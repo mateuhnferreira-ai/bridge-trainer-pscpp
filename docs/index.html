@@ -103,10 +103,17 @@ margin-top:40px;
 <div class="card">
 <h3>📚 Progresso Geral</h3>
 
-<progress value="8" max="100" style="width:100%;height:25px;"></progress>
+<progress id="barra" value="0" max="100" style="width:100%;height:25px;"></progress>
 
-<p><strong>8%</strong> concluído</p>
+<p><strong><span id="percentual">0</span>%</strong> concluído</p>
 
+<button onclick="adicionarProgresso()">
+Concluir uma aula
+</button>
+
+<button onclick="reiniciarProgresso()">
+Reiniciar
+</button>
 </div>
 
 <div class="card">
