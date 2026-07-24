@@ -1,78 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bridge Trainer PSCPP</title>
 
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        /* Todo o seu CSS atual fica aqui */
-    </style>
 </head>
 
 <body>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bridge Trainer PSCPP</title>
+<header>
+    <h1>Bridge Trainer PSCPP</h1>
+    <p>Plataforma de preparação para Praticante de Prático</p>
+</header>
 
-<style>
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Disciplinas</a>
+    <a href="#">Simulados</a>
+    <a href="#">Progresso</a>
+</nav>
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-margin:0;
-background:#f2f5f8;
-}
+<main>
 
-header{
-background:#003366;
-color:white;
-padding:25px;
-text-align:center;
-}
+<section>
 
-nav{
-background:#0b5ea8;
-padding:12px;
-text-align:center;
-}
+<h2>Painel de Estudos</h2>
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:bold;
-}
+<div class="card">
 
-section{
-max-width:1000px;
-margin:auto;
-padding:25px;
-}
+<h3>📚 Progresso Geral</h3>
 
-.card{
-background:white;
-padding:20px;
-margin:20px 0;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
+<progress id="barra" value="0" max="100"></progress>
 
-button{
-background:#0b5ea8;
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-size:16px;
-}
+<p><strong><span id="percentual">0</span>%</strong> concluído</p>
 
-button:hover{
+<button onclick="adicionarProgresso()">
+Concluir uma aula
+</button>
+
+<button onclick="reiniciarProgresso()">
+Reiniciar
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Disciplinas</h3>
+
+<table>
+
+<tr>
+<th>Disciplina</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Controlabilidade</td>
+<td>✅ Em andamento</td>
+</tr>
+
+<tr>
+<td>Hélices</td>
+<td>✅ Em andamento</td>
+</tr>
+
+<tr>
+<td>Arte Naval</td>
+<td>⏳ Em breve</td>
+</tr>
+
+<tr>
+<td>Meteorologia</td>
+<td>⏳ Em breve</td>
+</tr>
+
+<tr>
+<td>Navegação</td>
+<td>⏳ Em breve</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Meta da Semana</h3>
+
+<ul>
+<li>✔ Revisar Controlabilidade</li>
+<li>✔ Estudar Hélices</li>
+<li>⬜ Resolver 20 questões</li>
+<li>⬜ Revisão espaçada</li>
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+Bridge Trainer PSCPP © 2026
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>button:hover{
 background:#003366;
 }
 
