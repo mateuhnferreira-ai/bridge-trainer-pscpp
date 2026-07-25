@@ -1,27 +1,42 @@
 // =====================================
-// INTERFACE DO PLANEJAMENTO
+// INTERFACE DO PLANEJAMENTO PSCPP
 // =====================================
 
 
-// RESUMO DO PLANEJAMENTO
+console.log("APP PLANEJAMENTO CARREGADO");
+
+
+
+// Calcula resumo
 
 let resumo = calcularPlanejamento();
 
 
-console.log("Semanas disponíveis:", resumo.semanasDisponiveis);
 
-console.log("Horas por semana:", resumo.horasPorSemana);
-
-console.log("Horas totais:", resumo.horasTotais);
+// Mostra resumo na tela
 
 
+document.getElementById("semanas-disponiveis").innerHTML =
+"📅 Semanas disponíveis: " + resumo.semanasDisponiveis;
 
 
-// GERA LISTA DE ESTUDOS
+
+document.getElementById("horas-semana").innerHTML =
+"⏱ Horas por semana: " + resumo.horasPorSemana;
+
+
+
+document.getElementById("horas-totais").innerHTML =
+"🎯 Carga total disponível: " + resumo.horasTotais + " horas";
+
+
+
+
+
+// Lista de estudos
 
 
 let plano = gerarPlanoEstudo();
-
 
 
 let area = document.getElementById("lista-estudos");
@@ -31,9 +46,7 @@ let area = document.getElementById("lista-estudos");
 plano.forEach(item => {
 
 
-
 area.innerHTML += `
-
 
 <div class="card">
 
@@ -60,8 +73,8 @@ ${item.disciplina}
 
 </div>
 
-
 `;
+
 
 
 });
