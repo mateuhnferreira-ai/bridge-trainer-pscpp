@@ -14,218 +14,209 @@
 
 <body>
 
-<header>
+<header class="topo">
 
-    <h1>⚓ Bridge Trainer PSCPP</h1>
+    <div class="logo">
 
-    <p>
-        Plataforma de estudos para o Processo Seletivo à Categoria de Praticante de Prático (PSCPP)
-    </p>
+        <h1>⚓ Bridge Trainer PSCPP</h1>
+
+        <p>Preparação para o Processo Seletivo de Praticante de Prático</p>
+
+    </div>
 
 </header>
 
+<nav class="navbar">
+
+    <a href="index.html">🏠 Início</a>
+
+    <a href="#">📊 Progresso</a>
+
+    <a href="#">📝 Simulados</a>
+
+    <a href="#">📅 Planejamento</a>
+
+    <a href="#">⚙ Configurações</a>
+
+</nav>
+
 <main>
 
-<section class="disciplinas">
+    <!-- PROGRESSO GERAL -->
 
-<h2>Conteúdo Programático</h2>
+    <section class="dashboard">
 
-<div class="cards">
+        <h2>Progresso Geral</h2>
 
-<a href="artenaval.html" class="card">
+        <div class="barra-progresso">
 
-<h3>⚓ Arte Naval</h3>
+            <div class="progresso" id="progresso-geral"></div>
 
-<p>
-Construção Naval, Estabilidade, Equipamentos de Convés,
-Fundeio, Amarração e conhecimentos gerais.
-</p>
+        </div>
 
-</a>
+        <p id="porcentagem-geral">0%</p>
 
+    </section>
 
-<a href="controlabilidade.html" class="card">
 
-<h3>🚢 Controlabilidade</h3>
+    <!-- DISCIPLINAS -->
 
-<p>
-Manobrabilidade, Leme, Hélices,
-Propulsão, Curvas de Giro e Controle Direcional.
-</p>
+    <section>
 
-</a>
+        <h2>Conteúdo Programático</h2>
 
+        <div class="cards">
 
-<a href="navegacao.html" class="card">
+            <a href="disciplinas/arte-naval/index.html" class="card">
 
-<h3>🧭 Navegação em Águas Restritas</h3>
+                <h3>⚓ Arte Naval</h3>
 
-<p>
-COLREG, Balizamento,
-Praticagem, Cartas Náuticas e Navegação.
-</p>
+                <div class="mini-barra">
 
-</a>
+                    <div class="mini-progresso" style="width:0%"></div>
 
+                </div>
 
-<a href="meteorologia.html" class="card">
+                <span>0%</span>
 
-<h3>🌦 Meteorologia e Oceanografia</h3>
+            </a>
 
-<p>
-Ventos, Correntes,
-Ondas, Marés e Fenômenos Meteorológicos.
-</p>
+            <a href="disciplinas/controlabilidade/index.html" class="card">
 
-</a>
+                <h3>🚢 Controlabilidade</h3>
 
+                <div class="mini-barra">
 
-<a href="regulamentacao.html" class="card">
+                    <div class="mini-progresso" style="width:0%"></div>
 
-<h3>📜 Regulamentação</h3>
+                </div>
 
-<p>
-NORMAM,
-Legislação Marítima,
-Convenções e Regulamentos.
-</p>
+                <span>0%</span>
 
-</a>
+            </a>
 
+            <a href="disciplinas/navegacao/index.html" class="card">
 
-<a href="comunicacoes.html" class="card">
+                <h3>🧭 Navegação em Águas Restritas</h3>
 
-<h3>📡 Comunicações</h3>
+                <div class="mini-barra">
 
-<p>
-GMDSS,
-Radiocomunicações,
-Procedimentos Operacionais.
-</p>
+                    <div class="mini-progresso" style="width:0%"></div>
 
-</a>
+                </div>
 
+                <span>0%</span>
 
-<a href="ingles.html" class="card">
+            </a>
 
-<h3>🇬🇧 Inglês Marítimo</h3>
+            <a href="disciplinas/meteorologia/index.html" class="card">
 
-<p>
-Vocabulário Técnico,
-SMCP,
-Comunicações em Inglês.
-</p>
+                <h3>🌦 Meteorologia e Oceanografia</h3>
 
-</a>
+                <div class="mini-barra">
 
-</div>
+                    <div class="mini-progresso" style="width:0%"></div>
 
-</section>
+                </div>
 
-<section class="painel">
+                <span>0%</span>
 
-<div class="card">
+            </a>
 
-<h3>Status das Disciplinas</h3>
+            <a href="disciplinas/regulamentacao/index.html" class="card">
 
-<table>
+                <h3>📜 Regulamentação</h3>
 
-<tr>
+                <div class="mini-barra">
 
-<th>Disciplina</th>
+                    <div class="mini-progresso" style="width:0%"></div>
 
-<th>Status</th>
+                </div>
 
-</tr>
+                <span>0%</span>
 
-<tr>
+            </a>
 
-<td>Arte Naval</td>
+            <a href="disciplinas/comunicacoes/index.html" class="card">
 
-<td>✅ Em desenvolvimento</td>
+                <h3>📡 Comunicações</h3>
 
-</tr>
+                <div class="mini-barra">
 
-<tr>
+                    <div class="mini-progresso" style="width:0%"></div>
 
-<td>Controlabilidade</td>
+                </div>
 
-<td>✅ Em desenvolvimento</td>
+                <span>0%</span>
 
-</tr>
+            </a>
 
-<tr>
+            <a href="disciplinas/ingles/index.html" class="card">
 
-<td>Navegação</td>
+                <h3>🇬🇧 Inglês</h3>
 
-<td>⏳ Em breve</td>
+                <div class="mini-barra">
 
-</tr>
+                    <div class="mini-progresso" style="width:0%"></div>
 
-<tr>
+                </div>
 
-<td>Meteorologia</td>
+                <span>0%</span>
 
-<td>⏳ Em breve</td>
+            </a>
 
-</tr>
+        </div>
 
-<tr>
+    </section>
 
-<td>Regulamentação</td>
 
-<td>⏳ Em breve</td>
+    <!-- CENTRO DE COMANDO -->
 
-</tr>
+    <section class="painel">
 
-<tr>
+        <div class="widget">
 
-<td>Comunicações</td>
+            <h2>🎯 Meta da Semana</h2>
 
-<td>⏳ Em breve</td>
+            <ul>
 
-</tr>
+                <li>☐ Finalizar Hélices</li>
 
-<tr>
+                <li>☐ Resolver 20 questões</li>
 
-<td>Inglês</td>
+                <li>☐ Revisão espaçada</li>
 
-<td>⏳ Em breve</td>
+            </ul>
 
-</tr>
+        </div>
 
-</table>
+        <div class="widget">
 
-</div>
+            <h2>📖 Última Aula</h2>
 
+            <p>Nenhuma aula iniciada.</p>
 
-<div class="card">
+        </div>
 
-<h3>Meta da Semana</h3>
+        <div class="widget">
 
-<ul>
+            <h2>📅 Próxima Revisão</h2>
 
-<li>✔ Revisar Controlabilidade</li>
+            <p>Sem revisões programadas.</p>
 
-<li>✔ Estudar Hélices</li>
+        </div>
 
-<li>⬜ Resolver 20 questões</li>
-
-<li>⬜ Revisão Espaçada</li>
-
-</ul>
-
-</div>
-
-</section>
+    </section>
 
 </main>
 
 <footer>
 
-<p>
-Bridge Trainer PSCPP © 2026
-</p>
+    <p>
+
+        Bridge Trainer PSCPP © 2026
+
+    </p>
 
 </footer>
 
@@ -233,4 +224,4 @@ Bridge Trainer PSCPP © 2026
 
 </body>
 
-</html>
+                </html>
