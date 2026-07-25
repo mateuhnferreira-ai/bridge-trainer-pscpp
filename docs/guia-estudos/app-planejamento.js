@@ -3,6 +3,23 @@
 // =====================================
 
 
+// RESUMO DO PLANEJAMENTO
+
+let resumo = calcularPlanejamento();
+
+
+console.log("Semanas disponíveis:", resumo.semanasDisponiveis);
+
+console.log("Horas por semana:", resumo.horasPorSemana);
+
+console.log("Horas totais:", resumo.horasTotais);
+
+
+
+
+// GERA LISTA DE ESTUDOS
+
+
 let plano = gerarPlanoEstudo();
 
 
@@ -45,7 +62,6 @@ ${item.disciplina}
 
 
 `;
-
 
 
 });
