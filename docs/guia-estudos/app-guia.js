@@ -1,10 +1,7 @@
 // =====================================
-// CONTROLE DO GUIA DE ESTUDOS PSCPP
+// GUIA DE ESTUDOS PSCPP
+// PAINEL DE CONTROLE
 // =====================================
-
-
-console.log("Guia de Estudos carregado");
-
 
 
 let totalDisciplinas = Object.keys(conteudoPSCPP).length;
@@ -29,9 +26,7 @@ for (let disciplina in conteudoPSCPP) {
 
     assuntos.forEach(assunto => {
 
-
         totalHoras += assunto.horas;
-
 
     });
 
@@ -40,8 +35,18 @@ for (let disciplina in conteudoPSCPP) {
 
 
 
-console.log("Disciplinas:", totalDisciplinas);
+// Atualiza tela
 
-console.log("Assuntos:", totalAssuntos);
 
-console.log("Horas previstas:", totalHoras);
+document.getElementById("total-disciplinas").innerHTML =
+totalDisciplinas;
+
+
+
+document.getElementById("total-assuntos").innerHTML =
+totalAssuntos;
+
+
+
+document.getElementById("total-horas").innerHTML =
+totalHoras + " horas";
