@@ -1389,7 +1389,292 @@ Fonseca — Arte Naval.
 </ul>
 
 </section>
+<!-- PARTE 9 - COMPLEMENTO TÉCNICO DA AULA 1 -->
 
+<section class="aula">
+
+<h2>9. Complemento Técnico — Da Teoria de Controle ao Comportamento Real do Navio</h2>
+
+<p>
+Até este ponto estudamos os fundamentos da controlabilidade.
+Agora vamos conectar os conceitos hidrodinâmicos ao comportamento real do navio,
+nível exigido para o PSCPP.
+</p>
+
+
+<h3>9.1 Estabilidade Direcional x Controlabilidade</h3>
+
+<p>
+A estabilidade direcional representa a tendência natural do navio em manter ou
+retornar ao rumo original após uma perturbação.
+</p>
+
+<p>
+Já a controlabilidade representa a capacidade do navio de responder aos comandos
+do leme e realizar alterações de rumo de forma previsível.
+</p>
+
+<div class="caixa-info">
+
+<strong>Conceito operacional:</strong><br>
+
+Um navio extremamente estável pode apresentar dificuldade para alterar o rumo.
+Um navio pouco estável pode responder rapidamente, porém exigir grande atuação
+do timão para ser controlado.
+
+</div>
+
+
+<h3>9.2 Derivadas Hidrodinâmicas Fundamentais</h3>
+
+<p>
+O movimento lateral e de guinada do navio pode ser estudado através das
+derivadas hidrodinâmicas.
+</p>
+
+<ul>
+
+<li>
+<strong>Yv</strong> — força lateral causada pelo movimento de deriva.
+</li>
+
+<li>
+<strong>Yr</strong> — influência da velocidade angular de guinada na força lateral.
+</li>
+
+<li>
+<strong>Nv</strong> — momento de guinada provocado pela deriva.
+</li>
+
+<li>
+<strong>Nr</strong> — momento de amortecimento causado pela própria guinada.
+</li>
+
+</ul>
+
+
+<p>
+Esses coeficientes explicam por que determinados navios possuem tendência de
+manter o rumo, enquanto outros apresentam comportamento mais instável.
+</p>
+
+
+<h3>9.3 Modelo de Nomoto — Resposta do Navio ao Leme</h3>
+
+<p>
+O modelo de Nomoto simplifica a dinâmica de guinada do navio através de dois
+parâmetros principais:
+</p>
+
+<ul>
+
+<li>
+<strong>K (ganho de guinada)</strong> — representa quanto o navio responde ao comando
+do leme.
+</li>
+
+<li>
+<strong>T (constante de tempo)</strong> — representa a rapidez com que essa resposta
+se desenvolve.
+</li>
+
+</ul>
+
+
+<div class="caixa-info">
+
+<strong>Interpretação prática:</strong><br><br>
+
+K elevado → maior resposta angular para determinado ângulo de leme.<br>
+
+T pequeno → resposta mais rápida do navio ao comando.
+
+</div>
+
+
+<h3>9.4 Teste Espiral de Dieudonné</h3>
+
+<p>
+O teste espiral avalia a estabilidade direcional do navio observando a relação
+entre ângulo de leme aplicado e velocidade angular de guinada obtida.
+</p>
+
+<p>
+O resultado é apresentado através da curva espiral.
+</p>
+
+<ul>
+
+<li>
+Curva fechada e sem histerese → comportamento estável.
+</li>
+
+<li>
+Histerese significativa → tendência de instabilidade direcional.
+</li>
+
+<li>
+Grande diferença entre guinada positiva e negativa → comportamento assimétrico.
+</li>
+
+</ul>
+
+
+<h3>9.5 Influência do Projeto do Navio</h3>
+
+<p>
+A controlabilidade não depende apenas do leme.
+Ela é consequência da interação entre casco, propulsão e dispositivos de controle.
+</p>
+
+<ul>
+
+<li>
+Maior área lateral de popa (skeg) → aumenta estabilidade direcional.
+</li>
+
+<li>
+Casco com maior coeficiente de bloco (Cb) → normalmente apresenta maior dificuldade
+para mudanças rápidas de rumo.
+</li>
+
+<li>
+Leme eficiente → aumenta força lateral e capacidade de controle.
+</li>
+
+<li>
+Propulsor → influencia diretamente o fluxo sobre o leme.
+</li>
+
+</ul>
+
+
+<h3>9.6 Exemplo Operacional — Navio A x Navio B</h3>
+
+<p>
+Considere dois navios semelhantes operando em águas restritas.
+</p>
+
+<div class="tabela">
+
+<table>
+
+<tr>
+<th>Característica</th>
+<th>Navio A</th>
+<th>Navio B</th>
+</tr>
+
+<tr>
+<td>K</td>
+<td>Maior resposta ao leme</td>
+<td>Menor resposta</td>
+</tr>
+
+<tr>
+<td>T</td>
+<td>Resposta mais rápida</td>
+<td>Resposta mais lenta</td>
+</tr>
+
+<tr>
+<td>Estabilidade direcional</td>
+<td>Maior tendência de manter rumo</td>
+<td>Maior tendência de guinar</td>
+</tr>
+
+<tr>
+<td>Operação</td>
+<td>Controle previsível</td>
+<td>Maior necessidade de correções</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>9.7 Fórmulas Essenciais para o PSCPP</h3>
+
+<p>
+O candidato não precisa desenvolver matematicamente todos os modelos,
+mas deve compreender as relações fundamentais:
+</p>
+
+<div class="formula">
+
+<strong>Força do leme:</strong><br>
+
+F ≈ 1/2 × ρ × V² × A × CL
+
+<br><br>
+
+Onde:
+
+<br>
+ρ = densidade da água<br>
+V = velocidade do fluxo no leme<br>
+A = área do leme<br>
+CL = coeficiente de sustentação
+
+</div>
+
+
+<p>
+A relação mais importante operacionalmente é:
+</p>
+
+<div class="caixa-destaque">
+
+<strong>
+A força do leme cresce aproximadamente com o quadrado da velocidade do fluxo.
+</strong>
+
+</div>
+
+
+<h3>9.8 O que o PSCPP pode cobrar desta aula</h3>
+
+<ul>
+
+<li>
+Diferença entre estabilidade direcional e controlabilidade.
+</li>
+
+<li>
+Interpretação da curva espiral de Dieudonné.
+</li>
+
+<li>
+Significado físico das derivadas Nv e Nr.
+</li>
+
+<li>
+Influência de K e T no comportamento do navio.
+</li>
+
+<li>
+Relação entre projeto do casco, leme e capacidade de manobra.
+</li>
+
+</ul>
+
+
+<div class="caixa-info">
+
+<strong>
+Visão do Prático:
+</strong><br><br>
+
+O objetivo final da controlabilidade não é apenas saber se o navio consegue
+guinar, mas prever como ele irá responder antes que o comando seja aplicado.
+
+</div>
+
+
+</section>
+
+<!-- FIM DA PARTE 9 -->
 
 <section class="final-aula">
 
