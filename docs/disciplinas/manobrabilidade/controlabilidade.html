@@ -929,7 +929,47 @@ guinada do navio.
 </p>
 
 </section>
+<div class="grafico-navio">
 
+<h4>Representação das forças hidrodinâmicas durante a guinada</h4>
+
+<svg viewBox="0 0 600 300" width="100%">
+
+<!-- Corpo do navio -->
+<ellipse cx="300" cy="150" rx="120" ry="45"
+style="fill:none;stroke:black;stroke-width:3"/>
+
+<!-- Centro de gravidade -->
+<circle cx="300" cy="150" r="8" fill="black"/>
+
+<text x="315" y="145">CG</text>
+
+
+<!-- Força lateral -->
+<line x1="300" y1="150" x2="300" y2="60"
+stroke="black" stroke-width="3"/>
+
+<polygon points="300,50 290,70 310,70"/>
+
+<text x="315" y="75">Yv / Yr</text>
+
+
+<!-- Momento de guinada -->
+<path d="M250 210 Q300 260 350 210"
+fill="none"
+stroke="black"
+stroke-width="3"/>
+
+<polygon points="350,210 335,205 340,220"/>
+
+<text x="250" y="280">
+Momento de guinada N
+</text>
+
+
+</svg>
+
+</div>
 
 <section>
 
