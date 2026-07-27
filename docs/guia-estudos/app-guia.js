@@ -8,6 +8,7 @@
 // =====================================
 // VARIÁVEIS PRINCIPAIS
 // =====================================
+console.log("APP GUIA CARREGADO");
 
 let totalDisciplinas = 0;
 
