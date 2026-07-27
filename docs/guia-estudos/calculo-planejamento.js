@@ -7,11 +7,9 @@
 function calcularPlanejamento(){
 
 
-
 let inicio = new Date(
     configuracaoEstudo.inicio
 );
-
 
 
 let prova = new Date(
@@ -20,26 +18,20 @@ let prova = new Date(
 
 
 
-
 let diferenca =
 prova - inicio;
 
 
 
-
-let semanas = Math.floor(
+let semanas = Math.max(0, Math.floor(
     diferenca /
     (1000 * 60 * 60 * 24 * 7)
-);
-
-
+));
 
 
 
 let diasPorSemana =
 configuracaoEstudo.diasEstudo.length;
-
-
 
 
 
@@ -49,15 +41,9 @@ diasPorSemana;
 
 
 
-
-
-
 let horasTotais =
 semanas *
 horasSemana;
-
-
-
 
 
 
@@ -73,7 +59,15 @@ horasSemana,
 
 
 horasTotais:
-horasTotais
+horasTotais,
+
+
+dataInicio:
+configuracaoEstudo.inicio,
+
+
+dataProva:
+configuracaoEstudo.prova
 
 
 
