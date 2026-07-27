@@ -1,1 +1,57 @@
+{
+  "versao": "1.0",
+  "ultimaAtualizacao": "2026-07-27",
 
+  "disciplinas": {
+
+    "arte-naval": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "manobrabilidade": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "navegacao": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "meteorologia": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "regulamentacao": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "comunicacoes": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    },
+
+    "conhecimentos-gerais": {
+      "progresso": 0,
+      "status": "Não iniciado",
+      "ultimaAula": "",
+      "ultimaAtualizacao": ""
+    }
+
+  }
+}
