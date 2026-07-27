@@ -1,11 +1,15 @@
 // =====================================
 // GUIA DE ESTUDOS PSCPP
-// PAINEL DE CONTROLE INTELIGENTE v2.0
+// PAINEL DE CONTROLE INTELIGENTE v3.0
+// Bridge Trainer PSCPP
 // =====================================
 
 
-let totalDisciplinas = Object.keys(conteudoPSCPP).length;
+// =====================================
+// VARIÁVEIS PRINCIPAIS
+// =====================================
 
+let totalDisciplinas = 0;
 
 let totalAssuntos = 0;
 
@@ -30,117 +34,152 @@ let proximoEstudo = null;
 let maiorPrioridade = 0;
 
 
-
 // =====================================
-// LEITURA DO BANCO DE CONTEÚDO
+// PROCESSAMENTO DO BANCO DE CONTEÚDO
 // =====================================
 
 
-for (let disciplina in conteudoPSCPP) {
+function processarConteudo(){
 
 
-    let dadosDisciplina = conteudoPSCPP[disciplina];
+    if(typeof conteudoPSCPP === "undefined"){
 
+        console.error(
+        "Banco de conteúdo PSCPP não encontrado."
+        );
 
-    let assuntos = dadosDisciplina.assuntos;
+        return;
 
-
-
-    assuntos.forEach(assunto => {
-
-
-
-        totalAssuntos++;
-
-
-        totalHoras += assunto.horas;
+    }
 
 
 
-        let pesoAssunto =
-        assunto.horas * assunto.peso;
+    totalDisciplinas =
+    Object.keys(conteudoPSCPP).length;
 
 
 
-        pesoTotal += pesoAssunto;
+    for(let disciplina in conteudoPSCPP){
+
+
+        let dadosDisciplina =
+        conteudoPSCPP[disciplina];
+
+
+
+        let assuntos =
+        dadosDisciplina.assuntos || [];
+
+
+
+        assuntos.forEach(assunto => {
+
+
+
+            totalAssuntos++;
+
+
+            totalHoras += assunto.horas;
+
+
+
+            let pesoAssunto =
+            assunto.horas *
+            assunto.peso;
+
+
+
+            pesoTotal += pesoAssunto;
 
 
 
 
-        if (
-            assunto.status === "Concluído" ||
-            assunto.status === "Dominado"
-        ) {
+            if(
+                assunto.status === "Concluído" ||
+                assunto.status === "Dominado"
+            ){
 
 
-            assuntosConcluidos++;
+                assuntosConcluidos++;
 
-            horasConcluidas += assunto.horas;
+                horasConcluidas += assunto.horas;
 
-            pesoConcluido += pesoAssunto;
-
-
-        }
-
-
-
-
-
-        // Busca próximo estudo recomendado
-
-        if (
-            assunto.status !== "Concluído" &&
-            assunto.status !== "Dominado"
-        ) {
-
-
-
-            let prioridadeAtual =
-            assunto.peso *
-            (dadosDisciplina.pesoDisciplina || 1);
-
-
-
-            if (
-                prioridadeAtual > maiorPrioridade
-            ) {
-
-
-                maiorPrioridade = prioridadeAtual;
-
-
-                proximoEstudo = {
-
-                    disciplina:
-                    dadosDisciplina.nome,
-
-
-                    assunto:
-                    assunto.nome,
-
-
-                    peso:
-                    assunto.peso,
-
-
-                    horas:
-                    assunto.horas,
-
-
-                    status:
-                    assunto.status
-
-                };
+                pesoConcluido += pesoAssunto;
 
 
             }
 
 
-        }
+
+
+            // ============================
+            // RECOMENDAÇÃO INTELIGENTE
+            // ============================
+
+
+            if(
+                assunto.status !== "Concluído" &&
+                assunto.status !== "Dominado"
+            ){
 
 
 
-    });
+                let prioridadeAtual =
+
+                assunto.peso *
+                (dadosDisciplina.pesoDisciplina || 1);
+
+
+
+                if(
+                    prioridadeAtual >
+                    maiorPrioridade
+                ){
+
+
+                    maiorPrioridade =
+                    prioridadeAtual;
+
+
+
+                    proximoEstudo = {
+
+
+                        disciplina:
+                        dadosDisciplina.nome,
+
+
+                        assunto:
+                        assunto.nome,
+
+
+                        peso:
+                        assunto.peso,
+
+
+                        horas:
+                        assunto.horas,
+
+
+                        status:
+                        assunto.status
+
+
+                    };
+
+
+                }
+
+
+            }
+
+
+
+        });
+
+
+
+    }
 
 
 
@@ -149,20 +188,28 @@ for (let disciplina in conteudoPSCPP) {
 
 
 
+
 // =====================================
-// CÁLCULO DE PROGRESSO
+// CÁLCULO DO PROGRESSO
 // =====================================
 
 
-let progresso = 0;
+function calcularProgresso(){
 
 
-if (pesoTotal > 0) {
+    if(pesoTotal === 0){
+
+        return 0;
+
+    }
 
 
-    progresso =
-    Math.round(
-        (pesoConcluido / pesoTotal) * 100
+
+    return Math.round(
+
+        (pesoConcluido /
+        pesoTotal) * 100
+
     );
 
 
@@ -171,10 +218,10 @@ if (pesoTotal > 0) {
 
 
 
-// =====================================
-// ATUALIZAÇÃO DOS CARDS PRINCIPAIS
-// =====================================
 
+// =====================================
+// ATUALIZA ELEMENTOS HTML
+// =====================================
 
 
 function atualizarElemento(id, valor){
@@ -184,14 +231,192 @@ function atualizarElemento(id, valor){
     document.getElementById(id);
 
 
+
     if(elemento){
 
-        elemento.innerHTML = valor;
+        elemento.innerHTML =
+        valor;
 
     }
 
 
 }
+
+
+
+
+
+// =====================================
+// CRIA CARDS INTELIGENTES
+// =====================================
+
+
+function criarPainelInteligente(){
+
+
+    let progresso =
+    calcularProgresso();
+
+
+
+    let dashboard =
+    document.querySelector(".dashboard");
+
+
+
+    if(!dashboard){
+
+        return;
+
+    }
+
+
+
+    let cards =
+    dashboard.querySelector(".cards");
+
+
+
+    if(!cards){
+
+        return;
+
+    }
+
+
+
+
+
+    let progressoBox =
+    document.createElement("div");
+
+
+    progressoBox.className =
+    "card";
+
+
+
+    progressoBox.innerHTML = `
+
+    <h3>
+    📈 Progresso Estratégico
+    </h3>
+
+    <p>
+    ${progresso}% concluído
+    </p>
+
+    <p>
+    ${assuntosConcluidos}
+    de
+    ${totalAssuntos}
+    assuntos
+    </p>
+
+    <p>
+    ${horasConcluidas}h estudadas
+    </p>
+
+    `;
+
+
+
+    cards.appendChild(progressoBox);
+
+
+
+
+
+    let focoBox =
+    document.createElement("div");
+
+
+
+    focoBox.className =
+    "card";
+
+
+
+
+    if(proximoEstudo){
+
+
+        focoBox.innerHTML = `
+
+
+        <h3>
+        🎯 Próximo Foco
+        </h3>
+
+
+        <p>
+        <strong>
+        ${proximoEstudo.disciplina}
+        </strong>
+        </p>
+
+
+        <p>
+        ${proximoEstudo.assunto}
+        </p>
+
+
+        <p>
+        Peso:
+        ${proximoEstudo.peso}
+        </p>
+
+
+        <p>
+        Carga:
+        ${proximoEstudo.horas}
+        horas
+        </p>
+
+
+        `;
+
+
+    }
+    else{
+
+
+        focoBox.innerHTML = `
+
+
+        <h3>
+        🎯 Próximo Foco
+        </h3>
+
+
+        <p>
+        Todos os assuntos concluídos.
+        </p>
+
+
+        `;
+
+
+    }
+
+
+
+    cards.appendChild(focoBox);
+
+
+
+}
+
+
+
+
+
+// =====================================
+// INICIALIZAÇÃO
+// =====================================
+
+
+processarConteudo();
 
 
 
@@ -216,153 +441,10 @@ totalHoras + " horas"
 
 
 
+criarPainelInteligente();
+
 
 
 // =====================================
-// CRIA PAINEL INTELIGENTE
+// FIM APP-GUIA v3.0
 // =====================================
-
-
-let dashboard =
-document.querySelector(".dashboard");
-
-
-
-if(dashboard){
-
-
-
-    let cards =
-    dashboard.querySelector(".cards");
-
-
-
-    if(cards){
-
-
-
-        let progressoBox =
-        document.createElement("div");
-
-
-
-        progressoBox.className =
-        "card";
-
-
-
-        progressoBox.innerHTML = `
-
-
-        <h3>
-        📈 Progresso Estratégico
-        </h3>
-
-
-        <p>
-        ${progresso}% concluído
-        </p>
-
-
-        <p>
-        ${assuntosConcluidos}
-        de
-        ${totalAssuntos}
-        assuntos
-        </p>
-
-
-        <p>
-        ${horasConcluidas}h estudadas
-        </p>
-
-
-        `;
-
-
-
-        cards.appendChild(progressoBox);
-
-
-
-
-        let focoBox =
-        document.createElement("div");
-
-
-
-        focoBox.className =
-        "card";
-
-
-
-        if(proximoEstudo){
-
-
-            focoBox.innerHTML = `
-
-
-            <h3>
-            🎯 Próximo Foco
-            </h3>
-
-
-            <p>
-            <strong>
-            ${proximoEstudo.disciplina}
-            </strong>
-            </p>
-
-
-            <p>
-            ${proximoEstudo.assunto}
-            </p>
-
-
-            <p>
-            Peso:
-            ${proximoEstudo.peso}
-            </p>
-
-
-            <p>
-            Carga:
-            ${proximoEstudo.horas} horas
-            </p>
-
-
-            `;
-
-
-        }
-        else{
-
-
-            focoBox.innerHTML = `
-
-
-            <h3>
-            🎯 Próximo Foco
-            </h3>
-
-
-            <p>
-            Todos os assuntos concluídos.
-            </p>
-
-
-            `;
-
-
-        }
-
-
-
-        cards.appendChild(focoBox);
-
-
-
-    }
-
-
-}
