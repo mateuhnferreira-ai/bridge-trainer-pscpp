@@ -1,6 +1,6 @@
 // =====================================
 // GUIA DE ESTUDOS PSCPP
-// PAINEL DE CONTROLE
+// PAINEL DE CONTROLE INTELIGENTE
 // =====================================
 
 
@@ -9,10 +9,15 @@ let totalDisciplinas = Object.keys(conteudoPSCPP).length;
 
 let totalAssuntos = 0;
 
-
 let totalHoras = 0;
 
+let assuntosConcluidos = 0;
 
+let horasConcluidas = 0;
+
+
+
+// Percorre banco de conteúdo
 
 for (let disciplina in conteudoPSCPP) {
 
@@ -26,7 +31,22 @@ for (let disciplina in conteudoPSCPP) {
 
     assuntos.forEach(assunto => {
 
+
         totalHoras += assunto.horas;
+
+
+
+        if (
+            assunto.status === "Concluído" ||
+            assunto.status === "Dominado"
+        ) {
+
+            assuntosConcluidos++;
+
+            horasConcluidas += assunto.horas;
+
+        }
+
 
     });
 
@@ -35,18 +55,116 @@ for (let disciplina in conteudoPSCPP) {
 
 
 
-// Atualiza tela
+// Calcula progresso
 
 
-document.getElementById("total-disciplinas").innerHTML =
-totalDisciplinas;
+let progresso = 0;
+
+
+if (totalAssuntos > 0) {
+
+    progresso = Math.round(
+        (assuntosConcluidos / totalAssuntos) * 100
+    );
+
+}
 
 
 
-document.getElementById("total-assuntos").innerHTML =
-totalAssuntos;
+
+
+// Atualização segura da interface
+
+
+let disciplinasElemento =
+document.getElementById("total-disciplinas");
+
+
+if (disciplinasElemento) {
+
+    disciplinasElemento.innerHTML =
+    totalDisciplinas;
+
+}
 
 
 
-document.getElementById("total-horas").innerHTML =
-totalHoras + " horas";
+
+let assuntosElemento =
+document.getElementById("total-assuntos");
+
+
+if (assuntosElemento) {
+
+    assuntosElemento.innerHTML =
+    totalAssuntos;
+
+}
+
+
+
+
+let horasElemento =
+document.getElementById("total-horas");
+
+
+if (horasElemento) {
+
+    horasElemento.innerHTML =
+    totalHoras + " horas";
+
+}
+
+
+
+
+// Criação dinâmica do progresso
+
+let dashboard =
+document.querySelector(".dashboard");
+
+
+
+if (dashboard) {
+
+
+    let progressoBox =
+    document.createElement("div");
+
+
+    progressoBox.className = "card";
+
+
+    progressoBox.innerHTML = `
+
+    <h3>
+    📈 Progresso Geral
+    </h3>
+
+    <p>
+    ${progresso}% concluído
+    </p>
+
+    <p>
+    ${assuntosConcluidos} de ${totalAssuntos} assuntos
+    </p>
+
+    <p>
+    ${horasConcluidas}h estudadas
+    </p>
+
+    `;
+
+
+    let cards =
+    dashboard.querySelector(".cards");
+
+
+    if(cards){
+
+        cards.appendChild(progressoBox);
+
+    }
+
+
+        }
