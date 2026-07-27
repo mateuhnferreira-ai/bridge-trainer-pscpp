@@ -1,5 +1,5 @@
 // =====================================
-// SISTEMA DE PROGRESSO PSCPP v1.0
+// SISTEMA DE PROGRESSO PSCPP v2.0
 // Bridge Trainer PSCPP
 // =====================================
 
@@ -7,11 +7,13 @@
 let dadosProgresso = null;
 
 
+
 // =====================================
-// CARREGAR PROGRESSO
+// CARREGAR DADOS DE PROGRESSO
 // =====================================
 
-async function carregarProgresso(){
+
+async function carregarDadosProgresso(){
 
 
 try{
@@ -21,8 +23,10 @@ let resposta =
 await fetch("data/progresso.json");
 
 
+
 dadosProgresso =
 await resposta.json();
+
 
 
 console.log(
@@ -31,7 +35,9 @@ dadosProgresso
 );
 
 
+
 return dadosProgresso;
+
 
 
 }
@@ -44,13 +50,16 @@ erro
 );
 
 
+
 return null;
 
 
+
 }
 
 
 }
+
 
 
 
@@ -109,6 +118,7 @@ soma / disciplinas.length
 
 
 
+
 // =====================================
 // PROGRESSO POR DISCIPLINA
 // =====================================
@@ -138,8 +148,5 @@ dadosProgresso.disciplinas[id].progresso || 0;
 
 
 // =====================================
-// INICIALIZAÇÃO
+// FIM PROGRESSO v2.0
 // =====================================
-
-
-carregarProgresso();
