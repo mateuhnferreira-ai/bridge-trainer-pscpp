@@ -233,9 +233,8 @@ peso: 4
 
 ]
 
-}
+},
 
-};
 
 navegacao: {
 
