@@ -525,11 +525,9 @@ nome: "Comunicações",
 
 prioridade: "Média",
 
-pesoDisciplina: 3,
-
+pesoDisciplina: 2,
 
 assuntos: [
-
 
 {
 nome: "Standard Marine Communication Phrases (SMCP IMO)",
@@ -539,7 +537,6 @@ importancia: "Muito Alta",
 peso: 5
 },
 
-
 {
 nome: "Radiocomunicações Marítimas",
 status: "Não iniciado",
@@ -547,7 +544,6 @@ horas: 20,
 importancia: "Alta",
 peso: 4
 },
-
 
 {
 nome: "Código Internacional de Sinais (CIS)",
@@ -557,7 +553,6 @@ importancia: "Alta",
 peso: 4
 },
 
-
 {
 nome: "Sistema Marítimo Global de Socorro e Segurança (GMDSS)",
 status: "Não iniciado",
@@ -565,7 +560,6 @@ horas: 20,
 importancia: "Muito Alta",
 peso: 5
 },
-
 
 {
 nome: "Exercícios e Revisão de Comunicações",
@@ -575,12 +569,144 @@ importancia: "Média",
 peso: 3
 }
 
+]
+
+},
+
+
+conhecimentosGerais: {
+
+nome: "Conhecimentos Gerais",
+
+prioridade: "Alta",
+
+pesoDisciplina: 4,
+
+assuntos: [
+
+{
+nome: "Planejamento Portuário",
+status: "Não iniciado",
+horas: 20,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "PIANC",
+status: "Não iniciado",
+horas: 20,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "NORMAM-224",
+status: "Não iniciado",
+horas: 15,
+importancia: "Muito Alta",
+peso: 5
+},
+
+{
+nome: "Fatores Humanos",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "MARPOL",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "Economia Marítima",
+status: "Não iniciado",
+horas: 10,
+importancia: "Média",
+peso: 3
+},
+
+{
+nome: "Direito Processual Marítimo",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "Segurança da Navegação",
+status: "Não iniciado",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+},
+
+{
+nome: "Gestão Portuária",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "Hidrovias",
+status: "Não iniciado",
+horas: 10,
+importancia: "Média",
+peso: 3
+},
+
+{
+nome: "Dragagem",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "Meio Ambiente",
+status: "Não iniciado",
+horas: 10,
+importancia: "Média",
+peso: 3
+},
+
+{
+nome: "IMO",
+status: "Não iniciado",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+},
+
+{
+nome: "Infraestrutura Portuária",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+{
+nome: "Casos Práticos",
+status: "Não iniciado",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+}
 
 ]
 
 }
-
-
 
 };
 
