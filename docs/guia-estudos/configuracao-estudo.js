@@ -7,53 +7,32 @@
 const configuracaoEstudo = {
 
 
-// Data de início do planejamento
-
 inicio:
 "2026-07-27",
 
-
-
-// Data estimada da prova PSCPP
 
 prova:
 "2027-11-01",
 
 
-
-// Disponibilidade média diária
-
 horasPorDia:
 2,
 
 
-
-// Dias disponíveis para estudo
-
 diasEstudo: [
 
 "segunda",
-
 "terça",
-
 "quarta",
-
 "quinta",
-
 "sexta"
 
 ],
 
 
-
-// Controle de revisões
-
 usarRevisao:
 true,
 
-
-
-// Intensidade de revisão
 
 cicloRevisaoDias: [
 
@@ -62,13 +41,6 @@ cicloRevisaoDias: [
 90
 
 ],
-
-
-
-// Estratégia de prioridade
-
-// 5 = prioridade máxima
-// 1 = baixa prioridade
 
 
 pesosPrioridade: {
@@ -86,6 +58,9 @@ pesosPrioridade: {
 "Arte Naval": 4,
 
 
+"Conhecimentos Gerais": 4,
+
+
 "Comunicações": 3,
 
 
@@ -93,7 +68,6 @@ pesosPrioridade: {
 
 
 }
-
 
 
 };
