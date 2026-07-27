@@ -1,5 +1,6 @@
 // =====================================
 // CÁLCULO DO PLANEJAMENTO PSCPP
+// Bridge Trainer PSCPP
 // =====================================
 
 
@@ -7,47 +8,77 @@ function calcularPlanejamento(){
 
 
 
-let inicio = new Date(configuracaoEstudo.dataInicio);
+let inicio = new Date(
+    configuracaoEstudo.inicio
+);
 
 
-let prova = new Date(configuracaoEstudo.dataProva);
+
+let prova = new Date(
+    configuracaoEstudo.prova
+);
 
 
 
-let diferenca = prova - inicio;
+
+let diferenca =
+prova - inicio;
+
 
 
 
 let semanas = Math.floor(
-    diferenca / (1000 * 60 * 60 * 24 * 7)
+    diferenca /
+    (1000 * 60 * 60 * 24 * 7)
 );
+
+
+
+
+
+let diasPorSemana =
+configuracaoEstudo.diasEstudo.length;
+
+
 
 
 
 let horasSemana =
 configuracaoEstudo.horasPorDia *
-configuracaoEstudo.diasPorSemana;
+diasPorSemana;
+
+
+
 
 
 
 let horasTotais =
-semanas * horasSemana;
+semanas *
+horasSemana;
+
+
+
 
 
 
 return {
 
 
-semanasDisponiveis: semanas,
+semanasDisponiveis:
+semanas,
 
 
-horasPorSemana: horasSemana,
+horasPorSemana:
+horasSemana,
 
 
-horasTotais: horasTotais
+horasTotais:
+horasTotais
+
 
 
 };
+
 
 
 }
