@@ -1,5 +1,5 @@
 {
-  "versao": "1.0",
+  "versao": "1.1",
   "atualizado": "2026-07-27",
 
   "disciplinas": [
@@ -55,7 +55,7 @@
     {
       "id": "regulamentacao",
       "nome": "Legislação e Regulamentação",
-      "icone": "⚖",
+      "icone": "📜",
       "descricao": "Normas nacionais e internacionais.",
       "peso": 9,
       "prioridade": 1,
@@ -80,7 +80,7 @@
       "id": "conhecimentos-gerais",
       "nome": "Conhecimentos Gerais",
       "icone": "🌍",
-      "descricao": "Conteúdo complementar previsto na bibliografia oficial.",
+      "descricao": "Planejamento Portuário, PIANC, NORMAM-224, MARPOL, fatores humanos, economia marítima e temas técnicos complementares.",
       "peso": 8,
       "prioridade": 2,
       "status": "ativo",
@@ -167,4 +167,4 @@
     }
 
   ]
-    }
+        }
