@@ -1,5 +1,6 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP
+// MOTOR DE PLANEJAMENTO PSCPP v2.0
+// Bridge Trainer PSCPP
 // =====================================
 
 
@@ -10,10 +11,21 @@ let plano = [];
 
 
 
+// Percorre banco de conteúdo
+
+
 for(let disciplina in conteudoPSCPP){
 
 
-    let assuntos = conteudoPSCPP[disciplina].assuntos;
+
+    let dadosDisciplina =
+    conteudoPSCPP[disciplina];
+
+
+
+    let assuntos =
+    dadosDisciplina.assuntos;
+
 
 
 
@@ -21,31 +33,74 @@ for(let disciplina in conteudoPSCPP){
 
 
 
-        if(assunto.status !== "Concluído"){
+        if(
+            assunto.status !== "Concluído" &&
+            assunto.status !== "Dominado"
+        ){
+
+
+
+            let pesoDisciplina =
+            dadosDisciplina.pesoDisciplina || 1;
+
+
+
+            let pesoAssunto =
+            assunto.peso || 1;
+
+
+
+            let prioridade =
+            pesoDisciplina *
+            pesoAssunto;
+
+
 
 
             plano.push({
 
+
                 disciplina:
-                conteudoPSCPP[disciplina].nome,
+                dadosDisciplina.nome,
+
 
 
                 assunto:
                 assunto.nome,
 
 
+
                 horas:
                 assunto.horas,
 
 
+
                 importancia:
-                assunto.importancia
+                assunto.importancia,
+
+
+
+                pesoDisciplina:
+                pesoDisciplina,
+
+
+
+                pesoAssunto:
+                pesoAssunto,
+
+
+
+                prioridade:
+                prioridade
+
 
 
             });
 
 
+
         }
+
 
 
     });
@@ -56,7 +111,19 @@ for(let disciplina in conteudoPSCPP){
 
 
 
+// Ordenação:
+// maior prioridade primeiro
+
+
+plano.sort(
+(a,b) =>
+b.prioridade - a.prioridade
+);
+
+
+
 return plano;
+
 
 
 }
