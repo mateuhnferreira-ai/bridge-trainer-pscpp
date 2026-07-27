@@ -50,9 +50,27 @@ for(let disciplina in conteudoPSCPP){
 
 
 
-            let prioridade =
-            pesoDisciplina *
-            pesoAssunto;
+            let prioridadeConfiguracao =
+1;
+
+
+if(
+configuracaoEstudo &&
+configuracaoEstudo.pesosPrioridade &&
+configuracaoEstudo.pesosPrioridade[dadosDisciplina.nome]
+){
+
+prioridadeConfiguracao =
+configuracaoEstudo.pesosPrioridade[dadosDisciplina.nome];
+
+}
+
+
+
+let prioridade =
+pesoDisciplina *
+pesoAssunto *
+prioridadeConfiguracao;
 
 
 
