@@ -1,119 +1,282 @@
 /* =====================================================
    BRIDGE TRAINER PSCPP
-   APP.JS
+   APP.JS v2.0
+   Dashboard Integrado com Progresso
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", iniciarDashboard);
 
-function iniciarDashboard() {
+document.addEventListener(
+"DOMContentLoaded",
+iniciarDashboard
+);
 
-    carregarProgresso();
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+
+async function iniciarDashboard(){
+
+
+    if(typeof carregarDadosProgresso === "function"){
+
+
+        await carregarDadosProgresso();
+
+
+    }
+
+
+    atualizarDashboard();
+
+
 
 }
+
+
+
+
+/* =====================================================
+   ATUALIZA DASHBOARD PRINCIPAL
+===================================================== */
+
+
+function atualizarDashboard(){
+
+
+    const disciplinas = obterListaProgresso();
+
+
+    calcularProgressoGeral(
+        disciplinas
+    );
+
+
+}
+
+
+
+
+
+/* =====================================================
+   LISTA DE PROGRESSO
+===================================================== */
+
+
+function obterListaProgresso(){
+
+
+return [
+
+
+    obterProgressoDisciplina(
+        "arte-naval"
+    ),
+
+
+    obterProgressoDisciplina(
+        "manobrabilidade"
+    ),
+
+
+    obterProgressoDisciplina(
+        "navegacao"
+    ),
+
+
+    obterProgressoDisciplina(
+        "meteorologia"
+    ),
+
+
+    obterProgressoDisciplina(
+        "regulamentacao"
+    ),
+
+
+    obterProgressoDisciplina(
+        "comunicacoes"
+    ),
+
+
+    obterProgressoDisciplina(
+        "conhecimentos-gerais"
+    )
+
+
+];
+
+
+}
+
+
+
+
 
 /* =====================================================
    PROGRESSO GERAL
 ===================================================== */
 
-function carregarProgresso() {
 
-    // Temporário
-    // No futuro estes dados virão do progresso do usuário.
+function calcularProgressoGeral(lista){
 
-    const disciplinas = [
-
-        0, // Arte Naval
-        0, // Controlabilidade
-        0, // Navegação
-        0, // Meteorologia
-        0, // Regulamentação
-        0, // Comunicações
-        0  // Inglês
-
-    ];
-
-    atualizarDashboard(disciplinas);
-
-}
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-function atualizarDashboard(lista) {
 
     let soma = 0;
 
+
+
     lista.forEach(valor => {
 
-        soma += valor;
+
+        soma += valor || 0;
+
 
     });
 
-    const media = Math.round(soma / lista.length);
 
-    const barra = document.getElementById("progresso-geral");
 
-    const texto = document.getElementById("porcentagem-geral");
+    let media = Math.round(
+        soma / lista.length
+    );
 
-    barra.style.width = media + "%";
 
-    texto.textContent = media + "%";
+
+    const barra =
+    document.getElementById(
+        "progresso-geral"
+    );
+
+
+
+    const texto =
+    document.getElementById(
+        "porcentagem-geral"
+    );
+
+
+
+    if(barra){
+
+
+        barra.style.width =
+        media + "%";
+
+
+    }
+
+
+
+    if(texto){
+
+
+        texto.textContent =
+        media + "%";
+
+
+    }
+
+
 
     atualizarMiniBarras(lista);
 
+
 }
+
+
+
+
 
 /* =====================================================
    BARRAS DAS DISCIPLINAS
 ===================================================== */
 
-function atualizarMiniBarras(lista) {
 
-    const barras = document.querySelectorAll(".mini-progresso");
+function atualizarMiniBarras(lista){
 
-    const textos = document.querySelectorAll(".card span");
 
-    barras.forEach((barra, indice) => {
+    const barras =
+    document.querySelectorAll(
+        ".mini-progresso"
+    );
 
-        barra.style.width = lista[indice] + "%";
 
-        textos[indice].textContent = lista[indice] + "%";
+    const textos =
+    document.querySelectorAll(
+        ".card span"
+    );
+
+
+
+    barras.forEach(
+    (barra, indice)=>{
+
+
+        let valor =
+        lista[indice] || 0;
+
+
+
+        barra.style.width =
+        valor + "%";
+
+
+
+        if(textos[indice]){
+
+
+            textos[indice].textContent =
+            valor + "%";
+
+
+        }
+
+
 
     });
 
+
+
 }
+
+
+
+
 
 /* =====================================================
    FUNÇÕES FUTURAS
 ===================================================== */
 
-// salvar progresso
 
-function salvarProgresso() {
+function salvarProgresso(){
 
-}
-
-// carregar JSON
-
-function carregarJSON() {
+    console.log(
+    "Salvar progresso - aguardando implementação"
+    );
 
 }
 
-// atualizar metas
 
-function atualizarMetas() {
 
-}
-
-// última aula
-
-function ultimaAula() {
+function atualizarMetas(){
 
 }
 
-// revisões
 
-function revisar() {
+
+function ultimaAula(){
 
 }
+
+
+
+function revisar(){
+
+}
+
+
+
+/* =====================================================
+   FIM APP.JS v2.0
+===================================================== */
