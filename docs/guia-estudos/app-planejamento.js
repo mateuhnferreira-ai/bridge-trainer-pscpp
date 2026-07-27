@@ -1,73 +1,150 @@
 // =====================================
-// INTERFACE DO PLANEJAMENTO PSCPP
+// APLICATIVO DE PLANEJAMENTO PSCPP
+// Bridge Trainer PSCPP
 // =====================================
 
 
-// RESUMO DO PLANEJAMENTO
 
-let resumo = calcularPlanejamento();
+// Calcula informações gerais
 
-
-
-document.getElementById("horas-disponiveis").innerHTML =
-resumo.horasPorSemana + " horas / semana";
+let dadosPlanejamento =
+calcularPlanejamento();
 
 
 
-document.getElementById("meta-semana").innerHTML =
-"Avançar no ciclo de estudos";
+
+// Gera plano estratégico
+
+let planoEstudo =
+gerarPlanoEstudo();
+
+
+
+
+// =====================================
+// SEMANA ATUAL
+// =====================================
+
+
+let semanaElemento =
+document.getElementById("semana-atual");
+
+
+if(semanaElemento){
+
+
+semanaElemento.innerHTML =
+
+"Semana 1 de " +
+dadosPlanejamento.semanasDisponiveis;
+
+
+}
 
 
 
 
 
 // =====================================
-// LISTA DE PRÓXIMOS ESTUDOS
+// HORAS DISPONÍVEIS
 // =====================================
 
 
-let plano = gerarPlanoEstudo();
+let horasElemento =
+document.getElementById("horas-disponiveis");
+
+
+if(horasElemento){
+
+
+horasElemento.innerHTML =
+
+dadosPlanejamento.horasPorSemana +
+" horas / semana";
+
+
+}
 
 
 
-let areaEstudos = document.getElementById("lista-estudos");
+
+// =====================================
+// META DA SEMANA
+// =====================================
+
+
+let metaElemento =
+document.getElementById("meta-semana");
+
+
+if(metaElemento){
+
+
+if(planoEstudo.length > 0){
+
+
+metaElemento.innerHTML =
+
+planoEstudo[0].disciplina +
+" - " +
+planoEstudo[0].assunto;
 
 
 
-plano.forEach(item => {
+}
+else{
+
+
+metaElemento.innerHTML =
+"Todos os assuntos concluídos";
+
+
+}
 
 
 
-areaEstudos.innerHTML += `
+}
 
 
-<div class="card">
 
 
-<h3>
-${item.disciplina}
-</h3>
+
+// =====================================
+// DISTRIBUIÇÃO POR DISCIPLINA
+// =====================================
 
 
-<p>
-📖 ${item.assunto}
-</p>
+let distribuicao =
+document.getElementById(
+"distribuicao-carga"
+);
 
 
-<p>
-⏱ ${item.horas} horas
-</p>
+
+if(distribuicao){
 
 
-<p>
-⭐ Prioridade: ${item.importancia}
-</p>
+
+let disciplinas = {};
 
 
-</div>
+
+planoEstudo.forEach(item => {
 
 
-`;
+
+if(!disciplinas[item.disciplina]){
+
+
+disciplinas[item.disciplina] = 0;
+
+
+}
+
+
+
+disciplinas[item.disciplina]
++= item.horas;
 
 
 
@@ -77,57 +154,117 @@ ${item.disciplina}
 
 
 
+for(let disciplina in disciplinas){
+
+
+
+let card =
+document.createElement("div");
+
+
+
+card.className =
+"card";
+
+
+
+card.innerHTML = `
+
+
+<h3>
+${disciplina}
+</h3>
+
+
+<p>
+${disciplinas[disciplina]} horas pendentes
+</p>
+
+
+`;
+
+
+
+distribuicao.appendChild(card);
+
+
+
+}
+
+
+
+}
+
+
+
+
 
 // =====================================
-// DISTRIBUIÇÃO DA CARGA POR DISCIPLINA
+// PRÓXIMOS ESTUDOS
 // =====================================
 
 
-let areaCarga = document.getElementById("distribuicao-carga");
+let lista =
+document.getElementById(
+"lista-estudos"
+);
 
 
 
-for(let disciplina in conteudoPSCPP){
+if(lista){
 
 
 
-    let totalHoras = 0;
+planoEstudo
+.slice(0,10)
+.forEach(item => {
 
 
 
-    conteudoPSCPP[disciplina].assuntos.forEach(assunto => {
+let estudo =
+document.createElement("div");
 
 
 
-        totalHoras += assunto.horas;
+estudo.className =
+"card";
 
 
 
-    });
+estudo.innerHTML = `
+
+
+<h3>
+${item.disciplina}
+</h3>
+
+
+<p>
+${item.assunto}
+</p>
+
+
+<p>
+⏱ ${item.horas} horas
+</p>
+
+
+<p>
+⭐ Prioridade:
+${item.prioridade}
+</p>
+
+
+`;
 
 
 
-
-    areaCarga.innerHTML += `
-
-
-    <div class="card">
+lista.appendChild(estudo);
 
 
-        <h3>
-        ${conteudoPSCPP[disciplina].nome}
-        </h3>
 
+});
 
-        <p>
-        ⏱ ${totalHoras} horas previstas
-        </p>
-
-
-    </div>
-
-
-    `;
 
 
 }
