@@ -384,3 +384,207 @@ peso: 3
 ]
 
 },
+  // =====================================
+// PARTE 3/3
+// REGULAMENTAÇÃO + COMUNICAÇÕES
+// FECHAMENTO DO BANCO
+// =====================================
+
+
+regulamentacao: {
+
+nome: "Legislação e Regulamentação",
+
+prioridade: "Muito Alta",
+
+pesoDisciplina: 5,
+
+
+assuntos: [
+
+
+{
+nome: "NORMAM-201 - Embarcações Empregadas na Navegação de Mar Aberto",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "NORMAM-204 - Tráfego e Permanência de Embarcações em AJB",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "NORMAM-302 - IAFN",
+status: "Não iniciado",
+horas: 10,
+importancia: "Média",
+peso: 3
+},
+
+
+{
+nome: "NORMAM-311 - Serviço de Praticagem",
+status: "Não iniciado",
+horas: 35,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "NORMAM-601 - Auxílios à Navegação",
+status: "Não iniciado",
+horas: 10,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "NORMAM-602 - Serviço de Tráfego de Embarcações (VTS)",
+status: "Não iniciado",
+horas: 10,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "Lei nº 2.180/1954 - Tribunal Marítimo",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "LESTA - Lei nº 9.537/1997",
+status: "Não iniciado",
+horas: 25,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "RLESTA - Decreto nº 2.596/1998",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "Legislação da Praticagem",
+status: "Não iniciado",
+horas: 25,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "COLREG 1972 e Normas IMO",
+status: "Não iniciado",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "Lei dos Portos e Transporte Aquaviário",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+}
+
+
+]
+
+},
+
+
+
+
+
+comunicacoes: {
+
+nome: "Comunicações",
+
+prioridade: "Média",
+
+pesoDisciplina: 3,
+
+
+assuntos: [
+
+
+{
+nome: "Standard Marine Communication Phrases (SMCP IMO)",
+status: "Não iniciado",
+horas: 30,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "Radiocomunicações Marítimas",
+status: "Não iniciado",
+horas: 20,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "Código Internacional de Sinais (CIS)",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+nome: "Sistema Marítimo Global de Socorro e Segurança (GMDSS)",
+status: "Não iniciado",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+nome: "Exercícios e Revisão de Comunicações",
+status: "Não iniciado",
+horas: 5,
+importancia: "Média",
+peso: 3
+}
+
+
+]
+
+}
+
+
+
+};
+
+
+// =====================================
+// FIM DO BANCO DE CONTEÚDO PSCPP
+// =====================================
