@@ -1,1 +1,170 @@
+{
+  "versao": "1.0",
+  "atualizado": "2026-07-27",
 
+  "disciplinas": [
+
+    {
+      "id": "arte-naval",
+      "nome": "Arte Naval",
+      "icone": "⚓",
+      "descricao": "Fundamentos de Arte Naval.",
+      "peso": 10,
+      "prioridade": 1,
+      "status": "ativo",
+      "pasta": "arte-naval",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "manobrabilidade",
+      "nome": "Manobrabilidade",
+      "icone": "🚢",
+      "descricao": "Manobrabilidade e Controle do Navio.",
+      "peso": 10,
+      "prioridade": 1,
+      "status": "ativo",
+      "pasta": "manobrabilidade",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "navegacao",
+      "nome": "Navegação em Águas Restritas",
+      "icone": "🧭",
+      "descricao": "Navegação em Águas Restritas e COLREG.",
+      "peso": 10,
+      "prioridade": 1,
+      "status": "ativo",
+      "pasta": "navegacao",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "meteorologia",
+      "nome": "Meteorologia e Oceanografia",
+      "icone": "🌦",
+      "descricao": "Meteorologia e Oceanografia aplicadas.",
+      "peso": 8,
+      "prioridade": 2,
+      "status": "ativo",
+      "pasta": "meteorologia",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "regulamentacao",
+      "nome": "Legislação e Regulamentação",
+      "icone": "⚖",
+      "descricao": "Normas nacionais e internacionais.",
+      "peso": 9,
+      "prioridade": 1,
+      "status": "ativo",
+      "pasta": "regulamentacao",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "comunicacoes",
+      "nome": "Comunicações",
+      "icone": "📡",
+      "descricao": "Comunicações marítimas.",
+      "peso": 5,
+      "prioridade": 3,
+      "status": "ativo",
+      "pasta": "comunicacoes",
+      "paginaInicial": "index.html"
+    },
+
+    {
+      "id": "conhecimentos-gerais",
+      "nome": "Conhecimentos Gerais",
+      "icone": "🌍",
+      "descricao": "Conteúdo complementar previsto na bibliografia oficial.",
+      "peso": 8,
+      "prioridade": 2,
+      "status": "ativo",
+      "pasta": "conhecimentos-gerais",
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "planejamento-portuario",
+          "titulo": "Planejamento Portuário",
+          "arquivo": "planejamento-portuario.html"
+        },
+        {
+          "id": "pianc",
+          "titulo": "PIANC",
+          "arquivo": "pianc.html"
+        },
+        {
+          "id": "normam-224",
+          "titulo": "NORMAM-224",
+          "arquivo": "normam-224.html"
+        },
+        {
+          "id": "fatores-humanos",
+          "titulo": "Fatores Humanos",
+          "arquivo": "fatores-humanos.html"
+        },
+        {
+          "id": "marpol",
+          "titulo": "MARPOL",
+          "arquivo": "marpol.html"
+        },
+        {
+          "id": "economia-maritima",
+          "titulo": "Economia Marítima",
+          "arquivo": "economia-maritima.html"
+        },
+        {
+          "id": "direito-processual-maritimo",
+          "titulo": "Direito Processual Marítimo",
+          "arquivo": "direito-processual-maritimo.html"
+        },
+        {
+          "id": "seguranca-da-navegacao",
+          "titulo": "Segurança da Navegação",
+          "arquivo": "seguranca-da-navegacao.html"
+        },
+        {
+          "id": "gestao-portuaria",
+          "titulo": "Gestão Portuária",
+          "arquivo": "gestao-portuaria.html"
+        },
+        {
+          "id": "hidrovias",
+          "titulo": "Hidrovias",
+          "arquivo": "hidrovias.html"
+        },
+        {
+          "id": "dragagem",
+          "titulo": "Dragagem",
+          "arquivo": "dragagem.html"
+        },
+        {
+          "id": "meio-ambiente",
+          "titulo": "Meio Ambiente",
+          "arquivo": "meio-ambiente.html"
+        },
+        {
+          "id": "imo",
+          "titulo": "IMO",
+          "arquivo": "imo.html"
+        },
+        {
+          "id": "infraestrutura-portuaria",
+          "titulo": "Infraestrutura Portuária",
+          "arquivo": "infraestrutura-portuaria.html"
+        },
+        {
+          "id": "casos-praticos",
+          "titulo": "Casos Práticos",
+          "arquivo": "casos-praticos.html"
+        }
+      ]
+    }
+
+  ]
+    }
