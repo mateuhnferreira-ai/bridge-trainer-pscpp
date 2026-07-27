@@ -8,7 +8,7 @@ const configuracaoEstudo = {
 
 
 inicio:
-"2026-07-27",
+"2026-08-03",
 
 
 prova:
