@@ -156,7 +156,7 @@ peso: 3
 
 
 
-arteNaval: {
+"arte-naval": {
 
 nome: "Arte Naval",
 
@@ -574,7 +574,7 @@ peso: 3
 },
 
 
-conhecimentosGerais: {
+"conhecimentos-gerais": {
 
 nome: "Conhecimentos Gerais",
 
