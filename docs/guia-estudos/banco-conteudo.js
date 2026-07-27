@@ -711,6 +711,10 @@ peso: 5
 };
 
 
+console.log("BANCO CARREGADO");
+console.log(conteudoPSCPP);
+
+
 // =====================================
 // FIM DO BANCO DE CONTEÚDO PSCPP
 // =====================================
