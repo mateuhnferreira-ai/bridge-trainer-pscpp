@@ -30,35 +30,25 @@
 
 
 
-
-
 <nav class="navbar">
 
 <button onclick="voltarPagina()">
 ⬅ Voltar
 </button>
 
-
 <a href="../../index.html">
 🏠 Início
 </a>
-
 
 <a href="#">
 📊 Progresso
 </a>
 
-
 <a href="#">
 📝 Simulados
 </a>
 
-
 </nav>
-
-
-
-
 
 
 
@@ -66,13 +56,9 @@
 
 
 
-
-
 <section class="dashboard">
 
-
 <h2>🚢 Manobrabilidade</h2>
-
 
 <p>
 
@@ -82,83 +68,107 @@ segurança em diferentes condições operacionais.
 
 </p>
 
-
 </section>
-
-
-
-
-
 
 
 
 <section>
 
-
 <h2>📊 Progresso da Disciplina</h2>
 
-
 <div class="widget">
-
 
 <p>
 
 <strong>Status atual:</strong>
-Aula inicial concluída
+
+<span id="status-geral-manobrabilidade">
+Nenhum módulo concluído
+</span>
 
 </p>
 
+<p id="resumo-progresso-manobrabilidade">
 
-<p>
-
-⚓ Controlabilidade concluída
+0 de 15 módulos concluídos
 
 </p>
-
 
 <div class="barra-progresso">
 
-<div class="progresso" style="width:25%;">
+<div
+class="progresso"
+id="barra-progresso-manobrabilidade"
+style="width: 0%;"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
+>
 
-25%
+0%
 
 </div>
 
 </div>
 
-
 </div>
-
 
 </section>
 
 
 
-
-
-
-
-
-
-
 <section>
-
 
 <h2>📚 Módulos de Estudo</h2>
 
+<div
+class="cards"
+id="modulos-manobrabilidade"
+data-disciplina="manobrabilidade"
+>
 
-<div class="cards">
+
+
+<a
+href="resistencia.html"
+class="card"
+data-assunto="resistencia"
+>
+
+<h3>🌊 Resistência do Navio</h3>
+
+<span
+class="status pendente"
+id="status-resistencia"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Resistência friccional,
+resistência de ondas,
+resistência de forma e efeitos dos apêndices.
+
+</p>
+
+</a>
 
 
 
-
-
-<a href="controlabilidade.html" class="card">
+<a
+href="controlabilidade.html"
+class="card"
+data-assunto="controlabilidade"
+>
 
 <h3>⚓ Controlabilidade</h3>
 
-<span class="status concluido">
-✅ Concluído
+<span
+class="status pendente"
+id="status-controlabilidade"
+>
+⬜ Não iniciado
 </span>
 
 <p>
@@ -173,16 +183,19 @@ resposta do navio e critérios IMO.
 
 
 
-
-
-
-
-<a href="helices.html" class="card">
+<a
+href="helices.html"
+class="card"
+data-assunto="helices"
+>
 
 <h3>⚙ Hélices</h3>
 
-<span class="status andamento">
-🔄 Em desenvolvimento
+<span
+class="status pendente"
+id="status-helices"
+>
+⬜ Não iniciado
 </span>
 
 <p>
@@ -196,15 +209,18 @@ passo, eficiência e interação hélice-casco.
 
 
 
-
-
-
-
-<a href="lemes.html" class="card">
+<a
+href="lemes.html"
+class="card"
+data-assunto="lemes"
+>
 
 <h3>🛞 Lemes</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-lemes"
+>
 ⬜ Não iniciado
 </span>
 
@@ -219,16 +235,18 @@ e eficiência do governo.
 
 
 
-
-
-
-
-
-<a href="propulsao.html" class="card">
+<a
+href="propulsao.html"
+class="card"
+data-assunto="propulsao"
+>
 
 <h3>🚢 Propulsão</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-propulsao"
+>
 ⬜ Não iniciado
 </span>
 
@@ -243,16 +261,18 @@ nas características de manobra.
 
 
 
-
-
-
-
-
-<a href="efeitos-hidrodinamicos.html" class="card">
+<a
+href="efeitos-hidrodinamicos.html"
+class="card"
+data-assunto="efeitos-hidrodinamicos"
+>
 
 <h3>🌊 Efeitos Hidrodinâmicos</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-efeitos-hidrodinamicos"
+>
 ⬜ Não iniciado
 </span>
 
@@ -267,16 +287,18 @@ momento de guinada e interação casco-leme.
 
 
 
-
-
-
-
-
-<a href="estabilidade-direcional.html" class="card">
+<a
+href="estabilidade-direcional.html"
+class="card"
+data-assunto="estabilidade-direcional"
+>
 
 <h3>🧭 Estabilidade Direcional</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-estabilidade-direcional"
+>
 ⬜ Não iniciado
 </span>
 
@@ -291,16 +313,18 @@ neutra e negativa.
 
 
 
-
-
-
-
-
-<a href="qualidades-de-manobra.html" class="card">
+<a
+href="qualidades-de-manobra.html"
+class="card"
+data-assunto="qualidades-de-manobra"
+>
 
 <h3>📐 Qualidades de Manobra</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-qualidades-de-manobra"
+>
 ⬜ Não iniciado
 </span>
 
@@ -315,16 +339,18 @@ diâmetro tático e resposta ao leme.
 
 
 
-
-
-
-
-
-<a href="testes-de-manobrabilidade.html" class="card">
+<a
+href="testes-de-manobrabilidade.html"
+class="card"
+data-assunto="testes-de-manobrabilidade"
+>
 
 <h3>📊 Testes de Manobrabilidade</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-testes-de-manobrabilidade"
+>
 ⬜ Não iniciado
 </span>
 
@@ -339,16 +365,18 @@ Pull-Out e padrões IMO.
 
 
 
-
-
-
-
-
-<a href="efeitos-ambientais.html" class="card">
+<a
+href="efeitos-ambientais.html"
+class="card"
+data-assunto="efeitos-ambientais"
+>
 
 <h3>🌬 Efeitos Ambientais</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-efeitos-ambientais"
+>
 ⬜ Não iniciado
 </span>
 
@@ -363,16 +391,18 @@ corrente e ondas.
 
 
 
-
-
-
-
-
-<a href="aguas-rasas-e-canais.html" class="card">
+<a
+href="aguas-rasas-e-canais.html"
+class="card"
+data-assunto="aguas-rasas-e-canais"
+>
 
 <h3>⚓ Águas Rasas e Canais</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-aguas-rasas-e-canais"
+>
 ⬜ Não iniciado
 </span>
 
@@ -387,16 +417,18 @@ margens e confinamento.
 
 
 
-
-
-
-
-
-<a href="interacao-hidrodinamica.html" class="card">
+<a
+href="interacao-hidrodinamica.html"
+class="card"
+data-assunto="interacao-hidrodinamica"
+>
 
 <h3>🚢 Interação Hidrodinâmica</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-interacao-hidrodinamica"
+>
 ⬜ Não iniciado
 </span>
 
@@ -411,16 +443,18 @@ cais e proximidade.
 
 
 
-
-
-
-
-
-<a href="rebocadores.html" class="card">
+<a
+href="rebocadores.html"
+class="card"
+data-assunto="rebocadores"
+>
 
 <h3>🛳 Rebocadores</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-rebocadores"
+>
 ⬜ Não iniciado
 </span>
 
@@ -435,16 +469,18 @@ e assistência à manobra.
 
 
 
-
-
-
-
-
-<a href="manobras-portuarias.html" class="card">
+<a
+href="manobras-portuarias.html"
+class="card"
+data-assunto="manobras-portuarias"
+>
 
 <h3>⚓ Manobras Portuárias</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-manobras-portuarias"
+>
 ⬜ Não iniciado
 </span>
 
@@ -459,16 +495,18 @@ fundeio e giro.
 
 
 
-
-
-
-
-
-<a href="manobras-de-emergencia.html" class="card">
+<a
+href="manobras-de-emergencia.html"
+class="card"
+data-assunto="manobras-de-emergencia"
+>
 
 <h3>🚨 Manobras de Emergência</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-manobras-de-emergencia"
+>
 ⬜ Não iniciado
 </span>
 
@@ -483,24 +521,13 @@ perda de propulsão e contingências.
 
 
 
-
-
-
 </div>
-
 
 </section>
 
 
 
-
-
-
-
-
-
 <section class="painel">
-
 
 
 <div class="widget">
@@ -519,9 +546,6 @@ Crenshaw, Arte Naval e normas aplicáveis.
 
 
 
-
-
-
 <div class="widget">
 
 <h2>📖 Próxima Aula</h2>
@@ -533,9 +557,6 @@ Crenshaw, Arte Naval e normas aplicáveis.
 </p>
 
 </div>
-
-
-
 
 
 
@@ -556,18 +577,11 @@ IMO Standards for Ship Manoeuvrability
 </div>
 
 
-
 </section>
 
 
 
-
 </main>
-
-
-
-
-
 
 
 
@@ -583,10 +597,6 @@ Bridge Trainer PSCPP © 2026
 
 
 
-
-
-
-
 <a href="../../index.html" class="botao-inicio">
 
 🏠
@@ -595,14 +605,11 @@ Bridge Trainer PSCPP © 2026
 
 
 
-
-
-
 <script src="../../js/app.js"></script>
 
+<script src="../../js/progresso.js"></script>
 
 
 </body>
 
-
-</html>
+  </html>
