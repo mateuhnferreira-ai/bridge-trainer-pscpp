@@ -1,422 +1,530 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!-- =========================================
+     AULA: HÉLICES
+     PARTE 1 — ABERTURA E INTRODUÇÃO
+========================================= -->
 
-<head>
+<section class="dashboard aula-cabecalho">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p class="aula-identificacao">
+        I — MANOBRABILIDADE DO NAVIO
+    </p>
 
-<title>Hélices - PSCPP</title>
+    <h2>
+        ⚙️ Hélices
+        <span lang="en">(Propellers)</span>
+    </h2>
 
-<link rel="stylesheet" href="../../css/style.css">
-
-</head>
-
-
-<body>
-
-
-<header class="topo">
-
-<div class="logo">
-
-<h1>⚓ Bridge Trainer PSCPP</h1>
-
-<p>
-Hélices
-</p>
-
-</div>
-
-</header>
-
-
-
-
-<nav class="navbar">
-
-
-<button onclick="voltarPagina()">
-⬅ Voltar
-</button>
-
-
-<a href="../../index.html">
-🏠 Início
-</a>
-
-
-<a href="#">
-📊 Progresso
-</a>
-
-
-<a href="#">
-📝 Simulados
-</a>
-
-
-</nav>
-
-
-
-
-
-<main>
-
-
-
-<section class="dashboard">
-
-
-<h2>
-⚙ Hélices
-</h2>
-
-
-<p>
-
-Estudo dos fundamentos hidrodinâmicos dos propulsores,
-sua geometria, eficiência e influência na manobrabilidade
-do navio.
-
-</p>
-
+    <p>
+        Estudo dos fundamentos geométricos, hidrodinâmicos e
+        operacionais das hélices marítimas, com ênfase nos efeitos
+        produzidos durante a manobra do navio.
+    </p>
 
 </section>
 
 
+<section class="conteudo-aula" id="introducao-helices">
 
+    <h2>1. Introdução às hélices marítimas</h2>
 
+    <p>
+        A <strong>hélice marítima</strong>,
+        denominada <strong lang="en">marine propeller</strong>,
+        é o dispositivo propulsor responsável por converter a potência
+        mecânica transmitida pelo motor e pela linha de eixos em uma
+        força capaz de impulsionar o navio através da água.
+    </p>
 
+    <p>
+        Essa força longitudinal recebe o nome de
+        <strong>empuxo</strong>
+        (<strong lang="en">thrust</strong>).
+        O empuxo produzido pela hélice deve ser suficiente para superar
+        a resistência oferecida ao avanço do casco e produzir a
+        aceleração ou a velocidade pretendida.
+    </p>
 
-<section>
+    <div class="destaque-tecnico">
 
+        <h3>⚓ Ideia fundamental</h3>
 
-<h2>
-📚 Módulos de Estudo
-</h2>
+        <p>
+            O motor produz <strong>potência</strong> e
+            <strong>torque</strong>. A linha de eixos transmite essa
+            energia à hélice. A hélice interage com a água e produz
+            <strong>empuxo</strong>, movimentando o navio.
+        </p>
 
+    </div>
 
+    <div class="fluxo-conceitual">
 
-<div class="cards">
+        <div class="etapa-fluxo">
+            <strong>Motor principal</strong>
+            <span lang="en">Main Engine</span>
+        </div>
 
+        <div class="seta-fluxo">➜</div>
 
+        <div class="etapa-fluxo">
+            <strong>Potência e torque</strong>
+            <span lang="en">Power and Torque</span>
+        </div>
 
-<a href="#" class="card">
+        <div class="seta-fluxo">➜</div>
 
-<h3>
-1️⃣ Fundamentos do Hélice
-</h3>
+        <div class="etapa-fluxo">
+            <strong>Linha de eixos</strong>
+            <span lang="en">Shafting System</span>
+        </div>
 
-<p>
+        <div class="seta-fluxo">➜</div>
 
-Função do propulsor, geração de empuxo,
-Lift, Drag e Thrust.
+        <div class="etapa-fluxo">
+            <strong>Hélice</strong>
+            <span lang="en">Propeller</span>
+        </div>
 
-</p>
+        <div class="seta-fluxo">➜</div>
 
-</a>
+        <div class="etapa-fluxo">
+            <strong>Empuxo</strong>
+            <span lang="en">Thrust</span>
+        </div>
 
-
-
-
-<a href="#" class="card">
-
-<h3>
-2️⃣ Geometria da Pá
-</h3>
-
-<p>
-
-Passo, corda, ângulo geométrico,
-ângulo de ataque e torção da pá.
-
-</p>
-
-</a>
-
-
-
-
-<a href="#" class="card">
-
-<h3>
-3️⃣ Desempenho e Cavitação
-</h3>
-
-<p>
-
-Eficiência propulsiva, razão de avanço,
-perdas e fenômeno da cavitação.
-
-</p>
-
-</a>
-
-
-
-
-<a href="#" class="card">
-
-<h3>
-4️⃣ Hélice e Manobra
-</h3>
-
-<p>
-
-CPP, FPP, efeitos evolutivos,
-interação hélice-casco-leme.
-
-</p>
-
-</a>
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
-<section class="aula">
+<section class="conteudo-aula" id="funcao-da-helice">
 
+    <h2>2. Função da hélice</h2>
 
-<h2>
-⚙ Aula 1 — Fundamentos do Hélice
-</h2>
+    <p>
+        Durante sua rotação, as pás da hélice encontram a água com um
+        determinado ângulo. A geometria das pás provoca diferenças de
+        pressão e altera a quantidade de movimento do fluxo de água que
+        atravessa o disco da hélice.
+    </p>
 
+    <p>
+        Como resultado dessa interação, a hélice acelera uma massa de
+        água predominantemente em direção oposta ao movimento desejado
+        para o navio. A reação correspondente produz o empuxo aplicado à
+        embarcação.
+    </p>
 
+    <div class="quadro-comparativo">
 
-<h3>
-1. Função do Hélice
-</h3>
+        <div class="cartao-conceito">
 
+            <h3>Movimento avante</h3>
 
-<p>
+            <p>
+                Quando a hélice é acionada para
+                <strong>máquinas adiante</strong>
+                (<span lang="en">ahead propulsion</span>),
+                ela produz um fluxo de água para ré e um empuxo
+                resultante que tende a impulsionar o navio para vante.
+            </p>
 
-O hélice é o dispositivo responsável por transformar
-a potência mecânica fornecida pelo motor em força
-propulsiva capaz de movimentar o navio.
+        </div>
 
-</p>
+        <div class="cartao-conceito">
 
+            <h3>Movimento a ré</h3>
 
-<p>
+            <p>
+                Quando a hélice é acionada para
+                <strong>máquinas a ré</strong>
+                (<span lang="en">astern propulsion</span>),
+                o sentido do empuxo é alterado, produzindo uma força
+                longitudinal que tende a reduzir o seguimento avante
+                ou acelerar o navio para ré.
+            </p>
 
-Durante a operação, suas pás geram forças
-hidrodinâmicas que resultam principalmente em
-empuxo (Thrust) e resistência ao movimento de rotação.
+        </div>
 
-</p>
+    </div>
 
+    <div class="alerta-operacional">
 
+        <h3>⚠️ Atenção operacional</h3>
 
+        <p>
+            A resposta do navio não é instantânea. Mesmo após a
+            aplicação de potência, a aceleração depende da massa do
+            navio, de sua inércia, da resistência hidrodinâmica, da
+            condição de carregamento, da velocidade inicial e da
+            eficiência com que a hélice produz empuxo.
+        </p>
 
-<h3>
-2. O Hélice como uma Asa Rotativa
-</h3>
-
-
-<p>
-
-Assim como uma asa de aeronave, a seção da pá do
-hélice possui um perfil hidrodinâmico que produz
-uma diferença de pressão entre suas faces.
-
-</p>
-
-
-<ul>
-
-<li>
-Face de pressão: região de maior pressão.
-</li>
-
-<li>
-Face de sucção: região de menor pressão.
-</li>
-
-<li>
-A diferença de pressão gera uma força resultante.
-</li>
-
-</ul>
-
-
-
-
-<h3>
-3. Forças Atuantes na Pá
-</h3>
-
-
-<p>
-
-A força hidrodinâmica gerada pela pá pode ser
-decomposta em componentes fundamentais:
-
-</p>
-
-
-<ul>
-
-<li>
-<strong>Lift:</strong> força perpendicular ao fluxo relativo.
-</li>
-
-<li>
-<strong>Drag:</strong> resistência paralela ao fluxo relativo.
-</li>
-
-<li>
-<strong>Thrust:</strong> componente útil responsável pelo avanço do navio.
-</li>
-
-</ul>
-
-
-
-
-<h3>
-4. Relação com a Manobrabilidade
-</h3>
-
-
-<p>
-
-O hélice não influencia apenas a velocidade do navio.
-Ele altera diretamente a capacidade de governo através
-do fluxo de água lançado sobre o leme e dos efeitos
-evolutivos durante as manobras.
-
-</p>
-
-
-
-
-<div class="questao">
-
-
-<h3>
-🎯 Questão estilo PSCPP
-</h3>
-
-
-<p>
-
-Explique o princípio físico pelo qual o hélice produz
-o movimento de avanço do navio.
-
-</p>
-
-
-<p>
-
-<strong>Resposta:</strong><br>
-
-O hélice acelera uma massa de água para ré,
-produzindo uma reação igual e oposta que gera
-o empuxo responsável pelo deslocamento do navio.
-
-</p>
-
-
-</div>
-
-
+    </div>
 
 </section>
 
 
+<section class="conteudo-aula" id="helice-e-manobra">
 
+    <h2>3. Importância da hélice para a manobra</h2>
 
-<section class="painel">
+    <p>
+        Para o Prático, o estudo da hélice não se limita ao desempenho
+        propulsivo em viagem. A hélice também produz efeitos decisivos
+        durante manobras em baixa velocidade, atracações, desatracações,
+        giros e paradas.
+    </p>
 
+    <p>
+        Entre os principais efeitos operacionais relacionados à hélice,
+        destacam-se:
+    </p>
 
-<div class="widget">
+    <ul class="lista-tecnica">
 
+        <li>
+            produção do empuxo longitudinal
+            (<span lang="en">longitudinal thrust</span>);
+        </li>
 
-<h2>
-📖 Referências Técnicas
-</h2>
+        <li>
+            aceleração e desaceleração do navio;
+        </li>
 
+        <li>
+            influência sobre a distância e o tempo de parada;
+        </li>
 
-<p>
+        <li>
+            produção do empuxo transversal
+            (<span lang="en">transverse thrust</span>);
+        </li>
 
-Principles of Naval Architecture (PNA)<br>
-Shiphandling - Crenshaw<br>
-Arte Naval - Fonseca
+        <li>
+            formação da corrente da hélice
+            (<span lang="en">propeller race</span> ou
+            <span lang="en">propeller wash</span>);
+        </li>
 
-</p>
+        <li>
+            alteração do fluxo que atinge o leme;
+        </li>
 
+        <li>
+            aumento da ação do leme quando este se encontra imerso na
+            corrente da hélice;
+        </li>
 
-</div>
+        <li>
+            diferenças de comportamento entre máquinas adiante e
+            máquinas a ré;
+        </li>
 
+        <li>
+            efeitos relacionados ao sentido de rotação da hélice;
+        </li>
 
+        <li>
+            interação entre casco, hélice e leme.
+        </li>
 
+    </ul>
 
+    <div class="destaque-prova">
 
-<div class="widget">
+        <h3>🎯 Foco PSCPP</h3>
 
+        <p>
+            A banca pode relacionar o funcionamento da hélice a outros
+            tópicos do programa, especialmente
+            <strong>empuxo transversal</strong>,
+            <strong>ação do leme</strong>,
+            <strong>distância de parada</strong>,
+            <strong>interação casco-hélice</strong>,
+            <strong>cavitação</strong> e
+            <strong>manobras em águas restritas</strong>.
+        </p>
 
-<h2>
-🎯 Objetivo PSCPP
-</h2>
-
-
-<p>
-
-Compreender como o hélice transforma potência
-mecânica em empuxo e como seus efeitos influenciam
-a capacidade de governo do navio.
-
-</p>
-
-
-</div>
-
-
+    </div>
 
 </section>
 
 
+<section class="conteudo-aula" id="visao-hidrodinamica">
+
+    <h2>4. Visão hidrodinâmica inicial</h2>
+
+    <p>
+        A hélice pode ser entendida como um conjunto de pás rotativas
+        que trabalham de maneira semelhante a superfícies sustentadoras.
+        Cada seção de uma pá possui um perfil hidrodinâmico e encontra
+        a água com uma velocidade relativa resultante.
+    </p>
+
+    <p>
+        Essa velocidade relativa resulta da combinação de dois
+        movimentos principais:
+    </p>
+
+    <ol class="lista-numerada">
+
+        <li>
+            <strong>movimento de rotação da pá</strong> ao redor do eixo;
+        </li>
+
+        <li>
+            <strong>movimento de avanço da hélice</strong> através da água.
+        </li>
+
+    </ol>
+
+    <p>
+        A interação entre o perfil da pá e esse fluxo relativo gera uma
+        força hidrodinâmica. Essa força pode ser decomposta em duas
+        componentes principais:
+    </p>
+
+    <div class="quadro-comparativo">
+
+        <div class="cartao-conceito">
+
+            <h3>Empuxo — <span lang="en">Thrust</span></h3>
+
+            <p>
+                Componente da força na direção do eixo propulsor,
+                responsável pelo movimento longitudinal do navio.
+            </p>
+
+        </div>
+
+        <div class="cartao-conceito">
+
+            <h3>Torque — <span lang="en">Torque</span></h3>
+
+            <p>
+                Componente associada à resistência oferecida pela água
+                à rotação da hélice. O motor precisa fornecer torque
+                suficiente para manter a rotação.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="formula-box">
+
+        <h3>Relação inicial da potência transmitida</h3>
+
+        <p class="formula">
+            P = 2πnQ
+        </p>
+
+        <p>
+            Onde:
+        </p>
+
+        <ul>
+            <li>
+                <strong>P</strong> = potência transmitida ao eixo;
+            </li>
+
+            <li>
+                <strong>n</strong> = número de rotações por unidade de tempo;
+            </li>
+
+            <li>
+                <strong>Q</strong> = torque da hélice.
+            </li>
+        </ul>
+
+        <p class="observacao-formula">
+            Quando <strong>n</strong> é expresso em rotações por segundo,
+            a velocidade angular corresponde a
+            <strong>2πn</strong>.
+        </p>
+
+    </div>
+
+</section>
 
 
+<section class="conteudo-aula" id="termos-iniciais-helice">
 
-</main>
+    <h2>5. Terminologia técnica inicial</h2>
+
+    <div class="tabela-responsiva">
+
+        <table class="tabela-aula">
+
+            <thead>
+                <tr>
+                    <th>Termo em português</th>
+                    <th>Termo técnico em inglês</th>
+                    <th>Significado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Hélice</td>
+                    <td lang="en">Propeller</td>
+                    <td>
+                        Dispositivo rotativo que produz o empuxo
+                        propulsivo.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hélice marítima</td>
+                    <td lang="en">Marine Propeller</td>
+                    <td>
+                        Hélice projetada para operar em meio aquático.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Empuxo</td>
+                    <td lang="en">Thrust</td>
+                    <td>
+                        Componente longitudinal da força produzida pela
+                        hélice.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Torque</td>
+                    <td lang="en">Torque</td>
+                    <td>
+                        Momento aplicado para produzir ou manter a
+                        rotação da hélice.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Potência no eixo</td>
+                    <td lang="en">Shaft Power</td>
+                    <td>
+                        Potência mecânica transmitida pela linha de
+                        eixos à hélice.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Linha de eixos</td>
+                    <td lang="en">Shafting System</td>
+                    <td>
+                        Conjunto que transmite potência e torque do
+                        motor à hélice.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Rotação</td>
+                    <td lang="en">Revolutions</td>
+                    <td>
+                        Número de voltas executadas pela hélice em
+                        determinado intervalo de tempo.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Rotações por minuto</td>
+                    <td lang="en">Revolutions per Minute — RPM</td>
+                    <td>
+                        Unidade operacional comum para indicar a
+                        velocidade de rotação.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Corrente da hélice</td>
+                    <td lang="en">
+                        Propeller Race / Propeller Wash
+                    </td>
+                    <td>
+                        Fluxo de água acelerado pela operação da hélice.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hélice de passo fixo</td>
+                    <td lang="en">
+                        Fixed-Pitch Propeller — FPP
+                    </td>
+                    <td>
+                        Hélice cujas pás possuem passo geometricamente
+                        fixo.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hélice de passo controlável</td>
+                    <td lang="en">
+                        Controllable-Pitch Propeller — CPP
+                    </td>
+                    <td>
+                        Hélice que permite alterar o ângulo das pás e,
+                        consequentemente, o passo durante a operação.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
 
 
+<section class="conteudo-aula referencias-aula" id="referencias-parte-1">
 
+    <h2>📚 Referências desta parte</h2>
 
+    <div class="referencia-item">
 
+        <h3>
+            Principles of Naval Architecture — Volume II
+        </h3>
 
-<footer>
+        <p>
+            Edward V. Lewis, editor. Volume dedicado a
+            <em>Resistance, Propulsion and Vibration</em>.
+            Referência principal: <strong>Chapter VI — Propulsion</strong>.
+        </p>
 
-<p>
-Bridge Trainer PSCPP © 2026
-</p>
+    </div>
 
+    <div class="referencia-item">
 
-</footer>
+        <h3>Practical Ship Hydrodynamics</h3>
 
+        <p>
+            Volker Bertram, 2ª edição. Capítulos 2, 3 e 6,
+            conforme a bibliografia programática.
+        </p>
 
+    </div>
 
+    <div class="referencia-item">
 
+        <h3>Naval Shiphandling</h3>
 
-<a href="../../index.html" class="botao-inicio">
+        <p>
+            Russell Sydnor Crenshaw, 4ª edição.
+            Referência principal:
+            <strong>Chapter 2 — Forces Affecting the Ship</strong>.
+        </p>
 
-🏠
+    </div>
 
-</a>
+    <p class="nota-referencia">
+        A teoria hidrodinâmica será apresentada principalmente a partir
+        do PNA e de Bertram. Os efeitos observados durante a manobra
+        serão relacionados às explicações operacionais de Crenshaw e
+        das demais publicações de shiphandling.
+    </p>
 
-
-
-
-<script src="../../js/app.js"></script>
-
-
-</body>
-
-  </html>
+  </section>
