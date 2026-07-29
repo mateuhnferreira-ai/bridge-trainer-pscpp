@@ -1,152 +1,387 @@
 // =====================================
-// SISTEMA DE PROGRESSO PSCPP v2.0
+// SISTEMA DE PROGRESSO PSCPP v3.0
 // Bridge Trainer PSCPP
+// Armazenamento local no navegador
 // =====================================
 
 
+// Chave utilizada no localStorage
+const CHAVE_PROGRESSO_PSCPP = "bridgeTrainerPSCPP_progresso";
+
+
+// Estrutura de progresso carregada
 let dadosProgresso = null;
 
+
+// =====================================
+// CRIAR ESTRUTURA INICIAL
+// =====================================
+
+function criarEstruturaInicialProgresso() {
+
+    return {
+
+        versao: "3.0",
+
+        ultimaAtualizacao: null,
+
+        disciplinas: {}
+
+    };
+
+}
 
 
 // =====================================
 // CARREGAR DADOS DE PROGRESSO
 // =====================================
 
+async function carregarDadosProgresso() {
 
-async function carregarDadosProgresso(){
+    try {
 
+        const progressoLocal =
+            localStorage.getItem(CHAVE_PROGRESSO_PSCPP);
 
-try{
+        // Se já existir progresso salvo no tablet,
+        // ele terá prioridade.
+        if (progressoLocal) {
 
+            dadosProgresso =
+                JSON.parse(progressoLocal);
 
-let resposta =
-await fetch("data/progresso.json");
+            console.log(
+                "Progresso carregado do localStorage:",
+                dadosProgresso
+            );
 
+            return dadosProgresso;
 
+        }
 
-dadosProgresso =
-await resposta.json();
+        // Caso ainda não exista progresso local,
+        // tenta carregar a estrutura inicial do JSON.
+        try {
 
+            const caminhoJSON =
+                obterCaminhoProgressoJSON();
 
+            const resposta =
+                await fetch(caminhoJSON);
 
-console.log(
-"Progresso carregado",
-dadosProgresso
-);
+            if (!resposta.ok) {
 
+                throw new Error(
+                    "Não foi possível carregar progresso.json"
+                );
 
+            }
 
-return dadosProgresso;
+            dadosProgresso =
+                await resposta.json();
 
+        }
+        catch (erroJSON) {
 
+            console.warn(
+                "progresso.json não foi carregado. " +
+                "Será criada uma estrutura inicial.",
+                erroJSON
+            );
+
+            dadosProgresso =
+                criarEstruturaInicialProgresso();
+
+        }
+
+        salvarDadosProgresso();
+
+        console.log(
+            "Estrutura inicial de progresso criada:",
+            dadosProgresso
+        );
+
+        return dadosProgresso;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar progresso:",
+            erro
+        );
+
+        dadosProgresso =
+            criarEstruturaInicialProgresso();
+
+        return dadosProgresso;
+
+    }
 
 }
-catch(erro){
-
-
-console.error(
-"Erro ao carregar progresso:",
-erro
-);
-
-
-
-return null;
-
-
-
-}
-
-
-}
-
-
 
 
 // =====================================
-// PROGRESSO GERAL
+// IDENTIFICAR CAMINHO DO progresso.json
 // =====================================
 
+function obterCaminhoProgressoJSON() {
 
-function calcularProgressoGeral(){
+    const caminhoAtual =
+        window.location.pathname;
 
+    // Página dentro de:
+    // docs/disciplinas/nome-disciplina/
+    if (caminhoAtual.includes("/disciplinas/")) {
 
-if(!dadosProgresso){
+        return "../../data/progresso.json";
 
-return 0;
+    }
+
+    // Página dentro de:
+    // docs/guia-estudos/
+    if (caminhoAtual.includes("/guia-estudos/")) {
+
+        return "../data/progresso.json";
+
+    }
+
+    // Página principal:
+    // docs/index.html
+    return "data/progresso.json";
 
 }
 
 
+// =====================================
+// SALVAR DADOS
+// =====================================
 
-let disciplinas =
-Object.values(
-dadosProgresso.disciplinas
-);
+function salvarDadosProgresso() {
 
+    if (!dadosProgresso) {
 
+        dadosProgresso =
+            criarEstruturaInicialProgresso();
 
-if(disciplinas.length === 0){
+    }
 
-return 0;
+    dadosProgresso.ultimaAtualizacao =
+        new Date().toISOString();
+
+    localStorage.setItem(
+
+        CHAVE_PROGRESSO_PSCPP,
+
+        JSON.stringify(dadosProgresso)
+
+    );
 
 }
 
 
+// =====================================
+// GARANTIR DISCIPLINA
+// =====================================
 
-let soma = 0;
+function garantirDisciplina(idDisciplina) {
 
+    if (!dadosProgresso) {
 
+        dadosProgresso =
+            criarEstruturaInicialProgresso();
 
-disciplinas.forEach(disciplina=>{
+    }
 
+    if (!dadosProgresso.disciplinas) {
 
-soma += disciplina.progresso || 0;
+        dadosProgresso.disciplinas = {};
 
+    }
 
-});
+    if (!dadosProgresso.disciplinas[idDisciplina]) {
 
+        dadosProgresso.disciplinas[idDisciplina] = {
 
+            progresso: 0,
 
-return Math.round(
-soma / disciplinas.length
-);
+            assuntos: {}
 
+        };
 
+    }
+
+    if (
+        !dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos
+    ) {
+
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos = {};
+
+    }
 
 }
 
 
-
-
 // =====================================
-// PROGRESSO POR DISCIPLINA
+// MARCAR ASSUNTO COMO ESTUDADO
 // =====================================
 
+function marcarComoEstudado(
+    idDisciplina,
+    idAssunto
+) {
 
-function obterProgressoDisciplina(id){
+    garantirDisciplina(idDisciplina);
 
+    const assuntos =
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos;
 
-if(
-!dadosProgresso ||
-!dadosProgresso.disciplinas[id]
-){
+    assuntos[idAssunto] = {
 
-return 0;
+        concluido: true,
+
+        dataConclusao:
+            new Date().toISOString()
+
+    };
+
+    recalcularProgressoDisciplina(
+        idDisciplina
+    );
+
+    salvarDadosProgresso();
+
+    atualizarElementosDaPagina(
+        idDisciplina,
+        idAssunto
+    );
 
 }
 
 
+// =====================================
+// DESMARCAR ASSUNTO
+// =====================================
 
-return
-dadosProgresso.disciplinas[id].progresso || 0;
+function desmarcarComoEstudado(
+    idDisciplina,
+    idAssunto
+) {
 
+    garantirDisciplina(idDisciplina);
 
+    const assuntos =
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos;
+
+    assuntos[idAssunto] = {
+
+        concluido: false,
+
+        dataConclusao: null
+
+    };
+
+    recalcularProgressoDisciplina(
+        idDisciplina
+    );
+
+    salvarDadosProgresso();
+
+    atualizarElementosDaPagina(
+        idDisciplina,
+        idAssunto
+    );
 
 }
 
 
+// =====================================
+// ALTERNAR ESTADO DO ASSUNTO
+// =====================================
+
+function alternarStatusEstudo(
+    idDisciplina,
+    idAssunto
+) {
+
+    if (
+        assuntoFoiEstudado(
+            idDisciplina,
+            idAssunto
+        )
+    ) {
+
+        desmarcarComoEstudado(
+            idDisciplina,
+            idAssunto
+        );
+
+    }
+    else {
+
+        marcarComoEstudado(
+            idDisciplina,
+            idAssunto
+        );
+
+    }
+
+}
+
 
 // =====================================
-// FIM PROGRESSO v2.0
+// VERIFICAR SE FOI ESTUDADO
 // =====================================
+
+function assuntoFoiEstudado(
+    idDisciplina,
+    idAssunto
+) {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas ||
+        !dadosProgresso
+            .disciplinas[idDisciplina] ||
+        !dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos ||
+        !dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos[idAssunto]
+    ) {
+
+        return false;
+
+    }
+
+    return Boolean(
+
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos[idAssunto]
+            .concluido
+
+    );
+
+}
+
+
+// =====================================
+// CONTAR ASSUNTOS DA DISCIPLINA
+// =====================================
+
+function obterQuantidadeAssuntos(
+    idDisciplina
+) {
+
+    if (
+        typeof conteudoPSCPP !== "
