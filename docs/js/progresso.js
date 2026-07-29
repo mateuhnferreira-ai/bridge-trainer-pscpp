@@ -1594,7 +1594,380 @@ function atualizarProgressoVisualGeral() {
 
 }
 
+// =====================================
+// IDENTIFICAR PÁGINA DE DISCIPLINA
+// =====================================
 
+function identificarPaginaDisciplina() {
+
+    const corpo = document.body;
+
+    if (!corpo) {
+
+        return null;
+
+    }
+
+
+    const tipoPagina =
+        corpo.dataset.tipoPagina;
+
+
+    const disciplina =
+        corpo.dataset.disciplina;
+
+
+    if (
+        tipoPagina !== "disciplina" ||
+        !disciplina
+    ) {
+
+        return null;
+
+    }
+
+
+    return normalizarIdentificador(
+        disciplina
+    );
+
+}
+
+
+// =====================================
+// REGISTRAR AULAS DA DISCIPLINA
+// =====================================
+
+function registrarAulasDaDisciplina(
+    idDisciplina
+) {
+
+    const disciplina =
+        garantirDisciplina(
+            idDisciplina
+        );
+
+
+    const seletor =
+        '[data-disciplina="' +
+        idDisciplina +
+        '"] .card[data-assunto]';
+
+
+    const cards =
+        document.querySelectorAll(
+            seletor
+        );
+
+
+    cards.forEach(
+        card => {
+
+            const idAula =
+                normalizarIdentificador(
+                    card.dataset.assunto
+                );
+
+
+            garantirAula(
+
+                idDisciplina,
+
+                idAula
+
+            );
+
+        }
+    );
+
+
+    recalcularProgressoDisciplina(
+        idDisciplina
+    );
+
+
+    salvarDadosProgresso();
+
+
+    return disciplina;
+
+}
+
+
+// =====================================
+// ATUALIZAR CARDS DA DISCIPLINA
+// =====================================
+
+function atualizarCardsDaDisciplina(
+    idDisciplina
+) {
+
+    const seletor =
+        '[data-disciplina="' +
+        idDisciplina +
+        '"] .card[data-assunto]';
+
+
+    const cards =
+        document.querySelectorAll(
+            seletor
+        );
+
+
+    cards.forEach(
+        card => {
+
+            const idAula =
+                normalizarIdentificador(
+                    card.dataset.assunto
+                );
+
+
+            const percentual =
+                obterProgressoAula(
+
+                    idDisciplina,
+
+                    idAula
+
+                );
+
+
+            const status =
+                card.querySelector(
+                    ".status"
+                );
+
+
+            if (!status) {
+
+                return;
+
+            }
+
+
+            status.classList.remove(
+
+                "pendente",
+
+                "em-estudo",
+
+                "concluido"
+
+            );
+
+
+            if (percentual >= 100) {
+
+                status.textContent =
+                    "✅ Concluído";
+
+
+                status.classList.add(
+                    "concluido"
+                );
+
+            }
+            else if (percentual > 0) {
+
+                status.textContent =
+                    "🟡 Em estudo — " +
+                    percentual +
+                    "%";
+
+
+                status.classList.add(
+                    "em-estudo"
+                );
+
+            }
+            else {
+
+                status.textContent =
+                    "⬜ Não iniciado";
+
+
+                status.classList.add(
+                    "pendente"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR BARRA DA DISCIPLINA
+// =====================================
+
+function atualizarProgressoVisualDisciplina(
+    idDisciplina
+) {
+
+    const disciplina =
+        garantirDisciplina(
+            idDisciplina
+        );
+
+
+    const aulas =
+        Object.values(
+            disciplina.aulas
+        );
+
+
+    const totalAulas =
+        aulas.length;
+
+
+    const aulasConcluidas =
+        aulas.filter(
+            aula =>
+                aula.concluida === true
+        ).length;
+
+
+    const aulasEmEstudo =
+        aulas.filter(
+            aula =>
+                (
+                    aula.progresso || 0
+                ) > 0 &&
+                aula.concluida !== true
+        ).length;
+
+
+    const percentual =
+        recalcularProgressoDisciplina(
+            idDisciplina
+        );
+
+
+    const barra =
+        document.getElementById(
+
+            "barra-progresso-" +
+            idDisciplina
+
+        );
+
+
+    const resumo =
+        document.getElementById(
+
+            "resumo-progresso-" +
+            idDisciplina
+
+        );
+
+
+    const statusGeral =
+        document.getElementById(
+
+            "status-geral-" +
+            idDisciplina
+
+        );
+
+
+    if (barra) {
+
+        barra.style.width =
+            percentual + "%";
+
+
+        barra.textContent =
+            percentual + "%";
+
+
+        barra.setAttribute(
+            "aria-valuenow",
+            percentual
+        );
+
+    }
+
+
+    if (resumo) {
+
+        resumo.textContent =
+
+            aulasConcluidas +
+            " de " +
+            totalAulas +
+            " módulos concluídos";
+
+    }
+
+
+    if (statusGeral) {
+
+        if (
+            totalAulas > 0 &&
+            aulasConcluidas === totalAulas
+        ) {
+
+            statusGeral.textContent =
+                "Disciplina concluída";
+
+        }
+        else if (
+            aulasConcluidas > 0 ||
+            aulasEmEstudo > 0
+        ) {
+
+            statusGeral.textContent =
+
+                aulasConcluidas +
+                " concluído(s) e " +
+                aulasEmEstudo +
+                " em estudo";
+
+        }
+        else {
+
+            statusGeral.textContent =
+                "Nenhum módulo iniciado";
+
+        }
+
+    }
+
+
+    salvarDadosProgresso();
+
+}
+
+
+// =====================================
+// ATUALIZAR INTERFACE DA DISCIPLINA
+// =====================================
+
+function atualizarInterfaceDisciplina(
+    idDisciplina
+) {
+
+    registrarAulasDaDisciplina(
+        idDisciplina
+    );
+
+
+    atualizarCardsDaDisciplina(
+        idDisciplina
+    );
+
+
+    atualizarProgressoVisualDisciplina(
+        idDisciplina
+    );
+
+
+    atualizarProgressoVisualGeral();
+
+}
 // =====================================
 // ATUALIZAR INTERFACE DA AULA
 // =====================================
