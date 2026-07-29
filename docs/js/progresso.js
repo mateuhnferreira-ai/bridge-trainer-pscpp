@@ -2357,6 +2357,19 @@ async function inicializarProgressoAula() {
     await carregarDadosProgresso();
 
 
+    // Página principal
+    if (identificarPaginaPrincipal()) {
+
+        atualizarPaginaPrincipal();
+
+        atualizarProgressoVisualGeral();
+
+        return;
+
+    }
+
+
+    // Página de uma disciplina
     const disciplinaDaPagina =
         identificarPaginaDisciplina();
 
@@ -2373,6 +2386,7 @@ async function inicializarProgressoAula() {
     }
 
 
+    // Página de uma aula
     const aulaIdentificada =
         identificarAulaAtual();
 
