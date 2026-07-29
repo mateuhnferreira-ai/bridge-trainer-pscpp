@@ -2050,6 +2050,132 @@ function criarBarraDisciplina(card, disciplina) {
 
 }
 // =====================================
+// ATUALIZAR UM CARD DA DISCIPLINA
+// =====================================
+
+function atualizarCardDisciplina(card) {
+
+    const disciplina =
+        card.dataset.disciplina;
+
+    if (!disciplina) {
+
+        return;
+
+    }
+
+    garantirDisciplina(disciplina);
+
+    criarBarraDisciplina(
+        card,
+        disciplina
+    );
+
+    const percentual =
+        obterProgressoDisciplina(
+            disciplina
+        );
+
+    const barra =
+        document.getElementById(
+            "barra-card-" + disciplina
+        );
+
+    const texto =
+        document.getElementById(
+            "texto-card-" + disciplina
+        );
+
+    const status =
+        document.getElementById(
+            "status-disciplina-" + disciplina
+        );
+
+    if (barra) {
+
+        barra.style.width =
+            percentual + "%";
+
+        barra.textContent =
+            percentual + "%";
+
+    }
+
+    if (texto) {
+
+        texto.textContent =
+            "Progresso: " +
+            percentual +
+            "%";
+
+    }
+
+    if (!status) {
+
+        return;
+
+    }
+
+    status.classList.remove(
+        "pendente",
+        "em-estudo",
+        "concluido"
+    );
+
+    if (percentual >= 100) {
+
+        status.textContent =
+            "✅ Concluído";
+
+        status.classList.add(
+            "concluido"
+        );
+
+    }
+    else if (percentual > 0) {
+
+        status.textContent =
+            "🟡 Em estudo";
+
+        status.classList.add(
+            "em-estudo"
+        );
+
+    }
+    else {
+
+        status.textContent =
+            "⬜ Não iniciado";
+
+        status.classList.add(
+            "pendente"
+        );
+
+    }
+
+}
+
+
+
+// =====================================
+// ATUALIZAR TODOS OS CARDS
+// =====================================
+
+function atualizarPaginaPrincipal() {
+
+    const cards =
+        document.querySelectorAll(
+            ".card[data-disciplina]"
+        );
+
+    cards.forEach(card => {
+
+        atualizarCardDisciplina(card);
+
+    });
+
+            }
+// =====================================
 // ATUALIZAR INTERFACE DA AULA
 // =====================================
 
