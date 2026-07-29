@@ -2150,6 +2150,22 @@ async function inicializarProgressoAula() {
     await carregarDadosProgresso();
 
 
+    const disciplinaDaPagina =
+        identificarPaginaDisciplina();
+
+
+    if (disciplinaDaPagina) {
+
+        atualizarInterfaceDisciplina(
+            disciplinaDaPagina
+        );
+
+
+        return;
+
+    }
+
+
     const aulaIdentificada =
         identificarAulaAtual();
 
