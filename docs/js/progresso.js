@@ -1,16 +1,39 @@
 // =====================================
-// SISTEMA DE PROGRESSO PSCPP v3.0
+// SISTEMA DE PROGRESSO PSCPP v4.0
 // Bridge Trainer PSCPP
-// Armazenamento local no navegador
+//
+// Estrutura dinâmica:
+//
+// Disciplina
+// └── Aula
+//     ├── Tópico 1
+//     ├── Tópico 2
+//     └── Tópico N
+//
+// A quantidade de tópicos é identificada
+// automaticamente pelo HTML de cada aula.
 // =====================================
 
 
-// Chave utilizada no localStorage
-const CHAVE_PROGRESSO_PSCPP = "bridgeTrainerPSCPP_progresso";
+// =====================================
+// CONFIGURAÇÕES
+// =====================================
+
+const CHAVE_PROGRESSO_PSCPP =
+    "bridgeTrainerPSCPP_progresso";
 
 
-// Estrutura de progresso carregada
 let dadosProgresso = null;
+
+
+// Informações da aula atualmente aberta
+let aulaAtual = {
+
+    disciplina: null,
+
+    aula: null
+
+};
 
 
 // =====================================
@@ -21,7 +44,7 @@ function criarEstruturaInicialProgresso() {
 
     return {
 
-        versao: "3.0",
+        versao: "4.0",
 
         ultimaAtualizacao: null,
 
@@ -33,73 +56,96 @@ function criarEstruturaInicialProgresso() {
 
 
 // =====================================
-// CARREGAR DADOS DE PROGRESSO
+// NORMALIZAR IDENTIFICADORES
+// =====================================
+
+function normalizarIdentificador(texto) {
+
+    if (!texto) {
+
+        return "";
+
+    }
+
+    return texto
+
+        .toString()
+
+        .normalize("NFD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .toLowerCase()
+
+        .trim()
+
+        .replace(
+            /[^a-z0-9]+/g,
+            "-"
+        )
+
+        .replace(
+            /^-+|-+$/g,
+            ""
+        );
+
+}
+
+
+// =====================================
+// CARREGAR PROGRESSO
 // =====================================
 
 async function carregarDadosProgresso() {
 
     try {
 
-        const progressoLocal =
-            localStorage.getItem(CHAVE_PROGRESSO_PSCPP);
+        const progressoSalvo =
+            localStorage.getItem(
+                CHAVE_PROGRESSO_PSCPP
+            );
 
-        // Se já existir progresso salvo no tablet,
-        // ele terá prioridade.
-        if (progressoLocal) {
+
+        if (progressoSalvo) {
 
             dadosProgresso =
-                JSON.parse(progressoLocal);
+                JSON.parse(
+                    progressoSalvo
+                );
+
+
+            prepararEstruturaProgresso();
+
 
             console.log(
-                "Progresso carregado do localStorage:",
+                "Progresso carregado do tablet:",
                 dadosProgresso
             );
+
 
             return dadosProgresso;
 
         }
 
-        // Caso ainda não exista progresso local,
-        // tenta carregar a estrutura inicial do JSON.
-        try {
 
-            const caminhoJSON =
-                obterCaminhoProgressoJSON();
+        dadosProgresso =
+            await carregarProgressoInicialJSON();
 
-            const resposta =
-                await fetch(caminhoJSON);
 
-            if (!resposta.ok) {
+        prepararEstruturaProgresso();
 
-                throw new Error(
-                    "Não foi possível carregar progresso.json"
-                );
-
-            }
-
-            dadosProgresso =
-                await resposta.json();
-
-        }
-        catch (erroJSON) {
-
-            console.warn(
-                "progresso.json não foi carregado. " +
-                "Será criada uma estrutura inicial.",
-                erroJSON
-            );
-
-            dadosProgresso =
-                criarEstruturaInicialProgresso();
-
-        }
 
         salvarDadosProgresso();
+
 
         console.log(
             "Estrutura inicial de progresso criada:",
             dadosProgresso
         );
+
 
         return dadosProgresso;
 
@@ -111,8 +157,10 @@ async function carregarDadosProgresso() {
             erro
         );
 
+
         dadosProgresso =
             criarEstruturaInicialProgresso();
+
 
         return dadosProgresso;
 
@@ -122,7 +170,57 @@ async function carregarDadosProgresso() {
 
 
 // =====================================
-// IDENTIFICAR CAMINHO DO progresso.json
+// CARREGAR progresso.json
+// =====================================
+
+async function carregarProgressoInicialJSON() {
+
+    try {
+
+        const caminhoJSON =
+            obterCaminhoProgressoJSON();
+
+
+        const resposta =
+            await fetch(
+                caminhoJSON
+            );
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                "Não foi possível carregar progresso.json"
+            );
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        return dados;
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "O progresso.json não foi carregado. " +
+            "Será criada uma estrutura inicial local.",
+            erro
+        );
+
+
+        return criarEstruturaInicialProgresso();
+
+    }
+
+}
+
+
+// =====================================
+// CAMINHO DO progresso.json
 // =====================================
 
 function obterCaminhoProgressoJSON() {
@@ -130,50 +228,86 @@ function obterCaminhoProgressoJSON() {
     const caminhoAtual =
         window.location.pathname;
 
-    // Página dentro de:
-    // docs/disciplinas/nome-disciplina/
-    if (caminhoAtual.includes("/disciplinas/")) {
+
+    if (
+        caminhoAtual.includes(
+            "/disciplinas/"
+        )
+    ) {
 
         return "../../data/progresso.json";
 
     }
 
-    // Página dentro de:
-    // docs/guia-estudos/
-    if (caminhoAtual.includes("/guia-estudos/")) {
+
+    if (
+        caminhoAtual.includes(
+            "/guia-estudos/"
+        )
+    ) {
 
         return "../data/progresso.json";
 
     }
 
-    // Página principal:
-    // docs/index.html
+
     return "data/progresso.json";
 
 }
 
 
 // =====================================
-// SALVAR DADOS
+// PREPARAR ESTRUTURA
 // =====================================
 
-function salvarDadosProgresso() {
+function prepararEstruturaProgresso() {
 
-    if (!dadosProgresso) {
+    if (
+        !dadosProgresso ||
+        typeof dadosProgresso !== "object"
+    ) {
 
         dadosProgresso =
             criarEstruturaInicialProgresso();
 
     }
 
+
+    dadosProgresso.versao =
+        "4.0";
+
+
+    if (
+        !dadosProgresso.disciplinas
+    ) {
+
+        dadosProgresso.disciplinas = {};
+
+    }
+
+}
+
+
+// =====================================
+// SALVAR PROGRESSO
+// =====================================
+
+function salvarDadosProgresso() {
+
+    prepararEstruturaProgresso();
+
+
     dadosProgresso.ultimaAtualizacao =
         new Date().toISOString();
+
 
     localStorage.setItem(
 
         CHAVE_PROGRESSO_PSCPP,
 
-        JSON.stringify(dadosProgresso)
+        JSON.stringify(
+            dadosProgresso
+        )
 
     );
 
@@ -184,190 +318,460 @@ function salvarDadosProgresso() {
 // GARANTIR DISCIPLINA
 // =====================================
 
-function garantirDisciplina(idDisciplina) {
+function garantirDisciplina(
+    idDisciplina
+) {
 
-    if (!dadosProgresso) {
+    prepararEstruturaProgresso();
 
-        dadosProgresso =
-            criarEstruturaInicialProgresso();
 
-    }
+    const disciplinaNormalizada =
+        normalizarIdentificador(
+            idDisciplina
+        );
 
-    if (!dadosProgresso.disciplinas) {
-
-        dadosProgresso.disciplinas = {};
-
-    }
-
-    if (!dadosProgresso.disciplinas[idDisciplina]) {
-
-        dadosProgresso.disciplinas[idDisciplina] = {
-
-            progresso: 0,
-
-            assuntos: {}
-
-        };
-
-    }
 
     if (
         !dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos
+            .disciplinas[
+                disciplinaNormalizada
+            ]
     ) {
 
         dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos = {};
+            .disciplinas[
+                disciplinaNormalizada
+            ] = {
+
+                progresso: 0,
+
+                aulas: {}
+
+            };
 
     }
 
-}
 
-
-// =====================================
-// MARCAR ASSUNTO COMO ESTUDADO
-// =====================================
-
-function marcarComoEstudado(
-    idDisciplina,
-    idAssunto
-) {
-
-    garantirDisciplina(idDisciplina);
-
-    const assuntos =
+    const disciplina =
         dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos;
+            .disciplinas[
+                disciplinaNormalizada
+            ];
 
-    assuntos[idAssunto] = {
 
-        concluido: true,
+    if (!disciplina.aulas) {
 
-        dataConclusao:
-            new Date().toISOString()
+        disciplina.aulas = {};
 
-    };
+    }
 
-    recalcularProgressoDisciplina(
-        idDisciplina
-    );
 
-    salvarDadosProgresso();
-
-    atualizarElementosDaPagina(
-        idDisciplina,
-        idAssunto
-    );
+    return disciplina;
 
 }
 
 
 // =====================================
-// DESMARCAR ASSUNTO
+// GARANTIR AULA
 // =====================================
 
-function desmarcarComoEstudado(
+function garantirAula(
     idDisciplina,
-    idAssunto
+    idAula
 ) {
 
-    garantirDisciplina(idDisciplina);
-
-    const assuntos =
-        dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos;
-
-    assuntos[idAssunto] = {
-
-        concluido: false,
-
-        dataConclusao: null
-
-    };
-
-    recalcularProgressoDisciplina(
-        idDisciplina
-    );
-
-    salvarDadosProgresso();
-
-    atualizarElementosDaPagina(
-        idDisciplina,
-        idAssunto
-    );
-
-}
+    const disciplina =
+        garantirDisciplina(
+            idDisciplina
+        );
 
 
-// =====================================
-// ALTERNAR ESTADO DO ASSUNTO
-// =====================================
+    const aulaNormalizada =
+        normalizarIdentificador(
+            idAula
+        );
 
-function alternarStatusEstudo(
-    idDisciplina,
-    idAssunto
-) {
 
     if (
-        assuntoFoiEstudado(
-            idDisciplina,
-            idAssunto
-        )
+        !disciplina
+            .aulas[
+                aulaNormalizada
+            ]
     ) {
 
-        desmarcarComoEstudado(
-            idDisciplina,
-            idAssunto
-        );
+        disciplina
+            .aulas[
+                aulaNormalizada
+            ] = {
+
+                progresso: 0,
+
+                concluida: false,
+
+                totalTopicos: 0,
+
+                topicos: {}
+
+            };
 
     }
-    else {
 
-        marcarComoEstudado(
-            idDisciplina,
-            idAssunto
-        );
+
+    const aula =
+        disciplina
+            .aulas[
+                aulaNormalizada
+            ];
+
+
+    if (!aula.topicos) {
+
+        aula.topicos = {};
 
     }
+
+
+    return aula;
 
 }
 
 
 // =====================================
-// VERIFICAR SE FOI ESTUDADO
+// GARANTIR TÓPICO
 // =====================================
 
-function assuntoFoiEstudado(
+function garantirTopico(
     idDisciplina,
-    idAssunto
+    idAula,
+    idTopico
 ) {
+
+    const aula =
+        garantirAula(
+            idDisciplina,
+            idAula
+        );
+
+
+    const topicoNormalizado =
+        normalizarIdentificador(
+            idTopico
+        );
+
+
+    if (
+        !aula
+            .topicos[
+                topicoNormalizado
+            ]
+    ) {
+
+        aula
+            .topicos[
+                topicoNormalizado
+            ] = {
+
+                concluido: false,
+
+                dataConclusao: null
+
+            };
+
+    }
+
+
+    return aula
+        .topicos[
+            topicoNormalizado
+        ];
+
+}
+
+
+// =====================================
+// IDENTIFICAR DADOS DA AULA
+// =====================================
+
+function identificarAulaAtual() {
+
+    const corpo =
+        document.body;
+
+
+    if (!corpo) {
+
+        return false;
+
+    }
+
+
+    const disciplina =
+        corpo.dataset.disciplina;
+
+
+    const aula =
+        corpo.dataset.aula;
+
+
+    if (
+        !disciplina ||
+        !aula
+    ) {
+
+        console.warn(
+            "A página não possui data-disciplina " +
+            "e data-aula no elemento body."
+        );
+
+
+        return false;
+
+    }
+
+
+    aulaAtual.disciplina =
+        normalizarIdentificador(
+            disciplina
+        );
+
+
+    aulaAtual.aula =
+        normalizarIdentificador(
+            aula
+        );
+
+
+    return true;
+
+}
+
+
+// =====================================
+// LOCALIZAR TÓPICOS DA PÁGINA
+// =====================================
+
+function obterTopicosDaPagina() {
+
+    return Array.from(
+
+        document.querySelectorAll(
+            ".topico-aula"
+        )
+
+    );
+
+}
+
+
+// =====================================
+// IDENTIFICAR ID DO TÓPICO
+// =====================================
+
+function obterIdDoTopico(
+    elementoTopico,
+    indice
+) {
+
+    let idTopico =
+        elementoTopico.dataset.topicoId;
+
+
+    if (!idTopico) {
+
+        const titulo =
+            elementoTopico.querySelector(
+                "h2, h3, h4"
+            );
+
+
+        if (titulo) {
+
+            idTopico =
+                normalizarIdentificador(
+                    titulo.textContent
+                );
+
+        }
+
+    }
+
+
+    if (!idTopico) {
+
+        idTopico =
+            "topico-" + (indice + 1);
+
+    }
+
+
+    idTopico =
+        normalizarIdentificador(
+            idTopico
+        );
+
+
+    elementoTopico.dataset.topicoId =
+        idTopico;
+
+
+    return idTopico;
+
+}
+
+
+// =====================================
+// REGISTRAR TÓPICOS DA AULA
+// =====================================
+
+function registrarTopicosDaAula() {
+
+    if (
+        !aulaAtual.disciplina ||
+        !aulaAtual.aula
+    ) {
+
+        return;
+
+    }
+
+
+    const topicos =
+        obterTopicosDaPagina();
+
+
+    const aula =
+        garantirAula(
+
+            aulaAtual.disciplina,
+
+            aulaAtual.aula
+
+        );
+
+
+    aula.totalTopicos =
+        topicos.length;
+
+
+    topicos.forEach(
+        (
+            elementoTopico,
+            indice
+        ) => {
+
+            const idTopico =
+                obterIdDoTopico(
+                    elementoTopico,
+                    indice
+                );
+
+
+            garantirTopico(
+
+                aulaAtual.disciplina,
+
+                aulaAtual.aula,
+
+                idTopico
+
+            );
+
+        }
+    );
+
+
+    recalcularProgressoAula(
+
+        aulaAtual.disciplina,
+
+        aulaAtual.aula
+
+    );
+
+
+    salvarDadosProgresso();
+
+}
+
+
+// =====================================
+// VERIFICAR SE TÓPICO FOI ESTUDADO
+// =====================================
+
+function topicoFoiEstudado(
+    idDisciplina,
+    idAula,
+    idTopico
+) {
+
+    const disciplina =
+        normalizarIdentificador(
+            idDisciplina
+        );
+
+
+    const aula =
+        normalizarIdentificador(
+            idAula
+        );
+
+
+    const topico =
+        normalizarIdentificador(
+            idTopico
+        );
+
 
     if (
         !dadosProgresso ||
         !dadosProgresso.disciplinas ||
         !dadosProgresso
-            .disciplinas[idDisciplina] ||
+            .disciplinas[
+                disciplina
+            ] ||
         !dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos ||
+            .disciplinas[
+                disciplina
+            ].aulas ||
         !dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos[idAssunto]
+            .disciplinas[
+                disciplina
+            ].aulas[
+                aula
+            ] ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ].aulas[
+                aula
+            ].topicos ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ].aulas[
+                aula
+            ].topicos[
+                topico
+            ]
     ) {
 
         return false;
 
     }
 
+
     return Boolean(
 
         dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos[idAssunto]
+            .disciplinas[
+                disciplina
+            ]
+            .aulas[
+                aula
+            ]
+            .topicos[
+                topico
+            ]
             .concluido
 
     );
@@ -376,81 +780,210 @@ function assuntoFoiEstudado(
 
 
 // =====================================
-// CONTAR ASSUNTOS DA DISCIPLINA
+// MARCAR TÓPICO COMO ESTUDADO
 // =====================================
 
-function obterQuantidadeAssuntos(
-    idDisciplina
+function marcarTopicoComoEstudado(
+    idDisciplina,
+    idAula,
+    idTopico
 ) {
 
-    if (
-        typeof conteudoPSCPP !== "undefined" &&
-        conteudoPSCPP[idDisciplina] &&
-        Array.isArray(
-            conteudoPSCPP[idDisciplina].assuntos
-        )
-    ) {
+    const topico =
+        garantirTopico(
 
-        return conteudoPSCPP[
-            idDisciplina
-        ].assuntos.length;
+            idDisciplina,
 
-    }
+            idAula,
 
-    return 0;
+            idTopico
+
+        );
+
+
+    topico.concluido = true;
+
+
+    topico.dataConclusao =
+        new Date().toISOString();
+
+
+    atualizarProgressoCompleto(
+
+        idDisciplina,
+
+        idAula
+
+    );
+
+
+    atualizarInterfaceAula();
 
 }
 
 
 // =====================================
-// RECALCULAR DISCIPLINA
+// DESMARCAR TÓPICO
 // =====================================
 
-function recalcularProgressoDisciplina(
-    idDisciplina
+function desmarcarTopicoComoEstudado(
+    idDisciplina,
+    idAula,
+    idTopico
 ) {
 
-    garantirDisciplina(idDisciplina);
+    const topico =
+        garantirTopico(
 
-    const totalAssuntos =
-        obterQuantidadeAssuntos(
-            idDisciplina
+            idDisciplina,
+
+            idAula,
+
+            idTopico
+
         );
 
-    if (totalAssuntos === 0) {
 
-        dadosProgresso
-            .disciplinas[idDisciplina]
-            .progresso = 0;
+    topico.concluido = false;
+
+
+    topico.dataConclusao = null;
+
+
+    atualizarProgressoCompleto(
+
+        idDisciplina,
+
+        idAula
+
+    );
+
+
+    atualizarInterfaceAula();
+
+}
+
+
+// =====================================
+// ALTERNAR ESTADO DO TÓPICO
+// =====================================
+
+function alternarTopicoEstudado(
+    idDisciplina,
+    idAula,
+    idTopico
+) {
+
+    const concluido =
+        topicoFoiEstudado(
+
+            idDisciplina,
+
+            idAula,
+
+            idTopico
+
+        );
+
+
+    if (concluido) {
+
+        desmarcarTopicoComoEstudado(
+
+            idDisciplina,
+
+            idAula,
+
+            idTopico
+
+        );
+
+    }
+    else {
+
+        marcarTopicoComoEstudado(
+
+            idDisciplina,
+
+            idAula,
+
+            idTopico
+
+        );
+
+    }
+
+}
+
+
+// =====================================
+// RECALCULAR PROGRESSO DA AULA
+// =====================================
+
+function recalcularProgressoAula(
+    idDisciplina,
+    idAula
+) {
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    const totalTopicos =
+        aula.totalTopicos || 0;
+
+
+    if (totalTopicos === 0) {
+
+        aula.progresso = 0;
+
+        aula.concluida = false;
+
 
         return 0;
 
     }
 
-    const assuntosSalvos =
-        dadosProgresso
-            .disciplinas[idDisciplina]
-            .assuntos;
+
+    const topicosRegistrados =
+        Object.values(
+            aula.topicos
+        );
+
 
     const totalConcluidos =
-        Object.values(assuntosSalvos)
-            .filter(
-                assunto =>
-                    assunto.concluido === true
-            )
-            .length;
+        topicosRegistrados.filter(
+
+            topico =>
+                topico.concluido === true
+
+        ).length;
+
 
     const percentual =
         Math.round(
+
             (
                 totalConcluidos /
-                totalAssuntos
+                totalTopicos
             ) * 100
+
         );
 
-    dadosProgresso
-        .disciplinas[idDisciplina]
-        .progresso = percentual;
+
+    aula.progresso =
+        percentual;
+
+
+    aula.concluida =
+        percentual === 100;
+
 
     return percentual;
 
@@ -458,28 +991,196 @@ function recalcularProgressoDisciplina(
 
 
 // =====================================
-// PROGRESSO POR DISCIPLINA
+// RECALCULAR PROGRESSO DA DISCIPLINA
 // =====================================
 
-function obterProgressoDisciplina(
+function recalcularProgressoDisciplina(
     idDisciplina
 ) {
+
+    const disciplina =
+        garantirDisciplina(
+            idDisciplina
+        );
+
+
+    const aulas =
+        Object.values(
+            disciplina.aulas
+        );
+
+
+    if (aulas.length === 0) {
+
+        disciplina.progresso = 0;
+
+
+        return 0;
+
+    }
+
+
+    let somaProgresso = 0;
+
+
+    aulas.forEach(
+        aula => {
+
+            somaProgresso +=
+                aula.progresso || 0;
+
+        }
+    );
+
+
+    disciplina.progresso =
+        Math.round(
+
+            somaProgresso /
+            aulas.length
+
+        );
+
+
+    return disciplina.progresso;
+
+}
+
+
+// =====================================
+// RECALCULAR TUDO
+// =====================================
+
+function atualizarProgressoCompleto(
+    idDisciplina,
+    idAula
+) {
+
+    recalcularProgressoAula(
+
+        idDisciplina,
+
+        idAula
+
+    );
+
+
+    recalcularProgressoDisciplina(
+        idDisciplina
+    );
+
+
+    salvarDadosProgresso();
+
+
+    dispararEventoProgresso(
+
+        idDisciplina,
+
+        idAula
+
+    );
+
+}
+
+
+// =====================================
+// PROGRESSO DA AULA
+// =====================================
+
+function obterProgressoAula(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        normalizarIdentificador(
+            idDisciplina
+        );
+
+
+    const aula =
+        normalizarIdentificador(
+            idAula
+        );
+
 
     if (
         !dadosProgresso ||
         !dadosProgresso.disciplinas ||
         !dadosProgresso
-            .disciplinas[idDisciplina]
+            .disciplinas[
+                disciplina
+            ] ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ].aulas ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ].aulas[
+                aula
+            ]
     ) {
 
         return 0;
 
     }
 
+
     return (
+
         dadosProgresso
-            .disciplinas[idDisciplina]
+            .disciplinas[
+                disciplina
+            ]
+            .aulas[
+                aula
+            ]
             .progresso || 0
+
+    );
+
+}
+
+
+// =====================================
+// PROGRESSO DA DISCIPLINA
+// =====================================
+
+function obterProgressoDisciplina(
+    idDisciplina
+) {
+
+    const disciplina =
+        normalizarIdentificador(
+            idDisciplina
+        );
+
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ]
+    ) {
+
+        return 0;
+
+    }
+
+
+    return (
+
+        dadosProgresso
+            .disciplinas[
+                disciplina
+            ]
+            .progresso || 0
+
     );
 
 }
@@ -500,105 +1201,347 @@ function calcularProgressoGeral() {
 
     }
 
-    let idsDisciplinas = [];
 
-    if (
-        typeof conteudoPSCPP !== "undefined"
-    ) {
+    const disciplinas =
+        Object.values(
+            dadosProgresso.disciplinas
+        );
 
-        idsDisciplinas =
-            Object.keys(conteudoPSCPP);
 
-    }
-    else {
-
-        idsDisciplinas =
-            Object.keys(
-                dadosProgresso.disciplinas
-            );
-
-    }
-
-    if (idsDisciplinas.length === 0) {
+    if (disciplinas.length === 0) {
 
         return 0;
 
     }
 
+
     let soma = 0;
 
-    idsDisciplinas.forEach(
-        idDisciplina => {
+
+    disciplinas.forEach(
+        disciplina => {
 
             soma +=
-                obterProgressoDisciplina(
-                    idDisciplina
-                );
+                disciplina.progresso || 0;
 
         }
     );
 
+
     return Math.round(
-        soma / idsDisciplinas.length
+
+        soma /
+        disciplinas.length
+
     );
 
 }
 
 
 // =====================================
-// ATUALIZAR BOTÃO DA AULA
+// CRIAR CONTROLE DO TÓPICO
 // =====================================
 
-function atualizarBotaoEstudo(
-    idDisciplina,
-    idAssunto
+function criarControleDoTopico(
+    elementoTopico,
+    idTopico
 ) {
 
-    const botao =
-        document.getElementById(
-            "botao-marcar-estudado"
+    let controle =
+        elementoTopico.querySelector(
+            ".controle-progresso-topico"
         );
 
-    if (!botao) {
+
+    if (controle) {
+
+        return controle;
+
+    }
+
+
+    controle =
+        document.createElement(
+            "div"
+        );
+
+
+    controle.className =
+        "controle-progresso-topico";
+
+
+    const botao =
+        document.createElement(
+            "button"
+        );
+
+
+    botao.type =
+        "button";
+
+
+    botao.className =
+        "botao-topico-estudado";
+
+
+    botao.dataset.topicoId =
+        idTopico;
+
+
+    botao.setAttribute(
+        "aria-pressed",
+        "false"
+    );
+
+
+    botao.addEventListener(
+        "click",
+        function () {
+
+            alternarTopicoEstudado(
+
+                aulaAtual.disciplina,
+
+                aulaAtual.aula,
+
+                idTopico
+
+            );
+
+        }
+    );
+
+
+    controle.appendChild(
+        botao
+    );
+
+
+    elementoTopico.appendChild(
+        controle
+    );
+
+
+    return controle;
+
+}
+
+
+// =====================================
+// INSERIR BOTÕES AUTOMATICAMENTE
+// =====================================
+
+function inserirBotoesDosTopicos() {
+
+    const topicos =
+        obterTopicosDaPagina();
+
+
+    topicos.forEach(
+        (
+            elementoTopico,
+            indice
+        ) => {
+
+            const idTopico =
+                obterIdDoTopico(
+                    elementoTopico,
+                    indice
+                );
+
+
+            criarControleDoTopico(
+
+                elementoTopico,
+
+                idTopico
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR BOTÕES DOS TÓPICOS
+// =====================================
+
+function atualizarBotoesDosTopicos() {
+
+    const botoes =
+        document.querySelectorAll(
+            ".botao-topico-estudado"
+        );
+
+
+    botoes.forEach(
+        botao => {
+
+            const idTopico =
+                botao.dataset.topicoId;
+
+
+            const concluido =
+                topicoFoiEstudado(
+
+                    aulaAtual.disciplina,
+
+                    aulaAtual.aula,
+
+                    idTopico
+
+                );
+
+
+            if (concluido) {
+
+                botao.textContent =
+                    "✓ Tópico estudado";
+
+
+                botao.classList.add(
+                    "topico-concluido"
+                );
+
+
+                botao.setAttribute(
+                    "aria-pressed",
+                    "true"
+                );
+
+            }
+            else {
+
+                botao.textContent =
+                    "Marcar tópico como estudado";
+
+
+                botao.classList.remove(
+                    "topico-concluido"
+                );
+
+
+                botao.setAttribute(
+                    "aria-pressed",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// =====================================
+// DESTACAR TÓPICOS CONCLUÍDOS
+// =====================================
+
+function atualizarEstadoDosTopicos() {
+
+    const topicos =
+        obterTopicosDaPagina();
+
+
+    topicos.forEach(
+        (
+            elementoTopico,
+            indice
+        ) => {
+
+            const idTopico =
+                obterIdDoTopico(
+                    elementoTopico,
+                    indice
+                );
+
+
+            const concluido =
+                topicoFoiEstudado(
+
+                    aulaAtual.disciplina,
+
+                    aulaAtual.aula,
+
+                    idTopico
+
+                );
+
+
+            elementoTopico.classList.toggle(
+
+                "topico-estudado",
+
+                concluido
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR PROGRESSO VISUAL DA AULA
+// =====================================
+
+function atualizarProgressoVisualAula() {
+
+    if (
+        !aulaAtual.disciplina ||
+        !aulaAtual.aula
+    ) {
 
         return;
 
     }
 
-    const concluido =
-        assuntoFoiEstudado(
-            idDisciplina,
-            idAssunto
+
+    const percentual =
+        obterProgressoAula(
+
+            aulaAtual.disciplina,
+
+            aulaAtual.aula
+
         );
 
-    if (concluido) {
 
-        botao.textContent =
-            "✓ Conteúdo estudado";
-
-        botao.classList.add(
-            "conteudo-concluido"
+    const barra =
+        document.getElementById(
+            "barra-progresso-aula"
         );
 
-        botao.setAttribute(
-            "aria-pressed",
-            "true"
+
+    const texto =
+        document.getElementById(
+            "texto-progresso-aula"
+        );
+
+
+    if (barra) {
+
+        barra.style.width =
+            percentual + "%";
+
+
+        barra.setAttribute(
+            "aria-valuenow",
+            percentual
         );
 
     }
-    else {
 
-        botao.textContent =
-            "Marcar como estudado";
 
-        botao.classList.remove(
-            "conteudo-concluido"
-        );
+    if (texto) {
 
-        botao.setAttribute(
-            "aria-pressed",
-            "false"
-        );
+        texto.textContent =
+            percentual +
+            "% da aula concluída";
 
     }
 
@@ -606,40 +1549,46 @@ function atualizarBotaoEstudo(
 
 
 // =====================================
-// ATUALIZAR PROGRESSO VISUAL
+// ATUALIZAR PROGRESSO GERAL VISUAL
 // =====================================
 
-function atualizarProgressoVisual() {
+function atualizarProgressoVisualGeral() {
 
-    const progressoGeral =
+    const percentual =
         calcularProgressoGeral();
+
 
     const barra =
         document.getElementById(
             "barra-progresso-geral"
         );
 
+
     const texto =
         document.getElementById(
             "texto-progresso-geral"
         );
 
+
     if (barra) {
 
         barra.style.width =
-            progressoGeral + "%";
+            percentual + "%";
+
 
         barra.setAttribute(
             "aria-valuenow",
-            progressoGeral
+            percentual
         );
 
     }
 
+
     if (texto) {
 
         texto.textContent =
-            progressoGeral + "% concluído";
+            percentual +
+            "% concluído";
 
     }
 
@@ -647,32 +1596,55 @@ function atualizarProgressoVisual() {
 
 
 // =====================================
-// ATUALIZAR ELEMENTOS DA PÁGINA
+// ATUALIZAR INTERFACE DA AULA
 // =====================================
 
-function atualizarElementosDaPagina(
+function atualizarInterfaceAula() {
+
+    atualizarBotoesDosTopicos();
+
+
+    atualizarEstadoDosTopicos();
+
+
+    atualizarProgressoVisualAula();
+
+
+    atualizarProgressoVisualGeral();
+
+}
+
+
+// =====================================
+// EVENTO DE ATUALIZAÇÃO
+// =====================================
+
+function dispararEventoProgresso(
     idDisciplina,
-    idAssunto
+    idAula
 ) {
-
-    atualizarBotaoEstudo(
-        idDisciplina,
-        idAssunto
-    );
-
-    atualizarProgressoVisual();
 
     document.dispatchEvent(
 
         new CustomEvent(
+
             "progressoPSCPPAtualizado",
+
             {
+
                 detail: {
+
                     disciplina:
                         idDisciplina,
 
-                    assunto:
-                        idAssunto,
+                    aula:
+                        idAula,
+
+                    progressoAula:
+                        obterProgressoAula(
+                            idDisciplina,
+                            idAula
+                        ),
 
                     progressoDisciplina:
                         obterProgressoDisciplina(
@@ -681,8 +1653,11 @@ function atualizarElementosDaPagina(
 
                     progressoGeral:
                         calcularProgressoGeral()
+
                 }
+
             }
+
         )
 
     );
@@ -691,44 +1666,156 @@ function atualizarElementosDaPagina(
 
 
 // =====================================
-// INICIALIZAÇÃO DA AULA
+// IR AO PRIMEIRO TÓPICO PENDENTE
 // =====================================
 
-async function inicializarProgressoAula(
-    idDisciplina,
-    idAssunto
-) {
+function localizarPrimeiroTopicoPendente() {
 
-    if (!dadosProgresso) {
+    const topicos =
+        obterTopicosDaPagina();
 
-        await carregarDadosProgresso();
+
+    for (
+        let indice = 0;
+        indice < topicos.length;
+        indice++
+    ) {
+
+        const elementoTopico =
+            topicos[indice];
+
+
+        const idTopico =
+            obterIdDoTopico(
+                elementoTopico,
+                indice
+            );
+
+
+        const concluido =
+            topicoFoiEstudado(
+
+                aulaAtual.disciplina,
+
+                aulaAtual.aula,
+
+                idTopico
+
+            );
+
+
+        if (!concluido) {
+
+            return elementoTopico;
+
+        }
 
     }
 
-    recalcularProgressoDisciplina(
-        idDisciplina
+
+    return null;
+
+}
+
+
+// =====================================
+// ROLAR ATÉ ONDE O ESTUDO PAROU
+// =====================================
+
+function irParaOndeParei() {
+
+    const primeiroPendente =
+        localizarPrimeiroTopicoPendente();
+
+
+    if (!primeiroPendente) {
+
+        window.alert(
+            "Todos os tópicos desta aula já foram estudados."
+        );
+
+
+        return;
+
+    }
+
+
+    primeiroPendente.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+
+    primeiroPendente.classList.add(
+        "topico-destacado"
     );
 
-    atualizarBotaoEstudo(
-        idDisciplina,
-        idAssunto
+
+    window.setTimeout(
+        function () {
+
+            primeiroPendente.classList.remove(
+                "topico-destacado"
+            );
+
+        },
+        2500
     );
 
-    atualizarProgressoVisual();
+}
+
+
+// =====================================
+// INICIALIZAR AULA
+// =====================================
+
+async function inicializarProgressoAula() {
+
+    await carregarDadosProgresso();
+
+
+    const aulaIdentificada =
+        identificarAulaAtual();
+
+
+    if (!aulaIdentificada) {
+
+        atualizarProgressoVisualGeral();
+
+
+        return;
+
+    }
+
+
+    registrarTopicosDaAula();
+
+
+    inserirBotoesDosTopicos();
+
+
+    atualizarInterfaceAula();
 
 }
 
 
 // =====================================
 // LIMPAR TODO O PROGRESSO
-// Usar somente quando necessário
 // =====================================
 
 function limparTodoProgresso() {
 
-    const confirmar = window.confirm(
-        "Deseja realmente apagar todo o progresso de estudo?"
-    );
+    const confirmar =
+        window.confirm(
+
+            "Deseja realmente apagar todo " +
+            "o progresso de estudo salvo neste tablet?"
+
+        );
+
 
     if (!confirmar) {
 
@@ -736,12 +1823,15 @@ function limparTodoProgresso() {
 
     }
 
+
     localStorage.removeItem(
         CHAVE_PROGRESSO_PSCPP
     );
 
+
     dadosProgresso =
         criarEstruturaInicialProgresso();
+
 
     window.location.reload();
 
@@ -753,17 +1843,18 @@ function limparTodoProgresso() {
 // =====================================
 
 document.addEventListener(
+
     "DOMContentLoaded",
-    async function () {
 
-        await carregarDadosProgresso();
+    function () {
 
-        atualizarProgressoVisual();
+        inicializarProgressoAula();
 
     }
+
 );
 
 
 // =====================================
-// FIM PROGRESSO v3.0
+// FIM DO SISTEMA DE PROGRESSO v4.0
 // =====================================
