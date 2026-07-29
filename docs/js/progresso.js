@@ -384,4 +384,386 @@ function obterQuantidadeAssuntos(
 ) {
 
     if (
-        typeof conteudoPSCPP !== "
+        typeof conteudoPSCPP !== "undefined" &&
+        conteudoPSCPP[idDisciplina] &&
+        Array.isArray(
+            conteudoPSCPP[idDisciplina].assuntos
+        )
+    ) {
+
+        return conteudoPSCPP[
+            idDisciplina
+        ].assuntos.length;
+
+    }
+
+    return 0;
+
+}
+
+
+// =====================================
+// RECALCULAR DISCIPLINA
+// =====================================
+
+function recalcularProgressoDisciplina(
+    idDisciplina
+) {
+
+    garantirDisciplina(idDisciplina);
+
+    const totalAssuntos =
+        obterQuantidadeAssuntos(
+            idDisciplina
+        );
+
+    if (totalAssuntos === 0) {
+
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .progresso = 0;
+
+        return 0;
+
+    }
+
+    const assuntosSalvos =
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .assuntos;
+
+    const totalConcluidos =
+        Object.values(assuntosSalvos)
+            .filter(
+                assunto =>
+                    assunto.concluido === true
+            )
+            .length;
+
+    const percentual =
+        Math.round(
+            (
+                totalConcluidos /
+                totalAssuntos
+            ) * 100
+        );
+
+    dadosProgresso
+        .disciplinas[idDisciplina]
+        .progresso = percentual;
+
+    return percentual;
+
+}
+
+
+// =====================================
+// PROGRESSO POR DISCIPLINA
+// =====================================
+
+function obterProgressoDisciplina(
+    idDisciplina
+) {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas ||
+        !dadosProgresso
+            .disciplinas[idDisciplina]
+    ) {
+
+        return 0;
+
+    }
+
+    return (
+        dadosProgresso
+            .disciplinas[idDisciplina]
+            .progresso || 0
+    );
+
+}
+
+
+// =====================================
+// PROGRESSO GERAL
+// =====================================
+
+function calcularProgressoGeral() {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return 0;
+
+    }
+
+    let idsDisciplinas = [];
+
+    if (
+        typeof conteudoPSCPP !== "undefined"
+    ) {
+
+        idsDisciplinas =
+            Object.keys(conteudoPSCPP);
+
+    }
+    else {
+
+        idsDisciplinas =
+            Object.keys(
+                dadosProgresso.disciplinas
+            );
+
+    }
+
+    if (idsDisciplinas.length === 0) {
+
+        return 0;
+
+    }
+
+    let soma = 0;
+
+    idsDisciplinas.forEach(
+        idDisciplina => {
+
+            soma +=
+                obterProgressoDisciplina(
+                    idDisciplina
+                );
+
+        }
+    );
+
+    return Math.round(
+        soma / idsDisciplinas.length
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR BOTÃO DA AULA
+// =====================================
+
+function atualizarBotaoEstudo(
+    idDisciplina,
+    idAssunto
+) {
+
+    const botao =
+        document.getElementById(
+            "botao-marcar-estudado"
+        );
+
+    if (!botao) {
+
+        return;
+
+    }
+
+    const concluido =
+        assuntoFoiEstudado(
+            idDisciplina,
+            idAssunto
+        );
+
+    if (concluido) {
+
+        botao.textContent =
+            "✓ Conteúdo estudado";
+
+        botao.classList.add(
+            "conteudo-concluido"
+        );
+
+        botao.setAttribute(
+            "aria-pressed",
+            "true"
+        );
+
+    }
+    else {
+
+        botao.textContent =
+            "Marcar como estudado";
+
+        botao.classList.remove(
+            "conteudo-concluido"
+        );
+
+        botao.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+
+    }
+
+}
+
+
+// =====================================
+// ATUALIZAR PROGRESSO VISUAL
+// =====================================
+
+function atualizarProgressoVisual() {
+
+    const progressoGeral =
+        calcularProgressoGeral();
+
+    const barra =
+        document.getElementById(
+            "barra-progresso-geral"
+        );
+
+    const texto =
+        document.getElementById(
+            "texto-progresso-geral"
+        );
+
+    if (barra) {
+
+        barra.style.width =
+            progressoGeral + "%";
+
+        barra.setAttribute(
+            "aria-valuenow",
+            progressoGeral
+        );
+
+    }
+
+    if (texto) {
+
+        texto.textContent =
+            progressoGeral + "% concluído";
+
+    }
+
+}
+
+
+// =====================================
+// ATUALIZAR ELEMENTOS DA PÁGINA
+// =====================================
+
+function atualizarElementosDaPagina(
+    idDisciplina,
+    idAssunto
+) {
+
+    atualizarBotaoEstudo(
+        idDisciplina,
+        idAssunto
+    );
+
+    atualizarProgressoVisual();
+
+    document.dispatchEvent(
+
+        new CustomEvent(
+            "progressoPSCPPAtualizado",
+            {
+                detail: {
+                    disciplina:
+                        idDisciplina,
+
+                    assunto:
+                        idAssunto,
+
+                    progressoDisciplina:
+                        obterProgressoDisciplina(
+                            idDisciplina
+                        ),
+
+                    progressoGeral:
+                        calcularProgressoGeral()
+                }
+            }
+        )
+
+    );
+
+}
+
+
+// =====================================
+// INICIALIZAÇÃO DA AULA
+// =====================================
+
+async function inicializarProgressoAula(
+    idDisciplina,
+    idAssunto
+) {
+
+    if (!dadosProgresso) {
+
+        await carregarDadosProgresso();
+
+    }
+
+    recalcularProgressoDisciplina(
+        idDisciplina
+    );
+
+    atualizarBotaoEstudo(
+        idDisciplina,
+        idAssunto
+    );
+
+    atualizarProgressoVisual();
+
+}
+
+
+// =====================================
+// LIMPAR TODO O PROGRESSO
+// Usar somente quando necessário
+// =====================================
+
+function limparTodoProgresso() {
+
+    const confirmar = window.confirm(
+        "Deseja realmente apagar todo o progresso de estudo?"
+    );
+
+    if (!confirmar) {
+
+        return;
+
+    }
+
+    localStorage.removeItem(
+        CHAVE_PROGRESSO_PSCPP
+    );
+
+    dadosProgresso =
+        criarEstruturaInicialProgresso();
+
+    window.location.reload();
+
+}
+
+
+// =====================================
+// CARREGAMENTO AUTOMÁTICO
+// =====================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+        await carregarDadosProgresso();
+
+        atualizarProgressoVisual();
+
+    }
+);
+
+
+// =====================================
+// FIM PROGRESSO v3.0
+// =====================================
