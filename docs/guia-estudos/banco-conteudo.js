@@ -8,7 +8,6 @@
 var conteudoPSCPP = {
 
 
-
 manobrabilidade: {
 
 nome: "Manobrabilidade",
@@ -31,11 +30,11 @@ peso: 4
 
 
 {
-nome: "Propulsão",
+nome: "Controlabilidade",
 status: "Não iniciado",
-horas: 20,
-importancia: "Alta",
-peso: 4
+horas: 45,
+importancia: "Muito Alta",
+peso: 5
 },
 
 
@@ -58,11 +57,11 @@ peso: 4
 
 
 {
-nome: "Controlabilidade",
-status: "Em estudo",
-horas: 45,
-importancia: "Muito Alta",
-peso: 5
+nome: "Propulsão",
+status: "Não iniciado",
+horas: 20,
+importancia: "Alta",
+peso: 4
 },
 
 
@@ -99,6 +98,15 @@ status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
+},
+
+
+{
+nome: "Efeitos Ambientais",
+status: "Não iniciado",
+horas: 15,
+importancia: "Alta",
+peso: 4
 },
 
 
@@ -236,6 +244,10 @@ peso: 4
 },
 
 
+
+
+
+
 navegacao: {
 
 nome: "Navegação em Águas Restritas / COLREG",
@@ -305,6 +317,11 @@ peso: 3
 ]
 
 },
+
+
+
+
+
 
 meteorologia: {
 
@@ -384,7 +401,13 @@ peso: 3
 ]
 
 },
-  // =====================================
+
+
+
+
+
+
+// =====================================
 // PARTE 3/3
 // REGULAMENTAÇÃO + COMUNICAÇÕES
 // FECHAMENTO DO BANCO
@@ -519,6 +542,7 @@ peso: 4
 
 
 
+
 comunicacoes: {
 
 nome: "Comunicações",
@@ -527,7 +551,9 @@ prioridade: "Média",
 
 pesoDisciplina: 2,
 
+
 assuntos: [
+
 
 {
 nome: "Standard Marine Communication Phrases (SMCP IMO)",
@@ -537,6 +563,7 @@ importancia: "Muito Alta",
 peso: 5
 },
 
+
 {
 nome: "Radiocomunicações Marítimas",
 status: "Não iniciado",
@@ -544,6 +571,7 @@ horas: 20,
 importancia: "Alta",
 peso: 4
 },
+
 
 {
 nome: "Código Internacional de Sinais (CIS)",
@@ -553,6 +581,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "Sistema Marítimo Global de Socorro e Segurança (GMDSS)",
 status: "Não iniciado",
@@ -560,6 +589,7 @@ horas: 20,
 importancia: "Muito Alta",
 peso: 5
 },
+
 
 {
 nome: "Exercícios e Revisão de Comunicações",
@@ -569,9 +599,14 @@ importancia: "Média",
 peso: 3
 }
 
+
 ]
 
 },
+
+
+
+
 
 
 "conhecimentos-gerais": {
@@ -582,7 +617,9 @@ prioridade: "Alta",
 
 pesoDisciplina: 4,
 
+
 assuntos: [
+
 
 {
 nome: "Planejamento Portuário",
@@ -592,6 +629,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "PIANC",
 status: "Não iniciado",
@@ -599,6 +637,7 @@ horas: 20,
 importancia: "Alta",
 peso: 4
 },
+
 
 {
 nome: "NORMAM-224",
@@ -608,6 +647,7 @@ importancia: "Muito Alta",
 peso: 5
 },
 
+
 {
 nome: "Fatores Humanos",
 status: "Não iniciado",
@@ -615,6 +655,7 @@ horas: 15,
 importancia: "Alta",
 peso: 4
 },
+
 
 {
 nome: "MARPOL",
@@ -624,6 +665,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "Economia Marítima",
 status: "Não iniciado",
@@ -631,6 +673,7 @@ horas: 10,
 importancia: "Média",
 peso: 3
 },
+
 
 {
 nome: "Direito Processual Marítimo",
@@ -640,6 +683,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "Segurança da Navegação",
 status: "Não iniciado",
@@ -647,6 +691,7 @@ horas: 20,
 importancia: "Muito Alta",
 peso: 5
 },
+
 
 {
 nome: "Gestão Portuária",
@@ -656,6 +701,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "Hidrovias",
 status: "Não iniciado",
@@ -663,6 +709,7 @@ horas: 10,
 importancia: "Média",
 peso: 3
 },
+
 
 {
 nome: "Dragagem",
@@ -672,6 +719,7 @@ importancia: "Alta",
 peso: 4
 },
 
+
 {
 nome: "Meio Ambiente",
 status: "Não iniciado",
@@ -679,6 +727,7 @@ horas: 10,
 importancia: "Média",
 peso: 3
 },
+
 
 {
 nome: "IMO",
@@ -688,6 +737,7 @@ importancia: "Muito Alta",
 peso: 5
 },
 
+
 {
 nome: "Infraestrutura Portuária",
 status: "Não iniciado",
@@ -695,6 +745,7 @@ horas: 15,
 importancia: "Alta",
 peso: 4
 },
+
 
 {
 nome: "Casos Práticos",
@@ -704,9 +755,11 @@ importancia: "Muito Alta",
 peso: 5
 }
 
+
 ]
 
 }
+
 
 };
 
