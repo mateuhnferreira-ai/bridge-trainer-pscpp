@@ -1969,6 +1969,87 @@ function atualizarInterfaceDisciplina(
 
 }
 // =====================================
+// IDENTIFICAR PÁGINA PRINCIPAL
+// =====================================
+
+function identificarPaginaPrincipal() {
+
+    const corpo = document.body;
+
+    if (!corpo) {
+
+        return false;
+
+    }
+
+    return corpo.dataset.tipoPagina ===
+        "principal";
+
+}
+
+
+// =====================================
+// CRIAR BARRA DE PROGRESSO NO CARD
+// =====================================
+
+function criarBarraDisciplina(card, disciplina) {
+
+    let barraExistente = card.querySelector(
+        ".progresso-disciplina-card"
+    );
+
+    if (barraExistente) {
+
+        return;
+
+    }
+
+    const container =
+        document.createElement("div");
+
+    container.className =
+        "progresso-disciplina-card";
+
+
+    container.innerHTML = `
+
+        <div class="barra-progresso">
+
+            <div
+                class="progresso"
+                id="barra-card-${disciplina}"
+                style="width:0%;"
+            >
+
+                0%
+
+            </div>
+
+        </div>
+
+        <p
+            id="texto-card-${disciplina}"
+            style="margin-top:6px;font-size:13px;"
+        >
+
+            Progresso: 0%
+
+        </p>
+
+    `;
+
+
+    const status =
+        card.querySelector(".status");
+
+
+    card.insertBefore(
+        container,
+        status
+    );
+
+}
+// =====================================
 // ATUALIZAR INTERFACE DA AULA
 // =====================================
 
