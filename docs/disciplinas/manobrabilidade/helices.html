@@ -5228,6 +5228,3312 @@ A PARTE 4 ABORDARÁ:
 - CARREGAMENTO DA HÉLICE;
 - INTERAÇÃO ENTRE CASCO E HÉLICE.
 -->
+<!-- =========================================
+     PARTE 4
+     DESEMPENHO E INTERAÇÃO CASCO-HÉLICE
+========================================= -->
+
+
+<!-- =========================================
+     GRANDEZAS ADIMENSIONAIS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="grandezas-adimensionais-helice"
+>
+
+<h2>48. Grandezas adimensionais da hélice</h2>
+
+<div class="widget">
+
+<p>
+O desempenho de uma hélice depende de diversas
+grandezas físicas, entre elas:
+</p>
+
+<ul>
+
+<li>
+empuxo produzido;
+</li>
+
+<li>
+torque absorvido;
+</li>
+
+<li>
+diâmetro;
+</li>
+
+<li>
+rotação;
+</li>
+
+<li>
+velocidade de avanço;
+</li>
+
+<li>
+massa específica da água;
+</li>
+
+<li>
+geometria das pás.
+</li>
+
+</ul>
+
+<p>
+Para comparar hélices de diferentes tamanhos e condições
+de funcionamento, utilizam-se
+<strong>coeficientes adimensionais</strong>.
+</p>
+
+<p>
+Os principais são:
+</p>
+
+<ul>
+
+<li>
+<strong>J</strong> — coeficiente de avanço;</li>
+
+<li>
+<strong>K<sub>T</sub></strong> — coeficiente de empuxo;</li>
+
+<li>
+<strong>K<sub>Q</sub></strong> — coeficiente de torque;</li>
+
+<li>
+<strong>η<sub>0</sub></strong> — eficiência em águas abertas.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Por que usar coeficientes?</h3>
+
+<p>
+Grandezas adimensionais permitem comparar o desempenho
+de modelos reduzidos com hélices de escala real,
+desde que as condições de semelhança aplicáveis sejam
+respeitadas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COEFICIENTE DE EMPUXO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="coeficiente-de-empuxo"
+>
+
+<h2>49. Coeficiente de empuxo</h2>
+
+<div class="widget">
+
+<p>
+O <strong>coeficiente de empuxo</strong>,
+ou <strong>thrust coefficient</strong>,
+é representado por:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>K<sub>T</sub></strong>
+</p>
+
+</div>
+
+<p>
+Sua definição convencional é:
+</p>
+
+<div class="formula">
+
+<h3>Coeficiente de empuxo</h3>
+
+<p>
+<strong>
+K<sub>T</sub> =
+T / (ρn²D⁴)
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>K<sub>T</sub></strong> = coeficiente de empuxo;</li>
+
+<li>
+<strong>T</strong> = empuxo produzido pela hélice;</li>
+
+<li>
+<strong>ρ</strong> = massa específica da água;</li>
+
+<li>
+<strong>n</strong> = rotações por segundo;</li>
+
+<li>
+<strong>D</strong> = diâmetro da hélice.</li>
+
+</ul>
+
+<p>
+Reorganizando a equação:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+T = K<sub>T</sub>ρn²D⁴
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa forma mostra que, para um determinado valor de
+<strong>K<sub>T</sub></strong>, o empuxo varia com:
+</p>
+
+<ul>
+
+<li>
+a massa específica da água;</li>
+
+<li>
+o quadrado da rotação;</li>
+
+<li>
+a quarta potência do diâmetro.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Atenção à interpretação</h3>
+
+<p>
+A relação com <strong>D⁴</strong> não significa que
+a simples instalação de uma hélice maior produzirá,
+automaticamente, qualquer valor desejado de empuxo.
+</p>
+
+<p>
+O diâmetro altera também o torque, a potência requerida,
+a rotação adequada, as folgas e a condição de operação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INFLUÊNCIA DA ROTAÇÃO NO EMPUXO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="influencia-da-rotacao-no-empuxo"
+>
+
+<h2>50. Influência da rotação no empuxo</h2>
+
+<div class="widget">
+
+<p>
+A expressão:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+T = K<sub>T</sub>ρn²D⁴
+</strong>
+</p>
+
+</div>
+
+<p>
+indica que, mantendo-se aproximadamente constantes
+o diâmetro, a água e o coeficiente de empuxo, o empuxo
+é proporcional ao quadrado da rotação:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>T ∝ n²</strong>
+</p>
+
+</div>
+
+<p>
+Assim, em uma análise simplificada:
+</p>
+
+<ul>
+
+<li>
+se a rotação dobrar, o empuxo tenderia a quadruplicar;</li>
+
+<li>
+se a rotação cair pela metade, o empuxo tenderia a cair para um quarto.</li>
+
+</ul>
+
+<p>
+Entretanto, em uma hélice real,
+<strong>K<sub>T</sub></strong> não permanece
+necessariamente constante quando a rotação ou a
+velocidade de avanço mudam.
+</p>
+
+<p>
+Isso ocorre porque o coeficiente depende da condição
+de funcionamento representada principalmente por
+<strong>J</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>Pegadinha PSCPP</h3>
+
+<p>
+A proporcionalidade <strong>T ∝ n²</strong> só pode
+ser utilizada diretamente quando as demais condições,
+especialmente o coeficiente de avanço, permanecem
+aproximadamente equivalentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COEFICIENTE DE TORQUE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="coeficiente-de-torque"
+>
+
+<h2>51. Coeficiente de torque</h2>
+
+<div class="widget">
+
+<p>
+O <strong>coeficiente de torque</strong>,
+ou <strong>torque coefficient</strong>,
+é representado por:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>K<sub>Q</sub></strong>
+</p>
+
+</div>
+
+<p>
+Sua definição convencional é:
+</p>
+
+<div class="formula">
+
+<h3>Coeficiente de torque</h3>
+
+<p>
+<strong>
+K<sub>Q</sub> =
+Q / (ρn²D⁵)
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>K<sub>Q</sub></strong> = coeficiente de torque;</li>
+
+<li>
+<strong>Q</strong> = torque absorvido pela hélice;</li>
+
+<li>
+<strong>ρ</strong> = massa específica da água;</li>
+
+<li>
+<strong>n</strong> = rotações por segundo;</li>
+
+<li>
+<strong>D</strong> = diâmetro da hélice.</li>
+
+</ul>
+
+<p>
+Reorganizando:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+Q = K<sub>Q</sub>ρn²D⁵
+</strong>
+</p>
+
+</div>
+
+<p>
+O torque representa a resistência que a hélice oferece
+ao movimento de rotação.
+</p>
+
+<p>
+Esse torque deve ser fornecido pelo motor através da
+linha de eixos.
+</p>
+
+<div class="destaque">
+
+<h3>Relação com o motor</h3>
+
+<p>
+Uma hélice que exige torque superior ao disponível pode
+impedir que o motor alcance sua rotação prevista.
+</p>
+
+<p>
+Essa condição pode caracterizar uma hélice
+<strong>pesada</strong>, ou
+<strong>heavy propeller</strong>, em relação ao motor
+e à condição operacional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POTÊNCIA ABSORVIDA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="potencia-absorvida-pela-helice"
+>
+
+<h2>52. Potência absorvida pela hélice</h2>
+
+<div class="widget">
+
+<p>
+A potência entregue à hélice é relacionada ao torque
+e à velocidade angular.
+</p>
+
+<div class="formula">
+
+<h3>Potência entregue</h3>
+
+<p>
+<strong>
+P<sub>D</sub> = 2πnQ
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>D</sub></strong> = potência entregue à hélice;</li>
+
+<li>
+<strong>n</strong> = rotações por segundo;</li>
+
+<li>
+<strong>Q</strong> = torque da hélice.</li>
+
+</ul>
+
+<p>
+Substituindo a expressão do coeficiente de torque:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+P<sub>D</sub> =
+2πK<sub>Q</sub>ρn³D⁵
+</strong>
+</p>
+
+</div>
+
+<p>
+Em uma condição de semelhança, a potência absorvida
+varia aproximadamente com:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>P<sub>D</sub> ∝ n³</strong>
+</p>
+
+</div>
+
+<p>
+Essa relação é frequentemente chamada de
+<strong>propeller law</strong> ou lei da hélice.
+</p>
+
+<div class="destaque">
+
+<h3>Consequência prática</h3>
+
+<p>
+Pequenos aumentos de rotação podem exigir aumentos
+muito maiores de potência.
+</p>
+
+<p>
+Por isso, o aumento de RPM próximo da condição máxima
+pode produzir grande crescimento de consumo e carga
+sobre a máquina.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEIS DA HÉLICE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="leis-da-helice"
+>
+
+<h2>53. Leis aproximadas da hélice</h2>
+
+<div class="widget">
+
+<p>
+Para uma mesma hélice, operando em condições
+aproximadamente semelhantes, podem ser utilizadas as
+seguintes relações:
+</p>
+
+<div class="formula">
+
+<h3>Empuxo</h3>
+
+<p>
+<strong>T ∝ n²</strong>
+</p>
+
+<h3>Torque</h3>
+
+<p>
+<strong>Q ∝ n²</strong>
+</p>
+
+<h3>Potência</h3>
+
+<p>
+<strong>P ∝ n³</strong>
+</p>
+
+</div>
+
+<p>
+Para duas condições de funcionamento semelhantes:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+T₂ / T₁ = (n₂ / n₁)²
+</strong>
+</p>
+
+<p>
+<strong>
+Q₂ / Q₁ = (n₂ / n₁)²
+</strong>
+</p>
+
+<p>
+<strong>
+P₂ / P₁ = (n₂ / n₁)³
+</strong>
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Limitação</h3>
+
+<p>
+Essas relações não devem ser aplicadas indiscriminadamente
+durante condições transitórias, cavitação intensa,
+ventilação, manobras a ré ou grandes mudanças no
+coeficiente de avanço.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POTÊNCIA DE EMPUXO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="potencia-de-empuxo"
+>
+
+<h2>54. Potência de empuxo</h2>
+
+<div class="widget">
+
+<p>
+A potência útil associada ao empuxo da hélice é chamada
+de:
+</p>
+
+<ul>
+
+<li>
+<strong>thrust power</strong>;</li>
+
+<li>
+potência de empuxo.</li>
+
+</ul>
+
+<p>
+Ela é definida por:
+</p>
+
+<div class="formula">
+
+<h3>Potência de empuxo</h3>
+
+<p>
+<strong>
+P<sub>T</sub> = TV<sub>A</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>T</sub></strong> = potência de empuxo;</li>
+
+<li>
+<strong>T</strong> = empuxo da hélice;</li>
+
+<li>
+<strong>V<sub>A</sub></strong> = velocidade de avanço.</li>
+
+</ul>
+
+<p>
+Essa potência representa a parte da potência entregue
+à hélice que é convertida em empuxo útil na direção
+do avanço.
+</p>
+
+<p>
+Parte da potência é perdida em:
+</p>
+
+<ul>
+
+<li>
+energia cinética do jato;</li>
+
+<li>
+rotação da esteira;</li>
+
+<li>
+arrasto das pás;</li>
+
+<li>
+vórtices;</li>
+
+<li>
+turbulência;</li>
+
+<li>
+cavitação, quando existente.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENSAIO EM ÁGUAS ABERTAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="ensaio-em-aguas-abertas"
+>
+
+<h2>55. Ensaio da hélice em águas abertas</h2>
+
+<div class="widget">
+
+<p>
+O <strong>ensaio em águas abertas</strong>,
+ou <strong>open-water test</strong>,
+é realizado com a hélice operando sem um casco
+imediatamente à sua frente.
+</p>
+
+<p>
+A hélice é submetida a um fluxo aproximadamente
+uniforme e não perturbado.
+</p>
+
+<p>
+Durante o ensaio, medem-se:
+</p>
+
+<ul>
+
+<li>
+velocidade de avanço;</li>
+
+<li>
+rotação;</li>
+
+<li>
+empuxo;</li>
+
+<li>
+torque.</li>
+
+</ul>
+
+<p>
+A partir dessas grandezas são calculados:
+</p>
+
+<ul>
+
+<li>
+<strong>J</strong>;</li>
+
+<li>
+<strong>K<sub>T</sub></strong>;</li>
+
+<li>
+<strong>K<sub>Q</sub></strong>;</li>
+
+<li>
+<strong>η<sub>0</sub></strong>.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Condição idealizada</h3>
+
+<p>
+No ensaio em águas abertas, a hélice encontra um fluxo
+mais uniforme do que aquele existente atrás do casco
+de um navio real.
+</p>
+
+<p>
+Portanto, o desempenho obtido no ensaio não representa
+sozinho toda a condição propulsiva do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFICIÊNCIA EM ÁGUAS ABERTAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="eficiencia-em-aguas-abertas"
+>
+
+<h2>56. Eficiência em águas abertas</h2>
+
+<div class="widget">
+
+<p>
+A <strong>eficiência em águas abertas</strong>,
+ou <strong>open-water efficiency</strong>,
+é representada por:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>η<sub>0</sub></strong>
+</p>
+
+</div>
+
+<p>
+Ela é definida pela razão entre a potência de empuxo
+e a potência entregue à hélice:
+</p>
+
+<div class="formula">
+
+<h3>Definição física</h3>
+
+<p>
+<strong>
+η<sub>0</sub> =
+P<sub>T</sub> / P<sub>D</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Substituindo as expressões de potência:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+η<sub>0</sub> =
+TV<sub>A</sub> / 2πnQ
+</strong>
+</p>
+
+</div>
+
+<p>
+Utilizando os coeficientes adimensionais:
+</p>
+
+<div class="formula">
+
+<h3>Eficiência pelos coeficientes</h3>
+
+<p>
+<strong>
+η<sub>0</sub> =
+(J / 2π)
+×
+(K<sub>T</sub> / K<sub>Q</sub>)
+</strong>
+</p>
+
+</div>
+
+<p>
+A eficiência depende da relação entre:
+</p>
+
+<ul>
+
+<li>
+avanço;</li>
+
+<li>
+rotação;</li>
+
+<li>
+empuxo;</li>
+
+<li>
+torque;</li>
+
+<li>
+geometria da hélice.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Pegadinha PSCPP</h3>
+
+<p>
+Uma hélice não possui uma eficiência única e constante.
+</p>
+
+<p>
+A eficiência muda com o coeficiente de avanço e com a
+condição de operação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CURVAS EM ÁGUAS ABERTAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="curvas-em-aguas-abertas"
+>
+
+<h2>57. Curvas características em águas abertas</h2>
+
+<div class="widget">
+
+<p>
+Os resultados do ensaio são apresentados em um gráfico
+denominado:
+</p>
+
+<ul>
+
+<li>
+<strong>open-water diagram</strong>;</li>
+
+<li>
+<strong>open-water characteristics</strong>;</li>
+
+<li>
+diagrama de águas abertas.</li>
+
+</ul>
+
+<p>
+No eixo horizontal é colocado o coeficiente de avanço:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>J = V<sub>A</sub> / nD</strong>
+</p>
+
+</div>
+
+<p>
+No eixo vertical são representados normalmente:
+</p>
+
+<ul>
+
+<li>
+<strong>K<sub>T</sub></strong>;</li>
+
+<li>
+<strong>10K<sub>Q</sub></strong>;</li>
+
+<li>
+<strong>η<sub>0</sub></strong>.</li>
+
+</ul>
+
+<p>
+O coeficiente de torque é frequentemente multiplicado
+por dez apenas para facilitar sua visualização no mesmo
+gráfico.
+</p>
+
+<div class="destaque">
+
+<h3>Atenção</h3>
+
+<p>
+A curva representada como
+<strong>10K<sub>Q</sub></strong> não significa que
+o coeficiente de torque físico seja dez vezes maior.
+</p>
+
+<p>
+Trata-se somente de uma mudança de escala gráfica.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPORTAMENTO DE KT
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="comportamento-de-kt"
+>
+
+<h2>58. Comportamento de K<sub>T</sub></h2>
+
+<div class="widget">
+
+<p>
+Para uma hélice convencional operando adiante,
+o coeficiente de empuxo geralmente diminui à medida
+que o coeficiente de avanço aumenta.
+</p>
+
+<p>
+Em termos físicos:
+</p>
+
+<ul>
+
+<li>
+com baixo <strong>J</strong>, a rotação é elevada em relação à velocidade de avanço;</li>
+
+<li>
+a hélice apresenta elevado carregamento;</li>
+
+<li>
+o valor de <strong>K<sub>T</sub></strong> tende a ser maior.</li>
+
+</ul>
+
+<p>
+Quando <strong>J</strong> aumenta:
+</p>
+
+<ul>
+
+<li>
+o fluxo axial aumenta em relação à rotação;</li>
+
+<li>
+o ângulo de ataque efetivo das seções tende a diminuir;</li>
+
+<li>
+o empuxo produzido tende a cair;</li>
+
+<li>
+<strong>K<sub>T</sub></strong> pode atingir zero.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Ponto de empuxo nulo</h3>
+
+<p>
+Quando <strong>K<sub>T</sub> = 0</strong>, a hélice
+não está produzindo empuxo axial líquido.
+</p>
+
+<p>
+Isso não significa necessariamente que o torque também
+seja nulo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPORTAMENTO DE KQ
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="comportamento-de-kq"
+>
+
+<h2>59. Comportamento de K<sub>Q</sub></h2>
+
+<div class="widget">
+
+<p>
+O coeficiente de torque também tende a diminuir com o
+aumento do coeficiente de avanço, em uma hélice
+convencional operando adiante.
+</p>
+
+<p>
+Em baixos valores de <strong>J</strong>:
+</p>
+
+<ul>
+
+<li>
+a hélice encontra grande resistência à rotação;</li>
+
+<li>
+o torque absorvido tende a ser elevado;</li>
+
+<li>
+o motor trabalha sob maior carregamento.</li>
+
+</ul>
+
+<p>
+Em valores mais elevados de <strong>J</strong>:
+</p>
+
+<ul>
+
+<li>
+o ângulo efetivo de ataque tende a diminuir;</li>
+
+<li>
+a carga hidrodinâmica sobre as pás diminui;</li>
+
+<li>
+o torque absorvido pode cair.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Aplicação operacional</h3>
+
+<p>
+Ao aplicar máquinas adiante com o navio parado,
+a hélice trabalha inicialmente com
+<strong>J próximo de zero</strong>.
+</p>
+
+<p>
+Essa condição corresponde a elevado carregamento de
+empuxo e torque.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CURVA DE EFICIÊNCIA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="curva-de-eficiencia"
+>
+
+<h2>60. Curva de eficiência</h2>
+
+<div class="widget">
+
+<p>
+A curva de <strong>η<sub>0</sub></strong> apresenta,
+em geral, um comportamento diferente das curvas de
+empuxo e torque.
+</p>
+
+<p>
+Quando <strong>J = 0</strong>:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>V<sub>A</sub> = 0</strong>
+</p>
+
+<p>
+<strong>P<sub>T</sub> = TV<sub>A</sub> = 0</strong>
+</p>
+
+<p>
+<strong>η<sub>0</sub> = 0</strong>
+</p>
+
+</div>
+
+<p>
+À medida que <strong>J</strong> aumenta:
+</p>
+
+<ul>
+
+<li>
+a eficiência cresce;</li>
+
+<li>
+atinge um valor máximo;</li>
+
+<li>
+posteriormente volta a diminuir.</li>
+
+</ul>
+
+<p>
+Cada hélice possui uma faixa de coeficiente de avanço
+na qual apresenta melhor eficiência.
+</p>
+
+<div class="destaque">
+
+<h3>Bollard pull</h3>
+
+<p>
+Na condição de tração estática, a hélice pode produzir
+grande empuxo com o navio parado.
+</p>
+
+<p>
+Entretanto, pela definição de eficiência em águas
+abertas, como <strong>V<sub>A</sub> = 0</strong>,
+a potência de empuxo é zero e
+<strong>η<sub>0</sub> = 0</strong>.
+</p>
+
+<p>
+Isso não significa que a hélice não esteja produzindo
+força útil para a manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OPERAÇÃO FORA DO PONTO DE PROJETO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="operacao-fora-do-ponto-de-projeto"
+>
+
+<h2>61. Operação fora do ponto de projeto</h2>
+
+<div class="widget">
+
+<p>
+A hélice é normalmente projetada para apresentar bom
+desempenho em determinada condição de:
+</p>
+
+<ul>
+
+<li>
+velocidade;</li>
+
+<li>
+rotação;</li>
+
+<li>
+calado;</li>
+
+<li>
+potência;</li>
+
+<li>
+carregamento;</li>
+
+<li>
+esteira.</li>
+
+</ul>
+
+<p>
+Essa condição é chamada de:
+</p>
+
+<ul>
+
+<li>
+<strong>design condition</strong>;</li>
+
+<li>
+<strong>design point</strong>;</li>
+
+<li>
+condição de projeto.</li>
+
+</ul>
+
+<p>
+Durante a manobra, a hélice frequentemente trabalha
+muito distante desse ponto.
+</p>
+
+<p>
+Exemplos:
+</p>
+
+<ul>
+
+<li>
+navio parado com alta rotação;</li>
+
+<li>
+navio com seguimento e baixa rotação;</li>
+
+<li>
+reversão de máquinas;</li>
+
+<li>
+operação a ré;</li>
+
+<li>
+água rasa;</li>
+
+<li>
+esteira fortemente não uniforme.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Consequência</h3>
+
+<p>
+Uma hélice eficiente na velocidade de serviço não será
+necessariamente igualmente eficiente ou previsível em
+todas as condições de manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CARREGAMENTO DO DISCO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="carregamento-do-disco"
+>
+
+<h2>62. Carregamento do disco da hélice</h2>
+
+<div class="widget">
+
+<p>
+O <strong>carregamento do disco</strong>,
+ou <strong>disk loading</strong>,
+relaciona o empuxo produzido à área do disco da hélice.
+</p>
+
+<div class="formula">
+
+<h3>Carregamento do disco</h3>
+
+<p>
+<strong>
+DL = T / A<sub>0</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Como:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+A<sub>0</sub> = πD² / 4
+</strong>
+</p>
+
+</div>
+
+<p>
+o carregamento também pode ser escrito como:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+DL = 4T / πD²
+</strong>
+</p>
+
+</div>
+
+<p>
+Para um mesmo empuxo:
+</p>
+
+<ul>
+
+<li>
+uma hélice de menor diâmetro apresenta maior carregamento do disco;</li>
+
+<li>
+uma hélice de maior diâmetro apresenta menor carregamento do disco.</li>
+
+</ul>
+
+<p>
+Carregamento elevado pode estar associado a:
+</p>
+
+<ul>
+
+<li>
+maiores velocidades induzidas;</li>
+
+<li>
+menor eficiência ideal;</li>
+
+<li>
+maior risco de cavitação;</li>
+
+<li>
+maior intensidade do jato da hélice;</li>
+
+<li>
+maiores pressões sobre o casco e o leme.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COEFICIENTE DE CARREGAMENTO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="coeficiente-de-carregamento-de-empuxo"
+>
+
+<h2>63. Coeficiente de carregamento de empuxo</h2>
+
+<div class="widget">
+
+<p>
+O carregamento de empuxo também pode ser representado
+por um coeficiente adimensional chamado:
+</p>
+
+<ul>
+
+<li>
+<strong>thrust loading coefficient</strong>;</li>
+
+<li>
+coeficiente de carregamento de empuxo.</li>
+
+</ul>
+
+<p>
+Uma das formas utilizadas é:
+</p>
+
+<div class="formula">
+
+<h3>Coeficiente de carregamento</h3>
+
+<p>
+<strong>
+C<sub>Th</sub> =
+T /
+[½ρV<sub>A</sub>²A<sub>0</sub>]
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>C<sub>Th</sub></strong> = coeficiente de carregamento de empuxo;</li>
+
+<li>
+<strong>T</strong> = empuxo;</li>
+
+<li>
+<strong>ρ</strong> = massa específica da água;</li>
+
+<li>
+<strong>V<sub>A</sub></strong> = velocidade de avanço;</li>
+
+<li>
+<strong>A<sub>0</sub></strong> = área do disco.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Atenção matemática</h3>
+
+<p>
+Essa expressão não é adequada diretamente para
+<strong>V<sub>A</sub> = 0</strong>, pois o denominador
+se torna igual a zero.
+</p>
+
+<p>
+Para condições de tração estática, utilizam-se outras
+formas de representação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERAÇÃO CASCO-HÉLICE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="interacao-casco-helice"
+>
+
+<h2>64. Interação entre casco e hélice</h2>
+
+<div class="widget">
+
+<p>
+Uma hélice instalada atrás do casco não opera nas mesmas
+condições de uma hélice isolada em águas abertas.
+</p>
+
+<p>
+Essa diferença é chamada de:
+</p>
+
+<ul>
+
+<li>
+<strong>hull-propeller interaction</strong>;</li>
+
+<li>
+interação casco-hélice.</li>
+
+</ul>
+
+<p>
+O casco altera o fluxo que chega à hélice.
+</p>
+
+<p>
+Ao mesmo tempo, a hélice altera:
+</p>
+
+<ul>
+
+<li>
+a pressão na região da popa;</li>
+
+<li>
+a velocidade do fluxo ao redor do casco;</li>
+
+<li>
+a resistência total percebida pelo sistema propulsivo;</li>
+
+<li>
+a distribuição da esteira;</li>
+
+<li>
+o fluxo sobre o leme.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Interação de duas vias</h3>
+
+<p>
+O casco influencia a hélice, e a hélice influencia
+o casco.
+</p>
+
+<p>
+Por isso, o desempenho propulsivo não pode ser avaliado
+corretamente analisando somente a hélice isolada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ESTEIRA NOMINAL
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="esteira-nominal"
+>
+
+<h2>65. Esteira nominal</h2>
+
+<div class="widget">
+
+<p>
+A <strong>esteira nominal</strong>,
+ou <strong>nominal wake</strong>,
+é o campo de velocidades medido no plano da hélice
+quando o casco se desloca sem que a hélice esteja
+produzindo empuxo.
+</p>
+
+<p>
+Ela resulta principalmente de:
+</p>
+
+<ul>
+
+<li>
+camada-limite do casco;</li>
+
+<li>
+forma da popa;</li>
+
+<li>
+separação do escoamento;</li>
+
+<li>
+apêndices;</li>
+
+<li>
+movimentos orbitais próximos da superfície;</li>
+
+<li>
+componentes tangenciais e radiais do fluxo.</li>
+
+</ul>
+
+<p>
+A esteira nominal não é uniforme em todo o disco.
+</p>
+
+<p>
+Em um navio de uma hélice, a região superior do disco
+pode encontrar fluxo significativamente diferente da
+região inferior.
+</p>
+
+<div class="destaque">
+
+<h3>Consequência</h3>
+
+<p>
+Cada pá encontra regiões de velocidade diferente
+durante uma rotação.
+</p>
+
+<p>
+Isso produz variações periódicas de empuxo, torque,
+pressão, cavitação e carregamento estrutural.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ESTEIRA EFETIVA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="esteira-efetiva"
+>
+
+<h2>66. Esteira efetiva</h2>
+
+<div class="widget">
+
+<p>
+Quando a hélice está funcionando, ela altera o próprio
+campo de velocidades no qual opera.
+</p>
+
+<p>
+A esteira existente com a ação do propulsor é chamada
+de:
+</p>
+
+<ul>
+
+<li>
+<strong>effective wake</strong>;</li>
+
+<li>
+esteira efetiva.</li>
+
+</ul>
+
+<p>
+A esteira efetiva representa a condição de entrada que
+produziria, em um ensaio uniforme equivalente, a mesma
+relação entre:
+</p>
+
+<ul>
+
+<li>
+empuxo;</li>
+
+<li>
+torque;</li>
+
+<li>
+rotação.</li>
+
+</ul>
+
+<p>
+A correspondente fração de esteira é chamada de:
+</p>
+
+<ul>
+
+<li>
+<strong>effective wake fraction</strong>;</li>
+
+<li>
+fração de esteira efetiva.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Não confundir</h3>
+
+<p>
+A esteira nominal é determinada sem a ação da hélice.
+</p>
+
+<p>
+A esteira efetiva considera a condição equivalente
+com o propulsor funcionando.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DEDUÇÃO DE EMPUXO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="deducao-de-empuxo"
+>
+
+<h2>67. Dedução de empuxo</h2>
+
+<div class="widget">
+
+<p>
+Quando a hélice produz empuxo atrás do casco, ela
+acelera o fluxo na região da popa.
+</p>
+
+<p>
+Essa aceleração pode reduzir a pressão sobre partes
+do casco e aumentar a resistência efetiva que o
+propulsor precisa vencer.
+</p>
+
+<p>
+Por isso, o empuxo exigido da hélice é geralmente maior
+do que a resistência do casco medida em reboque.
+</p>
+
+<p>
+A relação é representada por:
+</p>
+
+<div class="formula">
+
+<h3>Fração de dedução de empuxo</h3>
+
+<p>
+<strong>
+t = (T − R<sub>T</sub>) / T
+</strong>
+</p>
+
+</div>
+
+<p>
+Ou:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+R<sub>T</sub> = T(1 − t)
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>t</strong> = fração de dedução de empuxo;</li>
+
+<li>
+<strong>T</strong> = empuxo da hélice;</li>
+
+<li>
+<strong>R<sub>T</sub></strong> = resistência total do casco em reboque.</li>
+
+</ul>
+
+<p>
+Em inglês:
+</p>
+
+<ul>
+
+<li>
+<strong>thrust deduction fraction</strong>;</li>
+
+<li>
+<strong>thrust deduction factor</strong>.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Interpretação</h3>
+
+<p>
+O termo “dedução” não significa que a hélice deixe de
+produzir parte do empuxo.
+</p>
+
+<p>
+Significa que parte do empuxo produzido é necessária
+para compensar o aumento de resistência associado à
+interação entre hélice e casco.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXEMPLO DE DEDUÇÃO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="exemplo-deducao-de-empuxo"
+>
+
+<h2>68. Exemplo de dedução de empuxo</h2>
+
+<div class="widget">
+
+<p>
+Considere:
+</p>
+
+<ul>
+
+<li>
+empuxo da hélice igual a 1.000 kN;</li>
+
+<li>
+fração de dedução de empuxo igual a 0,15.</li>
+
+</ul>
+
+<p>
+A resistência correspondente será:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+R<sub>T</sub> =
+T(1 − t)
+</strong>
+</p>
+
+<p>
+<strong>
+R<sub>T</sub> =
+1.000 × (1 − 0,15)
+</strong>
+</p>
+
+<p>
+<strong>
+R<sub>T</sub> = 850 kN
+</strong>
+</p>
+
+</div>
+
+<p>
+Dos 1.000 kN de empuxo produzidos, 850 kN correspondem
+à resistência do casco em reboque.
+</p>
+
+<p>
+A diferença de 150 kN está associada à dedução de
+empuxo.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFICIÊNCIA DO CASCO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="eficiencia-do-casco"
+>
+
+<h2>69. Eficiência do casco</h2>
+
+<div class="widget">
+
+<p>
+A relação entre os efeitos de esteira e dedução de
+empuxo é reunida na chamada:
+</p>
+
+<ul>
+
+<li>
+<strong>hull efficiency</strong>;</li>
+
+<li>
+eficiência do casco.</li>
+
+</ul>
+
+<p>
+Ela é representada por:
+</p>
+
+<div class="formula">
+
+<h3>Eficiência do casco</h3>
+
+<p>
+<strong>
+η<sub>H</sub> =
+(1 − t) / (1 − w)
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>η<sub>H</sub></strong> = eficiência do casco;</li>
+
+<li>
+<strong>t</strong> = fração de dedução de empuxo;</li>
+
+<li>
+<strong>w</strong> = fração de esteira.</li>
+
+</ul>
+
+<p>
+A eficiência do casco também pode ser interpretada
+como a relação entre:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+η<sub>H</sub> =
+P<sub>E</sub> / P<sub>T</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>E</sub></strong> = potência efetiva do casco;</li>
+
+<li>
+<strong>P<sub>T</sub></strong> = potência de empuxo.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Pegadinha importante</h3>
+
+<p>
+A eficiência do casco pode apresentar valor maior que
+1.
+</p>
+
+<p>
+Por isso, ela não é uma eficiência termodinâmica no
+sentido estrito.
+</p>
+
+<p>
+Ela é um fator de interação entre casco e propulsor.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXEMPLO EFICIÊNCIA DO CASCO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="exemplo-eficiencia-do-casco"
+>
+
+<h2>70. Exemplo de eficiência do casco</h2>
+
+<div class="widget">
+
+<p>
+Considere:
+</p>
+
+<ul>
+
+<li>
+fração de esteira <strong>w = 0,25</strong>;</li>
+
+<li>
+fração de dedução de empuxo <strong>t = 0,15</strong>.</li>
+
+</ul>
+
+<div class="formula">
+
+<p>
+<strong>
+η<sub>H</sub> =
+(1 − 0,15) / (1 − 0,25)
+</strong>
+</p>
+
+<p>
+<strong>
+η<sub>H</sub> =
+0,85 / 0,75
+</strong>
+</p>
+
+<p>
+<strong>
+η<sub>H</sub> ≈ 1,13
+</strong>
+</p>
+
+</div>
+
+<p>
+O resultado superior a 1 não viola nenhum princípio
+físico porque <strong>η<sub>H</sub></strong> é um
+fator de interação, e não uma eficiência isolada de
+conversão energética.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFICIÊNCIA ROTATIVA RELATIVA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="eficiencia-rotativa-relativa"
+>
+
+<h2>71. Eficiência rotativa relativa</h2>
+
+<div class="widget">
+
+<p>
+A hélice atrás do casco trabalha em um fluxo:
+</p>
+
+<ul>
+
+<li>
+não uniforme;</li>
+
+<li>
+tridimensional;</li>
+
+<li>
+com componentes axiais;</li>
+
+<li>
+com componentes tangenciais;</li>
+
+<li>
+com componentes radiais.</li>
+
+</ul>
+
+<p>
+Por isso, a relação entre torque, empuxo e rotação pode
+diferir da condição em águas abertas.
+</p>
+
+<p>
+Essa diferença é representada pela:
+</p>
+
+<ul>
+
+<li>
+<strong>relative rotative efficiency</strong>;</li>
+
+<li>
+eficiência rotativa relativa;</li>
+
+<li>
+<strong>η<sub>R</sub></strong>.</li>
+
+</ul>
+
+<p>
+Ela relaciona a eficiência da hélice atrás do casco
+com a eficiência correspondente em águas abertas.
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+η<sub>B</sub> =
+η<sub>R</sub>η<sub>0</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>η<sub>B</sub></strong> = eficiência da hélice atrás do casco;</li>
+
+<li>
+<strong>η<sub>R</sub></strong> = eficiência rotativa relativa;</li>
+
+<li>
+<strong>η<sub>0</sub></strong> = eficiência em águas abertas.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Atenção</h3>
+
+<p>
+Assim como a eficiência do casco,
+<strong>η<sub>R</sub></strong> também pode apresentar
+valor ligeiramente superior a 1.
+</p>
+
+<p>
+Ela representa uma correção de interação, e não uma
+máquina produzindo mais energia do que recebe.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFICIÊNCIA PROPULSIVA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="eficiencia-propulsiva"
+>
+
+<h2>72. Eficiência propulsiva hidrodinâmica</h2>
+
+<div class="widget">
+
+<p>
+A eficiência propulsiva hidrodinâmica reúne os
+principais fatores relacionados ao casco e à hélice.
+</p>
+
+<div class="formula">
+
+<h3>Eficiência propulsiva</h3>
+
+<p>
+<strong>
+η<sub>D</sub> =
+η<sub>H</sub>
+η<sub>R</sub>
+η<sub>0</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>η<sub>D</sub></strong> = eficiência propulsiva;</li>
+
+<li>
+<strong>η<sub>H</sub></strong> = eficiência do casco;</li>
+
+<li>
+<strong>η<sub>R</sub></strong> = eficiência rotativa relativa;</li>
+
+<li>
+<strong>η<sub>0</sub></strong> = eficiência em águas abertas.</li>
+
+</ul>
+
+<p>
+Essa eficiência também relaciona:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+η<sub>D</sub> =
+P<sub>E</sub> / P<sub>D</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>E</sub></strong> = potência efetiva necessária para vencer a resistência;</li>
+
+<li>
+<strong>P<sub>D</sub></strong> = potência entregue à hélice.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Visão sistêmica</h3>
+
+<p>
+Uma hélice com boa eficiência em águas abertas pode
+apresentar desempenho propulsivo insatisfatório se
+estiver mal adaptada à esteira do casco.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CADEIA DE POTÊNCIAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="cadeia-de-potencias"
+>
+
+<h2>73. Cadeia de potências do sistema propulsivo</h2>
+
+<div class="widget">
+
+<p>
+O fluxo de potência pode ser representado da seguinte
+forma:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>Potência no motor</strong>
+<br>
+Brake Power — P<sub>B</sub>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Perdas mecânicas na transmissão</strong>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Potência entregue à hélice</strong>
+<br>
+Delivered Power — P<sub>D</sub>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Perdas hidrodinâmicas da hélice</strong>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Potência de empuxo</strong>
+<br>
+Thrust Power — P<sub>T</sub>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Interação casco-hélice</strong>
+</p>
+
+<p>⬇</p>
+
+<p>
+<strong>Potência efetiva</strong>
+<br>
+Effective Power — P<sub>E</sub>
+</p>
+
+</div>
+
+<p>
+Em uma representação simplificada:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+P<sub>B</sub> &gt;
+P<sub>D</sub> &gt;
+P<sub>T</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+A relação envolvendo
+<strong>P<sub>E</sub></strong> depende dos fatores
+de interação, especialmente porque a eficiência do
+casco pode ser maior que 1.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POTÊNCIA EFETIVA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="potencia-efetiva"
+>
+
+<h2>74. Potência efetiva</h2>
+
+<div class="widget">
+
+<p>
+A <strong>potência efetiva</strong>,
+ou <strong>effective power</strong>,
+é a potência necessária para vencer a resistência do
+casco na velocidade considerada.
+</p>
+
+<div class="formula">
+
+<h3>Potência efetiva</h3>
+
+<p>
+<strong>
+P<sub>E</sub> =
+R<sub>T</sub>V
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>E</sub></strong> = potência efetiva;</li>
+
+<li>
+<strong>R<sub>T</sub></strong> = resistência total;</li>
+
+<li>
+<strong>V</strong> = velocidade do navio.</li>
+
+</ul>
+
+<p>
+A potência efetiva não é a potência que o motor precisa
+fornecer.
+</p>
+
+<p>
+A potência entregue pelo motor deve ser maior para
+compensar:
+</p>
+
+<ul>
+
+<li>
+perdas mecânicas;</li>
+
+<li>
+perdas na linha de eixos;</li>
+
+<li>
+perdas hidrodinâmicas;</li>
+
+<li>
+interação casco-hélice.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Não confundir</h3>
+
+<p>
+<strong>Effective power</strong> não é igual a
+<strong>delivered power</strong>.
+</p>
+
+<p>
+A primeira está associada à resistência do casco.
+A segunda é entregue mecanicamente à hélice.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFICIÊNCIA DO EIXO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="eficiencia-do-eixo"
+>
+
+<h2>75. Eficiência da linha de eixos</h2>
+
+<div class="widget">
+
+<p>
+Entre o motor e a hélice existem perdas mecânicas
+associadas a:
+</p>
+
+<ul>
+
+<li>
+mancais;</li>
+
+<li>
+engrenagens, quando existentes;</li>
+
+<li>
+vedações;</li>
+
+<li>
+atrito na linha de eixos;</li>
+
+<li>
+outros elementos de transmissão.</li>
+
+</ul>
+
+<p>
+Essas perdas podem ser representadas pela:
+</p>
+
+<ul>
+
+<li>
+<strong>shafting efficiency</strong>;</li>
+
+<li>
+eficiência da linha de eixos;</li>
+
+<li>
+<strong>η<sub>S</sub></strong>.</li>
+
+</ul>
+
+<div class="formula">
+
+<p>
+<strong>
+P<sub>D</sub> =
+η<sub>S</sub>P<sub>B</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P<sub>B</sub></strong> = potência no motor;</li>
+
+<li>
+<strong>P<sub>D</sub></strong> = potência entregue à hélice.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FLUXO NÃO UNIFORME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="fluxo-nao-uniforme-na-helice"
+>
+
+<h2>76. Efeitos do fluxo não uniforme</h2>
+
+<div class="widget">
+
+<p>
+A esteira atrás do casco varia ao longo do disco da
+hélice.
+</p>
+
+<p>
+Durante uma rotação, uma mesma pá pode encontrar:
+</p>
+
+<ul>
+
+<li>
+regiões de fluxo mais lento;</li>
+
+<li>
+regiões de fluxo mais rápido;</li>
+
+<li>
+componentes transversais;</li>
+
+<li>
+componentes radiais;</li>
+
+<li>
+vórtices produzidos pelo casco e apêndices.</li>
+
+</ul>
+
+<p>
+Como resultado, o carregamento de cada pá varia
+periodicamente.
+</p>
+
+<p>
+Essas variações podem produzir:
+</p>
+
+<ul>
+
+<li>
+pulsos de empuxo;</li>
+
+<li>
+pulsos de torque;</li>
+
+<li>
+pressões variáveis sobre o casco;</li>
+
+<li>
+vibração;</li>
+
+<li>
+ruído;</li>
+
+<li>
+cavitação intermitente;</li>
+
+<li>
+fadiga estrutural.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Aplicação operacional</h3>
+
+<p>
+Mudanças de calado e trim alteram a posição da hélice
+em relação ao campo de esteira.
+</p>
+
+<p>
+Consequentemente, podem modificar vibração, cavitação,
+carregamento e resposta propulsiva.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     HÉLICE E LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="interacao-helice-leme"
+>
+
+<h2>77. Interação entre hélice e leme</h2>
+
+<div class="widget">
+
+<p>
+O leme localizado atrás da hélice encontra um fluxo
+diferente daquele existente longe do propulsor.
+</p>
+
+<p>
+A corrente da hélice pode apresentar:
+</p>
+
+<ul>
+
+<li>
+velocidade axial elevada;</li>
+
+<li>
+movimento rotacional;</li>
+
+<li>
+distribuição não uniforme;</li>
+
+<li>
+variações periódicas causadas pelas pás.</li>
+
+</ul>
+
+<p>
+Quando a hélice opera adiante, esse fluxo geralmente
+aumenta a velocidade relativa sobre o leme.
+</p>
+
+<p>
+A força produzida pelo leme pode, portanto, aumentar
+mesmo antes de o navio adquirir grande seguimento.
+</p>
+
+<div class="destaque">
+
+<h3>Aplicação de manobra</h3>
+
+<p>
+Uma curta aplicação de máquinas adiante com o leme
+carregado pode gerar momento de guinada significativo,
+mesmo com baixa velocidade do navio.
+</p>
+
+<p>
+O efeito depende da potência, da geometria da popa,
+da posição do leme e do tipo de hélice.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     HÉLICE E ÁGUAS RASAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="desempenho-helice-aguas-rasas"
+>
+
+<h2>78. Desempenho propulsivo em águas rasas</h2>
+
+<div class="widget">
+
+<p>
+Em águas rasas, o fluxo entre o casco e o fundo sofre
+restrições adicionais.
+</p>
+
+<p>
+Essas restrições podem alterar:
+</p>
+
+<ul>
+
+<li>
+a resistência do casco;</li>
+
+<li>
+a velocidade do fluxo na popa;</li>
+
+<li>
+a esteira efetiva;</li>
+
+<li>
+o coeficiente de avanço;</li>
+
+<li>
+o empuxo disponível;</li>
+
+<li>
+o torque requerido;</li>
+
+<li>
+a eficiência propulsiva.</li>
+
+</ul>
+
+<p>
+Além disso, a proximidade entre a hélice e o fundo pode
+provocar:
+</p>
+
+<ul>
+
+<li>
+aspiração de sedimentos;</li>
+
+<li>
+recirculação do fluxo;</li>
+
+<li>
+erosão do fundo;</li>
+
+<li>
+alteração da corrente da hélice;</li>
+
+<li>
+aumento de vibração;</li>
+
+<li>
+redução da resposta propulsiva.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Consequência operacional</h3>
+
+<p>
+A mesma ordem de máquina pode não produzir a mesma
+aceleração ou velocidade em águas profundas e em
+águas rasas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOCO PSCPP
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="foco-pscpp-desempenho-helice"
+>
+
+<h2>🎯 Foco PSCPP — desempenho da hélice</h2>
+
+<div class="widget">
+
+<p>
+As principais relações desta parte são:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+J =
+V<sub>A</sub> / nD
+</strong>
+</p>
+
+<p>
+<strong>
+K<sub>T</sub> =
+T / ρn²D⁴
+</strong>
+</p>
+
+<p>
+<strong>
+K<sub>Q</sub> =
+Q / ρn²D⁵
+</strong>
+</p>
+
+<p>
+<strong>
+η<sub>0</sub> =
+(J / 2π)
+(K<sub>T</sub> / K<sub>Q</sub>)
+</strong>
+</p>
+
+<p>
+<strong>
+t =
+(T − R<sub>T</sub>) / T
+</strong>
+</p>
+
+<p>
+<strong>
+η<sub>H</sub> =
+(1 − t) / (1 − w)
+</strong>
+</p>
+
+<p>
+<strong>
+η<sub>D</sub> =
+η<sub>H</sub>
+η<sub>R</sub>
+η<sub>0</sub>
+</strong>
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Pegadinhas centrais</h3>
+
+<ul>
+
+<li>
+<strong>η<sub>0</sub></strong> varia com <strong>J</strong>.
+</li>
+
+<li>
+Em <strong>J = 0</strong>, a eficiência em águas abertas é zero.
+</li>
+
+<li>
+<strong>η<sub>H</sub></strong> pode ser maior que 1.
+</li>
+
+<li>
+<strong>η<sub>R</sub></strong> pode ser ligeiramente maior que 1.
+</li>
+
+<li>
+<strong>10K<sub>Q</sub></strong> é apenas uma escala gráfica.
+</li>
+
+<li>
+A hélice atrás do casco não trabalha nas mesmas condições de águas abertas.
+</li>
+
+<li>
+O empuxo necessário é geralmente maior que a resistência de reboque devido à dedução de empuxo.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 4
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="glossario-parte-quatro"
+>
+
+<h2>🌐 Glossário técnico — Parte 4</h2>
+
+<div class="widget">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Português</th>
+<th>Inglês marítimo</th>
+<th>Significado</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Coeficiente de empuxo</td>
+<td>Thrust Coefficient</td>
+<td>
+Coeficiente adimensional K<sub>T</sub>.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Coeficiente de torque</td>
+<td>Torque Coefficient</td>
+<td>
+Coeficiente adimensional K<sub>Q</sub>.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Ensaio em águas abertas</td>
+<td>Open-Water Test</td>
+<td>
+Ensaio da hélice em fluxo uniforme, sem o casco à frente.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Eficiência em águas abertas</td>
+<td>Open-Water Efficiency</td>
+<td>
+Razão entre potência de empuxo e potência entregue à hélice.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Carregamento do disco</td>
+<td>Disk Loading</td>
+<td>
+Empuxo por unidade de área do disco.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Esteira nominal</td>
+<td>Nominal Wake</td>
+<td>
+Campo de velocidades atrás do casco sem ação da hélice.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Esteira efetiva</td>
+<td>Effective Wake</td>
+<td>
+Esteira equivalente associada à hélice em funcionamento.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Dedução de empuxo</td>
+<td>Thrust Deduction</td>
+<td>
+Aumento de resistência associado à ação da hélice sobre o casco.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Eficiência do casco</td>
+<td>Hull Efficiency</td>
+<td>
+Fator que combina fração de esteira e dedução de empuxo.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Eficiência rotativa relativa</td>
+<td>Relative Rotative Efficiency</td>
+<td>
+Correção entre a operação em águas abertas e atrás do casco.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Potência efetiva</td>
+<td>Effective Power</td>
+<td>
+Potência necessária para vencer a resistência do casco.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Potência entregue</td>
+<td>Delivered Power</td>
+<td>
+Potência mecânica entregue à hélice.
+</td>
+
+</tr>
+
+<tr>
+
+<td>Potência de empuxo</td>
+<td>Thrust Power</td>
+<td>
+Produto do empuxo pela velocidade de avanço.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESUMO DA PARTE 4
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="resumo-parte-quatro"
+>
+
+<h2>📌 Resumo da Parte 4</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+<strong>K<sub>T</sub></strong> representa o coeficiente de empuxo.
+</li>
+
+<li>
+<strong>K<sub>Q</sub></strong> representa o coeficiente de torque.
+</li>
+
+<li>
+O empuxo varia aproximadamente com o quadrado da rotação.
+</li>
+
+<li>
+A potência varia aproximadamente com o cubo da rotação.
+</li>
+
+<li>
+A eficiência em águas abertas é a razão entre potência de empuxo e potência entregue.
+</li>
+
+<li>
+As curvas de águas abertas relacionam
+<strong>K<sub>T</sub></strong>,
+<strong>K<sub>Q</sub></strong> e
+<strong>η<sub>0</sub></strong> com <strong>J</strong>.
+</li>
+
+<li>
+Em condição de tração estática,
+<strong>J = 0</strong> e
+<strong>η<sub>0</sub> = 0</strong>.
+</li>
+
+<li>
+A esteira do casco reduz a velocidade média de avanço da hélice.
+</li>
+
+<li>
+A ação da hélice aumenta a resistência efetiva na popa, originando a dedução de empuxo.
+</li>
+
+<li>
+A eficiência do casco é
+<strong>η<sub>H</sub> = (1 − t)/(1 − w)</strong>.
+</li>
+
+<li>
+A eficiência rotativa relativa corrige diferenças entre águas abertas e operação atrás do casco.
+</li>
+
+<li>
+A eficiência propulsiva resulta da combinação entre hélice e casco.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MARCADOR PARA CONTINUAÇÃO
+========================================= -->
+
+<!--
+COLE A PARTE 5 IMEDIATAMENTE ABAIXO DESTE COMENTÁRIO.
+
+A PARTE 5 ABORDARÁ:
+
+- ÁREA DAS PÁS;
+- RAZÕES DE ÁREA;
+- NÚMERO DE PÁS;
+- HÉLICES DE PASSO FIXO;
+- HÉLICES DE PASSO CONTROLÁVEL;
+- VANTAGENS E LIMITAÇÕES OPERACIONAIS;
+- REVERSÃO DE EMPUXO;
+- TEMPO DE RESPOSTA DO SISTEMA PROPULSIVO.
+-->    
 </main>
 
 
