@@ -60,6 +60,67 @@
 
 
 <main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>🚢 Lemes — Rudders</h2>
+
+<p>
+Estudo dos princípios hidrodinâmicos, da finalidade e da atuação
+dos lemes no governo e na manobra dos navios.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================
      PARTE 1
      FUNDAMENTOS DOS LEMES
@@ -72,33 +133,33 @@
 
 <section class="abertura-parte">
 
-    <div class="widget">
+<div class="widget">
 
-        <h2>PARTE 1 — FUNDAMENTOS DOS LEMES</h2>
+<h2>PARTE 1 — FUNDAMENTOS DOS LEMES</h2>
 
-        <p>
-            Nesta primeira parte estudaremos os princípios fundamentais
-            de funcionamento dos <strong>lemes</strong>,
-            denominados <strong>rudders</strong> nas publicações técnicas
-            em inglês.
-        </p>
+<p>
+Nesta primeira parte estudaremos os princípios fundamentais
+de funcionamento dos <strong>lemes</strong>,
+denominados <strong>rudders</strong> nas publicações técnicas
+em inglês.
+</p>
 
-        <p>
-            O objetivo inicial é compreender como o leme transforma
-            o movimento relativo da água em uma
-            <strong>força hidrodinâmica transversal</strong>,
-            capaz de produzir um momento de guinada e alterar
-            o rumo do navio.
-        </p>
+<p>
+O objetivo inicial é compreender como o leme transforma
+o movimento relativo da água em uma
+<strong>força hidrodinâmica transversal</strong>,
+capaz de produzir um momento de guinada e alterar
+o rumo do navio.
+</p>
 
-        <p>
-            Esse entendimento será a base para os tópicos posteriores,
-            como sustentação, arrasto, ângulo de ataque,
-            estol do leme, interação hélice–leme
-            e emprego operacional durante as manobras.
-        </p>
+<p>
+Esse entendimento será a base para os tópicos posteriores,
+como sustentação, arrasto, ângulo de ataque,
+estol do leme, interação hélice–leme
+e emprego operacional durante as manobras.
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -113,127 +174,114 @@
     data-topico-id="introducao-aos-lemes"
 >
 
-    <h2>1. Introdução aos lemes</h2>
+<h2>1. Introdução aos lemes</h2>
 
-    <div class="widget">
+<div class="widget">
 
-        <p>
-            O <strong>leme</strong>,
-            ou <strong>rudder</strong>,
-            é uma superfície hidrodinâmica instalada normalmente
-            na região de popa do navio.
-        </p>
+<p>
+O <strong>leme</strong>,
+ou <strong>rudder</strong>,
+é uma superfície hidrodinâmica instalada normalmente
+na região de popa do navio.
+</p>
 
-        <p>
-            Sua principal função é produzir uma força lateral
-            que permita controlar a orientação do navio
-            no plano horizontal.
-        </p>
+<p>
+Sua principal função é produzir uma força lateral
+que permita controlar a orientação do navio
+no plano horizontal.
+</p>
 
-        <p>
-            Quando o leme é colocado em determinado ângulo,
-            ele modifica a direção do escoamento da água
-            que passa pela popa.
-        </p>
+<p>
+Quando o leme é colocado em determinado ângulo,
+ele modifica a direção do escoamento da água
+que passa pela popa.
+</p>
 
-        <p>
-            Como consequência dessa alteração do escoamento,
-            surge uma força hidrodinâmica sobre a superfície do leme.
-            Parte dessa força atua transversalmente ao navio
-            e contribui para iniciar ou manter a guinada.
-        </p>
+<p>
+Como consequência dessa alteração do escoamento,
+surge uma força hidrodinâmica sobre a superfície do leme.
+Parte dessa força atua transversalmente ao navio
+e contribui para iniciar ou manter a guinada.
+</p>
 
-        <div class="destaque">
+<div class="destaque">
 
-            <h3>⚓ Conceito fundamental</h3>
+<h3>⚓ Conceito fundamental</h3>
 
-            <p>
-                O leme não “empurra a popa” simplesmente por estar
-                inclinado.
-            </p>
+<p>
+O leme não “empurra a popa” simplesmente por estar
+inclinado.
+</p>
 
-            <p>
-                Ele necessita de
-                <strong>movimento relativo da água sobre sua superfície</strong>
-                para desenvolver força hidrodinâmica.
-            </p>
+<p>
+Ele necessita de
+<strong>movimento relativo da água sobre sua superfície</strong>
+para desenvolver força hidrodinâmica.
+</p>
 
-        </div>
+</div>
 
-        <p>
-            Esse movimento relativo pode resultar:
-        </p>
+<p>
+Esse movimento relativo pode resultar:
+</p>
 
-        <ul>
+<ul>
 
-            <li>
-                do avanço do próprio navio através da água;
-            </li>
+<li>
+do avanço do próprio navio através da água;
+</li>
 
-            <li>
-                do fluxo acelerado produzido pela hélice;
-            </li>
+<li>
+do fluxo acelerado produzido pela hélice;
+</li>
 
-            <li>
-                da combinação entre a velocidade do navio
-                e o jato da hélice;
-            </li>
+<li>
+da combinação entre a velocidade do navio
+e o jato da hélice;
+</li>
 
-            <li>
-                de condições particulares de corrente e movimento
-                relativo da água na região da popa.
-            </li>
+<li>
+de condições particulares de corrente e movimento
+relativo da água na região da popa.
+</li>
 
-        </ul>
+</ul>
 
-        <div class="termos-tecnicos">
+<div class="termos-tecnicos">
 
-            <h3>🌐 Termos técnicos</h3>
+<h3>🌐 Termos técnicos</h3>
 
-            <ul>
+<ul>
 
-                <li>
-                    <strong>Rudder</strong> — leme.
-                </li>
+<li>
+<strong>Rudder</strong> — leme.
+</li>
 
-                <li>
-                    <strong>Steering</strong> — governo ou ação de governar.
-                </li>
+<li>
+<strong>Steering</strong> — governo ou ação de governar.
+</li>
 
-                <li>
-                    <strong>Steering control</strong> — controle do governo.
-                </li>
+<li>
+<strong>Steering control</strong> — controle do governo.
+</li>
 
-                <li>
-                    <strong>Water flow</strong> — escoamento ou fluxo da água.
-                </li>
+<li>
+<strong>Water flow</strong> — escoamento ou fluxo da água.
+</li>
 
-                <li>
-                    <strong>Lateral force</strong> — força lateral.
-                </li>
+<li>
+<strong>Lateral force</strong> — força lateral.
+</li>
 
-                <li>
-                    <strong>Yaw</strong> — movimento de guinada.
-                </li>
+<li>
+<strong>Yaw</strong> — movimento de guinada.
+</li>
 
-            </ul>
+</ul>
 
-        </div>
+</div>
 
-    </div>
-
-
-    <div class="controle-topico">
-
-        <button
-            type="button"
-            class="botao-topico-estudado"
-            onclick="marcarTopicoEstudado(this)"
-        >
-            ✓ Marcar tópico como estudado
-        </button>
-
-    </div>
+</div>
 
 </section>
 
@@ -248,176 +296,163 @@
     data-topico-id="finalidade-do-leme"
 >
 
-    <h2>2. Finalidade do leme</h2>
+<h2>2. Finalidade do leme</h2>
 
-    <div class="widget">
+<div class="widget">
 
-        <p>
-            A finalidade imediata do leme é permitir que o navio
-            desenvolva um momento de guinada controlável.
-        </p>
+<p>
+A finalidade imediata do leme é permitir que o navio
+desenvolva um momento de guinada controlável.
+</p>
 
-        <p>
-            Esse momento pode ser empregado tanto para
-            <strong>iniciar uma mudança de rumo</strong>
-            quanto para
-            <strong>interromper ou reduzir uma guinada já existente</strong>.
-        </p>
+<p>
+Esse momento pode ser empregado tanto para
+<strong>iniciar uma mudança de rumo</strong>
+quanto para
+<strong>interromper ou reduzir uma guinada já existente</strong>.
+</p>
 
-        <p>
-            Portanto, o leme não serve apenas para fazer o navio
-            começar a girar.
-        </p>
+<p>
+Portanto, o leme não serve apenas para fazer o navio
+começar a girar.
+</p>
 
-        <p>
-            Ele também é utilizado para:
-        </p>
+<p>
+Ele também é utilizado para:
+</p>
 
-        <ul>
+<ul>
 
-            <li>
-                manter o navio em determinado rumo;
-            </li>
+<li>
+manter o navio em determinado rumo;
+</li>
 
-            <li>
-                corrigir desvios provocados pelo vento;
-            </li>
+<li>
+corrigir desvios provocados pelo vento;
+</li>
 
-            <li>
-                compensar efeitos de corrente;
-            </li>
+<li>
+compensar efeitos de corrente;
+</li>
 
-            <li>
-                iniciar uma curva;
-            </li>
+<li>
+iniciar uma curva;
+</li>
 
-            <li>
-                controlar a evolução da razão de guinada;
-            </li>
+<li>
+controlar a evolução da razão de guinada;
+</li>
 
-            <li>
-                verificar ou interromper uma guinada;
-            </li>
+<li>
+verificar ou interromper uma guinada;
+</li>
 
-            <li>
-                auxiliar no controle da trajetória em águas restritas;
-            </li>
+<li>
+auxiliar no controle da trajetória em águas restritas;
+</li>
 
-            <li>
-                atuar em conjunto com máquinas, hélices e propulsores
-                durante manobras portuárias.
-            </li>
+<li>
+atuar em conjunto com máquinas, hélices e propulsores
+durante manobras portuárias.
+</li>
 
-        </ul>
+</ul>
 
-        <div class="destaque">
+<div class="destaque">
 
-            <h3>🔄 Iniciar e verificar a guinada</h3>
+<h3>🔄 Iniciar e verificar a guinada</h3>
 
-            <p>
-                Um comando de leme pode ser usado para
-                <strong>iniciar a guinada</strong>.
-            </p>
+<p>
+Um comando de leme pode ser usado para
+<strong>iniciar a guinada</strong>.
+</p>
 
-            <p>
-                Posteriormente, um comando de leme para o bordo oposto
-                pode ser necessário para
-                <strong>verificar a guinada</strong>,
-                isto é, reduzir ou interromper a rotação do navio.
-            </p>
+<p>
+Posteriormente, um comando de leme para o bordo oposto
+pode ser necessário para
+<strong>verificar a guinada</strong>,
+isto é, reduzir ou interromper a rotação do navio.
+</p>
 
-        </div>
+</div>
 
-        <p>
-            A resposta do navio não ocorre instantaneamente.
-        </p>
+<p>
+A resposta do navio não ocorre instantaneamente.
+</p>
 
-        <p>
-            Entre a aplicação do leme e a alteração efetiva da trajetória
-            existe um intervalo relacionado à inércia,
-            à velocidade, às dimensões do navio,
-            à forma do casco, ao deslocamento e às características
-            do sistema de governo.
-        </p>
+<p>
+Entre a aplicação do leme e a alteração efetiva da trajetória
+existe um intervalo relacionado à inércia,
+à velocidade, às dimensões do navio,
+à forma do casco, ao deslocamento e às características
+do sistema de governo.
+</p>
 
-        <div class="atencao-pratico">
+<div class="atencao-pratico">
 
-            <h3>⚠ Atenção do Prático</h3>
+<h3>⚠ Atenção do Prático</h3>
 
-            <p>
-                O navio pode continuar aumentando sua razão de guinada
-                mesmo depois de o leme ser colocado a meio.
-            </p>
+<p>
+O navio pode continuar aumentando sua razão de guinada
+mesmo depois de o leme ser colocado a meio.
+</p>
 
-            <p>
-                Por isso, o leme de encontro normalmente precisa ser
-                aplicado antes que o navio alcance exatamente
-                a proa desejada.
-            </p>
+<p>
+Por isso, o leme de encontro normalmente precisa ser
+aplicado antes que o navio alcance exatamente
+a proa desejada.
+</p>
 
-            <p>
-                A antecipação necessária varia de navio para navio
-                e deve ser avaliada com base nas características
-                de manobra disponíveis e na resposta observada
-                durante a operação.
-            </p>
+<p>
+A antecipação necessária varia de navio para navio
+e deve ser avaliada com base nas características
+de manobra disponíveis e na resposta observada
+durante a operação.
+</p>
 
-        </div>
+</div>
 
-        <div class="termos-tecnicos">
+<div class="termos-tecnicos">
 
-            <h3>🌐 Termos técnicos</h3>
+<h3>🌐 Termos técnicos</h3>
 
-            <ul>
+<ul>
 
-                <li>
-                    <strong>Course keeping</strong> —
-                    manutenção do rumo.
-                </li>
+<li>
+<strong>Course keeping</strong> —
+manutenção do rumo.
+</li>
 
-                <li>
-                    <strong>Course changing</strong> —
-                    mudança de rumo.
-                </li>
+<li>
+<strong>Course changing</strong> —
+mudança de rumo.
+</li>
 
-                <li>
-                    <strong>Rate of turn</strong> —
-                    razão ou velocidade angular de guinada.
-                </li>
+<li>
+<strong>Rate of turn</strong> —
+razão ou velocidade angular de guinada.
+</li>
 
-                <li>
-                    <strong>Checking the swing</strong> —
-                    verificar ou conter a guinada.
-                </li>
+<li>
+<strong>Checking the swing</strong> —
+verificar ou conter a guinada.
+</li>
 
-                <li>
-                    <strong>Counter-rudder</strong> —
-                    leme de encontro.
-                </li>
+<li>
+<strong>Counter-rudder</strong> —
+leme de encontro.
+</li>
 
-                <li>
-                    <strong>Rudder amidships</strong> —
-                    leme a meio.
-                </li>
+<li>
+<strong>Rudder amidships</strong> —
+leme a meio.
+</li>
 
-            </ul>
+</ul>
 
-        </div>
+</div>
 
-    </div>
-
-
-    <div class="controle-topico">
-
-        <button
-            type="button"
-            class="botao-topico-estudado"
-            onclick="marcarTopicoEstudado(this)"
-        >
-            ✓ Marcar tópico como estudado
-        </button>
-
-    </div>
+</div>
 
 </section>
 
@@ -432,370 +467,338 @@
     data-topico-id="leme-como-perfil-hidrodinamico"
 >
 
-    <h2>3. O leme como perfil hidrodinâmico</h2>
-
-    <div class="widget">
-
-        <p>
-            Hidrodinamicamente, o leme pode ser compreendido como
-            um <strong>perfil sustentador</strong>,
-            ou <strong>hydrofoil</strong>.
-        </p>
-
-        <p>
-            Seu funcionamento apresenta princípios semelhantes
-            aos de um aerofólio, porém o fluido envolvido
-            é a água.
-        </p>
+<h2>3. O leme como perfil hidrodinâmico</h2>
+
+<div class="widget">
+
+<p>
+Hidrodinamicamente, o leme pode ser compreendido como
+um <strong>perfil sustentador</strong>,
+ou <strong>hydrofoil</strong>.
+</p>
+
+<p>
+Seu funcionamento apresenta princípios semelhantes
+aos de um aerofólio, porém o fluido envolvido
+é a água.
+</p>
 
-        <p>
-            Quando o leme está alinhado com o escoamento,
-            a distribuição de pressão em seus dois lados
-            tende a ser aproximadamente equilibrada,
-            desconsiderando assimetrias e perturbações locais.
-        </p>
+<p>
+Quando o leme está alinhado com o escoamento,
+a distribuição de pressão em seus dois lados
+tende a ser aproximadamente equilibrada,
+desconsiderando assimetrias e perturbações locais.
+</p>
 
-        <p>
-            Quando o leme é girado, passa a existir um ângulo
-            entre sua linha de referência e o fluxo de água incidente.
-        </p>
+<p>
+Quando o leme é girado, passa a existir um ângulo
+entre sua linha de referência e o fluxo de água incidente.
+</p>
 
-        <p>
-            Esse ângulo modifica a distribuição de pressão
-            nas duas faces do leme.
-        </p>
+<p>
+Esse ângulo modifica a distribuição de pressão
+nas duas faces do leme.
+</p>
 
-        <p>
-            Uma face passa a apresentar pressão relativamente maior,
-            enquanto a outra apresenta pressão relativamente menor.
-        </p>
+<p>
+Uma face passa a apresentar pressão relativamente maior,
+enquanto a outra apresenta pressão relativamente menor.
+</p>
+
+<p>
+A integração dessas pressões sobre toda a área do leme
+produz uma força hidrodinâmica resultante.
+</p>
 
-        <p>
-            A integração dessas pressões sobre toda a área do leme
-            produz uma força hidrodinâmica resultante.
-        </p>
 
 
-        <!-- =========================================
-             ESQUEMA DIDÁTICO
-        ========================================= -->
-
-        <div class="figura-aula">
-
-            <svg
-                viewBox="0 0 900 430"
-                role="img"
-                aria-labelledby="titulo-esquema-leme descricao-esquema-leme"
-                style="
-                    width: 100%;
-                    max-width: 900px;
-                    height: auto;
-                    display: block;
-                    margin: 20px auto;
-                    background: #eef6fb;
-                    border: 1px solid #b8cfdf;
-                    border-radius: 12px;
-                "
-            >
-
-                <title id="titulo-esquema-leme">
-                    Escoamento da água ao redor de um leme inclinado
-                </title>
-
-                <desc id="descricao-esquema-leme">
-                    Esquema didático mostrando o fluxo da água,
-                    um leme inclinado e a força hidrodinâmica resultante.
-                </desc>
-
-
-                <!-- TÍTULO -->
-
-                <text
-                    x="450"
-                    y="38"
-                    text-anchor="middle"
-                    font-size="22"
-                    font-weight="700"
-                    fill="#12344d"
-                >
-                    PRINCÍPIO HIDRODINÂMICO DO LEME
-                </text>
-
-
-                <!-- LINHAS DO ESCOAMENTO -->
-
-                <g
-                    fill="none"
-                    stroke="#3282b8"
-                    stroke-width="4"
-                    opacity="0.9"
-                >
-
-                    <path d="M60 110 C250 110, 330 120, 480 155 C620 190, 720 180, 840 165" />
-
-                    <path d="M60 160 C250 160, 340 165, 490 195 C630 225, 730 220, 840 210" />
-
-                    <path d="M60 220 C250 220, 340 220, 500 230 C650 240, 740 255, 840 275" />
-
-                    <path d="M60 280 C250 280, 340 275, 500 270 C650 265, 740 300, 840 330" />
-
-                </g>
-
-
-                <!-- SETAS DO ESCOAMENTO -->
-
-                <g fill="#3282b8">
-
-                    <polygon points="175,102 195,110 175,118" />
-
-                    <polygon points="175,152 195,160 175,168" />
-
-                    <polygon points="175,212 195,220 175,228" />
-
-                    <polygon points="175,272 195,280 175,288" />
-
-                </g>
-
-
-                <!-- TEXTO DO ESCOAMENTO -->
-
-                <text
-                    x="95"
-                    y="80"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#1d628d"
-                >
-                    Fluxo da água
-                </text>
-
-                <text
-                    x="95"
-                    y="101"
-                    font-size="15"
-                    fill="#1d628d"
-                >
-                    Water flow
-                </text>
-
-
-                <!-- EIXO DO LEME -->
-
-                <line
-                    x1="495"
-                    y1="95"
-                    x2="495"
-                    y2="340"
-                    stroke="#667987"
-                    stroke-width="7"
-                    stroke-linecap="round"
-                />
-
-
-                <!-- LEME INCLINADO -->
-
-                <polygon
-                    points="493,135 610,285 557,321 472,155"
-                    fill="#c58d32"
-                    stroke="#765319"
-                    stroke-width="5"
-                />
-
-
-                <!-- LINHA DE REFERÊNCIA -->
-
-                <line
-                    x1="495"
-                    y1="120"
-                    x2="495"
-                    y2="335"
-                    stroke="#6c7b86"
-                    stroke-width="2"
-                    stroke-dasharray="10 8"
-                />
-
-
-                <!-- ARCO DO ÂNGULO -->
-
-                <path
-                    d="M495 195 A75 75 0 0 1 545 218"
-                    fill="none"
-                    stroke="#d14545"
-                    stroke-width="4"
-                />
-
-                <text
-                    x="535"
-                    y="190"
-                    font-size="22"
-                    font-weight="700"
-                    fill="#b62f2f"
-                >
-                    δ
-                </text>
-
-
-                <!-- FORÇA RESULTANTE -->
-
-                <line
-                    x1="550"
-                    y1="235"
-                    x2="690"
-                    y2="125"
-                    stroke="#b62f2f"
-                    stroke-width="7"
-                    stroke-linecap="round"
-                />
-
-                <polygon
-                    points="690,125 670,132 681,148"
-                    fill="#b62f2f"
-                />
-
-                <text
-                    x="675"
-                    y="97"
-                    text-anchor="middle"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#a42727"
-                >
-                    Força resultante
-                </text>
-
-                <text
-                    x="675"
-                    y="118"
-                    text-anchor="middle"
-                    font-size="15"
-                    fill="#a42727"
-                >
-                    Resultant force
-                </text>
-
-
-                <!-- LEGENDA -->
-
-                <rect
-                    x="95"
-                    y="350"
-                    width="710"
-                    height="55"
-                    rx="10"
-                    fill="#ffffff"
-                    stroke="#b8cfdf"
-                />
-
-                <text
-                    x="450"
-                    y="374"
-                    text-anchor="middle"
-                    font-size="16"
-                    font-weight="700"
-                    fill="#12344d"
-                >
-                    O leme desvia o escoamento e desenvolve uma força hidrodinâmica.
-                </text>
-
-                <text
-                    x="450"
-                    y="395"
-                    text-anchor="middle"
-                    font-size="15"
-                    fill="#36566d"
-                >
-                    A componente lateral dessa força contribui para a guinada do navio.
-                </text>
-
-            </svg>
-
-            <p class="legenda-figura">
-
-                <strong>Figura 1 —</strong>
-                Representação didática do escoamento ao redor
-                de um leme inclinado.
-
-            </p>
-
-        </div>
-
-
-        <div class="destaque">
-
-            <h3>📌 Importante</h3>
-
-            <p>
-                O leme é um perfil hidrodinâmico que desenvolve
-                força em consequência da distribuição de pressão
-                criada pelo escoamento da água ao seu redor.
-            </p>
-
-            <p>
-                A força não depende apenas do ângulo geométrico
-                indicado no sistema de governo.
-            </p>
-
-            <p>
-                Ela depende também da direção real do fluxo
-                que alcança o leme.
-            </p>
-
-        </div>
-
-        <div class="termos-tecnicos">
-
-            <h3>🌐 Termos técnicos</h3>
-
-            <ul>
-
-                <li>
-                    <strong>Hydrofoil</strong> —
-                    perfil hidrodinâmico.
-                </li>
-
-                <li>
-                    <strong>Pressure distribution</strong> —
-                    distribuição de pressão.
-                </li>
-
-                <li>
-                    <strong>High-pressure side</strong> —
-                    face de maior pressão.
-                </li>
-
-                <li>
-                    <strong>Low-pressure side</strong> —
-                    face de menor pressão.
-                </li>
-
-                <li>
-                    <strong>Resultant force</strong> —
-                    força resultante.
-                </li>
-
-                <li>
-                    <strong>Flow direction</strong> —
-                    direção do escoamento.
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-
-    <div class="controle-topico">
-
-        <button
-            type="button"
-            class="botao-topico-estudado"
-            onclick="marcarTopicoEstudado(this)"
-        >
-            ✓ Marcar tópico como estudado
-        </button>
-
-    </div>
+<!-- =========================================
+     ILUSTRAÇÃO 1
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 430"
+    role="img"
+    aria-labelledby="titulo-esquema-leme descricao-esquema-leme"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #eef6fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-esquema-leme">
+Escoamento da água ao redor de um leme inclinado
+</title>
+
+<desc id="descricao-esquema-leme">
+Esquema didático mostrando o fluxo da água,
+um leme inclinado e a força hidrodinâmica resultante.
+</desc>
+
+
+<text
+    x="450"
+    y="38"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="700"
+    fill="#12344d"
+>
+PRINCÍPIO HIDRODINÂMICO DO LEME
+</text>
+
+
+<g
+    fill="none"
+    stroke="#3282b8"
+    stroke-width="4"
+    opacity="0.9"
+>
+
+<path d="M60 110 C250 110, 330 120, 480 155 C620 190, 720 180, 840 165" />
+
+<path d="M60 160 C250 160, 340 165, 490 195 C630 225, 730 220, 840 210" />
+
+<path d="M60 220 C250 220, 340 220, 500 230 C650 240, 740 255, 840 275" />
+
+<path d="M60 280 C250 280, 340 275, 500 270 C650 265, 740 300, 840 330" />
+
+</g>
+
+
+<g fill="#3282b8">
+
+<polygon points="175,102 195,110 175,118" />
+
+<polygon points="175,152 195,160 175,168" />
+
+<polygon points="175,212 195,220 175,228" />
+
+<polygon points="175,272 195,280 175,288" />
+
+</g>
+
+
+<text
+    x="95"
+    y="80"
+    font-size="18"
+    font-weight="700"
+    fill="#1d628d"
+>
+Fluxo da água
+</text>
+
+<text
+    x="95"
+    y="101"
+    font-size="15"
+    fill="#1d628d"
+>
+Water flow
+</text>
+
+
+<line
+    x1="495"
+    y1="95"
+    x2="495"
+    y2="340"
+    stroke="#667987"
+    stroke-width="7"
+    stroke-linecap="round"
+/>
+
+
+<polygon
+    points="493,135 610,285 557,321 472,155"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<line
+    x1="495"
+    y1="120"
+    x2="495"
+    y2="335"
+    stroke="#6c7b86"
+    stroke-width="2"
+    stroke-dasharray="10 8"
+/>
+
+
+<path
+    d="M495 195 A75 75 0 0 1 545 218"
+    fill="none"
+    stroke="#d14545"
+    stroke-width="4"
+/>
+
+<text
+    x="535"
+    y="190"
+    font-size="22"
+    font-weight="700"
+    fill="#b62f2f"
+>
+δ
+</text>
+
+
+<line
+    x1="550"
+    y1="235"
+    x2="690"
+    y2="125"
+    stroke="#b62f2f"
+    stroke-width="7"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="690,125 670,132 681,148"
+    fill="#b62f2f"
+/>
+
+<text
+    x="675"
+    y="97"
+    text-anchor="middle"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Força resultante
+</text>
+
+<text
+    x="675"
+    y="118"
+    text-anchor="middle"
+    font-size="15"
+    fill="#a42727"
+>
+Resultant force
+</text>
+
+
+<rect
+    x="95"
+    y="350"
+    width="710"
+    height="55"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="374"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+O leme desvia o escoamento e desenvolve uma força hidrodinâmica.
+</text>
+
+<text
+    x="450"
+    y="395"
+    text-anchor="middle"
+    font-size="15"
+    fill="#36566d"
+>
+A componente lateral dessa força contribui para a guinada do navio.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 1 —</strong>
+Representação didática do escoamento ao redor
+de um leme inclinado.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>📌 Importante</h3>
+
+<p>
+O leme é um perfil hidrodinâmico que desenvolve
+força em consequência da distribuição de pressão
+criada pelo escoamento da água ao seu redor.
+</p>
+
+<p>
+A força não depende apenas do ângulo geométrico
+indicado no sistema de governo.
+</p>
+
+<p>
+Ela depende também da direção real do fluxo
+que alcança o leme.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Hydrofoil</strong> —
+perfil hidrodinâmico.
+</li>
+
+<li>
+<strong>Pressure distribution</strong> —
+distribuição de pressão.
+</li>
+
+<li>
+<strong>High-pressure side</strong> —
+face de maior pressão.
+</li>
+
+<li>
+<strong>Low-pressure side</strong> —
+face de menor pressão.
+</li>
+
+<li>
+<strong>Resultant force</strong> —
+força resultante.
+</li>
+
+<li>
+<strong>Flow direction</strong> —
+direção do escoamento.
+</li>
+
+</ul>
+
+</div>
+
+</div>
 
 </section>
 
@@ -810,407 +813,380 @@
     data-topico-id="formacao-da-forca-lateral"
 >
 
-    <h2>4. Formação da força lateral</h2>
-
-    <div class="widget">
-
-        <p>
-            A força hidrodinâmica resultante que atua sobre o leme
-            pode ser analisada por meio de componentes.
-        </p>
-
-        <p>
-            Uma decomposição frequentemente utilizada considera:
-        </p>
-
-        <ul>
-
-            <li>
-                uma componente aproximadamente perpendicular
-                ao escoamento incidente, associada à
-                <strong>sustentação</strong>
-                ou <strong>lift</strong>;
-            </li>
-
-            <li>
-                uma componente aproximadamente paralela
-                ao escoamento incidente, associada ao
-                <strong>arrasto</strong>
-                ou <strong>drag</strong>.
-            </li>
-
-        </ul>
-
-        <p>
-            Para a manobra do navio, interessa especialmente
-            a componente transversal da força,
-            porque ela atua na região de popa
-            e produz um momento em relação ao centro de gravidade.
-        </p>
-
-        <p>
-            Esse momento tende a deslocar lateralmente a popa
-            e a fazer a proa girar para o bordo oposto.
-        </p>
-
-
-        <!-- =========================================
-             ESQUEMA DE FORÇAS
-        ========================================= -->
-
-        <div class="figura-aula">
-
-            <svg
-                viewBox="0 0 900 430"
-                role="img"
-                aria-labelledby="titulo-forcas-leme descricao-forcas-leme"
-                style="
-                    width: 100%;
-                    max-width: 900px;
-                    height: auto;
-                    display: block;
-                    margin: 20px auto;
-                    background: #f4f8fb;
-                    border: 1px solid #b8cfdf;
-                    border-radius: 12px;
-                "
-            >
-
-                <title id="titulo-forcas-leme">
-                    Decomposição da força hidrodinâmica no leme
-                </title>
-
-                <desc id="descricao-forcas-leme">
-                    Esquema indicando sustentação, arrasto
-                    e força resultante sobre o leme.
-                </desc>
-
-
-                <!-- TÍTULO -->
-
-                <text
-                    x="450"
-                    y="40"
-                    text-anchor="middle"
-                    font-size="22"
-                    font-weight="700"
-                    fill="#12344d"
-                >
-                    FORÇAS HIDRODINÂMICAS NO LEME
-                </text>
-
-
-                <!-- DIREÇÃO DO FLUXO -->
-
-                <line
-                    x1="90"
-                    y1="315"
-                    x2="760"
-                    y2="315"
-                    stroke="#3282b8"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                />
-
-                <polygon
-                    points="760,315 733,302 733,328"
-                    fill="#3282b8"
-                />
-
-                <text
-                    x="175"
-                    y="292"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#1d628d"
-                >
-                    Escoamento incidente
-                </text>
-
-                <text
-                    x="175"
-                    y="338"
-                    font-size="15"
-                    fill="#1d628d"
-                >
-                    Incoming flow
-                </text>
-
-
-                <!-- LEME -->
-
-                <polygon
-                    points="410,125 535,290 486,325 370,150"
-                    fill="#c58d32"
-                    stroke="#765319"
-                    stroke-width="5"
-                />
-
-
-                <!-- PONTO DE APLICAÇÃO -->
-
-                <circle
-                    cx="450"
-                    cy="225"
-                    r="8"
-                    fill="#202f3a"
-                />
-
-
-                <!-- LIFT -->
-
-                <line
-                    x1="450"
-                    y1="225"
-                    x2="450"
-                    y2="80"
-                    stroke="#2b8a3e"
-                    stroke-width="7"
-                    stroke-linecap="round"
-                />
-
-                <polygon
-                    points="450,80 437,107 463,107"
-                    fill="#2b8a3e"
-                />
-
-                <text
-                    x="475"
-                    y="95"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#237432"
-                >
-                    Lift
-                </text>
-
-                <text
-                    x="475"
-                    y="117"
-                    font-size="15"
-                    fill="#237432"
-                >
-                    Sustentação
-                </text>
-
-
-                <!-- DRAG -->
-
-                <line
-                    x1="450"
-                    y1="225"
-                    x2="620"
-                    y2="225"
-                    stroke="#d58a15"
-                    stroke-width="7"
-                    stroke-linecap="round"
-                />
-
-                <polygon
-                    points="620,225 593,212 593,238"
-                    fill="#d58a15"
-                />
-
-                <text
-                    x="625"
-                    y="208"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#b06d0d"
-                >
-                    Drag
-                </text>
-
-                <text
-                    x="625"
-                    y="231"
-                    font-size="15"
-                    fill="#b06d0d"
-                >
-                    Arrasto
-                </text>
-
-
-                <!-- RESULTANTE -->
-
-                <line
-                    x1="450"
-                    y1="225"
-                    x2="600"
-                    y2="90"
-                    stroke="#b62f2f"
-                    stroke-width="8"
-                    stroke-linecap="round"
-                />
-
-                <polygon
-                    points="600,90 574,99 592,117"
-                    fill="#b62f2f"
-                />
-
-                <text
-                    x="635"
-                    y="77"
-                    font-size="18"
-                    font-weight="700"
-                    fill="#a42727"
-                >
-                    Resultante
-                </text>
-
-                <text
-                    x="635"
-                    y="99"
-                    font-size="15"
-                    fill="#a42727"
-                >
-                    Resultant force
-                </text>
-
-
-                <!-- LEGENDA INFERIOR -->
-
-                <rect
-                    x="100"
-                    y="360"
-                    width="700"
-                    height="45"
-                    rx="10"
-                    fill="#ffffff"
-                    stroke="#b8cfdf"
-                />
-
-                <text
-                    x="450"
-                    y="388"
-                    text-anchor="middle"
-                    font-size="16"
-                    font-weight="700"
-                    fill="#12344d"
-                >
-                    A orientação das forças depende da direção real do fluxo incidente.
-                </text>
-
-            </svg>
-
-            <p class="legenda-figura">
-
-                <strong>Figura 2 —</strong>
-                Representação simplificada da sustentação,
-                do arrasto e da força hidrodinâmica resultante.
-
-            </p>
-
-        </div>
-
-
-        <div class="formula">
-
-            <h3>📐 Expressão geral da força hidrodinâmica</h3>
-
-            <p class="equacao">
-
-                F =
-                <span class="fracao">
-                    <span>1</span>
-                    <span>2</span>
-                </span>
-
-                · ρ · V² · A · C
-
-            </p>
-
-            <p>
-                Em que:
-            </p>
-
-            <ul>
-
-                <li>
-                    <strong>F</strong> =
-                    força hidrodinâmica;
-                </li>
-
-                <li>
-                    <strong>ρ</strong> =
-                    massa específica da água;
-                </li>
-
-                <li>
-                    <strong>V</strong> =
-                    velocidade relativa da água sobre o leme;
-                </li>
-
-                <li>
-                    <strong>A</strong> =
-                    área de referência do leme;
-                </li>
-
-                <li>
-                    <strong>C</strong> =
-                    coeficiente hidrodinâmico correspondente.
-                </li>
-
-            </ul>
-
-        </div>
-
-        <div class="destaque">
-
-            <h3>📈 Consequência da relação com a velocidade</h3>
-
-            <p>
-                A velocidade aparece elevada ao quadrado
-                na expressão geral da força.
-            </p>
-
-            <p>
-                Portanto, em uma análise simplificada,
-                pequenas variações da velocidade do fluxo sobre o leme
-                podem provocar alterações importantes
-                na força desenvolvida.
-            </p>
-
-            <p>
-                Essa relação ajuda a explicar por que um leme
-                normalmente se torna menos eficaz quando o navio
-                perde seguimento e por que o jato da hélice
-                pode aumentar significativamente sua ação.
-            </p>
-
-        </div>
-
-        <div class="pegadinha-prova">
-
-            <h3>🎯 Atenção para o PSCPP</h3>
-
-            <p>
-                Não se deve afirmar que a força do leme depende
-                somente do ângulo de leme.
-            </p>
-
-            <p>
-                Ela também depende da velocidade e da direção
-                do fluxo incidente, da área, da geometria do leme,
-                das condições da popa e da interação com a hélice.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="controle-topico">
-
-        <button
-            type="button"
-            class="botao-topico-estudado"
-            onclick="marcarTopicoEstudado(this)"
-        >
-            ✓ Marcar tópico como estudado
-        </button>
-
-    </div>
+<h2>4. Formação da força lateral</h2>
+
+<div class="widget">
+
+<p>
+A força hidrodinâmica resultante que atua sobre o leme
+pode ser analisada por meio de componentes.
+</p>
+
+<p>
+Uma decomposição frequentemente utilizada considera:
+</p>
+
+<ul>
+
+<li>
+uma componente aproximadamente perpendicular
+ao escoamento incidente, associada à
+<strong>sustentação</strong>
+ou <strong>lift</strong>;
+</li>
+
+<li>
+uma componente aproximadamente paralela
+ao escoamento incidente, associada ao
+<strong>arrasto</strong>
+ou <strong>drag</strong>.
+</li>
+
+</ul>
+
+<p>
+Para a manobra do navio, interessa especialmente
+a componente transversal da força,
+porque ela atua na região de popa
+e produz um momento em relação ao centro de gravidade.
+</p>
+
+<p>
+Esse momento tende a deslocar lateralmente a popa
+e a fazer a proa girar para o bordo oposto.
+</p>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 2
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 430"
+    role="img"
+    aria-labelledby="titulo-forcas-leme descricao-forcas-leme"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f4f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-forcas-leme">
+Decomposição da força hidrodinâmica no leme
+</title>
+
+<desc id="descricao-forcas-leme">
+Esquema indicando sustentação, arrasto
+e força resultante sobre o leme.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="700"
+    fill="#12344d"
+>
+FORÇAS HIDRODINÂMICAS NO LEME
+</text>
+
+
+<line
+    x1="90"
+    y1="315"
+    x2="760"
+    y2="315"
+    stroke="#3282b8"
+    stroke-width="6"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="760,315 733,302 733,328"
+    fill="#3282b8"
+/>
+
+<text
+    x="175"
+    y="292"
+    font-size="18"
+    font-weight="700"
+    fill="#1d628d"
+>
+Escoamento incidente
+</text>
+
+<text
+    x="175"
+    y="338"
+    font-size="15"
+    fill="#1d628d"
+>
+Incoming flow
+</text>
+
+
+<polygon
+    points="410,125 535,290 486,325 370,150"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<circle
+    cx="450"
+    cy="225"
+    r="8"
+    fill="#202f3a"
+/>
+
+
+<line
+    x1="450"
+    y1="225"
+    x2="450"
+    y2="80"
+    stroke="#2b8a3e"
+    stroke-width="7"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="450,80 437,107 463,107"
+    fill="#2b8a3e"
+/>
+
+<text
+    x="475"
+    y="95"
+    font-size="18"
+    font-weight="700"
+    fill="#237432"
+>
+Lift
+</text>
+
+<text
+    x="475"
+    y="117"
+    font-size="15"
+    fill="#237432"
+>
+Sustentação
+</text>
+
+
+<line
+    x1="450"
+    y1="225"
+    x2="620"
+    y2="225"
+    stroke="#d58a15"
+    stroke-width="7"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="620,225 593,212 593,238"
+    fill="#d58a15"
+/>
+
+<text
+    x="625"
+    y="208"
+    font-size="18"
+    font-weight="700"
+    fill="#b06d0d"
+>
+Drag
+</text>
+
+<text
+    x="625"
+    y="231"
+    font-size="15"
+    fill="#b06d0d"
+>
+Arrasto
+</text>
+
+
+<line
+    x1="450"
+    y1="225"
+    x2="600"
+    y2="90"
+    stroke="#b62f2f"
+    stroke-width="8"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="600,90 574,99 592,117"
+    fill="#b62f2f"
+/>
+
+<text
+    x="635"
+    y="77"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Resultante
+</text>
+
+<text
+    x="635"
+    y="99"
+    font-size="15"
+    fill="#a42727"
+>
+Resultant force
+</text>
+
+
+<rect
+    x="100"
+    y="360"
+    width="700"
+    height="45"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="388"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+A orientação das forças depende da direção real do fluxo incidente.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 2 —</strong>
+Representação simplificada da sustentação,
+do arrasto e da força hidrodinâmica resultante.
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>📐 Expressão geral da força hidrodinâmica</h3>
+
+<p class="equacao">
+
+F =
+<span class="fracao">
+<span>1</span>
+<span>2</span>
+</span>
+
+· ρ · V² · A · C
+
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>F</strong> =
+força hidrodinâmica;
+</li>
+
+<li>
+<strong>ρ</strong> =
+massa específica da água;
+</li>
+
+<li>
+<strong>V</strong> =
+velocidade relativa da água sobre o leme;
+</li>
+
+<li>
+<strong>A</strong> =
+área de referência do leme;
+</li>
+
+<li>
+<strong>C</strong> =
+coeficiente hidrodinâmico correspondente.
+</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>📈 Consequência da relação com a velocidade</h3>
+
+<p>
+A velocidade aparece elevada ao quadrado
+na expressão geral da força.
+</p>
+
+<p>
+Portanto, em uma análise simplificada,
+pequenas variações da velocidade do fluxo sobre o leme
+podem provocar alterações importantes
+na força desenvolvida.
+</p>
+
+<p>
+Essa relação ajuda a explicar por que um leme
+normalmente se torna menos eficaz quando o navio
+perde seguimento e por que o jato da hélice
+pode aumentar significativamente sua ação.
+</p>
+
+</div>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Atenção para o PSCPP</h3>
+
+<p>
+Não se deve afirmar que a força do leme depende
+somente do ângulo de leme.
+</p>
+
+<p>
+Ela também depende da velocidade e da direção
+do fluxo incidente, da área, da geometria do leme,
+das condições da popa e da interação com a hélice.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1225,165 +1201,152 @@
     data-topico-id="leme-popa-e-momento-de-guinada"
 >
 
-    <h2>5. Leme, popa e momento de guinada</h2>
+<h2>5. Leme, popa e momento de guinada</h2>
 
-    <div class="widget">
+<div class="widget">
 
-        <p>
-            Como o leme é instalado na extremidade de ré,
-            sua força lateral atua a uma distância considerável
-            do centro de gravidade do navio.
-        </p>
+<p>
+Como o leme é instalado na extremidade de ré,
+sua força lateral atua a uma distância considerável
+do centro de gravidade do navio.
+</p>
 
-        <p>
-            Essa distância forma um
-            <strong>braço de alavanca</strong>,
-            denominado em inglês
-            <strong>lever arm</strong>.
-        </p>
+<p>
+Essa distância forma um
+<strong>braço de alavanca</strong>,
+denominado em inglês
+<strong>lever arm</strong>.
+</p>
 
-        <p>
-            A combinação entre a força lateral e esse braço
-            produz um <strong>momento de guinada</strong>
-            ou <strong>yawing moment</strong>.
-        </p>
+<p>
+A combinação entre a força lateral e esse braço
+produz um <strong>momento de guinada</strong>
+ou <strong>yawing moment</strong>.
+</p>
 
-        <div class="formula">
+<div class="formula">
 
-            <h3>📐 Representação simplificada</h3>
+<h3>📐 Representação simplificada</h3>
 
-            <p class="equacao">
+<p class="equacao">
 
-                N<sub>R</sub> = Y<sub>R</sub> · l<sub>R</sub>
+N<sub>R</sub> = Y<sub>R</sub> · l<sub>R</sub>
 
-            </p>
+</p>
 
-            <p>
-                Em que:
-            </p>
+<p>
+Em que:
+</p>
 
-            <ul>
+<ul>
 
-                <li>
-                    <strong>N<sub>R</sub></strong> =
-                    momento de guinada produzido pelo leme;
-                </li>
+<li>
+<strong>N<sub>R</sub></strong> =
+momento de guinada produzido pelo leme;
+</li>
 
-                <li>
-                    <strong>Y<sub>R</sub></strong> =
-                    componente lateral da força do leme;
-                </li>
+<li>
+<strong>Y<sub>R</sub></strong> =
+componente lateral da força do leme;
+</li>
 
-                <li>
-                    <strong>l<sub>R</sub></strong> =
-                    distância longitudinal entre o ponto de aplicação
-                    da força do leme e o centro de referência do navio.
-                </li>
+<li>
+<strong>l<sub>R</sub></strong> =
+distância longitudinal entre o ponto de aplicação
+da força do leme e o centro de referência do navio.
+</li>
 
-            </ul>
+</ul>
 
-        </div>
+</div>
 
-        <p>
-            Quando o leme é colocado para boreste,
-            a força hidrodinâmica tende a deslocar a popa
-            para bombordo.
-        </p>
+<p>
+Quando o leme é colocado para boreste,
+a força hidrodinâmica tende a deslocar a popa
+para bombordo.
+</p>
 
-        <p>
-            Como consequência, a proa tende a girar para boreste.
-        </p>
+<p>
+Como consequência, a proa tende a girar para boreste.
+</p>
 
-        <p>
-            De forma correspondente, quando o leme é colocado
-            para bombordo, a popa tende a deslocar-se para boreste
-            e a proa tende a girar para bombordo.
-        </p>
+<p>
+De forma correspondente, quando o leme é colocado
+para bombordo, a popa tende a deslocar-se para boreste
+e a proa tende a girar para bombordo.
+</p>
 
-        <div class="destaque">
+<div class="destaque">
 
-            <h3>🧭 Regra operacional básica</h3>
+<h3>🧭 Regra operacional básica</h3>
 
-            <p>
-                O bordo para o qual o leme é comandado
-                corresponde normalmente ao bordo para o qual
-                se deseja levar a proa.
-            </p>
+<p>
+O bordo para o qual o leme é comandado
+corresponde normalmente ao bordo para o qual
+se deseja levar a proa.
+</p>
 
-            <p>
-                Entretanto, o movimento inicial da popa ocorre
-                para o bordo oposto.
-            </p>
+<p>
+Entretanto, o movimento inicial da popa ocorre
+para o bordo oposto.
+</p>
 
-        </div>
+</div>
 
-        <div class="atencao-pratico">
+<div class="atencao-pratico">
 
-            <h3>⚠ Atenção do Prático</h3>
+<h3>⚠ Atenção do Prático</h3>
 
-            <p>
-                Em águas restritas, o movimento lateral da popa
-                não pode ser ignorado.
-            </p>
+<p>
+Em águas restritas, o movimento lateral da popa
+não pode ser ignorado.
+</p>
 
-            <p>
-                Ao iniciar uma alteração de rumo, a popa pode
-                aproximar-se de um cais, banco, boia,
-                embarcação ou outro perigo situado no bordo oposto
-                ao movimento pretendido da proa.
-            </p>
+<p>
+Ao iniciar uma alteração de rumo, a popa pode
+aproximar-se de um cais, banco, boia,
+embarcação ou outro perigo situado no bordo oposto
+ao movimento pretendido da proa.
+</p>
 
-        </div>
+</div>
 
-        <div class="termos-tecnicos">
+<div class="termos-tecnicos">
 
-            <h3>🌐 Termos técnicos</h3>
+<h3>🌐 Termos técnicos</h3>
 
-            <ul>
+<ul>
 
-                <li>
-                    <strong>Yawing moment</strong> —
-                    momento de guinada.
-                </li>
+<li>
+<strong>Yawing moment</strong> —
+momento de guinada.
+</li>
 
-                <li>
-                    <strong>Lever arm</strong> —
-                    braço de alavanca.
-                </li>
+<li>
+<strong>Lever arm</strong> —
+braço de alavanca.
+</li>
 
-                <li>
-                    <strong>Rudder force</strong> —
-                    força do leme.
-                </li>
+<li>
+<strong>Rudder force</strong> —
+força do leme.
+</li>
 
-                <li>
-                    <strong>Stern movement</strong> —
-                    movimento da popa.
-                </li>
+<li>
+<strong>Stern movement</strong> —
+movimento da popa.
+</li>
 
-                <li>
-                    <strong>Bow movement</strong> —
-                    movimento da proa.
-                </li>
+<li>
+<strong>Bow movement</strong> —
+movimento da proa.
+</li>
 
-            </ul>
+</ul>
 
-        </div>
+</div>
 
-    </div>
-
-
-    <div class="controle-topico">
-
-        <button
-            type="button"
-            class="botao-topico-estudado"
-            onclick="marcarTopicoEstudado(this)"
-        >
-            ✓ Marcar tópico como estudado
-        </button>
-
-    </div>
+</div>
 
 </section>
 
@@ -1395,79 +1358,79 @@
 
 <section class="aplicacao-pscpp">
 
-    <div class="widget">
+<div class="widget">
 
-        <h2>🎓 Aplicação para o PSCPP</h2>
+<h2>🎓 Aplicação para o PSCPP</h2>
 
-        <p>
-            Ao concluir esta primeira parte, é importante compreender
-            as seguintes relações:
-        </p>
+<p>
+Ao concluir esta primeira parte, é importante compreender
+as seguintes relações:
+</p>
 
-        <ul>
+<ul>
 
-            <li>
-                o leme é uma superfície hidrodinâmica;
-            </li>
+<li>
+o leme é uma superfície hidrodinâmica;
+</li>
 
-            <li>
-                sua atuação exige fluxo relativo de água;
-            </li>
+<li>
+sua atuação exige fluxo relativo de água;
+</li>
 
-            <li>
-                a inclinação do leme modifica a distribuição
-                de pressão em suas faces;
-            </li>
+<li>
+a inclinação do leme modifica a distribuição
+de pressão em suas faces;
+</li>
 
-            <li>
-                essa distribuição de pressão produz
-                uma força resultante;
-            </li>
+<li>
+essa distribuição de pressão produz
+uma força resultante;
+</li>
 
-            <li>
-                a componente lateral da força atua na popa;
-            </li>
+<li>
+a componente lateral da força atua na popa;
+</li>
 
-            <li>
-                a força lateral, associada ao braço de alavanca,
-                produz um momento de guinada;
-            </li>
+<li>
+a força lateral, associada ao braço de alavanca,
+produz um momento de guinada;
+</li>
 
-            <li>
-                a eficácia do leme depende fortemente
-                da velocidade do fluxo incidente;
-            </li>
+<li>
+a eficácia do leme depende fortemente
+da velocidade do fluxo incidente;
+</li>
 
-            <li>
-                o movimento da popa ocorre, inicialmente,
-                para o bordo oposto ao movimento pretendido da proa.
-            </li>
+<li>
+o movimento da popa ocorre, inicialmente,
+para o bordo oposto ao movimento pretendido da proa.
+</li>
 
-        </ul>
+</ul>
 
-        <div class="pegadinha-prova">
+<div class="pegadinha-prova">
 
-            <h3>🎯 Pegadinha frequente</h3>
+<h3>🎯 Pegadinha frequente</h3>
 
-            <p>
-                Colocar mais leme nem sempre significa obter
-                aumento proporcional da força lateral.
-            </p>
+<p>
+Colocar mais leme nem sempre significa obter
+aumento proporcional da força lateral.
+</p>
 
-            <p>
-                Em ângulos elevados, podem ocorrer separação
-                do escoamento e redução da eficiência hidrodinâmica.
-            </p>
+<p>
+Em ângulos elevados, podem ocorrer separação
+do escoamento e redução da eficiência hidrodinâmica.
+</p>
 
-            <p>
-                Esse fenômeno será estudado posteriormente
-                no tópico <strong>estol do leme</strong>
-                ou <strong>rudder stall</strong>.
-            </p>
+<p>
+Esse fenômeno será estudado posteriormente
+no tópico <strong>estol do leme</strong>
+ou <strong>rudder stall</strong>.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -1479,56 +1442,56 @@
 
 <section class="bibliografia-aula">
 
-    <div class="widget">
+<div class="widget">
 
-        <h2>📚 Onde estudar na bibliografia</h2>
+<h2>📚 Onde estudar na bibliografia</h2>
 
-        <p>
-            Os princípios apresentados nesta parte são desenvolvidos
-            principalmente nas seguintes publicações:
-        </p>
+<p>
+Os princípios apresentados nesta parte são desenvolvidos
+principalmente nas seguintes publicações:
+</p>
 
-        <ul>
+<ul>
 
-            <li>
-                <strong>Naval Shiphandling</strong> —
-                fundamentos das forças que atuam no navio,
-                funcionamento hidrodinâmico do leme,
-                força do leme e relação com o fluxo da água.
-            </li>
+<li>
+<strong>Naval Shiphandling</strong> —
+fundamentos das forças que atuam no navio,
+funcionamento hidrodinâmico do leme,
+força do leme e relação com o fluxo da água.
+</li>
 
-            <li>
-                <strong>Shiphandling for the Mariner</strong> —
-                emprego operacional do leme,
-                resposta do navio, manutenção do rumo
-                e controle da guinada.
-            </li>
+<li>
+<strong>Shiphandling for the Mariner</strong> —
+emprego operacional do leme,
+resposta do navio, manutenção do rumo
+e controle da guinada.
+</li>
 
-            <li>
-                <strong>Principles of Naval Architecture</strong> —
-                fundamentos de controlabilidade,
-                forças hidrodinâmicas e atuação dos dispositivos
-                de governo.
-            </li>
+<li>
+<strong>Principles of Naval Architecture</strong> —
+fundamentos de controlabilidade,
+forças hidrodinâmicas e atuação dos dispositivos
+de governo.
+</li>
 
-            <li>
-                <strong>Arte Naval</strong> —
-                constituição, finalidade e elementos
-                do sistema de governo do navio.
-            </li>
+<li>
+<strong>Arte Naval</strong> —
+constituição, finalidade e elementos
+do sistema de governo do navio.
+</li>
 
-        </ul>
+</ul>
 
-        <p class="nota-bibliografica">
+<p class="nota-bibliografica">
 
-            <strong>Observação:</strong>
-            a indicação detalhada de capítulos e páginas será consolidada
-            no quadro bibliográfico final da aula, considerando
-            as edições específicas dos arquivos utilizados.
+<strong>Observação:</strong>
+a indicação detalhada de capítulos e páginas será consolidada
+no quadro bibliográfico final da aula, considerando
+as edições específicas dos arquivos utilizados.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -1540,54 +1503,71 @@
 
 <section class="encerramento-parte">
 
-    <div class="widget">
+<div class="widget">
 
-        <h2>✅ Conclusão da Parte 1</h2>
+<h2>✅ Conclusão da Parte 1</h2>
 
-        <p>
-            Nesta parte estudamos o leme como perfil hidrodinâmico,
-            a origem de sua força lateral e a formação
-            do momento de guinada.
-        </p>
+<p>
+Nesta parte estudamos o leme como perfil hidrodinâmico,
+a origem de sua força lateral e a formação
+do momento de guinada.
+</p>
 
-        <p>
-            Na próxima parte estudaremos com maior profundidade:
-        </p>
+<p>
+Na próxima parte estudaremos com maior profundidade:
+</p>
 
-        <ul>
+<ul>
 
-            <li>
-                sustentação — <strong>lift</strong>;
-            </li>
+<li>
+sustentação — <strong>lift</strong>;
+</li>
 
-            <li>
-                arrasto — <strong>drag</strong>;
-            </li>
+<li>
+arrasto — <strong>drag</strong>;
+</li>
 
-            <li>
-                ângulo geométrico do leme;
-            </li>
+<li>
+ângulo geométrico do leme;
+</li>
 
-            <li>
-                ângulo de ataque efetivo;
-            </li>
+<li>
+ângulo de ataque efetivo;
+</li>
 
-            <li>
-                direção real do fluxo incidente;
-            </li>
+<li>
+direção real do fluxo incidente;
+</li>
 
-            <li>
-                centro de pressão do leme.
-            </li>
+<li>
+centro de pressão do leme.
+</li>
 
-        </ul>
+</ul>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================================
      FIM DA PARTE 1
-     FUNDAMENTOS DOS LEMES
-========================================= -->  
+========================================= -->
+
+
+</main>
+
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+
+</body>
+
+</html>
