@@ -1553,6 +1553,4592 @@ centro de pressão do leme.
 <!-- =========================================
      FIM DA PARTE 1
 ========================================= -->
+<!-- =========================================
+     PARTE 2
+     FORÇAS HIDRODINÂMICAS NO LEME
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>PARTE 2 — FORÇAS HIDRODINÂMICAS NO LEME</h2>
+
+<p>
+Nesta parte estudaremos com maior profundidade
+as forças hidrodinâmicas desenvolvidas pelo leme.
+</p>
+
+<p>
+Serão analisados os conceitos de:
+</p>
+
+<ul>
+
+<li>
+<strong>sustentação — lift</strong>;
+</li>
+
+<li>
+<strong>arrasto — drag</strong>;
+</li>
+
+<li>
+<strong>ângulo de leme — rudder angle</strong>;
+</li>
+
+<li>
+<strong>ângulo de ataque — angle of attack</strong>;
+</li>
+
+<li>
+<strong>ângulo de ataque efetivo — effective angle of attack</strong>;
+</li>
+
+<li>
+<strong>centro de pressão — center of pressure</strong>.
+</li>
+
+</ul>
+
+<p>
+Esses conceitos são fundamentais para compreender
+por que a força produzida pelo leme varia durante
+uma manobra, mesmo quando o ângulo indicado
+permanece constante.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     6. SUSTENTAÇÃO PRODUZIDA PELO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="sustentacao-produzida-pelo-leme"
+>
+
+<h2>6. Sustentação produzida pelo leme</h2>
+
+<div class="widget">
+
+<p>
+A <strong>sustentação</strong>,
+ou <strong>lift</strong>,
+é a componente da força hidrodinâmica que atua
+aproximadamente perpendicular à direção
+do escoamento relativo da água.
+</p>
+
+<p>
+Quando o leme é inclinado em relação ao fluxo incidente,
+a água sofre uma alteração de direção ao passar
+por suas superfícies.
+</p>
+
+<p>
+Forma-se então uma distribuição desigual de pressão:
+</p>
+
+<ul>
+
+<li>
+uma região de pressão relativamente maior
+em uma das faces;
+</li>
+
+<li>
+uma região de pressão relativamente menor
+na face oposta.
+</li>
+
+</ul>
+
+<p>
+A diferença de pressão entre as duas faces
+produz a força de sustentação.
+</p>
+
+<div class="destaque">
+
+<h3>⚓ Aplicação ao leme</h3>
+
+<p>
+No caso do leme, a sustentação é a principal responsável
+pela geração da força transversal empregada
+para controlar a proa do navio.
+</p>
+
+<p>
+Por isso, embora a palavra
+<strong>lift</strong> seja frequentemente traduzida
+como “sustentação”, ela não atua necessariamente
+na direção vertical.
+</p>
+
+<p>
+Sua direção é definida em relação ao escoamento incidente,
+e não em relação à superfície do mar.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 3
+     LIFT E DISTRIBUIÇÃO DE PRESSÃO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 500"
+    role="img"
+    aria-labelledby="titulo-lift-leme descricao-lift-leme"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f3f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-lift-leme">
+Formação da sustentação sobre o leme
+</title>
+
+<desc id="descricao-lift-leme">
+Esquema mostrando o leme inclinado,
+a diferença de pressão e a força de sustentação.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+FORMAÇÃO DA SUSTENTAÇÃO NO LEME
+</text>
+
+
+<!-- FLUXO INCIDENTE -->
+
+<g
+    stroke="#3282b8"
+    stroke-width="4"
+    fill="none"
+>
+
+<line x1="70" y1="150" x2="350" y2="150" />
+
+<line x1="70" y1="220" x2="350" y2="220" />
+
+<line x1="70" y1="290" x2="350" y2="290" />
+
+<line x1="70" y1="360" x2="350" y2="360" />
+
+</g>
+
+
+<g fill="#3282b8">
+
+<polygon points="350,150 328,139 328,161" />
+
+<polygon points="350,220 328,209 328,231" />
+
+<polygon points="350,290 328,279 328,301" />
+
+<polygon points="350,360 328,349 328,371" />
+
+</g>
+
+
+<text
+    x="110"
+    y="115"
+    font-size="18"
+    font-weight="700"
+    fill="#1d628d"
+>
+Escoamento relativo
+</text>
+
+<text
+    x="110"
+    y="137"
+    font-size="15"
+    fill="#1d628d"
+>
+Relative flow
+</text>
+
+
+<!-- LEME -->
+
+<polygon
+    points="400,105 570,365 510,405 352,125"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- FACE DE BAIXA PRESSÃO -->
+
+<path
+    d="M395 112 C470 90, 545 160, 585 285"
+    fill="none"
+    stroke="#2b8a3e"
+    stroke-width="11"
+    opacity="0.75"
+/>
+
+<text
+    x="590"
+    y="235"
+    font-size="17"
+    font-weight="700"
+    fill="#237432"
+>
+Baixa pressão
+</text>
+
+<text
+    x="590"
+    y="257"
+    font-size="14"
+    fill="#237432"
+>
+Low-pressure side
+</text>
+
+
+<!-- FACE DE ALTA PRESSÃO -->
+
+<path
+    d="M362 128 C380 245, 430 345, 510 398"
+    fill="none"
+    stroke="#d14545"
+    stroke-width="11"
+    opacity="0.75"
+/>
+
+<text
+    x="230"
+    y="395"
+    font-size="17"
+    font-weight="700"
+    fill="#a42727"
+>
+Alta pressão
+</text>
+
+<text
+    x="230"
+    y="417"
+    font-size="14"
+    fill="#a42727"
+>
+High-pressure side
+</text>
+
+
+<!-- LIFT -->
+
+<line
+    x1="465"
+    y1="250"
+    x2="610"
+    y2="115"
+    stroke="#2b8a3e"
+    stroke-width="8"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="610,115 583,123 602,143"
+    fill="#2b8a3e"
+/>
+
+<text
+    x="630"
+    y="100"
+    font-size="20"
+    font-weight="700"
+    fill="#237432"
+>
+Lift
+</text>
+
+<text
+    x="630"
+    y="124"
+    font-size="16"
+    fill="#237432"
+>
+Sustentação
+</text>
+
+
+<!-- LEGENDA -->
+
+<rect
+    x="100"
+    y="440"
+    width="700"
+    height="40"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="466"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+A diferença de pressão entre as faces produz a força de sustentação.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 3 —</strong>
+Representação didática da formação da sustentação
+sobre um leme inclinado.
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>📐 Coeficiente de sustentação</h3>
+
+<p class="equacao">
+
+L =
+<span class="fracao">
+<span>1</span>
+<span>2</span>
+</span>
+
+· ρ · V² · A · C<sub>L</sub>
+
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>L</strong> =
+força de sustentação;
+</li>
+
+<li>
+<strong>ρ</strong> =
+massa específica da água;
+</li>
+
+<li>
+<strong>V</strong> =
+velocidade relativa do fluxo sobre o leme;
+</li>
+
+<li>
+<strong>A</strong> =
+área de referência do leme;
+</li>
+
+<li>
+<strong>C<sub>L</sub></strong> =
+coeficiente de sustentação.
+</li>
+
+</ul>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+A força do leme varia aproximadamente com o quadrado
+da velocidade da água que efetivamente passa por ele.
+</p>
+
+<p>
+Essa velocidade pode ser diferente da velocidade
+do navio através da água, especialmente quando
+o leme se encontra no fluxo acelerado da hélice.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Lift</strong> — sustentação.
+</li>
+
+<li>
+<strong>Lift force</strong> — força de sustentação.
+</li>
+
+<li>
+<strong>Lift coefficient</strong> —
+coeficiente de sustentação.
+</li>
+
+<li>
+<strong>Pressure difference</strong> —
+diferença de pressão.
+</li>
+
+<li>
+<strong>Pressure side</strong> —
+face de pressão.
+</li>
+
+<li>
+<strong>Suction side</strong> —
+face de sucção.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     7. ARRASTO PRODUZIDO PELO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="arrasto-produzido-pelo-leme"
+>
+
+<h2>7. Arrasto produzido pelo leme</h2>
+
+<div class="widget">
+
+<p>
+O <strong>arrasto</strong>,
+ou <strong>drag</strong>,
+é a componente da força hidrodinâmica que atua
+aproximadamente paralela à direção
+do escoamento relativo.
+</p>
+
+<p>
+Ao ser colocado em determinado ângulo,
+o leme cria resistência à passagem da água.
+</p>
+
+<p>
+Parte da força produzida atua contra o movimento
+relativo do fluxo e contribui para aumentar
+a resistência total ao avanço do navio.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Lift e drag coexistem</h3>
+
+<p>
+Um leme em atuação normalmente produz,
+ao mesmo tempo:
+</p>
+
+<ul>
+
+<li>
+sustentação, associada à força transversal;
+</li>
+
+<li>
+arrasto, associado à resistência ao escoamento.
+</li>
+
+</ul>
+
+<p>
+Essas duas componentes formam a
+<strong>força hidrodinâmica resultante</strong>
+sobre o leme.
+</p>
+
+</div>
+
+<div class="formula">
+
+<h3>📐 Expressão simplificada do arrasto</h3>
+
+<p class="equacao">
+
+D =
+<span class="fracao">
+<span>1</span>
+<span>2</span>
+</span>
+
+· ρ · V² · A · C<sub>D</sub>
+
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>D</strong> =
+força de arrasto;
+</li>
+
+<li>
+<strong>C<sub>D</sub></strong> =
+coeficiente de arrasto.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+O coeficiente de arrasto depende, entre outros fatores:
+</p>
+
+<ul>
+
+<li>
+da forma do perfil do leme;
+</li>
+
+<li>
+da rugosidade de sua superfície;
+</li>
+
+<li>
+do ângulo de ataque;
+</li>
+
+<li>
+da separação do escoamento;
+</li>
+
+<li>
+da turbulência do fluxo incidente;
+</li>
+
+<li>
+das condições de interação entre casco, hélice e leme.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Consequência operacional</h3>
+
+<p>
+Grandes ângulos de leme podem produzir
+força lateral significativa, mas também aumentam
+o arrasto e provocam perda adicional de velocidade.
+</p>
+
+<p>
+Durante uma curva, essa redução de velocidade
+altera progressivamente a própria força disponível
+no leme.
+</p>
+
+</div>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Atenção para o PSCPP</h3>
+
+<p>
+O arrasto do leme não é a principal componente
+responsável pela mudança de rumo.
+</p>
+
+<p>
+A ação de governo está principalmente associada
+à sustentação e à sua componente transversal,
+enquanto o arrasto atua predominantemente
+na direção do escoamento.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Drag</strong> — arrasto.
+</li>
+
+<li>
+<strong>Drag force</strong> — força de arrasto.
+</li>
+
+<li>
+<strong>Drag coefficient</strong> —
+coeficiente de arrasto.
+</li>
+
+<li>
+<strong>Flow resistance</strong> —
+resistência ao escoamento.
+</li>
+
+<li>
+<strong>Speed loss</strong> —
+perda de velocidade.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     8. ÂNGULO DE LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="angulo-de-leme"
+>
+
+<h2>8. Ângulo de leme</h2>
+
+<div class="widget">
+
+<p>
+O <strong>ângulo de leme</strong>,
+ou <strong>rudder angle</strong>,
+é normalmente medido entre o plano do leme
+e o plano longitudinal de referência do navio.
+</p>
+
+<p>
+Quando o leme está alinhado com a linha de centro,
+considera-se que está:
+</p>
+
+<p>
+<strong>a meio — amidships</strong>.
+</p>
+
+<p>
+Quando é girado para um dos bordos,
+o indicador do sistema de governo apresenta
+o ângulo comandado ou alcançado.
+</p>
+
+<div class="destaque">
+
+<h3>🧭 Ângulo geométrico</h3>
+
+<p>
+O ângulo indicado pelo aparelho de governo
+é um ângulo geométrico medido em relação ao navio.
+</p>
+
+<p>
+Ele não representa necessariamente o ângulo real
+entre o leme e o fluxo de água que o alcança.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 4
+     ÂNGULO DE LEME
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 470"
+    role="img"
+    aria-labelledby="titulo-angulo-leme descricao-angulo-leme"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f4f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-angulo-leme">
+Ângulo geométrico do leme
+</title>
+
+<desc id="descricao-angulo-leme">
+Vista superior da popa do navio mostrando
+a linha de centro e o ângulo do leme.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+ÂNGULO GEOMÉTRICO DO LEME
+</text>
+
+
+<!-- POPA DO NAVIO -->
+
+<path
+    d="M290 90
+       L610 90
+       L570 270
+       Q450 345 330 270
+       Z"
+    fill="#b9c4cc"
+    stroke="#536875"
+    stroke-width="5"
+/>
+
+
+<!-- LINHA DE CENTRO -->
+
+<line
+    x1="450"
+    y1="65"
+    x2="450"
+    y2="425"
+    stroke="#536875"
+    stroke-width="3"
+    stroke-dasharray="12 10"
+/>
+
+<text
+    x="462"
+    y="390"
+    font-size="16"
+    fill="#536875"
+>
+Linha de centro
+</text>
+
+<text
+    x="462"
+    y="411"
+    font-size="14"
+    fill="#536875"
+>
+Centerline
+</text>
+
+
+<!-- EIXO DO LEME -->
+
+<circle
+    cx="450"
+    cy="290"
+    r="11"
+    fill="#263844"
+/>
+
+
+<!-- LEME INCLINADO -->
+
+<polygon
+    points="445,285 605,392 578,430 433,306"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- ARCO DO ÂNGULO -->
+
+<path
+    d="M450 355 A65 65 0 0 1 505 324"
+    fill="none"
+    stroke="#b62f2f"
+    stroke-width="5"
+/>
+
+<text
+    x="505"
+    y="352"
+    font-size="25"
+    font-weight="700"
+    fill="#b62f2f"
+>
+δ
+</text>
+
+
+<!-- INDICAÇÃO -->
+
+<line
+    x1="595"
+    y1="385"
+    x2="720"
+    y2="300"
+    stroke="#b62f2f"
+    stroke-width="4"
+/>
+
+<polygon
+    points="720,300 696,307 711,326"
+    fill="#b62f2f"
+/>
+
+<text
+    x="725"
+    y="278"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Rudder angle
+</text>
+
+<text
+    x="725"
+    y="300"
+    font-size="15"
+    fill="#a42727"
+>
+Ângulo de leme
+</text>
+
+
+<rect
+    x="100"
+    y="425"
+    width="700"
+    height="32"
+    rx="9"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="447"
+    text-anchor="middle"
+    font-size="15"
+    font-weight="700"
+    fill="#12344d"
+>
+O ângulo geométrico é medido em relação à linha de centro do navio.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 4 —</strong>
+Representação do ângulo geométrico do leme
+em relação à linha de centro do navio.
+
+</p>
+
+</div>
+
+
+<p>
+Em condições iniciais de movimento retilíneo,
+o fluxo que alcança o leme pode estar aproximadamente
+alinhado com a direção longitudinal do navio.
+</p>
+
+<p>
+Nessa situação, o ângulo de leme e o ângulo
+de ataque podem apresentar valores próximos.
+</p>
+
+<p>
+Durante a guinada, porém, o navio passa a desenvolver:
+</p>
+
+<ul>
+
+<li>
+velocidade longitudinal;
+</li>
+
+<li>
+velocidade lateral;
+</li>
+
+<li>
+movimento de rotação;
+</li>
+
+<li>
+escoamento oblíquo na região da popa.
+</li>
+
+</ul>
+
+<p>
+Consequentemente, a direção real do fluxo sobre o leme
+deixa de coincidir com a linha de centro do navio.
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Rudder angle</strong> —
+ângulo de leme.
+</li>
+
+<li>
+<strong>Rudder amidships</strong> —
+leme a meio.
+</li>
+
+<li>
+<strong>Port rudder</strong> —
+leme para bombordo.
+</li>
+
+<li>
+<strong>Starboard rudder</strong> —
+leme para boreste.
+</li>
+
+<li>
+<strong>Centerline</strong> —
+linha de centro.
+</li>
+
+<li>
+<strong>Rudder angle indicator</strong> —
+indicador de ângulo do leme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     9. ÂNGULO DE ATAQUE EFETIVO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="angulo-de-ataque-efetivo"
+>
+
+<h2>9. Ângulo de ataque efetivo</h2>
+
+<div class="widget">
+
+<p>
+O <strong>ângulo de ataque</strong>,
+ou <strong>angle of attack</strong>,
+é o ângulo formado entre o perfil do leme
+e a direção real do escoamento relativo
+que chega até ele.
+</p>
+
+<p>
+Esse conceito é diferente do ângulo de leme,
+que é medido em relação à estrutura do navio.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Diferença essencial</h3>
+
+<p>
+<strong>Rudder angle</strong>:
+ângulo do leme em relação à linha de centro do navio.
+</p>
+
+<p>
+<strong>Angle of attack</strong>:
+ângulo do leme em relação ao fluxo relativo da água.
+</p>
+
+</div>
+
+<p>
+Quando o navio começa a guinar,
+sua popa passa a apresentar movimento lateral.
+</p>
+
+<p>
+O leme, portanto, já não recebe o fluxo
+exatamente pela direção longitudinal.
+</p>
+
+<p>
+O escoamento incidente torna-se oblíquo,
+reduzindo ou modificando o ângulo efetivo
+com que o leme encontra a água.
+</p>
+
+<div class="formula">
+
+<h3>📐 Relação conceitual simplificada</h3>
+
+<p class="equacao">
+
+α<sub>ef</sub> ≈ δ − β<sub>R</sub>
+
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>α<sub>ef</sub></strong> =
+ângulo de ataque efetivo do leme;
+</li>
+
+<li>
+<strong>δ</strong> =
+ângulo geométrico do leme;
+</li>
+
+<li>
+<strong>β<sub>R</sub></strong> =
+ângulo local do fluxo relativo
+na posição do leme.
+</li>
+
+</ul>
+
+<p>
+A expressão é uma representação conceitual.
+A definição de sinais pode variar conforme
+a convenção adotada na publicação ou no modelo matemático.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 5
+     ÂNGULO DE ATAQUE EFETIVO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 510"
+    role="img"
+    aria-labelledby="titulo-ataque-efetivo descricao-ataque-efetivo"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f3f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-ataque-efetivo">
+Diferença entre ângulo de leme e ângulo de ataque
+</title>
+
+<desc id="descricao-ataque-efetivo">
+Diagrama mostrando a linha de centro do navio,
+o fluxo relativo inclinado e o leme.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="700"
+    fill="#12344d"
+>
+ÂNGULO DE LEME × ÂNGULO DE ATAQUE
+</text>
+
+
+<!-- LINHA DE CENTRO -->
+
+<line
+    x1="450"
+    y1="80"
+    x2="450"
+    y2="450"
+    stroke="#536875"
+    stroke-width="4"
+    stroke-dasharray="12 10"
+/>
+
+<text
+    x="465"
+    y="100"
+    font-size="16"
+    fill="#536875"
+>
+Linha de centro do navio
+</text>
+
+
+<!-- LEME -->
+
+<polygon
+    points="445,220 625,370 594,410 430,242"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- FLUXO REAL -->
+
+<line
+    x1="120"
+    y1="365"
+    x2="455"
+    y2="245"
+    stroke="#3282b8"
+    stroke-width="7"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="455,245 425,242 435,268"
+    fill="#3282b8"
+/>
+
+<text
+    x="130"
+    y="330"
+    font-size="18"
+    font-weight="700"
+    fill="#1d628d"
+>
+Fluxo relativo local
+</text>
+
+<text
+    x="130"
+    y="352"
+    font-size="15"
+    fill="#1d628d"
+>
+Local relative flow
+</text>
+
+
+<!-- ÂNGULO DE LEME -->
+
+<path
+    d="M450 325 A90 90 0 0 1 520 292"
+    fill="none"
+    stroke="#b62f2f"
+    stroke-width="5"
+/>
+
+<text
+    x="515"
+    y="335"
+    font-size="24"
+    font-weight="700"
+    fill="#b62f2f"
+>
+δ
+</text>
+
+<text
+    x="525"
+    y="360"
+    font-size="15"
+    fill="#a42727"
+>
+Rudder angle
+</text>
+
+
+<!-- ÂNGULO DO FLUXO -->
+
+<path
+    d="M450 325 A68 68 0 0 0 392 302"
+    fill="none"
+    stroke="#7b5fc0"
+    stroke-width="5"
+/>
+
+<text
+    x="385"
+    y="335"
+    font-size="24"
+    font-weight="700"
+    fill="#6748ad"
+>
+β
+</text>
+
+
+<!-- ÂNGULO DE ATAQUE -->
+
+<path
+    d="M435 270 A58 58 0 0 1 485 276"
+    fill="none"
+    stroke="#2b8a3e"
+    stroke-width="6"
+/>
+
+<text
+    x="478"
+    y="245"
+    font-size="24"
+    font-weight="700"
+    fill="#237432"
+>
+α
+</text>
+
+<text
+    x="500"
+    y="265"
+    font-size="15"
+    fill="#237432"
+>
+Effective angle of attack
+</text>
+
+
+<!-- LEGENDA -->
+
+<rect
+    x="100"
+    y="450"
+    width="700"
+    height="42"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="477"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+O leme responde à direção real do fluxo, e não apenas ao ângulo indicado.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 5 —</strong>
+Representação conceitual da diferença entre
+ângulo de leme e ângulo de ataque efetivo.
+
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Consequência durante a curva</h3>
+
+<p>
+À medida que a razão de guinada aumenta,
+o fluxo local na popa também se modifica.
+</p>
+
+<p>
+Mesmo mantendo o mesmo ângulo indicado no leme,
+o ângulo de ataque efetivo e a força produzida
+podem mudar durante a evolução da curva.
+</p>
+
+</div>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Pegadinha frequente</h3>
+
+<p>
+Não é correto afirmar que um leme colocado,
+por exemplo, a 20 graus possui necessariamente
+ângulo de ataque de 20 graus.
+</p>
+
+<p>
+Isso somente seria aproximadamente verdadeiro
+se o fluxo incidente estivesse alinhado
+com a linha de centro do navio.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Angle of attack</strong> —
+ângulo de ataque.
+</li>
+
+<li>
+<strong>Effective angle of attack</strong> —
+ângulo de ataque efetivo.
+</li>
+
+<li>
+<strong>Relative free-stream flow</strong> —
+escoamento relativo não perturbado.
+</li>
+
+<li>
+<strong>Local inflow angle</strong> —
+ângulo local do fluxo incidente.
+</li>
+
+<li>
+<strong>Drift angle</strong> —
+ângulo de deriva.
+</li>
+
+<li>
+<strong>Oblique flow</strong> —
+escoamento oblíquo.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     10. CENTRO DE PRESSÃO DO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="centro-de-pressao-do-leme"
+>
+
+<h2>10. Centro de pressão do leme</h2>
+
+<div class="widget">
+
+<p>
+A pressão hidrodinâmica não atua em apenas um ponto
+da superfície do leme.
+</p>
+
+<p>
+Ela se distribui ao longo de toda a sua área.
+</p>
+
+<p>
+Para facilitar a análise, essa distribuição pode ser
+representada por uma única força resultante,
+aplicada em um ponto equivalente denominado:
+</p>
+
+<p>
+<strong>centro de pressão — center of pressure</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Definição</h3>
+
+<p>
+O centro de pressão é o ponto teórico da superfície
+no qual se considera aplicada a força hidrodinâmica
+resultante do leme.
+</p>
+
+</div>
+
+<p>
+A posição do centro de pressão pode variar em função:
+</p>
+
+<ul>
+
+<li>
+do perfil do leme;
+</li>
+
+<li>
+do ângulo de ataque;
+</li>
+
+<li>
+da distribuição de velocidade;
+</li>
+
+<li>
+da distribuição de pressão;
+</li>
+
+<li>
+da separação do escoamento;
+</li>
+
+<li>
+da geometria da parte fixa e da parte móvel;
+</li>
+
+<li>
+da proximidade do casco e da hélice.
+</li>
+
+</ul>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 6
+     CENTRO DE PRESSÃO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 500"
+    role="img"
+    aria-labelledby="titulo-centro-pressao descricao-centro-pressao"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f4f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-centro-pressao">
+Centro de pressão do leme
+</title>
+
+<desc id="descricao-centro-pressao">
+Esquema mostrando uma distribuição de pressão
+e sua força resultante aplicada no centro de pressão.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+CENTRO DE PRESSÃO DO LEME
+</text>
+
+
+<!-- LEME -->
+
+<rect
+    x="335"
+    y="95"
+    width="230"
+    height="315"
+    rx="22"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- EIXO -->
+
+<line
+    x1="390"
+    y1="75"
+    x2="390"
+    y2="430"
+    stroke="#263844"
+    stroke-width="8"
+/>
+
+<text
+    x="300"
+    y="455"
+    font-size="16"
+    font-weight="700"
+    fill="#263844"
+>
+Rudder stock
+</text>
+
+<text
+    x="300"
+    y="476"
+    font-size="14"
+    fill="#263844"
+>
+Madre do leme
+</text>
+
+
+<!-- SETAS DE PRESSÃO DISTRIBUÍDA -->
+
+<g
+    stroke="#3282b8"
+    stroke-width="4"
+    fill="#3282b8"
+>
+
+<line x1="210" y1="135" x2="335" y2="135" />
+<polygon points="335,135 315,125 315,145" />
+
+<line x1="185" y1="185" x2="335" y2="185" />
+<polygon points="335,185 315,175 315,195" />
+
+<line x1="160" y1="235" x2="335" y2="235" />
+<polygon points="335,235 315,225 315,245" />
+
+<line x1="175" y1="285" x2="335" y2="285" />
+<polygon points="335,285 315,275 315,295" />
+
+<line x1="205" y1="335" x2="335" y2="335" />
+<polygon points="335,335 315,325 315,345" />
+
+<line x1="235" y1="385" x2="335" y2="385" />
+<polygon points="335,385 315,375 315,395" />
+
+</g>
+
+
+<text
+    x="100"
+    y="105"
+    font-size="17"
+    font-weight="700"
+    fill="#1d628d"
+>
+Pressão distribuída
+</text>
+
+<text
+    x="100"
+    y="126"
+    font-size="14"
+    fill="#1d628d"
+>
+Distributed pressure
+</text>
+
+
+<!-- CENTRO DE PRESSÃO -->
+
+<circle
+    cx="475"
+    cy="250"
+    r="13"
+    fill="#b62f2f"
+    stroke="#ffffff"
+    stroke-width="4"
+/>
+
+<line
+    x1="475"
+    y1="250"
+    x2="720"
+    y2="250"
+    stroke="#b62f2f"
+    stroke-width="8"
+    stroke-linecap="round"
+/>
+
+<polygon
+    points="720,250 692,236 692,264"
+    fill="#b62f2f"
+/>
+
+<text
+    x="605"
+    y="220"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Força resultante
+</text>
+
+<text
+    x="605"
+    y="242"
+    font-size="15"
+    fill="#a42727"
+>
+Resultant force
+</text>
+
+
+<line
+    x1="475"
+    y1="250"
+    x2="620"
+    y2="125"
+    stroke="#6748ad"
+    stroke-width="4"
+/>
+
+<text
+    x="625"
+    y="105"
+    font-size="18"
+    font-weight="700"
+    fill="#6748ad"
+>
+Centro de pressão
+</text>
+
+<text
+    x="625"
+    y="127"
+    font-size="15"
+    fill="#6748ad"
+>
+Center of pressure
+</text>
+
+
+<!-- BRAÇO -->
+
+<line
+    x1="390"
+    y1="310"
+    x2="475"
+    y2="310"
+    stroke="#2b8a3e"
+    stroke-width="4"
+    stroke-dasharray="8 6"
+/>
+
+<line
+    x1="390"
+    y1="297"
+    x2="390"
+    y2="323"
+    stroke="#2b8a3e"
+    stroke-width="4"
+/>
+
+<line
+    x1="475"
+    y1="297"
+    x2="475"
+    y2="323"
+    stroke="#2b8a3e"
+    stroke-width="4"
+/>
+
+<text
+    x="432"
+    y="340"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#237432"
+>
+Braço
+</text>
+
+<text
+    x="432"
+    y="360"
+    text-anchor="middle"
+    font-size="14"
+    fill="#237432"
+>
+Lever arm
+</text>
+
+
+<rect
+    x="100"
+    y="440"
+    width="700"
+    height="40"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="466"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+A posição da resultante determina o momento aplicado à madre do leme.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 6 —</strong>
+Representação da força resultante aplicada
+no centro de pressão do leme.
+
+</p>
+
+</div>
+
+
+<p>
+A distância entre o centro de pressão
+e o eixo de rotação do leme forma um braço.
+</p>
+
+<p>
+A força hidrodinâmica, atuando nesse braço,
+produz um momento sobre a madre do leme
+e sobre o sistema de governo.
+</p>
+
+<div class="formula">
+
+<h3>📐 Momento sobre o eixo do leme</h3>
+
+<p class="equacao">
+
+M<sub>R</sub> = F<sub>R</sub> · e
+
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>M<sub>R</sub></strong> =
+momento aplicado ao eixo do leme;
+</li>
+
+<li>
+<strong>F<sub>R</sub></strong> =
+força hidrodinâmica resultante;
+</li>
+
+<li>
+<strong>e</strong> =
+distância entre o centro de pressão
+e o eixo de rotação.
+</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>⚙ Relação com o balanceamento</h3>
+
+<p>
+A posição do eixo de rotação em relação
+à área total do leme influencia o esforço necessário
+para movimentá-lo.
+</p>
+
+<p>
+Quando parte da área do leme fica à vante
+do eixo de rotação, a força nessa região
+pode reduzir o momento total exigido
+do aparelho de governo.
+</p>
+
+<p>
+Esse princípio será aprofundado posteriormente
+no estudo dos lemes balanceados
+e semibalanceados.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Importância operacional</h3>
+
+<p>
+O centro de pressão não é necessariamente
+o centro geométrico do leme.
+</p>
+
+<p>
+Sua posição depende da distribuição real de pressão
+e pode mudar conforme o ângulo de ataque
+e as condições do escoamento.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Center of pressure</strong> —
+centro de pressão.
+</li>
+
+<li>
+<strong>Rudder stock</strong> —
+madre ou eixo do leme.
+</li>
+
+<li>
+<strong>Rudder torque</strong> —
+torque ou momento sobre o leme.
+</li>
+
+<li>
+<strong>Turning axis</strong> —
+eixo de rotação.
+</li>
+
+<li>
+<strong>Hydrodynamic moment</strong> —
+momento hidrodinâmico.
+</li>
+
+<li>
+<strong>Lever arm</strong> —
+braço de alavanca.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     11. RELAÇÃO ENTRE ÂNGULO E FORÇA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="relacao-entre-angulo-e-forca"
+>
+
+<h2>11. Relação entre ângulo e força do leme</h2>
+
+<div class="widget">
+
+<p>
+Para ângulos de ataque relativamente pequenos
+e com escoamento aderente,
+o coeficiente de sustentação tende a aumentar
+com o aumento do ângulo de ataque.
+</p>
+
+<p>
+Consequentemente, a força lateral produzida
+pelo leme também tende a aumentar.
+</p>
+
+<div class="destaque">
+
+<h3>📈 Região aproximadamente linear</h3>
+
+<p>
+Em uma faixa limitada de operação,
+pode-se considerar que o aumento do ângulo
+de ataque produz aumento aproximadamente proporcional
+da sustentação.
+</p>
+
+<p>
+Essa aproximação deixa de ser válida
+quando o escoamento começa a se separar
+de maneira significativa.
+</p>
+
+</div>
+
+<p>
+A força efetivamente produzida depende simultaneamente:
+</p>
+
+<ul>
+
+<li>
+do ângulo de ataque;
+</li>
+
+<li>
+da velocidade local do fluxo;
+</li>
+
+<li>
+da área do leme;
+</li>
+
+<li>
+do perfil hidrodinâmico;
+</li>
+
+<li>
+da razão de aspecto;
+</li>
+
+<li>
+da interação com o casco;
+</li>
+
+<li>
+da interação com a hélice;
+</li>
+
+<li>
+da presença de separação do escoamento.
+</li>
+
+</ul>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Atenção para o PSCPP</h3>
+
+<p>
+Não existe crescimento indefinido da força
+com o aumento do ângulo do leme.
+</p>
+
+<p>
+Depois de determinado ponto,
+o aumento do ângulo pode produzir forte separação
+do escoamento, aumento do arrasto
+e perda de eficiência.
+</p>
+
+<p>
+Esse fenômeno será aprofundado na Parte 3,
+no estudo do <strong>rudder stall</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     APLICAÇÃO PARA O PSCPP
+========================================= -->
+
+<section class="aplicacao-pscpp">
+
+<div class="widget">
+
+<h2>🎓 Aplicação para o PSCPP — Parte 2</h2>
+
+<p>
+Ao concluir esta parte, devem estar claras
+as seguintes relações:
+</p>
+
+<ul>
+
+<li>
+<strong>lift</strong> atua perpendicularmente
+ao escoamento relativo;
+</li>
+
+<li>
+<strong>drag</strong> atua paralelamente
+ao escoamento relativo;
+</li>
+
+<li>
+o ângulo de leme é medido em relação
+à linha de centro do navio;
+</li>
+
+<li>
+o ângulo de ataque é medido em relação
+ao fluxo real que alcança o leme;
+</li>
+
+<li>
+durante a guinada, ângulo de leme
+e ângulo de ataque normalmente não são iguais;
+</li>
+
+<li>
+o centro de pressão representa o ponto equivalente
+de aplicação da força resultante;
+</li>
+
+<li>
+a distância entre o centro de pressão
+e o eixo do leme produz momento
+sobre o aparelho de governo;
+</li>
+
+<li>
+o aumento do ângulo de ataque não produz
+aumento ilimitado da força.
+</li>
+
+</ul>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Questão conceitual</h3>
+
+<p>
+Um navio mantém o leme em ângulo constante
+durante uma curva.
+</p>
+
+<p>
+É correto concluir que a força do leme
+também permanece constante?
+</p>
+
+<p>
+<strong>Não necessariamente.</strong>
+</p>
+
+<p>
+A direção e a velocidade do fluxo local
+podem mudar durante a guinada,
+alterando o ângulo de ataque efetivo
+e a força hidrodinâmica produzida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ONDE ESTUDAR NA BIBLIOGRAFIA
+========================================= -->
+
+<section class="bibliografia-aula">
+
+<div class="widget">
+
+<h2>📚 Onde estudar na bibliografia — Parte 2</h2>
+
+<ul>
+
+<li>
+
+<strong>Naval Shiphandling — Chapter 2:
+Forces Affecting the Ship</strong>
+
+<p>
+Definições de <em>hydrofoil</em>,
+<em>angle of attack</em>,
+<em>lift</em> e <em>drag</em>;
+formação da diferença de pressão;
+atuação do leme como perfil hidrodinâmico;
+relação entre força, área, pressão dinâmica
+e ângulo de ataque.
+</p>
+
+</li>
+
+<li>
+
+<strong>Principles of Naval Architecture —
+Controllability</strong>
+
+<p>
+Forças e momentos hidrodinâmicos de governo,
+coeficientes do leme, interação entre casco e leme
+e formulação da controlabilidade do navio.
+</p>
+
+</li>
+
+<li>
+
+<strong>Shiphandling for the Mariner</strong>
+
+<p>
+Aplicação operacional do ângulo de leme,
+resposta da embarcação e influência
+da velocidade sobre a capacidade de governo.
+</p>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 2
+========================================= -->
+
+<section class="encerramento-parte">
+
+<div class="widget">
+
+<h2>✅ Conclusão da Parte 2</h2>
+
+<p>
+Nesta parte estudamos a formação da sustentação
+e do arrasto, a diferença entre ângulo de leme
+e ângulo de ataque efetivo,
+e a posição do centro de pressão.
+</p>
+
+<p>
+Na próxima parte estudaremos:
+</p>
+
+<ul>
+
+<li>
+separação do escoamento;
+</li>
+
+<li>
+estol do leme — <strong>rudder stall</strong>;
+</li>
+
+<li>
+ângulo crítico;
+</li>
+
+<li>
+limitações dos grandes ângulos de leme;
+</li>
+
+<li>
+efeitos sobre a velocidade e a capacidade
+de governo do navio.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 2
+========================================= -->
+<!-- =========================================
+     PARTE 3
+     SEPARAÇÃO DO ESCOAMENTO E ESTOL DO LEME
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>PARTE 3 — SEPARAÇÃO DO ESCOAMENTO E ESTOL DO LEME</h2>
+
+<p>
+Nesta parte estudaremos as limitações hidrodinâmicas
+da atuação do leme.
+</p>
+
+<p>
+Até este ponto, observamos que o aumento do ângulo
+de ataque tende inicialmente a aumentar
+a força de sustentação.
+</p>
+
+<p>
+Entretanto, esse crescimento não ocorre indefinidamente.
+Quando o escoamento deixa de acompanhar adequadamente
+a superfície do leme, pode ocorrer:
+</p>
+
+<ul>
+
+<li>
+<strong>separação do escoamento — flow separation</strong>;
+</li>
+
+<li>
+aumento intenso da turbulência;
+</li>
+
+<li>
+crescimento do arrasto;
+</li>
+
+<li>
+redução da eficiência hidrodinâmica;
+</li>
+
+<li>
+<strong>estol do leme — rudder stall</strong>.
+</li>
+
+</ul>
+
+<p>
+A compreensão desses fenômenos é essencial
+para interpretar corretamente os efeitos
+dos grandes ângulos de leme.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     12. ESCOAMENTO ADERENTE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="escoamento-aderente"
+>
+
+<h2>12. Escoamento aderente ao leme</h2>
+
+<div class="widget">
+
+<p>
+Quando a água alcança o bordo de ataque do leme
+e consegue acompanhar sua superfície
+até as proximidades do bordo de fuga,
+diz-se que o escoamento permanece
+<strong>aderente</strong>.
+</p>
+
+<p>
+Em inglês, essa condição pode ser denominada:
+</p>
+
+<p>
+<strong>attached flow</strong>.
+</p>
+
+<p>
+Com o escoamento aderente, as linhas de corrente
+acompanham de maneira relativamente organizada
+a geometria do perfil.
+</p>
+
+<p>
+Nessa condição, estabelece-se uma distribuição
+de pressão capaz de produzir sustentação
+com eficiência hidrodinâmica.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Condição favorável</h3>
+
+<p>
+O escoamento aderente permite que o leme
+desenvolva uma relação favorável entre:
+</p>
+
+<ul>
+
+<li>
+força lateral;
+</li>
+
+<li>
+sustentação;
+</li>
+
+<li>
+arrasto;
+</li>
+
+<li>
+momento de guinada.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 7
+     ESCOAMENTO ADERENTE
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 480"
+    role="img"
+    aria-labelledby="titulo-escoamento-aderente descricao-escoamento-aderente"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f3f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-escoamento-aderente">
+Escoamento aderente ao redor do leme
+</title>
+
+<desc id="descricao-escoamento-aderente">
+Linhas de corrente acompanhando as duas faces
+de um leme em pequeno ângulo de ataque.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+ESCOAMENTO ADERENTE — ATTACHED FLOW
+</text>
+
+
+<!-- LEME -->
+
+<path
+    d="M380 215
+       Q465 180 620 235
+       Q475 290 380 255
+       Q355 238 380 215
+       Z"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- LINHAS SUPERIORES -->
+
+<g
+    fill="none"
+    stroke="#3282b8"
+    stroke-width="4"
+>
+
+<path
+    d="M70 100 C210 100, 290 125, 375 195 C455 160, 555 175, 800 200"
+ />
+
+<path
+    d="M70 145 C225 145, 305 160, 380 210 C470 178, 580 190, 820 225"
+ />
+
+<path
+    d="M70 190 C230 190, 300 195, 380 222 C485 195, 610 215, 830 250"
+ />
+
+</g>
+
+
+<!-- LINHAS INFERIORES -->
+
+<g
+    fill="none"
+    stroke="#3282b8"
+    stroke-width="4"
+>
+
+<path
+    d="M70 285 C235 285, 310 270, 380 250 C480 300, 600 310, 830 300"
+ />
+
+<path
+    d="M70 330 C220 330, 300 300, 375 265 C460 325, 580 350, 810 345"
+ />
+
+<path
+    d="M70 375 C205 375, 285 330, 370 275 C450 350, 565 390, 790 395"
+ />
+
+</g>
+
+
+<!-- SETAS -->
+
+<g fill="#3282b8">
+
+<polygon points="205,98 225,105 205,114" />
+<polygon points="205,143 225,150 205,159" />
+<polygon points="205,188 225,195 205,204" />
+<polygon points="205,278 225,285 205,294" />
+<polygon points="205,323 225,330 205,339" />
+<polygon points="205,368 225,375 205,384" />
+
+</g>
+
+
+<!-- INDICAÇÕES -->
+
+<line
+    x1="520"
+    y1="170"
+    x2="650"
+    y2="90"
+    stroke="#2b8a3e"
+    stroke-width="4"
+/>
+
+<text
+    x="655"
+    y="75"
+    font-size="18"
+    font-weight="700"
+    fill="#237432"
+>
+Linhas acompanham
+</text>
+
+<text
+    x="655"
+    y="98"
+    font-size="17"
+    fill="#237432"
+>
+a superfície
+</text>
+
+
+<line
+    x1="610"
+    y1="255"
+    x2="730"
+    y2="290"
+    stroke="#2b8a3e"
+    stroke-width="4"
+/>
+
+<text
+    x="630"
+    y="325"
+    font-size="18"
+    font-weight="700"
+    fill="#237432"
+>
+Bordo de fuga
+</text>
+
+<text
+    x="630"
+    y="348"
+    font-size="15"
+    fill="#237432"
+>
+Trailing edge
+</text>
+
+
+<rect
+    x="100"
+    y="420"
+    width="700"
+    height="40"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="446"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+O fluxo acompanha o perfil e mantém uma distribuição eficiente de pressão.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 7 —</strong>
+Representação didática do escoamento aderente
+ao redor de um leme.
+
+</p>
+
+</div>
+
+
+<p>
+Mesmo em condição aderente,
+existe uma camada muito próxima à superfície
+na qual os efeitos da viscosidade são importantes.
+</p>
+
+<p>
+Essa região é denominada:
+</p>
+
+<p>
+<strong>camada-limite — boundary layer</strong>.
+</p>
+
+<p>
+À medida que o ângulo de ataque aumenta,
+a camada-limite pode encontrar maior dificuldade
+para permanecer aderente à superfície do leme.
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Attached flow</strong> —
+escoamento aderente.
+</li>
+
+<li>
+<strong>Boundary layer</strong> —
+camada-limite.
+</li>
+
+<li>
+<strong>Leading edge</strong> —
+bordo de ataque.
+</li>
+
+<li>
+<strong>Trailing edge</strong> —
+bordo de fuga.
+</li>
+
+<li>
+<strong>Streamline</strong> —
+linha de corrente.
+</li>
+
+<li>
+<strong>Flow attachment</strong> —
+aderência do escoamento.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     13. SEPARAÇÃO DO ESCOAMENTO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="separacao-do-escoamento"
+>
+
+<h2>13. Separação do escoamento</h2>
+
+<div class="widget">
+
+<p>
+A <strong>separação do escoamento</strong>,
+ou <strong>flow separation</strong>,
+ocorre quando a água deixa de acompanhar
+a superfície do leme.
+</p>
+
+<p>
+Em vez de seguir de maneira organizada
+até o bordo de fuga, o fluxo se desprende
+da superfície e forma uma região de:
+</p>
+
+<ul>
+
+<li>
+recirculação;
+</li>
+
+<li>
+turbulência;
+</li>
+
+<li>
+vórtices;
+</li>
+
+<li>
+variações irregulares de pressão.
+</li>
+
+</ul>
+
+<p>
+Essa separação modifica o padrão das linhas
+de corrente e altera as forças hidrodinâmicas
+produzidas pelo leme.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Causa hidrodinâmica</h3>
+
+<p>
+Na face de sucção, a água pode encontrar
+um aumento de pressão na direção do escoamento.
+</p>
+
+<p>
+Essa condição é denominada:
+</p>
+
+<p>
+<strong>gradiente adverso de pressão — adverse pressure gradient</strong>.
+</p>
+
+<p>
+Quando a camada-limite não possui energia suficiente
+para vencer esse gradiente,
+o fluxo pode se desprender da superfície.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 8
+     SEPARAÇÃO DO ESCOAMENTO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 510"
+    role="img"
+    aria-labelledby="titulo-separacao descricao-separacao"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f5f8fa;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-separacao">
+Separação do escoamento no leme
+</title>
+
+<desc id="descricao-separacao">
+Linhas de corrente desprendendo-se da face
+de sucção do leme e formando uma esteira turbulenta.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+SEPARAÇÃO DO ESCOAMENTO — FLOW SEPARATION
+</text>
+
+
+<!-- LEME -->
+
+<path
+    d="M370 235
+       Q470 150 635 245
+       Q500 325 390 285
+       Q345 270 370 235
+       Z"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<!-- FLUXO INFERIOR ADERENTE -->
+
+<g
+    fill="none"
+    stroke="#3282b8"
+    stroke-width="4"
+>
+
+<path d="M60 300 C210 300, 300 285, 385 275 C500 350, 625 350, 830 315" />
+
+<path d="M60 350 C210 350, 305 315, 385 290 C490 390, 630 405, 820 380" />
+
+<path d="M60 400 C205 400, 300 350, 380 305 C475 420, 610 450, 790 445" />
+
+</g>
+
+
+<!-- FLUXO SUPERIOR SEPARADO -->
+
+<g
+    fill="none"
+    stroke="#d14545"
+    stroke-width="5"
+>
+
+<path
+    d="M60 105 C220 105, 300 130, 370 205
+       C440 145, 500 120, 560 150
+       C630 180, 675 145, 735 180
+       C790 210, 805 225, 835 230"
+ />
+
+<path
+    d="M60 155 C220 155, 300 170, 370 220
+       C430 180, 485 170, 530 200
+       C585 240, 620 185, 680 220
+       C735 250, 780 240, 835 260"
+ />
+
+</g>
+
+
+<!-- VÓRTICES -->
+
+<g
+    fill="none"
+    stroke="#b62f2f"
+    stroke-width="4"
+>
+
+<path d="M540 170 C590 130, 650 190, 610 225 C575 255, 535 225, 555 195" />
+
+<path d="M655 210 C705 170, 760 225, 725 260 C685 295, 650 260, 670 235" />
+
+</g>
+
+
+<!-- SETAS DO FLUXO -->
+
+<g fill="#3282b8">
+
+<polygon points="185,293 205,300 185,309" />
+<polygon points="185,343 205,350 185,359" />
+<polygon points="185,393 205,400 185,409" />
+
+</g>
+
+<g fill="#d14545">
+
+<polygon points="185,99 205,106 185,115" />
+<polygon points="185,149 205,156 185,165" />
+
+</g>
+
+
+<!-- PONTO DE SEPARAÇÃO -->
+
+<circle
+    cx="465"
+    cy="165"
+    r="10"
+    fill="#b62f2f"
+    stroke="#ffffff"
+    stroke-width="3"
+/>
+
+<line
+    x1="465"
+    y1="165"
+    x2="520"
+    y2="80"
+    stroke="#b62f2f"
+    stroke-width="4"
+/>
+
+<text
+    x="525"
+    y="67"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Ponto de separação
+</text>
+
+<text
+    x="525"
+    y="90"
+    font-size="15"
+    fill="#a42727"
+>
+Separation point
+</text>
+
+
+<!-- ESTEIRA -->
+
+<text
+    x="665"
+    y="330"
+    font-size="18"
+    font-weight="700"
+    fill="#a42727"
+>
+Esteira turbulenta
+</text>
+
+<text
+    x="665"
+    y="353"
+    font-size="15"
+    fill="#a42727"
+>
+Turbulent wake
+</text>
+
+
+<rect
+    x="100"
+    y="460"
+    width="700"
+    height="35"
+    rx="9"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="484"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+A separação altera a distribuição de pressão e reduz a eficiência do leme.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 8 —</strong>
+Representação da separação do escoamento
+e da formação de uma esteira turbulenta.
+
+</p>
+
+</div>
+
+
+<p>
+A separação pode começar em uma parte limitada
+da superfície e aumentar progressivamente
+com o crescimento do ângulo de ataque.
+</p>
+
+<p>
+Quanto maior for a região separada,
+maior tende a ser a deterioração
+do desempenho hidrodinâmico do leme.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+A separação do escoamento não significa
+necessariamente perda instantânea e completa
+da ação do leme.
+</p>
+
+<p>
+Ela pode desenvolver-se progressivamente,
+reduzindo a eficiência e aumentando o arrasto
+antes da ocorrência de um estol mais pronunciado.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Flow separation</strong> —
+separação do escoamento.
+</li>
+
+<li>
+<strong>Separation point</strong> —
+ponto de separação.
+</li>
+
+<li>
+<strong>Adverse pressure gradient</strong> —
+gradiente adverso de pressão.
+</li>
+
+<li>
+<strong>Recirculation region</strong> —
+região de recirculação.
+</li>
+
+<li>
+<strong>Turbulent wake</strong> —
+esteira turbulenta.
+</li>
+
+<li>
+<strong>Vortex shedding</strong> —
+desprendimento de vórtices.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     14. ESTOL DO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="estol-do-leme"
+>
+
+<h2>14. Estol do leme — Rudder Stall</h2>
+
+<div class="widget">
+
+<p>
+O <strong>estol do leme</strong>,
+ou <strong>rudder stall</strong>,
+é a condição em que a separação do escoamento
+se torna suficientemente intensa para provocar
+redução significativa da eficiência do leme.
+</p>
+
+<p>
+Antes do estol, o aumento do ângulo de ataque
+normalmente provoca aumento da sustentação.
+</p>
+
+<p>
+Ao atingir determinada condição crítica,
+a separação amplia-se e o coeficiente
+de sustentação deixa de crescer
+como ocorria anteriormente.
+</p>
+
+<p>
+Após esse ponto, um aumento adicional do ângulo
+pode produzir:
+</p>
+
+<ul>
+
+<li>
+pequeno aumento da força lateral;
+</li>
+
+<li>
+ausência de aumento útil;
+</li>
+
+<li>
+redução da sustentação;
+</li>
+
+<li>
+forte crescimento do arrasto;
+</li>
+
+<li>
+aumento da turbulência;
+</li>
+
+<li>
+vibrações e cargas irregulares.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>📌 Conceito essencial</h3>
+
+<p>
+O estol não significa necessariamente
+que toda a força do leme desaparece.
+</p>
+
+<p>
+Significa que o leme ultrapassou a região
+de funcionamento hidrodinamicamente eficiente
+e passou a apresentar separação intensa
+do escoamento.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 9
+     CURVA DE LIFT E STALL
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 540"
+    role="img"
+    aria-labelledby="titulo-curva-stall descricao-curva-stall"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f5f8fa;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-curva-stall">
+Curva conceitual de sustentação e estol do leme
+</title>
+
+<desc id="descricao-curva-stall">
+Gráfico conceitual mostrando o aumento da sustentação
+com o ângulo de ataque, seguido do estol.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+SUSTENTAÇÃO × ÂNGULO DE ATAQUE
+</text>
+
+
+<!-- EIXOS -->
+
+<line
+    x1="125"
+    y1="440"
+    x2="800"
+    y2="440"
+    stroke="#263844"
+    stroke-width="5"
+/>
+
+<polygon
+    points="800,440 775,428 775,452"
+    fill="#263844"
+/>
+
+<line
+    x1="125"
+    y1="440"
+    x2="125"
+    y2="85"
+    stroke="#263844"
+    stroke-width="5"
+/>
+
+<polygon
+    points="125,85 113,110 137,110"
+    fill="#263844"
+/>
+
+
+<!-- RÓTULOS -->
+
+<text
+    x="750"
+    y="480"
+    font-size="18"
+    font-weight="700"
+    fill="#263844"
+>
+Ângulo de ataque
+</text>
+
+<text
+    x="750"
+    y="502"
+    font-size="15"
+    fill="#263844"
+>
+Angle of attack
+</text>
+
+<text
+    x="35"
+    y="100"
+    font-size="18"
+    font-weight="700"
+    fill="#263844"
+    transform="rotate(-90 35 100)"
+>
+Sustentação — Lift
+</text>
+
+
+<!-- REGIÃO ADERENTE -->
+
+<path
+    d="M135 425
+       C240 385, 330 320, 430 240
+       C500 185, 550 145, 610 135"
+    fill="none"
+    stroke="#2b8a3e"
+    stroke-width="8"
+    stroke-linecap="round"
+/>
+
+
+<!-- REGIÃO APÓS STALL -->
+
+<path
+    d="M610 135
+       C650 140, 680 180, 710 230
+       C735 270, 760 295, 790 305"
+    fill="none"
+    stroke="#b62f2f"
+    stroke-width="8"
+    stroke-linecap="round"
+/>
+
+
+<!-- PONTO CRÍTICO -->
+
+<circle
+    cx="610"
+    cy="135"
+    r="12"
+    fill="#d58a15"
+    stroke="#ffffff"
+    stroke-width="4"
+/>
+
+<line
+    x1="610"
+    y1="135"
+    x2="610"
+    y2="440"
+    stroke="#d58a15"
+    stroke-width="4"
+    stroke-dasharray="10 8"
+/>
+
+<text
+    x="580"
+    y="110"
+    font-size="18"
+    font-weight="700"
+    fill="#b06d0d"
+>
+Início do estol
+</text>
+
+<text
+    x="580"
+    y="87"
+    font-size="15"
+    fill="#b06d0d"
+>
+Stall onset
+</text>
+
+
+<!-- ÁREAS -->
+
+<rect
+    x="170"
+    y="325"
+    width="245"
+    height="65"
+    rx="12"
+    fill="#e4f4e8"
+    stroke="#2b8a3e"
+/>
+
+<text
+    x="292"
+    y="352"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#237432"
+>
+Escoamento predominantemente
+</text>
+
+<text
+    x="292"
+    y="376"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#237432"
+>
+aderente
+</text>
+
+
+<rect
+    x="635"
+    y="325"
+    width="180"
+    height="65"
+    rx="12"
+    fill="#f9e7e7"
+    stroke="#b62f2f"
+/>
+
+<text
+    x="725"
+    y="352"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#a42727"
+>
+Separação
+</text>
+
+<text
+    x="725"
+    y="376"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#a42727"
+>
+intensa
+</text>
+
+
+<!-- NOTA -->
+
+<rect
+    x="105"
+    y="510"
+    width="690"
+    height="24"
+    rx="8"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="528"
+    text-anchor="middle"
+    font-size="14"
+    font-weight="700"
+    fill="#12344d"
+>
+Curva conceitual: valores reais dependem do perfil e das condições do escoamento.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 9 —</strong>
+Curva conceitual da sustentação em função
+do ângulo de ataque, destacando o início do estol.
+
+</p>
+
+</div>
+
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Pegadinha frequente</h3>
+
+<p>
+Após o estol, colocar mais leme
+não garante maior capacidade de guinada.
+</p>
+
+<p>
+O aumento do ângulo pode produzir principalmente
+mais arrasto e turbulência,
+sem aumento equivalente da força lateral útil.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Rudder stall</strong> —
+estol do leme.
+</li>
+
+<li>
+<strong>Stall onset</strong> —
+início do estol.
+</li>
+
+<li>
+<strong>Post-stall region</strong> —
+região posterior ao estol.
+</li>
+
+<li>
+<strong>Maximum lift</strong> —
+sustentação máxima.
+</li>
+
+<li>
+<strong>Loss of effectiveness</strong> —
+perda de eficiência.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     15. ÂNGULO CRÍTICO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="angulo-critico-do-leme"
+>
+
+<h2>15. Ângulo crítico do leme</h2>
+
+<div class="widget">
+
+<p>
+O <strong>ângulo crítico</strong>
+é a condição de ângulo de ataque
+na qual o escoamento passa a apresentar
+separação suficientemente intensa
+para iniciar o estol.
+</p>
+
+<p>
+Esse ângulo não deve ser tratado
+como um valor único e universal
+para todos os navios.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Não existe um único valor absoluto</h3>
+
+<p>
+O início do estol depende de diversas características,
+entre elas:
+</p>
+
+<ul>
+
+<li>
+forma do perfil do leme;
+</li>
+
+<li>
+espessura do perfil;
+</li>
+
+<li>
+razão de aspecto;
+</li>
+
+<li>
+acabamento superficial;
+</li>
+
+<li>
+velocidade do fluxo;
+</li>
+
+<li>
+nível de turbulência;
+</li>
+
+<li>
+esteira do casco;
+</li>
+
+<li>
+fluxo da hélice;
+</li>
+
+<li>
+posição do leme;
+</li>
+
+<li>
+interação com o casco e seus apêndices.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Além disso, deve-se distinguir:
+</p>
+
+<ul>
+
+<li>
+o ângulo indicado no aparelho de governo;
+</li>
+
+<li>
+o ângulo geométrico do leme;
+</li>
+
+<li>
+o ângulo de ataque efetivo do fluxo local.
+</li>
+
+</ul>
+
+<p>
+Um grande ângulo indicado não corresponde,
+necessariamente, ao mesmo valor
+de ângulo de ataque efetivo.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Não se deve utilizar um valor genérico
+de ângulo de estol como limite rígido
+para qualquer embarcação.
+</p>
+
+<p>
+A resposta deve ser avaliada com base:
+</p>
+
+<ul>
+
+<li>
+nas características do navio;
+</li>
+
+<li>
+nos dados de manobra disponíveis;
+</li>
+
+<li>
+no tipo de leme;
+</li>
+
+<li>
+na condição de carga;
+</li>
+
+<li>
+na velocidade;
+</li>
+
+<li>
+na resposta efetivamente observada.
+</li>
+
+</ul>
+
+</div>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Precisão conceitual</h3>
+
+<p>
+O estol está diretamente relacionado
+ao <strong>ângulo de ataque efetivo</strong>,
+e não apenas ao número apresentado
+pelo indicador de ângulo do leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     16. EFEITOS DOS GRANDES ÂNGULOS DE LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="efeitos-dos-grandes-angulos-de-leme"
+>
+
+<h2>16. Efeitos dos grandes ângulos de leme</h2>
+
+<div class="widget">
+
+<p>
+A utilização de grandes ângulos de leme
+produz efeitos que devem ser analisados em conjunto.
+</p>
+
+<p>
+Inicialmente, o aumento do ângulo pode elevar
+a força lateral e o momento de guinada.
+</p>
+
+<p>
+Entretanto, também ocorre aumento
+da resistência hidrodinâmica.
+</p>
+
+<p>
+Entre os principais efeitos encontram-se:
+</p>
+
+<ul>
+
+<li>
+aumento da força lateral até determinada condição;
+</li>
+
+<li>
+aumento do arrasto;
+</li>
+
+<li>
+redução da velocidade do navio;
+</li>
+
+<li>
+alteração da velocidade do fluxo sobre o leme;
+</li>
+
+<li>
+maior possibilidade de separação;
+</li>
+
+<li>
+maior risco de estol;
+</li>
+
+<li>
+aumento das cargas sobre o sistema de governo;
+</li>
+
+<li>
+possibilidade de vibrações e forças flutuantes.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>🔄 Efeito combinado</h3>
+
+<p>
+Um grande ângulo de leme aumenta o arrasto,
+fazendo o navio perder velocidade.
+</p>
+
+<p>
+Como a força hidrodinâmica depende
+aproximadamente do quadrado da velocidade
+do fluxo sobre o leme,
+essa perda de velocidade pode reduzir
+progressivamente a força disponível.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     ILUSTRAÇÃO 10
+     COMPARAÇÃO ENTRE ÂNGULOS
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+    viewBox="0 0 900 520"
+    role="img"
+    aria-labelledby="titulo-comparacao-angulos descricao-comparacao-angulos"
+    style="
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #f4f8fb;
+        border: 1px solid #b8cfdf;
+        border-radius: 12px;
+    "
+>
+
+<title id="titulo-comparacao-angulos">
+Comparação entre ângulo moderado e ângulo excessivo
+</title>
+
+<desc id="descricao-comparacao-angulos">
+Dois diagramas comparando o escoamento aderente
+em ângulo moderado e o escoamento separado
+em ângulo excessivo.
+</desc>
+
+
+<text
+    x="450"
+    y="40"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="700"
+    fill="#12344d"
+>
+EFEITO DO AUMENTO DO ÂNGULO DO LEME
+</text>
+
+
+<!-- DIVISÓRIA -->
+
+<line
+    x1="450"
+    y1="70"
+    x2="450"
+    y2="450"
+    stroke="#b8cfdf"
+    stroke-width="3"
+/>
+
+
+<!-- PAINEL ESQUERDO -->
+
+<text
+    x="225"
+    y="85"
+    text-anchor="middle"
+    font-size="20"
+    font-weight="700"
+    fill="#237432"
+>
+ÂNGULO MODERADO
+</text>
+
+<text
+    x="225"
+    y="108"
+    text-anchor="middle"
+    font-size="15"
+    fill="#237432"
+>
+Moderate rudder angle
+</text>
+
+
+<polygon
+    points="190,180 325,315 290,350 165,200"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<g
+    fill="none"
+    stroke="#3282b8"
+    stroke-width="4"
+>
+
+<path d="M45 150 C100 150, 135 165, 180 190 C230 150, 315 190, 405 220" />
+
+<path d="M45 220 C110 220, 145 215, 185 220 C245 200, 325 230, 410 260" />
+
+<path d="M45 290 C110 290, 150 270, 200 260 C250 300, 320 320, 400 325" />
+
+<path d="M45 350 C110 350, 150 315, 205 285 C260 345, 325 375, 400 380" />
+
+</g>
+
+
+<text
+    x="225"
+    y="415"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#237432"
+>
+Boa relação entre lift e drag
+</text>
+
+
+<!-- PAINEL DIREITO -->
+
+<text
+    x="675"
+    y="85"
+    text-anchor="middle"
+    font-size="20"
+    font-weight="700"
+    fill="#a42727"
+>
+ÂNGULO EXCESSIVO
+</text>
+
+<text
+    x="675"
+    y="108"
+    text-anchor="middle"
+    font-size="15"
+    fill="#a42727"
+>
+Excessive rudder angle
+</text>
+
+
+<polygon
+    points="590,145 735,335 690,370 555,170"
+    fill="#c58d32"
+    stroke="#765319"
+    stroke-width="5"
+/>
+
+
+<g
+    fill="none"
+    stroke="#d14545"
+    stroke-width="5"
+>
+
+<path d="M480 145 C530 145, 560 150, 590 165 C645 115, 700 135, 730 185 C760 235, 810 160, 860 220" />
+
+<path d="M480 215 C525 215, 555 200, 590 190 C640 165, 690 205, 705 250 C725 310, 790 235, 860 290" />
+
+</g>
+
+
+<g
+    fill="none"
+    stroke="#b62f2f"
+    stroke-width="4"
+>
+
+<path d="M700 170 C750 130, 790 180, 765 215 C740 245, 705 220, 725 195" />
+
+<path d="M755 245 C805 205, 845 255, 820 290 C790 325, 760 295, 780 270" />
+
+</g>
+
+
+<text
+    x="675"
+    y="415"
+    text-anchor="middle"
+    font-size="17"
+    font-weight="700"
+    fill="#a42727"
+>
+Mais drag e separação intensa
+</text>
+
+
+<!-- RODAPÉ -->
+
+<rect
+    x="90"
+    y="460"
+    width="720"
+    height="38"
+    rx="10"
+    fill="#ffffff"
+    stroke="#b8cfdf"
+/>
+
+<text
+    x="450"
+    y="485"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="700"
+    fill="#12344d"
+>
+Mais leme não significa, necessariamente, maior força lateral útil.
+</text>
+
+</svg>
+
+<p class="legenda-figura">
+
+<strong>Figura 10 —</strong>
+Comparação conceitual entre um leme operando
+com ângulo moderado e outro com separação intensa.
+
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Consequência para a manobra</h3>
+
+<p>
+Em determinadas situações, uma redução moderada
+do ângulo do leme pode restabelecer
+um escoamento mais organizado.
+</p>
+
+<p>
+Isso pode melhorar a eficiência hidrodinâmica,
+mesmo com um ângulo geométrico menor.
+</p>
+
+</div>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Atenção para o PSCPP</h3>
+
+<p>
+O comando de leme máximo não deve ser interpretado
+automaticamente como a condição
+de máxima eficiência do leme.
+</p>
+
+<p>
+O ângulo que produz a maior força útil depende
+do perfil, do escoamento e da interação
+entre casco, hélice e leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     17. RECUPERAÇÃO APÓS O ESTOL
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="recuperacao-apos-o-estol"
+>
+
+<h2>17. Recuperação após o estol</h2>
+
+<div class="widget">
+
+<p>
+Quando o leme está submetido a separação intensa,
+a recuperação do escoamento exige redução
+do ângulo de ataque efetivo.
+</p>
+
+<p>
+Isso pode ser obtido, conforme a situação,
+pela redução do ângulo de leme.
+</p>
+
+<p>
+Com menor incidência,
+a água pode voltar a acompanhar
+uma parcela maior da superfície do perfil,
+reduzindo a região separada.
+</p>
+
+<div class="destaque">
+
+<h3>🔄 Sequência conceitual</h3>
+
+<ol>
+
+<li>
+o ângulo de ataque torna-se excessivo;
+</li>
+
+<li>
+a camada-limite se separa;
+</li>
+
+<li>
+a sustentação deixa de crescer eficientemente;
+</li>
+
+<li>
+o arrasto e a turbulência aumentam;
+</li>
+
+<li>
+o ângulo é reduzido;
+</li>
+
+<li>
+o fluxo pode voltar a aderir ao perfil;
+</li>
+
+<li>
+a eficiência do leme pode ser recuperada.
+</li>
+
+</ol>
+
+</div>
+
+<p>
+A recuperação não deve ser analisada isoladamente.
+Durante a manobra, continuam atuando:
+</p>
+
+<ul>
+
+<li>
+a inércia do navio;
+</li>
+
+<li>
+a razão de guinada existente;
+</li>
+
+<li>
+as forças do casco;
+</li>
+
+<li>
+a ação da hélice;
+</li>
+
+<li>
+a redução de velocidade;
+</li>
+
+<li>
+o vento e a corrente;
+</li>
+
+<li>
+os efeitos de águas restritas.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Aplicação operacional</h3>
+
+<p>
+Reduzir o ângulo do leme não significa
+que a guinada será interrompida imediatamente.
+</p>
+
+<p>
+O navio possui inércia rotacional
+e pode continuar guinando mesmo depois
+da redução do comando.
+</p>
+
+<p>
+A recuperação hidrodinâmica do leme
+e a verificação da guinada são fenômenos relacionados,
+mas não devem ser confundidos.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Stall recovery</strong> —
+recuperação do estol.
+</li>
+
+<li>
+<strong>Flow reattachment</strong> —
+recolamento ou readesão do escoamento.
+</li>
+
+<li>
+<strong>Reduce rudder angle</strong> —
+reduzir o ângulo do leme.
+</li>
+
+<li>
+<strong>Rotational inertia</strong> —
+inércia rotacional.
+</li>
+
+<li>
+<strong>Residual rate of turn</strong> —
+razão de guinada residual.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     18. DISTINÇÃO ENTRE ESTOL E PERDA DE GOVERNO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="estol-e-perda-de-governo"
+>
+
+<h2>18. Estol do leme × perda de governo</h2>
+
+<div class="widget">
+
+<p>
+O estol do leme e a perda de governo
+são conceitos relacionados,
+mas não são sinônimos.
+</p>
+
+<div class="destaque">
+
+<h3>📌 Estol do leme</h3>
+
+<p>
+É uma condição hidrodinâmica associada
+à separação intensa do escoamento
+sobre o perfil do leme.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>📌 Perda de governo</h3>
+
+<p>
+É a incapacidade ou insuficiência do navio
+para responder adequadamente aos comandos
+de direção.
+</p>
+
+</div>
+
+<p>
+A perda de governo pode resultar de diferentes causas:
+</p>
+
+<ul>
+
+<li>
+velocidade insuficiente da água sobre o leme;
+</li>
+
+<li>
+estol ou redução da eficiência do leme;
+</li>
+
+<li>
+falha do aparelho de governo;
+</li>
+
+<li>
+avaria estrutural do leme;
+</li>
+
+<li>
+fluxo inadequado produzido pela hélice;
+</li>
+
+<li>
+ventos ou correntes superiores à capacidade de controle;
+</li>
+
+<li>
+efeitos hidrodinâmicos em águas restritas;
+</li>
+
+<li>
+interação com outra embarcação;
+</li>
+
+<li>
+condições extremas de mar.
+</li>
+
+</ul>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Pegadinha frequente</h3>
+
+<p>
+Um navio pode apresentar perda de governo
+sem que o leme esteja estolado.
+</p>
+
+<p>
+Da mesma forma, um leme pode operar
+em condição de separação intensa
+sem que o navio perca completamente
+sua capacidade de governo.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Loss of steering</strong> —
+perda do sistema de governo.
+</li>
+
+<li>
+<strong>Loss of steerage</strong> —
+perda da capacidade de governo.
+</li>
+
+<li>
+<strong>Steering failure</strong> —
+falha do aparelho de governo.
+</li>
+
+<li>
+<strong>Reduced rudder effectiveness</strong> —
+redução da eficácia do leme.
+</li>
+
+<li>
+<strong>Steerageway</strong> —
+seguimento suficiente para governar.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     APLICAÇÃO PARA O PSCPP
+========================================= -->
+
+<section class="aplicacao-pscpp">
+
+<div class="widget">
+
+<h2>🎓 Aplicação para o PSCPP — Parte 3</h2>
+
+<p>
+Ao concluir esta parte, devem estar claras
+as seguintes relações:
+</p>
+
+<ul>
+
+<li>
+com escoamento aderente, as linhas de corrente
+acompanham o perfil do leme;
+</li>
+
+<li>
+a separação ocorre quando o fluxo deixa
+de acompanhar a superfície;
+</li>
+
+<li>
+a separação modifica a distribuição de pressão;
+</li>
+
+<li>
+o estol corresponde a uma condição
+de separação intensa;
+</li>
+
+<li>
+após o estol, mais ângulo não garante
+maior força lateral útil;
+</li>
+
+<li>
+o arrasto tende a aumentar com os grandes
+ângulos de leme;
+</li>
+
+<li>
+o ângulo crítico não possui valor universal;
+</li>
+
+<li>
+o estol depende do ângulo de ataque efetivo;
+</li>
+
+<li>
+reduzir o ângulo pode favorecer
+a readesão do escoamento;
+</li>
+
+<li>
+estol do leme e perda de governo
+não são conceitos idênticos.
+</li>
+
+</ul>
+
+<div class="pegadinha-prova">
+
+<h3>🎯 Questão conceitual</h3>
+
+<p>
+Durante uma manobra, o navio responde pouco
+mesmo com grande ângulo de leme.
+O aumento adicional do ângulo necessariamente
+melhorará a resposta?
+</p>
+
+<p>
+<strong>Não.</strong>
+</p>
+
+<p>
+Caso o leme já esteja operando com separação intensa,
+o aumento adicional poderá provocar
+principalmente mais arrasto e turbulência,
+sem aumento equivalente da força lateral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ONDE ESTUDAR NA BIBLIOGRAFIA
+========================================= -->
+
+<section class="bibliografia-aula">
+
+<div class="widget">
+
+<h2>📚 Onde estudar na bibliografia — Parte 3</h2>
+
+<ul>
+
+<li>
+
+<strong>Naval Shiphandling — Chapter 2:
+Forces Affecting the Ship</strong>
+
+<p>
+Continuidade do escoamento,
+separação, alteração das linhas de corrente,
+distribuição de pressão sobre perfis hidrodinâmicos
+e influência da separação nas forças resultantes.
+</p>
+
+</li>
+
+<li>
+
+<strong>Principles of Naval Architecture —
+Controllability</strong>
+
+<p>
+Características hidrodinâmicas dos lemes,
+coeficientes de força, influência do ângulo
+de ataque e limitações da resposta do leme.
+</p>
+
+</li>
+
+<li>
+
+<strong>Shiphandling for the Mariner</strong>
+
+<p>
+Consequências operacionais dos grandes ângulos
+de leme, perda de velocidade,
+resposta do navio e controle da guinada.
+</p>
+
+</li>
+
+<li>
+
+<strong>Practical Ship Hydrodynamics</strong>
+
+<p>
+Camada-limite, separação do escoamento,
+turbulência e comportamento hidrodinâmico
+de superfícies imersas.
+</p>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 3
+========================================= -->
+
+<section class="encerramento-parte">
+
+<div class="widget">
+
+<h2>✅ Conclusão da Parte 3</h2>
+
+<p>
+Nesta parte estudamos o escoamento aderente,
+a separação, o estol do leme,
+os efeitos dos grandes ângulos
+e a recuperação da eficiência hidrodinâmica.
+</p>
+
+<p>
+Na próxima parte estudaremos:
+</p>
+
+<ul>
+
+<li>
+interação hélice–leme;
+</li>
+
+<li>
+fluxo acelerado da hélice;
+</li>
+
+<li>
+<strong>propeller slipstream</strong>;
+</li>
+
+<li>
+influência da máquina adiante;
+</li>
+
+<li>
+comportamento do leme com máquina atrás;
+</li>
+
+<li>
+ação do leme com pouco ou nenhum seguimento.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 3
+========================================= -->
+    
 
 
 </main>
