@@ -7786,6 +7786,2814 @@ do navio.
 </div>
 
 </section>
+<!-- =========================================
+     PARTE 5
+     INFLUÊNCIA DA VELOCIDADE, DERIVA,
+     ÁGUAS RASAS E CONDIÇÕES EXTERNAS
+========================================= -->
+
+
+<!-- =========================================
+     VELOCIDADE E EFICIÊNCIA DO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="velocidade-eficiencia-leme"
+>
+
+<h2>Influência da velocidade na eficiência do leme</h2>
+
+<div class="widget">
+
+<p>
+A força produzida pelo leme depende diretamente da velocidade
+do escoamento que alcança sua superfície.
+</p>
+
+<p>
+Essa velocidade é chamada de
+<strong>velocidade efetiva sobre o leme</strong>,
+ou
+<strong>effective rudder inflow velocity</strong>.
+</p>
+
+<p>
+Em uma representação simplificada,
+a força normal produzida pelo leme pode ser expressa por:
+</p>
+
+<div class="formula">
+
+<p>
+<strong>
+F<sub>N</sub>
+=
+½ × ρ × V<sub>R</sub><sup>2</sup>
+× A<sub>R</sub> × C<sub>N</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>F<sub>N</sub></strong> =
+força normal no leme;
+</li>
+
+<li>
+<strong>ρ</strong> =
+massa específica da água;
+</li>
+
+<li>
+<strong>V<sub>R</sub></strong> =
+velocidade efetiva do escoamento sobre o leme;
+</li>
+
+<li>
+<strong>A<sub>R</sub></strong> =
+área do leme;
+</li>
+
+<li>
+<strong>C<sub>N</sub></strong> =
+coeficiente de força normal.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Como a velocidade aparece elevada ao quadrado,
+a redução do fluxo sobre o leme provoca uma diminuição acentuada
+da força disponível para governar o navio.
+</p>
+
+
+<!-- FIGURA 1 -->
+
+<figure
+    class="figura-tecnica"
+    aria-labelledby="legenda-velocidade-leme"
+>
+
+<svg
+    viewBox="0 0 900 430"
+    role="img"
+    aria-label="Comparação da força produzida pelo leme em baixa e alta velocidade"
+    style="width: 100%; height: auto;"
+>
+
+<defs>
+
+    <marker
+        id="seta-azul-velocidade"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+        markerUnits="strokeWidth"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#1769aa"
+        />
+    </marker>
+
+    <marker
+        id="seta-vermelha-forca"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+        markerUnits="strokeWidth"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#b3261e"
+        />
+    </marker>
+
+</defs>
+
+
+<!-- FUNDO -->
+
+<rect
+    x="10"
+    y="10"
+    width="880"
+    height="410"
+    rx="18"
+    fill="#eef6fb"
+    stroke="#527d9b"
+    stroke-width="3"
+/>
+
+
+<!-- TÍTULO -->
+
+<text
+    x="450"
+    y="45"
+    text-anchor="middle"
+    font-size="25"
+    font-weight="bold"
+    fill="#123b56"
+>
+VELOCIDADE DO FLUXO × FORÇA DO LEME
+</text>
+
+
+<!-- PAINEL BAIXA VELOCIDADE -->
+
+<rect
+    x="35"
+    y="70"
+    width="390"
+    height="310"
+    rx="15"
+    fill="#ffffff"
+    stroke="#7d9eb5"
+    stroke-width="2"
+/>
+
+<text
+    x="230"
+    y="105"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="bold"
+    fill="#123b56"
+>
+BAIXA VELOCIDADE
+</text>
+
+<!-- CASCO -->
+
+<path
+    d="M80 190
+       L285 190
+       L340 220
+       L285 250
+       L80 250
+       L55 220
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="3"
+/>
+
+<!-- LEME -->
+
+<line
+    x1="315"
+    y1="205"
+    x2="348"
+    y2="258"
+    stroke="#8b3e2f"
+    stroke-width="12"
+    stroke-linecap="round"
+/>
+
+<!-- FLUXO CURTO -->
+
+<line
+    x1="65"
+    y1="145"
+    x2="145"
+    y2="145"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-azul-velocidade)"
+/>
+
+<line
+    x1="65"
+    y1="285"
+    x2="145"
+    y2="285"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-azul-velocidade)"
+/>
+
+<!-- FORÇA PEQUENA -->
+
+<line
+    x1="345"
+    y1="230"
+    x2="370"
+    y2="275"
+    stroke="#b3261e"
+    stroke-width="5"
+    marker-end="url(#seta-vermelha-forca)"
+/>
+
+<text
+    x="230"
+    y="325"
+    text-anchor="middle"
+    font-size="18"
+    fill="#37474f"
+>
+Fluxo reduzido
+</text>
+
+<text
+    x="230"
+    y="352"
+    text-anchor="middle"
+    font-size="18"
+    font-weight="bold"
+    fill="#b3261e"
+>
+Força lateral reduzida
+</text>
+
+
+<!-- PAINEL ALTA VELOCIDADE -->
+
+<rect
+    x="475"
+    y="70"
+    width="390"
+    height="310"
+    rx="15"
+    fill="#ffffff"
+    stroke="#7d9eb5"
+    stroke-width="2"
+/>
+
+<text
+    x="670"
+    y="105"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="bold"
+    fill="#123b56"
+>
+ALTA VELOCIDADE
+</text>
+
+<!-- CASCO -->
+
+<path
+    d="M520 190
+       L725 190
+       L780 220
+       L725 250
+       L520 250
+       L495 220
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="3"
+/>
+
+<!-- LEME -->
+
+<line
+    x1="755"
+    y1="205"
+    x2="788"
+    y2="258"
+    stroke="#8b3e2f"
+    stroke-width="12"
+    stroke-linecap="round"
+/>
+
+<!-- FLUXO LONGO -->
+
+<line
+    x1="490"
+    y1="135"
+    x2="655"
+    y2="135"
+    stroke="#1769aa"
+    stroke-width="6"
+    marker-end="url(#seta-azul-velocidade)"
+/>
+
+<line
+    x1="490"
+    y1="285"
+    x2="655"
+    y2="285"
+    stroke="#1769aa"
+    stroke-width="6"
+    marker-end="url(#seta-azul-velocidade)"
+/>
+
+<!-- FORÇA GRANDE -->
+
+<line
+    x1="785"
+    y1="230"
+    x2="835"
+    y2="320"
+    stroke="#b3261e"
+    stroke-width="7"
+    marker-end="url(#seta-vermelha-forca)"
+/>
+
+<text
+    x="670"
+    y="325"
+    text-anchor="middle"
+    font-size="18"
+    fill="#37474f"
+>
+Fluxo mais intenso
+</text>
+
+<text
+    x="670"
+    y="352"
+    text-anchor="middle"
+    font-size="18"
+    font-weight="bold"
+    fill="#b3261e"
+>
+Força lateral muito maior
+</text>
+
+</svg>
+
+<figcaption id="legenda-velocidade-leme">
+
+<strong>Figura 5.1 — Influência da velocidade:</strong>
+para o mesmo ângulo de leme,
+o aumento da velocidade efetiva do fluxo produz uma força
+hidrodinâmica muito maior.
+
+</figcaption>
+
+</figure>
+
+
+<div class="destaque">
+
+<p>
+Se a velocidade do fluxo sobre o leme for reduzida à metade,
+a força hidrodinâmica,
+em uma aproximação simplificada,
+poderá cair para aproximadamente um quarto do valor anterior.
+</p>
+
+</div>
+
+<p>
+Entretanto,
+a velocidade efetiva sobre o leme não é necessariamente igual à:
+</p>
+
+<ul>
+
+<li>
+<strong>speed over ground — SOG</strong>,
+velocidade em relação ao fundo;
+</li>
+
+<li>
+<strong>speed through the water — STW</strong>,
+velocidade através da água;
+</li>
+
+<li>
+velocidade indicada pelo sistema de navegação;
+</li>
+
+<li>
+velocidade média do escoamento ao redor do casco.
+</li>
+
+</ul>
+
+<p>
+O leme pode receber uma combinação de:
+</p>
+
+<ul>
+
+<li>velocidade de avanço do navio;</li>
+
+<li>corrente de descarga da hélice;</li>
+
+<li>esteira do casco;</li>
+
+<li>fluxo transversal provocado pela deriva;</li>
+
+<li>fluxo associado à guinada;</li>
+
+<li>corrente ambiental.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STEERAGEWAY
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="steerageway-controle-direcional"
+>
+
+<h2>Steerageway e perda da capacidade de governo</h2>
+
+<div class="widget">
+
+<p>
+O termo
+<strong>steerageway</strong>
+designa a existência de movimento suficiente através da água
+para que a embarcação responda ao leme.
+</p>
+
+<p>
+A expressão não corresponde a uma única velocidade universal.
+A velocidade mínima necessária depende das características
+de cada navio e das forças externas que atuam sobre ele.
+</p>
+
+<p>
+Um navio pode possuir algum fluxo sobre o leme,
+mas esse fluxo ainda ser insuficiente para superar:
+</p>
+
+<ul>
+
+<li>a ação do vento;</li>
+
+<li>a ação da corrente;</li>
+
+<li>a tendência de guinada já existente;</li>
+
+<li>o efeito de margem;</li>
+
+<li>a interação com outra embarcação;</li>
+
+<li>o empuxo transversal da hélice;</li>
+
+<li>os efeitos produzidos por ondas.</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+A perda de
+<strong>steerageway</strong>
+não significa necessariamente ausência total de força no leme.
+Significa que a força disponível já não é suficiente para manter
+ou alterar a proa conforme desejado.
+</p>
+
+</div>
+
+<p>
+Quando o navio perde a capacidade de governo pelo leme isoladamente,
+podem ser necessários:
+</p>
+
+<ul>
+
+<li>um golpe de máquina avante;</li>
+
+<li>uso de propulsores laterais;</li>
+
+<li>emprego de rebocadores;</li>
+
+<li>uso de âncoras em situação apropriada;</li>
+
+<li>redução ou compensação das forças externas;</li>
+
+<li>alteração do plano de manobra.</li>
+
+</ul>
+
+<div class="alerta">
+
+<p>
+<strong>Velocidade muito baixa</strong>
+e
+<strong>velocidade segura</strong>
+não são necessariamente sinônimos.
+Reduzir excessivamente a velocidade pode eliminar a autoridade
+de governo necessária para controlar o navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VELOCIDADE EM RELAÇÃO À ÁGUA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="velocidade-fundo-versus-agua"
+>
+
+<h2>Velocidade em relação ao fundo e à água</h2>
+
+<div class="widget">
+
+<p>
+Para avaliar a ação do leme,
+deve-se distinguir:
+</p>
+
+<div class="quadro-comparativo">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Grandeza</th>
+<th>Termo em inglês</th>
+<th>Referência</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Velocidade em relação ao fundo</td>
+<td><strong>Speed over ground — SOG</strong></td>
+<td>Movimento medido em relação ao leito ou à superfície terrestre</td>
+</tr>
+
+<tr>
+<td>Velocidade através da água</td>
+<td><strong>Speed through the water — STW</strong></td>
+<td>Movimento da embarcação em relação à massa de água</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p>
+O leme responde principalmente ao movimento relativo entre sua
+superfície e a água que o atravessa.
+Por isso,
+a
+<strong>STW</strong>
+é geralmente mais relevante para estimar sua eficiência
+hidrodinâmica.
+</p>
+
+<p>
+Considere um navio que navega contra uma corrente de 3 nós:
+</p>
+
+<ul>
+
+<li>
+SOG = 2 nós;
+</li>
+
+<li>
+corrente contrária = 3 nós;
+</li>
+
+<li>
+STW aproximada = 5 nós.
+</li>
+
+</ul>
+
+<p>
+Embora o navio progrida lentamente em relação ao fundo,
+o fluxo sobre o casco e o leme poderá corresponder aproximadamente
+a uma velocidade de 5 nós através da água.
+</p>
+
+<p>
+Na situação inversa,
+com corrente favorável:
+</p>
+
+<ul>
+
+<li>
+SOG = 5 nós;
+</li>
+
+<li>
+corrente favorável = 3 nós;
+</li>
+
+<li>
+STW aproximada = 2 nós.
+</li>
+
+</ul>
+
+<p>
+O navio poderá aproximar-se rapidamente de um ponto fixo,
+mas possuir pouca autoridade hidrodinâmica de leme.
+</p>
+
+<div class="alerta">
+
+<p>
+Uma SOG elevada com corrente favorável pode criar falsa impressão
+de boa capacidade de governo.
+A velocidade efetiva através da água pode continuar reduzida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÂNGULO DE DERIVA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="angulo-deriva-fluxo-sobre-leme"
+>
+
+<h2>Ângulo de deriva e fluxo oblíquo</h2>
+
+<div class="widget">
+
+<p>
+Quando o navio não se desloca exatamente na direção de sua linha
+de centro,
+existe um
+<strong>ângulo de deriva</strong>.
+</p>
+
+<p>
+Em inglês,
+esse ângulo pode ser chamado de:
+</p>
+
+<ul>
+
+<li>
+<strong>drift angle</strong>;
+</li>
+
+<li>
+<strong>leeway angle</strong>,
+especialmente quando associado ao vento;
+</li>
+
+<li>
+<strong>sideslip angle</strong>;
+</li>
+
+<li>
+<strong>angle of drift</strong>.
+</li>
+
+</ul>
+
+<p>
+Em movimento oblíquo,
+a água não chega ao leme paralelamente à linha de centro.
+O leme passa a receber uma componente transversal do escoamento.
+</p>
+
+
+<!-- FIGURA 2 -->
+
+<figure
+    class="figura-tecnica"
+    aria-labelledby="legenda-angulo-deriva"
+>
+
+<svg
+    viewBox="0 0 900 500"
+    role="img"
+    aria-label="Navio com ângulo de deriva e fluxo oblíquo chegando ao leme"
+    style="width: 100%; height: auto;"
+>
+
+<defs>
+
+    <marker
+        id="seta-fluxo-deriva"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#1769aa"
+        />
+    </marker>
+
+    <marker
+        id="seta-movimento-navio"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#2e7d32"
+        />
+    </marker>
+
+</defs>
+
+<rect
+    x="10"
+    y="10"
+    width="880"
+    height="480"
+    rx="18"
+    fill="#eef6fb"
+    stroke="#527d9b"
+    stroke-width="3"
+/>
+
+<text
+    x="450"
+    y="48"
+    text-anchor="middle"
+    font-size="25"
+    font-weight="bold"
+    fill="#123b56"
+>
+ÂNGULO DE DERIVA E ESCOAMENTO SOBRE O LEME
+</text>
+
+
+<!-- LINHA DE CENTRO -->
+
+<line
+    x1="190"
+    y1="360"
+    x2="760"
+    y2="155"
+    stroke="#555555"
+    stroke-width="3"
+    stroke-dasharray="12 10"
+/>
+
+
+<!-- CASCO ROTACIONADO -->
+
+<g transform="rotate(-20 470 270)">
+
+<path
+    d="M210 225
+       L630 225
+       L735 270
+       L630 315
+       L210 315
+       L155 270
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="4"
+/>
+
+<line
+    x1="175"
+    y1="270"
+    x2="715"
+    y2="270"
+    stroke="#5f6d75"
+    stroke-width="2"
+    stroke-dasharray="12 9"
+/>
+
+<!-- LEME -->
+
+<line
+    x1="685"
+    y1="255"
+    x2="718"
+    y2="315"
+    stroke="#8b3e2f"
+    stroke-width="13"
+    stroke-linecap="round"
+/>
+
+</g>
+
+
+<!-- DIREÇÃO DO MOVIMENTO -->
+
+<line
+    x1="245"
+    y1="415"
+    x2="735"
+    y2="415"
+    stroke="#2e7d32"
+    stroke-width="7"
+    marker-end="url(#seta-movimento-navio)"
+/>
+
+<text
+    x="490"
+    y="455"
+    text-anchor="middle"
+    font-size="20"
+    font-weight="bold"
+    fill="#2e7d32"
+>
+DIREÇÃO DO MOVIMENTO
+</text>
+
+
+<!-- FLUXOS OBLÍQUOS -->
+
+<line
+    x1="150"
+    y1="120"
+    x2="345"
+    y2="230"
+    stroke="#1769aa"
+    stroke-width="5"
+    marker-end="url(#seta-fluxo-deriva)"
+/>
+
+<line
+    x1="110"
+    y1="185"
+    x2="300"
+    y2="290"
+    stroke="#1769aa"
+    stroke-width="5"
+    marker-end="url(#seta-fluxo-deriva)"
+/>
+
+<line
+    x1="520"
+    y1="105"
+    x2="730"
+    y2="220"
+    stroke="#1769aa"
+    stroke-width="5"
+    marker-end="url(#seta-fluxo-deriva)"
+/>
+
+
+<!-- ARCO DO ÂNGULO -->
+
+<path
+    d="M300 415
+       A115 115 0 0 0 288 375"
+    fill="none"
+    stroke="#d47a00"
+    stroke-width="5"
+/>
+
+<text
+    x="325"
+    y="375"
+    font-size="24"
+    font-weight="bold"
+    fill="#d47a00"
+>
+β
+</text>
+
+<text
+    x="165"
+    y="92"
+    font-size="19"
+    font-weight="bold"
+    fill="#1769aa"
+>
+FLUXO RELATIVO DA ÁGUA
+</text>
+
+<text
+    x="620"
+    y="335"
+    font-size="18"
+    font-weight="bold"
+    fill="#8b3e2f"
+>
+LEME
+</text>
+
+</svg>
+
+<figcaption id="legenda-angulo-deriva">
+
+<strong>Figura 5.2 — Ângulo de deriva:</strong>
+o navio desloca-se em direção diferente daquela indicada por sua
+linha de centro,
+fazendo o leme receber um fluxo oblíquo.
+
+</figcaption>
+
+</figure>
+
+
+<p>
+O ângulo efetivo de ataque do leme não é necessariamente igual
+ao ângulo indicado pelo aparelho de governo.
+</p>
+
+<div class="formula">
+
+<p>
+De forma conceitual:
+</p>
+
+<p>
+<strong>
+α<sub>efetivo</sub>
+≈
+δ − β<sub>local</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>α<sub>efetivo</sub></strong> =
+ângulo efetivo de ataque do leme;
+</li>
+
+<li>
+<strong>δ</strong> =
+ângulo geométrico do leme em relação à linha de centro;
+</li>
+
+<li>
+<strong>β<sub>local</sub></strong> =
+ângulo local do escoamento que chega ao leme.
+</li>
+
+</ul>
+
+</div>
+
+<div class="alerta">
+
+<p>
+Essa relação é apenas conceitual.
+O fluxo na região da popa é tridimensional,
+não uniforme
+e influenciado pelo casco,
+pela hélice,
+pela guinada e pela deriva.
+</p>
+
+</div>
+
+<p>
+Dependendo da direção do fluxo transversal,
+a deriva pode:
+</p>
+
+<ul>
+
+<li>aumentar o ângulo efetivo sobre o leme;</li>
+
+<li>reduzir o ângulo efetivo;</li>
+
+<li>causar assimetria entre boreste e bombordo;</li>
+
+<li>alterar a distribuição de pressão;</li>
+
+<li>antecipar a separação do escoamento;</li>
+
+<li>modificar os esforços no aparelho de governo.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MOVIMENTO DE GUINADA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="guinada-fluxo-local-leme"
+>
+
+<h2>Influência da guinada no fluxo sobre o leme</h2>
+
+<div class="widget">
+
+<p>
+Durante uma guinada,
+a popa desloca-se lateralmente em sentido oposto ao movimento
+inicial da proa.
+</p>
+
+<p>
+Esse movimento produz uma velocidade transversal local na região
+do leme.
+</p>
+
+<p>
+O fluxo recebido pelo leme resulta então da combinação entre:
+</p>
+
+<ul>
+
+<li>movimento longitudinal do navio;</li>
+
+<li>movimento transversal da popa;</li>
+
+<li>rotação do navio em torno de seu eixo vertical;</li>
+
+<li>corrente da hélice;</li>
+
+<li>esteira do casco;</li>
+
+<li>corrente ambiental.</li>
+
+</ul>
+
+<p>
+Conforme a razão de guinada aumenta,
+o ângulo local do escoamento sobre o leme também se modifica.
+</p>
+
+<p>
+Esse fenômeno cria uma espécie de realimentação hidrodinâmica:
+</p>
+
+<ol>
+
+<li>o leme inicia a guinada;</li>
+
+<li>a popa adquire velocidade transversal;</li>
+
+<li>o fluxo local sobre o leme é modificado;</li>
+
+<li>a força produzida pelo leme também se altera;</li>
+
+<li>o navio tende a atingir uma razão de guinada de equilíbrio.</li>
+
+</ol>
+
+<div class="destaque">
+
+<p>
+Em uma curva estabilizada,
+o ângulo efetivo do leme em relação ao fluxo pode ser menor
+do que o ângulo geométrico indicado no passadiço.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÁGUAS RASAS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="efeito-aguas-rasas-leme"
+>
+
+<h2>Influência das águas rasas</h2>
+
+<div class="widget">
+
+<p>
+A operação em
+<strong>shallow water</strong>,
+ou águas rasas,
+altera o escoamento ao redor do casco,
+da hélice e do leme.
+</p>
+
+<p>
+À medida que diminui a
+<strong>under-keel clearance — UKC</strong>,
+ou folga abaixo da quilha,
+a água encontra menor espaço para escoar entre o fundo do navio
+e o leito.
+</p>
+
+<p>
+O fluxo é forçado a acelerar,
+especialmente sob o casco e ao redor de suas extremidades.
+Isso modifica:
+</p>
+
+<ul>
+
+<li>a distribuição de pressão;</li>
+
+<li>a esteira na popa;</li>
+
+<li>o fluxo de entrada da hélice;</li>
+
+<li>o fluxo que alcança o leme;</li>
+
+<li>a resistência ao avanço;</li>
+
+<li>a resposta de guinada;</li>
+
+<li>o abatimento e o avanço durante a curva.</li>
+
+</ul>
+
+
+<!-- FIGURA 3 -->
+
+<figure
+    class="figura-tecnica"
+    aria-labelledby="legenda-aguas-rasas"
+>
+
+<svg
+    viewBox="0 0 900 520"
+    role="img"
+    aria-label="Comparação do escoamento ao redor do navio em águas profundas e águas rasas"
+    style="width: 100%; height: auto;"
+>
+
+<defs>
+
+    <marker
+        id="seta-agua-profunda"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#1769aa"
+        />
+    </marker>
+
+    <marker
+        id="seta-agua-rasa"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#b3261e"
+        />
+    </marker>
+
+</defs>
+
+<rect
+    x="10"
+    y="10"
+    width="880"
+    height="500"
+    rx="18"
+    fill="#eef6fb"
+    stroke="#527d9b"
+    stroke-width="3"
+/>
+
+<text
+    x="450"
+    y="48"
+    text-anchor="middle"
+    font-size="25"
+    font-weight="bold"
+    fill="#123b56"
+>
+ESCOAMENTO EM ÁGUAS PROFUNDAS E RASAS
+</text>
+
+
+<!-- ÁGUAS PROFUNDAS -->
+
+<rect
+    x="35"
+    y="70"
+    width="390"
+    height="385"
+    rx="15"
+    fill="#ffffff"
+    stroke="#7d9eb5"
+    stroke-width="2"
+/>
+
+<text
+    x="230"
+    y="105"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="bold"
+    fill="#123b56"
+>
+ÁGUAS PROFUNDAS
+</text>
+
+<!-- NAVIO -->
+
+<path
+    d="M105 165
+       L315 165
+       L345 190
+       L315 215
+       L105 215
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="3"
+/>
+
+<!-- LINHAS DE FLUXO -->
+
+<path
+    d="M70 140 C165 115 290 120 370 145"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-agua-profunda)"
+/>
+
+<path
+    d="M70 250 C170 290 290 285 370 250"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-agua-profunda)"
+/>
+
+<path
+    d="M70 310 C165 345 285 345 370 310"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-agua-profunda)"
+/>
+
+<!-- FUNDO -->
+
+<line
+    x1="60"
+    y1="410"
+    x2="400"
+    y2="410"
+    stroke="#7b5e3b"
+    stroke-width="10"
+/>
+
+<text
+    x="230"
+    y="385"
+    text-anchor="middle"
+    font-size="18"
+    fill="#37474f"
+>
+Grande folga abaixo da quilha
+</text>
+
+
+<!-- ÁGUAS RASAS -->
+
+<rect
+    x="475"
+    y="70"
+    width="390"
+    height="385"
+    rx="15"
+    fill="#ffffff"
+    stroke="#7d9eb5"
+    stroke-width="2"
+/>
+
+<text
+    x="670"
+    y="105"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="bold"
+    fill="#123b56"
+>
+ÁGUAS RASAS
+</text>
+
+<!-- NAVIO -->
+
+<path
+    d="M545 165
+       L755 165
+       L785 190
+       L755 215
+       L545 215
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="3"
+/>
+
+<!-- FLUXO SUPERIOR -->
+
+<path
+    d="M510 140 C605 115 730 120 820 145"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="4"
+    marker-end="url(#seta-agua-profunda)"
+/>
+
+<!-- FLUXO COMPRIMIDO -->
+
+<path
+    d="M510 250 C615 275 730 275 820 250"
+    fill="none"
+    stroke="#b3261e"
+    stroke-width="7"
+    marker-end="url(#seta-agua-rasa)"
+/>
+
+<path
+    d="M510 295 C615 315 730 315 820 295"
+    fill="none"
+    stroke="#b3261e"
+    stroke-width="7"
+    marker-end="url(#seta-agua-rasa)"
+/>
+
+<!-- FUNDO ALTO -->
+
+<line
+    x1="500"
+    y1="345"
+    x2="840"
+    y2="345"
+    stroke="#7b5e3b"
+    stroke-width="14"
+/>
+
+<!-- UKC -->
+
+<line
+    x1="800"
+    y1="218"
+    x2="800"
+    y2="337"
+    stroke="#d47a00"
+    stroke-width="4"
+/>
+
+<line
+    x1="788"
+    y1="218"
+    x2="812"
+    y2="218"
+    stroke="#d47a00"
+    stroke-width="4"
+/>
+
+<line
+    x1="788"
+    y1="337"
+    x2="812"
+    y2="337"
+    stroke="#d47a00"
+    stroke-width="4"
+/>
+
+<text
+    x="825"
+    y="285"
+    font-size="19"
+    font-weight="bold"
+    fill="#d47a00"
+>
+UKC
+</text>
+
+<text
+    x="670"
+    y="395"
+    text-anchor="middle"
+    font-size="18"
+    font-weight="bold"
+    fill="#b3261e"
+>
+Fluxo comprimido e acelerado
+</text>
+
+<text
+    x="450"
+    y="485"
+    text-anchor="middle"
+    font-size="18"
+    fill="#37474f"
+>
+A restrição vertical modifica a pressão e o fluxo na região da popa.
+</text>
+
+</svg>
+
+<figcaption id="legenda-aguas-rasas">
+
+<strong>Figura 5.3 — Águas rasas:</strong>
+a redução da folga abaixo da quilha comprime o escoamento,
+aumenta sua velocidade sob o casco e altera o fluxo recebido
+pela hélice e pelo leme.
+
+</figcaption>
+
+</figure>
+
+
+<p>
+Em águas rasas,
+o navio pode apresentar:
+</p>
+
+<ul>
+
+<li>aumento da resistência;</li>
+
+<li>redução da velocidade para a mesma potência;</li>
+
+<li>aumento do diâmetro tático;</li>
+
+<li>resposta inicial de guinada mais lenta;</li>
+
+<li>maior tendência de seguir reto;</li>
+
+<li>mudança no abatimento da popa;</li>
+
+<li>alteração no avanço e na transferência;</li>
+
+<li>maior sensibilidade a margens e canais estreitos.</li>
+
+</ul>
+
+<div class="alerta">
+
+<p>
+A influência das águas rasas não se limita ao
+<strong>squat</strong>.
+Mesmo antes de ocorrer uma redução crítica da UKC,
+a controlabilidade do navio já pode estar alterada.
+</p>
+
+</div>
+
+<p>
+O efeito exato depende de:
+</p>
+
+<ul>
+
+<li>relação entre profundidade e calado;</li>
+
+<li>relação entre largura do canal e boca do navio;</li>
+
+<li>velocidade;</li>
+
+<li>forma do casco;</li>
+
+<li>trim;</li>
+
+<li>dimensões do leme;</li>
+
+<li>posição da hélice;</li>
+
+<li>proximidade das margens.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SQUAT E IMERSÃO DO LEME
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="squat-imersao-leme"
+>
+
+<h2>Squat, trim e imersão do leme</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>squat</strong>
+é o movimento vertical combinado de afundamento e alteração
+de trim sofrido pelo navio quando navega em águas restritas.
+</p>
+
+<p>
+Ele resulta das mudanças de velocidade e pressão no escoamento
+ao redor do casco.
+</p>
+
+<p>
+Dependendo da forma do navio e de sua condição de carregamento,
+o squat poderá ser predominante:
+</p>
+
+<ul>
+
+<li>pela proa;</li>
+
+<li>pela popa;</li>
+
+<li>de modo aproximadamente paralelo.</li>
+
+</ul>
+
+<p>
+Uma alteração do trim pode modificar:
+</p>
+
+<ul>
+
+<li>a imersão do leme;</li>
+
+<li>a imersão da hélice;</li>
+
+<li>a distribuição da esteira;</li>
+
+<li>a suscetibilidade à ventilação;</li>
+
+<li>a eficiência propulsiva;</li>
+
+<li>a resposta do navio às ordens de leme.</li>
+
+</ul>
+
+<div class="alerta">
+
+<p>
+A redução da distância entre o leme e o fundo também aumenta
+a influência do leito sobre o escoamento e pode alterar
+a distribuição de pressão na superfície do leme.
+</p>
+
+</div>
+
+<p>
+Caso a popa fique menos imersa,
+pode ocorrer maior risco de:
+</p>
+
+<ul>
+
+<li>ventilação da hélice;</li>
+
+<li>ventilação do leme;</li>
+
+<li>redução de empuxo;</li>
+
+<li>perda de força lateral;</li>
+
+<li>vibração.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFEITO DE MARGEM
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="efeito-margem-controle-leme"
+>
+
+<h2>Efeito de margem e ação do leme</h2>
+
+<div class="widget">
+
+<p>
+Quando um navio navega próximo de uma margem,
+o escoamento entre o casco e a margem fica restrito.
+</p>
+
+<p>
+Esse fenômeno é chamado de
+<strong>bank effect</strong>,
+ou efeito de margem.
+</p>
+
+<p>
+A água acelera no espaço reduzido entre o costado e a margem.
+O aumento da velocidade provoca redução da pressão nessa região.
+</p>
+
+<p>
+A distribuição assimétrica de pressão pode produzir dois efeitos
+principais:
+</p>
+
+<ul>
+
+<li>
+<strong>bow cushion</strong> —
+tendência de afastamento da proa;
+</li>
+
+<li>
+<strong>stern suction</strong> —
+tendência de aproximação da popa em direção à margem.
+</li>
+
+</ul>
+
+
+<!-- FIGURA 4 -->
+
+<figure
+    class="figura-tecnica"
+    aria-labelledby="legenda-efeito-margem"
+>
+
+<svg
+    viewBox="0 0 900 520"
+    role="img"
+    aria-label="Navio próximo da margem mostrando almofada de proa e sucção de popa"
+    style="width: 100%; height: auto;"
+>
+
+<defs>
+
+    <marker
+        id="seta-fluxo-margem"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#1769aa"
+        />
+    </marker>
+
+    <marker
+        id="seta-forca-margem"
+        markerWidth="10"
+        markerHeight="10"
+        refX="9"
+        refY="3"
+        orient="auto"
+    >
+        <path
+            d="M0,0 L0,6 L9,3 z"
+            fill="#b3261e"
+        />
+    </marker>
+
+</defs>
+
+<rect
+    x="10"
+    y="10"
+    width="880"
+    height="500"
+    rx="18"
+    fill="#eef6fb"
+    stroke="#527d9b"
+    stroke-width="3"
+/>
+
+<text
+    x="450"
+    y="48"
+    text-anchor="middle"
+    font-size="25"
+    font-weight="bold"
+    fill="#123b56"
+>
+EFEITO DE MARGEM — BANK EFFECT
+</text>
+
+
+<!-- MARGEM -->
+
+<path
+    d="M80 80
+       L235 80
+       L215 440
+       L80 440
+       Z"
+    fill="#b89b72"
+    stroke="#6d5132"
+    stroke-width="4"
+/>
+
+<text
+    x="145"
+    y="270"
+    text-anchor="middle"
+    font-size="23"
+    font-weight="bold"
+    fill="#4d3724"
+    transform="rotate(-90 145 270)"
+>
+MARGEM
+</text>
+
+
+<!-- NAVIO -->
+
+<path
+    d="M325 145
+       L650 145
+       L775 255
+       L650 365
+       L325 365
+       L270 255
+       Z"
+    fill="#aeb9c2"
+    stroke="#36454f"
+    stroke-width="4"
+/>
+
+<line
+    x1="290"
+    y1="255"
+    x2="745"
+    y2="255"
+    stroke="#5f6d75"
+    stroke-width="2"
+    stroke-dasharray="12 9"
+/>
+
+<text
+    x="530"
+    y="265"
+    text-anchor="middle"
+    font-size="20"
+    font-weight="bold"
+    fill="#37474f"
+>
+NAVIO
+</text>
+
+
+<!-- FLUXO RESTRITO -->
+
+<path
+    d="M225 120
+       C275 145 275 180 255 215
+       C235 255 245 305 275 390"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="6"
+    marker-end="url(#seta-fluxo-margem)"
+/>
+
+<path
+    d="M245 105
+       C315 145 315 185 285 220
+       C260 270 280 330 315 405"
+    fill="none"
+    stroke="#1769aa"
+    stroke-width="6"
+    marker-end="url(#seta-fluxo-margem)"
+/>
+
+
+<!-- BOW CUSHION -->
+
+<line
+    x1="710"
+    y1="185"
+    x2="815"
+    y2="135"
+    stroke="#b3261e"
+    stroke-width="7"
+    marker-end="url(#seta-forca-margem)"
+/>
+
+<text
+    x="720"
+    y="105"
+    font-size="19"
+    font-weight="bold"
+    fill="#b3261e"
+>
+BOW CUSHION
+</text>
+
+<text
+    x="720"
+    y="128"
+    font-size="17"
+    fill="#37474f"
+>
+Proa afasta-se
+</text>
+
+
+<!-- STERN SUCTION -->
+
+<line
+    x1="335"
+    y1="330"
+    x2="235"
+    y2="380"
+    stroke="#b3261e"
+    stroke-width="7"
+    marker-end="url(#seta-forca-margem)"
+/>
+
+<text
+    x="330"
+    y="435"
+    font-size="19"
+    font-weight="bold"
+    fill="#b3261e"
+>
+STERN SUCTION
+</text>
+
+<text
+    x="330"
+    y="460"
+    font-size="17"
+    fill="#37474f"
+>
+Popa aproxima-se
+</text>
+
+
+<!-- ÁREA DE BAIXA PRESSÃO -->
+
+<rect
+    x="225"
+    y="165"
+    width="65"
+    height="190"
+    rx="25"
+    fill="#4aa3df"
+    opacity="0.28"
+/>
+
+<text
+    x="252"
+    y="272"
+    text-anchor="middle"
+    font-size="16"
+    font-weight="bold"
+    fill="#0d4f7a"
+    transform="rotate(-90 252 272)"
+>
+BAIXA PRESSÃO
+</text>
+
+</svg>
+
+<figcaption id="legenda-efeito-margem">
+
+<strong>Figura 5.4 — Efeito de margem:</strong>
+a proa tende a afastar-se da margem,
+enquanto a popa tende a ser atraída para ela.
+
+</figcaption>
+
+</figure>
+
+
+<p>
+A ação do leme será necessária para compensar o momento de guinada
+produzido pelo efeito de margem.
+</p>
+
+<p>
+Entretanto,
+quanto mais intensa a proximidade da margem,
+maior poderá ser o ângulo de leme necessário para manter o rumo.
+</p>
+
+<div class="alerta">
+
+<p>
+O uso de grande ângulo de leme para compensar continuamente
+o efeito de margem reduz a reserva de controle disponível.
+Caso a interação aumente repentinamente,
+pode não haver ângulo adicional suficiente para recuperar
+a trajetória.
+</p>
+
+</div>
+
+<p>
+A intensidade do efeito de margem aumenta com:
+</p>
+
+<ul>
+
+<li>maior velocidade;</li>
+
+<li>menor distância lateral da margem;</li>
+
+<li>menor profundidade;</li>
+
+<li>menor largura do canal;</li>
+
+<li>maior porte do navio;</li>
+
+<li>maior bloqueio da seção navegável;</li>
+
+<li>assimetria do canal.</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+A principal medida de controle do efeito de margem é a redução
+antecipada da velocidade,
+mantendo simultaneamente autoridade de governo suficiente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROXIMIDADE DO FUNDO E ESTOL
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="proximidade-fundo-estol-leme"
+>
+
+<h2>Proximidade do fundo e separação do escoamento</h2>
+
+<div class="widget">
+
+<p>
+A proximidade do leito pode alterar a circulação da água ao redor
+do leme,
+principalmente nas regiões próximas à extremidade inferior.
+</p>
+
+<p>
+O fundo limita o desenvolvimento tridimensional do escoamento
+e modifica:
+</p>
+
+<ul>
+
+<li>os vórtices de extremidade;</li>
+
+<li>a distribuição de sustentação;</li>
+
+<li>o campo de pressão;</li>
+
+<li>a esteira do leme;</li>
+
+<li>a interação entre hélice, leme e fundo.</li>
+
+</ul>
+
+<p>
+Se o leme operar com grande ângulo em fluxo altamente perturbado,
+pode ocorrer separação prematura do escoamento.
+</p>
+
+<p>
+Esse fenômeno reduz o ganho de força lateral e aumenta
+consideravelmente o arrasto.
+</p>
+
+<div class="alerta">
+
+<p>
+Em águas rasas,
+a utilização de leme máximo não garante resposta proporcionalmente
+maior.
+O fluxo já pode estar distorcido,
+e a superfície pode operar próxima da condição de estol.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VENTO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="vento-autoridade-leme"
+>
+
+<h2>Influência do vento sobre a autoridade do leme</h2>
+
+<div class="widget">
+
+<p>
+O vento atua principalmente sobre a área vélica acima da linha
+d'água.
+</p>
+
+<p>
+A força aerodinâmica resultante pode produzir:
+</p>
+
+<ul>
+
+<li>movimento lateral;</li>
+
+<li>abatimento;</li>
+
+<li>momento de guinada;</li>
+
+<li>alteração da velocidade através da água;</li>
+
+<li>aumento do ângulo de deriva.</li>
+
+</ul>
+
+<p>
+Em navios de grande área lateral,
+como:
+</p>
+
+<ul>
+
+<li>porta-contêineres;</li>
+
+<li>navios de passageiros;</li>
+
+<li>transportadores de veículos;</li>
+
+<li>navios em condição de lastro;</li>
+
+</ul>
+
+<p>
+a força do vento pode superar a força disponível no leme
+quando a velocidade é muito baixa.
+</p>
+
+<div class="destaque">
+
+<p>
+Quanto menor a velocidade através da água,
+menor a força do leme;
+porém,
+a força do vento não desaparece com a redução da velocidade
+do navio.
+</p>
+
+</div>
+
+<p>
+Por isso,
+em vento forte,
+o navio poderá perder controle direcional antes de ficar
+completamente parado.
+</p>
+
+<p>
+Nessa condição,
+a manutenção da proa pode exigir:
+</p>
+
+<ul>
+
+<li>maior velocidade mínima;</li>
+
+<li>golpes de máquina;</li>
+
+<li>propulsores laterais;</li>
+
+<li>rebocadores;</li>
+
+<li>alteração do bordo de aproximação;</li>
+
+<li>maior distância disponível para correção.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CORRENTE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="corrente-fluxo-sobre-leme"
+>
+
+<h2>Influência da corrente</h2>
+
+<div class="widget">
+
+<p>
+Uma corrente uniforme desloca o navio e a massa de água
+aproximadamente em conjunto.
+</p>
+
+<p>
+O efeito sobre o leme deve ser avaliado a partir da velocidade
+relativa do navio através da água,
+e não apenas da velocidade sobre o fundo.
+</p>
+
+<p>
+Entretanto,
+a corrente raramente é perfeitamente uniforme.
+Podem existir:
+</p>
+
+<ul>
+
+<li>gradientes de velocidade;</li>
+
+<li>corrente mais intensa próximo da superfície;</li>
+
+<li>corrente diferente junto ao fundo;</li>
+
+<li>redemoinhos;</li>
+
+<li>contracorrentes;</li>
+
+<li>correntes transversais;</li>
+
+<li>alterações próximas a molhes e curvas de canal.</li>
+
+</ul>
+
+<p>
+Uma corrente transversal cria deriva e modifica o ângulo
+do escoamento que chega ao leme.
+</p>
+
+<p>
+Uma corrente variável ao longo do comprimento do navio pode
+produzir momento de guinada mesmo antes que o navio apresente
+grande deslocamento lateral.
+</p>
+
+<div class="alerta">
+
+<p>
+Ao entrar ou sair de uma área protegida,
+a proa e a popa podem ficar submetidas a correntes diferentes.
+O navio poderá guinar rapidamente enquanto apenas uma de suas
+extremidades estiver exposta ao fluxo mais intenso.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ONDAS E MAR
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="ondas-resposta-leme"
+>
+
+<h2>Ondas, mar e resposta do leme</h2>
+
+<div class="widget">
+
+<p>
+As ondas produzem movimentos oscilatórios e variações periódicas
+do fluxo sobre o casco e o leme.
+</p>
+
+<p>
+Entre os movimentos relevantes estão:
+</p>
+
+<ul>
+
+<li>
+<strong>roll</strong> — balanço;
+</li>
+
+<li>
+<strong>pitch</strong> — arfagem;
+</li>
+
+<li>
+<strong>yaw</strong> — guinada;
+</li>
+
+<li>
+<strong>heave</strong> — cabeceio vertical;
+</li>
+
+<li>
+<strong>sway</strong> — movimento transversal.
+</li>
+
+</ul>
+
+<p>
+A arfagem e o movimento vertical podem alterar temporariamente
+a imersão da hélice e do leme.
+</p>
+
+<p>
+O balanço modifica a orientação do leme em relação ao fluxo
+e pode provocar variações alternadas de força.
+</p>
+
+<p>
+Ondas de popa ou de alheta podem causar guinadas rápidas,
+especialmente em navios com baixa estabilidade direcional.
+</p>
+
+<div class="alerta">
+
+<p>
+A resposta do leme em mar agitado não será constante.
+Uma mesma ordem poderá produzir efeitos diferentes conforme
+a posição do navio em relação à onda.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÁGUA RESTRITA E BLOQUEIO
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="bloqueio-canal-autoridade-leme"
+>
+
+<h2>Bloqueio do canal e espaço hidrodinâmico</h2>
+
+<div class="widget">
+
+<p>
+A presença do navio reduz a área disponível para passagem da água
+em um canal.
+</p>
+
+<p>
+A relação entre a seção transversal submersa do navio e a seção
+transversal do canal está associada ao
+<strong>blockage ratio</strong>,
+ou razão de bloqueio.
+</p>
+
+<p>
+Quanto maior o bloqueio:
+</p>
+
+<ul>
+
+<li>maior a aceleração da água ao redor do casco;</li>
+
+<li>maior a alteração de pressão;</li>
+
+<li>maior a resistência;</li>
+
+<li>maior a sensibilidade às margens;</li>
+
+<li>maior a possibilidade de squat;</li>
+
+<li>mais limitada poderá ser a resposta do navio.</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+O navio pode estar fisicamente distante do fundo ou de uma margem
+e,
+ainda assim,
+operar em condição hidrodinamicamente restrita devido
+ao bloqueio da seção.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMBINAÇÃO DOS EFEITOS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="combinacao-efeitos-externos-leme"
+>
+
+<h2>Combinação dos efeitos externos</h2>
+
+<div class="widget">
+
+<p>
+Na prática,
+os efeitos que alteram a eficiência do leme raramente atuam
+isoladamente.
+</p>
+
+<p>
+Um navio poderá estar simultaneamente:
+</p>
+
+<ul>
+
+<li>em baixa velocidade;</li>
+
+<li>sob vento transversal;</li>
+
+<li>com corrente favorável;</li>
+
+<li>em águas rasas;</li>
+
+<li>próximo de uma margem;</li>
+
+<li>com grande ângulo de deriva;</li>
+
+<li>com a hélice em baixa rotação.</li>
+
+</ul>
+
+<p>
+Nessa situação,
+a autoridade de governo pode diminuir rapidamente,
+enquanto as forças que tendem a desviar o navio aumentam.
+</p>
+
+<div class="quadro-operacional">
+
+<h3>Exemplo operacional</h3>
+
+<p>
+Um navio aproxima-se de um cais com corrente favorável.
+A velocidade sobre o fundo permanece elevada,
+mas a velocidade através da água é reduzida.
+</p>
+
+<p>
+Ao mesmo tempo,
+o vento atua sobre a superestrutura e a margem altera
+a distribuição de pressão no casco.
+</p>
+
+<p>
+Embora o leme esteja com grande ângulo,
+o fluxo disponível pode ser insuficiente para corrigir a proa.
+Um golpe de máquina poderá restaurar momentaneamente
+a autoridade do leme,
+mas também produzirá avanço.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+A decisão operacional não deve considerar somente
+“quanto leme está aplicado”,
+mas principalmente:
+<strong>quanto fluxo efetivo existe sobre o leme</strong>
+e
+<strong>quais forças precisam ser superadas</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     APLICAÇÃO OPERACIONAL
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="aplicacao-operacional-condicoes-externas"
+>
+
+<h2>Aplicação operacional para o Prático</h2>
+
+<div class="widget">
+
+<p>
+Ao avaliar a capacidade de governo,
+o Prático deve acompanhar continuamente:
+</p>
+
+<ul>
+
+<li>velocidade sobre o fundo;</li>
+
+<li>velocidade através da água, quando disponível;</li>
+
+<li>razão de guinada;</li>
+
+<li>ângulo de leme;</li>
+
+<li>rotação ou passo da hélice;</li>
+
+<li>direção e intensidade do vento;</li>
+
+<li>direção e intensidade da corrente;</li>
+
+<li>profundidade e UKC;</li>
+
+<li>distância das margens;</li>
+
+<li>tendência real de movimento da proa e da popa.</li>
+
+</ul>
+
+<p>
+Também é necessário observar se o leme está:
+</p>
+
+<ul>
+
+<li>iniciando a guinada;</li>
+
+<li>apenas contendo uma tendência existente;</li>
+
+<li>compensando o efeito de margem;</li>
+
+<li>compensando vento ou corrente;</li>
+
+<li>operando próximo de seu limite útil;</li>
+
+<li>produzindo arrasto sem resposta proporcional.</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+Um grande ângulo de leme utilizado apenas para manter o rumo
+indica que parte importante da capacidade de controle já está
+comprometida.
+</p>
+
+</div>
+
+<p>
+A ação antecipada é particularmente importante porque navios
+de grande deslocamento possuem:
+</p>
+
+<ul>
+
+<li>grande inércia longitudinal;</li>
+
+<li>grande inércia lateral;</li>
+
+<li>atraso entre a ordem e a resposta;</li>
+
+<li>continuidade da guinada após neutralizar o leme;</li>
+
+<li>distâncias elevadas para correção.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PEGADINHAS PSCPP
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="pegadinhas-velocidade-aguas-rasas"
+>
+
+<h2>Pegadinhas sobre velocidade e águas restritas</h2>
+
+<div class="widget">
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 1:</strong>
+“Velocidade elevada sobre o fundo significa boa eficiência
+do leme.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+Com corrente favorável,
+a velocidade através da água pode ser muito menor que a SOG.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 2:</strong>
+“Quando o navio perde steerageway,
+o leme não produz nenhuma força.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+Pode existir alguma força,
+mas ela é insuficiente para superar as demais ações
+sobre o navio.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 3:</strong>
+“Em águas rasas,
+somente o squat é alterado.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+Também são alterados a resistência,
+a esteira,
+o fluxo da hélice,
+a resposta do leme
+e as características da curva.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 4:</strong>
+“O ângulo efetivo do leme é sempre igual ao ângulo indicado.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+Deriva,
+guinada,
+esteira
+e fluxo helicoidal modificam a direção local do escoamento.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 5:</strong>
+“O efeito de margem apenas atrai todo o navio para a margem.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+Geralmente ocorre afastamento da proa
+e atração da popa,
+produzindo importante momento de guinada.
+</p>
+
+</div>
+
+<div class="alerta">
+
+<p>
+<strong>Pegadinha 6:</strong>
+“A menor velocidade possível é sempre a condição mais segura.”
+</p>
+
+<p>
+<strong>Incorreto.</strong>
+A velocidade deve ser reduzida,
+mas ainda precisa preservar autoridade de governo compatível
+com as forças ambientais.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESUMO DA PARTE 5
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="resumo-velocidade-aguas-rasas"
+>
+
+<h2>Resumo da Parte 5</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A força do leme varia aproximadamente com o quadrado
+da velocidade efetiva do fluxo.
+</li>
+
+<li>
+SOG e STW representam grandezas diferentes.
+</li>
+
+<li>
+O leme responde ao movimento relativo entre a água
+e sua superfície.
+</li>
+
+<li>
+Steerageway é a condição em que existe fluxo suficiente
+para governar o navio.
+</li>
+
+<li>
+A perda de steerageway não exige força absolutamente nula
+no leme.
+</li>
+
+<li>
+Deriva e guinada modificam o ângulo efetivo de ataque do leme.
+</li>
+
+<li>
+Águas rasas alteram o fluxo ao redor do casco,
+da hélice e do leme.
+</li>
+
+<li>
+O efeito de margem tende a afastar a proa
+e aproximar a popa da margem.
+</li>
+
+<li>
+Vento,
+corrente,
+ondas
+e restrição do canal podem superar a força disponível no leme.
+</li>
+
+<li>
+Um grande ângulo de leme usado apenas para manter o rumo
+indica redução da reserva de controle.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+<strong>Ideia central:</strong>
+a autoridade do leme resulta do equilíbrio entre a força
+hidrodinâmica que ele consegue produzir
+e todas as forças externas que precisam ser superadas.
+</p>
+
+</div>
+
+</div>
+
+</section>    
+    
 
 </main>
 
