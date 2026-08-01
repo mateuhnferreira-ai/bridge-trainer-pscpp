@@ -7789,4 +7789,2952 @@ do casco.
      TÓPICO 43
      CONTINUA NA PRÓXIMA PARTE
 ========================================= -->
+<!-- =========================================
+     TÓPICO 43
+========================================= -->
+
+<section
+class="topico-aula"
+id="derivada-nr"
+data-topico-id="derivada-nr">
+
+<h2>
+43. Derivada do momento de guinada em relação à razão de guinada
+</h2>
+
+<div class="widget">
+
+<p>
+
+A derivada
+<strong>N<sub>r</sub></strong>
+representa a variação do momento de guinada
+<strong>N</strong>
+associada a uma pequena alteração da razão de guinada
+<strong>r</strong>.
+
+</p>
+
+<p>
+
+De forma conceitual:
+
+</p>
+
+<p>
+
+<strong>
+N<sub>r</sub> = ∂N / ∂r
+</strong>
+
+</p>
+
+<p>
+
+Quando o navio gira em torno do eixo vertical,
+as diferentes seções do casco desenvolvem velocidades
+laterais locais em relação à água.
+
+</p>
+
+<p>
+
+Essas velocidades produzem distribuições de pressão
+que originam forças laterais ao longo da proa e da
+popa.
+
+</p>
+
+<p>
+
+A combinação dessas forças gera um momento que,
+em muitas condições, tende a se opor à rotação já
+estabelecida, contribuindo para o amortecimento da
+guinada.
+
+</p>
+
+<div class="figura-aula">
+
+<h3>
+Vista superior — momento associado à razão de guinada
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Vista superior de um navio em rotação, com forças hidrodinâmicas locais produzindo momento contrário à razão de guinada"
+>
+
+<defs>
+
+<marker
+id="seta-nr"
+markerWidth="10"
+markerHeight="10"
+refX="8"
+refY="3"
+orient="auto">
+
+<path
+d="M0,0 L0,6 L9,3 z"
+fill="currentColor">
+</path>
+
+</marker>
+
+</defs>
+
+
+<!-- Navio em vista superior -->
+
+<path
+d="
+M170 250
+Q205 190 295 180
+L620 180
+Q715 195 770 250
+Q715 305 620 320
+L295 320
+Q205 310 170 250
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<path
+d="M770 250 L705 205 L705 295 Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<line
+x1="210"
+y1="250"
+x2="740"
+y2="250"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<circle
+cx="465"
+cy="250"
+r="10"
+fill="currentColor">
+</circle>
+
+<text
+x="438"
+y="285"
+font-size="22"
+fill="currentColor">
+origem
+</text>
+
+
+<!-- Razão de guinada -->
+
+<path
+d="M340 410
+A165 130 0 0 0 565 385"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-nr)">
+</path>
+
+<text
+x="390"
+y="465"
+font-size="23"
+fill="currentColor">
+razão de guinada r
+</text>
+
+
+<!-- Momento de reação -->
+
+<path
+d="M585 110
+A165 120 0 0 0 355 125"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-nr)">
+</path>
+
+<text
+x="325"
+y="80"
+font-size="23"
+fill="currentColor">
+momento hidrodinâmico de reação
+</text>
+
+
+<text
+x="35"
+y="45"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+VISTA SUPERIOR
+</text>
+
+</svg>
+
+<p>
+
+O diagrama representa conceitualmente uma razão de
+guinada e um momento hidrodinâmico atuando no sentido
+contrário à rotação.
+
+</p>
+
+<p>
+
+O sinal algébrico de
+<strong>N<sub>r</sub></strong>
+depende da convenção de sinais utilizada pela
+publicação.
+
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Significado físico
+</h3>
+
+<p>
+
+A derivada
+<strong>N<sub>r</sub></strong>
+está associada à maneira como o casco reage a uma
+rotação já estabelecida.
+
+</p>
+
+<p>
+
+Quando seu efeito se opõe à guinada, ela contribui
+para reduzir a razão de guinada e aumentar o
+amortecimento direcional.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 44
+========================================= -->
+
+<section
+class="topico-aula"
+id="derivadas-aceleracao"
+data-topico-id="derivadas-aceleracao">
+
+<h2>
+44. Derivadas associadas às acelerações
+</h2>
+
+<div class="widget">
+
+<p>
+
+Além das derivadas relacionadas às velocidades,
+os modelos de manobrabilidade podem incluir termos
+associados às acelerações lateral e angular.
+
+</p>
+
+<p>
+
+Esses termos representam a influência da água que
+também precisa ser acelerada quando o casco altera
+seu movimento.
+
+</p>
+
+<p>
+
+Entre as derivadas frequentemente utilizadas estão:
+
+</p>
+
+<ul>
+
+<li>
+
+<strong>Y<sub>v̇</sub></strong> —
+variação da força lateral em relação à aceleração
+lateral;
+
+</li>
+
+<li>
+
+<strong>Y<sub>ṙ</sub></strong> —
+variação da força lateral em relação à aceleração
+angular de guinada;
+
+</li>
+
+<li>
+
+<strong>N<sub>v̇</sub></strong> —
+variação do momento de guinada em relação à aceleração
+lateral;
+
+</li>
+
+<li>
+
+<strong>N<sub>ṙ</sub></strong> —
+variação do momento de guinada em relação à aceleração
+angular de guinada.
+
+</li>
+
+</ul>
+
+<p>
+
+Essas derivadas estão relacionadas aos efeitos de
+<strong>massa adicional</strong>
+e
+<strong>momento de inércia adicional</strong>
+já apresentados anteriormente.
+
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+Termos técnicos
+</h3>
+
+<p>
+
+<strong>Acceleration Derivatives</strong> —
+derivadas de aceleração: coeficientes que relacionam
+acelerações do navio às forças e aos momentos
+hidrodinâmicos correspondentes.
+
+</p>
+
+<p>
+
+<strong>Added Mass Effects</strong> —
+efeitos de massa adicional: contribuição inercial
+da água movimentada juntamente com o casco.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+
+Esses termos não representam uma nova massa física
+incorporada ao navio.
+
+</p>
+
+<p>
+
+Eles representam o efeito dinâmico do fluido que precisa
+ser acelerado durante as mudanças do movimento lateral
+e da guinada.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 45
+========================================= -->
+
+<section
+class="topico-aula"
+id="derivadas-controle"
+data-topico-id="derivadas-controle">
+
+<h2>
+45. Derivadas associadas ao leme
+</h2>
+
+<div class="widget">
+
+<p>
+
+Nos modelos de controle da manobrabilidade,
+a influência do ângulo de leme pode ser representada
+por derivadas de controle.
+
+</p>
+
+<p>
+
+Considerando o ângulo de leme
+<strong>δ</strong>,
+podem ser utilizados termos como:
+
+</p>
+
+<p>
+
+<strong>
+Y<sub>δ</sub> = ∂Y / ∂δ
+</strong>
+
+</p>
+
+<p>
+
+<strong>
+N<sub>δ</sub> = ∂N / ∂δ
+</strong>
+
+</p>
+
+<p>
+
+A derivada
+<strong>Y<sub>δ</sub></strong>
+representa a variação da força lateral produzida
+por uma pequena alteração do ângulo de leme.
+
+</p>
+
+<p>
+
+A derivada
+<strong>N<sub>δ</sub></strong>
+representa a variação do momento de guinada causada
+pela mesma alteração.
+
+</p>
+
+<p>
+
+Esses termos estão relacionados à eficácia do leme
+e à capacidade do navio de iniciar, sustentar ou
+corrigir uma guinada.
+
+</p>
+
+<div class="figura-aula">
+
+<h3>
+Vista superior — ângulo de leme e momento de guinada
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Vista superior de um navio com leme defletido na popa, força lateral no leme e momento de guinada em torno do centro de gravidade"
+>
+
+<defs>
+
+<marker
+id="seta-leme-derivada"
+markerWidth="10"
+markerHeight="10"
+refX="8"
+refY="3"
+orient="auto">
+
+<path
+d="M0,0 L0,6 L9,3 z"
+fill="currentColor">
+</path>
+
+</marker>
+
+</defs>
+
+
+<!-- Casco em vista superior -->
+
+<path
+d="
+M160 250
+Q200 190 290 180
+L615 180
+Q710 195 770 250
+Q710 305 615 320
+L290 320
+Q200 310 160 250
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<path
+d="M770 250 L705 205 L705 295 Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<line
+x1="205"
+y1="250"
+x2="735"
+y2="250"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<circle
+cx="460"
+cy="250"
+r="10"
+fill="currentColor">
+</circle>
+
+<text
+x="435"
+y="285"
+font-size="22"
+fill="currentColor">
+CG
+</text>
+
+
+<!-- Leme na popa -->
+
+<line
+x1="180"
+y1="250"
+x2="125"
+y2="205"
+stroke="currentColor"
+stroke-width="8">
+</line>
+
+<text
+x="45"
+y="180"
+font-size="22"
+fill="currentColor">
+leme defletido
+</text>
+
+<path
+d="M205 250 A55 55 0 0 0 167 217"
+fill="none"
+stroke="currentColor"
+stroke-width="3">
+</path>
+
+<text
+x="180"
+y="210"
+font-size="24"
+fill="currentColor">
+δ
+</text>
+
+
+<!-- Força no leme -->
+
+<line
+x1="145"
+y1="225"
+x2="145"
+y2="100"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-leme-derivada)">
+</line>
+
+<text
+x="165"
+y="110"
+font-size="22"
+fill="currentColor">
+força lateral no leme
+</text>
+
+
+<!-- Momento de guinada -->
+
+<path
+d="M355 420
+A160 125 0 0 0 570 395"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-leme-derivada)">
+</path>
+
+<text
+x="320"
+y="470"
+font-size="23"
+fill="currentColor">
+momento de guinada
+</text>
+
+
+<text
+x="35"
+y="45"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+VISTA SUPERIOR
+</text>
+
+</svg>
+
+<p>
+
+O leme foi representado na popa, em vista superior,
+defletido em relação à linha de centro do navio.
+
+</p>
+
+<p>
+
+A força lateral produzida no leme atua com grande
+braço em relação ao centro de gravidade, originando
+um momento de guinada.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+
+A resposta ao ângulo de leme não depende apenas do
+valor de
+<strong>δ</strong>.
+
+</p>
+
+<p>
+
+Ela também depende da velocidade do escoamento,
+da interação com o propulsor, da geometria do leme,
+do calado e da condição de movimento já existente.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 46
+========================================= -->
+
+<section
+class="topico-aula"
+id="derivadas-dimensionais-adimensionais"
+data-topico-id="derivadas-dimensionais-adimensionais">
+
+<h2>
+46. Derivadas dimensionais e adimensionais
+</h2>
+
+<div class="widget">
+
+<p>
+
+As derivadas hidrodinâmicas podem ser apresentadas
+em forma dimensional ou adimensional.
+
+</p>
+
+<p>
+
+As
+<strong>derivadas dimensionais</strong>
+mantêm unidades físicas relacionadas às forças,
+aos momentos e às variáveis utilizadas.
+
+</p>
+
+<p>
+
+As
+<strong>derivadas adimensionais</strong>
+são normalizadas por grandezas de referência,
+como:
+
+</p>
+
+<ul>
+
+<li>
+
+densidade da água;
+
+</li>
+
+<li>
+
+comprimento do navio;
+
+</li>
+
+<li>
+
+calado;
+
+</li>
+
+<li>
+
+velocidade de referência;
+
+</li>
+
+<li>
+
+área característica.
+
+</li>
+
+</ul>
+
+<p>
+
+A adimensionalização facilita a comparação entre
+navios de tamanhos diferentes e entre resultados
+obtidos por ensaios, modelos numéricos e provas
+em escala real.
+
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+Termos técnicos
+</h3>
+
+<p>
+
+<strong>Dimensional Derivative</strong> —
+derivada dimensional: coeficiente expresso com unidades
+físicas.
+
+</p>
+
+<p>
+
+<strong>Non-Dimensional Derivative</strong> —
+derivada adimensional: coeficiente normalizado por
+grandezas de referência.
+
+</p>
+
+<p>
+
+<strong>Reference Quantities</strong> —
+grandezas de referência: valores utilizados para
+normalizar forças, momentos, velocidades e dimensões.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+
+Dois coeficientes com o mesmo símbolo não devem ser
+comparados diretamente sem verificar se foram definidos
+com a mesma convenção de adimensionalização.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 47
+========================================= -->
+
+<section
+class="topico-aula"
+id="obtencao-derivadas"
+data-topico-id="obtencao-derivadas">
+
+<h2>
+47. Métodos de obtenção das derivadas hidrodinâmicas
+</h2>
+
+<div class="widget">
+
+<p>
+
+As derivadas hidrodinâmicas podem ser determinadas
+por diferentes métodos experimentais e numéricos.
+
+</p>
+
+<p>
+
+Entre os principais métodos encontram-se:
+
+</p>
+
+<ul>
+
+<li>
+
+ensaios com modelo em tanque;
+
+</li>
+
+<li>
+
+ensaios com modelo cativo;
+
+</li>
+
+<li>
+
+ensaios de movimento plano;
+
+</li>
+
+<li>
+
+ensaios de rotação em braço giratório;
+
+</li>
+
+<li>
+
+simulações de dinâmica dos fluidos computacional;
+
+</li>
+
+<li>
+
+identificação a partir de provas de mar;
+
+</li>
+
+<li>
+
+modelos empíricos e semiempíricos.
+
+</li>
+
+</ul>
+
+<p>
+
+Cada método possui hipóteses, limitações e faixas
+de validade próprias.
+
+</p>
+
+<p>
+
+Os ensaios cativos permitem impor movimentos
+específicos ao modelo e medir diretamente as forças
+e os momentos correspondentes.
+
+</p>
+
+<p>
+
+As provas de mar permitem observar o comportamento
+do navio real, mas os resultados podem ser influenciados
+por vento, ondas, corrente, profundidade e imprecisões
+de medição.
+
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+Termos técnicos
+</h3>
+
+<p>
+
+<strong>Captive Model Test</strong> —
+ensaio com modelo cativo: teste em que os movimentos
+do modelo são controlados pelo equipamento de ensaio.
+
+</p>
+
+<p>
+
+<strong>Planar Motion Mechanism</strong> —
+mecanismo de movimento plano: equipamento utilizado
+para impor movimentos laterais e de guinada ao modelo.
+
+</p>
+
+<p>
+
+<strong>Rotating Arm Test</strong> —
+ensaio de braço giratório: teste em que o modelo se
+desloca ao longo de uma trajetória circular imposta.
+
+</p>
+
+<p>
+
+<strong>System Identification</strong> —
+identificação de sistema: estimativa dos coeficientes
+do modelo a partir da resposta observada do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 48
+========================================= -->
+
+<section
+class="topico-aula"
+id="interpretacao-conjunta-derivadas"
+data-topico-id="interpretacao-conjunta-derivadas">
+
+<h2>
+48. Interpretação conjunta das derivadas
+</h2>
+
+<div class="widget">
+
+<p>
+
+As derivadas hidrodinâmicas não devem ser interpretadas
+isoladamente.
+
+</p>
+
+<p>
+
+A resposta direcional do navio resulta da interação
+entre:
+
+</p>
+
+<ul>
+
+<li>
+
+derivadas da força lateral;
+
+</li>
+
+<li>
+
+derivadas do momento de guinada;
+
+</li>
+
+<li>
+
+termos de massa adicional;
+
+</li>
+
+<li>
+
+inércia do navio;
+
+</li>
+
+<li>
+
+efeitos do leme e do propulsor;
+
+</li>
+
+<li>
+
+condição de carregamento;
+
+</li>
+
+<li>
+
+velocidade e ambiente operacional.
+
+</li>
+
+</ul>
+
+<p>
+
+Uma determinada derivada pode produzir efeito
+restaurador em uma equação e, ao mesmo tempo,
+interagir com outros termos de forma a alterar
+a resposta total do sistema.
+
+</p>
+
+<p>
+
+Por essa razão, a estabilidade direcional é avaliada
+a partir da combinação dos coeficientes do modelo,
+e não pelo sinal de uma única derivada.
+
+</p>
+
+<div class="destaque">
+
+<h3>
+Ideia central
+</h3>
+
+<p>
+
+As derivadas descrevem partes do comportamento
+hidrodinâmico.
+
+</p>
+
+<p>
+
+A manobra observada é o resultado do conjunto formado
+por todas essas partes, pelas propriedades inerciais
+e pelos comandos aplicados.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+
+Questões podem apresentar o significado físico de uma
+derivada específica.
+
+Entretanto, conclusões sobre estabilidade, capacidade
+de giro ou verificação da guinada exigem a análise
+do sistema completo.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 49
+========================================= -->
+
+<section
+class="topico-aula"
+id="limites-modelo-linear"
+data-topico-id="limites-modelo-linear">
+
+<h2>
+49. Limites do modelo linear
+</h2>
+
+<div class="widget">
+
+<p>
+
+O modelo linear com derivadas hidrodinâmicas é
+especialmente útil para estudar pequenas perturbações
+em torno de uma condição de movimento aproximadamente
+retilínea.
+
+</p>
+
+<p>
+
+Sua aplicação torna-se menos precisa quando existem:
+
+</p>
+
+<ul>
+
+<li>
+
+grandes ângulos de leme;
+
+</li>
+
+<li>
+
+grandes ângulos de deriva;
+
+</li>
+
+<li>
+
+razões de guinada elevadas;
+
+</li>
+
+<li>
+
+separação intensa do escoamento;
+
+</li>
+
+<li>
+
+velocidades muito baixas;
+
+</li>
+
+<li>
+
+ações fortes de propulsores laterais e rebocadores;
+
+</li>
+
+<li>
+
+interação acentuada com fundo ou margens;
+
+</li>
+
+<li>
+
+operações com máquina a ré;
+
+</li>
+
+<li>
+
+mudanças rápidas do regime propulsivo.
+
+</li>
+
+</ul>
+
+<p>
+
+Nessas situações, forças e momentos podem variar de
+forma não proporcional às variáveis de movimento,
+exigindo modelos não lineares ou observação operacional
+direta.
+
+</p>
+
+<div class="destaque">
+
+<h3>
+⚓ Aplicação Operacional
+</h3>
+
+<p>
+
+O modelo linear é valioso para compreender tendências,
+estabilidade e respostas próximas do movimento
+retilíneo.
+
+</p>
+
+<p>
+
+Entretanto, uma manobra portuária complexa envolve
+frequentemente efeitos não lineares que não podem
+ser resumidos por uma única relação proporcional.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>
+✅ Síntese da Parte 4
+</h2>
+
+<div class="widget">
+
+<p>
+
+As derivadas hidrodinâmicas representam a sensibilidade
+das forças e dos momentos às alterações do movimento
+do navio.
+
+</p>
+
+<p>
+
+As derivadas
+<strong>Y<sub>v</sub></strong>,
+<strong>N<sub>v</sub></strong>,
+<strong>Y<sub>r</sub></strong>
+e
+<strong>N<sub>r</sub></strong>
+relacionam a velocidade lateral e a razão de guinada
+à força lateral e ao momento de guinada.
+
+</p>
+
+<p>
+
+As derivadas de aceleração representam efeitos ligados
+à massa adicional e ao momento de inércia adicional.
+
+</p>
+
+<p>
+
+As derivadas de controle representam a influência
+do ângulo de leme sobre a força lateral e o momento
+de guinada.
+
+</p>
+
+<p>
+
+A interpretação deve considerar a convenção de sinais,
+a forma dimensional ou adimensional e a combinação
+entre todos os termos do modelo.
+
+</p>
+
+<p>
+
+Os modelos lineares são adequados para pequenas
+perturbações, mas possuem limitações em manobras
+de grande amplitude e em condições operacionais
+fortemente não lineares.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>
+📖 Glossário de Termos Técnicos — Parte 4
+</h2>
+
+<div class="widget">
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Hydrodynamic Derivatives
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+derivadas hidrodinâmicas.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+coeficientes que relacionam as alterações do movimento
+às forças e aos momentos produzidos sobre o navio.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Linearized Model
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+modelo linearizado.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+aproximação em que pequenas alterações do movimento
+produzem respostas aproximadamente proporcionais.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+State Variable
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+variável de estado.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+grandeza que descreve a condição instantânea do
+movimento, como velocidade lateral ou razão de guinada.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Control Variable
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+variável de controle.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+grandeza comandada para modificar o movimento,
+como o ângulo de leme.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Acceleration Derivatives
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+derivadas de aceleração.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+coeficientes associados às forças e aos momentos
+produzidos pelas acelerações do navio e da água
+ao seu redor.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Control Derivatives
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+derivadas de controle.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+coeficientes que representam a influência dos
+dispositivos de controle, especialmente o leme.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Dimensional Derivative
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+derivada dimensional.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+coeficiente expresso com unidades físicas.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Non-Dimensional Derivative
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+derivada adimensional.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+coeficiente normalizado para permitir comparações
+entre navios e métodos de ensaio.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Captive Model Test
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+ensaio com modelo cativo.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+ensaio no qual os movimentos do modelo são impostos
+e as forças correspondentes são medidas.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Planar Motion Mechanism
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+mecanismo de movimento plano.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+equipamento utilizado para impor movimentos laterais
+e rotacionais a um modelo de navio.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+Rotating Arm Test
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+ensaio de braço giratório.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+teste utilizado para medir forças e momentos durante
+um movimento circular imposto ao modelo.
+
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+System Identification
+</h3>
+
+<p>
+
+<strong>Português:</strong>
+identificação de sistema.
+
+</p>
+
+<p>
+
+<strong>Significado operacional:</strong>
+processo de estimar os coeficientes do modelo a partir
+da resposta observada do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 5
+     CONTROLE E RESPOSTA AO LEME
+     CONTINUA NA PRÓXIMA PARTE
+========================================= -->
+<!-- =========================================
+     PARTE 5
+     CONTROLE E RESPOSTA AO LEME
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — CONTROLE E RESPOSTA AO LEME
+</h2>
+
+<p>
+
+Nesta parte será estudada a relação entre o comando
+aplicado ao leme e a resposta direcional desenvolvida
+pelo navio.
+
+</p>
+
+<p>
+
+O leme constitui o principal dispositivo de controle
+direcional dos navios convencionais, produzindo força
+lateral e momento de guinada quando submetido ao
+escoamento da água.
+
+</p>
+
+<p>
+
+Entretanto, a resposta do navio não depende apenas
+do ângulo de leme.
+
+Ela também é influenciada pela velocidade, pelo fluxo
+produzido pelo propulsor, pela geometria do casco,
+pela condição de carregamento, pela profundidade e
+pelo movimento já existente.
+
+</p>
+
+<p>
+
+Serão examinados o desenvolvimento da força no leme,
+o início da guinada, o atraso da resposta, a razão de
+guinada, a aplicação de leme contrário e a capacidade
+de verificar uma guinada já estabelecida.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 50
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-dispositivo-controle"
+data-topico-id="leme-dispositivo-controle">
+
+<h2>
+50. O leme como dispositivo de controle
+</h2>
+
+<div class="widget">
+
+<p>
+
+O
+<strong>leme</strong>
+(<strong>rudder</strong>)
+é uma superfície de controle instalada normalmente
+na região da popa.
+
+</p>
+
+<p>
+
+Quando o leme é defletido em relação ao escoamento,
+surge uma força hidrodinâmica resultante sobre sua
+superfície.
+
+</p>
+
+<p>
+
+Essa força pode ser decomposta em componentes que
+produzem:
+
+</p>
+
+<ul>
+
+<li>
+
+força lateral na popa;
+
+</li>
+
+<li>
+
+momento de guinada em torno do centro de gravidade;
+
+</li>
+
+<li>
+
+alteração da trajetória do navio;
+
+</li>
+
+<li>
+
+aumento da resistência ao avanço;
+
+</li>
+
+<li>
+
+redução da velocidade durante a evolução.
+
+</li>
+
+</ul>
+
+<p>
+
+Como o leme está localizado afastado do centro de
+gravidade, sua força lateral possui um braço
+significativo e pode produzir um importante momento
+de guinada.
+
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+Termos técnicos
+</h3>
+
+<p>
+
+<strong>Rudder</strong> —
+leme: superfície de controle utilizada para produzir
+força lateral e momento de guinada.
+
+</p>
+
+<p>
+
+<strong>Rudder Force</strong> —
+força do leme: força hidrodinâmica resultante
+desenvolvida sobre o leme.
+
+</p>
+
+<p>
+
+<strong>Steering Control</strong> —
+controle de governo: atuação destinada a manter ou
+alterar a direção do navio.
+
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Ideia central
+</h3>
+
+<p>
+
+O leme não empurra diretamente a proa para o bordo
+da guinada.
+
+</p>
+
+<p>
+
+Ele produz inicialmente uma força lateral na região
+da popa, e o momento resultante modifica a orientação
+do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 51
+========================================= -->
+
+<section
+class="topico-aula"
+id="formacao-forca-leme"
+data-topico-id="formacao-forca-leme">
+
+<h2>
+51. Formação da força hidrodinâmica no leme
+</h2>
+
+<div class="widget">
+
+<p>
+
+Quando o leme está alinhado com o escoamento,
+o ângulo de ataque hidrodinâmico é reduzido e a
+força lateral produzida tende a ser pequena.
+
+</p>
+
+<p>
+
+Ao aplicar um ângulo de leme, a superfície passa
+a desviar o escoamento e desenvolve uma diferença
+de pressão entre suas faces.
+
+</p>
+
+<p>
+
+A integração dessa distribuição de pressão produz
+uma força hidrodinâmica resultante.
+
+</p>
+
+<p>
+
+A intensidade da força depende, entre outros fatores,
+da:
+
+</p>
+
+<ul>
+
+<li>
+
+velocidade do escoamento sobre o leme;
+
+</li>
+
+<li>
+
+área do leme;
+
+</li>
+
+<li>
+
+forma e perfil da superfície;
+
+</li>
+
+<li>
+
+relação de aspecto;
+
+</li>
+
+<li>
+
+ângulo de ataque efetivo;
+
+</li>
+
+<li>
+
+interação com o casco e o propulsor;
+
+</li>
+
+<li>
+
+presença de separação do escoamento.
+
+</li>
+
+</ul>
+
+<div class="figura-aula">
+
+<h3>
+Vista superior — leme defletido e força resultante
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Vista superior de um navio com leme defletido na popa e força hidrodinâmica lateral aplicada sobre o leme"
+>
+
+<defs>
+
+<marker
+id="seta-forca-leme-parte5"
+markerWidth="10"
+markerHeight="10"
+refX="8"
+refY="3"
+orient="auto"
+markerUnits="strokeWidth">
+
+<path
+d="M0,0 L0,6 L9,3 z"
+fill="currentColor">
+</path>
+
+</marker>
+
+</defs>
+
+
+<!-- Casco em vista superior -->
+
+<path
+d="
+M165 260
+Q205 195 300 185
+L620 185
+Q715 200 775 260
+Q715 320 620 335
+L300 335
+Q205 325 165 260
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<!-- Proa -->
+
+<path
+d="M775 260 L710 210 L710 310 Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<!-- Linha de centro -->
+
+<line
+x1="205"
+y1="260"
+x2="745"
+y2="260"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<text
+x="705"
+y="165"
+font-size="22"
+fill="currentColor">
+PROA
+</text>
+
+<text
+x="175"
+y="165"
+font-size="22"
+fill="currentColor">
+POPA
+</text>
+
+
+<!-- Leme defletido na popa -->
+
+<line
+x1="180"
+y1="260"
+x2="115"
+y2="205"
+stroke="currentColor"
+stroke-width="9">
+</line>
+
+<text
+x="35"
+y="185"
+font-size="22"
+fill="currentColor">
+leme
+</text>
+
+<!-- Ângulo do leme -->
+
+<path
+d="M205 260 A65 65 0 0 0 157 220"
+fill="none"
+stroke="currentColor"
+stroke-width="3">
+</path>
+
+<text
+x="180"
+y="220"
+font-size="25"
+fill="currentColor">
+δ
+</text>
+
+
+<!-- Escoamento -->
+
+<line
+x1="45"
+y1="300"
+x2="145"
+y2="300"
+stroke="currentColor"
+stroke-width="4"
+marker-end="url(#seta-forca-leme-parte5)">
+</line>
+
+<text
+x="35"
+y="340"
+font-size="21"
+fill="currentColor">
+escoamento local
+</text>
+
+
+<!-- Força resultante -->
+
+<line
+x1="135"
+y1="225"
+x2="135"
+y2="90"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-forca-leme-parte5)">
+</line>
+
+<text
+x="160"
+y="105"
+font-size="22"
+fill="currentColor">
+força resultante
+</text>
+
+
+<!-- Centro de gravidade -->
+
+<circle
+cx="460"
+cy="260"
+r="10"
+fill="currentColor">
+</circle>
+
+<text
+x="435"
+y="295"
+font-size="22"
+fill="currentColor">
+CG
+</text>
+
+
+<!-- Momento -->
+
+<path
+d="M355 430
+A160 125 0 0 0 575 405"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-forca-leme-parte5)">
+</path>
+
+<text
+x="320"
+y="480"
+font-size="23"
+fill="currentColor">
+momento de guinada
+</text>
+
+
+<text
+x="35"
+y="45"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+VISTA SUPERIOR
+</text>
+
+</svg>
+
+<p>
+
+O navio está representado em
+<strong>vista superior</strong>,
+com a proa voltada para a direita.
+
+</p>
+
+<p>
+
+O leme encontra-se instalado na popa e defletido em
+relação à linha de centro.
+
+A força lateral atua afastada do centro de gravidade,
+produzindo um momento de guinada.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção técnica
+</h3>
+
+<p>
+
+O ângulo geométrico do leme não corresponde
+necessariamente ao ângulo de ataque hidrodinâmico
+efetivo.
+
+</p>
+
+<p>
+
+O escoamento que chega ao leme pode estar alterado
+pela esteira do casco, pelo fluxo do propulsor e pelo
+movimento lateral e rotacional do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 52
+========================================= -->
+
+<section
+class="topico-aula"
+id="velocidade-escoamento-leme"
+data-topico-id="velocidade-escoamento-leme">
+
+<h2>
+52. Velocidade do escoamento sobre o leme
+</h2>
+
+<div class="widget">
+
+<p>
+
+A força produzida pelo leme depende fortemente da
+velocidade do escoamento que incide sobre sua
+superfície.
+
+</p>
+
+<p>
+
+De forma geral, o aumento da velocidade do escoamento
+eleva significativamente a força hidrodinâmica
+disponível para produzir controle direcional.
+
+</p>
+
+<p>
+
+O escoamento local sobre o leme pode resultar da
+combinação entre:
+
+</p>
+
+<ul>
+
+<li>
+
+velocidade de avanço do navio;
+
+</li>
+
+<li>
+
+corrente de descarga do propulsor;
+
+</li>
+
+<li>
+
+velocidade lateral da popa;
+
+</li>
+
+<li>
+
+razão de guinada;
+
+</li>
+
+<li>
+
+esteira formada pelo casco;
+
+</li>
+
+<li>
+
+condições de operação da máquina.
+
+</li>
+
+</ul>
+
+<p>
+
+Assim, o navio pode apresentar eficácia de leme
+diferente mesmo quando o ângulo aplicado permanece
+inalterado.
+
+</p>
+
+<div class="destaque">
+
+<h3>
+⚓ Aplicação Operacional
+</h3>
+
+<p>
+
+Com máquina avante e fluxo significativo do propulsor
+sobre o leme, pode existir força de governo mesmo
+quando a velocidade do navio em relação à Terra é
+reduzida.
+
+</p>
+
+<p>
+
+Com a máquina parada e pouca velocidade através da
+água, a eficácia do leme tende a diminuir
+consideravelmente.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+
+A velocidade indicada pelo GPS representa movimento
+em relação à Terra.
+
+</p>
+
+<p>
+
+A força no leme depende principalmente da velocidade
+do escoamento da água sobre sua superfície, que pode
+ser diferente da velocidade sobre o fundo.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 53
+========================================= -->
+
+<section
+class="topico-aula"
+id="resposta-inicial-leme"
+data-topico-id="resposta-inicial-leme">
+
+<h2>
+53. Resposta inicial após a aplicação do leme
+</h2>
+
+<div class="widget">
+
+<p>
+
+Após a aplicação do leme, o navio não entra
+imediatamente em uma curva estabilizada.
+
+</p>
+
+<p>
+
+Inicialmente, a força lateral do leme atua na popa
+e produz um momento de guinada em torno do centro de
+gravidade.
+
+</p>
+
+<p>
+
+A popa tende a deslocar-se lateralmente para o bordo
+oposto ao sentido da futura guinada da proa.
+
+</p>
+
+<p>
+
+À medida que o navio começa a girar, surgem:
+
+</p>
+
+<ul>
+
+<li>
+
+velocidade lateral;
+
+</li>
+
+<li>
+
+ângulo de deriva;
+
+</li>
+
+<li>
+
+forças hidrodinâmicas sobre o casco;
+
+</li>
+
+<li>
+
+aumento progressivo da razão de guinada;
+
+</li>
+
+<li>
+
+alteração da trajetória do centro de gravidade;
+
+</li>
+
+<li>
+
+redução gradual da velocidade de avanço.
+
+</li>
+
+</ul>
+
+<div class="figura-aula">
+
+<h3>
+Vista superior — resposta inicial ao leme
+</h3>
+
+<svg
+viewBox="0 0 900 540"
+role="img"
+aria-label="Vista superior mostrando a força do leme na popa, o deslocamento inicial da popa e o início da guinada da proa"
+>
+
+<defs>
+
+<marker
+id="seta-resposta-inicial-leme"
+markerWidth="10"
+markerHeight="10"
+refX="8"
+refY="3"
+orient="auto">
+
+<path
+d="M0,0 L0,6 L9,3 z"
+fill="currentColor">
+</path>
+
+</marker>
+
+</defs>
+
+
+<!-- Trajetória inicial -->
+
+<line
+x1="100"
+y1="280"
+x2="820"
+y2="280"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="12 10">
+</line>
+
+<text
+x="580"
+y="260"
+font-size="21"
+fill="currentColor">
+trajetória inicial
+</text>
+
+
+<!-- Navio em vista superior -->
+
+<path
+d="
+M165 280
+Q205 215 300 205
+L620 205
+Q715 220 775 280
+Q715 340 620 355
+L300 355
+Q205 345 165 280
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<path
+d="M775 280 L710 230 L710 330 Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4">
+</path>
+
+<line
+x1="205"
+y1="280"
+x2="745"
+y2="280"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<text
+x="705"
+y="185"
+font-size="22"
+fill="currentColor">
+PROA
+</text>
+
+<text
+x="175"
+y="185"
+font-size="22"
+fill="currentColor">
+POPA
+</text>
+
+
+<!-- CG -->
+
+<circle
+cx="460"
+cy="280"
+r="10"
+fill="currentColor">
+</circle>
+
+<text
+x="435"
+y="315"
+font-size="22"
+fill="currentColor">
+CG
+</text>
+
+
+<!-- Leme -->
+
+<line
+x1="180"
+y1="280"
+x2="125"
+y2="225"
+stroke="currentColor"
+stroke-width="9">
+</line>
+
+
+<!-- Força do leme -->
+
+<line
+x1="140"
+y1="240"
+x2="140"
+y2="105"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-resposta-inicial-leme)">
+</line>
+
+<text
+x="165"
+y="120"
+font-size="21"
+fill="currentColor">
+força do leme
+</text>
+
+
+<!-- Deslocamento inicial da popa -->
+
+<line
+x1="225"
+y1="320"
+x2="225"
+y2="420"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-resposta-inicial-leme)">
+</line>
+
+<text
+x="65"
+y="460"
+font-size="21"
+fill="currentColor">
+movimento inicial da popa
+</text>
+
+
+<!-- Início da guinada -->
+
+<path
+d="M420 455
+A190 145 0 0 0 650 415"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+marker-end="url(#seta-resposta-inicial-leme)">
+</path>
+
+<text
+x="500"
+y="500"
+font-size="22"
+fill="currentColor">
+início da guinada
+</text>
+
+
+<text
+x="35"
+y="45"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+VISTA SUPERIOR
+</text>
+
+</svg>
+
+<p>
+
+O esquema representa o início da resposta e não uma
+curva estabilizada.
+
+</p>
+
+<p>
+
+A força aplicada na popa inicia o momento de guinada,
+enquanto o casco começa progressivamente a desenvolver
+movimento lateral e rotação.
+
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Ideia central
+</h3>
+
+<p>
+
+A resposta inicial ao leme constitui uma fase
+transitória.
+
+</p>
+
+<p>
+
+A força do leme inicia a manobra, mas a trajetória
+posterior resulta da interação entre leme, casco,
+propulsor, inércia e forças hidrodinâmicas.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 54
+========================================= -->
+
+<section
+class="topico-aula"
+id="atraso-resposta-governo"
+data-topico-id="atraso-resposta-governo">
+
+<h2>
+54. Atraso entre o comando e a resposta
+</h2>
+
+<div class="widget">
+
+<p>
+
+A resposta do navio ao comando de leme não é
+instantânea.
+
+</p>
+
+<p>
+
+Entre a ordem aplicada e a alteração perceptível da
+trajetória existem diferentes componentes de atraso.
+
+</p>
+
+<p>
+
+Entre eles podem ser considerados:
+
+</p>
+
+<ul>
+
+<li>
+
+tempo de transmissão da ordem;
+
+</li>
+
+<li>
+
+tempo de atuação da máquina do leme;
+
+</li>
+
+<li>
+
+tempo necessário para o leme alcançar o ângulo
+comandado;
+
+</li>
+
+<li>
+
+tempo para desenvolvimento da força hidrodinâmica;
+
+</li>
+
+<li>
+
+tempo para superar a inércia do navio;
+
+</li>
+
+<li>
+
+tempo para que a razão de guinada se torne perceptível;
+
+</li>
+
+<li>
+
+tempo para que a trajetória apresente alteração
+significativa.
+
+</li>
+
+</ul>
+
+<p>
+
+O atraso total observado pelo Prático resulta da
+combinação entre a dinâmica do equipamento e a dinâmica
+hidrodinâmica do navio.
+
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+Termos técnicos
+</h3>
+
+<p>
+
+<strong>Steering Response</strong> —
+resposta de governo: comportamento desenvolvido pelo
+navio após a aplicação de um comando de leme.
+
+</p>
+
+<p>
+
+<strong>Time Lag</strong> —
+atraso temporal: intervalo entre a aplicação do
+comando e o desenvolvimento da resposta esperada.
+
+</p>
+
+<p>
+
+<strong>Rudder Execution Time</strong> —
+tempo de execução do leme: intervalo necessário para
+o leme deslocar-se até o ângulo comandado.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+
+Aplicar sucessivos comandos antes de avaliar a resposta
+do comando anterior pode produzir excesso de controle.
+
+</p>
+
+<p>
+
+O resultado pode ser uma sequência de guinadas
+alternadas, maior ocupação lateral da via navegável
+e dificuldade para estabilizar o rumo.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 55
+========================================= -->
+
+<section
+class="topico-aula"
+id="desenvolvimento-razao-guinada"
+data-topico-id="desenvolvimento-razao-guinada">
+
+<h2>
+55. Desenvolvimento da razão de guinada
+</h2>
+
+<div class="widget">
+
+<p>
+
+A
+<strong>razão de guinada</strong>
+(<strong>rate of turn</strong>)
+não atinge seu valor máximo imediatamente após a
+aplicação do leme.
+
+</p>
+
+<p>
+
+Durante a fase inicial da manobra, o momento produzido
+pelo leme gera aceleração angular.
+
+</p>
+
+<p>
+
+À medida que a guinada aumenta, as forças e os momentos
+hidrodinâmicos do casco também se modificam.
+
+</p>
+
+<p>
+
+A razão de guinada tende a evoluir até que seja
+estabelecido um novo equilíbrio dinâmico entre:
+
+</p>
+
+<ul>
+
+<li>
+
+momento produzido pelo leme;
+
+</li>
+
+<li>
+
+momentos hidrodinâmicos do casco;
+
+</li>
+
+<li>
+
+efeitos do propulsor;
+
+</li>
+
+<li>
+
+inércia e momento de inércia adicional;
+
+</li>
+
+<li>
+
+amortecimento da guinada;
+
+</li>
+
+<li>
+
+ações ambientais externas.
+
+</li>
+
+</ul>
+
+<p>
+
+Se o leme permanecer em um ângulo constante e as
+condições se mantiverem aproximadamente uniformes,
+o navio pode aproximar-se de uma razão de guinada
+quase estabilizada.
+
+</p>
+
+<div class="destaque">
+
+<h3>
+⚓ Aplicação Operacional
+</h3>
+
+<p>
+
+O rumo informa a orientação instantânea da proa.
+
+A razão de guinada informa a velocidade com que essa
+orientação está mudando.
+
+</p>
+
+<p>
+
+Durante a aproximação do rumo desejado, uma razão de
+guinada elevada indica que o navio ainda possui
+tendência significativa de ultrapassá-lo.
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+
+A observação isolada do rumo pode conduzir a uma
+correção tardia.
+
+</p>
+
+<p>
+
+O Prático deve acompanhar simultaneamente o rumo,
+a razão de guinada e a tendência visual da proa e
+da popa.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 56
+     CONTINUA NA PRÓXIMA PARTE
+========================================= -->
     
