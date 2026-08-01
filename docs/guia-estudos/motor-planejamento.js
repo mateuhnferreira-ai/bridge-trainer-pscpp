@@ -1,6 +1,12 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP v2.0
+// MOTOR DE PLANEJAMENTO PSCPP v2.1
 // Bridge Trainer PSCPP
+//
+// A partir da v2.1, o motor não lê mais assunto.status
+// (campo removido do banco-conteudo.js). O que já foi
+// concluído agora é verificado em tempo real via
+// obterProgressoAula(), do progresso.js — que precisa
+// estar carregado ANTES deste script na página.
 // =====================================
 
 
@@ -33,10 +39,14 @@ for(let disciplina in conteudoPSCPP){
 
 
 
-        if(
-            assunto.status !== "Concluído" &&
-            assunto.status !== "Dominado"
-        ){
+        const percentualConcluido =
+        (typeof obterProgressoAula === "function")
+            ? obterProgressoAula(disciplina, assunto.id)
+            : 0;
+
+
+
+        if(percentualConcluido < 100){
 
 
 
@@ -82,6 +92,16 @@ for(let disciplina in conteudoPSCPP){
             plano.push({
 
 
+                idDisciplina:
+                disciplina,
+
+
+
+                idAssunto:
+                assunto.id,
+
+
+
                 disciplina:
                 dadosDisciplina.nome,
 
@@ -113,7 +133,12 @@ for(let disciplina in conteudoPSCPP){
 
 
                 prioridade:
-                prioridade
+                prioridade,
+
+
+
+                percentualConcluido:
+                percentualConcluido
 
 
 
