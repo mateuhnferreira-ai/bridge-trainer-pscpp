@@ -1,27 +1,36 @@
-<!-- =========================================
-PARTE 1
-INÍCIO DO ARQUIVO ATÉ O TÓPICO 4
-========================================= -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Resistência do Navio - Bridge Trainer PSCPP</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="../../css/style.css">
+<title>
+Resistência do Navio - Bridge Trainer PSCPP
+</title>
+
+<link
+rel="stylesheet"
+href="../../css/style.css">
 
 </head>
+
 
 
 <body
 data-disciplina="manobrabilidade"
 data-aula="resistencia-navio">
 
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
 
 <header class="topo">
 
@@ -37,26 +46,46 @@ data-aula="resistencia-navio">
 
 
 
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
 <nav class="navbar">
 
-<button onclick="voltarPagina()">
+<button
+type="button"
+onclick="voltarPagina()">
+
 ⬅ Voltar
+
 </button>
 
+
 <a href="../../index.html">
+
 🏠 Início
+
 </a>
+
 
 <a href="../../guia-estudos/index.html">
+
 📚 Guia de Estudos
+
 </a>
 
-<a href="#">
+
+<a href="#progresso-aula">
+
 📊 Progresso
+
 </a>
 
+
 <a href="#">
+
 📝 Simulados
+
 </a>
 
 </nav>
@@ -66,8 +95,9 @@ data-aula="resistencia-navio">
 <main>
 
 
+
 <!-- =========================================
-CABEÇALHO DA AULA
+     DASHBOARD DA AULA
 ========================================= -->
 
 <section class="dashboard">
@@ -75,14 +105,17 @@ CABEÇALHO DA AULA
 <h2>🚢 Resistência do Navio</h2>
 
 <p>
+
 <strong>Ship Resistance</strong>
+
 </p>
 
 <p>
+
 Estudo das forças hidrodinâmicas e aerodinâmicas que se
-opõem ao avanço do navio, com ênfase em sua influência
-sobre a potência efetiva, a velocidade e a resposta da
-embarcação durante a operação.
+opõem ao avanço do navio e da relação existente entre
+resistência, velocidade, empuxo e potência efetiva.
+
 </p>
 
 </section>
@@ -90,26 +123,47 @@ embarcação durante a operação.
 
 
 <!-- =========================================
-CONTINUAR ESTUDANDO
+     PROGRESSO DA AULA
 ========================================= -->
 
-<section>
+<section id="progresso-aula">
 
-<h2>📖 Continuar estudando</h2>
+<h2>📊 Progresso da Aula</h2>
 
 <div class="widget">
 
 <p>
-Use o botão abaixo para retornar ao último tópico
-registrado como estudado nesta aula.
+
+Acompanhe abaixo o percentual de tópicos concluídos nesta
+aula.
+
 </p>
+
+
+<div class="barra-progresso">
+
+<div
+class="preenchimento-progresso"
+id="barraProgressoAula">
+
+</div>
+
+</div>
+
+
+<p id="percentualProgressoAula">
+
+0% concluído
+
+</p>
+
 
 <button
 type="button"
 class="botao-estudo"
-onclick="irParaUltimoTopicoEstudado()">
+id="botaoContinuarEstudo">
 
-▶ Ir para o último tópico estudado
+📍 Ir para onde parei
 
 </button>
 
@@ -120,753 +174,2933 @@ onclick="irParaUltimoTopicoEstudado()">
 
 
 <!-- =========================================
-IDENTIFICAÇÃO DA AULA
+     ABERTURA DA PARTE 1
 ========================================= -->
 
-<section>
+<section class="abertura-parte">
 
-<h2>📘 Identificação da aula</h2>
-
-<div class="widget">
+<h2>Parte 1 — Fundamentos da Resistência</h2>
 
 <p>
-<strong>Disciplina:</strong>
-Manobrabilidade do Navio
-</p>
 
-<p>
-<strong>Assunto:</strong>
-Resistência do Navio
-</p>
+Nesta primeira parte serão apresentados o conceito físico
+de resistência ao avanço, o equilíbrio entre empuxo e
+resistência e a importância operacional desse conhecimento
+para a condução do navio.
 
-<p>
-<strong>Termo técnico:</strong>
-Ship Resistance
 </p>
-
-<p>
-<strong>Nível:</strong>
-PSCPP
-</p>
-
-</div>
 
 </section>
 
 
 
 <!-- =========================================
-CONTEÚDO PROGRAMÁTICO
-========================================= -->
-
-<section>
-
-<h2>📋 Conteúdo programático</h2>
-
-<div class="widget">
-
-<p>
-<strong>I – Manobrabilidade do Navio</strong>
-</p>
-
-<p>
-<strong>1. Resistência do Navio</strong>
-</p>
-
-<ul>
-
-<li>
-resistência friccional;
-</li>
-
-<li>
-resistência de formação de ondas;
-</li>
-
-<li>
-resistências relativas às perturbações nas linhas de
-corrente produzidas pela forma do casco e por seus
-apêndices;
-</li>
-
-<li>
-outros componentes da resistência;
-</li>
-
-<li>
-relação entre resistência, velocidade e potência efetiva;
-</li>
-
-<li>
-efeitos operacionais da resistência sobre o navio.
-</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-OBJETIVOS
-========================================= -->
-
-<section>
-
-<h2>🎯 Objetivos de aprendizagem</h2>
-
-<div class="widget">
-
-<p>
-Ao concluir esta aula, o aluno deverá ser capaz de:
-</p>
-
-<ul>
-
-<li>
-compreender o conceito físico de resistência ao avanço;
-</li>
-
-<li>
-identificar os componentes da resistência total;
-</li>
-
-<li>
-diferenciar resistência friccional e resistência residual;
-</li>
-
-<li>
-compreender a formação da camada limite;
-</li>
-
-<li>
-relacionar o Número de Reynolds aos efeitos viscosos;
-</li>
-
-<li>
-relacionar o Número de Froude à formação de ondas;
-</li>
-
-<li>
-compreender a influência da forma do casco e dos apêndices;
-</li>
-
-<li>
-relacionar resistência, velocidade e potência efetiva;
-</li>
-
-<li>
-avaliar a influência da rugosidade, do calado e do trim;
-</li>
-
-<li>
-reconhecer alterações da resistência em águas rasas e
-restritas;
-</li>
-
-<li>
-utilizar corretamente os principais termos técnicos em
-inglês marítimo.
-</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-REFERÊNCIAS PRINCIPAIS
-========================================= -->
-
-<section>
-
-<h2>📚 Publicações utilizadas</h2>
-
-<div class="widget">
-
-<h3>
-Principles of Naval Architecture — Volume II
-</h3>
-
-<p>
-Referência para a introdução à resistência, resistência
-friccional, resistência de formação de ondas, outros
-componentes da resistência e potência efetiva.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>
-Ship Resistance and Flow
-</h3>
-
-<p>
-Referência para as equações fundamentais, semelhança,
-decomposição da resistência, escoamento invíscido,
-formação de ondas, resistência viscosa e outros
-componentes.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>
-Practical Ship Hydrodynamics
-</h3>
-
-<p>
-Referência complementar para resistência e propulsão,
-escoamento ao redor do casco, estimativa de resistência
-e efeitos hidrodinâmicos relevantes.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>
-Naval Shiphandling
-</h3>
-
-<p>
-Referência para a interpretação operacional das forças
-que atuam sobre o navio, incluindo resistência da água,
-vento, velocidade e águas rasas.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>
-Shiphandling for the Mariner
-</h3>
-
-<p>
-Referência complementar para relacionar potência,
-velocidade e resposta do navio durante a manobra.
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-TÓPICO 1
-INTRODUÇÃO À RESISTÊNCIA
+     TÓPICO 1
 ========================================= -->
 
 <section
 class="topico-aula"
-id="introducao"
-data-topico-id="introducao">
+id="introducao-resistencia"
+data-topico-id="introducao-resistencia">
 
 <h2>1. Introdução à resistência do navio</h2>
 
 <div class="widget">
 
 <p>
-Sempre que um navio se desloca pela água, ocorre uma
-interação entre o casco e o fluido ao seu redor.
+
+Sempre que um navio se desloca através da água, sua
+superfície externa interage com o fluido.
+
 </p>
 
 <p>
-Essa interação produz forças que se opõem ao movimento
-da embarcação.
+
+Essa interação produz forças de pressão e forças viscosas
+distribuídas sobre o casco e seus apêndices.
+
 </p>
 
 <p>
-A força necessária para rebocar o navio a determinada
-velocidade, em águas tranquilas, corresponde à sua
-<strong>resistência ao avanço</strong>,
-ou <strong>ship resistance</strong>.
+
+A componente longitudinal resultante dessas forças, quando
+atua no sentido contrário ao movimento do navio, constitui
+a sua <strong>resistência ao avanço</strong>.
+
+</p>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+
+A resistência do navio não corresponde a uma única força
+isolada aplicada em determinado ponto do casco.
+
 </p>
 
 <p>
-Quando são considerados apenas o casco e sua superfície,
-sem os apêndices, utiliza-se o termo
-<strong>bare-hull resistance</strong>,
-ou resistência do casco nu.
+
+Ela representa a resultante das forças exercidas pela água
+e pelo ar sobre toda a superfície da embarcação.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Ship Resistance</strong> — resistência do navio ou
+resistência ao avanço.
+
 </p>
 
 <p>
-Para que o navio mantenha movimento retilíneo com
-velocidade constante, o empuxo útil deve equilibrar a
+
+<strong>Total Resistance</strong> — resistência total
+resultante das diferentes parcelas resistentes.
+
+</p>
+
+<p>
+
+<strong>Drag</strong> — termo geral empregado para uma força
+que se opõe ao movimento relativo através de um fluido.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="origem-fisica-resistencia"
+data-topico-id="origem-fisica-resistencia">
+
+<h2>2. Origem física da resistência</h2>
+
+<div class="widget">
+
+<p>
+
+O navio precisa deslocar e acelerar a água ao seu redor,
+produzir um sistema de ondas e vencer os efeitos da
+viscosidade sobre sua superfície molhada.
+
+</p>
+
+<p>
+
+Além disso, a forma do casco modifica as linhas de corrente
+e a distribuição de pressão ao longo da embarcação.
+
+</p>
+
+<p>
+
+Por esse motivo, a resistência total envolve mecanismos
+físicos diferentes, que serão estudados separadamente nas
+próximas partes da aula.
+
+</p>
+
+<ul>
+
+<li>
+
+atrito viscoso sobre a superfície molhada;
+
+</li>
+
+<li>
+
+distribuição de pressão ao redor do casco;
+
+</li>
+
+<li>
+
+formação de ondas na superfície livre;
+
+</li>
+
+<li>
+
+perturbações causadas pelos apêndices;
+
+</li>
+
+<li>
+
+ação do ar sobre as obras mortas;
+
+</li>
+
+<li>
+
+efeitos adicionais decorrentes da condição operacional.
+
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A resistência friccional é apenas uma das parcelas da
 resistência total.
-</p>
 
-<div class="destaque">
-
-<h3>Princípio fundamental</h3>
-
-<p>
-<strong>Empuxo maior que a resistência:</strong>
-o navio acelera.
 </p>
 
 <p>
-<strong>Empuxo igual à resistência:</strong>
-o navio mantém velocidade constante.
-</p>
 
-<p>
-<strong>Empuxo menor que a resistência:</strong>
-o navio desacelera.
+Não se deve tratar resistência total e resistência
+friccional como expressões equivalentes.
+
 </p>
 
 </div>
 
-<div class="caixa-imagem">
+</div>
 
-<img
-src="../../img/infograficos/resistencia-visao-geral.png"
-alt="Empuxo e resistência atuando em sentidos opostos sobre o navio">
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="empuxo-resistencia"
+data-topico-id="empuxo-resistencia">
+
+<h2>3. Empuxo e resistência</h2>
+
+<div class="widget">
 
 <p>
+
+O sistema propulsivo produz uma força que impulsiona o navio
+no sentido do movimento.
+
+</p>
+
+<p>
+
+Essa força é denominada <strong>empuxo</strong>,
+ou <strong>thrust</strong>.
+
+</p>
+
+<p>
+
+A resistência total atua, de maneira geral, no sentido
+contrário ao avanço.
+
+</p>
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 360"
+role="img"
+aria-labelledby="titulo-forcas descricao-forcas"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-forcas">
+
+Empuxo e resistência atuando sobre o navio
+
+</title>
+
+<desc id="descricao-forcas">
+
+Vista lateral simplificada de um navio com uma seta de
+empuxo apontando para vante e uma seta de resistência
+apontando para ré.
+
+</desc>
+
+
+<!-- ÁGUA -->
+
+<rect
+x="0"
+y="235"
+width="900"
+height="125"
+fill="#b9d9ee">
+
+
+<path
+d="
+M 0 235
+Q 35 220 70 235
+T 140 235
+T 210 235
+T 280 235
+T 350 235
+T 420 235
+T 490 235
+T 560 235
+T 630 235
+T 700 235
+T 770 235
+T 840 235
+T 910 235
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+
+<!-- CASCO -->
+
+<path
+d="
+M 260 165
+L 650 165
+L 735 205
+Q 695 250 610 265
+L 330 265
+Q 275 250 235 205
+Z
+"
+fill="#d9e2e8"
+stroke="#17324d"
+stroke-width="5">
+
+
+<!-- SUPERESTRUTURA -->
+
+<rect
+x="405"
+y="105"
+width="150"
+height="60"
+rx="5"
+fill="#f4f7f9"
+stroke="#17324d"
+stroke-width="4">
+
+
+<rect
+x="445"
+y="65"
+width="75"
+height="40"
+fill="#f4f7f9"
+stroke="#17324d"
+stroke-width="4">
+
+
+<!-- JANELAS -->
+
+<rect
+x="425"
+y="120"
+width="25"
+height="15"
+fill="#4ea8de">
+
+</rect>
+
+<rect
+x="465"
+y="120"
+width="25"
+height="15"
+fill="#4ea8de">
+
+</rect>
+
+<rect
+x="505"
+y="120"
+width="25"
+height="15"
+fill="#4ea8de">
+
+</rect>
+
+
+<!-- SETA DE EMPUXO -->
+
+<line
+x1="570"
+y1="315"
+x2="790"
+y2="315"
+stroke="#15803d"
+stroke-width="13"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="790,315 750,290 750,340"
+fill="#15803d">
+
+</polygon>
+
+
+<text
+x="610"
+y="300"
+font-size="25"
+font-weight="bold"
+fill="#14532d">
+
+EMPUXO — THRUST
+
+</text>
+
+
+<!-- SETA DE RESISTÊNCIA -->
+
+<line
+x1="330"
+y1="315"
+x2="110"
+y2="315"
+stroke="#b91c1c"
+stroke-width="13"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="110,315 150,290 150,340"
+fill="#b91c1c">
+
+</polygon>
+
+
+<text
+x="105"
+y="300"
+font-size="25"
+font-weight="bold"
+fill="#7f1d1d">
+
+RESISTÊNCIA
+
+</text>
+
+
+<!-- DIREÇÃO DO MOVIMENTO -->
+
+<line
+x1="390"
+y1="35"
+x2="610"
+y2="35"
+stroke="#17324d"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="610,35 575,15 575,55"
+fill="#17324d">
+
+</polygon>
+
+
+<text
+x="365"
+y="25"
+font-size="22"
+font-weight="bold"
+fill="#17324d">
+
+DIREÇÃO DO AVANÇO
+
+</text>
+
+</svg>
+
+
+<p>
+
 <strong>Figura 1.</strong>
-Representação esquemática do empuxo e da resistência
-durante o avanço do navio.
+Representação esquemática do empuxo e da resistência total
+atuando em sentidos opostos.
+
 </p>
 
 </div>
+
+
 
 <div class="destaque">
 
-<h3>⚓ Aplicação operacional</h3>
+<h3>Equilíbrio das forças longitudinais</h3>
 
 <p>
-O Prático não calcula normalmente a resistência total
-durante a manobra, mas precisa reconhecer seus efeitos
-sobre a aceleração, a desaceleração, a velocidade obtida
-para determinada ordem de máquina e a distância de parada.
-</p>
 
-</div>
+Quando o navio se desloca em trajetória retilínea e com
+velocidade constante, não existe aceleração longitudinal.
 
-</div>
-
-<button
-type="button"
-class="botao-estudo"
-onclick="marcarTopicoEstudado(this)">
-
-✓ Marcar tópico como estudado
-
-</button>
-
-</section>
-
-
-
-<!-- =========================================
-TÓPICO 2
-COMPONENTES DA RESISTÊNCIA TOTAL
-========================================= -->
-
-<section
-class="topico-aula"
-id="componentes-resistencia"
-data-topico-id="componentes-resistencia">
-
-<h2>2. Componentes da resistência total</h2>
-
-<div class="widget">
-
-<p>
-A resistência total resulta da atuação simultânea de
-diferentes mecanismos físicos.
 </p>
 
 <p>
-Para facilitar o estudo, esses mecanismos são analisados
-separadamente, embora interajam entre si no escoamento
-real ao redor do navio.
+
+Nessa condição idealizada, o empuxo útil equilibra a
+resistência total:
+
 </p>
 
-<table>
+<p style="text-align:center; font-size:1.25rem;">
 
-<thead>
-
-<tr>
-
-<th>Componente</th>
-<th>Termo em inglês</th>
-<th>Origem principal</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>Resistência friccional</td>
-<td>Frictional Resistance</td>
-<td>
-Efeitos da viscosidade e das tensões de cisalhamento
-sobre a superfície molhada.
-</td>
-
-</tr>
-
-<tr>
-
-<td>Resistência de formação de ondas</td>
-<td>Wave-Making Resistance</td>
-<td>
-Energia fornecida continuamente ao sistema de ondas
-produzido pelo navio.
-</td>
-
-</tr>
-
-<tr>
-
-<td>Resistência associada a vórtices</td>
-<td>Eddy Resistance</td>
-<td>
-Energia transportada por vórtices produzidos pelo casco,
-apêndices e separação do escoamento.
-</td>
-
-</tr>
-
-<tr>
-
-<td>Resistência dos apêndices</td>
-<td>Appendage Resistance</td>
-<td>
-Interação do escoamento com leme, eixos, suportes,
-quilhas de balanço e outros apêndices.
-</td>
-
-</tr>
-
-<tr>
-
-<td>Resistência do ar</td>
-<td>Air Resistance</td>
-<td>
-Movimento das obras mortas e da superestrutura em relação
-ao ar.
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<div class="destaque">
-
-<h3>⚠ Atenção PSCPP</h3>
-
-<p>
-A resistência total não deve ser confundida apenas com
-a resistência friccional.
-</p>
-
-<p>
-O atrito é um componente importante, mas não é o único
-mecanismo que se opõe ao avanço.
-</p>
-
-</div>
-
-<p>
-A importância relativa de cada componente depende da
-velocidade, da forma do casco, da área molhada, dos
-apêndices, da condição da superfície, do calado e das
-condições ambientais.
-</p>
-
-</div>
-
-<button
-type="button"
-class="botao-estudo"
-onclick="marcarTopicoEstudado(this)">
-
-✓ Marcar tópico como estudado
-
-</button>
-
-</section>
-
-
-
-<!-- =========================================
-TÓPICO 3
-RESISTÊNCIA E POTÊNCIA EFETIVA
-========================================= -->
-
-<section
-class="topico-aula"
-id="potencia-efetiva"
-data-topico-id="potencia-efetiva">
-
-<h2>3. Resistência e potência efetiva</h2>
-
-<div class="widget">
-
-<p>
-A potência necessária para vencer diretamente a
-resistência total do navio recebe o nome de
-<strong>potência efetiva</strong>,
-ou <strong>effective power</strong>.
-</p>
-
-<div class="formula">
-
-<h3>Equação da potência efetiva</h3>
-
-<p>
 <strong>
-P<sub>E</sub> = R<sub>T</sub> × V
+T = R<sub>T</sub>
 </strong>
+
 </p>
 
-</div>
-
 <p>
-Onde:
+
+Em que:
+
 </p>
 
 <ul>
 
 <li>
-<strong>P<sub>E</sub></strong> =
-potência efetiva;
+
+<strong>T</strong> representa o empuxo útil;
+
 </li>
 
 <li>
-<strong>R<sub>T</sub></strong> =
-resistência total;
-</li>
 
-<li>
-<strong>V</strong> =
-velocidade do navio.
+<strong>R<sub>T</sub></strong> representa a resistência
+total do navio.
+
 </li>
 
 </ul>
 
-<p>
-Quando a resistência é expressa em quilonewtons
-(<strong>kN</strong>) e a velocidade em metros por segundo
-(<strong>m/s</strong>), o resultado é obtido diretamente
-em quilowatts (<strong>kW</strong>).
-</p>
-
-<div class="formula">
-
-<h3>Exemplo numérico</h3>
-
-<p>
-Considere um navio submetido a uma resistência total de
-<strong>500 kN</strong>, navegando a
-<strong>8 m/s</strong>.
-</p>
-
-<p>
-<strong>
-P<sub>E</sub> = 500 × 8
-</strong>
-</p>
-
-<p>
-<strong>
-P<sub>E</sub> = 4.000 kW
-</strong>
-</p>
-
-<p>
-<strong>
-P<sub>E</sub> = 4 MW
-</strong>
-</p>
-
 </div>
 
-<div class="destaque">
 
-<h3>Interpretação</h3>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
 
 <p>
-Nesse exemplo, são necessários 4 MW de potência efetiva
-para vencer a resistência total à velocidade indicada.
+
+<strong>Thrust</strong> — empuxo produzido pelo sistema
+propulsivo.
+
 </p>
 
 <p>
-A potência produzida pelo motor deverá ser maior, pois
-existem perdas no sistema de transmissão e no processo
-de conversão da potência em empuxo pelo propulsor.
-</p>
 
-</div>
+<strong>Resistance</strong> — força resistente resultante.
 
-<div class="destaque">
-
-<h3>⚠ Atenção PSCPP</h3>
-
-<p>
-A potência efetiva não é necessariamente igual à potência
-indicada pelo motor ou à potência entregue ao eixo.
 </p>
 
 <p>
-Ela representa apenas a potência útil empregada para
-vencer a resistência do navio na velocidade considerada.
+
+<strong>Steady Speed</strong> — velocidade constante ou
+regime permanente de velocidade.
+
 </p>
 
 </div>
 
 </div>
-
-<button
-type="button"
-class="botao-estudo"
-onclick="marcarTopicoEstudado(this)">
-
-✓ Marcar tópico como estudado
-
-</button>
 
 </section>
 
 
 
 <!-- =========================================
-TÓPICO 4
-IMPORTÂNCIA PARA A PRATICAGEM
+     TÓPICO 4
 ========================================= -->
 
 <section
 class="topico-aula"
-id="importancia-praticagem"
-data-topico-id="importancia-praticagem">
+id="aceleracao-desaceleracao"
+data-topico-id="aceleracao-desaceleracao">
 
-<h2>4. Importância para a praticagem</h2>
+<h2>4. Aceleração, velocidade constante e desaceleração</h2>
 
 <div class="widget">
 
 <p>
-Embora o cálculo detalhado da resistência seja atribuição
-da Arquitetura Naval, seus efeitos possuem aplicação direta
-na praticagem.
+
+A relação entre empuxo e resistência determina a variação
+da velocidade longitudinal do navio.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Empuxo maior que a resistência</h3>
+
+<p>
+
+Quando o empuxo disponível é maior que a resistência total,
+existe uma força resultante no sentido do avanço.
+
 </p>
 
 <p>
-A relação entre resistência e potência ajuda a explicar
-por que dois navios podem responder de maneira diferente
-à mesma ordem nominal de máquina.
+
+O navio tende a acelerar.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Empuxo igual à resistência</h3>
+
+<p>
+
+Quando o empuxo equilibra a resistência total, a força
+longitudinal resultante é nula.
+
 </p>
 
 <p>
-Entre os fatores que modificam essa resposta encontram-se:
+
+O navio mantém velocidade constante, desde que as condições
+externas permaneçam inalteradas.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Empuxo menor que a resistência</h3>
+
+<p>
+
+Quando a resistência supera o empuxo disponível, a força
+resultante atua contra o movimento.
+
+</p>
+
+<p>
+
+O navio tende a desacelerar.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+Uma ordem de máquina não produz instantaneamente a nova
+velocidade correspondente.
+
+</p>
+
+<p>
+
+A resposta depende da diferença entre o empuxo disponível
+e a resistência experimentada pelo navio, além de sua massa,
+inércia e condição operacional.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="importancia-operacional"
+data-topico-id="importancia-operacional">
+
+<h2>5. Importância operacional para a praticagem</h2>
+
+<div class="widget">
+
+<p>
+
+O cálculo detalhado da resistência é uma atividade própria
+da Arquitetura Naval.
+
+</p>
+
+<p>
+
+Para o Prático, entretanto, o conhecimento dos mecanismos
+de resistência permite interpretar melhor a resposta do
+navio às ordens de máquina.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Visão da Arquitetura Naval</h3>
+
+<p>
+
+A resistência é utilizada para estimar a potência necessária,
+comparar formas de casco, analisar desempenho e dimensionar
+o sistema propulsivo.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Visão operacional</h3>
+
+<p>
+
+O Prático utiliza esse conhecimento para antecipar:
+
 </p>
 
 <ul>
 
 <li>
-deslocamento e condição de carregamento;
+
+a capacidade de aceleração do navio;
+
 </li>
 
 <li>
-calado e trim;
+
+a tendência de perda de velocidade;
+
 </li>
 
 <li>
-rugosidade e incrustações no casco;
+
+a resposta a alterações de potência;
+
 </li>
 
 <li>
-forma do casco e tipo de apêndices;
+
+os efeitos da condição do casco;
+
 </li>
 
 <li>
-profundidade e largura da via navegável;
+
+a influência do carregamento e do trim;
+
 </li>
 
 <li>
-vento, ondas e corrente;
-</li>
 
-<li>
-estado do sistema propulsivo.
+as alterações de desempenho em águas rasas ou restritas.
+
 </li>
 
 </ul>
 
-<div class="destaque">
+</div>
 
-<h3>⚓ Visão do Arquiteto Naval</h3>
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
 
 <p>
-O arquiteto naval procura estimar a resistência total,
-selecionar formas eficientes e dimensionar a potência
-propulsiva necessária.
+
+Dois navios submetidos à mesma ordem de máquina não
+necessariamente apresentarão a mesma velocidade ou a mesma
+aceleração.
+
+</p>
+
+<p>
+
+Diferenças de deslocamento, forma do casco, condição da
+superfície, calado, trim, vento, corrente e profundidade
+alteram o equilíbrio entre empuxo e resistência.
+
 </p>
 
 </div>
 
-<div class="destaque">
 
-<h3>⚓ Visão do Prático</h3>
+
+<div class="termos-tecnicos">
+
+<h3>Vocabulário operacional</h3>
 
 <p>
-O Prático utiliza esse conhecimento para antecipar a
-resposta às ordens de máquina, controlar a velocidade,
-avaliar a aproximação ao ponto de parada e reconhecer
-alterações de comportamento em águas restritas.
+
+<strong>Power Setting</strong> — ajuste ou regime de potência.
+
+</p>
+
+<p>
+
+<strong>Speed Response</strong> — resposta de velocidade do
+navio após uma alteração de potência.
+
+</p>
+
+<p>
+
+<strong>Acceleration</strong> — aceleração.
+
+</p>
+
+<p>
+
+<strong>Deceleration</strong> — desaceleração.
+
+</p>
+
+<p>
+
+<strong>Hull Condition</strong> — condição da superfície do
+casco.
+
 </p>
 
 </div>
 
-<div class="destaque">
-
-<h3>⚠ Atenção PSCPP</h3>
-
-<p>
-A resistência não deve ser analisada isoladamente.
-Durante a manobra, seus efeitos aparecem associados à
-inércia, ao empuxo disponível, ao vento, à corrente e às
-interações entre o navio e a via navegável.
-</p>
-
 </div>
-
-</div>
-
-<button
-type="button"
-class="botao-estudo"
-onclick="marcarTopicoEstudado(this)">
-
-✓ Marcar tópico como estudado
-
-</button>
 
 </section>
 
 
 
 <!-- =========================================
-PARTE 2 DEVE SER COLADA IMEDIATAMENTE ABAIXO
-DESTE COMENTÁRIO
+     REFERÊNCIAS DA PARTE 1
 ========================================= -->
+
+<section>
+
+<h2>📚 Referências da Parte 1</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume II:
+Resistance, Propulsion and Vibration.
+</strong>
+Chapter V — Resistance.
+
+</li>
+
+
+<li>
+
+LARSSON, Lars; RAVEN, Hoyte C.
+<strong>Ship Resistance and Flow.</strong>
+Capítulo 1 — fundamentos introdutórios da resistência e do
+escoamento ao redor do navio.
+
+</li>
+
+
+<li>
+
+BERTRAM, Volker.
+<strong>Practical Ship Hydrodynamics.</strong>
+Capítulos indicados na bibliografia oficial do PSCPP para
+resistência e hidrodinâmica do navio.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 2 ABAIXO
+========================================= -->
+<!-- =========================================
+     PARTE 2
+     ESCOAMENTO AO REDOR DO CASCO
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<h2>Parte 2 — Escoamento ao redor do casco</h2>
+
+<p>
+
+Nesta parte será estudada a maneira como a água contorna o
+casco, modifica sua velocidade e sua direção e produz
+variações de pressão ao longo da embarcação.
+
+</p>
+
+<p>
+
+Esses conceitos constituem a base para compreender a
+resistência de pressão, a resistência viscosa, a formação
+da esteira e os efeitos hidrodinâmicos associados à forma
+do navio.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="movimento-relativo-fluido"
+data-topico-id="movimento-relativo-fluido">
+
+<h2>6. Movimento relativo entre o navio e a água</h2>
+
+<div class="widget">
+
+<p>
+
+O estudo da resistência depende do movimento relativo
+existente entre o casco e o fluido.
+
+</p>
+
+<p>
+
+Na operação real, observa-se o navio deslocando-se através
+da água.
+
+</p>
+
+<p>
+
+Entretanto, para estudar o escoamento, também é possível
+adotar um sistema de referência ligado ao navio e considerar
+o casco parado enquanto a água se aproxima com velocidade
+igual e sentido oposto ao avanço da embarcação.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Dois modos equivalentes de observação</h3>
+
+<p>
+
+<strong>Referencial fixo na água:</strong>
+o navio avança através do fluido.
+
+</p>
+
+<p>
+
+<strong>Referencial fixo no navio:</strong>
+o casco permanece parado e a água escoa ao seu redor.
+
+</p>
+
+<p>
+
+A segunda representação é especialmente útil para visualizar
+as linhas de corrente, a distribuição de velocidade e a
+distribuição de pressão ao redor do casco.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 920 500"
+role="img"
+aria-labelledby="titulo-referenciais descricao-referenciais"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-referenciais">
+
+Referenciais utilizados no estudo do escoamento
+
+</title>
+
+<desc id="descricao-referenciais">
+
+Comparação entre um navio avançando através da água e um
+navio considerado fixo, com a água escoando ao redor do
+casco no sentido oposto.
+
+</desc>
+
+
+<!-- PAINEL SUPERIOR -->
+
+<rect
+x="25"
+y="25"
+width="870"
+height="200"
+rx="12"
+fill="#eef5f9"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="50"
+y="62"
+font-size="24"
+font-weight="bold"
+fill="#17324d">
+
+REFERENCIAL FIXO NA ÁGUA
+
+</text>
+
+
+<!-- ÁGUA SUPERIOR -->
+
+<line
+x1="45"
+y1="175"
+x2="875"
+y2="175"
+stroke="#277da1"
+stroke-width="5">
+
+</line>
+
+
+<!-- CASCO SUPERIOR -->
+
+<path
+d="
+M 315 115
+L 640 115
+L 720 145
+Q 680 180 610 190
+L 350 190
+Q 290 178 255 145
+Z
+"
+fill="#d9e2e8"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<rect
+x="430"
+y="78"
+width="125"
+height="37"
+fill="#f8fafc"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- SETA NAVIO -->
+
+<line
+x1="360"
+y1="90"
+x2="680"
+y2="90"
+stroke="#15803d"
+stroke-width="10"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="680,90 640,67 640,113"
+fill="#15803d">
+
+</polygon>
+
+
+<text
+x="365"
+y="78"
+font-size="20"
+font-weight="bold"
+fill="#14532d">
+
+NAVIO EM MOVIMENTO
+
+</text>
+
+
+<!-- PAINEL INFERIOR -->
+
+<rect
+x="25"
+y="260"
+width="870"
+height="215"
+rx="12"
+fill="#eef5f9"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="50"
+y="298"
+font-size="24"
+font-weight="bold"
+fill="#17324d">
+
+REFERENCIAL FIXO NO NAVIO
+
+</text>
+
+
+<!-- CASCO INFERIOR -->
+
+<path
+d="
+M 315 365
+L 640 365
+L 720 395
+Q 680 430 610 440
+L 350 440
+Q 290 428 255 395
+Z
+"
+fill="#d9e2e8"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<rect
+x="430"
+y="328"
+width="125"
+height="37"
+fill="#f8fafc"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- LINHAS DE ESCOAMENTO -->
+
+<line
+x1="830"
+y1="340"
+x2="700"
+y2="340"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="700,340 735,320 735,360"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="830"
+y1="390"
+x2="750"
+y2="390"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="750,390 785,370 785,410"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="830"
+y1="440"
+x2="690"
+y2="440"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="690,440 725,420 725,460"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="215"
+y1="340"
+x2="85"
+y2="340"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="85,340 120,320 120,360"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="170"
+y1="390"
+x2="85"
+y2="390"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="85,390 120,370 120,410"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="225"
+y1="440"
+x2="85"
+y2="440"
+stroke="#277da1"
+stroke-width="7"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="85,440 120,420 120,460"
+fill="#277da1">
+
+</polygon>
+
+
+<text
+x="610"
+y="325"
+font-size="19"
+font-weight="bold"
+fill="#1d5f82">
+
+ESCOAMENTO RELATIVO
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 2.</strong>
+Representação dos dois referenciais empregados no estudo
+do movimento relativo entre o casco e a água.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Relative Motion</strong> — movimento relativo entre
+o navio e o fluido.
+
+</p>
+
+<p>
+
+<strong>Reference Frame</strong> — sistema de referência
+utilizado para descrever o movimento.
+
+</p>
+
+<p>
+
+<strong>Incoming Flow</strong> — escoamento que se aproxima
+do casco.
+
+</p>
+
+<p>
+
+<strong>Flow Velocity</strong> — velocidade do escoamento.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="linhas-de-corrente"
+data-topico-id="linhas-de-corrente">
+
+<h2>7. Linhas de corrente</h2>
+
+<div class="widget">
+
+<p>
+
+As <strong>linhas de corrente</strong>,
+ou <strong>streamlines</strong>, são linhas imaginárias
+traçadas de modo que, em cada ponto, sua direção coincide
+com a direção instantânea da velocidade do fluido.
+
+</p>
+
+<p>
+
+Elas permitem visualizar como a água se aproxima do navio,
+contorna a proa, acelera junto às regiões laterais e converge
+novamente em direção à popa.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Interpretação física</h3>
+
+<p>
+
+Uma linha de corrente não representa uma estrutura material
+existente na água.
+
+</p>
+
+<p>
+
+Ela é um recurso gráfico utilizado para representar a
+direção local do escoamento.
+
+</p>
+
+<p>
+
+Quando as linhas se curvam, a direção da velocidade do
+fluido também está mudando.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 520"
+role="img"
+aria-labelledby="titulo-streamlines descricao-streamlines"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-streamlines">
+
+Linhas de corrente ao redor do casco
+
+</title>
+
+<desc id="descricao-streamlines">
+
+Vista superior de um casco com a proa voltada para a
+esquerda e a popa para a direita. Linhas azuis representam
+o escoamento da esquerda para a direita, curvando-se para
+contornar o casco.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="480"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- DIREÇÃO DO ESCOAMENTO -->
+
+<line
+x1="70"
+y1="70"
+x2="280"
+y2="70"
+stroke="#277da1"
+stroke-width="9"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="280,70 240,47 240,93"
+fill="#277da1">
+
+</polygon>
+
+
+<text
+x="70"
+y="52"
+font-size="21"
+font-weight="bold"
+fill="#1d5f82">
+
+DIREÇÃO DO ESCOAMENTO
+
+</text>
+
+
+<!-- CASCO EM VISTA SUPERIOR -->
+
+<path
+d="
+M 235 260
+Q 305 175 470 150
+L 705 175
+Q 790 200 845 260
+Q 790 320 705 345
+L 470 370
+Q 305 345 235 260
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHA DE CENTRO -->
+
+<line
+x1="250"
+y1="260"
+x2="825"
+y2="260"
+stroke="#63788a"
+stroke-width="3"
+stroke-dasharray="12 10">
+
+</line>
+
+
+<text
+x="265"
+y="250"
+font-size="19"
+font-weight="bold"
+fill="#17324d">
+
+PROA
+
+</text>
+
+
+<text
+x="760"
+y="250"
+font-size="19"
+font-weight="bold"
+fill="#17324d">
+
+POPA
+
+</text>
+
+
+<!-- LINHAS SUPERIORES -->
+
+<path
+d="
+M 65 115
+C 245 115 295 105 440 95
+C 630 80 790 105 940 115
+"
+fill="none"
+stroke="#4ea8de"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 65 160
+C 220 160 270 145 360 125
+C 530 85 735 125 940 160
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 65 205
+C 190 205 220 185 270 155
+C 410 70 750 120 940 205
+"
+fill="none"
+stroke="#1d6f9f"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHAS INFERIORES -->
+
+<path
+d="
+M 65 405
+C 245 405 295 415 440 425
+C 630 440 790 415 940 405
+"
+fill="none"
+stroke="#4ea8de"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 65 360
+C 220 360 270 375 360 395
+C 530 435 735 395 940 360
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 65 315
+C 190 315 220 335 270 365
+C 410 450 750 400 940 315
+"
+fill="none"
+stroke="#1d6f9f"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHAS CENTRAIS -->
+
+<path
+d="
+M 65 245
+C 130 245 185 245 235 260
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 845 260
+C 885 250 910 245 940 245
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- SETAS NAS LINHAS -->
+
+<polygon
+points="905,108 875,93 875,123"
+fill="#4ea8de">
+
+</polygon>
+
+<polygon
+points="905,154 875,139 875,169"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="905,202 875,187 875,217"
+fill="#1d6f9f">
+
+</polygon>
+
+<polygon
+points="905,398 875,383 875,413"
+fill="#4ea8de">
+
+</polygon>
+
+<polygon
+points="905,354 875,339 875,369"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="905,308 875,293 875,323"
+fill="#1d6f9f">
+
+</polygon>
+
+
+<!-- INDICAÇÕES -->
+
+<line
+x1="310"
+y1="110"
+x2="345"
+y2="165"
+stroke="#b45309"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="150"
+y="102"
+font-size="20"
+font-weight="bold"
+fill="#92400e">
+
+CURVATURA JUNTO À PROA
+
+</text>
+
+
+<line
+x1="730"
+y1="110"
+x2="705"
+y2="165"
+stroke="#b45309"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="690"
+y="94"
+font-size="20"
+font-weight="bold"
+fill="#92400e">
+
+CONVERGÊNCIA NA POPA
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 3.</strong>
+Vista superior esquemática das linhas de corrente ao redor
+do casco.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A figura apresenta o escoamento em vista superior.
+
+</p>
+
+<p>
+
+A proa está à esquerda, a popa está à direita e as linhas
+azuis representam a água contornando lateralmente o casco.
+
+</p>
+
+<p>
+
+Essa representação não deve ser confundida com uma vista
+lateral do navio.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Streamline</strong> — linha de corrente.
+
+</p>
+
+<p>
+
+<strong>Flow Direction</strong> — direção do escoamento.
+
+</p>
+
+<p>
+
+<strong>Flow Field</strong> — campo de escoamento, isto é,
+a distribuição das velocidades do fluido ao redor do casco.
+
+</p>
+
+<p>
+
+<strong>Forebody</strong> — corpo de vante do navio.
+
+</p>
+
+<p>
+
+<strong>Afterbody</strong> — corpo de ré do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="velocidade-pressao-escoamento"
+data-topico-id="velocidade-pressao-escoamento">
+
+<h2>8. Velocidade e pressão ao redor do casco</h2>
+
+<div class="widget">
+
+<p>
+
+A presença do casco obriga o escoamento a mudar de direção
+e de velocidade.
+
+</p>
+
+<p>
+
+Na região mais próxima da proa, a água encontra uma
+obstrução ao seu movimento e precisa ser desviada para
+contornar o casco.
+
+</p>
+
+<p>
+
+Ao longo das regiões laterais, as linhas de corrente se
+curvam e o campo de velocidade é modificado.
+
+</p>
+
+<p>
+
+Essas alterações produzem uma distribuição de pressão que
+não é uniforme ao longo da embarcação.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Pressão sobre a superfície do casco</h3>
+
+<p>
+
+A água exerce pressão aproximadamente perpendicular à
+superfície local do casco.
+
+</p>
+
+<p>
+
+Como a orientação da superfície varia da proa até a popa,
+as forças de pressão possuem componentes longitudinais e
+transversais diferentes em cada região.
+
+</p>
+
+<p>
+
+A soma das componentes longitudinais dessas forças participa
+da resistência de pressão do navio.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 600"
+role="img"
+aria-labelledby="titulo-pressao descricao-pressao"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-pressao">
+
+Distribuição esquemática de pressão ao redor do casco
+
+</title>
+
+<desc id="descricao-pressao">
+
+Vista superior de um casco dividido em quatro regiões:
+proa, ombro de vante, ombro de ré e popa. Setas representam
+forças de pressão aproximadamente perpendiculares à
+superfície do casco.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="560"
+rx="15"
+fill="#f2f7fa"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- CASCO -->
+
+<path
+d="
+M 180 300
+Q 275 185 440 165
+L 720 190
+Q 810 220 875 300
+Q 810 380 720 410
+L 440 435
+Q 275 415 180 300
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- REGIÕES COLORIDAS -->
+
+<path
+d="
+M 180 300
+Q 230 225 325 190
+L 365 205
+Q 290 240 245 300
+Q 290 360 365 395
+L 325 410
+Q 230 375 180 300
+Z
+"
+fill="#f6c56f"
+opacity="0.8">
+
+</path>
+
+
+<path
+d="
+M 325 190
+Q 380 170 440 165
+L 545 175
+L 545 425
+L 440 435
+Q 380 430 325 410
+L 365 395
+Q 430 415 500 405
+L 500 195
+Q 430 185 365 205
+Z
+"
+fill="#9ad5c0"
+opacity="0.75">
+
+</path>
+
+
+<path
+d="
+M 545 175
+L 720 190
+Q 750 200 775 215
+L 735 245
+Q 700 225 650 215
+L 650 385
+Q 700 375 735 355
+L 775 385
+Q 750 400 720 410
+L 545 425
+Z
+"
+fill="#98c1e3"
+opacity="0.75">
+
+</path>
+
+
+<path
+d="
+M 775 215
+Q 830 245 875 300
+Q 830 355 775 385
+L 735 355
+Q 790 330 820 300
+Q 790 270 735 245
+Z
+"
+fill="#ee9c91"
+opacity="0.8">
+
+</path>
+
+
+<!-- LINHA DE CENTRO -->
+
+<line
+x1="195"
+y1="300"
+x2="855"
+y2="300"
+stroke="#657b8a"
+stroke-width="3"
+stroke-dasharray="12 10">
+
+</line>
+
+
+<!-- SETAS DE PRESSÃO PROA -->
+
+<line
+x1="105"
+y1="300"
+x2="175"
+y2="300"
+stroke="#b91c1c"
+stroke-width="8">
+
+</line>
+
+<polygon
+points="175,300 145,282 145,318"
+fill="#b91c1c">
+
+</polygon>
+
+
+<line
+x1="185"
+y1="145"
+x2="245"
+y2="215"
+stroke="#b91c1c"
+stroke-width="7">
+
+</line>
+
+<polygon
+points="245,215 212,200 235,180"
+fill="#b91c1c">
+
+</polygon>
+
+
+<line
+x1="185"
+y1="455"
+x2="245"
+y2="385"
+stroke="#b91c1c"
+stroke-width="7">
+
+</line>
+
+<polygon
+points="245,385 235,420 212,400"
+fill="#b91c1c">
+
+</polygon>
+
+
+<!-- SETAS OMBRO VANTE -->
+
+<line
+x1="390"
+y1="95"
+x2="410"
+y2="170"
+stroke="#2563a6"
+stroke-width="6">
+
+</line>
+
+<polygon
+points="410,170 390,140 420,132"
+fill="#2563a6">
+
+</polygon>
+
+
+<line
+x1="390"
+y1="505"
+x2="410"
+y2="430"
+stroke="#2563a6"
+stroke-width="6">
+
+</line>
+
+<polygon
+points="410,430 420,468 390,460"
+fill="#2563a6">
+
+</polygon>
+
+
+<!-- SETAS OMBRO RÉ -->
+
+<line
+x1="675"
+y1="100"
+x2="680"
+y2="188"
+stroke="#2563a6"
+stroke-width="6">
+
+</line>
+
+<polygon
+points="680,188 662,155 693,153"
+fill="#2563a6">
+
+</polygon>
+
+
+<line
+x1="675"
+y1="500"
+x2="680"
+y2="412"
+stroke="#2563a6"
+stroke-width="6">
+
+</line>
+
+<polygon
+points="680,412 693,447 662,445"
+fill="#2563a6">
+
+</polygon>
+
+
+<!-- SETAS POPA -->
+
+<line
+x1="955"
+y1="300"
+x2="880"
+y2="300"
+stroke="#b91c1c"
+stroke-width="8">
+
+</line>
+
+<polygon
+points="880,300 910,282 910,318"
+fill="#b91c1c">
+
+</polygon>
+
+
+<!-- RÓTULOS -->
+
+<text
+x="190"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="#92400e">
+
+PROA
+
+</text>
+
+
+<text
+x="320"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="#166534">
+
+OMBRO DE VANTE
+
+</text>
+
+
+<text
+x="585"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="#1d4f91">
+
+OMBRO DE RÉ
+
+</text>
+
+
+<text
+x="815"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="#9f2f2f">
+
+POPA
+
+</text>
+
+
+<text
+x="60"
+y="65"
+font-size="20"
+font-weight="bold"
+fill="#b91c1c">
+
+SETAS VERMELHAS: REGIÕES DE MAIOR PRESSÃO RELATIVA
+
+</text>
+
+
+<text
+x="60"
+y="92"
+font-size="20"
+font-weight="bold"
+fill="#2563a6">
+
+SETAS AZUIS: VARIAÇÕES DE PRESSÃO NOS OMBROS
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 4.</strong>
+Representação qualitativa da distribuição de pressão em
+diferentes regiões do casco, em vista superior.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A distribuição de pressão mostrada é qualitativa.
+
+</p>
+
+<p>
+
+Os valores reais dependem da forma do casco, da velocidade,
+do calado, do trim, da profundidade e das condições do
+escoamento.
+
+</p>
+
+<p>
+
+Não se deve interpretar a figura como uma distribuição
+universal e idêntica para todos os navios.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Pressure Distribution</strong> — distribuição de
+pressão ao redor do casco.
+
+</p>
+
+<p>
+
+<strong>Pressure Gradient</strong> — variação espacial da
+pressão no escoamento.
+
+</p>
+
+<p>
+
+<strong>Streamline Curvature</strong> — curvatura das linhas
+de corrente.
+
+</p>
+
+<p>
+
+<strong>Pressure Force</strong> — força de pressão exercida
+pelo fluido sobre a superfície.
+
+</p>
+
+<p>
+
+<strong>Pressure Resistance</strong> — parcela resistente
+associada à distribuição das pressões sobre o casco.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+========================================= -->
+
+<section
+class="topico-aula"
+id="escoamento-regiao-popa"
+data-topico-id="escoamento-regiao-popa">
+
+<h2>9. Escoamento na região de popa</h2>
+
+<div class="widget">
+
+<p>
+
+Depois de contornar o corpo de vante e as regiões laterais,
+a água escoa em direção à popa.
+
+</p>
+
+<p>
+
+Nessa região, a forma do casco procura conduzir novamente
+as linhas de corrente para trás da embarcação.
+
+</p>
+
+<p>
+
+O comportamento do escoamento na popa possui grande
+importância porque influencia a distribuição de pressão,
+a formação da esteira e as condições de entrada de água
+na hélice.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Recuperação de pressão</h3>
+
+<p>
+
+Ao longo do corpo de ré, o escoamento passa por uma região
+na qual a pressão tende a recuperar-se em direção aos valores
+do escoamento externo.
+
+</p>
+
+<p>
+
+Essa recuperação não ocorre necessariamente de forma
+perfeita.
+
+</p>
+
+<p>
+
+A viscosidade, a forma do corpo de ré e a evolução da
+camada de fluido próxima ao casco modificam o escoamento
+que alcança a região da hélice.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 980 500"
+role="img"
+aria-labelledby="titulo-popa descricao-popa"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-popa">
+
+Escoamento convergindo na região de popa
+
+</title>
+
+<desc id="descricao-popa">
+
+Vista superior da metade de ré de um navio. Linhas de
+corrente convergem para a região da popa e formam uma
+esteira atrás do casco.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="940"
+height="460"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- METADE DE RÉ DO CASCO -->
+
+<path
+d="
+M 100 155
+L 480 155
+Q 650 170 790 250
+Q 650 330 480 345
+L 100 345
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<line
+x1="100"
+y1="250"
+x2="785"
+y2="250"
+stroke="#657b8a"
+stroke-width="3"
+stroke-dasharray="12 10">
+
+</line>
+
+
+<!-- LINHAS DE CORRENTE SUPERIORES -->
+
+<path
+d="
+M 70 80
+C 360 80 600 90 805 205
+C 845 225 880 235 940 240
+"
+fill="none"
+stroke="#4ea8de"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 70 115
+C 350 115 570 120 785 220
+C 835 242 875 247 940 248
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHAS DE CORRENTE INFERIORES -->
+
+<path
+d="
+M 70 420
+C 360 420 600 410 805 295
+C 845 275 880 265 940 260
+"
+fill="none"
+stroke="#4ea8de"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 70 385
+C 350 385 570 380 785 280
+C 835 258 875 253 940 252
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- ESTEIRA -->
+
+<path
+d="
+M 790 250
+C 840 225 900 225 950 240
+L 950 260
+C 900 275 840 275 790 250
+Z
+"
+fill="#8ecae6"
+opacity="0.65">
+
+</path>
+
+
+<line
+x1="805"
+y1="250"
+x2="945"
+y2="250"
+stroke="#1d6f9f"
+stroke-width="5"
+stroke-dasharray="12 8">
+
+</line>
+
+
+<!-- INDICAÇÕES -->
+
+<line
+x1="620"
+y1="70"
+x2="705"
+y2="155"
+stroke="#b45309"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="445"
+y="62"
+font-size="21"
+font-weight="bold"
+fill="#92400e">
+
+CONVERGÊNCIA DAS LINHAS DE CORRENTE
+
+</text>
+
+
+<line
+x1="850"
+y1="360"
+x2="860"
+y2="275"
+stroke="#7f1d1d"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="760"
+y="390"
+font-size="22"
+font-weight="bold"
+fill="#7f1d1d">
+
+REGIÃO DA ESTEIRA
+
+</text>
+
+
+<text
+x="610"
+y="265"
+font-size="21"
+font-weight="bold"
+fill="#17324d">
+
+POPA
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 5.</strong>
+Convergência do escoamento na região de popa e formação
+esquemática da esteira.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+
+A hélice normalmente opera dentro do campo de escoamento
+produzido pelo próprio casco.
+
+</p>
+
+<p>
+
+Portanto, a água que chega à hélice não apresenta,
+necessariamente, a mesma velocidade nem a mesma uniformidade
+do escoamento distante do navio.
+
+</p>
+
+<p>
+
+Essa condição será estudada com maior profundidade na parte
+dedicada à esteira e na disciplina de Propulsão.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Stern Flow</strong> — escoamento na região da popa.
+
+</p>
+
+<p>
+
+<strong>Pressure Recovery</strong> — recuperação de pressão
+ao longo do corpo de ré.
+
+</p>
+
+<p>
+
+<strong>Wake</strong> — esteira produzida atrás do navio.
+
+</p>
+
+<p>
+
+<strong>Wake Field</strong> — campo de velocidades existente
+na esteira.
+
+</p>
+
+<p>
+
+<strong>Propeller Inflow</strong> — escoamento que chega à
+hélice.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 10
+========================================= -->
+
+<section
+class="topico-aula"
+id="introducao-esteira"
+data-topico-id="introducao-esteira">
+
+<h2>10. Introdução ao conceito de esteira</h2>
+
+<div class="widget">
+
+<p>
+
+A passagem do navio modifica o escoamento situado atrás
+do casco.
+
+</p>
+
+<p>
+
+A região resultante é denominada
+<strong>esteira</strong>, ou <strong>wake</strong>.
+
+</p>
+
+<p>
+
+De forma geral, a esteira contém água cuja velocidade,
+direção e características turbulentas diferem das condições
+do escoamento não perturbado.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Origem da esteira</h3>
+
+<p>
+
+A esteira está associada principalmente:
+
+</p>
+
+<ul>
+
+<li>
+
+aos efeitos viscosos produzidos junto à superfície do casco;
+
+</li>
+
+<li>
+
+à forma do corpo de ré;
+
+</li>
+
+<li>
+
+à convergência das linhas de corrente na popa;
+
+</li>
+
+<li>
+
+à possível separação do escoamento;
+
+</li>
+
+<li>
+
+à presença de apêndices;
+
+</li>
+
+<li>
+
+ao sistema de ondas produzido pelo navio.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A esteira não é apenas a faixa visual deixada pelo navio
+na superfície da água.
+
+</p>
+
+<p>
+
+Em hidrodinâmica, o termo também se refere ao campo de
+velocidades perturbado existente atrás do casco e na região
+de entrada da hélice.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Wake</strong> — esteira.
+
+</p>
+
+<p>
+
+<strong>Nominal Wake</strong> — campo de esteira medido ou
+considerado na ausência da ação da hélice.
+
+</p>
+
+<p>
+
+<strong>Disturbed Flow</strong> — escoamento perturbado pela
+presença do casco.
+
+</p>
+
+<p>
+
+<strong>Velocity Deficit</strong> — redução local da
+velocidade em comparação com o escoamento externo.
+
+</p>
+
+<p>
+
+<strong>Turbulence</strong> — movimento irregular e
+flutuante do fluido.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS DA PARTE 2
+========================================= -->
+
+<section>
+
+<h2>📚 Referências da Parte 2</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume II:
+Resistance, Propulsion and Vibration.
+</strong>
+Chapter V — Resistance.
+
+</li>
+
+
+<li>
+
+LARSSON, Lars; RAVEN, Hoyte C.
+<strong>Ship Resistance and Flow.</strong>
+Capítulos 1 a 4 — fundamentos do escoamento, distribuição
+de pressão e decomposição da resistência.
+
+</li>
+
+
+<li>
+
+BERTRAM, Volker.
+<strong>Practical Ship Hydrodynamics.</strong>
+Capítulo 2 — fundamentos de hidrodinâmica aplicados ao
+escoamento ao redor do navio.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 3 ABAIXO
+========================================= -->
+  
