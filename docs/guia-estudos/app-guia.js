@@ -1,14 +1,23 @@
 // =====================================
 // GUIA DE ESTUDOS PSCPP
-// PAINEL DE CONTROLE INTELIGENTE v3.0
+// PAINEL DE CONTROLE INTELIGENTE v4.0
 // Bridge Trainer PSCPP
+//
+// A partir da v4.0, o status de cada assunto
+// (Não iniciado / Em estudo / Concluído) não vem mais
+// do banco-conteudo.js — é calculado em tempo real a
+// partir do progresso salvo por progresso.js
+// (obterProgressoAula), usando o campo "id" de cada
+// assunto como idAula.
 // =====================================
+
+
+console.log("APP GUIA CARREGADO");
 
 
 // =====================================
 // VARIÁVEIS PRINCIPAIS
 // =====================================
-console.log("APP GUIA CARREGADO");
 
 let totalDisciplinas = 0;
 
@@ -36,17 +45,58 @@ let maiorPrioridade = 0;
 
 
 // =====================================
+// STATUS REAL DE UM ASSUNTO
+// =====================================
+//
+// Consulta progresso.js (já carregado antes deste
+// script) para saber o percentual real de conclusão
+// do assunto, usando idDisciplina + assunto.id.
+
+function obterStatusRealDoAssunto(
+    idDisciplina,
+    assunto
+) {
+
+    const percentual =
+        obterProgressoAula(
+
+            idDisciplina,
+
+            assunto.id
+
+        );
+
+
+    if (percentual >= 100) {
+
+        return "Concluído";
+
+    }
+
+
+    if (percentual > 0) {
+
+        return "Em estudo";
+
+    }
+
+
+    return "Não iniciado";
+
+}
+
+
+// =====================================
 // PROCESSAMENTO DO BANCO DE CONTEÚDO
 // =====================================
 
+function processarConteudo() {
 
-function processarConteudo(){
 
-
-    if(typeof conteudoPSCPP === "undefined"){
+    if (typeof conteudoPSCPP === "undefined") {
 
         console.error(
-        "Banco de conteúdo PSCPP não encontrado."
+            "Banco de conteúdo PSCPP não encontrado."
         );
 
         return;
@@ -54,27 +104,44 @@ function processarConteudo(){
     }
 
 
+    // Reinicia os acumuladores — importante caso esta
+    // função seja chamada mais de uma vez (ex: após o
+    // usuário marcar um tópico como estudado em outra aba)
+    totalDisciplinas = 0;
+
+    totalAssuntos = 0;
+
+    totalHoras = 0;
+
+    assuntosConcluidos = 0;
+
+    horasConcluidas = 0;
+
+    pesoTotal = 0;
+
+    pesoConcluido = 0;
+
+    proximoEstudo = null;
+
+    maiorPrioridade = 0;
+
 
     totalDisciplinas =
-    Object.keys(conteudoPSCPP).length;
+        Object.keys(conteudoPSCPP).length;
 
 
-
-    for(let disciplina in conteudoPSCPP){
+    for (let idDisciplina in conteudoPSCPP) {
 
 
         let dadosDisciplina =
-        conteudoPSCPP[disciplina];
-
+            conteudoPSCPP[idDisciplina];
 
 
         let assuntos =
-        dadosDisciplina.assuntos || [];
-
+            dadosDisciplina.assuntos || [];
 
 
         assuntos.forEach(assunto => {
-
 
 
             totalAssuntos++;
@@ -83,22 +150,25 @@ function processarConteudo(){
             totalHoras += assunto.horas;
 
 
-
             let pesoAssunto =
-            assunto.horas *
-            assunto.peso;
-
+                assunto.horas *
+                assunto.peso;
 
 
             pesoTotal += pesoAssunto;
 
 
+            const statusReal =
+                obterStatusRealDoAssunto(
+
+                    idDisciplina,
+
+                    assunto
+
+                );
 
 
-            if(
-                assunto.status === "Concluído" ||
-                assunto.status === "Dominado"
-            ){
+            if (statusReal === "Concluído") {
 
 
                 assuntosConcluidos++;
@@ -111,60 +181,52 @@ function processarConteudo(){
             }
 
 
-
-
             // ============================
             // RECOMENDAÇÃO INTELIGENTE
             // ============================
 
-
-            if(
-                assunto.status !== "Concluído" &&
-                assunto.status !== "Dominado"
-            ){
-
+            if (statusReal !== "Concluído") {
 
 
                 let prioridadeAtual =
 
-                assunto.peso *
-                (dadosDisciplina.pesoDisciplina || 1);
+                    assunto.peso *
+                    (dadosDisciplina.pesoDisciplina || 1);
 
 
-
-                if(
+                if (
                     prioridadeAtual >
                     maiorPrioridade
-                ){
+                ) {
 
 
                     maiorPrioridade =
-                    prioridadeAtual;
-
+                        prioridadeAtual;
 
 
                     proximoEstudo = {
 
 
-                        disciplina:
-                        dadosDisciplina.nome,
+                        idDisciplina:
+                            idDisciplina,
 
+                        idAssunto:
+                            assunto.id,
+
+                        disciplina:
+                            dadosDisciplina.nome,
 
                         assunto:
-                        assunto.nome,
-
+                            assunto.nome,
 
                         peso:
-                        assunto.peso,
-
+                            assunto.peso,
 
                         horas:
-                        assunto.horas,
-
+                            assunto.horas,
 
                         status:
-                        assunto.status
-
+                            statusReal
 
                     };
 
@@ -175,35 +237,27 @@ function processarConteudo(){
             }
 
 
-
         });
-
 
 
     }
 
 
-
 }
-
-
-
 
 
 // =====================================
 // CÁLCULO DO PROGRESSO
 // =====================================
 
+function calcularProgressoEstrategico() {
 
-function calcularProgresso(){
 
-
-    if(pesoTotal === 0){
+    if (pesoTotal === 0) {
 
         return 0;
 
     }
-
 
 
     return Math.round(
@@ -217,26 +271,21 @@ function calcularProgresso(){
 }
 
 
-
-
-
 // =====================================
 // ATUALIZA ELEMENTOS HTML
 // =====================================
 
-
-function atualizarElemento(id, valor){
+function atualizarElemento(id, valor) {
 
 
     let elemento =
-    document.getElementById(id);
+        document.getElementById(id);
 
 
-
-    if(elemento){
+    if (elemento) {
 
         elemento.innerHTML =
-        valor;
+            valor;
 
     }
 
@@ -244,57 +293,60 @@ function atualizarElemento(id, valor){
 }
 
 
-
-
-
 // =====================================
 // CRIA CARDS INTELIGENTES
 // =====================================
 
-
-function criarPainelInteligente(){
+function criarPainelInteligente() {
 
 
     let progresso =
-    calcularProgresso();
-
+        calcularProgressoEstrategico();
 
 
     let dashboard =
-    document.querySelector(".dashboard");
+        document.querySelector(".dashboard");
 
 
-
-    if(!dashboard){
+    if (!dashboard) {
 
         return;
 
     }
-
 
 
     let cards =
-    dashboard.querySelector(".cards");
+        dashboard.querySelector(".cards");
 
 
-
-    if(!cards){
+    if (!cards) {
 
         return;
 
     }
 
 
+    // Remove painéis inteligentes de uma execução
+    // anterior, para não duplicar cards ao reprocessar
+    const paineisAntigos =
+        cards.querySelectorAll(
+            "[data-painel-inteligente]"
+        );
 
+    paineisAntigos.forEach(
+        painel => painel.remove()
+    );
 
 
     let progressoBox =
-    document.createElement("div");
+        document.createElement("div");
 
 
     progressoBox.className =
-    "card";
+        "card";
 
+    progressoBox.dataset.painelInteligente =
+        "progresso";
 
 
     progressoBox.innerHTML = `
@@ -321,25 +373,21 @@ function criarPainelInteligente(){
     `;
 
 
-
     cards.appendChild(progressoBox);
 
 
-
-
-
     let focoBox =
-    document.createElement("div");
-
+        document.createElement("div");
 
 
     focoBox.className =
-    "card";
+        "card";
+
+    focoBox.dataset.painelInteligente =
+        "foco";
 
 
-
-
-    if(proximoEstudo){
+    if (proximoEstudo) {
 
 
         focoBox.innerHTML = `
@@ -379,7 +427,7 @@ function criarPainelInteligente(){
 
 
     }
-    else{
+    else {
 
 
         focoBox.innerHTML = `
@@ -401,51 +449,75 @@ function criarPainelInteligente(){
     }
 
 
-
     cards.appendChild(focoBox);
-
 
 
 }
 
 
-
-
-
 // =====================================
 // INICIALIZAÇÃO
 // =====================================
+//
+// carregarDadosProgresso() é assíncrona (lê localStorage
+// ou busca data/progresso.json). É preciso esperar essa
+// promessa resolver antes de processar o conteúdo —
+// senão dadosProgresso ainda estará vazio e todo assunto
+// apareceria como "Não iniciado" mesmo com progresso
+// real salvo.
+
+async function inicializarGuiaDeEstudos() {
 
 
-processarConteudo();
+    if (typeof carregarDadosProgresso !== "function") {
+
+        console.error(
+            "progresso.js não foi carregado antes de " +
+            "app-guia.js. Inclua <script src=\"../js/progresso.js\">" +
+            " antes deste arquivo."
+        );
+
+        return;
+
+    }
 
 
+    await carregarDadosProgresso();
 
-atualizarElemento(
-"total-disciplinas",
-totalDisciplinas
+
+    processarConteudo();
+
+
+    atualizarElemento(
+        "total-disciplinas",
+        totalDisciplinas
+    );
+
+
+    atualizarElemento(
+        "total-assuntos",
+        totalAssuntos
+    );
+
+
+    atualizarElemento(
+        "total-horas",
+        totalHoras + " horas"
+    );
+
+
+    criarPainelInteligente();
+
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    inicializarGuiaDeEstudos
 );
-
-
-
-atualizarElemento(
-"total-assuntos",
-totalAssuntos
-);
-
-
-
-atualizarElemento(
-"total-horas",
-totalHoras + " horas"
-);
-
-
-
-criarPainelInteligente();
-
 
 
 // =====================================
-// FIM APP-GUIA v3.0
+// FIM APP-GUIA v4.0
 // =====================================
