@@ -4,1817 +4,878 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>Controlabilidade | Bridge Trainer PSCPP</title>
+<title>
+Controlabilidade - Bridge Trainer PSCPP
+</title>
 
-<link rel="stylesheet" href="../../css/style.css">
-
-<meta name="description"
-content="Aula de Controlabilidade - Disciplina de Manobrabilidade - Bridge Trainer PSCPP">
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
 
 </head>
 
-<body>
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="controlabilidade"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
 
 <header class="topo">
 
 <div class="logo">
+
 <h1>⚓ Bridge Trainer PSCPP</h1>
-<p>Preparação para Praticante de Prático (PSCPP)</p>
+
+<p>Manobrabilidade do Navio</p>
+
 </div>
-
-<nav>
-
-<a href="../../index.html">Início</a>
-
-<a href="index.html">Manobrabilidade</a>
-
-<a href="../../publicacoes/index.html">Publicações</a>
-
-</nav>
 
 </header>
 
-<main class="conteudo">
 
-<h1>Controlabilidade</h1>
 
-<p class="subtitulo">
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
 
-Disciplina: <strong>Manobrabilidade</strong>
+<nav class="navbar">
 
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+🧭 Controlabilidade do Navio
+</h2>
+
+<p>
+<strong>Ship Controllability</strong>
 </p>
 
-<section class="objetivos">
+<p>
+Estudo da capacidade do navio de manter ou alterar
+seu movimento de maneira controlada, considerando
+a manutenção do rumo, a mudança de direção,
+a capacidade de verificar a guinada e as alterações
+de velocidade.
+</p>
 
-<h2>🎯 Objetivos da Aula</h2>
-
-<p>Ao final desta aula o candidato deverá ser capaz de:</p>
-
-<ul>
-
-<li>Definir controlabilidade.</li>
-
-<li>Diferenciar controlabilidade, estabilidade direcional e manobrabilidade.</li>
-
-<li>Compreender os fatores que influenciam a resposta do navio ao leme.</li>
-
-<li>Relacionar os conceitos hidrodinâmicos com a operação prática.</li>
-
-<li>Resolver questões no padrão PSCPP.</li>
-
-</ul>
+<p>
+A aula também examinará as respostas do navio aos
+comandos de governo e propulsão, os ensaios de
+manobrabilidade e os padrões estabelecidos pela
+Organização Marítima Internacional.
+</p>
 
 </section>
 
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
 <section>
 
-<h2>1. Introdução</h2>
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Controlabilidade do Navio
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Ship Controllability
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>I — Manobrabilidade do Navio</strong>
+</p>
+
+<p>
+<strong>Controlabilidade do Navio</strong>
+</p>
+
+<ul>
+
+<li>
+estabilidade de governo;
+</li>
+
+<li>
+manobras-padrão;
+</li>
+
+<li>
+estabilidade e controle do navio;
+</li>
+
+<li>
+análise da habilidade de governo de uma embarcação;
+</li>
+
+<li>
+acelerações para vante e para ré;
+</li>
+
+<li>
+parada do navio;
+</li>
+
+<li>
+distâncias e relações entre tempos e velocidades
+para se parar um navio;
+</li>
+
+<li>
+parada com liberdade para guinar;
+</li>
+
+<li>
+manobra de <strong>rudder cycling</strong>;
+</li>
+
+<li>
+efeitos e características da máquina e sua dinâmica
+na guinada;
+</li>
+
+<li>
+manobra de <strong>coasting</strong>;
+</li>
+
+<li>
+equipamentos auxiliares para parar o navio;
+</li>
+
+<li>
+efeitos do vento, das correntes e das ondas;
+</li>
+
+<li>
+estabilidade e controle de governo sob os efeitos
+do meio ambiente;
+</li>
+
+<li>
+interação do navio com águas rasas, bancos,
+canais estreitos e outros navios;
+</li>
+
+<li>
+conceito IMO de manobrabilidade do navio;
+</li>
+
+<li>
+características de manobrabilidade;
+</li>
+
+<li>
+testes e provas de mar;
+</li>
+
+<li>
+diretrizes para aplicação dos testes;
+</li>
+
+<li>
+previsão do desempenho de manobra;
+</li>
+
+<li>
+sistemas de coordenadas e nomenclatura;
+</li>
+
+<li>
+habilidade de parada de grandes navios;
+</li>
+
+<li>
+padrões de projeto IMO para a manobrabilidade.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+compreender o conceito de controlabilidade do navio;
+</li>
+
+<li>
+diferenciar manutenção de rumo, mudança de direção
+e alteração de velocidade;
+</li>
+
+<li>
+identificar os movimentos relevantes no plano horizontal;
+</li>
+
+<li>
+compreender os conceitos de estabilidade direcional
+estática e dinâmica;
+</li>
+
+<li>
+interpretar a influência das forças laterais e dos
+momentos de guinada;
+</li>
+
+<li>
+compreender o significado físico das derivadas
+hidrodinâmicas;
+</li>
+
+<li>
+relacionar ângulo de leme, razão de guinada
+e resposta do navio;
+</li>
+
+<li>
+identificar as principais fases de uma curva de giro;
+</li>
+
+<li>
+interpretar avanço, transferência e diâmetro tático;
+</li>
+
+<li>
+compreender os principais ensaios de manobrabilidade;
+</li>
+
+<li>
+interpretar os critérios de manobrabilidade da IMO;
+</li>
+
+<li>
+avaliar a influência da velocidade, do carregamento
+e do meio ambiente;
+</li>
+
+<li>
+reconhecer os efeitos de águas rasas, margens,
+canais e interação entre navios;
+</li>
+
+<li>
+relacionar os fundamentos teóricos com a atuação
+operacional do Prático;
+</li>
+
+<li>
+utilizar corretamente os principais termos técnicos
+em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture — Volume III
+</h3>
+
+<p>
+Referência principal para os fundamentos teóricos da
+controlabilidade, estabilidade direcional, forças e
+momentos hidrodinâmicos, capacidade de giro, parada
+e influência do ambiente.
+</p>
+
+<p>
+<strong>Trecho de referência:</strong>
+Chapter IX — Controllability.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Practical Ship Hydrodynamics
+</h3>
+
+<p>
+Referência complementar para a formulação dos movimentos
+do navio, derivadas hidrodinâmicas, modelagem matemática
+e métodos de previsão da manobrabilidade.
+</p>
+
+<p>
+<strong>Trecho de referência:</strong>
+Chapter 6.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+Referência para a interpretação operacional das forças
+que atuam sobre o navio e de sua resposta durante
+as manobras.
+</p>
+
+<p>
+<strong>Trecho de referência:</strong>
+Chapter 2 — Forces Affecting the Ship.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+Referência complementar para os aspectos práticos da
+resposta do navio aos comandos de leme e máquina,
+manutenção do rumo, evolução da guinada e parada.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Resolution MSC.137(76)
+</h3>
+
+<p>
+Referência normativa para os padrões de
+manobrabilidade dos navios.
+</p>
+
+<p>
+Será utilizada para o estudo das definições,
+condições de ensaio e critérios relacionados à
+capacidade de giro, verificação da guinada,
+manutenção do rumo e parada.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+MSC/Circ.1053
+</h3>
+
+<p>
+Notas explicativas destinadas a apoiar a interpretação
+e a aplicação dos padrões de manobrabilidade
+estabelecidos pela Resolution MSC.137(76).
+</p>
+
+<p>
+<strong>Trecho de referência:</strong>
+Chapters 1 a 3.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+A publicação
+<strong>A Manobrabilidade do Navio no Século 21</strong>,
+de Edson Mesquita dos Santos, não será utilizada nesta
+aula porque não está disponível na biblioteca fornecida
+para o desenvolvimento do projeto.
+</p>
+
+<p>
+Nenhuma informação será atribuída a essa obra.
+Os tópicos serão desenvolvidos somente quando houver
+fundamentação nas publicações efetivamente disponíveis.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+Fundamentos da controlabilidade;
+</li>
+
+<li>
+movimentos e forças no plano horizontal;
+</li>
+
+<li>
+estabilidade direcional;
+</li>
+
+<li>
+derivadas hidrodinâmicas;
+</li>
+
+<li>
+controle e resposta ao leme;
+</li>
+
+<li>
+capacidade de giro;
+</li>
+
+<li>
+ensaios de manobrabilidade;
+</li>
+
+<li>
+padrões IMO;
+</li>
+
+<li>
+influências externas;
+</li>
+
+<li>
+aplicação operacional.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DA CONTROLABILIDADE
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA CONTROLABILIDADE
+</h2>
+
+<p>
+Nesta primeira parte serão apresentados os conceitos
+fundamentais necessários para compreender a
+<strong>controlabilidade do navio</strong>,
+ou <strong>ship controllability</strong>.
+</p>
+
+<p>
+O estudo começará pela definição do seu escopo e pela
+distinção entre as funções relacionadas à manutenção
+do rumo, à mudança de direção e à alteração da
+velocidade do navio.
+</p>
+
+<p>
+Também será examinada a relação entre controlabilidade,
+estabilidade direcional e resposta aos comandos de
+governo, estabelecendo a base conceitual para os
+tópicos posteriores.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PRÓXIMA PARTE ABAIXO
+     TÓPICO 1 — DEFINIÇÃO E ESCOPO
+========================================= -->
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="definicao-controlabilidade"
+data-topico-id="definicao-controlabilidade">
+
+<h2>1. Definição e escopo da controlabilidade</h2>
+
+<div class="widget">
 
 <p>
 
-Durante uma manobra, o prático constantemente avalia como o navio responderá aos
-comandos aplicados ao leme e ao propulsor.
-
-Essa resposta nunca é instantânea.
-
-Existe um intervalo entre a aplicação do comando e o desenvolvimento da
-guinada.
-
-A compreensão desse comportamento constitui um dos fundamentos da
-manobrabilidade.
+A <strong>controlabilidade</strong>
+(<strong>Ship Controllability</strong>)
+é a capacidade de uma embarcação responder aos comandos
+de governo e de propulsão de forma previsível, segura
+e eficiente.
 
 </p>
 
 <p>
 
-A controlabilidade representa justamente a capacidade de o navio alterar ou
-manter seu movimento de acordo com os comandos do operador.
+Segundo o
+<strong>Principles of Naval Architecture – Volume III</strong>,
+a controlabilidade compreende o comportamento do navio
+quando submetido aos comandos do leme e da máquina,
+bem como às influências do ambiente, como vento,
+corrente, ondas e restrições impostas pela via navegável.
+</p>
 
-Quanto mais previsível e eficiente for essa resposta, maior será sua
-controlabilidade.
+<p>
+
+Sob a ótica operacional, interessa ao Prático saber
+como o navio responde aos comandos aplicados e quão
+rapidamente essa resposta ocorre.
 
 </p>
 
 <div class="destaque">
 
-<strong>Importante</strong>
+<h3>
+Ideia central
+</h3>
 
 <p>
 
-Não basta que o navio consiga girar.
-
-É necessário que sua resposta seja previsível,
-segura e compatível com as exigências da manobra.
+Um navio possui boa controlabilidade quando consegue
+executar as manobras desejadas de maneira previsível,
+mantendo estabilidade durante a evolução e respondendo
+adequadamente aos comandos do leme e da propulsão.
 
 </p>
 
 </div>
 
+</div>
+
 </section>
 
-<section>
 
-<h2>2. Conceito de Controlabilidade</h2>
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="funcoes-controlabilidade"
+data-topico-id="funcoes-controlabilidade">
+
+<h2>2. As três funções da controlabilidade</h2>
+
+<div class="widget">
 
 <p>
 
-Controlabilidade é a capacidade da embarcação responder aos comandos de governo,
-principalmente aqueles produzidos pelo leme e pelo sistema propulsor.
+O PNA organiza a controlabilidade em três grandes
+funções, que representam praticamente todas as manobras
+executadas por um navio.
 
 </p>
 
+<ul>
+
+<li>
+
+<strong>Coursekeeping</strong> —
+capacidade de manter um rumo desejado.
+
+</li>
+
+<li>
+
+<strong>Manoeuvring</strong> —
+capacidade de alterar o rumo de forma controlada.
+
+</li>
+
+<li>
+
+<strong>Speed Changing</strong> —
+capacidade de acelerar, desacelerar, parar ou navegar
+a ré.
+
+</li>
+
+</ul>
+
 <p>
 
-Essa característica depende da interação entre o casco, o leme, o propulsor,
-a velocidade do navio e diversos efeitos hidrodinâmicos.
+Essas três capacidades estão intimamente relacionadas,
+mas não representam o mesmo fenômeno hidrodinâmico.
 
 </p>
 
-<div class="caixa-conceito">
+<div class="destaque">
 
-<h3>Definição</h3>
+<h3>
+⚓ Aplicação prática
+</h3>
 
 <p>
 
-A controlabilidade mede a eficiência com que o navio executa as alterações
-de rumo determinadas pelo operador.
+Durante uma faina de praticagem, essas três funções são
+utilizadas continuamente. Em um canal estreito, por
+exemplo, o navio precisa manter o rumo, alterar a
+direção sempre que necessário e controlar sua velocidade
+simultaneamente.
 
 </p>
 
 </div>
 
-</section>
-
-<section>
-
-<h2>3. Por que este assunto é importante?</h2>
-
-<p>
-
-Em águas restritas, pequenos erros de avaliação podem resultar em grandes
-desvios de trajetória.
-
-Conhecer a resposta do navio permite antecipar comandos,
-reduzir o uso excessivo do leme e aumentar a segurança da manobra.
-
-</p>
-
-<p>
-
-Na praticagem, compreender a controlabilidade significa prever o comportamento
-da embarcação antes mesmo que ele aconteça.
-
-</p>
-
-</section>
-
-<section class="pscpp">
-
-<h2>📌 O que cai no PSCPP</h2>
-
-<ul>
-
-<li>Definição de controlabilidade.</li>
-
-<li>Diferença entre controlabilidade e estabilidade direcional.</li>
-
-<li>Influência do leme.</li>
-
-<li>Resposta dinâmica do navio.</li>
-
-<li>Fatores que afetam a capacidade de governo.</li>
-
-</ul>
-
-</section>
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-Dois navios aparentemente semelhantes podem responder de forma completamente
-diferente ao mesmo comando de leme.
-
-Essa diferença depende do projeto do casco,
-do deslocamento, da velocidade, do calado, do propulsor e da distribuição das
-áreas laterais.
-
-É por isso que o prático procura conhecer previamente as
-características de cada embarcação antes da manobra.
-
-</p>
-
-</section>
-
-<section>
-
-<h2>4. Controlabilidade × Estabilidade Direcional × Manobrabilidade</h2>
-
-<p>
-
-Embora frequentemente utilizados como sinônimos, esses conceitos representam
-características distintas do comportamento dinâmico do navio.
-
-</p>
-
-<h3>Controlabilidade</h3>
-
-<p>
-
-É a capacidade da embarcação responder aos comandos aplicados pelo operador,
-principalmente através do leme e do propulsor.
-
-</p>
-
-<h3>Estabilidade Direcional</h3>
-
-<p>
-
-É a tendência natural do navio manter seu rumo após cessar um comando de leme.
-
-Quanto maior a estabilidade direcional, menor será a necessidade de correções
-durante a navegação.
-
-</p>
-
-<h3>Manobrabilidade</h3>
-
-<p>
-
-É o conjunto de características que descrevem a capacidade do navio alterar seu
-movimento com segurança, incluindo curvas, parada, aceleração e resposta aos
-comandos de governo.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Resumo</h3>
-
-<ul>
-
-<li><strong>Controlabilidade:</strong> responde ao comando.</li>
-
-<li><strong>Estabilidade Direcional:</strong> mantém o rumo.</li>
-
-<li><strong>Manobrabilidade:</strong> comportamento geral durante as manobras.</li>
-
-</ul>
-
 </div>
 
 </section>
 
-<section>
 
-<h2>5. Estabilidade Direcional</h2>
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="controlabilidade-estabilidade"
+data-topico-id="controlabilidade-estabilidade">
+
+<h2>3. Controlabilidade × estabilidade direcional</h2>
+
+<div class="widget">
 
 <p>
 
-Sob o ponto de vista hidrodinâmico, a estabilidade direcional depende da posição
-relativa entre o centro de gravidade, o centro de pressão lateral e da
-distribuição das forças atuantes sobre o casco.
+Embora frequentemente utilizados como sinônimos,
+<strong>controlabilidade</strong> e
+<strong>estabilidade direcional</strong>
+não representam o mesmo conceito.
 
 </p>
 
 <p>
 
-Navios com elevada estabilidade direcional tendem a navegar em linha reta com
-pequenas correções de leme.
-
-Por outro lado, embarcações pouco estáveis apresentam tendência de desvio do
-rumo, exigindo atuação constante do timoneiro ou do piloto automático.
+A estabilidade direcional descreve a tendência natural
+do navio de manter ou recuperar seu rumo após uma
+pequena perturbação.
 
 </p>
 
-<h3>Classificação</h3>
-
-<ul>
-
-<li><strong>Positiva:</strong> retorna naturalmente ao rumo.</li>
-
-<li><strong>Neutra:</strong> permanece no novo rumo após a perturbação.</li>
-
-<li><strong>Negativa:</strong> aumenta progressivamente o desvio de rumo.</li>
-
-</ul>
-
-</section>
-
-<section class="destaque">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
 <p>
 
-O prático procura identificar rapidamente o comportamento direcional da
+A controlabilidade possui um significado mais amplo,
+incluindo também a facilidade de alterar o rumo,
+controlar a guinada e modificar a velocidade da
 embarcação.
 
-Um navio excessivamente estável demora mais para iniciar a guinada.
-
-Já um navio pouco estável responde rapidamente ao leme, porém exige constantes
-correções durante toda a manobra.
-
-</p>
-
-</section>
-
-<section class="pscpp">
-
-<h2>📌 O que costuma cair no PSCPP</h2>
-
-<ul>
-
-<li>Diferença entre controlabilidade e estabilidade direcional.</li>
-
-<li>Características da estabilidade positiva, neutra e negativa.</li>
-
-<li>Influência do casco na resposta ao leme.</li>
-
-<li>Interpretação conceitual de questões envolvendo governo do navio.</li>
-
-</ul>
-
-  </section>
-<section>
-
-<h2>6. Fundamentos Hidrodinâmicos da Controlabilidade</h2>
-
-<p>
-
-A resposta de um navio aos comandos de governo é resultado do equilíbrio entre
-as forças hidrodinâmicas produzidas pelo casco, pelo leme e pelo sistema
-propulsor.
-
-</p>
-
-<p>
-
-Quando o leme é defletido, surge uma força lateral que atua afastada do centro
-de gravidade do navio. Essa força produz um momento de guinada, responsável
-pela alteração da trajetória da embarcação.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Conceito fundamental</h3>
-
-<p>
-
-A capacidade de guinar não depende apenas da força gerada pelo leme, mas também
-da distância entre o ponto de aplicação dessa força e o centro de gravidade.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>7. Ação do Leme</h2>
-
-<p>
-
-O leme funciona como uma superfície hidrodinâmica semelhante a uma asa
-submersa.
-
-Quando defletido, altera o escoamento da água, produzindo uma força lateral.
-
-</p>
-
-<p>
-
-Essa força aumenta aproximadamente com o quadrado da velocidade do escoamento
-sobre o leme.
-
 </p>
 
 <div class="destaque">
 
-<strong>Importante para o PSCPP</strong>
+<h3>
+⚠ Atenção PSCPP
+</h3>
 
 <p>
 
-Um navio com maior velocidade apresenta maior eficiência do leme, pois a força
-hidrodinâmica gerada aumenta significativamente.
+Um navio pode apresentar excelente estabilidade
+direcional e, ainda assim, possuir pequena capacidade
+de manobra.
+
+Da mesma forma, um navio extremamente ágil pode
+apresentar baixa estabilidade direcional, exigindo
+constantes correções de leme.
 
 </p>
+
+</div>
 
 </div>
 
 </section>
 
 
-<section>
 
-<h2>8. Influência do Propulsor</h2>
-
-<p>
-
-O propulsor possui papel fundamental na controlabilidade porque altera o fluxo
-de água que chega ao leme.
-
-</p>
-
-<p>
-
-Em muitos navios, principalmente com hélice localizada à frente do leme, o
-escoamento acelerado pelo propulsor aumenta a velocidade da água sobre a
-superfície do leme, aumentando sua eficiência.
-
-</p>
-
-<p>
-
-Por esse motivo, durante determinadas manobras, manter a rotação do propulsor
-pode ser essencial para conservar a capacidade de governo.
-
-</p>
-
-</section>
-
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-Durante uma manobra em baixa velocidade, uma das primeiras preocupações do
-prático é avaliar se ainda existe fluxo suficiente sobre o leme.
-
-</p>
-
-<p>
-
-Um navio pode possuir um excelente sistema de governo, mas se não houver
-velocidade ou fluxo adequado, a resposta será limitada.
-
-</p>
-
-</section>
-<section>
-
-<h2>9. Estabilidade Direcional e o Teste Espiral de Dieudonné</h2>
-
-<p>
-
-A estabilidade direcional representa a tendência do navio de manter ou alterar
-seu rumo após uma perturbação ou comando de governo.
-
-</p>
-
-<p>
-
-Esse comportamento está diretamente relacionado à interação entre as forças
-laterais produzidas pelo casco, pelo leme e pelos efeitos hidrodinâmicos durante
-a guinada.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Conceito fundamental</h3>
-
-<p>
-
-Um navio direcionalmente estável tende a reduzir sua taxa de guinada quando o
-leme retorna à posição neutra.
-
-Um navio instável tende a continuar aumentando sua guinada mesmo após a retirada
-do comando.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>10. Teste Espiral de Dieudonné</h2>
-
-<p>
-
-O Teste Espiral de Dieudonné é um ensaio utilizado para avaliar a estabilidade
-direcional de um navio.
-
-</p>
-
-<p>
-
-Durante o teste, o navio navega em velocidade constante e são aplicados pequenos
-ângulos de leme, observando-se a taxa de guinada resultante.
-
-</p>
-
-<p>
-
-A relação entre o ângulo de leme aplicado e a taxa de guinada permite construir
-a chamada curva espiral.
-
-</p>
-<div class="grafico-navio">
-
-<h4>Curva Espiral de Dieudonné</h4>
-
-<svg viewBox="0 0 500 350" width="100%">
-
-<!-- eixos -->
-
-<line x1="70" y1="280"
-x2="450" y2="280"
-stroke="black"/>
-
-<line x1="250" y1="320"
-x2="250" y2="40"
-stroke="black"/>
-
-
-<!-- curva -->
-
-<path d="
-M250 280
-C180 260 130 200 160 150
-C200 80 300 80 340 150
-C380 220 320 270 250 280"
-
-fill="none"
-stroke="black"
-stroke-width="3"/>
-
-
-<text x="330" y="330">
-Ângulo de leme δ
-</text>
-
-<text x="260" y="60">
-Velocidade de guinada r
-</text>
-
-
-</svg>
-
-<p>
-Curva sem histerese indica comportamento mais previsível.
-A presença de laço indica tendência de instabilidade direcional.
-</p>
-
-</div>
-<div class="destaque">
-
-<strong>Atenção PSCPP</strong>
-
-<p>
-
-A interpretação da curva espiral permite identificar se o navio possui
-estabilidade direcional positiva, neutra ou negativa.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>11. Tipos de Estabilidade Direcional</h2>
-
-<h3>Estabilidade Positiva</h3>
-
-<p>
-
-Quando uma pequena perturbação é aplicada, o navio tende naturalmente a retornar
-ao rumo original.
-
-</p>
-
-<p>
-
-Esse comportamento facilita a manutenção do rumo, reduzindo a necessidade de
-correções constantes.
-
-</p>
-
-
-<h3>Estabilidade Neutra</h3>
-
-<p>
-
-O navio não retorna ao rumo original, porém também não aumenta o desvio.
-
-Após uma alteração de rumo, permanece aproximadamente no novo rumo.
-
-</p>
-
-
-<h3>Estabilidade Negativa</h3>
-
-<p>
-
-O navio apresenta tendência de aumentar progressivamente sua guinada após uma
-perturbação.
-
-Esse comportamento exige atuação constante do sistema de governo.
-
-</p>
-
-</section>
-
-
-<section>
-
-<h2>12. Histerese na Curva Espiral</h2>
-
-<p>
-
-A histerese ocorre quando existe diferença entre o comportamento do navio
-durante uma guinada para um bordo e o comportamento observado ao retornar o
-leme para o bordo oposto.
-
-</p>
-
-<p>
-
-Esse fenômeno indica que a resposta do navio depende do seu estado anterior de
-movimento, sendo uma característica importante na avaliação da estabilidade
-dinâmica.
-
-</p>
-
-</section>
-
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-O conhecimento da estabilidade direcional permite ao prático antecipar como o
-navio reagirá durante uma curva.
-
-</p>
-
-<p>
-
-Um navio com baixa estabilidade pode exigir comandos de leme antecipados e
-correções frequentes, principalmente em canais estreitos ou durante aproximações
-de cais.
-
-</p>
-
-</section>
-
-
-<section class="pscpp">
-
-<h2>📌 O que cai no PSCPP</h2>
-
-<ul>
-
-<li>Finalidade do Teste Espiral de Dieudonné.</li>
-
-<li>Interpretação da curva espiral.</li>
-
-<li>Diferença entre estabilidade positiva, neutra e negativa.</li>
-
-<li>Conceito de histerese.</li>
-
-<li>Relação entre resposta ao leme e comportamento direcional.</li>
-
-</ul>
-
-</section>  
- <section>
-
-<h2>13. Modelo de Nomoto e a Resposta do Navio ao Leme</h2>
-
-<p>
-
-A resposta dinâmica de um navio aos comandos de governo pode ser representada
-através de modelos matemáticos desenvolvidos para descrever o comportamento de
-guinada.
-
-</p>
-
-<p>
-
-Um dos modelos mais utilizados na análise de controlabilidade é o modelo de
-Nomoto, que relaciona a aplicação do ângulo de leme com a taxa de guinada
-desenvolvida pelo navio.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Modelo de primeira ordem de Nomoto</h3>
-
-<p>
-
-O comportamento do navio pode ser representado pelos parâmetros:
-
-</p>
-
-<ul>
-
-<li><strong>K:</strong> ganho de guinada.</li>
-
-<li><strong>T:</strong> constante de tempo de resposta.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>14. Significado Físico dos Parâmetros K e T</h2>
-
-<h3>Parâmetro K — Ganho de Guinada</h3>
-
-<p>
-
-O parâmetro K representa a intensidade da resposta final do navio ao comando de
-leme.
-
-</p>
-
-<p>
-
-Um valor elevado de K indica que o navio desenvolve uma maior taxa de guinada
-para determinado ângulo de leme.
-
-</p>
-
-
-<h3>Parâmetro T — Constante de Tempo</h3>
-
-<p>
-
-O parâmetro T representa a rapidez com que o navio atinge sua resposta de
-regime.
-
-</p>
-
-<p>
-
-Valores menores de T indicam uma resposta mais rápida ao comando de governo.
-
-</p>
-
-
-<div class="destaque">
-
-<strong>Interpretação operacional</strong>
-
-<p>
-
-Um navio com boa resposta ao leme normalmente apresenta combinação adequada
-entre ganho de guinada e tempo de resposta.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>15. Relação com a Manobra Real</h2>
-
-<p>
-
-Na prática, o prático não observa diretamente os valores de K e T, mas percebe
-seus efeitos durante a condução do navio.
-
-</p>
-
-<ul>
-
-<li>Tempo para iniciar a curva após aplicar o leme.</li>
-
-<li>Velocidade com que o navio desenvolve a guinada.</li>
-
-<li>Necessidade de correções durante a trajetória.</li>
-
-<li>Excesso ou falta de resposta ao comando.</li>
-
-</ul>
-
-<p>
-
-Esses fatores determinam a confiança operacional durante manobras em águas
-restritas.
-
-</p>
-
-</section>
-
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-Durante uma curva em um canal, o prático precisa saber se o navio responderá
-rapidamente ou se haverá atraso entre o comando e a alteração da trajetória.
-
-</p>
-
-<p>
-
-Um navio de grande porte pode possuir elevada inércia e grande tempo de
-resposta, exigindo comandos antecipados e planejamento da manobra.
-
-</p>
-
-</section>
-
-
-<section class="pscpp">
-
-<h2>📌 O que cai no PSCPP</h2>
-
-<ul>
-
-<li>Conceito dos parâmetros K e T.</li>
-
-<li>Diferença entre ganho de resposta e tempo de resposta.</li>
-
-<li>Interpretação qualitativa do modelo de Nomoto.</li>
-
-<li>Aplicação dos conceitos na controlabilidade do navio.</li>
-
-</ul>
-
-</section> 
-<section>
-
-<h2>16. Derivadas Hidrodinâmicas e Controle do Movimento</h2>
-
-<p>
-
-O comportamento de um navio durante uma manobra é resultado da ação combinada
-de diversas forças e momentos hidrodinâmicos.
-
-</p>
-
-<p>
-
-Para analisar matematicamente esse comportamento, a hidrodinâmica utiliza
-coeficientes conhecidos como derivadas hidrodinâmicas.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Conceito fundamental</h3>
-
-<p>
-
-As derivadas hidrodinâmicas representam como as forças e momentos atuantes no
-navio variam quando ocorre uma alteração no movimento da embarcação.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>17. Força Lateral e Momento de Guinada</h2>
-
-<p>
-
-Durante uma manobra, o casco sofre forças laterais provocadas principalmente
-pelo movimento de deriva e pela rotação do navio.
-
-</p>
-
-<p>
-
-Essas forças geram momentos em relação ao centro de gravidade, influenciando a
-capacidade do navio iniciar ou controlar uma guinada.
-
-</p>
-
-<p>
-
-A relação entre força lateral e momento de guinada é fundamental para entender
-a estabilidade direcional.
-
-</p>
-
-</section>
-
-
-<section>
-
-<h2>18. Principais Derivadas Hidrodinâmicas</h2>
-
-<h3>Y<sub>v</sub> — Influência da velocidade de deriva na força lateral</h3>
-
-<p>
-
-Representa como a força lateral do navio varia quando existe movimento lateral
-(deriva).
-
-</p>
-
-<p>
-
-Esse parâmetro está relacionado à capacidade do casco gerar forças que
-influenciam o movimento transversal.
-
-</p>
-
-
-<h3>Y<sub>r</sub> — Influência da velocidade de guinada na força lateral</h3>
-
-<p>
-
-Representa o efeito da rotação do navio sobre a força lateral produzida pelo
-casco.
-
-</p>
-
-
-<h3>N<sub>v</sub> — Momento de guinada causado pela deriva</h3>
-
-<p>
-
-Representa a tendência do movimento lateral do navio produzir um momento de
-guinada.
-
-</p>
-
-
-<h3>N<sub>r</sub> — Momento de guinada causado pela rotação</h3>
-
-<p>
-
-Representa a influência da velocidade angular de guinada sobre o momento de
-guinada do navio.
-
-</p>
-
-</section>
-<div class="grafico-navio">
-
-<h4>Representação das forças hidrodinâmicas durante a guinada</h4>
-
-<svg viewBox="0 0 600 300" width="100%">
-
-<!-- Corpo do navio -->
-<ellipse cx="300" cy="150" rx="120" ry="45"
-style="fill:none;stroke:black;stroke-width:3"/>
-
-<!-- Centro de gravidade -->
-<circle cx="300" cy="150" r="8" fill="black"/>
-
-<text x="315" y="145">CG</text>
-
-
-<!-- Força lateral -->
-<line x1="300" y1="150" x2="300" y2="60"
-stroke="black" stroke-width="3"/>
-
-<polygon points="300,50 290,70 310,70"/>
-
-<text x="315" y="75">Yv / Yr</text>
-
-
-<!-- Momento de guinada -->
-<path d="M250 210 Q300 260 350 210"
-fill="none"
-stroke="black"
-stroke-width="3"/>
-
-<polygon points="350,210 335,205 340,220"/>
-
-<text x="250" y="280">
-Momento de guinada N
-</text>
-
-
-</svg>
-
-</div>
-
-<section>
-
-<h2>19. Influência do Casco e do Skeg</h2>
-
-<p>
-
-A geometria do casco possui grande influência na estabilidade direcional e na
-controlabilidade.
-
-</p>
-
-<p>
-
-Elementos como skegs aumentam a área lateral na região de ré, contribuindo para
-a geração de forças laterais que podem melhorar o comportamento direcional.
-
-</p>
-
-<div class="destaque">
-
-<strong>Aplicação PSCPP</strong>
-
-<p>
-
-O aumento da área lateral de ré pode aumentar a capacidade do navio resistir a
-desvios de rumo e melhorar a estabilidade direcional.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-O prático normalmente não calcula as derivadas hidrodinâmicas durante uma
-manobra, mas observa seus efeitos.
-
-</p>
-
-<p>
-
-Um navio com maior tendência de manter o rumo exigirá estratégias diferentes de
-um navio que responde rapidamente às alterações de leme.
-
-</p>
-
-<p>
-
-Conhecer essas características permite escolher o momento correto para aplicar
-comandos e antecipar a resposta da embarcação.
-
-</p>
-
-</section>
-
-
-<section class="pscpp">
-
-<h2>📌 O que cai no PSCPP</h2>
-
-<ul>
-
-<li>Conceito de derivadas hidrodinâmicas.</li>
-
-<li>Diferença entre força lateral e momento de guinada.</li>
-
-<li>Influência do casco na estabilidade direcional.</li>
-
-<li>Função do skeg.</li>
-
-<li>Relação entre hidrodinâmica e comportamento de governo.</li>
-
-</ul>
-
-</section>
-<section>
-
-<h2>20. Testes de Manobra e Avaliação da Controlabilidade</h2>
-
-<p>
-
-A capacidade de governo de um navio é avaliada através de testes padronizados
-que permitem analisar sua resposta aos comandos de leme.
-
-</p>
-
-<p>
-
-Esses testes são importantes porque fornecem informações objetivas sobre o
-comportamento dinâmico da embarcação.
-
-</p>
-
-</section>
-
-
-<section>
-
-<h2>21. Teste de Giro (Turning Circle Test)</h2>
-
-<p>
-
-O teste de giro avalia a capacidade do navio realizar uma curva após a aplicação
-de um determinado ângulo de leme.
-
-</p>
-
-<p>
-
-Durante o ensaio são observados parâmetros como:
-
-</p>
-
-<ul>
-
-<li>Avanço (Advance).</li>
-
-<li>Afastamento lateral (Transfer).</li>
-
-<li>Diâmetro tático.</li>
-
-<li>Diâmetro final da curva.</li>
-
-<li>Taxa de guinada desenvolvida.</li>
-
-</ul>
-
-<div class="caixa-conceito">
-
-<h3>Interpretação operacional</h3>
-
-<p>
-
-Um menor diâmetro de giro normalmente indica maior capacidade de alteração de
-trajetória, porém deve ser analisado junto com a estabilidade direcional e a
-previsibilidade da resposta.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>22. Teste de Zigue-Zague</h2>
-
-<p>
-
-O teste de zigue-zague avalia a rapidez e a precisão da resposta do navio aos
-comandos alternados de leme.
-
-</p>
-
-<p>
-
-Durante o teste são observados:
-
-</p>
-
-<ul>
-
-<li>Tempo de resposta inicial.</li>
-
-<li>Ângulo máximo de guinada.</li>
-
-<li>Excesso de guinada (overshoot).</li>
-
-<li>Capacidade de reverter a tendência de giro.</li>
-
-</ul>
-
-<div class="destaque">
-
-<strong>Atenção PSCPP</strong>
-
-<p>
-
-O excesso de guinada indica que o navio continua respondendo mesmo após a
-mudança do comando, sendo um indicador importante da dinâmica do governo.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>23. Critérios de Manobrabilidade IMO</h2>
-
-<p>
-
-A Organização Marítima Internacional estabelece critérios para avaliar a
-capacidade mínima de manobra dos navios.
-
-</p>
-
-<p>
-
-Esses critérios buscam garantir que a embarcação apresente comportamento
-previsível e seguro em situações operacionais.
-
-</p>
-
-<ul>
-
-<li>Capacidade de alteração de rumo.</li>
-
-<li>Resposta adequada ao leme.</li>
-
-<li>Controle durante curvas.</li>
-
-<li>Capacidade de parada.</li>
-
-</ul>
-
-</section>
-
-
-<section class="visao-pratico">
-
-<h2>👨‍✈️ Visão do Prático</h2>
-
-<p>
-
-Os resultados dos testes de manobra representam o comportamento esperado do
-navio, mas o prático deve considerar que as condições reais podem alterar essa
-resposta.
-
-</p>
-
-<p>
-
-Calado, vento, corrente, águas rasas e proximidade de outras embarcações podem
-modificar significativamente a manobra.
-
-</p>
-
-<p>
-
-Por isso, a experiência operacional consiste em transformar informações
-técnicas em decisões práticas durante a condução do navio.
-
-</p>
-
-</section>
-
-
-<section class="pscpp">
-
-<h2>📌 O que cai no PSCPP</h2>
-
-<ul>
-
-<li>Finalidade do teste de giro.</li>
-
-<li>Parâmetros avaliados no Turning Circle.</li>
-
-<li>Objetivo do teste de zigue-zague.</li>
-
-<li>Conceito de overshoot.</li>
-
-<li>Importância dos critérios IMO.</li>
-
-</ul>
-
-  </section>
-<section>
-
-<h2>24. Resumo Geral da Aula</h2>
-
-<p>
-
-A controlabilidade representa a capacidade do navio responder de forma previsível
-aos comandos aplicados pelo operador.
-
-</p>
-
-<p>
-
-Seu comportamento depende da interação entre casco, leme, propulsor, velocidade
-e características hidrodinâmicas da embarcação.
-
-</p>
-
-<div class="caixa-conceito">
-
-<h3>Pontos fundamentais</h3>
-
-<ul>
-
-<li>Controlabilidade está relacionada à resposta aos comandos.</li>
-
-<li>Estabilidade direcional está relacionada à tendência de manter o rumo.</li>
-
-<li>Manobrabilidade representa o comportamento global durante as manobras.</li>
-
-<li>O leme gera forças laterais responsáveis pela alteração da trajetória.</li>
-
-<li>A velocidade influencia diretamente a eficiência do governo.</li>
-
-<li>Testes de manobra avaliam a resposta dinâmica do navio.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>25. Checklist PSCPP</h2>
-
-<p>
-
-Antes de avançar para a próxima aula, o candidato deve ser capaz de responder:
-
-</p>
-
-<ul class="checklist">
-
-<li>☐ Sei definir controlabilidade?</li>
-
-<li>☐ Sei diferenciar controlabilidade, estabilidade direcional e manobrabilidade?</li>
-
-<li>☐ Entendo a influência do leme na geração de força lateral?</li>
-
-<li>☐ Compreendo a influência da velocidade sobre o governo?</li>
-
-<li>☐ Sei explicar estabilidade positiva, neutra e negativa?</li>
-
-<li>☐ Conheço a finalidade do Teste Espiral de Dieudonné?</li>
-
-<li>☐ Entendo os parâmetros K e T do modelo de Nomoto?</li>
-
-<li>☐ Sei a função dos testes de giro e zigue-zague?</li>
-
-</ul>
-
-</section>
-
-
-<section>
-
-<h2>26. Exercícios de Fixação</h2>
-
-
-<h3>Questão 1</h3>
-
-<p>
-
-A característica que representa a capacidade de um navio responder aos comandos
-de leme é:
-
-</p>
-
-<p>
-
-<strong>A)</strong> Estabilidade transversal<br>
-<strong>B)</strong> Controlabilidade<br>
-<strong>C)</strong> Resistência ao avanço<br>
-<strong>D)</strong> Estabilidade intacta
-
-</p>
-
-<p class="resposta">
-
-<strong>Resposta:</strong> B
-
-</p>
-
-
-<h3>Questão 2</h3>
-
-<p>
-
-Um navio que mantém o rumo após a retirada do comando de leme apresenta:
-
-</p>
-
-<p>
-
-<strong>A)</strong> Baixa resistência<br>
-<strong>B)</strong> Grande deriva<br>
-<strong>C)</strong> Estabilidade direcional<br>
-<strong>D)</strong> Baixa controlabilidade
-
-</p>
-
-<p class="resposta">
-
-<strong>Resposta:</strong> C
-
-</p>
-
-
-<h3>Questão 3</h3>
-
-<p>
-
-O Teste Espiral de Dieudonné tem como objetivo principal avaliar:
-
-</p>
-
-<p>
-
-<strong>A)</strong> Potência do propulsor<br>
-<strong>B)</strong> Estabilidade direcional<br>
-<strong>C)</strong> Resistência estrutural<br>
-<strong>D)</strong> Consumo de combustível
-
-</p>
-
-<p class="resposta">
-
-<strong>Resposta:</strong> B
-
-</p>
-
-
-</section>
-
-
-<section>
-
-<h2>27. Referências Bibliográficas</h2>
-
-<ul>
-
-<li>
-Principles of Naval Architecture — Volume III: Maneuvering and Control.
-</li>
-
-<li>
-Crenshaw — Naval Shiphandling.
-</li>
-
-<li>
-IMO — Standards for Ship Manoeuvrability.
-</li>
-
-<li>
-Fonseca — Arte Naval.
-</li>
-
-</ul>
-
-</section>
-<!-- PARTE 9 - COMPLEMENTO TÉCNICO DA AULA 1 -->
-
-<section class="aula">
-
-<h2>9. Complemento Técnico — Da Teoria de Controle ao Comportamento Real do Navio</h2>
-
-<p>
-Até este ponto estudamos os fundamentos da controlabilidade.
-Agora vamos conectar os conceitos hidrodinâmicos ao comportamento real do navio,
-nível exigido para o PSCPP.
-</p>
-
-
-<h3>9.1 Estabilidade Direcional x Controlabilidade</h3>
-
-<p>
-A estabilidade direcional representa a tendência natural do navio em manter ou
-retornar ao rumo original após uma perturbação.
-</p>
-
-<p>
-Já a controlabilidade representa a capacidade do navio de responder aos comandos
-do leme e realizar alterações de rumo de forma previsível.
-</p>
-
-<div class="caixa-info">
-
-<strong>Conceito operacional:</strong><br>
-
-Um navio extremamente estável pode apresentar dificuldade para alterar o rumo.
-Um navio pouco estável pode responder rapidamente, porém exigir grande atuação
-do timão para ser controlado.
-
-</div>
-
-
-<h3>9.2 Derivadas Hidrodinâmicas Fundamentais</h3>
-
-<p>
-O movimento lateral e de guinada do navio pode ser estudado através das
-derivadas hidrodinâmicas.
-</p>
-
-<ul>
-
-<li>
-<strong>Yv</strong> — força lateral causada pelo movimento de deriva.
-</li>
-
-<li>
-<strong>Yr</strong> — influência da velocidade angular de guinada na força lateral.
-</li>
-
-<li>
-<strong>Nv</strong> — momento de guinada provocado pela deriva.
-</li>
-
-<li>
-<strong>Nr</strong> — momento de amortecimento causado pela própria guinada.
-</li>
-
-</ul>
-
-
-<p>
-Esses coeficientes explicam por que determinados navios possuem tendência de
-manter o rumo, enquanto outros apresentam comportamento mais instável.
-</p>
-
-
-<h3>9.3 Modelo de Nomoto — Resposta do Navio ao Leme</h3>
-
-<p>
-O modelo de Nomoto simplifica a dinâmica de guinada do navio através de dois
-parâmetros principais:
-</p>
-
-<ul>
-
-<li>
-<strong>K (ganho de guinada)</strong> — representa quanto o navio responde ao comando
-do leme.
-</li>
-
-<li>
-<strong>T (constante de tempo)</strong> — representa a rapidez com que essa resposta
-se desenvolve.
-</li>
-
-</ul>
-
-
-<div class="caixa-info">
-
-<strong>Interpretação prática:</strong><br><br>
-
-K elevado → maior resposta angular para determinado ângulo de leme.<br>
-
-T pequeno → resposta mais rápida do navio ao comando.
-
-</div>
-
-
-<h3>9.4 Teste Espiral de Dieudonné</h3>
-
-<p>
-O teste espiral avalia a estabilidade direcional do navio observando a relação
-entre ângulo de leme aplicado e velocidade angular de guinada obtida.
-</p>
-
-<p>
-O resultado é apresentado através da curva espiral.
-</p>
-
-<ul>
-
-<li>
-Curva fechada e sem histerese → comportamento estável.
-</li>
-
-<li>
-Histerese significativa → tendência de instabilidade direcional.
-</li>
-
-<li>
-Grande diferença entre guinada positiva e negativa → comportamento assimétrico.
-</li>
-
-</ul>
-
-
-<h3>9.5 Influência do Projeto do Navio</h3>
-
-<p>
-A controlabilidade não depende apenas do leme.
-Ela é consequência da interação entre casco, propulsão e dispositivos de controle.
-</p>
-
-<ul>
-
-<li>
-Maior área lateral de popa (skeg) → aumenta estabilidade direcional.
-</li>
-
-<li>
-Casco com maior coeficiente de bloco (Cb) → normalmente apresenta maior dificuldade
-para mudanças rápidas de rumo.
-</li>
-
-<li>
-Leme eficiente → aumenta força lateral e capacidade de controle.
-</li>
-
-<li>
-Propulsor → influencia diretamente o fluxo sobre o leme.
-</li>
-
-</ul>
-
-
-<h3>9.6 Exemplo Operacional — Navio A x Navio B</h3>
-
-<p>
-Considere dois navios semelhantes operando em águas restritas.
-</p>
-
-<div class="tabela">
-
-<table>
-
-<tr>
-<th>Característica</th>
-<th>Navio A</th>
-<th>Navio B</th>
-</tr>
-
-<tr>
-<td>K</td>
-<td>Maior resposta ao leme</td>
-<td>Menor resposta</td>
-</tr>
-
-<tr>
-<td>T</td>
-<td>Resposta mais rápida</td>
-<td>Resposta mais lenta</td>
-</tr>
-
-<tr>
-<td>Estabilidade direcional</td>
-<td>Maior tendência de manter rumo</td>
-<td>Maior tendência de guinar</td>
-</tr>
-
-<tr>
-<td>Operação</td>
-<td>Controle previsível</td>
-<td>Maior necessidade de correções</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<h3>9.7 Fórmulas Essenciais para o PSCPP</h3>
-
-<p>
-O candidato não precisa desenvolver matematicamente todos os modelos,
-mas deve compreender as relações fundamentais:
-</p>
-
-<div class="formula">
-
-<strong>Força do leme:</strong><br>
-
-F ≈ 1/2 × ρ × V² × A × CL
-
-<br><br>
-
-Onde:
-
-<br>
-ρ = densidade da água<br>
-V = velocidade do fluxo no leme<br>
-A = área do leme<br>
-CL = coeficiente de sustentação
-
-</div>
-
-
-<p>
-A relação mais importante operacionalmente é:
-</p>
-
-<div class="caixa-destaque">
-
-<strong>
-A força do leme cresce aproximadamente com o quadrado da velocidade do fluxo.
-</strong>
-
-</div>
-
-
-<h3>9.8 O que o PSCPP pode cobrar desta aula</h3>
-
-<ul>
-
-<li>
-Diferença entre estabilidade direcional e controlabilidade.
-</li>
-
-<li>
-Interpretação da curva espiral de Dieudonné.
-</li>
-
-<li>
-Significado físico das derivadas Nv e Nr.
-</li>
-
-<li>
-Influência de K e T no comportamento do navio.
-</li>
-
-<li>
-Relação entre projeto do casco, leme e capacidade de manobra.
-</li>
-
-</ul>
-
-
-<div class="caixa-info">
-
-<strong>
-Visão do Prático:
-</strong><br><br>
-
-O objetivo final da controlabilidade não é apenas saber se o navio consegue
-guinar, mas prever como ele irá responder antes que o comando seja aplicado.
-
-</div>
-
-
-</section>
-
-<!-- FIM DA PARTE 9 -->
-
-<section class="final-aula">
-
-<h2>⚓ Conclusão</h2>
-
-<p>
-
-A controlabilidade é um dos fundamentos essenciais para compreender o
-comportamento de um navio durante uma manobra.
-
-</p>
-
-<p>
-
-O futuro prático deve ser capaz de interpretar a resposta da embarcação,
-antecipar seus movimentos e utilizar o conhecimento hidrodinâmico como
-ferramenta para uma condução segura.
-
-</p>
-
-</section>
-
-
-<footer>
-
-<p>
-
-Bridge Trainer PSCPP © 2026
-
-</p>
-
-</footer>  
-<p style="text-align:center;">
-
-Na Parte 2 entraremos em:
-
-<strong>Controlabilidade × Estabilidade Direcional × Manobrabilidade</strong>,
-estabilidade positiva/neutra/negativa, coeficientes hidrodinâmicos e início dos
-testes de manobra.
-
-</p>
-
-</main>
-
-<footer>
-
-<p>
-
-Bridge Trainer PSCPP © 2026
-
-</p>
-
-</footer>
-
-</body>
-
-</html>
+<!-- =========================================
+     TÓPICO 4
+     CONTINUA NA PRÓXIMA PARTE
+========================================= -->  
