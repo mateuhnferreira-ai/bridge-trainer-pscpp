@@ -1,5 +1,5 @@
 // =====================================
-// SISTEMA DE PROGRESSO PSCPP v4.0
+// SISTEMA DE PROGRESSO PSCPP v4.1
 // Bridge Trainer PSCPP
 //
 // Estrutura dinâmica:
@@ -44,7 +44,7 @@ function criarEstruturaInicialProgresso() {
 
     return {
 
-        versao: "4.0",
+        versao: "4.1",
 
         ultimaAtualizacao: null,
 
@@ -274,7 +274,7 @@ function prepararEstruturaProgresso() {
 
 
     dadosProgresso.versao =
-        "4.0";
+        "4.1";
 
 
     if (
@@ -2174,7 +2174,7 @@ function atualizarPaginaPrincipal() {
 
     });
 
-            }
+}
 // =====================================
 // ATUALIZAR INTERFACE DA AULA
 // =====================================
@@ -2349,6 +2349,148 @@ function irParaOndeParei() {
 
 
 // =====================================
+// LOCALIZAR ÚLTIMO TÓPICO ESTUDADO
+// =====================================
+//
+// Percorre os tópicos já registrados para a aula atual
+// e retorna o elemento HTML do tópico com a data de
+// conclusão mais recente. Retorna null se nenhum tópico
+// da aula foi estudado ainda.
+
+function localizarUltimoTopicoEstudado() {
+
+    if (
+        !aulaAtual.disciplina ||
+        !aulaAtual.aula
+    ) {
+
+        return null;
+
+    }
+
+
+    const aula =
+        garantirAula(
+
+            aulaAtual.disciplina,
+
+            aulaAtual.aula
+
+        );
+
+
+    let idUltimoTopico = null;
+
+    let dataUltimoTopico = null;
+
+
+    Object.entries(
+        aula.topicos
+    ).forEach(
+
+        ([idTopico, dadosTopico]) => {
+
+            if (
+                dadosTopico.concluido &&
+                dadosTopico.dataConclusao
+            ) {
+
+                const dataAtual =
+                    new Date(
+                        dadosTopico.dataConclusao
+                    );
+
+
+                if (
+                    !dataUltimoTopico ||
+                    dataAtual > dataUltimoTopico
+                ) {
+
+                    dataUltimoTopico =
+                        dataAtual;
+
+
+                    idUltimoTopico =
+                        idTopico;
+
+                }
+
+            }
+
+        }
+
+    );
+
+
+    if (!idUltimoTopico) {
+
+        return null;
+
+    }
+
+
+    return document.querySelector(
+
+        '[data-topico-id="' +
+        idUltimoTopico +
+        '"]'
+
+    );
+
+}
+
+
+// =====================================
+// IR AO ÚLTIMO TÓPICO ESTUDADO
+// =====================================
+
+function irParaUltimoTopicoEstudado() {
+
+    const elementoTopico =
+        localizarUltimoTopicoEstudado();
+
+
+    if (!elementoTopico) {
+
+        window.alert(
+            "Nenhum tópico desta aula foi estudado ainda."
+        );
+
+
+        return;
+
+    }
+
+
+    elementoTopico.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+
+    elementoTopico.classList.add(
+        "topico-destacado"
+    );
+
+
+    window.setTimeout(
+        function () {
+
+            elementoTopico.classList.remove(
+                "topico-destacado"
+            );
+
+        },
+        2500
+    );
+
+}
+
+
+// =====================================
 // INICIALIZAR AULA
 // =====================================
 
@@ -2466,5 +2608,5 @@ document.addEventListener(
 
 
 // =====================================
-// FIM DO SISTEMA DE PROGRESSO v4.0
+// FIM DO SISTEMA DE PROGRESSO v4.1
 // =====================================
