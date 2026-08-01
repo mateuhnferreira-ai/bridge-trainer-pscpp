@@ -1,7 +1,20 @@
 // =====================================
 // BANCO DE CONTEÚDO PSCPP
 // Bridge Trainer PSCPP
-// Versão estratégica com pesos
+// Versão estratégica com pesos — v2.0
+//
+// O campo "status" foi removido. O status real de
+// cada assunto (Não iniciado / Em estudo / Concluído)
+// passou a ser calculado dinamicamente por app-guia.js
+// a partir do progresso salvo em progresso.js — este
+// banco guarda apenas dados estruturais e fixos.
+//
+// O campo "id" é o identificador curto do assunto,
+// usado para casar com o data-aula da página real da
+// aula (ex: <body data-disciplina="manobrabilidade"
+// data-aula="helices">). Ele é independente do "nome"
+// de exibição, que pode mudar livremente sem quebrar
+// o vínculo com o progresso salvo.
 // =====================================
 
 
@@ -21,8 +34,8 @@ assuntos: [
 
 
 {
+id: "resistencia-do-navio",
 nome: "Resistência do Navio",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -30,8 +43,8 @@ peso: 4
 
 
 {
+id: "controlabilidade",
 nome: "Controlabilidade",
-status: "Não iniciado",
 horas: 45,
 importancia: "Muito Alta",
 peso: 5
@@ -39,8 +52,8 @@ peso: 5
 
 
 {
+id: "helices",
 nome: "Hélices",
-status: "Em estudo",
 horas: 25,
 importancia: "Alta",
 peso: 4
@@ -48,8 +61,8 @@ peso: 4
 
 
 {
+id: "lemes",
 nome: "Lemes",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -57,8 +70,8 @@ peso: 4
 
 
 {
+id: "propulsao",
 nome: "Propulsão",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -66,8 +79,8 @@ peso: 4
 
 
 {
+id: "efeitos-hidrodinamicos",
 nome: "Efeitos Hidrodinâmicos",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -75,8 +88,8 @@ peso: 4
 
 
 {
+id: "estabilidade-direcional",
 nome: "Estabilidade Direcional",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -84,8 +97,8 @@ peso: 5
 
 
 {
+id: "qualidades-de-manobra",
 nome: "Qualidades de Manobra",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -93,8 +106,8 @@ peso: 4
 
 
 {
+id: "testes-de-manobrabilidade-imo",
 nome: "Testes de Manobrabilidade IMO",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -102,8 +115,8 @@ peso: 5
 
 
 {
+id: "efeitos-ambientais",
 nome: "Efeitos Ambientais",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -111,8 +124,8 @@ peso: 4
 
 
 {
+id: "aguas-rasas-e-canais",
 nome: "Águas Rasas e Canais",
-status: "Não iniciado",
 horas: 25,
 importancia: "Muito Alta",
 peso: 5
@@ -120,8 +133,8 @@ peso: 5
 
 
 {
+id: "interacao-hidrodinamica",
 nome: "Interação Hidrodinâmica",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -129,8 +142,8 @@ peso: 4
 
 
 {
+id: "rebocadores",
 nome: "Rebocadores",
-status: "Não iniciado",
 horas: 30,
 importancia: "Muito Alta",
 peso: 5
@@ -138,8 +151,8 @@ peso: 5
 
 
 {
+id: "manobras-portuarias",
 nome: "Manobras Portuárias",
-status: "Não iniciado",
 horas: 25,
 importancia: "Muito Alta",
 peso: 5
@@ -147,8 +160,8 @@ peso: 5
 
 
 {
+id: "manobras-de-emergencia",
 nome: "Manobras de Emergência",
-status: "Não iniciado",
 horas: 10,
 importancia: "Alta",
 peso: 3
@@ -177,8 +190,8 @@ assuntos: [
 
 
 {
+id: "fundamentos-do-navio",
 nome: "Fundamentos do Navio",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -186,8 +199,8 @@ peso: 4
 
 
 {
+id: "estruturas-navais",
 nome: "Estruturas Navais",
-status: "Não iniciado",
 horas: 30,
 importancia: "Alta",
 peso: 4
@@ -195,8 +208,8 @@ peso: 4
 
 
 {
+id: "compartimentagem",
 nome: "Compartimentagem",
-status: "Não iniciado",
 horas: 15,
 importancia: "Média",
 peso: 3
@@ -204,8 +217,8 @@ peso: 3
 
 
 {
+id: "estabilidade",
 nome: "Estabilidade",
-status: "Não iniciado",
 horas: 40,
 importancia: "Muito Alta",
 peso: 5
@@ -213,8 +226,8 @@ peso: 5
 
 
 {
+id: "avarias-e-controle-de-danos",
 nome: "Avarias e Controle de Danos",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 3
@@ -222,8 +235,8 @@ peso: 3
 
 
 {
+id: "equipamentos-de-conves",
 nome: "Equipamentos de Convés",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -231,8 +244,8 @@ peso: 4
 
 
 {
+id: "sistemas-do-navio",
 nome: "Sistemas do Navio",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -261,8 +274,8 @@ assuntos: [
 
 
 {
+id: "navegacao-em-aguas-restritas",
 nome: "Navegação em Águas Restritas",
-status: "Não iniciado",
 horas: 45,
 importancia: "Muito Alta",
 peso: 5
@@ -270,8 +283,8 @@ peso: 5
 
 
 {
+id: "colreg-1972",
 nome: "COLREG 1972",
-status: "Não iniciado",
 horas: 45,
 importancia: "Muito Alta",
 peso: 5
@@ -279,8 +292,8 @@ peso: 5
 
 
 {
+id: "regras-de-governo-e-navegacao",
 nome: "Regras de Governo e Navegação",
-status: "Não iniciado",
 horas: 35,
 importancia: "Muito Alta",
 peso: 5
@@ -288,8 +301,8 @@ peso: 5
 
 
 {
+id: "sinalizacao-nautica",
 nome: "Sinalização Náutica",
-status: "Não iniciado",
 horas: 25,
 importancia: "Alta",
 peso: 4
@@ -297,8 +310,8 @@ peso: 4
 
 
 {
+id: "cartas-nauticas",
 nome: "Cartas Náuticas",
-status: "Não iniciado",
 horas: 30,
 importancia: "Alta",
 peso: 4
@@ -306,8 +319,8 @@ peso: 4
 
 
 {
+id: "ecdis",
 nome: "ECDIS",
-status: "Não iniciado",
 horas: 20,
 importancia: "Média",
 peso: 3
@@ -336,8 +349,8 @@ assuntos: [
 
 
 {
+id: "atmosfera-e-pressao-atmosferica",
 nome: "Atmosfera e Pressão Atmosférica",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -345,8 +358,8 @@ peso: 3
 
 
 {
+id: "sistemas-meteorologicos",
 nome: "Sistemas Meteorológicos",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -354,8 +367,8 @@ peso: 4
 
 
 {
+id: "ventos-e-frentes",
 nome: "Ventos e Frentes",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -363,8 +376,8 @@ peso: 4
 
 
 {
+id: "previsao-meteorologica",
 nome: "Previsão Meteorológica",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -372,8 +385,8 @@ peso: 4
 
 
 {
+id: "ondas-e-estado-do-mar",
 nome: "Ondas e Estado do Mar",
-status: "Não iniciado",
 horas: 10,
 importancia: "Alta",
 peso: 3
@@ -381,8 +394,8 @@ peso: 3
 
 
 {
+id: "mares-e-correntes",
 nome: "Marés e Correntes",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -390,8 +403,8 @@ peso: 4
 
 
 {
+id: "oceanografia-operacional",
 nome: "Oceanografia Operacional",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -427,8 +440,8 @@ assuntos: [
 
 
 {
+id: "normam-201",
 nome: "NORMAM-201 - Embarcações Empregadas na Navegação de Mar Aberto",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -436,8 +449,8 @@ peso: 4
 
 
 {
+id: "normam-204",
 nome: "NORMAM-204 - Tráfego e Permanência de Embarcações em AJB",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -445,8 +458,8 @@ peso: 4
 
 
 {
+id: "normam-302",
 nome: "NORMAM-302 - IAFN",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -454,8 +467,8 @@ peso: 3
 
 
 {
+id: "normam-311",
 nome: "NORMAM-311 - Serviço de Praticagem",
-status: "Não iniciado",
 horas: 35,
 importancia: "Muito Alta",
 peso: 5
@@ -463,8 +476,8 @@ peso: 5
 
 
 {
+id: "normam-601",
 nome: "NORMAM-601 - Auxílios à Navegação",
-status: "Não iniciado",
 horas: 10,
 importancia: "Alta",
 peso: 4
@@ -472,8 +485,8 @@ peso: 4
 
 
 {
+id: "normam-602",
 nome: "NORMAM-602 - Serviço de Tráfego de Embarcações (VTS)",
-status: "Não iniciado",
 horas: 10,
 importancia: "Alta",
 peso: 4
@@ -481,8 +494,8 @@ peso: 4
 
 
 {
+id: "lei-2180-1954-tribunal-maritimo",
 nome: "Lei nº 2.180/1954 - Tribunal Marítimo",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -490,8 +503,8 @@ peso: 4
 
 
 {
+id: "lesta-lei-9537-1997",
 nome: "LESTA - Lei nº 9.537/1997",
-status: "Não iniciado",
 horas: 25,
 importancia: "Muito Alta",
 peso: 5
@@ -499,8 +512,8 @@ peso: 5
 
 
 {
+id: "rlesta-decreto-2596-1998",
 nome: "RLESTA - Decreto nº 2.596/1998",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -508,8 +521,8 @@ peso: 4
 
 
 {
+id: "legislacao-da-praticagem",
 nome: "Legislação da Praticagem",
-status: "Não iniciado",
 horas: 25,
 importancia: "Muito Alta",
 peso: 5
@@ -517,8 +530,8 @@ peso: 5
 
 
 {
+id: "colreg-1972-e-normas-imo",
 nome: "COLREG 1972 e Normas IMO",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -526,8 +539,8 @@ peso: 5
 
 
 {
+id: "lei-dos-portos-e-transporte-aquaviario",
 nome: "Lei dos Portos e Transporte Aquaviário",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -556,8 +569,8 @@ assuntos: [
 
 
 {
+id: "smcp-imo",
 nome: "Standard Marine Communication Phrases (SMCP IMO)",
-status: "Não iniciado",
 horas: 30,
 importancia: "Muito Alta",
 peso: 5
@@ -565,8 +578,8 @@ peso: 5
 
 
 {
+id: "radiocomunicacoes-maritimas",
 nome: "Radiocomunicações Marítimas",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -574,8 +587,8 @@ peso: 4
 
 
 {
+id: "codigo-internacional-de-sinais",
 nome: "Código Internacional de Sinais (CIS)",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -583,8 +596,8 @@ peso: 4
 
 
 {
+id: "gmdss",
 nome: "Sistema Marítimo Global de Socorro e Segurança (GMDSS)",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -592,8 +605,8 @@ peso: 5
 
 
 {
+id: "exercicios-e-revisao-de-comunicacoes",
 nome: "Exercícios e Revisão de Comunicações",
-status: "Não iniciado",
 horas: 5,
 importancia: "Média",
 peso: 3
@@ -622,8 +635,8 @@ assuntos: [
 
 
 {
+id: "planejamento-portuario",
 nome: "Planejamento Portuário",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -631,8 +644,8 @@ peso: 4
 
 
 {
+id: "pianc",
 nome: "PIANC",
-status: "Não iniciado",
 horas: 20,
 importancia: "Alta",
 peso: 4
@@ -640,8 +653,8 @@ peso: 4
 
 
 {
+id: "normam-224",
 nome: "NORMAM-224",
-status: "Não iniciado",
 horas: 15,
 importancia: "Muito Alta",
 peso: 5
@@ -649,8 +662,8 @@ peso: 5
 
 
 {
+id: "fatores-humanos",
 nome: "Fatores Humanos",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -658,8 +671,8 @@ peso: 4
 
 
 {
+id: "marpol",
 nome: "MARPOL",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -667,8 +680,8 @@ peso: 4
 
 
 {
+id: "economia-maritima",
 nome: "Economia Marítima",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -676,8 +689,8 @@ peso: 3
 
 
 {
+id: "direito-processual-maritimo",
 nome: "Direito Processual Marítimo",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -685,8 +698,8 @@ peso: 4
 
 
 {
+id: "seguranca-da-navegacao",
 nome: "Segurança da Navegação",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -694,8 +707,8 @@ peso: 5
 
 
 {
+id: "gestao-portuaria",
 nome: "Gestão Portuária",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -703,8 +716,8 @@ peso: 4
 
 
 {
+id: "hidrovias",
 nome: "Hidrovias",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -712,8 +725,8 @@ peso: 3
 
 
 {
+id: "dragagem",
 nome: "Dragagem",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -721,8 +734,8 @@ peso: 4
 
 
 {
+id: "meio-ambiente",
 nome: "Meio Ambiente",
-status: "Não iniciado",
 horas: 10,
 importancia: "Média",
 peso: 3
@@ -730,8 +743,8 @@ peso: 3
 
 
 {
+id: "imo",
 nome: "IMO",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
@@ -739,8 +752,8 @@ peso: 5
 
 
 {
+id: "infraestrutura-portuaria",
 nome: "Infraestrutura Portuária",
-status: "Não iniciado",
 horas: 15,
 importancia: "Alta",
 peso: 4
@@ -748,8 +761,8 @@ peso: 4
 
 
 {
+id: "casos-praticos",
 nome: "Casos Práticos",
-status: "Não iniciado",
 horas: 20,
 importancia: "Muito Alta",
 peso: 5
