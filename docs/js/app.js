@@ -1,282 +1,94 @@
 /* =====================================================
    BRIDGE TRAINER PSCPP
-   APP.JS v2.0
-   Dashboard Integrado com Progresso
+   APP.JS v3.0
+   Camada de Coaching — funções que ainda serão
+   implementadas em cima do progresso já calculado
+   por progresso.js (fonte única da verdade)
 ===================================================== */
 
 
+// =====================================
+// OUVIR ATUALIZAÇÕES DE PROGRESSO
+// =====================================
+//
+// progresso.js já cuida de:
+// - carregar/salvar dados (localStorage + progresso.json)
+// - calcular progresso de tópico, aula, disciplina e geral
+// - atualizar toda a interface (cards, barras, botões)
+//
+// app.js não deve recalcular nada disso. Em vez disso,
+// escuta o evento "progressoPSCPPAtualizado" disparado
+// por progresso.js sempre que algo muda, e usa esses
+// dados para as funções de coaching abaixo.
+
 document.addEventListener(
-"DOMContentLoaded",
-iniciarDashboard
+    "progressoPSCPPAtualizado",
+    function (evento) {
+
+        // evento.detail contém:
+        // { disciplina, aula, progressoAula,
+        //   progressoDisciplina, progressoGeral }
+
+        atualizarMetas(evento.detail);
+
+    }
 );
 
 
-
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
-
-
-async function iniciarDashboard(){
-
-
-    if(typeof carregarDadosProgresso === "function"){
-
-
-        await carregarDadosProgresso();
-
-
-    }
-
-
-    atualizarDashboard();
-
-
-
-}
-
-
-
-
-/* =====================================================
-   ATUALIZA DASHBOARD PRINCIPAL
-===================================================== */
-
-
-function atualizarDashboard(){
-
-
-    const disciplinas = obterListaProgresso();
-
-
-    calcularProgressoGeral(
-        disciplinas
-    );
-
-
-}
-
-
-
-
-
-/* =====================================================
-   LISTA DE PROGRESSO
-===================================================== */
-
-
-function obterListaProgresso(){
-
-
-return [
-
-
-    obterProgressoDisciplina(
-        "arte-naval"
-    ),
-
-
-    obterProgressoDisciplina(
-        "manobrabilidade"
-    ),
-
-
-    obterProgressoDisciplina(
-        "navegacao"
-    ),
-
-
-    obterProgressoDisciplina(
-        "meteorologia"
-    ),
-
-
-    obterProgressoDisciplina(
-        "regulamentacao"
-    ),
-
-
-    obterProgressoDisciplina(
-        "comunicacoes"
-    ),
-
-
-    obterProgressoDisciplina(
-        "conhecimentos-gerais"
-    )
-
-
-];
-
-
-}
-
-
-
-
-
-/* =====================================================
-   PROGRESSO GERAL
-===================================================== */
-
-
-function calcularProgressoGeral(lista){
-
-
-    let soma = 0;
-
-
-
-    lista.forEach(valor => {
-
-
-        soma += valor || 0;
-
-
-    });
-
-
-
-    let media = Math.round(
-        soma / lista.length
-    );
-
-
-
-    const barra =
-    document.getElementById(
-        "progresso-geral"
-    );
-
-
-
-    const texto =
-    document.getElementById(
-        "porcentagem-geral"
-    );
-
-
-
-    if(barra){
-
-
-        barra.style.width =
-        media + "%";
-
-
-    }
-
-
-
-    if(texto){
-
-
-        texto.textContent =
-        media + "%";
-
-
-    }
-
-
-
-    atualizarMiniBarras(lista);
-
-
-}
-
-
-
-
-
-/* =====================================================
-   BARRAS DAS DISCIPLINAS
-===================================================== */
-
-
-function atualizarMiniBarras(lista){
-
-
-    const barras =
-    document.querySelectorAll(
-        ".mini-progresso"
-    );
-
-
-    const textos =
-    document.querySelectorAll(
-        ".card span"
-    );
-
-
-
-    barras.forEach(
-    (barra, indice)=>{
-
-
-        let valor =
-        lista[indice] || 0;
-
-
-
-        barra.style.width =
-        valor + "%";
-
-
-
-        if(textos[indice]){
-
-
-            textos[indice].textContent =
-            valor + "%";
-
-
-        }
-
-
-
-    });
-
-
-
-}
-
-
-
-
-
-/* =====================================================
-   FUNÇÕES FUTURAS
-===================================================== */
-
-
-function salvarProgresso(){
+// =====================================
+// META DA SEMANA
+// =====================================
+//
+// TODO: definir a lógica de coaching, por exemplo:
+// - disciplina com menor progresso vira prioridade
+// - tópicos pendentes na aula atual
+// - proximidade da prova / cronograma de planejamento.html
+
+function atualizarMetas(detalheProgresso) {
 
     console.log(
-    "Salvar progresso - aguardando implementação"
+        "atualizarMetas — aguardando implementação",
+        detalheProgresso
     );
 
 }
 
 
+// =====================================
+// ÚLTIMA AULA ESTUDADA
+// =====================================
+//
+// TODO: usar dadosProgresso (progresso.js) para
+// encontrar a aula com dataConclusao mais recente
+// entre todos os tópicos concluídos, e popular o
+// widget "#ultima-aula" do index.html
 
-function atualizarMetas(){
+function ultimaAula() {
+
+    console.log(
+        "ultimaAula — aguardando implementação"
+    );
 
 }
 
 
+// =====================================
+// PRÓXIMA REVISÃO (REPETIÇÃO ESPAÇADA)
+// =====================================
+//
+// TODO: usar dataConclusao dos tópicos para calcular
+// quando cada um deve ser revisado (ex: 1, 7, 30 dias)
+// e popular o widget "#proxima-revisao" do index.html
 
-function ultimaAula(){
+function revisar() {
+
+    console.log(
+        "revisar — aguardando implementação"
+    );
 
 }
-
-
-
-function revisar(){
-
-}
-
 
 
 /* =====================================================
-   FIM APP.JS v2.0
+   FIM APP.JS v3.0
 ===================================================== */
