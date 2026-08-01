@@ -1,8 +1,37 @@
 // =====================================
-// APLICATIVO DE PLANEJAMENTO PSCPP
+// APLICATIVO DE PLANEJAMENTO PSCPP v2.1
 // Bridge Trainer PSCPP
+//
+// v2.1: toda a inicialização passou a esperar
+// carregarDadosProgresso() (progresso.js) resolver
+// antes de gerar o plano — antes disso, gerarPlanoEstudo()
+// rodava com dadosProgresso ainda vazio, e todo assunto
+// aparecia como "não concluído" mesmo com progresso real
+// salvo no localStorage.
 // =====================================
 
+
+async function inicializarPlanejamento(){
+
+
+if(typeof carregarDadosProgresso === "function"){
+
+
+    await carregarDadosProgresso();
+
+
+}
+else{
+
+
+    console.error(
+        "progresso.js não foi carregado antes de " +
+        "app-planejamento.js. Inclua <script src=\"../js/progresso.js\">" +
+        " antes deste arquivo."
+    );
+
+
+}
 
 
 // Calcula informações gerais
@@ -136,14 +165,20 @@ planoEstudo.forEach(item => {
 if(!disciplinas[item.disciplina]){
 
 
-disciplinas[item.disciplina] = 0;
+disciplinas[item.disciplina] = {
+
+idDisciplina: item.idDisciplina,
+
+horas: 0
+
+};
 
 
 }
 
 
 
-disciplinas[item.disciplina]
+disciplinas[item.disciplina].horas
 += item.horas;
 
 
@@ -158,13 +193,25 @@ for(let disciplina in disciplinas){
 
 
 
+let dadosCard =
+disciplinas[disciplina];
+
+
+
 let card =
-document.createElement("div");
+document.createElement("a");
 
 
 
 card.className =
 "card";
+
+
+
+card.href =
+"../disciplinas/" +
+dadosCard.idDisciplina +
+"/index.html";
 
 
 
@@ -177,7 +224,7 @@ ${disciplina}
 
 
 <p>
-${disciplinas[disciplina]} horas pendentes
+${dadosCard.horas} horas pendentes
 </p>
 
 
@@ -255,6 +302,14 @@ ${item.prioridade}
 </p>
 
 
+<a
+    href="../disciplinas/${item.idDisciplina}/${item.idAssunto}.html"
+    class="botao"
+>
+Ir para a aula
+</a>
+
+
 `;
 
 
@@ -268,3 +323,12 @@ lista.appendChild(estudo);
 
 
 }
+
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    inicializarPlanejamento
+);
