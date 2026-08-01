@@ -1,52 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Resistência do Navio - Bridge Trainer PSCPP</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="../../css/style.css">
+<title>
+Resistência do Navio
+</title>
 
-<style>
-.topico-continuacao-destaque {
-    outline: 3px solid #c9a227;
-    outline-offset: 6px;
-    border-radius: 8px;
-    transition: outline 0.4s ease;
-}
-
-.acoes-continuacao {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-}
-
-.texto-continuacao {
-    margin-top: 12px;
-    font-size: 0.95rem;
-}
-
-.formula-linha {
-    text-align: center;
-    font-size: 1.15rem;
-    margin: 14px 0;
-}
-
-.exemplo-calculo p {
-    margin-bottom: 8px;
-}
-</style>
+<link rel="stylesheet"
+href="../../css/style.css">
 
 </head>
 
-
-<body
-data-disciplina="manobrabilidade"
-data-aula="resistencia-navio">
+<body>
 
 
 <header class="topo">
@@ -55,17 +27,18 @@ data-aula="resistencia-navio">
 
 <h1>⚓ Bridge Trainer PSCPP</h1>
 
-<p>Manobrabilidade do Navio</p>
+<p>
+Manobrabilidade • Resistência do Navio
+</p>
 
 </div>
 
 </header>
 
 
-
 <nav class="navbar">
 
-<button type="button" onclick="voltarPagina()">
+<button onclick="voltarPagina()">
 ⬅ Voltar
 </button>
 
@@ -74,15 +47,11 @@ data-aula="resistencia-navio">
 </a>
 
 <a href="../../guia-estudos/index.html">
-📚 Guia de Estudos
+📚 Guia
 </a>
 
 <a href="#">
 📊 Progresso
-</a>
-
-<a href="#">
-📝 Simulados
 </a>
 
 </nav>
@@ -92,1118 +61,362 @@ data-aula="resistencia-navio">
 <main>
 
 
-<!-- =========================================
-     CABEÇALHO DA AULA
-========================================= -->
 
 <section class="dashboard">
 
-<h2>🚢 Resistência do Navio</h2>
+<h2>
+Resistência do Navio
+</h2>
 
 <p>
-<strong>Ship Resistance</strong>
+
+A resistência ao avanço representa o conjunto das forças
+hidrodinâmicas e aerodinâmicas que se opõem ao movimento
+de uma embarcação.
+
+O conhecimento desse assunto é fundamental para compreender
+o desempenho do navio, consumo de combustível, potência
+necessária, comportamento durante manobras e os efeitos
+observados na praticagem.
+
 </p>
 
-<p>
-Estudo das forças hidrodinâmicas e aerodinâmicas que se
-opõem ao avanço do navio, com ênfase em sua influência
-sobre a potência efetiva, a velocidade e a operação da
-embarcação.
-</p>
+<div class="alerta">
+
+<strong>Bibliografia principal</strong>
+
+<ul>
+
+<li>
+Principles of Naval Architecture – Volume II
+(Resistance, Propulsion and Vibration)
+</li>
+
+<li>
+Ship Resistance and Flow
+</li>
+
+<li>
+Practical Ship Hydrodynamics
+(Capítulos 2, 3 e 6)
+</li>
+
+<li>
+Naval Shiphandling
+</li>
+
+<li>
+Shiphandling for the Mariner
+</li>
+
+</ul>
+
+</div>
 
 </section>
 
 
 
-<!-- =========================================
-     CONTINUAR ESTUDANDO
-========================================= -->
+<section class="widget">
 
-<section>
-
-<h2>📖 Continuar estudando</h2>
-
-<div class="widget">
-
-<p>
-Retome a aula a partir do último tópico visualizado neste dispositivo.
-</p>
-
-<div class="acoes-continuacao">
+<h2>
+▶ Continuar do último tópico estudado
+</h2>
 
 <button
-type="button"
-class="botao-estudo"
-id="btnContinuar"
-onclick="continuarEstudando()">
+class="botao-principal"
+onclick="continuarUltimoTopico()">
 
-▶ Continuar do último tópico
+Continuar
 
 </button>
 
-</div>
+</section>
 
-<p
-id="informacaoContinuacao"
-class="texto-continuacao">
 
-Nenhum tópico registrado até o momento.
+
+<section class="widget">
+
+<h2>
+Conteúdo desta aula
+</h2>
+
+<ol>
+
+<li>Conceito de resistência</li>
+
+<li>Resistência total</li>
+
+<li>Resistência friccional</li>
+
+<li>Resistência de forma</li>
+
+<li>Resistência de ondas</li>
+
+<li>Resistência dos apêndices</li>
+
+<li>Resistência do ar</li>
+
+<li>Resistência em águas rasas</li>
+
+<li>Número de Reynolds</li>
+
+<li>Número de Froude</li>
+
+<li>Potência efetiva</li>
+
+<li>Aplicações operacionais</li>
+
+<li>Resumo</li>
+
+<li>Glossário</li>
+
+<li>Questões PSCPP</li>
+
+</ol>
+
+</section>
+
+
+
+<!-- ================================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="conceito-resistencia">
+
+<h2>
+
+1.
+Conceito de Resistência do Navio
+
+</h2>
+
+<div class="widget">
+
+<p>
+
+Sempre que um navio se desloca,
+a água e o ar exercem forças que se opõem ao seu movimento.
+
+A soma dessas forças recebe o nome de
+<strong>Resistência ao Avanço</strong>
+(<em>Total Resistance</em>).
+
+</p>
+
+<p>
+
+Essa resistência determina a potência que deverá ser
+fornecida pela planta propulsora para manter determinada
+velocidade.
+
+Quanto maior a resistência,
+maior será o consumo de combustível,
+a potência requerida e,
+consequentemente,
+o custo operacional.
 
 </p>
 
 </div>
 
-</section>
 
 
+<div class="destaque">
 
-<!-- =========================================
-     IDENTIFICAÇÃO DA AULA
-========================================= -->
+<h3>
 
-<section>
+⚓ Aplicação para o Prático
 
-<h2>📘 Identificação da aula</h2>
+</h3>
 
-<div class="widget">
+<p>
 
-<p><strong>Disciplina:</strong> Manobrabilidade do Navio</p>
+Embora o prático normalmente não controle a potência dos
+motores,
+o conhecimento da resistência permite prever:
 
-<p><strong>Assunto:</strong> Resistência do Navio</p>
-
-<p><strong>Termo técnico:</strong> Ship Resistance</p>
-
-<p><strong>Nível:</strong> PSCPP</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     CONTEÚDO PROGRAMÁTICO
-========================================= -->
-
-<section>
-
-<h2>📋 Conteúdo programático</h2>
-
-<div class="widget">
-
-<p><strong>I – Manobrabilidade do Navio</strong></p>
-
-<p><strong>1. Resistência do Navio</strong></p>
+</p>
 
 <ul>
-
-<li>resistência friccional;</li>
-
-<li>resistência de formação de ondas;</li>
 
 <li>
-resistências associadas às perturbações das linhas de
-corrente produzidas pela forma do casco e por seus apêndices;
+distâncias de parada;
 </li>
 
-<li>resistências adicionais relevantes à operação;</li>
+<li>
+capacidade de aceleração;
+</li>
 
-<li>relação entre resistência, velocidade e potência efetiva.</li>
+<li>
+efeitos de águas rasas;
+</li>
 
-</ul>
+<li>
+alterações de comportamento conforme o calado;
+</li>
 
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     OBJETIVOS
-========================================= -->
-
-<section>
-
-<h2>🎯 Objetivos de aprendizagem</h2>
-
-<div class="widget">
-
-<p>Ao concluir esta aula, o aluno deverá ser capaz de:</p>
-
-<ul>
-
-<li>compreender a origem física da resistência ao avanço;</li>
-
-<li>identificar os componentes da resistência total;</li>
-
-<li>diferenciar resistência friccional e resistência residual;</li>
-
-<li>relacionar Número de Reynolds aos efeitos viscosos;</li>
-
-<li>relacionar Número de Froude à formação de ondas;</li>
-
-<li>calcular o Número de Froude em situação simples;</li>
-
-<li>relacionar resistência, velocidade e potência efetiva;</li>
-
-<li>avaliar a influência da rugosidade, do calado, do trim e dos apêndices;</li>
-
-<li>reconhecer os efeitos operacionais das águas rasas;</li>
-
-<li>utilizar os principais termos técnicos em inglês marítimo.</li>
+<li>
+efeitos do vento e corrente.
+</li>
 
 </ul>
 
 </div>
 
-</section>
 
 
-
-<!-- =========================================
-     REFERÊNCIAS PRINCIPAIS
-========================================= -->
-
-<section>
-
-<h2>📚 Publicações utilizadas</h2>
-
-<div class="widget">
-
-<h3>Principles of Naval Architecture — Volume II</h3>
-
-<p>
-Referência principal para resistência, potência efetiva,
-métodos de decomposição da resistência e fundamentos da
-propulsão.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>Ship Resistance and Flow</h3>
-
-<p>
-Referência principal para escoamento ao redor do casco,
-viscosidade, camada limite, distribuição de pressões,
-formação de ondas e resistência do casco.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>Practical Ship Hydrodynamics</h3>
-
-<p>
-Referência complementar para resistência viscosa,
-escoamento, separação, métodos de estimativa e efeitos
-hidrodinâmicos em águas restritas.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>Naval Shiphandling</h3>
-
-<p>
-Utilizado somente para relacionar velocidade, potência e
-efeitos hidrodinâmicos com a condução operacional do navio.
-</p>
-
-</div>
-
-
-<div class="widget">
-
-<h3>Shiphandling for the Mariner</h3>
-
-<p>
-Utilizado como apoio à interpretação da resposta do navio
-às ordens de máquina e às condições operacionais.
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 1
-========================================= -->
-
-<section
-class="topico-aula"
-id="introducao"
-data-topico-id="introducao">
-
-<h2>1. Introdução à resistência do navio</h2>
-
-<div class="widget">
-
-<p>
-Sempre que um navio se desloca pela água, o casco interage
-com o fluido e produz forças que se opõem ao movimento.
-</p>
-
-<p>
-A resultante longitudinal dessas forças recebe o nome de
-<strong>resistência ao avanço</strong>,
-ou <strong>ship resistance</strong>.
-</p>
-
-<p>
-Em movimento retilíneo e com velocidade constante, o
-empuxo útil que atua no navio equilibra a resistência total.
-</p>
-
-<div class="destaque">
-
-<h3>Princípio fundamental</h3>
-
-<p><strong>Empuxo maior que a resistência:</strong> o navio acelera.</p>
-
-<p><strong>Empuxo igual à resistência:</strong> a velocidade permanece constante.</p>
-
-<p><strong>Empuxo menor que a resistência:</strong> o navio desacelera.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 2
-========================================= -->
-
-<section
-class="topico-aula"
-id="componentes-resistencia"
-data-topico-id="componentes-resistencia">
-
-<h2>2. Componentes da resistência total</h2>
-
-<div class="widget">
-
-<p>
-A resistência total não é formada somente pelo atrito.
-Ela resulta da combinação de mecanismos viscosos, formação
-de ondas, distribuição de pressões, apêndices e ação do ar.
-</p>
-
-<p>Entre os fatores que modificam a resistência estão:</p>
-
-<ul>
-
-<li>velocidade;</li>
-
-<li>dimensões e forma do casco;</li>
-
-<li>área molhada;</li>
-
-<li>calado e trim;</li>
-
-<li>rugosidade e incrustações;</li>
-
-<li>apêndices;</li>
-
-<li>profundidade e restrição lateral;</li>
-
-<li>vento relativo e área exposta.</li>
-
-</ul>
-
-<div class="destaque">
-
-<h3>⚠ Atenção PSCPP</h3>
-
-<p>
-Resistência friccional é apenas uma parcela da resistência total.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 3
-========================================= -->
-
-<section
-class="topico-aula"
-id="importancia-praticagem"
-data-topico-id="importancia-praticagem">
-
-<h2>3. Importância para a praticagem</h2>
-
-<div class="widget">
-
-<p>
-O cálculo detalhado da resistência pertence principalmente
-ao campo da Arquitetura Naval. Para o Prático, o valor está
-em compreender como alterações de velocidade, condição do
-casco, calado, trim e profundidade modificam a resposta às
-ordens de máquina.
-</p>
-
-<div class="destaque">
-
-<h3>⚓ Visão do Arquiteto Naval</h3>
-
-<p>
-Determinar a resistência e a potência necessárias, comparar
-formas de casco e dimensionar o sistema propulsivo.
-</p>
-
-</div>
-
-<div class="destaque">
-
-<h3>⚓ Visão do Prático</h3>
-
-<p>
-Antecipar aceleração, desaceleração, capacidade de manter
-velocidade, resposta às máquinas e efeitos de águas restritas.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 4
-========================================= -->
-
-<section
-class="topico-aula"
-id="visao-geral-forcas"
-data-topico-id="visao-geral-forcas">
-
-<h2>4. Visão geral das forças</h2>
-
-<div class="widget">
-
-<ul>
-
-<li><strong>Thrust</strong> — empuxo gerado pelo sistema propulsivo;</li>
-
-<li><strong>Resistance</strong> — força resultante que se opõe ao avanço.</li>
-
-</ul>
-
-<div class="formula">
-
-<h3>Equilíbrio em velocidade constante</h3>
-
-<p class="formula-linha">
-<strong>T = R<sub>T</sub></strong>
-</p>
-
-<p>
-Onde <strong>T</strong> é o empuxo útil e
-<strong>R<sub>T</sub></strong> é a resistência total.
-</p>
-
-</div>
-
-<div class="caixa-imagem">
+<div class="figura">
 
 <img
-src="../../img/infograficos/resistencia-visao-geral.png"
-alt="Empuxo e resistência atuando em sentidos opostos sobre o navio"
-loading="lazy">
+src="../../img/manobrabilidade/resistencia/resistencia-total.png"
+alt="Forças atuando no navio">
 
 <p>
-<strong>Figura 1.</strong>
-Representação esquemática do empuxo e da resistência total.
+
+Figura —
+Representação esquemática das forças atuando durante o avanço.
+
 </p>
 
 </div>
 
-</div>
+
+
+<button
+class="botao-estudo"
+onclick="marcarTopicoEstudado(this)">
+
+✓ Marcar tópico como estudado
+
+</button>
 
 </section>
 
 
 
-<!-- =========================================
-     TÓPICO 5
-========================================= -->
+<!-- ================================================= -->
 
 <section
 class="topico-aula"
-id="resistencia-friccional"
-data-topico-id="resistencia-friccional">
+data-topico-id="classificacao-resistencia">
 
-<h2>5. Resistência friccional</h2>
+<h2>
+
+2.
+Classificação da Resistência
+
+</h2>
 
 <div class="widget">
 
 <p>
-A <strong>resistência friccional</strong>,
-ou <strong>frictional resistance</strong>, decorre das
-tensões tangenciais produzidas pela viscosidade da água
-sobre a superfície molhada do casco.
-</p>
 
-<p>
-Sua intensidade depende, entre outros fatores, da velocidade,
-da área molhada, do comprimento característico, da viscosidade
-e da rugosidade da superfície.
-</p>
+Segundo o
+<strong>Principles of Naval Architecture</strong>,
+a resistência total resulta da soma de diversos componentes,
+cada um associado a um fenômeno físico distinto.
 
-<div class="caixa-imagem">
-
-<img
-src="../../img/infograficos/camada-limite.png"
-alt="Desenvolvimento da camada limite ao longo do casco"
-loading="lazy">
-
-<p>
-<strong>Figura 2.</strong>
-Desenvolvimento da camada limite ao longo do casco.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 6
-========================================= -->
-
-<section
-class="topico-aula"
-id="camada-limite"
-data-topico-id="camada-limite">
-
-<h2>6. Camada limite — Boundary Layer</h2>
-
-<div class="widget">
-
-<p>
-Na superfície do casco, a velocidade relativa da água é
-considerada nula pela condição de não deslizamento.
-A partir da superfície, a velocidade cresce até alcançar
-a velocidade do escoamento externo.
-</p>
-
-<p>
-A região em que os efeitos viscosos e esse gradiente de
-velocidade são importantes chama-se
-<strong>camada limite</strong>.
 </p>
 
 <table>
 
-<thead>
-
-<tr>
-<th>Português</th>
-<th>Inglês marítimo</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr><td>Camada limite</td><td>Boundary Layer</td></tr>
-
-<tr><td>Tensão de cisalhamento</td><td>Shear Stress</td></tr>
-
-<tr><td>Viscosidade</td><td>Viscosity</td></tr>
-
-<tr><td>Área molhada</td><td>Wetted Surface Area</td></tr>
-
-<tr><td>Atrito superficial</td><td>Skin Friction</td></tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-<!-- =========================================
-     PARTE 2 DE 5
-     TÓPICOS 7 A 13
-========================================= -->
-
-
-<!-- =========================================
-     TÓPICO 7
-========================================= -->
-
-<section
-class="topico-aula"
-id="numero-reynolds"
-data-topico-id="numero-reynolds">
-
-<h2>7. Número de Reynolds</h2>
-
-<div class="widget">
-
-<p>
-O <strong>Número de Reynolds</strong> compara os efeitos
-de inércia e viscosidade no escoamento.
-</p>
-
-<div class="formula">
-
-<h3>Equação</h3>
-
-<p class="formula-linha">
-<strong>Re = V × L / ν</strong>
-</p>
-
-<p>Onde:</p>
-
-<ul>
-
-<li>
-<strong>Re</strong> = Número de Reynolds;
-</li>
-
-<li>
-<strong>V</strong> = velocidade do navio, em m/s;
-</li>
-
-<li>
-<strong>L</strong> = comprimento característico, em m;
-</li>
-
-<li>
-<strong>ν</strong> = viscosidade cinemática da água, em m²/s.
-</li>
-
-</ul>
-
-</div>
-
-<div class="destaque">
-
-<h3>⚠ Atenção PSCPP</h3>
-
-<p>
-O Número de Reynolds está relacionado aos efeitos viscosos.
-</p>
-
-<p>
-O Número de Froude está relacionado aos efeitos gravitacionais
-e à formação de ondas.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 8
-========================================= -->
-
-<section
-class="topico-aula"
-id="rugosidade-casco"
-data-topico-id="rugosidade-casco">
-
-<h2>8. Rugosidade e condição do casco</h2>
-
-<div class="widget">
-
-<p>
-Rugosidade, pintura deteriorada e incrustações marinhas
-aumentam a tensão de cisalhamento e a resistência friccional.
-</p>
-
-<p>
-As consequências usuais incluem:
-</p>
-
-<ul>
-
-<li>
-maior potência para manter a mesma velocidade;
-</li>
-
-<li>
-maior consumo de combustível;
-</li>
-
-<li>
-menor velocidade para a mesma potência;
-</li>
-
-<li>
-alteração da resposta às ordens de máquina.
-</li>
-
-</ul>
-
-<div class="destaque">
-
-<h3>Termo técnico</h3>
-
-<p>
-<strong>Marine growth</strong> —
-incrustações de organismos marinhos no casco.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 9
-========================================= -->
-
-<section
-class="topico-aula"
-id="resistencia-residual"
-data-topico-id="resistencia-residual">
-
-<h2>9. Resistência residual</h2>
-
-<div class="widget">
-
-<p>
-Na decomposição clássica empregada em ensaios e análise
-de resistência, a resistência residual é a parcela obtida
-após separar a resistência friccional da resistência total.
-</p>
-
-<div class="formula">
-
-<h3>Decomposição clássica</h3>
-
-<p class="formula-linha">
-<strong>
-R<sub>T</sub> = R<sub>F</sub> + R<sub>R</sub>
-</strong>
-</p>
-
-<p>Onde:</p>
-
-<ul>
-
-<li>
-<strong>R<sub>T</sub></strong> = resistência total;
-</li>
-
-<li>
-<strong>R<sub>F</sub></strong> = resistência friccional;
-</li>
-
-<li>
-<strong>R<sub>R</sub></strong> = resistência residual.
-</li>
-
-</ul>
-
-</div>
-
-<div class="caixa-imagem">
-
-<img
-src="../../img/infograficos/resistencia-total.png"
-alt="Decomposição da resistência total em friccional e residual"
-loading="lazy">
-
-<p>
-<strong>Figura 3.</strong>
-Decomposição clássica da resistência total.
-</p>
-
-</div>
-
-<div class="destaque">
-
-<h3>⚠ Precisão conceitual</h3>
-
-<p>
-A terminologia e a decomposição podem variar conforme o
-método adotado.
-</p>
-
-<p>
-Nesta aula, utiliza-se a decomposição clássica apresentada
-acima para fins didáticos.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 10
-========================================= -->
-
-<section
-class="topico-aula"
-id="resistencia-ondas"
-data-topico-id="resistencia-ondas">
-
-<h2>10. Resistência de formação de ondas</h2>
-
-<div class="widget">
-
-<p>
-Ao avançar na superfície livre, o navio produz um sistema
-de ondas.
-</p>
-
-<p>
-A energia transferida para esse sistema contribui para a
-<strong>resistência de formação de ondas</strong>,
-ou <strong>wave-making resistance</strong>.
-</p>
-
-<div class="caixa-imagem">
-
-<img
-src="../../img/infograficos/sistema-ondas-navio.png"
-alt="Sistema de ondas gerado por um navio em avanço"
-loading="lazy">
-
-<p>
-<strong>Figura 4.</strong>
-Representação do sistema de ondas gerado pelo navio.
-</p>
-
-</div>
-
-<table>
-
-<thead>
-
 <tr>
 
-<th>Português</th>
-<th>Inglês marítimo</th>
+<th>Componente</th>
+
+<th>Nome em inglês</th>
+
+<th>Origem</th>
 
 </tr>
 
-</thead>
+<tr>
 
-<tbody>
+<td>Resistência friccional</td>
+
+<td>Frictional Resistance</td>
+
+<td>Atrito da água no casco</td>
+
+</tr>
+
+<tr>
+
+<td>Resistência de forma</td>
+
+<td>Form Resistance</td>
+
+<td>Separação do escoamento</td>
+
+</tr>
 
 <tr>
 
 <td>Resistência de ondas</td>
-<td>Wave-Making Resistance</td>
+
+<td>Wave Making Resistance</td>
+
+<td>Energia gasta na geração de ondas</td>
 
 </tr>
 
 <tr>
 
-<td>Sistema de ondas de Kelvin</td>
-<td>Kelvin Wave Pattern</td>
+<td>Apêndices</td>
+
+<td>Appendage Resistance</td>
+
+<td>Lemes, eixos, estabilizadores etc.</td>
 
 </tr>
 
 <tr>
 
-<td>Onda de proa</td>
-<td>Bow Wave</td>
+<td>Ar</td>
+
+<td>Air Resistance</td>
+
+<td>Vento sobre obras mortas</td>
 
 </tr>
-
-<tr>
-
-<td>Onda de popa</td>
-<td>Stern Wave</td>
-
-</tr>
-
-</tbody>
 
 </table>
 
 </div>
 
-</section>
 
 
+<div class="alerta">
 
-<!-- =========================================
-     TÓPICO 11
-========================================= -->
-
-<section
-class="topico-aula"
-id="numero-froude"
-data-topico-id="numero-froude">
-
-<h2>11. Número de Froude</h2>
-
-<div class="widget">
-
-<p>
-O <strong>Número de Froude</strong> relaciona velocidade,
-gravidade e comprimento característico.
-</p>
-
-<p>
-É o parâmetro fundamental de semelhança para os efeitos
-de superfície livre.
-</p>
-
-<div class="formula">
-
-<h3>Equação</h3>
-
-<p class="formula-linha">
 <strong>
-Fn = V / √(g × L)
+
+⚠ Atenção PSCPP
+
 </strong>
-</p>
-
-<p>Onde:</p>
-
-<ul>
-
-<li>
-<strong>Fn</strong> = Número de Froude, adimensional;
-</li>
-
-<li>
-<strong>V</strong> = velocidade, em m/s;
-</li>
-
-<li>
-<strong>g</strong> = aceleração da gravidade, em m/s²;
-</li>
-
-<li>
-<strong>L</strong> = comprimento característico, em m.
-</li>
-
-</ul>
-
-</div>
-
-<div class="formula exemplo-calculo">
-
-<h3>Exemplo numérico</h3>
 
 <p>
-Um navio de comprimento
-<strong>L = 200 m</strong>
-navega a
-<strong>V = 10 m/s</strong>.
-</p>
 
-<p>
-Adote
-<strong>g = 9,81 m/s²</strong>.
-</p>
+Em baixas velocidades,
+predomina a resistência friccional.
 
-<p>
-<strong>
-Fn = 10 / √(9,81 × 200)
-</strong>
-</p>
+À medida que a velocidade aumenta,
+a resistência de ondas cresce rapidamente,
+podendo tornar-se dominante.
 
-<p>
-<strong>
-Fn = 10 / √1962
-</strong>
-</p>
-
-<p>
-<strong>
-Fn = 10 / 44,29
-</strong>
-</p>
-
-<p>
-<strong>
-Fn ≈ 0,226
-</strong>
-</p>
-
-<div class="destaque">
-
-<h3>Interpretação</h3>
-
-<p>
-O resultado é adimensional.
-</p>
-
-<p>
-O Número de Froude permite comparar os efeitos de formação
-de ondas entre navios e modelos geometricamente semelhantes.
 </p>
 
 </div>
 
-</div>
-
-</div>
-
-</section>
 
 
+<button
+class="botao-estudo"
+onclick="marcarTopicoEstudado(this)">
 
-<!-- =========================================
-     TÓPICO 12
-========================================= -->
+✓ Marcar tópico como estudado
 
-<section
-class="topico-aula"
-id="resistencia-forma"
-data-topico-id="resistencia-forma">
-
-<h2>12. Forma do casco, pressão e separação</h2>
-
-<div class="widget">
-
-<p>
-A forma do casco modifica a curvatura das linhas de corrente
-e a distribuição de pressão ao redor da embarcação.
-</p>
-
-<p>
-Gradientes adversos de pressão podem favorecer a separação
-do escoamento, especialmente em formas menos favoráveis na
-região de ré.
-</p>
-
-<div class="caixa-imagem">
-
-<img
-src="../../img/infograficos/form-resistance.png"
-alt="Distribuição de pressão e linhas de corrente ao redor do casco"
-loading="lazy">
-
-<p>
-<strong>Figura 5.</strong>
-Distribuição esquemática de pressão e perturbação das linhas
-de corrente.
-</p>
-
-</div>
-
-<div class="destaque">
-
-<h3>Termos técnicos</h3>
-
-<ul>
-
-<li>
-<strong>Pressure distribution</strong> —
-distribuição de pressão;
-</li>
-
-<li>
-<strong>Streamline curvature</strong> —
-curvatura das linhas de corrente;
-</li>
-
-<li>
-<strong>Flow separation</strong> —
-separação do escoamento;
-</li>
-
-<li>
-<strong>Pressure resistance</strong> —
-resistência de pressão.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     TÓPICO 13
-========================================= -->
-
-<section
-class="topico-aula"
-id="resistencia-apendices"
-data-topico-id="resistencia-apendices">
-
-<h2>13. Resistência dos apêndices</h2>
-
-<div class="widget">
-
-<p>
-Lemes, eixos, pés-de-galinha, suportes, quilhas de balanço
-e outras projeções externas aumentam a área molhada e
-perturbam o escoamento.
-</p>
-
-<div class="caixa-imagem">
-
-<img
-src="../../img/infograficos/apendices-navio.png"
-alt="Apêndices externos que contribuem para a resistência"
-loading="lazy">
-
-<p>
-<strong>Figura 6.</strong>
-Exemplos de apêndices que contribuem para a resistência.
-</p>
-
-</div>
-
-<p>
-A contribuição dos apêndices depende da geometria, da
-orientação, do acabamento da superfície, da interferência
-com o casco e da velocidade local do escoamento.
-</p>
-
-<div class="destaque">
-
-<h3>⚓ Aplicação operacional</h3>
-
-<p>
-Embora o Prático não calcule individualmente a resistência
-de cada apêndice, essas estruturas alteram o escoamento e
-podem influenciar a eficiência propulsiva e a resposta do
-navio.
-</p>
-
-</div>
-
-</div>
+</button>
 
 </section>
