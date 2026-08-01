@@ -3103,4 +3103,5091 @@ escoamento ao redor do navio.
 <!-- =========================================
      COLE A PARTE 3 ABAIXO
 ========================================= -->
-  
+<!-- =========================================
+     PARTE 3
+     VISCOSIDADE E CAMADA-LIMITE
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<h2>Parte 3 — Viscosidade e camada-limite</h2>
+
+<p>
+
+Nesta parte serão estudados os efeitos viscosos produzidos
+pela interação entre a água e a superfície do casco.
+
+</p>
+
+<p>
+
+Esses efeitos explicam a origem da tensão de cisalhamento,
+da resistência friccional, da camada-limite e de parte
+importante da esteira formada atrás do navio.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+========================================= -->
+
+<section
+class="topico-aula"
+id="viscosidade"
+data-topico-id="viscosidade">
+
+<h2>11. Viscosidade da água</h2>
+
+<div class="widget">
+
+<p>
+
+A <strong>viscosidade</strong> é a propriedade do fluido
+associada à resistência interna à deformação e ao
+deslizamento relativo entre suas camadas.
+
+</p>
+
+<p>
+
+Quando regiões adjacentes da água apresentam velocidades
+diferentes, surgem tensões viscosas que tendem a reduzir
+essa diferença de velocidade.
+
+</p>
+
+<p>
+
+No escoamento ao redor do navio, a viscosidade é fundamental
+para explicar o atrito entre a água e a superfície do casco.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Interpretação física</h3>
+
+<p>
+
+A água em contato direto com o casco sofre forte influência
+da superfície sólida.
+
+</p>
+
+<p>
+
+As camadas imediatamente vizinhas também são afetadas,
+produzindo um gradiente de velocidade entre o casco e o
+escoamento externo.
+
+</p>
+
+<p>
+
+É nesse gradiente que surgem as tensões viscosas responsáveis
+por parte da resistência ao avanço.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Viscosity</strong> — viscosidade; propriedade do
+fluido que relaciona tensões internas e deformação do
+escoamento.
+
+</p>
+
+<p>
+
+<strong>Dynamic Viscosity</strong> — viscosidade dinâmica,
+normalmente representada pela letra grega μ.
+
+</p>
+
+<p>
+
+<strong>Kinematic Viscosity</strong> — viscosidade
+cinemática, normalmente representada por ν.
+
+</p>
+
+<p>
+
+<strong>Velocity Gradient</strong> — gradiente de velocidade,
+isto é, a variação da velocidade entre regiões próximas do
+fluido.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+========================================= -->
+
+<section
+class="topico-aula"
+id="condicao-nao-deslizamento"
+data-topico-id="condicao-nao-deslizamento">
+
+<h2>12. Condição de não deslizamento</h2>
+
+<div class="widget">
+
+<p>
+
+No modelo clássico de escoamento viscoso, considera-se que
+a água em contato direto com a superfície do casco possui
+a mesma velocidade da superfície naquele ponto.
+
+</p>
+
+<p>
+
+Essa condição recebe o nome de
+<strong>condição de não deslizamento</strong>,
+ou <strong>no-slip condition</strong>.
+
+</p>
+
+<p>
+
+No referencial fixo no navio, o casco está parado.
+Consequentemente, a velocidade relativa da água exatamente
+sobre a superfície é considerada nula.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Referencial fixo no navio</h3>
+
+<p>
+
+Na superfície do casco:
+
+</p>
+
+<p style="text-align:center; font-size:1.25rem;">
+
+<strong>u = 0</strong>
+
+</p>
+
+<p>
+
+Afastando-se da superfície, a velocidade aumenta
+progressivamente até se aproximar da velocidade do
+escoamento externo.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-no-slip descricao-no-slip"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-no-slip">
+
+Condição de não deslizamento junto ao casco
+
+</title>
+
+<desc id="descricao-no-slip">
+
+Vista lateral esquemática de uma superfície plana
+representando o casco. Setas de velocidade crescem à medida
+que se afastam da superfície, mostrando velocidade nula
+junto ao casco e maior velocidade no escoamento externo.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="920"
+height="520"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- SUPERFÍCIE DO CASCO -->
+
+<rect
+x="95"
+y="420"
+width="770"
+height="55"
+rx="8"
+fill="#64748b"
+stroke="#17324d"
+stroke-width="4">
+
+</rect>
+
+
+<text
+x="380"
+y="455"
+font-size="24"
+font-weight="bold"
+fill="#ffffff">
+
+SUPERFÍCIE DO CASCO
+
+</text>
+
+
+<!-- EIXO VERTICAL -->
+
+<line
+x1="155"
+y1="400"
+x2="155"
+y2="80"
+stroke="#17324d"
+stroke-width="4">
+
+</line>
+
+<polygon
+points="155,65 143,90 167,90"
+fill="#17324d">
+
+</polygon>
+
+
+<text
+x="90"
+y="75"
+font-size="21"
+font-weight="bold"
+fill="#17324d">
+
+DISTÂNCIA DO CASCO
+
+</text>
+
+
+<!-- SETA VELOCIDADE ZERO -->
+
+<circle
+cx="155"
+cy="420"
+r="8"
+fill="#b91c1c">
+
+</circle>
+
+
+<text
+x="180"
+y="410"
+font-size="21"
+font-weight="bold"
+fill="#b91c1c">
+
+u = 0
+
+</text>
+
+
+<!-- PERFIS DE VELOCIDADE -->
+
+<line
+x1="155"
+y1="365"
+x2="255"
+y2="365"
+stroke="#277da1"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="255,365 225,348 225,382"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="155"
+y1="300"
+x2="355"
+y2="300"
+stroke="#277da1"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="355,300 325,283 325,317"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="155"
+y1="235"
+x2="485"
+y2="235"
+stroke="#277da1"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="485,235 455,218 455,252"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="155"
+y1="170"
+x2="625"
+y2="170"
+stroke="#277da1"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="625,170 595,153 595,187"
+fill="#277da1">
+
+</polygon>
+
+
+<line
+x1="155"
+y1="105"
+x2="760"
+y2="105"
+stroke="#15803d"
+stroke-width="9"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="760,105 725,85 725,125"
+fill="#15803d">
+
+</polygon>
+
+
+<!-- CURVA DO PERFIL -->
+
+<path
+d="
+M 155 420
+C 180 370 255 325 355 280
+C 485 220 610 160 760 105
+"
+fill="none"
+stroke="#b45309"
+stroke-width="5"
+stroke-dasharray="12 9">
+
+</path>
+
+
+<text
+x="615"
+y="80"
+font-size="22"
+font-weight="bold"
+fill="#14532d">
+
+ESCOAMENTO EXTERNO
+
+</text>
+
+
+<text
+x="515"
+y="330"
+font-size="22"
+font-weight="bold"
+fill="#92400e">
+
+PERFIL DE VELOCIDADE
+
+</text>
+
+
+<line
+x1="575"
+y1="315"
+x2="470"
+y2="255"
+stroke="#92400e"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="180"
+y="500"
+font-size="20"
+font-weight="bold"
+fill="#17324d">
+
+VELOCIDADE NULA JUNTO À SUPERFÍCIE
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 6.</strong>
+Crescimento da velocidade da água desde a superfície do
+casco até o escoamento externo.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A condição de não deslizamento não significa que toda a
+água ao redor do casco esteja parada.
+
+</p>
+
+<p>
+
+Somente a camada em contato direto com a superfície possui,
+no referencial do navio, velocidade relativa nula.
+
+</p>
+
+<p>
+
+A velocidade cresce à medida que aumenta a distância em
+relação ao casco.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>No-Slip Condition</strong> — condição de não
+deslizamento na superfície sólida.
+
+</p>
+
+<p>
+
+<strong>Wall</strong> — parede ou superfície sólida
+considerada no estudo do escoamento.
+
+</p>
+
+<p>
+
+<strong>Near-Wall Flow</strong> — escoamento situado próximo
+à superfície.
+
+</p>
+
+<p>
+
+<strong>External Flow</strong> — escoamento externo,
+praticamente não afetado diretamente pela superfície.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="camada-limite"
+data-topico-id="camada-limite">
+
+<h2>13. Camada-limite</h2>
+
+<div class="widget">
+
+<p>
+
+A região do escoamento próxima ao casco, na qual os efeitos
+viscosos e o gradiente de velocidade são importantes,
+denomina-se <strong>camada-limite</strong>,
+ou <strong>boundary layer</strong>.
+
+</p>
+
+<p>
+
+Na superfície do casco, a velocidade relativa é nula.
+
+</p>
+
+<p>
+
+No limite externo da camada-limite, a velocidade se aproxima
+da velocidade do escoamento externo.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Crescimento ao longo do casco</h3>
+
+<p>
+
+A camada-limite começa muito fina na região de vante.
+
+</p>
+
+<p>
+
+À medida que a água percorre o casco, uma quantidade
+progressivamente maior de fluido sofre a influência dos
+efeitos viscosos.
+
+</p>
+
+<p>
+
+Por isso, a espessura da camada-limite tende a aumentar no
+sentido da proa para a popa.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1040 600"
+role="img"
+aria-labelledby="titulo-boundary descricao-boundary"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-boundary">
+
+Crescimento da camada-limite ao longo do casco
+
+</title>
+
+<desc id="descricao-boundary">
+
+Vista lateral esquemática de um casco com a proa à esquerda
+e a popa à direita. Uma região azul próxima ao casco aumenta
+de espessura no sentido da popa, representando o crescimento
+da camada-limite.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="1000"
+height="560"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- LINHA D'ÁGUA -->
+
+<line
+x1="45"
+y1="200"
+x2="995"
+y2="200"
+stroke="#277da1"
+stroke-width="5">
+
+</line>
+
+
+<!-- CASCO -->
+
+<path
+d="
+M 120 205
+Q 190 235 285 260
+L 785 260
+Q 875 250 930 215
+Q 885 335 785 385
+L 320 385
+Q 200 345 120 205
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- CAMADA-LIMITE -->
+
+<path
+d="
+M 128 215
+Q 205 250 300 275
+L 775 275
+Q 860 265 920 230
+Q 885 365 780 420
+L 305 420
+Q 185 370 128 215
+Z
+"
+fill="#4ea8de"
+opacity="0.45"
+stroke="#1d6f9f"
+stroke-width="4">
+
+</path>
+
+
+<!-- PERFIL EXTERNO DO CASCO NOVAMENTE -->
+
+<path
+d="
+M 120 205
+Q 190 235 285 260
+L 785 260
+Q 875 250 930 215
+Q 885 335 785 385
+L 320 385
+Q 200 345 120 205
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- SETAS DO ESCOAMENTO -->
+
+<line
+x1="50"
+y1="115"
+x2="950"
+y2="115"
+stroke="#15803d"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="950,115 915,95 915,135"
+fill="#15803d">
+
+</polygon>
+
+
+<text
+x="350"
+y="95"
+font-size="23"
+font-weight="bold"
+fill="#14532d">
+
+DIREÇÃO DO ESCOAMENTO
+
+</text>
+
+
+<!-- ESPESSURAS -->
+
+<line
+x1="250"
+y1="330"
+x2="250"
+y2="390"
+stroke="#b91c1c"
+stroke-width="5">
+
+</line>
+
+<polygon
+points="250,330 238,352 262,352"
+fill="#b91c1c">
+
+</polygon>
+
+<polygon
+points="250,390 238,368 262,368"
+fill="#b91c1c">
+
+</polygon>
+
+
+<text
+x="175"
+y="435"
+font-size="20"
+font-weight="bold"
+fill="#7f1d1d">
+
+CAMADA MAIS FINA
+
+</text>
+
+
+<line
+x1="785"
+y1="320"
+x2="785"
+y2="420"
+stroke="#b91c1c"
+stroke-width="5">
+
+</line>
+
+<polygon
+points="785,320 773,342 797,342"
+fill="#b91c1c">
+
+</polygon>
+
+<polygon
+points="785,420 773,398 797,398"
+fill="#b91c1c">
+
+</polygon>
+
+
+<text
+x="710"
+y="465"
+font-size="20"
+font-weight="bold"
+fill="#7f1d1d">
+
+CAMADA MAIS ESPESSA
+
+</text>
+
+
+<!-- RÓTULOS -->
+
+<text
+x="125"
+y="185"
+font-size="22"
+font-weight="bold"
+fill="#17324d">
+
+PROA
+
+</text>
+
+
+<text
+x="885"
+y="195"
+font-size="22"
+font-weight="bold"
+fill="#17324d">
+
+POPA
+
+</text>
+
+
+<text
+x="400"
+y="530"
+font-size="25"
+font-weight="bold"
+fill="#1d6f9f">
+
+CAMADA-LIMITE — BOUNDARY LAYER
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 7.</strong>
+Representação qualitativa do crescimento da camada-limite
+no sentido da proa para a popa.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+
+Na região da popa, a camada-limite já apresenta maior
+espessura e contém água com velocidades inferiores às do
+escoamento externo.
+
+</p>
+
+<p>
+
+Essa água participa da formação da esteira que alcança a
+região de entrada da hélice.
+
+</p>
+
+<p>
+
+Por isso, a hélice opera em um campo de velocidades
+influenciado pela forma e pela condição do casco.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Boundary Layer</strong> — camada-limite.
+
+</p>
+
+<p>
+
+<strong>Boundary-Layer Thickness</strong> — espessura da
+camada-limite.
+
+</p>
+
+<p>
+
+<strong>Boundary-Layer Growth</strong> — crescimento da
+camada-limite ao longo da superfície.
+
+</p>
+
+<p>
+
+<strong>Outer Flow</strong> — escoamento externo à
+camada-limite.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+========================================= -->
+
+<section
+class="topico-aula"
+id="tensao-cisalhamento"
+data-topico-id="tensao-cisalhamento">
+
+<h2>14. Tensão de cisalhamento no casco</h2>
+
+<div class="widget">
+
+<p>
+
+O gradiente de velocidade existente junto à superfície do
+casco produz uma tensão tangencial denominada
+<strong>tensão de cisalhamento</strong>,
+ou <strong>shear stress</strong>.
+
+</p>
+
+<p>
+
+Essa tensão atua sobre toda a superfície molhada do navio.
+
+</p>
+
+<p>
+
+Sua componente longitudinal contribui diretamente para a
+resistência friccional.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Relação básica</h3>
+
+<p>
+
+Para um fluido newtoniano, a tensão de cisalhamento junto
+à superfície pode ser representada por:
+
+</p>
+
+<p style="text-align:center; font-size:1.25rem;">
+
+<strong>
+τ<sub>w</sub> =
+μ
+(
+∂u / ∂y
+)<sub>w</sub>
+</strong>
+
+</p>
+
+<p>
+
+Em que:
+
+</p>
+
+<ul>
+
+<li>
+
+<strong>τ<sub>w</sub></strong> é a tensão de cisalhamento
+na superfície;
+
+</li>
+
+<li>
+
+<strong>μ</strong> é a viscosidade dinâmica;
+
+</li>
+
+<li>
+
+<strong>u</strong> é a velocidade paralela à superfície;
+
+</li>
+
+<li>
+
+<strong>y</strong> é a distância normal à superfície;
+
+</li>
+
+<li>
+
+o índice <strong>w</strong> indica que a grandeza é avaliada
+junto à parede ou casco.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A resistência friccional não depende somente do comprimento
+do navio.
+
+</p>
+
+<p>
+
+Ela também é influenciada pela área molhada, velocidade,
+viscosidade, regime do escoamento e rugosidade da superfície.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Shear Stress</strong> — tensão de cisalhamento
+tangencial à superfície.
+
+</p>
+
+<p>
+
+<strong>Wall Shear Stress</strong> — tensão de cisalhamento
+avaliada diretamente sobre o casco.
+
+</p>
+
+<p>
+
+<strong>Skin Friction</strong> — atrito superficial entre o
+fluido e o casco.
+
+</p>
+
+<p>
+
+<strong>Wetted Surface</strong> — superfície molhada do
+navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+========================================= -->
+
+<section
+class="topico-aula"
+id="escoamento-laminar-turbulento"
+data-topico-id="escoamento-laminar-turbulento">
+
+<h2>15. Escoamento laminar e turbulento</h2>
+
+<div class="widget">
+
+<p>
+
+A camada-limite pode apresentar características
+<strong>laminares</strong> ou
+<strong>turbulentas</strong>.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Camada-limite laminar</h3>
+
+<p>
+
+No regime laminar, o movimento do fluido é relativamente
+ordenado, com menor mistura transversal entre suas camadas.
+
+</p>
+
+<p>
+
+Esse regime está normalmente associado a menores tensões
+de cisalhamento quando comparado ao regime turbulento nas
+mesmas condições gerais.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Camada-limite turbulenta</h3>
+
+<p>
+
+No regime turbulento, o escoamento apresenta flutuações de
+velocidade e intensa mistura entre regiões vizinhas.
+
+</p>
+
+<p>
+
+Essa mistura transfere quantidade de movimento do
+escoamento externo para regiões próximas ao casco.
+
+</p>
+
+<p>
+
+Como consequência, o perfil de velocidade e a tensão de
+cisalhamento diferem daqueles observados na camada-limite
+laminar.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 540"
+role="img"
+aria-labelledby="titulo-laminar descricao-laminar"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-laminar">
+
+Comparação entre camada-limite laminar e turbulenta
+
+</title>
+
+<desc id="descricao-laminar">
+
+Dois painéis mostram uma superfície horizontal. No painel
+esquerdo, linhas regulares representam escoamento laminar.
+No painel direito, linhas irregulares representam
+escoamento turbulento.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="500"
+rx="15"
+fill="#f3f7fa"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- DIVISÃO -->
+
+<line
+x1="500"
+y1="45"
+x2="500"
+y2="495"
+stroke="#17324d"
+stroke-width="3"
+stroke-dasharray="12 10">
+
+</line>
+
+
+<!-- TÍTULOS -->
+
+<text
+x="145"
+y="75"
+font-size="27"
+font-weight="bold"
+fill="#14532d">
+
+ESCOAMENTO LAMINAR
+
+</text>
+
+
+<text
+x="630"
+y="75"
+font-size="27"
+font-weight="bold"
+fill="#7f1d1d">
+
+ESCOAMENTO TURBULENTO
+
+</text>
+
+
+<!-- SUPERFÍCIES -->
+
+<rect
+x="70"
+y="420"
+width="380"
+height="45"
+fill="#64748b"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<rect
+x="550"
+y="420"
+width="380"
+height="45"
+fill="#64748b"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- LINHAS LAMINARES -->
+
+<path
+d="M 80 365 C 170 360 300 360 440 360"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+<path
+d="M 80 310 C 170 305 300 305 440 305"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+<path
+d="M 80 250 C 170 245 300 245 440 245"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+<path
+d="M 80 185 C 170 180 300 180 440 180"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+<path
+d="M 80 120 C 170 115 300 115 440 115"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- SETAS LAMINARES -->
+
+<polygon
+points="440,360 412,345 412,375"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="440,305 412,290 412,320"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="440,245 412,230 412,260"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="440,180 412,165 412,195"
+fill="#277da1">
+
+</polygon>
+
+<polygon
+points="440,115 412,100 412,130"
+fill="#277da1">
+
+</polygon>
+
+
+<!-- LINHAS TURBULENTAS -->
+
+<path
+d="
+M 560 360
+C 610 320 650 395 700 350
+C 755 305 800 395 855 345
+C 890 315 910 340 925 350
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="5">
+
+</path>
+
+<path
+d="
+M 560 305
+C 610 260 660 345 710 295
+C 760 250 815 340 865 285
+C 895 255 915 280 925 300
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="5">
+
+</path>
+
+<path
+d="
+M 560 245
+C 615 205 655 275 715 225
+C 765 185 820 275 875 225
+C 900 205 915 220 925 235
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="5">
+
+</path>
+
+<path
+d="
+M 560 180
+C 610 145 665 210 720 165
+C 775 125 825 205 880 160
+C 900 145 915 150 925 170
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="5">
+
+</path>
+
+<path
+d="
+M 560 120
+C 620 95 665 145 725 110
+C 780 80 830 145 885 110
+C 905 98 918 105 925 115
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="5">
+
+</path>
+
+
+<!-- VÓRTICES -->
+
+<path
+d="
+M 635 390
+C 610 365 625 335 655 340
+C 685 345 685 380 660 390
+C 640 398 625 385 635 370
+"
+fill="none"
+stroke="#b45309"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 790 385
+C 765 360 780 330 810 335
+C 840 340 840 375 815 385
+C 795 393 780 380 790 365
+"
+fill="none"
+stroke="#b45309"
+stroke-width="4">
+
+</path>
+
+
+<!-- LEGENDAS -->
+
+<text
+x="120"
+y="495"
+font-size="21"
+font-weight="bold"
+fill="#ffffff">
+
+SUPERFÍCIE DO CASCO
+
+</text>
+
+
+<text
+x="600"
+y="495"
+font-size="21"
+font-weight="bold"
+fill="#ffffff">
+
+SUPERFÍCIE DO CASCO
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 8.</strong>
+Comparação qualitativa entre o comportamento laminar e
+turbulento da camada-limite.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+Em navios em escala real, a maior parte da camada-limite
+sobre o casco normalmente apresenta características
+turbulentas.
+
+</p>
+
+<p>
+
+Isso não significa que a água se mova de forma completamente
+aleatória nem que exista necessariamente separação do
+escoamento.
+
+</p>
+
+<p>
+
+Turbulência e separação são fenômenos distintos.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Laminar Flow</strong> — escoamento laminar.
+
+</p>
+
+<p>
+
+<strong>Turbulent Flow</strong> — escoamento turbulento.
+
+</p>
+
+<p>
+
+<strong>Transition</strong> — transição do regime laminar
+para o turbulento.
+
+</p>
+
+<p>
+
+<strong>Velocity Fluctuation</strong> — flutuação de
+velocidade característica da turbulência.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 16
+========================================= -->
+
+<section
+class="topico-aula"
+id="gradiente-adverso-pressao"
+data-topico-id="gradiente-adverso-pressao">
+
+<h2>16. Gradiente adverso de pressão</h2>
+
+<div class="widget">
+
+<p>
+
+Ao longo do casco, o escoamento atravessa regiões em que a
+pressão diminui e regiões em que a pressão aumenta no
+sentido do movimento.
+
+</p>
+
+<p>
+
+Quando a pressão aumenta no sentido do escoamento, existe
+um <strong>gradiente adverso de pressão</strong>,
+ou <strong>adverse pressure gradient</strong>.
+
+</p>
+
+<p>
+
+Nessa condição, a pressão atua contra o movimento do fluido
+próximo à superfície.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Efeito sobre a camada-limite</h3>
+
+<p>
+
+A água situada dentro da camada-limite possui menor
+quantidade de movimento do que o escoamento externo.
+
+</p>
+
+<p>
+
+Por isso, ela encontra maior dificuldade para vencer um
+aumento de pressão no sentido do escoamento.
+
+</p>
+
+<p>
+
+Se o gradiente adverso for suficientemente intenso, a
+velocidade junto à superfície pode diminuir até atingir
+valor nulo e, localmente, inverter seu sentido.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Favourable Pressure Gradient</strong> — gradiente
+favorável de pressão, normalmente associado à aceleração
+do escoamento.
+
+</p>
+
+<p>
+
+<strong>Adverse Pressure Gradient</strong> — gradiente
+adverso de pressão, associado à desaceleração do escoamento.
+
+</p>
+
+<p>
+
+<strong>Momentum</strong> — quantidade de movimento do
+fluido.
+
+</p>
+
+<p>
+
+<strong>Flow Deceleration</strong> — desaceleração do
+escoamento.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+class="topico-aula"
+id="separacao-escoamento"
+data-topico-id="separacao-escoamento">
+
+<h2>17. Separação do escoamento</h2>
+
+<div class="widget">
+
+<p>
+
+A <strong>separação do escoamento</strong>,
+ou <strong>flow separation</strong>, ocorre quando a
+camada-limite deixa de acompanhar adequadamente a superfície
+do casco.
+
+</p>
+
+<p>
+
+Esse fenômeno pode ocorrer quando a água próxima à
+superfície perde quantidade de movimento ao enfrentar um
+gradiente adverso de pressão.
+
+</p>
+
+<p>
+
+Após a separação, pode formar-se uma região de recirculação
+e escoamento irregular atrás do ponto de separação.
+
+</p>
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1040 600"
+role="img"
+aria-labelledby="titulo-separacao descricao-separacao"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-separacao">
+
+Separação da camada-limite na região de popa
+
+</title>
+
+<desc id="descricao-separacao">
+
+Vista lateral esquemática de um corpo de ré. Linhas de
+corrente acompanham inicialmente a superfície e depois se
+afastam, formando uma região de recirculação atrás do ponto
+de separação.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="1000"
+height="560"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- CORPO DE RÉ -->
+
+<path
+d="
+M 90 240
+L 610 240
+Q 760 250 900 350
+Q 760 450 610 460
+L 90 460
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHAS NÃO SEPARADAS -->
+
+<path
+d="
+M 60 145
+C 360 145 610 150 760 235
+C 835 275 880 300 955 315
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<path
+d="
+M 60 190
+C 345 190 600 190 730 255
+C 790 285 815 300 850 320
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- LINHA SEPARADA -->
+
+<path
+d="
+M 60 500
+C 350 500 580 500 690 455
+C 735 435 760 390 825 370
+C 875 355 925 360 970 375
+"
+fill="none"
+stroke="#b91c1c"
+stroke-width="7">
+
+</path>
+
+
+<!-- REGIÃO DE RECIRCULAÇÃO -->
+
+<path
+d="
+M 700 450
+C 745 390 800 360 860 370
+C 915 380 925 425 880 455
+C 835 485 770 475 735 440
+"
+fill="#f4a6a6"
+opacity="0.45"
+stroke="#b91c1c"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 760 430
+C 745 405 765 385 795 390
+C 825 395 830 425 805 440
+C 780 453 755 440 760 415
+"
+fill="none"
+stroke="#7f1d1d"
+stroke-width="5">
+
+</path>
+
+
+<polygon
+points="800,440 778,430 796,416"
+fill="#7f1d1d">
+
+</polygon>
+
+
+<!-- PONTO DE SEPARAÇÃO -->
+
+<circle
+cx="695"
+cy="452"
+r="11"
+fill="#b91c1c">
+
+</circle>
+
+
+<line
+x1="695"
+y1="452"
+x2="610"
+y2="530"
+stroke="#b91c1c"
+stroke-width="4">
+
+</line>
+
+
+<text
+x="360"
+y="555"
+font-size="22"
+font-weight="bold"
+fill="#7f1d1d">
+
+PONTO DE SEPARAÇÃO
+
+</text>
+
+
+<text
+x="750"
+y="520"
+font-size="22"
+font-weight="bold"
+fill="#7f1d1d">
+
+REGIÃO DE RECIRCULAÇÃO
+
+</text>
+
+
+<text
+x="155"
+y="115"
+font-size="22"
+font-weight="bold"
+fill="#1d6f9f">
+
+ESCOAMENTO ACOMPANHANDO A SUPERFÍCIE
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 9.</strong>
+Representação qualitativa da separação do escoamento na
+região de ré.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Consequências hidrodinâmicas</h3>
+
+<p>
+
+A separação pode:
+
+</p>
+
+<ul>
+
+<li>
+
+aumentar a resistência de pressão;
+
+</li>
+
+<li>
+
+ampliar a região de esteira;
+
+</li>
+
+<li>
+
+produzir escoamento menos uniforme na popa;
+
+</li>
+
+<li>
+
+alterar as condições de entrada de água na hélice;
+
+</li>
+
+<li>
+
+contribuir para vibrações e perdas de eficiência.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+Separação do escoamento e turbulência não são sinônimos.
+
+</p>
+
+<p>
+
+Uma camada-limite turbulenta pode permanecer aderida ao
+casco.
+
+</p>
+
+<p>
+
+A separação ocorre quando o escoamento próximo à superfície
+não consegue continuar acompanhando a geometria do casco.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Flow Separation</strong> — separação do escoamento.
+
+</p>
+
+<p>
+
+<strong>Separation Point</strong> — ponto no qual a
+camada-limite se afasta da superfície.
+
+</p>
+
+<p>
+
+<strong>Recirculation Region</strong> — região de
+recirculação formada após a separação.
+
+</p>
+
+<p>
+
+<strong>Separated Flow</strong> — escoamento separado.
+
+</p>
+
+<p>
+
+<strong>Attached Flow</strong> — escoamento que permanece
+aderido à superfície.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+class="topico-aula"
+id="forma-casco-separacao"
+data-topico-id="forma-casco-separacao">
+
+<h2>18. Influência da forma do casco</h2>
+
+<div class="widget">
+
+<p>
+
+A geometria do corpo de ré influencia diretamente a
+capacidade do escoamento de permanecer aderido à superfície.
+
+</p>
+
+<p>
+
+Mudanças suaves de seção e curvatura favorecem uma
+recuperação de pressão mais gradual.
+
+</p>
+
+<p>
+
+Formas muito cheias ou mudanças bruscas podem produzir
+gradientes adversos mais intensos e favorecer a separação.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Forma favorável</h3>
+
+<p>
+
+Um corpo de ré cuidadosamente desenvolvido conduz o
+escoamento de forma progressiva em direção à popa.
+
+</p>
+
+<p>
+
+Isso ajuda a reduzir regiões separadas e melhora a
+uniformidade do escoamento que alcança a hélice.
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Forma menos favorável</h3>
+
+<p>
+
+Uma geometria com recuperação de pressão muito rápida pode
+desacelerar intensamente o fluido próximo ao casco.
+
+</p>
+
+<p>
+
+Nessa situação, aumenta a possibilidade de separação,
+formação de vórtices e crescimento da resistência de
+pressão.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+
+Navios com formas de popa diferentes podem apresentar
+respostas distintas mesmo quando possuem deslocamentos e
+potências semelhantes.
+
+</p>
+
+<p>
+
+A forma do corpo de ré influencia a resistência, a esteira,
+a eficiência da hélice, a vibração e a resposta às ordens
+de máquina.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Afterbody Form</strong> — forma do corpo de ré.
+
+</p>
+
+<p>
+
+<strong>Full Form</strong> — forma cheia, com maior volume
+distribuído nas extremidades.
+
+</p>
+
+<p>
+
+<strong>Fine Form</strong> — forma fina, com transições mais
+esbeltas.
+
+</p>
+
+<p>
+
+<strong>Flow Attachment</strong> — manutenção do escoamento
+aderido ao casco.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS DA PARTE 3
+========================================= -->
+
+<section>
+
+<h2>📚 Referências da Parte 3</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume II:
+Resistance, Propulsion and Vibration.
+</strong>
+Chapter V — resistência friccional e efeitos viscosos.
+
+</li>
+
+
+<li>
+
+LARSSON, Lars; RAVEN, Hoyte C.
+<strong>Ship Resistance and Flow.</strong>
+Capítulos dedicados ao escoamento viscoso, camada-limite,
+tensão de cisalhamento e separação.
+
+</li>
+
+
+<li>
+
+BERTRAM, Volker.
+<strong>Practical Ship Hydrodynamics.</strong>
+Capítulos 2 e 3 — fundamentos do escoamento viscoso e
+resistência do navio.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 4 ABAIXO
+========================================= -->
+     
+<!-- =========================================
+     PARTE 4
+     SEMELHANÇA HIDRODINÂMICA
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<h2>Parte 4 — Semelhança hidrodinâmica</h2>
+
+<p>
+
+Nesta parte serão apresentados os parâmetros adimensionais
+utilizados para comparar escoamentos e interpretar os
+ensaios de resistência realizados com modelos reduzidos.
+
+</p>
+
+<p>
+
+O Número de Reynolds representa a relação entre os efeitos
+de inércia e viscosidade, enquanto o Número de Froude
+representa a relação entre os efeitos de inércia e
+gravidade associados à superfície livre.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="grandezas-adimensionais"
+data-topico-id="grandezas-adimensionais">
+
+<h2>19. Grandezas adimensionais</h2>
+
+<div class="widget">
+
+<p>
+
+Navios de dimensões diferentes podem produzir escoamentos
+com características semelhantes quando determinadas
+relações físicas são preservadas.
+
+</p>
+
+<p>
+
+Para realizar essa comparação, a hidrodinâmica utiliza
+<strong>grandezas adimensionais</strong>.
+
+</p>
+
+<p>
+
+Uma grandeza adimensional não possui unidade física.
+Ela expressa uma relação entre diferentes efeitos presentes
+no escoamento.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Por que utilizar relações adimensionais?</h3>
+
+<p>
+
+A simples comparação entre velocidade, comprimento ou
+força não é suficiente para afirmar que dois escoamentos
+são semelhantes.
+
+</p>
+
+<p>
+
+Um modelo reduzido e um navio em escala real possuem
+dimensões e velocidades diferentes, mas podem apresentar
+semelhança em determinados fenômenos quando os parâmetros
+adimensionais correspondentes são iguais.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+“Velocidade proporcional à escala” não é uma regra geral.
+
+</p>
+
+<p>
+
+A velocidade correta de um modelo depende do fenômeno que
+se pretende reproduzir e do parâmetro de semelhança adotado.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Dimensionless Quantity</strong> — grandeza
+adimensional.
+
+</p>
+
+<p>
+
+<strong>Similarity</strong> — semelhança entre dois
+escoamentos.
+
+</p>
+
+<p>
+
+<strong>Scaling</strong> — processo de conversão ou
+extrapolação entre escalas.
+
+</p>
+
+<p>
+
+<strong>Scale Ratio</strong> — razão de escala entre o navio
+e o modelo.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+class="topico-aula"
+id="semelhanca-geometrica"
+data-topico-id="semelhanca-geometrica">
+
+<h2>20. Semelhança geométrica</h2>
+
+<div class="widget">
+
+<p>
+
+Existe <strong>semelhança geométrica</strong> quando todas
+as dimensões correspondentes do modelo e do navio mantêm a
+mesma razão de escala.
+
+</p>
+
+<p>
+
+Se o modelo for construído na escala 1:λ, todas as suas
+dimensões lineares serão λ vezes menores que as dimensões
+do navio em escala real.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Relações de escala</h3>
+
+<p>
+
+Considerando:
+
+</p>
+
+<p style="text-align:center; font-size:1.25rem;">
+
+<strong>
+λ = L<sub>S</sub> / L<sub>M</sub>
+</strong>
+
+</p>
+
+<p>
+
+Em que:
+
+</p>
+
+<ul>
+
+<li>
+
+<strong>λ</strong> é a razão de escala;
+
+</li>
+
+<li>
+
+<strong>L<sub>S</sub></strong> é um comprimento
+correspondente no navio;
+
+</li>
+
+<li>
+
+<strong>L<sub>M</sub></strong> é o mesmo comprimento no
+modelo.
+
+</li>
+
+</ul>
+
+<p>
+
+Para corpos geometricamente semelhantes:
+
+</p>
+
+<ul>
+
+<li>
+
+os comprimentos variam com λ;
+
+</li>
+
+<li>
+
+as áreas variam com λ²;
+
+</li>
+
+<li>
+
+os volumes variam com λ³.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 560"
+role="img"
+aria-labelledby="titulo-escala descricao-escala"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-escala">
+
+Comparação geométrica entre navio e modelo
+
+</title>
+
+<desc id="descricao-escala">
+
+Vista lateral de um navio em escala real e de um modelo
+reduzido, apresentando comprimentos correspondentes e a
+razão de escala.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="520"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- NAVIO -->
+
+<text
+x="70"
+y="75"
+font-size="26"
+font-weight="bold"
+fill="#17324d">
+
+NAVIO EM ESCALA REAL — SHIP
+
+</text>
+
+
+<path
+d="
+M 100 180
+L 735 180
+L 885 235
+Q 810 315 670 330
+L 250 330
+Q 155 300 90 235
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<rect
+x="430"
+y="115"
+width="185"
+height="65"
+fill="#f8fafc"
+stroke="#17324d"
+stroke-width="4">
+
+</rect>
+
+
+<line
+x1="100"
+y1="360"
+x2="885"
+y2="360"
+stroke="#15803d"
+stroke-width="5">
+
+</line>
+
+<polygon
+points="100,360 130,343 130,377"
+fill="#15803d">
+
+</polygon>
+
+<polygon
+points="885,360 855,343 855,377"
+fill="#15803d">
+
+</polygon>
+
+
+<text
+x="435"
+y="395"
+font-size="25"
+font-weight="bold"
+fill="#14532d">
+
+L<tspan baseline-shift="sub" font-size="17">S</tspan>
+
+</text>
+
+
+<!-- MODELO -->
+
+<text
+x="70"
+y="445"
+font-size="25"
+font-weight="bold"
+fill="#17324d">
+
+MODELO — MODEL
+
+</text>
+
+
+<path
+d="
+M 350 455
+L 675 455
+L 745 480
+Q 710 515 645 522
+L 425 522
+Q 380 510 345 480
+Z
+"
+fill="#b8cfdd"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<line
+x1="350"
+y1="535"
+x2="745"
+y2="535"
+stroke="#b45309"
+stroke-width="4">
+
+</line>
+
+<polygon
+points="350,535 375,520 375,550"
+fill="#b45309">
+
+</polygon>
+
+<polygon
+points="745,535 720,520 720,550"
+fill="#b45309">
+
+</polygon>
+
+
+<text
+x="525"
+y="525"
+font-size="23"
+font-weight="bold"
+fill="#92400e">
+
+L<tspan baseline-shift="sub" font-size="16">M</tspan>
+
+</text>
+
+
+<rect
+x="765"
+y="405"
+width="175"
+height="90"
+rx="10"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="795"
+y="445"
+font-size="25"
+font-weight="bold"
+fill="#17324d">
+
+λ = L<tspan baseline-shift="sub" font-size="17">S</tspan>
+
+</text>
+
+
+<text
+x="847"
+y="475"
+font-size="25"
+font-weight="bold"
+fill="#17324d">
+
+────
+
+</text>
+
+
+<text
+x="858"
+y="493"
+font-size="25"
+font-weight="bold"
+fill="#17324d">
+
+L<tspan baseline-shift="sub" font-size="17">M</tspan>
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 10.</strong>
+Representação da semelhança geométrica entre o navio e seu
+modelo reduzido.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+Semelhança geométrica não garante, isoladamente, semelhança
+hidrodinâmica completa.
+
+</p>
+
+<p>
+
+Também é necessário considerar as relações entre inércia,
+viscosidade, gravidade e outros efeitos físicos relevantes.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Geometric Similarity</strong> — semelhança
+geométrica.
+
+</p>
+
+<p>
+
+<strong>Full-Scale Ship</strong> — navio em escala real.
+
+</p>
+
+<p>
+
+<strong>Scale Model</strong> — modelo reduzido.
+
+</p>
+
+<p>
+
+<strong>Linear Scale Ratio</strong> — razão linear de
+escala.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+========================================= -->
+
+<section
+class="topico-aula"
+id="numero-reynolds"
+data-topico-id="numero-reynolds">
+
+<h2>21. Número de Reynolds</h2>
+
+<div class="widget">
+
+<p>
+
+O <strong>Número de Reynolds</strong>,
+ou <strong>Reynolds Number</strong>, representa a relação
+entre os efeitos de inércia e os efeitos viscosos no
+escoamento.
+
+</p>
+
+<p>
+
+Ele é um dos principais parâmetros utilizados no estudo
+da camada-limite, da resistência friccional e do regime do
+escoamento.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Equação</h3>
+
+<p style="text-align:center; font-size:1.35rem;">
+
+<strong>
+Re = V L / ν
+</strong>
+
+</p>
+
+<p>
+
+Ou, utilizando a viscosidade dinâmica:
+
+</p>
+
+<p style="text-align:center; font-size:1.35rem;">
+
+<strong>
+Re = ρ V L / μ
+</strong>
+
+</p>
+
+<p>
+
+Em que:
+
+</p>
+
+<ul>
+
+<li>
+
+<strong>Re</strong> é o Número de Reynolds;
+
+</li>
+
+<li>
+
+<strong>V</strong> é a velocidade característica do
+escoamento;
+
+</li>
+
+<li>
+
+<strong>L</strong> é o comprimento característico;
+
+</li>
+
+<li>
+
+<strong>ν</strong> é a viscosidade cinemática;
+
+</li>
+
+<li>
+
+<strong>ρ</strong> é a massa específica da água;
+
+</li>
+
+<li>
+
+<strong>μ</strong> é a viscosidade dinâmica.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Significado físico</h3>
+
+<p>
+
+Quando o Número de Reynolds aumenta, os efeitos de inércia
+tornam-se mais importantes em relação aos efeitos viscosos.
+
+</p>
+
+<p>
+
+Quando o Número de Reynolds diminui, a influência relativa
+da viscosidade torna-se maior.
+
+</p>
+
+<p>
+
+Isso não significa que a viscosidade deixe de existir em
+Reynolds elevado. Seus efeitos continuam fundamentais junto
+ao casco, especialmente dentro da camada-limite.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 580"
+role="img"
+aria-labelledby="titulo-reynolds descricao-reynolds"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-reynolds">
+
+Influência relativa da inércia e da viscosidade
+
+</title>
+
+<desc id="descricao-reynolds">
+
+Uma balança conceitual compara efeitos viscosos em Reynolds
+menor e efeitos de inércia em Reynolds maior.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="540"
+rx="15"
+fill="#f2f7fa"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="285"
+y="70"
+font-size="30"
+font-weight="bold"
+fill="#17324d">
+
+NÚMERO DE REYNOLDS
+
+</text>
+
+
+<!-- EIXO -->
+
+<line
+x1="130"
+y1="300"
+x2="870"
+y2="300"
+stroke="#17324d"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+
+<polygon
+points="870,300 830,275 830,325"
+fill="#17324d">
+
+</polygon>
+
+
+<!-- MARCADORES -->
+
+<circle
+cx="250"
+cy="300"
+r="15"
+fill="#277da1">
+
+</circle>
+
+<circle
+cx="500"
+cy="300"
+r="15"
+fill="#b45309">
+
+</circle>
+
+<circle
+cx="750"
+cy="300"
+r="15"
+fill="#15803d">
+
+</circle>
+
+
+<!-- ESQUERDA -->
+
+<text
+x="105"
+y="365"
+font-size="24"
+font-weight="bold"
+fill="#1d6f9f">
+
+Re MENOR
+
+</text>
+
+
+<text
+x="75"
+y="400"
+font-size="21"
+fill="#17324d">
+
+Maior influência
+
+</text>
+
+<text
+x="92"
+y="430"
+font-size="21"
+fill="#17324d">
+
+relativa da
+
+</text>
+
+<text
+x="93"
+y="460"
+font-size="21"
+font-weight="bold"
+fill="#1d6f9f">
+
+VISCOSIDADE
+
+</text>
+
+
+<!-- CENTRO -->
+
+<text
+x="425"
+y="365"
+font-size="22"
+font-weight="bold"
+fill="#92400e">
+
+TRANSIÇÃO ENTRE
+
+</text>
+
+<text
+x="418"
+y="395"
+font-size="22"
+font-weight="bold"
+fill="#92400e">
+
+COMPORTAMENTOS
+
+</text>
+
+
+<!-- DIREITA -->
+
+<text
+x="695"
+y="365"
+font-size="24"
+font-weight="bold"
+fill="#14532d">
+
+Re MAIOR
+
+</text>
+
+
+<text
+x="690"
+y="400"
+font-size="21"
+fill="#17324d">
+
+Maior influência
+
+</text>
+
+<text
+x="708"
+y="430"
+font-size="21"
+fill="#17324d">
+
+relativa da
+
+</text>
+
+<text
+x="716"
+y="460"
+font-size="21"
+font-weight="bold"
+fill="#14532d">
+
+INÉRCIA
+
+</text>
+
+
+<!-- FÓRMULA -->
+
+<rect
+x="330"
+y="105"
+width="340"
+height="105"
+rx="12"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="405"
+y="170"
+font-size="40"
+font-weight="bold"
+fill="#17324d">
+
+Re = V L / ν
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 11.</strong>
+Interpretação qualitativa da relação entre inércia e
+viscosidade representada pelo Número de Reynolds.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+O Número de Reynolds não é uma medida direta da resistência
+do navio.
+
+</p>
+
+<p>
+
+Ele é um parâmetro de semelhança e caracterização do
+escoamento, especialmente importante para os efeitos
+viscosos.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Reynolds Number</strong> — Número de Reynolds.
+
+</p>
+
+<p>
+
+<strong>Inertial Effects</strong> — efeitos de inércia.
+
+</p>
+
+<p>
+
+<strong>Viscous Effects</strong> — efeitos viscosos.
+
+</p>
+
+<p>
+
+<strong>Characteristic Length</strong> — comprimento
+característico utilizado na definição do parâmetro.
+
+</p>
+
+<p>
+
+<strong>Kinematic Viscosity</strong> — viscosidade
+cinemática.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+========================================= -->
+
+<section
+class="topico-aula"
+id="reynolds-navio-modelo"
+data-topico-id="reynolds-navio-modelo">
+
+<h2>22. Reynolds no navio e no modelo</h2>
+
+<div class="widget">
+
+<p>
+
+Para que um modelo e um navio apresentem semelhança exata
+dos efeitos viscosos, seus Números de Reynolds deveriam ser
+iguais:
+
+</p>
+
+<p style="text-align:center; font-size:1.3rem;">
+
+<strong>
+Re<sub>M</sub> = Re<sub>S</sub>
+</strong>
+
+</p>
+
+<p>
+
+Entretanto, quando o modelo é muito menor que o navio e
+ambos utilizam água, seria necessário empregar no modelo
+uma velocidade muito elevada para obter o mesmo Reynolds
+do navio real.
+
+</p>
+
+<p>
+
+Na prática, essa condição normalmente não pode ser atendida
+simultaneamente com a semelhança de Froude.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Consequência para os ensaios</h3>
+
+<p>
+
+Os efeitos de superfície livre são normalmente reproduzidos
+mantendo-se a igualdade do Número de Froude.
+
+</p>
+
+<p>
+
+Os efeitos viscosos são então tratados separadamente,
+utilizando correlações e métodos de extrapolação entre o
+modelo e o navio.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+O modelo reduzido não é uma reprodução hidrodinâmica
+perfeita do navio em todos os aspectos.
+
+</p>
+
+<p>
+
+A diferença entre os Números de Reynolds do modelo e do
+navio é um dos principais efeitos de escala dos ensaios de
+resistência.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Scale Effect</strong> — efeito de escala.
+
+</p>
+
+<p>
+
+<strong>Reynolds Similarity</strong> — semelhança baseada
+na igualdade do Número de Reynolds.
+
+</p>
+
+<p>
+
+<strong>Extrapolation</strong> — extrapolação dos resultados
+do modelo para o navio.
+
+</p>
+
+<p>
+
+<strong>Correlation Allowance</strong> — margem ou correção
+de correlação aplicada na previsão do desempenho em escala
+real.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+========================================= -->
+
+<section
+class="topico-aula"
+id="numero-froude"
+data-topico-id="numero-froude">
+
+<h2>23. Número de Froude</h2>
+
+<div class="widget">
+
+<p>
+
+O <strong>Número de Froude</strong>,
+ou <strong>Froude Number</strong>, representa a relação
+entre os efeitos de inércia e os efeitos gravitacionais no
+escoamento com superfície livre.
+
+</p>
+
+<p>
+
+Ele é o principal parâmetro utilizado para estudar a
+semelhança dos sistemas de ondas produzidos pelo navio.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Equação</h3>
+
+<p style="text-align:center; font-size:1.35rem;">
+
+<strong>
+Fn = V / √(gL)
+</strong>
+
+</p>
+
+<p>
+
+Em que:
+
+</p>
+
+<ul>
+
+<li>
+
+<strong>Fn</strong> é o Número de Froude;
+
+</li>
+
+<li>
+
+<strong>V</strong> é a velocidade característica;
+
+</li>
+
+<li>
+
+<strong>g</strong> é a aceleração da gravidade;
+
+</li>
+
+<li>
+
+<strong>L</strong> é o comprimento característico.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Significado físico</h3>
+
+<p>
+
+A gravidade atua como força restauradora das deformações
+da superfície livre.
+
+</p>
+
+<p>
+
+O Número de Froude compara a tendência inercial do navio
+de perturbar a água com a capacidade da gravidade de
+restaurar a superfície.
+
+</p>
+
+<p>
+
+Navios geometricamente semelhantes operando com o mesmo
+Número de Froude produzem sistemas de ondas geometricamente
+semelhantes, dentro das limitações do método.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 600"
+role="img"
+aria-labelledby="titulo-froude descricao-froude"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-froude">
+
+Influência do Número de Froude sobre o sistema de ondas
+
+</title>
+
+<desc id="descricao-froude">
+
+Três vistas laterais esquemáticas de um navio representam
+Números de Froude crescente e sistemas de ondas com
+comprimentos progressivamente maiores.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="560"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="315"
+y="70"
+font-size="30"
+font-weight="bold"
+fill="#17324d">
+
+NÚMERO DE FROUDE
+
+</text>
+
+
+<!-- PAINEL 1 -->
+
+<rect
+x="55"
+y="110"
+width="275"
+height="380"
+rx="12"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="105"
+y="150"
+font-size="24"
+font-weight="bold"
+fill="#14532d">
+
+Fn MAIS BAIXO
+
+</text>
+
+
+<path
+d="
+M 90 290
+L 245 290
+L 295 315
+Q 270 350 225 360
+L 125 360
+Q 100 345 85 315
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 70 375
+Q 90 355 110 375
+T 150 375
+T 190 375
+T 230 375
+T 270 375
+T 310 375
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<text
+x="88"
+y="430"
+font-size="20"
+fill="#17324d">
+
+Ondas relativamente
+
+</text>
+
+<text
+x="113"
+y="460"
+font-size="20"
+font-weight="bold"
+fill="#1d6f9f">
+
+MAIS CURTAS
+
+</text>
+
+
+<!-- PAINEL 2 -->
+
+<rect
+x="362"
+y="110"
+width="275"
+height="380"
+rx="12"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="420"
+y="150"
+font-size="24"
+font-weight="bold"
+fill="#92400e">
+
+Fn INTERMEDIÁRIO
+
+</text>
+
+
+<path
+d="
+M 395 290
+L 550 290
+L 600 315
+Q 575 350 530 360
+L 430 360
+Q 405 345 390 315
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 375 375
+Q 410 345 445 375
+T 515 375
+T 585 375
+T 655 375
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<text
+x="405"
+y="430"
+font-size="20"
+fill="#17324d">
+
+Comprimento de onda
+
+</text>
+
+<text
+x="442"
+y="460"
+font-size="20"
+font-weight="bold"
+fill="#92400e">
+
+AUMENTA
+
+</text>
+
+
+<!-- PAINEL 3 -->
+
+<rect
+x="670"
+y="110"
+width="275"
+height="380"
+rx="12"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="725"
+y="150"
+font-size="24"
+font-weight="bold"
+fill="#7f1d1d">
+
+Fn MAIS ALTO
+
+</text>
+
+
+<path
+d="
+M 705 290
+L 860 290
+L 910 315
+Q 885 350 840 360
+L 740 360
+Q 715 345 700 315
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 682 375
+Q 745 330 808 375
+T 934 375
+"
+fill="none"
+stroke="#277da1"
+stroke-width="6">
+
+</path>
+
+
+<text
+x="702"
+y="430"
+font-size="20"
+fill="#17324d">
+
+Ondas relativamente
+
+</text>
+
+<text
+x="745"
+y="460"
+font-size="20"
+font-weight="bold"
+fill="#7f1d1d">
+
+MAIS LONGAS
+
+</text>
+
+
+<!-- FÓRMULA -->
+
+<rect
+x="335"
+y="515"
+width="330"
+height="65"
+rx="10"
+fill="#ffffff"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="410"
+y="558"
+font-size="34"
+font-weight="bold"
+fill="#17324d">
+
+Fn = V / √gL
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 12.</strong>
+Representação qualitativa da relação entre o Número de
+Froude e a escala do sistema de ondas.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+O Número de Froude não representa diretamente a altura das
+ondas nem a resistência de formação de ondas.
+
+</p>
+
+<p>
+
+Ele é o parâmetro adimensional que caracteriza a relação
+entre inércia e gravidade no escoamento com superfície
+livre.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Froude Number</strong> — Número de Froude.
+
+</p>
+
+<p>
+
+<strong>Free Surface</strong> — superfície livre da água.
+
+</p>
+
+<p>
+
+<strong>Gravity Effects</strong> — efeitos gravitacionais.
+
+</p>
+
+<p>
+
+<strong>Wave Pattern</strong> — padrão ou sistema de ondas
+produzido pelo navio.
+
+</p>
+
+<p>
+
+<strong>Wave-Making</strong> — processo de geração de ondas
+pelo movimento do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 24
+========================================= -->
+
+<section
+class="topico-aula"
+id="semelhanca-froude"
+data-topico-id="semelhanca-froude">
+
+<h2>24. Semelhança de Froude</h2>
+
+<div class="widget">
+
+<p>
+
+Nos ensaios de resistência com superfície livre, o modelo
+é normalmente operado de modo que seu Número de Froude seja
+igual ao Número de Froude do navio:
+
+</p>
+
+<p style="text-align:center; font-size:1.3rem;">
+
+<strong>
+Fn<sub>M</sub> = Fn<sub>S</sub>
+</strong>
+
+</p>
+
+<p>
+
+Considerando a mesma aceleração da gravidade para o modelo
+e para o navio:
+
+</p>
+
+<p style="text-align:center; font-size:1.3rem;">
+
+<strong>
+V<sub>S</sub> / V<sub>M</sub> =
+√(L<sub>S</sub> / L<sub>M</sub>)
+</strong>
+
+</p>
+
+<p>
+
+Logo:
+
+</p>
+
+<p style="text-align:center; font-size:1.3rem;">
+
+<strong>
+V<sub>S</sub> / V<sub>M</sub> = √λ
+</strong>
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Interpretação</h3>
+
+<p>
+
+Se o comprimento do navio for λ vezes maior que o do
+modelo, sua velocidade correspondente será √λ vezes maior
+para que ambos operem com o mesmo Número de Froude.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A velocidade do modelo não varia diretamente com a razão
+linear de escala.
+
+</p>
+
+<p>
+
+Na semelhança de Froude, a relação das velocidades é igual
+à raiz quadrada da relação dos comprimentos.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Froude Similarity</strong> — semelhança baseada na
+igualdade do Número de Froude.
+
+</p>
+
+<p>
+
+<strong>Corresponding Speed</strong> — velocidade
+correspondente entre modelo e navio.
+
+</p>
+
+<p>
+
+<strong>Model Speed</strong> — velocidade do modelo durante
+o ensaio.
+
+</p>
+
+<p>
+
+<strong>Ship Speed</strong> — velocidade correspondente do
+navio em escala real.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+========================================= -->
+
+<section
+class="topico-aula"
+id="incompatibilidade-reynolds-froude"
+data-topico-id="incompatibilidade-reynolds-froude">
+
+<h2>25. Incompatibilidade entre Reynolds e Froude</h2>
+
+<div class="widget">
+
+<p>
+
+Em um ensaio convencional com modelo reduzido utilizando
+água, não é possível, em geral, manter simultaneamente:
+
+</p>
+
+<ul>
+
+<li>
+
+o mesmo Número de Froude do navio;
+
+</li>
+
+<li>
+
+o mesmo Número de Reynolds do navio.
+
+</li>
+
+</ul>
+
+<p>
+
+Essa incompatibilidade ocorre porque Reynolds e Froude
+possuem relações de escala diferentes.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Semelhança de Froude</h3>
+
+<p>
+
+Para preservar os efeitos gravitacionais e o sistema de
+ondas:
+
+</p>
+
+<p style="text-align:center; font-size:1.2rem;">
+
+<strong>
+V ∝ √L
+</strong>
+
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Semelhança de Reynolds</h3>
+
+<p>
+
+Utilizando o mesmo fluido e mantendo a viscosidade
+cinemática aproximadamente constante:
+
+</p>
+
+<p style="text-align:center; font-size:1.2rem;">
+
+<strong>
+V ∝ 1 / L
+</strong>
+
+</p>
+
+</div>
+
+<p>
+
+Como as duas condições exigem relações de velocidade
+diferentes, não podem ser atendidas simultaneamente em um
+modelo convencional.
+
+</p>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1000 540"
+role="img"
+aria-labelledby="titulo-incompatibilidade descricao-incompatibilidade"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-incompatibilidade">
+
+Incompatibilidade entre as semelhanças de Reynolds e Froude
+
+</title>
+
+<desc id="descricao-incompatibilidade">
+
+Duas setas partem de um modelo reduzido. Uma representa a
+velocidade necessária para igualdade de Froude e a outra a
+velocidade necessária para igualdade de Reynolds, mostrando
+que as condições são diferentes.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="960"
+height="500"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="240"
+y="70"
+font-size="29"
+font-weight="bold"
+fill="#17324d">
+
+MODELO REDUZIDO EM ÁGUA
+
+</text>
+
+
+<!-- MODELO -->
+
+<path
+d="
+M 360 210
+L 620 210
+L 700 245
+Q 660 300 590 310
+L 425 310
+Q 385 295 350 245
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<!-- RAMO FROUDE -->
+
+<line
+x1="345"
+y1="255"
+x2="115"
+y2="155"
+stroke="#277da1"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="115,155 155,150 140,185"
+fill="#277da1">
+
+</polygon>
+
+
+<rect
+x="45"
+y="85"
+width="300"
+height="105"
+rx="10"
+fill="#ffffff"
+stroke="#277da1"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="88"
+y="125"
+font-size="23"
+font-weight="bold"
+fill="#1d6f9f">
+
+IGUALDADE DE FROUDE
+
+</text>
+
+
+<text
+x="115"
+y="165"
+font-size="25"
+font-weight="bold"
+fill="#1d6f9f">
+
+V ∝ √L
+
+</text>
+
+
+<!-- RAMO REYNOLDS -->
+
+<line
+x1="700"
+y1="255"
+x2="900"
+y2="155"
+stroke="#b91c1c"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="900,155 875,185 858,150"
+fill="#b91c1c">
+
+</polygon>
+
+
+<rect
+x="655"
+y="85"
+width="300"
+height="105"
+rx="10"
+fill="#ffffff"
+stroke="#b91c1c"
+stroke-width="3">
+
+</rect>
+
+
+<text
+x="690"
+y="125"
+font-size="23"
+font-weight="bold"
+fill="#7f1d1d">
+
+IGUALDADE DE REYNOLDS
+
+</text>
+
+
+<text
+x="755"
+y="165"
+font-size="25"
+font-weight="bold"
+fill="#7f1d1d">
+
+V ∝ 1 / L
+
+</text>
+
+
+<!-- CONCLUSÃO -->
+
+<rect
+x="190"
+y="375"
+width="620"
+height="105"
+rx="12"
+fill="#ffffff"
+stroke="#b45309"
+stroke-width="4">
+
+</rect>
+
+
+<text
+x="235"
+y="417"
+font-size="25"
+font-weight="bold"
+fill="#92400e">
+
+AS DUAS VELOCIDADES EXIGIDAS NÃO COINCIDEM
+
+</text>
+
+
+<text
+x="295"
+y="455"
+font-size="22"
+fill="#17324d">
+
+→ surge o efeito de escala viscoso
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 13.</strong>
+Representação da incompatibilidade entre a igualdade de
+Froude e a igualdade de Reynolds em ensaios convencionais.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+
+A semelhança de Froude permite reproduzir adequadamente o
+padrão de ondas, mas não elimina os efeitos de escala
+viscosos.
+
+</p>
+
+<p>
+
+Por isso, os resultados dos ensaios precisam ser corrigidos
+antes de serem aplicados ao navio em escala real.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+========================================= -->
+
+<section
+class="topico-aula"
+id="ensaios-resistencia-modelos"
+data-topico-id="ensaios-resistencia-modelos">
+
+<h2>26. Ensaios de resistência com modelos</h2>
+
+<div class="widget">
+
+<p>
+
+Nos ensaios de resistência, um modelo geometricamente
+semelhante ao navio é rebocado em um tanque de provas.
+
+</p>
+
+<p>
+
+A força necessária para rebocar o modelo em diferentes
+velocidades é medida experimentalmente.
+
+</p>
+
+<p>
+
+Os resultados são utilizados para estimar a resistência e
+a potência necessárias ao navio em escala real.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Procedimento conceitual</h3>
+
+<ol>
+
+<li>
+
+constrói-se um modelo geometricamente semelhante ao navio;
+
+</li>
+
+<li>
+
+define-se a velocidade do modelo pela semelhança de Froude;
+
+</li>
+
+<li>
+
+mede-se a resistência total do modelo;
+
+</li>
+
+<li>
+
+separam-se ou estimam-se as parcelas viscosas e de
+superfície livre;
+
+</li>
+
+<li>
+
+aplicam-se relações de escala e correções;
+
+</li>
+
+<li>
+
+estima-se a resistência do navio em escala real.
+
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 1040 580"
+role="img"
+aria-labelledby="titulo-tanque descricao-tanque"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="titulo-tanque">
+
+Ensaio de resistência em tanque de provas
+
+</title>
+
+<desc id="descricao-tanque">
+
+Vista lateral de um modelo de navio sendo rebocado em um
+tanque. Um dinamômetro mede a força de reboque enquanto
+ondas são produzidas na superfície.
+
+</desc>
+
+
+<rect
+x="20"
+y="20"
+width="1000"
+height="540"
+rx="15"
+fill="#eef7fb"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- ESTRUTURA DO TANQUE -->
+
+<rect
+x="50"
+y="120"
+width="940"
+height="390"
+fill="#b9d9ee"
+stroke="#17324d"
+stroke-width="5">
+
+</rect>
+
+
+<line
+x1="50"
+y1="190"
+x2="990"
+y2="190"
+stroke="#277da1"
+stroke-width="6">
+
+</line>
+
+
+<!-- TRILHO -->
+
+<line
+x1="80"
+y1="70"
+x2="960"
+y2="70"
+stroke="#64748b"
+stroke-width="12"
+stroke-linecap="round">
+
+</line>
+
+
+<!-- CARRO DE REBOQUE -->
+
+<rect
+x="390"
+y="45"
+width="260"
+height="70"
+rx="10"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="4">
+
+</rect>
+
+
+<text
+x="425"
+y="88"
+font-size="23"
+font-weight="bold"
+fill="#17324d">
+
+CARRO DE REBOQUE
+
+</text>
+
+
+<!-- DINAMÔMETRO -->
+
+<rect
+x="465"
+y="125"
+width="110"
+height="55"
+rx="8"
+fill="#ffffff"
+stroke="#b45309"
+stroke-width="4">
+
+</rect>
+
+
+<text
+x="478"
+y="158"
+font-size="19"
+font-weight="bold"
+fill="#92400e">
+
+FORÇA
+
+</text>
+
+
+<line
+x1="520"
+y1="115"
+x2="520"
+y2="125"
+stroke="#17324d"
+stroke-width="5">
+
+</line>
+
+
+<line
+x1="520"
+y1="180"
+x2="520"
+y2="260"
+stroke="#17324d"
+stroke-width="5">
+
+</line>
+
+
+<!-- MODELO -->
+
+<path
+d="
+M 325 265
+L 650 265
+L 745 305
+Q 700 360 625 370
+L 405 370
+Q 355 350 315 305
+Z
+"
+fill="#d8e1e7"
+stroke="#17324d"
+stroke-width="5">
+
+</path>
+
+
+<rect
+x="455"
+y="220"
+width="125"
+height="45"
+fill="#f8fafc"
+stroke="#17324d"
+stroke-width="3">
+
+</rect>
+
+
+<!-- ONDAS -->
+
+<path
+d="
+M 70 190
+Q 105 170 140 190
+T 210 190
+"
+fill="none"
+stroke="#277da1"
+stroke-width="4">
+
+</path>
+
+
+<path
+d="
+M 750 190
+Q 800 155 850 190
+T 950 190
+"
+fill="none"
+stroke="#277da1"
+stroke-width="5">
+
+</path>
+
+
+<!-- MOVIMENTO -->
+
+<line
+x1="720"
+y1="110"
+x2="900"
+y2="110"
+stroke="#15803d"
+stroke-width="8"
+stroke-linecap="round">
+
+</line>
+
+<polygon
+points="900,110 865,90 865,130"
+fill="#15803d">
+
+</polygon>
+
+
+<text
+x="720"
+y="95"
+font-size="21"
+font-weight="bold"
+fill="#14532d">
+
+DIREÇÃO DO ENSAIO
+
+</text>
+
+
+<!-- RÓTULOS -->
+
+<line
+x1="290"
+y1="425"
+x2="385"
+y2="360"
+stroke="#17324d"
+stroke-width="3">
+
+</line>
+
+
+<text
+x="80"
+y="450"
+font-size="22"
+font-weight="bold"
+fill="#17324d">
+
+MODELO GEOMETRICAMENTE
+
+</text>
+
+<text
+x="135"
+y="480"
+font-size="22"
+font-weight="bold"
+fill="#17324d">
+
+SEMELHANTE
+
+</text>
+
+
+<text
+x="670"
+y="455"
+font-size="22"
+font-weight="bold"
+fill="#1d6f9f">
+
+SISTEMA DE ONDAS
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Figura 14.</strong>
+Representação esquemática de um ensaio de resistência em
+tanque de provas.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+
+As curvas de resistência e potência previstas a partir dos
+ensaios ajudam a definir o desempenho esperado do navio.
+
+</p>
+
+<p>
+
+Na operação real, diferenças de rugosidade, vento, ondas,
+calado, trim, profundidade e condição do sistema propulsivo
+podem produzir desempenho diferente daquele observado nas
+condições ideais de ensaio.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<p>
+
+<strong>Towing Tank</strong> — tanque de provas ou tanque
+de reboque.
+
+</p>
+
+<p>
+
+<strong>Resistance Test</strong> — ensaio de resistência.
+
+</p>
+
+<p>
+
+<strong>Towing Carriage</strong> — carro de reboque.
+
+</p>
+
+<p>
+
+<strong>Dynamometer</strong> — instrumento utilizado para
+medir a força.
+
+</p>
+
+<p>
+
+<strong>Full-Scale Prediction</strong> — previsão do
+desempenho em escala real.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+========================================= -->
+
+<section
+class="topico-aula"
+id="reynolds-froude-comparacao"
+data-topico-id="reynolds-froude-comparacao">
+
+<h2>27. Reynolds e Froude — comparação fundamental</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>Número de Reynolds</h3>
+
+<ul>
+
+<li>
+
+relaciona inércia e viscosidade;
+
+</li>
+
+<li>
+
+é fundamental para camada-limite e atrito superficial;
+
+</li>
+
+<li>
+
+utiliza a viscosidade do fluido;
+
+</li>
+
+<li>
+
+está associado aos efeitos viscosos e ao regime do
+escoamento.
+
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Número de Froude</h3>
+
+<ul>
+
+<li>
+
+relaciona inércia e gravidade;
+
+</li>
+
+<li>
+
+é fundamental para fenômenos de superfície livre;
+
+</li>
+
+<li>
+
+utiliza a aceleração da gravidade;
+
+</li>
+
+<li>
+
+está associado à formação e à semelhança das ondas.
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+
+<strong>Reynolds → viscosidade.</strong>
+
+</p>
+
+<p>
+
+<strong>Froude → gravidade e superfície livre.</strong>
+
+</p>
+
+<p>
+
+Essa distinção é essencial e aparece com frequência em
+questões conceituais.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Resumo técnico</h3>
+
+<p>
+
+<strong>Reynolds Similarity</strong> — semelhança dos
+efeitos viscosos.
+
+</p>
+
+<p>
+
+<strong>Froude Similarity</strong> — semelhança dos efeitos
+de gravidade e superfície livre.
+
+</p>
+
+<p>
+
+<strong>Viscous Scale Effect</strong> — efeito de escala
+decorrente da diferença de Reynolds entre modelo e navio.
+
+</p>
+
+<p>
+
+<strong>Wave Similarity</strong> — semelhança do padrão de
+ondas obtida pela igualdade de Froude.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>📚 Referências da Parte 4</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume II:
+Resistance, Propulsion and Vibration.
+</strong>
+Chapter V — resistência, ensaios com modelos e extrapolação
+para escala real.
+
+</li>
+
+
+<li>
+
+LARSSON, Lars; RAVEN, Hoyte C.
+<strong>Ship Resistance and Flow.</strong>
+Capítulos sobre semelhança, Número de Reynolds, Número de
+Froude e previsão experimental da resistência.
+
+</li>
+
+
+<li>
+
+BERTRAM, Volker.
+<strong>Practical Ship Hydrodynamics.</strong>
+Capítulos 2 e 3 — semelhança hidrodinâmica, efeitos de
+escala e ensaios de resistência.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 5 ABAIXO
+========================================= -->
+     
