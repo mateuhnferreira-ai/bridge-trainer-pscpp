@@ -181,10 +181,23 @@ Controlabilidade do Navio
 Ship Controllability
 </p>
 
-<p>
-<strong>Nível:</strong>
-PSCPP
-</p>
+<section>
+
+<div class="widget" style="text-align:center;">
+
+<h3>⏱ Cronômetro de Estudo</h3>
+
+<p>Fase atual: <strong id="pomodoro-fase">📖 Estudo</strong> — faltam <strong id="pomodoro-restante">30:00</strong></p>
+
+<p>Estudado nesta sessão: <strong id="pomodoro-sessao">00:00</strong></p>
+
+<p>Total acumulado nesta disciplina: <strong id="pomodoro-cumulativo">00:00</strong></p>
+
+<button type="button" class="botao" id="pomodoro-btn-start" onclick="iniciarPomodoro()">▶ Iniciar</button>
+
+<button type="button" class="botao" id="pomodoro-btn-pause" onclick="pausarPomodoro()" disabled>⏸ Pausar</button>
+
+<button type="button" class="botao" onclick="zerarPomodoro()">↺ Zerar ciclo</button>
 
 </div>
 
