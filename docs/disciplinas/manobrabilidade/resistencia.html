@@ -126,45 +126,41 @@ resistência, velocidade, empuxo e potência efetiva.
      PROGRESSO DA AULA
 ========================================= -->
 
-<section id="progresso-aula">
+<section>
 
 <h2>📊 Progresso da Aula</h2>
 
 <div class="widget">
 
 <p>
-
 Acompanhe abaixo o percentual de tópicos concluídos nesta
 aula.
-
 </p>
-
 
 <div class="barra-progresso">
 
 <div
-class="preenchimento-progresso"
-id="barraProgressoAula">
-
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
 </div>
 
 </div>
 
-
-<p id="percentualProgressoAula">
-
-0% concluído
-
+<p id="texto-progresso-aula">
+0% da aula concluída
 </p>
 
-
 <button
-type="button"
-class="botao-estudo"
-id="botaoContinuarEstudo">
-
+    type="button"
+    onclick="irParaOndeParei()"
+>
 📍 Ir para onde parei
-
 </button>
 
 </div>
