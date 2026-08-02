@@ -15459,7 +15459,2165 @@ cada sistema produz, altera e reverte o empuxo.
 <!-- =========================================
      COLE A PARTE 6 ABAIXO DESTA LINHA
 ========================================= -->   
+<!-- =========================================
+     PARTE 6A
+     SÍNTESE OPERACIONAL DA PROPULSÃO
+========================================= -->
 
+<section class="abertura-parte">
+
+<h1>Parte 6 — Síntese Operacional da Propulsão</h1>
+
+<p>
+
+Após compreender os fundamentos hidrodinâmicos, os diferentes
+tipos de hélices e os dispositivos propulsivos, o próximo passo
+é integrar todos esses conceitos sob a ótica operacional da
+Praticagem.
+
+Nesta etapa serão comparadas as principais soluções propulsivas
+apresentadas ao longo da aula, destacando suas características,
+vantagens, limitações e aplicações práticas durante as manobras.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPARAÇÃO GERAL DOS SISTEMAS
+========================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="comparacao-geral-sistemas-propulsivos">
+
+<h2>69. Comparação geral dos sistemas propulsivos</h2>
+
+<div class="widget">
+
+<p>
+
+Cada sistema propulsivo foi desenvolvido para atender um tipo
+específico de operação. Não existe um propulsor universalmente
+superior; sua eficiência depende diretamente da missão da
+embarcação, da velocidade de operação, da necessidade de
+manobrabilidade e das condições ambientais.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<strong>Conceito importante:</strong>
+
+<p>
+
+A melhor propulsão para um navio mercante oceânico pode ser
+inadequada para um rebocador portuário, enquanto um sistema
+excelente para baixas velocidades pode apresentar baixo
+rendimento em navegação de longo curso.
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<svg viewBox="0 0 980 520">
+
+<rect x="20" y="40" width="940" height="430"
+fill="#eef6fb" stroke="#0c4a6e" stroke-width="2"/>
+
+<line x1="260" y1="40" x2="260" y2="470"
+stroke="#0c4a6e"/>
+
+<line x1="520" y1="40" x2="520" y2="470"
+stroke="#0c4a6e"/>
+
+<line x1="760" y1="40" x2="760" y2="470"
+stroke="#0c4a6e"/>
+
+<text x="75" y="75"
+font-size="22"
+font-weight="bold">
+FPP
+</text>
+
+<text x="325" y="75"
+font-size="22"
+font-weight="bold">
+CPP
+</text>
+
+<text x="560" y="75"
+font-size="22"
+font-weight="bold">
+Kort Nozzle
+</text>
+
+<text x="800" y="75"
+font-size="22"
+font-weight="bold">
+Voith/Cycloidal
+</text>
+
+<text x="45" y="130">✔ Simples</text>
+<text x="45" y="170">✔ Alta eficiência</text>
+<text x="45" y="210">✔ Baixo custo</text>
+
+<text x="290" y="130">✔ Grande controle</text>
+<text x="290" y="170">✔ Mudança rápida</text>
+<text x="290" y="210">✔ Reversão sem inverter eixo</text>
+
+<text x="545" y="130">✔ Elevado empuxo</text>
+<text x="545" y="170">✔ Excelente baixa velocidade</text>
+<text x="545" y="210">✔ Rebocadores</text>
+
+<text x="785" y="130">✔ Máxima manobrabilidade</text>
+<text x="785" y="170">✔ Empuxo instantâneo</text>
+<text x="785" y="210">✔ Ferries</text>
+
+</svg>
+
+<p>
+
+<strong>Figura.</strong>
+Comparação qualitativa dos principais sistemas estudados.
+
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<table>
+
+<tr>
+
+<th>Sistema</th>
+<th>Eficiência</th>
+<th>Controle</th>
+<th>Aplicação típica</th>
+
+</tr>
+
+<tr>
+
+<td>FPP</td>
+<td>Muito alta</td>
+<td>Médio</td>
+<td>Graneleiros, petroleiros, cargueiros</td>
+
+</tr>
+
+<tr>
+
+<td>CPP</td>
+<td>Alta</td>
+<td>Muito alto</td>
+<td>Navios de apoio, pesquisa, ferry</td>
+
+</tr>
+
+<tr>
+
+<td>Ducted Propeller</td>
+<td>Alta em baixa velocidade</td>
+<td>Alto</td>
+<td>Rebocadores</td>
+
+</tr>
+
+<tr>
+
+<td>Waterjet</td>
+<td>Alta em grandes velocidades</td>
+<td>Muito alto</td>
+<td>Lanchas rápidas</td>
+
+</tr>
+
+<tr>
+
+<td>Cycloidal / Voith</td>
+<td>Moderada</td>
+<td>Excelente</td>
+<td>Rebocadores especiais e ferries</td>
+
+</tr>
+
+<tr>
+
+<td>Contra-Rotating</td>
+<td>Muito alta</td>
+<td>Elevado rendimento</td>
+<td>Aplicações específicas</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     APLICAÇÃO OPERACIONAL
+========================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="aplicacoes-operacionais">
+
+<h2>70. Aplicações operacionais na Praticagem</h2>
+
+<div class="widget">
+
+<p>
+
+Embora o Prático normalmente não escolha o sistema propulsivo da
+embarcação, ele precisa conhecer profundamente suas
+características para antecipar o comportamento do navio durante
+a manobra.
+
+</p>
+
+<p>
+
+A resposta aos comandos de máquina varia significativamente entre
+os diferentes sistemas estudados. O tempo necessário para gerar
+empuxo, a capacidade de produzir força em baixas velocidades e a
+forma como o navio responde às alterações de potência influenciam
+diretamente o planejamento e a execução das manobras.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Atenção do Prático</h3>
+
+<ul>
+
+<li>Conheça previamente o tipo de propulsão do navio.</li>
+
+<li>Avalie a capacidade de resposta em baixa velocidade.</li>
+
+<li>Considere o tempo necessário para desenvolvimento do empuxo.</li>
+
+<li>Antecipe limitações durante aproximações e atracações.</li>
+
+<li>Nunca suponha que navios semelhantes respondam exatamente da mesma forma.</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     COLE A PARTE 6A.2 ABAIXO DESTA LINHA
+========================================= -->
+<!-- =========================================
+     PEGADINHAS CLÁSSICAS DO PSCPP
+========================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="pegadinhas-propulsao">
+
+<h2>71. Pegadinhas clássicas do PSCPP</h2>
+
+<div class="widget">
+
+<p>
+
+As questões do PSCPP normalmente não cobram apenas definições,
+mas principalmente a capacidade do candidato de compreender o
+comportamento hidrodinâmico do sistema propulsivo durante a
+operação do navio.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Pegadinha 1</h3>
+
+<p>
+
+Uma hélice de maior diâmetro nem sempre produz maior velocidade.
+O aumento do diâmetro normalmente favorece a produção de empuxo,
+mas sua eficiência depende da potência disponível, da rotação,
+das características do casco e do regime de operação.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Pegadinha 2</h3>
+
+<p>
+
+Uma hélice de passo controlável (CPP) não é necessariamente mais
+eficiente que uma hélice de passo fixo (FPP). Em muitas
+aplicações oceânicas, a FPP apresenta rendimento superior devido
+à simplicidade construtiva e às menores perdas mecânicas.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Pegadinha 3</h3>
+
+<p>
+
+O duto Kort não aumenta a eficiência em todas as velocidades.
+Sua principal vantagem ocorre em baixas velocidades e em
+operações que exigem elevado empuxo estático.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Pegadinha 4</h3>
+
+<p>
+
+Wake Fraction, Thrust Deduction e Hull Efficiency representam
+fenômenos diferentes. Embora estejam relacionados, não podem ser
+tratados como sinônimos.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Pegadinha 5</h3>
+
+<p>
+
+Maior potência instalada não significa automaticamente maior
+capacidade de manobra. O comportamento do navio depende da
+interação entre casco, hélice, leme e condições ambientais.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESUMO GERAL
+========================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="resumo-geral-propulsao">
+
+<h2>72. Resumo técnico da disciplina</h2>
+
+<div class="widget">
+
+<p>
+
+Ao longo desta aula foi demonstrado que a propulsão naval é o
+resultado da interação entre diversos fenômenos hidrodinâmicos,
+e não apenas da potência desenvolvida pelo motor principal.
+
+</p>
+
+<p>
+
+O sistema propulsivo transforma energia mecânica em empuxo,
+permitindo vencer a resistência ao avanço e produzir o movimento
+da embarcação.
+
+</p>
+
+<p>
+
+O desempenho do conjunto depende simultaneamente das
+características do casco, do tipo de hélice, da distribuição da
+esteira, da interação casco-hélice e das condições operacionais.
+
+</p>
+
+<p>
+
+Foram estudados os conceitos fundamentais de empuxo, torque,
+potência absorvida, rendimento propulsivo, passo da hélice,
+avanço efetivo, escorregamento, cavitação, ventilação, fração de
+esteira, dedução do empuxo e eficiência do casco.
+
+</p>
+
+<p>
+
+Também foram comparados os principais dispositivos propulsivos
+empregados na engenharia naval moderna, destacando suas
+vantagens, limitações e aplicações típicas.
+
+</p>
+
+<p>
+
+Sob a ótica da Praticagem, compreender esses fenômenos permite
+antecipar o comportamento do navio, interpretar corretamente sua
+resposta aos comandos de máquina e aumentar a segurança durante
+as manobras em águas restritas.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ O Prático deve lembrar sempre:</h3>
+
+<ul>
+
+<li>Todo sistema propulsivo possui limitações.</li>
+
+<li>O comportamento hidrodinâmico varia conforme a velocidade.</li>
+
+<li>Casco, hélice e leme formam um único sistema.</li>
+
+<li>Conhecer o tipo de propulsão reduz riscos durante a manobra.</li>
+
+<li>Antecipação continua sendo o principal recurso do Prático.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO DA PARTE 6A
+========================================= -->
+
+<section class="widget">
+
+<h2>Conclusão da Parte 6A</h2>
+
+<p>
+
+Com esta etapa conclui-se o conteúdo técnico da disciplina
+<strong>Propulsão</strong>. Todos os conceitos fundamentais
+previstos na bibliografia utilizada foram apresentados sob a
+perspectiva hidrodinâmica e operacional, estabelecendo a base
+necessária para o entendimento das futuras aulas de
+<strong>Lemes</strong>, <strong>Interação Hélice–Leme</strong> e
+dos demais fenômenos de manobrabilidade.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 6B ABAIXO DESTA LINHA
+========================================= -->
+
+<section
+class="topico-aula"
+data-topico-id="glossario-geral">
+
+<h2>73. Glossário Geral – Termos Técnicos</h2>
+
+<div class="widget">
+
+<h3>A</h3>
+
+<p>
+<strong>Advance Velocity</strong><br>
+<strong>Velocidade de avanço.</strong><br>
+Velocidade média da água que chega ao disco da hélice após a
+influência da esteira do casco. É utilizada nos cálculos de
+rendimento propulsivo.
+</p>
+
+<p>
+<strong>Ahead</strong><br>
+<strong>Avante.</strong><br>
+Condição em que o sistema propulsivo produz empuxo para deslocar
+o navio para frente.
+</p>
+
+<p>
+<strong>Astern</strong><br>
+<strong>A ré.</strong><br>
+Condição em que o sistema propulsivo produz empuxo para deslocar
+o navio para trás ou reduzir seu seguimento avante.
+</p>
+
+<p>
+<strong>Axial Flow</strong><br>
+<strong>Escoamento axial.</strong><br>
+Movimento do fluido aproximadamente paralelo ao eixo da hélice,
+fundamental para a produção eficiente de empuxo.
+</p>
+
+<h3>B</h3>
+
+<p>
+<strong>Blade</strong><br>
+<strong>Pá da hélice.</strong><br>
+Elemento da hélice responsável por transformar potência em
+empuxo através da diferença de pressão entre suas faces.
+</p>
+
+<p>
+<strong>Blade Area Ratio (BAR)</strong><br>
+<strong>Relação de área das pás.</strong><br>
+Razão entre a área total das pás e a área do disco da hélice,
+parâmetro que influencia cavitação, carregamento e rendimento.
+</p>
+
+<p>
+<strong>Bollard Pull</strong><br>
+<strong>Tração estática.</strong><br>
+Empuxo máximo desenvolvido com a embarcação parada, amplamente
+utilizado na avaliação de rebocadores.
+</p>
+
+<p>
+<strong>Boss</strong><br>
+<strong>Cubo da hélice.</strong><br>
+Parte central onde as pás são fixadas ao eixo propulsor.
+</p>
+
+<!-- =========================================
+     CONTINUA NA PARTE 6B.2
+========================================= -->
+
+<h3>C</h3>
+
+<p>
+<strong>Cavitation</strong><br>
+<strong>Cavitação.</strong><br>
+Fenômeno caracterizado pela formação e posterior colapso de
+bolhas de vapor quando a pressão local na água torna-se inferior
+à pressão de vaporização, podendo provocar perda de rendimento,
+vibração, ruído e erosão das pás.
+</p>
+
+<p>
+<strong>Contra-Rotating Propeller</strong><br>
+<strong>Hélice contrarrotativa.</strong><br>
+Sistema composto por duas hélices montadas no mesmo eixo,
+girando em sentidos opostos para recuperar parte da energia
+rotacional perdida no escoamento.
+</p>
+
+<p>
+<strong>Controllable Pitch Propeller (CPP)</strong><br>
+<strong>Hélice de passo controlável.</strong><br>
+Sistema em que o passo das pás pode ser alterado durante a
+operação, permitindo controlar o empuxo sem modificar o sentido
+de rotação do eixo.
+</p>
+
+
+
+<h3>D</h3>
+
+<p>
+<strong>Diameter</strong><br>
+<strong>Diâmetro da hélice.</strong><br>
+Maior distância entre as extremidades opostas das pás, parâmetro
+fundamental para determinação do empuxo e do rendimento.
+</p>
+
+<p>
+<strong>Disc Area</strong><br>
+<strong>Área do disco da hélice.</strong><br>
+Área circular varrida pelas pás durante a rotação.
+</p>
+
+<p>
+<strong>Ducted Propeller</strong><br>
+<strong>Hélice em duto.</strong><br>
+Hélice instalada no interior de um duto hidrodinâmico (Kort
+Nozzle), destinada principalmente ao aumento do empuxo em baixas
+velocidades.
+</p>
+
+
+
+<h3>E</h3>
+
+<p>
+<strong>Effective Power (PE)</strong><br>
+<strong>Potência efetiva.</strong><br>
+Potência necessária para vencer exclusivamente a resistência ao
+avanço do casco.
+</p>
+
+<p>
+<strong>Efficiency</strong><br>
+<strong>Rendimento.</strong><br>
+Relação entre a potência útil obtida e a potência fornecida ao
+sistema.
+</p>
+
+<p>
+<strong>Expanded Blade Area Ratio (EAR)</strong><br>
+<strong>Razão de área expandida.</strong><br>
+Parâmetro utilizado no projeto de hélices para avaliar o
+carregamento hidrodinâmico das pás.
+</p>
+
+
+
+<h3>F</h3>
+
+<p>
+<strong>Fixed Pitch Propeller (FPP)</strong><br>
+<strong>Hélice de passo fixo.</strong><br>
+Hélice cujo passo permanece constante durante toda a operação,
+dependendo da variação da rotação ou da reversão da máquina para
+alterar o empuxo.
+</p>
+
+<p>
+<strong>Forward Thrust</strong><br>
+<strong>Empuxo avante.</strong><br>
+Força produzida pela hélice para impulsionar o navio no sentido
+de vante.
+</p>
+
+
+
+<h3>H</h3>
+
+<p>
+<strong>Hull Efficiency</strong><br>
+<strong>Eficiência do casco.</strong><br>
+Fator que representa a influência da interação casco-hélice
+sobre o rendimento global do sistema propulsivo.
+</p>
+
+<p>
+<strong>Hub</strong><br>
+<strong>Cubo da hélice.</strong><br>
+Elemento central da hélice ao qual as pás estão fixadas e que
+transmite o torque proveniente do eixo propulsor.
+</p>
+
+
+
+<h3>J</h3>
+
+<p>
+<strong>Jet Propulsion</strong><br>
+<strong>Propulsão por jato d'água.</strong><br>
+Sistema em que o empuxo é produzido pela aceleração de um jato
+de água expelido em alta velocidade por um bocal.
+</p>
+
+
+
+<h3>K</h3>
+
+<p>
+<strong>Kort Nozzle</strong><br>
+<strong>Duto Kort.</strong><br>
+Perfil hidrodinâmico que envolve a hélice, aumentando a produção
+de empuxo principalmente em baixas velocidades.
+</p>
+
+
+
+<h3>L</h3>
+
+<p>
+<strong>Leading Edge</strong><br>
+<strong>Bordo de ataque.</strong><br>
+Primeira região da pá que entra em contato com o escoamento da
+água.
+</p>
+
+<p>
+<strong>Lift</strong><br>
+<strong>Sustentação hidrodinâmica.</strong><br>
+Componente da força hidrodinâmica responsável pela geração do
+empuxo nas pás da hélice.
+</p>
+
+
+
+<h3>M</h3>
+
+<p>
+<strong>Main Engine</strong><br>
+<strong>Máquina principal.</strong><br>
+Motor responsável por fornecer potência ao eixo propulsor.
+</p>
+
+<p>
+<strong>Mechanical Efficiency</strong><br>
+<strong>Eficiência mecânica.</strong><br>
+Relação entre a potência transmitida ao eixo e a potência
+desenvolvida pelo motor principal.
+</p>
+
+
+
+<!-- =========================================
+     CONTINUA NA PARTE 6B.3
+========================================= -->
+
+<!-- =========================================
+     PARTE 6B.3
+     CONCLUSÃO DA AULA DE PROPULSÃO
+========================================= -->
+
+
+<!-- =========================================
+     CONTINUAÇÃO DO GLOSSÁRIO
+========================================= -->
+
+<h3>N</h3>
+
+<p>
+<strong>Nominal Wake</strong><br>
+<strong>Esteira nominal.</strong><br>
+Campo de velocidades existente no plano da hélice sem a
+presença do propulsor em funcionamento. Representa a influência
+do casco, dos apêndices e da camada limite sobre o escoamento.
+</p>
+
+
+<p>
+<strong>Nozzle</strong><br>
+<strong>Duto ou bocal.</strong><br>
+Estrutura hidrodinâmica instalada ao redor de uma hélice ou na
+saída de um sistema a jato, destinada a modificar e direcionar
+o escoamento.
+</p>
+
+
+
+<h3>O</h3>
+
+<p>
+<strong>Off-Design Condition</strong><br>
+<strong>Condição fora do ponto de projeto.</strong><br>
+Situação em que o conjunto motor–eixo–propulsor opera afastado
+da condição para a qual foi otimizado, podendo apresentar menor
+rendimento, maior vibração ou maior risco de cavitação.
+</p>
+
+
+<p>
+<strong>Open-Water Efficiency</strong><br>
+<strong>Rendimento da hélice em águas abertas.</strong><br>
+Relação entre a potência de empuxo e a potência entregue à
+hélice quando o propulsor é avaliado isoladamente, sem a
+influência direta do casco.
+</p>
+
+
+<p>
+<strong>Open-Water Test</strong><br>
+<strong>Ensaio da hélice em águas abertas.</strong><br>
+Ensaio realizado com a hélice isolada em escoamento controlado
+para determinar empuxo, torque e rendimento em diferentes
+condições de avanço.
+</p>
+
+
+
+<h3>P</h3>
+
+<p>
+<strong>Pitch</strong><br>
+<strong>Passo da hélice.</strong><br>
+Distância teórica que uma hélice avançaria em uma rotação se
+se deslocasse em um meio sólido, sem escorregamento.
+</p>
+
+
+<p>
+<strong>Power</strong><br>
+<strong>Potência.</strong><br>
+Taxa de realização de trabalho ou transferência de energia.
+No sistema propulsivo, relaciona-se ao torque e à rotação do
+eixo.
+</p>
+
+
+<p>
+<strong>Propeller</strong><br>
+<strong>Hélice.</strong><br>
+Propulsor rotativo que comunica quantidade de movimento à água
+e produz empuxo sobre o navio.
+</p>
+
+
+<p>
+<strong>Propeller Loading</strong><br>
+<strong>Carregamento da hélice.</strong><br>
+Intensidade das forças hidrodinâmicas absorvidas pelas pás em
+relação às dimensões e à condição de funcionamento do propulsor.
+</p>
+
+
+<p>
+<strong>Propeller Race</strong><br>
+<strong>Jato da hélice.</strong><br>
+Escoamento acelerado produzido a jusante da hélice. Quando
+atinge o leme, pode aumentar significativamente sua eficácia.
+</p>
+
+
+<p>
+<strong>Propulsive Efficiency</strong><br>
+<strong>Rendimento propulsivo.</strong><br>
+Relação entre a potência efetiva utilizada para vencer a
+resistência do casco e a potência entregue ao propulsor.
+</p>
+
+
+
+<h3>Q</h3>
+
+<p>
+<strong>Quasi-Propulsive Coefficient</strong><br>
+<strong>Coeficiente quase propulsivo.</strong><br>
+Relação entre a potência efetiva e a potência entregue à
+hélice, normalmente representada por
+<strong>η<sub>D</sub></strong>.
+</p>
+
+
+
+<h3>R</h3>
+
+<p>
+<strong>Relative Rotative Efficiency</strong><br>
+<strong>Rendimento rotativo relativo.</strong><br>
+Fator que compara o funcionamento da hélice atrás do casco
+com o desempenho da mesma hélice em águas abertas.
+</p>
+
+
+<p>
+<strong>Revolutions per Minute — RPM</strong><br>
+<strong>Rotações por minuto.</strong><br>
+Número de voltas realizadas pelo eixo ou pela hélice em um
+minuto. Não representa, isoladamente, potência ou empuxo.
+</p>
+
+
+
+<h3>S</h3>
+
+<p>
+<strong>Shaft</strong><br>
+<strong>Eixo propulsor.</strong><br>
+Componente mecânico que transmite torque e potência da máquina
+ou da transmissão até o propulsor.
+</p>
+
+
+<p>
+<strong>Shaft Power</strong><br>
+<strong>Potência no eixo.</strong><br>
+Potência mecânica transmitida pela linha de eixo, calculada a
+partir do torque e da velocidade de rotação.
+</p>
+
+
+<p>
+<strong>Slipstream</strong><br>
+<strong>Esteira acelerada da hélice.</strong><br>
+Região de água acelerada e geralmente rotativa existente a
+jusante do propulsor.
+</p>
+
+
+
+<h3>T</h3>
+
+<p>
+<strong>Thrust</strong><br>
+<strong>Empuxo.</strong><br>
+Força longitudinal produzida pelo propulsor e transmitida ao
+navio.
+</p>
+
+
+<p>
+<strong>Thrust Deduction</strong><br>
+<strong>Dedução de empuxo.</strong><br>
+Diferença entre o empuxo produzido pela hélice e a resistência
+do casco isolado, decorrente da alteração das pressões na popa
+pela ação do propulsor.
+</p>
+
+
+<p>
+<strong>Thrust Deduction Fraction</strong><br>
+<strong>Coeficiente de dedução de empuxo.</strong><br>
+Relação definida por
+<strong>t = (T − R<sub>T</sub>) / T</strong>.
+</p>
+
+
+<p>
+<strong>Thrust Power</strong><br>
+<strong>Potência de empuxo.</strong><br>
+Produto entre o empuxo e a velocidade de avanço da hélice:
+<strong>P<sub>T</sub> = T × V<sub>A</sub></strong>.
+</p>
+
+
+<p>
+<strong>Torque</strong><br>
+<strong>Torque ou momento de torção.</strong><br>
+Momento aplicado ao eixo para produzir sua rotação. Junto com
+a velocidade angular, determina a potência transmitida.
+</p>
+
+
+<p>
+<strong>Trailing Edge</strong><br>
+<strong>Bordo de fuga.</strong><br>
+Região da pá pela qual o escoamento deixa o perfil
+hidrodinâmico.
+</p>
+
+
+
+<h3>V</h3>
+
+<p>
+<strong>Ventilation</strong><br>
+<strong>Ventilação.</strong><br>
+Entrada de ar ou gases da superfície no escoamento da hélice,
+reduzindo o empuxo e podendo provocar oscilações de carga.
+</p>
+
+
+<p>
+<strong>Voith-Schneider Propeller</strong><br>
+<strong>Propulsor Voith-Schneider.</strong><br>
+Propulsor cicloidal de eixo vertical capaz de produzir empuxo
+rapidamente orientável em diferentes direções.
+</p>
+
+
+
+<h3>W</h3>
+
+<p>
+<strong>Wake</strong><br>
+<strong>Esteira.</strong><br>
+Região de escoamento perturbado existente atrás do casco,
+caracterizada por alterações de velocidade e direção da água.
+</p>
+
+
+<p>
+<strong>Wake Field</strong><br>
+<strong>Campo de esteira.</strong><br>
+Distribuição espacial das velocidades e direções do escoamento
+no plano do propulsor.
+</p>
+
+
+<p>
+<strong>Wake Fraction</strong><br>
+<strong>Coeficiente ou fração de esteira.</strong><br>
+Grandeza que representa a redução da velocidade média da água
+que chega à hélice:
+<strong>w = (V − V<sub>A</sub>) / V</strong>.
+</p>
+
+
+<p>
+<strong>Waterjet</strong><br>
+<strong>Propulsor a jato d’água.</strong><br>
+Sistema que aspira água, aumenta sua quantidade de movimento e
+a descarrega por um bocal para produzir empuxo.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUESTÕES DE REVISÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="questoes-revisao-propulsao"
+data-topico-id="questoes-revisao-propulsao">
+
+<h2>74. Questões de revisão — Padrão PSCPP</h2>
+
+<div class="widget">
+
+<p>
+
+Assinale a alternativa correta em cada questão. Algumas
+alternativas apresentam conceitos parcialmente verdadeiros,
+mas aplicados de forma incorreta.
+
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 1</h3>
+
+<p>
+
+A potência efetiva de um navio corresponde:
+
+</p>
+
+<ol type="A">
+
+<li>à potência desenvolvida dentro dos cilindros do motor;</li>
+
+<li>à potência transmitida pela linha de eixo;</li>
+
+<li>
+ao produto entre a resistência total e a velocidade do navio;
+</li>
+
+<li>ao produto entre torque e velocidade de avanço;</li>
+
+<li>à potência entregue exclusivamente à caixa redutora.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 2</h3>
+
+<p>
+
+A relação correta entre potência, torque e rotação em um eixo
+rotativo é:
+
+</p>
+
+<ol type="A">
+
+<li>P = Q / 2πn;</li>
+
+<li>P = 2πnQ;</li>
+
+<li>P = T × V;</li>
+
+<li>P = R<sub>T</sub> / V;</li>
+
+<li>P = Q × V<sub>A</sub>.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 3</h3>
+
+<p>
+
+A respeito da potência entregue,
+<strong>P<sub>D</sub></strong>, é correto afirmar que:
+
+</p>
+
+<ol type="A">
+
+<li>é a potência útil necessária para vencer a resistência;</li>
+
+<li>é desenvolvida no interior dos cilindros;</li>
+
+<li>é a potência efetivamente entregue ao propulsor;</li>
+
+<li>é necessariamente igual à potência indicada;</li>
+
+<li>não sofre influência das perdas na linha de eixo.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 4</h3>
+
+<p>
+
+O rendimento da hélice em águas abertas é definido por:
+
+</p>
+
+<ol type="A">
+
+<li>
+η<sub>O</sub> =
+P<sub>D</sub> / P<sub>T</sub>;
+</li>
+
+<li>
+η<sub>O</sub> =
+P<sub>T</sub> / P<sub>D</sub>;
+</li>
+
+<li>
+η<sub>O</sub> =
+P<sub>E</sub> / P<sub>T</sub>;
+</li>
+
+<li>
+η<sub>O</sub> =
+(1 − t)/(1 − w);
+</li>
+
+<li>
+η<sub>O</sub> =
+P<sub>S</sub> / P<sub>E</sub>.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 5</h3>
+
+<p>
+
+A velocidade de avanço da hélice é expressa por:
+
+</p>
+
+<ol type="A">
+
+<li>V<sub>A</sub> = V(1 + w);</li>
+
+<li>V<sub>A</sub> = V/w;</li>
+
+<li>V<sub>A</sub> = V(1 − w);</li>
+
+<li>V<sub>A</sub> = T(1 − t);</li>
+
+<li>V<sub>A</sub> = R<sub>T</sub>/T.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 6</h3>
+
+<p>
+
+O coeficiente de esteira representa:
+
+</p>
+
+<ol type="A">
+
+<li>a diferença entre torque e empuxo;</li>
+
+<li>a redução relativa da velocidade da água no plano da hélice;</li>
+
+<li>a perda mecânica na linha de eixo;</li>
+
+<li>a diferença entre potência indicada e potência no freio;</li>
+
+<li>o aumento de pressão provocado pelo leme.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 7</h3>
+
+<p>
+
+Sobre a dedução de empuxo, assinale a alternativa correta:
+
+</p>
+
+<ol type="A">
+
+<li>
+representa energia destruída pela hélice;
+</li>
+
+<li>
+é provocada exclusivamente pelo atrito nos mancais;
+</li>
+
+<li>
+representa o aumento da força resistente sobre o casco
+provocado pela ação da hélice;
+</li>
+
+<li>
+é sempre igual ao coeficiente de esteira;
+</li>
+
+<li>
+ocorre somente em hélices de passo controlável.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 8</h3>
+
+<p>
+
+O coeficiente de dedução de empuxo é definido por:
+
+</p>
+
+<ol type="A">
+
+<li>
+t = (T − R<sub>T</sub>)/T;
+</li>
+
+<li>
+t = (V − V<sub>A</sub>)/V;
+</li>
+
+<li>
+t = T/R<sub>T</sub>;
+</li>
+
+<li>
+t = P<sub>E</sub>/P<sub>D</sub>;
+</li>
+
+<li>
+t = Q/2πn.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 9</h3>
+
+<p>
+
+O rendimento do casco é corretamente expresso por:
+
+</p>
+
+<ol type="A">
+
+<li>
+η<sub>H</sub> = (1 − w)/(1 − t);
+</li>
+
+<li>
+η<sub>H</sub> = (1 − t)/(1 − w);
+</li>
+
+<li>
+η<sub>H</sub> = t/w;
+</li>
+
+<li>
+η<sub>H</sub> = P<sub>D</sub>/P<sub>E</sub>;
+</li>
+
+<li>
+η<sub>H</sub> = T/R<sub>T</sub>.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 10</h3>
+
+<p>
+
+Um rendimento do casco maior que a unidade:
+
+</p>
+
+<ol type="A">
+
+<li>viola necessariamente a conservação de energia;</li>
+
+<li>significa que o motor produz potência adicional;</li>
+
+<li>
+pode ocorrer devido às definições de velocidade, empuxo e
+potência utilizadas;
+</li>
+
+<li>somente ocorre quando não existe esteira;</li>
+
+<li>indica erro obrigatório no ensaio.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 11</h3>
+
+<p>
+
+O coeficiente quase propulsivo é dado por:
+
+</p>
+
+<ol type="A">
+
+<li>
+η<sub>D</sub> =
+η<sub>H</sub> +
+η<sub>R</sub> +
+η<sub>O</sub>;
+</li>
+
+<li>
+η<sub>D</sub> =
+η<sub>H</sub> ×
+η<sub>R</sub> ×
+η<sub>O</sub>;
+</li>
+
+<li>
+η<sub>D</sub> =
+η<sub>H</sub> /
+η<sub>R</sub>;
+</li>
+
+<li>
+η<sub>D</sub> =
+P<sub>D</sub> /
+P<sub>E</sub>;
+</li>
+
+<li>
+η<sub>D</sub> =
+w × t.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 12</h3>
+
+<p>
+
+O rendimento rotativo relativo compara:
+
+</p>
+
+<ol type="A">
+
+<li>a potência indicada e a potência no freio;</li>
+
+<li>a velocidade do navio e a velocidade da corrente;</li>
+
+<li>
+a hélice operando atrás do casco e a mesma hélice em águas
+abertas;
+</li>
+
+<li>o desempenho da FPP com o de uma CPP;</li>
+
+<li>o empuxo avante com o empuxo a ré.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 13</h3>
+
+<p>
+
+Na hélice de passo fixo:
+
+</p>
+
+<ol type="A">
+
+<li>as pás alteram continuamente seu ângulo;</li>
+
+<li>o passo pode ser invertido sem alterar a rotação;</li>
+
+<li>as pás permanecem fixas em relação ao cubo;</li>
+
+<li>a potência não depende da rotação;</li>
+
+<li>o empuxo independe da velocidade de avanço.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 14</h3>
+
+<p>
+
+Em uma CPP, uma rotação elevada do eixo:
+
+</p>
+
+<ol type="A">
+
+<li>garante empuxo máximo avante;</li>
+
+<li>impede a produção de empuxo a ré;</li>
+
+<li>
+não permite determinar isoladamente a intensidade nem o
+sentido do empuxo;
+</li>
+
+<li>significa obrigatoriamente passo máximo;</li>
+
+<li>elimina qualquer possibilidade de cavitação.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 15</h3>
+
+<p>
+
+A principal vantagem operacional da CPP é:
+
+</p>
+
+<ol type="A">
+
+<li>eliminar todas as perdas hidrodinâmicas;</li>
+
+<li>
+permitir alteração rápida do empuxo pela mudança do passo;
+</li>
+
+<li>dispensar completamente a linha de eixo;</li>
+
+<li>produzir sempre rendimento superior à FPP;</li>
+
+<li>impedir a ocorrência de ventilação.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 16</h3>
+
+<p>
+
+A hélice em duto é particularmente adequada para:
+
+</p>
+
+<ol type="A">
+
+<li>operações de elevado empuxo em baixa velocidade;</li>
+
+<li>eliminar a resistência do casco;</li>
+
+<li>operações exclusivamente em alta velocidade;</li>
+
+<li>reduzir o calado do navio a zero;</li>
+
+<li>evitar qualquer interação com o leme.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 17</h3>
+
+<p>
+
+Nas hélices contrarrotativas:
+
+</p>
+
+<ol type="A">
+
+<li>as duas hélices giram obrigatoriamente no mesmo sentido;</li>
+
+<li>não existe escoamento rotacional;</li>
+
+<li>
+a hélice posterior pode recuperar parte da energia rotacional
+deixada pela hélice anterior;
+</li>
+
+<li>não são utilizados eixos coaxiais;</li>
+
+<li>a segunda hélice não produz empuxo.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 18</h3>
+
+<p>
+
+O Voith-Schneider caracteriza-se por:
+
+</p>
+
+<ol type="A">
+
+<li>pás fixas em eixo horizontal;</li>
+
+<li>produção exclusiva de empuxo longitudinal;</li>
+
+<li>empuxo rapidamente orientável;</li>
+
+<li>ausência de movimento das pás;</li>
+
+<li>necessidade de leme convencional para produzir força lateral.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 19</h3>
+
+<p>
+
+Durante uma manobra em baixa velocidade:
+
+</p>
+
+<ol type="A">
+
+<li>
+a resposta do navio depende somente da potência nominal do
+motor;
+</li>
+
+<li>
+o escoamento induzido pela hélice pode predominar sobre o
+escoamento de avanço;
+</li>
+
+<li>a esteira do casco permanece sempre igual à condição de
+velocidade de serviço;
+</li>
+
+<li>o empuxo independe da imersão da hélice;</li>
+
+<li>a profundidade não influencia a resposta propulsiva.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>Questão 20</h3>
+
+<p>
+
+A respeito da atuação do Prático, é correto afirmar que:
+
+</p>
+
+<ol type="A">
+
+<li>uma ordem de máquina determina instantaneamente a velocidade;</li>
+
+<li>
+navios com a mesma potência instalada apresentam respostas
+necessariamente iguais;
+</li>
+
+<li>
+a resposta deve ser prevista considerando o tipo de propulsor,
+a inércia, o carregamento e o ambiente;
+</li>
+
+<li>a rotação da hélice é suficiente para determinar o empuxo;</li>
+
+<li>os dados de prova de mar são invariáveis em qualquer condição.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section
+class="topico-aula"
+id="gabarito-comentado-propulsao"
+data-topico-id="gabarito-comentado-propulsao">
+
+<h2>75. Gabarito comentado</h2>
+
+<div class="widget">
+
+<p>
+
+Utilize o botão abaixo para exibir ou ocultar o gabarito.
+
+</p>
+
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabarito()">
+
+📝 Mostrar/Ocultar Gabarito Comentado
+
+</button>
+
+</div>
+
+
+<div
+id="gabarito"
+class="widget"
+style="display: none;">
+
+
+<h3>1. Alternativa C</h3>
+
+<p>
+
+A potência efetiva é o produto entre a resistência total e a
+velocidade do navio:
+
+<strong>P<sub>E</sub> = R<sub>T</sub> × V</strong>.
+
+</p>
+
+
+<h3>2. Alternativa B</h3>
+
+<p>
+
+Em um eixo rotativo, a potência é dada por
+<strong>P = 2πnQ</strong>, sendo
+<strong>n</strong> a rotação por segundo e
+<strong>Q</strong> o torque.
+
+</p>
+
+
+<h3>3. Alternativa C</h3>
+
+<p>
+
+A potência entregue é aquela que efetivamente chega à hélice
+depois das perdas existentes na transmissão.
+
+</p>
+
+
+<h3>4. Alternativa B</h3>
+
+<p>
+
+O rendimento em águas abertas relaciona potência de empuxo e
+potência entregue:
+
+<strong>η<sub>O</sub> =
+P<sub>T</sub>/P<sub>D</sub></strong>.
+
+</p>
+
+
+<h3>5. Alternativa C</h3>
+
+<p>
+
+A velocidade de avanço é reduzida pela esteira do casco:
+
+<strong>V<sub>A</sub> = V(1 − w)</strong>.
+
+</p>
+
+
+<h3>6. Alternativa B</h3>
+
+<p>
+
+O coeficiente de esteira representa a redução relativa da
+velocidade média que chega ao propulsor.
+
+</p>
+
+
+<h3>7. Alternativa C</h3>
+
+<p>
+
+A sucção da hélice altera as pressões da popa e aumenta a força
+resistente sobre o casco. Esse efeito é associado à dedução de
+empuxo.
+
+</p>
+
+
+<h3>8. Alternativa A</h3>
+
+<p>
+
+A definição correta é:
+
+<strong>t =
+(T − R<sub>T</sub>)/T</strong>.
+
+</p>
+
+
+<h3>9. Alternativa B</h3>
+
+<p>
+
+O rendimento do casco é:
+
+<strong>η<sub>H</sub> =
+(1 − t)/(1 − w)</strong>.
+
+</p>
+
+
+<h3>10. Alternativa C</h3>
+
+<p>
+
+O valor pode superar a unidade porque compara potências
+definidas com velocidades e forças diferentes. Isso não
+representa criação de energia.
+
+</p>
+
+
+<h3>11. Alternativa B</h3>
+
+<p>
+
+A decomposição correta é:
+
+<strong>
+η<sub>D</sub> =
+η<sub>H</sub> ×
+η<sub>R</sub> ×
+η<sub>O</sub>
+</strong>.
+
+</p>
+
+
+<h3>12. Alternativa C</h3>
+
+<p>
+
+O rendimento rotativo relativo representa a diferença entre o
+funcionamento da hélice isolada e sua operação atrás do casco.
+
+</p>
+
+
+<h3>13. Alternativa C</h3>
+
+<p>
+
+Na FPP, as pás são rigidamente ligadas ao cubo e o passo não
+pode ser alterado durante a operação.
+
+</p>
+
+
+<h3>14. Alternativa C</h3>
+
+<p>
+
+Em uma CPP, a rotação isolada não informa a intensidade nem o
+sentido do empuxo, pois é necessário conhecer também o passo.
+
+</p>
+
+
+<h3>15. Alternativa B</h3>
+
+<p>
+
+A CPP permite alterar rapidamente o empuxo e até seu sentido
+pela mudança do ângulo das pás.
+
+</p>
+
+
+<h3>16. Alternativa A</h3>
+
+<p>
+
+O duto pode contribuir para o empuxo total e apresenta vantagem
+principalmente em baixa velocidade e alto carregamento.
+
+</p>
+
+
+<h3>17. Alternativa C</h3>
+
+<p>
+
+A hélice posterior gira em sentido oposto e pode recuperar
+parte da energia associada à rotação residual da esteira.
+
+</p>
+
+
+<h3>18. Alternativa C</h3>
+
+<p>
+
+O Voith-Schneider produz empuxo vetorial rapidamente
+controlável, sendo adequado a operações de elevada
+manobrabilidade.
+
+</p>
+
+
+<h3>19. Alternativa B</h3>
+
+<p>
+
+Com pouco seguimento, o escoamento gerado pelo propulsor pode
+ser mais importante que o escoamento decorrente do avanço do
+navio.
+
+</p>
+
+
+<h3>20. Alternativa C</h3>
+
+<p>
+
+A previsão da resposta exige considerar o sistema propulsivo,
+a massa, a inércia, o carregamento, a profundidade e as
+condições ambientais.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="referencias-propulsao"
+data-topico-id="referencias-propulsao">
+
+<h2>76. Referências utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture — Volume II
+</h3>
+
+<p>
+
+Referência principal para potência propulsiva, teoria da ação
+da hélice, rendimentos, interação casco–propulsor, geometria do
+propulsor, cavitação e dispositivos propulsivos.
+
+</p>
+
+<p>
+
+<strong>Capítulo utilizado:</strong>
+Chapter VI — Propulsion.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Practical Ship Hydrodynamics
+</h3>
+
+<p>
+
+Utilizado como referência complementar para resistência,
+propulsão, desempenho de hélices e interpretação das relações
+hidrodinâmicas do sistema propulsivo.
+
+</p>
+
+<p>
+
+<strong>Capítulos indicados na bibliografia:</strong>
+Chapters 2, 3 e 6.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+
+Utilizado para relacionar os fundamentos de propulsão ao
+comportamento operacional do navio, às ordens de máquina e à
+resposta durante as manobras.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+
+Utilizado como apoio para a interpretação prática da produção,
+alteração e reversão do empuxo em diferentes condições de
+manobra.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO DA AULA
+========================================= -->
+
+<section
+class="topico-aula"
+id="conclusao-aula-propulsao"
+data-topico-id="conclusao-aula-propulsao">
+
+<h2>77. Conclusão da aula</h2>
+
+<div class="widget">
+
+<p>
+
+A propulsão naval envolve a transformação da energia produzida
+pela instalação de máquinas em empuxo capaz de movimentar o
+navio.
+
+</p>
+
+<p>
+
+Entre a potência produzida e o movimento útil existem perdas
+mecânicas e hidrodinâmicas. A resposta final depende da máquina,
+da transmissão, da hélice, do casco, da esteira, do carregamento
+e do ambiente de operação.
+
+</p>
+
+<p>
+
+Para a praticagem, compreender esses fenômenos permite avaliar
+corretamente a resposta às ordens de máquina, antecipar o
+desenvolvimento do empuxo e reconhecer as limitações de cada
+tipo de propulsor.
+
+</p>
+
+<p>
+
+A potência nominal, a rotação ou o passo não devem ser
+interpretados isoladamente. A manobra resulta da interação
+dinâmica entre potência, torque, empuxo, resistência, inércia
+e condições ambientais.
+
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Síntese final do Prático</h3>
+
+<p>
+
+O Prático não comanda diretamente a velocidade do navio.
+
+</p>
+
+<p>
+
+Ele utiliza o sistema propulsivo para produzir forças dentro
+de um ambiente hidrodinâmico variável.
+
+</p>
+
+<p>
+
+A segurança da manobra depende de conhecer essas forças,
+antecipar seu desenvolvimento e reconhecer que cada navio
+responde de maneira própria.
+
+</p>
+
+</div>
+
+</section>   
+   
 
 </main>
 
