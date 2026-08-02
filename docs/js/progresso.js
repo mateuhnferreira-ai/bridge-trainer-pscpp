@@ -345,6 +345,8 @@ function garantirDisciplina(
 
                 progresso: 0,
 
+                tempoEstudadoSegundos: 0,
+
                 aulas: {}
 
             };
@@ -362,6 +364,13 @@ function garantirDisciplina(
     if (!disciplina.aulas) {
 
         disciplina.aulas = {};
+
+    }
+
+
+    if (typeof disciplina.tempoEstudadoSegundos !== "number") {
+
+        disciplina.tempoEstudadoSegundos = 0;
 
     }
 
@@ -1234,6 +1243,124 @@ function calcularProgressoGeral() {
         disciplinas.length
 
     );
+
+}
+
+
+// =====================================
+// TEMPO DE ESTUDO POR DISCIPLINA
+// =====================================
+//
+// Registro cumulativo de segundos estudados por
+// disciplina, alimentado pelo cronômetro (pomodoro.js).
+// Usa a mesma estrutura de dados e o mesmo localStorage
+// do progresso de tópicos — não é um sistema paralelo.
+
+function adicionarTempoEstudado(
+    idDisciplina,
+    segundosAdicionais
+) {
+
+    if (
+        !segundosAdicionais ||
+        segundosAdicionais <= 0
+    ) {
+
+        return;
+
+    }
+
+
+    const disciplina =
+        garantirDisciplina(
+            idDisciplina
+        );
+
+
+    disciplina.tempoEstudadoSegundos =
+
+        (disciplina.tempoEstudadoSegundos || 0) +
+        segundosAdicionais;
+
+
+    salvarDadosProgresso();
+
+}
+
+
+// =====================================
+// OBTER TEMPO ESTUDADO DE UMA DISCIPLINA
+// =====================================
+
+function obterTempoEstudadoDisciplina(
+    idDisciplina
+) {
+
+    const disciplina =
+        normalizarIdentificador(
+            idDisciplina
+        );
+
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas ||
+        !dadosProgresso
+            .disciplinas[
+                disciplina
+            ]
+    ) {
+
+        return 0;
+
+    }
+
+
+    return (
+
+        dadosProgresso
+            .disciplinas[
+                disciplina
+            ]
+            .tempoEstudadoSegundos || 0
+
+    );
+
+}
+
+
+// =====================================
+// OBTER TEMPO ESTUDADO TOTAL (TODAS DISCIPLINAS)
+// =====================================
+
+function obterTempoEstudadoGeral() {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return 0;
+
+    }
+
+
+    let soma = 0;
+
+
+    Object.values(
+        dadosProgresso.disciplinas
+    ).forEach(
+        disciplina => {
+
+            soma +=
+                disciplina.tempoEstudadoSegundos || 0;
+
+        }
+    );
+
+
+    return soma;
 
 }
 
