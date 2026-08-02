@@ -1,1 +1,2456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Propulsão do Navio - Bridge Trainer PSCPP</title>
+
+<link rel="stylesheet" href="../../css/style.css">
+
+
+<style>
+
+/* =========================================
+   CONTINUAR ESTUDANDO
+========================================= */
+
+.topico-continuacao-destaque {
+
+    outline: 3px solid #c9a227;
+    outline-offset: 6px;
+    border-radius: 8px;
+    transition: outline 0.4s ease;
+
+}
+
+
+.acoes-continuacao {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+
+}
+
+
+.texto-continuacao {
+
+    margin-top: 12px;
+    font-size: 0.95rem;
+
+}
+
+
+/* =========================================
+   FÓRMULAS
+========================================= */
+
+.formula-linha {
+
+    text-align: center;
+    font-size: 1.15rem;
+    margin: 14px 0;
+
+}
+
+
+.exemplo-calculo p {
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================
+   SVG RESPONSIVO
+========================================= */
+
+.figura-aula svg {
+
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 18px auto;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body
+data-disciplina="manobrabilidade"
+data-aula="propulsao">
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade do Navio</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+type="button"
+onclick="voltarPagina()">
+
+⬅ Voltar
+
+</button>
+
+
+<a href="../../index.html">
+
+🏠 Início
+
+</a>
+
+
+<a href="../../guia-estudos/index.html">
+
+📚 Guia de Estudos
+
+</a>
+
+
+<a href="#">
+
+📊 Progresso
+
+</a>
+
+
+<a href="#">
+
+📝 Simulados
+
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     DASHBOARD DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>⚙️ Propulsão do Navio</h2>
+
+<p>
+
+<strong>Ship Propulsion</strong>
+
+</p>
+
+<p>
+
+Estudo da produção e da transmissão da potência necessária
+para gerar empuxo, vencer a resistência ao avanço e controlar
+o movimento longitudinal do navio.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTINUAR ESTUDANDO
+========================================= -->
+
+<section>
+
+<h2>📖 Continuar estudando</h2>
+
+<div class="widget">
+
+<p>
+
+Retome a aula a partir do último tópico visualizado neste
+dispositivo.
+
+</p>
+
+
+<div class="acoes-continuacao">
+
+<button
+type="button"
+class="botao-estudo"
+id="btnContinuar"
+onclick="continuarEstudando()">
+
+▶ Continuar do último tópico
+
+</button>
+
+</div>
+
+
+<p
+id="informacaoContinuacao"
+class="texto-continuacao">
+
+Nenhum tópico registrado até o momento.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+
+</p>
+
+
+<p>
+
+<strong>Assunto:</strong>
+Propulsão
+
+</p>
+
+
+<p>
+
+<strong>Termo técnico:</strong>
+Ship Propulsion
+
+</p>
+
+
+<p>
+
+<strong>Nível:</strong>
+PSCPP
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+
+<strong>I – Manobrabilidade do Navio</strong>
+
+</p>
+
+
+<p>
+
+<strong>2. Propulsão</strong>
+
+</p>
+
+
+<ul>
+
+<li>fundamentos da propulsão naval;</li>
+
+<li>produção e transmissão da potência;</li>
+
+<li>empuxo produzido pelo propulsor;</li>
+
+<li>relação entre resistência, empuxo e velocidade;</li>
+
+<li>potências envolvidas no sistema propulsivo;</li>
+
+<li>perdas e rendimentos do sistema;</li>
+
+<li>interação entre casco e propulsor;</li>
+
+<li>efeitos operacionais da propulsão na manobra.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+
+Ao concluir esta aula, o aluno deverá ser capaz de:
+
+</p>
+
+
+<ul>
+
+<li>definir propulsão naval;</li>
+
+<li>
+identificar a função do motor, da transmissão, do eixo
+e do propulsor;
+</li>
+
+<li>
+diferenciar potência produzida, potência transmitida
+e potência útil;
+</li>
+
+<li>
+explicar como o propulsor gera empuxo por meio da
+aceleração da água;
+</li>
+
+<li>
+relacionar empuxo, resistência, aceleração e velocidade;
+</li>
+
+<li>
+compreender a cadeia de transformação de energia do
+sistema propulsivo;
+</li>
+
+<li>
+reconhecer que parte da potência produzida é perdida
+antes de se transformar em potência útil;
+</li>
+
+<li>
+relacionar a propulsão à resposta do navio durante
+as ordens de máquina;
+</li>
+
+<li>
+utilizar os principais termos técnicos em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture — Volume II
+</h3>
+
+<p>
+
+Referência principal para os fundamentos da propulsão,
+produção de potência, ação do propulsor, rendimentos e
+interação entre casco e hélice.
+
+</p>
+
+<p>
+
+<strong>Trecho indicado:</strong>
+Chapter VI — Propulsion.
+
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Practical Ship Hydrodynamics
+</h3>
+
+<p>
+
+Referência complementar para a interpretação hidrodinâmica
+da propulsão, do empuxo, das perdas e da interação entre
+o casco e o propulsor.
+
+</p>
+
+<p>
+
+<strong>Trechos indicados:</strong>
+Chapters 2, 3 e 6.
+
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+
+Utilizado para relacionar a produção de empuxo e a resposta
+do conjunto propulsivo com o comportamento operacional do
+navio durante as manobras.
+
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+
+Utilizado como apoio para a interpretação prática das ordens
+de máquina, da aceleração, da desaceleração e da resposta
+do navio em diferentes condições operacionais.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<h2>PARTE 1</h2>
+
+<h3>Fundamentos da Propulsão Naval</h3>
+
+<p>
+
+Nesta primeira parte será estudada a função fundamental do
+sistema propulsivo e a sequência pela qual a energia produzida
+a bordo é convertida em empuxo capaz de movimentar o navio.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-propulsao"
+data-topico-id="conceito-propulsao">
+
+<h2>1. Conceito de propulsão naval</h2>
+
+<div class="widget">
+
+<p>
+
+A <strong>propulsão naval</strong>,
+ou <strong>ship propulsion</strong>, compreende o conjunto
+de processos e equipamentos utilizados para produzir uma
+força capaz de movimentar o navio através da água.
+
+</p>
+
+
+<p>
+
+Essa força longitudinal recebe o nome de
+<strong>empuxo</strong>, ou <strong>thrust</strong>.
+
+</p>
+
+
+<p>
+
+Para que o navio avance, o sistema propulsivo deve comunicar
+momento à água. O propulsor acelera uma determinada massa de
+água em uma direção, produzindo sobre o navio uma força de
+reação em sentido oposto.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Princípio fundamental</h3>
+
+<p>
+
+O propulsor exerce uma força sobre a água e a água exerce
+sobre o propulsor uma força de reação.
+
+</p>
+
+<p>
+
+A componente longitudinal dessa força de reação constitui
+o empuxo que impulsiona o navio.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Ship propulsion</strong> —
+propulsão do navio;
+</li>
+
+<li>
+<strong>Propulsion system</strong> —
+sistema propulsivo;
+</li>
+
+<li>
+<strong>Propulsor</strong> —
+dispositivo que comunica energia à água;
+</li>
+
+<li>
+<strong>Thrust</strong> —
+empuxo longitudinal produzido pelo propulsor;
+</li>
+
+<li>
+<strong>Power</strong> —
+potência disponível ou transmitida.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="finalidade-sistema-propulsivo"
+data-topico-id="finalidade-sistema-propulsivo">
+
+<h2>2. Finalidade do sistema propulsivo</h2>
+
+<div class="widget">
+
+<p>
+
+A finalidade imediata do sistema propulsivo é produzir
+empuxo suficiente para superar as forças que se opõem ao
+movimento do navio.
+
+</p>
+
+
+<p>
+
+Durante a navegação em velocidade constante, o empuxo útil
+e a resistência total encontram-se em equilíbrio longitudinal.
+
+</p>
+
+
+<div class="formula">
+
+<h3>Equilíbrio em velocidade constante</h3>
+
+<p class="formula-linha">
+
+<strong>
+T = R<sub>T</sub>
+</strong>
+
+</p>
+
+
+<p>
+
+Onde:
+
+</p>
+
+
+<ul>
+
+<li>
+<strong>T</strong> =
+empuxo útil produzido pelo sistema propulsivo;
+</li>
+
+<li>
+<strong>R<sub>T</sub></strong> =
+resistência total ao avanço.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Relação entre as forças</h3>
+
+<p>
+
+<strong>T &gt; R<sub>T</sub>:</strong>
+existe força resultante no sentido do avanço e o navio
+tende a acelerar.
+
+</p>
+
+
+<p>
+
+<strong>T = R<sub>T</sub>:</strong>
+a velocidade longitudinal tende a permanecer constante.
+
+</p>
+
+
+<p>
+
+<strong>T &lt; R<sub>T</sub>:</strong>
+a força resistente predomina e o navio tende a desacelerar.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Atenção do Prático</h3>
+
+<p>
+
+Uma ordem de máquina não determina instantaneamente uma
+nova velocidade.
+
+</p>
+
+<p>
+
+A ordem altera a potência e o empuxo disponíveis. A velocidade
+resultante depende do desequilíbrio entre o empuxo produzido
+e as forças resistentes, além da massa e da inércia do navio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="cadeia-propulsiva"
+data-topico-id="cadeia-propulsiva">
+
+<h2>3. Cadeia de transformação da energia</h2>
+
+<div class="widget">
+
+<p>
+
+O sistema propulsivo não converte diretamente toda a energia
+produzida pelo motor em movimento útil do navio.
+
+</p>
+
+
+<p>
+
+A energia passa por diferentes componentes e sofre perdas
+antes de chegar ao propulsor e produzir empuxo.
+
+</p>
+
+
+<div class="figura-aula">
+
+<h3>
+Figura 1 — Cadeia simplificada da propulsão
+</h3>
+
+
+<svg
+viewBox="0 0 1000 440"
+role="img"
+aria-labelledby="tituloCadeia descricaoCadeia"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="tituloCadeia">
+Cadeia simplificada da propulsão naval
+</title>
+
+<desc id="descricaoCadeia">
+Diagrama lateral mostrando motor, transmissão, eixo,
+propulsor, aceleração da água e empuxo do navio.
+</desc>
+
+
+<!-- FUNDO -->
+
+<rect
+x="10"
+y="10"
+width="980"
+height="420"
+rx="18"
+fill="#eef6fb"
+stroke="#003b5c"
+stroke-width="3"/>
+
+
+<!-- TÍTULO -->
+
+<text
+x="500"
+y="48"
+text-anchor="middle"
+font-size="25"
+font-weight="bold"
+fill="#003b5c">
+
+CADEIA DE TRANSFORMAÇÃO DA ENERGIA
+
+</text>
+
+
+<!-- MOTOR -->
+
+<rect
+x="45"
+y="125"
+width="160"
+height="105"
+rx="12"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="3"/>
+
+<text
+x="125"
+y="165"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#102a43">
+
+MOTOR
+
+</text>
+
+<text
+x="125"
+y="194"
+text-anchor="middle"
+font-size="16"
+fill="#102a43">
+
+Engine
+
+</text>
+
+
+<!-- SETA 1 -->
+
+<line
+x1="205"
+y1="177"
+x2="270"
+y2="177"
+stroke="#c9a227"
+stroke-width="8"/>
+
+<polygon
+points="270,177 248,164 248,190"
+fill="#c9a227"/>
+
+
+<!-- TRANSMISSÃO -->
+
+<rect
+x="275"
+y="125"
+width="165"
+height="105"
+rx="12"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="3"/>
+
+<text
+x="357"
+y="165"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#102a43">
+
+TRANSMISSÃO
+
+</text>
+
+<text
+x="357"
+y="194"
+text-anchor="middle"
+font-size="16"
+fill="#102a43">
+
+Transmission
+
+</text>
+
+
+<!-- SETA 2 -->
+
+<line
+x1="440"
+y1="177"
+x2="505"
+y2="177"
+stroke="#c9a227"
+stroke-width="8"/>
+
+<polygon
+points="505,177 483,164 483,190"
+fill="#c9a227"/>
+
+
+<!-- EIXO -->
+
+<rect
+x="510"
+y="125"
+width="145"
+height="105"
+rx="12"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="3"/>
+
+<text
+x="582"
+y="165"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#102a43">
+
+EIXO
+
+</text>
+
+<text
+x="582"
+y="194"
+text-anchor="middle"
+font-size="16"
+fill="#102a43">
+
+Shaft
+
+</text>
+
+
+<!-- SETA 3 -->
+
+<line
+x1="655"
+y1="177"
+x2="720"
+y2="177"
+stroke="#c9a227"
+stroke-width="8"/>
+
+<polygon
+points="720,177 698,164 698,190"
+fill="#c9a227"/>
+
+
+<!-- PROPULSOR -->
+
+<circle
+cx="790"
+cy="177"
+r="61"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="3"/>
+
+<ellipse
+cx="790"
+cy="139"
+rx="19"
+ry="42"
+transform="rotate(25 790 177)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+<ellipse
+cx="790"
+cy="215"
+rx="19"
+ry="42"
+transform="rotate(25 790 177)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+<ellipse
+cx="752"
+cy="177"
+rx="42"
+ry="19"
+transform="rotate(25 790 177)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+<ellipse
+cx="828"
+cy="177"
+rx="42"
+ry="19"
+transform="rotate(25 790 177)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+<circle
+cx="790"
+cy="177"
+r="15"
+fill="#725d10"/>
+
+<text
+x="790"
+y="267"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#102a43">
+
+PROPULSOR
+
+</text>
+
+<text
+x="790"
+y="292"
+text-anchor="middle"
+font-size="16"
+fill="#102a43">
+
+Propulsor
+
+</text>
+
+
+<!-- FLUXO DE ÁGUA -->
+
+<line
+x1="855"
+y1="145"
+x2="945"
+y2="125"
+stroke="#1976a3"
+stroke-width="5"/>
+
+<polygon
+points="945,125 921,119 926,141"
+fill="#1976a3"/>
+
+
+<line
+x1="855"
+y1="177"
+x2="960"
+y2="177"
+stroke="#1976a3"
+stroke-width="5"/>
+
+<polygon
+points="960,177 936,165 936,189"
+fill="#1976a3"/>
+
+
+<line
+x1="855"
+y1="209"
+x2="945"
+y2="229"
+stroke="#1976a3"
+stroke-width="5"/>
+
+<polygon
+points="945,229 926,213 921,235"
+fill="#1976a3"/>
+
+
+<text
+x="890"
+y="92"
+text-anchor="middle"
+font-size="17"
+font-weight="bold"
+fill="#1976a3">
+
+ÁGUA ACELERADA PARA RÉ
+
+</text>
+
+
+<!-- EMPUXO -->
+
+<line
+x1="785"
+y1="350"
+x2="595"
+y2="350"
+stroke="#b33a3a"
+stroke-width="9"/>
+
+<polygon
+points="595,350 622,334 622,366"
+fill="#b33a3a"/>
+
+<text
+x="690"
+y="390"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#b33a3a">
+
+EMPUXO SOBRE O NAVIO
+
+</text>
+
+<text
+x="690"
+y="414"
+text-anchor="middle"
+font-size="16"
+fill="#b33a3a">
+
+Thrust
+
+</text>
+
+
+<!-- LEGENDA DE ENERGIA -->
+
+<text
+x="275"
+y="300"
+text-anchor="middle"
+font-size="17"
+font-weight="bold"
+fill="#102a43">
+
+Energia → potência mecânica → rotação
+
+</text>
+
+</svg>
+
+
+<p>
+
+<strong>Leitura da figura:</strong>
+o motor produz potência; a transmissão e o eixo conduzem
+essa potência ao propulsor; o propulsor acelera a água para
+ré; a reação hidrodinâmica produz empuxo sobre o navio.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Sequência básica</h3>
+
+<p>
+
+<strong>
+Fonte de energia → motor → transmissão → eixo →
+propulsor → aceleração da água → empuxo.
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="componentes-sistema-propulsivo"
+data-topico-id="componentes-sistema-propulsivo">
+
+<h2>4. Componentes básicos do sistema propulsivo</h2>
+
+<div class="widget">
+
+<h3>4.1 Motor principal — Main Engine</h3>
+
+<p>
+
+O motor principal converte a energia disponível no combustível
+ou em outra fonte de energia em potência mecânica.
+
+</p>
+
+
+<p>
+
+Essa potência será transmitida ao propulsor para produzir
+o movimento da água e o empuxo.
+
+</p>
+
+
+
+<h3>4.2 Transmissão — Transmission</h3>
+
+<p>
+
+A transmissão conecta o motor ao eixo propulsor e pode incluir
+elementos destinados a transmitir, reduzir, adaptar ou
+interromper a rotação.
+
+</p>
+
+
+<p>
+
+A configuração varia de acordo com o tipo de instalação
+propulsiva.
+
+</p>
+
+
+
+<h3>4.3 Linha de eixo — Shafting</h3>
+
+<p>
+
+A linha de eixo transmite potência e torque desde o motor
+ou a caixa de redução até o propulsor.
+
+</p>
+
+
+
+<h3>4.4 Propulsor — Propulsor</h3>
+
+<p>
+
+O propulsor recebe potência mecânica e comunica energia à água.
+
+</p>
+
+
+<p>
+
+A hélice convencional é o propulsor marítimo mais comum,
+mas não é o único dispositivo capaz de produzir empuxo.
+
+</p>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Vocabulário essencial</h3>
+
+<ul>
+
+<li>
+<strong>Main engine</strong> —
+motor principal;
+</li>
+
+<li>
+<strong>Gearbox</strong> —
+caixa de redução ou caixa de engrenagens;
+</li>
+
+<li>
+<strong>Clutch</strong> —
+embreagem;
+</li>
+
+<li>
+<strong>Propeller shaft</strong> —
+eixo propulsor;
+</li>
+
+<li>
+<strong>Shaft line</strong> ou
+<strong>shafting</strong> —
+linha de eixo;
+</li>
+
+<li>
+<strong>Torque</strong> —
+momento de torção transmitido pelo eixo;
+</li>
+
+<li>
+<strong>Propeller</strong> —
+hélice;
+</li>
+
+<li>
+<strong>Propulsor</strong> —
+termo geral para o dispositivo propulsivo.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="producao-empuxo"
+data-topico-id="producao-empuxo">
+
+<h2>5. Produção do empuxo</h2>
+
+<div class="widget">
+
+<p>
+
+O propulsor produz empuxo ao modificar o movimento da água
+que passa por ele.
+
+</p>
+
+
+<p>
+
+Em uma descrição física simplificada, o propulsor recebe
+água com determinada velocidade e aumenta sua quantidade de
+movimento na direção de ré.
+
+</p>
+
+
+<p>
+
+A reação correspondente atua sobre o propulsor e é transmitida
+ao casco por meio da linha de eixo e de seus mancais.
+
+</p>
+
+
+
+<div class="figura-aula">
+
+<h3>
+Figura 2 — Ação e reação na produção do empuxo
+</h3>
+
+
+<svg
+viewBox="0 0 1000 420"
+role="img"
+aria-labelledby="tituloEmpuxo descricaoEmpuxo"
+xmlns="http://www.w3.org/2000/svg">
+
+<title id="tituloEmpuxo">
+Ação e reação na produção do empuxo
+</title>
+
+<desc id="descricaoEmpuxo">
+Vista lateral simplificada de um navio com propulsor,
+água acelerada para ré e empuxo dirigido para vante.
+</desc>
+
+
+<!-- FUNDO -->
+
+<rect
+x="10"
+y="10"
+width="980"
+height="400"
+rx="18"
+fill="#eef6fb"
+stroke="#003b5c"
+stroke-width="3"/>
+
+
+<!-- LINHA D'ÁGUA -->
+
+<line
+x1="35"
+y1="245"
+x2="965"
+y2="245"
+stroke="#1976a3"
+stroke-width="5"/>
+
+
+<!-- CASCO LATERAL -->
+
+<path
+d="
+M 170 145
+L 705 145
+L 820 210
+L 755 265
+L 245 265
+L 130 205
+Z"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="4"/>
+
+
+<!-- SUPERESTRUTURA -->
+
+<rect
+x="330"
+y="95"
+width="185"
+height="50"
+fill="#d8e3ec"
+stroke="#003b5c"
+stroke-width="4"/>
+
+
+<!-- EIXO -->
+
+<line
+x1="705"
+y1="235"
+x2="825"
+y2="263"
+stroke="#555555"
+stroke-width="10"/>
+
+
+<!-- HÉLICE -->
+
+<circle
+cx="840"
+cy="267"
+r="13"
+fill="#725d10"/>
+
+<ellipse
+cx="840"
+cy="230"
+rx="15"
+ry="44"
+transform="rotate(18 840 267)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+<ellipse
+cx="840"
+cy="304"
+rx="15"
+ry="44"
+transform="rotate(18 840 267)"
+fill="#c9a227"
+stroke="#725d10"
+stroke-width="2"/>
+
+
+<!-- ÁGUA ACELERADA PARA RÉ -->
+
+<line
+x1="875"
+y1="235"
+x2="955"
+y2="205"
+stroke="#1976a3"
+stroke-width="7"/>
+
+<polygon
+points="955,205 929,202 937,224"
+fill="#1976a3"/>
+
+
+<line
+x1="875"
+y1="267"
+x2="970"
+y2="267"
+stroke="#1976a3"
+stroke-width="7"/>
+
+<polygon
+points="970,267 944,253 944,281"
+fill="#1976a3"/>
+
+
+<line
+x1="875"
+y1="299"
+x2="955"
+y2="329"
+stroke="#1976a3"
+stroke-width="7"/>
+
+<polygon
+points="955,329 937,310 929,332"
+fill="#1976a3"/>
+
+
+<text
+x="883"
+y="165"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#1976a3">
+
+AÇÃO SOBRE A ÁGUA
+
+</text>
+
+<text
+x="883"
+y="188"
+text-anchor="middle"
+font-size="16"
+fill="#1976a3">
+
+Fluxo acelerado para ré
+
+</text>
+
+
+<!-- EMPUXO PARA VANTE -->
+
+<line
+x1="460"
+y1="335"
+x2="205"
+y2="335"
+stroke="#b33a3a"
+stroke-width="10"/>
+
+<polygon
+points="205,335 235,317 235,353"
+fill="#b33a3a"/>
+
+
+<text
+x="335"
+y="375"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#b33a3a">
+
+REAÇÃO: EMPUXO PARA VANTE
+
+</text>
+
+
+<!-- INDICAÇÃO DE VANTE E RÉ -->
+
+<text
+x="95"
+y="75"
+font-size="18"
+font-weight="bold"
+fill="#102a43">
+
+VANTE
+
+</text>
+
+<line
+x1="150"
+y1="70"
+x2="75"
+y2="70"
+stroke="#102a43"
+stroke-width="4"/>
+
+<polygon
+points="75,70 94,59 94,81"
+fill="#102a43"/>
+
+
+<text
+x="905"
+y="75"
+font-size="18"
+font-weight="bold"
+fill="#102a43">
+
+RÉ
+
+</text>
+
+<line
+x1="850"
+y1="70"
+x2="925"
+y2="70"
+stroke="#102a43"
+stroke-width="4"/>
+
+<polygon
+points="925,70 906,59 906,81"
+fill="#102a43"/>
+
+</svg>
+
+
+<p>
+
+<strong>Figura em vista lateral:</strong>
+a água é acelerada para ré e a reação correspondente produz
+empuxo para vante.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação operacional</h3>
+
+<p>
+
+A geração de empuxo não depende apenas da rotação indicada
+pelo motor.
+
+</p>
+
+<p>
+
+A resposta efetiva também é influenciada pelo tipo de
+propulsor, pela velocidade de avanço, pelo sentido da marcha,
+pela condição do casco e pelo escoamento que chega ao
+propulsor.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="potencia-empuxo-velocidade"
+data-topico-id="potencia-empuxo-velocidade">
+
+<h2>6. Potência, empuxo e velocidade</h2>
+
+<div class="widget">
+
+<p>
+
+Potência e empuxo são grandezas relacionadas, mas não são
+sinônimos.
+
+</p>
+
+
+<p>
+
+A <strong>potência</strong> representa a taxa de realização
+de trabalho ou de transferência de energia.
+
+</p>
+
+
+<p>
+
+O <strong>empuxo</strong> representa uma força produzida
+pelo propulsor.
+
+</p>
+
+
+<div class="destaque">
+
+<h3>Distinção essencial</h3>
+
+<p>
+
+<strong>Power:</strong>
+indica a rapidez com que a energia é produzida ou transmitida.
+
+</p>
+
+
+<p>
+
+<strong>Thrust:</strong>
+indica a força longitudinal produzida pelo propulsor.
+
+</p>
+
+</div>
+
+
+
+<p>
+
+Na propulsão naval, parte da potência produzida pelo motor é
+perdida na transmissão e na interação hidrodinâmica antes de
+se converter em potência útil para vencer a resistência.
+
+</p>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Atenção do Prático</h3>
+
+<p>
+
+A mesma indicação de potência ou rotação não garante exatamente
+o mesmo empuxo em todas as condições.
+
+</p>
+
+<p>
+
+O comportamento pode variar com o carregamento, o trim,
+a velocidade inicial, a profundidade, a condição do casco
+e o escoamento de chegada ao propulsor.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="perdas-sistema-propulsivo"
+data-topico-id="perdas-sistema-propulsivo">
+
+<h2>7. Perdas no sistema propulsivo</h2>
+
+<div class="widget">
+
+<p>
+
+Nem toda potência produzida pelo motor chega ao navio como
+potência efetivamente empregada para vencer a resistência.
+
+</p>
+
+
+<p>
+
+Existem perdas mecânicas e hidrodinâmicas ao longo da cadeia
+propulsiva.
+
+</p>
+
+
+<ul>
+
+<li>
+perdas internas do motor;
+</li>
+
+<li>
+perdas na transmissão e nos mancais;
+</li>
+
+<li>
+perdas associadas à rotação da linha de eixo;
+</li>
+
+<li>
+perdas no próprio propulsor;
+</li>
+
+<li>
+perdas decorrentes da interação entre casco e propulsor;
+</li>
+
+<li>
+energia comunicada à água que não se converte integralmente
+em movimento útil do navio.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>Consequência</h3>
+
+<p>
+
+A potência fornecida pelo motor deve ser superior à potência
+efetiva necessária para vencer a resistência do navio.
+
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>Termos que serão aprofundados</h3>
+
+<ul>
+
+<li>
+<strong>Effective power</strong> —
+potência efetiva;
+</li>
+
+<li>
+<strong>Shaft power</strong> —
+potência no eixo;
+</li>
+
+<li>
+<strong>Delivered power</strong> —
+potência entregue ao propulsor;
+</li>
+
+<li>
+<strong>Propulsive efficiency</strong> —
+rendimento propulsivo;
+</li>
+
+<li>
+<strong>Mechanical losses</strong> —
+perdas mecânicas;
+</li>
+
+<li>
+<strong>Hydrodynamic losses</strong> —
+perdas hidrodinâmicas.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="importancia-praticagem"
+data-topico-id="importancia-praticagem">
+
+<h2>8. Importância da propulsão para a praticagem</h2>
+
+<div class="widget">
+
+<p>
+
+Para o Prático, o estudo da propulsão não tem como finalidade
+principal projetar motores, eixos ou hélices.
+
+</p>
+
+
+<p>
+
+A finalidade operacional é compreender como o sistema
+propulsivo transforma uma ordem de máquina em força e como
+essa força modifica o movimento do navio.
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Visão do projetista naval</h3>
+
+<p>
+
+Dimensionar potência, transmissão, eixo e propulsor,
+avaliando resistência, rendimento, cavitação, vibração
+e desempenho.
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Visão do Prático</h3>
+
+<p>
+
+Antecipar a magnitude e o tempo da resposta do navio,
+considerando a condição inicial, a inércia, o tipo de
+propulsor e o ambiente de manobra.
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação operacional</h3>
+
+<p>
+
+Durante a manobra, é necessário distinguir:
+
+</p>
+
+
+<ul>
+
+<li>a ordem transmitida ao sistema propulsivo;</li>
+
+<li>a resposta do motor;</li>
+
+<li>a rotação ou o passo efetivamente alcançado;</li>
+
+<li>o empuxo produzido;</li>
+
+<li>a aceleração resultante do navio;</li>
+
+<li>a velocidade obtida após determinado intervalo.</li>
+
+</ul>
+
+
+<p>
+
+Essas etapas não são instantâneas nem necessariamente
+proporcionais entre si.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+========================================= -->
+
+<section
+class="topico-aula"
+id="resumo-parte-1"
+data-topico-id="resumo-parte-1">
+
+<h2>9. Resumo da Parte 1</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A propulsão naval tem a função de produzir empuxo.
+</li>
+
+<li>
+O propulsor comunica energia e quantidade de movimento à água.
+</li>
+
+<li>
+A reação hidrodinâmica sobre o propulsor impulsiona o navio.
+</li>
+
+<li>
+Em velocidade constante, o empuxo útil equilibra a resistência.
+</li>
+
+<li>
+Empuxo maior que a resistência produz tendência de aceleração.
+</li>
+
+<li>
+Potência e empuxo são grandezas diferentes.
+</li>
+
+<li>
+A potência passa pelo motor, transmissão, eixo e propulsor.
+</li>
+
+<li>
+Existem perdas mecânicas e hidrodinâmicas no sistema.
+</li>
+
+<li>
+A ordem de máquina não determina instantaneamente a velocidade.
+</li>
+
+<li>
+Para o Prático, o ponto principal é interpretar a resposta
+operacional do navio.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PARTE 2 ACIMA DESTA LINHA
+========================================= -->
+
+
+
+</main>
+
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+<p>⚓ Bridge Trainer PSCPP</p>
+
+<p>
+
+Preparação para o Processo Seletivo de Praticante de Prático
+
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+
+
+<script>
+
+
+// =====================================
+// GABARITO
+// SERÁ UTILIZADO NA PARTE FINAL
+// =====================================
+
+function alternarGabarito() {
+
+    const gabarito =
+        document.getElementById("gabarito");
+
+    if (!gabarito) return;
+
+    gabarito.style.display =
+        gabarito.style.display === "none"
+            ? "block"
+            : "none";
+
+}
+
+
+// =====================================
+// CONTINUAR ESTUDANDO
+// =====================================
+
+const CHAVE_CONTINUACAO_AULA =
+    "bridgeTrainerPSCPP_continuacao_" +
+    document.body.dataset.disciplina +
+    "_" +
+    document.body.dataset.aula;
+
+
+
+function obterTopicosDaAula() {
+
+    return Array.from(
+
+        document.querySelectorAll(
+
+            ".topico-aula[data-topico-id]"
+
+        )
+
+    );
+
+}
+
+
+
+function salvarUltimoTopico(idTopico) {
+
+    if (!idTopico) return;
+
+
+    localStorage.setItem(
+
+        CHAVE_CONTINUACAO_AULA,
+
+        idTopico
+
+    );
+
+
+    atualizarInformacaoContinuacao();
+
+}
+
+
+
+function obterUltimoTopicoSalvo() {
+
+    return localStorage.getItem(
+
+        CHAVE_CONTINUACAO_AULA
+
+    );
+
+}
+
+
+
+function continuarEstudando() {
+
+    const topicos =
+        obterTopicosDaAula();
+
+
+    if (topicos.length === 0) return;
+
+
+    const idSalvo =
+        obterUltimoTopicoSalvo();
+
+
+    let destino = null;
+
+
+    if (idSalvo) {
+
+        destino =
+            document.querySelector(
+
+                '.topico-aula[data-topico-id="' +
+                idSalvo +
+                '"]'
+
+            );
+
+    }
+
+
+    if (!destino) {
+
+        destino = topicos[0];
+
+    }
+
+
+    destino.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+
+    destino.classList.add(
+
+        "topico-continuacao-destaque"
+
+    );
+
+
+    window.setTimeout(
+
+        function () {
+
+            destino.classList.remove(
+
+                "topico-continuacao-destaque"
+
+            );
+
+        },
+
+        1800
+
+    );
+
+}
+
+
+
+function atualizarInformacaoContinuacao() {
+
+    const informacao =
+        document.getElementById(
+
+            "informacaoContinuacao"
+
+        );
+
+
+    if (!informacao) return;
+
+
+    const idSalvo =
+        obterUltimoTopicoSalvo();
+
+
+    if (!idSalvo) {
+
+        informacao.textContent =
+            "Nenhum tópico registrado até o momento.";
+
+        return;
+
+    }
+
+
+    const topico =
+        document.querySelector(
+
+            '.topico-aula[data-topico-id="' +
+            idSalvo +
+            '"]'
+
+        );
+
+
+    if (!topico) {
+
+        informacao.textContent =
+            "O tópico salvo não foi encontrado nesta versão da aula.";
+
+        return;
+
+    }
+
+
+    const titulo =
+        topico.querySelector("h2");
+
+
+    informacao.textContent =
+
+        titulo
+
+            ? "Último tópico: " +
+              titulo.textContent
+
+            : "Há um tópico salvo nesta aula.";
+
+}
+
+
+
+// =====================================
+// OBSERVAR O ÚLTIMO TÓPICO VISUALIZADO
+// =====================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function () {
+
+
+        atualizarInformacaoContinuacao();
+
+
+        const topicos =
+            obterTopicosDaAula();
+
+
+        if (
+
+            topicos.length === 0 ||
+
+            !("IntersectionObserver" in window)
+
+        ) {
+
+            return;
+
+        }
+
+
+        let temporizador = null;
+
+
+        const observador =
+            new IntersectionObserver(
+
+
+                function (entradas) {
+
+
+                    entradas.forEach(
+
+
+                        function (entrada) {
+
+
+                            if (
+
+                                entrada.isIntersecting &&
+
+                                entrada.intersectionRatio >= 0.45
+
+                            ) {
+
+
+                                window.clearTimeout(
+
+                                    temporizador
+
+                                );
+
+
+                                temporizador =
+                                    window.setTimeout(
+
+
+                                        function () {
+
+
+                                            salvarUltimoTopico(
+
+                                                entrada.target
+                                                    .dataset
+                                                    .topicoId
+
+                                            );
+
+
+                                        },
+
+
+                                        500
+
+                                    );
+
+                            }
+
+                        }
+
+                    );
+
+                },
+
+
+                {
+
+                    threshold: [0.45]
+
+                }
+
+            );
+
+
+        topicos.forEach(
+
+            function (topico) {
+
+                observador.observe(
+
+                    topico
+
+                );
+
+            }
+
+        );
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+  </html>
