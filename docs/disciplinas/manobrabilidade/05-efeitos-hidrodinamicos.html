@@ -13,7 +13,7 @@ content="width=device-width, initial-scale=1.0"
 >
 
 <title>
-Efeitos Hidrodinâmicos — Bridge Trainer PSCPP
+Efeitos Hidrodinâmicos - Bridge Trainer PSCPP
 </title>
 
 <link
@@ -84,6 +84,13 @@ onclick="voltarPagina()"
 
 <a href="#">
 
+📊 Progresso
+
+</a>
+
+
+<a href="#">
+
 📝 Simulados
 
 </a>
@@ -97,7 +104,7 @@ onclick="voltarPagina()"
 
 
 <!-- =========================================
-     DASHBOARD DA AULA
+     CABEÇALHO DA AULA
 ========================================= -->
 
 <section class="dashboard">
@@ -107,42 +114,21 @@ onclick="voltarPagina()"
 </h2>
 
 <p>
-Estudo das alterações do escoamento, da velocidade e da
-distribuição de pressão ao redor do casco, bem como dos
-efeitos produzidos pela proximidade do fundo, das margens
-e de outras embarcações.
+<strong>Hydrodynamic Effects</strong>
 </p>
 
 <p>
-Esses fenômenos podem gerar forças longitudinais,
-forças laterais, momentos de guinada, alterações de
-calado e mudanças importantes na resposta do navio
-durante a manobra.
-</p>
-
-<div class="destaque">
-
-<p>
-<strong>Disciplina:</strong>
-Manobrabilidade do Navio
+Estudo das forças e dos momentos produzidos pelas
+alterações do escoamento e da distribuição de pressão
+ao redor do casco.
 </p>
 
 <p>
-<strong>Aula:</strong>
-Efeitos Hidrodinâmicos
+A aula estabelece os fundamentos necessários para
+compreender fenômenos como forças laterais, momentos
+de guinada, efeitos de confinamento, interação com
+margens e interação entre embarcações.
 </p>
-
-<p>
-<strong>Termo técnico:</strong>
-Hydrodynamic Effects
-</p>
-
-<p>
-<strong>Nível:</strong>
-PSCPP
-</p>
-
-</div>
 
 </section>
 
@@ -160,12 +146,18 @@ PSCPP
 
 <div class="widget">
 
-<div class="barra-progresso-container">
+<div class="barra-progresso">
 
 <div
+class="progresso"
 id="barra-progresso-aula"
-class="barra-progresso"
+style="width: 0%;"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
 >
+
+0%
 
 </div>
 
@@ -174,15 +166,15 @@ class="barra-progresso"
 
 <p id="percentual-progresso-aula">
 
-0% concluído
+0% da aula concluída
 
 </p>
 
 
 <button
 type="button"
-id="botao-continuar-aula"
 class="botao-estudo"
+id="botao-continuar-aula"
 >
 
 📍 Ir para onde parei
@@ -196,29 +188,222 @@ class="botao-estudo"
 
 
 <!-- =========================================
-     POMODORO
+     IDENTIFICAÇÃO DA AULA
 ========================================= -->
 
 <section>
 
 <h2>
-⏱️ Sessão de Estudo
+📘 Identificação da aula
 </h2>
 
 <div class="widget">
 
 <p>
-Utilize o temporizador Pomodoro para organizar períodos
-de estudo concentrado e intervalos de recuperação.
+
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+
 </p>
 
-<div
-id="pomodoro"
-class="pomodoro"
-data-pomodoro
->
+
+<p>
+
+<strong>Assunto:</strong>
+Efeitos Hidrodinâmicos
+
+</p>
+
+
+<p>
+
+<strong>Termo técnico principal:</strong>
+Hydrodynamic Effects
+
+</p>
+
+
+<p>
+
+<strong>Nível:</strong>
+PSCPP
+
+</p>
 
 </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>
+⏱ Cronômetro de Estudo
+</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+
+⏱
+
+</div>
+
+
+<div>
+
+<span class="pomodoro-rotulo">
+
+Fase atual
+
+</span>
+
+<h3 id="pomodoro-fase">
+
+📖 Estudo
+
+</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+
+Tempo restante
+
+</span>
+
+<strong id="pomodoro-restante">
+
+30:00
+
+</strong>
+
+</div>
+
+
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+🎯
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Sessão atual
+
+</span>
+
+<strong id="pomodoro-sessao">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+📚
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Total na disciplina
+
+</span>
+
+<strong id="pomodoro-cumulativo">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Utilize o ciclo de estudo para manter a concentração
+durante a leitura dos tópicos técnicos.
+
+</p>
 
 </div>
 
@@ -233,68 +418,73 @@ data-pomodoro
 <section>
 
 <h2>
-📋 Conteúdo da Aula
+📋 Conteúdo programático
 </h2>
 
 <div class="widget">
 
 <p>
-A aula relacionará os fundamentos do escoamento ao redor
-do casco aos principais efeitos hidrodinâmicos relevantes
-para a manobra.
+<strong>I – Manobrabilidade do Navio</strong>
+</p>
+
+<p>
+<strong>Efeitos Hidrodinâmicos</strong>
 </p>
 
 <ul>
 
 <li>
-escoamento e distribuição de pressão ao redor do casco;
+escoamento da água ao redor do casco;
 </li>
 
 <li>
-linhas de corrente e curvatura do escoamento;
+curvatura das linhas de corrente;
 </li>
 
 <li>
-relação entre velocidade e pressão;
+distribuição de pressão ao longo do casco;
 </li>
 
 <li>
-camada limite, separação do escoamento e esteira;
+forças hidrodinâmicas laterais e longitudinais;
 </li>
 
 <li>
-efeitos de águas rasas;
+momentos hidrodinâmicos e momento de guinada;
 </li>
 
 <li>
-<strong>squat</strong> e alteração dinâmica do trim;
+influência da velocidade relativa entre navio e água;
 </li>
 
 <li>
-efeito de bloqueio;
+efeitos produzidos pela assimetria do escoamento;
 </li>
 
 <li>
-interação entre navio e margem;
-</li>
-
-<li>
-<strong>bank suction</strong> e forças laterais;
-</li>
-
-<li>
-interação entre embarcações;
-</li>
-
-<li>
-efeitos de encontro e ultrapassagem;
-</li>
-
-<li>
-aplicações operacionais para a praticagem.
+aplicação dos fundamentos hidrodinâmicos à manobra.
 </li>
 
 </ul>
+
+<div class="destaque">
+
+<h3>
+Delimitação desta aula
+</h3>
+
+<p>
+Esta aula apresenta os fundamentos físicos dos efeitos
+hidrodinâmicos.
+</p>
+
+<p>
+Os fenômenos específicos de águas rasas, canais,
+margens e interação entre embarcações serão aprofundados
+nas aulas próprias previstas na disciplina.
+</p>
+
+</div>
 
 </div>
 
@@ -303,13 +493,13 @@ aplicações operacionais para a praticagem.
 
 
 <!-- =========================================
-     OBJETIVOS DE APRENDIZAGEM
+     OBJETIVOS
 ========================================= -->
 
 <section>
 
 <h2>
-🎯 Objetivos de Aprendizagem
+🎯 Objetivos de aprendizagem
 </h2>
 
 <div class="widget">
@@ -321,44 +511,39 @@ Ao concluir esta aula, o aluno deverá ser capaz de:
 <ul>
 
 <li>
-compreender como o casco modifica o escoamento da água;
+explicar como o casco modifica o escoamento da água;
 </li>
 
 <li>
-relacionar alterações de velocidade às variações de pressão;
+identificar o movimento relativo entre navio e água;
 </li>
 
 <li>
-identificar regiões de maior e menor pressão ao longo do casco;
+interpretar linhas de corrente em diagramas hidrodinâmicos;
 </li>
 
 <li>
-reconhecer forças e momentos produzidos por escoamentos
-assimétricos;
+relacionar curvatura do escoamento e distribuição de pressão;
 </li>
 
 <li>
-explicar os principais efeitos de águas rasas e restritas;
+distinguir pressão local de força hidrodinâmica resultante;
 </li>
 
 <li>
-avaliar a influência da velocidade, do calado, da profundidade
-e da distância da margem;
+reconhecer forças longitudinais, laterais e momentos de guinada;
 </li>
 
 <li>
-interpretar situações de interação navio–margem e
-navio–navio;
+compreender a origem de escoamentos simétricos e assimétricos;
 </li>
 
 <li>
-empregar corretamente os principais termos técnicos em
-inglês marítimo;
+aplicar os conceitos básicos à interpretação da manobra;
 </li>
 
 <li>
-aplicar os conhecimentos hidrodinâmicos ao planejamento
-e à execução de manobras.
+empregar corretamente os principais termos técnicos em inglês.
 </li>
 
 </ul>
@@ -376,7 +561,7 @@ e à execução de manobras.
 <section>
 
 <h2>
-📚 Publicações Utilizadas
+📚 Publicações utilizadas
 </h2>
 
 
@@ -387,37 +572,69 @@ Naval Shiphandling
 </h3>
 
 <p>
-Referência operacional para as forças que afetam o navio
-e para os efeitos observados durante a manobra em águas
-restritas.
+Russell Sydnor Crenshaw.
 </p>
 
 <p>
-<strong>Trecho indicado:</strong>
+<strong>Trecho indicado na bibliografia:</strong>
 Chapter 2 — Forces Affecting the Ship.
 </p>
 
+<p>
+Referência operacional para a interpretação das forças
+que atuam sobre o navio durante a manobra.
+</p>
+
 </div>
+
 
 
 <div class="widget">
 
 <h3>
-Principles of Naval Architecture
+Principles of Naval Architecture — Volume II
 </h3>
 
 <p>
-Referência para os fundamentos de resistência,
-controlabilidade e forças hidrodinâmicas que atuam
-sobre o casco.
+Edward V. Lewis.
 </p>
 
 <p>
-<strong>Trechos relacionados:</strong>
-Volume II — Resistance; Volume III — Controllability.
+<strong>Trecho indicado:</strong>
+Chapter V — Resistance.
+</p>
+
+<p>
+Referência para os fundamentos do escoamento ao redor
+do casco e da distribuição das forças hidrodinâmicas.
 </p>
 
 </div>
+
+
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture — Volume III
+</h3>
+
+<p>
+Edward V. Lewis.
+</p>
+
+<p>
+<strong>Trecho indicado:</strong>
+Chapter IX — Controllability.
+</p>
+
+<p>
+Referência para forças, momentos e resposta do navio
+durante os movimentos de manobra.
+</p>
+
+</div>
+
 
 
 <div class="widget">
@@ -427,9 +644,7 @@ Ship Resistance and Flow
 </h3>
 
 <p>
-Referência para o estudo do escoamento ao redor do casco,
-das linhas de corrente, da camada limite, da esteira e da
-distribuição de pressão.
+Lars Larsson e Hoyte C. Raven.
 </p>
 
 <p>
@@ -437,7 +652,13 @@ distribuição de pressão.
 Chapters 1 a 8.
 </p>
 
+<p>
+Referência para linhas de corrente, campo de velocidades,
+pressões, camada limite e esteira.
+</p>
+
 </div>
+
 
 
 <div class="widget">
@@ -447,9 +668,7 @@ Practical Ship Hydrodynamics
 </h3>
 
 <p>
-Referência para os fundamentos do escoamento,
-hidrodinâmica do casco e efeitos associados às condições
-de operação.
+Volker Bertram.
 </p>
 
 <p>
@@ -457,19 +676,9 @@ de operação.
 Chapters 2, 3 e 6.
 </p>
 
-</div>
-
-
-<div class="widget">
-
-<h3>
-Shiphandling for the Mariner
-</h3>
-
 <p>
-Referência complementar para a interpretação prática dos
-efeitos hidrodinâmicos durante manobras em canais, portos
-e águas restritas.
+Referência complementar para os fundamentos físicos
+da hidrodinâmica do navio.
 </p>
 
 </div>
@@ -489,35 +698,21 @@ PARTE 1
 </h2>
 
 <h3>
-Fundamentos do Escoamento ao Redor do Casco
+Fundamentos do escoamento ao redor do casco
 </h3>
 
 <p>
-Antes de estudar fenômenos específicos como
-<strong>squat</strong>, interação com margens e interação
-entre embarcações, é necessário compreender como o casco
-modifica o movimento da água ao seu redor.
+Os efeitos hidrodinâmicos surgem porque a água precisa
+modificar sua velocidade e sua direção para contornar
+o casco em movimento.
 </p>
 
 <p>
-A base física desses fenômenos está na relação entre:
+Essas alterações produzem distribuições de pressão que,
+quando integradas sobre a superfície molhada, originam
+forças e momentos capazes de modificar a trajetória do
+navio.
 </p>
-
-<ul>
-
-<li>geometria do casco;</li>
-
-<li>velocidade relativa entre o navio e a água;</li>
-
-<li>curvatura das linhas de corrente;</li>
-
-<li>variação da velocidade do escoamento;</li>
-
-<li>distribuição de pressão;</li>
-
-<li>assimetria do espaço disponível para o escoamento.</li>
-
-</ul>
 
 </section>
 
@@ -534,57 +729,64 @@ data-topico-id="conceito-efeitos-hidrodinamicos"
 >
 
 <h2>
-1. Conceito de Efeitos Hidrodinâmicos
+1. Conceito de efeitos hidrodinâmicos
 </h2>
-
 
 <div class="widget">
 
 <p>
 Os <strong>efeitos hidrodinâmicos</strong>,
-ou <strong>hydrodynamic effects</strong>, são as alterações
-nas forças e nos momentos que atuam sobre o navio em razão
-do movimento relativo entre o casco e a água.
+ou <strong>hydrodynamic effects</strong>, são os efeitos
+produzidos pela interação entre o casco e a água em
+movimento relativo.
 </p>
 
 <p>
-Quando o navio se desloca, ele precisa desviar a água que
-ocupava a região para a qual o casco avança. A água é
-acelerada, desacelerada e desviada ao longo das formas
-de proa, dos costados e da popa.
+Quando o navio se desloca, a água não permanece
+indiferente à sua passagem. O casco obriga o escoamento
+a mudar de direção, velocidade e pressão.
 </p>
 
 <p>
-Esse movimento produz uma distribuição de pressão que não
-é uniforme ao redor do casco.
+A água, por sua vez, exerce pressões e tensões sobre
+a superfície molhada do navio.
 </p>
 
 <p>
-As pressões atuantes sobre a superfície molhada podem
-originar:
+A combinação dessas ações pode produzir:
 </p>
 
 <ul>
 
-<li>forças longitudinais;</li>
+<li>
+força longitudinal;
+</li>
 
-<li>forças transversais ou laterais;</li>
+<li>
+força lateral;
+</li>
 
-<li>momentos de guinada;</li>
+<li>
+força vertical;
+</li>
 
-<li>alterações dinâmicas de afundamento;</li>
+<li>
+momento de guinada;
+</li>
 
-<li>alterações de trim;</li>
+<li>
+momento de trim;
+</li>
 
-<li>mudanças na resistência ao avanço;</li>
+<li>
+alterações na resistência ao avanço;
+</li>
 
-<li>mudanças na resposta ao leme e à propulsão.</li>
+<li>
+mudanças na resposta do navio ao leme e à propulsão.
+</li>
 
 </ul>
-
-</div>
-
-
 
 <div class="destaque">
 
@@ -593,19 +795,15 @@ Princípio fundamental
 </h3>
 
 <p>
-O navio não se movimenta através de uma massa de água
-passiva e imóvel.
+O navio modifica o campo de escoamento da água.
 </p>
 
 <p>
-Ao avançar, o casco modifica o campo de velocidades e o
-campo de pressões da água. A água modificada pelo navio,
-por sua vez, exerce forças sobre o próprio casco.
+O campo de escoamento modificado exerce forças e
+momentos sobre o próprio navio.
 </p>
 
 </div>
-
-
 
 <div class="atencao-pratico">
 
@@ -614,69 +812,55 @@ por sua vez, exerce forças sobre o próprio casco.
 </h3>
 
 <p>
-O comportamento observado durante uma manobra não depende
-apenas da ação do leme, da máquina, do vento e da corrente.
+Nem toda alteração da trajetória é causada diretamente
+pelo vento, pela corrente, pelo leme ou pela máquina.
 </p>
 
 <p>
-A proximidade do fundo, de uma margem, de uma estrutura ou
-de outra embarcação pode tornar o escoamento assimétrico e
-produzir forças hidrodinâmicas capazes de alterar
-significativamente a trajetória do navio.
+A proximidade do fundo, de uma margem, de uma estrutura
+ou de outra embarcação pode modificar o escoamento e
+gerar forças hidrodinâmicas relevantes.
 </p>
 
 </div>
 
-
-
 <div class="termos-tecnicos">
 
 <h3>
-🌐 Termos Técnicos
+🌐 Termos técnicos
 </h3>
 
 <p>
-<strong>Hydrodynamic Effects</strong> —
-Efeitos hidrodinâmicos.
+<strong>Hydrodynamic Effect</strong> —
+efeito hidrodinâmico.
 </p>
 
 <p>
-Alterações das forças e dos momentos que atuam sobre o
-navio em consequência do escoamento da água ao redor
-do casco.
+Alteração do comportamento do navio produzida pela
+interação entre o casco e o escoamento da água.
 </p>
-
 
 <p>
 <strong>Hydrodynamic Force</strong> —
-Força hidrodinâmica.
+força hidrodinâmica.
 </p>
 
 <p>
 Força resultante das pressões e das tensões exercidas
-pela água sobre a superfície do navio.
+pela água sobre uma superfície.
 </p>
-
 
 <p>
 <strong>Hydrodynamic Moment</strong> —
-Momento hidrodinâmico.
+momento hidrodinâmico.
 </p>
 
 <p>
-Efeito rotacional produzido pela distribuição das forças
-hidrodinâmicas ao redor do casco.
+Efeito rotacional produzido pelas forças hidrodinâmicas
+em relação a um ponto ou eixo de referência.
 </p>
 
-
-<p>
-<strong>Relative Flow</strong> —
-Escoamento relativo.
-</p>
-
-<p>
-Movimento da água observado em relação ao navio.
-</p>
+</div>
 
 </div>
 
@@ -695,379 +879,90 @@ data-topico-id="movimento-relativo-navio-agua"
 >
 
 <h2>
-2. Movimento Relativo entre o Navio e a Água
+2. Movimento relativo entre o navio e a água
 </h2>
-
 
 <div class="widget">
 
 <p>
-Para estudar o escoamento ao redor do casco, é comum
-considerar o navio parado e a água movimentando-se no
-sentido oposto ao avanço.
+O fenômeno hidrodinâmico depende do movimento relativo
+entre o casco e a água.
 </p>
 
 <p>
-Essa mudança do referencial não altera o fenômeno físico,
-mas facilita a visualização do escoamento.
+Para facilitar a análise, pode-se considerar o navio
+parado enquanto a água escoa ao redor dele no sentido
+oposto ao avanço.
 </p>
 
 <p>
-Assim, para um navio avançando com velocidade
-<strong>V</strong>, pode-se representar a água chegando à
-proa com velocidade relativa aproximadamente igual a
-<strong>V</strong>, desde que não sejam consideradas,
-neste primeiro momento, corrente, ondas e outras
-perturbações.
+Essa mudança de referencial não altera o fenômeno físico.
+Ela apenas torna mais simples a representação das linhas
+de corrente e das velocidades locais.
 </p>
-
-</div>
-
-
-
-<div class="figura-aula">
-
-<h3>
-Figura 1 — Referencial do escoamento
-</h3>
-
-<svg
-viewBox="0 0 900 360"
-role="img"
-aria-labelledby="titulo-referencial descricao-referencial"
->
-
-<title id="titulo-referencial">
-Movimento relativo entre o navio e a água
-</title>
-
-<desc id="descricao-referencial">
-Comparação entre um navio avançando em água inicialmente
-em repouso e um navio considerado parado com a água
-escoando no sentido contrário.
-</desc>
-
-
-<!-- PAINEL ESQUERDO -->
-
-<rect
-x="20"
-y="20"
-width="410"
-height="300"
-rx="16"
-fill="#eef6fb"
-stroke="#174a6e"
-stroke-width="3"
-/>
-
-<text
-x="225"
-y="55"
-text-anchor="middle"
-font-size="22"
-font-weight="bold"
-fill="#102a43"
->
-
-NAVIO EM MOVIMENTO
-
-</text>
-
-
-<!-- NAVIO -->
-
-<path
-d="M125 165
-   L305 165
-   L365 205
-   L305 245
-   L125 245
-   L75 205
-   Z"
-fill="#d8e3ec"
-stroke="#003b5c"
-stroke-width="4"
-/>
-
-<line
-x1="105"
-y1="205"
-x2="335"
-y2="205"
-stroke="#6c7f8d"
-stroke-width="2"
-stroke-dasharray="10 8"
-/>
-
-
-<!-- SETA DO NAVIO -->
-
-<line
-x1="145"
-y1="120"
-x2="320"
-y2="120"
-stroke="#c0392b"
-stroke-width="7"
-/>
-
-<polygon
-points="320,120 290,103 290,137"
-fill="#c0392b"
-/>
-
-<text
-x="230"
-y="103"
-text-anchor="middle"
-font-size="20"
-font-weight="bold"
-fill="#c0392b"
->
-
-VELOCIDADE V
-
-</text>
-
-
-<text
-x="225"
-y="285"
-text-anchor="middle"
-font-size="18"
-fill="#102a43"
->
-
-Água inicialmente em repouso
-
-</text>
-
-
-
-<!-- PAINEL DIREITO -->
-
-<rect
-x="470"
-y="20"
-width="410"
-height="300"
-rx="16"
-fill="#eef6fb"
-stroke="#174a6e"
-stroke-width="3"
-/>
-
-<text
-x="675"
-y="55"
-text-anchor="middle"
-font-size="22"
-font-weight="bold"
-fill="#102a43"
->
-
-REFERENCIAL DO NAVIO
-
-</text>
-
-
-<!-- NAVIO -->
-
-<path
-d="M575 165
-   L755 165
-   L815 205
-   L755 245
-   L575 245
-   L525 205
-   Z"
-fill="#d8e3ec"
-stroke="#003b5c"
-stroke-width="4"
-/>
-
-<line
-x1="555"
-y1="205"
-x2="785"
-y2="205"
-stroke="#6c7f8d"
-stroke-width="2"
-stroke-dasharray="10 8"
-/>
-
-
-<!-- SETAS DO ESCOAMENTO -->
-
-<line
-x1="820"
-y1="105"
-x2="565"
-y2="105"
-stroke="#1676a3"
-stroke-width="6"
-/>
-
-<polygon
-points="565,105 595,88 595,122"
-fill="#1676a3"
-/>
-
-
-<line
-x1="820"
-y1="275"
-x2="565"
-y2="275"
-stroke="#1676a3"
-stroke-width="6"
-/>
-
-<polygon
-points="565,275 595,258 595,292"
-fill="#1676a3"
-/>
-
-
-<text
-x="690"
-y="88"
-text-anchor="middle"
-font-size="20"
-font-weight="bold"
-fill="#1676a3"
->
-
-ESCOAMENTO RELATIVO V
-
-</text>
-
-
-<text
-x="675"
-y="305"
-text-anchor="middle"
-font-size="18"
-fill="#102a43"
->
-
-Navio considerado parado
-
-</text>
-
-</svg>
-
-
-<p>
-No painel esquerdo, o navio avança em relação à água.
-No painel direito, o navio é considerado parado e a água
-escoa no sentido contrário.
-</p>
-
-<p>
-As duas representações descrevem o mesmo movimento
-relativo.
-</p>
-
-</div>
-
-
 
 <div class="destaque">
 
 <h3>
-Velocidade através da água
+Velocidade relevante
 </h3>
 
 <p>
-Os efeitos hidrodinâmicos gerados pelo casco estão
-relacionados principalmente à velocidade do navio
-<strong>através da água</strong>, e não simplesmente à
-velocidade em relação ao fundo.
+Para os efeitos gerados pelo escoamento ao redor do casco,
+a velocidade relevante é principalmente a velocidade do
+navio em relação à água.
 </p>
 
 <p>
-Uma corrente pode alterar a velocidade sobre o fundo sem
-produzir a mesma alteração na velocidade relativa entre
-o casco e a massa de água.
+Essa velocidade não deve ser confundida automaticamente
+com a velocidade em relação ao fundo.
 </p>
 
 </div>
-
-
-
-<div class="atencao-pratico">
-
-<h3>
-⚠️ Atenção do Prático
-</h3>
-
-<p>
-Durante a avaliação dos efeitos hidrodinâmicos, diferencie:
-</p>
-
-<ul>
-
-<li>
-<strong>Speed Through the Water — STW:</strong>
-velocidade através da água;
-</li>
-
-<li>
-<strong>Speed Over the Ground — SOG:</strong>
-velocidade sobre o fundo.
-</li>
-
-</ul>
-
-<p>
-Uma embarcação pode apresentar SOG elevada em razão de
-corrente favorável sem que sua STW tenha aumentado na
-mesma proporção.
-</p>
-
-</div>
-
-
 
 <div class="termos-tecnicos">
 
 <h3>
-🌐 Termos Técnicos
+🌐 Termos técnicos
 </h3>
 
 <p>
-<strong>Speed Through the Water — STW</strong> —
-Velocidade através da água.
+<strong>Relative Motion</strong> —
+movimento relativo.
 </p>
 
 <p>
-Velocidade do navio em relação à massa de água na qual
-ele se desloca.
+Movimento observado entre dois corpos ou referenciais.
 </p>
 
+<p>
+<strong>Speed Through the Water — STW</strong> —
+velocidade através da água.
+</p>
+
+<p>
+Velocidade do navio em relação à massa de água.
+</p>
 
 <p>
 <strong>Speed Over the Ground — SOG</strong> —
-Velocidade sobre o fundo.
+velocidade sobre o fundo.
 </p>
 
 <p>
-Velocidade do navio em relação à superfície terrestre,
-normalmente obtida por sistemas de posicionamento.
+Velocidade do navio em relação à superfície terrestre.
 </p>
-
 
 <p>
 <strong>Reference Frame</strong> —
-Referencial.
+referencial.
 </p>
 
 <p>
-Sistema adotado para descrever posições, velocidades
-e movimentos.
+Sistema adotado para descrever posições e movimentos.
 </p>
+
+</div>
 
 </div>
 
@@ -1086,58 +981,70 @@ data-topico-id="escoamento-ao-redor-do-casco"
 >
 
 <h2>
-3. Escoamento ao Redor do Casco
+3. Escoamento ao redor do casco
 </h2>
-
 
 <div class="widget">
 
 <p>
-Ao alcançar a proa, o escoamento precisa dividir-se e
-contornar o casco.
+Quando o escoamento alcança a proa, a água precisa
+dividir-se e contornar o casco.
 </p>
 
 <p>
-Parte da água é desviada para bombordo, parte para
-boreste, parte para baixo e, na região próxima da
-superfície livre, parte participa da formação do sistema
-de ondas do navio.
+Parte do escoamento passa por bombordo, parte por
+boreste e parte é desviada para baixo.
 </p>
 
 <p>
-Ao longo dos costados, a geometria do casco orienta as
-trajetórias seguidas pelas partículas de água.
+Na região da superfície livre, o deslocamento do casco
+também participa da formação do sistema de ondas do
+navio.
 </p>
 
 <p>
-Essas trajetórias são representadas por
-<strong>linhas de corrente</strong>, ou
-<strong>streamlines</strong>.
+As trajetórias instantâneas seguidas pelo escoamento
+podem ser representadas por
+<strong>linhas de corrente</strong>,
+ou <strong>streamlines</strong>.
 </p>
 
-</div>
 
 
+<!-- =========================================
+     FIGURA 1
+========================================= -->
 
 <div class="figura-aula">
 
 <h3>
-Figura 2 — Linhas de corrente ao redor do casco
+Figura 1 — Escoamento ao redor do casco
 </h3>
 
+<p>
+<strong>Panorama de visada:</strong>
+vista superior ou vista em planta
+(<strong>plan view</strong>).
+</p>
+
 <svg
-viewBox="0 0 1000 500"
+viewBox="0 0 1000 520"
 role="img"
-aria-labelledby="titulo-escoamento descricao-escoamento"
+aria-labelledby="titulo-figura-1 descricao-figura-1"
 >
 
-<title id="titulo-escoamento">
-Escoamento em vista superior ao redor do casco
+<title id="titulo-figura-1">
+
+Vista superior de um navio com linhas de corrente
+
 </title>
 
-<desc id="descricao-escoamento">
-Linhas de corrente desviando-se na proa, acompanhando os
-costados e convergindo novamente após a popa.
+<desc id="descricao-figura-1">
+
+Navio observado de cima, com a proa claramente indicada
+à esquerda, a popa à direita e linhas de corrente passando
+de esquerda para direita ao redor dos dois bordos.
+
 </desc>
 
 
@@ -1147,7 +1054,7 @@ costados e convergindo novamente após a popa.
 x="15"
 y="15"
 width="970"
-height="450"
+height="470"
 rx="18"
 fill="#eef7fb"
 stroke="#174a6e"
@@ -1155,62 +1062,71 @@ stroke-width="3"
 />
 
 
-<!-- TÍTULO INTERNO -->
+<!-- IDENTIFICAÇÃO DA VISTA -->
+
+<rect
+x="315"
+y="30"
+width="370"
+height="45"
+rx="10"
+fill="#003b5c"
+/>
 
 <text
 x="500"
-y="55"
+y="60"
 text-anchor="middle"
-font-size="25"
+font-size="22"
 font-weight="bold"
-fill="#102a43"
+fill="#ffffff"
 >
 
-VISTA EM PLANTA — PLAN VIEW
+VISTA SUPERIOR — PLAN VIEW
 
 </text>
 
 
-<!-- LINHAS DE CORRENTE SUPERIORES -->
+<!-- LINHAS DE CORRENTE DE BOMBORDO -->
 
 <path
-d="M55 105
-   C250 105 300 120 370 155
-   C440 190 610 190 700 150
-   C775 118 850 108 945 108"
+d="M55 120
+C230 120 300 135 375 170
+C445 202 665 202 745 168
+C825 135 885 125 945 125"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
 />
 
 <path
-d="M55 145
-   C235 145 290 158 355 185
-   C430 217 620 215 720 180
-   C800 152 860 145 945 145"
+d="M55 165
+C225 165 292 180 360 205
+C430 232 675 232 760 202
+C835 176 890 168 945 168"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
 />
 
 <path
-d="M55 185
-   C225 185 280 195 340 215
-   C420 242 630 240 735 210
-   C815 188 870 185 945 185"
+d="M55 210
+C220 210 280 220 345 238
+C420 260 685 260 775 235
+C845 216 895 212 945 212"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
 />
 
 
-<!-- LINHAS DE CORRENTE INFERIORES -->
+<!-- LINHAS DE CORRENTE DE BORESTE -->
 
 <path
-d="M55 395
-   C250 395 300 380 370 345
-   C440 310 610 310 700 350
-   C775 382 850 392 945 392"
+d="M55 400
+C230 400 300 385 375 350
+C445 318 665 318 745 352
+C825 385 885 395 945 395"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
@@ -1218,62 +1134,136 @@ stroke-width="4"
 
 <path
 d="M55 355
-   C235 355 290 342 355 315
-   C430 283 620 285 720 320
-   C800 348 860 355 945 355"
+C225 355 292 340 360 315
+C430 288 675 288 760 318
+C835 344 890 352 945 352"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
 />
 
 <path
-d="M55 315
-   C225 315 280 305 340 285
-   C420 258 630 260 735 290
-   C815 312 870 315 945 315"
+d="M55 310
+C220 310 280 300 345 282
+C420 260 685 260 775 285
+C845 304 895 308 945 308"
 fill="none"
 stroke="#1684b3"
 stroke-width="4"
 />
 
 
-<!-- CASCO -->
+<!-- CASCO EM VISTA SUPERIOR -->
 
 <path
-d="M260 250
-   C300 205 385 192 510 192
-   C655 192 745 220 820 250
-   C745 280 655 308 510 308
-   C385 308 300 295 260 250
-   Z"
-fill="#cbd8e1"
+d="M225 260
+C265 220 350 195 505 195
+C665 195 775 220 845 260
+C775 300 665 325 505 325
+C350 325 265 300 225 260
+Z"
+fill="#d4dee6"
 stroke="#003b5c"
 stroke-width="5"
+/>
+
+
+<!-- PROA MAIS AFILADA -->
+
+<path
+d="M225 260
+C250 235 275 220 315 210"
+fill="none"
+stroke="#003b5c"
+stroke-width="4"
+/>
+
+<path
+d="M225 260
+C250 285 275 300 315 310"
+fill="none"
+stroke="#003b5c"
+stroke-width="4"
+/>
+
+
+<!-- POPA MAIS LARGA E DEFINIDA -->
+
+<line
+x1="820"
+y1="240"
+x2="845"
+y2="260"
+stroke="#003b5c"
+stroke-width="4"
+/>
+
+<line
+x1="845"
+y1="260"
+x2="820"
+y2="280"
+stroke="#003b5c"
+stroke-width="4"
 />
 
 
 <!-- LINHA DE CENTRO -->
 
 <line
-x1="285"
-y1="250"
-x2="795"
-y2="250"
+x1="245"
+y1="260"
+x2="825"
+y2="260"
 stroke="#6c7f8d"
 stroke-width="2"
-stroke-dasharray="12 9"
+stroke-dasharray="13 9"
 />
 
 
-<!-- PROA E POPA -->
+<!-- SUPERESTRUTURA PRÓXIMA À POPA -->
+
+<rect
+x="685"
+y="225"
+width="70"
+height="70"
+rx="8"
+fill="#ffffff"
+stroke="#526d82"
+stroke-width="3"
+/>
+
+<rect
+x="700"
+y="238"
+width="40"
+height="44"
+rx="5"
+fill="#b9d4e6"
+stroke="#526d82"
+stroke-width="2"
+/>
+
+
+<!-- RÓTULO PROA -->
+
+<line
+x1="225"
+y1="260"
+x2="145"
+y2="260"
+stroke="#c0392b"
+stroke-width="3"
+/>
 
 <text
-x="260"
-y="338"
+x="135"
+y="245"
 text-anchor="middle"
-font-size="20"
+font-size="22"
 font-weight="bold"
-fill="#102a43"
+fill="#c0392b"
 >
 
 PROA
@@ -1281,11 +1271,11 @@ PROA
 </text>
 
 <text
-x="260"
-y="362"
+x="135"
+y="273"
 text-anchor="middle"
-font-size="17"
-fill="#102a43"
+font-size="18"
+fill="#c0392b"
 >
 
 BOW
@@ -1293,13 +1283,24 @@ BOW
 </text>
 
 
+<!-- RÓTULO POPA -->
+
+<line
+x1="845"
+y1="260"
+x2="915"
+y2="260"
+stroke="#8e5a20"
+stroke-width="3"
+/>
+
 <text
-x="820"
-y="338"
+x="915"
+y="245"
 text-anchor="middle"
-font-size="20"
+font-size="22"
 font-weight="bold"
-fill="#102a43"
+fill="#8e5a20"
 >
 
 POPA
@@ -1307,11 +1308,11 @@ POPA
 </text>
 
 <text
-x="820"
-y="362"
+x="915"
+y="273"
 text-anchor="middle"
-font-size="17"
-fill="#102a43"
+font-size="18"
+fill="#8e5a20"
 >
 
 STERN
@@ -1319,107 +1320,144 @@ STERN
 </text>
 
 
-<!-- DIREÇÃO DO ESCOAMENTO -->
-
-<line
-x1="80"
-y1="435"
-x2="240"
-y2="435"
-stroke="#c0392b"
-stroke-width="7"
-/>
-
-<polygon
-points="240,435 210,418 210,452"
-fill="#c0392b"
-/>
+<!-- BOMBORDO -->
 
 <text
-x="160"
-y="415"
+x="510"
+y="150"
 text-anchor="middle"
-font-size="18"
+font-size="20"
 font-weight="bold"
-fill="#c0392b"
+fill="#102a43"
 >
 
-DIREÇÃO DO ESCOAMENTO
+BOMBORDO — PORT
 
 </text>
 
 
-<!-- SETAS NAS LINHAS -->
+<!-- BORESTE -->
+
+<text
+x="510"
+y="385"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#102a43"
+>
+
+BORESTE — STARBOARD
+
+</text>
+
+
+<!-- DIREÇÃO DO ESCOAMENTO -->
+
+<line
+x1="75"
+y1="455"
+x2="275"
+y2="455"
+stroke="#1676a3"
+stroke-width="7"
+/>
 
 <polygon
-points="175,101 195,108 175,115"
+points="275,455 242,436 242,474"
+fill="#1676a3"
+/>
+
+<text
+x="175"
+y="435"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="#1676a3"
+>
+
+ESCOAMENTO RELATIVO
+
+</text>
+
+
+<!-- SETAS NAS LINHAS SUPERIORES -->
+
+<polygon
+points="150,113 173,120 150,127"
 fill="#1684b3"
 />
 
 <polygon
-points="175,141 195,148 175,155"
+points="150,158 173,165 150,172"
 fill="#1684b3"
 />
 
 <polygon
-points="175,181 195,188 175,195"
+points="150,203 173,210 150,217"
 fill="#1684b3"
 />
 
 <polygon
-points="175,311 195,318 175,325"
+points="880,118 903,125 880,132"
 fill="#1684b3"
 />
 
 <polygon
-points="175,351 195,358 175,365"
+points="880,161 903,168 880,175"
 fill="#1684b3"
 />
 
 <polygon
-points="175,391 195,398 175,405"
+points="880,205 903,212 880,219"
 fill="#1684b3"
 />
 
 
+<!-- SETAS NAS LINHAS INFERIORES -->
+
 <polygon
-points="890,101 910,108 890,115"
+points="150,303 173,310 150,317"
 fill="#1684b3"
 />
 
 <polygon
-points="890,141 910,148 890,155"
+points="150,348 173,355 150,362"
 fill="#1684b3"
 />
 
 <polygon
-points="890,181 910,188 890,195"
+points="150,393 173,400 150,407"
 fill="#1684b3"
 />
 
 <polygon
-points="890,311 910,318 890,325"
+points="880,301 903,308 880,315"
 fill="#1684b3"
 />
 
 <polygon
-points="890,351 910,358 890,365"
+points="880,345 903,352 880,359"
 fill="#1684b3"
 />
 
 <polygon
-points="890,391 910,398 890,405"
+points="880,388 903,395 880,402"
 fill="#1684b3"
 />
 
 </svg>
 
+<p>
+A ilustração apresenta o navio observado de cima.
+A proa está à esquerda e a popa está à direita.
+</p>
 
 <p>
-As linhas representam a direção instantânea do
-escoamento. Elas se desviam para contornar a proa,
-acompanham aproximadamente os costados e reorganizam-se
-na região da popa.
+O escoamento relativo desloca-se da esquerda para a
+direita, encontra a proa, divide-se entre bombordo e
+boreste e reorganiza-se após a popa.
 </p>
 
 </div>
@@ -1429,56 +1467,34 @@ na região da popa.
 <div class="destaque">
 
 <h3>
-Linhas de corrente
+Leitura correta da figura
 </h3>
-
-<p>
-Uma linha de corrente é uma linha imaginária cuja direção,
-em cada ponto, coincide com a direção instantânea da
-velocidade local do fluido.
-</p>
-
-<p>
-As partículas de água não atravessam lateralmente uma
-linha de corrente em um escoamento idealizado e
-permanente.
-</p>
-
-</div>
-
-
-
-<div class="widget">
-
-<h3>
-Perturbação produzida pelo casco
-</h3>
-
-<p>
-Longe do navio, o escoamento pode ser considerado
-aproximadamente uniforme.
-</p>
-
-<p>
-Nas proximidades do casco, entretanto, a forma da
-embarcação provoca:
-</p>
 
 <ul>
 
-<li>mudanças na direção do escoamento;</li>
+<li>
+<strong>Panorama:</strong> vista superior;
+</li>
 
-<li>mudanças na velocidade local;</li>
+<li>
+<strong>proa:</strong> extremidade afilada à esquerda;
+</li>
 
-<li>curvatura das linhas de corrente;</li>
+<li>
+<strong>popa:</strong> extremidade de ré à direita;
+</li>
 
-<li>variações de pressão;</li>
+<li>
+<strong>bombordo:</strong> parte superior do desenho;
+</li>
 
-<li>formação de camada limite;</li>
+<li>
+<strong>boreste:</strong> parte inferior do desenho;
+</li>
 
-<li>formação de ondas;</li>
-
-<li>desenvolvimento de esteira na região da popa.</li>
+<li>
+<strong>sentido do escoamento:</strong> da esquerda para a direita.
+</li>
 
 </ul>
 
@@ -1493,16 +1509,13 @@ embarcação provoca:
 </h3>
 
 <p>
-Em águas abertas e suficientemente profundas, o
-escoamento pode desenvolver-se ao redor e abaixo do casco
-com menor restrição.
+A figura representa uma condição idealizada e simétrica.
 </p>
 
 <p>
-Em águas rasas, canais ou próximo de margens, a área
-disponível para a passagem da água é reduzida. O
-escoamento é alterado e os gradientes de pressão podem
-tornar-se muito mais relevantes para a manobra.
+Em uma condição real, deriva, curva, margem, fundo,
+corrente não uniforme ou outra embarcação podem tornar
+o escoamento diferente entre os dois bordos.
 </p>
 
 </div>
@@ -1512,60 +1525,56 @@ tornar-se muito mais relevantes para a manobra.
 <div class="termos-tecnicos">
 
 <h3>
-🌐 Termos Técnicos
+🌐 Termos técnicos
 </h3>
 
 <p>
 <strong>Streamline</strong> —
-Linha de corrente.
+linha de corrente.
 </p>
 
 <p>
-Linha tangente à direção local da velocidade do
-escoamento.
+Linha cuja direção coincide, em cada ponto, com a direção
+instantânea da velocidade do fluido.
 </p>
-
 
 <p>
 <strong>Flow Field</strong> —
-Campo de escoamento.
+campo de escoamento.
 </p>
 
 <p>
-Distribuição das velocidades do fluido em uma determinada
-região.
-</p>
-
-
-<p>
-<strong>Flow Direction</strong> —
-Direção do escoamento.
+Distribuição das velocidades do fluido em uma região.
 </p>
 
 <p>
-Sentido local do movimento da água em relação ao navio.
-</p>
-
-
-<p>
-<strong>Flow Disturbance</strong> —
-Perturbação do escoamento.
+<strong>Bow</strong> —
+proa.
 </p>
 
 <p>
-Alteração produzida pela presença e pelo movimento do
-casco.
+Extremidade de vante do navio.
 </p>
 
+<p>
+<strong>Stern</strong> —
+popa.
+</p>
+
+<p>
+Extremidade de ré do navio.
+</p>
 
 <p>
 <strong>Plan View</strong> —
-Vista em planta.
+vista superior ou vista em planta.
 </p>
 
 <p>
 Representação do navio observado de cima.
 </p>
+
+</div>
 
 </div>
 
@@ -1579,126 +1588,84 @@ Representação do navio observado de cima.
 
 <section
 class="topico-aula"
-id="distribuicao-inicial-pressao"
-data-topico-id="distribuicao-inicial-pressao"
+id="perturbacao-do-escoamento"
+data-topico-id="perturbacao-do-escoamento"
 >
 
 <h2>
-4. Introdução à Distribuição de Pressão
+4. Perturbação produzida pelo casco
 </h2>
 
-
 <div class="widget">
 
 <p>
-A pressão da água sobre o casco não possui o mesmo valor
-em todos os pontos.
+Longe do navio, o escoamento pode ser considerado
+aproximadamente uniforme em uma análise simplificada.
 </p>
 
 <p>
-Quando o escoamento encontra a proa, ele é desacelerado e
-desviado. Em determinadas regiões, a velocidade local da
-água diminui e a pressão aumenta.
+Nas proximidades do casco, entretanto, a água sofre
+alterações produzidas pela geometria da embarcação.
 </p>
 
 <p>
-Em outras regiões, o escoamento é acelerado ao acompanhar
-as formas do casco, produzindo pressões menores.
-</p>
-
-<p>
-A combinação dessas pressões, integrada sobre toda a
-superfície molhada, produz forças e momentos sobre o
-navio.
-</p>
-
-</div>
-
-
-
-<div class="destaque">
-
-<h3>
-Pressão local e força resultante
-</h3>
-
-<p>
-A pressão atua localmente em direção aproximadamente
-normal, isto é, perpendicular à superfície do casco.
-</p>
-
-<p>
-Embora cada pequena área receba apenas uma parcela da
-força, a soma de todas essas parcelas determina a força
-hidrodinâmica resultante.
-</p>
-
-</div>
-
-
-
-<div class="widget">
-
-<h3>
-Distribuição simétrica
-</h3>
-
-<p>
-Em uma condição idealizada, com casco simétrico,
-escoamento uniforme, águas profundas e ausência de
-deriva, a distribuição de pressão entre bombordo e
-boreste tende a apresentar simetria.
-</p>
-
-<p>
-Nessa condição, as componentes laterais produzidas em um
-bordo tendem a ser compensadas pelas componentes
-correspondentes do outro bordo.
-</p>
-
-</div>
-
-
-
-<div class="widget">
-
-<h3>
-Distribuição assimétrica
-</h3>
-
-<p>
-Quando o navio se aproxima de uma margem, navega com
-ângulo de deriva, encontra profundidades diferentes entre
-os bordos ou interage com outra embarcação, o escoamento
-pode tornar-se assimétrico.
-</p>
-
-<p>
-Consequentemente, as pressões entre bombordo e boreste
-deixam de se compensar completamente.
-</p>
-
-<p>
-O resultado pode incluir:
+Entre essas alterações estão:
 </p>
 
 <ul>
 
-<li>força lateral sobre o casco;</li>
+<li>
+desaceleração do escoamento diante da proa;
+</li>
 
-<li>momento de guinada;</li>
+<li>
+desvio da água para os bordos e para baixo;
+</li>
 
-<li>aproximação ou afastamento da margem;</li>
+<li>
+aceleração local em determinadas regiões do casco;
+</li>
 
-<li>mudança na trajetória prevista;</li>
+<li>
+curvatura das linhas de corrente;
+</li>
 
-<li>necessidade de correção com leme, máquina ou rebocadores.</li>
+<li>
+variação da pressão;
+</li>
+
+<li>
+formação de camada limite;
+</li>
+
+<li>
+formação de ondas na superfície livre;
+</li>
+
+<li>
+formação de esteira na região de ré.
+</li>
 
 </ul>
 
+<div class="destaque">
+
+<h3>
+Forma do casco
+</h3>
+
+<p>
+A geometria do casco determina como o escoamento será
+desviado ao longo da proa, dos ombros, do corpo paralelo
+e da popa.
+</p>
+
+<p>
+Por isso, navios com formas diferentes podem apresentar
+distribuições distintas de velocidade e pressão.
+</p>
+
 </div>
-
-
 
 <div class="atencao-pratico">
 
@@ -1707,84 +1674,63 @@ O resultado pode incluir:
 </h3>
 
 <p>
-Muitos efeitos hidrodinâmicos relevantes não resultam de
-uma “sucção” isolada exercida por um único ponto.
+A resposta hidrodinâmica não depende apenas da velocidade.
 </p>
 
 <p>
-Eles resultam da diferença entre as distribuições de
-pressão existentes em regiões distintas do casco.
-</p>
-
-<p>
-A interpretação correta deve considerar a força
-resultante e o momento produzido pela distribuição global
-das pressões.
+Forma do casco, calado, trim, coeficiente de bloco,
+profundidade, largura disponível e proximidade de
+obstáculos também influenciam o campo de escoamento.
 </p>
 
 </div>
 
-
-
 <div class="termos-tecnicos">
 
 <h3>
-🌐 Termos Técnicos
+🌐 Termos técnicos
 </h3>
 
 <p>
-<strong>Pressure Distribution</strong> —
-Distribuição de pressão.
+<strong>Flow Disturbance</strong> —
+perturbação do escoamento.
 </p>
 
 <p>
-Variação da pressão da água ao longo da superfície do
-casco.
-</p>
-
-
-<p>
-<strong>Pressure Gradient</strong> —
-Gradiente de pressão.
+Alteração da velocidade ou da direção da água produzida
+pela presença do casco.
 </p>
 
 <p>
-Variação da pressão entre diferentes pontos do
-escoamento.
-</p>
-
-
-<p>
-<strong>Normal Force</strong> —
-Força normal.
+<strong>Hull Form</strong> —
+forma do casco.
 </p>
 
 <p>
-Componente da força que atua perpendicularmente à
-superfície considerada.
-</p>
-
-
-<p>
-<strong>Resultant Force</strong> —
-Força resultante.
+Geometria externa que determina como o casco desloca
+e desvia a água.
 </p>
 
 <p>
-Força equivalente à combinação de todas as forças
-distribuídas sobre a superfície.
-</p>
-
-
-<p>
-<strong>Asymmetric Flow</strong> —
-Escoamento assimétrico.
+<strong>Wake</strong> —
+esteira.
 </p>
 
 <p>
-Escoamento que apresenta características diferentes entre
-os dois bordos ou entre diferentes regiões do casco.
+Região de escoamento perturbado formada atrás do navio.
 </p>
+
+<p>
+<strong>Boundary Layer</strong> —
+camada limite.
+</p>
+
+<p>
+Região próxima à superfície do casco na qual os efeitos
+viscosos são importantes.
+</p>
+
+</div>
 
 </div>
 
@@ -1793,132 +1739,73 @@ os dois bordos ou entre diferentes regiões do casco.
 
 
 <!-- =========================================
-     APLICAÇÃO OPERACIONAL DA PARTE 1
+     RESUMO DA PARTE 1
 ========================================= -->
 
-<section class="topico-aula"
-id="aplicacao-operacional-parte-1"
-data-topico-id="aplicacao-operacional-parte-1"
+<section
+class="topico-aula"
+id="resumo-parte-1"
+data-topico-id="resumo-parte-1"
 >
 
 <h2>
-5. Aplicação Operacional — Leitura Inicial do Escoamento
+5. Resumo técnico da Parte 1
 </h2>
-
 
 <div class="widget">
 
-<p>
-Considere um navio navegando inicialmente no centro de um
-canal, com profundidade e largura aproximadamente
-uniformes.
-</p>
-
-<p>
-Se o navio se deslocar em direção a uma das margens, o
-espaço disponível para o escoamento entre o casco e essa
-margem será reduzido.
-</p>
-
-<p>
-A água que precisa atravessar essa região poderá sofrer
-alterações de velocidade e pressão diferentes das
-observadas no bordo oposto.
-</p>
-
-<p>
-Essa assimetria é a base para compreender, nas próximas
-partes:
-</p>
-
 <ul>
 
-<li>o efeito de margem;</li>
+<li>
+Os efeitos hidrodinâmicos resultam da interação entre
+o casco e a água.
+</li>
 
-<li>a sucção da popa em direção à margem;</li>
+<li>
+O navio modifica a velocidade, a direção e a pressão
+do escoamento.
+</li>
 
-<li>o afastamento da proa;</li>
+<li>
+A água exerce forças e momentos sobre a superfície
+molhada do casco.
+</li>
 
-<li>as mudanças na capacidade de governo;</li>
+<li>
+O movimento relativo pode ser estudado considerando
+o navio parado e a água escoando em sentido contrário.
+</li>
 
-<li>os riscos associados à velocidade excessiva.</li>
+<li>
+As linhas de corrente representam a direção local
+do escoamento.
+</li>
+
+<li>
+A geometria do casco perturba o escoamento de maneira
+diferente ao longo da proa, dos costados e da popa.
+</li>
+
+<li>
+A assimetria do escoamento é uma das origens das forças
+laterais e dos momentos de guinada.
+</li>
 
 </ul>
-
-</div>
-
-
-
-<div class="atencao-pratico">
-
-<h3>
-⚠️ Atenção do Prático
-</h3>
-
-<p>
-A redução antecipada da velocidade é uma das medidas mais
-importantes para controlar efeitos hidrodinâmicos em águas
-restritas.
-</p>
-
-<p>
-Como regra física geral, o aumento da velocidade relativa
-intensifica as alterações produzidas no escoamento e pode
-aumentar significativamente as forças e os momentos
-hidrodinâmicos.
-</p>
-
-<p>
-A relação quantitativa e suas limitações serão estudadas
-nas próximas partes.
-</p>
-
-</div>
-
-
 
 <div class="destaque">
 
 <h3>
-Resumo da Parte 1
+Próxima etapa
 </h3>
 
-<ul>
+<p>
+A Parte 2 estudará a relação entre curvatura das linhas
+de corrente, velocidade local, pressão e força
+hidrodinâmica.
+</p>
 
-<li>
-O movimento relativo entre o navio e a água gera o
-escoamento ao redor do casco.
-</li>
-
-<li>
-O casco desvia, acelera e desacelera a água.
-</li>
-
-<li>
-As linhas de corrente representam a direção local do
-escoamento.
-</li>
-
-<li>
-Mudanças no escoamento produzem variações de pressão.
-</li>
-
-<li>
-A distribuição das pressões gera forças e momentos sobre
-o navio.
-</li>
-
-<li>
-Quando o escoamento se torna assimétrico, podem surgir
-forças laterais e momentos de guinada.
-</li>
-
-<li>
-A velocidade através da água é fundamental para avaliar
-os efeitos hidrodinâmicos.
-</li>
-
-</ul>
+</div>
 
 </div>
 
@@ -1929,37 +1816,42 @@ os efeitos hidrodinâmicos.
 <!-- =====================================================
      FIM DA PARTE 1
 
-     A PRÓXIMA PARTE — PARTE 2
-     DEVERÁ SER COLADA IMEDIATAMENTE ABAIXO DESTE MARCADOR.
+     PARA INSERIR A PARTE 2:
 
-     NÃO SUBSTITUIR NENHUM TRECHO DA PARTE 1.
-     APENAS COLAR A PARTE 2 ABAIXO.
+     1. APAGUE SOMENTE O BLOCO DE ENCERRAMENTO TEMPORÁRIO
+        LOCALIZADO ABAIXO DESTE MARCADOR.
+
+     2. COLE A PARTE 2 IMEDIATAMENTE ABAIXO DESTE COMENTÁRIO.
+
+     3. NÃO APAGUE NENHUM TÓPICO DA PARTE 1.
 
      A PARTE 2 COMEÇARÁ COM:
-
-     CURVATURA DAS LINHAS DE CORRENTE,
-     VELOCIDADE E DISTRIBUIÇÃO DE PRESSÃO.
-
-     IMPORTANTE:
-     AS TAGS </main>, </body> E </html>
-     E OS SCRIPTS navigation.js, progresso.js E pomodoro.js
-     SERÃO INSERIDOS SOMENTE NA ÚLTIMA PARTE DA AULA.
+     CURVATURA DAS LINHAS DE CORRENTE E PRESSÃO.
 ===================================================== -->
 
 
 
-     
 <!-- =========================================
-     ENCERRAMENTO TEMPORÁRIO DA AULA
-     MANTÉM A PÁGINA FUNCIONANDO
+     ENCERRAMENTO TEMPORÁRIO
 ========================================= -->
 
 </main>
 
 
-<!-- =========================================
-     SCRIPTS OBRIGATÓRIOS
-========================================= -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
 
 <script src="../../js/navigation.js"></script>
 
@@ -1968,7 +1860,7 @@ os efeitos hidrodinâmicos.
 <script src="../../js/pomodoro.js"></script>
 
 
+
 </body>
 
-</html>     
-  
+</html>
