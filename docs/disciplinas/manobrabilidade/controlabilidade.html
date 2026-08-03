@@ -185,23 +185,158 @@ Ship Controllability
 
 </section>
 
-<section>
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
 
-<div class="widget" style="text-align:center;">
+<section class="secao-pomodoro">
 
-<h3>⏱ Cronômetro de Estudo</h3>
+<h2>⏱ Cronômetro de Estudo</h2>
 
-<p>Fase atual: <strong id="pomodoro-fase">📖 Estudo</strong> — faltam <strong id="pomodoro-restante">30:00</strong></p>
+<div class="widget pomodoro-widget">
 
-<p>Estudado nesta sessão: <strong id="pomodoro-sessao">00:00</strong></p>
 
-<p>Total acumulado nesta disciplina: <strong id="pomodoro-cumulativo">00:00</strong></p>
+<!-- FASE ATUAL -->
 
-<button type="button" class="botao" id="pomodoro-btn-start" onclick="iniciarPomodoro()">▶ Iniciar</button>
+<div class="pomodoro-cabecalho">
 
-<button type="button" class="botao" id="pomodoro-btn-pause" onclick="pausarPomodoro()" disabled>⏸ Pausar</button>
+<div class="pomodoro-icone">
+⏱
+</div>
 
-<button type="button" class="botao" onclick="zerarPomodoro()">↺ Zerar ciclo</button>
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
 
 </div>
 
