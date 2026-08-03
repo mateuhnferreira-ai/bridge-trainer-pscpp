@@ -504,3 +504,326 @@ main {
 
 
 }
+
+/* ==================================
+   CRONÔMETRO POMODORO
+================================== */
+
+.secao-pomodoro {
+
+    margin-top: 10px;
+    margin-bottom: 24px;
+
+}
+
+
+.pomodoro-widget {
+
+    max-width: 100%;
+
+    padding: 24px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* CABEÇALHO */
+
+.pomodoro-cabecalho {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.pomodoro-icone {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    border-radius: 50%;
+
+    background: #dceaf5;
+
+    font-size: 28px;
+
+}
+
+
+.pomodoro-rotulo {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+
+    color: #526d82;
+
+}
+
+
+.pomodoro-cabecalho h3 {
+
+    margin: 0;
+
+    color: #123f5a;
+
+    font-size: 22px;
+
+}
+
+
+/* TEMPO PRINCIPAL */
+
+.pomodoro-tempo-principal {
+
+    max-width: 360px;
+
+    margin: 0 auto 22px auto;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: #edf6fc;
+
+    border: 1px solid #c3dcea;
+
+}
+
+
+.pomodoro-tempo-label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #526d82;
+
+    font-size: 14px;
+
+}
+
+
+#pomodoro-restante {
+
+    display: block;
+
+    color: #003b5c;
+
+    font-size: 44px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* CAIXAS DE INFORMAÇÃO */
+
+.pomodoro-informacoes {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.pomodoro-caixa {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 92px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: #f7fbfe;
+
+    border: 1px solid #d2e4ef;
+
+    box-shadow: 0 4px 10px rgba(16, 42, 67, 0.08);
+
+}
+
+
+.pomodoro-caixa-icone {
+
+    font-size: 27px;
+
+}
+
+
+.pomodoro-caixa-titulo {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #526d82;
+
+    font-size: 14px;
+
+}
+
+
+.pomodoro-caixa strong {
+
+    display: block;
+
+    color: #123f5a;
+
+    font-size: 24px;
+
+}
+
+
+/* BOTÕES */
+
+.pomodoro-controles {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.pomodoro-botao {
+
+    min-width: 130px;
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+.pomodoro-botao-iniciar {
+
+    background: #176b87;
+
+    color: white;
+
+}
+
+
+.pomodoro-botao:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+.pomodoro-botao:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.45;
+
+    transform: none;
+
+}
+
+
+.pomodoro-orientacao {
+
+    max-width: 620px;
+
+    margin: 20px auto 0 auto;
+
+    color: #526d82;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    .pomodoro-widget {
+
+        padding: 18px 14px;
+
+    }
+
+
+    .pomodoro-informacoes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #pomodoro-restante {
+
+        font-size: 38px;
+
+    }
+
+
+    .pomodoro-controles {
+
+        flex-direction: column;
+
+    }
+
+
+    .pomodoro-botao {
+
+        width: 100%;
+
+    }
+
+   }
