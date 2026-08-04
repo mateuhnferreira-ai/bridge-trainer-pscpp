@@ -991,3 +991,62 @@ main {
     }
 
 }
+/* ==================================
+   CORREÇÃO DOS EXERCÍCIOS
+================================== */
+
+.alternativa-correta {
+
+    background: #dff4e5 !important;
+
+    border: 2px solid #2f855a !important;
+
+    color: #1f5138 !important;
+
+}
+
+
+.alternativa-incorreta {
+
+    background: #fde2e2 !important;
+
+    border: 2px solid #c53030 !important;
+
+    color: #742a2a !important;
+
+}
+
+
+.questao-correta {
+
+    border-left-color: #2f855a;
+
+}
+
+
+.questao-incorreta {
+
+    border-left-color: #c53030;
+
+}
+
+
+.alternativa:disabled,
+.alternativa-questao:disabled {
+
+    cursor: default;
+
+    opacity: 1;
+
+}
+
+
+.botao-corrigir-exercicios:disabled {
+
+    cursor: default;
+
+    opacity: 0.7;
+
+    transform: none;
+
+}
