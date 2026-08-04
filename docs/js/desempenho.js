@@ -13,6 +13,8 @@ const CHAVE_HISTORICO_EXERCICIOS =
     "bridgeTrainerPSCPP_historicoExercicios";
 
 
+let historicoTentativas = [];
+
 let historicoExercicios = [];
 
 
