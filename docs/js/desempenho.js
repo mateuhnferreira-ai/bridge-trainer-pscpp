@@ -22,14 +22,21 @@ let historicoExercicios = [];
 // INICIALIZAÇÃO
 // =====================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+if (
+    document.readyState ===
+    "loading"
+) {
 
-        iniciarCentroDesempenho();
+    document.addEventListener(
+        "DOMContentLoaded",
+        iniciarCentroDesempenho
+    );
 
-    }
-);
+} else {
+
+    iniciarCentroDesempenho();
+
+}
 
 
 // =====================================
