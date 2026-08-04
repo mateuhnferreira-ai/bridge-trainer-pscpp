@@ -60,6 +60,140 @@ function iniciarCentroDesempenho() {
 
 
 // =====================================
+// NORMALIZAR HISTÓRICO DE DESEMPENHO
+// =====================================
+
+function normalizarHistoricoDesempenho(
+    historicoSalvo
+) {
+
+    if (
+        !Array.isArray(
+            historicoSalvo
+        )
+    ) {
+
+        return [];
+
+    }
+
+
+    const questoesNormalizadas = [];
+
+
+    historicoSalvo.forEach(
+        tentativa => {
+
+            if (!tentativa) {
+
+                return;
+
+            }
+
+
+            /*
+             * Compatibilidade com registros antigos
+             * que já tenham sido salvos individualmente.
+             */
+
+            if (
+                typeof tentativa.acertou !==
+                "undefined"
+            ) {
+
+                questoesNormalizadas.push(
+                    tentativa
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Formato atual do exercicios.js:
+             *
+             * tentativa
+             * └── questoes[]
+             */
+
+            if (
+                !Array.isArray(
+                    tentativa.questoes
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            tentativa.questoes.forEach(
+                questao => {
+
+                    if (!questao) {
+
+                        return;
+
+                    }
+
+
+                    questoesNormalizadas.push({
+
+                        tentativaId:
+                            tentativa.id || "",
+
+                        data:
+                            tentativa.data || "",
+
+                        disciplina:
+                            tentativa.disciplina ||
+                            "Disciplina não informada",
+
+                        aula:
+                            tentativa.aula ||
+                            "Aula não informada",
+
+                        pagina:
+                            tentativa.pagina || "",
+
+                        questaoId:
+                            questao.questaoId || "",
+
+                        topico:
+                            questao.topico ||
+                            "Tópico não informado",
+
+                        edital:
+                            questao.edital || "",
+
+                        bibliografia:
+                            questao.bibliografia || "",
+
+                        respostaUsuario:
+                            questao.respostaUsuario || "",
+
+                        respostaCorreta:
+                            questao.respostaCorreta || "",
+
+                        acertou:
+                            questao.acertou === true
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    return questoesNormalizadas;
+
+}
+
+
+// =====================================
 // CARREGAR HISTÓRICO
 // =====================================
 
@@ -75,6 +209,8 @@ function carregarHistorico() {
 
         if (!dados) {
 
+            historicoTentativas = [];
+
             historicoExercicios = [];
 
             return;
@@ -83,13 +219,23 @@ function carregarHistorico() {
 
 
         const historicoSalvo =
-            JSON.parse(dados);
+            JSON.parse(
+                dados
+            );
+
+
+        historicoTentativas =
+            Array.isArray(
+                historicoSalvo
+            )
+                ? historicoSalvo
+                : [];
 
 
         historicoExercicios =
-            Array.isArray(historicoSalvo)
-                ? historicoSalvo
-                : [];
+            normalizarHistoricoDesempenho(
+                historicoTentativas
+            );
 
     }
 
@@ -101,12 +247,13 @@ function carregarHistorico() {
         );
 
 
+        historicoTentativas = [];
+
         historicoExercicios = [];
 
     }
 
 }
-
 
 // =====================================
 // FUNÇÕES AUXILIARES
@@ -521,7 +668,11 @@ function ordenarGruposPorNome(
 // =====================================
 // TOTAIS GERAIS
 // =====================================
+function obterTotalTentativas() {
 
+    return historicoTentativas.length;
+
+}
 function obterTotalQuestoes() {
 
     return historicoExercicios.length;
@@ -610,9 +761,9 @@ function atualizarResumoGeral() {
 
 
     atualizarTexto(
-        "desempenho-total-tentativas",
-        totalQuestoes
-    );
+    "desempenho-total-tentativas",
+    obterTotalTentativas()
+);
 
 
     atualizarTexto(
