@@ -827,3 +827,167 @@ main {
     }
 
    }
+/* ==================================
+   EXERCÍCIOS INTERATIVOS PSCPP
+================================== */
+
+
+/* QUESTÃO */
+
+.questao {
+
+    background: #f8fbfd;
+
+    padding: 22px;
+
+    margin: 22px 0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px #00000030;
+
+    border-left: 5px solid #1b5a85;
+
+}
+
+
+.questao h3 {
+
+    margin-bottom: 16px;
+
+    color: #003b5c;
+
+}
+
+
+.questao p {
+
+    margin-bottom: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* QUESTÃO RESPONDIDA */
+
+.questao-respondida {
+
+    border-left-color: #c9a227;
+
+}
+
+
+/* ALTERNATIVAS */
+
+.alternativa,
+.alternativa-questao {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #102a43;
+
+    background: #edf6fc;
+
+    border: 1px solid #c3dcea;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.alternativa:hover,
+.alternativa-questao:hover {
+
+    background: #dceaf5;
+
+    border-color: #1b5a85;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ALTERNATIVA SELECIONADA */
+
+.alternativa-selecionada {
+
+    background: #d8edf7;
+
+    border: 2px solid #176b87;
+
+    color: #003b5c;
+
+    font-weight: bold;
+
+    box-shadow: 0 3px 10px rgba(23, 107, 135, 0.18);
+
+}
+
+
+/* FOCO PELO TECLADO */
+
+.alternativa:focus,
+.alternativa-questao:focus {
+
+    outline: 3px solid rgba(201, 162, 39, 0.35);
+
+    outline-offset: 2px;
+
+}
+
+
+/* RESUMO DAS RESPOSTAS */
+
+#resumo-selecao-exercicios {
+
+    margin: 0;
+
+    padding: 12px;
+
+    color: #003b5c;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    .questao {
+
+        padding: 18px 14px;
+
+    }
+
+
+    .alternativa,
+    .alternativa-questao {
+
+        padding: 13px 12px;
+
+        font-size: 14px;
+
+    }
+
+}
