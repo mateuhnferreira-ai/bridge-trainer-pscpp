@@ -1050,3 +1050,85 @@ main {
     transform: none;
 
 }
+
+/* ==================================
+   HISTÓRICO DOS EXERCÍCIOS
+================================== */
+
+.historico-exercicios-pscpp {
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f8fbfd;
+
+    border-left: 5px solid #c9a227;
+
+    box-shadow: 0 5px 15px #00000020;
+
+}
+
+
+.historico-exercicios-pscpp h3 {
+
+    margin-bottom: 10px;
+
+    color: #003b5c;
+
+}
+
+
+.lista-historico-exercicios {
+
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 16px;
+
+}
+
+
+.item-historico-exercicio {
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #edf6fc;
+
+    border: 1px solid #c3dcea;
+
+}
+
+
+.item-historico-exercicio strong {
+
+    color: #003b5c;
+
+}
+
+
+.item-historico-exercicio span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #526d82;
+
+    font-size: 13px;
+
+}
+
+
+.item-historico-exercicio p {
+
+    margin-top: 8px;
+
+    margin-bottom: 0;
+
+}
