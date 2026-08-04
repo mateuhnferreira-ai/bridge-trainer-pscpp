@@ -1,17 +1,15 @@
 // =====================================
-// SISTEMA DE EXERCÍCIOS PSCPP v1.0
+// SISTEMA DE EXERCÍCIOS PSCPP v2.0
 // Bridge Trainer PSCPP
 //
-// Funções desta versão:
+// Funções:
 //
 // 1. Localizar automaticamente as questões.
-// 2. Localizar as alternativas de cada questão.
-// 3. Permitir apenas uma alternativa selecionada.
-// 4. Destacar visualmente a alternativa escolhida.
-// 5. Registrar as respostas em memória.
-//
-// A correção automática e o relatório
-// serão implementados nas próximas versões.
+// 2. Permitir uma alternativa por questão.
+// 3. Registrar as respostas selecionadas.
+// 4. Corrigir automaticamente o exercício.
+// 5. Destacar respostas corretas e incorretas.
+// 6. Exibir acertos, erros e aproveitamento.
 // =====================================
 
 
@@ -19,30 +17,34 @@
 // CONFIGURAÇÕES
 // =====================================
 
-const SELETOR_QUESTAO_PSCPP = ".questao";
+const SELETOR_QUESTAO_PSCPP =
+    ".questao";
+
 
 const SELETOR_ALTERNATIVA_PSCPP =
     ".alternativa, .alternativa-questao";
+
 
 const CLASSE_ALTERNATIVA_SELECIONADA =
     "alternativa-selecionada";
 
 
-// Armazena as respostas da página atual.
-//
-// Estrutura:
-//
-// {
-//     "EH001": {
-//         questaoId: "EH001",
-//         alternativa: "C",
-//         topico: "Squat",
-//         edital: "8.11",
-//         bibliografia: "PNA Volume III"
-//     }
-// }
+const CLASSE_ALTERNATIVA_CORRETA =
+    "alternativa-correta";
+
+
+const CLASSE_ALTERNATIVA_INCORRETA =
+    "alternativa-incorreta";
+
+
+// =====================================
+// ESTADO DO EXERCÍCIO
+// =====================================
 
 const respostasExerciciosPSCPP = {};
+
+
+let exercicioCorrigidoPSCPP = false;
 
 
 // =====================================
@@ -51,7 +53,10 @@ const respostasExerciciosPSCPP = {};
 
 function normalizarTextoExercicio(texto) {
 
-    if (texto === null || texto === undefined) {
+    if (
+        texto === null ||
+        texto === undefined
+    ) {
 
         return "";
 
@@ -68,11 +73,16 @@ function normalizarTextoExercicio(texto) {
 // OBTER IDENTIFICADOR DA QUESTÃO
 // =====================================
 
-function obterIdQuestao(questao, indice) {
+function obterIdQuestao(
+    questao,
+    indice
+) {
 
-    const idInformado = normalizarTextoExercicio(
-        questao.dataset.questaoId
-    );
+    const idInformado =
+        normalizarTextoExercicio(
+            questao.dataset.questaoId
+        );
+
 
     if (idInformado) {
 
@@ -81,13 +91,14 @@ function obterIdQuestao(questao, indice) {
     }
 
 
-    // Identificador temporário caso o HTML ainda
-    // não possua data-questao-id.
-
     const idGerado =
-        "questao-automatica-" + (indice + 1);
+        "questao-automatica-" +
+        (indice + 1);
 
-    questao.dataset.questaoId = idGerado;
+
+    questao.dataset.questaoId =
+        idGerado;
+
 
     return idGerado;
 
@@ -98,12 +109,19 @@ function obterIdQuestao(questao, indice) {
 // OBTER OPÇÃO DA ALTERNATIVA
 // =====================================
 
-function obterOpcaoAlternativa(alternativa, indice) {
+function obterOpcaoAlternativa(
+    alternativa,
+    indice
+) {
 
-    const opcaoInformada = normalizarTextoExercicio(
-        alternativa.dataset.opcao ||
-        alternativa.dataset.alternativa
-    ).toUpperCase();
+    const opcaoInformada =
+        normalizarTextoExercicio(
+
+            alternativa.dataset.opcao ||
+
+            alternativa.dataset.alternativa
+
+        ).toUpperCase();
 
 
     if (opcaoInformada) {
@@ -113,13 +131,15 @@ function obterOpcaoAlternativa(alternativa, indice) {
     }
 
 
-    // Gera A, B, C, D... quando o atributo
-    // ainda não estiver presente no HTML.
-
     const opcaoGerada =
-        String.fromCharCode(65 + indice);
+        String.fromCharCode(
+            65 + indice
+        );
 
-    alternativa.dataset.opcao = opcaoGerada;
+
+    alternativa.dataset.opcao =
+        opcaoGerada;
+
 
     return opcaoGerada;
 
@@ -127,26 +147,142 @@ function obterOpcaoAlternativa(alternativa, indice) {
 
 
 // =====================================
-// REMOVER SELEÇÃO ANTERIOR
+// OBTER RESPOSTA CORRETA
 // =====================================
 
-function limparSelecaoQuestao(questao) {
+function obterRespostaCorretaQuestao(
+    questao
+) {
 
-    const alternativas = questao.querySelectorAll(
-        SELETOR_ALTERNATIVA_PSCPP
-    );
+    return normalizarTextoExercicio(
+
+        questao.dataset.resposta ||
+
+        questao.dataset.respostaCorreta
+
+    ).toUpperCase();
+
+}
 
 
-    alternativas.forEach(function (alternativa) {
+// =====================================
+// LOCALIZAR ALTERNATIVA POR OPÇÃO
+// =====================================
+
+function localizarAlternativaPorOpcao(
+    questao,
+    opcao
+) {
+
+    const alternativas =
+        questao.querySelectorAll(
+            SELETOR_ALTERNATIVA_PSCPP
+        );
+
+
+    let alternativaEncontrada =
+        null;
+
+
+    alternativas.forEach(function (
+        alternativa
+    ) {
+
+        const opcaoAlternativa =
+            normalizarTextoExercicio(
+
+                alternativa.dataset.opcao ||
+
+                alternativa.dataset.alternativa
+
+            ).toUpperCase();
+
+
+        if (
+            opcaoAlternativa === opcao
+        ) {
+
+            alternativaEncontrada =
+                alternativa;
+
+        }
+
+    });
+
+
+    return alternativaEncontrada;
+
+}
+
+
+// =====================================
+// LIMPAR SELEÇÃO DA QUESTÃO
+// =====================================
+
+function limparSelecaoQuestao(
+    questao
+) {
+
+    const alternativas =
+        questao.querySelectorAll(
+            SELETOR_ALTERNATIVA_PSCPP
+        );
+
+
+    alternativas.forEach(function (
+        alternativa
+    ) {
 
         alternativa.classList.remove(
             CLASSE_ALTERNATIVA_SELECIONADA
         );
 
+
         alternativa.setAttribute(
             "aria-pressed",
             "false"
         );
+
+    });
+
+}
+
+
+// =====================================
+// LIMPAR CORREÇÃO VISUAL
+// =====================================
+
+function limparCorrecaoQuestao(
+    questao
+) {
+
+    questao.classList.remove(
+        "questao-correta",
+        "questao-incorreta"
+    );
+
+
+    delete questao.dataset.resultado;
+
+
+    const alternativas =
+        questao.querySelectorAll(
+            SELETOR_ALTERNATIVA_PSCPP
+        );
+
+
+    alternativas.forEach(function (
+        alternativa
+    ) {
+
+        alternativa.classList.remove(
+            CLASSE_ALTERNATIVA_CORRETA,
+            CLASSE_ALTERNATIVA_INCORRETA
+        );
+
+
+        alternativa.disabled =
+            false;
 
     });
 
@@ -170,12 +306,18 @@ function registrarRespostaQuestao(
 
     const opcao =
         normalizarTextoExercicio(
+
             alternativa.dataset.opcao ||
+
             alternativa.dataset.alternativa
+
         ).toUpperCase();
 
 
-    if (!questaoId || !opcao) {
+    if (
+        !questaoId ||
+        !opcao
+    ) {
 
         console.warn(
             "Bridge Trainer: questão ou alternativa sem identificação.",
@@ -190,41 +332,51 @@ function registrarRespostaQuestao(
     }
 
 
-    respostasExerciciosPSCPP[questaoId] = {
+    respostasExerciciosPSCPP[
+        questaoId
+    ] = {
 
         questaoId: questaoId,
 
         alternativa: opcao,
 
-        topico: normalizarTextoExercicio(
-            questao.dataset.topico
-        ),
+        topico:
+            normalizarTextoExercicio(
+                questao.dataset.topico
+            ),
 
-        edital: normalizarTextoExercicio(
-            questao.dataset.edital
-        ),
+        edital:
+            normalizarTextoExercicio(
+                questao.dataset.edital
+            ),
 
-        bibliografia: normalizarTextoExercicio(
-            questao.dataset.bibliografia
-        )
+        bibliografia:
+            normalizarTextoExercicio(
+                questao.dataset.bibliografia
+            )
 
     };
 
 
-    questao.dataset.respostaSelecionada =
+    questao.dataset
+        .respostaSelecionada =
         opcao;
 
 
-    atualizarEstadoQuestao(questao);
+    atualizarEstadoQuestao(
+        questao
+    );
 
 }
 
 
 // =====================================
-// ATUALIZAR ESTADO VISUAL DA QUESTÃO
+// ATUALIZAR ESTADO DA QUESTÃO
 // =====================================
 
-function atualizarEstadoQuestao(questao) {
+function atualizarEstadoQuestao(
+    questao
+) {
 
     const questaoId =
         normalizarTextoExercicio(
@@ -233,7 +385,9 @@ function atualizarEstadoQuestao(questao) {
 
 
     const resposta =
-        respostasExerciciosPSCPP[questaoId];
+        respostasExerciciosPSCPP[
+            questaoId
+        ];
 
 
     if (resposta) {
@@ -241,6 +395,7 @@ function atualizarEstadoQuestao(questao) {
         questao.classList.add(
             "questao-respondida"
         );
+
 
         questao.dataset.respondida =
             "true";
@@ -250,6 +405,7 @@ function atualizarEstadoQuestao(questao) {
         questao.classList.remove(
             "questao-respondida"
         );
+
 
         questao.dataset.respondida =
             "false";
@@ -271,24 +427,32 @@ function selecionarAlternativaExercicio(
     alternativa
 ) {
 
-    if (!questao || !alternativa) {
+    if (
+        !questao ||
+        !alternativa
+    ) {
 
         return;
 
     }
 
 
-    // Remove qualquer alternativa marcada
-    // anteriormente na mesma questão.
+    if (exercicioCorrigidoPSCPP) {
 
-    limparSelecaoQuestao(questao);
+        return;
+
+    }
 
 
-    // Marca somente a alternativa escolhida.
+    limparSelecaoQuestao(
+        questao
+    );
+
 
     alternativa.classList.add(
         CLASSE_ALTERNATIVA_SELECIONADA
     );
+
 
     alternativa.setAttribute(
         "aria-pressed",
@@ -308,7 +472,9 @@ function selecionarAlternativaExercicio(
 // CLIQUE NA ALTERNATIVA
 // =====================================
 
-function tratarCliqueAlternativa(evento) {
+function tratarCliqueAlternativa(
+    evento
+) {
 
     const alternativa =
         evento.currentTarget;
@@ -343,7 +509,9 @@ function tratarCliqueAlternativa(evento) {
 // USO PELO TECLADO
 // =====================================
 
-function tratarTecladoAlternativa(evento) {
+function tratarTecladoAlternativa(
+    evento
+) {
 
     if (
         evento.key !== "Enter" &&
@@ -357,7 +525,10 @@ function tratarTecladoAlternativa(evento) {
 
     evento.preventDefault();
 
-    tratarCliqueAlternativa(evento);
+
+    tratarCliqueAlternativa(
+        evento
+    );
 
 }
 
@@ -392,7 +563,9 @@ function prepararQuestaoExercicio(
         );
 
 
-    if (alternativas.length === 0) {
+    if (
+        alternativas.length === 0
+    ) {
 
         console.warn(
             "Bridge Trainer: questão sem alternativas.",
@@ -432,12 +605,10 @@ function prepararQuestaoExercicio(
         );
 
 
-        // Evita duplicar eventos caso a função
-        // de inicialização seja chamada novamente.
-
         if (
-            alternativa.dataset.exercicioPreparado
-            === "true"
+            alternativa.dataset
+                .exercicioPreparado ===
+            "true"
         ) {
 
             return;
@@ -457,7 +628,8 @@ function prepararQuestaoExercicio(
         );
 
 
-        alternativa.dataset.exercicioPreparado =
+        alternativa.dataset
+            .exercicioPreparado =
             "true";
 
     });
@@ -501,10 +673,375 @@ function atualizarResumoSelecaoExercicios() {
 
 
     resumo.textContent =
+
         totalRespondidas +
+
         " de " +
+
         totalQuestoes +
+
         " questões respondidas";
+
+}
+
+
+// =====================================
+// MOSTRAR RESULTADO
+// =====================================
+
+function mostrarResultadoExercicios(
+    acertos,
+    erros,
+    total
+) {
+
+    const caixaResultado =
+        document.getElementById(
+            "resultado-exercicios"
+        );
+
+
+    const textoResultado =
+        document.getElementById(
+            "texto-resultado-exercicios"
+        );
+
+
+    if (
+        !caixaResultado ||
+        !textoResultado
+    ) {
+
+        return;
+
+    }
+
+
+    const percentual =
+        total > 0
+            ? Math.round(
+                (acertos / total) * 100
+            )
+            : 0;
+
+
+    textoResultado.innerHTML =
+
+        "<strong>Acertos:</strong> " +
+        acertos +
+        "<br>" +
+
+        "<strong>Erros:</strong> " +
+        erros +
+        "<br>" +
+
+        "<strong>Total:</strong> " +
+        total +
+        "<br>" +
+
+        "<strong>Aproveitamento:</strong> " +
+        percentual +
+        "%";
+
+
+    caixaResultado.style.display =
+        "block";
+
+
+    caixaResultado.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+}
+
+
+// =====================================
+// CORRIGIR UMA QUESTÃO
+// =====================================
+
+function corrigirQuestaoExercicio(
+    questao
+) {
+
+    const questaoId =
+        normalizarTextoExercicio(
+            questao.dataset.questaoId
+        );
+
+
+    const respostaCorreta =
+        obterRespostaCorretaQuestao(
+            questao
+        );
+
+
+    const respostaUsuario =
+        respostasExerciciosPSCPP[
+            questaoId
+        ];
+
+
+    if (!respostaCorreta) {
+
+        console.warn(
+            "Bridge Trainer: questão sem data-resposta.",
+            questaoId
+        );
+
+        return null;
+
+    }
+
+
+    if (!respostaUsuario) {
+
+        return null;
+
+    }
+
+
+    const alternativaCorreta =
+        localizarAlternativaPorOpcao(
+            questao,
+            respostaCorreta
+        );
+
+
+    const alternativaSelecionada =
+        localizarAlternativaPorOpcao(
+            questao,
+            respostaUsuario.alternativa
+        );
+
+
+    const acertou =
+        respostaUsuario.alternativa ===
+        respostaCorreta;
+
+
+    if (alternativaCorreta) {
+
+        alternativaCorreta.classList.add(
+            CLASSE_ALTERNATIVA_CORRETA
+        );
+
+    }
+
+
+    if (
+        !acertou &&
+        alternativaSelecionada
+    ) {
+
+        alternativaSelecionada
+            .classList.add(
+                CLASSE_ALTERNATIVA_INCORRETA
+            );
+
+    }
+
+
+    if (acertou) {
+
+        questao.classList.add(
+            "questao-correta"
+        );
+
+
+        questao.dataset.resultado =
+            "correta";
+
+    } else {
+
+        questao.classList.add(
+            "questao-incorreta"
+        );
+
+
+        questao.dataset.resultado =
+            "incorreta";
+
+    }
+
+
+    const alternativas =
+        questao.querySelectorAll(
+            SELETOR_ALTERNATIVA_PSCPP
+        );
+
+
+    alternativas.forEach(function (
+        alternativa
+    ) {
+
+        alternativa.disabled =
+            true;
+
+    });
+
+
+    return acertou;
+
+}
+
+
+// =====================================
+// CORRIGIR EXERCÍCIO
+// =====================================
+
+function corrigirExerciciosPSCPP() {
+
+    if (exercicioCorrigidoPSCPP) {
+
+        return;
+
+    }
+
+
+    const questoes =
+        document.querySelectorAll(
+            SELETOR_QUESTAO_PSCPP
+        );
+
+
+    const totalQuestoes =
+        questoes.length;
+
+
+    const totalRespondidas =
+        Object.keys(
+            respostasExerciciosPSCPP
+        ).length;
+
+
+    if (totalQuestoes === 0) {
+
+        return;
+
+    }
+
+
+    if (
+        totalRespondidas <
+        totalQuestoes
+    ) {
+
+        alert(
+
+            "Responda todas as questões antes de corrigir o exercício."
+
+        );
+
+        return;
+
+    }
+
+
+    let acertos = 0;
+
+    let erros = 0;
+
+
+    questoes.forEach(function (
+        questao
+    ) {
+
+        const resultado =
+            corrigirQuestaoExercicio(
+                questao
+            );
+
+
+        if (resultado === true) {
+
+            acertos++;
+
+        }
+
+
+        if (resultado === false) {
+
+            erros++;
+
+        }
+
+    });
+
+
+    exercicioCorrigidoPSCPP =
+        true;
+
+
+    mostrarResultadoExercicios(
+        acertos,
+        erros,
+        totalQuestoes
+    );
+
+
+    const botaoCorrigir =
+        document.getElementById(
+            "botao-corrigir-exercicios"
+        );
+
+
+    if (botaoCorrigir) {
+
+        botaoCorrigir.disabled =
+            true;
+
+
+        botaoCorrigir.textContent =
+            "✅ Exercício corrigido";
+
+    }
+
+}
+
+
+// =====================================
+// PREPARAR BOTÃO DE CORREÇÃO
+// =====================================
+
+function prepararBotaoCorrecaoExercicios() {
+
+    const botao =
+        document.getElementById(
+            "botao-corrigir-exercicios"
+        );
+
+
+    if (!botao) {
+
+        return;
+
+    }
+
+
+    if (
+        botao.dataset
+            .correcaoPreparada ===
+        "true"
+    ) {
+
+        return;
+
+    }
+
+
+    botao.addEventListener(
+        "click",
+        corrigirExerciciosPSCPP
+    );
+
+
+    botao.dataset
+        .correcaoPreparada =
+        "true";
 
 }
 
@@ -516,9 +1053,11 @@ function atualizarResumoSelecaoExercicios() {
 function obterRespostasExerciciosPSCPP() {
 
     return JSON.parse(
+
         JSON.stringify(
             respostasExerciciosPSCPP
         )
+
     );
 
 }
@@ -545,8 +1084,9 @@ function obterRespostaQuestaoPSCPP(
     }
 
 
-    return respostasExerciciosPSCPP[id]
-        || null;
+    return respostasExerciciosPSCPP[
+        id
+    ] || null;
 
 }
 
@@ -563,16 +1103,28 @@ function limparRespostasExerciciosPSCPP() {
         );
 
 
-    questoes.forEach(function (questao) {
+    questoes.forEach(function (
+        questao
+    ) {
 
-        limparSelecaoQuestao(questao);
+        limparSelecaoQuestao(
+            questao
+        );
+
+
+        limparCorrecaoQuestao(
+            questao
+        );
+
 
         questao.classList.remove(
             "questao-respondida"
         );
 
+
         questao.dataset.respondida =
             "false";
+
 
         delete questao.dataset
             .respostaSelecionada;
@@ -582,13 +1134,51 @@ function limparRespostasExerciciosPSCPP() {
 
     Object.keys(
         respostasExerciciosPSCPP
-    ).forEach(function (questaoId) {
+    ).forEach(function (
+        questaoId
+    ) {
 
         delete respostasExerciciosPSCPP[
             questaoId
         ];
 
     });
+
+
+    exercicioCorrigidoPSCPP =
+        false;
+
+
+    const caixaResultado =
+        document.getElementById(
+            "resultado-exercicios"
+        );
+
+
+    if (caixaResultado) {
+
+        caixaResultado.style.display =
+            "none";
+
+    }
+
+
+    const botaoCorrigir =
+        document.getElementById(
+            "botao-corrigir-exercicios"
+        );
+
+
+    if (botaoCorrigir) {
+
+        botaoCorrigir.disabled =
+            false;
+
+
+        botaoCorrigir.textContent =
+            "✅ Corrigir Exercício";
+
+    }
 
 
     atualizarResumoSelecaoExercicios();
@@ -608,7 +1198,9 @@ function inicializarExerciciosPSCPP() {
         );
 
 
-    if (questoes.length === 0) {
+    if (
+        questoes.length === 0
+    ) {
 
         return;
 
@@ -628,13 +1220,20 @@ function inicializarExerciciosPSCPP() {
     });
 
 
+    prepararBotaoCorrecaoExercicios();
+
+
     atualizarResumoSelecaoExercicios();
 
 
     console.info(
-        "Bridge Trainer PSCPP: sistema de exercícios v1.0 iniciado.",
+
+        "Bridge Trainer PSCPP: sistema de exercícios v2.0 iniciado.",
+
         questoes.length,
+
         "questões localizadas."
+
     );
 
 }
@@ -645,12 +1244,16 @@ function inicializarExerciciosPSCPP() {
 // =====================================
 
 if (
-    document.readyState === "loading"
+    document.readyState ===
+    "loading"
 ) {
 
     document.addEventListener(
+
         "DOMContentLoaded",
+
         inicializarExerciciosPSCPP
+
     );
 
 } else {
