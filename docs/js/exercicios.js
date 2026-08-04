@@ -1,15 +1,16 @@
 // =====================================
-// SISTEMA DE EXERCÍCIOS PSCPP v2.0
+// SISTEMA DE EXERCÍCIOS PSCPP v3.0
 // Bridge Trainer PSCPP
 //
 // Funções:
 //
-// 1. Localizar automaticamente as questões.
-// 2. Permitir uma alternativa por questão.
-// 3. Registrar as respostas selecionadas.
-// 4. Corrigir automaticamente o exercício.
-// 5. Destacar respostas corretas e incorretas.
-// 6. Exibir acertos, erros e aproveitamento.
+// 1. Seleção interativa de alternativas.
+// 2. Correção automática.
+// 3. Resultado da tentativa.
+// 4. Salvamento permanente no localStorage.
+// 5. Histórico de desempenho.
+// 6. Registro de erros por tópico.
+// 7. Nova tentativa sem restaurar marcações.
 // =====================================
 
 
@@ -37,14 +38,23 @@ const CLASSE_ALTERNATIVA_INCORRETA =
     "alternativa-incorreta";
 
 
+const CHAVE_HISTORICO_EXERCICIOS_PSCPP =
+    "bridgeTrainerPSCPP_historicoExercicios";
+
+
+const LIMITE_TENTATIVAS_EXIBIDAS =
+    10;
+
+
 // =====================================
-// ESTADO DO EXERCÍCIO
+// ESTADO DA TENTATIVA ATUAL
 // =====================================
 
 const respostasExerciciosPSCPP = {};
 
 
-let exercicioCorrigidoPSCPP = false;
+let exercicioCorrigidoPSCPP =
+    false;
 
 
 // =====================================
@@ -62,9 +72,53 @@ function normalizarTextoExercicio(texto) {
 
     }
 
+
     return texto
         .toString()
         .trim();
+
+}
+
+
+// =====================================
+// OBTER INFORMAÇÕES DA PÁGINA
+// =====================================
+
+function obterIdentificacaoExercicioPSCPP() {
+
+    const corpo =
+        document.body;
+
+
+    const tituloPagina =
+        normalizarTextoExercicio(
+            document.title
+        );
+
+
+    const disciplina =
+        normalizarTextoExercicio(
+            corpo.dataset.disciplina
+        ) || "disciplina-nao-identificada";
+
+
+    const aula =
+        normalizarTextoExercicio(
+            corpo.dataset.aula
+        ) ||
+        tituloPagina ||
+        window.location.pathname;
+
+
+    return {
+
+        disciplina: disciplina,
+
+        aula: aula,
+
+        pagina: window.location.pathname
+
+    };
 
 }
 
@@ -290,7 +344,7 @@ function limparCorrecaoQuestao(
 
 
 // =====================================
-// REGISTRAR RESPOSTA
+// REGISTRAR RESPOSTA DA TENTATIVA
 // =====================================
 
 function registrarRespostaQuestao(
@@ -318,14 +372,6 @@ function registrarRespostaQuestao(
         !questaoId ||
         !opcao
     ) {
-
-        console.warn(
-            "Bridge Trainer: questão ou alternativa sem identificação.",
-            {
-                questao: questao,
-                alternativa: alternativa
-            }
-        );
 
         return;
 
@@ -429,15 +475,9 @@ function selecionarAlternativaExercicio(
 
     if (
         !questao ||
-        !alternativa
+        !alternativa ||
+        exercicioCorrigidoPSCPP
     ) {
-
-        return;
-
-    }
-
-
-    if (exercicioCorrigidoPSCPP) {
 
         return;
 
@@ -488,10 +528,6 @@ function tratarCliqueAlternativa(
 
     if (!questao) {
 
-        console.warn(
-            "Bridge Trainer: alternativa fora de uma questão válida."
-        );
-
         return;
 
     }
@@ -506,7 +542,7 @@ function tratarCliqueAlternativa(
 
 
 // =====================================
-// USO PELO TECLADO
+// ACESSIBILIDADE PELO TECLADO
 // =====================================
 
 function tratarTecladoAlternativa(
@@ -534,7 +570,7 @@ function tratarTecladoAlternativa(
 
 
 // =====================================
-// PREPARAR UMA QUESTÃO
+// PREPARAR QUESTÃO
 // =====================================
 
 function prepararQuestaoExercicio(
@@ -561,20 +597,6 @@ function prepararQuestaoExercicio(
         questao.querySelectorAll(
             SELETOR_ALTERNATIVA_PSCPP
         );
-
-
-    if (
-        alternativas.length === 0
-    ) {
-
-        console.warn(
-            "Bridge Trainer: questão sem alternativas.",
-            questaoId
-        );
-
-        return;
-
-    }
 
 
     alternativas.forEach(function (
@@ -656,14 +678,10 @@ function atualizarResumoSelecaoExercicios() {
     }
 
 
-    const questoes =
+    const totalQuestoes =
         document.querySelectorAll(
             SELETOR_QUESTAO_PSCPP
-        );
-
-
-    const totalQuestoes =
-        questoes.length;
+        ).length;
 
 
     const totalRespondidas =
@@ -686,75 +704,169 @@ function atualizarResumoSelecaoExercicios() {
 
 
 // =====================================
-// MOSTRAR RESULTADO
+// CARREGAR HISTÓRICO
 // =====================================
 
-function mostrarResultadoExercicios(
-    acertos,
-    erros,
-    total
-) {
+function carregarHistoricoExerciciosPSCPP() {
 
-    const caixaResultado =
-        document.getElementById(
-            "resultado-exercicios"
+    try {
+
+        const historicoSalvo =
+            localStorage.getItem(
+                CHAVE_HISTORICO_EXERCICIOS_PSCPP
+            );
+
+
+        if (!historicoSalvo) {
+
+            return [];
+
+        }
+
+
+        const historico =
+            JSON.parse(
+                historicoSalvo
+            );
+
+
+        return Array.isArray(
+            historico
+        )
+            ? historico
+            : [];
+
+    } catch (erro) {
+
+        console.error(
+            "Bridge Trainer: não foi possível carregar o histórico.",
+            erro
         );
 
 
-    const textoResultado =
-        document.getElementById(
-            "texto-resultado-exercicios"
+        return [];
+
+    }
+
+}
+
+
+// =====================================
+// SALVAR HISTÓRICO
+// =====================================
+
+function salvarHistoricoExerciciosPSCPP(
+    historico
+) {
+
+    try {
+
+        localStorage.setItem(
+
+            CHAVE_HISTORICO_EXERCICIOS_PSCPP,
+
+            JSON.stringify(
+                historico
+            )
+
+        );
+
+
+        return true;
+
+    } catch (erro) {
+
+        console.error(
+            "Bridge Trainer: não foi possível salvar o histórico.",
+            erro
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+// =====================================
+// REGISTRAR NOVA TENTATIVA
+// =====================================
+
+function registrarTentativaHistoricoPSCPP(
+    resultado
+) {
+
+    const historico =
+        carregarHistoricoExerciciosPSCPP();
+
+
+    historico.push(
+        resultado
+    );
+
+
+    salvarHistoricoExerciciosPSCPP(
+        historico
+    );
+
+
+    return historico;
+
+}
+
+
+// =====================================
+// CRIAR IDENTIFICADOR DA TENTATIVA
+// =====================================
+
+function criarIdTentativaPSCPP() {
+
+    return (
+
+        "tentativa-" +
+
+        Date.now() +
+
+        "-" +
+
+        Math.random()
+            .toString(36)
+            .slice(2, 8)
+
+    );
+
+}
+
+
+// =====================================
+// FORMATAR DATA
+// =====================================
+
+function formatarDataTentativaPSCPP(
+    dataISO
+) {
+
+    const data =
+        new Date(
+            dataISO
         );
 
 
     if (
-        !caixaResultado ||
-        !textoResultado
+        Number.isNaN(
+            data.getTime()
+        )
     ) {
 
-        return;
+        return dataISO;
 
     }
 
 
-    const percentual =
-        total > 0
-            ? Math.round(
-                (acertos / total) * 100
-            )
-            : 0;
-
-
-    textoResultado.innerHTML =
-
-        "<strong>Acertos:</strong> " +
-        acertos +
-        "<br>" +
-
-        "<strong>Erros:</strong> " +
-        erros +
-        "<br>" +
-
-        "<strong>Total:</strong> " +
-        total +
-        "<br>" +
-
-        "<strong>Aproveitamento:</strong> " +
-        percentual +
-        "%";
-
-
-    caixaResultado.style.display =
-        "block";
-
-
-    caixaResultado.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "center"
-
-    });
+    return data.toLocaleString(
+        "pt-BR"
+    );
 
 }
 
@@ -785,19 +897,10 @@ function corrigirQuestaoExercicio(
         ];
 
 
-    if (!respostaCorreta) {
-
-        console.warn(
-            "Bridge Trainer: questão sem data-resposta.",
-            questaoId
-        );
-
-        return null;
-
-    }
-
-
-    if (!respostaUsuario) {
+    if (
+        !respostaCorreta ||
+        !respostaUsuario
+    ) {
 
         return null;
 
@@ -813,8 +916,11 @@ function corrigirQuestaoExercicio(
 
     const alternativaSelecionada =
         localizarAlternativaPorOpcao(
+
             questao,
+
             respostaUsuario.alternativa
+
         );
 
 
@@ -845,36 +951,25 @@ function corrigirQuestaoExercicio(
     }
 
 
-    if (acertou) {
+    questao.classList.add(
 
-        questao.classList.add(
-            "questao-correta"
-        );
+        acertou
+            ? "questao-correta"
+            : "questao-incorreta"
 
-
-        questao.dataset.resultado =
-            "correta";
-
-    } else {
-
-        questao.classList.add(
-            "questao-incorreta"
-        );
+    );
 
 
-        questao.dataset.resultado =
-            "incorreta";
+    questao.dataset.resultado =
 
-    }
-
-
-    const alternativas =
-        questao.querySelectorAll(
-            SELETOR_ALTERNATIVA_PSCPP
-        );
+        acertou
+            ? "correta"
+            : "incorreta";
 
 
-    alternativas.forEach(function (
+    questao.querySelectorAll(
+        SELETOR_ALTERNATIVA_PSCPP
+    ).forEach(function (
         alternativa
     ) {
 
@@ -884,13 +979,276 @@ function corrigirQuestaoExercicio(
     });
 
 
-    return acertou;
+    return {
+
+        questaoId: questaoId,
+
+        topico:
+            respostaUsuario.topico ||
+            "Tópico não informado",
+
+        edital:
+            respostaUsuario.edital,
+
+        bibliografia:
+            respostaUsuario.bibliografia,
+
+        respostaUsuario:
+            respostaUsuario.alternativa,
+
+        respostaCorreta:
+            respostaCorreta,
+
+        acertou:
+            acertou
+
+    };
 
 }
 
 
 // =====================================
-// CORRIGIR EXERCÍCIO
+// MOSTRAR RESULTADO ATUAL
+// =====================================
+
+function mostrarResultadoExercicios(
+    resultado
+) {
+
+    const caixaResultado =
+        document.getElementById(
+            "resultado-exercicios"
+        );
+
+
+    const textoResultado =
+        document.getElementById(
+            "texto-resultado-exercicios"
+        );
+
+
+    if (
+        !caixaResultado ||
+        !textoResultado
+    ) {
+
+        return;
+
+    }
+
+
+    textoResultado.innerHTML =
+
+        "<strong>Acertos:</strong> " +
+        resultado.acertos +
+        "<br>" +
+
+        "<strong>Erros:</strong> " +
+        resultado.erros +
+        "<br>" +
+
+        "<strong>Total:</strong> " +
+        resultado.total +
+        "<br>" +
+
+        "<strong>Aproveitamento:</strong> " +
+        resultado.percentual +
+        "%";
+
+
+    caixaResultado.style.display =
+        "block";
+
+}
+
+
+// =====================================
+// CRIAR PAINEL DE HISTÓRICO
+// =====================================
+
+function garantirPainelHistoricoPSCPP() {
+
+    let painel =
+        document.getElementById(
+            "historico-exercicios-pscpp"
+        );
+
+
+    if (painel) {
+
+        return painel;
+
+    }
+
+
+    const resultado =
+        document.getElementById(
+            "resultado-exercicios"
+        );
+
+
+    if (!resultado) {
+
+        return null;
+
+    }
+
+
+    painel =
+        document.createElement(
+            "div"
+        );
+
+
+    painel.id =
+        "historico-exercicios-pscpp";
+
+
+    painel.className =
+        "historico-exercicios-pscpp";
+
+
+    resultado.insertAdjacentElement(
+        "afterend",
+        painel
+    );
+
+
+    return painel;
+
+}
+
+
+// =====================================
+// RENDERIZAR HISTÓRICO DA AULA
+// =====================================
+
+function renderizarHistoricoExerciciosPSCPP() {
+
+    const painel =
+        garantirPainelHistoricoPSCPP();
+
+
+    if (!painel) {
+
+        return;
+
+    }
+
+
+    const identificacao =
+        obterIdentificacaoExercicioPSCPP();
+
+
+    const historicoCompleto =
+        carregarHistoricoExerciciosPSCPP();
+
+
+    const historicoAula =
+        historicoCompleto
+            .filter(function (
+                tentativa
+            ) {
+
+                return (
+                    tentativa.pagina ===
+                    identificacao.pagina
+                );
+
+            })
+            .slice(
+                -LIMITE_TENTATIVAS_EXIBIDAS
+            )
+            .reverse();
+
+
+    if (
+        historicoAula.length === 0
+    ) {
+
+        painel.innerHTML =
+
+            "<h3>📊 Histórico de desempenho</h3>" +
+
+            "<p>" +
+
+            "Nenhuma tentativa concluída nesta aula." +
+
+            "</p>";
+
+
+        return;
+
+    }
+
+
+    let html =
+
+        "<h3>📊 Histórico de desempenho</h3>" +
+
+        "<p>" +
+
+        "Tentativas mais recentes desta aula:" +
+
+        "</p>" +
+
+        "<div class='lista-historico-exercicios'>";
+
+
+    historicoAula.forEach(function (
+        tentativa,
+        indice
+    ) {
+
+        const numeroTentativa =
+            historicoAula.length -
+            indice;
+
+
+        html +=
+
+            "<div class='item-historico-exercicio'>" +
+
+            "<strong>Tentativa " +
+            numeroTentativa +
+            "</strong>" +
+
+            "<span>" +
+            formatarDataTentativaPSCPP(
+                tentativa.data
+            ) +
+            "</span>" +
+
+            "<p>" +
+
+            tentativa.acertos +
+            " acertos de " +
+            tentativa.total +
+            " — " +
+
+            "<strong>" +
+            tentativa.percentual +
+            "%</strong>" +
+
+            "</p>" +
+
+            "</div>";
+
+    });
+
+
+    html +=
+        "</div>";
+
+
+    painel.innerHTML =
+        html;
+
+}
+
+
+// =====================================
+// CORRIGIR EXERCÍCIO COMPLETO
 // =====================================
 
 function corrigirExerciciosPSCPP() {
@@ -908,17 +1266,17 @@ function corrigirExerciciosPSCPP() {
         );
 
 
-    const totalQuestoes =
+    const total =
         questoes.length;
 
 
-    const totalRespondidas =
+    const respondidas =
         Object.keys(
             respostasExerciciosPSCPP
         ).length;
 
 
-    if (totalQuestoes === 0) {
+    if (total === 0) {
 
         return;
 
@@ -926,15 +1284,13 @@ function corrigirExerciciosPSCPP() {
 
 
     if (
-        totalRespondidas <
-        totalQuestoes
+        respondidas < total
     ) {
 
         alert(
-
             "Responda todas as questões antes de corrigir o exercício."
-
         );
+
 
         return;
 
@@ -946,30 +1302,117 @@ function corrigirExerciciosPSCPP() {
     let erros = 0;
 
 
+    const detalhesQuestoes = [];
+
+    const errosPorTopico = {};
+
+
     questoes.forEach(function (
         questao
     ) {
 
-        const resultado =
+        const detalhe =
             corrigirQuestaoExercicio(
                 questao
             );
 
 
-        if (resultado === true) {
+        if (!detalhe) {
 
-            acertos++;
+            return;
 
         }
 
 
-        if (resultado === false) {
+        detalhesQuestoes.push(
+            detalhe
+        );
+
+
+        if (detalhe.acertou) {
+
+            acertos++;
+
+        } else {
 
             erros++;
+
+
+            if (
+                !errosPorTopico[
+                    detalhe.topico
+                ]
+            ) {
+
+                errosPorTopico[
+                    detalhe.topico
+                ] = 0;
+
+            }
+
+
+            errosPorTopico[
+                detalhe.topico
+            ]++;
 
         }
 
     });
+
+
+    const percentual =
+        total > 0
+            ? Math.round(
+                (acertos / total) * 100
+            )
+            : 0;
+
+
+    const identificacao =
+        obterIdentificacaoExercicioPSCPP();
+
+
+    const resultadoTentativa = {
+
+        id:
+            criarIdTentativaPSCPP(),
+
+        data:
+            new Date().toISOString(),
+
+        disciplina:
+            identificacao.disciplina,
+
+        aula:
+            identificacao.aula,
+
+        pagina:
+            identificacao.pagina,
+
+        total:
+            total,
+
+        acertos:
+            acertos,
+
+        erros:
+            erros,
+
+        percentual:
+            percentual,
+
+        errosPorTopico:
+            errosPorTopico,
+
+        questoes:
+            detalhesQuestoes
+
+    };
+
+
+    registrarTentativaHistoricoPSCPP(
+        resultadoTentativa
+    );
 
 
     exercicioCorrigidoPSCPP =
@@ -977,25 +1420,26 @@ function corrigirExerciciosPSCPP() {
 
 
     mostrarResultadoExercicios(
-        acertos,
-        erros,
-        totalQuestoes
+        resultadoTentativa
     );
 
 
-    const botaoCorrigir =
+    renderizarHistoricoExerciciosPSCPP();
+
+
+    const botao =
         document.getElementById(
             "botao-corrigir-exercicios"
         );
 
 
-    if (botaoCorrigir) {
+    if (botao) {
 
-        botaoCorrigir.disabled =
+        botao.disabled =
             true;
 
 
-        botaoCorrigir.textContent =
+        botao.textContent =
             "✅ Exercício corrigido";
 
     }
@@ -1015,16 +1459,9 @@ function prepararBotaoCorrecaoExercicios() {
         );
 
 
-    if (!botao) {
-
-        return;
-
-    }
-
-
     if (
-        botao.dataset
-            .correcaoPreparada ===
+        !botao ||
+        botao.dataset.correcaoPreparada ===
         "true"
     ) {
 
@@ -1039,71 +1476,32 @@ function prepararBotaoCorrecaoExercicios() {
     );
 
 
-    botao.dataset
-        .correcaoPreparada =
+    botao.dataset.correcaoPreparada =
         "true";
 
 }
 
 
 // =====================================
-// OBTER RESPOSTAS ATUAIS
+// CONSULTAR HISTÓRICO COMPLETO
 // =====================================
 
-function obterRespostasExerciciosPSCPP() {
+function obterHistoricoExerciciosPSCPP() {
 
-    return JSON.parse(
-
-        JSON.stringify(
-            respostasExerciciosPSCPP
-        )
-
-    );
+    return carregarHistoricoExerciciosPSCPP();
 
 }
 
 
 // =====================================
-// OBTER RESPOSTA DE UMA QUESTÃO
-// =====================================
-
-function obterRespostaQuestaoPSCPP(
-    questaoId
-) {
-
-    const id =
-        normalizarTextoExercicio(
-            questaoId
-        );
-
-
-    if (!id) {
-
-        return null;
-
-    }
-
-
-    return respostasExerciciosPSCPP[
-        id
-    ] || null;
-
-}
-
-
-// =====================================
-// LIMPAR TODAS AS RESPOSTAS
+// LIMPAR TENTATIVA ATUAL
 // =====================================
 
 function limparRespostasExerciciosPSCPP() {
 
-    const questoes =
-        document.querySelectorAll(
-            SELETOR_QUESTAO_PSCPP
-        );
-
-
-    questoes.forEach(function (
+    document.querySelectorAll(
+        SELETOR_QUESTAO_PSCPP
+    ).forEach(function (
         questao
     ) {
 
@@ -1149,33 +1547,33 @@ function limparRespostasExerciciosPSCPP() {
         false;
 
 
-    const caixaResultado =
+    const resultado =
         document.getElementById(
             "resultado-exercicios"
         );
 
 
-    if (caixaResultado) {
+    if (resultado) {
 
-        caixaResultado.style.display =
+        resultado.style.display =
             "none";
 
     }
 
 
-    const botaoCorrigir =
+    const botao =
         document.getElementById(
             "botao-corrigir-exercicios"
         );
 
 
-    if (botaoCorrigir) {
+    if (botao) {
 
-        botaoCorrigir.disabled =
+        botao.disabled =
             false;
 
 
-        botaoCorrigir.textContent =
+        botao.textContent =
             "✅ Corrigir Exercício";
 
     }
@@ -1226,9 +1624,12 @@ function inicializarExerciciosPSCPP() {
     atualizarResumoSelecaoExercicios();
 
 
+    renderizarHistoricoExerciciosPSCPP();
+
+
     console.info(
 
-        "Bridge Trainer PSCPP: sistema de exercícios v2.0 iniciado.",
+        "Bridge Trainer PSCPP: sistema de exercícios v3.0 iniciado.",
 
         questoes.length,
 
