@@ -1,9 +1,8 @@
 // =====================================
 // CENTRO DE DESEMPENHO PSCPP
 // Bridge Trainer PSCPP
-// Versão 1.0
+// Versão 1.1
 // =====================================
-
 
 
 // =====================================
@@ -14,9 +13,7 @@ const CHAVE_HISTORICO_EXERCICIOS =
     "bridgeTrainerPSCPP_historicoExercicios";
 
 
-
 let historicoExercicios = [];
-
 
 
 // =====================================
@@ -24,115 +21,89 @@ let historicoExercicios = [];
 // =====================================
 
 document.addEventListener(
-
     "DOMContentLoaded",
-
     () => {
 
         iniciarCentroDesempenho();
 
     }
-
 );
-
 
 
 // =====================================
 // INICIAR MÓDULO
 // =====================================
 
-function iniciarCentroDesempenho(){
-
+function iniciarCentroDesempenho() {
 
     carregarHistorico();
 
-
     atualizarResumoGeral();
-
 
     atualizarPreparacaoPSCPP();
 
-
     atualizarDesempenhoDisciplinas();
-
 
     atualizarDesempenhoAulas();
 
-
     atualizarDesempenhoTopicos();
-
 
     atualizarAssuntosPrioritarios();
 
-
     atualizarEvolucao();
-
 
     atualizarRecomendacao();
 
-
 }
-
 
 
 // =====================================
 // CARREGAR HISTÓRICO
 // =====================================
 
-function carregarHistorico(){
+function carregarHistorico() {
 
-
-    try{
-
+    try {
 
         const dados =
-
             localStorage.getItem(
-
                 CHAVE_HISTORICO_EXERCICIOS
-
             );
 
 
-        if(dados){
-
-
-            historicoExercicios =
-
-                JSON.parse(dados);
-
-
-        }else{
-
+        if (!dados) {
 
             historicoExercicios = [];
 
+            return;
 
         }
 
 
+        const historicoSalvo =
+            JSON.parse(dados);
+
+
+        historicoExercicios =
+            Array.isArray(historicoSalvo)
+                ? historicoSalvo
+                : [];
+
     }
 
-    catch(erro){
-
+    catch (erro) {
 
         console.error(
-
-            "Erro ao carregar histórico:",
-
+            "Erro ao carregar histórico de exercícios:",
             erro
-
         );
 
 
         historicoExercicios = [];
 
-
     }
 
-
 }
-
 
 
 // =====================================
@@ -140,19 +111,15 @@ function carregarHistorico(){
 // =====================================
 
 function atualizarTexto(
-
     id,
-
     texto
-
-){
+) {
 
     const elemento =
-
         document.getElementById(id);
 
 
-    if(elemento){
+    if (elemento) {
 
         elemento.textContent = texto;
 
@@ -161,21 +128,16 @@ function atualizarTexto(
 }
 
 
-
 function atualizarHTML(
-
     id,
-
     html
-
-){
+) {
 
     const elemento =
-
         document.getElementById(id);
 
 
-    if(elemento){
+    if (elemento) {
 
         elemento.innerHTML = html;
 
@@ -184,136 +146,181 @@ function atualizarHTML(
 }
 
 
-
-function limparElemento(id){
+function limparElemento(id) {
 
     atualizarHTML(
-
         id,
-
         ""
-
     );
 
 }
 
 
+function formatarPercentual(valor) {
 
-function formatarPercentual(valor){
+    const numero =
+        Number(valor);
 
 
-    if(
+    if (!Number.isFinite(numero)) {
 
-        isNaN(valor)
-
-    ){
-
-        return "0%";
+        return "0,0%";
 
     }
 
 
-    return
-
-        valor.toFixed(1) + "%";
-
+    return numero
+        .toFixed(1)
+        .replace(".", ",") + "%";
 
 }
 
 
+function formatarData(data) {
 
-function formatarData(data){
-
-
-    if(
-
-        !data
-
-    ){
+    if (!data) {
 
         return "--";
 
     }
 
 
-    const d =
-
+    const objetoData =
         new Date(data);
 
 
-    if(
-
-        isNaN(d)
-
-    ){
+    if (
+        Number.isNaN(
+            objetoData.getTime()
+        )
+    ) {
 
         return "--";
 
     }
 
 
-    return d.toLocaleDateString(
-
+    return objetoData.toLocaleDateString(
         "pt-BR"
-
     );
 
+}
+
+
+function formatarDataHora(data) {
+
+    if (!data) {
+
+        return "--";
+
+    }
+
+
+    const objetoData =
+        new Date(data);
+
+
+    if (
+        Number.isNaN(
+            objetoData.getTime()
+        )
+    ) {
+
+        return "--";
+
+    }
+
+
+    return objetoData.toLocaleString(
+        "pt-BR",
+        {
+
+            dateStyle: "short",
+
+            timeStyle: "short"
+
+        }
+    );
 
 }
 
 
+function escaparHTML(texto) {
 
-// =====================================
-// TOTAIS GERAIS
-// =====================================
-
-function obterTotalQuestoes(){
-
-
-    return historicoExercicios.length;
-
-
-}
-
-
-
-function obterTotalAcertos(){
-
-
-    return historicoExercicios.filter(
-
-        q => q.acertou
-
-    ).length;
-
-
-}
-
-
-
-function obterTotalErros(){
-
-
-    return historicoExercicios.filter(
-
-        q => !q.acertou
-
-    ).length;
-
+    return String(
+        texto ?? ""
+    )
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
 
 }
 
 
+function obterNomeValido(
+    valor,
+    padrao
+) {
 
-function obterAproveitamentoGeral(){
+    if (
+        typeof valor !== "string"
+    ) {
+
+        return padrao;
+
+    }
 
 
-    const total =
+    const texto =
+        valor.trim();
 
-        obterTotalQuestoes();
+
+    return texto || padrao;
+
+}
 
 
-    if(total===0){
+function registroFoiAcerto(registro) {
+
+    return (
+        registro &&
+        (
+            registro.acertou === true ||
+            registro.acertou === "true" ||
+            registro.resultado === "acerto" ||
+            registro.resultado === "correto"
+        )
+    );
+
+}
+
+
+function calcularPercentual(
+    acertos,
+    total
+) {
+
+    if (
+        !total ||
+        total <= 0
+    ) {
 
         return 0;
 
@@ -321,24 +328,242 @@ function obterAproveitamentoGeral(){
 
 
     return (
-
-        obterTotalAcertos()
-
-        /
-
+        acertos /
         total
+    ) * 100;
 
-    ) *100;
+}
 
+
+// =====================================
+// GERAR BARRA DE DESEMPENHO
+// =====================================
+
+function gerarBarraDesempenho(
+    percentual
+) {
+
+    const valor =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                Number(percentual) || 0
+            )
+        );
+
+
+    return `
+        <div
+            class="barra-progresso"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="${valor.toFixed(1)}"
+        >
+
+            <div
+                class="barra-progresso-preenchimento"
+                style="width: ${valor.toFixed(1)}%;"
+            ></div>
+
+        </div>
+    `;
+
+}
+
+
+// =====================================
+// GERAR ITEM DE DESEMPENHO
+// =====================================
+
+function gerarItemDesempenho(
+    titulo,
+    total,
+    acertos
+) {
+
+    const erros =
+        total - acertos;
+
+
+    const percentual =
+        calcularPercentual(
+            acertos,
+            total
+        );
+
+
+    return `
+        <div class="widget">
+
+            <h3>
+                ${escaparHTML(titulo)}
+            </h3>
+
+            <p>
+                <strong>Questões:</strong>
+                ${total}
+
+                &nbsp;|&nbsp;
+
+                <strong>Acertos:</strong>
+                ${acertos}
+
+                &nbsp;|&nbsp;
+
+                <strong>Erros:</strong>
+                ${erros}
+            </p>
+
+            <p>
+                <strong>Aproveitamento:</strong>
+                ${formatarPercentual(percentual)}
+            </p>
+
+            ${gerarBarraDesempenho(percentual)}
+
+        </div>
+    `;
+
+}
+
+
+// =====================================
+// AGRUPAR HISTÓRICO
+// =====================================
+
+function agruparHistorico(
+    obterChave,
+    obterTitulo
+) {
+
+    const grupos = {};
+
+
+    historicoExercicios.forEach(
+        registro => {
+
+            if (!registro) {
+
+                return;
+
+            }
+
+
+            const chave =
+                obterChave(registro);
+
+
+            const titulo =
+                obterTitulo(registro);
+
+
+            if (!grupos[chave]) {
+
+                grupos[chave] = {
+
+                    titulo: titulo,
+
+                    total: 0,
+
+                    acertos: 0
+
+                };
+
+            }
+
+
+            grupos[chave].total++;
+
+
+            if (
+                registroFoiAcerto(
+                    registro
+                )
+            ) {
+
+                grupos[chave].acertos++;
+
+            }
 
         }
+    );
+
+
+    return grupos;
+
+}
+
+
+// =====================================
+// ORDENAR GRUPOS POR NOME
+// =====================================
+
+function ordenarGruposPorNome(
+    grupos
+) {
+
+    return Object.values(grupos)
+        .sort(
+            (a, b) =>
+                a.titulo.localeCompare(
+                    b.titulo,
+                    "pt-BR"
+                )
+        );
+
+}
+
+
+// =====================================
+// TOTAIS GERAIS
+// =====================================
+
+function obterTotalQuestoes() {
+
+    return historicoExercicios.length;
+
+}
+
+
+function obterTotalAcertos() {
+
+    return historicoExercicios.filter(
+        registro =>
+            registroFoiAcerto(
+                registro
+            )
+    ).length;
+
+}
+
+
+function obterTotalErros() {
+
+    return (
+        obterTotalQuestoes() -
+        obterTotalAcertos()
+    );
+
+}
+
+
+function obterAproveitamentoGeral() {
+
+    return calcularPercentual(
+        obterTotalAcertos(),
+        obterTotalQuestoes()
+    );
+
+}
+
 
 // =====================================
 // RESUMO GERAL
 // =====================================
 
-function atualizarResumoGeral(){
-
+function atualizarResumoGeral() {
 
     const totalQuestoes =
         obterTotalQuestoes();
@@ -357,409 +582,322 @@ function atualizarResumoGeral(){
 
 
     atualizarTexto(
-
         "desempenho-total-questoes",
-
         totalQuestoes
-
     );
 
 
     atualizarTexto(
-
         "desempenho-total-acertos",
-
         totalAcertos
-
     );
 
 
     atualizarTexto(
-
         "desempenho-total-erros",
-
         totalErros
-
     );
 
 
     atualizarTexto(
-
         "desempenho-aproveitamento-geral",
-
         formatarPercentual(
-
             aproveitamento
-
         )
-
     );
 
 
     atualizarTexto(
-
         "desempenho-total-tentativas",
-
         totalQuestoes
-
     );
 
 
     atualizarTexto(
-
         "desempenho-ultima-atividade",
-
         obterUltimaAtividade()
-
     );
-
 
 }
-
 
 
 // =====================================
 // ÚLTIMA ATIVIDADE
 // =====================================
 
-function obterUltimaAtividade(){
+function obterUltimoRegistro() {
+
+    if (
+        historicoExercicios.length === 0
+    ) {
+
+        return null;
+
+    }
 
 
-    if(
+    const registrosComData =
+        historicoExercicios.filter(
+            registro =>
+                registro &&
+                registro.data &&
+                !Number.isNaN(
+                    new Date(
+                        registro.data
+                    ).getTime()
+                )
+        );
 
-        historicoExercicios.length===0
 
-    ){
+    if (
+        registrosComData.length === 0
+    ) {
+
+        return historicoExercicios[
+            historicoExercicios.length - 1
+        ];
+
+    }
+
+
+    return registrosComData
+        .slice()
+        .sort(
+            (a, b) =>
+                new Date(b.data) -
+                new Date(a.data)
+        )[0];
+
+}
+
+
+function obterUltimaAtividade() {
+
+    const ultimoRegistro =
+        obterUltimoRegistro();
+
+
+    if (!ultimoRegistro) {
 
         return "--";
 
     }
 
 
-    const ultima =
-
-        historicoExercicios[
-
-            historicoExercicios.length-1
-
-        ];
-
-
-    return formatarData(
-
-        ultima.data
-
+    return formatarDataHora(
+        ultimoRegistro.data
     );
 
-
 }
-
 
 
 // =====================================
 // PREPARAÇÃO PSCPP
 // =====================================
 
-function atualizarPreparacaoPSCPP(){
-
+function atualizarPreparacaoPSCPP() {
 
     atualizarTexto(
-
         "preparacao-questoes",
-
         obterTotalQuestoes()
-
     );
 
 
     atualizarTexto(
-
         "preparacao-acertos",
-
         obterTotalAcertos()
-
     );
 
 
     atualizarTexto(
-
         "preparacao-erros",
-
         obterTotalErros()
-
     );
 
 
     atualizarTexto(
-
         "preparacao-percentual",
-
         formatarPercentual(
-
             obterAproveitamentoGeral()
-
         )
-
     );
 
+}
 
-        }
 
 // =====================================
 // DESEMPENHO POR DISCIPLINA
 // =====================================
 
-function atualizarDesempenhoDisciplinas(){
+function atualizarDesempenhoDisciplinas() {
 
+    const grupos =
+        agruparHistorico(
 
-    const lista = {};
+            registro =>
+                obterNomeValido(
+                    registro.disciplina,
+                    "Não informada"
+                ),
 
+            registro =>
+                obterNomeValido(
+                    registro.disciplina,
+                    "Não informada"
+                )
 
-
-    historicoExercicios.forEach(registro=>{
-
-
-        const disciplina =
-
-            registro.disciplina ||
-
-            "Não informada";
-
-
-
-        if(!lista[disciplina]){
-
-            lista[disciplina]={
-
-                total:0,
-
-                acertos:0
-
-            };
-
-        }
-
-
-
-        lista[disciplina].total++;
-
-
-
-        if(registro.acertou){
-
-            lista[disciplina].acertos++;
-
-        }
-
-
-    });
-
-
-
-    let html="";
-
+        );
 
 
     const disciplinas =
+        ordenarGruposPorNome(
+            grupos
+        );
 
-        Object.keys(lista);
 
+    if (
+        disciplinas.length === 0
+    ) {
 
+        atualizarHTML(
+            "lista-desempenho-disciplinas",
+            `
+                <p>
+                    Nenhum exercício respondido.
+                </p>
+            `
+        );
 
-    if(
-
-        disciplinas.length===0
-
-    ){
-
-        html="<p>Nenhum exercício respondido.</p>";
+        return;
 
     }
 
 
-
-    disciplinas.forEach(disciplina=>{
-
-
-        const dados =
-
-            lista[disciplina];
-
-
-
-        const percentual =
-
-            (dados.acertos/dados.total)*100;
-
-
-
-        html += `
-
-<div class="item-desempenho">
-
-<strong>${disciplina}</strong>
-
-<br>
-
-Questões:
-${dados.total}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-Acertos:
-${dados.acertos}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-${formatarPercentual(percentual)}
-
-</div>
-
-`;
-
-
-
-    });
-
+    const html =
+        disciplinas
+            .map(
+                disciplina =>
+                    gerarItemDesempenho(
+                        disciplina.titulo,
+                        disciplina.total,
+                        disciplina.acertos
+                    )
+            )
+            .join("");
 
 
     atualizarHTML(
-
         "lista-desempenho-disciplinas",
-
         html
-
     );
 
-
 }
-
 
 
 // =====================================
 // DESEMPENHO POR AULA
 // =====================================
 
-function atualizarDesempenhoAulas(){
+function atualizarDesempenhoAulas() {
+
+    const grupos =
+        agruparHistorico(
+
+            registro => {
+
+                const disciplina =
+                    obterNomeValido(
+                        registro.disciplina,
+                        "Disciplina não informada"
+                    );
 
 
-    const lista={};
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
 
 
+                return (
+                    disciplina +
+                    "::" +
+                    aula
+                );
 
-    historicoExercicios.forEach(registro=>{
+            },
 
+            registro => {
 
-        const aula=
-
-            registro.aula ||
-
-            "Não informada";
-
-
-
-        if(!lista[aula]){
-
-            lista[aula]={
-
-                total:0,
-
-                acertos:0
-
-            };
-
-        }
+                const disciplina =
+                    obterNomeValido(
+                        registro.disciplina,
+                        "Disciplina não informada"
+                    );
 
 
-
-        lista[aula].total++;
-
-
-
-        if(registro.acertou){
-
-            lista[aula].acertos++;
-
-        }
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
 
 
-    });
+                return (
+                    aula +
+                    " — " +
+                    disciplina
+                );
+
+            }
+
+        );
 
 
-
-    let html="";
-
-
-
-    const aulas=
-
-        Object.keys(lista);
+    const aulas =
+        ordenarGruposPorNome(
+            grupos
+        );
 
 
+    if (
+        aulas.length === 0
+    ) {
 
-    if(aulas.length===0){
+        atualizarHTML(
+            "lista-desempenho-aulas",
+            `
+                <p>
+                    Nenhuma aula registrada.
+                </p>
+            `
+        );
 
-        html="<p>Nenhuma aula registrada.</p>";
+        return;
 
     }
 
 
-
-    aulas.forEach(aula=>{
-
-
-        const dados=
-
-            lista[aula];
-
-
-
-        const percentual=
-
-            (dados.acertos/dados.total)*100;
-
-
-
-        html += `
-
-<div class="item-desempenho">
-
-<strong>${aula}</strong>
-
-<br>
-
-Questões:
-${dados.total}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-Acertos:
-${dados.acertos}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-${formatarPercentual(percentual)}
-
-</div>
-
-`;
-
-
-
-    });
-
+    const html =
+        aulas
+            .map(
+                aula =>
+                    gerarItemDesempenho(
+                        aula.titulo,
+                        aula.total,
+                        aula.acertos
+                    )
+            )
+            .join("");
 
 
     atualizarHTML(
-
         "lista-desempenho-aulas",
-
         html
-
     );
 
+}
 
-        }
 
 // =====================================
 // DESEMPENHO POR TÓPICO
@@ -767,86 +905,112 @@ ${formatarPercentual(percentual)}
 
 function atualizarDesempenhoTopicos() {
 
-    const lista = {};
+    const grupos =
+        agruparHistorico(
 
-    historicoExercicios.forEach(registro => {
+            registro => {
 
-        const topico =
-            registro.topico || "Não informado";
+                const disciplina =
+                    obterNomeValido(
+                        registro.disciplina,
+                        "Disciplina não informada"
+                    );
 
-        if (!lista[topico]) {
 
-            lista[topico] = {
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
 
-                total: 0,
 
-                acertos: 0
+                const topico =
+                    obterNomeValido(
+                        registro.topico,
+                        "Tópico não informado"
+                    );
 
-            };
 
-        }
+                return (
+                    disciplina +
+                    "::" +
+                    aula +
+                    "::" +
+                    topico
+                );
 
-        lista[topico].total++;
+            },
 
-        if (registro.acertou) {
+            registro => {
 
-            lista[topico].acertos++;
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
 
-        }
 
-    });
+                const topico =
+                    obterNomeValido(
+                        registro.topico,
+                        "Tópico não informado"
+                    );
 
-    let html = "";
 
-    const topicos = Object.keys(lista);
+                return (
+                    topico +
+                    " — " +
+                    aula
+                );
 
-    if (topicos.length === 0) {
+            }
 
-        html = "<p>Nenhum tópico registrado.</p>";
+        );
+
+
+    const topicos =
+        ordenarGruposPorNome(
+            grupos
+        );
+
+
+    if (
+        topicos.length === 0
+    ) {
+
+        atualizarHTML(
+            "lista-desempenho-topicos",
+            `
+                <p>
+                    Nenhum tópico registrado.
+                </p>
+            `
+        );
+
+        return;
 
     }
 
-    topicos.forEach(topico => {
 
-        const dados = lista[topico];
+    const html =
+        topicos
+            .map(
+                topico =>
+                    gerarItemDesempenho(
+                        topico.titulo,
+                        topico.total,
+                        topico.acertos
+                    )
+            )
+            .join("");
 
-        const percentual =
-            (dados.acertos / dados.total) * 100;
-
-        html += `
-
-<div class="item-desempenho">
-
-<strong>${topico}</strong>
-
-<br>
-
-Questões: ${dados.total}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-Acertos: ${dados.acertos}
-
-&nbsp;&nbsp;|&nbsp;&nbsp;
-
-${formatarPercentual(percentual)}
-
-</div>
-
-`;
-
-    });
 
     atualizarHTML(
-
         "lista-desempenho-topicos",
-
         html
-
     );
 
 }
-
 
 
 // =====================================
@@ -855,100 +1019,175 @@ ${formatarPercentual(percentual)}
 
 function atualizarAssuntosPrioritarios() {
 
-    const lista = {};
+    const grupos =
+        agruparHistorico(
 
-    historicoExercicios.forEach(registro => {
+            registro => {
 
-        const topico =
-            registro.topico || "Não informado";
+                const disciplina =
+                    obterNomeValido(
+                        registro.disciplina,
+                        "Disciplina não informada"
+                    );
 
-        if (!lista[topico]) {
 
-            lista[topico] = {
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
 
-                total: 0,
 
-                acertos: 0
+                const topico =
+                    obterNomeValido(
+                        registro.topico,
+                        "Tópico não informado"
+                    );
 
-            };
 
-        }
+                return (
+                    disciplina +
+                    "::" +
+                    aula +
+                    "::" +
+                    topico
+                );
 
-        lista[topico].total++;
+            },
 
-        if (registro.acertou) {
+            registro =>
+                obterNomeValido(
+                    registro.topico,
+                    "Tópico não informado"
+                )
 
-            lista[topico].acertos++;
+        );
 
-        }
 
-    });
+    const prioridades =
+        Object.values(grupos)
+            .map(
+                grupo => ({
 
-    let prioridades = [];
+                    titulo:
+                        grupo.titulo,
 
-    Object.keys(lista).forEach(topico => {
+                    total:
+                        grupo.total,
 
-        const dados = lista[topico];
+                    acertos:
+                        grupo.acertos,
 
-        prioridades.push({
+                    percentual:
+                        calcularPercentual(
+                            grupo.acertos,
+                            grupo.total
+                        )
 
-            topico: topico,
+                })
+            )
+            .sort(
+                (a, b) => {
 
-            percentual:
-                (dados.acertos / dados.total) * 100,
+                    if (
+                        a.percentual !==
+                        b.percentual
+                    ) {
 
-            total: dados.total
+                        return (
+                            a.percentual -
+                            b.percentual
+                        );
 
-        });
+                    }
 
-    });
 
-    prioridades.sort(
+                    return (
+                        b.total -
+                        a.total
+                    );
 
-        (a, b) =>
+                }
+            );
 
-        a.percentual - b.percentual
 
-    );
+    if (
+        prioridades.length === 0
+    ) {
 
-    let html = "";
+        atualizarHTML(
+            "lista-assuntos-prioritarios",
+            `
+                <p>
+                    Nenhum dado disponível.
+                </p>
+            `
+        );
 
-    if (prioridades.length === 0) {
-
-        html = "<p>Nenhum dado disponível.</p>";
+        return;
 
     }
 
-    prioridades.forEach(item => {
 
-        html += `
+    const html =
+        prioridades
+            .slice(
+                0,
+                5
+            )
+            .map(
+                item => {
 
-<div class="item-desempenho">
+                    const erros =
+                        item.total -
+                        item.acertos;
 
-<strong>${item.topico}</strong>
 
-<br>
+                    return `
+                        <div class="widget">
 
-${formatarPercentual(item.percentual)}
+                            <h3>
+                                ${escaparHTML(item.titulo)}
+                            </h3>
 
-(${item.total} questões)
+                            <p>
+                                <strong>
+                                    ${formatarPercentual(
+                                        item.percentual
+                                    )}
+                                </strong>
 
-</div>
+                                de aproveitamento
+                            </p>
 
-`;
+                            <p>
+                                ${item.total}
+                                questão(ões)
 
-    });
+                                &nbsp;|&nbsp;
+
+                                ${erros}
+                                erro(s)
+                            </p>
+
+                            ${gerarBarraDesempenho(
+                                item.percentual
+                            )}
+
+                        </div>
+                    `;
+
+                }
+            )
+            .join("");
+
 
     atualizarHTML(
-
         "lista-assuntos-prioritarios",
-
         html
-
     );
 
 }
-
 
 
 // =====================================
@@ -957,72 +1196,154 @@ ${formatarPercentual(item.percentual)}
 
 function atualizarEvolucao() {
 
-    let html = "";
+    if (
+        historicoExercicios.length === 0
+    ) {
 
-    if (historicoExercicios.length === 0) {
+        atualizarHTML(
+            "lista-evolucao-desempenho",
+            `
+                <p>
+                    Sem histórico suficiente.
+                </p>
+            `
+        );
 
-        html = "<p>Sem histórico suficiente.</p>";
-
-    }
-
-    else {
-
-        const ultimos =
-
-            historicoExercicios.slice(-10);
-
-        let acertos = 0;
-
-        ultimos.forEach(item => {
-
-            if (item.acertou) {
-
-                acertos++;
-
-            }
-
-        });
-
-        const percentual =
-
-            (acertos / ultimos.length) * 100;
-
-        html = `
-
-<div class="item-desempenho">
-
-Últimas ${ultimos.length} questões
-
-<br>
-
-Acertos: ${acertos}
-
-<br>
-
-Aproveitamento:
-
-<strong>
-
-${formatarPercentual(percentual)}
-
-</strong>
-
-</div>
-
-`;
+        return;
 
     }
+
+
+    const registrosOrdenados =
+        historicoExercicios
+            .slice()
+            .sort(
+                (a, b) => {
+
+                    const dataA =
+                        new Date(
+                            a?.data || 0
+                        ).getTime();
+
+
+                    const dataB =
+                        new Date(
+                            b?.data || 0
+                        ).getTime();
+
+
+                    return dataA - dataB;
+
+                }
+            );
+
+
+    const ultimos =
+        registrosOrdenados.slice(
+            -10
+        );
+
+
+    const acertos =
+        ultimos.filter(
+            registro =>
+                registroFoiAcerto(
+                    registro
+                )
+        ).length;
+
+
+    const erros =
+        ultimos.length -
+        acertos;
+
+
+    const percentual =
+        calcularPercentual(
+            acertos,
+            ultimos.length
+        );
+
+
+    const html = `
+        <div class="widget">
+
+            <h3>
+                Últimas ${ultimos.length} questões
+            </h3>
+
+            <p>
+                <strong>Acertos:</strong>
+                ${acertos}
+
+                &nbsp;|&nbsp;
+
+                <strong>Erros:</strong>
+                ${erros}
+            </p>
+
+            <p>
+                <strong>Aproveitamento:</strong>
+
+                ${formatarPercentual(
+                    percentual
+                )}
+            </p>
+
+            ${gerarBarraDesempenho(
+                percentual
+            )}
+
+        </div>
+    `;
+
 
     atualizarHTML(
-
         "lista-evolucao-desempenho",
-
         html
-
     );
 
 }
 
+
+// =====================================
+// CLASSIFICAR NÍVEL DE DESEMPENHO
+// =====================================
+
+function classificarDesempenho(
+    percentual
+) {
+
+    if (
+        percentual >= 85
+    ) {
+
+        return "excelente";
+
+    }
+
+
+    if (
+        percentual >= 70
+    ) {
+
+        return "adequado";
+
+    }
+
+
+    if (
+        percentual >= 50
+    ) {
+
+        return "intermediário";
+
+    }
+
+
+    return "insuficiente";
+
+}
 
 
 // =====================================
@@ -1031,85 +1352,187 @@ ${formatarPercentual(percentual)}
 
 function atualizarRecomendacao() {
 
-    const lista = {};
-
-    historicoExercicios.forEach(registro => {
-
-        const topico =
-            registro.topico || "Não informado";
-
-        if (!lista[topico]) {
-
-            lista[topico] = {
-
-                total: 0,
-
-                acertos: 0
-
-            };
-
-        }
-
-        lista[topico].total++;
-
-        if (registro.acertou) {
-
-            lista[topico].acertos++;
-
-        }
-
-    });
-
-    let piorTopico = null;
-
-    let piorPercentual = 101;
-
-    Object.keys(lista).forEach(topico => {
-
-        const dados = lista[topico];
-
-        const percentual =
-
-            (dados.acertos / dados.total) * 100;
-
-        if (percentual < piorPercentual) {
-
-            piorPercentual = percentual;
-
-            piorTopico = topico;
-
-        }
-
-    });
-
-    if (!piorTopico) {
+    if (
+        historicoExercicios.length === 0
+    ) {
 
         atualizarTexto(
-
             "texto-recomendacao-desempenho",
-
-            "Resolva exercícios para gerar recomendações."
-
+            "Resolva exercícios para gerar recomendações de estudo."
         );
 
         return;
 
     }
 
+
+    const grupos =
+        agruparHistorico(
+
+            registro => {
+
+                const disciplina =
+                    obterNomeValido(
+                        registro.disciplina,
+                        "Disciplina não informada"
+                    );
+
+
+                const aula =
+                    obterNomeValido(
+                        registro.aula,
+                        "Aula não informada"
+                    );
+
+
+                const topico =
+                    obterNomeValido(
+                        registro.topico,
+                        "Tópico não informado"
+                    );
+
+
+                return (
+                    disciplina +
+                    "::" +
+                    aula +
+                    "::" +
+                    topico
+                );
+
+            },
+
+            registro =>
+                obterNomeValido(
+                    registro.topico,
+                    "Tópico não informado"
+                )
+
+        );
+
+
+    const topicos =
+        Object.values(grupos)
+            .map(
+                grupo => ({
+
+                    titulo:
+                        grupo.titulo,
+
+                    total:
+                        grupo.total,
+
+                    acertos:
+                        grupo.acertos,
+
+                    percentual:
+                        calcularPercentual(
+                            grupo.acertos,
+                            grupo.total
+                        )
+
+                })
+            )
+            .sort(
+                (a, b) => {
+
+                    if (
+                        a.percentual !==
+                        b.percentual
+                    ) {
+
+                        return (
+                            a.percentual -
+                            b.percentual
+                        );
+
+                    }
+
+
+                    return (
+                        b.total -
+                        a.total
+                    );
+
+                }
+            );
+
+
+    const piorTopico =
+        topicos[0];
+
+
+    if (!piorTopico) {
+
+        atualizarTexto(
+            "texto-recomendacao-desempenho",
+            "Ainda não existem dados suficientes para gerar uma recomendação."
+        );
+
+        return;
+
+    }
+
+
+    const nivelGeral =
+        classificarDesempenho(
+            obterAproveitamentoGeral()
+        );
+
+
+    let recomendacao = "";
+
+
+    if (
+        piorTopico.percentual < 50
+    ) {
+
+        recomendacao =
+            `Seu desempenho geral está em nível ${nivelGeral}. ` +
+            `Priorize o estudo e a revisão do tópico ` +
+            `"${piorTopico.titulo}", no qual o aproveitamento atual é ` +
+            `${formatarPercentual(piorTopico.percentual)} ` +
+            `em ${piorTopico.total} questão(ões).`;
+
+    }
+
+    else if (
+        piorTopico.percentual < 70
+    ) {
+
+        recomendacao =
+            `Seu desempenho geral está em nível ${nivelGeral}. ` +
+            `Reforce o tópico "${piorTopico.titulo}", cujo aproveitamento ` +
+            `atual é ${formatarPercentual(piorTopico.percentual)}. ` +
+            `Revise a teoria e responda novas questões sobre esse assunto.`;
+
+    }
+
+    else {
+
+        recomendacao =
+            `Seu desempenho geral está em nível ${nivelGeral}. ` +
+            `O tópico com maior necessidade relativa de revisão é ` +
+            `"${piorTopico.titulo}", com aproveitamento de ` +
+            `${formatarPercentual(piorTopico.percentual)}. ` +
+            `Mantenha revisões periódicas e continue ampliando o histórico de questões.`;
+
+    }
+
+
     atualizarTexto(
-
         "texto-recomendacao-desempenho",
-
-        `Priorize a revisão do tópico "${piorTopico}", cujo desempenho atual é ${formatarPercentual(piorPercentual)}.`
-
+        recomendacao
     );
 
-        }
+}
+
+
 // =====================================
 // ATUALIZAÇÃO AUTOMÁTICA
 // =====================================
 
-function atualizarCentroDesempenho(){
+function atualizarCentroDesempenho() {
 
     carregarHistorico();
 
@@ -1132,89 +1555,135 @@ function atualizarCentroDesempenho(){
 }
 
 
+// =====================================
+// ATUALIZAR AO RETORNAR PARA A PÁGINA
+// =====================================
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+
+        if (
+            document.visibilityState ===
+            "visible"
+        ) {
+
+            atualizarCentroDesempenho();
+
+        }
+
+    }
+);
+
+
+// =====================================
+// SINCRONIZAÇÃO ENTRE ABAS
+// =====================================
+
+window.addEventListener(
+    "storage",
+    evento => {
+
+        if (
+            evento.key ===
+            CHAVE_HISTORICO_EXERCICIOS
+        ) {
+
+            atualizarCentroDesempenho();
+
+        }
+
+    }
+);
+
 
 // =====================================
 // ATUALIZAÇÃO EXTERNA
 // =====================================
 
 window.atualizarCentroDesempenho =
-
     atualizarCentroDesempenho;
 
 
-
 // =====================================
-// UTILIDADES
+// UTILIDADES EXTERNAS
 // =====================================
 
-function existeHistorico(){
+function existeHistorico() {
 
-    return historicoExercicios.length > 0;
+    return (
+        historicoExercicios.length >
+        0
+    );
 
 }
 
 
+function obterHistorico() {
 
-function obterHistorico(){
-
-    return historicoExercicios;
+    return historicoExercicios.slice();
 
 }
 
+
+window.existeHistoricoDesempenho =
+    existeHistorico;
+
+
+window.obterHistoricoDesempenho =
+    obterHistorico;
 
 
 // =====================================
 // DEPURAÇÃO
 // =====================================
 
-function exibirResumoConsole(){
+function exibirResumoConsole() {
 
     console.group(
-
-        "Centro de Desempenho"
-
+        "Centro de Desempenho PSCPP"
     );
 
-    console.log(
 
+    console.log(
         "Questões:",
-
         obterTotalQuestoes()
-
     );
 
-    console.log(
 
+    console.log(
         "Acertos:",
-
         obterTotalAcertos()
-
     );
 
-    console.log(
 
+    console.log(
         "Erros:",
-
         obterTotalErros()
-
     );
+
 
     console.log(
-
         "Aproveitamento:",
-
         formatarPercentual(
-
             obterAproveitamentoGeral()
-
         )
-
     );
+
+
+    console.log(
+        "Última atividade:",
+        obterUltimaAtividade()
+    );
+
 
     console.groupEnd();
 
 }
 
+
+window.exibirResumoDesempenho =
+    exibirResumoConsole;
 
 
 // =====================================
