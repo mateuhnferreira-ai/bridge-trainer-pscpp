@@ -184,152 +184,178 @@ o movimento longitudinal do navio.
 </section>
 
 <!-- =========================================
-     POMODORO DE ESTUDO
+     CRONÔMETRO DE ESTUDO
 ========================================= -->
 
-<section
-class="pomodoro-estudo"
-id="pomodoro-estudo"
->
-
-<div class="widget">
+<section class="secao-pomodoro">
 
 <h2>
-⏱️ Pomodoro de Estudo
+⏱ Cronômetro de Estudo
 </h2>
 
-<p>
-Use o temporizador para organizar seu período de estudo
-desta aula.
-</p>
+<div class="widget pomodoro-widget">
 
-<div
-class="pomodoro"
-data-pomodoro
->
 
-<div class="pomodoro-status">
+<div class="pomodoro-cabecalho">
 
-<p
-class="pomodoro-modo"
-data-pomodoro-modo
->
-Foco
-</p>
+<div class="pomodoro-icone">
 
-<p
-class="pomodoro-tempo"
-data-pomodoro-tempo
->
-25:00
-</p>
+⏱
 
 </div>
+
+
+<div>
+
+<span class="pomodoro-rotulo">
+
+Fase atual
+
+</span>
+
+<h3 id="pomodoro-fase">
+
+📖 Estudo
+
+</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+
+Tempo restante
+
+</span>
+
+<strong id="pomodoro-restante">
+
+30:00
+
+</strong>
+
+</div>
+
+
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+🎯
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Sessão atual
+
+</span>
+
+<strong id="pomodoro-sessao">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+📚
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Total na disciplina
+
+</span>
+
+<strong id="pomodoro-cumulativo">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
 
 
 <div class="pomodoro-controles">
 
 <button
 type="button"
-class="botao-estudo"
-data-pomodoro-iniciar
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
 >
+
 ▶ Iniciar
+
 </button>
+
 
 <button
 type="button"
-class="botao-estudo"
-data-pomodoro-pausar
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
 >
+
 ⏸ Pausar
+
 </button>
+
 
 <button
 type="button"
-class="botao-estudo"
-data-pomodoro-reiniciar
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
 >
-↻ Reiniciar
+
+↺ Zerar ciclo
+
 </button>
 
 </div>
 
 
-<div class="pomodoro-configuracao">
+<p class="pomodoro-orientacao">
 
-<label>
+Utilize o ciclo de estudo para manter a concentração
+durante a resolução das questões de revisão.
 
-Tempo de foco
-
-<select data-pomodoro-foco>
-
-<option value="15">
-15 minutos
-</option>
-
-<option value="25" selected>
-25 minutos
-</option>
-
-<option value="30">
-30 minutos
-</option>
-
-<option value="45">
-45 minutos
-</option>
-
-<option value="50">
-50 minutos
-</option>
-
-<option value="60">
-60 minutos
-</option>
-
-</select>
-
-</label>
-
-
-<label>
-
-Intervalo
-
-<select data-pomodoro-intervalo>
-
-<option value="5" selected>
-5 minutos
-</option>
-
-<option value="10">
-10 minutos
-</option>
-
-<option value="15">
-15 minutos
-</option>
-
-</select>
-
-</label>
-
-</div>
-
-
-<p
-class="pomodoro-mensagem"
-data-pomodoro-mensagem
->
-Prepare-se para iniciar o período de foco.
 </p>
 
 </div>
 
-</div>
-
 </section>
+
 
 <!-- =========================================
      CONTINUAR ESTUDANDO
