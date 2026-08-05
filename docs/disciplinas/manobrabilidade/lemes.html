@@ -14632,3 +14632,4359 @@ da popa.
 <!-- =========================================
      FIM DA PARTE 6
 ========================================= -->
+
+<!-- =========================================
+     PARTE 7
+     INTERAÇÃO DO LEME COM O PROPULSOR
+     E COM O CASCO
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 7 — Interação do Leme com o Propulsor e com o Casco
+</h2>
+
+<p>
+A força produzida pelo leme não depende somente de sua
+geometria e de seu ângulo.
+</p>
+
+<p>
+O escoamento que chega ao leme é modificado pelo propulsor,
+pela esteira do casco e pelo próprio movimento do navio.
+</p>
+
+<p>
+Por essa razão, o leme, o propulsor e o casco devem ser
+compreendidos como partes de um mesmo sistema hidrodinâmico.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POSIÇÃO DO LEME NO ESCOAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-leme-escoamento"
+data-topico-id="posicao-leme-escoamento">
+
+<h2>Posição do Leme no Escoamento</h2>
+
+<div class="widget">
+
+<p>
+Nos navios convencionais de uma hélice e um leme, o leme
+é normalmente instalado imediatamente a ré do propulsor.
+</p>
+
+<p>
+Essa posição permite que a superfície do leme seja atingida
+pelo escoamento acelerado que deixa o disco da hélice.
+</p>
+
+<p>
+A velocidade local da água sobre o leme pode, portanto,
+ser diferente da velocidade de avanço do navio.
+</p>
+
+<div class="destaque">
+
+<h3>Consequência hidrodinâmica</h3>
+
+<p>
+Quando o propulsor está produzindo empuxo avante, o
+escoamento dirigido para ré pode aumentar a velocidade
+de incidência sobre o leme.
+</p>
+
+<p>
+O aumento dessa velocidade modifica as forças de
+sustentação e arrasto produzidas pela superfície de
+controle.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Posição relativa entre hélice e leme</h3>
+
+<svg
+viewBox="0 0 960 480"
+role="img"
+aria-labelledby="titulo-posicao-helice-leme descricao-posicao-helice-leme"
+style="width:100%; height:auto;">
+
+<title id="titulo-posicao-helice-leme">
+Posição do leme a ré da hélice
+</title>
+
+<desc id="descricao-posicao-helice-leme">
+Vista lateral simplificada da região de popa,
+mostrando o eixo propulsor, a hélice, o leme
+e o escoamento dirigido para ré.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<linearGradient
+id="agua-parte7"
+x1="0"
+x2="0"
+y1="0"
+y2="1">
+
+<stop
+offset="0%"
+stop-color="#e5f6ff">
+</stop>
+
+<stop
+offset="100%"
+stop-color="#9ed8f5">
+</stop>
+
+</linearGradient>
+
+</defs>
+
+<rect
+width="960"
+height="480"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<rect
+x="0"
+y="220"
+width="960"
+height="260"
+fill="url(#agua-parte7)">
+</rect>
+
+<!-- POPA DO NAVIO -->
+
+<path
+d="M70 145
+   L555 145
+   Q640 150 715 205
+   L770 248
+   L160 248
+   Q105 235 70 195 Z"
+fill="#607d8b"
+stroke="#263238"
+stroke-width="5">
+</path>
+
+<!-- EIXO -->
+
+<line
+x1="580"
+y1="210"
+x2="690"
+y2="275"
+stroke="#37474f"
+stroke-width="10">
+</line>
+
+<!-- HÉLICE -->
+
+<circle
+cx="710"
+cy="286"
+r="38"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="5">
+</circle>
+
+<path
+d="M710 248
+   Q741 267 710 286
+   Q679 267 710 248 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="3">
+</path>
+
+<path
+d="M748 286
+   Q729 317 710 286
+   Q729 255 748 286 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="3">
+</path>
+
+<path
+d="M710 324
+   Q679 305 710 286
+   Q741 305 710 324 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="3">
+</path>
+
+<path
+d="M672 286
+   Q691 255 710 286
+   Q691 317 672 286 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="3">
+</path>
+
+<!-- MADRE E LEME -->
+
+<line
+x1="830"
+y1="205"
+x2="830"
+y2="265"
+stroke="#263238"
+stroke-width="10">
+</line>
+
+<path
+d="M830 260
+   L873 280
+   L852 395
+   L805 374 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="5">
+</path>
+
+<!-- ESCOAMENTO -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-fluxo-parte7)">
+
+<path d="M748 255 C780 245 805 250 828 270"></path>
+
+<path d="M750 285 C785 280 810 285 835 298"></path>
+
+<path d="M748 315 C780 325 805 335 828 350"></path>
+
+</g>
+
+<text
+x="605"
+y="105"
+font-size="27"
+font-weight="700"
+fill="#263238">
+
+Região de popa
+
+</text>
+
+<text
+x="650"
+y="390"
+font-size="26"
+font-weight="700"
+fill="#805b10">
+
+Hélice
+
+</text>
+
+<text
+x="800"
+y="435"
+font-size="26"
+font-weight="700"
+fill="#7b261d">
+
+Leme
+
+</text>
+
+<text
+x="630"
+y="455"
+font-size="24"
+font-weight="700"
+fill="#1565c0">
+
+Escoamento dirigido para ré
+
+</text>
+
+</svg>
+
+<p>
+A figura representa uma disposição convencional. A
+configuração real varia conforme o número de propulsores,
+o número de lemes e o projeto da região de popa.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Propeller–rudder arrangement</strong> —
+arranjo entre propulsor e leme.
+</li>
+
+<li>
+<strong>Rudder inflow</strong> —
+escoamento que chega ao leme.
+</li>
+
+<li>
+<strong>Propeller slipstream</strong> —
+esteira acelerada produzida pelo propulsor.
+</li>
+
+<li>
+<strong>Propeller race</strong> —
+corrente acelerada da hélice.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERAÇÃO LEME-PROPULSOR
+========================================= -->
+
+<section
+class="topico-aula"
+id="interacao-leme-propulsor"
+data-topico-id="interacao-leme-propulsor">
+
+<h2>Interação entre o Leme e o Propulsor</h2>
+
+<div class="widget">
+
+<p>
+O propulsor altera a velocidade, a direção e a distribuição
+do escoamento que chega ao leme.
+</p>
+
+<p>
+A corrente gerada pela hélice apresenta velocidade axial
+e também pode possuir uma componente rotacional.
+</p>
+
+<p>
+Assim, o fluxo recebido pelo leme não é necessariamente
+uniforme nem perfeitamente paralelo ao eixo longitudinal
+do navio.
+</p>
+
+<div class="destaque">
+
+<h3>Velocidade axial</h3>
+
+<p>
+A hélice acelera a água através do disco propulsor.
+A corrente que deixa o propulsor possui velocidade axial
+superior àquela existente antes de atravessar o disco.
+</p>
+
+<p>
+Quando o leme está inserido nessa corrente, a velocidade
+relativa sobre sua superfície aumenta.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Componente rotacional</h3>
+
+<p>
+Além da aceleração axial, o propulsor transmite rotação
+ao escoamento.
+</p>
+
+<p>
+Essa componente rotacional faz com que diferentes regiões
+do leme possam receber o fluxo com direções e velocidades
+distintas.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Componentes do escoamento atrás da hélice</h3>
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-fluxo-helice descricao-fluxo-helice"
+style="width:100%; height:auto;">
+
+<title id="titulo-fluxo-helice">
+Escoamento axial e rotacional atrás da hélice
+</title>
+
+<desc id="descricao-fluxo-helice">
+Representação esquemática da hélice produzindo
+uma corrente axial dirigida para o leme e uma
+componente rotacional no escoamento.
+</desc>
+
+<defs>
+
+<marker
+id="seta-axial-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-rotacional-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#7b1fa2">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="560"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- HÉLICE -->
+
+<circle
+cx="270"
+cy="280"
+r="72"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="6">
+</circle>
+
+<path
+d="M270 208
+   Q330 244 270 280
+   Q210 244 270 208 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M342 280
+   Q306 340 270 280
+   Q306 220 342 280 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M270 352
+   Q210 316 270 280
+   Q330 316 270 352 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M198 280
+   Q234 220 270 280
+   Q234 340 198 280 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<!-- LEME -->
+
+<line
+x1="760"
+y1="150"
+x2="760"
+y2="205"
+stroke="#263238"
+stroke-width="10">
+</line>
+
+<path
+d="M760 195
+   L810 215
+   L785 400
+   L730 380 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- FLUXO AXIAL -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="8"
+marker-end="url(#seta-axial-parte7)">
+
+<path d="M350 215 C470 205 585 205 730 230"></path>
+
+<path d="M350 280 C480 280 600 280 740 290"></path>
+
+<path d="M350 345 C470 355 585 355 730 350"></path>
+
+</g>
+
+<!-- COMPONENTE ROTACIONAL -->
+
+<path
+d="M415 170
+   C530 95 675 130 705 230
+   C735 330 655 430 530 415
+   C445 405 400 350 405 285"
+fill="none"
+stroke="#7b1fa2"
+stroke-width="7"
+stroke-dasharray="14 9"
+marker-end="url(#seta-rotacional-parte7)">
+</path>
+
+<text
+x="105"
+y="120"
+font-size="29"
+font-weight="700"
+fill="#805b10">
+
+Hélice
+
+</text>
+
+<text
+x="430"
+y="105"
+font-size="27"
+font-weight="700"
+fill="#7b1fa2">
+
+Componente rotacional
+
+</text>
+
+<text
+x="420"
+y="475"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Componente axial
+
+</text>
+
+<text
+x="735"
+y="450"
+font-size="27"
+font-weight="700"
+fill="#7b261d">
+
+Leme
+
+</text>
+
+</svg>
+
+<p>
+A figura é uma representação didática. O campo real de
+velocidades depende da geometria da hélice, da carga do
+propulsor e da configuração da popa.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Aplicação operacional</h3>
+
+<p>
+Uma mudança na rotação ou na carga do propulsor altera
+o escoamento recebido pelo leme.
+</p>
+
+<p>
+Consequentemente, a resposta do navio ao mesmo ângulo
+de leme pode mudar quando a condição de funcionamento
+do propulsor é alterada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEME FORA DA CORRENTE PRINCIPAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-fora-corrente-principal"
+data-topico-id="leme-fora-corrente-principal">
+
+<h2>Leme Fora da Corrente Principal da Hélice</h2>
+
+<div class="widget">
+
+<p>
+Nem todos os lemes recebem diretamente a região de maior
+velocidade da corrente do propulsor.
+</p>
+
+<p>
+A posição relativa entre o leme e o disco da hélice
+determina quanto da superfície permanece dentro do
+escoamento acelerado.
+</p>
+
+<div class="destaque">
+
+<h3>Influência do arranjo</h3>
+
+<p>
+A interação depende, entre outros fatores, de:
+</p>
+
+<ul>
+
+<li>número de hélices;</li>
+
+<li>número de lemes;</li>
+
+<li>distância entre hélice e leme;</li>
+
+<li>posição transversal do leme;</li>
+
+<li>diâmetro do propulsor;</li>
+
+<li>área do leme atingida pela corrente;</li>
+
+<li>forma da popa.</li>
+
+</ul>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Exemplos simplificados de arranjos</h3>
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-arranjos-leme descricao-arranjos-leme"
+style="width:100%; height:auto;">
+
+<title id="titulo-arranjos-leme">
+Arranjos simplificados de hélices e lemes
+</title>
+
+<desc id="descricao-arranjos-leme">
+Comparação entre um navio com uma hélice e um leme
+e um navio com duas hélices e um leme central.
+</desc>
+
+<defs>
+
+<marker
+id="seta-arranjo"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="560"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="520"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 10">
+</line>
+
+<!-- UMA HÉLICE / UM LEME -->
+
+<text
+x="105"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Uma hélice e um leme
+
+</text>
+
+<path
+d="M70 260
+   Q135 170 240 165
+   L360 185
+   Q415 205 440 260
+   Q415 315 360 335
+   L240 355
+   Q135 350 70 260 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<circle
+cx="340"
+cy="260"
+r="38"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="5">
+</circle>
+
+<path
+d="M405 205
+   L435 220
+   L420 300
+   L390 285 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="5">
+</path>
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-arranjo)">
+
+<path d="M375 225 C395 220 408 225 420 235"></path>
+<path d="M378 260 C400 260 412 260 425 260"></path>
+<path d="M375 295 C395 300 408 295 420 285"></path>
+
+</g>
+
+<text
+x="105"
+y="420"
+font-size="24"
+fill="#37474f">
+
+O leme permanece diretamente
+
+</text>
+
+<text
+x="105"
+y="452"
+font-size="24"
+fill="#37474f">
+
+na corrente do propulsor.
+
+</text>
+
+<!-- DUAS HÉLICES / LEME CENTRAL -->
+
+<text
+x="585"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Duas hélices e leme central
+
+</text>
+
+<path
+d="M520 260
+   Q585 170 690 165
+   L810 185
+   Q865 205 890 260
+   Q865 315 810 335
+   L690 355
+   Q585 350 520 260 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<circle
+cx="775"
+cy="220"
+r="31"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="5">
+</circle>
+
+<circle
+cx="775"
+cy="300"
+r="31"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="5">
+</circle>
+
+<path
+d="M850 220
+   L882 235
+   L867 315
+   L835 300 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="5">
+</path>
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-arranjo)">
+
+<path d="M810 205 C830 200 845 205 855 218"></path>
+<path d="M810 315 C830 320 845 315 855 302"></path>
+
+</g>
+
+<text
+x="585"
+y="420"
+font-size="24"
+fill="#37474f">
+
+A posição relativa modifica a parcela
+
+</text>
+
+<text
+x="585"
+y="452"
+font-size="24"
+fill="#37474f">
+
+do leme atingida pelo escoamento.
+
+</text>
+
+</svg>
+
+<p>
+Os desenhos mostram somente duas possibilidades.
+Existem diversos outros arranjos de propulsores e
+superfícies de controle.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+A resposta observada em um navio não deve ser transferida
+automaticamente para outra embarcação com arranjo
+propulsivo diferente.
+</p>
+
+<p>
+O número e a posição dos propulsores e lemes modificam
+a interação hidrodinâmica do sistema.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ESTEIRA DO CASCO
+========================================= -->
+
+<section
+class="topico-aula"
+id="esteira-casco-leme"
+data-topico-id="esteira-casco-leme">
+
+<h2>Influência da Esteira do Casco</h2>
+
+<div class="widget">
+
+<p>
+Durante o avanço do navio, o casco modifica o campo de
+velocidades da água ao seu redor.
+</p>
+
+<p>
+Na região de popa, o escoamento que chega à hélice e ao
+leme já foi influenciado pela camada limite, pela geometria
+do casco e pela distribuição de pressão.
+</p>
+
+<p>
+Esse campo de velocidades recebe, de forma geral, a
+denominação de esteira do casco.
+</p>
+
+<div class="destaque">
+
+<h3>Escoamento não uniforme</h3>
+
+<p>
+A velocidade da água na região de popa não é necessariamente
+igual em todos os pontos.
+</p>
+
+<p>
+Determinadas regiões podem apresentar velocidades menores
+ou direções diferentes em razão da influência do casco.
+</p>
+
+<p>
+Consequentemente, diferentes partes do leme podem receber
+condições distintas de escoamento.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Esteira formada na região de popa</h3>
+
+<svg
+viewBox="0 0 960 520"
+role="img"
+aria-labelledby="titulo-esteira-casco descricao-esteira-casco"
+style="width:100%; height:auto;">
+
+<title id="titulo-esteira-casco">
+Esteira do casco na região do leme
+</title>
+
+<desc id="descricao-esteira-casco">
+Vista superior simplificada mostrando o casco
+perturbando as linhas de corrente e formando
+uma esteira não uniforme na região de popa.
+</desc>
+
+<defs>
+
+<marker
+id="seta-esteira-casco"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="520"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- CASCO -->
+
+<path
+d="M90 260
+   Q180 150 330 150
+   L650 180
+   Q745 195 800 260
+   Q745 325 650 340
+   L330 370
+   Q180 370 90 260 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<line
+x1="105"
+y1="260"
+x2="800"
+y2="260"
+stroke="#90a4ae"
+stroke-width="3"
+stroke-dasharray="12 9">
+</line>
+
+<!-- LEME -->
+
+<path
+d="M820 220
+   L860 240
+   L842 330
+   L800 310 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="5">
+</path>
+
+<!-- LINHAS EXTERNAS -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="5"
+marker-end="url(#seta-esteira-casco)">
+
+<path d="M40 95 C240 85 490 95 745 175"></path>
+
+<path d="M35 145 C235 130 475 145 745 205"></path>
+
+<path d="M35 375 C235 390 475 375 745 315"></path>
+
+<path d="M40 425 C240 435 490 425 745 345"></path>
+
+</g>
+
+<!-- ESTEIRA INTERNA -->
+
+<g
+fill="none"
+stroke="#42a5f5"
+stroke-width="4"
+stroke-dasharray="11 8"
+marker-end="url(#seta-esteira-casco)">
+
+<path d="M655 220 C720 220 765 230 810 250"></path>
+
+<path d="M655 260 C720 260 770 260 815 270"></path>
+
+<path d="M655 300 C720 300 765 295 810 290"></path>
+
+</g>
+
+<text
+x="590"
+y="110"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Linhas de corrente modificadas pelo casco
+
+</text>
+
+<text
+x="655"
+y="430"
+font-size="27"
+font-weight="700"
+fill="#0d47a1">
+
+Esteira na região de popa
+
+</text>
+
+<text
+x="805"
+y="380"
+font-size="26"
+font-weight="700"
+fill="#7b261d">
+
+Leme
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Hull wake</strong> —
+esteira do casco.
+</li>
+
+<li>
+<strong>Wake field</strong> —
+campo de velocidades da esteira.
+</li>
+
+<li>
+<strong>Boundary layer</strong> —
+camada limite formada junto ao casco.
+</li>
+
+<li>
+<strong>Non-uniform inflow</strong> —
+escoamento de entrada não uniforme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERAÇÃO LEME-CASCO
+========================================= -->
+
+<section
+class="topico-aula"
+id="interacao-leme-casco"
+data-topico-id="interacao-leme-casco">
+
+<h2>Interação entre o Leme e o Casco</h2>
+
+<div class="widget">
+
+<p>
+A força do leme inicia uma alteração no movimento do navio,
+mas a resposta completa depende também das forças
+hidrodinâmicas geradas sobre o casco.
+</p>
+
+<p>
+Quando a embarcação começa a desenvolver movimento lateral
+e rotação, o escoamento ao redor das obras vivas é
+modificado.
+</p>
+
+<p>
+A distribuição de pressão sobre o casco passa a produzir
+forças e momentos que interagem com aqueles originados
+pelo leme.
+</p>
+
+<div class="destaque">
+
+<h3>Resistência ao movimento lateral</h3>
+
+<p>
+O casco oferece resistência ao movimento transversal
+através da água.
+</p>
+
+<p>
+Essa reação hidrodinâmica influencia a velocidade lateral,
+a razão de guinada e o desenvolvimento da trajetória curva.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Influência da geometria do navio</h3>
+
+<p>
+A interação entre leme e casco depende de características
+como:
+</p>
+
+<ul>
+
+<li>comprimento do navio;</li>
+
+<li>boca e relação comprimento–boca;</li>
+
+<li>calado;</li>
+
+<li>área lateral submersa;</li>
+
+<li>forma da região de popa;</li>
+
+<li>distribuição longitudinal do volume;</li>
+
+<li>condição de trim;</li>
+
+<li>posição e características dos apêndices.</li>
+
+</ul>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Forças do leme e reação hidrodinâmica do casco</h3>
+
+<svg
+viewBox="0 0 960 580"
+role="img"
+aria-labelledby="titulo-leme-casco descricao-leme-casco"
+style="width:100%; height:auto;">
+
+<title id="titulo-leme-casco">
+Interação entre a força do leme e o casco
+</title>
+
+<desc id="descricao-leme-casco">
+Vista superior de um navio em guinada,
+mostrando a força aplicada pelo leme,
+o movimento lateral e as reações
+hidrodinâmicas distribuídas sobre o casco.
+</desc>
+
+<defs>
+
+<marker
+id="seta-forca-leme-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+<marker
+id="seta-reacao-casco-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+<marker
+id="seta-guinada-parte7"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="580"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<g transform="translate(475 300) rotate(18)">
+
+<path
+d="M0 -220
+   Q72 -115 75 20
+   L58 205
+   Q0 260 -58 205
+   L-75 20
+   Q-72 -115 0 -220 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="6">
+</path>
+
+<line
+x1="0"
+y1="-190"
+x2="0"
+y2="210"
+stroke="#90a4ae"
+stroke-width="3"
+stroke-dasharray="12 9">
+</line>
+
+<path
+d="M0 200
+   L48 220
+   L26 270
+   L-20 247 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="5">
+</path>
+
+</g>
+
+<!-- FORÇA DO LEME -->
+
+<line
+x1="400"
+y1="510"
+x2="270"
+y2="485"
+stroke="#c62828"
+stroke-width="10"
+marker-end="url(#seta-forca-leme-parte7)">
+</line>
+
+<text
+x="85"
+y="475"
+font-size="27"
+font-weight="700"
+fill="#c62828">
+
+Força do leme
+
+</text>
+
+<!-- REAÇÕES NO CASCO -->
+
+<g
+stroke="#2e7d32"
+stroke-width="7"
+marker-end="url(#seta-reacao-casco-parte7)">
+
+<line x1="445" y1="185" x2="340" y2="160"></line>
+
+<line x1="475" y1="250" x2="365" y2="225"></line>
+
+<line x1="505" y1="320" x2="395" y2="295"></line>
+
+</g>
+
+<text
+x="75"
+y="120"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Reações hidrodinâmicas
+
+</text>
+
+<text
+x="120"
+y="155"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+distribuídas no casco
+
+</text>
+
+<!-- GUINADA -->
+
+<path
+d="M585 160
+   C720 120 825 190 830 305"
+fill="none"
+stroke="#1565c0"
+stroke-width="10"
+marker-end="url(#seta-guinada-parte7)">
+</path>
+
+<text
+x="655"
+y="100"
+font-size="28"
+font-weight="700"
+fill="#1565c0">
+
+Momento de guinada
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+Navios com diferentes formas de casco podem responder de
+maneira diferente ao mesmo ângulo de leme.
+</p>
+
+<p>
+A resposta observada resulta da combinação entre a força
+do leme, o escoamento do propulsor e as reações
+hidrodinâmicas distribuídas pelo casco.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERFERÊNCIA DO CASCO SOBRE O LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="interferencia-casco-sobre-leme"
+data-topico-id="interferencia-casco-sobre-leme">
+
+<h2>Interferência do Casco sobre o Leme</h2>
+
+<div class="widget">
+
+<p>
+A forma da região de popa determina como o escoamento é
+conduzido até o propulsor e o leme.
+</p>
+
+<p>
+As linhas de corrente podem chegar ao leme com direção
+diferente daquela correspondente ao movimento longitudinal
+do navio.
+</p>
+
+<p>
+O ângulo efetivo de incidência sobre o leme resulta,
+portanto, da combinação entre:
+</p>
+
+<ul>
+
+<li>ângulo geométrico do leme;</li>
+
+<li>velocidade longitudinal do escoamento;</li>
+
+<li>velocidade lateral do navio;</li>
+
+<li>razão de guinada;</li>
+
+<li>esteira do casco;</li>
+
+<li>corrente produzida pelo propulsor.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Ângulo geométrico e incidência efetiva</h3>
+
+<p>
+O ângulo indicado pelo sistema de governo representa a
+posição geométrica do leme em relação à linha de centro.
+</p>
+
+<p>
+Esse valor não é necessariamente igual ao ângulo
+hidrodinâmico efetivo entre o perfil do leme e o
+escoamento local.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Direção do escoamento e ângulo efetivo</h3>
+
+<svg
+viewBox="0 0 960 520"
+role="img"
+aria-labelledby="titulo-angulo-efetivo descricao-angulo-efetivo"
+style="width:100%; height:auto;">
+
+<title id="titulo-angulo-efetivo">
+Ângulo geométrico e ângulo efetivo do leme
+</title>
+
+<desc id="descricao-angulo-efetivo">
+Representação em planta mostrando a linha de centro,
+o leme defletido e um escoamento local oblíquo,
+resultando em um ângulo efetivo de incidência.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-efetivo"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="520"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- LINHA DE CENTRO -->
+
+<line
+x1="130"
+y1="260"
+x2="840"
+y2="260"
+stroke="#546e7a"
+stroke-width="5"
+stroke-dasharray="14 10">
+</line>
+
+<text
+x="135"
+y="235"
+font-size="26"
+font-weight="700"
+fill="#546e7a">
+
+Linha de centro
+
+</text>
+
+<!-- LEME -->
+
+<g transform="translate(650 260) rotate(25)">
+
+<path
+d="M-25 -130
+   L30 -110
+   L25 135
+   L-30 115 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+<!-- ESCOAMENTO LOCAL -->
+
+<g
+stroke="#1565c0"
+stroke-width="7"
+fill="none"
+marker-end="url(#seta-fluxo-efetivo)">
+
+<line x1="180" y1="390" x2="560" y2="285"></line>
+
+<line x1="165" y1="335" x2="545" y2="230"></line>
+
+<line x1="150" y1="280" x2="530" y2="175"></line>
+
+</g>
+
+<!-- ÂNGULO GEOMÉTRICO -->
+
+<path
+d="M650 260
+   m110 0
+   A110 110 0 0 0 750 215"
+fill="none"
+stroke="#2e7d32"
+stroke-width="7">
+</path>
+
+<text
+x="760"
+y="215"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Ângulo geométrico
+
+</text>
+
+<!-- ÂNGULO EFETIVO -->
+
+<path
+d="M650 260
+   m-95 26
+   A100 100 0 0 1 565 215"
+fill="none"
+stroke="#c62828"
+stroke-width="7">
+</path>
+
+<text
+x="400"
+y="145"
+font-size="27"
+font-weight="700"
+fill="#c62828">
+
+Incidência efetiva
+
+</text>
+
+<text
+x="160"
+y="450"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Direção local do escoamento
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Geometric rudder angle</strong> —
+ângulo geométrico do leme em relação à linha de centro.
+</li>
+
+<li>
+<strong>Effective angle of attack</strong> —
+ângulo efetivo de ataque em relação ao escoamento local.
+</li>
+
+<li>
+<strong>Inflow angle</strong> —
+ângulo de entrada do escoamento.
+</li>
+
+<li>
+<strong>Hull–rudder interaction</strong> —
+interação hidrodinâmica entre casco e leme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="sintese-interacoes-leme"
+data-topico-id="sintese-interacoes-leme">
+
+<h2>Síntese das Interações Hidrodinâmicas</h2>
+
+<div class="widget">
+
+<p>
+O leme não opera em um escoamento isolado ou uniforme.
+</p>
+
+<p>
+A condição de entrada da água sobre sua superfície é
+modificada simultaneamente pelo casco e pelo propulsor.
+</p>
+
+<div class="destaque">
+
+<h3>Interação leme–propulsor</h3>
+
+<p>
+O propulsor modifica a velocidade e a direção do
+escoamento que chega ao leme.
+</p>
+
+<p>
+A corrente acelerada pode aumentar as forças produzidas,
+enquanto sua componente rotacional pode tornar o fluxo
+não uniforme sobre a superfície.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Interação leme–casco</h3>
+
+<p>
+O casco modifica o escoamento antes que ele alcance o
+leme e também produz forças hidrodinâmicas durante o
+movimento lateral e a guinada.
+</p>
+
+<p>
+A resposta final do navio resulta da interação entre as
+forças do leme e as forças distribuídas sobre as obras
+vivas.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de atenção para o PSCPP</h3>
+
+<p>
+Não se deve avaliar a efetividade do leme apenas por seu
+ângulo geométrico.
+</p>
+
+<p>
+Devem ser considerados o escoamento local, a corrente do
+propulsor, a esteira do casco e o estado de movimento da
+embarcação.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Resumo dos termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Propeller–rudder interaction</strong> —
+interação entre propulsor e leme.
+</li>
+
+<li>
+<strong>Hull–rudder interaction</strong> —
+interação entre casco e leme.
+</li>
+
+<li>
+<strong>Propeller slipstream</strong> —
+esteira acelerada do propulsor.
+</li>
+
+<li>
+<strong>Hull wake</strong> —
+esteira produzida pelo casco.
+</li>
+
+<li>
+<strong>Non-uniform inflow</strong> —
+escoamento de entrada não uniforme.
+</li>
+
+<li>
+<strong>Effective angle of attack</strong> —
+ângulo efetivo de ataque.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 7
+========================================= -->
+
+<!-- =========================================
+     PARTE 8
+     LEMES CONVENCIONAIS E LEMES COM FLAP
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 8 — Lemes Convencionais e Lemes com Flap
+</h2>
+
+<p>
+A configuração geométrica do leme influencia diretamente
+a intensidade das forças hidrodinâmicas produzidas e a
+capacidade de controle do navio.
+</p>
+
+<p>
+Entre as configurações utilizadas estão os lemes
+convencionais, constituídos por uma superfície móvel
+principal, e os lemes dotados de uma aba articulada
+na extremidade de ré.
+</p>
+
+<p>
+Essa aba recebe a denominação técnica de
+<strong>flap</strong>.
+</p>
+
+<p>
+Nesta parte serão estudadas as diferenças de funcionamento
+e de desempenho entre essas duas configurações.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEME CONVENCIONAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-convencional"
+data-topico-id="leme-convencional">
+
+<h2>Leme Convencional</h2>
+
+<div class="widget">
+
+<p>
+No leme convencional, a superfície móvel gira como uma
+unidade em torno de seu eixo de rotação.
+</p>
+
+<p>
+Quando o leme é defletido, sua linha de corda forma um
+ângulo com o escoamento local.
+</p>
+
+<p>
+Essa incidência produz uma força hidrodinâmica resultante,
+que pode ser decomposta em sustentação e arrasto.
+</p>
+
+<div class="destaque">
+
+<h3>Característica básica</h3>
+
+<p>
+A curvatura do perfil permanece essencialmente fixa.
+</p>
+
+<p>
+A alteração da força é obtida principalmente pela mudança
+do ângulo de toda a superfície do leme em relação ao
+escoamento.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Deflexão de um leme convencional</h3>
+
+<svg
+viewBox="0 0 960 500"
+role="img"
+aria-labelledby="titulo-leme-convencional descricao-leme-convencional"
+style="width:100%; height:auto;">
+
+<title id="titulo-leme-convencional">
+Deflexão de um leme convencional
+</title>
+
+<desc id="descricao-leme-convencional">
+Vista superior de um leme convencional girando como
+uma única superfície em relação à linha de centro
+e ao escoamento.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-convencional"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-forca-convencional"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="500"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- LINHA DE CENTRO -->
+
+<line
+x1="100"
+y1="250"
+x2="860"
+y2="250"
+stroke="#78909c"
+stroke-width="5"
+stroke-dasharray="14 10">
+</line>
+
+<text
+x="110"
+y="225"
+font-size="26"
+font-weight="700"
+fill="#546e7a">
+
+Linha de centro
+
+</text>
+
+<!-- EIXO DO LEME -->
+
+<circle
+cx="600"
+cy="250"
+r="15"
+fill="#263238">
+</circle>
+
+<line
+x1="600"
+y1="115"
+x2="600"
+y2="385"
+stroke="#263238"
+stroke-width="8">
+</line>
+
+<!-- LEME -->
+
+<g transform="rotate(27 600 250)">
+
+<path
+d="M600 130
+   Q670 140 755 205
+   Q780 225 790 250
+   Q780 275 755 295
+   Q670 360 600 370 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="600"
+y1="250"
+x2="790"
+y2="250"
+stroke="#8d3025"
+stroke-width="4"
+stroke-dasharray="10 8">
+</line>
+
+</g>
+
+<!-- FLUXO -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-fluxo-convencional)">
+
+<line x1="80" y1="150" x2="485" y2="150"></line>
+
+<line x1="80" y1="210" x2="485" y2="210"></line>
+
+<line x1="80" y1="290" x2="485" y2="290"></line>
+
+<line x1="80" y1="350" x2="485" y2="350"></line>
+
+</g>
+
+<!-- FORÇA -->
+
+<line
+x1="700"
+y1="250"
+x2="740"
+y2="110"
+stroke="#2e7d32"
+stroke-width="9"
+marker-end="url(#seta-forca-convencional)">
+</line>
+
+<text
+x="735"
+y="90"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Força hidrodinâmica
+
+</text>
+
+<!-- ÂNGULO -->
+
+<path
+d="M600 250
+   m110 0
+   A110 110 0 0 0 698 200"
+fill="none"
+stroke="#c62828"
+stroke-width="7">
+</path>
+
+<text
+x="710"
+y="205"
+font-size="28"
+font-weight="700"
+fill="#c62828">
+
+δ
+
+</text>
+
+<text
+x="130"
+y="420"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Escoamento
+
+</text>
+
+<text
+x="560"
+y="425"
+font-size="25"
+font-weight="700"
+fill="#263238">
+
+A superfície gira como uma unidade
+
+</text>
+
+</svg>
+
+<p>
+O símbolo <strong>δ</strong> representa o ângulo geométrico
+do leme em relação à linha de centro.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Conventional rudder</strong> —
+leme convencional.
+</li>
+
+<li>
+<strong>All-movable rudder</strong> —
+leme cuja superfície principal é totalmente móvel.
+</li>
+
+<li>
+<strong>Rudder angle</strong> —
+ângulo do leme.
+</li>
+
+<li>
+<strong>Rudder chord</strong> —
+corda do perfil do leme.
+</li>
+
+<li>
+<strong>Rudder stock</strong> —
+madre ou eixo estrutural do leme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEME COM FLAP
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-com-flap"
+data-topico-id="leme-com-flap">
+
+<h2>Leme com Flap</h2>
+
+<div class="widget">
+
+<p>
+O leme com flap possui uma superfície principal e uma aba
+móvel articulada junto à sua borda de fuga.
+</p>
+
+<p>
+A aba gira em relação à parte principal quando o leme é
+acionado.
+</p>
+
+<p>
+O movimento combinado aumenta a curvatura efetiva do
+perfil hidrodinâmico.
+</p>
+
+<div class="destaque">
+
+<h3>Princípio de funcionamento</h3>
+
+<p>
+A superfície principal estabelece a deflexão básica do
+leme.
+</p>
+
+<p>
+O flap adiciona uma nova deflexão na parte posterior do
+perfil, desviando mais intensamente o escoamento.
+</p>
+
+<p>
+O aumento da curvatura efetiva permite obter maior força
+lateral para uma determinada área de leme e determinada
+condição de escoamento.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Deflexão de um leme com flap</h3>
+
+<svg
+viewBox="0 0 960 520"
+role="img"
+aria-labelledby="titulo-leme-flap descricao-leme-flap"
+style="width:100%; height:auto;">
+
+<title id="titulo-leme-flap">
+Deflexão de um leme com flap
+</title>
+
+<desc id="descricao-leme-flap">
+Vista superior mostrando a superfície principal do leme
+defletida e uma aba posterior com deflexão adicional.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-flap"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-forca-flap"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="520"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- LINHA DE CENTRO -->
+
+<line
+x1="90"
+y1="260"
+x2="875"
+y2="260"
+stroke="#78909c"
+stroke-width="5"
+stroke-dasharray="14 10">
+</line>
+
+<text
+x="105"
+y="235"
+font-size="26"
+font-weight="700"
+fill="#546e7a">
+
+Linha de centro
+
+</text>
+
+<!-- EIXO PRINCIPAL -->
+
+<circle
+cx="560"
+cy="260"
+r="15"
+fill="#263238">
+</circle>
+
+<line
+x1="560"
+y1="120"
+x2="560"
+y2="400"
+stroke="#263238"
+stroke-width="8">
+</line>
+
+<!-- CONJUNTO PRINCIPAL -->
+
+<g transform="rotate(22 560 260)">
+
+<path
+d="M560 130
+   Q625 138 700 185
+   L725 205
+   L725 315
+   L700 335
+   Q625 382 560 390 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- ARTICULAÇÃO DO FLAP -->
+
+<line
+x1="725"
+y1="205"
+x2="725"
+y2="315"
+stroke="#263238"
+stroke-width="7">
+</line>
+
+<circle
+cx="725"
+cy="260"
+r="10"
+fill="#263238">
+</circle>
+
+<!-- FLAP -->
+
+<g transform="rotate(25 725 260)">
+
+<path
+d="M725 205
+   Q775 215 830 250
+   Q775 305 725 315 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+</g>
+
+<!-- FLUXO -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-fluxo-flap)">
+
+<line x1="70" y1="150" x2="455" y2="150"></line>
+
+<line x1="70" y1="215" x2="455" y2="215"></line>
+
+<line x1="70" y1="305" x2="455" y2="305"></line>
+
+<line x1="70" y1="370" x2="455" y2="370"></line>
+
+</g>
+
+<!-- FORÇA -->
+
+<line
+x1="690"
+y1="250"
+x2="740"
+y2="80"
+stroke="#2e7d32"
+stroke-width="10"
+marker-end="url(#seta-forca-flap)">
+</line>
+
+<text
+x="715"
+y="55"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Força hidrodinâmica
+
+</text>
+
+<!-- ÂNGULO PRINCIPAL -->
+
+<path
+d="M560 260
+   m100 0
+   A100 100 0 0 0 653 223"
+fill="none"
+stroke="#c62828"
+stroke-width="7">
+</path>
+
+<text
+x="655"
+y="220"
+font-size="28"
+font-weight="700"
+fill="#c62828">
+
+δ
+
+</text>
+
+<!-- INDICAÇÃO DO FLAP -->
+
+<line
+x1="785"
+y1="345"
+x2="850"
+y2="405"
+stroke="#7b1fa2"
+stroke-width="5">
+</line>
+
+<text
+x="680"
+y="450"
+font-size="27"
+font-weight="700"
+fill="#7b1fa2">
+
+Deflexão adicional do flap
+
+</text>
+
+<text
+x="110"
+y="435"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Escoamento
+
+</text>
+
+</svg>
+
+<p>
+A figura mostra de forma esquemática a deflexão adicional
+do flap em relação à superfície principal.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Flap rudder</strong> —
+leme com aba móvel articulada.
+</li>
+
+<li>
+<strong>Flap</strong> —
+aba móvel localizada na parte posterior do leme.
+</li>
+
+<li>
+<strong>Trailing edge</strong> —
+borda de fuga do perfil.
+</li>
+
+<li>
+<strong>Hinge</strong> —
+articulação ou dobradiça do flap.
+</li>
+
+<li>
+<strong>Effective camber</strong> —
+curvatura efetiva do perfil.
+</li>
+
+<li>
+<strong>Flap angle</strong> —
+ângulo do flap em relação à superfície principal.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MECANISMO DE ACIONAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="acionamento-flap"
+data-topico-id="acionamento-flap">
+
+<h2>Acionamento do Flap</h2>
+
+<div class="widget">
+
+<p>
+O movimento do flap é coordenado com o movimento da
+superfície principal.
+</p>
+
+<p>
+Em configurações mecânicas, essa coordenação pode ser
+obtida por meio de articulações e barras de ligação.
+</p>
+
+<p>
+Quando o leme principal gira, o mecanismo transmite
+movimento adicional à aba posterior.
+</p>
+
+<div class="destaque">
+
+<h3>Relação entre os movimentos</h3>
+
+<p>
+O flap normalmente se desloca para o mesmo bordo da
+superfície principal.
+</p>
+
+<p>
+Entretanto, seu ângulo relativo é maior, produzindo uma
+curvatura mais acentuada na parte posterior do perfil.
+</p>
+
+<p>
+A relação exata entre o ângulo principal e o ângulo do
+flap depende do projeto do mecanismo.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Movimento combinado da superfície principal e do flap</h3>
+
+<svg
+viewBox="0 0 960 600"
+role="img"
+aria-labelledby="titulo-acionamento-flap descricao-acionamento-flap"
+style="width:100%; height:auto;">
+
+<title id="titulo-acionamento-flap">
+Movimento coordenado de um leme com flap
+</title>
+
+<desc id="descricao-acionamento-flap">
+Três posições esquemáticas mostram o leme a meio,
+a superfície principal defletida e o flap com
+deflexão adicional.
+</desc>
+
+<rect
+width="960"
+height="600"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="320"
+y1="40"
+x2="320"
+y2="550"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 9">
+</line>
+
+<line
+x1="640"
+y1="40"
+x2="640"
+y2="550"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 9">
+</line>
+
+<!-- POSIÇÃO A MEIO -->
+
+<text
+x="95"
+y="70"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Leme a meio
+
+</text>
+
+<line
+x1="165"
+y1="135"
+x2="165"
+y2="425"
+stroke="#263238"
+stroke-width="8">
+</line>
+
+<path
+d="M165 155
+   Q225 165 255 210
+   L255 350
+   Q225 395 165 405 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="255"
+y1="210"
+x2="255"
+y2="350"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<path
+d="M255 210
+   Q295 230 305 280
+   Q295 330 255 350 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<text
+x="75"
+y="490"
+font-size="23"
+fill="#37474f">
+
+Superfícies alinhadas
+
+</text>
+
+<!-- DEFLEXÃO INTERMEDIÁRIA -->
+
+<text
+x="375"
+y="70"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Deflexão intermediária
+
+</text>
+
+<g transform="rotate(18 485 280)">
+
+<line
+x1="405"
+y1="280"
+x2="565"
+y2="280"
+stroke="#263238"
+stroke-width="8">
+</line>
+
+<path
+d="M405 220
+   Q465 225 525 250
+   L525 310
+   Q465 335 405 340 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="525"
+y1="250"
+x2="525"
+y2="310"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<g transform="rotate(20 525 280)">
+
+<path
+d="M525 250
+   Q575 255 610 280
+   Q575 305 525 310 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+</g>
+
+<text
+x="370"
+y="490"
+font-size="23"
+fill="#37474f">
+
+Flap amplia a curvatura
+
+</text>
+
+<!-- GRANDE DEFLEXÃO -->
+
+<text
+x="700"
+y="70"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Grande deflexão
+
+</text>
+
+<g transform="rotate(32 790 280)">
+
+<line
+x1="700"
+y1="280"
+x2="850"
+y2="280"
+stroke="#263238"
+stroke-width="8">
+</line>
+
+<path
+d="M700 220
+   Q760 225 820 250
+   L820 310
+   Q760 335 700 340 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="820"
+y1="250"
+x2="820"
+y2="310"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<g transform="rotate(30 820 280)">
+
+<path
+d="M820 250
+   Q865 255 900 280
+   Q865 305 820 310 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+</g>
+
+<text
+x="675"
+y="490"
+font-size="23"
+fill="#37474f">
+
+Maior deflexão do fluxo
+
+</text>
+
+<text
+x="210"
+y="550"
+font-size="25"
+font-weight="700"
+fill="#7b1fa2">
+
+A amplitude relativa do flap depende do mecanismo de projeto.
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+A posição indicada pelo repetidor representa normalmente
+o ângulo da superfície principal.
+</p>
+
+<p>
+Em um leme com flap, a aba pode apresentar uma deflexão
+adicional, produzindo uma resposta hidrodinâmica superior
+àquela esperada de uma superfície convencional com o
+mesmo ângulo principal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUMENTO DA CURVATURA
+========================================= -->
+
+<section
+class="topico-aula"
+id="curvatura-efetiva-flap"
+data-topico-id="curvatura-efetiva-flap">
+
+<h2>Aumento da Curvatura Efetiva</h2>
+
+<div class="widget">
+
+<p>
+A capacidade de uma superfície hidrodinâmica de produzir
+sustentação depende, entre outros fatores, de sua curvatura
+e do ângulo de incidência do escoamento.
+</p>
+
+<p>
+No leme convencional, o perfil permanece essencialmente
+sem alteração de forma durante a deflexão.
+</p>
+
+<p>
+No leme com flap, o movimento da aba aumenta a curvatura
+do conjunto.
+</p>
+
+<div class="destaque">
+
+<h3>Efeito sobre o escoamento</h3>
+
+<p>
+O escoamento acompanha a mudança de direção imposta pela
+superfície principal e pelo flap.
+</p>
+
+<p>
+A maior alteração na quantidade de movimento da água
+corresponde a uma força hidrodinâmica maior sobre o leme.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Comparação da curvatura dos perfis</h3>
+
+<svg
+viewBox="0 0 960 540"
+role="img"
+aria-labelledby="titulo-curvatura-perfis descricao-curvatura-perfis"
+style="width:100%; height:auto;">
+
+<title id="titulo-curvatura-perfis">
+Comparação entre perfil convencional e perfil com flap
+</title>
+
+<desc id="descricao-curvatura-perfis">
+Dois perfis mostram a menor curvatura de um leme
+convencional e a maior curvatura efetiva de um
+leme dotado de flap.
+</desc>
+
+<defs>
+
+<marker
+id="seta-curvatura"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="540"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="500"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 10">
+</line>
+
+<!-- CONVENCIONAL -->
+
+<text
+x="125"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Leme convencional
+
+</text>
+
+<path
+d="M100 240
+   Q210 180 380 220
+   Q410 230 430 250
+   Q400 270 375 280
+   Q210 325 100 260 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-curvatura)">
+
+<path d="M60 150 C195 145 320 165 430 210"></path>
+
+<path d="M55 330 C190 340 325 315 430 270"></path>
+
+</g>
+
+<text
+x="110"
+y="410"
+font-size="25"
+font-weight="700"
+fill="#37474f">
+
+Curvatura praticamente fixa
+
+</text>
+
+<!-- FLAP -->
+
+<text
+x="640"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Leme com flap
+
+</text>
+
+<path
+d="M535 230
+   Q635 170 755 210
+   L785 225
+   L785 285
+   L755 300
+   Q635 340 535 270 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="785"
+y1="225"
+x2="785"
+y2="285"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<path
+d="M785 225
+   Q845 245 900 320
+   Q840 330 785 285 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-curvatura)">
+
+<path d="M515 140 C660 130 805 175 900 270"></path>
+
+<path d="M510 365 C660 390 810 370 910 330"></path>
+
+</g>
+
+<text
+x="605"
+y="440"
+font-size="25"
+font-weight="700"
+fill="#37474f">
+
+Maior curvatura efetiva
+
+</text>
+
+<text
+x="660"
+y="480"
+font-size="24"
+font-weight="700"
+fill="#7b1fa2">
+
+Maior desvio do escoamento
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Camber</strong> —
+curvatura do perfil.
+</li>
+
+<li>
+<strong>Increased camber</strong> —
+aumento da curvatura.
+</li>
+
+<li>
+<strong>Flow deflection</strong> —
+deflexão ou mudança de direção do escoamento.
+</li>
+
+<li>
+<strong>Lift enhancement</strong> —
+aumento da sustentação hidrodinâmica.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPARAÇÃO DE DESEMPENHO
+========================================= -->
+
+<section
+class="topico-aula"
+id="comparacao-desempenho-lemes"
+data-topico-id="comparacao-desempenho-lemes">
+
+<h2>Comparação de Desempenho</h2>
+
+<div class="widget">
+
+<p>
+Para uma mesma área projetada, o leme com flap pode produzir
+força lateral superior àquela produzida por um leme
+convencional, desde que ambos operem em condições
+comparáveis de escoamento.
+</p>
+
+<p>
+A diferença decorre principalmente da maior curvatura
+efetiva e da maior deflexão da corrente de água.
+</p>
+
+<div class="destaque">
+
+<h3>Leme convencional</h3>
+
+<ul>
+
+<li>construção hidrodinâmica mais simples;</li>
+
+<li>toda a superfície gira como uma unidade;</li>
+
+<li>curvatura do perfil permanece essencialmente fixa;</li>
+
+<li>a força aumenta principalmente com o ângulo do leme;</li>
+
+<li>possui menos elementos móveis no próprio perfil.</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>Leme com flap</h3>
+
+<ul>
+
+<li>possui superfície principal e aba articulada;</li>
+
+<li>a aba apresenta deflexão adicional;</li>
+
+<li>a curvatura efetiva aumenta durante o acionamento;</li>
+
+<li>produz maior desvio do escoamento;</li>
+
+<li>pode produzir maior força lateral para área semelhante;</li>
+
+<li>possui mecanismo adicional de articulação e transmissão.</li>
+
+</ul>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Comparação qualitativa da força produzida</h3>
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-comparacao-forcas descricao-comparacao-forcas"
+style="width:100%; height:auto;">
+
+<title id="titulo-comparacao-forcas">
+Comparação qualitativa entre as forças dos lemes
+</title>
+
+<desc id="descricao-comparacao-forcas">
+Dois lemes de área semelhante são submetidos ao mesmo
+escoamento. O leme com flap apresenta uma seta de força
+maior que a do leme convencional.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-comparacao"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-forca-comparacao"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="560"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="520"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 10">
+</line>
+
+<!-- CONVENCIONAL -->
+
+<text
+x="120"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Leme convencional
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-fluxo-comparacao)">
+
+<line x1="55" y1="170" x2="245" y2="170"></line>
+
+<line x1="55" y1="235" x2="245" y2="235"></line>
+
+<line x1="55" y1="300" x2="245" y2="300"></line>
+
+<line x1="55" y1="365" x2="245" y2="365"></line>
+
+</g>
+
+<g transform="rotate(25 320 265)">
+
+<path
+d="M275 130
+   Q340 145 410 215
+   Q430 240 435 265
+   Q425 295 405 315
+   Q340 385 275 400 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+<line
+x1="350"
+y1="270"
+x2="380"
+y2="130"
+stroke="#2e7d32"
+stroke-width="9"
+marker-end="url(#seta-forca-comparacao)">
+</line>
+
+<text
+x="115"
+y="470"
+font-size="25"
+font-weight="700"
+fill="#2e7d32">
+
+Força lateral
+
+</text>
+
+<!-- FLAP -->
+
+<text
+x="650"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Leme com flap
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-fluxo-comparacao)">
+
+<line x1="515" y1="170" x2="700" y2="170"></line>
+
+<line x1="515" y1="235" x2="700" y2="235"></line>
+
+<line x1="515" y1="300" x2="700" y2="300"></line>
+
+<line x1="515" y1="365" x2="700" y2="365"></line>
+
+</g>
+
+<g transform="rotate(20 760 265)">
+
+<path
+d="M710 130
+   Q770 140 825 205
+   L825 325
+   Q770 390 710 400 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="825"
+y1="205"
+x2="825"
+y2="325"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<g transform="rotate(25 825 265)">
+
+<path
+d="M825 205
+   Q880 225 920 265
+   Q880 305 825 325 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+</g>
+
+<line
+x1="800"
+y1="270"
+x2="845"
+y2="75"
+stroke="#2e7d32"
+stroke-width="12"
+marker-end="url(#seta-forca-comparacao)">
+</line>
+
+<text
+x="610"
+y="470"
+font-size="25"
+font-weight="700"
+fill="#2e7d32">
+
+Maior força lateral
+
+</text>
+
+<text
+x="215"
+y="525"
+font-size="24"
+font-weight="700"
+fill="#37474f">
+
+Comparação qualitativa para condições equivalentes de escoamento.
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+Dois navios com dimensões semelhantes e o mesmo ângulo
+indicado de leme podem apresentar respostas diferentes
+quando utilizam configurações distintas de superfície
+de controle.
+</p>
+
+<p>
+Um leme com flap pode produzir maior momento de guinada
+e uma resposta mais intensa para uma determinada ordem
+de governo.
+</p>
+
+<p>
+A resposta real deve ser confirmada pelas informações
+de manobra específicas da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFETIVIDADE EM BAIXA VELOCIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="flap-baixa-velocidade"
+data-topico-id="flap-baixa-velocidade">
+
+<h2>Efetividade em Baixa Velocidade</h2>
+
+<div class="widget">
+
+<p>
+A maior capacidade de desviar o escoamento torna o leme
+com flap particularmente eficiente quando instalado na
+corrente acelerada da hélice.
+</p>
+
+<p>
+Nessa condição, a superfície recebe água com velocidade
+superior à velocidade de avanço do navio.
+</p>
+
+<p>
+A combinação entre corrente da hélice e maior curvatura
+efetiva pode produzir força lateral significativa mesmo
+quando o seguimento do navio é reduzido.
+</p>
+
+<div class="destaque">
+
+<h3>Limitação física</h3>
+
+<p>
+O flap não elimina a necessidade de escoamento sobre o
+leme.
+</p>
+
+<p>
+Sem velocidade relativa da água, nem a superfície principal
+nem a aba podem produzir força hidrodinâmica significativa.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Leme com flap na corrente da hélice</h3>
+
+<svg
+viewBox="0 0 960 510"
+role="img"
+aria-labelledby="titulo-flap-corrente descricao-flap-corrente"
+style="width:100%; height:auto;">
+
+<title id="titulo-flap-corrente">
+Leme com flap dentro da corrente da hélice
+</title>
+
+<desc id="descricao-flap-corrente">
+A hélice acelera a água em direção a um leme com flap,
+que desvia intensamente o escoamento para um dos bordos.
+</desc>
+
+<defs>
+
+<marker
+id="seta-corrente-flap"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-desvio-flap"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="510"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- HÉLICE -->
+
+<circle
+cx="225"
+cy="255"
+r="75"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="6">
+</circle>
+
+<path
+d="M225 180
+   Q288 220 225 255
+   Q162 220 225 180 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M300 255
+   Q260 318 225 255
+   Q260 192 300 255 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M225 330
+   Q162 290 225 255
+   Q288 290 225 330 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M150 255
+   Q190 192 225 255
+   Q190 318 150 255 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<!-- CORRENTE DA HÉLICE -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="8"
+marker-end="url(#seta-corrente-flap)">
+
+<path d="M310 170 C450 155 555 170 670 215"></path>
+
+<path d="M310 220 C455 215 565 220 675 240"></path>
+
+<path d="M310 270 C460 270 575 270 680 270"></path>
+
+<path d="M310 320 C455 325 565 320 675 300"></path>
+
+<path d="M310 370 C450 385 555 370 670 325"></path>
+
+</g>
+
+<!-- LEME COM FLAP -->
+
+<g transform="rotate(22 725 270)">
+
+<path
+d="M680 135
+   Q735 145 785 205
+   L785 335
+   Q735 395 680 405 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<line
+x1="785"
+y1="205"
+x2="785"
+y2="335"
+stroke="#263238"
+stroke-width="6">
+</line>
+
+<g transform="rotate(25 785 270)">
+
+<path
+d="M785 205
+   Q845 225 895 270
+   Q845 315 785 335 Z"
+fill="#f08a70"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+</g>
+
+<!-- FLUXO DESVIADO -->
+
+<g
+fill="none"
+stroke="#2e7d32"
+stroke-width="8"
+marker-end="url(#seta-desvio-flap)">
+
+<path d="M815 220 C860 180 900 150 930 105"></path>
+
+<path d="M835 260 C880 225 910 200 940 165"></path>
+
+</g>
+
+<text
+x="125"
+y="95"
+font-size="28"
+font-weight="700"
+fill="#805b10">
+
+Hélice
+
+</text>
+
+<text
+x="365"
+y="440"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Corrente acelerada
+
+</text>
+
+<text
+x="730"
+y="460"
+font-size="27"
+font-weight="700"
+fill="#7b261d">
+
+Leme com flap
+
+</text>
+
+<text
+x="735"
+y="90"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Maior desvio do fluxo
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Aplicação operacional</h3>
+
+<p>
+A presença de um leme de alta sustentação não significa
+que a embarcação mantenha governo sem fluxo de água.
+</p>
+
+<p>
+A efetividade continuará dependendo da velocidade local,
+da carga do propulsor e da parcela do leme atingida pela
+corrente da hélice.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ARRASTO E PERDA DE VELOCIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="arrasto-leme-flap"
+data-topico-id="arrasto-leme-flap">
+
+<h2>Arrasto e Perda de Velocidade</h2>
+
+<div class="widget">
+
+<p>
+O aumento da força lateral não ocorre sem aumento de
+resistência hidrodinâmica.
+</p>
+
+<p>
+Quando o leme principal e o flap apresentam grande
+deflexão, o conjunto impõe uma alteração intensa ao
+escoamento.
+</p>
+
+<p>
+Essa condição aumenta o arrasto produzido pela superfície
+de controle.
+</p>
+
+<div class="destaque">
+
+<h3>Consequência para o navio</h3>
+
+<p>
+O aumento do arrasto contribui para a redução da velocidade
+durante a manobra.
+</p>
+
+<p>
+A perda de velocidade altera progressivamente o próprio
+escoamento sobre o leme e, consequentemente, sua força.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+A maior efetividade de um leme com flap não deve ser
+interpretada como ausência de limitações.
+</p>
+
+<p>
+Grandes deflexões podem produzir:
+</p>
+
+<ul>
+
+<li>força lateral elevada;</li>
+
+<li>momento de guinada elevado;</li>
+
+<li>aumento do arrasto;</li>
+
+<li>maior redução de velocidade;</li>
+
+<li>maior carregamento sobre o leme e seu mecanismo.</li>
+
+</ul>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>High-lift rudder</strong> —
+leme de alta sustentação.
+</li>
+
+<li>
+<strong>Rudder drag</strong> —
+arrasto produzido pelo leme.
+</li>
+
+<li>
+<strong>Speed loss</strong> —
+perda de velocidade.
+</li>
+
+<li>
+<strong>Hydrodynamic loading</strong> —
+carregamento hidrodinâmico.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPLEXIDADE CONSTRUTIVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="complexidade-leme-flap"
+data-topico-id="complexidade-leme-flap">
+
+<h2>Complexidade Construtiva</h2>
+
+<div class="widget">
+
+<p>
+O leme convencional possui uma única superfície móvel
+principal.
+</p>
+
+<p>
+O leme com flap acrescenta uma articulação, uma aba móvel
+e um sistema de transmissão do movimento.
+</p>
+
+<div class="destaque">
+
+<h3>Elementos adicionais</h3>
+
+<p>
+Conforme o projeto, o sistema pode incluir:
+</p>
+
+<ul>
+
+<li>articulação do flap;</li>
+
+<li>braços ou barras de ligação;</li>
+
+<li>pinos e mancais;</li>
+
+<li>elementos de vedação;</li>
+
+<li>componentes destinados a transmitir o movimento.</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>Implicação técnica</h3>
+
+<p>
+A maior complexidade permite obter elevado desempenho
+hidrodinâmico, mas introduz elementos adicionais que devem
+manter alinhamento, integridade estrutural e liberdade de
+movimento.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Limite do conteúdo operacional</h3>
+
+<p>
+A bibliografia utilizada sustenta a diferença construtiva
+e hidrodinâmica entre as configurações.
+</p>
+
+<p>
+Procedimentos específicos de inspeção, manutenção ou
+operação de emergência dependem do fabricante e do sistema
+instalado em cada embarcação, não sendo generalizados
+nesta aula.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERPRETAÇÃO DAS INFORMAÇÕES DE MANOBRA
+========================================= -->
+
+<section
+class="topico-aula"
+id="informacoes-manobra-tipo-leme"
+data-topico-id="informacoes-manobra-tipo-leme">
+
+<h2>Interpretação das Informações de Manobra</h2>
+
+<div class="widget">
+
+<p>
+O tipo de leme faz parte das características que influenciam
+o desempenho de manobra do navio.
+</p>
+
+<p>
+Entretanto, o comportamento da embarcação não pode ser
+determinado somente pela denominação do leme.
+</p>
+
+<p>
+Também devem ser considerados:
+</p>
+
+<ul>
+
+<li>área total da superfície;</li>
+
+<li>altura e razão de aspecto;</li>
+
+<li>perfil hidrodinâmico;</li>
+
+<li>posição em relação ao propulsor;</li>
+
+<li>área inserida na corrente da hélice;</li>
+
+<li>ângulo máximo permitido;</li>
+
+<li>velocidade de deslocamento do leme;</li>
+
+<li>forma do casco e da popa;</li>
+
+<li>número de hélices e lemes.</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de atenção para o PSCPP</h3>
+
+<p>
+Não é correto concluir que todo navio equipado com flap
+apresentará exatamente a mesma resposta.
+</p>
+
+<p>
+O flap aumenta o potencial de força hidrodinâmica, mas
+a resposta final depende da integração entre leme,
+propulsor e casco.
+</p>
+
+<p>
+As características reais devem ser verificadas nas
+informações de manobra da própria embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMPARAÇÃO FINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="comparacao-final-convencional-flap"
+data-topico-id="comparacao-final-convencional-flap">
+
+<h2>Comparação entre as Configurações</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>Leme convencional</h3>
+
+<p>
+A superfície principal gira como uma unidade e mantém
+essencialmente sua curvatura original.
+</p>
+
+<p>
+A força hidrodinâmica é modificada principalmente pelo
+ângulo do leme e pela velocidade do escoamento.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Leme com flap</h3>
+
+<p>
+A superfície principal gira juntamente com uma aba
+articulada que apresenta deflexão adicional.
+</p>
+
+<p>
+O flap aumenta a curvatura efetiva e o desvio do
+escoamento, permitindo maior geração de força lateral.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Efetividade</h3>
+
+<p>
+Em condições equivalentes, um leme com flap pode produzir
+força lateral superior à de um leme convencional de área
+semelhante.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Arrasto</h3>
+
+<p>
+O aumento da força e da deflexão do escoamento também pode
+produzir maior arrasto e maior perda de velocidade.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Construção</h3>
+
+<p>
+O leme convencional apresenta configuração mais simples.
+O leme com flap acrescenta articulações e mecanismos
+destinados a produzir o movimento adicional da aba.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Síntese operacional</h3>
+
+<p>
+O ângulo indicado no repetidor não permite, isoladamente,
+comparar a intensidade da resposta entre navios dotados
+de tipos diferentes de leme.
+</p>
+
+<p>
+A avaliação deve considerar o tipo de superfície de
+controle, o escoamento local e as informações específicas
+de manobra da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TERMOS TÉCNICOS DA PARTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="glossario-lemes-flap"
+data-topico-id="glossario-lemes-flap">
+
+<h2>Termos Técnicos da Parte</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Conventional rudder</strong> —
+leme convencional constituído por uma superfície principal.
+</li>
+
+<li>
+<strong>All-movable rudder</strong> —
+leme cuja superfície principal é inteiramente móvel.
+</li>
+
+<li>
+<strong>Flap rudder</strong> —
+leme dotado de aba articulada na borda de fuga.
+</li>
+
+<li>
+<strong>Flap</strong> —
+aba móvel que apresenta deflexão adicional.
+</li>
+
+<li>
+<strong>Trailing edge</strong> —
+borda posterior ou borda de fuga do perfil.
+</li>
+
+<li>
+<strong>Hinge</strong> —
+articulação que permite o movimento relativo do flap.
+</li>
+
+<li>
+<strong>Camber</strong> —
+curvatura geométrica do perfil.
+</li>
+
+<li>
+<strong>Effective camber</strong> —
+curvatura efetiva resultante da deflexão combinada.
+</li>
+
+<li>
+<strong>High-lift rudder</strong> —
+leme projetado para produzir elevada sustentação
+hidrodinâmica.
+</li>
+
+<li>
+<strong>Flow deflection</strong> —
+mudança de direção imposta ao escoamento.
+</li>
+
+<li>
+<strong>Hydrodynamic loading</strong> —
+carregamento produzido pelas pressões hidrodinâmicas.
+</li>
+
+<li>
+<strong>Rudder effectiveness</strong> —
+capacidade do leme de produzir força e contribuir para
+o controle do navio.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="sintese-lemes-convencionais-flap"
+data-topico-id="sintese-lemes-convencionais-flap">
+
+<h2>Síntese da Parte</h2>
+
+<div class="widget">
+
+<p>
+O leme convencional altera sua orientação como uma única
+superfície, mantendo essencialmente fixa a curvatura do
+perfil.
+</p>
+
+<p>
+O leme com flap combina a deflexão da superfície principal
+com uma deflexão adicional da aba articulada.
+</p>
+
+<p>
+Essa configuração aumenta a curvatura efetiva e produz
+maior desvio do escoamento.
+</p>
+
+<div class="destaque">
+
+<h3>Consequência principal</h3>
+
+<p>
+Para condições equivalentes de área e escoamento, o leme
+com flap pode produzir maior força lateral e maior momento
+de guinada.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Limitações</h3>
+
+<p>
+A maior efetividade pode ser acompanhada por maior arrasto,
+perda de velocidade e aumento do carregamento hidrodinâmico.
+</p>
+
+<p>
+Além disso, o flap acrescenta articulações e mecanismos
+à construção do leme.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto essencial</h3>
+
+<p>
+O desempenho de um leme não depende apenas de sua
+denominação.
+</p>
+
+<p>
+A resposta final resulta da área, do perfil, da posição
+em relação ao propulsor, da velocidade do escoamento e
+da interação com o casco.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 8
+========================================= -->
+
+     
+     
+     
