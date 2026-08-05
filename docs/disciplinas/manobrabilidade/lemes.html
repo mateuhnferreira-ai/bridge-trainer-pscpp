@@ -18986,5 +18986,7152 @@ da interação com o casco.
 ========================================= -->
 
      
+<!-- =========================================
+     PARTE 9
+     CAVITAÇÃO EM LEMES
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 9 — Cavitação em Lemes
+</h2>
+
+<p>
+O funcionamento do leme depende da diferença de pressão
+produzida entre suas duas faces.
+</p>
+
+<p>
+Quando o leme é submetido a elevada velocidade de
+escoamento ou a grande ângulo de ataque, a pressão em
+determinadas regiões do lado de sucção pode cair
+acentuadamente.
+</p>
+
+<p>
+Se essa pressão alcançar valores suficientemente baixos,
+podem formar-se cavidades de vapor na água.
+Esse fenômeno recebe a denominação de
+<strong>cavitação</strong>.
+</p>
+
+<p>
+Nesta parte serão estudados o mecanismo de formação,
+os fatores que favorecem sua ocorrência e seus efeitos
+sobre o desempenho e a integridade do leme.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DEFINIÇÃO DE CAVITAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="definicao-cavitacao-leme"
+data-topico-id="definicao-cavitacao-leme">
+
+<h2>Definição de Cavitação</h2>
+
+<div class="widget">
+
+<p>
+A cavitação é um fenômeno associado à formação de
+cavidades de vapor em regiões onde a pressão local
+da água sofre uma redução intensa.
+</p>
+
+<p>
+No leme, essa redução ocorre principalmente no lado
+de sucção do perfil hidrodinâmico.
+</p>
+
+<p>
+Quando a pressão local cai até um valor igual ou inferior
+à pressão de vapor da água, a fase líquida já não consegue
+permanecer integralmente nessa condição.
+</p>
+
+<p>
+Formam-se, então, cavidades preenchidas por vapor.
+</p>
+
+<div class="destaque">
+
+<h3>Condição física fundamental</h3>
+
+<p>
+A cavitação não é simplesmente a presença de bolhas
+de ar na água.
+</p>
+
+<p>
+Ela está associada à vaporização local do próprio líquido
+em razão da baixa pressão.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Formação de cavidades no lado de sucção</h3>
+
+<svg
+viewBox="0 0 960 540"
+role="img"
+aria-labelledby="titulo-formacao-cavitacao descricao-formacao-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-formacao-cavitacao">
+Formação de cavitação em um leme
+</title>
+
+<desc id="descricao-formacao-cavitacao">
+Perfil de leme submetido a um escoamento oblíquo,
+mostrando uma região de baixa pressão e cavidades
+de vapor no lado de sucção.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-cavitacao"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-pressao-cavitacao"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+<linearGradient
+id="gradiente-perfil-cavitacao"
+x1="0"
+x2="1"
+y1="0"
+y2="0">
+
+<stop
+offset="0%"
+stop-color="#b7c5cc">
+</stop>
+
+<stop
+offset="50%"
+stop-color="#eceff1">
+</stop>
+
+<stop
+offset="100%"
+stop-color="#90a4ae">
+</stop>
+
+</linearGradient>
+
+</defs>
+
+<rect
+width="960"
+height="540"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- ESCOAMENTO -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-fluxo-cavitacao)">
+
+<path d="M55 160 C220 145 365 165 485 225"></path>
+
+<path d="M50 225 C220 215 360 225 475 255"></path>
+
+<path d="M50 310 C220 320 355 310 475 285"></path>
+
+<path d="M55 375 C220 395 365 375 490 315"></path>
+
+</g>
+
+<!-- PERFIL -->
+
+<g transform="rotate(16 585 270)">
+
+<path
+d="M465 270
+   Q520 165 675 185
+   Q770 200 850 270
+   Q770 340 675 355
+   Q520 375 465 270 Z"
+fill="url(#gradiente-perfil-cavitacao)"
+stroke="#37474f"
+stroke-width="6">
+</path>
+
+<line
+x1="475"
+y1="270"
+x2="845"
+y2="270"
+stroke="#78909c"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+</g>
+
+<!-- REGIÃO DE BAIXA PRESSÃO -->
+
+<path
+d="M515 205
+   C585 135 720 150 795 205
+   C735 190 620 190 535 245 Z"
+fill="#bbdefb"
+stroke="#1976d2"
+stroke-width="4"
+stroke-dasharray="10 7">
+</path>
+
+<!-- CAVIDADES -->
+
+<ellipse
+cx="590"
+cy="190"
+rx="31"
+ry="14"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="655"
+cy="180"
+rx="40"
+ry="17"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="728"
+cy="190"
+rx="27"
+ry="13"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="775"
+cy="210"
+rx="18"
+ry="10"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<!-- INDICAÇÕES -->
+
+<line
+x1="650"
+y1="120"
+x2="650"
+y2="165"
+stroke="#c62828"
+stroke-width="6"
+marker-end="url(#seta-pressao-cavitacao)">
+</line>
+
+<text
+x="515"
+y="90"
+font-size="28"
+font-weight="700"
+fill="#c62828">
+
+Região de pressão reduzida
+
+</text>
+
+<line
+x1="745"
+y1="380"
+x2="705"
+y2="230"
+stroke="#1565c0"
+stroke-width="5"
+marker-end="url(#seta-fluxo-cavitacao)">
+</line>
+
+<text
+x="635"
+y="430"
+font-size="28"
+font-weight="700"
+fill="#1565c0">
+
+Cavidades de vapor
+
+</text>
+
+<text
+x="90"
+y="455"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Escoamento incidente
+
+</text>
+
+<text
+x="390"
+y="495"
+font-size="24"
+fill="#37474f">
+
+Representação esquemática do lado de sucção do leme.
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Cavitation</strong> —
+cavitação; formação de cavidades de vapor decorrente
+da redução da pressão local.
+</li>
+
+<li>
+<strong>Vapour cavity</strong> —
+cavidade de vapor.
+</li>
+
+<li>
+<strong>Vapour pressure</strong> —
+pressão de vapor do líquido.
+</li>
+
+<li>
+<strong>Suction side</strong> —
+lado de sucção ou lado de menor pressão do perfil.
+</li>
+
+<li>
+<strong>Pressure side</strong> —
+lado de pressão ou lado de maior pressão do perfil.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DISTRIBUIÇÃO DE PRESSÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="distribuicao-pressao-cavitacao"
+data-topico-id="distribuicao-pressao-cavitacao">
+
+<h2>Distribuição de Pressão no Leme</h2>
+
+<div class="widget">
+
+<p>
+Quando o leme apresenta determinado ângulo de ataque,
+o escoamento acelera em algumas regiões de sua superfície
+e desacelera em outras.
+</p>
+
+<p>
+Essa alteração de velocidade produz uma distribuição
+assimétrica de pressão.
+</p>
+
+<p>
+O lado de sucção apresenta pressão inferior àquela
+existente no lado oposto.
+</p>
+
+<div class="destaque">
+
+<h3>Região crítica</h3>
+
+<p>
+A redução de pressão não é uniforme ao longo do perfil.
+</p>
+
+<p>
+Determinadas regiões podem alcançar valores muito baixos,
+especialmente quando o ângulo de ataque ou a velocidade
+do escoamento aumentam.
+</p>
+
+<p>
+A cavitação inicia-se nos pontos em que a condição crítica
+é atingida primeiro.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Distribuição esquemática de pressão</h3>
+
+<svg
+viewBox="0 0 960 600"
+role="img"
+aria-labelledby="titulo-distribuicao-pressao descricao-distribuicao-pressao"
+style="width:100%; height:auto;">
+
+<title id="titulo-distribuicao-pressao">
+Distribuição de pressão ao redor do perfil do leme
+</title>
+
+<desc id="descricao-distribuicao-pressao">
+Perfil hidrodinâmico com pressão superior em uma face
+e região de pressão negativa mais intensa no lado
+de sucção.
+</desc>
+
+<defs>
+
+<marker
+id="seta-pressao-alta"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+<marker
+id="seta-pressao-baixa"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="600"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- PERFIL -->
+
+<path
+d="M150 300
+   Q260 185 550 205
+   Q735 215 850 300
+   Q735 385 550 395
+   Q260 415 150 300 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="6">
+</path>
+
+<line
+x1="160"
+y1="300"
+x2="845"
+y2="300"
+stroke="#90a4ae"
+stroke-width="3"
+stroke-dasharray="12 9">
+</line>
+
+<!-- PRESSÃO BAIXA -->
+
+<g
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-pressao-baixa)">
+
+<line x1="260" y1="95" x2="260" y2="195"></line>
+<line x1="360" y1="70" x2="360" y2="190"></line>
+<line x1="470" y1="85" x2="470" y2="198"></line>
+<line x1="580" y1="115" x2="580" y2="205"></line>
+<line x1="690" y1="145" x2="690" y2="220"></line>
+
+</g>
+
+<!-- PRESSÃO ALTA -->
+
+<g
+stroke="#c62828"
+stroke-width="7"
+marker-end="url(#seta-pressao-alta)">
+
+<line x1="260" y1="510" x2="260" y2="405"></line>
+<line x1="360" y1="530" x2="360" y2="410"></line>
+<line x1="470" y1="515" x2="470" y2="402"></line>
+<line x1="580" y1="485" x2="580" y2="395"></line>
+<line x1="690" y1="455" x2="690" y2="380"></line>
+
+</g>
+
+<path
+d="M220 190
+   C330 110 505 125 630 190"
+fill="none"
+stroke="#42a5f5"
+stroke-width="7"
+stroke-dasharray="14 9">
+</path>
+
+<text
+x="265"
+y="45"
+font-size="29"
+font-weight="700"
+fill="#1565c0">
+
+Lado de sucção — pressão reduzida
+
+</text>
+
+<text
+x="275"
+y="575"
+font-size="29"
+font-weight="700"
+fill="#c62828">
+
+Lado de pressão — pressão mais elevada
+
+</text>
+
+<text
+x="615"
+y="125"
+font-size="24"
+font-weight="700"
+fill="#1565c0">
+
+Região crítica
+
+</text>
+
+</svg>
+
+<p>
+O diagrama representa apenas a diferença qualitativa
+de pressão entre as faces do perfil.
+</p>
+
+<p>
+A distribuição real depende do formato do leme, do ângulo
+de ataque e do campo de escoamento na popa do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INÍCIO DA CAVITAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="inicio-cavitacao-leme"
+data-topico-id="inicio-cavitacao-leme">
+
+<h2>Início da Cavitação</h2>
+
+<div class="widget">
+
+<p>
+O início da cavitação recebe a denominação técnica de
+<strong>cavitation inception</strong>.
+</p>
+
+<p>
+Esse início ocorre quando a redução de pressão em uma
+região do leme se torna suficiente para permitir a
+formação das primeiras cavidades de vapor.
+</p>
+
+<div class="destaque">
+
+<h3>Dependência das condições da água</h3>
+
+<p>
+Segundo o PNA, o início da cavitação depende de forma
+crítica da presença de núcleos existentes na água.
+</p>
+
+<p>
+Esses núcleos podem facilitar a formação e o crescimento
+das cavidades.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Influência da superfície</h3>
+
+<p>
+A rugosidade da superfície do leme também influencia
+o início da cavitação.
+</p>
+
+<p>
+Irregularidades, descontinuidades e imperfeições podem
+criar regiões locais nas quais a pressão sofre redução
+mais intensa.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+A condição exata de início da cavitação não depende apenas
+do ângulo de leme indicado.
+</p>
+
+<p>
+Ela também é influenciada pela velocidade local, pela
+pressão hidrostática, pela qualidade da superfície e
+pelas características da água.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Cavitation inception</strong> —
+início da cavitação.
+</li>
+
+<li>
+<strong>Cavitation nuclei</strong> —
+núcleos presentes na água que favorecem o surgimento
+das cavidades.
+</li>
+
+<li>
+<strong>Surface roughness</strong> —
+rugosidade da superfície.
+</li>
+
+<li>
+<strong>Local pressure</strong> —
+pressão existente em um ponto específico do escoamento.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VELOCIDADE DO ESCOAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="velocidade-cavitacao-leme"
+data-topico-id="velocidade-cavitacao-leme">
+
+<h2>Influência da Velocidade do Escoamento</h2>
+
+<div class="widget">
+
+<p>
+O aumento da velocidade do escoamento sobre o leme aumenta
+as diferenças de pressão produzidas pelo perfil.
+</p>
+
+<p>
+Consequentemente, regiões do lado de sucção podem atingir
+pressões mais baixas.
+</p>
+
+<div class="destaque">
+
+<h3>Velocidade local</h3>
+
+<p>
+Para a análise da cavitação, a velocidade relevante não
+é apenas a velocidade do navio.
+</p>
+
+<p>
+Deve-se considerar a velocidade local da água sobre o
+leme.
+</p>
+
+<p>
+Quando o leme está dentro da corrente acelerada da hélice,
+essa velocidade pode ser superior à velocidade de avanço
+da embarcação.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Efeito qualitativo do aumento da velocidade</h3>
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-velocidade-cavitacao descricao-velocidade-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-velocidade-cavitacao">
+Influência da velocidade na cavitação do leme
+</title>
+
+<desc id="descricao-velocidade-cavitacao">
+Comparação entre baixa, média e alta velocidade do
+escoamento, mostrando o aumento progressivo da região
+de cavitação no lado de sucção.
+</desc>
+
+<defs>
+
+<marker
+id="seta-velocidade-cavitacao"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="560"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="320"
+y1="35"
+x2="320"
+y2="520"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<line
+x1="640"
+y1="35"
+x2="640"
+y2="520"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<!-- BAIXA VELOCIDADE -->
+
+<text
+x="85"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Baixa velocidade
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="5"
+marker-end="url(#seta-velocidade-cavitacao)">
+
+<line x1="40" y1="190" x2="145" y2="190"></line>
+<line x1="40" y1="250" x2="145" y2="250"></line>
+<line x1="40" y1="310" x2="145" y2="310"></line>
+
+</g>
+
+<path
+d="M150 250
+   Q190 165 270 190
+   Q295 205 310 250
+   Q285 300 270 310
+   Q190 335 150 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<ellipse
+cx="205"
+cy="194"
+rx="18"
+ry="8"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="80"
+y="410"
+font-size="23"
+fill="#37474f">
+
+Cavitação limitada
+
+</text>
+
+<!-- VELOCIDADE MÉDIA -->
+
+<text
+x="395"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Velocidade média
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="7"
+marker-end="url(#seta-velocidade-cavitacao)">
+
+<line x1="345" y1="175" x2="465" y2="175"></line>
+<line x1="345" y1="235" x2="465" y2="235"></line>
+<line x1="345" y1="295" x2="465" y2="295"></line>
+<line x1="345" y1="355" x2="465" y2="355"></line>
+
+</g>
+
+<path
+d="M470 250
+   Q510 165 590 190
+   Q615 205 630 250
+   Q605 300 590 310
+   Q510 335 470 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<ellipse
+cx="520"
+cy="190"
+rx="26"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="570"
+cy="195"
+rx="24"
+ry="10"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="380"
+y="410"
+font-size="23"
+fill="#37474f">
+
+Região ampliada
+
+</text>
+
+<!-- ALTA VELOCIDADE -->
+
+<text
+x="730"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Alta velocidade
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="9"
+marker-end="url(#seta-velocidade-cavitacao)">
+
+<line x1="660" y1="155" x2="795" y2="155"></line>
+<line x1="660" y1="205" x2="795" y2="205"></line>
+<line x1="660" y1="255" x2="795" y2="255"></line>
+<line x1="660" y1="305" x2="795" y2="305"></line>
+<line x1="660" y1="355" x2="795" y2="355"></line>
+
+</g>
+
+<path
+d="M800 250
+   Q840 165 920 190
+   Q945 205 955 250
+   Q940 300 920 310
+   Q840 335 800 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<ellipse
+cx="845"
+cy="185"
+rx="30"
+ry="12"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="900"
+cy="190"
+rx="32"
+ry="13"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="930"
+cy="215"
+rx="18"
+ry="9"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="705"
+y="410"
+font-size="23"
+fill="#37474f">
+
+Efeito mais intenso
+
+</text>
+
+<text
+x="235"
+y="500"
+font-size="25"
+font-weight="700"
+fill="#1565c0">
+
+O aumento da velocidade intensifica a redução de pressão.
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Aplicação Operacional</h3>
+
+<p>
+O aumento da rotação do propulsor pode elevar a velocidade
+do escoamento sobre o leme mesmo sem aumento imediato
+equivalente da velocidade do navio.
+</p>
+
+<p>
+Por essa razão, a carga do propulsor integra o ambiente
+hidrodinâmico no qual o leme opera.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÂNGULO DE ATAQUE
+========================================= -->
+
+<section
+class="topico-aula"
+id="angulo-ataque-cavitacao"
+data-topico-id="angulo-ataque-cavitacao">
+
+<h2>Influência do Ângulo de Ataque</h2>
+
+<div class="widget">
+
+<p>
+O aumento do ângulo de ataque amplia a diferença de pressão
+entre as faces do leme.
+</p>
+
+<p>
+No lado de sucção, a região de pressão negativa tende
+a crescer à medida que o ângulo aumenta.
+</p>
+
+<p>
+Essa condição favorece o início e a expansão da cavitação.
+</p>
+
+<div class="destaque">
+
+<h3>Ângulo geométrico e ângulo efetivo</h3>
+
+<p>
+O ângulo de ataque efetivo não é determinado somente pelo
+ângulo indicado no repetidor do leme.
+</p>
+
+<p>
+Ele depende também da direção local do escoamento, que
+pode ser modificada pela esteira do casco, pela corrente
+da hélice, pela deriva e pela razão de guinada.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Expansão da região de cavitação com o ângulo</h3>
+
+<svg
+viewBox="0 0 960 560"
+role="img"
+aria-labelledby="titulo-angulo-cavitacao descricao-angulo-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-angulo-cavitacao">
+Influência do ângulo de ataque na cavitação
+</title>
+
+<desc id="descricao-angulo-cavitacao">
+Três lemes submetidos ao mesmo escoamento,
+com ângulos progressivamente maiores e regiões
+crescentes de cavitação.
+</desc>
+
+<defs>
+
+<marker
+id="seta-angulo-cavitacao"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="560"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="320"
+y1="35"
+x2="320"
+y2="520"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<line
+x1="640"
+y1="35"
+x2="640"
+y2="520"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<!-- PEQUENO ÂNGULO -->
+
+<text
+x="90"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Pequeno ângulo
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-angulo-cavitacao)">
+
+<line x1="35" y1="180" x2="150" y2="180"></line>
+<line x1="35" y1="250" x2="150" y2="250"></line>
+<line x1="35" y1="320" x2="150" y2="320"></line>
+
+</g>
+
+<g transform="rotate(8 220 250)">
+
+<path
+d="M165 250
+   Q205 160 285 190
+   Q305 205 315 250
+   Q305 295 285 310
+   Q205 340 165 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+</g>
+
+<ellipse
+cx="215"
+cy="190"
+rx="16"
+ry="7"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="75"
+y="420"
+font-size="23"
+fill="#37474f">
+
+Região inicial reduzida
+
+</text>
+
+<!-- ÂNGULO INTERMEDIÁRIO -->
+
+<text
+x="365"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Ângulo intermediário
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-angulo-cavitacao)">
+
+<line x1="345" y1="180" x2="455" y2="180"></line>
+<line x1="345" y1="250" x2="455" y2="250"></line>
+<line x1="345" y1="320" x2="455" y2="320"></line>
+
+</g>
+
+<g transform="rotate(20 530 250)">
+
+<path
+d="M475 250
+   Q515 160 595 190
+   Q615 205 625 250
+   Q615 295 595 310
+   Q515 340 475 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+</g>
+
+<ellipse
+cx="515"
+cy="180"
+rx="28"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="565"
+cy="190"
+rx="25"
+ry="10"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="385"
+y="420"
+font-size="23"
+fill="#37474f">
+
+Região ampliada
+
+</text>
+
+<!-- GRANDE ÂNGULO -->
+
+<text
+x="730"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Grande ângulo
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-angulo-cavitacao)">
+
+<line x1="660" y1="180" x2="770" y2="180"></line>
+<line x1="660" y1="250" x2="770" y2="250"></line>
+<line x1="660" y1="320" x2="770" y2="320"></line>
+
+</g>
+
+<g transform="rotate(34 835 250)">
+
+<path
+d="M780 250
+   Q820 160 900 190
+   Q920 205 930 250
+   Q920 295 900 310
+   Q820 340 780 250 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+</g>
+
+<ellipse
+cx="810"
+cy="165"
+rx="31"
+ry="13"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="865"
+cy="175"
+rx="33"
+ry="14"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<ellipse
+cx="915"
+cy="195"
+rx="23"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="3">
+</ellipse>
+
+<text
+x="700"
+y="420"
+font-size="23"
+fill="#37474f">
+
+Cavitação mais extensa
+
+</text>
+
+<text
+x="180"
+y="505"
+font-size="25"
+font-weight="700"
+fill="#c62828">
+
+O aumento do ângulo de ataque amplia a região de baixa pressão.
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROFUNDIDADE DE SUBMERSÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="submersao-cavitacao-leme"
+data-topico-id="submersao-cavitacao-leme">
+
+<h2>Influência da Profundidade de Submersão</h2>
+
+<div class="widget">
+
+<p>
+A pressão hidrostática aumenta com a profundidade.
+</p>
+
+<p>
+Por essa razão, uma superfície situada mais profundamente
+opera sob maior pressão ambiente do que uma superfície
+próxima da superfície livre.
+</p>
+
+<div class="destaque">
+
+<h3>Efeito sobre a cavitação</h3>
+
+<p>
+Maior pressão ambiente dificulta que a pressão local
+alcance a pressão de vapor.
+</p>
+
+<p>
+Em contrapartida, regiões do leme com menor profundidade
+de submersão podem estar mais sujeitas ao início da
+cavitação.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Pressão hidrostática e submersão</h3>
+
+<svg
+viewBox="0 0 960 600"
+role="img"
+aria-labelledby="titulo-submersao-cavitacao descricao-submersao-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-submersao-cavitacao">
+Influência da profundidade na cavitação do leme
+</title>
+
+<desc id="descricao-submersao-cavitacao">
+Leme vertical parcialmente próximo da superfície,
+mostrando menor pressão hidrostática na parte superior
+e maior pressão na parte inferior.
+</desc>
+
+<defs>
+
+<linearGradient
+id="gradiente-profundidade"
+x1="0"
+x2="0"
+y1="0"
+y2="1">
+
+<stop
+offset="0%"
+stop-color="#dff5ff">
+</stop>
+
+<stop
+offset="100%"
+stop-color="#2389c9">
+</stop>
+
+</linearGradient>
+
+<marker
+id="seta-profundidade"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#263238">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="600"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<rect
+x="0"
+y="90"
+width="960"
+height="510"
+fill="url(#gradiente-profundidade)">
+</rect>
+
+<!-- SUPERFÍCIE -->
+
+<line
+x1="0"
+y1="90"
+x2="960"
+y2="90"
+stroke="#1565c0"
+stroke-width="7">
+</line>
+
+<path
+d="M0 80
+   Q40 65 80 80
+   T160 80
+   T240 80
+   T320 80
+   T400 80
+   T480 80
+   T560 80
+   T640 80
+   T720 80
+   T800 80
+   T880 80
+   T960 80"
+fill="none"
+stroke="#42a5f5"
+stroke-width="5">
+</path>
+
+<!-- LEME -->
+
+<line
+x1="480"
+y1="100"
+x2="480"
+y2="155"
+stroke="#263238"
+stroke-width="10">
+</line>
+
+<path
+d="M430 145
+   Q485 130 540 165
+   L570 500
+   Q500 545 415 510 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- CAVITAÇÃO SUPERIOR -->
+
+<ellipse
+cx="455"
+cy="180"
+rx="30"
+ry="13"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="500"
+cy="188"
+rx="24"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<!-- INDICAÇÃO DE PROFUNDIDADE -->
+
+<line
+x1="720"
+y1="125"
+x2="720"
+y2="510"
+stroke="#263238"
+stroke-width="6"
+marker-end="url(#seta-profundidade)">
+</line>
+
+<text
+x="750"
+y="320"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Aumento da profundidade
+
+</text>
+
+<text
+x="70"
+y="145"
+font-size="27"
+font-weight="700"
+fill="#0d47a1">
+
+Menor pressão hidrostática
+
+</text>
+
+<text
+x="70"
+y="520"
+font-size="27"
+font-weight="700"
+fill="#ffffff">
+
+Maior pressão hidrostática
+
+</text>
+
+<text
+x="515"
+y="225"
+font-size="25"
+font-weight="700"
+fill="#ffffff">
+
+Região mais próxima
+
+</text>
+
+<text
+x="535"
+y="255"
+font-size="25"
+font-weight="700"
+fill="#ffffff">
+
+da superfície
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de Atenção</h3>
+
+<p>
+A condição de carregamento e o trim podem alterar a
+profundidade de submersão das diferentes regiões do leme.
+</p>
+
+<p>
+Essas alterações também modificam o escoamento da popa
+e não devem ser analisadas isoladamente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CORRENTE DA HÉLICE
+========================================= -->
+
+<section
+class="topico-aula"
+id="corrente-helice-cavitacao-leme"
+data-topico-id="corrente-helice-cavitacao-leme">
+
+<h2>Cavitação do Leme na Corrente da Hélice</h2>
+
+<div class="widget">
+
+<p>
+O leme instalado a ré do propulsor pode operar dentro
+da corrente acelerada da hélice.
+</p>
+
+<p>
+Essa posição aumenta sua efetividade, mas também o submete
+a um campo de velocidades complexo e não uniforme.
+</p>
+
+<div class="destaque">
+
+<h3>Velocidade aumentada</h3>
+
+<p>
+A velocidade da água na corrente da hélice pode ser
+superior à velocidade do navio.
+</p>
+
+<p>
+O aumento da velocidade local favorece reduções mais
+intensas de pressão na superfície do leme.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Escoamento não uniforme</h3>
+
+<p>
+A esteira da hélice possui componentes axial e rotacional.
+</p>
+
+<p>
+Além disso, o campo de esteira do casco modifica a
+magnitude e a direção do escoamento.
+</p>
+
+<p>
+Diferentes partes do leme podem, portanto, operar sob
+velocidades e ângulos de ataque distintos.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Ambiente de escoamento atrás do propulsor</h3>
+
+<svg
+viewBox="0 0 960 580"
+role="img"
+aria-labelledby="titulo-cavitacao-slipstream descricao-cavitacao-slipstream"
+style="width:100%; height:auto;">
+
+<title id="titulo-cavitacao-slipstream">
+Cavitação do leme na corrente da hélice
+</title>
+
+<desc id="descricao-cavitacao-slipstream">
+Hélice produzindo um escoamento acelerado e rotacional
+que incide de forma não uniforme sobre o leme,
+com cavitação em parte de sua superfície.
+</desc>
+
+<defs>
+
+<marker
+id="seta-slipstream-cavitacao"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-rotacao-cavitacao"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#7b1fa2">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="580"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- HÉLICE -->
+
+<circle
+cx="250"
+cy="290"
+r="78"
+fill="#f5b642"
+stroke="#805b10"
+stroke-width="6">
+</circle>
+
+<path
+d="M250 212
+   Q315 250 250 290
+   Q185 250 250 212 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M328 290
+   Q290 355 250 290
+   Q290 225 328 290 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M250 368
+   Q185 330 250 290
+   Q315 330 250 368 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<path
+d="M172 290
+   Q210 225 250 290
+   Q210 355 172 290 Z"
+fill="#ffe082"
+stroke="#805b10"
+stroke-width="4">
+</path>
+
+<!-- FLUXO AXIAL -->
+
+<g
+fill="none"
+stroke="#1565c0"
+stroke-width="8"
+marker-end="url(#seta-slipstream-cavitacao)">
+
+<path d="M335 190 C470 175 610 185 755 225"></path>
+
+<path d="M340 240 C485 230 625 240 760 255"></path>
+
+<path d="M340 290 C490 290 630 290 765 290"></path>
+
+<path d="M340 340 C485 350 625 340 760 325"></path>
+
+<path d="M335 390 C470 405 610 395 755 355"></path>
+
+</g>
+
+<!-- FLUXO ROTACIONAL -->
+
+<path
+d="M405 145
+   C555 75 725 145 750 270
+   C775 395 650 485 500 440"
+fill="none"
+stroke="#7b1fa2"
+stroke-width="7"
+stroke-dasharray="14 9"
+marker-end="url(#seta-rotacao-cavitacao)">
+</path>
+
+<!-- LEME -->
+
+<path
+d="M760 145
+   Q810 135 850 170
+   L880 420
+   Q820 455 750 425 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- CAVITAÇÃO -->
+
+<ellipse
+cx="780"
+cy="190"
+rx="26"
+ry="12"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="825"
+cy="205"
+rx="32"
+ry="14"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="850"
+cy="250"
+rx="20"
+ry="10"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<text
+x="120"
+y="115"
+font-size="28"
+font-weight="700"
+fill="#805b10">
+
+Hélice
+
+</text>
+
+<text
+x="380"
+y="520"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Escoamento axial acelerado
+
+</text>
+
+<text
+x="480"
+y="105"
+font-size="27"
+font-weight="700"
+fill="#7b1fa2">
+
+Componente rotacional
+
+</text>
+
+<text
+x="750"
+y="500"
+font-size="27"
+font-weight="700"
+fill="#7b261d">
+
+Leme
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+O mesmo ângulo de leme pode corresponder a diferentes
+condições de cavitação quando a carga do propulsor é
+alterada.
+</p>
+
+<p>
+A intensidade do fenômeno depende da velocidade e da
+direção efetivas do escoamento em cada região da
+superfície.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EFEITO SOBRE A SUSTENTAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="cavitacao-sustentacao-leme"
+data-topico-id="cavitacao-sustentacao-leme">
+
+<h2>Efeito da Cavitação sobre a Sustentação</h2>
+
+<div class="widget">
+
+<p>
+A sustentação produzida pelo leme depende da distribuição
+de pressão entre suas faces.
+</p>
+
+<p>
+A cavitação limita o valor de pressão negativa que pode
+ser mantido no lado de sucção.
+</p>
+
+<p>
+Como consequência, o crescimento da força lateral com o
+aumento do ângulo de ataque torna-se menos intenso.
+</p>
+
+<div class="destaque">
+
+<h3>Entendimento apresentado pelo PNA</h3>
+
+<p>
+A cavitação reduz a taxa de crescimento da sustentação
+à medida que o ângulo de ataque aumenta.
+</p>
+
+<p>
+Entretanto, a cavitação isoladamente não interrompe
+necessariamente todo o crescimento da sustentação.
+Ela reduz sua taxa de aumento.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Representação qualitativa da sustentação</h3>
+
+<svg
+viewBox="0 0 960 600"
+role="img"
+aria-labelledby="titulo-curva-cavitacao descricao-curva-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-curva-cavitacao">
+Efeito qualitativo da cavitação na sustentação
+</title>
+
+<desc id="descricao-curva-cavitacao">
+Gráfico qualitativo da força lateral em função do
+ângulo de ataque, mostrando crescimento menor quando
+há cavitação.
+</desc>
+
+<defs>
+
+<marker
+id="seta-eixo-grafico"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#263238">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="600"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- EIXOS -->
+
+<line
+x1="120"
+y1="500"
+x2="870"
+y2="500"
+stroke="#263238"
+stroke-width="6"
+marker-end="url(#seta-eixo-grafico)">
+</line>
+
+<line
+x1="120"
+y1="500"
+x2="120"
+y2="80"
+stroke="#263238"
+stroke-width="6"
+marker-end="url(#seta-eixo-grafico)">
+</line>
+
+<!-- SEM CAVITAÇÃO -->
+
+<path
+d="M120 500
+   C280 440 430 350 570 245
+   C690 155 775 105 840 85"
+fill="none"
+stroke="#2e7d32"
+stroke-width="9">
+</path>
+
+<!-- COM CAVITAÇÃO -->
+
+<path
+d="M120 500
+   C275 445 420 360 535 285
+   C645 215 745 180 840 160"
+fill="none"
+stroke="#1565c0"
+stroke-width="9"
+stroke-dasharray="16 10">
+</path>
+
+<!-- REGIÃO DE DIFERENÇA -->
+
+<path
+d="M535 285
+   C645 215 745 180 840 160
+   L840 85
+   C775 105 690 155 570 245 Z"
+fill="#bbdefb"
+opacity="0.55">
+</path>
+
+<text
+x="585"
+y="125"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Sem limitação por cavitação
+
+</text>
+
+<text
+x="585"
+y="240"
+font-size="27"
+font-weight="700"
+fill="#1565c0">
+
+Com cavitação
+
+</text>
+
+<text
+x="385"
+y="570"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Ângulo de ataque
+
+</text>
+
+<text
+x="35"
+y="335"
+font-size="27"
+font-weight="700"
+fill="#263238"
+transform="rotate(-90 35 335)">
+
+Força lateral
+
+</text>
+
+<text
+x="510"
+y="380"
+font-size="24"
+font-weight="700"
+fill="#0d47a1">
+
+Redução da taxa de crescimento
+
+</text>
+
+</svg>
+
+<p>
+O gráfico é qualitativo e representa o entendimento físico
+descrito na bibliografia.
+</p>
+
+<p>
+Ele não deve ser utilizado para determinar valores
+numéricos de força ou de ângulo.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de Atenção para o PSCPP</h3>
+
+<p>
+Não é correto afirmar que o início da cavitação elimina
+imediatamente toda a ação do leme.
+</p>
+
+<p>
+O efeito indicado pela fonte é a limitação progressiva
+do desenvolvimento da pressão negativa e da sustentação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CAVITAÇÃO E ESTOL
+========================================= -->
+
+<section
+class="topico-aula"
+id="cavitacao-estol-leme"
+data-topico-id="cavitacao-estol-leme">
+
+<h2>Cavitação e Estol</h2>
+
+<div class="widget">
+
+<p>
+Cavitação e estol são fenômenos distintos.
+</p>
+
+<p>
+A cavitação está associada à redução da pressão local
+até a formação de cavidades de vapor.
+</p>
+
+<p>
+O estol está associado à separação extensa do escoamento
+e a uma alteração abrupta no crescimento da sustentação
+com o ângulo de ataque.
+</p>
+
+<div class="destaque">
+
+<h3>Comparação apresentada pelo PNA</h3>
+
+<p>
+Em velocidades moderadas, a bibliografia indica que o
+estol pode ser mais restritivo ao desempenho do leme
+do que a cavitação.
+</p>
+
+<p>
+À medida que a velocidade aumenta, o efeito limitador
+da cavitação sobre a sustentação torna-se mais importante.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Diferença física entre cavitação e estol</h3>
+
+<svg
+viewBox="0 0 960 570"
+role="img"
+aria-labelledby="titulo-cavitacao-estol descricao-cavitacao-estol"
+style="width:100%; height:auto;">
+
+<title id="titulo-cavitacao-estol">
+Comparação entre cavitação e estol
+</title>
+
+<desc id="descricao-cavitacao-estol">
+Dois perfis mostram cavidades de vapor no lado de
+sucção e uma região de separação extensa associada
+ao estol.
+</desc>
+
+<defs>
+
+<marker
+id="seta-comparacao-fenomenos"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="570"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="525"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 9">
+</line>
+
+<!-- CAVITAÇÃO -->
+
+<text
+x="165"
+y="65"
+font-size="30"
+font-weight="700"
+fill="#1565c0">
+
+Cavitação
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-comparacao-fenomenos)">
+
+<line x1="50" y1="185" x2="175" y2="185"></line>
+<line x1="50" y1="255" x2="175" y2="255"></line>
+<line x1="50" y1="325" x2="175" y2="325"></line>
+
+</g>
+
+<path
+d="M180 255
+   Q240 155 385 195
+   Q430 210 455 255
+   Q430 300 385 315
+   Q240 355 180 255 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<ellipse
+cx="260"
+cy="185"
+rx="30"
+ry="12"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="320"
+cy="188"
+rx="35"
+ry="14"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="380"
+cy="205"
+rx="25"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<text
+x="90"
+y="430"
+font-size="24"
+fill="#37474f">
+
+Formação de cavidades de vapor
+
+</text>
+
+<text
+x="125"
+y="465"
+font-size="24"
+fill="#37474f">
+
+em baixa pressão
+
+</text>
+
+<!-- ESTOL -->
+
+<text
+x="685"
+y="65"
+font-size="30"
+font-weight="700"
+fill="#c62828">
+
+Estol
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-comparacao-fenomenos)">
+
+<line x1="515" y1="185" x2="640" y2="185"></line>
+<line x1="515" y1="255" x2="640" y2="255"></line>
+<line x1="515" y1="325" x2="640" y2="325"></line>
+
+</g>
+
+<g transform="rotate(28 745 255)">
+
+<path
+d="M640 255
+   Q700 155 845 195
+   Q890 210 915 255
+   Q890 300 845 315
+   Q700 355 640 255 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+</g>
+
+<path
+d="M680 175
+   C770 105 900 150 920 250
+   C940 340 845 405 735 350"
+fill="none"
+stroke="#c62828"
+stroke-width="8"
+stroke-dasharray="14 9">
+</path>
+
+<text
+x="565"
+y="430"
+font-size="24"
+fill="#37474f">
+
+Separação extensa do escoamento
+
+</text>
+
+<text
+x="625"
+y="465"
+font-size="24"
+fill="#37474f">
+
+e perda de sustentação
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Stall</strong> —
+estol; descontinuidade associada à separação extensa
+e à redução do crescimento da sustentação.
+</li>
+
+<li>
+<strong>Flow separation</strong> —
+separação do escoamento.
+</li>
+
+<li>
+<strong>Stall angle</strong> —
+ângulo crítico de estol.
+</li>
+
+<li>
+<strong>Lift reduction</strong> —
+redução da sustentação.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EROSÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="erosao-cavitacao-leme"
+data-topico-id="erosao-cavitacao-leme">
+
+<h2>Erosão por Cavitação</h2>
+
+<div class="widget">
+
+<p>
+As cavidades de vapor são transportadas pelo escoamento
+para regiões de maior pressão.
+</p>
+
+<p>
+Nessas regiões, elas podem sofrer colapso.
+</p>
+
+<p>
+Quando esse colapso ocorre repetidamente próximo à
+superfície do leme, podem ser produzidas solicitações
+locais capazes de danificar o material.
+</p>
+
+<div class="destaque">
+
+<h3>Efeito acumulativo</h3>
+
+<p>
+A ocorrência repetida do fenômeno pode remover pequenas
+porções do material ou do revestimento superficial.
+</p>
+
+<p>
+Com o tempo, podem surgir irregularidades, crateras e
+aumento de rugosidade.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Desenvolvimento esquemático da erosão</h3>
+
+<svg
+viewBox="0 0 960 540"
+role="img"
+aria-labelledby="titulo-erosao-cavitacao descricao-erosao-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-erosao-cavitacao">
+Erosão da superfície causada por cavitação
+</title>
+
+<desc id="descricao-erosao-cavitacao">
+Sequência esquemática mostrando cavidades próximas
+à superfície, seu colapso e a formação progressiva
+de irregularidades no material.
+</desc>
+
+<rect
+width="960"
+height="540"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="320"
+y1="35"
+x2="320"
+y2="500"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<line
+x1="640"
+y1="35"
+x2="640"
+y2="500"
+stroke="#b0bec5"
+stroke-width="3"
+stroke-dasharray="11 8">
+</line>
+
+<!-- FORMAÇÃO -->
+
+<text
+x="95"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Formação
+
+</text>
+
+<rect
+x="40"
+y="300"
+width="240"
+height="100"
+rx="12"
+fill="#78909c"
+stroke="#37474f"
+stroke-width="5">
+</rect>
+
+<ellipse
+cx="115"
+cy="260"
+rx="30"
+ry="18"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="180"
+cy="245"
+rx="38"
+ry="21"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="240"
+cy="270"
+rx="25"
+ry="15"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<text
+x="70"
+y="445"
+font-size="23"
+fill="#37474f">
+
+Cavidades junto à superfície
+
+</text>
+
+<!-- COLAPSO -->
+
+<text
+x="410"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Colapso
+
+</text>
+
+<rect
+x="360"
+y="300"
+width="240"
+height="100"
+rx="12"
+fill="#78909c"
+stroke="#37474f"
+stroke-width="5">
+</rect>
+
+<g
+stroke="#c62828"
+stroke-width="6">
+
+<line x1="440" y1="225" x2="470" y2="280"></line>
+<line x1="500" y1="215" x2="500" y2="280"></line>
+<line x1="555" y1="230" x2="530" y2="280"></line>
+
+</g>
+
+<circle
+cx="500"
+cy="285"
+r="17"
+fill="#ffffff"
+stroke="#c62828"
+stroke-width="4">
+</circle>
+
+<text
+x="385"
+y="445"
+font-size="23"
+fill="#37474f">
+
+Colapso próximo ao material
+
+</text>
+
+<!-- EROSÃO -->
+
+<text
+x="745"
+y="65"
+font-size="28"
+font-weight="700"
+fill="#263238">
+
+Erosão
+
+</text>
+
+<path
+d="M680 300
+   L720 300
+   Q735 330 750 300
+   L790 300
+   Q805 345 825 300
+   L870 300
+   Q885 325 900 300
+   L920 300
+   L920 400
+   L680 400 Z"
+fill="#78909c"
+stroke="#37474f"
+stroke-width="5">
+</path>
+
+<circle
+cx="750"
+cy="315"
+r="12"
+fill="#455a64">
+</circle>
+
+<circle
+cx="825"
+cy="320"
+r="15"
+fill="#455a64">
+</circle>
+
+<circle
+cx="885"
+cy="312"
+r="10"
+fill="#455a64">
+</circle>
+
+<text
+x="690"
+y="445"
+font-size="23"
+fill="#37474f">
+
+Superfície irregular e danificada
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Consequência Hidrodinâmica</h3>
+
+<p>
+A erosão aumenta a rugosidade da superfície.
+</p>
+
+<p>
+A rugosidade, por sua vez, pode alterar o escoamento local
+e favorecer novas regiões de início da cavitação.
+</p>
+
+<p>
+Dessa forma, a deterioração pode modificar progressivamente
+o comportamento hidrodinâmico do leme.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Cavitation erosion</strong> —
+erosão provocada pela cavitação.
+</li>
+
+<li>
+<strong>Cavity collapse</strong> —
+colapso das cavidades.
+</li>
+
+<li>
+<strong>Pitting</strong> —
+formação de pequenas crateras ou cavidades no material.
+</li>
+
+<li>
+<strong>Surface damage</strong> —
+dano superficial.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VIBRAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="vibracao-cavitacao-leme"
+data-topico-id="vibracao-cavitacao-leme">
+
+<h2>Vibração Associada à Cavitação</h2>
+
+<div class="widget">
+
+<p>
+A formação e o colapso das cavidades produzem variações
+locais e não estacionárias de pressão.
+</p>
+
+<p>
+Essas variações podem gerar forças flutuantes sobre
+a superfície do leme.
+</p>
+
+<p>
+A bibliografia registra que casos de vibração induzida
+pelo leme foram atribuídos à cavitação.
+</p>
+
+<div class="destaque">
+
+<h3>Origem da excitação</h3>
+
+<p>
+O fenômeno pode não ocorrer de maneira uniforme e contínua.
+</p>
+
+<p>
+As cavidades podem surgir, crescer, deslocar-se e colapsar
+em diferentes regiões da superfície.
+</p>
+
+<p>
+Essa variação modifica continuamente o campo de pressão
+e o carregamento do leme.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Carregamento variável sobre o leme</h3>
+
+<svg
+viewBox="0 0 960 540"
+role="img"
+aria-labelledby="titulo-vibracao-cavitacao descricao-vibracao-cavitacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-vibracao-cavitacao">
+Vibração associada à cavitação no leme
+</title>
+
+<desc id="descricao-vibracao-cavitacao">
+Leme com cavidades de vapor e setas alternadas
+representando flutuações do carregamento hidrodinâmico.
+</desc>
+
+<defs>
+
+<marker
+id="seta-vibracao-vermelha"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+<marker
+id="seta-vibracao-azul"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="540"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- MADRE -->
+
+<line
+x1="480"
+y1="55"
+x2="480"
+y2="145"
+stroke="#263238"
+stroke-width="12">
+</line>
+
+<!-- LEME -->
+
+<path
+d="M390 130
+   Q480 105 565 155
+   L610 430
+   Q500 490 365 445 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- CAVIDADES -->
+
+<ellipse
+cx="415"
+cy="175"
+rx="28"
+ry="12"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="470"
+cy="165"
+rx="34"
+ry="14"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="525"
+cy="185"
+rx="24"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="550"
+cy="235"
+rx="20"
+ry="10"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<!-- FORÇAS ALTERNADAS -->
+
+<line
+x1="360"
+y1="240"
+x2="230"
+y2="210"
+stroke="#c62828"
+stroke-width="9"
+marker-end="url(#seta-vibracao-vermelha)">
+</line>
+
+<line
+x1="595"
+y1="280"
+x2="730"
+y2="315"
+stroke="#1565c0"
+stroke-width="9"
+marker-end="url(#seta-vibracao-azul)">
+</line>
+
+<line
+x1="390"
+y1="375"
+x2="250"
+y2="410"
+stroke="#1565c0"
+stroke-width="8"
+marker-end="url(#seta-vibracao-azul)">
+</line>
+
+<line
+x1="580"
+y1="395"
+x2="720"
+y2="365"
+stroke="#c62828"
+stroke-width="8"
+marker-end="url(#seta-vibracao-vermelha)">
+</line>
+
+<!-- LINHAS DE VIBRAÇÃO -->
+
+<path
+d="M455 70
+   Q470 45 485 70
+   Q500 95 515 70"
+fill="none"
+stroke="#7b1fa2"
+stroke-width="6">
+</path>
+
+<path
+d="M430 40
+   Q470 5 510 40"
+fill="none"
+stroke="#7b1fa2"
+stroke-width="5">
+</path>
+
+<text
+x="325"
+y="515"
+font-size="27"
+font-weight="700"
+fill="#7b1fa2">
+
+Carregamento hidrodinâmico variável
+
+</text>
+
+<text
+x="60"
+y="175"
+font-size="25"
+font-weight="700"
+fill="#c62828">
+
+Forças flutuantes
+
+</text>
+
+<text
+x="735"
+y="260"
+font-size="25"
+font-weight="700"
+fill="#1565c0">
+
+Forças flutuantes
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Limite da Generalização</h3>
+
+<p>
+Vibrações observadas na região de popa não podem ser
+atribuídas automaticamente à cavitação do leme.
+</p>
+
+<p>
+A identificação da causa exige análise técnica das
+condições de escoamento, do propulsor, do leme e da
+estrutura da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AERAÇÃO E VENTILAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="aeracao-ventilacao-leme"
+data-topico-id="aeracao-ventilacao-leme">
+
+<h2>Cavitação, Aeração e Ventilação</h2>
+
+<div class="widget">
+
+<p>
+A cavitação não deve ser confundida com a entrada de ar
+atmosférico no lado de sucção do leme.
+</p>
+
+<p>
+O PNA utiliza os termos <strong>aeration</strong> e
+<strong>ventilation</strong> para descrever o arrastamento
+de ar da atmosfera para a região de baixa pressão.
+</p>
+
+<div class="destaque">
+
+<h3>Cavitação</h3>
+
+<p>
+As cavidades são formadas principalmente por vapor da
+própria água em razão da baixa pressão local.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Aeração ou ventilação</h3>
+
+<p>
+O ar atmosférico é conduzido da superfície livre até
+o lado de sucção do leme.
+</p>
+
+<p>
+Esse fenômeno tende a estar associado à proximidade
+entre a região de baixa pressão e a superfície da água.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Diferença entre cavitação e ventilação</h3>
+
+<svg
+viewBox="0 0 960 620"
+role="img"
+aria-labelledby="titulo-cavitacao-ventilacao descricao-cavitacao-ventilacao"
+style="width:100%; height:auto;">
+
+<title id="titulo-cavitacao-ventilacao">
+Comparação entre cavitação e ventilação do leme
+</title>
+
+<desc id="descricao-cavitacao-ventilacao">
+Dois esquemas mostram cavidades de vapor formadas
+no interior da água e uma coluna de ar atmosférico
+conectando a superfície livre ao lado de sucção do leme.
+</desc>
+
+<defs>
+
+<linearGradient
+id="agua-cavitacao-ventilacao"
+x1="0"
+x2="0"
+y1="0"
+y2="1">
+
+<stop
+offset="0%"
+stop-color="#dff5ff">
+</stop>
+
+<stop
+offset="100%"
+stop-color="#55aeda">
+</stop>
+
+</linearGradient>
+
+</defs>
+
+<rect
+width="960"
+height="620"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="575"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 9">
+</line>
+
+<!-- CAVITAÇÃO -->
+
+<text
+x="180"
+y="65"
+font-size="30"
+font-weight="700"
+fill="#1565c0">
+
+Cavitação
+
+</text>
+
+<rect
+x="20"
+y="115"
+width="430"
+height="450"
+fill="url(#agua-cavitacao-ventilacao)">
+</rect>
+
+<line
+x1="20"
+y1="115"
+x2="450"
+y2="115"
+stroke="#1565c0"
+stroke-width="6">
+</line>
+
+<path
+d="M210 190
+   Q280 165 340 205
+   L370 450
+   Q290 500 195 460 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<ellipse
+cx="225"
+cy="235"
+rx="29"
+ry="13"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="280"
+cy="225"
+rx="35"
+ry="15"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<ellipse
+cx="330"
+cy="245"
+rx="22"
+ry="11"
+fill="#ffffff"
+stroke="#42a5f5"
+stroke-width="4">
+</ellipse>
+
+<text
+x="70"
+y="530"
+font-size="23"
+font-weight="700"
+fill="#ffffff">
+
+Cavidades formadas na água
+
+</text>
+
+<!-- VENTILAÇÃO -->
+
+<text
+x="655"
+y="65"
+font-size="30"
+font-weight="700"
+fill="#c62828">
+
+Ventilação
+
+</text>
+
+<rect
+x="510"
+y="115"
+width="430"
+height="450"
+fill="url(#agua-cavitacao-ventilacao)">
+</rect>
+
+<line
+x1="510"
+y1="115"
+x2="940"
+y2="115"
+stroke="#1565c0"
+stroke-width="6">
+</line>
+
+<path
+d="M700 190
+   Q770 165 830 205
+   L860 450
+   Q780 500 685 460 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<path
+d="M750 115
+   C725 170 725 225 745 280
+   C760 320 760 360 750 400"
+fill="none"
+stroke="#ffffff"
+stroke-width="35"
+stroke-linecap="round">
+</path>
+
+<path
+d="M750 115
+   C725 170 725 225 745 280
+   C760 320 760 360 750 400"
+fill="none"
+stroke="#42a5f5"
+stroke-width="5"
+stroke-dasharray="12 9">
+</path>
+
+<text
+x="575"
+y="530"
+font-size="23"
+font-weight="700"
+fill="#ffffff">
+
+Ar conectado à superfície livre
+
+</text>
+
+<text
+x="705"
+y="95"
+font-size="23"
+font-weight="700"
+fill="#c62828">
+
+Atmosfera
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de Atenção para o PSCPP</h3>
+
+<p>
+Cavitação e ventilação podem produzir perda de desempenho,
+mas não possuem a mesma origem física.
+</p>
+
+<ul>
+
+<li>
+na cavitação, formam-se cavidades de vapor da água;
+</li>
+
+<li>
+na ventilação, ar atmosférico alcança a região de sucção.
+</li>
+
+</ul>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Aeration</strong> —
+aeração; entrada de ar atmosférico na região de sucção.
+</li>
+
+<li>
+<strong>Ventilation</strong> —
+ventilação; termo também utilizado para a entrada de ar
+a partir da superfície livre.
+</li>
+
+<li>
+<strong>Air drawing</strong> —
+arrastamento ou aspiração de ar.
+</li>
+
+<li>
+<strong>Free surface</strong> —
+superfície livre da água.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROXIMIDADE DA SUPERFÍCIE
+========================================= -->
+
+<section
+class="topico-aula"
+id="superficie-livre-leme"
+data-topico-id="superficie-livre-leme">
+
+<h2>Influência da Superfície Livre</h2>
+
+<div class="widget">
+
+<p>
+A ventilação torna-se possível quando existe um caminho
+pelo qual o ar atmosférico pode ser conduzido até a região
+de baixa pressão do leme.
+</p>
+
+<p>
+A proximidade da parte superior do leme com a superfície
+livre favorece essa comunicação.
+</p>
+
+<div class="destaque">
+
+<h3>Proteção proporcionada pelo casco</h3>
+
+<p>
+A bibliografia indica que a ventilação é rara em navios
+de um único leme quando sua parte superior está bem
+submersa e protegida pelo casco contra o acesso direto
+do ar atmosférico.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Condição de Carregamento</h3>
+
+<p>
+A redução do calado pode aproximar a parte superior do
+leme da superfície livre.
+</p>
+
+<p>
+Entretanto, a ocorrência efetiva de ventilação depende
+também da separação do escoamento e das características
+geométricas da instalação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PREVISÃO DO FENÔMENO
+========================================= -->
+
+<section
+class="topico-aula"
+id="previsao-cavitacao-leme"
+data-topico-id="previsao-cavitacao-leme">
+
+<h2>Dificuldade de Previsão da Cavitação</h2>
+
+<div class="widget">
+
+<p>
+A previsão da cavitação em um perfil isolado já exige
+conhecimento preciso da velocidade, da pressão e do
+ângulo de ataque.
+</p>
+
+<p>
+No leme real, instalado sob a popa, essas grandezas não
+são uniformes nem facilmente determinadas.
+</p>
+
+<div class="destaque">
+
+<h3>Influência do casco</h3>
+
+<p>
+O casco modifica a velocidade e a direção do escoamento
+antes que a água alcance o leme.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Influência do propulsor</h3>
+
+<p>
+A corrente da hélice aumenta a velocidade local e introduz
+uma componente rotacional no fluxo.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Variação ao longo da superfície</h3>
+
+<p>
+O campo de esteira na popa é normalmente não uniforme.
+</p>
+
+<p>
+Diferentes regiões do leme podem estar submetidas a
+diferentes velocidades e direções do vetor de escoamento.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Campo de escoamento complexo na popa</h3>
+
+<svg
+viewBox="0 0 960 570"
+role="img"
+aria-labelledby="titulo-campo-complexo descricao-campo-complexo"
+style="width:100%; height:auto;">
+
+<title id="titulo-campo-complexo">
+Campo de escoamento não uniforme sobre o leme
+</title>
+
+<desc id="descricao-campo-complexo">
+Leme dividido em regiões que recebem vetores de
+velocidade com magnitudes e direções diferentes
+devido à influência do casco e da hélice.
+</desc>
+
+<defs>
+
+<marker
+id="seta-campo-complexo"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="570"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- LEME -->
+
+<path
+d="M610 85
+   Q700 65 790 110
+   L845 465
+   Q720 530 580 475 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+<!-- DIVISÕES -->
+
+<line
+x1="605"
+y1="205"
+x2="810"
+y2="195"
+stroke="#6d2b20"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<line
+x1="595"
+y1="330"
+x2="825"
+y2="315"
+stroke="#6d2b20"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<!-- VETORES -->
+
+<g
+fill="none"
+stroke="#1565c0"
+marker-end="url(#seta-campo-complexo)">
+
+<line
+x1="110"
+y1="145"
+x2="575"
+y2="125"
+stroke-width="9">
+</line>
+
+<line
+x1="145"
+y1="250"
+x2="585"
+y2="235"
+stroke-width="6">
+</line>
+
+<line
+x1="95"
+y1="375"
+x2="570"
+y2="355"
+stroke-width="11">
+</line>
+
+<line
+x1="170"
+y1="480"
+x2="575"
+y2="430"
+stroke-width="7">
+</line>
+
+</g>
+
+<!-- INDICAÇÕES -->
+
+<text
+x="110"
+y="100"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Maior velocidade
+
+</text>
+
+<text
+x="165"
+y="225"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Menor velocidade
+
+</text>
+
+<text
+x="105"
+y="350"
+font-size="26"
+font-weight="700"
+fill="#1565c0">
+
+Direção modificada
+
+</text>
+
+<text
+x="595"
+y="550"
+font-size="27"
+font-weight="700"
+fill="#7b261d">
+
+Leme submetido a fluxo não uniforme
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Limite da Análise Simplificada</h3>
+
+<p>
+Diagramas de perfil em escoamento uniforme ajudam a
+compreender o fenômeno, mas não reproduzem integralmente
+o ambiente hidrodinâmico existente na popa do navio.
+</p>
+
+<p>
+A resposta real depende da interação entre casco,
+propulsor, leme e estado de movimento da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONSEQUÊNCIAS PARA O DESEMPENHO
+========================================= -->
+
+<section
+class="topico-aula"
+id="consequencias-cavitacao-leme"
+data-topico-id="consequencias-cavitacao-leme">
+
+<h2>Consequências da Cavitação</h2>
+
+<div class="widget">
+
+<p>
+A cavitação pode afetar simultaneamente o desempenho
+hidrodinâmico e a integridade física do leme.
+</p>
+
+<div class="destaque">
+
+<h3>Limitação da força lateral</h3>
+
+<p>
+A presença das cavidades limita a região de pressão
+negativa e reduz a taxa de crescimento da sustentação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Aumento do arrasto</h3>
+
+<p>
+A bibliografia de resistência indica que a ocorrência
+de cavitação e ventilação em apêndices pode aumentar
+o arrasto associado a essas superfícies.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Erosão</h3>
+
+<p>
+O colapso repetido das cavidades próximo à superfície
+pode provocar deterioração do material.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Vibração</h3>
+
+<p>
+As flutuações de pressão associadas ao fenômeno podem
+produzir carregamentos variáveis e contribuir para
+vibrações.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Interpretação Operacional</h3>
+
+<p>
+Uma perda de efetividade do leme em alta velocidade não
+deve ser atribuída automaticamente a uma única causa.
+</p>
+
+<p>
+Cavitação, estol, ventilação e alterações do escoamento
+na popa são fenômenos distintos que podem ocorrer de
+forma isolada ou combinada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PONTOS FUNDAMENTAIS
+========================================= -->
+
+<section
+class="topico-aula"
+id="pontos-fundamentais-cavitacao-leme"
+data-topico-id="pontos-fundamentais-cavitacao-leme">
+
+<h2>Pontos Fundamentais para o PSCPP</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A cavitação ocorre quando a pressão local no lado de
+sucção cai até valores compatíveis com a pressão de
+vapor da água.
+</li>
+
+<li>
+As cavidades de cavitação são formadas por vapor do
+líquido, não simplesmente por ar atmosférico.
+</li>
+
+<li>
+O aumento da velocidade local favorece a cavitação.
+</li>
+
+<li>
+O aumento do ângulo de ataque amplia a região de baixa
+pressão.
+</li>
+
+<li>
+Maior profundidade de submersão aumenta a pressão
+hidrostática e dificulta a cavitação.
+</li>
+
+<li>
+O início da cavitação depende também dos núcleos existentes
+na água e da rugosidade da superfície.
+</li>
+
+<li>
+A corrente da hélice pode aumentar a velocidade local
+sobre o leme.
+</li>
+
+<li>
+O campo de velocidades na popa é complexo e não uniforme.
+</li>
+
+<li>
+A cavitação reduz a taxa de crescimento da sustentação,
+mas não elimina necessariamente toda a força do leme
+assim que se inicia.
+</li>
+
+<li>
+Em velocidades moderadas, o estol pode ser mais restritivo
+ao desempenho do leme que a cavitação.
+</li>
+
+<li>
+À medida que a velocidade aumenta, o efeito limitador
+da cavitação torna-se mais importante.
+</li>
+
+<li>
+A cavitação pode causar erosão e contribuir para vibrações.
+</li>
+
+<li>
+A cavitação deve ser diferenciada da ventilação ou aeração.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="glossario-cavitacao-leme"
+data-topico-id="glossario-cavitacao-leme">
+
+<h2>Termos Técnicos da Parte</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Cavitation</strong> —
+cavitação.
+</li>
+
+<li>
+<strong>Cavitation inception</strong> —
+início da cavitação.
+</li>
+
+<li>
+<strong>Vapour pressure</strong> —
+pressão de vapor.
+</li>
+
+<li>
+<strong>Vapour cavity</strong> —
+cavidade de vapor.
+</li>
+
+<li>
+<strong>Cavitation nuclei</strong> —
+núcleos que favorecem a formação de cavidades.
+</li>
+
+<li>
+<strong>Suction side</strong> —
+lado de sucção ou lado de baixa pressão.
+</li>
+
+<li>
+<strong>Pressure side</strong> —
+lado de pressão.
+</li>
+
+<li>
+<strong>Cavity collapse</strong> —
+colapso da cavidade.
+</li>
+
+<li>
+<strong>Cavitation erosion</strong> —
+erosão por cavitação.
+</li>
+
+<li>
+<strong>Pitting</strong> —
+formação de pequenas crateras na superfície.
+</li>
+
+<li>
+<strong>Aeration</strong> —
+aeração.
+</li>
+
+<li>
+<strong>Ventilation</strong> —
+ventilação.
+</li>
+
+<li>
+<strong>Air drawing</strong> —
+aspiração ou arrastamento de ar atmosférico.
+</li>
+
+<li>
+<strong>Free surface</strong> —
+superfície livre.
+</li>
+
+<li>
+<strong>Non-uniform inflow</strong> —
+escoamento de entrada não uniforme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="sintese-cavitacao-leme"
+data-topico-id="sintese-cavitacao-leme">
+
+<h2>Síntese da Parte</h2>
+
+<div class="widget">
+
+<p>
+A cavitação em lemes resulta da redução intensa da pressão
+no lado de sucção do perfil.
+</p>
+
+<p>
+Quando a pressão local atinge a condição crítica,
+formam-se cavidades de vapor.
+</p>
+
+<div class="destaque">
+
+<h3>Fatores principais</h3>
+
+<p>
+A ocorrência é influenciada pela velocidade local,
+pelo ângulo de ataque, pela profundidade de submersão,
+pela rugosidade da superfície e pelos núcleos presentes
+na água.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Ambiente da popa</h3>
+
+<p>
+O leme opera em um campo de velocidades modificado pelo
+casco e pelo propulsor.
+</p>
+
+<p>
+Por isso, a intensidade e a localização da cavitação
+podem variar ao longo da superfície.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Efeitos</h3>
+
+<p>
+A cavitação limita o desenvolvimento da sustentação,
+pode aumentar o arrasto e pode causar erosão e vibração.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto Essencial</h3>
+
+<p>
+Cavitação, estol e ventilação não são sinônimos.
+</p>
+
+<p>
+A cavitação envolve vapor da água, o estol envolve
+separação extensa do escoamento e a ventilação envolve
+a entrada de ar atmosférico.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 9
+========================================= -->     
      
-     
+<!-- =========================================
+     PARTE 10
+     PROJETO, CRITÉRIOS DE MANOBRABILIDADE
+     E REVISÃO FINAL
+========================================= -->
+
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 10 — Projeto, Critérios de Manobrabilidade e Revisão Final
+</h2>
+
+<p>
+O leme é um dos elementos fundamentais do sistema de
+controle direcional do navio.
+</p>
+
+<p>
+Entretanto, seu desempenho não pode ser analisado
+isoladamente.
+</p>
+
+<p>
+A capacidade de manobra resulta da integração entre
+casco, propulsor, leme, sistema de governo, condição de
+carregamento e ambiente de operação.
+</p>
+
+<p>
+Nesta parte serão relacionados os fundamentos estudados
+ao projeto do navio e aos critérios internacionais de
+manobrabilidade.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROJETO DO LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="projeto-leme"
+data-topico-id="projeto-leme">
+
+<h2>Projeto do Leme</h2>
+
+<div class="widget">
+
+<p>
+O projeto do leme deve proporcionar força lateral e
+momento de guinada suficientes para controlar o navio
+nas condições previstas de operação.
+</p>
+
+<p>
+Essa capacidade depende simultaneamente das dimensões
+do leme, de sua geometria, de sua posição e do campo
+de escoamento no qual ele trabalha.
+</p>
+
+<div class="destaque">
+
+<h3>Características relevantes</h3>
+
+<ul>
+
+<li>área da superfície do leme;</li>
+
+<li>altura e comprimento de corda;</li>
+
+<li>razão de aspecto;</li>
+
+<li>perfil hidrodinâmico;</li>
+
+<li>grau de balanceamento;</li>
+
+<li>posição do eixo de rotação;</li>
+
+<li>ângulo máximo disponível;</li>
+
+<li>posição em relação ao propulsor;</li>
+
+<li>distância entre hélice e leme;</li>
+
+<li>resistência estrutural;</li>
+
+<li>torque exigido do sistema de governo.</li>
+
+</ul>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto de Atenção</h3>
+
+<p>
+Não existe uma única geometria de leme adequada para todos
+os navios.
+</p>
+
+<p>
+A solução deve ser compatível com a forma da popa, o
+arranjo propulsivo, a velocidade de projeto e os requisitos
+de manobrabilidade da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÁREA DO LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="area-leme-desempenho"
+data-topico-id="area-leme-desempenho">
+
+<h2>Área do Leme e Capacidade de Controle</h2>
+
+<div class="widget">
+
+<p>
+A área do leme influencia diretamente a quantidade de
+força hidrodinâmica que pode ser produzida.
+</p>
+
+<p>
+Mantidas as demais condições, o aumento da área submetida
+ao escoamento tende a aumentar a força lateral disponível.
+</p>
+
+<div class="destaque">
+
+<h3>Limite dessa interpretação</h3>
+
+<p>
+Uma área maior não garante, isoladamente, melhor
+manobrabilidade.
+</p>
+
+<p>
+Também devem ser considerados:
+</p>
+
+<ul>
+
+<li>a velocidade local da água;</li>
+
+<li>a distribuição do escoamento;</li>
+
+<li>o perfil do leme;</li>
+
+<li>o ângulo de ataque;</li>
+
+<li>a interação com o casco;</li>
+
+<li>a corrente da hélice;</li>
+
+<li>o torque necessário para movimentar a superfície.</li>
+
+</ul>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Influência qualitativa da área do leme</h3>
+
+<svg
+viewBox="0 0 960 540"
+role="img"
+aria-labelledby="titulo-area-leme descricao-area-leme"
+style="width:100%; height:auto;">
+
+<title id="titulo-area-leme">
+Comparação qualitativa entre áreas de leme
+</title>
+
+<desc id="descricao-area-leme">
+Dois lemes de perfis semelhantes e áreas diferentes
+submetidos ao mesmo escoamento, mostrando diferença
+qualitativa na força lateral.
+</desc>
+
+<defs>
+
+<marker
+id="seta-fluxo-area-leme"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-forca-area-leme"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#2e7d32">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="540"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<line
+x1="480"
+y1="35"
+x2="480"
+y2="500"
+stroke="#b0bec5"
+stroke-width="4"
+stroke-dasharray="12 9">
+</line>
+
+<!-- ÁREA MENOR -->
+
+<text
+x="140"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Área menor
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-fluxo-area-leme)">
+
+<line x1="55" y1="175" x2="230" y2="175"></line>
+<line x1="55" y1="245" x2="230" y2="245"></line>
+<line x1="55" y1="315" x2="230" y2="315"></line>
+
+</g>
+
+<g transform="rotate(22 330 250)">
+
+<path
+d="M290 165
+   Q340 175 385 215
+   L385 285
+   Q340 325 290 335 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+<line
+x1="340"
+y1="250"
+x2="365"
+y2="135"
+stroke="#2e7d32"
+stroke-width="8"
+marker-end="url(#seta-forca-area-leme)">
+</line>
+
+<text
+x="115"
+y="430"
+font-size="24"
+fill="#37474f">
+
+Força lateral menor
+
+</text>
+
+<!-- ÁREA MAIOR -->
+
+<text
+x="665"
+y="65"
+font-size="29"
+font-weight="700"
+fill="#263238">
+
+Área maior
+
+</text>
+
+<g
+stroke="#1565c0"
+stroke-width="6"
+marker-end="url(#seta-fluxo-area-leme)">
+
+<line x1="520" y1="150" x2="700" y2="150"></line>
+<line x1="520" y1="210" x2="700" y2="210"></line>
+<line x1="520" y1="270" x2="700" y2="270"></line>
+<line x1="520" y1="330" x2="700" y2="330"></line>
+<line x1="520" y1="390" x2="700" y2="390"></line>
+
+</g>
+
+<g transform="rotate(22 795 270)">
+
+<path
+d="M735 125
+   Q805 140 865 205
+   L865 335
+   Q805 400 735 415 Z"
+fill="#c75c4a"
+stroke="#6d2b20"
+stroke-width="6">
+</path>
+
+</g>
+
+<line
+x1="805"
+y1="270"
+x2="850"
+y2="85"
+stroke="#2e7d32"
+stroke-width="11"
+marker-end="url(#seta-forca-area-leme)">
+</line>
+
+<text
+x="625"
+y="465"
+font-size="24"
+fill="#37474f">
+
+Força lateral potencialmente maior
+
+</text>
+
+</svg>
+
+<p>
+A comparação é qualitativa e pressupõe condições
+equivalentes de perfil, ângulo e escoamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RAZÃO DE ASPECTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="razao-aspecto-leme"
+data-topico-id="razao-aspecto-leme">
+
+<h2>Razão de Aspecto</h2>
+
+<div class="widget">
+
+<p>
+A razão de aspecto relaciona a altura do leme à sua área
+ou à sua dimensão de corda.
+</p>
+
+<p>
+Ela influencia a distribuição da sustentação ao longo da
+altura e a intensidade dos efeitos tridimensionais nas
+extremidades da superfície.
+</p>
+
+<div class="destaque">
+
+<h3>Interpretação geral</h3>
+
+<p>
+Lemes mais altos e relativamente estreitos podem apresentar
+comportamento hidrodinâmico diferente de lemes baixos e
+largos, mesmo quando possuem áreas semelhantes.
+</p>
+
+<p>
+Entretanto, a geometria disponível é limitada pelo calado,
+pela forma da popa, pelo diâmetro da hélice e pela resistência
+estrutural necessária.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Aspect ratio</strong> —
+razão de aspecto.
+</li>
+
+<li>
+<strong>Span</strong> —
+altura ou envergadura da superfície.
+</li>
+
+<li>
+<strong>Chord</strong> —
+corda do perfil.
+</li>
+
+<li>
+<strong>Tip effect</strong> —
+efeito tridimensional associado à extremidade do leme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PERFIL DO LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="perfil-leme-projeto"
+data-topico-id="perfil-leme-projeto">
+
+<h2>Perfil Hidrodinâmico</h2>
+
+<div class="widget">
+
+<p>
+A seção transversal do leme é projetada para produzir
+diferenças de pressão com resistência compatível e
+comportamento adequado em diferentes ângulos de ataque.
+</p>
+
+<p>
+O perfil influencia:
+</p>
+
+<ul>
+
+<li>o crescimento da sustentação;</li>
+
+<li>o arrasto produzido;</li>
+
+<li>o ângulo de estol;</li>
+
+<li>a distribuição de pressão;</li>
+
+<li>a tendência à cavitação;</li>
+
+<li>o centro de pressão;</li>
+
+<li>o torque do leme.</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Compromisso de projeto</h3>
+
+<p>
+Um perfil que produza força elevada também deve manter
+resistência estrutural suficiente e limitar cavitação,
+separação do escoamento e torque excessivo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POSIÇÃO RELATIVA AO PROPULSOR
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-leme-propulsor-projeto"
+data-topico-id="posicao-leme-propulsor-projeto">
+
+<h2>Posição em Relação ao Propulsor</h2>
+
+<div class="widget">
+
+<p>
+A posição do leme determina a parcela de sua superfície
+que recebe diretamente a corrente acelerada da hélice.
+</p>
+
+<p>
+Quando a superfície permanece dentro dessa corrente,
+a velocidade local aumenta e a força disponível pode
+ser superior àquela produzida apenas pelo seguimento
+do navio.
+</p>
+
+<div class="destaque">
+
+<h3>Aspectos relevantes</h3>
+
+<ul>
+
+<li>alinhamento entre hélice e leme;</li>
+
+<li>distância longitudinal entre as superfícies;</li>
+
+<li>diâmetro da hélice;</li>
+
+<li>contração da esteira do propulsor;</li>
+
+<li>componente rotacional do escoamento;</li>
+
+<li>não uniformidade da esteira do casco;</li>
+
+<li>número de hélices e lemes.</li>
+
+</ul>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto Operacional</h3>
+
+<p>
+O tipo e a posição do leme ajudam a explicar por que
+navios semelhantes podem apresentar respostas diferentes
+ao mesmo ângulo de governo e à mesma ordem de máquina.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ANGULO MÁXIMO
+========================================= -->
+
+<section
+class="topico-aula"
+id="angulo-maximo-projeto-leme"
+data-topico-id="angulo-maximo-projeto-leme">
+
+<h2>Ângulo Máximo do Leme</h2>
+
+<div class="widget">
+
+<p>
+O ângulo máximo disponível é limitado por considerações
+hidrodinâmicas, estruturais e mecânicas.
+</p>
+
+<p>
+O aumento do ângulo tende inicialmente a aumentar a força
+lateral, mas também aumenta o arrasto e o torque exigido.
+</p>
+
+<p>
+Em ângulos elevados, a separação do escoamento pode reduzir
+o ganho adicional de sustentação.
+</p>
+
+<div class="destaque">
+
+<h3>Critério das manobras padronizadas</h3>
+
+<p>
+Na manobra de círculo de giro prevista pela Resolução
+MSC.137(76), utiliza-se 35° de leme ou o ângulo máximo
+permitido na velocidade de teste, quando esse limite for
+inferior.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+O valor de 35° não deve ser interpretado como ângulo
+universal obrigatório de todos os sistemas de governo.
+</p>
+
+<p>
+A resolução utiliza esse valor como referência para a
+execução da manobra padronizada, respeitado o máximo
+permitido para o navio na velocidade de teste.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VELOCIDADE DO LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="velocidade-acionamento-leme"
+data-topico-id="velocidade-acionamento-leme">
+
+<h2>Velocidade de Acionamento</h2>
+
+<div class="widget">
+
+<p>
+A resposta do navio não depende somente do ângulo final
+ordenado.
+</p>
+
+<p>
+O tempo necessário para o sistema movimentar o leme
+influencia o início e o desenvolvimento da guinada.
+</p>
+
+<div class="destaque">
+
+<h3>Sequência da resposta</h3>
+
+<ul>
+
+<li>a ordem é transmitida ao sistema de governo;</li>
+
+<li>a máquina do leme movimenta a madre;</li>
+
+<li>a superfície percorre o ângulo ordenado;</li>
+
+<li>a força hidrodinâmica se desenvolve;</li>
+
+<li>o navio começa a adquirir razão de guinada.</li>
+
+</ul>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Rudder rate</strong> —
+velocidade angular de deslocamento do leme.
+</li>
+
+<li>
+<strong>Hard-over time</strong> —
+tempo necessário para movimentar o leme entre posições
+extremas especificadas.
+</li>
+
+<li>
+<strong>Steering gear response</strong> —
+resposta do sistema de governo.
+</li>
+
+<li>
+<strong>Response lag</strong> —
+atraso entre a ordem e a resposta observada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROJETO INTEGRADO
+========================================= -->
+
+<section
+class="topico-aula"
+id="projeto-integrado-manobrabilidade"
+data-topico-id="projeto-integrado-manobrabilidade">
+
+<h2>Projeto Integrado da Manobrabilidade</h2>
+
+<div class="widget">
+
+<p>
+A manobrabilidade não é determinada exclusivamente pelo
+leme.
+</p>
+
+<p>
+O comportamento final resulta de um sistema integrado
+formado por:
+</p>
+
+<ul>
+
+<li>geometria do casco;</li>
+
+<li>estabilidade direcional;</li>
+
+<li>massa e distribuição de inércia;</li>
+
+<li>arranjo propulsivo;</li>
+
+<li>características do leme;</li>
+
+<li>sistema de governo;</li>
+
+<li>condição de carregamento;</li>
+
+<li>velocidade de operação.</li>
+
+</ul>
+
+<div class="figura-aula">
+
+<h3>Sistema integrado de manobrabilidade</h3>
+
+<svg
+viewBox="0 0 960 650"
+role="img"
+aria-labelledby="titulo-sistema-integrado descricao-sistema-integrado"
+style="width:100%; height:auto;">
+
+<title id="titulo-sistema-integrado">
+Integração dos elementos de manobrabilidade
+</title>
+
+<desc id="descricao-sistema-integrado">
+Diagrama mostrando casco, propulsor, leme, sistema
+de governo e condição operacional convergindo para
+o desempenho de manobra do navio.
+</desc>
+
+<defs>
+
+<marker
+id="seta-integracao-leme"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="650"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- CENTRO -->
+
+<circle
+cx="480"
+cy="330"
+r="125"
+fill="#dceefb"
+stroke="#0d47a1"
+stroke-width="7">
+</circle>
+
+<text
+x="480"
+y="310"
+text-anchor="middle"
+font-size="30"
+font-weight="700"
+fill="#0d47a1">
+
+DESEMPENHO
+
+</text>
+
+<text
+x="480"
+y="350"
+text-anchor="middle"
+font-size="30"
+font-weight="700"
+fill="#0d47a1">
+
+DE MANOBRA
+
+</text>
+
+<!-- CASCO -->
+
+<rect
+x="65"
+y="75"
+width="220"
+height="95"
+rx="18"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="5">
+</rect>
+
+<text
+x="175"
+y="115"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#263238">
+
+Casco
+
+</text>
+
+<text
+x="175"
+y="148"
+text-anchor="middle"
+font-size="21"
+fill="#37474f">
+
+Hull geometry
+
+</text>
+
+<!-- PROPULSOR -->
+
+<rect
+x="675"
+y="75"
+width="220"
+height="95"
+rx="18"
+fill="#fff3cd"
+stroke="#805b10"
+stroke-width="5">
+</rect>
+
+<text
+x="785"
+y="115"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#805b10">
+
+Propulsor
+
+</text>
+
+<text
+x="785"
+y="148"
+text-anchor="middle"
+font-size="21"
+fill="#805b10">
+
+Propulsion system
+
+</text>
+
+<!-- LEME -->
+
+<rect
+x="65"
+y="490"
+width="220"
+height="95"
+rx="18"
+fill="#f9ded8"
+stroke="#7b261d"
+stroke-width="5">
+</rect>
+
+<text
+x="175"
+y="530"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#7b261d">
+
+Leme
+
+</text>
+
+<text
+x="175"
+y="563"
+text-anchor="middle"
+font-size="21"
+fill="#7b261d">
+
+Rudder
+
+</text>
+
+<!-- SISTEMA DE GOVERNO -->
+
+<rect
+x="675"
+y="490"
+width="220"
+height="95"
+rx="18"
+fill="#e7dff3"
+stroke="#6a1b9a"
+stroke-width="5">
+</rect>
+
+<text
+x="785"
+y="530"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#6a1b9a">
+
+Sistema de governo
+
+</text>
+
+<text
+x="785"
+y="563"
+text-anchor="middle"
+font-size="21"
+fill="#6a1b9a">
+
+Steering gear
+
+</text>
+
+<!-- CONDIÇÃO -->
+
+<rect
+x="370"
+y="45"
+width="220"
+height="95"
+rx="18"
+fill="#e3f2e5"
+stroke="#2e7d32"
+stroke-width="5">
+</rect>
+
+<text
+x="480"
+y="85"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#2e7d32">
+
+Condição operacional
+
+</text>
+
+<text
+x="480"
+y="118"
+text-anchor="middle"
+font-size="21"
+fill="#2e7d32">
+
+Operating condition
+
+</text>
+
+<!-- SETAS -->
+
+<g
+stroke="#1565c0"
+stroke-width="7"
+fill="none"
+marker-end="url(#seta-integracao-leme)">
+
+<line x1="270" y1="160" x2="390" y2="245"></line>
+
+<line x1="690" y1="160" x2="570" y2="245"></line>
+
+<line x1="275" y1="500" x2="385" y2="410"></line>
+
+<line x1="685" y1="500" x2="575" y2="410"></line>
+
+<line x1="480" y1="140" x2="480" y2="200"></line>
+
+</g>
+
+</svg>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto Fundamental</h3>
+
+<p>
+Um leme altamente eficiente não compensa necessariamente
+um casco com características desfavoráveis de estabilidade
+direcional ou um arranjo propulsivo inadequado.
+</p>
+
+<p>
+A avaliação deve considerar o conjunto da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PADRÕES IMO
+========================================= -->
+
+<section
+class="topico-aula"
+id="padroes-imo-manobrabilidade"
+data-topico-id="padroes-imo-manobrabilidade">
+
+<h2>Padrões IMO de Manobrabilidade</h2>
+
+<div class="widget">
+
+<p>
+A Resolução IMO MSC.137(76) estabelece padrões destinados
+a avaliar o desempenho de manobra dos navios.
+</p>
+
+<p>
+Segundo a resolução, esses padrões auxiliam os responsáveis
+pelo projeto, construção, reparo e operação das embarcações.
+</p>
+
+<div class="destaque">
+
+<h3>Princípio da resolução</h3>
+
+<p>
+O atendimento é demonstrado pelo desempenho do navio em
+manobras padronizadas.
+</p>
+
+<p>
+A resolução não avalia apenas o leme, mas a resposta do
+navio completo.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Métodos de demonstração</h3>
+
+<p>
+A conformidade pode ser prevista na fase de projeto por
+meio de ensaios com modelos em escala e modelos matemáticos,
+com posterior validação por provas em escala real.
+</p>
+
+<p>
+Também pode ser demonstrada diretamente pelos resultados
+das provas de mar executadas conforme os padrões.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Escopo original</h3>
+
+<p>
+A resolução informa que os padrões foram desenvolvidos
+considerando navios com sistemas tradicionais de propulsão
+e governo, como navios de eixo propulsor e leme convencional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONDIÇÕES DOS TESTES
+========================================= -->
+
+<section
+class="topico-aula"
+id="condicoes-testes-imo"
+data-topico-id="condicoes-testes-imo">
+
+<h2>Condições das Manobras Padronizadas</h2>
+
+<div class="widget">
+
+<p>
+Para avaliar o desempenho de forma comparável, a
+MSC.137(76) estabelece condições de referência para
+as provas.
+</p>
+
+<div class="destaque">
+
+<h3>Condições previstas</h3>
+
+<ul>
+
+<li>águas profundas e sem restrição lateral;</li>
+
+<li>ambiente calmo;</li>
+
+<li>condição de plena carga;</li>
+
+<li>calado correspondente à linha de carga de verão;</li>
+
+<li>navio sem trim significativo, em condição de quilha paralela;</li>
+
+<li>aproximação estabilizada na velocidade de teste;</li>
+
+<li>execução para boreste e bombordo, quando aplicável.</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>Velocidade de teste</h3>
+
+<p>
+A resolução define como velocidade de teste um valor
+de pelo menos 90% da velocidade correspondente a 85%
+da potência máxima da máquina.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Interpretação</h3>
+
+<p>
+Os resultados padronizados não descrevem diretamente
+o comportamento do navio em águas rasas, canais estreitos,
+vento forte ou corrente intensa.
+</p>
+
+<p>
+Essas condições alteram o desempenho observado na
+operação real.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CAPACIDADE DE GIRO
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterio-capacidade-giro"
+data-topico-id="criterio-capacidade-giro">
+
+<h2>Capacidade de Giro</h2>
+
+<div class="widget">
+
+<p>
+A capacidade de giro é avaliada pela manobra de círculo
+de giro executada para ambos os bordos.
+</p>
+
+<p>
+A manobra é realizada com 35° de leme ou com o ângulo
+máximo permitido na velocidade de teste.
+</p>
+
+<div class="destaque">
+
+<h3>Critérios da MSC.137(76)</h3>
+
+<ul>
+
+<li>
+o avanço não deve exceder
+<strong>4,5 comprimentos do navio</strong>;
+</li>
+
+<li>
+o diâmetro tático não deve exceder
+<strong>5 comprimentos do navio</strong>.
+</li>
+
+</ul>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Avanço e diâmetro tático</h3>
+
+<svg
+viewBox="0 0 960 650"
+role="img"
+aria-labelledby="titulo-criterios-circulo descricao-criterios-circulo"
+style="width:100%; height:auto;">
+
+<title id="titulo-criterios-circulo">
+Avanço e diâmetro tático no círculo de giro
+</title>
+
+<desc id="descricao-criterios-circulo">
+Trajetória de um navio durante um círculo de giro,
+mostrando o avanço até a mudança de 90 graus e o
+diâmetro tático até a mudança de 180 graus.
+</desc>
+
+<defs>
+
+<marker
+id="seta-trajetoria-circulo"
+markerWidth="12"
+markerHeight="12"
+refX="10"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L11,4 z"
+fill="#1565c0">
+</path>
+
+</marker>
+
+<marker
+id="seta-dupla-circulo-inicio"
+markerWidth="10"
+markerHeight="10"
+refX="2"
+refY="3"
+orient="auto">
+
+<path
+d="M9,0 L9,6 L0,3 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+<marker
+id="seta-dupla-circulo-fim"
+markerWidth="10"
+markerHeight="10"
+refX="8"
+refY="3"
+orient="auto">
+
+<path
+d="M0,0 L0,6 L9,3 z"
+fill="#c62828">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="650"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- RUMO INICIAL -->
+
+<line
+x1="200"
+y1="590"
+x2="200"
+y2="90"
+stroke="#90a4ae"
+stroke-width="4"
+stroke-dasharray="12 9">
+</line>
+
+<!-- TRAJETÓRIA -->
+
+<path
+d="M200 575
+   C195 430 230 305 340 215
+   C455 120 610 105 735 170
+   C850 230 875 365 805 470
+   C735 570 595 585 490 520"
+fill="none"
+stroke="#1565c0"
+stroke-width="10"
+marker-end="url(#seta-trajetoria-circulo)">
+</path>
+
+<!-- POSIÇÃO INICIAL -->
+
+<g transform="translate(200 535)">
+
+<path
+d="M0 -55
+   Q22 -28 24 8
+   L18 55
+   Q0 75 -18 55
+   L-24 8
+   Q-22 -28 0 -55 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="4">
+</path>
+
+</g>
+
+<!-- 90 GRAUS -->
+
+<g transform="translate(380 190) rotate(90)">
+
+<path
+d="M0 -55
+   Q22 -28 24 8
+   L18 55
+   Q0 75 -18 55
+   L-24 8
+   Q-22 -28 0 -55 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="4">
+</path>
+
+</g>
+
+<!-- 180 GRAUS -->
+
+<g transform="translate(790 410) rotate(180)">
+
+<path
+d="M0 -55
+   Q22 -28 24 8
+   L18 55
+   Q0 75 -18 55
+   L-24 8
+   Q-22 -28 0 -55 Z"
+fill="#eceff1"
+stroke="#37474f"
+stroke-width="4">
+</path>
+
+</g>
+
+<!-- AVANÇO -->
+
+<line
+x1="110"
+y1="535"
+x2="110"
+y2="190"
+stroke="#2e7d32"
+stroke-width="6">
+</line>
+
+<line
+x1="85"
+y1="535"
+x2="135"
+y2="535"
+stroke="#2e7d32"
+stroke-width="5">
+</line>
+
+<line
+x1="85"
+y1="190"
+x2="135"
+y2="190"
+stroke="#2e7d32"
+stroke-width="5">
+</line>
+
+<text
+x="75"
+y="380"
+font-size="27"
+font-weight="700"
+fill="#2e7d32"
+transform="rotate(-90 75 380)">
+
+Avanço ≤ 4,5 L
+
+</text>
+
+<!-- DIÂMETRO TÁTICO -->
+
+<line
+x1="200"
+y1="590"
+x2="790"
+y2="590"
+stroke="#c62828"
+stroke-width="6"
+marker-start="url(#seta-dupla-circulo-inicio)"
+marker-end="url(#seta-dupla-circulo-fim)">
+</line>
+
+<line
+x1="200"
+y1="530"
+x2="200"
+y2="615"
+stroke="#c62828"
+stroke-width="3"
+stroke-dasharray="8 7">
+</line>
+
+<line
+x1="790"
+y1="410"
+x2="790"
+y2="615"
+stroke="#c62828"
+stroke-width="3"
+stroke-dasharray="8 7">
+</line>
+
+<text
+x="495"
+y="630"
+text-anchor="middle"
+font-size="27"
+font-weight="700"
+fill="#c62828">
+
+Diâmetro tático ≤ 5 L
+
+</text>
+
+<text
+x="315"
+y="105"
+font-size="24"
+font-weight="700"
+fill="#2e7d32">
+
+Mudança de 90°
+
+</text>
+
+<text
+x="760"
+y="320"
+font-size="24"
+font-weight="700"
+fill="#c62828">
+
+Mudança de 180°
+
+</text>
+
+</svg>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Turning ability</strong> —
+capacidade de giro.
+</li>
+
+<li>
+<strong>Turning circle</strong> —
+círculo de giro.
+</li>
+
+<li>
+<strong>Advance</strong> —
+avanço medido na direção do rumo inicial até a mudança
+de 90°.
+</li>
+
+<li>
+<strong>Tactical diameter</strong> —
+distância transversal ao rumo inicial quando a proa
+completa mudança de 180°.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESPOSTA INICIAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterio-resposta-inicial"
+data-topico-id="criterio-resposta-inicial">
+
+<h2>Capacidade Inicial de Guinada</h2>
+
+<div class="widget">
+
+<p>
+A capacidade inicial de guinada avalia a rapidez com que
+o navio começa a alterar seu rumo após uma ordem moderada
+de leme.
+</p>
+
+<div class="destaque">
+
+<h3>Critério da MSC.137(76)</h3>
+
+<p>
+Com a aplicação de 10° de leme para boreste ou bombordo,
+o navio não deve percorrer mais de
+<strong>2,5 comprimentos</strong> até que sua proa tenha
+alterado 10° em relação ao rumo inicial.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Interpretação</h3>
+
+<p>
+Esse critério avalia a resposta inicial do conjunto
+casco–propulsor–leme, e não apenas a velocidade mecânica
+da máquina do leme.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Initial turning ability</strong> —
+capacidade inicial de guinada.
+</li>
+
+<li>
+<strong>Rudder execute</strong> —
+momento em que a ordem de leme é executada.
+</li>
+
+<li>
+<strong>Heading change</strong> —
+alteração de proa ou rumo.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ZIG-ZAG
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterios-zig-zag"
+data-topico-id="criterios-zig-zag">
+
+<h2>Contenção da Guinada e Manutenção de Rumo</h2>
+
+<div class="widget">
+
+<p>
+As capacidades de conter a guinada e manter o rumo são
+avaliadas principalmente pelos testes de zig-zag.
+</p>
+
+<p>
+Nesses testes, o leme é aplicado alternadamente para
+ambos os bordos quando a proa atinge desvios previamente
+determinados.
+</p>
+
+<div class="destaque">
+
+<h3>Teste 10°/10°</h3>
+
+<p>
+O leme é aplicado alternadamente a 10° quando a proa
+alcança um desvio de 10° em relação ao rumo original.
+</p>
+
+<p>
+A resolução estabelece limites para o primeiro e o segundo
+ângulos de ultrapassagem.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Primeiro ângulo de ultrapassagem</h3>
+
+<ul>
+
+<li>
+não deve exceder 10° quando L/V for inferior a 10 segundos;
+</li>
+
+<li>
+não deve exceder 20° quando L/V for igual ou superior
+a 30 segundos;
+</li>
+
+<li>
+para valores intermediários, o limite é obtido pela
+expressão estabelecida na resolução.
+</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>Segundo ângulo de ultrapassagem</h3>
+
+<ul>
+
+<li>
+não deve exceder 25° quando L/V for inferior a 10 segundos;
+</li>
+
+<li>
+não deve exceder 40° quando L/V for igual ou superior
+a 30 segundos;
+</li>
+
+<li>
+para valores intermediários, aplica-se a expressão
+estabelecida na resolução.
+</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>Teste 20°/20°</h3>
+
+<p>
+O primeiro ângulo de ultrapassagem não deve exceder
+<strong>25°</strong>.
+</p>
+
+</div>
+
+<div class="figura-aula">
+
+<h3>Representação do teste de zig-zag</h3>
+
+<svg
+viewBox="0 0 960 600"
+role="img"
+aria-labelledby="titulo-zig-zag descricao-zig-zag"
+style="width:100%; height:auto;">
+
+<title id="titulo-zig-zag">
+Teste de zig-zag e ângulos de ultrapassagem
+</title>
+
+<desc id="descricao-zig-zag">
+Gráfico qualitativo mostrando o ângulo da proa ao longo
+do tempo, as mudanças de leme e os ângulos de ultrapassagem.
+</desc>
+
+<defs>
+
+<marker
+id="seta-eixo-zigzag"
+markerWidth="11"
+markerHeight="11"
+refX="9"
+refY="4"
+orient="auto">
+
+<path
+d="M0,0 L0,8 L10,4 z"
+fill="#263238">
+</path>
+
+</marker>
+
+</defs>
+
+<rect
+width="960"
+height="600"
+rx="24"
+fill="#f7fbff">
+</rect>
+
+<!-- EIXOS -->
+
+<line
+x1="105"
+y1="300"
+x2="880"
+y2="300"
+stroke="#263238"
+stroke-width="5"
+marker-end="url(#seta-eixo-zigzag)">
+</line>
+
+<line
+x1="105"
+y1="520"
+x2="105"
+y2="70"
+stroke="#263238"
+stroke-width="5"
+marker-end="url(#seta-eixo-zigzag)">
+</line>
+
+<!-- LIMITES DE EXECUÇÃO -->
+
+<line
+x1="105"
+y1="205"
+x2="870"
+y2="205"
+stroke="#90a4ae"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<line
+x1="105"
+y1="395"
+x2="870"
+y2="395"
+stroke="#90a4ae"
+stroke-width="3"
+stroke-dasharray="10 8">
+</line>
+
+<text
+x="45"
+y="212"
+font-size="22"
+font-weight="700"
+fill="#546e7a">
+
++10°
+
+</text>
+
+<text
+x="48"
+y="402"
+font-size="22"
+font-weight="700"
+fill="#546e7a">
+
+−10°
+
+</text>
+
+<!-- CURVA DA PROA -->
+
+<path
+d="M105 300
+   C180 285 225 225 285 175
+   C345 125 405 190 455 285
+   C510 395 570 455 625 415
+   C690 370 720 245 775 185
+   C820 135 855 170 875 235"
+fill="none"
+stroke="#1565c0"
+stroke-width="9">
+</path>
+
+<!-- ÂNGULO DE ULTRAPASSAGEM 1 -->
+
+<line
+x1="285"
+y1="205"
+x2="285"
+y2="175"
+stroke="#c62828"
+stroke-width="6">
+</line>
+
+<text
+x="305"
+y="165"
+font-size="23"
+font-weight="700"
+fill="#c62828">
+
+1º overshoot
+
+</text>
+
+<!-- ÂNGULO 2 -->
+
+<line
+x1="625"
+y1="395"
+x2="625"
+y2="415"
+stroke="#c62828"
+stroke-width="6">
+</line>
+
+<text
+x="645"
+y="445"
+font-size="23"
+font-weight="700"
+fill="#c62828">
+
+2º overshoot
+
+</text>
+
+<text
+x="420"
+y="570"
+font-size="27"
+font-weight="700"
+fill="#263238">
+
+Tempo
+
+</text>
+
+<text
+x="35"
+y="330"
+font-size="27"
+font-weight="700"
+fill="#263238"
+transform="rotate(-90 35 330)">
+
+Ângulo da proa
+
+</text>
+
+</svg>
+
+<p>
+O gráfico é qualitativo e não representa valores medidos
+de uma embarcação específica.
+</p>
+
+</div>
+
+<div class="termos-tecnicos">
+
+<h3>Termos Técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Zig-zag test</strong> —
+teste de zig-zag.
+</li>
+
+<li>
+<strong>Yaw-checking ability</strong> —
+capacidade de conter a guinada.
+</li>
+
+<li>
+<strong>Course-keeping ability</strong> —
+capacidade de manutenção do rumo.
+</li>
+
+<li>
+<strong>Overshoot angle</strong> —
+ângulo de ultrapassagem após a inversão do leme.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RELAÇÃO ENTRE LEME E CRITÉRIOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-criterios-imo"
+data-topico-id="leme-criterios-imo">
+
+<h2>Relação entre o Leme e os Critérios IMO</h2>
+
+<div class="widget">
+
+<p>
+O leme influencia diretamente a capacidade de giro,
+a resposta inicial e a contenção da guinada.
+</p>
+
+<p>
+Entretanto, os critérios IMO avaliam o desempenho do
+navio completo.
+</p>
+
+<div class="destaque">
+
+<h3>Capacidade de giro</h3>
+
+<p>
+É influenciada pela força lateral máxima produzida,
+pelo braço de alavanca e pela resistência lateral do casco.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Resposta inicial</h3>
+
+<p>
+É influenciada pela rapidez de acionamento, pela força
+inicial do leme, pela inércia do navio e pelo escoamento
+sobre a superfície.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Contenção da guinada</h3>
+
+<p>
+Depende da capacidade de o leme contrário produzir momento
+oposto à rotação existente e das características de
+estabilidade direcional do casco.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Ponto Fundamental</h3>
+
+<p>
+Aumentar simplesmente a área ou o ângulo do leme não
+garante atendimento automático a todos os critérios.
+</p>
+
+<p>
+Uma embarcação pode apresentar boa capacidade de giro
+e, ao mesmo tempo, exigir maior atenção para conter a
+guinada ou manter o rumo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LIMITES DOS PADRÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="limites-padroes-manobrabilidade"
+data-topico-id="limites-padroes-manobrabilidade">
+
+<h2>Limites de Interpretação dos Padrões</h2>
+
+<div class="widget">
+
+<p>
+Os padrões da MSC.137(76) fornecem uma base comum para
+avaliar a manobrabilidade em condições controladas.
+</p>
+
+<p>
+Eles não substituem o conhecimento das características
+específicas de cada navio.
+</p>
+
+<div class="destaque">
+
+<h3>Condições operacionais diferentes</h3>
+
+<p>
+O desempenho pode ser alterado por:
+</p>
+
+<ul>
+
+<li>águas rasas;</li>
+
+<li>canais estreitos;</li>
+
+<li>vento;</li>
+
+<li>corrente;</li>
+
+<li>ondas;</li>
+
+<li>condição de carga diferente;</li>
+
+<li>trim;</li>
+
+<li>velocidade inferior à velocidade de teste;</li>
+
+<li>uso de rebocadores ou propulsores laterais.</li>
+
+</ul>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Atenção do Prático</h3>
+
+<p>
+Dados de círculo de giro e zig-zag obtidos em provas
+padronizadas devem ser interpretados considerando as
+condições em que foram medidos.
+</p>
+
+<p>
+O comportamento em águas restritas pode ser
+significativamente diferente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REVISÃO GERAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="revisao-geral-lemes"
+data-topico-id="revisao-geral-lemes">
+
+<h2>Revisão Geral da Aula</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>Função do leme</h3>
+
+<p>
+O leme é uma superfície hidrodinâmica destinada a produzir
+força lateral e momento de guinada para controlar o rumo
+e o movimento do navio.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Origem da força</h3>
+
+<p>
+A força surge da diferença de pressão produzida quando
+o escoamento incide sobre o perfil com determinado ângulo
+de ataque.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Sustentação e arrasto</h3>
+
+<p>
+A força resultante pode ser decomposta em sustentação,
+aproximadamente perpendicular ao escoamento, e arrasto,
+aproximadamente paralelo ao fluxo.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Velocidade do escoamento</h3>
+
+<p>
+A força aumenta fortemente com a velocidade relativa
+da água sobre o leme.
+</p>
+
+<p>
+A velocidade local pode ser diferente da velocidade
+do próprio navio.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Corrente da hélice</h3>
+
+<p>
+O propulsor pode acelerar a água que chega ao leme,
+aumentando sua efetividade.
+</p>
+
+<p>
+Essa corrente também possui componente rotacional e
+distribuição não uniforme.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Interação com o casco</h3>
+
+<p>
+A esteira do casco modifica o escoamento de entrada,
+enquanto as forças distribuídas sobre as obras vivas
+influenciam a resposta completa da embarcação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Centro de pressão e torque</h3>
+
+<p>
+A força resultante atua no centro de pressão.
+Sua distância em relação ao eixo de rotação determina
+parte do torque exigido do sistema de governo.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Estol</h3>
+
+<p>
+Em grandes ângulos de ataque, a separação extensa do
+escoamento pode limitar ou reduzir o crescimento da
+sustentação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Lemes balanceados</h3>
+
+<p>
+A presença de área à vante do eixo reduz o braço entre
+o centro de pressão e a madre, diminuindo o torque exigido.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Lemes com flap</h3>
+
+<p>
+O flap aumenta a curvatura efetiva do perfil e pode
+produzir maior força lateral para uma determinada área
+e condição de escoamento.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Cavitação</h3>
+
+<p>
+Surge quando a pressão local cai até valores compatíveis
+com a pressão de vapor da água.
+</p>
+
+<p>
+Pode limitar a sustentação, aumentar o arrasto, provocar
+erosão e contribuir para vibrações.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Ventilação</h3>
+
+<p>
+Consiste na entrada de ar atmosférico na região de baixa
+pressão e não deve ser confundida com cavitação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Projeto e desempenho</h3>
+
+<p>
+O projeto do leme deve ser integrado às características
+do casco, do propulsor e do sistema de governo.
+</p>
+
+<p>
+O resultado é avaliado pelo desempenho do navio completo
+em manobras padronizadas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUADRO DE RELAÇÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="relacoes-fundamentais-leme"
+data-topico-id="relacoes-fundamentais-leme">
+
+<h2>Relações Fundamentais</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>Aumento da velocidade local</h3>
+
+<p>
+Tende a aumentar a força do leme, o carregamento,
+o arrasto e o risco de cavitação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Aumento do ângulo de ataque</h3>
+
+<p>
+Tende inicialmente a aumentar a sustentação e o momento
+de guinada, mas pode favorecer separação, estol, arrasto
+e cavitação.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Aumento da área</h3>
+
+<p>
+Tende a aumentar a força potencial, mas também o
+carregamento e o torque exigido.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Aumento do balanceamento</h3>
+
+<p>
+Tende a reduzir o torque necessário, desde que a
+configuração permaneça dentro dos limites de projeto.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Uso de flap</h3>
+
+<p>
+Aumenta a curvatura efetiva e a capacidade de desviar
+o escoamento, podendo elevar a sustentação e o arrasto.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Redução do seguimento</h3>
+
+<p>
+Reduz a força disponível quando não existe corrente
+suficiente da hélice sobre o leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PEGADINHAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="pegadinhas-lemes-pscpp"
+data-topico-id="pegadinhas-lemes-pscpp">
+
+<h2>Pontos de Atenção para o PSCPP</h2>
+
+<div class="widget">
+
+<div class="atencao-pratico">
+
+<h3>Ângulo de leme não é força</h3>
+
+<p>
+O mesmo ângulo pode produzir forças diferentes conforme
+a velocidade e a direção do escoamento.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Velocidade do navio não é velocidade do leme</h3>
+
+<p>
+A corrente da hélice pode fazer o leme receber fluxo
+superior à velocidade de avanço do navio.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Maior ângulo não significa ganho ilimitado</h3>
+
+<p>
+Estol e separação podem reduzir o ganho adicional de
+sustentação.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Cavitação não é ventilação</h3>
+
+<p>
+A cavitação envolve vapor da água.
+A ventilação envolve ar atmosférico.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Cavitação não elimina imediatamente toda a força</h3>
+
+<p>
+O fenômeno limita o desenvolvimento da pressão negativa
+e reduz a taxa de crescimento da sustentação.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Leme balanceado não significa equilíbrio total</h3>
+
+<p>
+O balanceamento reduz o torque, mas não elimina as forças
+hidrodinâmicas nem as cargas estruturais.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Flap não produz força sem escoamento</h3>
+
+<p>
+Mesmo um leme de alta sustentação depende de velocidade
+relativa da água.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Critérios IMO avaliam o navio completo</h3>
+
+<p>
+O atendimento aos limites de manobrabilidade não depende
+somente do leme.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>35° não é regra universal de projeto</h3>
+
+<p>
+É o ângulo de referência da manobra de círculo de giro,
+ou utiliza-se o máximo permitido na velocidade de teste.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Boa capacidade de giro não garante boa manutenção de rumo</h3>
+
+<p>
+Capacidade de giro, estabilidade direcional e contenção
+da guinada são características relacionadas, mas não
+idênticas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO FINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="glossario-final-lemes"
+data-topico-id="glossario-final-lemes">
+
+<h2>Glossário Técnico Final</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Rudder</strong> —
+leme.
+</li>
+
+<li>
+<strong>Rudder stock</strong> —
+madre ou eixo estrutural do leme.
+</li>
+
+<li>
+<strong>Rudder blade</strong> —
+porta ou superfície do leme.
+</li>
+
+<li>
+<strong>Rudder angle</strong> —
+ângulo do leme.
+</li>
+
+<li>
+<strong>Rudder area</strong> —
+área do leme.
+</li>
+
+<li>
+<strong>Rudder effectiveness</strong> —
+efetividade ou capacidade de produzir controle.
+</li>
+
+<li>
+<strong>Lift</strong> —
+sustentação hidrodinâmica.
+</li>
+
+<li>
+<strong>Drag</strong> —
+arrasto.
+</li>
+
+<li>
+<strong>Angle of attack</strong> —
+ângulo de ataque.
+</li>
+
+<li>
+<strong>Stall</strong> —
+estol.
+</li>
+
+<li>
+<strong>Flow separation</strong> —
+separação do escoamento.
+</li>
+
+<li>
+<strong>Centre of pressure</strong> —
+centro de pressão.
+</li>
+
+<li>
+<strong>Rudder torque</strong> —
+torque do leme.
+</li>
+
+<li>
+<strong>Balanced rudder</strong> —
+leme balanceado.
+</li>
+
+<li>
+<strong>Unbalanced rudder</strong> —
+leme não balanceado.
+</li>
+
+<li>
+<strong>Semi-balanced rudder</strong> —
+leme semibalanceado.
+</li>
+
+<li>
+<strong>Spade rudder</strong> —
+leme suspenso ou totalmente apoiado pela madre.
+</li>
+
+<li>
+<strong>Horn rudder</strong> —
+leme sustentado parcialmente por horn.
+</li>
+
+<li>
+<strong>Flap rudder</strong> —
+leme com aba articulada.
+</li>
+
+<li>
+<strong>High-lift rudder</strong> —
+leme de alta sustentação.
+</li>
+
+<li>
+<strong>Propeller slipstream</strong> —
+esteira acelerada e rotacional da hélice.
+</li>
+
+<li>
+<strong>Propeller race</strong> —
+corrente acelerada da hélice.
+</li>
+
+<li>
+<strong>Hull wake</strong> —
+esteira do casco.
+</li>
+
+<li>
+<strong>Rudder inflow</strong> —
+escoamento que chega ao leme.
+</li>
+
+<li>
+<strong>Hull–rudder interaction</strong> —
+interação entre casco e leme.
+</li>
+
+<li>
+<strong>Propeller–rudder interaction</strong> —
+interação entre propulsor e leme.
+</li>
+
+<li>
+<strong>Yawing moment</strong> —
+momento de guinada.
+</li>
+
+<li>
+<strong>Yaw rate</strong> —
+razão de guinada.
+</li>
+
+<li>
+<strong>Counter-rudder</strong> —
+leme contrário.
+</li>
+
+<li>
+<strong>Cavitation</strong> —
+cavitação.
+</li>
+
+<li>
+<strong>Ventilation</strong> —
+ventilação.
+</li>
+
+<li>
+<strong>Cavitation erosion</strong> —
+erosão por cavitação.
+</li>
+
+<li>
+<strong>Turning circle</strong> —
+círculo de giro.
+</li>
+
+<li>
+<strong>Advance</strong> —
+avanço.
+</li>
+
+<li>
+<strong>Tactical diameter</strong> —
+diâmetro tático.
+</li>
+
+<li>
+<strong>Zig-zag test</strong> —
+teste de zig-zag.
+</li>
+
+<li>
+<strong>Overshoot angle</strong> —
+ângulo de ultrapassagem.
+</li>
+
+<li>
+<strong>Course-keeping ability</strong> —
+capacidade de manutenção de rumo.
+</li>
+
+<li>
+<strong>Yaw-checking ability</strong> —
+capacidade de conter a guinada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="conclusao-aula-lemes"
+data-topico-id="conclusao-aula-lemes">
+
+<h2>Conclusão da Aula</h2>
+
+<div class="widget">
+
+<p>
+O leme transforma a energia do escoamento em força lateral
+e momento de guinada.
+</p>
+
+<p>
+Sua efetividade depende da velocidade relativa da água,
+do ângulo de ataque, da geometria da superfície e das
+interações com o casco e o propulsor.
+</p>
+
+<p>
+A resposta observada no navio é resultado de um sistema
+integrado e não pode ser prevista somente pela posição
+indicada do leme.
+</p>
+
+<div class="destaque">
+
+<h3>Conhecimento técnico</h3>
+
+<p>
+A compreensão de sustentação, arrasto, centro de pressão,
+torque, estol, cavitação e interação hidrodinâmica permite
+interpretar por que o desempenho do leme varia entre
+embarcações e condições operacionais.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Conhecimento operacional</h3>
+
+<p>
+Para o Prático, o elemento decisivo é a resposta real do
+navio: alteração da proa, razão de guinada, deslocamento
+da popa, velocidade e espaço disponível.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>Critério de projeto</h3>
+
+<p>
+O projeto deve proporcionar desempenho compatível com
+os padrões aplicáveis de capacidade de giro, resposta
+inicial, contenção da guinada e manutenção do rumo.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>Síntese Final</h3>
+
+<p>
+O leme não governa o navio sozinho.
+</p>
+
+<p>
+O navio é governado pela interação entre leme, hélice,
+casco, sistema de governo e escoamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="referencias-aula-lemes"
+data-topico-id="referencias-aula-lemes">
+
+<h2>Referências Bibliográficas</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume III:
+Motions in Waves and Controllability.
+</strong>
+Capítulo IX — Controllability.
+</li>
+
+<li>
+CRENSHAW, Russell Sydnor.
+<strong>Naval Shiphandling.</strong>
+4ª edição.
+Capítulo 2 — Forces Affecting the Ship.
+</li>
+
+<li>
+MACELREVEY, Daniel H.; MACELREVEY, Daniel E.
+<strong>Shiphandling for the Mariner.</strong>
+5ª edição.
+Trechos pertinentes ao comportamento operacional
+do leme e do navio.
+</li>
+
+<li>
+LEWIS, Edward V. (ed.).
+<strong>
+Principles of Naval Architecture — Volume II:
+Resistance, Propulsion and Vibration.
+</strong>
+Trechos pertinentes à interação propulsor–leme,
+escoamento, apêndices e cavitação.
+</li>
+
+<li>
+BERTRAM, Volker.
+<strong>Practical Ship Hydrodynamics.</strong>
+2ª edição.
+Capítulos 2, 3 e 6.
+</li>
+
+<li>
+INTERNATIONAL MARITIME ORGANIZATION.
+<strong>
+Resolution MSC.137(76) — Standards for Ship
+Manoeuvrability.
+</strong>
+2002.
+</li>
+
+<li>
+INTERNATIONAL MARITIME ORGANIZATION.
+<strong>
+MSC/Circ.1053 — Explanatory Notes to the Standards
+for Ship Manoeuvrability.
+</strong>
+Capítulos 1 a 3.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>Observação Bibliográfica</h3>
+
+<p>
+Os critérios numéricos de capacidade de giro, resposta
+inicial e testes de zig-zag apresentados nesta parte
+foram extraídos da Resolução MSC.137(76).
+</p>
+
+<p>
+Os fundamentos hidrodinâmicos do leme foram organizados
+a partir das publicações técnicas indicadas na bibliografia
+oficial do PSCPP.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 10
+========================================= -->
