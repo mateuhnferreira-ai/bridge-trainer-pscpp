@@ -90,7 +90,9 @@ produzidos durante a manobra do navio.
 
 <section>
 
-<h2>📘 Identificação da aula</h2>
+<h2>
+📘 Identificação da aula
+</h2>
 
 <div class="widget">
 
@@ -109,28 +111,184 @@ Hélices
 Propellers
 </p>
 
-<section>
+</div>
 
-<div class="widget" style="text-align:center;">
+</section>
 
-<h3>⏱ Cronômetro de Estudo</h3>
 
-<p>Fase atual: <strong id="pomodoro-fase">📖 Estudo</strong> — faltam <strong id="pomodoro-restante">30:00</strong></p>
 
-<p>Estudado nesta sessão: <strong id="pomodoro-sessao">00:00</strong></p>
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO
+========================================= -->
 
-<p>Total acumulado nesta disciplina: <strong id="pomodoro-cumulativo">00:00</strong></p>
+<section class="secao-pomodoro">
 
-<button type="button" class="botao" id="pomodoro-btn-start" onclick="iniciarPomodoro()">▶ Iniciar</button>
+<h2>
+⏱ Cronômetro de Estudo
+</h2>
 
-<button type="button" class="botao" id="pomodoro-btn-pause" onclick="pausarPomodoro()" disabled>⏸ Pausar</button>
+<div class="widget pomodoro-widget">
 
-<button type="button" class="botao" onclick="zerarPomodoro()">↺ Zerar ciclo</button>
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+
+⏱
 
 </div>
 
-                                         </section>
 
+<div>
+
+<span class="pomodoro-rotulo">
+
+Fase atual
+
+</span>
+
+<h3 id="pomodoro-fase">
+
+📖 Estudo
+
+</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+
+Tempo restante
+
+</span>
+
+<strong id="pomodoro-restante">
+
+30:00
+
+</strong>
+
+</div>
+
+
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+🎯
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Sessão atual
+
+</span>
+
+<strong id="pomodoro-sessao">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+📚
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Total na disciplina
+
+</span>
+
+<strong id="pomodoro-cumulativo">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Utilize o ciclo de estudo para manter a concentração
+durante a leitura dos tópicos técnicos da aula de Hélices.
+
+</p>
+
+</div>
+
+</section>
 
 
 <!-- =========================================
