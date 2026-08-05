@@ -1,6 +1,6 @@
 {
-  "versao": "1.1",
-  "atualizado": "2026-07-27",
+  "versao": "1.2",
+  "atualizado": "2026-08-05",
 
   "disciplinas": [
 
@@ -8,12 +8,90 @@
       "id": "arte-naval",
       "nome": "Arte Naval",
       "icone": "⚓",
-      "descricao": "Fundamentos de Arte Naval.",
+      "descricao": "Fundamentos técnicos do navio, estrutura, equipamentos, estabilidade, operações marinheiras, rebocadores e transferência de prático.",
       "peso": 10,
       "prioridade": 1,
       "status": "ativo",
       "pasta": "arte-naval",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "fundamentos",
+          "titulo": "Fundamentos de Arte Naval",
+          "arquivo": "fundamentos.html"
+        },
+        {
+          "id": "tipos-de-navios",
+          "titulo": "Tipos e Características dos Navios",
+          "arquivo": "tipos-de-navios.html"
+        },
+        {
+          "id": "estrutura-naval",
+          "titulo": "Estrutura Naval",
+          "arquivo": "estrutura-naval.html"
+        },
+        {
+          "id": "compartimentagem",
+          "titulo": "Compartimentagem e Estanqueidade",
+          "arquivo": "compartimentagem.html"
+        },
+        {
+          "id": "aparelhos-de-governo",
+          "titulo": "Aparelhos de Governo",
+          "arquivo": "aparelhos-de-governo.html"
+        },
+        {
+          "id": "fundear-e-amarrar",
+          "titulo": "Aparelhos de Fundear e Amarrar",
+          "arquivo": "fundear-e-amarrar.html"
+        },
+        {
+          "id": "equipamentos-de-conves",
+          "titulo": "Equipamentos de Convés",
+          "arquivo": "equipamentos-de-conves.html"
+        },
+        {
+          "id": "cabos-e-espias",
+          "titulo": "Cabos, Espias e Manuseio",
+          "arquivo": "cabos-e-espias.html"
+        },
+        {
+          "id": "estabilidade",
+          "titulo": "Estabilidade do Navio",
+          "arquivo": "estabilidade.html"
+        },
+        {
+          "id": "operacoes-marinheiras",
+          "titulo": "Operações Marinheiras",
+          "arquivo": "operacoes-marinheiras.html"
+        },
+        {
+          "id": "manobras-portuarias",
+          "titulo": "Manobras Portuárias",
+          "arquivo": "manobras-portuarias.html"
+        },
+        {
+          "id": "rebocadores-portuarios",
+          "titulo": "Rebocadores Portuários",
+          "arquivo": "rebocadores-portuarios.html"
+        },
+        {
+          "id": "estabilidade-dos-rebocadores",
+          "titulo": "Estabilidade dos Rebocadores",
+          "arquivo": "estabilidade-dos-rebocadores.html"
+        },
+        {
+          "id": "transferencia-de-pratico",
+          "titulo": "Transferência de Prático",
+          "arquivo": "transferencia-de-pratico.html"
+        },
+        {
+          "id": "master-pilot-information-exchange",
+          "titulo": "Master–Pilot Information Exchange",
+          "arquivo": "master-pilot-information-exchange.html"
+        }
+      ]
     },
 
     {
@@ -167,4 +245,4 @@
     }
 
   ]
-        }
+}
