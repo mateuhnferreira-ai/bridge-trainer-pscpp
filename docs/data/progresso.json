@@ -1,57 +1,41 @@
 {
-  "versao": "1.1",
-  "ultimaAtualizacao": "2026-07-27",
-
+  "versao": "4.1",
+  "ultimaAtualizacao": "2026-08-05T00:00:00.000Z",
   "disciplinas": {
-
     "arte-naval": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "manobrabilidade": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "navegacao": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "meteorologia": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "regulamentacao": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "comunicacoes": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     },
-
     "conhecimentos-gerais": {
       "progresso": 0,
-      "status": "Não iniciado",
-      "ultimaAula": "",
-      "ultimaAtualizacao": ""
+      "tempoEstudadoSegundos": 0,
+      "aulas": {}
     }
-
   }
 }
