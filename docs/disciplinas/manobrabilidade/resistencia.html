@@ -119,6 +119,178 @@ resistência, velocidade, empuxo e potência efetiva.
 
 </section>
 
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>
+⏱ Cronômetro de Estudo
+</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+
+⏱
+
+</div>
+
+
+<div>
+
+<span class="pomodoro-rotulo">
+
+Fase atual
+
+</span>
+
+<h3 id="pomodoro-fase">
+
+📖 Estudo
+
+</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+
+Tempo restante
+
+</span>
+
+<strong id="pomodoro-restante">
+
+30:00
+
+</strong>
+
+</div>
+
+
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+🎯
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Sessão atual
+
+</span>
+
+<strong id="pomodoro-sessao">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+
+📚
+
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+
+Total na disciplina
+
+</span>
+
+<strong id="pomodoro-cumulativo">
+
+00:00
+
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Utilize o ciclo de estudo para manter a concentração
+durante a resolução das questões de revisão.
+
+</p>
+
+</div>
+
+</section>
 
 
 <!-- =========================================
@@ -26221,6 +26393,8 @@ potência.
 
 
 
+
+
 <!-- =========================================
      TÓPICO 83
 ========================================= -->
@@ -26228,14 +26402,26 @@ potência.
 <section
 class="topico-aula"
 id="questoes-revisao-resistencia"
-data-topico-id="questoes-revisao-resistencia">
+data-topico-id="questoes-revisao-resistencia"
+>
 
-<h2>83. Questões de revisão — Padrão PSCPP</h2>
+<h2>
+83. Questões de revisão — Padrão PSCPP
+</h2>
 
 
-<div class="widget">
+<div
+class="widget questao"
+data-questao-id="resistencia-q01"
+data-resposta="B"
+data-topico="Resistência friccional"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II — Resistance"
+>
 
-<h3>Questão 1</h3>
+<h3>
+Questão 1
+</h3>
 
 <p>
 
@@ -26243,24 +26429,69 @@ A resistência friccional do casco resulta principalmente:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>da ação da gravidade sobre o sistema de ondas;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>das tensões de cisalhamento sobre a superfície molhada;</li>
+A) Da ação da gravidade sobre o sistema de ondas.
 
-<li>exclusivamente da pressão na proa;</li>
+</button>
 
-<li>da potência entregue à hélice.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Das tensões de cisalhamento sobre a superfície molhada.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Exclusivamente da pressão na proa.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Da potência entregue à hélice.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 2</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q02"
+data-resposta="C"
+data-topico="Número de Reynolds"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Practical Ship Hydrodynamics"
+>
+
+<h3>
+Questão 2
+</h3>
 
 <p>
 
@@ -26269,24 +26500,69 @@ semelhança dos efeitos viscosos é:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>Número de Froude;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>coeficiente de bloco;</li>
+A) Número de Froude.
 
-<li>Número de Reynolds;</li>
+</button>
 
-<li>razão de escala volumétrica.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Coeficiente de bloco.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Número de Reynolds.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Razão de escala volumétrica.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 3</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q03"
+data-resposta="A"
+data-topico="Número de Froude"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Practical Ship Hydrodynamics"
+>
+
+<h3>
+Questão 3
+</h3>
 
 <p>
 
@@ -26294,24 +26570,69 @@ O Número de Froude relaciona predominantemente:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>inércia e gravidade;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>viscosidade e tensão superficial;</li>
+A) Inércia e gravidade.
 
-<li>pressão e massa específica;</li>
+</button>
 
-<li>empuxo e torque.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Viscosidade e tensão superficial.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Pressão e massa específica.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Empuxo e torque.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 4</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q04"
+data-resposta="B"
+data-topico="Decomposição da resistência"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II — Resistance"
+>
+
+<h3>
+Questão 4
+</h3>
 
 <p>
 
@@ -26321,24 +26642,69 @@ a resistência residual é:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>sempre idêntica à resistência de ondas;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>a diferença entre resistência total e friccional;</li>
+A) Sempre idêntica à resistência de ondas.
 
-<li>a soma da resistência friccional e aerodinâmica;</li>
+</button>
 
-<li>a resistência exclusiva dos apêndices.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) A diferença entre resistência total e friccional.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) A soma da resistência friccional e aerodinâmica.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) A resistência exclusiva dos apêndices.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 5</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q05"
+data-resposta="C"
+data-topico="Fator de forma"
+data-edital="Resistência do navio"
+data-bibliografia="Ship Resistance and Flow"
+>
+
+<h3>
+Questão 5
+</h3>
 
 <p>
 
@@ -26346,26 +26712,71 @@ Sobre o fator de forma, assinale a alternativa correta:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>representa exclusivamente a formação de ondas;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>substitui o Número de Froude;</li>
+A) Representa exclusivamente a formação de ondas.
 
-<li>representa o efeito viscoso adicional da forma
-tridimensional do casco;</li>
+</button>
 
-<li>corresponde à razão entre potência efetiva e potência
-no freio.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Substitui o Número de Froude.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Representa o efeito viscoso adicional da forma
+tridimensional do casco.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Corresponde à razão entre potência efetiva e potência
+no freio.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 6</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q06"
+data-resposta="A"
+data-topico="Semelhança de Froude"
+data-edital="Resistência do navio"
+data-bibliografia="Practical Ship Hydrodynamics"
+>
+
+<h3>
+Questão 6
+</h3>
 
 <p>
 
@@ -26375,24 +26786,69 @@ do modelo é:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>7;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>49;</li>
+A) 7.
 
-<li>2.401;</li>
+</button>
 
-<li>3,5.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) 49.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) 2.401.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) 3,5.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 7</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q07"
+data-resposta="D"
+data-topico="Escala de forças"
+data-edital="Resistência do navio"
+data-bibliografia="Practical Ship Hydrodynamics"
+>
+
+<h3>
+Questão 7
+</h3>
 
 <p>
 
@@ -26402,24 +26858,69 @@ massa específica, a relação de forças pela escala de Froude
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>25;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>125;</li>
+A) 25.
 
-<li>625;</li>
+</button>
 
-<li>15.625.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) 125.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) 625.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) 15.625.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 8</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q08"
+data-resposta="A"
+data-topico="Linha ITTC-1957"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Ship Resistance and Flow"
+>
+
+<h3>
+Questão 8
+</h3>
 
 <p>
 
@@ -26427,25 +26928,70 @@ A linha ITTC-1957 é utilizada principalmente para estimar:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>o coeficiente de resistência friccional em função de
-Reynolds;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>a velocidade crítica em águas rasas;</li>
+A) O coeficiente de resistência friccional em função de
+Reynolds.
 
-<li>a força lateral causada pelo vento;</li>
+</button>
 
-<li>o coeficiente de empuxo da hélice.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) A velocidade crítica em águas rasas.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) A força lateral causada pelo vento.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) O coeficiente de empuxo da hélice.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 9</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q09"
+data-resposta="C"
+data-topico="Potência efetiva"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II — Resistance"
+>
+
+<h3>
+Questão 9
+</h3>
 
 <p>
 
@@ -26454,24 +27000,69 @@ total de 450 kN e navegando a 6 m/s é:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>75 kW;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>456 kW;</li>
+A) 75 kW.
 
-<li>2.700 kW;</li>
+</button>
 
-<li>7.500 kW.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) 456 kW.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) 2.700 kW.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) 7.500 kW.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 10</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q10"
+data-resposta="C"
+data-topico="Bulbo de proa"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Ship Resistance and Flow"
+>
+
+<h3>
+Questão 10
+</h3>
 
 <p>
 
@@ -26479,25 +27070,70 @@ Assinale a alternativa correta a respeito do bulbo de proa:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>reduz a resistência em qualquer velocidade e calado;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>atua somente reduzindo a resistência friccional;</li>
+A) Reduz a resistência em qualquer velocidade e calado.
 
-<li>pode reduzir a resistência de ondas por interferência
-favorável na condição de projeto;</li>
+</button>
 
-<li>elimina completamente as ondas de proa.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Atua somente reduzindo a resistência friccional.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Pode reduzir a resistência de ondas por interferência
+favorável na condição de projeto.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Elimina completamente as ondas de proa.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 11</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q11"
+data-resposta="C"
+data-topico="Rugosidade do casco"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Ship Resistance and Flow"
+>
+
+<h3>
+Questão 11
+</h3>
 
 <p>
 
@@ -26505,25 +27141,70 @@ A respeito da rugosidade do casco, é correto afirmar que:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>reduz a tensão de cisalhamento;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>não altera a esteira;</li>
+A) Reduz a tensão de cisalhamento.
 
-<li>pode aumentar a resistência e reduzir a velocidade para
-a mesma potência;</li>
+</button>
 
-<li>afeta apenas navios de pequeno porte.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) Não altera a esteira.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Pode aumentar a resistência e reduzir a velocidade para
+a mesma potência.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Afeta apenas navios de pequeno porte.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 12</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q12"
+data-resposta="B"
+data-topico="Resistência em águas rasas"
+data-edital="Resistência do navio"
+data-bibliografia="Naval Shiphandling; Shiphandling for the Mariner"
+>
+
+<h3>
+Questão 12
+</h3>
 
 <p>
 
@@ -26532,24 +27213,69 @@ correta:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>a pequena UKC não altera o escoamento;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>a restrição do escoamento pode aumentar a resistência;</li>
+A) A pequena UKC não altera o escoamento.
 
-<li>squat é uma parcela da resistência friccional;</li>
+</button>
 
-<li>o Número de Reynolds deixa de existir.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) A restrição do escoamento pode aumentar a resistência.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Squat é uma parcela da resistência friccional.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) O Número de Reynolds deixa de existir.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 13</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q13"
+data-resposta="C"
+data-topico="Potência efetiva e potência no freio"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II — Resistance and Propulsion"
+>
+
+<h3>
+Questão 13
+</h3>
 
 <p>
 
@@ -26557,26 +27283,71 @@ A potência efetiva difere da potência no freio porque:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>a potência efetiva inclui todas as perdas mecânicas;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>a potência no freio representa somente a formação de
-ondas;</li>
+A) A potência efetiva inclui todas as perdas mecânicas.
 
-<li>existem perdas entre o motor e a potência útil de avanço
-do casco;</li>
+</button>
 
-<li>ambas são sempre numericamente iguais.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) A potência no freio representa somente a formação de
+ondas.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) Existem perdas entre o motor e a potência útil de avanço
+do casco.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) Ambas são sempre numericamente iguais.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 14</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q14"
+data-resposta="C"
+data-topico="Interferência de ondas"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Ship Resistance and Flow"
+>
+
+<h3>
+Questão 14
+</h3>
 
 <p>
 
@@ -26612,24 +27383,69 @@ Está correto o que se afirma em:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>I apenas;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>II apenas;</li>
+A) I apenas.
 
-<li>II e III apenas;</li>
+</button>
 
-<li>I, II e III.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) II apenas.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) II e III apenas.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) I, II e III.
+
+</button>
+
+</div>
 
 </div>
 
 
-<div class="widget">
 
-<h3>Questão 15</h3>
+<div
+class="widget questao"
+data-questao-id="resistencia-q15"
+data-resposta="B"
+data-topico="Resistência adicional em ondas"
+data-edital="Resistência do navio"
+data-bibliografia="PNA Volume II; Shiphandling for the Mariner"
+>
+
+<h3>
+Questão 15
+</h3>
 
 <p>
 
@@ -26639,20 +27455,105 @@ velocidade. A explicação mais adequada é:
 
 </p>
 
-<ol type="A">
+<div class="alternativas-questao">
 
-<li>a massa do navio deixou de existir;</li>
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
 
-<li>a resistência adicional aumentou e alterou o novo ponto
-de equilíbrio entre empuxo e resistência;</li>
+A) A massa do navio deixou de existir.
 
-<li>o Número de Reynolds tornou-se igual a zero;</li>
+</button>
 
-<li>a resistência friccional foi eliminada pelas ondas.</li>
 
-</ol>
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+
+B) A resistência adicional aumentou e alterou o novo ponto
+de equilíbrio entre empuxo e resistência.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+
+C) O Número de Reynolds tornou-se igual a zero.
+
+</button>
+
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+
+D) A resistência friccional foi eliminada pelas ondas.
+
+</button>
 
 </div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+========================================= -->
+
+<div class="widget">
+
+<h3>
+📋 Progresso das questões
+</h3>
+
+<p id="resumo-selecao-exercicios">
+
+0 de 15 questões respondidas
+
+</p>
+
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+
+✅ Corrigir Exercício
+
+</button>
+
+</div>
+
+
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios">
+
+</p>
+
+</div>
+
 
 </section>
 
@@ -26664,14 +27565,17 @@ de equilíbrio entre empuxo e resistência;</li>
 
 <section>
 
-<h2>✅ Gabarito comentado</h2>
+<h2>
+✅ Gabarito comentado
+</h2>
 
 <div class="widget">
 
 <button
 type="button"
 class="botao-estudo"
-onclick="alternarGabaritoResistencia()">
+onclick="alternarGabaritoResistencia()"
+>
 
 Mostrar / Ocultar Gabarito
 
@@ -26680,13 +27584,16 @@ Mostrar / Ocultar Gabarito
 
 <div
 id="gabaritoResistencia"
-style="display:none;">
+style="display:none;"
+>
 
 
 <hr>
 
 
-<h3>Questão 1 — Alternativa B ✅</h3>
+<h3>
+Questão 1 — Alternativa B ✅
+</h3>
 
 <p>
 
@@ -26699,7 +27606,9 @@ viscosas tangenciais sobre a superfície molhada.
 <hr>
 
 
-<h3>Questão 2 — Alternativa C ✅</h3>
+<h3>
+Questão 2 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26712,7 +27621,9 @@ viscosidade.
 <hr>
 
 
-<h3>Questão 3 — Alternativa A ✅</h3>
+<h3>
+Questão 3 — Alternativa A ✅
+</h3>
 
 <p>
 
@@ -26726,7 +27637,9 @@ livre.
 <hr>
 
 
-<h3>Questão 4 — Alternativa B ✅</h3>
+<h3>
+Questão 4 — Alternativa B ✅
+</h3>
 
 <p>
 
@@ -26737,8 +27650,10 @@ Na decomposição apresentada:
 <p style="text-align:center;">
 
 <strong>
+
 R<sub>R</sub> =
 R<sub>T</sub> − R<sub>F</sub>
+
 </strong>
 
 </p>
@@ -26754,7 +27669,9 @@ idêntica à resistência de ondas.
 <hr>
 
 
-<h3>Questão 5 — Alternativa C ✅</h3>
+<h3>
+Questão 5 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26767,7 +27684,9 @@ adicional associada à geometria tridimensional do casco.
 <hr>
 
 
-<h3>Questão 6 — Alternativa A ✅</h3>
+<h3>
+Questão 6 — Alternativa A ✅
+</h3>
 
 <p>
 
@@ -26778,8 +27697,10 @@ Pela semelhança de Froude:
 <p style="text-align:center;">
 
 <strong>
+
 V<sub>S</sub> / V<sub>M</sub> =
 √49 = 7
+
 </strong>
 
 </p>
@@ -26788,7 +27709,9 @@ V<sub>S</sub> / V<sub>M</sub> =
 <hr>
 
 
-<h3>Questão 7 — Alternativa D ✅</h3>
+<h3>
+Questão 7 — Alternativa D ✅
+</h3>
 
 <p>
 
@@ -26799,8 +27722,10 @@ Para fluidos de mesma massa específica:
 <p style="text-align:center;">
 
 <strong>
+
 F<sub>S</sub> / F<sub>M</sub> =
 λ³ = 25³ = 15.625
+
 </strong>
 
 </p>
@@ -26809,7 +27734,9 @@ F<sub>S</sub> / F<sub>M</sub> =
 <hr>
 
 
-<h3>Questão 8 — Alternativa A ✅</h3>
+<h3>
+Questão 8 — Alternativa A ✅
+</h3>
 
 <p>
 
@@ -26822,7 +27749,9 @@ friccional de referência em função do Número de Reynolds.
 <hr>
 
 
-<h3>Questão 9 — Alternativa C ✅</h3>
+<h3>
+Questão 9 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26833,7 +27762,10 @@ Aplicando:
 <p style="text-align:center;">
 
 <strong>
-P<sub>E</sub> = R<sub>T</sub>V
+
+P<sub>E</sub> =
+R<sub>T</sub>V
+
 </strong>
 
 </p>
@@ -26841,10 +27773,12 @@ P<sub>E</sub> = R<sub>T</sub>V
 <p style="text-align:center;">
 
 <strong>
+
 P<sub>E</sub> =
 450.000 × 6 =
 2.700.000 W =
 2.700 kW
+
 </strong>
 
 </p>
@@ -26853,7 +27787,9 @@ P<sub>E</sub> =
 <hr>
 
 
-<h3>Questão 10 — Alternativa C ✅</h3>
+<h3>
+Questão 10 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26867,7 +27803,9 @@ para a qual foi projetado.
 <hr>
 
 
-<h3>Questão 11 — Alternativa C ✅</h3>
+<h3>
+Questão 11 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26881,7 +27819,9 @@ mesma potência.
 <hr>
 
 
-<h3>Questão 12 — Alternativa B ✅</h3>
+<h3>
+Questão 12 — Alternativa B ✅
+</h3>
 
 <p>
 
@@ -26901,7 +27841,9 @@ resistência friccional.
 <hr>
 
 
-<h3>Questão 13 — Alternativa C ✅</h3>
+<h3>
+Questão 13 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26915,7 +27857,9 @@ e de interação casco-hélice.
 <hr>
 
 
-<h3>Questão 14 — Alternativa C ✅</h3>
+<h3>
+Questão 14 — Alternativa C ✅
+</h3>
 
 <p>
 
@@ -26934,7 +27878,9 @@ As afirmativas II e III estão corretas.
 <hr>
 
 
-<h3>Questão 15 — Alternativa B ✅</h3>
+<h3>
+Questão 15 — Alternativa B ✅
+</h3>
 
 <p>
 
@@ -26959,7 +27905,9 @@ ocorrer em velocidade menor.
 
 <section>
 
-<h2>📚 Referências bibliográficas finais</h2>
+<h2>
+📚 Referências bibliográficas finais
+</h2>
 
 <div class="widget">
 
@@ -26968,10 +27916,12 @@ ocorrer em velocidade menor.
 <li>
 
 LEWIS, Edward V. (ed.).
+
 <strong>
 Principles of Naval Architecture — Volume II:
 Resistance, Propulsion and Vibration.
 </strong>
+
 Chapter V — Resistance; fundamentos da relação entre
 resistência e potência efetiva.
 
@@ -26981,7 +27931,11 @@ resistência e potência efetiva.
 <li>
 
 LARSSON, Lars; RAVEN, Hoyte C.
-<strong>Ship Resistance and Flow.</strong>
+
+<strong>
+Ship Resistance and Flow.
+</strong>
+
 Chapters 1 a 8 — escoamento, decomposição da resistência,
 efeitos viscosos, ondas e previsão experimental.
 
@@ -26991,7 +27945,11 @@ efeitos viscosos, ondas e previsão experimental.
 <li>
 
 BERTRAM, Volker.
-<strong>Practical Ship Hydrodynamics.</strong>
+
+<strong>
+Practical Ship Hydrodynamics.
+</strong>
+
 Chapters 2, 3 e 6 — semelhança, resistência, métodos de
 previsão e efeitos hidrodinâmicos relevantes.
 
@@ -27001,7 +27959,11 @@ previsão e efeitos hidrodinâmicos relevantes.
 <li>
 
 CRENSHAW, Russell Sydnor.
-<strong>Naval Shiphandling.</strong>
+
+<strong>
+Naval Shiphandling.
+</strong>
+
 Chapter 2 — Forces Affecting the Ship; aplicação operacional
 das forças atuantes durante a manobra.
 
@@ -27011,7 +27973,11 @@ das forças atuantes durante a manobra.
 <li>
 
 MACELREVEY, Daniel H.; MACELREVEY, Daniel E.
-<strong>Shiphandling for the Mariner.</strong>
+
+<strong>
+Shiphandling for the Mariner.
+</strong>
+
 Aplicações operacionais pertinentes à resposta de velocidade,
 potência e comportamento do navio.
 
@@ -27031,7 +27997,9 @@ potência e comportamento do navio.
 
 <section class="dashboard">
 
-<h2>⚓ Conclusão da aula</h2>
+<h2>
+⚓ Conclusão da aula
+</h2>
 
 <p>
 
@@ -27067,8 +28035,10 @@ A relação fundamental que encerra a aula é:
 <p style="text-align:center; font-size:1.4rem;">
 
 <strong>
+
 P<sub>E</sub> =
 R<sub>T</sub>V
+
 </strong>
 
 </p>
@@ -27084,13 +28054,19 @@ para manter a mesma velocidade.
 
 
 
+<!-- =========================================
+     FIM DEFINITIVO DA AULA
+========================================= -->
+
 </main>
 
 
 
 <footer>
 
-<p>⚓ Bridge Trainer PSCPP</p>
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
 
 <p>
 
@@ -27102,17 +28078,25 @@ Preparação para o Processo Seletivo de Praticante de Prático
 
 
 
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+========================================= -->
+
 <script src="../../js/navigation.js"></script>
 
 <script src="../../js/progresso.js"></script>
 
 <script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
 <script>
-
-
-// =====================================
-// MOSTRAR / OCULTAR GABARITO
-// =====================================
 
 function alternarGabaritoResistencia() {
 
@@ -27129,15 +28113,20 @@ function alternarGabaritoResistencia() {
     }
 
 
-    const estaOculto =
-        gabarito.style.display === "none" ||
-        gabarito.style.display === "";
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
 
+        gabarito.style.display =
+            "block";
 
-    gabarito.style.display =
-        estaOculto
-            ? "block"
-            : "none";
+    } else {
+
+        gabarito.style.display =
+            "none";
+
+    }
 
 }
 
@@ -27147,4 +28136,4 @@ function alternarGabaritoResistencia() {
 
 </body>
 
-</html>     
+</html>
