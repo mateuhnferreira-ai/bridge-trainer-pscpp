@@ -34,7 +34,7 @@ assuntos: [
 
 
 {
-id: "resistencia-do-navio",
+id: "resistencia",
 nome: "Resistência do Navio",
 horas: 15,
 importancia: "Alta",
@@ -106,7 +106,7 @@ peso: 4
 
 
 {
-id: "testes-de-manobrabilidade-imo",
+id: "testes-de-manobrabilidade",
 nome: "Testes de Manobrabilidade IMO",
 horas: 20,
 importancia: "Muito Alta",
