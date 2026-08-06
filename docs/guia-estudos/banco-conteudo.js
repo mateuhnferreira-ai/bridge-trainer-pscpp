@@ -190,18 +190,27 @@ assuntos: [
 
 
 {
-id: "fundamentos-do-navio",
-nome: "Fundamentos do Navio",
-horas: 20,
+id: "fundamentos",
+nome: "Fundamentos de Arte Naval",
+horas: 15,
 importancia: "Alta",
 peso: 4
 },
 
 
 {
-id: "estruturas-navais",
-nome: "Estruturas Navais",
-horas: 30,
+id: "tipos-de-navios",
+nome: "Tipos e Características dos Navios",
+horas: 15,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+id: "estrutura-naval",
+nome: "Estrutura Naval",
+horas: 25,
 importancia: "Alta",
 peso: 4
 },
@@ -209,28 +218,28 @@ peso: 4
 
 {
 id: "compartimentagem",
-nome: "Compartimentagem",
-horas: 15,
-importancia: "Média",
-peso: 3
-},
-
-
-{
-id: "estabilidade",
-nome: "Estabilidade",
-horas: 40,
-importancia: "Muito Alta",
-peso: 5
-},
-
-
-{
-id: "avarias-e-controle-de-danos",
-nome: "Avarias e Controle de Danos",
+nome: "Compartimentagem e Estanqueidade",
 horas: 15,
 importancia: "Alta",
-peso: 3
+peso: 4
+},
+
+
+{
+id: "aparelhos-de-governo",
+nome: "Aparelhos de Governo",
+horas: 20,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+id: "fundear-e-amarrar",
+nome: "Aparelhos de Fundear e Amarrar",
+horas: 25,
+importancia: "Muito Alta",
+peso: 5
 },
 
 
@@ -244,18 +253,80 @@ peso: 4
 
 
 {
-id: "sistemas-do-navio",
-nome: "Sistemas do Navio",
+id: "cabos-e-espias",
+nome: "Cabos, Espias e Manuseio",
 horas: 20,
 importancia: "Alta",
 peso: 4
+},
+
+
+{
+id: "estabilidade",
+nome: "Estabilidade do Navio",
+horas: 40,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+id: "operacoes-marinheiras",
+nome: "Operações Marinheiras",
+horas: 20,
+importancia: "Alta",
+peso: 4
+},
+
+
+{
+id: "manobras-portuarias",
+nome: "Manobras Portuárias",
+horas: 25,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+id: "rebocadores-portuarios",
+nome: "Rebocadores Portuários",
+horas: 35,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+id: "estabilidade-dos-rebocadores",
+nome: "Estabilidade dos Rebocadores",
+horas: 20,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+id: "transferencia-de-pratico",
+nome: "Transferência de Prático",
+horas: 15,
+importancia: "Muito Alta",
+peso: 5
+},
+
+
+{
+id: "master-pilot-information-exchange",
+nome: "Master–Pilot Information Exchange",
+horas: 15,
+importancia: "Muito Alta",
+peso: 5
 }
 
 
 ]
 
 },
-
 
 
 
