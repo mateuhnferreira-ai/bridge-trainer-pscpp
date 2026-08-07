@@ -1,9 +1,20 @@
 /* =====================================================
    BRIDGE TRAINER PSCPP
-   POMODORO.JS v2.0
-   Ciclo de 30 minutos de estudo + 10 minutos de pausa,
-   com apito nas transições e contador cumulativo de
-   horas de ESTUDO (a pausa não conta) por disciplina
+   POMODORO.JS v3.0
+
+   Ciclo:
+   - 30 minutos de estudo
+   - 10 minutos de pausa
+
+   Funções:
+   - contador de estudo
+   - pausa automática
+   - apito nas transições
+   - tempo cumulativo por disciplina
+   - registro por aula
+   - histórico de blocos Pomodoro
+   - identificação do último bloco estudado
+   - evento para o motor recalcular o próximo estudo
 ===================================================== */
 
 
@@ -11,36 +22,203 @@
 // CONFIGURAÇÕES
 // =====================================
 
-const POMODORO_DURACAO_ESTUDO_SEGUNDOS = 30 * 60;
+const POMODORO_DURACAO_ESTUDO_SEGUNDOS =
+    30 * 60;
 
-const POMODORO_DURACAO_PAUSA_SEGUNDOS = 10 * 60;
+const POMODORO_DURACAO_PAUSA_SEGUNDOS =
+    10 * 60;
 
+
+// Histórico dos blocos Pomodoro
+
+const CHAVE_HISTORICO_POMODORO =
+    "bridgeTrainerPSCPP_historicoPomodoro";
+
+
+// Limite para evitar crescimento indefinido
+// do localStorage.
+
+const POMODORO_MAX_HISTORICO =
+    500;
+
+
+// =====================================
+// ESTADO
+// =====================================
 
 let pomodoroRodando = false;
 
+
 // "estudo" ou "pausa"
-let pomodoroFase = "estudo";
 
-// segundos decorridos na fase atual (zera a cada troca de fase)
-let pomodoroSegundosFaseAtual = 0;
+let pomodoroFase =
+    "estudo";
 
-// segundos de ESTUDO ainda não somados ao total cumulativo
-let pomodoroSegundosEstudoNaoSalvos = 0;
 
-// segundos de ESTUDO acumulados nesta sessão (só exibição)
-let pomodoroSegundosSessaoEstudoTotal = 0;
+// Tempo transcorrido na fase atual
 
-let pomodoroIntervalId = null;
+let pomodoroSegundosFaseAtual =
+    0;
+
+
+// Tempo de estudo ainda não enviado
+// para progresso.js
+
+let pomodoroSegundosEstudoNaoSalvos =
+    0;
+
+
+// Tempo de estudo acumulado apenas
+// durante a sessão atual
+
+let pomodoroSegundosSessaoEstudoTotal =
+    0;
+
+
+let pomodoroIntervalId =
+    null;
+
+
+// Data/hora em que começou o bloco
+// atualmente em andamento.
+
+let pomodoroInicioBloco =
+    null;
+
+
+// Quantidade acumulada desde o último
+// registro de bloco no histórico.
+
+let pomodoroSegundosBlocoAtual =
+    0;
 
 
 // =====================================
-// TOCAR APITO (SINTETIZADO, SEM ARQUIVO DE ÁUDIO)
+// IDENTIFICAR DISCIPLINA
+// =====================================
+
+function obterDisciplinaDoPomodoro() {
+
+    if (!document.body) {
+
+        return null;
+
+    }
+
+
+    return (
+        document.body.dataset.disciplina ||
+        null
+    );
+
+}
+
+
+// =====================================
+// IDENTIFICAR AULA
+// =====================================
+
+function obterAulaDoPomodoro() {
+
+    if (!document.body) {
+
+        return null;
+
+    }
+
+
+    return (
+        document.body.dataset.aula ||
+        null
+    );
+
+}
+
+
+// =====================================
+// NORMALIZAR IDENTIFICADOR
 // =====================================
 //
-// tipo "pausa": apito descendente (hora de parar)
-// tipo "retorno": apito ascendente (hora de voltar a estudar)
+// Usa normalizarIdentificador() do
+// progresso.js quando disponível.
 
-function tocarApitoPomodoro(tipo) {
+function normalizarIdPomodoro(
+    valor
+) {
+
+    if (!valor) {
+
+        return null;
+
+    }
+
+
+    if (
+        typeof normalizarIdentificador ===
+        "function"
+    ) {
+
+        return normalizarIdentificador(
+            valor
+        );
+
+    }
+
+
+    return valor
+        .toString()
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .toLowerCase()
+        .trim()
+        .replace(
+            /[^a-z0-9]+/g,
+            "-"
+        )
+        .replace(
+            /^-+|-+$/g,
+            ""
+        );
+
+}
+
+
+// =====================================
+// OBTER CONTEXTO ATUAL
+// =====================================
+
+function obterContextoPomodoro() {
+
+    return {
+
+        disciplina:
+            normalizarIdPomodoro(
+                obterDisciplinaDoPomodoro()
+            ),
+
+        aula:
+            normalizarIdPomodoro(
+                obterAulaDoPomodoro()
+            )
+
+    };
+
+}
+
+
+// =====================================
+// TOCAR APITO
+// =====================================
+//
+// "pausa"   -> descendente
+// "retorno" -> ascendente
+
+function tocarApitoPomodoro(
+    tipo
+) {
 
     try {
 
@@ -52,27 +230,45 @@ function tocarApitoPomodoro(tipo) {
 
 
         const frequencias =
-            (tipo === "retorno")
-                ? [660, 880, 1046]
-                : [1046, 880, 660];
+            (
+                tipo ===
+                "retorno"
+            )
+                ? [
+                    660,
+                    880,
+                    1046
+                ]
+                : [
+                    1046,
+                    880,
+                    660
+                ];
 
 
         frequencias.forEach(
-            (frequencia, indice) => {
+            (
+                frequencia,
+                indice
+            ) => {
 
                 const oscilador =
-                    contexto.createOscillator();
+                    contexto
+                        .createOscillator();
 
 
                 const ganho =
-                    contexto.createGain();
+                    contexto
+                        .createGain();
 
 
                 oscilador.type =
                     "square";
 
 
-                oscilador.frequency.value =
+                oscilador
+                    .frequency
+                    .value =
                     frequencia;
 
 
@@ -85,28 +281,38 @@ function tocarApitoPomodoro(tipo) {
                     inicio + 0.25;
 
 
-                ganho.gain.setValueAtTime(
-                    0.15,
-                    inicio
+                ganho.gain
+                    .setValueAtTime(
+                        0.15,
+                        inicio
+                    );
+
+
+                ganho.gain
+                    .exponentialRampToValueAtTime(
+                        0.001,
+                        fim
+                    );
+
+
+                oscilador.connect(
+                    ganho
                 );
 
-
-                ganho.gain.exponentialRampToValueAtTime(
-                    0.001,
-                    fim
-                );
-
-
-                oscilador.connect(ganho);
 
                 ganho.connect(
                     contexto.destination
                 );
 
 
-                oscilador.start(inicio);
+                oscilador.start(
+                    inicio
+                );
 
-                oscilador.stop(fim);
+
+                oscilador.stop(
+                    fim
+                );
 
             }
         );
@@ -125,22 +331,35 @@ function tocarApitoPomodoro(tipo) {
 
 
 // =====================================
-// FORMATAR TEMPO (mm:ss OU h:mm:ss)
+// FORMATAR TEMPO
 // =====================================
 
-function formatarTempoPomodoro(segundosTotais) {
+function formatarTempoPomodoro(
+    segundosTotais
+) {
 
     const total =
-        Math.max(0, Math.floor(segundosTotais));
+        Math.max(
+            0,
+            Math.floor(
+                segundosTotais
+            )
+        );
 
 
     const horas =
-        Math.floor(total / 3600);
+        Math.floor(
+            total / 3600
+        );
 
 
     const minutos =
         Math.floor(
-            (total % 3600) / 60
+            (
+                total %
+                3600
+            ) /
+            60
         );
 
 
@@ -149,47 +368,372 @@ function formatarTempoPomodoro(segundosTotais) {
 
 
     const doisDigitos =
-        numero => String(numero).padStart(2, "0");
+        numero =>
+            String(
+                numero
+            )
+            .padStart(
+                2,
+                "0"
+            );
 
 
     if (horas > 0) {
 
         return (
-
-            horas + ":" +
-            doisDigitos(minutos) + ":" +
-            doisDigitos(segundos)
-
+            horas +
+            ":" +
+            doisDigitos(
+                minutos
+            ) +
+            ":" +
+            doisDigitos(
+                segundos
+            )
         );
 
     }
 
 
     return (
-
-        doisDigitos(minutos) + ":" +
-        doisDigitos(segundos)
-
+        doisDigitos(
+            minutos
+        ) +
+        ":" +
+        doisDigitos(
+            segundos
+        )
     );
 
 }
 
 
 // =====================================
-// IDENTIFICAR A DISCIPLINA DO CRONÔMETRO
+// CARREGAR HISTÓRICO
 // =====================================
-//
-// Usa data-disciplina do <body> da página atual.
-// Páginas de aula já têm esse atributo. Se a página não
-// tiver, o cronômetro ainda funciona para contar a
-// sessão, mas não consegue salvar o tempo cumulativo.
 
-function obterDisciplinaDoPomodoro() {
+function carregarHistoricoPomodoro() {
+
+    try {
+
+        const salvo =
+            localStorage.getItem(
+                CHAVE_HISTORICO_POMODORO
+            );
+
+
+        if (!salvo) {
+
+            return [];
+
+        }
+
+
+        const dados =
+            JSON.parse(
+                salvo
+            );
+
+
+        if (
+            !Array.isArray(
+                dados
+            )
+        ) {
+
+            return [];
+
+        }
+
+
+        return dados;
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "Erro ao carregar histórico Pomodoro:",
+            erro
+        );
+
+
+        return [];
+
+    }
+
+}
+
+
+// =====================================
+// SALVAR HISTÓRICO
+// =====================================
+
+function salvarHistoricoPomodoro(
+    historico
+) {
+
+    try {
+
+        let dados =
+            Array.isArray(
+                historico
+            )
+                ? historico
+                : [];
+
+
+        if (
+            dados.length >
+            POMODORO_MAX_HISTORICO
+        ) {
+
+            dados =
+                dados.slice(
+                    -POMODORO_MAX_HISTORICO
+                );
+
+        }
+
+
+        localStorage.setItem(
+
+            CHAVE_HISTORICO_POMODORO,
+
+            JSON.stringify(
+                dados
+            )
+
+        );
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "Erro ao salvar histórico Pomodoro:",
+            erro
+        );
+
+    }
+
+}
+
+
+// =====================================
+// REGISTRAR BLOCO DE ESTUDO
+// =====================================
+
+function registrarBlocoPomodoro(
+    segundos,
+    motivo = "registro"
+) {
+
+    if (
+        !segundos ||
+        segundos <= 0
+    ) {
+
+        return null;
+
+    }
+
+
+    const contexto =
+        obterContextoPomodoro();
+
+
+    if (
+        !contexto.disciplina
+    ) {
+
+        console.warn(
+            "Bloco Pomodoro não registrado: " +
+            "data-disciplina ausente."
+        );
+
+
+        return null;
+
+    }
+
+
+    const fim =
+        new Date();
+
+
+    const inicio =
+        pomodoroInicioBloco
+            ? new Date(
+                pomodoroInicioBloco
+            )
+            : new Date(
+                fim.getTime() -
+                segundos * 1000
+            );
+
+
+    const bloco = {
+
+        id:
+            "pomodoro-" +
+            fim.getTime(),
+
+        disciplina:
+            contexto.disciplina,
+
+        aula:
+            contexto.aula,
+
+        segundos:
+            Math.floor(
+                segundos
+            ),
+
+        inicio:
+            inicio.toISOString(),
+
+        fim:
+            fim.toISOString(),
+
+        motivo:
+            motivo
+
+    };
+
+
+    const historico =
+        carregarHistoricoPomodoro();
+
+
+    historico.push(
+        bloco
+    );
+
+
+    salvarHistoricoPomodoro(
+        historico
+    );
+
+
+    document.dispatchEvent(
+
+        new CustomEvent(
+
+            "pomodoroPSCPPBlocoRegistrado",
+
+            {
+
+                detail:
+                    bloco
+
+            }
+
+        )
+
+    );
+
+
+    return bloco;
+
+}
+
+
+// =====================================
+// OBTER ÚLTIMO BLOCO
+// =====================================
+
+function obterUltimoBlocoPomodoro() {
+
+    const historico =
+        carregarHistoricoPomodoro();
+
+
+    if (
+        historico.length === 0
+    ) {
+
+        return null;
+
+    }
+
 
     return (
-        document.body.dataset.disciplina ||
+        historico[
+            historico.length - 1
+        ] ||
         null
     );
+
+}
+
+
+// =====================================
+// OBTER ÚLTIMOS BLOCOS
+// =====================================
+
+function obterUltimosBlocosPomodoro(
+    quantidade = 10
+) {
+
+    const historico =
+        carregarHistoricoPomodoro();
+
+
+    return historico.slice(
+        -Math.max(
+            1,
+            quantidade
+        )
+    );
+
+}
+
+
+// =====================================
+// TEMPO POR AULA NO HISTÓRICO
+// =====================================
+
+function obterTempoEstudadoAulaPomodoro(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        normalizarIdPomodoro(
+            idDisciplina
+        );
+
+
+    const aula =
+        normalizarIdPomodoro(
+            idAula
+        );
+
+
+    let total = 0;
+
+
+    carregarHistoricoPomodoro()
+        .forEach(
+            bloco => {
+
+                if (
+                    bloco.disciplina ===
+                        disciplina &&
+                    bloco.aula ===
+                        aula
+                ) {
+
+                    total +=
+                        bloco.segundos ||
+                        0;
+
+                }
+
+            }
+        );
+
+
+    return total;
 
 }
 
@@ -228,7 +772,10 @@ function atualizarDisplayPomodoro() {
 
         displayFase.textContent =
 
-            (pomodoroFase === "estudo")
+            (
+                pomodoroFase ===
+                "estudo"
+            )
                 ? "📖 Estudo"
                 : "☕ Pausa";
 
@@ -239,17 +786,23 @@ function atualizarDisplayPomodoro() {
 
         const duracaoFase =
 
-            (pomodoroFase === "estudo")
+            (
+                pomodoroFase ===
+                "estudo"
+            )
                 ? POMODORO_DURACAO_ESTUDO_SEGUNDOS
                 : POMODORO_DURACAO_PAUSA_SEGUNDOS;
 
 
         const restante =
-            duracaoFase - pomodoroSegundosFaseAtual;
+            duracaoFase -
+            pomodoroSegundosFaseAtual;
 
 
         displayRestante.textContent =
-            formatarTempoPomodoro(restante);
+            formatarTempoPomodoro(
+                restante
+            );
 
     }
 
@@ -271,11 +824,16 @@ function atualizarDisplayPomodoro() {
 
 
         const totalSegundos =
+
             (
                 idDisciplina &&
-                typeof obterTempoEstudadoDisciplina === "function"
+                typeof
+                    obterTempoEstudadoDisciplina ===
+                    "function"
             )
-                ? obterTempoEstudadoDisciplina(idDisciplina)
+                ? obterTempoEstudadoDisciplina(
+                    idDisciplina
+                )
                 : 0;
 
 
@@ -290,7 +848,64 @@ function atualizarDisplayPomodoro() {
 
 
 // =====================================
-// TICK (RODA A CADA SEGUNDO)
+// INICIAR NOVO BLOCO
+// =====================================
+
+function iniciarNovoBlocoPomodoro() {
+
+    pomodoroInicioBloco =
+        new Date()
+            .toISOString();
+
+
+    pomodoroSegundosBlocoAtual =
+        0;
+
+}
+
+
+// =====================================
+// FINALIZAR BLOCO ATUAL
+// =====================================
+
+function finalizarBlocoAtualPomodoro(
+    motivo
+) {
+
+    if (
+        pomodoroSegundosBlocoAtual <= 0
+    ) {
+
+        pomodoroInicioBloco =
+            null;
+
+
+        return;
+
+    }
+
+
+    registrarBlocoPomodoro(
+
+        pomodoroSegundosBlocoAtual,
+
+        motivo
+
+    );
+
+
+    pomodoroSegundosBlocoAtual =
+        0;
+
+
+    pomodoroInicioBloco =
+        null;
+
+}
+
+
+// =====================================
+// TICK
 // =====================================
 
 function tickPomodoro() {
@@ -298,11 +913,16 @@ function tickPomodoro() {
     pomodoroSegundosFaseAtual++;
 
 
-    if (pomodoroFase === "estudo") {
+    if (
+        pomodoroFase ===
+        "estudo"
+    ) {
 
         pomodoroSegundosEstudoNaoSalvos++;
 
         pomodoroSegundosSessaoEstudoTotal++;
+
+        pomodoroSegundosBlocoAtual++;
 
 
         if (
@@ -310,18 +930,25 @@ function tickPomodoro() {
             POMODORO_DURACAO_ESTUDO_SEGUNDOS
         ) {
 
-            tocarApitoPomodoro("pausa");
+            tocarApitoPomodoro(
+                "pausa"
+            );
 
 
-            // Salva o bloco de estudo concluído no
-            // total cumulativo da disciplina antes de
-            // entrar na pausa
             salvarTempoAcumuladoPomodoro();
 
 
-            pomodoroFase = "pausa";
+            finalizarBlocoAtualPomodoro(
+                "bloco-concluido"
+            );
 
-            pomodoroSegundosFaseAtual = 0;
+
+            pomodoroFase =
+                "pausa";
+
+
+            pomodoroSegundosFaseAtual =
+                0;
 
         }
 
@@ -333,12 +960,20 @@ function tickPomodoro() {
             POMODORO_DURACAO_PAUSA_SEGUNDOS
         ) {
 
-            tocarApitoPomodoro("retorno");
+            tocarApitoPomodoro(
+                "retorno"
+            );
 
 
-            pomodoroFase = "estudo";
+            pomodoroFase =
+                "estudo";
 
-            pomodoroSegundosFaseAtual = 0;
+
+            pomodoroSegundosFaseAtual =
+                0;
+
+
+            iniciarNovoBlocoPomodoro();
 
         }
 
@@ -356,14 +991,28 @@ function tickPomodoro() {
 
 function iniciarPomodoro() {
 
-    if (pomodoroRodando) {
+    if (
+        pomodoroRodando
+    ) {
 
         return;
 
     }
 
 
-    pomodoroRodando = true;
+    pomodoroRodando =
+        true;
+
+
+    if (
+        pomodoroFase ===
+        "estudo" &&
+        !pomodoroInicioBloco
+    ) {
+
+        iniciarNovoBlocoPomodoro();
+
+    }
 
 
     pomodoroIntervalId =
@@ -379,19 +1028,22 @@ function iniciarPomodoro() {
 
 
 // =====================================
-// PAUSAR (E SALVAR O TEMPO DE ESTUDO PENDENTE)
+// PAUSAR
 // =====================================
 
 function pausarPomodoro() {
 
-    if (!pomodoroRodando) {
+    if (
+        !pomodoroRodando
+    ) {
 
         return;
 
     }
 
 
-    pomodoroRodando = false;
+    pomodoroRodando =
+        false;
 
 
     clearInterval(
@@ -399,7 +1051,23 @@ function pausarPomodoro() {
     );
 
 
+    pomodoroIntervalId =
+        null;
+
+
     salvarTempoAcumuladoPomodoro();
+
+
+    if (
+        pomodoroFase ===
+        "estudo"
+    ) {
+
+        finalizarBlocoAtualPomodoro(
+            "pausa-manual"
+        );
+
+    }
 
 
     atualizarBotoesPomodoro();
@@ -408,24 +1076,36 @@ function pausarPomodoro() {
 
 
 // =====================================
-// ZERAR SESSÃO ATUAL
+// ZERAR SESSÃO
 // =====================================
-//
-// Zera o ciclo inteiro (fase, contadores de sessão).
-// Não afeta o total cumulativo já salvo da disciplina.
 
 function zerarPomodoro() {
 
     pausarPomodoro();
 
 
-    pomodoroFase = "estudo";
+    pomodoroFase =
+        "estudo";
 
-    pomodoroSegundosFaseAtual = 0;
 
-    pomodoroSegundosEstudoNaoSalvos = 0;
+    pomodoroSegundosFaseAtual =
+        0;
 
-    pomodoroSegundosSessaoEstudoTotal = 0;
+
+    pomodoroSegundosEstudoNaoSalvos =
+        0;
+
+
+    pomodoroSegundosSessaoEstudoTotal =
+        0;
+
+
+    pomodoroSegundosBlocoAtual =
+        0;
+
+
+    pomodoroInicioBloco =
+        null;
 
 
     atualizarDisplayPomodoro();
@@ -434,12 +1114,8 @@ function zerarPomodoro() {
 
 
 // =====================================
-// SALVAR TEMPO DE ESTUDO PENDENTE NO TOTAL DA DISCIPLINA
+// SALVAR TEMPO CUMULATIVO
 // =====================================
-//
-// Só soma tempo de ESTUDO — a pausa nunca é contada no
-// cumulativo. Chamada automaticamente a cada transição
-// para pausa, ao clicar em Pausar, e ao sair da página.
 
 function salvarTempoAcumuladoPomodoro() {
 
@@ -447,12 +1123,13 @@ function salvarTempoAcumuladoPomodoro() {
         obterDisciplinaDoPomodoro();
 
 
-    if (!idDisciplina) {
+    if (
+        !idDisciplina
+    ) {
 
         console.warn(
-            "Não foi possível identificar a disciplina " +
-            "desta página (data-disciplina ausente no " +
-            "<body>). O tempo desta sessão não foi salvo."
+            "Não foi possível identificar " +
+            "a disciplina desta página."
         );
 
 
@@ -461,24 +1138,33 @@ function salvarTempoAcumuladoPomodoro() {
     }
 
 
-    if (pomodoroSegundosEstudoNaoSalvos <= 0) {
+    if (
+        pomodoroSegundosEstudoNaoSalvos <= 0
+    ) {
 
         return;
 
     }
 
 
-    if (typeof adicionarTempoEstudado === "function") {
+    if (
+        typeof adicionarTempoEstudado ===
+        "function"
+    ) {
 
         adicionarTempoEstudado(
+
             idDisciplina,
+
             pomodoroSegundosEstudoNaoSalvos
+
         );
 
     }
 
 
-    pomodoroSegundosEstudoNaoSalvos = 0;
+    pomodoroSegundosEstudoNaoSalvos =
+        0;
 
 
     atualizarDisplayPomodoro();
@@ -487,7 +1173,7 @@ function salvarTempoAcumuladoPomodoro() {
 
 
 // =====================================
-// ATUALIZAR ESTADO DOS BOTÕES
+// ATUALIZAR BOTÕES
 // =====================================
 
 function atualizarBotoesPomodoro() {
@@ -525,35 +1211,51 @@ function atualizarBotoesPomodoro() {
 // =====================================
 // SALVAR AO SAIR DA PÁGINA
 // =====================================
-//
-// Evita perder tempo de estudo já decorrido caso o
-// usuário navegue para outra página sem apertar Pausar.
 
 window.addEventListener(
+
     "beforeunload",
+
     function () {
 
-        if (pomodoroRodando) {
+        if (
+            !pomodoroRodando
+        ) {
 
-            salvarTempoAcumuladoPomodoro();
+            return;
+
+        }
+
+
+        salvarTempoAcumuladoPomodoro();
+
+
+        if (
+            pomodoroFase ===
+            "estudo"
+        ) {
+
+            finalizarBlocoAtualPomodoro(
+                "saida-da-pagina"
+            );
 
         }
 
     }
+
 );
 
 
 // =====================================
 // INICIALIZAÇÃO
 // =====================================
-//
-// Espera carregarDadosProgresso() (progresso.js) para
-// exibir o total cumulativo correto assim que a página
-// abre.
 
 async function inicializarPomodoro() {
 
-    if (typeof carregarDadosProgresso === "function") {
+    if (
+        typeof carregarDadosProgresso ===
+        "function"
+    ) {
 
         await carregarDadosProgresso();
 
@@ -567,13 +1269,19 @@ async function inicializarPomodoro() {
 }
 
 
+// =====================================
+// CARREGAMENTO
+// =====================================
+
 document.addEventListener(
+
     "DOMContentLoaded",
+
     inicializarPomodoro
+
 );
 
 
 /* =====================================================
-   FIM POMODORO.JS v2.0
+   FIM POMODORO.JS v3.0
 ===================================================== */
-
