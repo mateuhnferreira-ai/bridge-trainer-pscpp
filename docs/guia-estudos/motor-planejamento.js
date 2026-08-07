@@ -469,6 +469,101 @@ function escolherProximoItem(
 
 
 // =====================================
+// CONVERTER ÚLTIMO BLOCO POMODORO
+// EM CONTEXTO PARA O MOTOR
+// =====================================
+
+function obterUltimoItemRealEstudado() {
+
+    if (
+        typeof obterUltimoBlocoPomodoro !==
+        "function"
+    ) {
+
+        return null;
+
+    }
+
+
+    const ultimoBloco =
+        obterUltimoBlocoPomodoro();
+
+
+    if (
+        !ultimoBloco ||
+        !ultimoBloco.disciplina ||
+        !ultimoBloco.aula
+    ) {
+
+        return null;
+
+    }
+
+
+    const dadosDisciplina =
+        conteudoPSCPP[
+            ultimoBloco.disciplina
+        ];
+
+
+    if (
+        !dadosDisciplina ||
+        !Array.isArray(
+            dadosDisciplina.assuntos
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const assunto =
+        dadosDisciplina.assuntos.find(
+            item =>
+                item.id ===
+                ultimoBloco.aula
+        );
+
+
+    if (!assunto) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        idDisciplina:
+            ultimoBloco.disciplina,
+
+        idAssunto:
+            assunto.id,
+
+        disciplina:
+            dadosDisciplina.nome,
+
+        assunto:
+            assunto.nome,
+
+        cargaCognitiva:
+            normalizarCargaCognitiva(
+                assunto.cargaCognitiva
+            ),
+
+        ultimoBlocoSegundos:
+            ultimoBloco.segundos || 0,
+
+        ultimoBlocoFim:
+            ultimoBloco.fim || null
+
+    };
+
+}
+
+
+// =====================================
 // GERAR SEQUÊNCIA EQUILIBRADA
 // =====================================
 
@@ -484,7 +579,12 @@ function gerarSequenciaEquilibrada(
     const sequencia = [];
 
 
-    let ultimoItem = null;
+    // Agora o motor começa considerando
+    // aquilo que foi REALMENTE estudado
+    // no último bloco Pomodoro.
+
+    let ultimoItem =
+        obterUltimoItemRealEstudado();
 
 
     while (
@@ -527,6 +627,10 @@ function gerarSequenciaEquilibrada(
         }
 
 
+        // Depois da primeira escolha,
+        // a própria sequência recomendada
+        // passa a fornecer o contexto.
+
         ultimoItem =
             escolhido;
 
@@ -536,7 +640,6 @@ function gerarSequenciaEquilibrada(
     return sequencia;
 
 }
-
 
 // =====================================
 // GERAR PLANO DE ESTUDO
