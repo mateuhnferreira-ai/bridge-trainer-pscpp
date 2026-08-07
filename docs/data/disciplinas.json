@@ -1,6 +1,6 @@
 {
-  "versao": "1.2",
-  "atualizado": "2026-08-05",
+  "versao": "2.0",
+  "atualizado": "2026-08-07",
 
   "disciplinas": [
 
@@ -98,67 +98,447 @@
       "id": "manobrabilidade",
       "nome": "Manobrabilidade",
       "icone": "🚢",
-      "descricao": "Manobrabilidade e Controle do Navio.",
+      "descricao": "Manobrabilidade e controle do navio.",
       "peso": 10,
       "prioridade": 1,
       "status": "ativo",
       "pasta": "manobrabilidade",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "resistencia",
+          "titulo": "Resistência do Navio",
+          "arquivo": "resistencia.html"
+        },
+        {
+          "id": "controlabilidade",
+          "titulo": "Controlabilidade",
+          "arquivo": "controlabilidade.html"
+        },
+        {
+          "id": "helices",
+          "titulo": "Hélices",
+          "arquivo": "helices.html"
+        },
+        {
+          "id": "lemes",
+          "titulo": "Lemes",
+          "arquivo": "lemes.html"
+        },
+        {
+          "id": "propulsao",
+          "titulo": "Propulsão",
+          "arquivo": "propulsao.html"
+        },
+        {
+          "id": "efeitos-hidrodinamicos",
+          "titulo": "Efeitos Hidrodinâmicos",
+          "arquivo": "05-efeitos-hidrodinamicos.html"
+        },
+        {
+          "id": "estabilidade-direcional",
+          "titulo": "Estabilidade Direcional",
+          "arquivo": "06-estabilidade-direcional.html"
+        },
+        {
+          "id": "qualidades-de-manobra",
+          "titulo": "Qualidades de Manobra",
+          "arquivo": "07-qualidades-de-manobra.html"
+        },
+        {
+          "id": "testes-de-manobrabilidade",
+          "titulo": "Testes de Manobrabilidade",
+          "arquivo": "08-testes-de-manobrabilidade.html"
+        },
+        {
+          "id": "efeitos-ambientais",
+          "titulo": "Efeitos Ambientais",
+          "arquivo": "09-efeitos-ambientais.html"
+        },
+        {
+          "id": "aguas-rasas-e-canais",
+          "titulo": "Águas Rasas e Canais",
+          "arquivo": "10-aguas-rasas-e-canais.html"
+        },
+        {
+          "id": "interacao-hidrodinamica",
+          "titulo": "Interação Hidrodinâmica",
+          "arquivo": "11-interacao-hidrodinamica.html"
+        },
+        {
+          "id": "rebocadores",
+          "titulo": "Rebocadores",
+          "arquivo": "12-rebocadores.html"
+        },
+        {
+          "id": "manobras-portuarias",
+          "titulo": "Manobras Portuárias",
+          "arquivo": "13-manobras-portuarias.html"
+        },
+        {
+          "id": "manobras-de-emergencia",
+          "titulo": "Manobras de Emergência",
+          "arquivo": "14-manobras-de-emergencia.html"
+        }
+      ]
     },
 
     {
       "id": "navegacao",
-      "nome": "Navegação em Águas Restritas",
+      "nome": "Navegação",
       "icone": "🧭",
-      "descricao": "Navegação em Águas Restritas e COLREG.",
+      "descricao": "Navegação marítima, pilotagem, COLREG, planejamento e sistemas de apoio à navegação.",
       "peso": 10,
       "prioridade": 1,
       "status": "ativo",
       "pasta": "navegacao",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "navegacao-costeira",
+          "titulo": "Navegação Costeira",
+          "arquivo": "navegacao-costeira.html"
+        },
+        {
+          "id": "aguas-restritas",
+          "titulo": "Navegação em Águas Restritas",
+          "arquivo": "aguas-restritas.html"
+        },
+        {
+          "id": "planejamento-navegacao",
+          "titulo": "Planejamento da Navegação",
+          "arquivo": "planejamento-navegacao.html"
+        },
+        {
+          "id": "pilotagem",
+          "titulo": "Pilotagem",
+          "arquivo": "pilotagem.html"
+        },
+        {
+          "id": "colreg",
+          "titulo": "COLREG 1972",
+          "arquivo": "colreg.html"
+        },
+        {
+          "id": "manobras-com-trafego",
+          "titulo": "Manobras com Tráfego",
+          "arquivo": "manobras-com-trafego.html"
+        },
+        {
+          "id": "ecdis",
+          "titulo": "ECDIS",
+          "arquivo": "ecdis.html"
+        },
+        {
+          "id": "balizamento",
+          "titulo": "Balizamento e Auxílios à Navegação",
+          "arquivo": "balizamento.html"
+        },
+        {
+          "id": "publicacoes",
+          "titulo": "Publicações Náuticas",
+          "arquivo": "publicacoes.html"
+        },
+        {
+          "id": "ais-vts",
+          "titulo": "AIS e VTS",
+          "arquivo": "ais-vts.html"
+        },
+        {
+          "id": "bridge-team-management",
+          "titulo": "Bridge Team Management / BRM",
+          "arquivo": "bridge-team-management.html"
+        },
+        {
+          "id": "dynamic-positioning",
+          "titulo": "Dynamic Positioning — DP",
+          "arquivo": "dynamic-positioning.html"
+        }
+      ]
     },
 
     {
       "id": "meteorologia",
       "nome": "Meteorologia e Oceanografia",
       "icone": "🌦",
-      "descricao": "Meteorologia e Oceanografia aplicadas.",
+      "descricao": "Meteorologia e Oceanografia aplicadas à navegação e à operação do navio.",
       "peso": 8,
       "prioridade": 2,
       "status": "ativo",
       "pasta": "meteorologia",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "fundamentos-meteorologia",
+          "titulo": "Fundamentos de Meteorologia",
+          "arquivo": "fundamentos-meteorologia.html"
+        },
+        {
+          "id": "atmosfera",
+          "titulo": "Atmosfera Terrestre",
+          "arquivo": "atmosfera.html"
+        },
+        {
+          "id": "pressao-atmosferica",
+          "titulo": "Pressão Atmosférica",
+          "arquivo": "pressao-atmosferica.html"
+        },
+        {
+          "id": "temperatura-umidade",
+          "titulo": "Temperatura e Umidade",
+          "arquivo": "temperatura-umidade.html"
+        },
+        {
+          "id": "ventos",
+          "titulo": "Ventos",
+          "arquivo": "ventos.html"
+        },
+        {
+          "id": "circulacao-atmosferica",
+          "titulo": "Circulação Atmosférica",
+          "arquivo": "circulacao-atmosferica.html"
+        },
+        {
+          "id": "massas-ar-frentes",
+          "titulo": "Massas de Ar e Frentes",
+          "arquivo": "massas-ar-frentes.html"
+        },
+        {
+          "id": "nuvens-precipitacao",
+          "titulo": "Nuvens e Precipitação",
+          "arquivo": "nuvens-precipitacao.html"
+        },
+        {
+          "id": "sistemas-meteorologicos",
+          "titulo": "Sistemas Meteorológicos",
+          "arquivo": "sistemas-meteorologicos.html"
+        },
+        {
+          "id": "meteorologia-tropical",
+          "titulo": "Meteorologia Tropical, Ciclones e Tempestades",
+          "arquivo": "meteorologia-tropical.html"
+        },
+        {
+          "id": "previsao-meteorologica",
+          "titulo": "Previsão Meteorológica",
+          "arquivo": "previsao-meteorologica.html"
+        },
+        {
+          "id": "boletins-meteorologicos",
+          "titulo": "Boletins Meteorológicos e Informações Hydro/Meteo",
+          "arquivo": "boletins-meteorologicos.html"
+        },
+        {
+          "id": "ondas-estado-mar",
+          "titulo": "Ondas e Estado do Mar",
+          "arquivo": "ondas-estado-mar.html"
+        },
+        {
+          "id": "mares-correntes",
+          "titulo": "Marés e Correntes Oceânicas",
+          "arquivo": "mares-correntes.html"
+        },
+        {
+          "id": "meteorologia-aplicada",
+          "titulo": "Meteorologia Aplicada à Navegação",
+          "arquivo": "meteorologia-aplicada.html"
+        },
+        {
+          "id": "condicoes-adversas-navegacao",
+          "titulo": "Condições Adversas e Efeitos sobre o Navio",
+          "arquivo": "condicoes-adversas-navegacao.html"
+        }
+      ]
     },
 
     {
       "id": "regulamentacao",
       "nome": "Legislação e Regulamentação",
       "icone": "📜",
-      "descricao": "Normas nacionais e internacionais.",
+      "descricao": "Normas nacionais e internacionais aplicáveis à atividade marítima e à praticagem.",
       "peso": 9,
       "prioridade": 1,
       "status": "ativo",
       "pasta": "regulamentacao",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "normam-201",
+          "titulo": "NORMAM-201/DPC",
+          "arquivo": "normam-201.html"
+        },
+        {
+          "id": "normam-204",
+          "titulo": "NORMAM-204/DPC",
+          "arquivo": "normam-204.html"
+        },
+        {
+          "id": "normam-302",
+          "titulo": "NORMAM-302/DPC",
+          "arquivo": "normam-302.html"
+        },
+        {
+          "id": "normam-311",
+          "titulo": "NORMAM-311/DPC",
+          "arquivo": "normam-311.html"
+        },
+        {
+          "id": "normam-601",
+          "titulo": "NORMAM-601/DHN",
+          "arquivo": "normam-601.html"
+        },
+        {
+          "id": "normam-112",
+          "titulo": "NORMAM-112/DPC",
+          "arquivo": "normam-112.html"
+        },
+        {
+          "id": "normam-602",
+          "titulo": "NORMAM-602/DHN",
+          "arquivo": "normam-602.html"
+        },
+        {
+          "id": "lei-2180-tribunal-maritimo",
+          "titulo": "Lei nº 2.180/1954 — Tribunal Marítimo",
+          "arquivo": "lei-2180-tribunal-maritimo.html"
+        },
+        {
+          "id": "lesta-lei-9537",
+          "titulo": "Lei nº 9.537/1997 — LESTA",
+          "arquivo": "lesta-lei-9537.html"
+        },
+        {
+          "id": "rlesta-decreto-2596",
+          "titulo": "Decreto nº 2.596/1998 — RLESTA",
+          "arquivo": "rlesta-decreto-2596.html"
+        },
+        {
+          "id": "lei-14813-praticagem",
+          "titulo": "Lei nº 14.813/2024 — Praticagem",
+          "arquivo": "lei-14813-praticagem.html"
+        },
+        {
+          "id": "autoridade-maritima-portaria-37",
+          "titulo": "Portaria nº 37/MB/2022",
+          "arquivo": "autoridade-maritima-portaria-37.html"
+        },
+        {
+          "id": "colreg",
+          "titulo": "COLREG 1972",
+          "arquivo": "colreg.html"
+        },
+        {
+          "id": "publicacoes-dhn",
+          "titulo": "Publicações Náuticas da DHN",
+          "arquivo": "publicacoes-dhn.html"
+        },
+        {
+          "id": "sar-brasil",
+          "titulo": "Serviço de Busca e Salvamento — SAR Brasil",
+          "arquivo": "sar-brasil.html"
+        },
+        {
+          "id": "lei-12815-portos",
+          "titulo": "Lei nº 12.815/2013 — Lei dos Portos",
+          "arquivo": "lei-12815-portos.html"
+        },
+        {
+          "id": "lei-complementar-97",
+          "titulo": "Lei Complementar nº 97/1999",
+          "arquivo": "lei-complementar-97.html"
+        },
+        {
+          "id": "resolucao-imo-a960",
+          "titulo": "IMO Resolution A.960(23)",
+          "arquivo": "resolucao-imo-a960.html"
+        },
+        {
+          "id": "glossario-md35-g01",
+          "titulo": "Glossário MD35-G-01",
+          "arquivo": "glossario-md35-g01.html"
+        },
+        {
+          "id": "politica-nacional-defesa",
+          "titulo": "Política Nacional de Defesa",
+          "arquivo": "politica-nacional-defesa.html"
+        },
+        {
+          "id": "politica-maritima-nacional",
+          "titulo": "Política Marítima Nacional",
+          "arquivo": "politica-maritima-nacional.html"
+        },
+        {
+          "id": "decreto-2256",
+          "titulo": "Decreto nº 2.256/1997",
+          "arquivo": "decreto-2256.html"
+        },
+        {
+          "id": "lei-7642-pem",
+          "titulo": "Lei nº 7.642/1987 — PEM",
+          "arquivo": "lei-7642-pem.html"
+        },
+        {
+          "id": "lei-7652-registro-propriedade-maritima",
+          "titulo": "Lei nº 7.652/1988 — Registro da Propriedade Marítima",
+          "arquivo": "lei-7652-registro-propriedade-maritima.html"
+        },
+        {
+          "id": "lei-9432-transporte-aquaviario",
+          "titulo": "Lei nº 9.432/1997 — Transporte Aquaviário",
+          "arquivo": "lei-9432-transporte-aquaviario.html"
+        }
+      ]
     },
 
     {
       "id": "comunicacoes",
       "nome": "Comunicações",
       "icone": "📡",
-      "descricao": "Comunicações marítimas.",
+      "descricao": "Comunicações marítimas, SMCP, radiocomunicações, CIS e GMDSS.",
       "peso": 5,
       "prioridade": 3,
       "status": "ativo",
       "pasta": "comunicacoes",
-      "paginaInicial": "index.html"
+      "paginaInicial": "index.html",
+
+      "modulos": [
+        {
+          "id": "smcp",
+          "titulo": "Standard Marine Communication Phrases — SMCP",
+          "arquivo": "smcp.html"
+        },
+        {
+          "id": "radiocomunicacoes-maritimas",
+          "titulo": "Radiocomunicações Marítimas",
+          "arquivo": "radiocomunicacoes-maritimas.html"
+        },
+        {
+          "id": "codigo-internacional-sinais",
+          "titulo": "Código Internacional de Sinais",
+          "arquivo": "codigo-internacional-sinais.html"
+        },
+        {
+          "id": "gmdss",
+          "titulo": "GMDSS",
+          "arquivo": "gmdss.html"
+        },
+        {
+          "id": "exercicios-comunicacoes",
+          "titulo": "Exercícios e Revisão de Comunicações",
+          "arquivo": "exercicios-comunicacoes.html"
+        }
+      ]
     },
 
     {
       "id": "conhecimentos-gerais",
       "nome": "Conhecimentos Gerais",
       "icone": "🌍",
-      "descricao": "Planejamento Portuário, PIANC, NORMAM-224, MARPOL, fatores humanos, economia marítima e temas técnicos complementares.",
+      "descricao": "Planejamento portuário, PIANC, NORMAM-224, fatores humanos, interface navio-porto, MARPOL, economia marítima, direitos humanos e direito processual marítimo.",
       "peso": 8,
       "prioridade": 2,
       "status": "ativo",
@@ -173,7 +553,7 @@
         },
         {
           "id": "pianc",
-          "titulo": "PIANC",
+          "titulo": "PIANC — Harbour Approach Channels",
           "arquivo": "pianc.html"
         },
         {
@@ -183,12 +563,22 @@
         },
         {
           "id": "fatores-humanos",
-          "titulo": "Fatores Humanos",
+          "titulo": "Fatores Humanos e Fadiga",
           "arquivo": "fatores-humanos.html"
         },
         {
+          "id": "ship-port-interface",
+          "titulo": "Ship/Port Interface e Aspectos Operacionais",
+          "arquivo": "ship-port-interface.html"
+        },
+        {
+          "id": "direitos-humanos",
+          "titulo": "Direitos Humanos",
+          "arquivo": "direitos-humanos.html"
+        },
+        {
           "id": "marpol",
-          "titulo": "MARPOL",
+          "titulo": "MARPOL 73/78",
           "arquivo": "marpol.html"
         },
         {
@@ -200,46 +590,6 @@
           "id": "direito-processual-maritimo",
           "titulo": "Direito Processual Marítimo",
           "arquivo": "direito-processual-maritimo.html"
-        },
-        {
-          "id": "seguranca-da-navegacao",
-          "titulo": "Segurança da Navegação",
-          "arquivo": "seguranca-da-navegacao.html"
-        },
-        {
-          "id": "gestao-portuaria",
-          "titulo": "Gestão Portuária",
-          "arquivo": "gestao-portuaria.html"
-        },
-        {
-          "id": "hidrovias",
-          "titulo": "Hidrovias",
-          "arquivo": "hidrovias.html"
-        },
-        {
-          "id": "dragagem",
-          "titulo": "Dragagem",
-          "arquivo": "dragagem.html"
-        },
-        {
-          "id": "meio-ambiente",
-          "titulo": "Meio Ambiente",
-          "arquivo": "meio-ambiente.html"
-        },
-        {
-          "id": "imo",
-          "titulo": "IMO",
-          "arquivo": "imo.html"
-        },
-        {
-          "id": "infraestrutura-portuaria",
-          "titulo": "Infraestrutura Portuária",
-          "arquivo": "infraestrutura-portuaria.html"
-        },
-        {
-          "id": "casos-praticos",
-          "titulo": "Casos Práticos",
-          "arquivo": "casos-praticos.html"
         }
       ]
     }
