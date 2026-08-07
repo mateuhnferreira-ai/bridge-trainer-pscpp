@@ -1,5 +1,5 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP v3.0
+// MOTOR DE PLANEJAMENTO PSCPP v3.1
 // Bridge Trainer PSCPP
 //
 // Responsabilidades:
@@ -10,7 +10,9 @@
 // 4. Considerar carga cognitiva.
 // 5. Evitar dois conteúdos pesados seguidos.
 // 6. Montar sequência equilibrada de estudos.
-// 7. Manter compatibilidade com progresso.js.
+// 7. Considerar o último estudo REAL registrado
+//    pelo Pomodoro.
+// 8. Manter compatibilidade com progresso.js.
 //
 // IMPORTANTE:
 // Este motor NÃO salva progresso.
@@ -25,24 +27,30 @@
 const MOTOR_LIMITE_PLANO_PADRAO = 20;
 
 
-// Bônus para aulas já iniciadas.
-// Não é alto o suficiente para "prender"
-// o aluno indefinidamente no mesmo assunto.
+// Bônus para uma aula parcialmente iniciada.
+// Ajuda na continuidade, mas não obriga o
+// sistema a permanecer indefinidamente nela.
 
 const MOTOR_BONUS_ASSUNTO_INICIADO = 1.15;
 
 
-// Redução aplicada quando dois assuntos
-// consecutivos seriam de carga cognitiva alta.
+// Penalidade aplicada quando um conteúdo
+// de carga cognitiva Alta seria seguido
+// imediatamente por outro conteúdo Alta.
 
 const MOTOR_PENALIDADE_ALTA_SEGUIDA = 0.55;
 
 
-// Pequeno bônus para conteúdos de carga
-// média ou baixa quando o último estudo
-// recomendado foi pesado.
+// Bônus para conteúdos Média ou Baixa
+// quando o último estudo foi de carga Alta.
 
 const MOTOR_BONUS_RECUPERACAO = 1.25;
+
+
+// Pequena penalidade para repetir imediatamente
+// a mesma disciplina quando existe alternativa.
+
+const MOTOR_PENALIDADE_MESMA_DISCIPLINA = 0.92;
 
 
 // =====================================
@@ -55,7 +63,8 @@ function obterProgressoSeguro(
 ) {
 
     if (
-        typeof obterProgressoAula !== "function"
+        typeof obterProgressoAula !==
+        "function"
     ) {
 
         return 0;
@@ -63,10 +72,12 @@ function obterProgressoSeguro(
     }
 
 
-    return obterProgressoAula(
-        idDisciplina,
-        idAssunto
-    ) || 0;
+    return (
+        obterProgressoAula(
+            idDisciplina,
+            idAssunto
+        ) || 0
+    );
 
 }
 
@@ -80,7 +91,8 @@ function obterPesoConfiguracao(
 ) {
 
     if (
-        typeof configuracaoEstudo === "undefined" ||
+        typeof configuracaoEstudo ===
+            "undefined" ||
         !configuracaoEstudo ||
         !configuracaoEstudo.pesosPrioridade
     ) {
@@ -91,10 +103,12 @@ function obterPesoConfiguracao(
 
 
     return (
+
         configuracaoEstudo
             .pesosPrioridade[
                 nomeDisciplina
             ] || 1
+
     );
 
 }
@@ -120,14 +134,18 @@ function normalizarCargaCognitiva(
         );
 
 
-    if (valor === "alta") {
+    if (
+        valor === "alta"
+    ) {
 
         return "Alta";
 
     }
 
 
-    if (valor === "baixa") {
+    if (
+        valor === "baixa"
+    ) {
 
         return "Baixa";
 
@@ -150,7 +168,8 @@ function calcularPrioridadeBase(
 ) {
 
     const pesoDisciplina =
-        dadosDisciplina.pesoDisciplina || 1;
+        dadosDisciplina
+            .pesoDisciplina || 1;
 
 
     const pesoAssunto =
@@ -170,8 +189,8 @@ function calcularPrioridadeBase(
         pesoConfiguracao;
 
 
-    // Aula iniciada recebe pequeno bônus,
-    // mas não domina o algoritmo.
+    // Aula parcialmente iniciada recebe
+    // pequeno bônus de continuidade.
 
     if (
         percentualConcluido > 0 &&
@@ -195,11 +214,28 @@ function calcularPrioridadeBase(
 
 function gerarPlanoBruto() {
 
-    let plano = [];
+    const plano = [];
+
+
+    if (
+        typeof conteudoPSCPP ===
+            "undefined" ||
+        !conteudoPSCPP
+    ) {
+
+        console.warn(
+            "conteudoPSCPP não está disponível."
+        );
+
+
+        return plano;
+
+    }
 
 
     for (
-        let idDisciplina in conteudoPSCPP
+        const idDisciplina
+        in conteudoPSCPP
     ) {
 
         const dadosDisciplina =
@@ -209,7 +245,11 @@ function gerarPlanoBruto() {
 
 
         const assuntos =
-            dadosDisciplina.assuntos || [];
+            Array.isArray(
+                dadosDisciplina.assuntos
+            )
+                ? dadosDisciplina.assuntos
+                : [];
 
 
         assuntos.forEach(
@@ -217,10 +257,16 @@ function gerarPlanoBruto() {
 
                 const percentualConcluido =
                     obterProgressoSeguro(
+
                         idDisciplina,
+
                         assunto.id
+
                     );
 
+
+                // Aula completamente concluída
+                // não entra mais no plano normal.
 
                 if (
                     percentualConcluido >= 100
@@ -318,7 +364,9 @@ function calcularPrioridadeContextual(
         item.prioridadeBase;
 
 
-    if (!ultimoItem) {
+    if (
+        !ultimoItem
+    ) {
 
         return prioridade;
 
@@ -326,15 +374,21 @@ function calcularPrioridadeContextual(
 
 
     const cargaAtual =
-        item.cargaCognitiva;
+        normalizarCargaCognitiva(
+            item.cargaCognitiva
+        );
 
 
     const cargaAnterior =
-        ultimoItem.cargaCognitiva;
+        normalizarCargaCognitiva(
+            ultimoItem.cargaCognitiva
+        );
 
 
-    // Regra principal:
-    // evitar Alta -> Alta.
+    // =================================
+    // REGRA PRINCIPAL
+    // Alta -> Alta deve ser evitado.
+    // =================================
 
     if (
         cargaAnterior === "Alta" &&
@@ -347,8 +401,11 @@ function calcularPrioridadeContextual(
     }
 
 
-    // Depois de conteúdo pesado,
-    // favorecer um bloco intermediário ou leve.
+    // =================================
+    // RECUPERAÇÃO COGNITIVA
+    // Depois de Alta, favorecer Média
+    // ou Baixa.
+    // =================================
 
     if (
         cargaAnterior === "Alta" &&
@@ -370,20 +427,23 @@ function calcularPrioridadeContextual(
 
 
 // =====================================
-// EVITAR REPETIÇÃO IMEDIATA
-// DA MESMA DISCIPLINA
+// PENALIDADE POR REPETIÇÃO DE DISCIPLINA
 // =====================================
 //
-// Não proíbe repetir disciplina.
-// Apenas usa como desempate quando
-// houver alternativa estratégica próxima.
+// Não impede repetir disciplina.
+//
+// Serve apenas para favorecer diversidade
+// quando dois candidatos possuem prioridade
+// estratégica semelhante.
 
 function calcularPenalidadeDisciplina(
     item,
     ultimoItem
 ) {
 
-    if (!ultimoItem) {
+    if (
+        !ultimoItem
+    ) {
 
         return 1;
 
@@ -395,7 +455,8 @@ function calcularPenalidadeDisciplina(
         ultimoItem.idDisciplina
     ) {
 
-        return 0.92;
+        return
+            MOTOR_PENALIDADE_MESMA_DISCIPLINA;
 
     }
 
@@ -406,74 +467,20 @@ function calcularPenalidadeDisciplina(
 
 
 // =====================================
-// ESCOLHER PRÓXIMO ITEM
-// =====================================
-
-function escolherProximoItem(
-    candidatos,
-    ultimoItem
-) {
-
-    let melhor = null;
-
-    let melhorPontuacao = -Infinity;
-
-
-    candidatos.forEach(
-        item => {
-
-            let pontuacao =
-                calcularPrioridadeContextual(
-                    item,
-                    ultimoItem
-                );
-
-
-            pontuacao *=
-                calcularPenalidadeDisciplina(
-                    item,
-                    ultimoItem
-                );
-
-
-            if (
-                pontuacao >
-                melhorPontuacao
-            ) {
-
-                melhorPontuacao =
-                    pontuacao;
-
-                melhor =
-                    item;
-
-            }
-
-        }
-    );
-
-
-    if (melhor) {
-
-        melhor.prioridade =
-            Math.round(
-                melhorPontuacao * 100
-            ) / 100;
-
-    }
-
-
-    return melhor;
-
-}
-
-
-
-
-// =====================================
 // OBTER ÚLTIMO ITEM REAL ESTUDADO
-// A PARTIR DO HISTÓRICO DO POMODORO
+// A PARTIR DO POMODORO
 // =====================================
+//
+// O Pomodoro v3.0 registra:
+//
+// disciplina
+// aula
+// segundos
+// início
+// fim
+//
+// Aqui esses dados são convertidos para
+// o formato esperado pelo motor.
 
 function obterUltimoItemRealEstudado() {
 
@@ -502,6 +509,17 @@ function obterUltimoItemRealEstudado() {
     }
 
 
+    if (
+        typeof conteudoPSCPP ===
+            "undefined" ||
+        !conteudoPSCPP
+    ) {
+
+        return null;
+
+    }
+
+
     const dadosDisciplina =
         conteudoPSCPP[
             ultimoBloco.disciplina
@@ -521,14 +539,20 @@ function obterUltimoItemRealEstudado() {
 
 
     const assunto =
-        dadosDisciplina.assuntos.find(
-            item =>
-                item.id ===
-                ultimoBloco.aula
-        );
+        dadosDisciplina
+            .assuntos
+            .find(
+
+                item =>
+                    item.id ===
+                    ultimoBloco.aula
+
+            );
 
 
-    if (!assunto) {
+    if (
+        !assunto
+    ) {
 
         return null;
 
@@ -563,6 +587,84 @@ function obterUltimoItemRealEstudado() {
     };
 
 }
+
+
+// =====================================
+// ESCOLHER PRÓXIMO ITEM
+// =====================================
+
+function escolherProximoItem(
+    candidatos,
+    ultimoItem
+) {
+
+    let melhor =
+        null;
+
+
+    let melhorPontuacao =
+        -Infinity;
+
+
+    candidatos.forEach(
+        item => {
+
+            let pontuacao =
+                calcularPrioridadeContextual(
+
+                    item,
+
+                    ultimoItem
+
+                );
+
+
+            pontuacao *=
+                calcularPenalidadeDisciplina(
+
+                    item,
+
+                    ultimoItem
+
+                );
+
+
+            if (
+                pontuacao >
+                melhorPontuacao
+            ) {
+
+                melhorPontuacao =
+                    pontuacao;
+
+
+                melhor =
+                    item;
+
+            }
+
+        }
+    );
+
+
+    if (
+        melhor
+    ) {
+
+        melhor.prioridade =
+            Math.round(
+                melhorPontuacao *
+                100
+            ) / 100;
+
+    }
+
+
+    return melhor;
+
+}
+
+
 // =====================================
 // GERAR SEQUÊNCIA EQUILIBRADA
 // =====================================
@@ -573,15 +675,18 @@ function gerarSequenciaEquilibrada(
 ) {
 
     const candidatos =
-        [...planoBruto];
+        [
+            ...planoBruto
+        ];
 
 
-    const sequencia = [];
+    const sequencia =
+        [];
 
 
-    // Agora o primeiro cálculo já considera
-    // a aula realmente estudada no último
-    // bloco Pomodoro.
+    // A PRIMEIRA decisão agora considera
+    // aquilo que o usuário realmente estudou
+    // no último bloco Pomodoro.
 
     let ultimoItem =
         obterUltimoItemRealEstudado();
@@ -594,12 +699,17 @@ function gerarSequenciaEquilibrada(
 
         const escolhido =
             escolherProximoItem(
+
                 candidatos,
+
                 ultimoItem
+
             );
 
 
-        if (!escolhido) {
+        if (
+            !escolhido
+        ) {
 
             break;
 
@@ -617,7 +727,9 @@ function gerarSequenciaEquilibrada(
             );
 
 
-        if (indice >= 0) {
+        if (
+            indice >= 0
+        ) {
 
             candidatos.splice(
                 indice,
@@ -626,6 +738,10 @@ function gerarSequenciaEquilibrada(
 
         }
 
+
+        // Depois da primeira escolha,
+        // cada recomendação passa a servir
+        // como contexto para a seguinte.
 
         ultimoItem =
             escolhido;
@@ -636,12 +752,17 @@ function gerarSequenciaEquilibrada(
     return sequencia;
 
 }
+
+
 // =====================================
 // GERAR PLANO DE ESTUDO
 // =====================================
 //
-// Função principal mantida com o mesmo nome
-// para não quebrar app-planejamento.js.
+// Nome mantido para compatibilidade com:
+//
+// app-planejamento.js
+// página principal
+// futuras funções de coaching
 
 function gerarPlanoEstudo(
     limite =
@@ -653,8 +774,11 @@ function gerarPlanoEstudo(
 
 
     return gerarSequenciaEquilibrada(
+
         planoBruto,
+
         limite
+
     );
 
 }
@@ -663,17 +787,13 @@ function gerarPlanoEstudo(
 // =====================================
 // OBTER PRÓXIMO ESTUDO
 // =====================================
-//
-// Será útil para:
-// - página principal
-// - Pomodoro
-// - coaching
-// - "Próxima Aula"
 
 function obterProximoEstudo() {
 
     const plano =
-        gerarPlanoEstudo(1);
+        gerarPlanoEstudo(
+            1
+        );
 
 
     if (
@@ -698,11 +818,68 @@ function obterProximosEstudos(
     quantidade = 3
 ) {
 
+    const quantidadeSegura =
+        Math.max(
+            1,
+            Number(
+                quantidade
+            ) || 1
+        );
+
+
     return gerarPlanoEstudo(
-        quantidade
+        quantidadeSegura
     );
 
 }
+
+
+// =====================================
+// RECALCULAR APÓS NOVO BLOCO POMODORO
+// =====================================
+//
+// O Pomodoro v3.0 dispara:
+//
+// pomodoroPSCPPBlocoRegistrado
+//
+// O motor não altera a interface diretamente.
+// Apenas emite um novo evento informando que
+// sua recomendação pode ter mudado.
+
+document.addEventListener(
+
+    "pomodoroPSCPPBlocoRegistrado",
+
+    function () {
+
+        const proximo =
+            obterProximoEstudo();
+
+
+        document.dispatchEvent(
+
+            new CustomEvent(
+
+                "planejamentoPSCPPAtualizado",
+
+                {
+
+                    detail: {
+
+                        proximoEstudo:
+                            proximo
+
+                    }
+
+                }
+
+            )
+
+        );
+
+    }
+
+);
 
 
 // =====================================
@@ -710,10 +887,10 @@ function obterProximosEstudos(
 // =====================================
 
 console.log(
-    "MOTOR DE PLANEJAMENTO PSCPP v3.0 CARREGADO"
+    "MOTOR DE PLANEJAMENTO PSCPP v3.1 CARREGADO"
 );
 
 
 // =====================================
-// FIM DO MOTOR DE PLANEJAMENTO v3.0
+// FIM DO MOTOR DE PLANEJAMENTO v3.1
 // =====================================
