@@ -1,176 +1,621 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP v2.1
+// MOTOR DE PLANEJAMENTO PSCPP v3.0
 // Bridge Trainer PSCPP
 //
-// A partir da v2.1, o motor não lê mais assunto.status
-// (campo removido do banco-conteudo.js). O que já foi
-// concluído agora é verificado em tempo real via
-// obterProgressoAula(), do progresso.js — que precisa
-// estar carregado ANTES deste script na página.
+// Responsabilidades:
+//
+// 1. Ler o banco de conteúdo.
+// 2. Ignorar aulas já concluídas.
+// 3. Calcular prioridade estratégica.
+// 4. Considerar carga cognitiva.
+// 5. Evitar dois conteúdos pesados seguidos.
+// 6. Montar sequência equilibrada de estudos.
+// 7. Manter compatibilidade com progresso.js.
+//
+// IMPORTANTE:
+// Este motor NÃO salva progresso.
+// Ele apenas recomenda a ordem de estudo.
 // =====================================
 
 
-function gerarPlanoEstudo(){
+// =====================================
+// CONFIGURAÇÕES DO MOTOR
+// =====================================
+
+const MOTOR_LIMITE_PLANO_PADRAO = 20;
 
 
-let plano = [];
+// Bônus para aulas já iniciadas.
+// Não é alto o suficiente para "prender"
+// o aluno indefinidamente no mesmo assunto.
+
+const MOTOR_BONUS_ASSUNTO_INICIADO = 1.15;
 
 
+// Redução aplicada quando dois assuntos
+// consecutivos seriam de carga cognitiva alta.
 
-// Percorre banco de conteúdo
-
-
-for(let disciplina in conteudoPSCPP){
-
+const MOTOR_PENALIDADE_ALTA_SEGUIDA = 0.55;
 
 
-    let dadosDisciplina =
-    conteudoPSCPP[disciplina];
+// Pequeno bônus para conteúdos de carga
+// média ou baixa quando o último estudo
+// recomendado foi pesado.
+
+const MOTOR_BONUS_RECUPERACAO = 1.25;
 
 
+// =====================================
+// OBTER PROGRESSO SEGURO
+// =====================================
 
-    let assuntos =
-    dadosDisciplina.assuntos;
+function obterProgressoSeguro(
+    idDisciplina,
+    idAssunto
+) {
 
+    if (
+        typeof obterProgressoAula !== "function"
+    ) {
 
+        return 0;
 
-
-    assuntos.forEach(assunto => {
-
-
-
-        const percentualConcluido =
-        (typeof obterProgressoAula === "function")
-            ? obterProgressoAula(disciplina, assunto.id)
-            : 0;
-
-
-
-        if(percentualConcluido < 100){
+    }
 
 
+    return obterProgressoAula(
+        idDisciplina,
+        idAssunto
+    ) || 0;
 
-            let pesoDisciplina =
-            dadosDisciplina.pesoDisciplina || 1;
-
-
-
-            let pesoAssunto =
-            assunto.peso || 1;
+}
 
 
+// =====================================
+// OBTER PESO DA CONFIGURAÇÃO
+// =====================================
 
-            let prioridadeConfiguracao = 1;
+function obterPesoConfiguracao(
+    nomeDisciplina
+) {
+
+    if (
+        typeof configuracaoEstudo === "undefined" ||
+        !configuracaoEstudo ||
+        !configuracaoEstudo.pesosPrioridade
+    ) {
+
+        return 1;
+
+    }
 
 
+    return (
+        configuracaoEstudo
+            .pesosPrioridade[
+                nomeDisciplina
+            ] || 1
+    );
 
-            if(
-                configuracaoEstudo &&
-                configuracaoEstudo.pesosPrioridade &&
-                configuracaoEstudo.pesosPrioridade[dadosDisciplina.nome]
-            ){
+}
 
 
-                prioridadeConfiguracao =
-                configuracaoEstudo.pesosPrioridade[dadosDisciplina.nome];
+// =====================================
+// NORMALIZAR CARGA COGNITIVA
+// =====================================
 
+function normalizarCargaCognitiva(
+    carga
+) {
+
+    const valor =
+        String(
+            carga || "Média"
+        )
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        );
+
+
+    if (valor === "alta") {
+
+        return "Alta";
+
+    }
+
+
+    if (valor === "baixa") {
+
+        return "Baixa";
+
+    }
+
+
+    return "Média";
+
+}
+
+
+// =====================================
+// CALCULAR PRIORIDADE BASE
+// =====================================
+
+function calcularPrioridadeBase(
+    dadosDisciplina,
+    assunto,
+    percentualConcluido
+) {
+
+    const pesoDisciplina =
+        dadosDisciplina.pesoDisciplina || 1;
+
+
+    const pesoAssunto =
+        assunto.peso || 1;
+
+
+    const pesoConfiguracao =
+        obterPesoConfiguracao(
+            dadosDisciplina.nome
+        );
+
+
+    let prioridade =
+
+        pesoDisciplina *
+        pesoAssunto *
+        pesoConfiguracao;
+
+
+    // Aula iniciada recebe pequeno bônus,
+    // mas não domina o algoritmo.
+
+    if (
+        percentualConcluido > 0 &&
+        percentualConcluido < 100
+    ) {
+
+        prioridade *=
+            MOTOR_BONUS_ASSUNTO_INICIADO;
+
+    }
+
+
+    return prioridade;
+
+}
+
+
+// =====================================
+// GERAR PLANO BRUTO
+// =====================================
+
+function gerarPlanoBruto() {
+
+    let plano = [];
+
+
+    for (
+        let idDisciplina in conteudoPSCPP
+    ) {
+
+        const dadosDisciplina =
+            conteudoPSCPP[
+                idDisciplina
+            ];
+
+
+        const assuntos =
+            dadosDisciplina.assuntos || [];
+
+
+        assuntos.forEach(
+            assunto => {
+
+                const percentualConcluido =
+                    obterProgressoSeguro(
+                        idDisciplina,
+                        assunto.id
+                    );
+
+
+                if (
+                    percentualConcluido >= 100
+                ) {
+
+                    return;
+
+                }
+
+
+                const prioridadeBase =
+                    calcularPrioridadeBase(
+
+                        dadosDisciplina,
+
+                        assunto,
+
+                        percentualConcluido
+
+                    );
+
+
+                plano.push({
+
+                    idDisciplina:
+                        idDisciplina,
+
+                    idAssunto:
+                        assunto.id,
+
+                    disciplina:
+                        dadosDisciplina.nome,
+
+                    assunto:
+                        assunto.nome,
+
+                    horas:
+                        assunto.horas || 0,
+
+                    importancia:
+                        assunto.importancia ||
+                        "Média",
+
+                    pesoDisciplina:
+                        dadosDisciplina
+                            .pesoDisciplina || 1,
+
+                    pesoAssunto:
+                        assunto.peso || 1,
+
+                    cargaCognitiva:
+                        normalizarCargaCognitiva(
+                            assunto.cargaCognitiva
+                        ),
+
+                    prioridadeBase:
+                        prioridadeBase,
+
+                    prioridade:
+                        prioridadeBase,
+
+                    percentualConcluido:
+                        percentualConcluido
+
+                });
+
+            }
+        );
+
+    }
+
+
+    plano.sort(
+        (a, b) =>
+            b.prioridadeBase -
+            a.prioridadeBase
+    );
+
+
+    return plano;
+
+}
+
+
+// =====================================
+// AJUSTAR PRIORIDADE PELA CARGA
+// =====================================
+
+function calcularPrioridadeContextual(
+    item,
+    ultimoItem
+) {
+
+    let prioridade =
+        item.prioridadeBase;
+
+
+    if (!ultimoItem) {
+
+        return prioridade;
+
+    }
+
+
+    const cargaAtual =
+        item.cargaCognitiva;
+
+
+    const cargaAnterior =
+        ultimoItem.cargaCognitiva;
+
+
+    // Regra principal:
+    // evitar Alta -> Alta.
+
+    if (
+        cargaAnterior === "Alta" &&
+        cargaAtual === "Alta"
+    ) {
+
+        prioridade *=
+            MOTOR_PENALIDADE_ALTA_SEGUIDA;
+
+    }
+
+
+    // Depois de conteúdo pesado,
+    // favorecer um bloco intermediário ou leve.
+
+    if (
+        cargaAnterior === "Alta" &&
+        (
+            cargaAtual === "Média" ||
+            cargaAtual === "Baixa"
+        )
+    ) {
+
+        prioridade *=
+            MOTOR_BONUS_RECUPERACAO;
+
+    }
+
+
+    return prioridade;
+
+}
+
+
+// =====================================
+// EVITAR REPETIÇÃO IMEDIATA
+// DA MESMA DISCIPLINA
+// =====================================
+//
+// Não proíbe repetir disciplina.
+// Apenas usa como desempate quando
+// houver alternativa estratégica próxima.
+
+function calcularPenalidadeDisciplina(
+    item,
+    ultimoItem
+) {
+
+    if (!ultimoItem) {
+
+        return 1;
+
+    }
+
+
+    if (
+        item.idDisciplina ===
+        ultimoItem.idDisciplina
+    ) {
+
+        return 0.92;
+
+    }
+
+
+    return 1;
+
+}
+
+
+// =====================================
+// ESCOLHER PRÓXIMO ITEM
+// =====================================
+
+function escolherProximoItem(
+    candidatos,
+    ultimoItem
+) {
+
+    let melhor = null;
+
+    let melhorPontuacao = -Infinity;
+
+
+    candidatos.forEach(
+        item => {
+
+            let pontuacao =
+                calcularPrioridadeContextual(
+                    item,
+                    ultimoItem
+                );
+
+
+            pontuacao *=
+                calcularPenalidadeDisciplina(
+                    item,
+                    ultimoItem
+                );
+
+
+            if (
+                pontuacao >
+                melhorPontuacao
+            ) {
+
+                melhorPontuacao =
+                    pontuacao;
+
+                melhor =
+                    item;
 
             }
 
+        }
+    );
 
 
+    if (melhor) {
 
-            let prioridade =
-            pesoDisciplina *
-            pesoAssunto *
-            prioridadeConfiguracao;
+        melhor.prioridade =
+            Math.round(
+                melhorPontuacao * 100
+            ) / 100;
 
-
-
-
-
-            plano.push({
+    }
 
 
-                idDisciplina:
-                disciplina,
+    return melhor;
+
+}
 
 
+// =====================================
+// GERAR SEQUÊNCIA EQUILIBRADA
+// =====================================
 
-                idAssunto:
-                assunto.id,
+function gerarSequenciaEquilibrada(
+    planoBruto,
+    limite
+) {
 
-
-
-                disciplina:
-                dadosDisciplina.nome,
-
-
-
-                assunto:
-                assunto.nome,
+    const candidatos =
+        [...planoBruto];
 
 
-
-                horas:
-                assunto.horas,
+    const sequencia = [];
 
 
-
-                importancia:
-                assunto.importancia,
+    let ultimoItem = null;
 
 
+    while (
+        candidatos.length > 0 &&
+        sequencia.length < limite
+    ) {
 
-                pesoDisciplina:
-                pesoDisciplina,
-
-
-
-                pesoAssunto:
-                pesoAssunto,
-
-
-
-                prioridade:
-                prioridade,
+        const escolhido =
+            escolherProximoItem(
+                candidatos,
+                ultimoItem
+            );
 
 
+        if (!escolhido) {
 
-                percentualConcluido:
-                percentualConcluido
-
-
-
-            });
-
-
+            break;
 
         }
 
 
+        sequencia.push(
+            escolhido
+        );
 
-    });
+
+        const indice =
+            candidatos.indexOf(
+                escolhido
+            );
 
 
+        if (indice >= 0) {
+
+            candidatos.splice(
+                indice,
+                1
+            );
+
+        }
+
+
+        ultimoItem =
+            escolhido;
+
+    }
+
+
+    return sequencia;
 
 }
 
 
+// =====================================
+// GERAR PLANO DE ESTUDO
+// =====================================
+//
+// Função principal mantida com o mesmo nome
+// para não quebrar app-planejamento.js.
 
-// Ordenação:
-// maior prioridade primeiro
+function gerarPlanoEstudo(
+    limite =
+        MOTOR_LIMITE_PLANO_PADRAO
+) {
+
+    const planoBruto =
+        gerarPlanoBruto();
 
 
-plano.sort(
-(a,b) =>
-b.prioridade - a.prioridade
+    return gerarSequenciaEquilibrada(
+        planoBruto,
+        limite
+    );
+
+}
+
+
+// =====================================
+// OBTER PRÓXIMO ESTUDO
+// =====================================
+//
+// Será útil para:
+// - página principal
+// - Pomodoro
+// - coaching
+// - "Próxima Aula"
+
+function obterProximoEstudo() {
+
+    const plano =
+        gerarPlanoEstudo(1);
+
+
+    if (
+        plano.length === 0
+    ) {
+
+        return null;
+
+    }
+
+
+    return plano[0];
+
+}
+
+
+// =====================================
+// OBTER PRÓXIMOS ESTUDOS
+// =====================================
+
+function obterProximosEstudos(
+    quantidade = 3
+) {
+
+    return gerarPlanoEstudo(
+        quantidade
+    );
+
+}
+
+
+// =====================================
+// DEBUG
+// =====================================
+
+console.log(
+    "MOTOR DE PLANEJAMENTO PSCPP v3.0 CARREGADO"
 );
 
 
-
-return plano;
-
-
-
-}
+// =====================================
+// FIM DO MOTOR DE PLANEJAMENTO v3.0
+// =====================================
