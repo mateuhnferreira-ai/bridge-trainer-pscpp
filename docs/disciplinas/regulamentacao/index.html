@@ -12,7 +12,12 @@
 
 </head>
 
-<body>
+
+<body
+data-tipo-pagina="disciplina"
+data-disciplina="regulamentacao"
+>
+
 
 <header class="topo">
 
@@ -26,9 +31,13 @@
 
 </header>
 
+
 <nav class="navbar">
 
-<button onclick="voltarPagina()">
+<button
+type="button"
+onclick="voltarPagina()"
+>
 ⬅ Voltar
 </button>
 
@@ -36,8 +45,8 @@
 🏠 Início
 </a>
 
-<a href="#">
-📊 Progresso
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
 </a>
 
 <a href="#">
@@ -46,7 +55,13 @@
 
 </nav>
 
+
 <main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
 
 <section class="dashboard">
 
@@ -54,14 +69,22 @@
 
 <p>
 
-Estudo das normas nacionais e internacionais aplicáveis à atividade marítima,
-com foco nas atribuições da Autoridade Marítima, segurança da navegação,
-praticagem, investigação de acidentes, navegação e administração portuária,
+Estudo das normas nacionais e internacionais
+aplicáveis à atividade marítima, com foco nas
+atribuições da Autoridade Marítima,
+segurança da navegação, praticagem,
+investigação de acidentes,
+navegação e administração portuária,
 conforme bibliografia oficial do PSCPP.
 
 </p>
 
 </section>
+
+
+<!-- =========================================
+     PROGRESSO DA DISCIPLINA
+========================================= -->
 
 <section>
 
@@ -72,22 +95,30 @@ conforme bibliografia oficial do PSCPP.
 <p>
 
 <strong>Status atual:</strong>
-Não iniciado
+
+<span id="status-geral-regulamentacao">
+Nenhum módulo iniciado
+</span>
 
 </p>
 
-<p>
+<p id="resumo-progresso-regulamentacao">
 
-📚 Nenhum módulo concluído.
+0 de 25 módulos concluídos
 
 </p>
 
 <div class="barra-progresso">
 
-<div class="progresso" style="width:0%;">
-
+<div
+class="progresso"
+id="barra-progresso-regulamentacao"
+style="width: 0%;"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
+>
 0%
-
 </div>
 
 </div>
@@ -96,453 +127,672 @@ Não iniciado
 
 </section>
 
+
+<!-- =========================================
+     MÓDULOS
+========================================= -->
+
 <section>
 
 <h2>📚 Módulos de Estudo</h2>
 
-<div class="cards">
+<div
+class="cards"
+id="modulos-regulamentacao"
+data-disciplina="regulamentacao"
+>
 
-<a href="normam-201.html" class="card">
+
+<a
+href="normam-201.html"
+class="card"
+data-assunto="normam-201"
+>
 
 <h3>📘 NORMAM-201/DPC</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-201"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Embarcações Empregadas na Navegação de Mar Aberto.
-
 </p>
 
 </a>
 
-<a href="normam-204.html" class="card">
+
+<a
+href="normam-204.html"
+class="card"
+data-assunto="normam-204"
+>
 
 <h3>📘 NORMAM-204/DPC</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-204"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Tráfego e Permanência de Embarcações em AJB.
-
 </p>
 
 </a>
 
-<a href="normam-302.html" class="card">
+
+<a
+href="normam-302.html"
+class="card"
+data-assunto="normam-302"
+>
 
 <h3>📘 NORMAM-302/DPC</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-302"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Inquéritos Administrativos sobre Acidentes e Fatos da Navegação.
-
+Inquéritos Administrativos sobre
+Acidentes e Fatos da Navegação.
 </p>
 
 </a>
 
-<a href="normam-311.html" class="card">
+
+<a
+href="normam-311.html"
+class="card"
+data-assunto="normam-311"
+>
 
 <h3>📘 NORMAM-311/DPC</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-311"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Serviço de Praticagem.
-
 </p>
 
 </a>
 
-<a href="normam-601.html" class="card">
+
+<a
+href="normam-601.html"
+class="card"
+data-assunto="normam-601"
+>
 
 <h3>📘 NORMAM-601/DHN</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-601"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Auxílios à Navegação.
-
 </p>
 
 </a>
 
-<a href="normam-112.html" class="card">
+
+<a
+href="normam-112.html"
+class="card"
+data-assunto="normam-112"
+>
 
 <h3>📘 NORMAM-112/DPC</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-112"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Cerimonial da Marinha Mercante.
-
 </p>
 
 </a>
 
-<a href="normam-602.html" class="card">
+
+<a
+href="normam-602.html"
+class="card"
+data-assunto="normam-602"
+>
 
 <h3>📘 NORMAM-602/DHN</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-normam-602"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Serviço de Tráfego de Embarcações (VTS).
-
+Serviço de Tráfego de Embarcações — VTS.
 </p>
 
 </a>
 
-<a href="lei-2180-tribunal-maritimo.html" class="card">
+
+<a
+href="lei-2180-tribunal-maritimo.html"
+class="card"
+data-assunto="lei-2180-tribunal-maritimo"
+>
 
 <h3>⚖ Lei nº 2.180/1954</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-2180-tribunal-maritimo"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Tribunal Marítimo.
-
 </p>
 
 </a>
 
-<a href="lesta-lei-9537.html" class="card">
+
+<a
+href="lesta-lei-9537.html"
+class="card"
+data-assunto="lesta-lei-9537"
+>
 
 <h3>⚖ Lei nº 9.537/1997</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lesta-lei-9537"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 LESTA.
-
 </p>
 
 </a>
 
-<a href="rlesta-decreto-2596.html" class="card">
+
+<a
+href="rlesta-decreto-2596.html"
+class="card"
+data-assunto="rlesta-decreto-2596"
+>
 
 <h3>⚖ Decreto nº 2.596/1998</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-rlesta-decreto-2596"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 RLESTA.
-
 </p>
 
 </a>
 
-<a href="lei-14813-praticagem.html" class="card">
+
+<a
+href="lei-14813-praticagem.html"
+class="card"
+data-assunto="lei-14813-praticagem"
+>
 
 <h3>⚖ Lei nº 14.813/2024</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-14813-praticagem"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Regulamentação da Praticagem.
-
 </p>
 
 </a>
 
-<a href="autoridade-maritima-portaria-37.html" class="card">
+
+<a
+href="autoridade-maritima-portaria-37.html"
+class="card"
+data-assunto="autoridade-maritima-portaria-37"
+>
 
 <h3>⚓ Portaria nº 37/MB/2022</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-autoridade-maritima-portaria-37"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Estrutura da Autoridade Marítima.
-
 </p>
 
 </a>
 
-<a href="colreg.html" class="card">
+
+<a
+href="colreg.html"
+class="card"
+data-assunto="colreg"
+>
 
 <h3>🚢 COLREG 1972</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-colreg"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Regulamento Internacional para Evitar Abalroamentos no Mar.
-
+Regulamento Internacional para
+Evitar Abalroamentos no Mar.
 </p>
 
-  </a>
-  <a href="publicacoes-dhn.html" class="card">
+</a>
+
+
+<a
+href="publicacoes-dhn.html"
+class="card"
+data-assunto="publicacoes-dhn"
+>
 
 <h3>🗺 Publicações Náuticas da DHN</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-publicacoes-dhn"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Cartas e publicações oficiais da Diretoria de Hidrografia e Navegação.
-
+Cartas e publicações oficiais da
+Diretoria de Hidrografia e Navegação.
 </p>
 
 </a>
 
-<a href="sar-brasil.html" class="card">
+
+<a
+href="sar-brasil.html"
+class="card"
+data-assunto="sar-brasil"
+>
 
 <h3>🆘 Serviço de Busca e Salvamento</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-sar-brasil"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Sistema SAR Marítimo Brasileiro.
-
 </p>
 
 </a>
 
-<a href="lei-12815-portos.html" class="card">
+
+<a
+href="lei-12815-portos.html"
+class="card"
+data-assunto="lei-12815-portos"
+>
 
 <h3>⚖ Lei nº 12.815/2013</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-12815-portos"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Lei dos Portos.
-
 </p>
 
 </a>
 
-<a href="lei-complementar-97.html" class="card">
+
+<a
+href="lei-complementar-97.html"
+class="card"
+data-assunto="lei-complementar-97"
+>
 
 <h3>⚖ Lei Complementar nº 97/1999</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-complementar-97"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Atribuições da Marinha do Brasil.
-
 </p>
 
 </a>
 
-<a href="resolucao-imo-a960.html" class="card">
+
+<a
+href="resolucao-imo-a960.html"
+class="card"
+data-assunto="resolucao-imo-a960"
+>
 
 <h3>🌍 IMO Resolution A.960(23)</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-resolucao-imo-a960"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Recomendações sobre Práticos.
-
+Recomendações sobre treinamento,
+certificação e procedimentos relativos aos Práticos.
 </p>
 
 </a>
 
-<a href="glossario-md35-g01.html" class="card">
+
+<a
+href="glossario-md35-g01.html"
+class="card"
+data-assunto="glossario-md35-g01"
+>
 
 <h3>📖 Glossário MD35-G-01</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-glossario-md35-g01"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Glossário das Forças Armadas.
-
 </p>
 
 </a>
 
-<a href="politica-nacional-defesa.html" class="card">
+
+<a
+href="politica-nacional-defesa.html"
+class="card"
+data-assunto="politica-nacional-defesa"
+>
 
 <h3>🛡 Política Nacional de Defesa</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-politica-nacional-defesa"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Diretrizes da Política Nacional de Defesa.
-
 </p>
 
 </a>
 
-<a href="politica-maritima-nacional.html" class="card">
+
+<a
+href="politica-maritima-nacional.html"
+class="card"
+data-assunto="politica-maritima-nacional"
+>
 
 <h3>🌊 Política Marítima Nacional</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-politica-maritima-nacional"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Fundamentos da Política Marítima Nacional.
-
+Fundamentos e diretrizes da
+Política Marítima Nacional.
 </p>
 
 </a>
 
-<a href="decreto-2256.html" class="card">
+
+<a
+href="decreto-2256.html"
+class="card"
+data-assunto="decreto-2256"
+>
 
 <h3>⚖ Decreto nº 2.256/1997</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-decreto-2256"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Transporte Aquaviário.
-
+Normas relacionadas ao transporte aquaviário.
 </p>
 
 </a>
 
-<a href="lei-7642-pem.html" class="card">
+
+<a
+href="lei-7642-pem.html"
+class="card"
+data-assunto="lei-7642-pem"
+>
 
 <h3>⚖ Lei nº 7.642/1987</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-7642-pem"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
-Procuradoria Especial da Marinha (PEM).
-
+Procuradoria Especial da Marinha — PEM.
 </p>
 
 </a>
 
-<a href="lei-7652-registro-propriedade-maritima.html" class="card">
+
+<a
+href="lei-7652-registro-propriedade-maritima.html"
+class="card"
+data-assunto="lei-7652-registro-propriedade-maritima"
+>
 
 <h3>⚖ Lei nº 7.652/1988</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-7652-registro-propriedade-maritima"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
-
 Registro da Propriedade Marítima.
-
 </p>
 
 </a>
 
-<a href="lei-9432-transporte-aquaviario.html" class="card">
+
+<a
+href="lei-9432-transporte-aquaviario.html"
+class="card"
+data-assunto="lei-9432-transporte-aquaviario"
+>
 
 <h3>⚖ Lei nº 9.432/1997</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-lei-9432-transporte-aquaviario"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
+Ordenação do Transporte Aquaviário.
+</p>
 
-Ordenação do
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PAINEL COMPLEMENTAR
+========================================= -->
+
+<section class="painel">
+
+
+<div class="widget">
+
+<h2>🎯 Objetivo PSCPP</h2>
+
+<p>
+
+Dominar as normas nacionais e internacionais
+aplicáveis à navegação, praticagem,
+segurança marítima, autoridade marítima,
+administração portuária e transporte aquaviário.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h2>📖 Situação do Estudo</h2>
+
+<p>
+
+O sistema de planejamento indicará
+automaticamente os módulos prioritários
+de acordo com progresso, peso,
+carga cognitiva e tempo disponível.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h2>📚 Biblioteca Técnica</h2>
+
+<p>
+
+NORMAM<br>
+Legislação marítima brasileira<br>
+COLREG<br>
+Resoluções IMO<br>
+Publicações DHN<br>
+Bibliografia oficial do PSCPP
+
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+Bridge Trainer PSCPP © 2026
+</p>
+
+</footer>
+
+
+<a
+href="../../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
+🏠
+</a>
+
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/app.js"></script>
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+
+</body>
+
+</html>
