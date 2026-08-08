@@ -1854,7 +1854,203 @@ function atualizarEstadoDosTopicos() {
 
 }
 
+// =====================================
+// INDICADORES DO CONTEÚDO PROGRAMÁTICO
+// =====================================
+//
+// Os itens do conteúdo programático podem
+// possuir:
+//
+// data-progresso-topico="id-do-topico"
+//
+// O identificador deve ser exatamente o
+// mesmo utilizado em:
+//
+// data-topico-id="id-do-topico"
+//
+// A caixa é apenas um indicador visual.
+// O estado verdadeiro continua sendo
+// controlado pelo sistema de progresso.
+// =====================================
 
+
+// =====================================
+// CRIAR INDICADORES
+// =====================================
+
+function criarIndicadoresConteudoProgramatico() {
+
+    const itens =
+        document.querySelectorAll(
+            "[data-progresso-topico]"
+        );
+
+
+    itens.forEach(
+        item => {
+
+            let indicador =
+                item.querySelector(
+                    ".indicador-conteudo-programatico"
+                );
+
+
+            if (indicador) {
+
+                return;
+
+            }
+
+
+            indicador =
+                document.createElement(
+                    "span"
+                );
+
+
+            indicador.className =
+                "indicador-conteudo-programatico";
+
+
+            indicador.textContent =
+                "□";
+
+
+            indicador.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            // Pequeno espaçamento entre
+            // a caixa e o texto.
+
+            indicador.style.display =
+                "inline-block";
+
+
+            indicador.style.minWidth =
+                "1.5em";
+
+
+            indicador.style.fontWeight =
+                "bold";
+
+
+            item.insertBefore(
+
+                indicador,
+
+                item.firstChild
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR INDICADORES
+// =====================================
+
+function atualizarIndicadoresConteudoProgramatico() {
+
+    if (
+        !aulaAtual.disciplina ||
+        !aulaAtual.aula
+    ) {
+
+        return;
+
+    }
+
+
+    const itens =
+        document.querySelectorAll(
+            "[data-progresso-topico]"
+        );
+
+
+    itens.forEach(
+        item => {
+
+            const idTopico =
+                normalizarIdentificador(
+                    item.dataset.progressoTopico
+                );
+
+
+            if (!idTopico) {
+
+                return;
+
+            }
+
+
+            const concluido =
+                topicoFoiEstudado(
+
+                    aulaAtual.disciplina,
+
+                    aulaAtual.aula,
+
+                    idTopico
+
+                );
+
+
+            const indicador =
+                item.querySelector(
+                    ".indicador-conteudo-programatico"
+                );
+
+
+            if (!indicador) {
+
+                return;
+
+            }
+
+
+            if (concluido) {
+
+                indicador.textContent =
+                    "✓";
+
+
+                indicador.style.color =
+                    "#198754";
+
+
+                indicador.setAttribute(
+                    "aria-label",
+                    "Tópico estudado"
+                );
+
+            }
+            else {
+
+                indicador.textContent =
+                    "□";
+
+
+                indicador.style.color =
+                    "";
+
+
+                indicador.setAttribute(
+                    "aria-label",
+                    "Tópico não estudado"
+                );
+
+            }
+
+        }
+    );
+
+}
 // =====================================
 // ATUALIZAR PROGRESSO VISUAL DA AULA
 // =====================================
