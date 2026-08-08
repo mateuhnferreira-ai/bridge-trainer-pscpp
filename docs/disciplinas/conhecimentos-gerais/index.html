@@ -4,15 +4,26 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Conhecimentos Gerais - PSCPP</title>
 
-<link rel="stylesheet" href="../../css/style.css">
+<link
+rel="stylesheet"
+href="../../css/style.css"
+>
 
 </head>
 
-<body>
+
+<body
+data-tipo-pagina="disciplina"
+data-disciplina="conhecimentos-gerais"
+>
+
 
 <header class="topo">
 
@@ -26,9 +37,13 @@
 
 </header>
 
+
 <nav class="navbar">
 
-<button onclick="voltarPagina()">
+<button
+type="button"
+onclick="voltarPagina()"
+>
 ⬅ Voltar
 </button>
 
@@ -36,8 +51,8 @@
 🏠 Início
 </a>
 
-<a href="#">
-📊 Progresso
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
 </a>
 
 <a href="#">
@@ -46,7 +61,13 @@
 
 </nav>
 
+
 <main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
 
 <section class="dashboard">
 
@@ -54,14 +75,22 @@
 
 <p>
 
-Disciplina baseada na bibliografia oficial do PSCPP, reunindo
-os conhecimentos complementares sobre praticagem, planejamento
-portuário, normas nacionais e internacionais, fatores humanos,
-meio ambiente e legislação marítima.
+Estudo dos conhecimentos complementares
+previstos na bibliografia oficial do PSCPP,
+abrangendo planejamento portuário,
+infraestrutura de acessos náuticos,
+fatores humanos, interface navio-porto,
+proteção ambiental, economia marítima,
+direitos humanos e direito processual marítimo.
 
 </p>
 
 </section>
+
+
+<!-- =========================================
+     PROGRESSO DA DISCIPLINA
+========================================= -->
 
 <section>
 
@@ -72,22 +101,30 @@ meio ambiente e legislação marítima.
 <p>
 
 <strong>Status atual:</strong>
-Disciplina iniciada
+
+<span id="status-geral-conhecimentos-gerais">
+Nenhum módulo iniciado
+</span>
 
 </p>
 
-<p>
+<p id="resumo-progresso-conhecimentos-gerais">
 
-📚 Nenhum módulo concluído
+0 de 9 módulos concluídos
 
 </p>
 
 <div class="barra-progresso">
 
-<div class="progresso" style="width:0%;">
-
+<div
+class="progresso"
+id="barra-progresso-conhecimentos-gerais"
+style="width: 0%;"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
+>
 0%
-
 </div>
 
 </div>
@@ -96,272 +133,314 @@ Disciplina iniciada
 
 </section>
 
+
+<!-- =========================================
+     MÓDULOS DE ESTUDO
+========================================= -->
+
 <section>
 
 <h2>📚 Módulos de Estudo</h2>
 
-<div class="cards">
+<div
+class="cards"
+id="modulos-conhecimentos-gerais"
+data-disciplina="conhecimentos-gerais"
+>
 
-<a href="planejamento-portuario.html" class="card">
+
+<!-- =========================================
+     1 - PLANEJAMENTO PORTUÁRIO
+========================================= -->
+
+<a
+href="planejamento-portuario.html"
+class="card"
+data-assunto="planejamento-portuario"
+>
 
 <h3>⚓ Planejamento Portuário</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-planejamento-portuario"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Planejamento, organização e desenvolvimento
-da infraestrutura portuária.
+Planejamento de acessos náuticos,
+vias de acesso, instalações portuárias
+e análise de risco aplicada
+ao planejamento portuário.
 
 </p>
 
 </a>
 
-<a href="pianc.html" class="card">
 
-<h3>🌍 PIANC</h3>
+<!-- =========================================
+     2 - PIANC
+========================================= -->
 
-<span class="status pendente">
+<a
+href="pianc.html"
+class="card"
+data-assunto="pianc"
+>
+
+<h3>🌍 PIANC — Harbour Approach Channels</h3>
+
+<span
+class="status pendente"
+id="status-pianc"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Recomendações técnicas para
-vias navegáveis e portos.
+Critérios técnicos para projeto
+e operação de canais de acesso,
+dimensões verticais e horizontais,
+entradas portuárias e áreas de manobra.
 
 </p>
 
 </a>
 
-<a href="normam-224.html" class="card">
+
+<!-- =========================================
+     3 - NORMAM-224
+========================================= -->
+
+<a
+href="normam-224.html"
+class="card"
+data-assunto="normam-224"
+>
 
 <h3>📘 NORMAM-224</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-normam-224"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Norma da Autoridade Marítima
-sobre o Serviço de Praticagem.
+Normas e critérios aplicáveis
+à segurança da navegação
+e às condições operacionais
+relacionadas aos acessos náuticos.
 
 </p>
 
 </a>
 
-<a href="fatores-humanos.html" class="card">
 
-<h3>👥 Fatores Humanos</h3>
+<!-- =========================================
+     4 - FATORES HUMANOS
+========================================= -->
 
-<span class="status pendente">
+<a
+href="fatores-humanos.html"
+class="card"
+data-assunto="fatores-humanos"
+>
+
+<h3>👥 Fatores Humanos e Fadiga</h3>
+
+<span
+class="status pendente"
+id="status-fatores-humanos"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Erro humano, CRM,
-liderança e tomada de decisão.
+Fadiga, desempenho humano,
+tomada de decisão, comunicação,
+liderança e fatores relacionados
+à segurança operacional.
 
 </p>
 
 </a>
 
-<a href="marpol.html" class="card">
 
-<h3>🌱 MARPOL</h3>
+<!-- =========================================
+     5 - SHIP / PORT INTERFACE
+========================================= -->
 
-<span class="status pendente">
+<a
+href="ship-port-interface.html"
+class="card"
+data-assunto="ship-port-interface"
+>
+
+<h3>🚢 Ship/Port Interface e Aspectos Operacionais</h3>
+
+<span
+class="status pendente"
+id="status-ship-port-interface"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Convenção Internacional para
-Prevenção da Poluição por Navios.
+Interface entre navio e porto,
+coordenação operacional,
+informações relevantes à operação
+e aspectos associados à condução
+segura do navio.
 
 </p>
 
 </a>
 
-<a href="economia-maritima.html" class="card">
+
+<!-- =========================================
+     6 - DIREITOS HUMANOS
+========================================= -->
+
+<a
+href="direitos-humanos.html"
+class="card"
+data-assunto="direitos-humanos"
+>
+
+<h3>⚖ Direitos Humanos</h3>
+
+<span
+class="status pendente"
+id="status-direitos-humanos"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Princípios fundamentais
+da Declaração Universal
+dos Direitos Humanos
+previstos na bibliografia do PSCPP.
+
+</p>
+
+</a>
+
+
+<!-- =========================================
+     7 - MARPOL
+========================================= -->
+
+<a
+href="marpol.html"
+class="card"
+data-assunto="marpol"
+>
+
+<h3>🌱 MARPOL 73/78</h3>
+
+<span
+class="status pendente"
+id="status-marpol"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Prevenção da poluição por navios,
+proteção do meio ambiente marinho
+e principais disposições da convenção.
+
+</p>
+
+</a>
+
+
+<!-- =========================================
+     8 - ECONOMIA MARÍTIMA
+========================================= -->
+
+<a
+href="economia-maritima.html"
+class="card"
+data-assunto="economia-maritima"
+>
 
 <h3>📈 Economia Marítima</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-economia-maritima"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
 Transporte marítimo,
-mercado e economia naval.
+mercados de navegação,
+economia dos portos
+e dinâmica econômica
+do setor marítimo.
 
 </p>
 
 </a>
 
-<a href="direito-maritimo.html" class="card">
 
-<h3>⚖ Direito Marítimo</h3>
+<!-- =========================================
+     9 - DIREITO PROCESSUAL MARÍTIMO
+========================================= -->
 
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Princípios, legislação
-e institutos do Direito Marítimo.
-
-</p>
-
-</a>
-
-<a href="direito-processual-maritimo.html" class="card">
+<a
+href="direito-processual-maritimo.html"
+class="card"
+data-assunto="direito-processual-maritimo"
+>
 
 <h3>🏛 Direito Processual Marítimo</h3>
 
-<span class="status pendente">
+<span
+class="status pendente"
+id="status-direito-processual-maritimo"
+>
 ⬜ Não iniciado
 </span>
 
 <p>
 
+Processo marítimo,
 Tribunal Marítimo,
-processos e responsabilidades.
+responsabilidades,
+procedimentos e aspectos
+processuais aplicáveis.
 
 </p>
 
 </a>
 
-<a href="convencoes-imo.html" class="card">
-
-<h3>🚢 Convenções IMO</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Convenções internacionais
-aplicáveis à navegação.
-
-</p>
-
-</a>
-
-<a href="seguranca-da-navegacao.html" class="card">
-
-<h3>🛡 Segurança da Navegação</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Gestão de riscos,
-segurança operacional e prevenção.
-
-</p>
-
-</a>
-
-<a href="gestao-portuaria.html" class="card">
-
-<h3>🏗 Gestão Portuária</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Administração,
-operações e eficiência portuária.
-
-</p>
-
-</a>
-
-<a href="logistica-maritima.html" class="card">
-
-<h3>📦 Logística Marítima</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Cadeia logística,
-transporte e integração portuária.
-
-</p>
-
-</a>
-
-<a href="comercio-internacional.html" class="card">
-
-<h3>🌎 Comércio Internacional</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Fluxos comerciais
-e transporte marítimo mundial.
-
-</p>
-
-</a>
-
-<a href="meio-ambiente-marinho.html" class="card">
-
-<h3>🌊 Meio Ambiente Marinho</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Proteção ambiental,
-poluição e sustentabilidade.
-
-</p>
-
-</a>
-
-<a href="atualidades-setor-maritimo.html" class="card">
-
-<h3>📰 Atualidades do Setor Marítimo</h3>
-
-<span class="status pendente">
-⬜ Não iniciado
-</span>
-
-<p>
-
-Temas atuais da
-praticagem, navegação e portos.
-
-</p>
-
-</a>
 
 </div>
 
 </section>
 
+
+<!-- =========================================
+     PAINEL COMPLEMENTAR
+========================================= -->
+
 <section class="painel">
+
 
 <div class="widget">
 
@@ -369,25 +448,32 @@ praticagem, navegação e portos.
 
 <p>
 
-Consolidar os conhecimentos complementares exigidos no PSCPP,
-integrando normas nacionais, convenções internacionais e a
-bibliografia oficial da praticagem.
+Consolidar os conhecimentos complementares
+exigidos no PSCPP, integrando planejamento
+portuário, fatores humanos, normas,
+economia marítima, proteção ambiental
+e fundamentos jurídicos.
 
 </p>
 
 </div>
+
 
 <div class="widget">
 
-<h2>📖 Próxima Aula</h2>
+<h2>📖 Situação do Estudo</h2>
 
 <p>
 
-⚓ Planejamento Portuário
+O sistema de planejamento indicará
+automaticamente os módulos prioritários
+de acordo com progresso, peso,
+carga cognitiva e tempo disponível.
 
 </p>
 
 </div>
+
 
 <div class="widget">
 
@@ -395,38 +481,56 @@ bibliografia oficial da praticagem.
 
 <p>
 
-PIANC<br>
+IMO — Ship/Port Interface<br>
+CONAPRA — Planejamento Portuário<br>
+PIANC — Harbour Approach Channels<br>
 NORMAM-224<br>
-MARPOL<br>
-Convenções IMO<br>
-Bibliografia Oficial PSCPP
+IMO — Guidelines on Fatigue<br>
+MARPOL 73/78<br>
+Economia Marítima<br>
+Direito Processual Marítimo<br>
+Bibliografia oficial do PSCPP
 
 </p>
 
 </div>
 
+
 </section>
 
+
 </main>
+
 
 <footer>
 
 <p>
-
 Bridge Trainer PSCPP © 2026
-
 </p>
 
 </footer>
 
-<a href="../../index.html" class="botao-inicio">
 
+<a
+href="../../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
 🏠
-
 </a>
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
 
 <script src="../../js/app.js"></script>
 
+
 </body>
 
-  </html>
+</html>
