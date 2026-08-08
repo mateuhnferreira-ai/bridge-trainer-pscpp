@@ -196,9 +196,12 @@ cargaCognitiva: "Média"
 },
 
 
+
+
+
 // =====================================
-// II - ARTE NAVAL
-// Total aproximado: 72 h
+// III - NAVEGAÇÃO
+// Total aproximado: 65 h
 // =====================================
 
 "arte-naval": {
@@ -212,26 +215,8 @@ pesoDisciplina: 4,
 assuntos: [
 
 {
-id: "fundamentos",
-nome: "Fundamentos de Arte Naval",
-horas: 3,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "tipos-de-navios",
-nome: "Tipos e Características dos Navios",
-horas: 3,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Baixa"
-},
-
-{
-id: "estrutura-naval",
-nome: "Estrutura Naval",
+id: "nomenclatura-geometria-estrutura",
+nome: "Nomenclatura, Geometria e Estrutura do Navio",
 horas: 5,
 importancia: "Alta",
 peso: 4,
@@ -239,53 +224,44 @@ cargaCognitiva: "Média"
 },
 
 {
-id: "compartimentagem",
-nome: "Compartimentagem e Estanqueidade",
+id: "classificacao-navios",
+nome: "Classificação e Características dos Navios",
 horas: 4,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "aparelhos-de-governo",
-nome: "Aparelhos de Governo",
-horas: 4,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "fundear-e-amarrar",
-nome: "Aparelhos de Fundear e Amarrar",
-horas: 6,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Média"
-},
-
-{
-id: "equipamentos-de-conves",
-nome: "Equipamentos de Convés",
-horas: 3,
 importancia: "Alta",
 peso: 4,
 cargaCognitiva: "Baixa"
 },
 
 {
-id: "cabos-e-espias",
-nome: "Cabos, Espias e Manuseio",
-horas: 4,
+id: "trabalhos-marinheiros-poleame",
+nome: "Trabalhos Marinheiros, Poleame e Aparelhos de Laborar",
+horas: 5,
 importancia: "Alta",
 peso: 4,
 cargaCognitiva: "Média"
 },
 
 {
-id: "estabilidade",
-nome: "Estabilidade do Navio",
+id: "estabilidade-arqueacao-deslocamento",
+nome: "Estabilidade, Arqueação e Deslocamento",
+horas: 7,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "fundeio-amarracao",
+nome: "Fundeio, Suspender e Amarração",
+horas: 7,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Média"
+},
+
+{
+id: "manobras-portuarias",
+nome: "Manobras Portuárias",
 horas: 8,
 importancia: "Muito Alta",
 peso: 5,
@@ -293,21 +269,21 @@ cargaCognitiva: "Alta"
 },
 
 {
-id: "operacoes-marinheiras",
-nome: "Operações Marinheiras",
-horas: 4,
-importancia: "Alta",
-peso: 4,
+id: "transferencia-de-pratico",
+nome: "Transferência de Prático",
+horas: 5,
+importancia: "Muito Alta",
+peso: 5,
 cargaCognitiva: "Média"
 },
 
 {
-id: "manobras-portuarias",
-nome: "Manobras Portuárias",
-horas: 7,
+id: "master-pilot-information-exchange",
+nome: "Master–Pilot Information Exchange — MPX",
+horas: 4,
 importancia: "Muito Alta",
 peso: 5,
-cargaCognitiva: "Alta"
+cargaCognitiva: "Média"
 },
 
 {
@@ -320,164 +296,35 @@ cargaCognitiva: "Alta"
 },
 
 {
-id: "estabilidade-dos-rebocadores",
-nome: "Estabilidade dos Rebocadores",
-horas: 5,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "transferencia-de-pratico",
-nome: "Transferência de Prático",
-horas: 4,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Média"
-},
-
-{
-id: "master-pilot-information-exchange",
-nome: "Master–Pilot Information Exchange",
-horas: 4,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Média"
-}
-
-]
-
-},
-
-
-// =====================================
-// III - NAVEGAÇÃO
-// Total aproximado: 65 h
-// =====================================
-
-navegacao: {
-
-nome: "Navegação",
-
-prioridade: "Muito Alta",
-
-pesoDisciplina: 5,
-
-assuntos: [
-
-{
-id: "navegacao-costeira",
-nome: "Navegação Costeira",
-horas: 5,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "aguas-restritas",
-nome: "Navegação em Águas Restritas",
-horas: 8,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "planejamento-navegacao",
-nome: "Planejamento da Navegação",
-horas: 7,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "pilotagem",
-nome: "Pilotagem",
-horas: 7,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "colreg",
-nome: "COLREG 1972",
-horas: 10,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Alta"
-},
-
-{
-id: "manobras-com-trafego",
-nome: "Manobras com Tráfego",
+id: "reboque-cabos-equipamentos",
+nome: "Reboque, Cabos e Equipamentos de Reboque",
 horas: 6,
 importancia: "Muito Alta",
 peso: 5,
+cargaCognitiva: "Média"
+},
+
+{
+id: "manobras-portuarias-emergencia",
+nome: "Manobras Portuárias de Emergência",
+horas: 5,
+importancia: "Muito Alta",
+peso: 5,
 cargaCognitiva: "Alta"
 },
 
 {
-id: "ecdis",
-nome: "ECDIS",
+id: "manobras-especiais-sts-sbm",
+nome: "Manobras Especiais — STS e SBM",
 horas: 4,
 importancia: "Alta",
 peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "balizamento",
-nome: "Balizamento e Auxílios à Navegação",
-horas: 4,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "publicacoes",
-nome: "Publicações Náuticas",
-horas: 3,
-importancia: "Alta",
-peso: 3,
-cargaCognitiva: "Baixa"
-},
-
-{
-id: "ais-vts",
-nome: "AIS e VTS",
-horas: 4,
-importancia: "Alta",
-peso: 4,
-cargaCognitiva: "Média"
-},
-
-{
-id: "bridge-team-management",
-nome: "Bridge Team Management / BRM",
-horas: 4,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Média"
-},
-
-{
-id: "dynamic-positioning",
-nome: "Dynamic Positioning — DP",
-horas: 3,
-importancia: "Média",
-peso: 3,
 cargaCognitiva: "Média"
 }
 
 ]
 
 },
-
 
 // =====================================
 // IV - METEOROLOGIA E OCEANOGRAFIA
