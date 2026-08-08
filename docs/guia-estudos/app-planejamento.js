@@ -1,5 +1,5 @@
 // =====================================
-// APLICATIVO DE PLANEJAMENTO PSCPP v3.0
+// APLICATIVO DE PLANEJAMENTO PSCPP v3.1
 // Bridge Trainer PSCPP
 //
 // Integra:
@@ -7,23 +7,27 @@
 // - progresso.js
 // - banco-conteudo.js
 // - configuracao-estudo.js
-// - calculo-planejamento.js v2.0
+// - calculo-planejamento.js v2.1
 // - motor-planejamento.js v3.3
-// - Pomodoro inteligente
+// - histórico analítico do Pomodoro v3.1
 //
 // Exibe:
 //
 // 1. Semana atual.
 // 2. Fase do planejamento.
 // 3. Disponibilidade semanal.
-// 4. Necessidade semanal.
-// 5. Margem semanal.
-// 6. Horas restantes.
-// 7. Situação do prazo.
-// 8. Progresso real × esperado.
-// 9. Distribuição por disciplina.
-// 10. Próximos estudos recomendados.
-// 11. Ciclo Pomodoro atual.
+// 4. Ritmo necessário.
+// 5. Ritmo REAL de estudo.
+// 6. Saldo do ritmo real.
+// 7. Tendência de 7 / 14 / 30 dias.
+// 8. Margem de capacidade.
+// 9. Horas restantes.
+// 10. Situação do prazo.
+// 11. Situação do ritmo real.
+// 12. Progresso real × esperado.
+// 13. Distribuição por disciplina.
+// 14. Próximos estudos.
+// 15. Ciclo Pomodoro.
 // =====================================
 
 
@@ -40,7 +44,7 @@ let ultimoPlanoEstudoRenderizado =
 
 
 // =====================================
-// ARREDONDAR VALOR
+// ARREDONDAR
 // =====================================
 
 function arredondarAppPlanejamento(
@@ -100,6 +104,34 @@ function formatarHorasPlanejamento(
                 ? " hora"
                 : " horas"
         )
+    );
+
+}
+
+
+// =====================================
+// FORMATAR SALDO DE HORAS
+// =====================================
+
+function formatarSaldoHorasPlanejamento(
+    valor
+) {
+
+    const numero =
+        arredondarAppPlanejamento(
+            valor,
+            1
+        );
+
+
+    return (
+        (
+            numero > 0
+                ? "+"
+                : ""
+        ) +
+        numero +
+        " h"
     );
 
 }
@@ -179,7 +211,7 @@ function calcularSemanaAtualApp(
 
 
 // =====================================
-// OBTER CONTAINER DOS CARDS SUPERIORES
+// CONTAINER DO DASHBOARD
 // =====================================
 
 function obterContainerDashboardPlanejamento() {
@@ -207,7 +239,7 @@ function obterContainerDashboardPlanejamento() {
 
 
 // =====================================
-// CRIAR CARD DE INDICADOR
+// CRIAR CARD
 // =====================================
 
 function criarCardIndicadorPlanejamento(
@@ -292,7 +324,7 @@ function criarCardIndicadorPlanejamento(
 
 
 // =====================================
-// REMOVER INDICADORES DINÂMICOS ANTIGOS
+// LIMPAR CARDS DINÂMICOS
 // =====================================
 
 function limparIndicadoresDinamicosPlanejamento() {
@@ -303,11 +335,19 @@ function limparIndicadoresDinamicosPlanejamento() {
 
         "card-necessidade-semanal",
 
+        "card-ritmo-real",
+
+        "card-saldo-ritmo-real",
+
+        "card-tendencia-ritmo",
+
         "card-margem-semanal",
 
         "card-horas-restantes",
 
         "card-situacao-prazo",
+
+        "card-situacao-ritmo",
 
         "card-progresso-planejamento",
 
@@ -340,6 +380,105 @@ function limparIndicadoresDinamicosPlanejamento() {
 
 
 // =====================================
+// DESCRIÇÃO DO RITMO REAL
+// =====================================
+
+function obterDescricaoRitmoReal(
+    dados
+) {
+
+    const horas =
+        arredondarAppPlanejamento(
+            dados.horasEstudadas7Dias,
+            1
+        );
+
+
+    const dias =
+        Number(
+            dados.diasComEstudo7Dias
+        ) || 0;
+
+
+    return (
+        horas +
+        " h registradas em " +
+        dias +
+        (
+            dias === 1
+                ? " dia de estudo."
+                : " dias de estudo."
+        )
+    );
+
+}
+
+
+// =====================================
+// DESCRIÇÃO DA TENDÊNCIA
+// =====================================
+
+function obterDescricaoTendenciaRitmo(
+    dados
+) {
+
+    const ritmo7 =
+        Number(
+            dados.ritmoReal7Dias
+        ) || 0;
+
+
+    const ritmo14 =
+        Number(
+            dados.ritmoReal14Dias
+        ) || 0;
+
+
+    const ritmo30 =
+        Number(
+            dados.ritmoReal30Dias
+        ) || 0;
+
+
+    // Ainda não existe histórico suficiente.
+
+    if (
+        ritmo7 === 0 &&
+        ritmo14 === 0 &&
+        ritmo30 === 0
+    ) {
+
+        return "Aguardando registros de estudo.";
+
+    }
+
+
+    if (
+        ritmo7 >
+        ritmo14
+    ) {
+
+        return "Tendência recente de aumento do ritmo.";
+
+    }
+
+
+    if (
+        ritmo7 <
+        ritmo14
+    ) {
+
+        return "O ritmo dos últimos dias caiu em relação à média recente.";
+
+    }
+
+
+    return "Ritmo recente estável.";
+
+}
+
+
+// =====================================
 // RENDERIZAR DASHBOARD
 // =====================================
 
@@ -348,7 +487,7 @@ function renderizarDashboardPlanejamento(
 ) {
 
     // =================================
-    // SEMANA ATUAL
+    // SEMANA
     // =================================
 
     const semanaElemento =
@@ -379,7 +518,7 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // HORAS DISPONÍVEIS
+    // DISPONIBILIDADE
     // =================================
 
     const horasElemento =
@@ -403,10 +542,6 @@ function renderizarDashboardPlanejamento(
     }
 
 
-    // =================================
-    // CONTAINER
-    // =================================
-
     const container =
         obterContainerDashboardPlanejamento();
 
@@ -424,7 +559,7 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // FASE ATUAL
+    // FASE
     // =================================
 
     container.appendChild(
@@ -447,7 +582,7 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // CARGA NECESSÁRIA
+    // RITMO NECESSÁRIO
     // =================================
 
     container.appendChild(
@@ -464,7 +599,7 @@ function renderizarDashboardPlanejamento(
             ) +
             " / semana",
 
-            "Carga mínima média para concluir o conteúdo dentro do prazo."
+            "Carga média necessária para concluir o conteúdo dentro do prazo."
 
         )
 
@@ -472,7 +607,115 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // MARGEM SEMANAL
+    // RITMO REAL
+    // =================================
+
+    container.appendChild(
+
+        criarCardIndicadorPlanejamento(
+
+            "card-ritmo-real",
+
+            "⏱ Ritmo Real",
+
+            formatarHorasPlanejamento(
+                dadosPlanejamento
+                    .ritmoReal7Dias
+            ) +
+            " / semana",
+
+            obterDescricaoRitmoReal(
+                dadosPlanejamento
+            )
+
+        )
+
+    );
+
+
+    // =================================
+    // SALDO DO RITMO REAL
+    // =================================
+
+    const saldoReal =
+        Number(
+            dadosPlanejamento
+                .saldoRitmoRealSemana
+        ) || 0;
+
+
+    container.appendChild(
+
+        criarCardIndicadorPlanejamento(
+
+            "card-saldo-ritmo-real",
+
+            "⚖ Saldo do Ritmo",
+
+            formatarSaldoHorasPlanejamento(
+                saldoReal
+            ) +
+            " / semana",
+
+            saldoReal >= 0
+
+                ? "O ritmo real está cobrindo a carga semanal necessária."
+
+                : "Faltam horas de estudo no ritmo atual para acompanhar a meta."
+
+        )
+
+    );
+
+
+    // =================================
+    // TENDÊNCIA 7 / 14 / 30
+    // =================================
+
+    const textoTendencia =
+
+        "7d: " +
+        arredondarAppPlanejamento(
+            dadosPlanejamento
+                .ritmoReal7Dias,
+            1
+        ) +
+        "h | 14d: " +
+        arredondarAppPlanejamento(
+            dadosPlanejamento
+                .ritmoReal14Dias,
+            1
+        ) +
+        "h | 30d: " +
+        arredondarAppPlanejamento(
+            dadosPlanejamento
+                .ritmoReal30Dias,
+            1
+        ) +
+        "h";
+
+
+    container.appendChild(
+
+        criarCardIndicadorPlanejamento(
+
+            "card-tendencia-ritmo",
+
+            "📈 Tendência de Estudo",
+
+            textoTendencia,
+
+            obterDescricaoTendenciaRitmo(
+                dadosPlanejamento
+            )
+
+        )
+
+    );
+
+
+    // =================================
+    // MARGEM DA CAPACIDADE
     // =================================
 
     const margem =
@@ -482,37 +725,24 @@ function renderizarDashboardPlanejamento(
         ) || 0;
 
 
-    const textoMargem =
-
-        (
-            margem >= 0
-                ? "+"
-                : ""
-        ) +
-
-        arredondarAppPlanejamento(
-            margem,
-            1
-        ) +
-
-        " h / semana";
-
-
     container.appendChild(
 
         criarCardIndicadorPlanejamento(
 
             "card-margem-semanal",
 
-            "📈 Margem Semanal",
+            "🛡 Margem de Capacidade",
 
-            textoMargem,
+            formatarSaldoHorasPlanejamento(
+                margem
+            ) +
+            " / semana",
 
             margem >= 0
 
-                ? "Há margem entre a disponibilidade e a carga necessária."
+                ? "Sua disponibilidade configurada comporta a carga necessária."
 
-                : "A carga necessária está acima da disponibilidade configurada."
+                : "A disponibilidade configurada é menor que a carga exigida."
 
         )
 
@@ -520,7 +750,7 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // HORAS RESTANTES
+    // CONTEÚDO RESTANTE
     // =================================
 
     container.appendChild(
@@ -552,7 +782,7 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // SITUAÇÃO DO PRAZO
+    // CAPACIDADE × PRAZO
     // =================================
 
     container.appendChild(
@@ -561,7 +791,7 @@ function renderizarDashboardPlanejamento(
 
             "card-situacao-prazo",
 
-            "🚦 Situação do Prazo",
+            "🚦 Capacidade × Prazo",
 
             dadosPlanejamento
                 .situacaoPrazo ||
@@ -577,7 +807,32 @@ function renderizarDashboardPlanejamento(
 
 
     // =================================
-    // PROGRESSO REAL × ESPERADO
+    // RITMO REAL × META
+    // =================================
+
+    container.appendChild(
+
+        criarCardIndicadorPlanejamento(
+
+            "card-situacao-ritmo",
+
+            "📡 Ritmo Real × Meta",
+
+            dadosPlanejamento
+                .situacaoRitmoReal ||
+            "Sem dados",
+
+            dadosPlanejamento
+                .mensagemSituacaoRitmoReal ||
+            ""
+
+        )
+
+    );
+
+
+    // =================================
+    // PROGRESSO × CRONOGRAMA
     // =================================
 
     const progressoReal =
@@ -687,7 +942,7 @@ function renderizarDashboardPlanejamento(
 
 
 // =====================================
-// RENDERIZAR META DA SEMANA
+// META DA SEMANA
 // =====================================
 
 function renderizarMetaPlanejamento(
@@ -758,7 +1013,7 @@ function renderizarMetaPlanejamento(
 
         texto +=
 
-            " | meta semanal: " +
+            " | meta: " +
 
             arredondarAppPlanejamento(
                 dadosPlanejamento
@@ -766,7 +1021,7 @@ function renderizarMetaPlanejamento(
                 1
             ) +
 
-            " h";
+            " h/sem";
 
     }
 
@@ -780,12 +1035,6 @@ function renderizarMetaPlanejamento(
 // =====================================
 // DISTRIBUIÇÃO POR DISCIPLINA
 // =====================================
-//
-// A versão antiga somava as horas nominais
-// dos itens presentes no plano.
-//
-// Agora utilizamos o cálculo real de
-// horas restantes por disciplina.
 
 function renderizarDistribuicaoPlanejamento(
     dadosPlanejamento
@@ -909,11 +1158,9 @@ function renderizarDistribuicaoPlanejamento(
             horas.textContent =
 
                 "⏳ " +
-
                 formatarHorasPlanejamento(
                     dados.horasRestantes
                 ) +
-
                 " restantes";
 
 
@@ -963,7 +1210,7 @@ function renderizarDistribuicaoPlanejamento(
 
 
 // =====================================
-// OBTER TEXTO DA CARGA COGNITIVA
+// CARGA COGNITIVA
 // =====================================
 
 function obterTextoCargaCognitiva(
@@ -994,7 +1241,7 @@ function obterTextoCargaCognitiva(
 
 
 // =====================================
-// CRIAR LINK PARA AULA
+// LINK PARA AULA
 // =====================================
 
 function criarLinkAulaPlanejamento(
@@ -1030,7 +1277,7 @@ function criarLinkAulaPlanejamento(
 
 
 // =====================================
-// RENDERIZAR PRÓXIMOS ESTUDOS
+// PRÓXIMOS ESTUDOS
 // =====================================
 
 function renderizarProximosEstudos(
@@ -1077,10 +1324,6 @@ function renderizarProximosEstudos(
                     "card";
 
 
-                // =============================
-                // POSIÇÃO
-                // =============================
-
                 const ordem =
                     document.createElement(
                         "p"
@@ -1094,10 +1337,6 @@ function renderizarProximosEstudos(
                         : "Opção " + (indice + 1);
 
 
-                // =============================
-                // DISCIPLINA
-                // =============================
-
                 const tituloDisciplina =
                     document.createElement(
                         "h3"
@@ -1108,10 +1347,6 @@ function renderizarProximosEstudos(
                     item.disciplina;
 
 
-                // =============================
-                // ASSUNTO
-                // =============================
-
                 const tituloAssunto =
                     document.createElement(
                         "p"
@@ -1121,10 +1356,6 @@ function renderizarProximosEstudos(
                 tituloAssunto.textContent =
                     item.assunto;
 
-
-                // =============================
-                // PROGRESSO
-                // =============================
 
                 const progresso =
                     document.createElement(
@@ -1144,10 +1375,6 @@ function renderizarProximosEstudos(
                     "%";
 
 
-                // =============================
-                // CARGA COGNITIVA
-                // =============================
-
                 const carga =
                     document.createElement(
                         "p"
@@ -1163,10 +1390,6 @@ function renderizarProximosEstudos(
                     );
 
 
-                // =============================
-                // PRIORIDADE
-                // =============================
-
                 const prioridade =
                     document.createElement(
                         "p"
@@ -1180,47 +1403,6 @@ function renderizarProximosEstudos(
                     arredondarAppPlanejamento(
                         item.prioridade,
                         2
-                    );
-
-
-                // =============================
-                // CONTINUIDADE POMODORO
-                // =============================
-
-                if (
-                    item.continuidadePomodoro
-                ) {
-
-                    const ciclo =
-                        document.createElement(
-                            "p"
-                        );
-
-
-                    ciclo.textContent =
-
-                        "🍅 Ciclo: " +
-
-                        item
-                            .blocosCompletosNoCiclo +
-
-                        " de 3 blocos completos";
-
-
-                    estudo.appendChild(
-                        ciclo
-                    );
-
-                }
-
-
-                // =============================
-                // LINK
-                // =============================
-
-                const link =
-                    criarLinkAulaPlanejamento(
-                        item
                     );
 
 
@@ -1254,8 +1436,39 @@ function renderizarProximosEstudos(
                 );
 
 
+                if (
+                    item.continuidadePomodoro
+                ) {
+
+                    const ciclo =
+                        document.createElement(
+                            "p"
+                        );
+
+
+                    ciclo.textContent =
+
+                        "🍅 Ciclo atual: " +
+
+                        item
+                            .blocosCompletosNoCiclo +
+
+                        " de 3 blocos completos";
+
+
+                    estudo.appendChild(
+                        ciclo
+                    );
+
+                }
+
+
                 estudo.appendChild(
-                    link
+
+                    criarLinkAulaPlanejamento(
+                        item
+                    )
+
                 );
 
 
@@ -1266,10 +1479,6 @@ function renderizarProximosEstudos(
             }
         );
 
-
-    // =================================
-    // NENHUM ASSUNTO PENDENTE
-    // =================================
 
     if (
         planoEstudo.length === 0
@@ -1389,10 +1598,6 @@ function renderizarPlanejamentoCompleto() {
 
 async function inicializarPlanejamento() {
 
-    // =================================
-    // CARREGAR PROGRESSO
-    // =================================
-
     if (
         typeof carregarDadosProgresso ===
         "function"
@@ -1404,10 +1609,7 @@ async function inicializarPlanejamento() {
     else {
 
         console.error(
-
-            "progresso.js não foi carregado antes de " +
-            "app-planejamento.js."
-
+            "progresso.js não foi carregado antes de app-planejamento.js."
         );
 
     }
@@ -1419,14 +1621,8 @@ async function inicializarPlanejamento() {
 
 
 // =====================================
-// ATUALIZAÇÃO APÓS POMODORO
+// ATUALIZAÇÃO APÓS MOTOR/POMODORO
 // =====================================
-//
-// motor-planejamento.js v3.3 dispara
-// planejamentoPSCPPAtualizado.
-//
-// Assim a interface pode reagir sem
-// precisar recarregar toda a página.
 
 document.addEventListener(
 
@@ -1442,7 +1638,27 @@ document.addEventListener(
 
 
 // =====================================
-// CARREGAMENTO AUTOMÁTICO
+// ATUALIZAÇÃO APÓS PROGRESSO
+// =====================================
+//
+// Permite recalcular o painel também quando
+// algum tópico/aula for marcado como estudado.
+
+document.addEventListener(
+
+    "progressoPSCPPAtualizado",
+
+    function () {
+
+        renderizarPlanejamentoCompleto();
+
+    }
+
+);
+
+
+// =====================================
+// CARREGAMENTO
 // =====================================
 
 document.addEventListener(
@@ -1459,10 +1675,10 @@ document.addEventListener(
 // =====================================
 
 console.log(
-    "APP-PLANEJAMENTO PSCPP v3.0 CARREGADO"
+    "APP-PLANEJAMENTO PSCPP v3.1 CARREGADO"
 );
 
 
 // =====================================
-// FIM APP-PLANEJAMENTO v3.0
+// FIM APP-PLANEJAMENTO v3.1
 // =====================================
