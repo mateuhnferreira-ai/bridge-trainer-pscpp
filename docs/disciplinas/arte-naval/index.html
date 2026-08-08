@@ -4,11 +4,18 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Arte Naval - PSCPP</title>
 
-<link rel="stylesheet" href="../../css/style.css">
+<link
+rel="stylesheet"
+href="../../css/style.css"
+>
 
 </head>
 
@@ -18,6 +25,10 @@ data-tipo-pagina="disciplina"
 data-disciplina="arte-naval"
 >
 
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
 
 <header class="topo">
 
@@ -32,20 +43,29 @@ data-disciplina="arte-naval"
 </header>
 
 
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
 
 <nav class="navbar">
 
-<button onclick="voltarPagina()">
+<button
+type="button"
+onclick="voltarPagina()"
+>
 ⬅ Voltar
 </button>
+
 
 <a href="../../index.html">
 🏠 Início
 </a>
 
-<a href="#">
-📊 Progresso
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
 </a>
+
 
 <a href="#">
 📝 Simulados
@@ -54,10 +74,12 @@ data-disciplina="arte-naval"
 </nav>
 
 
-
 <main>
 
 
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
 
 <section class="dashboard">
 
@@ -65,16 +87,22 @@ data-disciplina="arte-naval"
 
 <p>
 
-Estudo dos fundamentos técnicos dos navios,
-estrutura, equipamentos de bordo, sistemas
-marinheiros e conhecimentos essenciais para
-a operação segura da embarcação.
+Estudo dos conhecimentos de Arte Naval
+aplicados ao PSCPP, abrangendo nomenclatura
+e geometria do navio, classificação,
+trabalhos marinheiros, estabilidade,
+fundeio, amarração, manobras portuárias,
+transferência de Prático, rebocadores,
+reboque e operações especiais.
 
 </p>
 
 </section>
 
 
+<!-- =========================================
+     PROGRESSO DA DISCIPLINA
+========================================= -->
 
 <section>
 
@@ -87,16 +115,18 @@ a operação segura da embarcação.
 <strong>Status atual:</strong>
 
 <span id="status-geral-arte-naval">
-Nenhum módulo concluído
+Nenhum módulo iniciado
 </span>
 
 </p>
 
+
 <p id="resumo-progresso-arte-naval">
 
-0 de 15 módulos concluídos
+0 de 12 módulos concluídos
 
 </p>
+
 
 <div class="barra-progresso">
 
@@ -120,10 +150,14 @@ aria-valuenow="0"
 </section>
 
 
+<!-- =========================================
+     MÓDULOS DE ESTUDO
+========================================= -->
 
 <section>
 
 <h2>📚 Módulos de Estudo</h2>
+
 
 <div
 class="cards"
@@ -132,153 +166,163 @@ data-disciplina="arte-naval"
 >
 
 
+<!-- =========================================
+     1. NOMENCLATURA, GEOMETRIA E ESTRUTURA
+========================================= -->
 
 <a
-href="fundamentos.html"
+href="nomenclatura-geometria-estrutura.html"
 class="card"
-data-assunto="fundamentos"
+data-assunto="nomenclatura-geometria-estrutura"
 >
 
-<h3>⚓ Fundamentos de Arte Naval</h3>
+<h3>
+⚓ Nomenclatura, Geometria e Estrutura do Navio
+</h3>
 
 <span
 class="status pendente"
-id="status-fundamentos"
+id="status-nomenclatura-geometria-estrutura"
 >
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Conceitos básicos,
-terminologia naval,
-partes do navio e fundamentos
-da construção naval.
+Nomenclatura geral,
+estrutura dos cascos metálicos,
+conveses, cobertas, plataformas,
+subdivisão do casco,
+geometria, plano de formas,
+dimensões, deslocamento
+e tonelagem.
 
 </p>
 
 </a>
 
 
+<!-- =========================================
+     2. CLASSIFICAÇÃO DOS NAVIOS
+========================================= -->
 
 <a
-href="tipos-de-navios.html"
+href="classificacao-navios.html"
 class="card"
-data-assunto="tipos-de-navios"
+data-assunto="classificacao-navios"
 >
 
-<h3>🚢 Tipos e Características dos Navios</h3>
+<h3>
+🚢 Classificação e Características dos Navios
+</h3>
 
 <span
 class="status pendente"
-id="status-tipos-de-navios"
+id="status-classificacao-navios"
 >
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Classificação dos navios,
-características principais,
-dimensões e aplicações operacionais.
+Classificação dos navios mercantes,
+tipos de navios,
+critérios PIANC,
+parâmetros de projeto,
+LOA, boca, calado,
+DWT, GT e TEU.
 
 </p>
 
 </a>
 
 
+<!-- =========================================
+     3. TRABALHOS MARINHEIROS E POLEAME
+========================================= -->
 
 <a
-href="estrutura-naval.html"
+href="trabalhos-marinheiros-poleame.html"
 class="card"
-data-assunto="estrutura-naval"
+data-assunto="trabalhos-marinheiros-poleame"
 >
 
-<h3>🏗 Estrutura Naval</h3>
+<h3>
+🪢 Trabalhos Marinheiros, Poleame e Aparelhos de Laborar
+</h3>
 
 <span
 class="status pendente"
-id="status-estrutura-naval"
+id="status-trabalhos-marinheiros-poleame"
 >
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Elementos estruturais,
-casco, conveses,
-anteparas e reforços.
+Trabalhos marinheiros,
+cabos e nós,
+poleame,
+aparelhos de laborar,
+acessórios e equipamentos
+empregados nas operações de bordo.
 
 </p>
 
 </a>
 
 
+<!-- =========================================
+     4. ESTABILIDADE, ARQUEAÇÃO E DESLOCAMENTO
+========================================= -->
 
 <a
-href="compartimentagem.html"
+href="estabilidade-arqueacao-deslocamento.html"
 class="card"
-data-assunto="compartimentagem"
+data-assunto="estabilidade-arqueacao-deslocamento"
 >
 
-<h3>⚓ Compartimentagem e Estanqueidade</h3>
+<h3>
+📐 Estabilidade, Arqueação e Deslocamento
+</h3>
 
 <span
 class="status pendente"
-id="status-compartimentagem"
+id="status-estabilidade-arqueacao-deslocamento"
 >
 ⬜ Não iniciado
 </span>
 
 <p>
 
-Divisão interna do navio,
-compartimentos estanques,
-segurança e prevenção de alagamento.
+Princípios básicos de estabilidade,
+deslocamento,
+arqueação,
+centros característicos
+e comportamento transversal do navio.
 
 </p>
 
 </a>
 
 
+<!-- =========================================
+     5. FUNDEIO E AMARRAÇÃO
+========================================= -->
 
 <a
-href="aparelhos-de-governo.html"
+href="fundeio-amarracao.html"
 class="card"
-data-assunto="aparelhos-de-governo"
+data-assunto="fundeio-amarracao"
 >
 
-<h3>🛞 Aparelhos de Governo</h3>
+<h3>
+⚓ Fundeio, Suspender e Amarração
+</h3>
 
 <span
 class="status pendente"
-id="status-aparelhos-de-governo"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Lemes, sistemas de governo,
-componentes e funcionamento.
-
-</p>
-
-</a>
-
-
-
-<a
-href="fundear-e-amarrar.html"
-class="card"
-data-assunto="fundear-e-amarrar"
->
-
-<h3>⚓ Aparelhos de Fundear e Amarrar</h3>
-
-<span
-class="status pendente"
-id="status-fundear-e-amarrar"
+id="status-fundeio-amarracao"
 >
 ⬜ Não iniciado
 </span>
@@ -286,122 +330,21 @@ id="status-fundear-e-amarrar"
 <p>
 
 Âncoras, amarras,
-espias, cabeços e operações
-de fundeio e amarração.
+aparelhos de fundear e suspender,
+operações com uma ou duas âncoras,
+fundeio de emergência,
+amarração no cais,
+amarração em boias
+e configurações especiais de amarração.
 
 </p>
 
 </a>
 
 
-
-<a
-href="equipamentos-de-conves.html"
-class="card"
-data-assunto="equipamentos-de-conves"
->
-
-<h3>🔧 Equipamentos de Convés</h3>
-
-<span
-class="status pendente"
-id="status-equipamentos-de-conves"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Guinchos, cabrestantes,
-equipamentos auxiliares
-e aparelhos utilizados no convés.
-
-</p>
-
-</a>
-
-
-
-<a
-href="cabos-e-espias.html"
-class="card"
-data-assunto="cabos-e-espias"
->
-
-<h3>🪢 Cabos, Espias e Manuseio</h3>
-
-<span
-class="status pendente"
-id="status-cabos-e-espias"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Tipos de cabos,
-resistência,
-conservação, manuseio e utilização.
-
-</p>
-
-</a>
-
-
-
-<a
-href="estabilidade.html"
-class="card"
-data-assunto="estabilidade"
->
-
-<h3>📐 Estabilidade do Navio</h3>
-
-<span
-class="status pendente"
-id="status-estabilidade"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Centro de gravidade,
-centro de carena,
-metacentro e segurança operacional.
-
-</p>
-
-</a>
-
-
-
-<a
-href="operacoes-marinheiras.html"
-class="card"
-data-assunto="operacoes-marinheiras"
->
-
-<h3>⚓ Operações Marinheiras</h3>
-
-<span
-class="status pendente"
-id="status-operacoes-marinheiras"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Procedimentos de bordo,
-trabalhos marinheiros,
-segurança e rotina operacional.
-
-</p>
-
-</a>
-
-
+<!-- =========================================
+     6. MANOBRAS PORTUÁRIAS
+========================================= -->
 
 <a
 href="manobras-portuarias.html"
@@ -409,7 +352,9 @@ class="card"
 data-assunto="manobras-portuarias"
 >
 
-<h3>🏗️ Manobras Portuárias</h3>
+<h3>
+🏗️ Manobras Portuárias
+</h3>
 
 <span
 class="status pendente"
@@ -420,70 +365,24 @@ id="status-manobras-portuarias"
 
 <p>
 
-Aproximação, atracação,
-desatracação, giro e movimentação
-do navio em áreas portuárias.
+Condução e governo do navio
+em áreas portuárias,
+manobras em baixa velocidade,
+aproximação,
+atracação,
+desatracação,
+amarração,
+troca de atracadouro
+e saída para navegar.
 
 </p>
 
 </a>
 
 
-
-<a
-href="rebocadores-portuarios.html"
-class="card"
-data-assunto="rebocadores-portuarios"
->
-
-<h3>🛳 Rebocadores Portuários</h3>
-
-<span
-class="status pendente"
-id="status-rebocadores-portuarios"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Tipos, características,
-equipamentos, métodos de assistência
-e emprego dos rebocadores.
-
-</p>
-
-</a>
-
-
-
-<a
-href="estabilidade-dos-rebocadores.html"
-class="card"
-data-assunto="estabilidade-dos-rebocadores"
->
-
-<h3>📐 Estabilidade dos Rebocadores</h3>
-
-<span
-class="status pendente"
-id="status-estabilidade-dos-rebocadores"
->
-⬜ Não iniciado
-</span>
-
-<p>
-
-Forças de reboque,
-momentos de inclinação,
-riscos operacionais e prevenção
-do emborcamento.
-
-</p>
-
-</a>
-
-
+<!-- =========================================
+     7. TRANSFERÊNCIA DE PRÁTICO
+========================================= -->
 
 <a
 href="transferencia-de-pratico.html"
@@ -491,7 +390,9 @@ class="card"
 data-assunto="transferencia-de-pratico"
 >
 
-<h3>🪜 Transferência de Prático</h3>
+<h3>
+🪜 Transferência de Prático
+</h3>
 
 <span
 class="status pendente"
@@ -502,15 +403,23 @@ id="status-transferencia-de-pratico"
 
 <p>
 
-Arranjos de embarque e desembarque,
-escadas, equipamentos,
-procedimentos e requisitos de segurança.
+Regulamentações IMO,
+SOLAS V/23,
+arranjos para transferência,
+riscos,
+deficiências,
+procedimentos seguros,
+embarque e desembarque
+e métodos alternativos de transferência.
 
 </p>
 
 </a>
 
 
+<!-- =========================================
+     8. MASTER-PILOT INFORMATION EXCHANGE
+========================================= -->
 
 <a
 href="master-pilot-information-exchange.html"
@@ -518,7 +427,9 @@ class="card"
 data-assunto="master-pilot-information-exchange"
 >
 
-<h3>🤝 Master–Pilot Information Exchange</h3>
+<h3>
+🤝 Master–Pilot Information Exchange — MPX
+</h3>
 
 <span
 class="status pendente"
@@ -531,13 +442,165 @@ id="status-master-pilot-information-exchange"
 
 Troca de informações entre
 Comandante e Prático,
-planejamento, limitações
-e condições operacionais do navio.
+preparativos pré-embarque,
+informações do navio,
+informações do Prático,
+planos de manobra
+e efetividade do MPX.
 
 </p>
 
 </a>
 
+
+<!-- =========================================
+     9. REBOCADORES PORTUÁRIOS
+========================================= -->
+
+<a
+href="rebocadores-portuarios.html"
+class="card"
+data-assunto="rebocadores-portuarios"
+>
+
+<h3>
+🛳 Rebocadores Portuários
+</h3>
+
+<span
+class="status pendente"
+id="status-rebocadores-portuarios"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Fatores de projeto,
+tipos de rebocadores,
+métodos de assistência,
+capacidades e limitações,
+Bollard Pull,
+interação hidrodinâmica,
+segurança,
+Escort Tugs
+e métodos utilizados no Brasil.
+
+</p>
+
+</a>
+
+
+<!-- =========================================
+     10. REBOQUE, CABOS E EQUIPAMENTOS
+========================================= -->
+
+<a
+href="reboque-cabos-equipamentos.html"
+class="card"
+data-assunto="reboque-cabos-equipamentos"
+>
+
+<h3>
+🪢 Reboque, Cabos e Equipamentos de Reboque
+</h3>
+
+<span
+class="status pendente"
+id="status-reboque-cabos-equipamentos"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Reboque de embarcações
+ou objetos sem propulsão,
+cabos de reboque,
+fibras sintéticas,
+cabos de aço,
+resistência,
+inspeção,
+manutenção,
+equipamentos de reboque
+e sistemas de emergência.
+
+</p>
+
+</a>
+
+
+<!-- =========================================
+     11. EMERGÊNCIAS PORTUÁRIAS
+========================================= -->
+
+<a
+href="manobras-portuarias-emergencia.html"
+class="card"
+data-assunto="manobras-portuarias-emergencia"
+>
+
+<h3>
+⚠ Manobras Portuárias de Emergência
+</h3>
+
+<span
+class="status pendente"
+id="status-manobras-portuarias-emergencia"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Cenários de emergência,
+capacidade de parada,
+toda força a ré,
+falhas de máquina,
+falhas de telégrafo
+e procedimentos para evitar acidentes
+durante manobras portuárias.
+
+</p>
+
+</a>
+
+
+<!-- =========================================
+     12. MANOBRAS ESPECIAIS
+========================================= -->
+
+<a
+href="manobras-especiais-sts-sbm.html"
+class="card"
+data-assunto="manobras-especiais-sts-sbm"
+>
+
+<h3>
+🚢 Manobras Especiais — STS e SBM
+</h3>
+
+<span
+class="status pendente"
+id="status-manobras-especiais-sts-sbm"
+>
+⬜ Não iniciado
+</span>
+
+<p>
+
+Operações Ship-to-Ship — STS,
+Single Buoy Mooring — SBM,
+planejamento,
+aproximação,
+amarração,
+transferência de carga,
+desatracação
+e partida.
+
+</p>
+
+</a>
 
 
 </div>
@@ -545,6 +608,9 @@ e condições operacionais do navio.
 </section>
 
 
+<!-- =========================================
+     PAINEL COMPLEMENTAR
+========================================= -->
 
 <section class="painel">
 
@@ -555,30 +621,37 @@ e condições operacionais do navio.
 
 <p>
 
-Dominar os conhecimentos fundamentais
-sobre o navio, seus equipamentos,
-sistemas, estabilidade e operações marinheiras,
-conforme o conteúdo programático
-e a bibliografia oficial do PSCPP.
+Dominar os conhecimentos de Arte Naval
+previstos no conteúdo programático do PSCPP,
+com ênfase na identificação e características
+do navio, operações marinheiras,
+estabilidade, fundeio, amarração,
+manobras portuárias,
+transferência de Prático,
+rebocadores e operações de reboque.
 
 </p>
 
 </div>
-
 
 
 <div class="widget">
 
-<h2>📖 Próxima Aula</h2>
+<h2>📖 Situação do Estudo</h2>
 
 <p>
 
-⚓ Fundamentos de Arte Naval
+O sistema de planejamento indicará
+automaticamente os módulos prioritários
+de acordo com o progresso,
+peso estratégico,
+carga cognitiva,
+ritmo real de estudo
+e prazo disponível.
 
 </p>
 
 </div>
-
 
 
 <div class="widget">
@@ -587,12 +660,16 @@ e a bibliografia oficial do PSCPP.
 
 <p>
 
-Arte Naval<br>
+Arte Naval — 8ª edição<br>
 Shiphandling for the Mariner<br>
 Theory and Practices of Marine Pilotage<br>
 Tug Use in Port<br>
-Estabilidade dos Rebocadores<br>
-Publicações e normas indicadas no PSCPP
+Mooring and Anchoring Ships<br>
+Rebocadores Portuários<br>
+PIANC<br>
+SOLAS<br>
+Resoluções e circulares IMO<br>
+Bibliografia oficial do PSCPP
 
 </p>
 
@@ -602,34 +679,40 @@ Publicações e normas indicadas no PSCPP
 </section>
 
 
-
 </main>
 
 
+<!-- =========================================
+     RODAPÉ
+========================================= -->
 
 <footer>
 
 <p>
-
 Bridge Trainer PSCPP © 2026
-
 </p>
 
 </footer>
 
 
-
-<a href="../../index.html" class="botao-inicio">
-
+<a
+href="../../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
 🏠
-
 </a>
 
 
+<!-- =========================================
+     SCRIPTS
+========================================= -->
 
-<script src="../../js/app.js"></script>
+<script src="../../js/navigation.js"></script>
 
 <script src="../../js/progresso.js"></script>
+
+<script src="../../js/app.js"></script>
 
 
 </body>
