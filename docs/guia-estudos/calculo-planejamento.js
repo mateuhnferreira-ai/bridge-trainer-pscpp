@@ -1,30 +1,40 @@
 // =====================================
-// CÁLCULO DO PLANEJAMENTO PSCPP v2.0
+// CÁLCULO DO PLANEJAMENTO PSCPP v2.1
 // Bridge Trainer PSCPP
 //
 // Responsabilidades:
 //
 // 1. Calcular disponibilidade total.
-// 2. Identificar a fase atual do plano.
-// 3. Calcular horas previstas no conteúdo.
-// 4. Estimar horas já cumpridas pelo progresso.
-// 5. Calcular horas restantes.
-// 6. Calcular semanas úteis restantes.
-// 7. Determinar carga semanal necessária.
-// 8. Comparar disponibilidade × necessidade.
-// 9. Detectar adiantamento ou atraso.
-// 10. Produzir diagnóstico de prazo.
+// 2. Identificar a fase atual.
+// 3. Calcular carga prevista.
+// 4. Estimar carga cumprida pelo progresso.
+// 5. Calcular carga restante.
+// 6. Calcular semanas restantes.
+// 7. Determinar ritmo semanal necessário.
+// 8. Comparar capacidade × necessidade.
+// 9. Ler ritmo REAL do Pomodoro.
+// 10. Analisar últimos 7, 14 e 30 dias.
+// 11. Detectar tendência real de estudo.
+// 12. Produzir diagnóstico de prazo.
 //
-// IMPORTANTE:
+// PRINCÍPIO:
 //
-// O cálculo NÃO escolhe o próximo assunto.
+// PROGRESSO PEDAGÓGICO
+//        +
+// PRAZO
+//        +
+// CAPACIDADE DISPONÍVEL
+//        +
+// RITMO REAL DE ESTUDO
+//        ↓
+// DIAGNÓSTICO DA PREPARAÇÃO
 //
-// Ele responde:
+// Este arquivo responde:
 //
-// "Quanto ainda preciso estudar e
-//  em que ritmo preciso avançar?"
+// "Quanto preciso avançar e meu ritmo
+//  atual é suficiente?"
 //
-// O motor-planejamento.js responde:
+// motor-planejamento.js responde:
 //
 // "O que devo estudar agora?"
 // =====================================
@@ -42,12 +52,16 @@ const PLANEJAMENTO_MS_SEMANA =
     PLANEJAMENTO_MS_DIA * 7;
 
 
+// Mesmo localStorage utilizado
+// pelo pomodoro.js v3.1.
+
+const PLANEJAMENTO_CHAVE_RESUMO_POMODORO =
+    "bridgeTrainerPSCPP_resumoDiarioPomodoro";
+
+
 // =====================================
 // CRIAR DATA LOCAL SEGURA
 // =====================================
-//
-// Evita diferenças indesejadas de fuso
-// ao interpretar datas YYYY-MM-DD.
 
 function criarDataPlanejamento(
     valor
@@ -120,6 +134,61 @@ function obterHojePlanejamento() {
         0,
         0
 
+    );
+
+}
+
+
+// =====================================
+// FORMATAR DATA LOCAL
+// =====================================
+
+function formatarDataLocalPlanejamento(
+    data
+) {
+
+    if (
+        !(data instanceof Date) ||
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const ano =
+        data.getFullYear();
+
+
+    const mes =
+        String(
+            data.getMonth() + 1
+        )
+        .padStart(
+            2,
+            "0"
+        );
+
+
+    const dia =
+        String(
+            data.getDate()
+        )
+        .padStart(
+            2,
+            "0"
+        );
+
+
+    return (
+        ano +
+        "-" +
+        mes +
+        "-" +
+        dia
     );
 
 }
@@ -253,7 +322,9 @@ function diferencaSemanasPlanejamento(
         );
 
 
-    return dias / 7;
+    return (
+        dias / 7
+    );
 
 }
 
@@ -288,16 +359,16 @@ function calcularHorasSemanaPlanejamento() {
 
 
 // =====================================
-// HORAS REAIS POR SEMANA
+// CAPACIDADE SEMANAL REALISTA
 // =====================================
 //
-// Aplica a margem de segurança.
+// Aplica o fator de segurança.
 //
 // Exemplo:
 //
-// 10 h teóricas × 0,90
-// = 9 h consideradas realmente
-// disponíveis para o planejamento.
+// 10 h disponíveis
+// × 0,90
+// = 9 h consideradas pelo plano.
 
 function calcularHorasSemanaRealPlanejamento() {
 
@@ -328,7 +399,7 @@ function calcularHorasSemanaRealPlanejamento() {
 
 
 // =====================================
-// IDENTIFICAR FASE ATUAL
+// IDENTIFICAR FASE
 // =====================================
 
 function identificarFasePlanejamento(
@@ -388,7 +459,7 @@ function identificarFasePlanejamento(
     if (
         inicioConteudo &&
         dataReferencia <
-        inicioConteudo
+            inicioConteudo
     ) {
 
         return "preparacao";
@@ -441,7 +512,7 @@ function identificarFasePlanejamento(
     if (
         fimRetaFinal &&
         dataReferencia >
-        fimRetaFinal
+            fimRetaFinal
     ) {
 
         return "encerrado";
@@ -497,7 +568,7 @@ function obterNomeFasePlanejamento(
 
 
 // =====================================
-// OBTER PROGRESSO DE UMA AULA
+// PROGRESSO DE UMA AULA
 // =====================================
 
 function obterProgressoAulaPlanejamento(
@@ -538,38 +609,29 @@ function obterProgressoAulaPlanejamento(
 
 
 // =====================================
-// ANALISAR CARGA TOTAL DO CONTEÚDO
+// ANALISAR CARGA DO CONTEÚDO
 // =====================================
-//
-// Usa:
-//
-// horas previstas × progresso percentual.
-//
-// Exemplo:
-//
-// Aula prevista: 20 horas
-// Progresso: 25%
-//
-// Horas equivalentes cumpridas:
-// 5 horas
-//
-// Horas equivalentes restantes:
-// 15 horas
 
 function analisarCargaConteudoPlanejamento() {
 
-    let horasPrevistasTotal = 0;
-
-    let horasCumpridasEstimadas = 0;
-
-    let horasRestantesEstimadas = 0;
-
-    let quantidadeAssuntos = 0;
-
-    let assuntosConcluidos = 0;
+    let horasPrevistasTotal =
+        0;
 
 
-    const porDisciplina = {};
+    let horasCumpridasEstimadas =
+        0;
+
+
+    let quantidadeAssuntos =
+        0;
+
+
+    let assuntosConcluidos =
+        0;
+
+
+    const porDisciplina =
+        {};
 
 
     if (
@@ -580,19 +642,26 @@ function analisarCargaConteudoPlanejamento() {
 
         return {
 
-            horasPrevistasTotal: 0,
+            horasPrevistasTotal:
+                0,
 
-            horasCumpridasEstimadas: 0,
+            horasCumpridasEstimadas:
+                0,
 
-            horasRestantesEstimadas: 0,
+            horasRestantesEstimadas:
+                0,
 
-            progressoPonderado: 0,
+            progressoPonderado:
+                0,
 
-            quantidadeAssuntos: 0,
+            quantidadeAssuntos:
+                0,
 
-            assuntosConcluidos: 0,
+            assuntosConcluidos:
+                0,
 
-            porDisciplina: {}
+            porDisciplina:
+                {}
 
         };
 
@@ -760,7 +829,7 @@ function analisarCargaConteudoPlanejamento() {
     }
 
 
-    horasRestantesEstimadas =
+    const horasRestantesEstimadas =
         Math.max(
 
             0,
@@ -823,15 +892,8 @@ function analisarCargaConteudoPlanejamento() {
 
 
 // =====================================
-// CALCULAR PROGRESSO ESPERADO
+// PROGRESSO ESPERADO
 // =====================================
-//
-// Mede quanto da fase de conteúdo
-// deveria ter transcorrido até hoje.
-//
-// Não representa nota.
-//
-// É apenas a curva temporal esperada.
 
 function calcularProgressoEsperadoPlanejamento(
     hoje
@@ -930,8 +992,387 @@ function calcularProgressoEsperadoPlanejamento(
 
 
 // =====================================
-// DIAGNOSTICAR SITUAÇÃO DO PRAZO
+// CARREGAR RESUMO DO POMODORO
 // =====================================
+//
+// O planejamento NÃO precisa carregar
+// pomodoro.js.
+//
+// Ele lê diretamente o resumo permanente
+// criado pelo Pomodoro v3.1.
+
+function carregarResumoPomodoroPlanejamento() {
+
+    try {
+
+        const salvo =
+            localStorage.getItem(
+                PLANEJAMENTO_CHAVE_RESUMO_POMODORO
+            );
+
+
+        if (!salvo) {
+
+            return null;
+
+        }
+
+
+        const dados =
+            JSON.parse(
+                salvo
+            );
+
+
+        if (
+            !dados ||
+            typeof dados !== "object" ||
+            !dados.dias
+        ) {
+
+            return null;
+
+        }
+
+
+        return dados;
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "Planejamento não conseguiu ler " +
+            "o resumo do Pomodoro:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+// =====================================
+// ANALISAR RITMO REAL
+// =====================================
+//
+// Considera somente dias posteriores ao
+// início oficial da preparação.
+//
+// Isso evita penalizar o usuário porque
+// uma janela de 7 ou 30 dias contém dias
+// anteriores ao início do plano.
+//
+// Exemplo:
+//
+// início oficial: 03/08
+// hoje: 08/08
+//
+// período solicitado: 7 dias
+//
+// o cálculo utilizará somente os dias
+// efetivamente disponíveis desde 03/08.
+
+function analisarRitmoRealPlanejamento(
+    periodoDias,
+    hoje
+) {
+
+    const resultado = {
+
+        periodoDias:
+            periodoDias,
+
+        diasConsiderados:
+            0,
+
+        diasComEstudo:
+            0,
+
+        segundosTotal:
+            0,
+
+        horasTotal:
+            0,
+
+        mediaHorasDia:
+            0,
+
+        mediaHorasDiaEstudado:
+            0,
+
+        ritmoSemanal:
+            0,
+
+        blocos:
+            0,
+
+        blocosCompletos:
+            0,
+
+        disciplinas:
+            {}
+
+    };
+
+
+    const resumo =
+        carregarResumoPomodoroPlanejamento();
+
+
+    if (
+        !resumo ||
+        !resumo.dias
+    ) {
+
+        return resultado;
+
+    }
+
+
+    const inicioOficial =
+        criarDataPlanejamento(
+            configuracaoEstudo.inicio
+        );
+
+
+    const inicioJanela =
+        new Date(
+            hoje
+        );
+
+
+    inicioJanela.setDate(
+
+        inicioJanela.getDate() -
+        (
+            periodoDias -
+            1
+        )
+
+    );
+
+
+    inicioJanela.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    let inicioConsiderado =
+        inicioJanela;
+
+
+    if (
+        inicioOficial &&
+        inicioOficial >
+            inicioConsiderado
+    ) {
+
+        inicioConsiderado =
+            inicioOficial;
+
+    }
+
+
+    resultado.diasConsiderados =
+        Math.max(
+
+            1,
+
+            diferencaDiasPlanejamento(
+
+                inicioConsiderado,
+
+                hoje
+
+            ) + 1
+
+        );
+
+
+    Object.entries(
+        resumo.dias
+    ).forEach(
+
+        ([dataTexto, dia]) => {
+
+            const data =
+                criarDataPlanejamento(
+                    dataTexto
+                );
+
+
+            if (
+                !data ||
+                data <
+                    inicioConsiderado ||
+                data >
+                    hoje
+            ) {
+
+                return;
+
+            }
+
+
+            const segundosDia =
+                Math.max(
+
+                    0,
+
+                    Number(
+                        dia.segundosTotal
+                    ) || 0
+
+                );
+
+
+            if (
+                segundosDia > 0
+            ) {
+
+                resultado.diasComEstudo++;
+
+            }
+
+
+            resultado.segundosTotal +=
+                segundosDia;
+
+
+            resultado.blocos +=
+                Number(
+                    dia.blocos
+                ) || 0;
+
+
+            resultado.blocosCompletos +=
+                Number(
+                    dia.blocosCompletos
+                ) || 0;
+
+
+            const disciplinas =
+                dia.disciplinas ||
+                {};
+
+
+            Object.entries(
+                disciplinas
+            ).forEach(
+
+                ([
+                    idDisciplina,
+                    dadosDisciplina
+                ]) => {
+
+                    if (
+                        !resultado
+                            .disciplinas[
+                                idDisciplina
+                            ]
+                    ) {
+
+                        resultado
+                            .disciplinas[
+                                idDisciplina
+                            ] = {
+
+                                segundos:
+                                    0,
+
+                                horas:
+                                    0
+
+                            };
+
+                    }
+
+
+                    resultado
+                        .disciplinas[
+                            idDisciplina
+                        ]
+                        .segundos +=
+
+                        Number(
+                            dadosDisciplina
+                                .segundos
+                        ) || 0;
+
+                }
+
+            );
+
+        }
+
+    );
+
+
+    resultado.horasTotal =
+        resultado.segundosTotal /
+        3600;
+
+
+    resultado.mediaHorasDia =
+
+        resultado.horasTotal /
+        resultado.diasConsiderados;
+
+
+    if (
+        resultado.diasComEstudo > 0
+    ) {
+
+        resultado.mediaHorasDiaEstudado =
+
+            resultado.horasTotal /
+            resultado.diasComEstudo;
+
+    }
+
+
+    // Converte a média observada
+    // para equivalente semanal.
+
+    resultado.ritmoSemanal =
+
+        resultado.mediaHorasDia *
+        7;
+
+
+    Object.values(
+        resultado.disciplinas
+    ).forEach(
+        disciplina => {
+
+            disciplina.horas =
+
+                disciplina.segundos /
+                3600;
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// DIAGNOSTICAR CAPACIDADE
+// =====================================
+//
+// Pergunta:
+//
+// "Com minha disponibilidade configurada,
+// é matematicamente possível terminar?"
 
 function diagnosticarPrazoPlanejamento(
     cargaNecessariaSemana,
@@ -1006,7 +1447,7 @@ function diagnosticarPrazoPlanejamento(
                 "confortavel",
 
             mensagem:
-                "O ritmo disponível oferece boa margem para concluir o conteúdo."
+                "A disponibilidade oferece boa margem para concluir o conteúdo."
 
         };
 
@@ -1052,7 +1493,7 @@ function diagnosticarPrazoPlanejamento(
                 "atencao",
 
             mensagem:
-                "O plano ainda cabe no prazo, mas com pouca margem para imprevistos."
+                "O planejamento cabe no prazo, mas com pouca margem para imprevistos."
 
         };
 
@@ -1069,13 +1510,13 @@ function diagnosticarPrazoPlanejamento(
                 "atraso-moderado",
 
             status:
-                "Ritmo insuficiente",
+                "Capacidade insuficiente",
 
             nivel:
                 "alerta",
 
             mensagem:
-                "Será necessário recuperar carga de estudo para terminar o conteúdo no prazo."
+                "Será necessário aumentar a disponibilidade para concluir o conteúdo no prazo."
 
         };
 
@@ -1094,7 +1535,187 @@ function diagnosticarPrazoPlanejamento(
             "critico",
 
         mensagem:
-            "A disponibilidade configurada é insuficiente para concluir o conteúdo no prazo atual."
+            "A disponibilidade configurada é insuficiente para o prazo atual."
+
+    };
+
+}
+
+
+// =====================================
+// DIAGNOSTICAR RITMO REAL
+// =====================================
+//
+// Pergunta:
+//
+// "No ritmo que estou REALMENTE estudando,
+// estou acompanhando o ritmo necessário?"
+
+function diagnosticarRitmoRealPlanejamento(
+    ritmoReal,
+    ritmoNecessario,
+    diasConsiderados
+) {
+
+    if (
+        ritmoNecessario <= 0
+    ) {
+
+        return {
+
+            codigo:
+                "sem-meta",
+
+            status:
+                "Sem meta de ritmo",
+
+            nivel:
+                "neutro",
+
+            mensagem:
+                "Não há carga semanal pendente para comparação."
+
+        };
+
+    }
+
+
+    // No início da preparação ainda existe
+    // pouca amostra para afirmar tendência.
+
+    if (
+        diasConsiderados < 3
+    ) {
+
+        return {
+
+            codigo:
+                "dados-iniciais",
+
+            status:
+                "Coletando dados",
+
+            nivel:
+                "neutro",
+
+            mensagem:
+                "Ainda há poucos dias de estudo registrados para avaliar o ritmo real."
+
+        };
+
+    }
+
+
+    const razao =
+        ritmoReal /
+        ritmoNecessario;
+
+
+    if (
+        razao >= 1.20
+    ) {
+
+        return {
+
+            codigo:
+                "acima-do-ritmo",
+
+            status:
+                "Acima do ritmo",
+
+            nivel:
+                "excelente",
+
+            mensagem:
+                "O ritmo real de estudo está acima do necessário."
+
+        };
+
+    }
+
+
+    if (
+        razao >= 1.00
+    ) {
+
+        return {
+
+            codigo:
+                "no-ritmo",
+
+            status:
+                "No ritmo",
+
+            nivel:
+                "adequado",
+
+            mensagem:
+                "O ritmo real de estudo é suficiente para acompanhar o planejamento."
+
+        };
+
+    }
+
+
+    if (
+        razao >= 0.85
+    ) {
+
+        return {
+
+            codigo:
+                "ligeiramente-abaixo",
+
+            status:
+                "Pouco abaixo do ritmo",
+
+            nivel:
+                "atencao",
+
+            mensagem:
+                "O ritmo observado está ligeiramente abaixo do necessário."
+
+        };
+
+    }
+
+
+    if (
+        razao >= 0.65
+    ) {
+
+        return {
+
+            codigo:
+                "abaixo-do-ritmo",
+
+            status:
+                "Abaixo do ritmo",
+
+            nivel:
+                "alerta",
+
+            mensagem:
+                "O ritmo real está abaixo do necessário e merece correção."
+
+        };
+
+    }
+
+
+    return {
+
+        codigo:
+            "ritmo-critico",
+
+        status:
+            "Ritmo insuficiente",
+
+        nivel:
+            "critico",
+
+        mensagem:
+            "O ritmo real está significativamente abaixo da carga necessária."
 
     };
 
@@ -1137,7 +1758,7 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // COMPATIBILIDADE COM SISTEMA ANTIGO
+    // PERÍODO TOTAL
     // =================================
 
     const semanasTotais =
@@ -1151,6 +1772,10 @@ function calcularPlanejamento() {
             )
             : 0;
 
+
+    // =================================
+    // CAPACIDADE
+    // =================================
 
     const horasSemanaTeoricas =
         calcularHorasSemanaPlanejamento();
@@ -1166,7 +1791,7 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // FASE ATUAL
+    // FASE
     // =================================
 
     const faseAtual =
@@ -1184,15 +1809,12 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // TEMPO RESTANTE PARA CONTEÚDO
+    // PRAZO DA FASE DE CONTEÚDO
     // =================================
 
     let dataReferenciaPrazo =
         hoje;
 
-
-    // Antes do início oficial,
-    // usa a própria data inicial.
 
     if (
         inicio &&
@@ -1209,7 +1831,7 @@ function calcularPlanejamento() {
         (
             fimConteudo &&
             dataReferenciaPrazo <
-            fimConteudo
+                fimConteudo
         )
             ? diferencaSemanasPlanejamento(
 
@@ -1227,7 +1849,7 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // CARGA SEMANAL NECESSÁRIA
+    // RITMO NECESSÁRIO
     // =================================
 
     let horasNecessariasSemana =
@@ -1235,10 +1857,8 @@ function calcularPlanejamento() {
 
 
     if (
-        carga.horasRestantesEstimadas >
-            0 &&
-        semanasRestantesConteudo >
-            0
+        carga.horasRestantesEstimadas > 0 &&
+        semanasRestantesConteudo > 0
     ) {
 
         horasNecessariasSemana =
@@ -1250,7 +1870,7 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // MARGEM SEMANAL
+    // MARGEM TEÓRICA
     // =================================
 
     const margemSemanal =
@@ -1258,17 +1878,13 @@ function calcularPlanejamento() {
         horasNecessariasSemana;
 
 
-    // =================================
-    // SALDO TOTAL DE HORAS
-    // =================================
-
     const saldoHorasPeriodo =
         horasDisponiveisConteudo -
         carga.horasRestantesEstimadas;
 
 
     // =================================
-    // PROGRESSO ESPERADO × REAL
+    // PROGRESSO TEMPORAL
     // =================================
 
     const progressoEsperado =
@@ -1287,10 +1903,87 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // DIAGNÓSTICO
+    // RITMO REAL — POMODORO
     // =================================
 
-    const diagnostico =
+    const ritmo7 =
+        analisarRitmoRealPlanejamento(
+            7,
+            hoje
+        );
+
+
+    const ritmo14 =
+        analisarRitmoRealPlanejamento(
+            14,
+            hoje
+        );
+
+
+    const ritmo30 =
+        analisarRitmoRealPlanejamento(
+            30,
+            hoje
+        );
+
+
+    // O período de 7 dias representa
+    // a situação mais recente.
+
+    const ritmoSemanalAtual =
+        ritmo7.ritmoSemanal;
+
+
+    // 14 dias dá maior estabilidade.
+
+    const ritmoSemanal14Dias =
+        ritmo14.ritmoSemanal;
+
+
+    // 30 dias mede tendência estrutural.
+
+    const ritmoSemanal30Dias =
+        ritmo30.ritmoSemanal;
+
+
+    // =================================
+    // SALDO DO RITMO REAL
+    // =================================
+
+    const saldoRitmoRealSemana =
+
+        ritmoSemanalAtual -
+        horasNecessariasSemana;
+
+
+    // =================================
+    // TAXA DE CUMPRIMENTO DA META
+    // =================================
+
+    let percentualMetaRitmo =
+        0;
+
+
+    if (
+        horasNecessariasSemana > 0
+    ) {
+
+        percentualMetaRitmo =
+
+            (
+                ritmoSemanalAtual /
+                horasNecessariasSemana
+            ) *
+            100;
+
+    }
+
+
+    // =================================
+    // DIAGNÓSTICO DE CAPACIDADE
+    // =================================
+
+    const diagnosticoPrazo =
         diagnosticarPrazoPlanejamento(
 
             horasNecessariasSemana,
@@ -1303,7 +1996,23 @@ function calcularPlanejamento() {
 
 
     // =================================
-    // RITMO NECESSÁRIO
+    // DIAGNÓSTICO DO RITMO REAL
+    // =================================
+
+    const diagnosticoRitmo =
+        diagnosticarRitmoRealPlanejamento(
+
+            ritmoSemanalAtual,
+
+            horasNecessariasSemana,
+
+            ritmo7.diasConsiderados
+
+        );
+
+
+    // =================================
+    // % DA DISPONIBILIDADE NECESSÁRIA
     // =================================
 
     let percentualDisponibilidadeNecessaria =
@@ -1333,8 +2042,7 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // CAMPOS ANTIGOS
-        // Mantidos por compatibilidade
+        // COMPATIBILIDADE
         // =============================
 
         semanasDisponiveis:
@@ -1369,16 +2077,13 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // NOVA CAMADA TEMPORAL
+        // TEMPORAL
         // =============================
 
         dataAtual:
-            hoje
-                .toISOString()
-                .slice(
-                    0,
-                    10
-                ),
+            formatarDataLocalPlanejamento(
+                hoje
+            ),
 
 
         faseAtual:
@@ -1407,7 +2112,7 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // DISPONIBILIDADE
+        // CAPACIDADE
         // =============================
 
         horasSemanaTeoricas:
@@ -1432,7 +2137,7 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // CARGA DO PROGRAMA
+        // CONTEÚDO
         // =============================
 
         horasPrevistasConteudo:
@@ -1456,7 +2161,7 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // RITMO
+        // RITMO NECESSÁRIO
         // =============================
 
         horasNecessariasSemana:
@@ -1488,7 +2193,105 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // PROGRESSO TEMPORAL
+        // RITMO REAL
+        // =============================
+
+        ritmoReal7Dias:
+            arredondarPlanejamento(
+                ritmoSemanalAtual,
+                1
+            ),
+
+
+        ritmoReal14Dias:
+            arredondarPlanejamento(
+                ritmoSemanal14Dias,
+                1
+            ),
+
+
+        ritmoReal30Dias:
+            arredondarPlanejamento(
+                ritmoSemanal30Dias,
+                1
+            ),
+
+
+        horasEstudadas7Dias:
+            arredondarPlanejamento(
+                ritmo7.horasTotal,
+                1
+            ),
+
+
+        horasEstudadas14Dias:
+            arredondarPlanejamento(
+                ritmo14.horasTotal,
+                1
+            ),
+
+
+        horasEstudadas30Dias:
+            arredondarPlanejamento(
+                ritmo30.horasTotal,
+                1
+            ),
+
+
+        diasComEstudo7Dias:
+            ritmo7.diasComEstudo,
+
+
+        diasComEstudo14Dias:
+            ritmo14.diasComEstudo,
+
+
+        diasComEstudo30Dias:
+            ritmo30.diasComEstudo,
+
+
+        diasConsideradosRitmo7:
+            ritmo7.diasConsiderados,
+
+
+        mediaHorasDia7:
+            arredondarPlanejamento(
+                ritmo7.mediaHorasDia,
+                2
+            ),
+
+
+        mediaHorasDiaEstudado7:
+            arredondarPlanejamento(
+                ritmo7.mediaHorasDiaEstudado,
+                2
+            ),
+
+
+        blocosPomodoro7Dias:
+            ritmo7.blocos,
+
+
+        blocosCompletos7Dias:
+            ritmo7.blocosCompletos,
+
+
+        saldoRitmoRealSemana:
+            arredondarPlanejamento(
+                saldoRitmoRealSemana,
+                1
+            ),
+
+
+        percentualMetaRitmo:
+            arredondarPlanejamento(
+                percentualMetaRitmo,
+                1
+            ),
+
+
+        // =============================
+        // PROGRESSO
         // =============================
 
         progressoEsperado:
@@ -1513,27 +2316,68 @@ function calcularPlanejamento() {
 
 
         // =============================
-        // DIAGNÓSTICO
+        // DIAGNÓSTICO DE CAPACIDADE
         // =============================
+        //
+        // Mantemos estes nomes para
+        // compatibilidade com o motor v3.3.
 
         situacaoPrazo:
-            diagnostico.status,
+            diagnosticoPrazo.status,
 
 
         codigoSituacaoPrazo:
-            diagnostico.codigo,
+            diagnosticoPrazo.codigo,
 
 
         nivelSituacaoPrazo:
-            diagnostico.nivel,
+            diagnosticoPrazo.nivel,
 
 
         mensagemSituacaoPrazo:
-            diagnostico.mensagem,
+            diagnosticoPrazo.mensagem,
 
 
         // =============================
-        // DETALHAMENTO
+        // DIAGNÓSTICO DO RITMO REAL
+        // =============================
+
+        situacaoRitmoReal:
+            diagnosticoRitmo.status,
+
+
+        codigoSituacaoRitmoReal:
+            diagnosticoRitmo.codigo,
+
+
+        nivelSituacaoRitmoReal:
+            diagnosticoRitmo.nivel,
+
+
+        mensagemSituacaoRitmoReal:
+            diagnosticoRitmo.mensagem,
+
+
+        // =============================
+        // DETALHES DE RITMO
+        // =============================
+
+        ritmoDetalhado: {
+
+            ultimos7Dias:
+                ritmo7,
+
+            ultimos14Dias:
+                ritmo14,
+
+            ultimos30Dias:
+                ritmo30
+
+        },
+
+
+        // =============================
+        // DISCIPLINAS
         // =============================
 
         disciplinas:
@@ -1545,11 +2389,11 @@ function calcularPlanejamento() {
 
 
 // =====================================
-// DEBUG OPCIONAL
+// DEBUG
 // =====================================
 
 console.log(
-    "CÁLCULO DO PLANEJAMENTO PSCPP v2.0 CARREGADO"
+    "CÁLCULO DO PLANEJAMENTO PSCPP v2.1 CARREGADO"
 );
 
 
