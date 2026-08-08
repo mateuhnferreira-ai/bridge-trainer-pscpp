@@ -1,1 +1,1258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Nomenclatura, Geometria e Estrutura Naval - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="arte-naval"
+    data-aula="nomenclatura-geometria-estrutura"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Arte Naval</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Nomenclatura, Geometria e Estrutura Naval
+</h2>
+
+<p>
+<strong>
+Ship Nomenclature, Geometry and Structure
+</strong>
+</p>
+
+<p>
+Estudo da terminologia fundamental utilizada para
+identificar as partes do navio, suas regiões,
+dimensões, formas geométricas e principais elementos
+estruturais.
+</p>
+
+<p>
+A compreensão dessa nomenclatura constitui a base
+para o estudo posterior de classificação dos navios,
+estabilidade, fundeio, amarração, reboque e manobras
+portuárias.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Arte Naval
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Nomenclatura, Geometria e Estrutura Naval
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Ship Nomenclature, Geometry and Structure
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<!-- FASE ATUAL -->
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>II — Arte Naval</strong>
+</p>
+
+<p>
+<strong>
+Nomenclatura, Geometria e Estrutura Naval
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="embarcacao-navio">
+Embarcação e navio;
+</li>
+
+<li data-progresso-topico="casco">
+casco e plano diametral;
+</li>
+
+<li data-progresso-topico="proa-popa">
+proa e popa;
+</li>
+
+<li data-progresso-topico="bordos">
+bordos, boreste e bombordo;
+</li>
+
+<li data-progresso-topico="avante-re">
+avante e a ré;
+</li>
+
+<li data-progresso-topico="meia-nau">
+meia-nau;
+</li>
+
+<li data-progresso-topico="corpos-navio">
+corpo de proa e corpo de popa;
+</li>
+
+<li data-progresso-topico="obras-vivas-mortas">
+obras vivas, carena e obras mortas;
+</li>
+
+<li data-progresso-topico="linha-dagua">
+linha-d'água;
+</li>
+
+<li data-progresso-topico="fundo-bojo-costado">
+fundo, bojo e costado;
+</li>
+
+<li data-progresso-topico="geometria-navio">
+geometria do navio e planos de referência;
+</li>
+
+<li data-progresso-topico="dimensoes-principais">
+dimensões principais do navio;
+</li>
+
+<li data-progresso-topico="estrutura-casco">
+estrutura do casco;
+</li>
+
+<li data-progresso-topico="elementos-longitudinais">
+elementos estruturais longitudinais;
+</li>
+
+<li data-progresso-topico="elementos-transversais">
+elementos estruturais transversais;
+</li>
+
+<li data-progresso-topico="chapeamento">
+chapeamento e reforços estruturais.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+distinguir os conceitos de embarcação e navio;
+</li>
+
+<li>
+identificar as principais regiões do casco;
+</li>
+
+<li>
+diferenciar proa, popa, boreste e bombordo;
+</li>
+
+<li>
+utilizar corretamente as referências avante e a ré;
+</li>
+
+<li>
+identificar meia-nau, corpo de proa e corpo de popa;
+</li>
+
+<li>
+diferenciar obras vivas, carena e obras mortas;
+</li>
+
+<li>
+identificar linha-d'água, fundo, bojo e costado;
+</li>
+
+<li>
+compreender os principais planos e dimensões
+utilizados na geometria do navio;
+</li>
+
+<li>
+reconhecer os principais elementos estruturais
+longitudinais e transversais;
+</li>
+
+<li>
+relacionar nomenclatura naval com a interpretação
+operacional do navio;
+</li>
+
+<li>
+utilizar corretamente os principais termos técnicos
+em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Arte Naval — Volume 1
+</h3>
+
+<p>
+Publicação principal utilizada para a nomenclatura,
+geometria e estrutura básica do navio.
+</p>
+
+<p>
+<strong>Autor:</strong>
+Maurílio Magalhães Fonseca.
+</p>
+
+<p>
+<strong>Edição:</strong>
+8ª edição, 2019.
+</p>
+
+<p>
+<strong>Trechos principais utilizados nesta aula:</strong>
+Capítulo 1 — Nomenclatura do Navio e
+Capítulo 2 — Geometria do Navio.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+O desenvolvimento desta aula será baseado
+prioritariamente no conteúdo efetivamente apresentado
+no <strong>Arte Naval — Volume 1</strong>.
+</p>
+
+<p>
+Conteúdos pertencentes à classificação dos navios,
+estabilidade, fundeio, amarração e demais módulos
+serão mantidos em suas respectivas aulas para evitar
+duplicações.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+nomenclatura fundamental do navio;
+</li>
+
+<li>
+regiões e referências direcionais;
+</li>
+
+<li>
+obras vivas, obras mortas e linha-d'água;
+</li>
+
+<li>
+partes externas do casco;
+</li>
+
+<li>
+fundamentos da geometria naval;
+</li>
+
+<li>
+dimensões principais;
+</li>
+
+<li>
+estrutura do casco;
+</li>
+
+<li>
+elementos longitudinais;
+</li>
+
+<li>
+elementos transversais;
+</li>
+
+<li>
+chapeamento e reforços estruturais;
+</li>
+
+<li>
+terminologia técnica em inglês marítimo;
+</li>
+
+<li>
+aplicações e pontos de atenção para o PSCPP.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     NOMENCLATURA FUNDAMENTAL DO NAVIO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — NOMENCLATURA FUNDAMENTAL DO NAVIO
+</h2>
+
+<p>
+O estudo da Arte Naval começa pela linguagem utilizada
+para identificar o navio e suas diferentes regiões.
+</p>
+
+<p>
+Nesta primeira parte serão apresentados os conceitos
+básicos empregados pelo
+<strong>Arte Naval — Volume 1</strong>
+para definir embarcação, navio, casco, proa, popa,
+bordos e referências longitudinais.
+</p>
+
+<p>
+Esses termos formam a base para praticamente todos
+os assuntos posteriores da disciplina.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     EMBARCAÇÃO E NAVIO
+========================================= -->
+
+<section
+class="topico-aula"
+id="embarcacao-navio"
+data-topico-id="embarcacao-navio">
+
+<h2>1. Embarcação e navio</h2>
+
+<div class="widget">
+
+<p>
+O <strong>Arte Naval</strong> utiliza
+<strong>embarcação</strong>
+(<strong>vessel</strong>) como termo de uso geral
+para designar uma construção que flutua e se destina
+ao transporte, pela água, de pessoas e/ou cargas.
+</p>
+
+<p>
+A publicação registra que essas construções podem ser
+feitas de materiais como madeira, concreto, aço,
+alumínio ou combinações de diferentes materiais.
+</p>
+
+<p>
+O termo <strong>navio</strong>
+(<strong>ship</strong>) designa, em geral,
+as embarcações de maior porte.
+</p>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+<strong>Embarcação</strong> é o termo de sentido
+mais geral.
+</p>
+
+<p>
+<strong>Navio</strong> é empregado, em geral,
+para embarcações de maior porte.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Vessel</strong> — embarcação;
+</li>
+
+<li>
+<strong>Ship</strong> — navio;
+</li>
+
+<li>
+<strong>Boat</strong> — barco.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Em uma questão conceitual, não é recomendável tratar
+<strong>embarcação</strong> e <strong>navio</strong>
+como termos rigorosamente equivalentes.
+</p>
+
+<p>
+O próprio <strong>Arte Naval</strong> distingue
+o uso geral de embarcação do emprego de navio
+para os meios de maior porte.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+     CASCO
+========================================= -->
+
+<section
+class="topico-aula"
+id="casco"
+data-topico-id="casco">
+
+<h2>2. Casco e plano diametral</h2>
+
+<div class="widget">
+
+<p>
+O <strong>casco</strong>
+(<strong>hull</strong>)
+é o corpo do navio considerado sem mastreação,
+aparelhos acessórios ou outros arranjos.
+</p>
+
+<p>
+Segundo o <strong>Arte Naval</strong>,
+o casco normalmente não possui uma forma geométrica
+simples e definida.
+</p>
+
+<p>
+Uma característica fundamental de sua forma é possuir,
+na maioria dos casos, um
+<strong>plano de simetria</strong>,
+denominado <strong>plano diametral</strong>,
+que se imagina passando pela quilha.
+</p>
+
+<div class="destaque">
+
+<h3>Importância da forma do casco</h3>
+
+<p>
+A publicação relaciona a forma adequada do casco
+às qualidades náuticas do navio, incluindo:
+</p>
+
+<ul>
+
+<li>
+resistência mínima à propulsão;
+</li>
+
+<li>
+mobilidade;
+</li>
+
+<li>
+estabilidade de plataforma.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 360"
+role="img"
+aria-label="Vista superior simplificada de um casco mostrando o plano diametral"
+>
+
+<path
+d="
+M100 180
+C180 90 330 70 500 70
+C650 70 760 110 820 180
+C760 250 650 290 500 290
+C330 290 180 270 100 180
+Z
+"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="105"
+y1="180"
+x2="810"
+y2="180"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="14 10"
+/>
+
+<text
+x="335"
+y="160"
+font-size="23"
+>
+PLANO DIAMETRAL
+</text>
+
+<text
+x="825"
+y="187"
+font-size="23"
+>
+PROA
+</text>
+
+<text
+x="25"
+y="187"
+font-size="23"
+>
+POPA
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 1.</strong>
+Representação didática do plano diametral em
+vista superior do casco.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Hull</strong> — casco;
+</li>
+
+<li>
+<strong>Centerline plane</strong> —
+plano diametral ou plano longitudinal de simetria;
+</li>
+
+<li>
+<strong>Keel</strong> — quilha.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+     PROA E POPA
+========================================= -->
+
+<section
+class="topico-aula"
+id="proa-popa"
+data-topico-id="proa-popa">
+
+<h2>3. Proa e popa</h2>
+
+<div class="widget">
+
+<h3>Proa</h3>
+
+<p>
+A <strong>proa</strong>
+(<strong>bow</strong> ou <strong>foreship</strong>)
+é a extremidade de vante do navio no sentido
+de sua marcha normal.
+</p>
+
+<p>
+Sua forma exterior é normalmente adequada para
+facilitar a penetração do navio no mar.
+</p>
+
+
+<h3>Popa</h3>
+
+<p>
+A <strong>popa</strong>
+(<strong>stern</strong> ou <strong>aftship</strong>)
+é a extremidade de ré do navio.
+</p>
+
+<p>
+O <strong>Arte Naval</strong> destaca que sua forma
+é normalmente adequada para facilitar o fluxo da água
+produzido pelo movimento do navio e favorecer a ação
+eficiente do leme e do hélice.
+</p>
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 320"
+role="img"
+aria-label="Vista superior simplificada indicando proa e popa"
+>
+
+<path
+d="
+M100 160
+L180 105
+C340 70 610 75 730 110
+L820 160
+L730 210
+C610 245 340 250 180 215
+Z
+"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="115"
+y1="160"
+x2="810"
+y2="160"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="12 8"
+/>
+
+<text
+x="25"
+y="168"
+font-size="25"
+>
+POPA
+</text>
+
+<text
+x="820"
+y="168"
+font-size="25"
+>
+PROA
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 2.</strong>
+Identificação de proa e popa em vista superior.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Bow</strong> — proa;
+</li>
+
+<li>
+<strong>Foreship</strong> — região de proa;
+</li>
+
+<li>
+<strong>Stern</strong> — popa;
+</li>
+
+<li>
+<strong>Aftship</strong> — região de popa.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+     BORDOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="bordos"
+data-topico-id="bordos">
+
+<h2>4. Bordos — boreste e bombordo</h2>
+
+<div class="widget">
+
+<p>
+Os <strong>bordos</strong>
+(<strong>sides</strong>)
+são as partes laterais do casco.
+</p>
+
+<p>
+Para sua identificação, considera-se o observador
+situado no plano diametral e olhando para a proa.
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>Boreste — BE — Starboard side:</strong>
+bordo situado à direita.
+</p>
+
+<p>
+<strong>Bombordo — BB — Port side:</strong>
+bordo situado à esquerda.
+</p>
+
+</div>
+
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 420"
+role="img"
+aria-label="Vista superior do navio indicando boreste e bombordo"
+>
+
+<path
+d="
+M120 210
+C200 125 350 105 520 105
+C665 105 760 150 820 210
+C760 270 665 315 520 315
+C350 315 200 295 120 210
+Z
+"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="125"
+y1="210"
+x2="810"
+y2="210"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="12 9"
+/>
+
+<text
+x="370"
+y="160"
+font-size="27"
+>
+BOMBORDO — BB
+</text>
+
+<text
+x="405"
+y="190"
+font-size="20"
+>
+PORT SIDE
+</text>
+
+<text
+x="395"
+y="265"
+font-size="27"
+>
+BORESTE — BE
+</text>
+
+<text
+x="410"
+y="295"
+font-size="20"
+>
+STARBOARD SIDE
+</text>
+
+<text
+x="820"
+y="218"
+font-size="23"
+>
+PROA →
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 3.</strong>
+Referência de boreste e bombordo com o observador
+orientado para a proa.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Boreste e bombordo são referências fixas do navio.
+</p>
+
+<p>
+A definição é estabelecida considerando o observador
+voltado para a proa, mas o bordo não muda quando
+uma pessoa muda sua orientação a bordo.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Starboard side</strong> — boreste;
+</li>
+
+<li>
+<strong>Port side</strong> — bombordo;
+</li>
+
+<li>
+<strong>Sides</strong> — bordos.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PRÓXIMA PARTE ABAIXO
+     TÓPICO 5 — AVANTE E A RÉ
+========================================= -->
