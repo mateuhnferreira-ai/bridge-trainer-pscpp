@@ -117,13 +117,15 @@ async function carregarDadosProgresso() {
                 );
 
 
-            prepararEstruturaProgresso();
+           prepararEstruturaProgresso();
+
+migrarIdentificadoresAntigosProgresso();
 
 
-            console.log(
-                "Progresso carregado do tablet:",
-                dadosProgresso
-            );
+console.log(
+    "Progresso carregado do tablet:",
+    dadosProgresso
+);
 
 
             return dadosProgresso;
@@ -287,7 +289,248 @@ function prepararEstruturaProgresso() {
 
 }
 
+// =====================================
+// MIGRAÇÕES DE IDENTIFICADORES ANTIGOS
+// =====================================
+//
+// Preserva progresso salvo antes da
+// padronização definitiva dos IDs.
+//
+// Migração atual:
+//
+// manobrabilidade
+// resistencia-navio
+//        ↓
+// resistencia
+//
+// Se o destino já possuir dados,
+// os tópicos são combinados sem apagar
+// progresso existente.
+// =====================================
 
+function migrarIdentificadoresAntigosProgresso() {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return false;
+
+    }
+
+
+    let houveMigracao = false;
+
+
+    const disciplina =
+        dadosProgresso
+            .disciplinas[
+                "manobrabilidade"
+            ];
+
+
+    if (
+        !disciplina ||
+        !disciplina.aulas
+    ) {
+
+        return false;
+
+    }
+
+
+    const idAntigo =
+        "resistencia-navio";
+
+
+    const idNovo =
+        "resistencia";
+
+
+    const aulaAntiga =
+        disciplina.aulas[
+            idAntigo
+        ];
+
+
+    if (!aulaAntiga) {
+
+        return false;
+
+    }
+
+
+    const aulaNova =
+        disciplina.aulas[
+            idNovo
+        ];
+
+
+    // =================================
+    // DESTINO AINDA NÃO EXISTE
+    // =================================
+
+    if (!aulaNova) {
+
+        disciplina.aulas[
+            idNovo
+        ] = aulaAntiga;
+
+
+        delete disciplina.aulas[
+            idAntigo
+        ];
+
+
+        houveMigracao = true;
+
+    }
+
+
+    // =================================
+    // DESTINO JÁ EXISTE
+    // =================================
+    //
+    // Combina os dados para não perder
+    // nada que já tenha sido registrado.
+
+    else {
+
+        if (!aulaNova.topicos) {
+
+            aulaNova.topicos = {};
+
+        }
+
+
+        const topicosAntigos =
+            aulaAntiga.topicos || {};
+
+
+        Object.entries(
+            topicosAntigos
+        ).forEach(
+            ([idTopico, dadosTopico]) => {
+
+                const atual =
+                    aulaNova.topicos[
+                        idTopico
+                    ];
+
+
+                if (!atual) {
+
+                    aulaNova.topicos[
+                        idTopico
+                    ] =
+                        dadosTopico;
+
+
+                    return;
+
+                }
+
+
+                // Se qualquer versão disser
+                // que o tópico foi concluído,
+                // preservamos a conclusão.
+
+                if (
+                    dadosTopico.concluido === true
+                ) {
+
+                    atual.concluido = true;
+
+                }
+
+
+                // Preserva a data disponível.
+
+                if (
+                    !atual.dataConclusao &&
+                    dadosTopico.dataConclusao
+                ) {
+
+                    atual.dataConclusao =
+                        dadosTopico.dataConclusao;
+
+                }
+
+            }
+        );
+
+
+        aulaNova.totalTopicos =
+            Math.max(
+
+                aulaNova.totalTopicos || 0,
+
+                aulaAntiga.totalTopicos || 0
+
+            );
+
+
+        // Se a aula antiga estava concluída,
+        // preservamos esse estado até o
+        // recálculo definitivo.
+
+        if (
+            aulaAntiga.concluida === true
+        ) {
+
+            aulaNova.concluida = true;
+
+        }
+
+
+        aulaNova.progresso =
+            Math.max(
+
+                aulaNova.progresso || 0,
+
+                aulaAntiga.progresso || 0
+
+            );
+
+
+        delete disciplina.aulas[
+            idAntigo
+        ];
+
+
+        houveMigracao = true;
+
+    }
+
+
+    if (houveMigracao) {
+
+        recalcularProgressoAula(
+            "manobrabilidade",
+            "resistencia"
+        );
+
+
+        recalcularProgressoDisciplina(
+            "manobrabilidade"
+        );
+
+
+        salvarDadosProgresso();
+
+
+        console.log(
+            "Migração concluída: " +
+            "resistencia-navio → resistencia"
+        );
+
+    }
+
+
+    return houveMigracao;
+
+}
 // =====================================
 // SALVAR PROGRESSO
 // =====================================
