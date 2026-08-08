@@ -1,7 +1,7 @@
 // =====================================
 // BANCO DE CONTEÚDO PSCPP
 // Bridge Trainer PSCPP
-// Versão estratégica v3.1
+// Versão estratégica v3.2
 //
 // Fonte estrutural para:
 // - Guia de Estudos
@@ -19,7 +19,7 @@
 // utilizado nas páginas das aulas.
 //
 // horas
-// representa agora uma ESTIMATIVA REALISTA
+// representa uma ESTIMATIVA REALISTA
 // de tempo de primeiro estudo do assunto.
 //
 // Não deve ser usada como peso de importância.
@@ -34,7 +34,7 @@
 // "Baixa" = leitura/revisão mais leve
 //
 // Carga total aproximada desta versão:
-// 403 horas.
+// 399 horas.
 // =====================================
 
 
@@ -196,12 +196,9 @@ cargaCognitiva: "Média"
 },
 
 
-
-
-
 // =====================================
-// III - NAVEGAÇÃO
-// Total aproximado: 65 h
+// II - ARTE NAVAL
+// Total aproximado: 68 h
 // =====================================
 
 "arte-naval": {
@@ -325,6 +322,135 @@ cargaCognitiva: "Média"
 ]
 
 },
+
+
+// =====================================
+// III - NAVEGAÇÃO
+// Total aproximado: 65 h
+// =====================================
+
+navegacao: {
+
+nome: "Navegação",
+
+prioridade: "Muito Alta",
+
+pesoDisciplina: 5,
+
+assuntos: [
+
+{
+id: "navegacao-costeira",
+nome: "Navegação Costeira",
+horas: 5,
+importancia: "Alta",
+peso: 4,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "aguas-restritas",
+nome: "Navegação em Águas Restritas",
+horas: 8,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "planejamento-navegacao",
+nome: "Planejamento da Navegação",
+horas: 7,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "pilotagem",
+nome: "Pilotagem",
+horas: 7,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "colreg",
+nome: "COLREG 1972",
+horas: 10,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "manobras-com-trafego",
+nome: "Manobras com Tráfego",
+horas: 6,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Alta"
+},
+
+{
+id: "ecdis",
+nome: "ECDIS",
+horas: 4,
+importancia: "Alta",
+peso: 4,
+cargaCognitiva: "Média"
+},
+
+{
+id: "balizamento",
+nome: "Balizamento e Auxílios à Navegação",
+horas: 4,
+importancia: "Alta",
+peso: 4,
+cargaCognitiva: "Média"
+},
+
+{
+id: "publicacoes",
+nome: "Publicações Náuticas",
+horas: 3,
+importancia: "Alta",
+peso: 3,
+cargaCognitiva: "Baixa"
+},
+
+{
+id: "ais-vts",
+nome: "AIS e VTS",
+horas: 4,
+importancia: "Alta",
+peso: 4,
+cargaCognitiva: "Média"
+},
+
+{
+id: "bridge-team-management",
+nome: "Bridge Team Management / BRM",
+horas: 4,
+importancia: "Muito Alta",
+peso: 5,
+cargaCognitiva: "Média"
+},
+
+{
+id: "dynamic-positioning",
+nome: "Dynamic Positioning — DP",
+horas: 3,
+importancia: "Média",
+peso: 3,
+cargaCognitiva: "Média"
+}
+
+]
+
+},
+
 
 // =====================================
 // IV - METEOROLOGIA E OCEANOGRAFIA
@@ -909,7 +1035,7 @@ cargaCognitiva: "Média"
 // =====================================
 
 console.log(
-    "BANCO DE CONTEÚDO PSCPP v3.1 CARREGADO"
+    "BANCO DE CONTEÚDO PSCPP v3.2 CARREGADO"
 );
 
 
@@ -919,5 +1045,5 @@ console.log(
 
 
 // =====================================
-// FIM DO BANCO DE CONTEÚDO PSCPP v3.1
+// FIM DO BANCO DE CONTEÚDO PSCPP v3.2
 // =====================================
