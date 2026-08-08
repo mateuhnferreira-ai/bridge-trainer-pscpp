@@ -1,73 +1,182 @@
 // =====================================
 // CONFIGURAÇÃO DE ESTUDO PSCPP
 // Bridge Trainer PSCPP
+// Versão 2.0
+//
+// Esta configuração define:
+//
+// - período geral de preparação
+// - disponibilidade semanal
+// - fases do planejamento
+// - revisão
+// - pesos estratégicos por disciplina
+//
+// Os pesos passam a usar os IDs das
+// disciplinas, evitando erro por mudança
+// no nome de exibição.
 // =====================================
 
 
 const configuracaoEstudo = {
 
 
-inicio:
-"2026-08-03",
+    // =================================
+    // PERÍODO GERAL
+    // =================================
+
+    inicio:
+        "2026-08-03",
 
 
-prova:
-"2027-11-01",
+    prova:
+        "2027-11-01",
 
 
-horasPorDia:
-2,
+
+    // =================================
+    // FASES DO PLANEJAMENTO
+    // =================================
+    //
+    // Fase 1:
+    // percorrer todo o conteúdo programático
+    //
+    // Fase 2:
+    // consolidação e aumento de exercícios
+    //
+    // Fase 3:
+    // reta final predominantemente voltada
+    // a revisão, questões e simulados
+    //
+    // As datas poderão ser recalibradas
+    // posteriormente sem alterar o motor.
+
+    fases: {
+
+        conteudo: {
+
+            inicio:
+                "2026-08-03",
+
+            fim:
+                "2027-07-31"
+
+        },
 
 
-diasEstudo: [
+        consolidacao: {
 
-"segunda",
-"terça",
-"quarta",
-"quinta",
-"sexta"
+            inicio:
+                "2027-08-01",
 
-],
+            fim:
+                "2027-09-30"
 
-
-usarRevisao:
-true,
+        },
 
 
-cicloRevisaoDias: [
+        retaFinal: {
 
-7,
-30,
-90
+            inicio:
+                "2027-10-01",
 
-],
+            fim:
+                "2027-11-01"
 
+        }
 
-pesosPrioridade: {
-
-
-"Manobrabilidade": 5,
+    },
 
 
-"Navegação em Águas Restritas / COLREG": 5,
+
+    // =================================
+    // DISPONIBILIDADE
+    // =================================
+
+    horasPorDia:
+        2,
 
 
-"Legislação e Regulamentação": 4,
+    diasEstudo: [
+
+        "segunda",
+        "terça",
+        "quarta",
+        "quinta",
+        "sexta"
+
+    ],
 
 
-"Arte Naval": 4,
+
+    // =================================
+    // REVISÃO
+    // =================================
+
+    usarRevisao:
+        true,
 
 
-"Conhecimentos Gerais": 4,
+    cicloRevisaoDias: [
+
+        7,
+        30,
+        90
+
+    ],
 
 
-"Comunicações": 3,
+
+    // =================================
+    // MARGEM DE SEGURANÇA
+    // =================================
+    //
+    // 0.90 significa que o planejamento
+    // considera apenas 90% das horas
+    // teoricamente disponíveis.
+    //
+    // Isso cria margem para:
+    //
+    // - dias perdidos
+    // - compromissos
+    // - cansaço
+    // - imprevistos
+    // - semanas menos produtivas
+
+    fatorDisponibilidadeReal:
+        0.90,
 
 
-"Meteorologia e Oceanografia": 3
 
+    // =================================
+    // PESOS POR DISCIPLINA
+    // =================================
+    //
+    // Agora usamos ID em vez do nome.
 
-}
+    pesosPrioridade: {
+
+        "manobrabilidade":
+            5,
+
+        "navegacao":
+            5,
+
+        "regulamentacao":
+            4,
+
+        "arte-naval":
+            4,
+
+        "conhecimentos-gerais":
+            4,
+
+        "comunicacoes":
+            3,
+
+        "meteorologia":
+            3
+
+    }
 
 
 };
