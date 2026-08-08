@@ -4,15 +4,27 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Comunicações - PSCPP</title>
 
-<link rel="stylesheet" href="../../css/style.css">
+<link
+rel="stylesheet"
+href="../../css/style.css"
+>
 
 </head>
 
-<body>
+
+<body
+data-tipo-pagina="disciplina"
+data-disciplina="comunicacoes"
+>
+
 
 <header class="topo">
 
@@ -26,9 +38,13 @@
 
 </header>
 
+
 <nav class="navbar">
 
-<button onclick="voltarPagina()">
+<button
+type="button"
+onclick="voltarPagina()"
+>
 ⬅ Voltar
 </button>
 
@@ -36,8 +52,8 @@
 🏠 Início
 </a>
 
-<a href="#">
-📊 Progresso
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
 </a>
 
 <a href="#">
@@ -46,7 +62,13 @@
 
 </nav>
 
+
 <main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
 
 <section class="dashboard">
 
@@ -54,15 +76,22 @@
 
 <p>
 
-Estudo dos sistemas de comunicação utilizados na navegação marítima,
-abrangendo o Standard Marine Communication Phrases (SMCP), os princípios
-das radiocomunicações, o Código Internacional de Sinais (CIS) e o Sistema
-Marítimo Global de Socorro e Segurança (GMDSS), conforme a bibliografia
-oficial do PSCPP.
+Estudo dos sistemas de comunicação utilizados
+na navegação marítima, abrangendo o
+Standard Marine Communication Phrases — SMCP,
+radiocomunicações marítimas,
+Código Internacional de Sinais — CIS
+e o Sistema Marítimo Global de Socorro
+e Segurança — GMDSS.
 
 </p>
 
 </section>
+
+
+<!-- =========================================
+     PROGRESSO DA DISCIPLINA
+========================================= -->
 
 <section>
 
@@ -73,22 +102,30 @@ oficial do PSCPP.
 <p>
 
 <strong>Status atual:</strong>
-Não iniciado
+
+<span id="status-geral-comunicacoes">
+Nenhum módulo iniciado
+</span>
 
 </p>
 
-<p>
+<p id="resumo-progresso-comunicacoes">
 
-📚 Nenhum módulo concluído.
+0 de 5 módulos concluídos
 
 </p>
 
 <div class="barra-progresso">
 
-<div class="progresso" style="width:0%;">
-
+<div
+class="progresso"
+id="barra-progresso-comunicacoes"
+style="width: 0%;"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
+>
 0%
-
 </div>
 
 </div>
@@ -96,100 +133,195 @@ Não iniciado
 </div>
 
 </section>
+
+
+<!-- =========================================
+     MÓDULOS OFICIAIS
+========================================= -->
 
 <section>
 
 <h2>📚 Módulos de Estudo</h2>
 
-<div class="cards">
+<div
+class="cards"
+id="modulos-comunicacoes"
+data-disciplina="comunicacoes"
+>
 
-<a href="smcp.html" class="card">
 
-<h3>🗣 Standard Marine Communication Phrases (SMCP)</h3>
+<a
+href="smcp.html"
+class="card"
+data-assunto="smcp"
+>
 
-<span class="status pendente">
+<h3>🗣 Standard Marine Communication Phrases — SMCP</h3>
 
+<span
+class="status pendente"
+id="status-smcp"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
 
-Vocabulário padrão da IMO, frases operacionais, procedimentos, conceitos e comunicações a bordo.
+Vocabulário padrão da IMO,
+frases operacionais,
+procedimentos de comunicação
+e terminologia marítima padronizada.
 
 </p>
 
 </a>
 
-<a href="radiocomunicacoes-maritimas.html" class="card">
+
+<a
+href="radiocomunicacoes-maritimas.html"
+class="card"
+data-assunto="radiocomunicacoes-maritimas"
+>
 
 <h3>📻 Radiocomunicações Marítimas</h3>
 
-<span class="status pendente">
-
+<span
+class="status pendente"
+id="status-radiocomunicacoes-maritimas"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
 
-Ondas eletromagnéticas, propagação, frequências, antenas, Serviço Móvel Marítimo e equipamentos.
+Princípios de radiocomunicação,
+frequências, propagação,
+equipamentos e procedimentos
+do Serviço Móvel Marítimo.
 
 </p>
 
 </a>
 
-<a href="codigo-internacional-sinais.html" class="card">
 
-<h3>🚩 Código Internacional de Sinais (CIS)</h3>
+<a
+href="codigo-internacional-sinais.html"
+class="card"
+data-assunto="codigo-internacional-sinais"
+>
 
-<span class="status pendente">
+<h3>🚩 Código Internacional de Sinais — CIS</h3>
 
+<span
+class="status pendente"
+id="status-codigo-internacional-sinais"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
 
-Bandeiras, flâmulas, métodos de sinalização, radiotelefonia e sinais de letra única.
+Bandeiras, flâmulas,
+métodos de sinalização,
+sinais de letra única
+e comunicações padronizadas.
 
 </p>
 
 </a>
 
-<a href="gmdss.html" class="card">
 
-<h3>🆘 Sistema Marítimo Global de Socorro e Segurança (GMDSS)</h3>
+<a
+href="gmdss.html"
+class="card"
+data-assunto="gmdss"
+>
 
-<span class="status pendente">
+<h3>🆘 GMDSS</h3>
 
+<span
+class="status pendente"
+id="status-gmdss"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
 
-Organização do GMDSS, equipamentos, áreas marítimas, procedimentos e comunicações de emergência.
+Organização do sistema,
+áreas marítimas,
+equipamentos,
+socorro, urgência,
+segurança e comunicações de emergência.
 
 </p>
 
 </a>
 
-<a href="exercicios-comunicacoes.html" class="card">
 
-<h3>📝 Exercícios e Revisão</h3>
+<a
+href="exercicios-comunicacoes.html"
+class="card"
+data-assunto="exercicios-comunicacoes"
+>
 
-<span class="status pendente">
+<h3>📝 Exercícios e Revisão de Comunicações</h3>
 
+<span
+class="status pendente"
+id="status-exercicios-comunicacoes"
+>
 ⬜ Não iniciado
-
 </span>
 
 <p>
 
-Questões comentadas, simulados e revisão dos principais conceitos da disciplina.
+Questões comentadas,
+revisão integrada,
+aplicação prática dos procedimentos
+e treinamento dos principais conceitos.
 
 </p>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TREINAMENTO COMPLEMENTAR
+     FORA DO SISTEMA DE PROGRESSO
+========================================= -->
+
+<section>
+
+<h2>🎙 Treinamento Complementar</h2>
+
+<div class="cards">
+
+<a
+href="prova-pratico-oral.html"
+class="card"
+>
+
+<h3>🎙 Prova de Prático Oral</h3>
+
+<p>
+
+Treinamento progressivo de respostas orais,
+vocabulário marítimo,
+situações operacionais,
+SMCP e comunicação profissional
+para preparação de longo prazo.
+
+</p>
+
+<span class="status">
+Treinamento complementar
+</span>
 
 </a>
 
@@ -197,7 +329,13 @@ Questões comentadas, simulados e revisão dos principais conceitos da disciplin
 
 </section>
 
+
+<!-- =========================================
+     PAINEL COMPLEMENTAR
+========================================= -->
+
 <section class="painel">
+
 
 <div class="widget">
 
@@ -205,25 +343,34 @@ Questões comentadas, simulados e revisão dos principais conceitos da disciplin
 
 <p>
 
-Dominar os procedimentos de comunicação marítima padronizados pela IMO,
-os sistemas de radiocomunicações, o Código Internacional de Sinais e o
-GMDSS, aplicando-os com precisão nas operações de praticagem.
+Dominar os procedimentos de comunicação
+marítima padronizados,
+o vocabulário técnico,
+os sistemas de radiocomunicação,
+o Código Internacional de Sinais
+e o GMDSS.
 
 </p>
 
 </div>
+
 
 <div class="widget">
 
-<h2>📖 Próxima Aula</h2>
+<h2>📖 Situação do Estudo</h2>
 
 <p>
 
-🗣 Standard Marine Communication Phrases (SMCP)
+O sistema de planejamento indicará
+automaticamente os módulos prioritários
+de acordo com progresso,
+peso, carga cognitiva
+e tempo disponível.
 
 </p>
 
 </div>
+
 
 <div class="widget">
 
@@ -231,37 +378,52 @@ GMDSS, aplicando-os com precisão nas operações de praticagem.
 
 <p>
 
-IMO SMCP<br>
-Código Internacional de Sinais (CIS)<br>
+IMO Standard Marine Communication Phrases — SMCP<br>
+Código Internacional de Sinais — CIS<br>
 GMDSS<br>
 SOLAS<br>
-ITU Radio Regulations
+ITU Radio Regulations<br>
+Bibliografia oficial do PSCPP
 
 </p>
 
 </div>
 
+
 </section>
 
+
 </main>
+
 
 <footer>
 
 <p>
-
 Bridge Trainer PSCPP © 2026
-
 </p>
 
 </footer>
 
-<a href="../../index.html" class="botao-inicio">
 
+<a
+href="../../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
 🏠
-
 </a>
 
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
 <script src="../../js/app.js"></script>
+
 
 </body>
 
