@@ -1,1 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Tipos e Características dos Navios - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="arte-naval"
+    data-aula="classificacao-navios"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Arte Naval</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<div class="widget">
+
+<h2>
+🚢 Tipos e Características dos Navios
+</h2>
+
+<p>
+<strong>Ship Types and Characteristics</strong>
+</p>
+
+<p>
+Nesta aula serão estudados os principais critérios utilizados
+para classificar os navios e as características que permitem
+distinguir diferentes tipos de embarcação.
+</p>
+
+<p>
+A classificação será relacionada à finalidade da embarcação,
+ao serviço executado e às características gerais de sua
+construção.
+</p>
+
+<p>
+Será dada atenção especial aos principais tipos encontrados
+na Marinha Mercante, desenvolvendo também a capacidade de
+<strong>reconhecimento visual das embarcações</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Arte Naval
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Tipos e Características dos Navios
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Ship Types and Characteristics
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>II — Arte Naval</strong>
+</p>
+
+<p>
+<strong>Tipos e Características dos Navios</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="criterios-classificacao">
+critérios gerais de classificação dos navios;
+</li>
+
+<li data-progresso-topico="classificacao-emprego">
+classificação quanto ao emprego;
+</li>
+
+<li data-progresso-topico="navios-guerra-mercantes">
+navios de guerra e navios mercantes;
+</li>
+
+<li data-progresso-topico="navios-passageiros">
+navios de passageiros;
+</li>
+
+<li data-progresso-topico="navios-carga-geral">
+navios de carga geral;
+</li>
+
+<li data-progresso-topico="porta-conteineres">
+navios porta-contêineres;
+</li>
+
+<li data-progresso-topico="navios-graneleiros">
+navios graneleiros;
+</li>
+
+<li data-progresso-topico="navios-tanque">
+navios-tanque;
+</li>
+
+<li data-progresso-topico="navios-ro-ro">
+navios roll-on/roll-off;
+</li>
+
+<li data-progresso-topico="navios-especializados">
+outros tipos e navios especializados;
+</li>
+
+<li data-progresso-topico="reconhecimento-visual">
+características gerais e reconhecimento visual dos
+principais tipos de navios mercantes.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+compreender os principais critérios utilizados na
+classificação dos navios;
+</li>
+
+<li>
+distinguir navios segundo sua finalidade e emprego;
+</li>
+
+<li>
+reconhecer os principais tipos de navios mercantes;
+</li>
+
+<li>
+associar características construtivas gerais ao serviço
+executado pela embarcação;
+</li>
+
+<li>
+diferenciar visualmente os principais tipos de navios;
+</li>
+
+<li>
+reconhecer características externas relevantes à
+identificação de uma embarcação;
+</li>
+
+<li>
+utilizar corretamente a terminologia técnica marítima
+em português e inglês;
+</li>
+
+<li>
+relacionar o tipo de navio às características relevantes
+para sua operação e manobra.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Arte Naval — Volume 1
+</h3>
+
+<p>
+Publicação principal utilizada para o estudo da classificação,
+dos tipos e das características gerais dos navios.
+</p>
+
+<p>
+<strong>Referência principal:</strong>
+Capítulo 3.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+PIANC — Ship Dimensions and Data for Design of Marine Infrastructure
+</h3>
+
+<p>
+Referência complementar prevista na bibliografia de Arte Naval
+para informações relacionadas aos tipos, dimensões e
+características de navios relevantes à infraestrutura marítima.
+</p>
+
+<p>
+<strong>Trecho indicado na base bibliográfica:</strong>
+Chapters 1 e 2.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Critério bibliográfico da aula</h3>
+
+<p>
+A classificação apresentada pelo
+<strong>Arte Naval</strong>
+será preservada como referência principal.
+</p>
+
+<p>
+Quando forem acrescentadas denominações contemporâneas
+utilizadas na Marinha Mercante, elas serão identificadas
+claramente como complementação e não serão atribuídas ao
+Arte Naval quando a publicação não utilizar aquela
+denominação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+fundamentos da classificação dos navios;
+</li>
+
+<li>
+classificação quanto ao emprego;
+</li>
+
+<li>
+navios de guerra e navios mercantes;
+</li>
+
+<li>
+navios de passageiros e carga;
+</li>
+
+<li>
+porta-contêineres e transporte modular;
+</li>
+
+<li>
+graneleiros;
+</li>
+
+<li>
+navios-tanque;
+</li>
+
+<li>
+navios Ro-Ro e especializados;
+</li>
+
+<li>
+classes usuais da Marinha Mercante contemporânea;
+</li>
+
+<li>
+reconhecimento visual e aplicação operacional.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DA CLASSIFICAÇÃO
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA CLASSIFICAÇÃO DOS NAVIOS
+</h2>
+
+<p>
+Antes de estudar individualmente cada tipo de embarcação,
+é necessário compreender que os navios podem ser agrupados
+segundo diferentes critérios.
+</p>
+
+<p>
+Uma mesma embarcação pode, portanto, receber diferentes
+designações dependendo do aspecto utilizado para
+classificá-la.
+</p>
+
+<p>
+Nesta primeira parte será estabelecida a base necessária
+para posteriormente identificar os principais tipos de
+navios empregados na atividade marítima.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterios-classificacao"
+data-topico-id="criterios-classificacao"
+>
+
+<h2>
+1. Critérios gerais de classificação
+</h2>
+
+<div class="widget">
+
+<p>
+Os navios podem ser classificados segundo diferentes
+características relacionadas à sua finalidade, ao serviço
+que executam e às condições em que são empregados.
+</p>
+
+<p>
+Por esse motivo, a classificação de um navio não deve ser
+entendida apenas como a atribuição de um nome ao tipo de
+embarcação.
+</p>
+
+<p>
+Ela permite organizar embarcações que apresentam
+características ou funções semelhantes.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Ideia fundamental
+</h3>
+
+<p>
+O critério utilizado determina a classificação.
+</p>
+
+<p>
+Assim, uma mesma embarcação pode ser descrita sob diferentes
+aspectos sem que essas classificações sejam necessariamente
+contraditórias.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Ship</strong> — navio;
+</li>
+
+<li>
+<strong>Vessel</strong> — embarcação/navio, conforme o contexto;
+</li>
+
+<li>
+<strong>Ship type</strong> — tipo de navio;
+</li>
+
+<li>
+<strong>Merchant ship</strong> — navio mercante;
+</li>
+
+<li>
+<strong>Passenger ship</strong> — navio de passageiros;
+</li>
+
+<li>
+<strong>Cargo ship</strong> — navio de carga.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação para o Prático
+</h3>
+
+<p>
+Identificar corretamente o tipo de navio é mais do que uma
+questão de nomenclatura.
+</p>
+
+<p>
+O tipo de embarcação fornece uma primeira indicação de sua
+configuração geral, distribuição de carga, superestrutura,
+equipamentos e características operacionais.
+</p>
+
+<p>
+Essas informações ajudam a construir uma percepção inicial
+do navio antes mesmo da análise detalhada de seus dados de
+manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PRÓXIMA PARTE
+========================================= -->
+<!--
+     PARTE 2
+     CLASSIFICAÇÃO QUANTO AO EMPREGO
+========================================= -->
