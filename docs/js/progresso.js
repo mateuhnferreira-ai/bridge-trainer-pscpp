@@ -117,15 +117,15 @@ async function carregarDadosProgresso() {
                 );
 
 
-           prepararEstruturaProgresso();
+            prepararEstruturaProgresso();
 
-migrarIdentificadoresAntigosProgresso();
+            migrarIdentificadoresAntigosProgresso();
 
 
-console.log(
-    "Progresso carregado do tablet:",
-    dadosProgresso
-);
+            console.log(
+                "Progresso carregado do tablet:",
+                dadosProgresso
+            );
 
 
             return dadosProgresso;
@@ -289,6 +289,7 @@ function prepararEstruturaProgresso() {
 
 }
 
+
 // =====================================
 // MIGRAÇÕES DE IDENTIFICADORES ANTIGOS
 // =====================================
@@ -391,9 +392,6 @@ function migrarIdentificadoresAntigosProgresso() {
     // =================================
     // DESTINO JÁ EXISTE
     // =================================
-    //
-    // Combina os dados para não perder
-    // nada que já tenha sido registrado.
 
     else {
 
@@ -432,10 +430,6 @@ function migrarIdentificadoresAntigosProgresso() {
                 }
 
 
-                // Se qualquer versão disser
-                // que o tópico foi concluído,
-                // preservamos a conclusão.
-
                 if (
                     dadosTopico.concluido === true
                 ) {
@@ -444,8 +438,6 @@ function migrarIdentificadoresAntigosProgresso() {
 
                 }
 
-
-                // Preserva a data disponível.
 
                 if (
                     !atual.dataConclusao &&
@@ -470,10 +462,6 @@ function migrarIdentificadoresAntigosProgresso() {
 
             );
 
-
-        // Se a aula antiga estava concluída,
-        // preservamos esse estado até o
-        // recálculo definitivo.
 
         if (
             aulaAntiga.concluida === true
@@ -531,6 +519,8 @@ function migrarIdentificadoresAntigosProgresso() {
     return houveMigracao;
 
 }
+
+
 // =====================================
 // SALVAR PROGRESSO
 // =====================================
@@ -611,9 +601,14 @@ function garantirDisciplina(
     }
 
 
-    if (typeof disciplina.tempoEstudadoSegundos !== "number") {
+    if (
+        typeof disciplina
+            .tempoEstudadoSegundos !==
+        "number"
+    ) {
 
-        disciplina.tempoEstudadoSegundos = 0;
+        disciplina
+            .tempoEstudadoSegundos = 0;
 
     }
 
@@ -1493,11 +1488,6 @@ function calcularProgressoGeral() {
 // =====================================
 // TEMPO DE ESTUDO POR DISCIPLINA
 // =====================================
-//
-// Registro cumulativo de segundos estudados por
-// disciplina, alimentado pelo cronômetro (pomodoro.js).
-// Usa a mesma estrutura de dados e o mesmo localStorage
-// do progresso de tópicos — não é um sistema paralelo.
 
 function adicionarTempoEstudado(
     idDisciplina,
@@ -1522,7 +1512,11 @@ function adicionarTempoEstudado(
 
     disciplina.tempoEstudadoSegundos =
 
-        (disciplina.tempoEstudadoSegundos || 0) +
+        (
+            disciplina
+                .tempoEstudadoSegundos ||
+            0
+        ) +
         segundosAdicionais;
 
 
@@ -1565,7 +1559,8 @@ function obterTempoEstudadoDisciplina(
             .disciplinas[
                 disciplina
             ]
-            .tempoEstudadoSegundos || 0
+            .tempoEstudadoSegundos ||
+        0
 
     );
 
@@ -1573,7 +1568,7 @@ function obterTempoEstudadoDisciplina(
 
 
 // =====================================
-// OBTER TEMPO ESTUDADO TOTAL (TODAS DISCIPLINAS)
+// OBTER TEMPO ESTUDADO TOTAL
 // =====================================
 
 function obterTempoEstudadoGeral() {
@@ -1597,7 +1592,9 @@ function obterTempoEstudadoGeral() {
         disciplina => {
 
             soma +=
-                disciplina.tempoEstudadoSegundos || 0;
+                disciplina
+                    .tempoEstudadoSegundos ||
+                0;
 
         }
     );
@@ -1854,23 +1851,22 @@ function atualizarEstadoDosTopicos() {
 
 }
 
+
 // =====================================
 // INDICADORES DO CONTEÚDO PROGRAMÁTICO
 // =====================================
 //
-// Os itens do conteúdo programático podem
-// possuir:
+// Cada item pode usar:
 //
 // data-progresso-topico="id-do-topico"
 //
-// O identificador deve ser exatamente o
-// mesmo utilizado em:
+// Esse ID deve corresponder ao:
 //
 // data-topico-id="id-do-topico"
 //
-// A caixa é apenas um indicador visual.
-// O estado verdadeiro continua sendo
-// controlado pelo sistema de progresso.
+// A caixa é apenas um espelho visual.
+// O progresso verdadeiro continua salvo
+// normalmente no sistema de progresso.
 // =====================================
 
 
@@ -1921,9 +1917,6 @@ function criarIndicadoresConteudoProgramatico() {
                 "true"
             );
 
-
-            // Pequeno espaçamento entre
-            // a caixa e o texto.
 
             indicador.style.display =
                 "inline-block";
@@ -2051,6 +2044,8 @@ function atualizarIndicadoresConteudoProgramatico() {
     );
 
 }
+
+
 // =====================================
 // ATUALIZAR PROGRESSO VISUAL DA AULA
 // =====================================
@@ -2160,13 +2155,16 @@ function atualizarProgressoVisualGeral() {
 
 }
 
+
 // =====================================
 // IDENTIFICAR PÁGINA DE DISCIPLINA
 // =====================================
 
 function identificarPaginaDisciplina() {
 
-    const corpo = document.body;
+    const corpo =
+        document.body;
+
 
     if (!corpo) {
 
@@ -2473,7 +2471,8 @@ function atualizarProgressoVisualDisciplina(
 
         if (
             totalAulas > 0 &&
-            aulasConcluidas === totalAulas
+            aulasConcluidas ===
+                totalAulas
         ) {
 
             statusGeral.textContent =
@@ -2534,13 +2533,17 @@ function atualizarInterfaceDisciplina(
     atualizarProgressoVisualGeral();
 
 }
+
+
 // =====================================
 // IDENTIFICAR PÁGINA PRINCIPAL
 // =====================================
 
 function identificarPaginaPrincipal() {
 
-    const corpo = document.body;
+    const corpo =
+        document.body;
+
 
     if (!corpo) {
 
@@ -2548,8 +2551,11 @@ function identificarPaginaPrincipal() {
 
     }
 
-    return corpo.dataset.tipoPagina ===
-        "principal";
+
+    return (
+        corpo.dataset.tipoPagina ===
+        "principal"
+    );
 
 }
 
@@ -2558,11 +2564,16 @@ function identificarPaginaPrincipal() {
 // CRIAR BARRA DE PROGRESSO NO CARD
 // =====================================
 
-function criarBarraDisciplina(card, disciplina) {
+function criarBarraDisciplina(
+    card,
+    disciplina
+) {
 
-    let barraExistente = card.querySelector(
-        ".progresso-disciplina-card"
-    );
+    let barraExistente =
+        card.querySelector(
+            ".progresso-disciplina-card"
+        );
+
 
     if (barraExistente) {
 
@@ -2570,8 +2581,12 @@ function criarBarraDisciplina(card, disciplina) {
 
     }
 
+
     const container =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     container.className =
         "progresso-disciplina-card";
@@ -2606,7 +2621,9 @@ function criarBarraDisciplina(card, disciplina) {
 
 
     const status =
-        card.querySelector(".status");
+        card.querySelector(
+            ".status"
+        );
 
 
     card.insertBefore(
@@ -2615,14 +2632,19 @@ function criarBarraDisciplina(card, disciplina) {
     );
 
 }
+
+
 // =====================================
 // ATUALIZAR UM CARD DA DISCIPLINA
 // =====================================
 
-function atualizarCardDisciplina(card) {
+function atualizarCardDisciplina(
+    card
+) {
 
     const disciplina =
         card.dataset.disciplina;
+
 
     if (!disciplina) {
 
@@ -2630,42 +2652,59 @@ function atualizarCardDisciplina(card) {
 
     }
 
-    garantirDisciplina(disciplina);
 
-    criarBarraDisciplina(
-        card,
+    garantirDisciplina(
         disciplina
     );
+
+
+    criarBarraDisciplina(
+
+        card,
+
+        disciplina
+
+    );
+
 
     const percentual =
         obterProgressoDisciplina(
             disciplina
         );
 
+
     const barra =
         document.getElementById(
-            "barra-card-" + disciplina
+            "barra-card-" +
+            disciplina
         );
+
 
     const texto =
         document.getElementById(
-            "texto-card-" + disciplina
+            "texto-card-" +
+            disciplina
         );
+
 
     const status =
         document.getElementById(
-            "status-disciplina-" + disciplina
+            "status-disciplina-" +
+            disciplina
         );
+
 
     if (barra) {
 
         barra.style.width =
             percentual + "%";
 
+
         barra.textContent =
             percentual + "%";
 
     }
+
 
     if (texto) {
 
@@ -2676,22 +2715,30 @@ function atualizarCardDisciplina(card) {
 
     }
 
+
     if (!status) {
 
         return;
 
     }
 
+
     status.classList.remove(
+
         "pendente",
+
         "em-estudo",
+
         "concluido"
+
     );
+
 
     if (percentual >= 100) {
 
         status.textContent =
             "✅ Concluído";
+
 
         status.classList.add(
             "concluido"
@@ -2703,6 +2750,7 @@ function atualizarCardDisciplina(card) {
         status.textContent =
             "🟡 Em estudo";
 
+
         status.classList.add(
             "em-estudo"
         );
@@ -2713,6 +2761,7 @@ function atualizarCardDisciplina(card) {
         status.textContent =
             "⬜ Não iniciado";
 
+
         status.classList.add(
             "pendente"
         );
@@ -2720,7 +2769,6 @@ function atualizarCardDisciplina(card) {
     }
 
 }
-
 
 
 // =====================================
@@ -2734,13 +2782,20 @@ function atualizarPaginaPrincipal() {
             ".card[data-disciplina]"
         );
 
-    cards.forEach(card => {
 
-        atualizarCardDisciplina(card);
+    cards.forEach(
+        card => {
 
-    });
+            atualizarCardDisciplina(
+                card
+            );
+
+        }
+    );
 
 }
+
+
 // =====================================
 // ATUALIZAR INTERFACE DA AULA
 // =====================================
@@ -2751,6 +2806,9 @@ function atualizarInterfaceAula() {
 
 
     atualizarEstadoDosTopicos();
+
+
+    atualizarIndicadoresConteudoProgramatico();
 
 
     atualizarProgressoVisualAula();
@@ -2828,13 +2886,18 @@ function localizarPrimeiroTopicoPendente() {
     ) {
 
         const elementoTopico =
-            topicos[indice];
+            topicos[
+                indice
+            ];
 
 
         const idTopico =
             obterIdDoTopico(
+
                 elementoTopico,
+
                 indice
+
             );
 
 
@@ -2903,9 +2966,11 @@ function irParaOndeParei() {
     window.setTimeout(
         function () {
 
-            primeiroPendente.classList.remove(
-                "topico-destacado"
-            );
+            primeiroPendente
+                .classList
+                .remove(
+                    "topico-destacado"
+                );
 
         },
         2500
@@ -2917,11 +2982,6 @@ function irParaOndeParei() {
 // =====================================
 // LOCALIZAR ÚLTIMO TÓPICO ESTUDADO
 // =====================================
-//
-// Percorre os tópicos já registrados para a aula atual
-// e retorna o elemento HTML do tópico com a data de
-// conclusão mais recente. Retorna null se nenhum tópico
-// da aula foi estudado ainda.
 
 function localizarUltimoTopicoEstudado() {
 
@@ -2945,16 +3005,24 @@ function localizarUltimoTopicoEstudado() {
         );
 
 
-    let idUltimoTopico = null;
+    let idUltimoTopico =
+        null;
 
-    let dataUltimoTopico = null;
+
+    let dataUltimoTopico =
+        null;
 
 
     Object.entries(
         aula.topicos
     ).forEach(
 
-        ([idTopico, dadosTopico]) => {
+        (
+            [
+                idTopico,
+                dadosTopico
+            ]
+        ) => {
 
             if (
                 dadosTopico.concluido &&
@@ -2963,13 +3031,15 @@ function localizarUltimoTopicoEstudado() {
 
                 const dataAtual =
                     new Date(
-                        dadosTopico.dataConclusao
+                        dadosTopico
+                            .dataConclusao
                     );
 
 
                 if (
                     !dataUltimoTopico ||
-                    dataAtual > dataUltimoTopico
+                    dataAtual >
+                        dataUltimoTopico
                 ) {
 
                     dataUltimoTopico =
@@ -3045,9 +3115,11 @@ function irParaUltimoTopicoEstudado() {
     window.setTimeout(
         function () {
 
-            elementoTopico.classList.remove(
-                "topico-destacado"
-            );
+            elementoTopico
+                .classList
+                .remove(
+                    "topico-destacado"
+                );
 
         },
         2500
@@ -3065,19 +3137,29 @@ async function inicializarProgressoAula() {
     await carregarDadosProgresso();
 
 
-    // Página principal
-    if (identificarPaginaPrincipal()) {
+    // =================================
+    // PÁGINA PRINCIPAL
+    // =================================
+
+    if (
+        identificarPaginaPrincipal()
+    ) {
 
         atualizarPaginaPrincipal();
 
+
         atualizarProgressoVisualGeral();
+
 
         return;
 
     }
 
 
-    // Página de uma disciplina
+    // =================================
+    // PÁGINA DE UMA DISCIPLINA
+    // =================================
+
     const disciplinaDaPagina =
         identificarPaginaDisciplina();
 
@@ -3094,7 +3176,10 @@ async function inicializarProgressoAula() {
     }
 
 
-    // Página de uma aula
+    // =================================
+    // PÁGINA DE UMA AULA
+    // =================================
+
     const aulaIdentificada =
         identificarAulaAtual();
 
@@ -3113,6 +3198,9 @@ async function inicializarProgressoAula() {
 
 
     inserirBotoesDosTopicos();
+
+
+    criarIndicadoresConteudoProgramatico();
 
 
     atualizarInterfaceAula();
