@@ -113,9 +113,22 @@ function obterProgressoSeguro(
 // =====================================
 // OBTER PESO DA CONFIGURAÇÃO
 // =====================================
+//
+// A partir da configuração v2.0,
+// os pesos são lidos pelo ID estável
+// da disciplina.
+//
+// Exemplo:
+//
+// configuracaoEstudo
+//     .pesosPrioridade
+//     .manobrabilidade
+//
+// Isso evita dependência do nome
+// exibido na interface.
 
 function obterPesoConfiguracao(
-    nomeDisciplina
+    idDisciplina
 ) {
 
     if (
@@ -134,7 +147,7 @@ function obterPesoConfiguracao(
 
         configuracaoEstudo
             .pesosPrioridade[
-                nomeDisciplina
+                idDisciplina
             ] || 1
 
     );
@@ -524,10 +537,11 @@ function calcularPrioridadeBase(
         assunto.peso || 1;
 
 
-    const pesoConfiguracao =
-        obterPesoConfiguracao(
-            dadosDisciplina.nome
-        );
+   const pesoConfiguracao =
+    obterPesoConfiguracao(
+        dadosDisciplina.idDisciplina ||
+        null
+    );
 
 
     let prioridade =
