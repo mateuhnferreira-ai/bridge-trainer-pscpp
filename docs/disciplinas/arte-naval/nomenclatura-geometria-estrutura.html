@@ -5151,3 +5151,1437 @@ no projeto do navio.
      COLE A PRÓXIMA PARTE ABAIXO
      SUPERFÍCIE MOLDADA E DIMENSÕES
 ========================================= -->
+
+
+ <!-- =========================================
+     PARTE 4
+     SUPERFÍCIES E FORMAS GEOMÉTRICAS
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — SUPERFÍCIES E FORMAS GEOMÉTRICAS DO CASCO
+</h2>
+
+<p>
+A descrição geométrica do navio exige distinguir
+a forma teórica utilizada no projeto da superfície
+externa efetivamente existente no casco.
+</p>
+
+<p>
+Nesta parte serão estudados os conceitos de
+<strong>superfície moldada</strong>,
+<strong>linhas moldadas</strong>,
+<strong>superfície da carena</strong>,
+<strong>superfície molhada</strong>
+e os volumes correspondentes.
+</p>
+
+<p>
+Em seguida serão examinadas algumas características
+geométricas da seção transversal do navio,
+incluindo curvatura do vau, mediania,
+seção a meia-nau e seção mestra.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+     SUPERFÍCIE MOLDADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="superficie-moldada"
+data-topico-id="superficie-moldada">
+
+<h2>27. Superfície moldada — Moulded surface</h2>
+
+<div class="widget">
+
+<p>
+A <strong>superfície moldada</strong>
+(<strong>moulded surface</strong>)
+é uma superfície contínua imaginária que passa
+pelas faces externas do
+<strong>cavernamento</strong> do navio
+e dos <strong>vaus do convés</strong>.
+</p>
+
+<p>
+Nos navios cujo chapeamento é liso,
+a superfície moldada coincide com a
+<strong>face interna do chapeamento</strong>.
+</p>
+
+<p>
+Nas embarcações metálicas dotadas de
+<strong>quilha maciça</strong> e, em alguns casos,
+de quilha chata, o contorno inferior da superfície
+moldada coincide com a face superior
+da chapa-quilha.
+</p>
+
+<p>
+Nas embarcações de madeira, a referência utilizada
+é a projeção, sobre o plano diametral,
+do canto superior do alefriz da quilha.
+</p>
+
+
+<!-- =========================================
+     FIGURA BASEADA NA FIG. 2-4
+     SUPERFÍCIE MOLDADA
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 650"
+role="img"
+aria-label="Representação didática da superfície moldada conforme a Figura 2-4 do Arte Naval"
+>
+
+<!-- =====================================
+     A — CHAPEAMENTO A TOPO
+===================================== -->
+
+<text
+x="80"
+y="55"
+font-size="25">
+A — CHAPEAMENTO A TOPO
+</text>
+
+
+<!-- seção -->
+
+<path
+d="
+M190 115
+L190 260
+C190 340 270 385 355 395
+L445 395
+C530 385 610 340 610 260
+L610 115
+"
+fill="none"
+stroke="currentColor"
+stroke-width="10"
+/>
+
+
+<!-- superfície moldada interna -->
+
+<path
+d="
+M205 120
+L205 255
+C205 325 280 365 360 375
+L440 375
+C520 365 595 325 595 255
+L595 120
+"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- linha centro -->
+
+<line
+x1="400"
+y1="90"
+x2="400"
+y2="420"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+
+<!-- linha base -->
+
+<line
+x1="125"
+y1="395"
+x2="675"
+y2="395"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<text
+x="420"
+y="100"
+font-size="19">
+LINHA DE CENTRO
+</text>
+
+<text
+x="520"
+y="425"
+font-size="19">
+LINHA DE BASE
+</text>
+
+
+<!-- indicação superfície -->
+
+<line
+x1="595"
+y1="220"
+x2="760"
+y2="170"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="615"
+y="145"
+font-size="19">
+SUPERFÍCIE MOLDADA
+</text>
+
+<text
+x="615"
+y="168"
+font-size="17">
+FACE INTERNA DO
+</text>
+
+<text
+x="615"
+y="189"
+font-size="17">
+CHAPEAMENTO
+</text>
+
+
+
+<!-- =====================================
+     B — CHAPEAMENTO EM TRINCADO
+===================================== -->
+
+<text
+x="80"
+y="485"
+font-size="25">
+B — CHAPEAMENTO EM TRINCADO
+</text>
+
+
+<!-- representação simplificada -->
+
+<path
+d="
+M180 530
+L235 515
+L290 530
+L345 515
+L400 530
+L455 515
+L510 530
+L565 515
+L620 530
+"
+fill="none"
+stroke="currentColor"
+stroke-width="8"
+/>
+
+
+<!-- moldada -->
+
+<line
+x1="180"
+y1="550"
+x2="620"
+y2="550"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 7"
+/>
+
+
+<text
+x="220"
+y="590"
+font-size="19">
+AS CHAPAS INTERIORES NÃO TOCAM
+</text>
+
+<text
+x="250"
+y="615"
+font-size="19">
+A SUPERFÍCIE MOLDADA
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 22.</strong>
+Representação didática baseada na
+<strong>Fig. 2-4 — Superfície moldada</strong>
+do <strong>Arte Naval — Volume 1</strong>.
+A publicação compara o chapeamento a topo
+com o chapeamento em trincado.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+A superfície moldada é uma
+<strong>referência geométrica de projeto</strong>.
+</p>
+
+<p>
+Ela não deve ser automaticamente confundida
+com a superfície exterior real do casco.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Moulded surface</strong> —
+superfície moldada;
+</li>
+
+<li>
+<strong>Plating</strong> —
+chapeamento;
+</li>
+
+<li>
+<strong>Frame</strong> —
+caverna;
+</li>
+
+<li>
+<strong>Deck beam</strong> —
+vau do convés.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+     LINHAS MOLDADAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="linhas-moldadas"
+data-topico-id="linhas-moldadas">
+
+<h2>28. Linhas moldadas — Moulded lines</h2>
+
+<div class="widget">
+
+<p>
+As <strong>linhas moldadas</strong>
+(<strong>moulded lines</strong>)
+são as linhas do navio referidas à
+<strong>superfície moldada</strong>.
+</p>
+
+<p>
+Nos navios de casco metálico,
+a diferença entre as linhas moldadas
+e as linhas externas corresponde à
+<strong>espessura do chapeamento</strong>.
+</p>
+
+<p>
+O <strong>Arte Naval</strong> estabelece que
+as linhas empregadas no desenho do
+<strong>plano de linhas</strong>
+são linhas moldadas.
+</p>
+
+
+<div class="destaque">
+
+<h3>Relação importante</h3>
+
+<p>
+<strong>Linhas moldadas:</strong>
+representam geometricamente a superfície moldada.
+</p>
+
+<p>
+<strong>Linhas externas:</strong>
+consideram a superfície exterior real do casco.
+</p>
+
+<p>
+Nos cascos metálicos, a diferença entre ambas
+corresponde essencialmente à espessura
+do chapeamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+     SUPERFÍCIE DA CARENA
+========================================= -->
+
+<section
+class="topico-aula"
+id="superficie-carena"
+data-topico-id="superficie-carena">
+
+<h2>29. Superfície da carena</h2>
+
+<div class="widget">
+
+<p>
+A <strong>superfície da carena</strong>
+é a superfície da parte imersa do casco
+considerada
+<strong>por fora do chapeamento</strong>,
+sem incluir os apêndices.
+</p>
+
+<p>
+Segundo o <strong>Arte Naval</strong>,
+a soma da superfície da carena
+com a superfície do costado representa
+a <strong>área total do chapeamento</strong>.
+</p>
+
+<p>
+Essa grandeza permite, entre outras aplicações,
+estimar aproximadamente o peso total
+do chapeamento.
+</p>
+
+
+<div class="destaque">
+
+<h3>Não inclui</h3>
+
+<p>
+Na definição de
+<strong>superfície da carena</strong>,
+os <strong>apêndices não são incluídos</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+     SUPERFÍCIE MOLHADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="superficie-molhada"
+data-topico-id="superficie-molhada">
+
+<h2>30. Superfície molhada — Wetted surface</h2>
+
+<div class="widget">
+
+<p>
+Para um determinado plano de flutuação,
+a <strong>superfície molhada</strong>
+(<strong>wetted surface</strong>)
+é a superfície externa da carena que fica
+<strong>efetivamente em contato com a água</strong>.
+</p>
+
+<p>
+Ela compreende:
+</p>
+
+<ul>
+
+<li>
+a superfície da carena;
+</li>
+
+<li>
+as superfícies dos apêndices.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>Aplicações indicadas pelo Arte Naval</h3>
+
+<p>
+A superfície molhada é necessária para o cálculo
+da <strong>resistência de atrito</strong>
+ao movimento do navio.
+</p>
+
+<p>
+Somada à superfície do costado,
+ela também permite estimar a quantidade
+de tinta necessária para a pintura do casco.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Existe uma diferença importante:
+</p>
+
+<p>
+<strong>Superfície da carena:</strong>
+não inclui os apêndices.
+</p>
+
+<p>
+<strong>Superfície molhada:</strong>
+inclui as superfícies dos apêndices
+efetivamente em contato com a água.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Wetted surface</strong> —
+superfície molhada;
+</li>
+
+<li>
+<strong>Appendages</strong> —
+apêndices;
+</li>
+
+<li>
+<strong>Frictional resistance</strong> —
+resistência de atrito.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+     VOLUMES DA FORMA MOLDADA E CARENA
+========================================= -->
+
+<section
+class="topico-aula"
+id="volumes-forma-carena"
+data-topico-id="volumes-forma-carena">
+
+<h2>31. Volume da forma moldada e volume da carena</h2>
+
+<div class="widget">
+
+
+<h3>Volume da forma moldada</h3>
+
+<p>
+O <strong>volume da forma moldada</strong>
+é o volume compreendido entre a
+<strong>superfície moldada da carena</strong>
+e um determinado plano de flutuação.
+</p>
+
+
+<h3>Volume da carena</h3>
+
+<p>
+O <strong>volume da carena</strong>
+é o volume compreendido entre a
+<strong>superfície molhada</strong>
+e um dado plano de flutuação.
+</p>
+
+<p>
+A publicação observa que esse volume
+pode ser chamado simplesmente de
+<strong>carena</strong> nos cálculos,
+pois nesse contexto não existe possibilidade
+de confusão com a região do casco
+que recebe o mesmo nome.
+</p>
+
+
+<h3>Embarcações de casco metálico</h3>
+
+<p>
+Nas embarcações metálicas,
+o volume da carena é calculado somando:
+</p>
+
+<ul>
+
+<li>
+o volume do deslocamento moldado;
+</li>
+
+<li>
+o volume do chapeamento;
+</li>
+
+<li>
+os volumes dos apêndices.
+</li>
+
+</ul>
+
+<p>
+O <strong>Arte Naval</strong> cita como exemplos
+de apêndices:
+</p>
+
+<ul>
+
+<li>
+parte saliente da quilha;
+</li>
+
+<li>
+leme;
+</li>
+
+<li>
+hélice;
+</li>
+
+<li>
+pés-de-galinha;
+</li>
+
+<li>
+bolinas.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>Utilização</h3>
+
+<p>
+O <strong>volume da carena</strong>
+é o volume empregado no cálculo
+do <strong>deslocamento do navio</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Não confunda:
+</p>
+
+<p>
+<strong>volume da forma moldada</strong>
+com
+<strong>volume da carena</strong>.
+</p>
+
+<p>
+No casco metálico, o volume da carena considera,
+além do volume moldado,
+o chapeamento e os apêndices correspondentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 5
+     GEOMETRIA DA SEÇÃO TRANSVERSAL
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — GEOMETRIA DA SEÇÃO TRANSVERSAL
+</h2>
+
+<p>
+A geometria do navio também é estudada
+por meio de suas seções transversais.
+</p>
+
+<p>
+O <strong>Arte Naval</strong> utiliza a
+<strong>Fig. 2-6 — Dimensões da seção a meia-nau</strong>
+para reunir vários conceitos importantes,
+como curvatura do vau, flecha do vau,
+boca moldada e pontal moldado.
+</p>
+
+<p>
+A mesma lógica será utilizada aqui:
+uma única representação servirá de referência
+para os conceitos seguintes.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+     CURVATURA E FLECHA DO VAU
+========================================= -->
+
+<section
+class="topico-aula"
+id="curvatura-flecha-vau"
+data-topico-id="curvatura-flecha-vau">
+
+<h2>32. Curvatura, linha reta e flecha do vau</h2>
+
+<div class="widget">
+
+
+<h3>Curvatura do vau</h3>
+
+<p>
+Os vaus dos conveses expostos ao tempo
+e, algumas vezes, os das cobertas situadas
+acima da linha-d'água possuem uma
+<strong>curvatura</strong>.
+</p>
+
+<p>
+Sua finalidade é permitir que a água
+escoe em direção ao costado,
+facilitando sua retirada do convés.
+</p>
+
+<p>
+Segundo o <strong>Arte Naval</strong>,
+essa curvatura pode assumir a forma de:
+</p>
+
+<ul>
+
+<li>
+arco de circunferência;
+</li>
+
+<li>
+parábola;
+</li>
+
+<li>
+conjunto de segmentos retos.
+</li>
+
+</ul>
+
+<p>
+A curvatura também proporciona
+<strong>resistência adicional ao vau</strong>.
+</p>
+
+
+<h3>Linha reta do vau</h3>
+
+<p>
+A <strong>linha reta do vau</strong>
+é a linha que une as interseções
+da face superior do vau
+com as faces exteriores
+da caverna correspondente.
+</p>
+
+
+<h3>Flecha do vau</h3>
+
+<p>
+A <strong>flecha do vau</strong>
+(<strong>deck camber</strong>)
+é a maior distância entre
+a face superior do vau
+e sua linha reta.
+</p>
+
+<p>
+Por definição,
+essa distância é medida no
+<strong>plano diametral do navio</strong>.
+</p>
+
+
+<!-- =========================================
+     FIGURA BASEADA NA FIG. 2-6
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 620"
+role="img"
+aria-label="Representação didática das dimensões da seção a meia-nau conforme Figura 2-6 do Arte Naval"
+>
+
+<!-- CASCO -->
+
+<path
+d="
+M170 145
+L170 340
+C170 440 260 500 365 515
+L535 515
+C640 500 730 440 730 340
+L730 145
+"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- VAU CURVO -->
+
+<path
+d="
+M170 145
+Q450 90 730 145
+"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- LINHA RETA DO VAU -->
+
+<line
+x1="170"
+y1="145"
+x2="730"
+y2="145"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- CENTRO -->
+
+<line
+x1="450"
+y1="75"
+x2="450"
+y2="535"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+
+<!-- FLECHA DO VAU -->
+
+<line
+x1="450"
+y1="95"
+x2="450"
+y2="145"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="438"
+y1="95"
+x2="462"
+y2="95"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="438"
+y1="145"
+x2="462"
+y2="145"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- BOCA MOLDADA -->
+
+<line
+x1="170"
+y1="555"
+x2="730"
+y2="555"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="170"
+y1="542"
+x2="170"
+y2="568"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="730"
+y1="542"
+x2="730"
+y2="568"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- PONTAL -->
+
+<line
+x1="775"
+y1="145"
+x2="775"
+y2="515"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="762"
+y1="145"
+x2="788"
+y2="145"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="762"
+y1="515"
+x2="788"
+y2="515"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- LEGENDAS -->
+
+<text
+x="470"
+y="115"
+font-size="18">
+FLECHA DO VAU
+</text>
+
+<text
+x="245"
+y="135"
+font-size="18">
+LINHA RETA DO VAU
+</text>
+
+<text
+x="365"
+y="590"
+font-size="22">
+BOCA MOLDADA
+</text>
+
+<text
+x="790"
+y="340"
+font-size="21"
+transform="rotate(90 790 340)">
+PONTAL MOLDADO
+</text>
+
+<text
+x="470"
+y="315"
+font-size="19">
+PLANO DIAMETRAL
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 23.</strong>
+Representação didática baseada na
+<strong>Fig. 2-6 — Dimensões da seção a meia-nau</strong>,
+do <strong>Arte Naval — Volume 1</strong>.
+Os conceitos de boca e pontal serão aprofundados
+na próxima parte, dedicada às dimensões lineares.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Deck camber</strong> —
+flecha do vau;
+</li>
+
+<li>
+<strong>Deck beam</strong> —
+vau;
+</li>
+
+<li>
+<strong>Frame</strong> —
+caverna.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+     MEDIANIA
+========================================= -->
+
+<section
+class="topico-aula"
+id="mediania"
+data-topico-id="mediania">
+
+<h2>33. Mediania</h2>
+
+<div class="widget">
+
+<p>
+A <strong>mediania</strong>
+é a interseção de um pavimento
+com o <strong>plano diametral do navio</strong>.
+</p>
+
+<p>
+Trata-se de uma linha imaginária
+que divide longitudinalmente o casco
+em seus dois bordos:
+</p>
+
+<ul>
+
+<li>
+<strong>boreste</strong>;
+</li>
+
+<li>
+<strong>bombordo</strong>.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>Referência geométrica</h3>
+
+<p>
+A mediania encontra-se exatamente
+sobre o plano de simetria longitudinal
+do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+     SEÇÃO A MEIA-NAU
+========================================= -->
+
+<section
+class="topico-aula"
+id="secao-meia-nau"
+data-topico-id="secao-meia-nau">
+
+<h2>34. Seção a meia-nau</h2>
+
+<div class="widget">
+
+<p>
+A <strong>seção a meia-nau</strong>
+é a seção transversal localizada
+a meio comprimento entre
+as <strong>perpendiculares</strong>.
+</p>
+
+<p>
+Essa definição será especialmente importante
+quando forem estudadas as dimensões longitudinais
+do navio e o
+<strong>comprimento entre perpendiculares</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 35
+     SEÇÃO TRANSVERSAL E SEÇÃO MESTRA
+========================================= -->
+
+<section
+class="topico-aula"
+id="secao-transversal-mestra"
+data-topico-id="secao-transversal-mestra">
+
+<h2>35. Seção transversal e seção mestra</h2>
+
+<div class="widget">
+
+
+<h3>Seção transversal</h3>
+
+<p>
+Chama-se
+<strong>seção transversal</strong>
+(<strong>cross section</strong>)
+qualquer seção determinada no casco
+por um <strong>plano transversal</strong>.
+</p>
+
+
+<h3>Seção mestra</h3>
+
+<p>
+A mais significativa das seções transversais
+recebe o nome de
+<strong>seção mestra</strong>
+(<strong>midship section</strong>).
+</p>
+
+<p>
+Segundo o <strong>Arte Naval</strong>,
+a seção mestra encontra-se geralmente
+<strong>à meia-nau ou muito próxima dela</strong>.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+<strong>Seção a meia-nau</strong>
+e
+<strong>seção mestra</strong>
+não constituem obrigatoriamente a mesma definição.
+</p>
+
+<p>
+A seção a meia-nau é definida
+<strong>geometricamente</strong>
+pela metade do comprimento entre perpendiculares.
+</p>
+
+<p>
+A seção mestra é a
+<strong>seção transversal mais significativa</strong>
+e normalmente se encontra à meia-nau
+ou muito próxima dela.
+</p>
+
+</div>
+
+
+<h3>Corpo paralelo</h3>
+
+<p>
+Em muitos navios modernos,
+especialmente cargueiros,
+uma região central apreciável do casco
+pode ser formada por várias seções iguais
+à seção mestra.
+</p>
+
+<p>
+Nessa situação, a região recebe a denominação
+de <strong>corpo paralelo</strong>.
+</p>
+
+
+<h3>Formas cheias e formas finas</h3>
+
+<p>
+Quando uma região central significativa
+é constituída por seções iguais à seção mestra,
+o <strong>Arte Naval</strong> relaciona essa configuração
+a navios de <strong>formas cheias</strong>.
+</p>
+
+<p>
+Nos navios de <strong>formas finas</strong>,
+as formas das seções transversais variam
+consideravelmente ao longo do comprimento,
+tanto a vante quanto a ré da seção mestra.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Cross section</strong> —
+seção transversal;
+</li>
+
+<li>
+<strong>Midship section</strong> —
+seção mestra;
+</li>
+
+<li>
+<strong>Parallel body</strong> —
+corpo paralelo.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LIMITE DESTA AULA
+========================================= -->
+
+<section>
+
+<div class="destaque">
+
+<h3>📌 Limite entre os módulos</h3>
+
+<p>
+O <strong>Arte Naval</strong> prossegue,
+a partir do item 2.21,
+para os conceitos de:
+</p>
+
+<ul>
+
+<li>
+centro de gravidade;
+</li>
+
+<li>
+centro de carena;
+</li>
+
+<li>
+centro de flutuação;
+</li>
+
+<li>
+empuxo;
+</li>
+
+<li>
+Princípio de Arquimedes;
+</li>
+
+<li>
+flutuabilidade;
+</li>
+
+<li>
+reserva de flutuabilidade;
+</li>
+
+<li>
+borda-livre;
+</li>
+
+<li>
+metacentros;
+</li>
+
+<li>
+raios e alturas metacêntricas.
+</li>
+
+</ul>
+
+<p>
+Esses conceitos serão desenvolvidos na aula
+<strong>Estabilidade, Arqueação e Deslocamento</strong>,
+evitando duplicação de conteúdo entre os módulos
+do Bridge Trainer PSCPP.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PRÓXIMA PARTE
+     PLANO DE LINHAS E DIMENSÕES LINEARES
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 6 — PLANO DE LINHAS E DIMENSÕES DO NAVIO
+</h2>
+
+<p>
+A próxima etapa retomará o estudo geométrico
+com o <strong>plano de linhas</strong>,
+seus planos e linhas de referência
+e a representação das formas do casco.
+</p>
+
+<p>
+Em seguida serão estudadas as principais dimensões
+lineares do navio, incluindo:
+</p>
+
+<ul>
+
+<li>
+perpendiculares;
+</li>
+
+<li>
+comprimentos;
+</li>
+
+<li>
+boca;
+</li>
+
+<li>
+pontal;
+</li>
+
+<li>
+calado.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COLE A PRÓXIMA PARTE ABAIXO
+     PLANO DE LINHAS
+========================================= -->   
