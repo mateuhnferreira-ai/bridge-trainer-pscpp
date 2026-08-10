@@ -1,17 +1,34 @@
 // =====================================
-// SISTEMA DE PROGRESSO PSCPP v4.1
+// SISTEMA DE PROGRESSO PSCPP v4.2
 // Bridge Trainer PSCPP
 //
-// Estrutura dinâmica:
+// Estrutura:
 //
 // Disciplina
 // └── Aula
-//     ├── Tópico 1
-//     ├── Tópico 2
-//     └── Tópico N
+//     ├── Tópicos
+//     └── Revisões
 //
 // A quantidade de tópicos é identificada
-// automaticamente pelo HTML de cada aula.
+// automaticamente pelo HTML da aula.
+//
+// NOVO NA v4.2:
+//
+// - histórico de revisões por aula;
+// - próxima revisão automática;
+// - ciclo 7 / 30 / 90 dias;
+// - manutenção a cada 90 dias;
+// - migração segura das aulas antigas;
+// - preservação integral do progresso;
+// - funções para card "Próxima Revisão";
+// - base para o futuro Quadro de Revisões.
+//
+// IMPORTANTE:
+//
+// Revisão NÃO altera o percentual
+// de conclusão da aula.
+//
+// Aula concluída continua concluída.
 // =====================================
 
 
@@ -23,10 +40,22 @@ const CHAVE_PROGRESSO_PSCPP =
     "bridgeTrainerPSCPP_progresso";
 
 
+const REVISAO_CICLO_PADRAO_DIAS = [
+    7,
+    30,
+    90
+];
+
+
+const REVISAO_MANUTENCAO_DIAS =
+    90;
+
+
 let dadosProgresso = null;
 
 
 // Informações da aula atualmente aberta
+
 let aulaAtual = {
 
     disciplina: null,
@@ -44,7 +73,7 @@ function criarEstruturaInicialProgresso() {
 
     return {
 
-        versao: "4.1",
+        versao: "4.2",
 
         ultimaAtualizacao: null,
 
@@ -59,13 +88,16 @@ function criarEstruturaInicialProgresso() {
 // NORMALIZAR IDENTIFICADORES
 // =====================================
 
-function normalizarIdentificador(texto) {
+function normalizarIdentificador(
+    texto
+) {
 
     if (!texto) {
 
         return "";
 
     }
+
 
     return texto
 
@@ -96,6 +128,241 @@ function normalizarIdentificador(texto) {
 
 
 // =====================================
+// CRIAR DATA LOCAL
+// =====================================
+
+function criarDataLocalRevisao(
+    valor = null
+) {
+
+    const data =
+        valor
+            ? new Date(valor)
+            : new Date();
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    return new Date(
+
+        data.getFullYear(),
+
+        data.getMonth(),
+
+        data.getDate(),
+
+        0,
+        0,
+        0,
+        0
+
+    );
+
+}
+
+
+// =====================================
+// ADICIONAR DIAS
+// =====================================
+
+function adicionarDiasRevisao(
+    dataBase,
+    dias
+) {
+
+    const data =
+        criarDataLocalRevisao(
+            dataBase
+        );
+
+
+    if (!data) {
+
+        return null;
+
+    }
+
+
+    data.setDate(
+
+        data.getDate() +
+        Number(
+            dias || 0
+        )
+
+    );
+
+
+    return data;
+
+}
+
+
+// =====================================
+// DATA EM ISO
+// =====================================
+
+function converterDataRevisaoISO(
+    data
+) {
+
+    if (!data) {
+
+        return null;
+
+    }
+
+
+    const dataValida =
+        criarDataLocalRevisao(
+            data
+        );
+
+
+    if (!dataValida) {
+
+        return null;
+
+    }
+
+
+    return dataValida.toISOString();
+
+}
+
+
+// =====================================
+// FORMATAR DATA BRASILEIRA
+// =====================================
+
+function formatarDataRevisao(
+    valor
+) {
+
+    if (!valor) {
+
+        return "—";
+
+    }
+
+
+    const data =
+        new Date(
+            valor
+        );
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return "—";
+
+    }
+
+
+    return data.toLocaleDateString(
+        "pt-BR"
+    );
+
+}
+
+
+// =====================================
+// OBTER CICLO DE REVISÃO
+// =====================================
+//
+// Se configuracao-estudo.js estiver
+// disponível, usa o ciclo configurado.
+//
+// Caso contrário:
+//
+// 7 / 30 / 90 dias.
+
+function obterCicloRevisaoConfigurado() {
+
+    try {
+
+        if (
+            typeof configuracaoEstudo !==
+                "undefined" &&
+            configuracaoEstudo &&
+            Array.isArray(
+                configuracaoEstudo
+                    .cicloRevisaoDias
+            ) &&
+            configuracaoEstudo
+                .cicloRevisaoDias
+                .length > 0
+        ) {
+
+            return configuracaoEstudo
+                .cicloRevisaoDias
+                .map(
+                    valor =>
+                        Number(valor)
+                )
+                .filter(
+                    valor =>
+                        Number.isFinite(valor) &&
+                        valor > 0
+                );
+
+        }
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "Não foi possível ler ciclo de revisão configurado:",
+            erro
+        );
+
+    }
+
+
+    return [
+        ...REVISAO_CICLO_PADRAO_DIAS
+    ];
+
+}
+
+
+// =====================================
+// CRIAR ESTRUTURA DE REVISÃO
+// =====================================
+
+function criarEstruturaInicialRevisao() {
+
+    return {
+
+        datas: [],
+
+        ultimaRevisao: null,
+
+        proximaRevisao: null,
+
+        nivelRevisao: 0,
+
+        totalRevisoes: 0
+
+    };
+
+}
+
+
+// =====================================
 // CARREGAR PROGRESSO
 // =====================================
 
@@ -119,7 +386,14 @@ async function carregarDadosProgresso() {
 
             prepararEstruturaProgresso();
 
+
             migrarIdentificadoresAntigosProgresso();
+
+
+            migrarEstruturaRevisoesProgresso();
+
+
+            salvarDadosProgresso();
 
 
             console.log(
@@ -138,6 +412,9 @@ async function carregarDadosProgresso() {
 
 
         prepararEstruturaProgresso();
+
+
+        migrarEstruturaRevisoesProgresso();
 
 
         salvarDadosProgresso();
@@ -266,7 +543,8 @@ function prepararEstruturaProgresso() {
 
     if (
         !dadosProgresso ||
-        typeof dadosProgresso !== "object"
+        typeof dadosProgresso !==
+            "object"
     ) {
 
         dadosProgresso =
@@ -276,7 +554,7 @@ function prepararEstruturaProgresso() {
 
 
     dadosProgresso.versao =
-        "4.1";
+        "4.2";
 
 
     if (
@@ -297,16 +575,10 @@ function prepararEstruturaProgresso() {
 // Preserva progresso salvo antes da
 // padronização definitiva dos IDs.
 //
-// Migração atual:
-//
 // manobrabilidade
 // resistencia-navio
 //        ↓
 // resistencia
-//
-// Se o destino já possuir dados,
-// os tópicos são combinados sem apagar
-// progresso existente.
 // =====================================
 
 function migrarIdentificadoresAntigosProgresso() {
@@ -321,7 +593,8 @@ function migrarIdentificadoresAntigosProgresso() {
     }
 
 
-    let houveMigracao = false;
+    let houveMigracao =
+        false;
 
 
     const disciplina =
@@ -369,14 +642,15 @@ function migrarIdentificadoresAntigosProgresso() {
 
 
     // =================================
-    // DESTINO AINDA NÃO EXISTE
+    // DESTINO NÃO EXISTE
     // =================================
 
     if (!aulaNova) {
 
         disciplina.aulas[
             idNovo
-        ] = aulaAntiga;
+        ] =
+            aulaAntiga;
 
 
         delete disciplina.aulas[
@@ -384,7 +658,8 @@ function migrarIdentificadoresAntigosProgresso() {
         ];
 
 
-        houveMigracao = true;
+        houveMigracao =
+            true;
 
     }
 
@@ -409,7 +684,13 @@ function migrarIdentificadoresAntigosProgresso() {
         Object.entries(
             topicosAntigos
         ).forEach(
-            ([idTopico, dadosTopico]) => {
+
+            (
+                [
+                    idTopico,
+                    dadosTopico
+                ]
+            ) => {
 
                 const atual =
                     aulaNova.topicos[
@@ -431,10 +712,12 @@ function migrarIdentificadoresAntigosProgresso() {
 
 
                 if (
-                    dadosTopico.concluido === true
+                    dadosTopico.concluido ===
+                    true
                 ) {
 
-                    atual.concluido = true;
+                    atual.concluido =
+                        true;
 
                 }
 
@@ -445,29 +728,35 @@ function migrarIdentificadoresAntigosProgresso() {
                 ) {
 
                     atual.dataConclusao =
-                        dadosTopico.dataConclusao;
+                        dadosTopico
+                            .dataConclusao;
 
                 }
 
             }
+
         );
 
 
         aulaNova.totalTopicos =
             Math.max(
 
-                aulaNova.totalTopicos || 0,
+                aulaNova.totalTopicos ||
+                    0,
 
-                aulaAntiga.totalTopicos || 0
+                aulaAntiga.totalTopicos ||
+                    0
 
             );
 
 
         if (
-            aulaAntiga.concluida === true
+            aulaAntiga.concluida ===
+            true
         ) {
 
-            aulaNova.concluida = true;
+            aulaNova.concluida =
+                true;
 
         }
 
@@ -475,11 +764,27 @@ function migrarIdentificadoresAntigosProgresso() {
         aulaNova.progresso =
             Math.max(
 
-                aulaNova.progresso || 0,
+                aulaNova.progresso ||
+                    0,
 
-                aulaAntiga.progresso || 0
+                aulaAntiga.progresso ||
+                    0
 
             );
+
+
+        // Preservar revisão antiga,
+        // caso já exista futuramente.
+
+        if (
+            !aulaNova.revisoes &&
+            aulaAntiga.revisoes
+        ) {
+
+            aulaNova.revisoes =
+                aulaAntiga.revisoes;
+
+        }
 
 
         delete disciplina.aulas[
@@ -487,7 +792,8 @@ function migrarIdentificadoresAntigosProgresso() {
         ];
 
 
-        houveMigracao = true;
+        houveMigracao =
+            true;
 
     }
 
@@ -505,9 +811,6 @@ function migrarIdentificadoresAntigosProgresso() {
         );
 
 
-        salvarDadosProgresso();
-
-
         console.log(
             "Migração concluída: " +
             "resistencia-navio → resistencia"
@@ -517,6 +820,467 @@ function migrarIdentificadoresAntigosProgresso() {
 
 
     return houveMigracao;
+
+}
+
+
+// =====================================
+// OBTER DATA DE CONCLUSÃO DA AULA
+// =====================================
+//
+// Para aulas antigas:
+//
+// procura entre os tópicos a data
+// de conclusão mais recente.
+//
+// Isso nos permite iniciar o ciclo de
+// revisão mesmo em aulas concluídas
+// antes da v4.2.
+
+function obterDataConclusaoAula(
+    aula
+) {
+
+    if (!aula) {
+
+        return null;
+
+    }
+
+
+    if (
+        aula.dataConclusao
+    ) {
+
+        return aula.dataConclusao;
+
+    }
+
+
+    const topicos =
+        aula.topicos || {};
+
+
+    let dataMaisRecente =
+        null;
+
+
+    Object.values(
+        topicos
+    ).forEach(
+        topico => {
+
+            if (
+                !topico ||
+                !topico.concluido ||
+                !topico.dataConclusao
+            ) {
+
+                return;
+
+            }
+
+
+            const data =
+                new Date(
+                    topico.dataConclusao
+                );
+
+
+            if (
+                Number.isNaN(
+                    data.getTime()
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                !dataMaisRecente ||
+                data >
+                dataMaisRecente
+            ) {
+
+                dataMaisRecente =
+                    data;
+
+            }
+
+        }
+    );
+
+
+    if (
+        dataMaisRecente
+    ) {
+
+        aula.dataConclusao =
+            dataMaisRecente
+                .toISOString();
+
+
+        return aula.dataConclusao;
+
+    }
+
+
+    return null;
+
+}
+
+
+// =====================================
+// GARANTIR ESTRUTURA DE REVISÃO
+// =====================================
+
+function garantirEstruturaRevisaoAula(
+    aula
+) {
+
+    if (!aula) {
+
+        return null;
+
+    }
+
+
+    if (
+        !aula.revisoes ||
+        typeof aula.revisoes !==
+            "object"
+    ) {
+
+        aula.revisoes =
+            criarEstruturaInicialRevisao();
+
+    }
+
+
+    const revisoes =
+        aula.revisoes;
+
+
+    if (
+        !Array.isArray(
+            revisoes.datas
+        )
+    ) {
+
+        revisoes.datas = [];
+
+    }
+
+
+    revisoes.totalRevisoes =
+        revisoes.datas.length;
+
+
+    if (
+        typeof revisoes
+            .nivelRevisao !==
+        "number"
+    ) {
+
+        revisoes.nivelRevisao =
+            revisoes.totalRevisoes;
+
+    }
+
+
+    return revisoes;
+
+}
+
+
+// =====================================
+// CALCULAR INTERVALO SEGUINTE
+// =====================================
+//
+// Antes de qualquer revisão:
+// 7 dias da conclusão.
+//
+// Após revisão 1:
+// 30 dias.
+//
+// Após revisão 2:
+// 90 dias.
+//
+// Após revisão 3 em diante:
+// manutenção de 90 dias.
+
+function obterIntervaloProximaRevisao(
+    totalRevisoes
+) {
+
+    const ciclo =
+        obterCicloRevisaoConfigurado();
+
+
+    const total =
+        Math.max(
+            0,
+            Number(
+                totalRevisoes
+            ) || 0
+        );
+
+
+    if (
+        total < ciclo.length
+    ) {
+
+        return ciclo[
+            total
+        ];
+
+    }
+
+
+    return (
+        ciclo[
+            ciclo.length - 1
+        ] ||
+        REVISAO_MANUTENCAO_DIAS
+    );
+
+}
+
+
+// =====================================
+// RECALCULAR PRÓXIMA REVISÃO
+// =====================================
+
+function recalcularProximaRevisaoAula(
+    aula
+) {
+
+    if (
+        !aula ||
+        aula.concluida !== true
+    ) {
+
+        return null;
+
+    }
+
+
+    const revisoes =
+        garantirEstruturaRevisaoAula(
+            aula
+        );
+
+
+    const totalRevisoes =
+        revisoes.datas.length;
+
+
+    const intervaloDias =
+        obterIntervaloProximaRevisao(
+            totalRevisoes
+        );
+
+
+    let dataBase =
+        null;
+
+
+    if (
+        totalRevisoes > 0
+    ) {
+
+        dataBase =
+            revisoes.datas[
+                totalRevisoes - 1
+            ];
+
+    }
+    else {
+
+        dataBase =
+            obterDataConclusaoAula(
+                aula
+            );
+
+    }
+
+
+    if (!dataBase) {
+
+        revisoes.proximaRevisao =
+            null;
+
+
+        return null;
+
+    }
+
+
+    const proxima =
+        adicionarDiasRevisao(
+
+            dataBase,
+
+            intervaloDias
+
+        );
+
+
+    revisoes.ultimaRevisao =
+
+        totalRevisoes > 0
+            ? revisoes.datas[
+                totalRevisoes - 1
+            ]
+            : null;
+
+
+    revisoes.totalRevisoes =
+        totalRevisoes;
+
+
+    revisoes.nivelRevisao =
+        totalRevisoes;
+
+
+    revisoes.proximaRevisao =
+        proxima
+            ? proxima.toISOString()
+            : null;
+
+
+    return revisoes.proximaRevisao;
+
+}
+
+
+// =====================================
+// MIGRAR ESTRUTURA DE REVISÕES
+// =====================================
+//
+// Esta função NÃO apaga nada.
+//
+// Apenas acrescenta:
+// - dataConclusao;
+// - revisoes;
+//
+// nas aulas antigas que ainda não
+// possuíam esses campos.
+
+function migrarEstruturaRevisoesProgresso() {
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return false;
+
+    }
+
+
+    let alterado =
+        false;
+
+
+    Object.values(
+        dadosProgresso.disciplinas
+    ).forEach(
+        disciplina => {
+
+            if (
+                !disciplina ||
+                !disciplina.aulas
+            ) {
+
+                return;
+
+            }
+
+
+            Object.values(
+                disciplina.aulas
+            ).forEach(
+                aula => {
+
+                    if (!aula) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        !aula.revisoes
+                    ) {
+
+                        aula.revisoes =
+                            criarEstruturaInicialRevisao();
+
+
+                        alterado =
+                            true;
+
+                    }
+
+
+                    garantirEstruturaRevisaoAula(
+                        aula
+                    );
+
+
+                    if (
+                        aula.concluida ===
+                        true
+                    ) {
+
+                        const antes =
+                            aula.revisoes
+                                .proximaRevisao;
+
+
+                        obterDataConclusaoAula(
+                            aula
+                        );
+
+
+                        recalcularProximaRevisaoAula(
+                            aula
+                        );
+
+
+                        if (
+                            antes !==
+                            aula.revisoes
+                                .proximaRevisao
+                        ) {
+
+                            alterado =
+                                true;
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    if (alterado) {
+
+        console.log(
+            "Estrutura de revisões v4.2 preparada."
+        );
+
+    }
+
+
+    return alterado;
 
 }
 
@@ -655,9 +1419,14 @@ function garantirAula(
 
                 concluida: false,
 
+                dataConclusao: null,
+
                 totalTopicos: 0,
 
-                topicos: {}
+                topicos: {},
+
+                revisoes:
+                    criarEstruturaInicialRevisao()
 
             };
 
@@ -676,6 +1445,11 @@ function garantirAula(
         aula.topicos = {};
 
     }
+
+
+    garantirEstruturaRevisaoAula(
+        aula
+    );
 
 
     return aula;
@@ -820,7 +1594,9 @@ function obterIdDoTopico(
 ) {
 
     let idTopico =
-        elementoTopico.dataset.topicoId;
+        elementoTopico
+            .dataset
+            .topicoId;
 
 
     if (!idTopico) {
@@ -846,7 +1622,10 @@ function obterIdDoTopico(
     if (!idTopico) {
 
         idTopico =
-            "topico-" + (indice + 1);
+            "topico-" +
+            (
+                indice + 1
+            );
 
     }
 
@@ -908,8 +1687,11 @@ function registrarTopicosDaAula() {
 
             const idTopico =
                 obterIdDoTopico(
+
                     elementoTopico,
+
                     indice
+
                 );
 
 
@@ -1048,7 +1830,8 @@ function marcarTopicoComoEstudado(
         );
 
 
-    topico.concluido = true;
+    topico.concluido =
+        true;
 
 
     topico.dataConclusao =
@@ -1091,10 +1874,12 @@ function desmarcarTopicoComoEstudado(
         );
 
 
-    topico.concluido = false;
+    topico.concluido =
+        false;
 
 
-    topico.dataConclusao = null;
+    topico.dataConclusao =
+        null;
 
 
     atualizarProgressoCompleto(
@@ -1182,15 +1967,27 @@ function recalcularProgressoAula(
         );
 
 
+    const estavaConcluida =
+        aula.concluida ===
+        true;
+
+
     const totalTopicos =
-        aula.totalTopicos || 0;
+        aula.totalTopicos ||
+        0;
 
 
-    if (totalTopicos === 0) {
+    if (
+        totalTopicos ===
+        0
+    ) {
 
-        aula.progresso = 0;
+        aula.progresso =
+            0;
 
-        aula.concluida = false;
+
+        aula.concluida =
+            false;
 
 
         return 0;
@@ -1208,7 +2005,8 @@ function recalcularProgressoAula(
         topicosRegistrados.filter(
 
             topico =>
-                topico.concluido === true
+                topico.concluido ===
+                true
 
         ).length;
 
@@ -1219,7 +2017,8 @@ function recalcularProgressoAula(
             (
                 totalConcluidos /
                 totalTopicos
-            ) * 100
+            ) *
+            100
 
         );
 
@@ -1229,7 +2028,51 @@ function recalcularProgressoAula(
 
 
     aula.concluida =
-        percentual === 100;
+        percentual ===
+        100;
+
+
+    // =================================
+    // AULA ACABOU DE SER CONCLUÍDA
+    // =================================
+
+    if (
+        aula.concluida &&
+        !estavaConcluida
+    ) {
+
+        aula.dataConclusao =
+            new Date()
+                .toISOString();
+
+    }
+
+
+    // Aula antiga concluída.
+
+    if (
+        aula.concluida &&
+        !aula.dataConclusao
+    ) {
+
+        obterDataConclusaoAula(
+            aula
+        );
+
+    }
+
+
+    // Atualizar calendário de revisão.
+
+    if (
+        aula.concluida
+    ) {
+
+        recalcularProximaRevisaoAula(
+            aula
+        );
+
+    }
 
 
     return percentual;
@@ -1257,9 +2100,13 @@ function recalcularProgressoDisciplina(
         );
 
 
-    if (aulas.length === 0) {
+    if (
+        aulas.length ===
+        0
+    ) {
 
-        disciplina.progresso = 0;
+        disciplina.progresso =
+            0;
 
 
         return 0;
@@ -1267,14 +2114,17 @@ function recalcularProgressoDisciplina(
     }
 
 
-    let somaProgresso = 0;
+    let somaProgresso =
+        0;
 
 
     aulas.forEach(
         aula => {
 
             somaProgresso +=
-                aula.progresso || 0;
+
+                aula.progresso ||
+                0;
 
         }
     );
@@ -1385,7 +2235,8 @@ function obterProgressoAula(
             .aulas[
                 aula
             ]
-            .progresso || 0
+            .progresso ||
+        0
 
     );
 
@@ -1426,7 +2277,8 @@ function obterProgressoDisciplina(
             .disciplinas[
                 disciplina
             ]
-            .progresso || 0
+            .progresso ||
+        0
 
     );
 
@@ -1455,21 +2307,26 @@ function calcularProgressoGeral() {
         );
 
 
-    if (disciplinas.length === 0) {
+    if (
+        disciplinas.length ===
+        0
+    ) {
 
         return 0;
 
     }
 
 
-    let soma = 0;
+    let soma =
+        0;
 
 
     disciplinas.forEach(
         disciplina => {
 
             soma +=
-                disciplina.progresso || 0;
+                disciplina.progresso ||
+                0;
 
         }
     );
@@ -1479,6 +2336,821 @@ function calcularProgressoGeral() {
 
         soma /
         disciplinas.length
+
+    );
+
+}
+
+
+// =====================================================
+// SISTEMA DE REVISÕES
+// =====================================================
+
+
+// =====================================
+// OBTER DADOS DE REVISÃO DA AULA
+// =====================================
+
+function obterDadosRevisaoAula(
+    idDisciplina,
+    idAula
+) {
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (
+        aula.concluida
+    ) {
+
+        recalcularProximaRevisaoAula(
+            aula
+        );
+
+    }
+
+
+    return aula.revisoes;
+
+}
+
+
+// =====================================
+// REGISTRAR REVISÃO REALIZADA
+// =====================================
+//
+// Esta será a função usada por:
+//
+// "✅ Revisada hoje"
+
+function registrarRevisaoAula(
+    idDisciplina,
+    idAula,
+    dataRevisao = null
+) {
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (
+        aula.concluida !==
+        true
+    ) {
+
+        console.warn(
+            "A revisão não foi registrada: " +
+            "a aula ainda não está concluída."
+        );
+
+
+        return null;
+
+    }
+
+
+    const revisoes =
+        garantirEstruturaRevisaoAula(
+            aula
+        );
+
+
+    const data =
+        dataRevisao
+            ? new Date(
+                dataRevisao
+            )
+            : new Date();
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const dataISO =
+        data.toISOString();
+
+
+    revisoes.datas.push(
+        dataISO
+    );
+
+
+    revisoes.ultimaRevisao =
+        dataISO;
+
+
+    revisoes.totalRevisoes =
+        revisoes.datas.length;
+
+
+    revisoes.nivelRevisao =
+        revisoes.totalRevisoes;
+
+
+    recalcularProximaRevisaoAula(
+        aula
+    );
+
+
+    salvarDadosProgresso();
+
+
+    dispararEventoRevisao(
+
+        idDisciplina,
+
+        idAula
+
+    );
+
+
+    return {
+
+        disciplina:
+            normalizarIdentificador(
+                idDisciplina
+            ),
+
+        aula:
+            normalizarIdentificador(
+                idAula
+            ),
+
+        ultimaRevisao:
+            revisoes.ultimaRevisao,
+
+        proximaRevisao:
+            revisoes.proximaRevisao,
+
+        totalRevisoes:
+            revisoes.totalRevisoes
+
+    };
+
+}
+
+
+// =====================================
+// MARCAR REVISADA HOJE
+// =====================================
+
+function marcarAulaRevisadaHoje(
+    idDisciplina,
+    idAula
+) {
+
+    return registrarRevisaoAula(
+
+        idDisciplina,
+
+        idAula,
+
+        new Date()
+
+    );
+
+}
+
+
+// =====================================
+// DIFERENÇA DE DIAS PARA REVISÃO
+// =====================================
+
+function calcularDiasParaRevisao(
+    dataRevisao
+) {
+
+    if (!dataRevisao) {
+
+        return null;
+
+    }
+
+
+    const hoje =
+        criarDataLocalRevisao();
+
+
+    const revisao =
+        criarDataLocalRevisao(
+            dataRevisao
+        );
+
+
+    if (
+        !hoje ||
+        !revisao
+    ) {
+
+        return null;
+
+    }
+
+
+    const diferenca =
+        revisao.getTime() -
+        hoje.getTime();
+
+
+    return Math.ceil(
+
+        diferenca /
+        (
+            1000 *
+            60 *
+            60 *
+            24
+        )
+
+    );
+
+}
+
+
+// =====================================
+// STATUS DA REVISÃO
+// =====================================
+
+function obterStatusRevisaoAula(
+    idDisciplina,
+    idAula
+) {
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (
+        aula.concluida !==
+        true
+    ) {
+
+        return {
+
+            codigo:
+                "nao-disponivel",
+
+            texto:
+                "Ainda não entrou no ciclo",
+
+            icone:
+                "⚪",
+
+            dias:
+                null
+
+        };
+
+    }
+
+
+    const revisoes =
+        garantirEstruturaRevisaoAula(
+            aula
+        );
+
+
+    recalcularProximaRevisaoAula(
+        aula
+    );
+
+
+    const dias =
+        calcularDiasParaRevisao(
+            revisoes.proximaRevisao
+        );
+
+
+    if (
+        dias === null
+    ) {
+
+        return {
+
+            codigo:
+                "sem-data",
+
+            texto:
+                "Sem data definida",
+
+            icone:
+                "⚪",
+
+            dias:
+                null
+
+        };
+
+    }
+
+
+    if (
+        dias < 0
+    ) {
+
+        return {
+
+            codigo:
+                "vencida",
+
+            texto:
+                "Revisão vencida",
+
+            icone:
+                "🔴",
+
+            dias:
+                dias
+
+        };
+
+    }
+
+
+    if (
+        dias === 0
+    ) {
+
+        return {
+
+            codigo:
+                "hoje",
+
+            texto:
+                "Revisar hoje",
+
+            icone:
+                "🔵",
+
+            dias:
+                0
+
+        };
+
+    }
+
+
+    if (
+        dias <= 7
+    ) {
+
+        return {
+
+            codigo:
+                "proxima",
+
+            texto:
+                "Revisão próxima",
+
+            icone:
+                "🟡",
+
+            dias:
+                dias
+
+        };
+
+    }
+
+
+    return {
+
+        codigo:
+            "em-dia",
+
+        texto:
+            "Em dia",
+
+        icone:
+            "🟢",
+
+        dias:
+            dias
+
+    };
+
+}
+
+
+// =====================================
+// LISTAR TODAS AS REVISÕES
+// =====================================
+//
+// Base do futuro:
+//
+// revisoes/index.html
+
+function listarQuadroRevisoes() {
+
+    const lista =
+        [];
+
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return lista;
+
+    }
+
+
+    Object.entries(
+        dadosProgresso.disciplinas
+    ).forEach(
+
+        (
+            [
+                idDisciplina,
+                disciplina
+            ]
+        ) => {
+
+            if (
+                !disciplina ||
+                !disciplina.aulas
+            ) {
+
+                return;
+
+            }
+
+
+            Object.entries(
+                disciplina.aulas
+            ).forEach(
+
+                (
+                    [
+                        idAula,
+                        aula
+                    ]
+                ) => {
+
+                    if (
+                        !aula ||
+                        aula.concluida !==
+                            true
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const revisoes =
+                        garantirEstruturaRevisaoAula(
+                            aula
+                        );
+
+
+                    recalcularProximaRevisaoAula(
+                        aula
+                    );
+
+
+                    const status =
+                        obterStatusRevisaoAula(
+
+                            idDisciplina,
+
+                            idAula
+
+                        );
+
+
+                    lista.push({
+
+                        idDisciplina:
+                            idDisciplina,
+
+                        idAula:
+                            idAula,
+
+                        dataConclusao:
+                            obterDataConclusaoAula(
+                                aula
+                            ),
+
+                        ultimaRevisao:
+                            revisoes
+                                .ultimaRevisao,
+
+                        proximaRevisao:
+                            revisoes
+                                .proximaRevisao,
+
+                        totalRevisoes:
+                            revisoes
+                                .totalRevisoes,
+
+                        nivelRevisao:
+                            revisoes
+                                .nivelRevisao,
+
+                        status:
+                            status
+
+                    });
+
+                }
+
+            );
+
+        }
+
+    );
+
+
+    lista.sort(
+        (a, b) => {
+
+            const dataA =
+                a.proximaRevisao
+                    ? new Date(
+                        a.proximaRevisao
+                    ).getTime()
+                    : Infinity;
+
+
+            const dataB =
+                b.proximaRevisao
+                    ? new Date(
+                        b.proximaRevisao
+                    ).getTime()
+                    : Infinity;
+
+
+            return (
+                dataA -
+                dataB
+            );
+
+        }
+    );
+
+
+    return lista;
+
+}
+
+
+// =====================================
+// OBTER PRÓXIMA REVISÃO
+// =====================================
+//
+// Esta função substituirá depois
+// a lógica fixa do card atual.
+
+function obterProximaRevisaoPSCPP() {
+
+    const revisoes =
+        listarQuadroRevisoes();
+
+
+    if (
+        revisoes.length ===
+        0
+    ) {
+
+        return null;
+
+    }
+
+
+    return revisoes[0];
+
+}
+
+
+// =====================================
+// REVISÕES VENCIDAS
+// =====================================
+
+function obterRevisoesVencidas() {
+
+    return listarQuadroRevisoes()
+        .filter(
+
+            item =>
+                item.status.codigo ===
+                "vencida"
+
+        );
+
+}
+
+
+// =====================================
+// REVISÕES PARA HOJE
+// =====================================
+
+function obterRevisoesHoje() {
+
+    return listarQuadroRevisoes()
+        .filter(
+
+            item =>
+                item.status.codigo ===
+                "hoje"
+
+        );
+
+}
+
+
+// =====================================
+// REVISÕES NOS PRÓXIMOS 7 DIAS
+// =====================================
+
+function obterRevisoesProximosSeteDias() {
+
+    return listarQuadroRevisoes()
+        .filter(
+
+            item => {
+
+                const dias =
+                    item.status.dias;
+
+
+                return (
+                    dias !== null &&
+                    dias >= 0 &&
+                    dias <= 7
+                );
+
+            }
+
+        );
+
+}
+
+
+// =====================================
+// TOTAL DE REVISÕES NO MÊS
+// =====================================
+
+function obterTotalRevisoesMesAtual() {
+
+    const agora =
+        new Date();
+
+
+    const mes =
+        agora.getMonth();
+
+
+    const ano =
+        agora.getFullYear();
+
+
+    let total =
+        0;
+
+
+    if (
+        !dadosProgresso ||
+        !dadosProgresso.disciplinas
+    ) {
+
+        return 0;
+
+    }
+
+
+    Object.values(
+        dadosProgresso.disciplinas
+    ).forEach(
+        disciplina => {
+
+            if (
+                !disciplina ||
+                !disciplina.aulas
+            ) {
+
+                return;
+
+            }
+
+
+            Object.values(
+                disciplina.aulas
+            ).forEach(
+                aula => {
+
+                    const revisoes =
+                        garantirEstruturaRevisaoAula(
+                            aula
+                        );
+
+
+                    revisoes.datas.forEach(
+                        valor => {
+
+                            const data =
+                                new Date(
+                                    valor
+                                );
+
+
+                            if (
+                                data.getFullYear() ===
+                                    ano &&
+                                data.getMonth() ===
+                                    mes
+                            ) {
+
+                                total++;
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    return total;
+
+}
+
+
+// =====================================
+// EVENTO DE REVISÃO
+// =====================================
+
+function dispararEventoRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    document.dispatchEvent(
+
+        new CustomEvent(
+
+            "revisaoPSCPPAtualizada",
+
+            {
+
+                detail: {
+
+                    disciplina:
+                        normalizarIdentificador(
+                            idDisciplina
+                        ),
+
+                    aula:
+                        normalizarIdentificador(
+                            idAula
+                        ),
+
+                    revisao:
+                        obterDadosRevisaoAula(
+
+                            idDisciplina,
+
+                            idAula
+
+                        )
+
+                }
+
+            }
+
+        )
 
     );
 
@@ -1496,7 +3168,8 @@ function adicionarTempoEstudado(
 
     if (
         !segundosAdicionais ||
-        segundosAdicionais <= 0
+        segundosAdicionais <=
+            0
     ) {
 
         return;
@@ -1517,6 +3190,7 @@ function adicionarTempoEstudado(
                 .tempoEstudadoSegundos ||
             0
         ) +
+
         segundosAdicionais;
 
 
@@ -1583,7 +3257,8 @@ function obterTempoEstudadoGeral() {
     }
 
 
-    let soma = 0;
+    let soma =
+        0;
 
 
     Object.values(
@@ -1592,6 +3267,7 @@ function obterTempoEstudadoGeral() {
         disciplina => {
 
             soma +=
+
                 disciplina
                     .tempoEstudadoSegundos ||
                 0;
@@ -1712,8 +3388,11 @@ function inserirBotoesDosTopicos() {
 
             const idTopico =
                 obterIdDoTopico(
+
                     elementoTopico,
+
                     indice
+
                 );
 
 
@@ -1821,8 +3500,11 @@ function atualizarEstadoDosTopicos() {
 
             const idTopico =
                 obterIdDoTopico(
+
                     elementoTopico,
+
                     indice
+
                 );
 
 
@@ -1838,13 +3520,15 @@ function atualizarEstadoDosTopicos() {
                 );
 
 
-            elementoTopico.classList.toggle(
+            elementoTopico
+                .classList
+                .toggle(
 
-                "topico-estudado",
+                    "topico-estudado",
 
-                concluido
+                    concluido
 
-            );
+                );
 
         }
     );
@@ -1854,24 +3538,6 @@ function atualizarEstadoDosTopicos() {
 
 // =====================================
 // INDICADORES DO CONTEÚDO PROGRAMÁTICO
-// =====================================
-//
-// Cada item pode usar:
-//
-// data-progresso-topico="id-do-topico"
-//
-// Esse ID deve corresponder ao:
-//
-// data-topico-id="id-do-topico"
-//
-// A caixa é apenas um espelho visual.
-// O progresso verdadeiro continua salvo
-// normalmente no sistema de progresso.
-// =====================================
-
-
-// =====================================
-// CRIAR INDICADORES
 // =====================================
 
 function criarIndicadoresConteudoProgramatico() {
@@ -1971,7 +3637,8 @@ function atualizarIndicadoresConteudoProgramatico() {
 
             const idTopico =
                 normalizarIdentificador(
-                    item.dataset.progressoTopico
+                    item.dataset
+                        .progressoTopico
                 );
 
 
@@ -2087,7 +3754,8 @@ function atualizarProgressoVisualAula() {
     if (barra) {
 
         barra.style.width =
-            percentual + "%";
+            percentual +
+            "%";
 
 
         barra.setAttribute(
@@ -2134,7 +3802,8 @@ function atualizarProgressoVisualGeral() {
     if (barra) {
 
         barra.style.width =
-            percentual + "%";
+            percentual +
+            "%";
 
 
         barra.setAttribute(
@@ -2182,7 +3851,8 @@ function identificarPaginaDisciplina() {
 
 
     if (
-        tipoPagina !== "disciplina" ||
+        tipoPagina !==
+            "disciplina" ||
         !disciplina
     ) {
 
@@ -2213,6 +3883,7 @@ function registrarAulasDaDisciplina(
 
 
     const seletor =
+
         '[data-disciplina="' +
         idDisciplina +
         '"] .card[data-assunto]';
@@ -2267,6 +3938,7 @@ function atualizarCardsDaDisciplina(
 ) {
 
     const seletor =
+
         '[data-disciplina="' +
         idDisciplina +
         '"] .card[data-assunto]';
@@ -2321,7 +3993,10 @@ function atualizarCardsDaDisciplina(
             );
 
 
-            if (percentual >= 100) {
+            if (
+                percentual >=
+                100
+            ) {
 
                 status.textContent =
                     "✅ Concluído";
@@ -2332,7 +4007,10 @@ function atualizarCardsDaDisciplina(
                 );
 
             }
-            else if (percentual > 0) {
+            else if (
+                percentual >
+                0
+            ) {
 
                 status.textContent =
                     "🟡 Em estudo — " +
@@ -2389,18 +4067,28 @@ function atualizarProgressoVisualDisciplina(
 
     const aulasConcluidas =
         aulas.filter(
+
             aula =>
-                aula.concluida === true
+                aula.concluida ===
+                true
+
         ).length;
 
 
     const aulasEmEstudo =
         aulas.filter(
+
             aula =>
+
                 (
-                    aula.progresso || 0
-                ) > 0 &&
-                aula.concluida !== true
+                    aula.progresso ||
+                    0
+                ) >
+                0 &&
+
+                aula.concluida !==
+                    true
+
         ).length;
 
 
@@ -2440,11 +4128,13 @@ function atualizarProgressoVisualDisciplina(
     if (barra) {
 
         barra.style.width =
-            percentual + "%";
+            percentual +
+            "%";
 
 
         barra.textContent =
-            percentual + "%";
+            percentual +
+            "%";
 
 
         barra.setAttribute(
@@ -2470,7 +4160,8 @@ function atualizarProgressoVisualDisciplina(
     if (statusGeral) {
 
         if (
-            totalAulas > 0 &&
+            totalAulas >
+                0 &&
             aulasConcluidas ===
                 totalAulas
         ) {
@@ -2480,8 +4171,10 @@ function atualizarProgressoVisualDisciplina(
 
         }
         else if (
-            aulasConcluidas > 0 ||
-            aulasEmEstudo > 0
+            aulasConcluidas >
+                0 ||
+            aulasEmEstudo >
+                0
         ) {
 
             statusGeral.textContent =
@@ -2553,8 +4246,10 @@ function identificarPaginaPrincipal() {
 
 
     return (
+
         corpo.dataset.tipoPagina ===
         "principal"
+
     );
 
 }
@@ -2627,8 +4322,11 @@ function criarBarraDisciplina(
 
 
     card.insertBefore(
+
         container,
+
         status
+
     );
 
 }
@@ -2675,33 +4373,41 @@ function atualizarCardDisciplina(
 
     const barra =
         document.getElementById(
+
             "barra-card-" +
             disciplina
+
         );
 
 
     const texto =
         document.getElementById(
+
             "texto-card-" +
             disciplina
+
         );
 
 
     const status =
         document.getElementById(
+
             "status-disciplina-" +
             disciplina
+
         );
 
 
     if (barra) {
 
         barra.style.width =
-            percentual + "%";
+            percentual +
+            "%";
 
 
         barra.textContent =
-            percentual + "%";
+            percentual +
+            "%";
 
     }
 
@@ -2734,7 +4440,10 @@ function atualizarCardDisciplina(
     );
 
 
-    if (percentual >= 100) {
+    if (
+        percentual >=
+        100
+    ) {
 
         status.textContent =
             "✅ Concluído";
@@ -2745,7 +4454,10 @@ function atualizarCardDisciplina(
         );
 
     }
-    else if (percentual > 0) {
+    else if (
+        percentual >
+        0
+    ) {
 
         status.textContent =
             "🟡 Em estudo";
@@ -2881,7 +4593,8 @@ function localizarPrimeiroTopicoPendente() {
 
     for (
         let indice = 0;
-        indice < topicos.length;
+        indice <
+            topicos.length;
         indice++
     ) {
 
@@ -2951,9 +4664,11 @@ function irParaOndeParei() {
 
     primeiroPendente.scrollIntoView({
 
-        behavior: "smooth",
+        behavior:
+            "smooth",
 
-        block: "start"
+        block:
+            "start"
 
     });
 
@@ -3100,9 +4815,11 @@ function irParaUltimoTopicoEstudado() {
 
     elementoTopico.scrollIntoView({
 
-        behavior: "smooth",
+        behavior:
+            "smooth",
 
-        block: "start"
+        block:
+            "start"
 
     });
 
@@ -3129,7 +4846,7 @@ function irParaUltimoTopicoEstudado() {
 
 
 // =====================================
-// INICIALIZAR AULA
+// INICIALIZAR PROGRESSO
 // =====================================
 
 async function inicializarProgressoAula() {
@@ -3157,7 +4874,7 @@ async function inicializarProgressoAula() {
 
 
     // =================================
-    // PÁGINA DE UMA DISCIPLINA
+    // PÁGINA DE DISCIPLINA
     // =================================
 
     const disciplinaDaPagina =
@@ -3177,7 +4894,7 @@ async function inicializarProgressoAula() {
 
 
     // =================================
-    // PÁGINA DE UMA AULA
+    // PÁGINA DE AULA
     // =================================
 
     const aulaIdentificada =
@@ -3262,5 +4979,14 @@ document.addEventListener(
 
 
 // =====================================
-// FIM DO SISTEMA DE PROGRESSO v4.1
+// DEBUG
+// =====================================
+
+console.log(
+    "SISTEMA DE PROGRESSO PSCPP v4.2 CARREGADO"
+);
+
+
+// =====================================
+// FIM DO SISTEMA DE PROGRESSO v4.2
 // =====================================
