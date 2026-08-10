@@ -1,1 +1,1843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Quadro de Revisões - PSCPP</title>
+
+<link
+rel="stylesheet"
+href="../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Quadro de Revisões</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+type="button"
+onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+
+<a href="../index.html">
+🏠 Início
+</a>
+
+
+<a href="../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+
+<a href="../guia-estudos/planejamento.html">
+📅 Planejamento
+</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
+
+<section class="dashboard">
+
+<h2>🔁 Quadro de Revisões</h2>
+
+<p>
+
+Acompanhamento das revisões das aulas já concluídas.
+
+</p>
+
+<p>
+
+O sistema utiliza o ciclo de revisão definido no
+Bridge Trainer PSCPP e registra o histórico real
+de cada revisão realizada.
+
+</p>
+
+</section>
+
+
+<!-- =========================================
+     RESUMO DAS REVISÕES
+========================================= -->
+
+<section>
+
+<h2>📊 Situação Atual</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>🔴 Vencidas</h3>
+
+<p
+id="resumo-revisoes-vencidas"
+class="valor-planejamento"
+>
+0
+</p>
+
+<p>
+Revisões que já deveriam ter sido realizadas.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🔵 Para Hoje</h3>
+
+<p
+id="resumo-revisoes-hoje"
+class="valor-planejamento"
+>
+0
+</p>
+
+<p>
+Revisões programadas para hoje.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🟡 Próximos 7 dias</h3>
+
+<p
+id="resumo-revisoes-proximas"
+class="valor-planejamento"
+>
+0
+</p>
+
+<p>
+Revisões previstas para os próximos sete dias.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>✅ Realizadas no mês</h3>
+
+<p
+id="resumo-revisoes-mes"
+class="valor-planejamento"
+>
+0
+</p>
+
+<p>
+Quantidade de revisões registradas no mês atual.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FILTROS
+========================================= -->
+
+<section>
+
+<h2>🔎 Filtrar Revisões</h2>
+
+
+<div class="widget">
+
+
+<label for="filtro-status-revisao">
+
+<strong>Situação</strong>
+
+</label>
+
+
+<select
+id="filtro-status-revisao"
+>
+
+<option value="todas">
+Todas
+</option>
+
+<option value="vencida">
+🔴 Vencidas
+</option>
+
+<option value="hoje">
+🔵 Para hoje
+</option>
+
+<option value="proxima">
+🟡 Próximas
+</option>
+
+<option value="em-dia">
+🟢 Em dia
+</option>
+
+</select>
+
+
+<br><br>
+
+
+<label for="filtro-disciplina-revisao">
+
+<strong>Disciplina</strong>
+
+</label>
+
+
+<select
+id="filtro-disciplina-revisao"
+>
+
+<option value="todas">
+Todas as disciplinas
+</option>
+
+</select>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     QUADRO DE REVISÕES
+========================================= -->
+
+<section>
+
+<h2>📚 Aulas em Ciclo de Revisão</h2>
+
+
+<div
+id="lista-quadro-revisoes"
+class="cards"
+>
+
+<div class="card">
+
+<p>
+Carregando revisões...
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ORIENTAÇÃO
+========================================= -->
+
+<section class="painel">
+
+
+<div class="widget">
+
+<h2>🧠 Ciclo de Revisão</h2>
+
+<p>
+
+O ciclo inicial utilizado pelo sistema é:
+
+</p>
+
+<p>
+
+<strong>
+7 dias → 30 dias → 90 dias
+</strong>
+
+</p>
+
+<p>
+
+Depois desse ciclo,
+a aula permanece em revisão de manutenção.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h2>📅 Registro Manual</h2>
+
+<p>
+
+O registro manual permite incluir revisões
+realizadas antes da implantação deste sistema.
+
+</p>
+
+<p>
+
+A data registrada passa a fazer parte
+do histórico real da aula e será utilizada
+para calcular a próxima revisão.
+
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+<p>
+Bridge Trainer PSCPP © 2026
+</p>
+
+</footer>
+
+
+<a
+href="../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
+🏠
+</a>
+
+
+<!-- =========================================
+     SCRIPTS DO PROJETO
+========================================= -->
+
+<script src="../js/navigation.js"></script>
+
+<script src="../js/progresso.js"></script>
+
+
+<!-- =========================================
+     QUADRO DE REVISÕES
+========================================= -->
+
+<script>
+
+
+// =====================================
+// CATÁLOGO
+// =====================================
+
+let catalogoRevisoesPSCPP =
+    null;
+
+
+// =====================================
+// CARREGAR disciplinas.json
+// =====================================
+
+async function carregarCatalogoRevisoes() {
+
+    try {
+
+        const resposta =
+            await fetch(
+                "../data/disciplinas.json"
+            );
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                "Não foi possível carregar disciplinas.json"
+            );
+
+        }
+
+
+        catalogoRevisoesPSCPP =
+            await resposta.json();
+
+
+        return catalogoRevisoesPSCPP;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar catálogo para revisões:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+// =====================================
+// DISCIPLINA DO CATÁLOGO
+// =====================================
+
+function encontrarDisciplinaRevisao(
+    idDisciplina
+) {
+
+    if (
+        !catalogoRevisoesPSCPP ||
+        !Array.isArray(
+            catalogoRevisoesPSCPP.disciplinas
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const id =
+        normalizarIdentificador(
+            idDisciplina
+        );
+
+
+    return (
+
+        catalogoRevisoesPSCPP
+            .disciplinas
+            .find(
+                disciplina =>
+                    normalizarIdentificador(
+                        disciplina.id
+                    ) === id
+            ) ||
+
+        null
+
+    );
+
+}
+
+
+// =====================================
+// AULA DO CATÁLOGO
+// =====================================
+
+function encontrarModuloRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        encontrarDisciplinaRevisao(
+            idDisciplina
+        );
+
+
+    if (
+        !disciplina ||
+        !Array.isArray(
+            disciplina.modulos
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const id =
+        normalizarIdentificador(
+            idAula
+        );
+
+
+    return (
+
+        disciplina.modulos.find(
+            modulo =>
+                normalizarIdentificador(
+                    modulo.id
+                ) === id
+        ) ||
+
+        null
+
+    );
+
+}
+
+
+// =====================================
+// NOME DA DISCIPLINA
+// =====================================
+
+function obterNomeDisciplinaRevisao(
+    idDisciplina
+) {
+
+    const disciplina =
+        encontrarDisciplinaRevisao(
+            idDisciplina
+        );
+
+
+    if (
+        disciplina &&
+        disciplina.nome
+    ) {
+
+        return disciplina.nome;
+
+    }
+
+
+    return idDisciplina;
+
+}
+
+
+// =====================================
+// NOME DA AULA
+// =====================================
+
+function obterNomeAulaRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    const modulo =
+        encontrarModuloRevisao(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (
+        modulo &&
+        modulo.titulo
+    ) {
+
+        return modulo.titulo;
+
+    }
+
+
+    return idAula;
+
+}
+
+
+// =====================================
+// CAMINHO PARA A AULA
+// =====================================
+
+function obterCaminhoAulaRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        encontrarDisciplinaRevisao(
+            idDisciplina
+        );
+
+
+    const modulo =
+        encontrarModuloRevisao(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (
+        !disciplina ||
+        !modulo ||
+        !disciplina.pasta ||
+        !modulo.arquivo
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+
+        "../disciplinas/" +
+
+        disciplina.pasta +
+
+        "/" +
+
+        modulo.arquivo
+
+    );
+
+}
+
+
+// =====================================
+// FORMATAR DATA
+// =====================================
+
+function formatarDataQuadroRevisao(
+    valor
+) {
+
+    if (!valor) {
+
+        return "—";
+
+    }
+
+
+    const data =
+        new Date(
+            valor
+        );
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return "—";
+
+    }
+
+
+    return data.toLocaleDateString(
+        "pt-BR",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+// =====================================
+// DATA PARA INPUT
+// =====================================
+
+function obterDataHojeInputRevisao() {
+
+    const hoje =
+        new Date();
+
+
+    const ano =
+        hoje.getFullYear();
+
+
+    const mes =
+        String(
+            hoje.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    const dia =
+        String(
+            hoje.getDate()
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    return (
+        ano +
+        "-" +
+        mes +
+        "-" +
+        dia
+    );
+
+}
+
+
+// =====================================
+// PREENCHER FILTRO DE DISCIPLINAS
+// =====================================
+
+function preencherFiltroDisciplinasRevisao() {
+
+    const seletor =
+        document.getElementById(
+            "filtro-disciplina-revisao"
+        );
+
+
+    if (!seletor) {
+
+        return;
+
+    }
+
+
+    const ids =
+        new Set();
+
+
+    listarQuadroRevisoes()
+        .forEach(
+            item => {
+
+                ids.add(
+                    item.idDisciplina
+                );
+
+            }
+        );
+
+
+    ids.forEach(
+        idDisciplina => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                idDisciplina;
+
+
+            option.textContent =
+                obterNomeDisciplinaRevisao(
+                    idDisciplina
+                );
+
+
+            seletor.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR RESUMO
+// =====================================
+
+function atualizarResumoRevisoes() {
+
+    const vencidas =
+        document.getElementById(
+            "resumo-revisoes-vencidas"
+        );
+
+
+    const hoje =
+        document.getElementById(
+            "resumo-revisoes-hoje"
+        );
+
+
+    const proximas =
+        document.getElementById(
+            "resumo-revisoes-proximas"
+        );
+
+
+    const mes =
+        document.getElementById(
+            "resumo-revisoes-mes"
+        );
+
+
+    if (vencidas) {
+
+        vencidas.textContent =
+            obterRevisoesVencidas()
+                .length;
+
+    }
+
+
+    if (hoje) {
+
+        hoje.textContent =
+            obterRevisoesHoje()
+                .length;
+
+    }
+
+
+    if (proximas) {
+
+        proximas.textContent =
+            obterRevisoesProximosSeteDias()
+                .length;
+
+    }
+
+
+    if (mes) {
+
+        mes.textContent =
+            obterTotalRevisoesMesAtual();
+
+    }
+
+}
+
+
+// =====================================
+// OBTER REVISÕES FILTRADAS
+// =====================================
+
+function obterRevisoesFiltradas() {
+
+    let lista =
+        listarQuadroRevisoes();
+
+
+    const status =
+        document.getElementById(
+            "filtro-status-revisao"
+        );
+
+
+    const disciplina =
+        document.getElementById(
+            "filtro-disciplina-revisao"
+        );
+
+
+    const filtroStatus =
+        status
+            ? status.value
+            : "todas";
+
+
+    const filtroDisciplina =
+        disciplina
+            ? disciplina.value
+            : "todas";
+
+
+    if (
+        filtroStatus !==
+        "todas"
+    ) {
+
+        lista =
+            lista.filter(
+                item =>
+                    item.status.codigo ===
+                    filtroStatus
+            );
+
+    }
+
+
+    if (
+        filtroDisciplina !==
+        "todas"
+    ) {
+
+        lista =
+            lista.filter(
+                item =>
+                    item.idDisciplina ===
+                    filtroDisciplina
+            );
+
+    }
+
+
+    return lista;
+
+}
+
+
+// =====================================
+// REGISTRAR REVISÃO HOJE
+// =====================================
+
+function registrarHojeQuadroRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    const resultado =
+        marcarAulaRevisadaHoje(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    if (!resultado) {
+
+        window.alert(
+            "Não foi possível registrar a revisão."
+        );
+
+
+        return;
+
+    }
+
+
+    atualizarQuadroRevisoes();
+
+}
+
+
+// =====================================
+// REGISTRAR DATA MANUAL
+// =====================================
+
+function registrarDataManualRevisao(
+    idDisciplina,
+    idAula,
+    inputId
+) {
+
+    const input =
+        document.getElementById(
+            inputId
+        );
+
+
+    if (
+        !input ||
+        !input.value
+    ) {
+
+        window.alert(
+            "Selecione a data da revisão."
+        );
+
+
+        return;
+
+    }
+
+
+    const partes =
+        input.value
+            .split("-")
+            .map(Number);
+
+
+    if (
+        partes.length !== 3
+    ) {
+
+        return;
+
+    }
+
+
+    const data =
+        new Date(
+
+            partes[0],
+
+            partes[1] - 1,
+
+            partes[2],
+
+            12,
+            0,
+            0,
+            0
+
+        );
+
+
+    const hoje =
+        new Date();
+
+
+    hoje.setHours(
+        23,
+        59,
+        59,
+        999
+    );
+
+
+    if (
+        data >
+        hoje
+    ) {
+
+        window.alert(
+            "Não é possível registrar uma revisão em data futura."
+        );
+
+
+        return;
+
+    }
+
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    const conclusao =
+        obterDataConclusaoAula(
+            aula
+        );
+
+
+    if (conclusao) {
+
+        const dataConclusao =
+            new Date(
+                conclusao
+            );
+
+
+        if (
+            data <
+            dataConclusao
+        ) {
+
+            const confirmar =
+                window.confirm(
+
+                    "A data selecionada é anterior à data registrada de conclusão da aula. Deseja registrar mesmo assim?"
+
+                );
+
+
+            if (!confirmar) {
+
+                return;
+
+            }
+
+        }
+
+    }
+
+
+    const resultado =
+        registrarRevisaoAula(
+
+            idDisciplina,
+
+            idAula,
+
+            data
+
+        );
+
+
+    if (!resultado) {
+
+        window.alert(
+            "Não foi possível registrar a revisão."
+        );
+
+
+        return;
+
+    }
+
+
+    atualizarQuadroRevisoes();
+
+}
+
+
+// =====================================
+// CRIAR HISTÓRICO
+// =====================================
+
+function criarHistoricoRevisao(
+    idDisciplina,
+    idAula
+) {
+
+    const aula =
+        garantirAula(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    const revisoes =
+        garantirEstruturaRevisaoAula(
+            aula
+        );
+
+
+    const details =
+        document.createElement(
+            "details"
+        );
+
+
+    const summary =
+        document.createElement(
+            "summary"
+        );
+
+
+    summary.textContent =
+        "📜 Histórico de revisões";
+
+
+    details.appendChild(
+        summary
+    );
+
+
+    if (
+        revisoes.datas.length ===
+        0
+    ) {
+
+        const vazio =
+            document.createElement(
+                "p"
+            );
+
+
+        vazio.textContent =
+            "Nenhuma revisão registrada ainda.";
+
+
+        details.appendChild(
+            vazio
+        );
+
+
+        return details;
+
+    }
+
+
+    const lista =
+        document.createElement(
+            "ol"
+        );
+
+
+    revisoes.datas
+        .slice()
+        .sort(
+            (a, b) =>
+                new Date(b) -
+                new Date(a)
+        )
+        .forEach(
+            data => {
+
+                const item =
+                    document.createElement(
+                        "li"
+                    );
+
+
+                item.textContent =
+                    formatarDataQuadroRevisao(
+                        data
+                    );
+
+
+                lista.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+    details.appendChild(
+        lista
+    );
+
+
+    return details;
+
+}
+
+
+// =====================================
+// CRIAR CARD DE REVISÃO
+// =====================================
+
+function criarCardQuadroRevisao(
+    item,
+    indice
+) {
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className =
+        "card";
+
+
+    const titulo =
+        document.createElement(
+            "h3"
+        );
+
+
+    titulo.textContent =
+        obterNomeAulaRevisao(
+
+            item.idDisciplina,
+
+            item.idAula
+
+        );
+
+
+    const disciplina =
+        document.createElement(
+            "p"
+        );
+
+
+    disciplina.innerHTML =
+
+        "<strong>Disciplina:</strong> " +
+
+        obterNomeDisciplinaRevisao(
+            item.idDisciplina
+        );
+
+
+    const status =
+        document.createElement(
+            "p"
+        );
+
+
+    status.innerHTML =
+
+        "<strong>Situação:</strong> " +
+
+        item.status.icone +
+        " " +
+        item.status.texto;
+
+
+    const conclusao =
+        document.createElement(
+            "p"
+        );
+
+
+    conclusao.innerHTML =
+
+        "<strong>Aula concluída:</strong> " +
+
+        formatarDataQuadroRevisao(
+            item.dataConclusao
+        );
+
+
+    const ultima =
+        document.createElement(
+            "p"
+        );
+
+
+    ultima.innerHTML =
+
+        "<strong>Última revisão:</strong> " +
+
+        formatarDataQuadroRevisao(
+            item.ultimaRevisao
+        );
+
+
+    const proxima =
+        document.createElement(
+            "p"
+        );
+
+
+    proxima.innerHTML =
+
+        "<strong>Próxima revisão:</strong> " +
+
+        formatarDataQuadroRevisao(
+            item.proximaRevisao
+        );
+
+
+    const total =
+        document.createElement(
+            "p"
+        );
+
+
+    total.innerHTML =
+
+        "<strong>Revisões realizadas:</strong> " +
+
+        item.totalRevisoes;
+
+
+    card.appendChild(
+        titulo
+    );
+
+
+    card.appendChild(
+        disciplina
+    );
+
+
+    card.appendChild(
+        status
+    );
+
+
+    card.appendChild(
+        conclusao
+    );
+
+
+    card.appendChild(
+        ultima
+    );
+
+
+    card.appendChild(
+        proxima
+    );
+
+
+    card.appendChild(
+        total
+    );
+
+
+    // =================================
+    // ABRIR AULA
+    // =================================
+
+    const caminho =
+        obterCaminhoAulaRevisao(
+
+            item.idDisciplina,
+
+            item.idAula
+
+        );
+
+
+    if (caminho) {
+
+        const abrir =
+            document.createElement(
+                "a"
+            );
+
+
+        abrir.href =
+            caminho;
+
+
+        abrir.className =
+            "botao";
+
+
+        abrir.textContent =
+            "📖 Abrir aula";
+
+
+        card.appendChild(
+            abrir
+        );
+
+    }
+
+
+    // =================================
+    // REVISADA HOJE
+    // =================================
+
+    const hoje =
+        document.createElement(
+            "button"
+        );
+
+
+    hoje.type =
+        "button";
+
+
+    hoje.className =
+        "botao";
+
+
+    hoje.textContent =
+        "✅ Revisada hoje";
+
+
+    hoje.addEventListener(
+        "click",
+        function () {
+
+            registrarHojeQuadroRevisao(
+
+                item.idDisciplina,
+
+                item.idAula
+
+            );
+
+        }
+    );
+
+
+    card.appendChild(
+        hoje
+    );
+
+
+    // =================================
+    // REGISTRO MANUAL
+    // =================================
+
+    const registro =
+        document.createElement(
+            "details"
+        );
+
+
+    const resumoRegistro =
+        document.createElement(
+            "summary"
+        );
+
+
+    resumoRegistro.textContent =
+        "📅 Registrar revisão anterior";
+
+
+    registro.appendChild(
+        resumoRegistro
+    );
+
+
+    const orientacao =
+        document.createElement(
+            "p"
+        );
+
+
+    orientacao.textContent =
+        "Selecione a data em que esta revisão foi realmente realizada.";
+
+
+    registro.appendChild(
+        orientacao
+    );
+
+
+    const input =
+        document.createElement(
+            "input"
+        );
+
+
+    const inputId =
+
+        "data-revisao-" +
+
+        item.idDisciplina +
+
+        "-" +
+
+        item.idAula +
+
+        "-" +
+
+        indice;
+
+
+    input.type =
+        "date";
+
+
+    input.id =
+        inputId;
+
+
+    input.max =
+        obterDataHojeInputRevisao();
+
+
+    registro.appendChild(
+        input
+    );
+
+
+    const registrar =
+        document.createElement(
+            "button"
+        );
+
+
+    registrar.type =
+        "button";
+
+
+    registrar.className =
+        "botao";
+
+
+    registrar.textContent =
+        "Salvar revisão";
+
+
+    registrar.addEventListener(
+        "click",
+        function () {
+
+            registrarDataManualRevisao(
+
+                item.idDisciplina,
+
+                item.idAula,
+
+                inputId
+
+            );
+
+        }
+    );
+
+
+    registro.appendChild(
+        registrar
+    );
+
+
+    card.appendChild(
+        registro
+    );
+
+
+    // =================================
+    // HISTÓRICO
+    // =================================
+
+    card.appendChild(
+
+        criarHistoricoRevisao(
+
+            item.idDisciplina,
+
+            item.idAula
+
+        )
+
+    );
+
+
+    return card;
+
+}
+
+
+// =====================================
+// RENDERIZAR QUADRO
+// =====================================
+
+function renderizarQuadroRevisoes() {
+
+    const container =
+        document.getElementById(
+            "lista-quadro-revisoes"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        "";
+
+
+    const lista =
+        obterRevisoesFiltradas();
+
+
+    if (
+        lista.length ===
+        0
+    ) {
+
+        const aviso =
+            document.createElement(
+                "div"
+            );
+
+
+        aviso.className =
+            "card";
+
+
+        aviso.innerHTML = `
+
+            <h3>
+            ✅ Nenhuma revisão nesta seleção
+            </h3>
+
+            <p>
+            Não existem aulas concluídas
+            correspondentes aos filtros atuais.
+            </p>
+
+        `;
+
+
+        container.appendChild(
+            aviso
+        );
+
+
+        return;
+
+    }
+
+
+    lista.forEach(
+        (
+            item,
+            indice
+        ) => {
+
+            container.appendChild(
+
+                criarCardQuadroRevisao(
+                    item,
+                    indice
+                )
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR TUDO
+// =====================================
+
+function atualizarQuadroRevisoes() {
+
+    atualizarResumoRevisoes();
+
+
+    renderizarQuadroRevisoes();
+
+}
+
+
+// =====================================
+// EVENTOS DOS FILTROS
+// =====================================
+
+function configurarFiltrosRevisao() {
+
+    const status =
+        document.getElementById(
+            "filtro-status-revisao"
+        );
+
+
+    const disciplina =
+        document.getElementById(
+            "filtro-disciplina-revisao"
+        );
+
+
+    if (status) {
+
+        status.addEventListener(
+            "change",
+            renderizarQuadroRevisoes
+        );
+
+    }
+
+
+    if (disciplina) {
+
+        disciplina.addEventListener(
+            "change",
+            renderizarQuadroRevisoes
+        );
+
+    }
+
+}
+
+
+// =====================================
+// REAGIR A NOVA REVISÃO
+// =====================================
+
+document.addEventListener(
+
+    "revisaoPSCPPAtualizada",
+
+    function () {
+
+        atualizarQuadroRevisoes();
+
+    }
+
+);
+
+
+// =====================================
+// INICIALIZAÇÃO
+// =====================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    async function () {
+
+        // progresso.js também inicia sozinho,
+        // mas aguardamos explicitamente para
+        // garantir os dados antes do quadro.
+
+        await carregarDadosProgresso();
+
+
+        await carregarCatalogoRevisoes();
+
+
+        preencherFiltroDisciplinasRevisao();
+
+
+        configurarFiltrosRevisao();
+
+
+        atualizarQuadroRevisoes();
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
