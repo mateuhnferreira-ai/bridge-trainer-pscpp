@@ -1,6 +1,6 @@
 /* =====================================================
    BRIDGE TRAINER PSCPP
-   APP.JS v4.0
+   APP.JS v4.1
 
    CAMADA DE COACHING
 
@@ -8,11 +8,17 @@
    - Próxima aula
    - Meta da semana
    - Última aula estudada
-   - Próxima revisão
+   - Próxima revisão inteligente
+
+   Integração:
+   - progresso.js v4.2
 
    IMPORTANTE:
+
    progresso.js continua sendo a fonte única
-   dos dados de progresso.
+   dos dados de progresso e revisão.
+
+   O app.js apenas apresenta esses dados.
 ===================================================== */
 
 
@@ -27,29 +33,41 @@ let catalogoDisciplinasPSCPP = null;
 // NORMALIZAR IDENTIFICADOR
 // =====================================
 //
-// Função própria para evitar dependência da ordem
-// de carregamento entre app.js e progresso.js.
+// Função própria para evitar dependência da
+// ordem de carregamento entre app.js
+// e progresso.js.
 
-function normalizarIdApp(texto) {
+function normalizarIdApp(
+    texto
+) {
 
     if (!texto) {
+
         return "";
+
     }
 
 
     return texto
+
         .toString()
+
         .normalize("NFD")
+
         .replace(
             /[\u0300-\u036f]/g,
             ""
         )
+
         .toLowerCase()
+
         .trim()
+
         .replace(
             /[^a-z0-9]+/g,
             "-"
         )
+
         .replace(
             /^-+|-+$/g,
             ""
@@ -65,9 +83,14 @@ function normalizarIdApp(texto) {
 function appEstaNaPaginaPrincipal() {
 
     return Boolean(
+
         document.body &&
-        document.body.dataset.tipoPagina ===
+
+        document.body
+            .dataset
+            .tipoPagina ===
             "principal"
+
     );
 
 }
@@ -100,6 +123,9 @@ function obterCaminhoDisciplinasJSONApp() {
         ) ||
         caminho.includes(
             "/desempenho/"
+        ) ||
+        caminho.includes(
+            "/revisoes/"
         )
     ) {
 
@@ -119,7 +145,9 @@ function obterCaminhoDisciplinasJSONApp() {
 
 async function carregarCatalogoDisciplinasApp() {
 
-    if (catalogoDisciplinasPSCPP) {
+    if (
+        catalogoDisciplinasPSCPP
+    ) {
 
         return catalogoDisciplinasPSCPP;
 
@@ -168,10 +196,6 @@ async function carregarCatalogoDisciplinasApp() {
 // =====================================
 // AGUARDAR progresso.js
 // =====================================
-//
-// progresso.js realiza carregamento assíncrono.
-// Esta função impede que app.js tente ler os dados
-// antes de eles estarem disponíveis.
 
 function aguardarDadosProgressoApp() {
 
@@ -185,15 +209,24 @@ function aguardarDadosProgressoApp() {
                 function () {
 
                     const progressoDisponivel =
+
                         typeof dadosProgresso !==
                             "undefined" &&
+
                         dadosProgresso &&
-                        dadosProgresso.disciplinas;
+
+                        dadosProgresso
+                            .disciplinas;
 
 
-                    if (progressoDisponivel) {
+                    if (
+                        progressoDisponivel
+                    ) {
 
-                        resolve(true);
+                        resolve(
+                            true
+                        );
+
 
                         return;
 
@@ -203,14 +236,20 @@ function aguardarDadosProgressoApp() {
                     tentativas++;
 
 
-                    if (tentativas >= 100) {
+                    if (
+                        tentativas >=
+                        100
+                    ) {
 
                         console.warn(
                             "app.js não conseguiu acessar dadosProgresso."
                         );
 
 
-                        resolve(false);
+                        resolve(
+                            false
+                        );
+
 
                         return;
 
@@ -218,8 +257,11 @@ function aguardarDadosProgressoApp() {
 
 
                     window.setTimeout(
+
                         verificar,
+
                         50
+
                     );
 
                 };
@@ -244,7 +286,8 @@ function encontrarDisciplinaCatalogo(
     if (
         !catalogoDisciplinasPSCPP ||
         !Array.isArray(
-            catalogoDisciplinasPSCPP.disciplinas
+            catalogoDisciplinasPSCPP
+                .disciplinas
         )
     ) {
 
@@ -260,16 +303,21 @@ function encontrarDisciplinaCatalogo(
 
 
     return (
+
         catalogoDisciplinasPSCPP
             .disciplinas
             .find(
                 disciplina =>
+
                     normalizarIdApp(
                         disciplina.id
                     ) ===
                     idNormalizado
+
             ) ||
+
         null
+
     );
 
 }
@@ -309,14 +357,21 @@ function encontrarModuloCatalogo(
 
 
     return (
-        disciplina.modulos.find(
-            modulo =>
-                normalizarIdApp(
-                    modulo.id
-                ) ===
-                aulaNormalizada
-        ) ||
+
+        disciplina
+            .modulos
+            .find(
+                modulo =>
+
+                    normalizarIdApp(
+                        modulo.id
+                    ) ===
+                    aulaNormalizada
+
+            ) ||
+
         null
+
     );
 
 }
@@ -373,11 +428,14 @@ function obterAulaSalvaApp(
 
 
     return (
+
         dadosDisciplina
             .aulas[
                 aula
             ] ||
+
         null
+
     );
 
 }
@@ -407,10 +465,13 @@ function aulaConcluidaApp(
 
 
     return (
+
         aula.concluida === true ||
+
         Number(
             aula.progresso || 0
         ) >= 100
+
     );
 
 }
@@ -426,10 +487,15 @@ function criarCaminhoAulaApp(
 ) {
 
     return (
+
         "disciplinas/" +
+
         disciplina.pasta +
+
         "/" +
+
         modulo.arquivo
+
     );
 
 }
@@ -438,17 +504,14 @@ function criarCaminhoAulaApp(
 // =====================================
 // ENCONTRAR PRÓXIMA AULA
 // =====================================
-//
-// Percorre as disciplinas conforme a ordem do
-// disciplinas.json e retorna a primeira aula
-// ainda não concluída.
 
 function encontrarProximaAulaApp() {
 
     if (
         !catalogoDisciplinasPSCPP ||
         !Array.isArray(
-            catalogoDisciplinasPSCPP.disciplinas
+            catalogoDisciplinasPSCPP
+                .disciplinas
         )
     ) {
 
@@ -473,11 +536,15 @@ function encontrarProximaAulaApp() {
 
 
         if (
-            disciplina.status !== "ativo" ||
+            disciplina.status !==
+                "ativo" ||
+
             !Array.isArray(
                 disciplina.modulos
             ) ||
-            disciplina.modulos.length === 0
+
+            disciplina.modulos.length ===
+                0
         ) {
 
             continue;
@@ -497,8 +564,11 @@ function encontrarProximaAulaApp() {
 
             if (
                 !aulaConcluidaApp(
+
                     disciplina.id,
+
                     modulo.id
+
                 )
             ) {
 
@@ -511,7 +581,8 @@ function encontrarProximaAulaApp() {
                         disciplina.nome,
 
                     disciplinaIcone:
-                        disciplina.icone || "📚",
+                        disciplina.icone ||
+                        "📚",
 
                     aulaId:
                         modulo.id,
@@ -600,8 +671,11 @@ function atualizarProximaAulaApp() {
     if (elemento) {
 
         elemento.textContent =
+
             proxima.disciplinaIcone +
+
             " " +
+
             proxima.aulaTitulo;
 
     }
@@ -628,10 +702,6 @@ function atualizarProximaAulaApp() {
 // =====================================
 // META DA SEMANA
 // =====================================
-//
-// A primeira versão da meta acompanha a próxima
-// aula pendente. Posteriormente o motor estratégico
-// e o Pomodoro poderão assumir esta decisão.
 
 function atualizarMetas() {
 
@@ -657,16 +727,22 @@ function atualizarMetas() {
         elemento.textContent =
             "✅ Meta alcançada: todas as aulas cadastradas foram concluídas.";
 
+
         return;
 
     }
 
 
     elemento.textContent =
+
         "Concluir " +
+
         proxima.aulaTitulo +
+
         " — " +
+
         proxima.disciplinaNome +
+
         ".";
 
 }
@@ -675,9 +751,6 @@ function atualizarMetas() {
 // =====================================
 // LOCALIZAR ÚLTIMA ATIVIDADE
 // =====================================
-//
-// Procura a dataConclusao mais recente entre
-// todos os tópicos de todas as aulas.
 
 function encontrarUltimaAtividadeApp() {
 
@@ -693,14 +766,20 @@ function encontrarUltimaAtividadeApp() {
     }
 
 
-    let resultado = null;
+    let resultado =
+        null;
 
 
     Object.entries(
         dadosProgresso.disciplinas
     ).forEach(
 
-        ([idDisciplina, disciplina]) => {
+        (
+            [
+                idDisciplina,
+                disciplina
+            ]
+        ) => {
 
             if (
                 !disciplina ||
@@ -716,7 +795,12 @@ function encontrarUltimaAtividadeApp() {
                 disciplina.aulas
             ).forEach(
 
-                ([idAula, aula]) => {
+                (
+                    [
+                        idAula,
+                        aula
+                    ]
+                ) => {
 
                     if (
                         !aula ||
@@ -732,7 +816,12 @@ function encontrarUltimaAtividadeApp() {
                         aula.topicos
                     ).forEach(
 
-                        ([idTopico, topico]) => {
+                        (
+                            [
+                                idTopico,
+                                topico
+                            ]
+                        ) => {
 
                             if (
                                 !topico ||
@@ -765,7 +854,7 @@ function encontrarUltimaAtividadeApp() {
                             if (
                                 !resultado ||
                                 data >
-                                resultado.data
+                                    resultado.data
                             ) {
 
                                 resultado = {
@@ -832,6 +921,7 @@ function ultimaAula() {
         elemento.textContent =
             "Nenhuma aula registrada.";
 
+
         return;
 
     }
@@ -845,26 +935,34 @@ function ultimaAula() {
 
     const modulo =
         encontrarModuloCatalogo(
+
             ultima.disciplinaId,
+
             ultima.aulaId
+
         );
 
 
     const nomeDisciplina =
+
         disciplina
             ? disciplina.nome
             : ultima.disciplinaId;
 
 
     const nomeAula =
+
         modulo
             ? modulo.titulo
             : ultima.aulaId;
 
 
     elemento.textContent =
+
         nomeAula +
+
         " — " +
+
         nomeDisciplina;
 
 }
@@ -874,155 +972,491 @@ function ultimaAula() {
 // FORMATAR DATA
 // =====================================
 
-function formatarDataApp(data) {
+function formatarDataApp(
+    valor
+) {
+
+    if (!valor) {
+
+        return "—";
+
+    }
+
+
+    const data =
+
+        valor instanceof Date
+            ? valor
+            : new Date(valor);
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return "—";
+
+    }
+
 
     return data.toLocaleDateString(
+
         "pt-BR",
+
         {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
+
+            day:
+                "2-digit",
+
+            month:
+                "2-digit",
+
+            year:
+                "numeric"
+
         }
+
+    );
+
+}
+
+
+// =====================================================
+// SISTEMA DE REVISÃO
+// =====================================================
+
+
+// =====================================
+// OBTER PRÓXIMA REVISÃO
+// =====================================
+//
+// A fonte agora é progresso.js v4.2.
+//
+// O app.js NÃO recalcula datas.
+
+function encontrarProximaRevisaoApp() {
+
+    if (
+        typeof obterProximaRevisaoPSCPP ===
+        "function"
+    ) {
+
+        return obterProximaRevisaoPSCPP();
+
+    }
+
+
+    console.warn(
+        "obterProximaRevisaoPSCPP() não está disponível."
+    );
+
+
+    return null;
+
+}
+
+
+// =====================================
+// CRIAR CAMINHO DA REVISÃO
+// =====================================
+
+function criarCaminhoRevisaoApp(
+    revisao
+) {
+
+    if (!revisao) {
+
+        return "#";
+
+    }
+
+
+    const disciplina =
+        encontrarDisciplinaCatalogo(
+            revisao.idDisciplina
+        );
+
+
+    const modulo =
+        encontrarModuloCatalogo(
+
+            revisao.idDisciplina,
+
+            revisao.idAula
+
+        );
+
+
+    if (
+        !disciplina ||
+        !modulo
+    ) {
+
+        return "#";
+
+    }
+
+
+    return criarCaminhoAulaApp(
+
+        disciplina,
+
+        modulo
+
     );
 
 }
 
 
 // =====================================
-// PRÓXIMA REVISÃO
+// OBTER TÍTULO DA REVISÃO
 // =====================================
-//
-// Primeira regra:
-// cada tópico estudado gera revisão 1 dia
-// após sua conclusão.
-//
-// Futuramente poderá receber ciclos:
-// 1 dia → 7 dias → 30 dias.
 
-function encontrarProximaRevisaoApp() {
+function obterTituloRevisaoApp(
+    revisao
+) {
+
+    if (!revisao) {
+
+        return "";
+
+    }
+
+
+    const modulo =
+        encontrarModuloCatalogo(
+
+            revisao.idDisciplina,
+
+            revisao.idAula
+
+        );
+
 
     if (
-        typeof dadosProgresso ===
-            "undefined" ||
-        !dadosProgresso ||
-        !dadosProgresso.disciplinas
+        modulo &&
+        modulo.titulo
     ) {
+
+        return modulo.titulo;
+
+    }
+
+
+    return revisao.idAula;
+
+}
+
+
+// =====================================
+// OBTER NOME DA DISCIPLINA DA REVISÃO
+// =====================================
+
+function obterDisciplinaRevisaoApp(
+    revisao
+) {
+
+    if (!revisao) {
+
+        return "";
+
+    }
+
+
+    const disciplina =
+        encontrarDisciplinaCatalogo(
+            revisao.idDisciplina
+        );
+
+
+    if (
+        disciplina &&
+        disciplina.nome
+    ) {
+
+        return disciplina.nome;
+
+    }
+
+
+    return revisao.idDisciplina;
+
+}
+
+
+// =====================================
+// CRIAR ÁREA DE CONTROLES DA REVISÃO
+// =====================================
+//
+// A área é criada automaticamente dentro
+// do mesmo card que contém:
+//
+// #proxima-revisao
+//
+// Não exige alteração manual do index.html.
+
+function obterOuCriarControlesRevisaoApp(
+    elementoRevisao
+) {
+
+    if (!elementoRevisao) {
 
         return null;
 
     }
 
 
-    let proximaRevisao = null;
+    const card =
+        elementoRevisao.closest(
+            ".card, .widget"
+        ) ||
+        elementoRevisao.parentElement;
 
 
-    Object.entries(
-        dadosProgresso.disciplinas
-    ).forEach(
+    if (!card) {
 
-        ([idDisciplina, disciplina]) => {
+        return null;
 
-            if (
-                !disciplina ||
-                !disciplina.aulas
-            ) {
-
-                return;
-
-            }
+    }
 
 
-            Object.entries(
-                disciplina.aulas
-            ).forEach(
-
-                ([idAula, aula]) => {
-
-                    if (
-                        !aula ||
-                        !aula.topicos
-                    ) {
-
-                        return;
-
-                    }
+    let controles =
+        card.querySelector(
+            "#controles-proxima-revisao"
+        );
 
 
-                    Object.entries(
-                        aula.topicos
-                    ).forEach(
+    if (controles) {
 
-                        ([idTopico, topico]) => {
+        return controles;
 
-                            if (
-                                !topico ||
-                                !topico.concluido ||
-                                !topico.dataConclusao
-                            ) {
-
-                                return;
-
-                            }
+    }
 
 
-                            const conclusao =
-                                new Date(
-                                    topico.dataConclusao
-                                );
+    controles =
+        document.createElement(
+            "div"
+        );
 
 
-                            if (
-                                Number.isNaN(
-                                    conclusao.getTime()
-                                )
-                            ) {
-
-                                return;
-
-                            }
+    controles.id =
+        "controles-proxima-revisao";
 
 
-                            const revisao =
-                                new Date(
-                                    conclusao
-                                );
+    controles.style.marginTop =
+        "12px";
 
 
-                            revisao.setDate(
-                                revisao.getDate() + 1
-                            );
+    controles.style.display =
+        "flex";
 
 
-                            if (
-                                !proximaRevisao ||
-                                revisao <
-                                proximaRevisao.data
-                            ) {
+    controles.style.flexWrap =
+        "wrap";
 
-                                proximaRevisao = {
 
-                                    disciplinaId:
-                                        idDisciplina,
+    controles.style.gap =
+        "8px";
 
-                                    aulaId:
-                                        idAula,
 
-                                    topicoId:
-                                        idTopico,
+    card.appendChild(
+        controles
+    );
 
-                                    data:
-                                        revisao
 
-                                };
+    return controles;
 
-                            }
+}
 
-                        }
 
-                    );
+// =====================================
+// MARCAR REVISÃO COMO REALIZADA HOJE
+// =====================================
 
-                }
+function registrarRevisaoHojeApp(
+    revisao
+) {
 
+    if (!revisao) {
+
+        return;
+
+    }
+
+
+    if (
+        typeof marcarAulaRevisadaHoje !==
+        "function"
+    ) {
+
+        console.error(
+            "marcarAulaRevisadaHoje() não está disponível."
+        );
+
+
+        return;
+
+    }
+
+
+    const resultado =
+        marcarAulaRevisadaHoje(
+
+            revisao.idDisciplina,
+
+            revisao.idAula
+
+        );
+
+
+    if (!resultado) {
+
+        window.alert(
+            "Não foi possível registrar a revisão."
+        );
+
+
+        return;
+
+    }
+
+
+    atualizarCoachingApp();
+
+}
+
+
+// =====================================
+// RENDERIZAR CONTROLES DA REVISÃO
+// =====================================
+
+function renderizarControlesRevisaoApp(
+    revisao,
+    elementoRevisao
+) {
+
+    const controles =
+        obterOuCriarControlesRevisaoApp(
+            elementoRevisao
+        );
+
+
+    if (!controles) {
+
+        return;
+
+    }
+
+
+    controles.innerHTML =
+        "";
+
+
+    // =================================
+    // NÃO EXISTE REVISÃO PROGRAMADA
+    // =================================
+
+    if (!revisao) {
+
+        const quadro =
+            document.createElement(
+                "a"
+            );
+
+
+        quadro.href =
+            "revisoes/index.html";
+
+
+        quadro.className =
+            "botao";
+
+
+        quadro.textContent =
+            "📋 Quadro de Revisões";
+
+
+        controles.appendChild(
+            quadro
+        );
+
+
+        return;
+
+    }
+
+
+    // =================================
+    // ABRIR AULA
+    // =================================
+
+    const caminho =
+        criarCaminhoRevisaoApp(
+            revisao
+        );
+
+
+    if (
+        caminho !== "#"
+    ) {
+
+        const abrir =
+            document.createElement(
+                "a"
+            );
+
+
+        abrir.href =
+            caminho;
+
+
+        abrir.className =
+            "botao";
+
+
+        abrir.textContent =
+            "📖 Revisar agora";
+
+
+        controles.appendChild(
+            abrir
+        );
+
+    }
+
+
+    // =================================
+    // REVISADA HOJE
+    // =================================
+
+    const revisadaHoje =
+        document.createElement(
+            "button"
+        );
+
+
+    revisadaHoje.type =
+        "button";
+
+
+    revisadaHoje.className =
+        "botao";
+
+
+    revisadaHoje.textContent =
+        "✅ Revisada hoje";
+
+
+    revisadaHoje.addEventListener(
+
+        "click",
+
+        function () {
+
+            registrarRevisaoHojeApp(
+                revisao
             );
 
         }
@@ -1030,7 +1464,36 @@ function encontrarProximaRevisaoApp() {
     );
 
 
-    return proximaRevisao;
+    controles.appendChild(
+        revisadaHoje
+    );
+
+
+    // =================================
+    // QUADRO DE REVISÕES
+    // =================================
+
+    const quadro =
+        document.createElement(
+            "a"
+        );
+
+
+    quadro.href =
+        "revisoes/index.html";
+
+
+    quadro.className =
+        "botao";
+
+
+    quadro.textContent =
+        "📋 Quadro de Revisões";
+
+
+    controles.appendChild(
+        quadro
+    );
 
 }
 
@@ -1058,74 +1521,225 @@ function revisar() {
         encontrarProximaRevisaoApp();
 
 
+    // =================================
+    // NENHUMA AULA EM CICLO
+    // =================================
+
     if (!revisao) {
 
-        elemento.textContent =
+        elemento.innerHTML =
+
             "Nenhuma revisão programada.";
+
+
+        renderizarControlesRevisaoApp(
+
+            null,
+
+            elemento
+
+        );
+
 
         return;
 
     }
 
 
-    const modulo =
-        encontrarModuloCatalogo(
-            revisao.disciplinaId,
-            revisao.aulaId
-        );
-
-
     const tituloAula =
-        modulo
-            ? modulo.titulo
-            : revisao.aulaId;
-
-
-    const hoje =
-        new Date();
-
-
-    hoje.setHours(
-        0,
-        0,
-        0,
-        0
-    );
-
-
-    const dataRevisao =
-        new Date(
-            revisao.data
+        obterTituloRevisaoApp(
+            revisao
         );
 
 
-    dataRevisao.setHours(
-        0,
-        0,
-        0,
-        0
+    const nomeDisciplina =
+        obterDisciplinaRevisaoApp(
+            revisao
+        );
+
+
+    const status =
+        revisao.status || {};
+
+
+    const icone =
+        status.icone ||
+        "🔔";
+
+
+    const textoStatus =
+        status.texto ||
+        "Revisão programada";
+
+
+    const data =
+        formatarDataApp(
+            revisao.proximaRevisao
+        );
+
+
+    const totalRevisoes =
+        Number(
+            revisao.totalRevisoes ||
+            0
+        );
+
+
+    // =================================
+    // CONTEÚDO DO CARD
+    // =================================
+
+    elemento.innerHTML = "";
+
+
+    const linhaStatus =
+        document.createElement(
+            "strong"
+        );
+
+
+    linhaStatus.textContent =
+
+        icone +
+
+        " " +
+
+        textoStatus;
+
+
+    elemento.appendChild(
+        linhaStatus
     );
+
+
+    elemento.appendChild(
+        document.createElement(
+            "br"
+        )
+    );
+
+
+    const linhaAula =
+        document.createElement(
+            "span"
+        );
+
+
+    linhaAula.textContent =
+        tituloAula;
+
+
+    elemento.appendChild(
+        linhaAula
+    );
+
+
+    elemento.appendChild(
+        document.createElement(
+            "br"
+        )
+    );
+
+
+    const linhaDisciplina =
+        document.createElement(
+            "small"
+        );
+
+
+    linhaDisciplina.textContent =
+        nomeDisciplina;
+
+
+    elemento.appendChild(
+        linhaDisciplina
+    );
+
+
+    elemento.appendChild(
+        document.createElement(
+            "br"
+        )
+    );
+
+
+    const linhaData =
+        document.createElement(
+            "small"
+        );
 
 
     if (
-        dataRevisao <= hoje
+        status.codigo ===
+            "vencida"
     ) {
 
-        elemento.textContent =
-            "🔔 Revisar agora: " +
-            tituloAula;
+        linhaData.textContent =
+            "Prevista para: " +
+            data;
 
     }
     else {
 
-        elemento.textContent =
-            tituloAula +
-            " — " +
-            formatarDataApp(
-                revisao.data
-            );
+        linhaData.textContent =
+            "Próxima revisão: " +
+            data;
 
     }
+
+
+    elemento.appendChild(
+        linhaData
+    );
+
+
+    // =================================
+    // HISTÓRICO RESUMIDO
+    // =================================
+
+    if (
+        totalRevisoes >
+        0
+    ) {
+
+        elemento.appendChild(
+            document.createElement(
+                "br"
+            )
+        );
+
+
+        const historico =
+            document.createElement(
+                "small"
+            );
+
+
+        historico.textContent =
+
+            totalRevisoes +
+
+            (
+                totalRevisoes === 1
+                    ? " revisão realizada"
+                    : " revisões realizadas"
+            );
+
+
+        elemento.appendChild(
+            historico
+        );
+
+    }
+
+
+    renderizarControlesRevisaoApp(
+
+        revisao,
+
+        elemento
+
+    );
 
 }
 
@@ -1147,9 +1761,12 @@ function atualizarCoachingApp() {
 
     atualizarProximaAulaApp();
 
+
     atualizarMetas();
 
+
     ultimaAula();
+
 
     revisar();
 
@@ -1163,6 +1780,30 @@ function atualizarCoachingApp() {
 document.addEventListener(
 
     "progressoPSCPPAtualizado",
+
+    function () {
+
+        atualizarCoachingApp();
+
+    }
+
+);
+
+
+// =====================================
+// OUVIR ALTERAÇÃO DE REVISÃO
+// =====================================
+//
+// Ao clicar:
+//
+// ✅ Revisada hoje
+//
+// o card muda imediatamente para a
+// próxima revisão sem recarregar a página.
+
+document.addEventListener(
+
+    "revisaoPSCPPAtualizada",
 
     function () {
 
@@ -1199,7 +1840,9 @@ document.addEventListener(
             await aguardarDadosProgressoApp();
 
 
-        if (!progressoDisponivel) {
+        if (
+            !progressoDisponivel
+        ) {
 
             return;
 
@@ -1213,6 +1856,15 @@ document.addEventListener(
 );
 
 
+// =====================================
+// DEBUG
+// =====================================
+
+console.log(
+    "APP.JS v4.1 - COACHING + REVISÕES CARREGADO"
+);
+
+
 /* =====================================================
-   FIM APP.JS v4.0
+   FIM APP.JS v4.1
 ===================================================== */
