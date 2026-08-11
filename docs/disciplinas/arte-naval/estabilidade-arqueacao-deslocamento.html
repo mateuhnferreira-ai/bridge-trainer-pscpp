@@ -1,1 +1,1510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Estabilidade, Arqueação e Deslocamento - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="arte-naval"
+    data-aula="estabilidade-arqueacao-deslocamento"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Arte Naval</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚖️ Estabilidade, Arqueação e Deslocamento
+</h2>
+
+<p>
+<strong>
+Ship Stability, Tonnage and Displacement
+</strong>
+</p>
+
+<p>
+Esta aula reúne três conceitos fundamentais da Arte Naval
+que, embora relacionados às características do navio,
+representam grandezas de natureza diferente:
+<strong>estabilidade</strong>,
+<strong>arqueação</strong>
+e
+<strong>deslocamento</strong>.
+</p>
+
+<p>
+O estudo começará pela relação entre peso,
+empuxo e volume de água deslocado e avançará
+progressivamente para os elementos fundamentais
+da estabilidade transversal do navio.
+</p>
+
+<p>
+Serão estudadas as posições do
+<strong>centro de gravidade</strong>,
+do
+<strong>centro de carena</strong>
+e do
+<strong>metacentro</strong>,
+bem como a altura metacêntrica,
+o braço de endireitamento e suas consequências
+sobre o comportamento da embarcação.
+</p>
+
+<p>
+A arqueação será tratada separadamente,
+evitando a confusão frequente entre
+<strong>tonnage</strong>,
+<strong>displacement</strong>
+e capacidade de carga.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Arte Naval
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Estabilidade, Arqueação e Deslocamento
+</p>
+
+<p>
+<strong>Termos técnicos principais:</strong>
+Ship Stability, Tonnage and Displacement
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<!-- FASE ATUAL -->
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>II — Arte Naval</strong>
+</p>
+
+<p>
+<strong>
+Estabilidade, Arqueação e Deslocamento
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="principio-flutuacao">
+princípio de flutuação e equilíbrio do navio;
+</li>
+
+<li data-progresso-topico="deslocamento">
+deslocamento;
+</li>
+
+<li data-progresso-topico="peso-empuxo">
+relação entre peso, empuxo e água deslocada;
+</li>
+
+<li data-progresso-topico="centro-gravidade">
+centro de gravidade;
+</li>
+
+<li data-progresso-topico="centro-carena">
+centro de carena;
+</li>
+
+<li data-progresso-topico="metacentro">
+metacentro;
+</li>
+
+<li data-progresso-topico="altura-metacentrica">
+altura metacêntrica;
+</li>
+
+<li data-progresso-topico="equilibrio-transversal">
+equilíbrio e estabilidade transversal;
+</li>
+
+<li data-progresso-topico="braco-endireitamento">
+braço de endireitamento;
+</li>
+
+<li data-progresso-topico="estabilidade-inicial">
+estabilidade inicial;
+</li>
+
+<li data-progresso-topico="estabilidade-estatica">
+estabilidade estática;
+</li>
+
+<li data-progresso-topico="condicao-carregamento">
+influência da condição de carregamento;
+</li>
+
+<li data-progresso-topico="arqueacao">
+arqueação;
+</li>
+
+<li data-progresso-topico="arqueacao-bruta-liquida">
+arqueação bruta e arqueação líquida;
+</li>
+
+<li data-progresso-topico="distincao-grandezas">
+distinção entre arqueação, deslocamento
+e capacidade de carga.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+compreender o princípio físico que permite
+a flutuação do navio;
+</li>
+
+<li>
+relacionar o peso da embarcação com o peso
+da água por ela deslocada;
+</li>
+
+<li>
+distinguir peso, volume deslocado
+e deslocamento;
+</li>
+
+<li>
+identificar o centro de gravidade
+e o centro de carena;
+</li>
+
+<li>
+compreender o deslocamento do centro de carena
+quando o navio aderna;
+</li>
+
+<li>
+compreender a formação geométrica
+do metacentro inicial;
+</li>
+
+<li>
+interpretar o significado da altura metacêntrica GM;
+</li>
+
+<li>
+compreender a formação do braço
+de endireitamento GZ;
+</li>
+
+<li>
+relacionar a posição do centro de gravidade
+à estabilidade transversal;
+</li>
+
+<li>
+compreender as limitações do conceito de GM
+para ângulos maiores de inclinação;
+</li>
+
+<li>
+interpretar qualitativamente
+uma curva de estabilidade;
+</li>
+
+<li>
+compreender o conceito de arqueação;
+</li>
+
+<li>
+diferenciar arqueação bruta
+e arqueação líquida;
+</li>
+
+<li>
+não confundir arqueação,
+deslocamento e capacidade de carga;
+</li>
+
+<li>
+familiarizar-se com os principais termos técnicos
+correspondentes em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Arte Naval — Volume 1
+</h3>
+
+<p>
+Publicação utilizada para os conceitos relacionados
+à geometria do navio, carena, deslocamento,
+tonelagem e demais definições fundamentais
+necessárias ao desenvolvimento deste assunto.
+</p>
+
+<p>
+<strong>Autor:</strong>
+Maurílio M. Fonseca.
+</p>
+
+<p>
+<strong>Edição:</strong>
+8ª edição, 2019.
+</p>
+
+<p>
+<strong>Trecho principal utilizado:</strong>
+Capítulo 2 — Geometria do Navio.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Estabilidade dos Rebocadores:
+Um Guia Prático para Operações Seguras
+</h3>
+
+<p>
+Publicação utilizada como referência para
+os princípios fundamentais de estabilidade,
+incluindo estabilidade transversal,
+centro de gravidade,
+centro de carena,
+metacentro,
+altura metacêntrica
+e braço de endireitamento.
+</p>
+
+<p>
+<strong>Autores:</strong>
+Henk Hensen e Markus van der Laan.
+</p>
+
+<p>
+<strong>Edição em português:</strong>
+2022.
+</p>
+
+<p>
+<strong>Trecho utilizado:</strong>
+Capítulo 2 — Princípios básicos de estabilidade.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+Os conceitos geométricos já desenvolvidos
+na aula de
+<strong>Nomenclatura, Geometria e Estrutura do Navio</strong>
+não serão repetidos integralmente.
+</p>
+
+<p>
+Nesta aula, termos como
+<strong>carena</strong>,
+<strong>linha-d'água</strong>,
+<strong>calado</strong>
+e
+<strong>trim</strong>
+serão retomados somente quando sua utilização
+for necessária para compreender deslocamento
+ou estabilidade.
+</p>
+
+<p>
+Os conceitos específicos dos rebocadores
+serão utilizados somente quando contribuírem
+para explicar os princípios gerais de estabilidade
+ou quando a aplicação operacional justificar
+essa diferenciação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+princípio da flutuação;
+</li>
+
+<li>
+deslocamento e água deslocada;
+</li>
+
+<li>
+centro de gravidade e centro de carena;
+</li>
+
+<li>
+adernamento e deslocamento do centro de carena;
+</li>
+
+<li>
+metacentro e estabilidade inicial;
+</li>
+
+<li>
+altura metacêntrica GM;
+</li>
+
+<li>
+braço de endireitamento GZ;
+</li>
+
+<li>
+estabilidade estática;
+</li>
+
+<li>
+influência da distribuição de pesos;
+</li>
+
+<li>
+comportamento de navios com diferentes níveis
+de estabilidade;
+</li>
+
+<li>
+arqueação;
+</li>
+
+<li>
+arqueação bruta e arqueação líquida;
+</li>
+
+<li>
+diferenças entre arqueação,
+deslocamento e capacidade de carga;
+</li>
+
+<li>
+aplicações operacionais;
+</li>
+
+<li>
+terminologia técnica em inglês marítimo;
+</li>
+
+<li>
+revisão e questões no padrão PSCPP.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FLUTUAÇÃO E DESLOCAMENTO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FLUTUAÇÃO E DESLOCAMENTO
+</h2>
+
+<p>
+Antes de analisar por que um navio retorna ou não
+à posição de equilíbrio depois de adernar,
+é necessário compreender por que ele flutua.
+</p>
+
+<p>
+O ponto de partida é a relação entre
+<strong>peso</strong>,
+<strong>empuxo</strong>
+e
+<strong>volume de água deslocado</strong>.
+</p>
+
+<p>
+Essa relação estabelece a base física
+para o conceito de
+<strong>deslocamento</strong>
+e permitirá compreender posteriormente
+a função do centro de carena na estabilidade.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     PRINCÍPIO DE FLUTUAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="principio-flutuacao"
+data-topico-id="principio-flutuacao">
+
+<h2>1. Princípio de flutuação do navio</h2>
+
+<div class="widget">
+
+<p>
+Quando uma embarcação flutua livremente
+e permanece em equilíbrio,
+duas forças verticais fundamentais atuam sobre ela.
+</p>
+
+<ul>
+
+<li>
+o <strong>peso da embarcação</strong>,
+atuando verticalmente para baixo;
+</li>
+
+<li>
+o <strong>empuxo hidrostático</strong>,
+atuando verticalmente para cima.
+</li>
+
+</ul>
+
+<p>
+Para que o navio permaneça flutuando
+em equilíbrio estático,
+essas forças possuem a mesma intensidade
+e sentidos opostos.
+</p>
+
+
+<div class="formula">
+
+<h3>Condição de equilíbrio vertical</h3>
+
+<p class="formula-linha">
+
+<strong>
+W = F<sub>B</sub>
+</strong>
+
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>W</strong> = peso total da embarcação;
+</li>
+
+<li>
+<strong>F<sub>B</sub></strong> =
+força de empuxo ou força de flutuação.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Princípio fundamental</h3>
+
+<p>
+A embarcação flutuante desloca uma quantidade
+de água cujo peso corresponde ao peso
+da própria embarcação.
+</p>
+
+<p>
+Portanto, quando o peso do navio se modifica,
+a condição de imersão também precisa se modificar
+até que seja restabelecido o equilíbrio.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     FIGURA 1 — EQUILÍBRIO VERTICAL
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 800 420"
+role="img"
+aria-labelledby="titulo-figura-equilibrio descricao-figura-equilibrio"
+>
+
+<title id="titulo-figura-equilibrio">
+Equilíbrio vertical de um navio flutuando
+</title>
+
+<desc id="descricao-figura-equilibrio">
+Representação esquemática de uma seção transversal
+de um navio flutuando, com o peso atuando para baixo
+e o empuxo atuando para cima.
+</desc>
+
+
+<!-- ÁGUA -->
+
+<rect
+x="0"
+y="245"
+width="800"
+height="175"
+fill="#dceff8"
+/>
+
+<line
+x1="40"
+y1="245"
+x2="760"
+y2="245"
+stroke="#2878a8"
+stroke-width="4"
+/>
+
+
+<!-- CASCO -->
+
+<path
+d="
+M 225 150
+L 575 150
+L 545 270
+Q 400 350 255 270
+Z
+"
+fill="#f5f5f5"
+stroke="#263238"
+stroke-width="4"
+/>
+
+
+<!-- EIXO CENTRAL -->
+
+<line
+x1="400"
+y1="105"
+x2="400"
+y2="355"
+stroke="#666"
+stroke-width="2"
+stroke-dasharray="8 8"
+/>
+
+
+<!-- PESO -->
+
+<line
+x1="400"
+y1="135"
+x2="400"
+y2="220"
+stroke="#c62828"
+stroke-width="6"
+/>
+
+<polygon
+points="400,235 388,213 412,213"
+fill="#c62828"
+/>
+
+<text
+x="425"
+y="175"
+font-size="24"
+fill="#c62828"
+>
+Peso W
+</text>
+
+
+<!-- EMPUXO -->
+
+<line
+x1="400"
+y1="330"
+x2="400"
+y2="270"
+stroke="#1565c0"
+stroke-width="6"
+/>
+
+<polygon
+points="400,255 388,277 412,277"
+fill="#1565c0"
+/>
+
+<text
+x="425"
+y="320"
+font-size="24"
+fill="#1565c0"
+>
+Empuxo Fᵦ
+</text>
+
+
+<!-- LINHA D'ÁGUA -->
+
+<text
+x="55"
+y="230"
+font-size="21"
+fill="#2878a8"
+>
+Linha-d'água
+</text>
+
+
+<!-- EQUAÇÃO -->
+
+<text
+x="295"
+y="395"
+font-size="27"
+font-weight="bold"
+fill="#263238"
+>
+W = Fᵦ
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 1.</strong>
+Representação esquemática do equilíbrio vertical
+entre o peso da embarcação e o empuxo hidrostático.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Não confunda
+<strong>volume de água deslocada</strong>
+com
+<strong>peso da água deslocada</strong>.
+</p>
+
+<p>
+O primeiro é uma grandeza de
+<strong>volume</strong>.
+O segundo é uma grandeza de
+<strong>peso</strong>
+e está diretamente relacionado ao deslocamento
+da embarcação.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Buoyancy</strong> —
+flutuabilidade;
+</li>
+
+<li>
+<strong>Buoyant force</strong> —
+força de empuxo ou força de flutuação;
+</li>
+
+<li>
+<strong>Weight</strong> —
+peso;
+</li>
+
+<li>
+<strong>Displaced water</strong> —
+água deslocada;
+</li>
+
+<li>
+<strong>Displaced volume</strong> —
+volume deslocado.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+     DESLOCAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="deslocamento"
+data-topico-id="deslocamento">
+
+<h2>2. Deslocamento</h2>
+
+<div class="widget">
+
+<p>
+O <strong>deslocamento</strong>,
+ou <strong>displacement</strong>,
+representa o peso do navio em determinada
+condição de carregamento.
+</p>
+
+<p>
+Como uma embarcação flutuando em equilíbrio
+desloca uma quantidade de água cujo peso
+é igual ao seu próprio peso,
+o deslocamento também pode ser determinado
+a partir do volume da carena
+e da densidade da água em que o navio flutua.
+</p>
+
+
+<div class="formula">
+
+<h3>Relação fundamental</h3>
+
+<p class="formula-linha">
+
+<strong>
+Δ = ρ × ∇
+</strong>
+
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>Δ</strong> =
+deslocamento;
+</li>
+
+<li>
+<strong>ρ</strong> =
+densidade da água;
+</li>
+
+<li>
+<strong>∇</strong> =
+volume de água deslocado,
+correspondente ao volume imerso da carena.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Significado físico</h3>
+
+<p>
+O símbolo
+<strong>∇</strong>
+representa um volume.
+</p>
+
+<p>
+Ao multiplicar esse volume pela densidade
+da água, obtém-se a massa correspondente
+da água deslocada e, conforme o sistema
+de unidades empregado, relaciona-se essa
+grandeza ao deslocamento do navio.
+</p>
+
+<p>
+Fisicamente, quanto maior for o peso
+da embarcação, maior deverá ser o volume
+de água deslocado para que o equilíbrio
+de flutuação seja mantido.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     FIGURA 2 — AUMENTO DO DESLOCAMENTO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 470"
+role="img"
+aria-labelledby="titulo-figura-deslocamento descricao-figura-deslocamento"
+>
+
+<title id="titulo-figura-deslocamento">
+Efeito do aumento de peso sobre o volume deslocado
+</title>
+
+<desc id="descricao-figura-deslocamento">
+Comparação esquemática do mesmo navio em duas
+condições de carregamento. O navio mais pesado
+apresenta maior imersão e maior volume de água deslocado.
+</desc>
+
+
+<!-- PAINEL ESQUERDO -->
+
+<text
+x="170"
+y="45"
+font-size="25"
+font-weight="bold"
+fill="#263238"
+>
+Menor deslocamento
+</text>
+
+<rect
+x="35"
+y="240"
+width="370"
+height="190"
+fill="#dceff8"
+/>
+
+<line
+x1="35"
+y1="240"
+x2="405"
+y2="240"
+stroke="#2878a8"
+stroke-width="4"
+/>
+
+<path
+d="
+M 105 145
+L 335 145
+L 315 260
+Q 220 320 125 260
+Z
+"
+fill="#f5f5f5"
+stroke="#263238"
+stroke-width="4"
+/>
+
+<line
+x1="220"
+y1="110"
+x2="220"
+y2="200"
+stroke="#c62828"
+stroke-width="5"
+/>
+
+<polygon
+points="220,215 208,193 232,193"
+fill="#c62828"
+/>
+
+<text
+x="245"
+y="165"
+font-size="21"
+fill="#c62828"
+>
+W₁
+</text>
+
+<text
+x="105"
+y="405"
+font-size="21"
+fill="#1565c0"
+>
+Menor volume imerso
+</text>
+
+
+<!-- PAINEL DIREITO -->
+
+<text
+x="590"
+y="45"
+font-size="25"
+font-weight="bold"
+fill="#263238"
+>
+Maior deslocamento
+</text>
+
+<rect
+x="495"
+y="205"
+width="370"
+height="225"
+fill="#dceff8"
+/>
+
+<line
+x1="495"
+y1="205"
+x2="865"
+y2="205"
+stroke="#2878a8"
+stroke-width="4"
+/>
+
+<path
+d="
+M 565 145
+L 795 145
+L 775 260
+Q 680 320 585 260
+Z
+"
+fill="#f5f5f5"
+stroke="#263238"
+stroke-width="4"
+/>
+
+<line
+x1="680"
+y1="100"
+x2="680"
+y2="185"
+stroke="#c62828"
+stroke-width="7"
+/>
+
+<polygon
+points="680,200 666,176 694,176"
+fill="#c62828"
+/>
+
+<text
+x="705"
+y="155"
+font-size="21"
+fill="#c62828"
+>
+W₂
+</text>
+
+<text
+x="560"
+y="405"
+font-size="21"
+fill="#1565c0"
+>
+Maior volume imerso
+</text>
+
+
+<!-- RELAÇÃO -->
+
+<text
+x="340"
+y="455"
+font-size="24"
+font-weight="bold"
+fill="#263238"
+>
+W₂ &gt; W₁  →  ∇₂ &gt; ∇₁
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 2.</strong>
+Representação simplificada da alteração da imersão
+quando aumenta o peso total da embarcação.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Consequência da adição de peso</h3>
+
+<p>
+Quando carga, combustível, água,
+provisões ou outros pesos são adicionados ao navio,
+seu peso total aumenta.
+</p>
+
+<p>
+Para recuperar o equilíbrio,
+a embarcação afunda até deslocar
+uma quantidade adicional de água
+compatível com o novo peso.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+<strong>
+Deslocamento não é volume.
+</strong>
+</p>
+
+<p>
+O volume da parte imersa é utilizado
+para determinar a quantidade de água deslocada.
+O deslocamento do navio está associado
+ao seu peso.
+</p>
+
+<p>
+Essa distinção será especialmente importante
+quando compararmos mais adiante
+<strong>deslocamento</strong>,
+<strong>porte</strong>
+e
+<strong>arqueação</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<ul>
+
+<li>
+<strong>Displacement</strong> —
+deslocamento;
+</li>
+
+<li>
+<strong>Displacement volume</strong> —
+volume de deslocamento;
+</li>
+
+<li>
+<strong>Underwater volume</strong> —
+volume imerso;
+</li>
+
+<li>
+<strong>Light displacement</strong> —
+deslocamento leve;
+</li>
+
+<li>
+<strong>Loaded displacement</strong> —
+deslocamento na condição carregada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
