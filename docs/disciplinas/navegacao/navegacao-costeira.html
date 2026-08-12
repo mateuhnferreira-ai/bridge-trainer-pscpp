@@ -11886,3 +11886,3311 @@ do Capítulo 3.
 <!-- =========================================
      FINAL PARTE 5
 ========================================= -->     
+<!-- =========================================
+     INÍCIO PARTE 6
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 6
+     A POSIÇÃO NO MAR
+     LINHAS DE POSIÇÃO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 6
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 6 — A POSIÇÃO NO MAR:
+LINHAS DE POSIÇÃO
+</h2>
+
+<p>
+Durante a execução da derrota,
+o navegante precisa responder continuamente
+a três questões fundamentais:
+</p>
+
+<ul>
+
+<li>
+<strong>qual é minha posição atual?</strong>
+</li>
+
+<li>
+<strong>para onde estou indo?</strong>
+</li>
+
+<li>
+<strong>qual será minha posição
+em determinado instante futuro?</strong>
+</li>
+
+</ul>
+
+<p>
+A determinação da posição
+e sua plotagem na Carta Náutica
+constituem problemas fundamentais
+da navegação.
+</p>
+
+<p>
+Na navegação costeira,
+uma das ferramentas essenciais
+para resolver esse problema
+é a
+<strong>Linha de Posição — LDP</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+     LINHA DE POSIÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="linhas-posicao"
+data-topico-id="linhas-posicao">
+
+<h2>
+25. Conceito de Linha de Posição — LDP
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens define
+<strong>Linha de Posição — LDP</strong>
+como o
+<strong>lugar geométrico de todas as posições
+que o navio pode ocupar</strong>
+após determinada observação,
+em determinado instante.
+</p>
+
+<p>
+Uma observação,
+isoladamente,
+normalmente não fornece um único ponto.
+</p>
+
+<p>
+Ela restringe a posição do navio
+a uma linha,
+curva
+ou circunferência
+sobre a qual ele necessariamente
+deverá encontrar-se.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Exemplo conceitual
+</h3>
+
+<p>
+Se às
+<strong>1032</strong>
+for determinado que o navio está
+a
+<strong>5 milhas</strong>
+de uma determinada ilha,
+a posição exata ainda não está definida.
+</p>
+
+<p>
+O que se sabe é que o navio
+está em algum ponto
+de uma circunferência:
+</p>
+
+<ul>
+
+<li>
+com centro na ilha;
+</li>
+
+<li>
+com raio de 5 milhas.
+</li>
+
+</ul>
+
+<p>
+Essa circunferência constitui
+uma
+<strong>Linha de Posição</strong>.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG
+     UMA LDP NÃO DEFINE O PONTO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 17 — Uma única LDP não determina a posição
+</h3>
+
+<svg
+viewBox="0 0 900 620"
+role="img"
+aria-label="Ilha no centro de uma circunferência de cinco milhas mostrando várias possíveis posições do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- circunferência -->
+
+<circle
+cx="450"
+cy="310"
+r="215"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- ilha -->
+
+<path
+d="M 420 310
+Q 435 280 455 295
+Q 478 275 495 310
+Q 485 338 450 345
+Q 420 340 420 310
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<text
+x="425"
+y="375"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+ILHA
+</text>
+
+
+<!-- raio -->
+
+<line
+x1="450"
+y1="310"
+x2="635"
+y2="200"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="8 6"
+/>
+
+
+<text
+x="535"
+y="235"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+5 NM
+</text>
+
+
+<!-- possíveis navios -->
+
+<circle
+cx="450"
+cy="95"
+r="8"
+fill="currentColor"
+/>
+
+<circle
+cx="650"
+cy="390"
+r="8"
+fill="currentColor"
+/>
+
+<circle
+cx="260"
+cy="410"
+r="8"
+fill="currentColor"
+/>
+
+
+<text
+x="460"
+y="90"
+font-size="18"
+fill="currentColor">
+posição possível
+</text>
+
+<text
+x="665"
+y="395"
+font-size="18"
+fill="currentColor">
+posição possível
+</text>
+
+<text
+x="105"
+y="420"
+font-size="18"
+fill="currentColor">
+posição possível
+</text>
+
+
+<!-- legenda -->
+
+<text
+x="270"
+y="575"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+LDP = Circunferência de Igual Distância
+</text>
+
+
+</svg>
+
+<p>
+A observação de distância restringe
+a posição a uma circunferência,
+mas não determina um ponto único.
+</p>
+
+</div>
+
+
+
+<h3>
+25.1 Tipos de Linhas de Posição
+</h3>
+
+<p>
+Miguens apresenta,
+entre as LDP utilizadas em navegação:
+</p>
+
+<ul>
+
+<li>
+<strong>Retas de Marcação;</strong>
+</li>
+
+<li>
+<strong>Retas de Alinhamento;</strong>
+</li>
+
+<li>
+<strong>Retas de Altura</strong>
+— utilizadas em Navegação Astronômica;
+</li>
+
+<li>
+<strong>Circunferências de Igual Distância;</strong>
+</li>
+
+<li>
+<strong>Circunferências dos Segmentos Capazes;</strong>
+</li>
+
+<li>
+<strong>Linhas de Igual Profundidade — Isóbatas.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>
+Identificação da LDP na Carta
+</h3>
+
+<p>
+Na navegação costeira,
+Miguens recomenda identificar
+a Linha de Posição registrando:
+</p>
+
+<ul>
+
+<li>
+sobre a LDP,
+a
+<strong>hora da observação</strong>,
+escrita com quatro algarismos;
+</li>
+
+<li>
+abaixo da LDP,
+o valor da
+<strong>marcação</strong>
+ou da
+<strong>distância</strong>
+que originou a linha.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Line of Position — LOP</strong>
+</td>
+
+<td>
+Linha de Posição — LDP
+</td>
+
+<td>
+Lugar geométrico das posições possíveis
+resultante de determinada observação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Bearing Line</strong>
+</td>
+
+<td>
+Reta de Marcação
+</td>
+
+<td>
+Linha construída a partir
+de uma marcação observada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Range / Distance Circle</strong>
+</td>
+
+<td>
+Circunferência de Igual Distância
+</td>
+
+<td>
+Circunferência centrada
+no objeto observado,
+com raio igual à distância medida.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Depth Contour</strong>
+</td>
+
+<td>
+Isóbata
+</td>
+
+<td>
+Linha que une pontos
+de igual profundidade.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+     ALINHAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="ldp-alinhamento"
+data-topico-id="ldp-alinhamento">
+
+<h2>
+26. LDP de Alinhamento
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens considera o
+<strong>alinhamento</strong>
+a Linha de Posição
+de maior precisão
+entre as LDP visuais apresentadas nesse trecho.
+</p>
+
+<p>
+Sua obtenção não exige instrumento:
+ela pode ser determinada
+por observação visual direta.
+</p>
+
+
+
+<h3>
+Condições essenciais
+</h3>
+
+<p>
+Para que dois pontos sejam utilizados
+como alinhamento:
+</p>
+
+<ul>
+
+<li>
+devem ser
+<strong>bem definidos;</strong>
+</li>
+
+<li>
+devem ser
+<strong>corretamente identificados;</strong>
+</li>
+
+<li>
+devem estar
+<strong>representados na Carta Náutica;</strong>
+</li>
+
+<li>
+a altitude do ponto posterior
+deve ser maior que a altitude
+do ponto anterior.
+</li>
+
+</ul>
+
+
+
+<!-- =========================================
+     SVG ALINHAMENTO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 18 — Linha de Posição por Alinhamento
+</h3>
+
+<svg
+viewBox="0 0 950 620"
+role="img"
+aria-label="Dois pontos notáveis alinhados com o navio formando uma linha de posição"
+style="width:100%; height:auto;"
+>
+
+
+<!-- LDP -->
+
+<line
+x1="120"
+y1="510"
+x2="830"
+y2="115"
+stroke="currentColor"
+stroke-width="5"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- ponto anterior -->
+
+<rect
+x="530"
+y="275"
+width="35"
+height="75"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polygon
+points="522,275 573,275 547,240"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- ponto posterior, mais alto -->
+
+<rect
+x="705"
+y="150"
+width="42"
+height="105"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polygon
+points="695,150 757,150 726,105"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- navio -->
+
+<g transform="translate(240 445) rotate(61)">
+
+<path
+d="M 0 -70
+L 28 -25
+L 28 42
+L 15 65
+L -15 65
+L -28 42
+L -28 -25
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- labels -->
+
+<text
+x="485"
+y="390"
+font-size="20"
+fill="currentColor">
+Ponto anterior
+</text>
+
+<text
+x="690"
+y="90"
+font-size="20"
+fill="currentColor">
+Ponto posterior
+</text>
+
+<text
+x="145"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+Navio sobre o alinhamento
+</text>
+
+
+</svg>
+
+<p>
+Quando o ponto anterior
+e o ponto posterior
+são vistos sobre a mesma direção,
+o navio encontra-se
+sobre a linha que une os dois pontos.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação operacional</h3>
+
+<p>
+Miguens ressalta que alinhamentos
+são amplamente utilizados
+na sinalização náutica
+para indicar ao navegante
+onde governar,
+mantendo a embarcação
+safa de perigos.
+</p>
+
+<p>
+Sua aplicação é especialmente relevante
+em
+<strong>canais estreitos</strong>.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Alinhamento não precisa estar previamente desenhado
+</h3>
+
+<p>
+Se dois pontos atendem
+às condições necessárias
+e estão corretamente representados
+na Carta Náutica,
+eles podem ser utilizados
+como uma LDP de alinhamento
+mesmo que o alinhamento
+não esteja previamente traçado
+na carta.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+     MARCAÇÃO VISUAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="ldp-marcacao-visual"
+data-topico-id="ldp-marcacao-visual">
+
+<h2>
+27. LDP por Marcação Visual
+</h2>
+
+<div class="widget">
+
+<p>
+A
+<strong>Reta de Marcação Visual</strong>
+é apontada por Miguens
+como uma das LDP
+mais utilizadas
+na navegação costeira
+e em águas restritas.
+</p>
+
+<p>
+A direção observada para um ponto conhecido
+é transformada em uma linha
+sobre a qual o navio deve encontrar-se.
+</p>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Regra fundamental
+</h3>
+
+<p>
+Miguens estabelece expressamente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+SÓ SE TRAÇAM NA CARTA
+MARCAÇÕES VERDADEIRAS
+</strong>
+
+</p>
+
+<p>
+Assim,
+uma marcação obtida por Agulha Magnética
+deve ser corrigida considerando:
+</p>
+
+<ul>
+
+<li>
+<strong>Desvio da Agulha;</strong>
+</li>
+
+<li>
+<strong>Declinação Magnética.</strong>
+</li>
+
+</ul>
+
+<p>
+Quando a observação é realizada
+por repetidora da Agulha Giroscópica,
+deve ser considerado
+o correspondente
+<strong>Desvio da Giro</strong>.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG RETA DE MARCAÇÃO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 19 — Reta de Marcação
+</h3>
+
+<svg
+viewBox="0 0 950 630"
+role="img"
+aria-label="Farol conhecido e reta de marcação verdadeira passando pela possível posição do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- farol -->
+
+<rect
+x="710"
+y="115"
+width="45"
+height="110"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polygon
+points="700,115 765,115 733,75"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<text
+x="675"
+y="255"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Farol conhecido
+</text>
+
+
+<!-- LDP -->
+
+<line
+x1="185"
+y1="520"
+x2="733"
+y2="170"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- navio -->
+
+<g transform="translate(355 412) rotate(58)">
+
+<path
+d="M 0 -70
+L 28 -25
+L 28 45
+L 15 68
+L -15 68
+L -28 45
+L -28 -25
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- estimada -->
+
+<circle
+cx="395"
+cy="445"
+r="50"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="7 6"
+/>
+
+
+<text
+x="170"
+y="570"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+Trecho da LDP próximo à posição estimada
+</text>
+
+
+</svg>
+
+<p>
+Miguens recomenda traçar
+a Reta de Marcação
+somente nas proximidades
+da posição estimada,
+evitando prolongá-la desnecessariamente
+por toda a carta.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Por que evitar prolongar todas as marcações?
+</h3>
+
+<p>
+Se cada reta observada
+for estendida até seu objeto,
+a Carta Náutica pode ficar
+excessivamente carregada
+por linhas.
+</p>
+
+<p>
+Esse excesso de traçados
+pode dificultar a interpretação
+e confundir o navegante.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<p>
+Miguens apresenta o seguinte registro:
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Ponto observado</th>
+<th>LDP</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>0630</strong>
+</td>
+
+<td>
+Farolete da Ponta do Arpoador
+</td>
+
+<td>
+<strong>Mv = 000°</strong>
+</td>
+
+<td>
+<strong>083,0</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+     IGUAL DISTÂNCIA
+========================================= -->
+
+<section
+class="topico-aula"
+id="ldp-igual-distancia"
+data-topico-id="ldp-igual-distancia">
+
+<h2>
+28. LDP por Circunferência de Igual Distância
+</h2>
+
+<div class="widget">
+
+<p>
+Quando a distância do navio
+a um objeto conhecido
+é determinada,
+pode ser construída uma
+<strong>Circunferência de Igual Distância</strong>.
+</p>
+
+<p>
+O traçado é realizado:
+</p>
+
+<ol>
+
+<li>
+ajustando o compasso
+na
+<strong>Escala de Latitudes</strong>
+da Carta;
+</li>
+
+<li>
+utilizando uma abertura
+igual à distância medida;
+</li>
+
+<li>
+colocando o centro
+no objeto observado;
+</li>
+
+<li>
+traçando a circunferência
+ou apenas o arco
+próximo à posição estimada.
+</li>
+
+</ol>
+
+
+
+<!-- =========================================
+     SVG IGUAL DISTÂNCIA
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 20 — Circunferência de Igual Distância
+</h3>
+
+<svg
+viewBox="0 0 900 620"
+role="img"
+aria-label="Ponta costeira no centro de um arco de distância usado como linha de posição"
+style="width:100%; height:auto;"
+>
+
+
+<!-- costa -->
+
+<path
+d="M 650 60
+Q 590 170 665 265
+Q 720 350 660 560"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- objeto -->
+
+<circle
+cx="650"
+cy="275"
+r="9"
+fill="currentColor"
+/>
+
+<text
+x="675"
+y="280"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+Objeto conhecido
+</text>
+
+
+<!-- circunferência -->
+
+<circle
+cx="650"
+cy="275"
+r="245"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- raio -->
+
+<line
+x1="650"
+y1="275"
+x2="440"
+y2="402"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="505"
+y="350"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Distância medida
+</text>
+
+
+<!-- navio -->
+
+<g transform="translate(440 402) rotate(65)">
+
+<path
+d="M 0 -65
+L 25 -22
+L 25 42
+L 14 63
+L -14 63
+L -25 42
+L -25 -22
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+</g>
+
+
+</svg>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Ponto observado</th>
+<th>LDP</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>1030</strong>
+</td>
+
+<td>
+Ponta de Cabo Frio
+</td>
+
+<td>
+<strong>Distância = 10 MN</strong>
+</td>
+
+<td>
+<strong>324,7</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Ligação com a Parte 4</h3>
+
+<p>
+A abertura do compasso
+deve ser tomada
+na
+<strong>Escala de Latitudes</strong>,
+pois a relação utilizada é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1' de latitude = 1 NM
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+     ISÓBATA
+========================================= -->
+
+<section
+class="topico-aula"
+id="ldp-isobata"
+data-topico-id="ldp-isobata">
+
+<h2>
+29. LDP por Linha de Igual Profundidade — Isóbata
+</h2>
+
+<div class="widget">
+
+<p>
+Uma profundidade medida a bordo
+também pode definir
+uma Linha de Posição.
+</p>
+
+<p>
+O navio estará,
+em princípio,
+sobre a
+<strong>isóbata</strong>
+correspondente à profundidade observada.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Natureza da LDP
+</h3>
+
+<p>
+Miguens considera a isóbata
+uma
+<strong>LDP aproximada</strong>.
+</p>
+
+<p>
+Apesar disso,
+ela possui grande utilidade
+como
+<strong>LDP de segurança</strong>,
+especialmente para evitar
+áreas de profundidade insuficiente.
+</p>
+
+</div>
+
+
+
+<h3>
+29.1 Condições para utilização
+</h3>
+
+<p>
+O emprego da isóbata
+possui maior valor quando:
+</p>
+
+<ul>
+
+<li>
+o relevo submarino é
+<strong>bem definido;</strong>
+</li>
+
+<li>
+a profundidade apresenta
+<strong>variação regular;</strong>
+</li>
+
+<li>
+a informação hidrográfica
+possui confiabilidade adequada.
+</li>
+
+</ul>
+
+<p>
+Miguens ressalta a necessidade
+de considerar as informações
+do:
+</p>
+
+<ul>
+
+<li>
+<strong>Diagrama de Levantamentos
+ou de Confiabilidade</strong>,
+nas cartas em papel;
+</li>
+
+<li>
+<strong>Diagrama de Zona de Confiança</strong>,
+nas ENC.
+</li>
+
+</ul>
+
+
+
+<h3>
+29.2 Correção pelo calado
+</h3>
+
+<p>
+O ecobatímetro pode indicar
+a profundidade abaixo da quilha.
+</p>
+
+<p>
+Nesse caso,
+para obter a profundidade total
+da superfície até o fundo,
+deve-se considerar também
+o calado do navio.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+Quando o ecobatímetro indica
+profundidade abaixo da quilha
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Profundidade real
+=
+leitura do ecobatímetro
++
+calado
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+29.3 Redução ao Nível de Redução
+</h3>
+
+<p>
+Para comparação mais rigorosa
+com a profundidade cartografada,
+Miguens explica que pode ser necessário
+reduzir a profundidade observada
+ao
+<strong>Nível de Redução da Carta</strong>.
+</p>
+
+<p>
+Para isso,
+deve-se considerar
+a altura da maré
+no instante da observação.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+Redução simplificada ao Nível de Redução
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Profundidade reduzida
+=
+profundidade observada
+−
+altura da maré
+</strong>
+
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG ISÓBATA
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 21 — Isóbata como Linha de Posição
+</h3>
+
+<svg
+viewBox="0 0 950 600"
+role="img"
+aria-label="Carta esquemática com linhas de profundidade e navio localizado sobre a isóbata de vinte metros"
+style="width:100%; height:auto;"
+>
+
+
+<!-- isóbatas -->
+
+<path
+d="M 90 150
+Q 280 90 460 155
+Q 650 225 850 130"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<path
+d="M 80 270
+Q 290 185 475 270
+Q 650 345 865 240"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<path
+d="M 95 405
+Q 300 300 490 405
+Q 660 485 850 375"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+
+<text
+x="110"
+y="135"
+font-size="20"
+fill="currentColor">
+10 m
+</text>
+
+<text
+x="110"
+y="255"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+20 m
+</text>
+
+<text
+x="110"
+y="390"
+font-size="20"
+fill="currentColor">
+30 m
+</text>
+
+
+<!-- navio sobre 20 -->
+
+<g transform="translate(470 270) rotate(85)">
+
+<path
+d="M 0 -60
+L 24 -20
+L 24 38
+L 13 60
+L -13 60
+L -24 38
+L -24 -20
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+</g>
+
+
+<text
+x="515"
+y="300"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Navio sobre a isóbata de 20 m
+</text>
+
+
+</svg>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Elemento observado</th>
+<th>LDP</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>1538</strong>
+</td>
+
+<td>
+Profundidade de 20 m
+</td>
+
+<td>
+<strong>Isóbata de 20 m</strong>
+</td>
+
+<td>
+<strong>489,3</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>
+No exemplo de Miguens,
+o valor de 20 m
+já considera as correções
+de calado
+e da altura da maré.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação operacional</h3>
+
+<p>
+A isóbata pode ser utilizada
+como uma barreira conceitual
+de segurança.
+</p>
+
+<p>
+Miguens destaca inclusive
+a possibilidade de ajustar
+uma profundidade limite
+no alarme:
+</p>
+
+<ul>
+
+<li>
+do
+<strong>ecobatímetro;</strong>
+</li>
+
+<li>
+ou do
+<strong>ECDIS</strong>.
+</li>
+
+</ul>
+
+<p>
+O estudo aprofundado dos alarmes
+e das configurações eletrônicas
+será realizado
+na aula específica de ECDIS.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+     DETERMINAÇÃO DA POSIÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="determinacao-posicao"
+data-topico-id="determinacao-posicao">
+
+<h2>
+30. Determinação da posição por interseção de LDP
+</h2>
+
+<div class="widget">
+
+<p>
+Uma única Linha de Posição
+contém a posição do navio,
+mas
+<strong>não a define</strong>.
+</p>
+
+<p>
+Para determinar a posição,
+Miguens estabelece que é necessário
+cruzar:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+duas ou mais Linhas de Posição
+</strong>
+
+</p>
+
+<p>
+Essas LDP podem ser:
+</p>
+
+<ul>
+
+<li>
+do mesmo tipo;
+</li>
+
+<li>
+de tipos diferentes;
+</li>
+
+<li>
+obtidas por observações consideradas simultâneas;
+</li>
+
+<li>
+obtidas sucessivamente,
+com o tratamento apropriado.
+</li>
+
+</ul>
+
+
+
+<!-- =========================================
+     SVG
+     CRUZAMENTO DE LDP
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 22 — Duas LDP determinando uma posição
+</h3>
+
+<svg
+viewBox="0 0 900 600"
+role="img"
+aria-label="Duas linhas de posição cruzando em um único ponto representando a posição determinada do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- LDP 1 -->
+
+<line
+x1="120"
+y1="500"
+x2="760"
+y2="125"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- LDP 2 -->
+
+<line
+x1="160"
+y1="120"
+x2="745"
+y2="505"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- posição -->
+
+<circle
+cx="445"
+cy="310"
+r="18"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="475"
+y="315"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+POSIÇÃO
+</text>
+
+
+<text
+x="165"
+y="445"
+font-size="21"
+fill="currentColor">
+LDP 1
+</text>
+
+<text
+x="660"
+y="455"
+font-size="21"
+fill="currentColor">
+LDP 2
+</text>
+
+
+</svg>
+
+<p>
+O símbolo de posição determinada
+é uma pequena circunferência
+centrada na interseção das LDP.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Observações consideradas simultâneas
+</h3>
+
+<p>
+A bordo,
+normalmente um único observador
+realiza várias observações.
+</p>
+
+<p>
+Portanto,
+elas não são rigorosamente simultâneas.
+</p>
+
+<p>
+Miguens admite,
+na prática,
+que sejam consideradas simultâneas
+desde que:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+o intervalo entre as observações
+seja o menor possível
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Escolha do método</h3>
+
+<p>
+Segundo Miguens,
+a escolha do método
+de determinação da posição
+depende,
+entre outros fatores,
+de:
+</p>
+
+<ul>
+
+<li>
+<strong>meios disponíveis a bordo;</strong>
+</li>
+
+<li>
+<strong>precisão requerida;</strong>
+</li>
+
+<li>
+<strong>distância da costa
+ou do perigo mais próximo;</strong>
+</li>
+
+<li>
+<strong>quantidade de pontos notáveis disponíveis;</strong>
+</li>
+
+<li>
+possibilidade de identificação
+visual ou radar.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+     DUAS MARCAÇÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-duas-marcacoes"
+data-topico-id="posicao-duas-marcacoes">
+
+<h2>
+31. Posição por duas marcações visuais
+</h2>
+
+<div class="widget">
+
+<p>
+Um dos métodos mais usuais
+consiste em observar
+dois pontos conhecidos
+e traçar as respectivas
+Retas de Marcação.
+</p>
+
+<p>
+A posição encontra-se
+na interseção das duas LDP.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Objeto visado</th>
+<th>Marcação</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td rowspan="2">
+<strong>0648</strong>
+</td>
+
+<td>
+Farolete da Ponta do Arpoador
+</td>
+
+<td>
+<strong>311°</strong>
+</td>
+
+<td rowspan="2">
+<strong>0022,0</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Farol da Ilha de Palmas
+</td>
+
+<td>
+<strong>229°</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Registro da posição
+</h3>
+
+<p>
+Quando a posição é determinada
+por LDP consideradas simultâneas,
+Miguens informa que
+não é necessário rotular
+individualmente cada linha.
+</p>
+
+<p>
+Identifica-se diretamente
+a posição obtida,
+registrando:
+</p>
+
+<ul>
+
+<li>
+<strong>hora;</strong>
+</li>
+
+<li>
+<strong>odômetro.</strong>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Geometria do cruzamento</h3>
+
+<p>
+Duas LDP podem,
+em princípio,
+definir uma posição,
+mas a qualidade do ponto obtido
+depende também
+da geometria da interseção.
+</p>
+
+<p>
+Por isso,
+sempre que houver possibilidade,
+o navegante deve escolher
+observações que produzam
+um cruzamento bem definido.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+     ALINHAMENTO + MARCAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-alinhamento-marcacao"
+data-topico-id="posicao-alinhamento-marcacao">
+
+<h2>
+32. Posição por alinhamento e marcação visual
+</h2>
+
+<div class="widget">
+
+<p>
+Outra combinação apresentada por Miguens
+é utilizar:
+</p>
+
+<ul>
+
+<li>
+uma
+<strong>LDP de Alinhamento;</strong>
+</li>
+
+<li>
+uma
+<strong>Reta de Marcação Visual.</strong>
+</li>
+
+</ul>
+
+<p>
+Essa combinação possui boa precisão
+e apresenta a vantagem
+de o alinhamento
+não exigir instrumento
+para sua observação.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação —
+demanda do Porto de Santos
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Objeto / referência</th>
+<th>Marcação</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td rowspan="2">
+<strong>1227</strong>
+</td>
+
+<td>
+Alinhamento C
+</td>
+
+<td>
+<strong>094°</strong>
+</td>
+
+<td rowspan="2">
+<strong>1247,0</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Farolete da Ponta da Fortaleza
+</td>
+
+<td>
+<strong>184° — través BE</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Preparação prévia</h3>
+
+<p>
+Miguens recomenda estudar:
+</p>
+
+<ul>
+
+<li>
+a
+<strong>Carta Náutica;</strong>
+</li>
+
+<li>
+o
+<strong>Roteiro</strong>
+da região;
+</li>
+
+</ul>
+
+<p>
+buscando previamente identificar
+alinhamentos que possam ser utilizados
+para posicionar o navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+     MARCAÇÃO + DISTÂNCIA
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-marcacao-distancia"
+data-topico-id="posicao-marcacao-distancia">
+
+<h2>
+33. Posição por marcação e distância
+</h2>
+
+<div class="widget">
+
+<h3>
+33.1 Marcação e distância do mesmo objeto
+</h3>
+
+<p>
+Miguens considera esse método
+capaz de produzir
+<strong>bons resultados</strong>.
+</p>
+
+<p>
+Sua principal vantagem geométrica
+é que:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+a Reta de Marcação
+e a Circunferência de Distância
+se cruzam a 90°
+</strong>
+
+</p>
+
+<p>
+Essa é uma condição favorável
+para a determinação da posição.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Combinação especialmente favorável
+</h3>
+
+<p>
+Miguens destaca a combinação:
+</p>
+
+<ul>
+
+<li>
+<strong>marcação visual;</strong>
+</li>
+
+<li>
+<strong>distância radar;</strong>
+</li>
+
+</ul>
+
+<p>
+obtidas para
+<strong>o mesmo objeto</strong>.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação —
+Ilha de Villegagnon
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Objeto visado</th>
+<th>Marcação</th>
+<th>Distância</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>1415</strong>
+</td>
+
+<td>
+Farolete da Ilha de Villegagnon
+</td>
+
+<td>
+<strong>293°</strong>
+</td>
+
+<td>
+<strong>0,75 NM</strong>
+</td>
+
+<td>
+<strong>0043,8</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG MARCAÇÃO + DISTÂNCIA
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 23 — Marcação e distância do mesmo objeto
+</h3>
+
+<svg
+viewBox="0 0 950 620"
+role="img"
+aria-label="Reta de marcação e circunferência de distância cruzando perpendicularmente na posição do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- objeto -->
+
+<circle
+cx="700"
+cy="180"
+r="10"
+fill="currentColor"
+/>
+
+<text
+x="725"
+y="185"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+Objeto
+</text>
+
+
+<!-- círculo -->
+
+<circle
+cx="700"
+cy="180"
+r="270"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- reta radial/marcação -->
+
+<line
+x1="700"
+y1="180"
+x2="335"
+y2="410"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- posição -->
+
+<circle
+cx="472"
+cy="324"
+r="17"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- símbolo de 90 -->
+
+<path
+d="M 492 312
+L 505 333
+L 484 346"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<text
+x="505"
+y="380"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+cruzamento ≈ 90°
+</text>
+
+
+</svg>
+
+</div>
+
+
+
+<h3>
+33.2 Marcação de um objeto
+e distância de outro
+</h3>
+
+<p>
+Quando não é possível obter
+boa marcação
+e boa distância
+para o mesmo objeto,
+pode-se utilizar:
+</p>
+
+<ul>
+
+<li>
+a marcação de um ponto;
+</li>
+
+<li>
+a distância de outro.
+</li>
+
+</ul>
+
+<p>
+Miguens observa que essa posição
+possui
+<strong>menor consistência</strong>
+que a obtida por marcação
+e distância do mesmo objeto,
+porque as duas LDP
+não se cruzam necessariamente
+perpendicularmente.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Objeto visado</th>
+<th>Marcação</th>
+<th>Distância</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td rowspan="2">
+<strong>1525</strong>
+</td>
+
+<td>
+Farolete da Ponta do Arpoador
+</td>
+
+<td>
+<strong>311°</strong>
+</td>
+
+<td>
+—
+</td>
+
+<td rowspan="2">
+<strong>0738,0</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Ponta de Copacabana
+— pedra mais a Leste
+</td>
+
+<td>
+—
+</td>
+
+<td>
+<strong>1,0 NM</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+     AMBIGUIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="ambiguidade-duas-ldp"
+data-topico-id="ambiguidade-duas-ldp">
+
+<h2>
+34. Ambiguidade na posição obtida por duas LDP
+</h2>
+
+<div class="widget">
+
+<p>
+Embora duas Linhas de Posição
+possam determinar uma posição,
+existem situações
+em que elas produzem
+<strong>mais de uma interseção possível</strong>.
+</p>
+
+<p>
+Nesse caso,
+surge uma
+<strong>ambiguidade</strong>.
+</p>
+
+
+
+<!-- =========================================
+     SVG AMBIGUIDADE
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 24 — Duas posições possíveis
+</h3>
+
+<svg
+viewBox="0 0 900 600"
+role="img"
+aria-label="Reta de marcação cruzando circunferência em dois pontos A e B"
+style="width:100%; height:auto;"
+>
+
+
+<!-- circunferência -->
+
+<circle
+cx="550"
+cy="300"
+r="215"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- reta -->
+
+<line
+x1="120"
+y1="465"
+x2="820"
+y2="195"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- interseções -->
+
+<circle
+cx="365"
+cy="370"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<circle
+cx="716"
+cy="235"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="330"
+y="410"
+font-size="26"
+font-weight="bold"
+fill="currentColor">
+A ?
+</text>
+
+<text
+x="735"
+y="225"
+font-size="26"
+font-weight="bold"
+fill="currentColor">
+B ?
+</text>
+
+
+</svg>
+
+<p>
+Duas LDP podem produzir
+duas posições geometricamente possíveis.
+Uma informação adicional
+é necessária para eliminar a dúvida.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Objeto visado</th>
+<th>Marcação</th>
+<th>Distância</th>
+<th>Odômetro</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td rowspan="2">
+<strong>0845</strong>
+</td>
+
+<td>
+Farol da Ilha da Moela
+</td>
+
+<td>
+<strong>090°</strong>
+</td>
+
+<td>
+—
+</td>
+
+<td rowspan="2">
+<strong>0104,5</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Ponta Itaipu
+</td>
+
+<td>
+—
+</td>
+
+<td>
+<strong>1,6 NM</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Terceira LDP</h3>
+
+<p>
+Miguens recomenda que,
+<strong>sempre que possível</strong>,
+se obtenha uma
+<strong>terceira Linha de Posição</strong>.
+</p>
+
+<p>
+Ela permite:
+</p>
+
+<ul>
+
+<li>
+eliminar possíveis ambiguidades;
+</li>
+
+<li>
+aumentar a confiança
+na posição obtida;
+</li>
+
+<li>
+verificar a consistência
+das observações.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 35
+     MARCAÇÃO + PROFUNDIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-marcacao-profundidade"
+data-topico-id="posicao-marcacao-profundidade">
+
+<h2>
+35. Posição por marcação e profundidade
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta ainda
+a combinação entre:
+</p>
+
+<ul>
+
+<li>
+uma
+<strong>Reta de Marcação;</strong>
+</li>
+
+<li>
+uma
+<strong>Isóbata.</strong>
+</li>
+
+</ul>
+
+<p>
+O método é considerado
+<strong>pouco preciso</strong>,
+mas pode fornecer
+uma posição razoável
+quando outras alternativas
+não estão disponíveis.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Condição favorável
+</h3>
+
+<p>
+Melhores resultados são obtidos
+quando a Reta de Marcação
+corta a isóbata
+o mais
+<strong>perpendicularmente possível</strong>.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da publicação
+</h3>
+
+<p>
+O navio observa:
+</p>
+
+<ul>
+
+<li>
+farol na marcação
+<strong>264°;</strong>
+</li>
+
+<li>
+profundidade simultânea
+de
+<strong>20 m.</strong>
+</li>
+
+</ul>
+
+<p>
+A posição estará
+na interseção:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Reta de Marcação 264°
+∩
+Isóbata de 20 m
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 36
+     POSICIONAMENTO ELETRÔNICO
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicionamento-eletronico"
+data-topico-id="posicionamento-eletronico">
+
+<h2>
+36. Posicionamento eletrônico
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens menciona também
+sistemas eletrônicos capazes
+de fornecer rapidamente
+a posição do navio
+com elevada precisão.
+</p>
+
+<p>
+Entre eles,
+o Volume I cita:
+</p>
+
+<ul>
+
+<li>
+<strong>e-LORAN;</strong>
+</li>
+
+<li>
+<strong>GNSS —
+Global Navigation Satellite System.</strong>
+</li>
+
+</ul>
+
+
+
+<h3>
+Sistemas GNSS citados
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Sistema</th>
+<th>Origem indicada</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>GPS</strong></td>
+<td>Estados Unidos</td>
+</tr>
+
+<tr>
+<td><strong>GLONASS</strong></td>
+<td>Rússia</td>
+</tr>
+
+<tr>
+<td><strong>GALILEO</strong></td>
+<td>Comunidade Europeia</td>
+</tr>
+
+<tr>
+<td><strong>BEIDOU / COMPASS</strong></td>
+<td>China</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<div class="destaque">
+
+<h3>
+Limite desta aula
+</h3>
+
+<p>
+Miguens informa que
+o estudo detalhado
+dos sistemas eletrônicos de posicionamento
+é realizado no
+<strong>Volume III</strong>.
+</p>
+
+<p>
+Por isso,
+nesta aula de Navegação Costeira
+eles são apresentados apenas
+como métodos adicionais
+de determinação da posição.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+🧭 Síntese — Linhas de Posição
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>LDP / Método</th>
+
+<th>Observação</th>
+
+<th>Característica principal</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Alinhamento</strong>
+</td>
+
+<td>
+Dois pontos vistos alinhados
+</td>
+
+<td>
+Grande precisão
+e dispensa instrumento
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Marcação visual</strong>
+</td>
+
+<td>
+Direção de um ponto conhecido
+</td>
+
+<td>
+Muito utilizada;
+traçar somente marcação verdadeira
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Igual distância</strong>
+</td>
+
+<td>
+Distância a um ponto conhecido
+</td>
+
+<td>
+Circunferência centrada
+no objeto
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Isóbata</strong>
+</td>
+
+<td>
+Profundidade
+</td>
+
+<td>
+LDP aproximada;
+importante para segurança
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Duas marcações</strong>
+</td>
+
+<td>
+Duas direções
+</td>
+
+<td>
+Interseção das retas
+define o ponto
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Marcação + distância</strong>
+</td>
+
+<td>
+Direção + distância
+</td>
+
+<td>
+Muito favorável
+quando do mesmo objeto
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Marcação + profundidade</strong>
+</td>
+
+<td>
+Direção + isóbata
+</td>
+
+<td>
+Menor precisão;
+alternativa quando necessário
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>📚 Referência desta parte</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte — Volume I.
+</strong>
+</p>
+
+<p>
+<strong>
+Capítulo 4 —
+A Posição no Mar.
+Navegação Costeira.
+</strong>
+</p>
+
+<p>
+Conteúdo utilizado:
+</p>
+
+<ul>
+
+<li>
+<strong>4.2</strong> —
+Conceito de Linha de Posição;
+</li>
+
+<li>
+LDP de Alinhamento;
+</li>
+
+<li>
+LDP de Marcação Visual;
+</li>
+
+<li>
+Circunferência de Igual Distância;
+</li>
+
+<li>
+Linha de Igual Profundidade — Isóbata;
+</li>
+
+<li>
+introdução ao Segmento Capaz;
+</li>
+
+<li>
+<strong>4.3</strong> —
+Determinação da Posição no Mar;
+</li>
+
+<li>
+posição por duas marcações;
+</li>
+
+<li>
+posição por alinhamento
+e marcação;
+</li>
+
+<li>
+posição por marcação
+e distância;
+</li>
+
+<li>
+ambiguidade por duas LDP;
+</li>
+
+<li>
+posição por marcação
+e profundidade;
+</li>
+
+<li>
+referência aos métodos
+de posicionamento eletrônico.
+</li>
+
+</ul>
+
+<p>
+Os valores numéricos,
+horários,
+marcações,
+distâncias
+e odômetros apresentados
+nos exemplos desta parte
+foram mantidos conforme
+os exemplos do Capítulo 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 6
+========================================= -->
