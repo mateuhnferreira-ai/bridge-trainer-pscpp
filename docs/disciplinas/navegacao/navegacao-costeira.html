@@ -15194,3 +15194,11772 @@ os exemplos do Capítulo 4.
 <!-- =========================================
      FINAL PARTE 6
 ========================================= -->
+<!-- =========================================
+     INÍCIO PARTE 7
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 7
+     POSIÇÃO POR SEGMENTOS CAPAZES
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 7
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 7 — POSIÇÃO POR SEGMENTOS CAPAZES
+</h2>
+
+<p>
+Além das posições obtidas por
+<strong>marcações</strong>,
+<strong>distâncias</strong>
+e
+<strong>alinhamentos</strong>,
+a navegação costeira dispõe de outro método
+de elevada precisão:
+a posição por
+<strong>segmentos capazes</strong>.
+</p>
+
+<p>
+O método utiliza
+<strong>ângulos horizontais</strong>
+observados entre pontos notáveis
+representados na Carta Náutica.
+</p>
+
+<p>
+Cada ângulo observado define uma
+<strong>Linha de Posição</strong>
+em forma de circunferência.
+</p>
+
+<p>
+A combinação de dois segmentos capazes,
+obtidos a partir de três pontos,
+permite determinar a posição do navio
+com elevado grau de precisão.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 37
+     CONCEITO DE SEGMENTO CAPAZ
+========================================= -->
+
+<section
+class="topico-aula"
+id="segmento-capaz"
+data-topico-id="segmento-capaz">
+
+<h2>
+37. Conceito de Segmento Capaz
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens estabelece que,
+ao observar com o
+<strong>sextante</strong>
+um ângulo horizontal
+<strong>α</strong>
+entre dois pontos conhecidos
+<strong>M</strong>
+e
+<strong>F</strong>,
+fica definida uma Linha de Posição.
+</p>
+
+<p>
+Essa LDP é o lugar geométrico
+dos pontos a partir dos quais
+o segmento
+<strong>MF</strong>
+é observado segundo o mesmo ângulo
+<strong>α</strong>.
+</p>
+
+<p>
+A Linha de Posição resultante
+é uma circunferência,
+denominada
+<strong>segmento capaz</strong>
+desse ângulo.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+Relação geométrica fundamental
+</h3>
+
+<p>
+Se
+<strong>α</strong>
+é o ângulo observado a partir do navio,
+o centro
+<strong>O</strong>
+da circunferência está situado
+na mediatriz de
+<strong>MF</strong>,
+de modo que:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+∠MOF = 2α
+</strong>
+
+</p>
+
+<p>
+O raio da circunferência
+é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = OM = OF
+</strong>
+
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG
+     CONCEITO DO SEGMENTO CAPAZ
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 25 — Geometria do Segmento Capaz
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Circunferência de segmento capaz passando pelos pontos M e F e por diferentes possíveis posições do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- circunferência -->
+
+<circle
+cx="500"
+cy="360"
+r="260"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- centro O -->
+
+<circle
+cx="500"
+cy="360"
+r="8"
+fill="currentColor"
+/>
+
+<text
+x="515"
+y="365"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+O
+</text>
+
+
+<!-- pontos M e F -->
+
+<circle
+cx="280"
+cy="500"
+r="9"
+fill="currentColor"
+/>
+
+<circle
+cx="720"
+cy="500"
+r="9"
+fill="currentColor"
+/>
+
+
+<text
+x="245"
+y="535"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+M
+</text>
+
+<text
+x="730"
+y="535"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+F
+</text>
+
+
+<!-- segmento MF -->
+
+<line
+x1="280"
+y1="500"
+x2="720"
+y2="500"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- raios OM OF -->
+
+<line
+x1="500"
+y1="360"
+x2="280"
+y2="500"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+<line
+x1="500"
+y1="360"
+x2="720"
+y2="500"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+
+<!-- posição A -->
+
+<circle
+cx="500"
+cy="100"
+r="10"
+fill="currentColor"
+/>
+
+<text
+x="520"
+y="105"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+A
+</text>
+
+
+<!-- linhas de visada de A -->
+
+<line
+x1="500"
+y1="100"
+x2="280"
+y2="500"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="500"
+y1="100"
+x2="720"
+y2="500"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- arco alfa -->
+
+<path
+d="M 451 189
+A 102 102 0 0 1 549 189"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="485"
+y="205"
+font-size="27"
+font-weight="bold"
+fill="currentColor">
+α
+</text>
+
+
+<!-- arco 2 alfa no centro -->
+
+<path
+d="M 430 405
+A 90 90 0 0 0 570 405"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="478"
+y="445"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+2α
+</text>
+
+
+<!-- outras posições possíveis -->
+
+<circle
+cx="300"
+cy="175"
+r="8"
+fill="currentColor"
+/>
+
+<circle
+cx="700"
+cy="175"
+r="8"
+fill="currentColor"/>
+
+<text
+x="255"
+y="155"
+font-size="19"
+fill="currentColor">
+posição possível
+</text>
+
+<text
+x="710"
+y="155"
+font-size="19"
+fill="currentColor">
+posição possível
+</text>
+
+
+</svg>
+
+<p>
+Todos os pontos pertencentes
+à mesma circunferência
+observam o segmento
+<strong>MF</strong>
+sob o mesmo ângulo
+<strong>α</strong>.
+</p>
+
+<p>
+Assim,
+uma única observação angular
+define uma LDP,
+mas ainda não uma posição única.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Natureza da LDP
+</h3>
+
+<p>
+O Segmento Capaz não é uma reta.
+</p>
+
+<p>
+Ele é uma
+<strong>circunferência</strong>
+que passa pelos dois pontos observados
+e pela posição do navio.
+</p>
+
+<p>
+Para determinar efetivamente a posição,
+será necessário combinar
+dois segmentos capazes.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Horizontal Angle</strong>
+</td>
+
+<td>
+Ângulo horizontal
+</td>
+
+<td>
+Ângulo observado entre dois pontos
+utilizado para definir
+uma LDP do tipo segmento capaz.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Sextant</strong>
+</td>
+
+<td>
+Sextante
+</td>
+
+<td>
+Instrumento utilizado
+para medir ângulos.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Circle of Position</strong>
+</td>
+
+<td>
+Circunferência de posição
+</td>
+
+<td>
+Lugar geométrico
+das posições possíveis
+associadas à observação.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 38
+     TRAÇADO DO SEGMENTO CAPAZ
+========================================= -->
+
+<section
+class="topico-aula"
+id="tracado-segmento-capaz"
+data-topico-id="tracado-segmento-capaz">
+
+<h2>
+38. Traçado gráfico do Segmento Capaz
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta um procedimento gráfico
+para construir a circunferência
+correspondente ao ângulo observado.
+</p>
+
+<p>
+O exemplo da publicação considera
+um ângulo horizontal de:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+α = 30°
+</strong>
+
+</p>
+
+
+
+<h3>
+38.1 Primeiro passo — traçar a mediatriz
+</h3>
+
+<p>
+Inicialmente,
+traça-se a perpendicular
+ao segmento
+<strong>MF</strong>
+em seu ponto médio.
+</p>
+
+<p>
+Essa linha é a
+<strong>mediatriz</strong>
+de MF
+e conterá o centro
+<strong>O</strong>
+da circunferência.
+</p>
+
+
+
+<h3>
+38.2 Segundo passo — determinar a direção do centro
+</h3>
+
+<p>
+Como o ângulo observado
+é menor que 90°,
+Miguens determina que,
+a partir de
+<strong>M</strong>
+ou
+<strong>F</strong>,
+se marque:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+90° − α
+</strong>
+
+</p>
+
+<p>
+No exemplo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+90° − 30° = 60°
+</strong>
+
+</p>
+
+<p>
+Essa linha é prolongada
+até interceptar
+a mediatriz de MF.
+</p>
+
+
+
+<h3>
+38.3 Terceiro passo — encontrar o centro
+</h3>
+
+<p>
+A interseção encontrada
+é o ponto
+<strong>O</strong>,
+centro do segmento capaz.
+</p>
+
+<p>
+Com centro em O
+e raio:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+OF = OM
+</strong>
+
+</p>
+
+<p>
+traça-se a circunferência.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Caso α seja maior que 90°
+</h3>
+
+<p>
+Miguens estabelece que,
+se o ângulo observado
+for maior que 90°,
+o ângulo utilizado
+na construção,
+a partir de M ou F,
+será:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+α − 90°
+</strong>
+
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG
+     CONSTRUÇÃO DO EXEMPLO 30°
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 26 — Construção do Segmento Capaz para α = 30°
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Construção geométrica do segmento capaz de 30 graus entre os pontos M e F"
+style="width:100%; height:auto;"
+>
+
+
+<!-- MF -->
+
+<line
+x1="250"
+y1="520"
+x2="750"
+y2="520"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<circle
+cx="250"
+cy="520"
+r="9"
+fill="currentColor"
+/>
+
+<circle
+cx="750"
+cy="520"
+r="9"
+fill="currentColor"/>
+
+<text
+x="220"
+y="555"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+M
+</text>
+
+<text
+x="760"
+y="555"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+F
+</text>
+
+
+<!-- ponto médio -->
+
+<circle
+cx="500"
+cy="520"
+r="7"
+fill="currentColor"/>
+
+
+<!-- mediatriz -->
+
+<line
+x1="500"
+y1="620"
+x2="500"
+y2="80"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="9 7"
+/>
+
+<text
+x="520"
+y="130"
+font-size="20"
+fill="currentColor">
+Mediatriz de MF
+</text>
+
+
+<!-- linha 60° a partir de M -->
+
+<line
+x1="250"
+y1="520"
+x2="500"
+y2="87"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- centro O -->
+
+<circle
+cx="500"
+cy="87"
+r="10"
+fill="currentColor"
+/>
+
+<text
+x="520"
+y="95"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+O
+</text>
+
+
+<!-- círculo -->
+
+<circle
+cx="500"
+cy="87"
+r="500"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="10 7"
+/>
+
+
+<!-- arco 60 -->
+
+<path
+d="M 330 520
+A 80 80 0 0 0 290 451"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="305"
+y="465"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+60°
+</text>
+
+
+<!-- indicação alfa -->
+
+<text
+x="390"
+y="640"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+α = 30°
+</text>
+
+
+</svg>
+
+<p>
+No exemplo,
+o ângulo marcado a partir de M
+é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+90° − 30° = 60°
+</strong>
+
+</p>
+
+<p>
+Sua interseção com a mediatriz
+determina o centro O.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Não confunda:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+ângulo observado pelo navio = α
+</strong>
+
+</p>
+
+<p>
+com:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+ângulo central = 2α
+</strong>
+
+</p>
+
+<p>
+No exemplo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+α = 30°
+→
+∠MOF = 60°
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 39
+     CUIDADOS NA OBSERVAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="cuidados-segmento-capaz"
+data-topico-id="cuidados-segmento-capaz">
+
+<h2>
+39. Cuidados na observação dos ângulos
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens considera o segmento capaz
+uma Linha de Posição
+<strong>muito rigorosa</strong>,
+desde que sejam observados
+determinados cuidados.
+</p>
+
+
+
+<h3>
+39.1 Altitude dos pontos visados
+</h3>
+
+<p>
+Os pontos observados devem estar:
+</p>
+
+<ul>
+
+<li>
+<strong>próximos ao horizonte;</strong>
+</li>
+
+<li>
+com
+<strong>baixa altitude;</strong>
+</li>
+
+<li>
+sem diferença de altitude apreciável
+entre eles.
+</li>
+
+</ul>
+
+<p>
+Isso ocorre porque,
+na realidade,
+o sextante mede uma
+<strong>distância angular inclinada</strong>
+entre os pontos,
+e não diretamente
+o ângulo horizontal
+representado na carta.
+</p>
+
+<p>
+Se os pontos tiverem
+altitudes elevadas
+ou muito diferentes entre si,
+a diferença entre:
+</p>
+
+<ul>
+
+<li>
+ângulo inclinado observado;
+</li>
+
+<li>
+ângulo horizontal correspondente
+</li>
+
+</ul>
+
+<p>
+pode tornar-se significativa,
+introduzindo erro na LDP.
+</p>
+
+
+
+<!-- =========================================
+     SVG
+     ERRO DE ALTITUDE
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 27 — Efeito da diferença de altitude
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Navio observando dois pontos costeiros de altitudes muito diferentes e comparação com dois pontos próximos ao horizonte"
+style="width:100%; height:auto;"
+>
+
+
+<!-- nível do mar -->
+
+<line
+x1="80"
+y1="500"
+x2="920"
+y2="500"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- navio -->
+
+<g transform="translate(250 475) rotate(90)">
+
+<path
+d="M 0 -65
+L 25 -22
+L 25 40
+L 13 62
+L -13 62
+L -25 40
+L -25 -22
+Z"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- ponto baixo -->
+
+<rect
+x="650"
+y="435"
+width="35"
+height="65"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="620"
+y="535"
+font-size="19"
+fill="currentColor">
+Ponto baixo
+</text>
+
+
+<!-- ponto alto -->
+
+<rect
+x="820"
+y="210"
+width="35"
+height="290"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="785"
+y="190"
+font-size="19"
+fill="currentColor">
+Ponto elevado
+</text>
+
+
+<!-- visadas -->
+
+<line
+x1="250"
+y1="455"
+x2="668"
+y2="435"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<line
+x1="250"
+y1="455"
+x2="838"
+y2="210"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- ângulo -->
+
+<path
+d="M 350 450
+A 100 100 0 0 0 342 416"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="360"
+y="420"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+ângulo inclinado
+</text>
+
+
+</svg>
+
+<p>
+Quanto maior a diferença de altitude,
+maior pode ser a diferença
+entre o ângulo efetivamente medido
+e o ângulo horizontal
+utilizado na carta.
+</p>
+
+</div>
+
+
+
+<h3>
+39.2 Valor mínimo do ângulo
+</h3>
+
+<p>
+Miguens estabelece que:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+α não deve ser inferior a 30°
+</strong>
+
+</p>
+
+<p>
+Ângulos menores
+produzem erros de plotagem
+progressivamente maiores.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Regra prática apresentada por Miguens
+</h3>
+
+<p>
+Como regra,
+não se deve observar
+ângulos horizontais
+a distância superior a aproximadamente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+2,5 × distância entre os pontos visados
+</strong>
+
+</p>
+
+<p>
+Seguindo essa regra,
+o ângulo observado
+não deverá ser inferior
+a cerca de
+<strong>30°</strong>.
+</p>
+
+</div>
+
+
+
+<h3>
+39.3 Erro instrumental
+</h3>
+
+<p>
+O eventual
+<strong>erro instrumental do sextante</strong>
+deve ser aplicado
+às leituras obtidas.
+</p>
+
+<p>
+O tratamento detalhado
+da correção instrumental
+pertence ao conteúdo específico
+do sextante,
+referenciado por Miguens
+no Volume II.
+</p>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Síntese dos cuidados
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Aspecto</th>
+<th>Condição recomendada</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Altitude dos pontos</td>
+<td>Baixa, próxima ao horizonte</td>
+</tr>
+
+<tr>
+<td>Diferença de altitude</td>
+<td>Pequena</td>
+</tr>
+
+<tr>
+<td>Ângulo observado</td>
+<td>Preferencialmente ≥ 30°</td>
+</tr>
+
+<tr>
+<td>Distância de observação</td>
+<td>
+Não superior, como regra,
+a cerca de 2,5 vezes
+a distância entre os pontos
+</td>
+</tr>
+
+<tr>
+<td>Sextante</td>
+<td>
+Aplicar o erro instrumental,
+quando existente
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 40
+     POSIÇÃO POR DOIS SEGMENTOS CAPAZES
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-segmentos-capazes"
+data-topico-id="posicao-segmentos-capazes">
+
+<h2>
+40. Posição por dois Segmentos Capazes
+</h2>
+
+<div class="widget">
+
+<p>
+A determinação da posição
+é realizada combinando
+<strong>dois segmentos capazes</strong>.
+</p>
+
+<p>
+Para isso,
+Miguens utiliza
+<strong>três pontos conhecidos</strong>,
+sendo o ponto central
+comum aos dois ângulos observados.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Configuração básica
+</h3>
+
+<p>
+Considere três pontos:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+A — B — C
+</strong>
+
+</p>
+
+<p>
+São medidos:
+</p>
+
+<ul>
+
+<li>
+ângulo horizontal entre
+<strong>A e B;</strong>
+</li>
+
+<li>
+ângulo horizontal entre
+<strong>B e C.</strong>
+</li>
+
+</ul>
+
+<p>
+O ponto
+<strong>B</strong>
+é comum aos dois ângulos.
+</p>
+
+</div>
+
+
+
+<p>
+As observações devem ser realizadas:
+</p>
+
+<ul>
+
+<li>
+<strong>simultaneamente;</strong>
+</li>
+
+<li>
+ou,
+quando isso não for possível,
+com o
+<strong>menor intervalo de tempo possível</strong>.
+</li>
+
+</ul>
+
+<p>
+Os dois segmentos capazes
+passam pelo ponto central
+e se cruzam novamente
+em outro ponto.
+</p>
+
+<p>
+Essa segunda interseção
+define a
+<strong>posição do navio</strong>.
+</p>
+
+
+
+<!-- =========================================
+     SVG
+     DOIS SEGMENTOS CAPAZES
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 28 — Posição por dois Segmentos Capazes
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Três pontos A B C na costa e dois segmentos capazes que se cruzam na posição do navio"
+style="width:100%; height:auto;"
+>
+
+
+<!-- costa -->
+
+<path
+d="M 100 120
+Q 280 70 480 115
+Q 680 165 900 105"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- pontos A B C -->
+
+<circle cx="220" cy="105" r="9" fill="currentColor"/>
+<circle cx="500" cy="120" r="9" fill="currentColor"/>
+<circle cx="790" cy="120" r="9" fill="currentColor"/>
+
+<text x="195" y="85" font-size="24" font-weight="bold" fill="currentColor">A</text>
+<text x="490" y="95" font-size="24" font-weight="bold" fill="currentColor">B</text>
+<text x="805" y="105" font-size="24" font-weight="bold" fill="currentColor">C</text>
+
+
+<!-- círculo AB -->
+
+<circle
+cx="360"
+cy="330"
+r="264"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- círculo BC -->
+
+<circle
+cx="645"
+cy="332"
+r="267"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- navio/interseção -->
+
+<circle
+cx="503"
+cy="548"
+r="18"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="530"
+y="555"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+POSIÇÃO DO NAVIO
+</text>
+
+
+<!-- visadas -->
+
+<line
+x1="503"
+y1="548"
+x2="220"
+y2="105"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+<line
+x1="503"
+y1="548"
+x2="500"
+y2="120"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+<line
+x1="503"
+y1="548"
+x2="790"
+y2="120"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+
+<!-- ângulos -->
+
+<text
+x="360"
+y="460"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+α
+</text>
+
+<text
+x="630"
+y="460"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+β
+</text>
+
+
+</svg>
+
+<p>
+O ponto central
+<strong>B</strong>
+é comum aos dois ângulos.
+A segunda interseção
+dos dois segmentos capazes
+é a posição do navio.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Precisão do método
+</h3>
+
+<p>
+Miguens afirma que
+a combinação de dois segmentos capazes
+fornece a posição do navio
+com
+<strong>elevado grau de precisão</strong>.
+</p>
+
+<p>
+Essa precisão depende,
+naturalmente,
+da correta escolha dos pontos
+e da qualidade das observações.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 41
+     PROCESSOS DE PLOTAGEM
+========================================= -->
+
+<section
+class="topico-aula"
+id="plotagem-segmentos-capazes"
+data-topico-id="plotagem-segmentos-capazes">
+
+<h2>
+41. Processos de plotagem da posição
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta
+<strong>três processos</strong>
+para plotar a posição
+obtida por segmentos capazes.
+</p>
+
+
+
+<h3>
+41.1 Método gráfico
+</h3>
+
+<p>
+O primeiro processo consiste
+em traçar geometricamente
+os dois segmentos capazes
+na Carta Náutica,
+utilizando o procedimento estudado
+no tópico anterior.
+</p>
+
+<p>
+Miguens observa que esse método
+é
+<strong>muito pouco empregado</strong>
+na prática.
+</p>
+
+
+
+<h3>
+41.2 Estaciógrafo
+</h3>
+
+<p>
+O segundo processo,
+mais rápido
+e normalmente preferido a bordo,
+utiliza o
+<strong>estaciógrafo</strong>.
+</p>
+
+<p>
+O instrumento possui,
+essencialmente:
+</p>
+
+<ul>
+
+<li>
+um círculo graduado;
+</li>
+
+<li>
+uma régua central fixa;
+</li>
+
+<li>
+duas réguas laterais móveis.
+</li>
+
+</ul>
+
+<p>
+A régua central passa
+pelo centro do círculo
+e pelo zero da graduação.
+</p>
+
+<p>
+As outras duas réguas
+são ajustadas
+de acordo com os ângulos observados.
+</p>
+
+
+
+<!-- =========================================
+     SVG
+     ESTACIÓGRAFO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 29 — Princípio de funcionamento do Estaciógrafo
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Representação simplificada de um estaciógrafo com três réguas irradiando de um círculo central e alinhadas com três pontos A B C"
+style="width:100%; height:auto;"
+>
+
+
+<!-- círculo graduado -->
+
+<circle
+cx="500"
+cy="400"
+r="135"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- centro -->
+
+<circle
+cx="500"
+cy="400"
+r="9"
+fill="currentColor"
+/>
+
+
+<!-- régua central -->
+
+<line
+x1="500"
+y1="400"
+x2="500"
+y2="80"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+
+<!-- régua esquerda -->
+
+<line
+x1="500"
+y1="400"
+x2="195"
+y2="155"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+
+<!-- régua direita -->
+
+<line
+x1="500"
+y1="400"
+x2="815"
+y2="155"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+
+<!-- pontos A B C -->
+
+<circle cx="195" cy="155" r="10" fill="currentColor"/>
+<circle cx="500" cy="80" r="10" fill="currentColor"/>
+<circle cx="815" cy="155" r="10" fill="currentColor"/>
+
+<text x="155" y="140" font-size="25" font-weight="bold" fill="currentColor">A</text>
+<text x="520" y="75" font-size="25" font-weight="bold" fill="currentColor">B</text>
+<text x="835" y="145" font-size="25" font-weight="bold" fill="currentColor">C</text>
+
+
+<!-- labels -->
+
+<text
+x="440"
+y="590"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Centro = posição do navio
+</text>
+
+<text
+x="330"
+y="680"
+font-size="20"
+fill="currentColor">
+Réguas ajustadas aos dois ângulos observados
+</text>
+
+
+</svg>
+
+<p>
+Depois de introduzidos
+os ângulos medidos,
+o instrumento é deslocado
+sobre a Carta
+até que suas três réguas
+tangenciem simultaneamente
+os três pontos observados.
+</p>
+
+<p>
+O centro do círculo
+indica então
+a posição do navio.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Graduação do Estaciógrafo
+</h3>
+
+<p>
+Miguens descreve uma graduação
+normalmente marcada:
+</p>
+
+<ul>
+
+<li>
+de
+<strong>0° a 180°</strong>
+para cada lado da régua central;
+</li>
+
+<li>
+com divisões geralmente
+de
+<strong>0,5° em 0,5°</strong>.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h3>
+41.3 Estaciógrafo de Fortuna
+</h3>
+
+<p>
+Quando não se dispõe
+de um estaciógrafo
+e não se deseja utilizar
+o método gráfico,
+Miguens apresenta o chamado:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Estaciógrafo de Fortuna
+</strong>
+
+</p>
+
+<p>
+O método utiliza
+uma folha de papel transparente.
+</p>
+
+<p>
+Nessa folha:
+</p>
+
+<ol>
+
+<li>
+traçam-se os dois ângulos observados;
+</li>
+
+<li>
+a folha é colocada
+sobre a Carta Náutica;
+</li>
+
+<li>
+move-se a folha
+até fazer coincidir
+as três linhas de visada
+com os três pontos observados;
+</li>
+
+<li>
+o vértice comum
+dos dois ângulos
+representa a posição do navio.
+</li>
+
+</ol>
+
+
+
+<div class="destaque">
+
+<h3>
+Comparação dos processos
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Processo</th>
+<th>Característica</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Método gráfico</td>
+<td>
+Constrói diretamente
+os segmentos capazes;
+pouco empregado
+</td>
+</tr>
+
+<tr>
+<td>Estaciógrafo</td>
+<td>
+Processo mais rápido
+e normalmente preferido a bordo
+</td>
+</tr>
+
+<tr>
+<td>Estaciógrafo de Fortuna</td>
+<td>
+Solução improvisada
+com papel transparente
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 42
+     CIRCUNFERÊNCIA DE INDETERMINAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="circunferencia-indeterminacao"
+data-topico-id="circunferencia-indeterminacao">
+
+<h2>
+42. Circunferência de Indeterminação
+</h2>
+
+<div class="widget">
+
+<p>
+A escolha dos três objetos
+é fundamental
+para a qualidade da posição.
+</p>
+
+<p>
+Existe uma configuração
+que deve ser evitada:
+</p>
+
+<p>
+os três pontos observados
+e a posição do navio
+pertencerem à
+<strong>mesma circunferência</strong>.
+</p>
+
+<p>
+Nessa situação,
+qualquer ponto dessa circunferência
+observa os mesmos dois ângulos,
+e a posição torna-se
+<strong>indeterminada</strong>.
+</p>
+
+
+
+<!-- =========================================
+     SVG
+     CIRCUNFERÊNCIA DE INDETERMINAÇÃO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 30 — Circunferência de Indeterminação
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Três pontos A B C e várias possíveis posições do navio sobre a mesma circunferência de indeterminação"
+style="width:100%; height:auto;"
+>
+
+
+<!-- círculo -->
+
+<circle
+cx="500"
+cy="350"
+r="275"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- três pontos -->
+
+<circle cx="250" cy="235" r="9" fill="currentColor"/>
+<circle cx="500" cy="75" r="9" fill="currentColor"/>
+<circle cx="750" cy="235" r="9" fill="currentColor"/>
+
+<text x="215" y="220" font-size="24" font-weight="bold" fill="currentColor">A</text>
+<text x="515" y="80" font-size="24" font-weight="bold" fill="currentColor">B</text>
+<text x="770" y="225" font-size="24" font-weight="bold" fill="currentColor">C</text>
+
+
+<!-- possíveis navios -->
+
+<circle cx="300" cy="540" r="14" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="500" cy="625" r="14" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="700" cy="540" r="14" fill="none" stroke="currentColor" stroke-width="4"/>
+
+<text x="215" y="585" font-size="19" fill="currentColor">posição possível</text>
+<text x="460" y="670" font-size="19" fill="currentColor">posição possível</text>
+<text x="715" y="585" font-size="19" fill="currentColor">posição possível</text>
+
+
+<text
+x="300"
+y="390"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+CIRCUNFERÊNCIA DE INDETERMINAÇÃO
+</text>
+
+
+</svg>
+
+<p>
+Nessa geometria,
+os dois ângulos observados
+não permitem distinguir
+qual ponto da circunferência
+é a posição verdadeira.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O problema não está
+na precisão do sextante,
+mas na
+<strong>geometria escolhida</strong>.
+</p>
+
+<p>
+Mesmo duas observações perfeitas
+podem produzir posição indeterminada
+se os três pontos
+forem selecionados
+em configuração desfavorável.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 43
+     CONDIÇÕES FAVORÁVEIS
+========================================= -->
+
+<section
+class="topico-aula"
+id="escolha-objetos-segmentos-capazes"
+data-topico-id="escolha-objetos-segmentos-capazes">
+
+<h2>
+43. Condições favoráveis para escolha dos três pontos
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta três condições
+particularmente favoráveis
+para evitar
+a circunferência de indeterminação.
+</p>
+
+
+
+<h3>
+43.1 Três pontos em linha reta
+ou aproximadamente alinhados
+</h3>
+
+<p>
+Quando os três pontos
+estão em linha reta
+ou próximos dessa condição,
+a circunferência de indeterminação
+pode ser considerada
+com raio infinito.
+</p>
+
+<p>
+Assim,
+a posição do navio
+permanece definível.
+</p>
+
+
+
+<h3>
+43.2 Ponto central mais próximo do navio
+</h3>
+
+<p>
+Outra condição favorável
+ocorre quando o
+<strong>ponto central</strong>
+está mais próximo do navio
+que os dois pontos laterais.
+</p>
+
+<p>
+Nessa configuração,
+a circunferência de indeterminação
+fica com sua convexidade
+voltada para a região
+em que se navega,
+favorecendo uma posição bem definida.
+</p>
+
+
+
+<h3>
+43.3 Navio no interior do triângulo
+</h3>
+
+<p>
+Também é favorável
+quando o navio se encontra
+<strong>dentro do triângulo</strong>
+formado pelos três pontos observados.
+</p>
+
+<p>
+Segundo Miguens,
+nessa situação
+a posição também fica
+bem definida,
+pois o navio permanece afastado
+da circunferência de indeterminação.
+</p>
+
+
+
+<!-- =========================================
+     SVG
+     TRÊS CONDIÇÕES FAVORÁVEIS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 31 — Geometrias favoráveis
+</h3>
+
+<svg
+viewBox="0 0 1200 680"
+role="img"
+aria-label="Três esquemas mostrando pontos alinhados, ponto central mais próximo e navio dentro do triângulo"
+style="width:100%; height:auto;"
+>
+
+
+<!-- =========================================
+     CASO 1
+========================================= -->
+
+<text
+x="80"
+y="70"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+1 — Pontos aproximadamente alinhados
+</text>
+
+<line
+x1="90"
+y1="210"
+x2="350"
+y2="210"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<circle cx="110" cy="210" r="9" fill="currentColor"/>
+<circle cx="220" cy="210" r="9" fill="currentColor"/>
+<circle cx="330" cy="210" r="9" fill="currentColor"/>
+
+<text x="95" y="190" font-size="19" fill="currentColor">A</text>
+<text x="210" y="190" font-size="19" fill="currentColor">B</text>
+<text x="320" y="190" font-size="19" fill="currentColor">C</text>
+
+<circle
+cx="220"
+cy="410"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="150"
+y="455"
+font-size="19"
+fill="currentColor">
+Navio
+</text>
+
+
+<!-- divisor -->
+
+<line
+x1="400"
+y1="50"
+x2="400"
+y2="620"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+
+<!-- =========================================
+     CASO 2
+========================================= -->
+
+<text
+x="440"
+y="70"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+2 — Ponto central mais próximo
+</text>
+
+<circle cx="465" cy="180" r="9" fill="currentColor"/>
+<circle cx="600" cy="310" r="9" fill="currentColor"/>
+<circle cx="735" cy="180" r="9" fill="currentColor"/>
+
+<text x="445" y="160" font-size="19" fill="currentColor">A</text>
+<text x="590" y="290" font-size="19" fill="currentColor">B</text>
+<text x="745" y="160" font-size="19" fill="currentColor">C</text>
+
+<circle
+cx="600"
+cy="470"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="600"
+y1="470"
+x2="600"
+y2="310"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="6 5"
+/>
+
+<text
+x="540"
+y="520"
+font-size="19"
+fill="currentColor">
+Navio
+</text>
+
+
+<!-- divisor -->
+
+<line
+x1="800"
+y1="50"
+x2="800"
+y2="620"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+
+<!-- =========================================
+     CASO 3
+========================================= -->
+
+<text
+x="835"
+y="70"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+3 — Navio dentro do triângulo
+</text>
+
+<polygon
+points="860,470 1000,145 1140,470"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<circle cx="860" cy="470" r="9" fill="currentColor"/>
+<circle cx="1000" cy="145" r="9" fill="currentColor"/>
+<circle cx="1140" cy="470" r="9" fill="currentColor"/>
+
+<text x="835" y="500" font-size="19" fill="currentColor">A</text>
+<text x="990" y="120" font-size="19" fill="currentColor">B</text>
+<text x="1150" y="500" font-size="19" fill="currentColor">C</text>
+
+<circle
+cx="1000"
+cy="365"
+r="16"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="940"
+y="410"
+font-size="19"
+fill="currentColor">
+Navio
+</text>
+
+
+</svg>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Resumo das condições favoráveis
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Configuração</th>
+<th>Resultado</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>
+Três pontos alinhados
+ou quase alinhados
+</td>
+<td>
+Posição definível
+</td>
+</tr>
+
+<tr>
+<td>
+Ponto central mais próximo
+do navio
+</td>
+<td>
+Posição bem definida
+</td>
+</tr>
+
+<tr>
+<td>
+Navio dentro do triângulo
+dos três pontos
+</td>
+<td>
+Posição bem definida
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 44
+     VANTAGENS E LIMITAÇÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="vantagens-limitacoes-segmentos-capazes"
+data-topico-id="vantagens-limitacoes-segmentos-capazes">
+
+<h2>
+44. Vantagens e limitações do método
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo Miguens,
+a combinação de dois segmentos capazes
+fornece
+<strong>uma das posições mais precisas
+obtidas por processos visuais</strong>.
+</p>
+
+
+
+<h3>
+Vantagens
+</h3>
+
+<ul>
+
+<li>
+elevada precisão;
+</li>
+
+<li>
+dispensa o uso de agulha
+para a obtenção da posição;
+</li>
+
+<li>
+consequentemente,
+não depende diretamente
+de correções de:
+<ul>
+<li>desvio;</li>
+<li>declinação magnética.</li>
+</ul>
+</li>
+
+</ul>
+
+
+
+<h3>
+Limitações práticas
+</h3>
+
+<p>
+Apesar da precisão,
+o método apresenta dificuldades.
+</p>
+
+<ul>
+
+<li>
+com o navio em movimento,
+a simultaneidade perfeita
+dos dois ângulos
+pode exigir
+<strong>dois observadores;</strong>
+</li>
+
+<li>
+a plotagem requer prática;
+</li>
+
+<li>
+são necessários
+<strong>três objetos bem definidos</strong>;
+</li>
+
+<li>
+os três objetos devem estar
+representados na Carta Náutica;
+</li>
+
+<li>
+a geometria dos pontos
+precisa atender às condições favoráveis.
+</li>
+
+</ul>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Consequência operacional
+</h3>
+
+<p>
+Essas dificuldades tornam
+a navegação por segmentos capazes
+<strong>pouco utilizada na prática corrente</strong>,
+apesar da elevada precisão
+que o método pode oferecer.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 45
+     APLICAÇÕES ESPECIAIS
+========================================= -->
+
+<section
+class="topico-aula"
+id="aplicacoes-segmentos-capazes"
+data-topico-id="aplicacoes-segmentos-capazes">
+
+<h2>
+45. Aplicações especiais dos Segmentos Capazes
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens destaca algumas situações
+nas quais a precisão do método
+pode ser particularmente útil.
+</p>
+
+
+
+<h3>
+45.1 Navio fundeado
+</h3>
+
+<p>
+Com o navio fundeado,
+pode-se obter uma posição rigorosa
+independente da utilização
+da agulha.
+</p>
+
+<p>
+Essa posição pode servir de base
+para:
+</p>
+
+<ul>
+
+<li>
+determinação dos desvios
+da agulha;
+</li>
+
+<li>
+calibragem do radar;
+</li>
+
+<li>
+outras verificações instrumentais.
+</li>
+
+</ul>
+
+
+
+<h3>
+45.2 Posicionamento de perigos não cartografados
+</h3>
+
+<p>
+O método pode ser empregado
+para determinar a posição
+de novos perigos visíveis
+ainda não representados
+na Carta Náutica.
+</p>
+
+<p>
+Miguens cita como exemplos:
+</p>
+
+<ul>
+
+<li>
+cascos soçobrados;
+</li>
+
+<li>
+outros obstáculos à navegação;
+</li>
+
+<li>
+pontos notáveis ainda não cartografados.
+</li>
+
+</ul>
+
+
+
+<h3>
+45.3 Navegação de segurança
+</h3>
+
+<p>
+O conceito de segmento capaz
+também pode ser empregado
+na definição de
+<strong>ângulos horizontais de segurança</strong>.
+</p>
+
+<p>
+Esse uso será tratado
+posteriormente,
+no conteúdo específico
+de navegação de segurança.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Outros empregos citados
+</h3>
+
+<p>
+Em virtude de sua precisão,
+Miguens também menciona
+o emprego do método em:
+</p>
+
+<ul>
+
+<li>
+posicionamento de sinais
+de auxílio à navegação;
+</li>
+
+<li>
+levantamentos hidrográficos;
+</li>
+
+<li>
+minagem e varredura;
+</li>
+
+<li>
+outros serviços
+que exijam elevada precisão
+na posição observada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 46
+     QUATRO PONTOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="segmentos-capazes-quatro-pontos"
+data-topico-id="segmentos-capazes-quatro-pontos">
+
+<h2>
+46. Segmentos Capazes sem ponto central comum
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta ainda
+um emprego particular
+para a situação
+em que não é possível estabelecer
+um ponto central
+comum aos dois ângulos.
+</p>
+
+<p>
+Nesse caso,
+são utilizados:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+4 pontos conhecidos
+</strong>
+
+</p>
+
+<p>
+e medidos:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+2 ângulos horizontais não adjacentes
+</strong>
+
+</p>
+
+<p>
+Traçados os dois segmentos capazes,
+eles apresentam
+duas interseções.
+</p>
+
+<p>
+A posição do navio
+será a interseção:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+mais próxima da posição estimada
+</strong>
+
+</p>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Papel da posição estimada</h3>
+
+<p>
+Neste caso,
+a posição estimada
+é empregada para eliminar
+a ambiguidade entre
+as duas interseções geométricas.
+</p>
+
+<p>
+Isso mostra novamente
+que a navegação costeira
+não utiliza seus métodos
+de forma isolada:
+a posição observada
+e a posição estimada
+se complementam continuamente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 47
+     DESVIO DESCONHECIDO
+========================================= -->
+
+<section
+class="topico-aula"
+id="segmentos-capazes-desvio-desconhecido"
+data-topico-id="segmentos-capazes-desvio-desconhecido">
+
+<h2>
+47. Uso quando o Desvio da Agulha é desconhecido
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta ainda
+uma aplicação especialmente interessante
+do conceito de segmentos capazes.
+</p>
+
+<p>
+Quando o valor real
+do
+<strong>Desvio da Agulha</strong>
+não é conhecido,
+podem ser obtidas
+marcações da agulha
+de
+<strong>três pontos adjacentes</strong>.
+</p>
+
+<p>
+Em seguida,
+as marcações são subtraídas
+duas a duas.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+Princípio
+</h3>
+
+<p>
+Se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Mag<sub>A</sub>,
+Mag<sub>B</sub>,
+Mag<sub>C</sub>
+</strong>
+
+</p>
+
+<p>
+são as marcações dos três pontos,
+os ângulos entre eles
+podem ser obtidos por:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+α =
+|Mag<sub>B</sub> − Mag<sub>A</sub>|
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+β =
+|Mag<sub>C</sub> − Mag<sub>B</sub>|
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Por que o Desvio é eliminado?
+</h3>
+
+<p>
+Como as três marcações
+são tomadas
+com o navio no mesmo rumo,
+o mesmo erro de desvio
+está presente em todas elas.
+</p>
+
+<p>
+Ao obter a diferença
+entre duas marcações,
+essa parcela comum
+é eliminada.
+</p>
+
+<p>
+Os ângulos resultantes
+podem então ser introduzidos
+no estaciógrafo
+como se tivessem sido observados
+diretamente pelo método
+dos segmentos capazes.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Esse procedimento
+<strong>não determina o valor do desvio</strong>.
+</p>
+
+<p>
+Ele permite determinar a posição
+utilizando diferenças angulares
+nas quais o erro comum
+da agulha é cancelado.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+🧭 Síntese — Segmentos Capazes
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Elemento</th>
+<th>Conceito-chave</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>
+Uma observação
+</td>
+<td>
+Ângulo horizontal entre dois pontos
+define uma circunferência de posição
+</td>
+</tr>
+
+<tr>
+<td>
+Ângulo central
+</td>
+<td>
+<strong>2α</strong>
+</td>
+</tr>
+
+<tr>
+<td>
+Construção para α &lt; 90°
+</td>
+<td>
+Utilizar
+<strong>90° − α</strong>
+</td>
+</tr>
+
+<tr>
+<td>
+Construção para α &gt; 90°
+</td>
+<td>
+Utilizar
+<strong>α − 90°</strong>
+</td>
+</tr>
+
+<tr>
+<td>
+Ângulo observado
+</td>
+<td>
+Preferencialmente
+<strong>≥ 30°</strong>
+</td>
+</tr>
+
+<tr>
+<td>
+Posição
+</td>
+<td>
+Interseção de dois segmentos capazes
+</td>
+</tr>
+
+<tr>
+<td>
+Número usual de pontos
+</td>
+<td>
+3,
+com um ponto central comum
+</td>
+</tr>
+
+<tr>
+<td>
+Plotagem preferida a bordo
+</td>
+<td>
+Estaciógrafo
+</td>
+</tr>
+
+<tr>
+<td>
+Configuração a evitar
+</td>
+<td>
+Circunferência de indeterminação
+</td>
+</tr>
+
+<tr>
+<td>
+Vantagem principal
+</td>
+<td>
+Elevada precisão
+e independência da agulha
+</td>
+</tr>
+
+<tr>
+<td>
+Limitação principal
+</td>
+<td>
+Exige boa geometria,
+três objetos
+e maior trabalho de observação/plotagem
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>📚 Referência desta parte</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte — Volume I.
+</strong>
+</p>
+
+<p>
+<strong>
+Capítulo 4 —
+A Posição no Mar.
+Navegação Costeira.
+</strong>
+</p>
+
+<p>
+<strong>
+Seção 4.4 —
+Posição por Segmentos Capazes.
+</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>4.4.1</strong> —
+Observação e traçado da LDP Segmento Capaz;
+</li>
+
+<li>
+<strong>4.4.2</strong> —
+Determinação e plotagem da posição
+por Segmentos Capazes;
+</li>
+
+<li>
+<strong>4.4.3</strong> —
+Cuidados na escolha
+dos objetos visados;
+</li>
+
+<li>
+<strong>4.4.4</strong> —
+Observações finais
+sobre Navegação por Segmentos Capazes.
+</li>
+
+</ul>
+
+<p>
+<strong>Páginas da publicação:</strong>
+4-15 a 4-22.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 7
+========================================= -->
+
+<!-- =========================================
+     INÍCIO PARTE 8
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 8
+     NAVEGAÇÃO ESTIMADA
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 8
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 8 — NAVEGAÇÃO ESTIMADA
+</h2>
+
+<p>
+Mesmo quando o navegante dispõe de
+posições observadas,
+radar,
+GNSS
+ou outros sistemas de posicionamento,
+é necessário acompanhar continuamente
+o movimento esperado da embarcação.
+</p>
+
+<p>
+Esse acompanhamento é realizado por meio da
+<strong>Navegação Estimada</strong>.
+</p>
+
+<p>
+A partir de uma
+<strong>posição conhecida</strong>,
+aplicam-se os elementos do movimento do navio:
+</p>
+
+<ul>
+
+<li>
+<strong>rumo;</strong>
+</li>
+
+<li>
+<strong>velocidade;</strong>
+</li>
+
+<li>
+<strong>tempo decorrido.</strong>
+</li>
+
+</ul>
+
+<p>
+O resultado é uma posição provável,
+que permite ao navegante comparar
+o movimento previsto
+com as posições efetivamente observadas.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 48
+     CONCEITO DE NAVEGAÇÃO ESTIMADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="navegacao-estimada"
+data-topico-id="navegacao-estimada">
+
+<h2>
+48. Conceito de Navegação Estimada
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens define a
+<strong>Navegação Estimada</strong>
+como o método utilizado para determinar
+a
+<strong>posição provável do navio</strong>
+a partir de uma posição conhecida,
+recorrendo somente
+às características de seu movimento.
+</p>
+
+<p>
+No método convencional,
+o movimento é caracterizado por:
+</p>
+
+<ul>
+
+<li>
+<strong>rumo verdadeiro;</strong>
+</li>
+
+<li>
+<strong>distância percorrida.</strong>
+</li>
+
+</ul>
+
+<p>
+Esses elementos são tradicionalmente obtidos
+pelas informações da:
+</p>
+
+<ul>
+
+<li>
+<strong>agulha;</strong>
+</li>
+
+<li>
+<strong>odômetro.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+Relação fundamental
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+D = V × T
+</strong>
+
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>D</strong> = distância percorrida;
+</li>
+
+<li>
+<strong>V</strong> = velocidade;
+</li>
+
+<li>
+<strong>T</strong> = tempo.
+</li>
+
+</ul>
+
+<p>
+Dessa relação também resultam:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = D / T
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = D / V
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Dead Reckoning — DR
+</h3>
+
+<p>
+Miguens informa que,
+na língua inglesa,
+a navegação baseada
+no conhecimento do rumo
+e da velocidade do navio sobre a água
+é denominada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Dead Reckoning — DR
+</strong>
+
+</p>
+
+<p>
+e as posições obtidas por esse processo
+são denominadas:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+DR Positions
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Natureza da posição estimada
+</h3>
+
+<p>
+A posição obtida pela estima convencional
+é
+<strong>aproximada</strong>.
+</p>
+
+<p>
+Isso ocorre porque,
+nesse processo inicial,
+não são necessariamente considerados
+os diversos fatores externos
+que podem modificar
+o movimento real do navio.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação Operacional
+</h3>
+
+<p>
+Miguens ressalta que
+a Navegação Estimada
+não deve ser considerada
+um método secundário
+apenas porque seus cálculos básicos
+são simples.
+</p>
+
+<p>
+Sua utilização paralela
+aos demais métodos
+permite:
+</p>
+
+<ul>
+
+<li>
+detectar erros grosseiros;
+</li>
+
+<li>
+criticar posições obtidas
+por outros meios;
+</li>
+
+<li>
+acompanhar continuamente
+a evolução do navio;
+</li>
+
+<li>
+contribuir para a
+<strong>consciência situacional</strong>.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Dead Reckoning — DR</strong>
+</td>
+
+<td>
+Navegação Estimada
+</td>
+
+<td>
+Determinação da posição provável
+a partir do movimento do navio,
+sem considerar inicialmente
+o efeito da corrente.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>DR Position</strong>
+</td>
+
+<td>
+Posição Estimada
+</td>
+
+<td>
+Posição obtida
+pela Navegação Estimada convencional.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Known Position</strong>
+</td>
+
+<td>
+Posição conhecida
+</td>
+
+<td>
+Posição inicial
+a partir da qual a estima é desenvolvida.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 49
+     PLOTAGEM DO PONTO ESTIMADO
+========================================= -->
+
+<section
+class="topico-aula"
+id="plotagem-ponto-estimado"
+data-topico-id="plotagem-ponto-estimado">
+
+<h2>
+49. Plotagem do Ponto Estimado
+</h2>
+
+<div class="widget">
+
+<p>
+A posição estimada é obtida graficamente
+aplicando,
+a partir da última posição conhecida,
+um vetor ou uma sequência de vetores
+representativos:
+</p>
+
+<ul>
+
+<li>
+dos rumos verdadeiros governados;
+</li>
+
+<li>
+das distâncias percorridas.
+</li>
+
+</ul>
+
+<p>
+A distância percorrida é determinada
+pela relação:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = V × T
+</strong>
+
+</p>
+
+
+
+<!-- =========================================
+     EXEMPLO DO LIVRO
+========================================= -->
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens —
+posição estimada às 0800
+</h3>
+
+<p>
+A posição observada inicial
+é conhecida às:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+0700
+</strong>
+
+</p>
+
+<p>
+A partir desse ponto,
+o navio governa no:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 100°
+</strong>
+
+</p>
+
+<p>
+com velocidade:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 15 nós
+</strong>
+
+</p>
+
+<p>
+O intervalo entre 0700 e 0800 é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = 1 hora
+</strong>
+
+</p>
+
+<p>
+Aplicando:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = V × T
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 15 × 1
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 15 NM
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Resultado
+</h3>
+
+<p>
+A posição estimada das
+<strong>0800</strong>
+deverá estar:
+</p>
+
+<ul>
+
+<li>
+sobre a linha de rumo
+<strong>100°;</strong>
+</li>
+
+<li>
+a
+<strong>15 milhas náuticas</strong>
+da posição observada das 0700.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG
+     PLOTAGEM DO PONTO ESTIMADO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 32 — Plotagem de uma posição estimada
+</h3>
+
+<svg
+viewBox="0 0 1000 620"
+role="img"
+aria-label="Posição observada às 0700 seguida de rumo 100 graus por 15 milhas até posição estimada às 0800"
+style="width:100%; height:auto;"
+>
+
+
+<!-- norte -->
+
+<line
+x1="260"
+y1="490"
+x2="260"
+y2="90"
+stroke="currentColor"
+stroke-width="3"
+stroke-dasharray="8 6"
+/>
+
+<polyline
+points="247,115 260,90 273,115"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="280"
+y="105"
+font-size="25"
+font-weight="bold"
+fill="currentColor">
+N
+</text>
+
+
+<!-- posição 0700 -->
+
+<circle
+cx="260"
+cy="430"
+r="17"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="175"
+y="475"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+0700 — posição observada
+</text>
+
+
+<!-- rumo 100 -->
+
+<line
+x1="260"
+y1="430"
+x2="800"
+y2="525"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- posição 0800 -->
+
+<line
+x1="690"
+y1="485"
+x2="682"
+y2="535"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="650"
+y="575"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+0800 — posição estimada
+</text>
+
+
+<!-- distância -->
+
+<text
+x="470"
+y="455"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+15 NM
+</text>
+
+
+<!-- rumo -->
+
+<path
+d="M 260 310
+A 120 120 0 0 1 378 451"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="335"
+y="345"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+R = 100°
+</text>
+
+
+</svg>
+
+<p>
+A posição estimada é construída
+exclusivamente a partir
+do movimento previsto do navio.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Observação importante
+</h3>
+
+<p>
+No exemplo de Miguens,
+a velocidade de 15 nós
+é uma velocidade em relação à superfície.
+</p>
+
+<p>
+Como o efeito da corrente
+é desconhecido nesse momento,
+ela é utilizada,
+por aproximação,
+como se representasse
+o movimento efetivo no fundo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 50
+     DISTÂNCIA VELOCIDADE TEMPO
+========================================= -->
+
+<section
+class="topico-aula"
+id="distancia-velocidade-tempo"
+data-topico-id="distancia-velocidade-tempo">
+
+<h2>
+50. Distância, Velocidade e Tempo
+</h2>
+
+<div class="widget">
+
+<p>
+Grande parte dos problemas
+da Navegação Estimada
+depende da relação
+entre:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Distância — Velocidade — Tempo
+</strong>
+
+</p>
+
+<p>
+Miguens menciona,
+além do cálculo direto,
+duas regras práticas tradicionais.
+</p>
+
+
+
+<h3>
+50.1 Regra dos três minutos
+</h3>
+
+<div class="formula">
+
+<p>
+A distância percorrida,
+em
+<strong>jardas</strong>,
+durante
+<strong>3 minutos</strong>,
+é igual à velocidade em nós
+multiplicada por 100.
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D<sub>3min</sub> (jardas)
+=
+V (nós) × 100
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+Exemplo didático
+</h3>
+
+<p>
+Para:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 12 nós
+</strong>
+
+</p>
+
+<p>
+em três minutos:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 12 × 100
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 1.200 jardas
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+50.2 Regra dos seis minutos
+</h3>
+
+<div class="formula">
+
+<p>
+A distância percorrida,
+em
+<strong>milhas náuticas</strong>,
+durante
+<strong>6 minutos</strong>,
+é igual à velocidade em nós
+dividida por 10.
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D<sub>6min</sub> (NM)
+=
+V (nós) / 10
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+Exemplo didático
+</h3>
+
+<p>
+Para:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 15 nós
+</strong>
+
+</p>
+
+<p>
+durante 6 minutos:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 15 / 10
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 1,5 NM
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Por que essas regras funcionam?
+</h3>
+
+<p>
+Se um navio navega a
+<strong>V nós</strong>,
+ele percorre
+<strong>V milhas náuticas em 60 minutos</strong>.
+</p>
+
+<p>
+Em 6 minutos,
+que correspondem a
+<strong>1/10 de hora</strong>,
+percorrerá:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V / 10 milhas
+</strong>
+
+</p>
+
+<p>
+O mesmo princípio,
+convertendo a milha náutica
+para aproximadamente 2.000 jardas,
+origina a regra prática
+dos três minutos.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação Operacional
+</h3>
+
+<p>
+Essas regras permitem estimar rapidamente
+distâncias percorridas em pequenos intervalos,
+o que é particularmente útil:
+</p>
+
+<ul>
+
+<li>
+em aproximações;
+</li>
+
+<li>
+na avaliação de distância até um ponto de guinada;
+</li>
+
+<li>
+na antecipação de eventos;
+</li>
+
+<li>
+em águas restritas.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 51
+     REGRAS DA NAVEGAÇÃO ESTIMADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="regras-navegacao-estimada"
+data-topico-id="regras-navegacao-estimada">
+
+<h2>
+51. As seis regras da Navegação Estimada
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta
+<strong>seis regras</strong>
+para manter corretamente
+a plotagem estimada.
+</p>
+
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>Regra</th>
+<th>Procedimento</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>1</strong>
+</td>
+
+<td>
+Plotar uma posição estimada
+nas horas inteiras
+e nas meias horas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>2</strong>
+</td>
+
+<td>
+Plotar uma posição estimada
+a cada mudança de rumo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>3</strong>
+</td>
+
+<td>
+Plotar uma posição estimada
+a cada mudança de velocidade.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>4</strong>
+</td>
+
+<td>
+Plotar uma posição estimada
+para o instante
+em que se obtém uma posição determinada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>5</strong>
+</td>
+
+<td>
+Plotar uma posição estimada
+para o instante
+em que se obtém
+uma única Linha de Posição.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>6</strong>
+</td>
+
+<td>
+Originar nova linha de rumo
+e nova plotagem estimada
+a partir de cada posição determinada.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Duas observações fundamentais de Miguens
+</h3>
+
+<p>
+<strong>
+Não se ajusta uma plotagem estimada
+com uma única Linha de Posição.
+</strong>
+</p>
+
+<p>
+Além disso:
+</p>
+
+<p>
+<strong>
+uma LDP cruzando uma linha de rumo
+não constitui uma posição determinada.
+</strong>
+</p>
+
+<p>
+A linha de rumo
+<strong>não é uma Linha de Posição</strong>.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Frequência da plotagem
+</h3>
+
+<p>
+Os intervalos de
+1 hora
+ou meia hora
+são valores normalmente associados
+à navegação oceânica
+e costeira.
+</p>
+
+<p>
+Miguens ressalta que
+intervalos menores devem ser empregados
+quando:
+</p>
+
+<ul>
+
+<li>
+a escala da carta assim exigir;
+</li>
+
+<li>
+o tipo de navegação assim exigir;
+</li>
+
+<li>
+a embarcação estiver
+em águas restritas.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 52
+     EXEMPLO DE PLOTAGEM
+========================================= -->
+
+<section
+class="topico-aula"
+id="exemplo-plotagem-estimada"
+data-topico-id="exemplo-plotagem-estimada">
+
+<h2>
+52. Exemplo completo de plotagem estimada
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta uma sequência
+de eventos entre
+<strong>0800</strong>
+e
+<strong>1200</strong>
+para demonstrar
+a aplicação das seis regras.
+</p>
+
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>Hora</th>
+<th>Evento</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>0800</strong>
+</td>
+
+<td>
+Farol ALFA
+<strong>270° / 6 NM</strong>.
+Suspendeu no rumo
+<strong>090°</strong>,
+velocidade
+<strong>15 nós</strong>.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>0900</strong>
+</td>
+
+<td>
+Velocidade reduzida para
+<strong>10 nós</strong>
+para evitar um barco à vela.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>1000</strong>
+</td>
+
+<td>
+Rumo alterado para
+<strong>145°</strong>
+e velocidade aumentada para
+<strong>15 nós</strong>.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>1030</strong>
+</td>
+
+<td>
+Rumo alterado para
+<strong>075°</strong>
+e velocidade aumentada para
+<strong>20 nós</strong>.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>1115</strong>
+</td>
+
+<td>
+Posição determinada:
+Farol BRAVO
+<strong>020° / 7 NM</strong>.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>1130</strong>
+</td>
+
+<td>
+Rumo alterado para
+<strong>090°</strong>
+e velocidade reduzida para
+<strong>18 nós</strong>.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<div class="destaque">
+
+<h3>
+O que deve ser percebido
+</h3>
+
+<p>
+A estima não consiste
+em traçar uma única linha
+desde a posição inicial
+até o final da viagem.
+</p>
+
+<p>
+Cada alteração relevante
+no movimento do navio
+gera um novo trecho da plotagem.
+</p>
+
+<p>
+Da mesma forma,
+uma nova posição determinada
+passa a constituir
+a nova origem da estima.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 53
+     FATORES QUE INFLUENCIAM A ESTIMA
+========================================= -->
+
+<section
+class="topico-aula"
+id="fatores-posicao-estimada"
+data-topico-id="fatores-posicao-estimada">
+
+<h2>
+53. Fatores que influenciam a posição estimada
+</h2>
+
+<div class="widget">
+
+<p>
+Na construção inicial da posição estimada,
+supõe-se que o navio:
+</p>
+
+<ul>
+
+<li>
+segue exatamente o rumo ordenado;
+</li>
+
+<li>
+mantém exatamente a velocidade considerada;
+</li>
+
+<li>
+não sofre deslocamentos externos.
+</li>
+
+</ul>
+
+<p>
+Na realidade,
+diversos fatores modificam
+seu movimento.
+</p>
+
+
+
+<h3>
+Fatores relacionados por Miguens
+</h3>
+
+<ul>
+
+<li>
+correntes marítimas;
+</li>
+
+<li>
+correntes de maré;
+</li>
+
+<li>
+efeito do vento;
+</li>
+
+<li>
+estado do mar;
+</li>
+
+<li>
+mau governo;
+</li>
+
+<li>
+pequenas diferenças de RPM
+entre eixos;
+</li>
+
+<li>
+pequenas diferenças de velocidade;
+</li>
+
+<li>
+banda;
+</li>
+
+<li>
+trim;
+</li>
+
+<li>
+desvio da agulha
+não detectado
+ou incorretamente determinado.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>
+Uso do termo “corrente”
+na Navegação Estimada
+</h3>
+
+<p>
+Miguens explica que,
+na prática da navegação costeira,
+o termo
+<strong>corrente</strong>
+pode representar
+a
+<strong>resultante de todos esses fatores</strong>
+sobre o movimento do navio.
+</p>
+
+<p>
+Portanto,
+nesse contexto,
+o vetor corrente pode representar
+mais do que apenas
+o movimento físico da massa d'água.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG
+     MOVIMENTO PREVISTO X REAL
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 33 — Movimento previsto e movimento real
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Navio partindo de uma posição comum com vetor de superfície, vetor corrente e vetor resultante no fundo"
+style="width:100%; height:auto;"
+>
+
+
+<!-- origem -->
+
+<circle
+cx="240"
+cy="500"
+r="12"
+fill="currentColor"
+/>
+
+<text
+x="130"
+y="545"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Posição inicial
+</text>
+
+
+<!-- vetor superfície -->
+
+<line
+x1="240"
+y1="500"
+x2="570"
+y2="205"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+<polyline
+points="535,210 570,205 560,238"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="330"
+y="305"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Vetor superfície
+</text>
+
+
+<!-- corrente -->
+
+<line
+x1="570"
+y1="205"
+x2="745"
+y2="300"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+<polyline
+points="718,277 745,300 710,302"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="585"
+y="175"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Vetor corrente
+</text>
+
+
+<!-- fundo -->
+
+<line
+x1="240"
+y1="500"
+x2="745"
+y2="300"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+<polyline
+points="712,286 745,300 719,322"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="485"
+y="435"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+Vetor fundo
+</text>
+
+
+<!-- posições -->
+
+<line
+x1="560"
+y1="185"
+x2="580"
+y2="225"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="525"
+y="155"
+font-size="20"
+fill="currentColor">
+Posição estimada
+</text>
+
+
+<circle
+cx="745"
+cy="300"
+r="17"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="760"
+y="330"
+font-size="20"
+fill="currentColor">
+Posição observada
+</text>
+
+
+</svg>
+
+<p>
+A diferença entre
+o movimento previsto na superfície
+e o movimento efetivamente observado no fundo
+permite avaliar o efeito resultante
+designado por Miguens como corrente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 54
+     TERMOS DA NAVEGAÇÃO ESTIMADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="termos-navegacao-estimada"
+data-topico-id="termos-navegacao-estimada">
+
+<h2>
+54. Termos empregados na Navegação Estimada
+</h2>
+
+<div class="widget">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Símbolo</th>
+<th>Definição</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Velocidade do navio</strong>
+</td>
+
+<td>
+<strong>velN</strong>
+</td>
+
+<td>
+Distância percorrida em uma hora
+em relação à superfície.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Velocidade no fundo</strong>
+</td>
+
+<td>
+<strong>velfd</strong>
+</td>
+
+<td>
+Distância percorrida em uma hora
+em relação ao fundo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Velocidade da corrente</strong>
+</td>
+
+<td>
+<strong>velcor</strong>
+</td>
+
+<td>
+Grandeza do efeito resultante
+sobre o movimento do navio.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Rumo na superfície</strong>
+</td>
+
+<td>
+<strong>RN</strong>
+</td>
+
+<td>
+Direção em que o navio é governado
+em relação à superfície.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Rumo no fundo</strong>
+</td>
+
+<td>
+<strong>Rfd</strong>
+</td>
+
+<td>
+Direção do caminho
+efetivamente percorrido
+sobre o fundo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Rumo da corrente</strong>
+</td>
+
+<td>
+<strong>Rcor</strong>
+</td>
+
+<td>
+Direção para a qual atua
+o vetor corrente.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 55
+     ABATIMENTO CAIMENTO AVANÇO ATRASO
+========================================= -->
+
+<section
+class="topico-aula"
+id="abatimento-caimento-avanco"
+data-topico-id="abatimento-caimento-avanco">
+
+<h2>
+55. Abatimento, Caimento, Avanço e Atraso
+</h2>
+
+<div class="widget">
+
+<h3>
+55.1 Abatimento — abt
+</h3>
+
+<p>
+O
+<strong>abatimento</strong>
+é o ângulo entre:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN
+e
+Rfd
+</strong>
+
+</p>
+
+<p>
+e é contado para:
+</p>
+
+<ul>
+
+<li>
+<strong>BE;</strong>
+</li>
+
+<li>
+<strong>BB.</strong>
+</li>
+
+</ul>
+
+<p>
+a partir do rumo na superfície.
+</p>
+
+
+
+<div class="formula">
+
+<p class="formula-linha">
+
+<strong>
+abt = diferença angular entre RN e Rfd
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+55.2 Avanço e atraso
+</h3>
+
+<p>
+Quando se compara,
+para o mesmo instante,
+a posição observada
+com a posição estimada,
+uma das componentes
+da diferença entre elas
+pode atuar aproximadamente
+na direção do movimento.
+</p>
+
+<p>
+Há:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+AVANÇO
+quando
+velfd &gt; velN
+</strong>
+
+</p>
+
+<p>
+e:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+ATRASO
+quando
+velfd &lt; velN
+</strong>
+
+</p>
+
+
+
+<h3>
+55.3 Caimento
+</h3>
+
+<p>
+O
+<strong>caimento</strong>
+representa a componente transversal
+da diferença entre
+a posição estimada
+e a posição observada.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Interpretação vetorial
+</h3>
+
+<p>
+Em termos vetoriais,
+Miguens relaciona o vetor corrente
+às componentes
+de caimento
+e avanço/atraso.
+</p>
+
+<p>
+O conceito permite compreender
+não apenas
+<strong>quanto</strong>
+o navio foi deslocado,
+mas também
+<strong>como</strong>
+esse deslocamento ocorreu
+em relação ao movimento previsto.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 56
+     TIPOS DE POSIÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="tipos-posicao-estimada"
+data-topico-id="tipos-posicao-estimada">
+
+<h2>
+56. Posição Estimada,
+Estimada Corrigida
+e Carteada
+</h2>
+
+<div class="widget">
+
+<h3>
+56.1 Posição Estimada
+</h3>
+
+<p>
+A
+<strong>posição estimada</strong>
+é uma posição
+<strong>presente</strong>,
+obtida a partir
+de uma posição observada,
+aplicando vetores definidos:
+</p>
+
+<ul>
+
+<li>
+pelo rumo do navio;
+</li>
+
+<li>
+pela distância percorrida
+em relação à superfície.
+</li>
+
+</ul>
+
+
+
+<h3>
+56.2 Posição Estimada Corrigida
+</h3>
+
+<p>
+A
+<strong>posição estimada corrigida</strong>
+também representa
+uma posição presente.
+</p>
+
+<p>
+Entretanto,
+ela utiliza:
+</p>
+
+<ul>
+
+<li>
+<strong>rumo no fundo;</strong>
+</li>
+
+<li>
+<strong>distância percorrida
+em relação ao fundo.</strong>
+</li>
+
+</ul>
+
+<p>
+Para isso,
+admite-se que
+o vetor corrente anteriormente determinado
+permaneça válido.
+</p>
+
+
+
+<h3>
+56.3 Posição Carteada
+</h3>
+
+<p>
+A
+<strong>posição carteada</strong>
+é diferente das anteriores.
+</p>
+
+<p>
+Ela representa uma posição
+<strong>futura</strong>
+que se prevê
+que o navio ocupará.
+</p>
+
+<p>
+Pode ser construída
+a partir de:
+</p>
+
+<ul>
+
+<li>
+uma posição observada;
+</li>
+
+<li>
+uma posição estimada;
+</li>
+
+<li>
+uma posição estimada corrigida.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>
+Não confundir
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Posição</th>
+<th>Tempo de referência</th>
+<th>Base</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Estimada</strong>
+</td>
+
+<td>
+Presente
+</td>
+
+<td>
+RN + distância na superfície
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Estimada Corrigida</strong>
+</td>
+
+<td>
+Presente
+</td>
+
+<td>
+Rfd + distância no fundo,
+considerando corrente
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Carteada</strong>
+</td>
+
+<td>
+Futuro
+</td>
+
+<td>
+Projeção antecipada
+do movimento esperado
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Utilidade da posição carteada
+</h3>
+
+<p>
+Miguens destaca seu valor
+na antecipação
+de eventos futuros,
+como:
+</p>
+
+<ul>
+
+<li>
+faróis que deverão aparecer;
+</li>
+
+<li>
+variações sensíveis de profundidade;
+</li>
+
+<li>
+aproximação de perigos;
+</li>
+
+<li>
+eventos previstos
+ao longo da derrota.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 57
+     TRIÂNGULO DE CORRENTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="triangulo-corrente"
+data-topico-id="triangulo-corrente">
+
+<h2>
+57. O Triângulo de Corrente
+</h2>
+
+<div class="widget">
+
+<p>
+O efeito combinado
+entre o movimento próprio do navio
+e a corrente
+é representado graficamente
+por três vetores.
+</p>
+
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>Vetor</th>
+<th>Direção</th>
+<th>Grandeza</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Vetor Superfície</strong>
+</td>
+
+<td>
+RN
+</td>
+
+<td>
+velN
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Vetor Corrente</strong>
+</td>
+
+<td>
+Rcor
+</td>
+
+<td>
+velcor
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Vetor Fundo</strong>
+</td>
+
+<td>
+Rfd
+</td>
+
+<td>
+velfd
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<div class="formula">
+
+<h3>
+Relação vetorial
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Vetor Superfície
++
+Vetor Corrente
+=
+Vetor Fundo
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="figura-aula">
+
+<h3>
+Figura 34 — Triângulo de Corrente
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Triângulo vetorial representando vetor superfície, corrente e fundo"
+style="width:100%; height:auto;"
+>
+
+
+<!-- A -->
+
+<circle
+cx="200"
+cy="500"
+r="9"
+fill="currentColor"
+/>
+
+
+<!-- B -->
+
+<circle
+cx="560"
+cy="190"
+r="9"
+fill="currentColor"
+/>
+
+
+<!-- C -->
+
+<circle
+cx="790"
+cy="330"
+r="9"
+fill="currentColor"
+/>
+
+
+<!-- superfície -->
+
+<line
+x1="200"
+y1="500"
+x2="560"
+y2="190"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+<polyline
+points="525,198 560,190 547,224"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- corrente -->
+
+<line
+x1="560"
+y1="190"
+x2="790"
+y2="330"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+<polyline
+points="759,302 790,330 750,329"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- fundo -->
+
+<line
+x1="200"
+y1="500"
+x2="790"
+y2="330"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+<polyline
+points="753,326 790,330 760,351"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="300"
+y="300"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+RN / velN
+</text>
+
+<text
+x="615"
+y="220"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+Rcor / velcor
+</text>
+
+<text
+x="430"
+y="465"
+font-size="24"
+font-weight="bold"
+fill="currentColor">
+Rfd / velfd
+</text>
+
+
+</svg>
+
+</div>
+
+
+
+<h3>
+57.1 Triângulo de Corrente Real
+</h3>
+
+<p>
+No
+<strong>Triângulo Real</strong>,
+são conhecidos:
+</p>
+
+<ul>
+
+<li>
+RN e velN;
+</li>
+
+<li>
+Rfd e velfd,
+obtidos por duas posições determinadas.
+</li>
+
+</ul>
+
+<p>
+Determinam-se:
+</p>
+
+<ul>
+
+<li>
+Rcor;
+</li>
+
+<li>
+velcor.
+</li>
+
+</ul>
+
+
+
+<h3>
+57.2 Triângulo de Corrente Estimado
+</h3>
+
+<p>
+No
+<strong>Triângulo Estimado</strong>,
+são conhecidos:
+</p>
+
+<ul>
+
+<li>
+RN e velN;
+</li>
+
+<li>
+Rcor e velcor estimados.
+</li>
+
+</ul>
+
+<p>
+Determinam-se:
+</p>
+
+<ul>
+
+<li>
+Rfd previsto;
+</li>
+
+<li>
+velfd prevista.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 58
+     EXEMPLO CORRENTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="exemplo-corrente-miguens"
+data-topico-id="exemplo-corrente-miguens">
+
+<h2>
+58. Exemplo de determinação da corrente
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta um exemplo
+na entrada da barra
+do Rio de Janeiro.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Dados do problema
+</h3>
+
+<p>
+Posição observada às
+<strong>0300</strong>:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°05,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°19,0' W
+</strong>
+
+</p>
+
+<p>
+Rumo e velocidade:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 055°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 9,0 nós
+</strong>
+
+</p>
+
+<p>
+Às
+<strong>0400</strong>,
+nova posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°00,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°10,0' W
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+58.1 Posição estimada das 0400
+</h3>
+
+<p>
+Entre 0300 e 0400:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = 1 h
+</strong>
+
+</p>
+
+<p>
+Logo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 9 × 1
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 9 NM
+</strong>
+
+</p>
+
+<p>
+A posição estimada das 0400
+é plotada:
+</p>
+
+<ul>
+
+<li>
+sobre RN = 055°;
+</li>
+
+<li>
+a 9 NM
+da posição observada das 0300.
+</li>
+
+</ul>
+
+
+
+<h3>
+58.2 Vetor corrente
+</h3>
+
+<p>
+O vetor que liga
+a posição estimada das 0400
+à posição observada das 0400
+representa o efeito da corrente.
+</p>
+
+<p>
+Miguens obtém:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 101°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1 nó
+</strong>
+
+</p>
+
+
+
+<h3>
+58.3 Movimento no fundo
+</h3>
+
+<p>
+A direção entre
+as posições observadas de 0300 e 0400
+fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rfd = 059°
+</strong>
+
+</p>
+
+<p>
+Como o intervalo é de 1 hora,
+a distância entre as posições
+fornece diretamente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velfd = 9,7 nós
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Resultados adicionais apresentados por Miguens
+</h3>
+
+<p>
+No período 0300–0400 ocorreu:
+</p>
+
+<ul>
+
+<li>
+<strong>abatimento = 4° BE;</strong>
+</li>
+
+<li>
+<strong>avanço = 0,7 NM;</strong>
+</li>
+
+<li>
+<strong>caimento para BE = 0,7 NM.</strong>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Se o intervalo não for de uma hora
+</h3>
+
+<p>
+Quando o intervalo de tempo
+for diferente de 1 hora,
+a distância do vetor corrente
+não representa diretamente
+a velocidade da corrente.
+</p>
+
+<p>
+Será necessário aplicar:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = D / T
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESUMO DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+🧭 Síntese da Navegação Estimada
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Conceito</th>
+<th>Ideia-chave</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Dead Reckoning</td>
+<td>
+Posição provável baseada
+no movimento próprio do navio
+</td>
+</tr>
+
+<tr>
+<td>Distância</td>
+<td>
+<strong>D = V × T</strong>
+</td>
+</tr>
+
+<tr>
+<td>Posição estimada</td>
+<td>
+Posição presente,
+sem correção de corrente
+</td>
+</tr>
+
+<tr>
+<td>Posição estimada corrigida</td>
+<td>
+Posição presente,
+considerando movimento no fundo
+</td>
+</tr>
+
+<tr>
+<td>Posição carteada</td>
+<td>
+Posição futura prevista
+</td>
+</tr>
+
+<tr>
+<td>Abatimento</td>
+<td>
+Diferença angular
+entre RN e Rfd
+</td>
+</tr>
+
+<tr>
+<td>Avanço</td>
+<td>
+velfd &gt; velN
+</td>
+</tr>
+
+<tr>
+<td>Atraso</td>
+<td>
+velfd &lt; velN
+</td>
+</tr>
+
+<tr>
+<td>Triângulo de corrente</td>
+<td>
+Superfície + Corrente = Fundo
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+📚 Referência desta parte
+</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte — Volume I.
+</strong>
+</p>
+
+<p>
+<strong>
+Capítulo 5 — Navegação Estimada.
+</strong>
+</p>
+
+<p>
+Conteúdo desta parte:
+</p>
+
+<ul>
+
+<li>
+<strong>5.1</strong> —
+Conceito de Navegação Estimada;
+</li>
+
+<li>
+<strong>5.2</strong> —
+Plotagem do Ponto Estimado;
+</li>
+
+<li>
+<strong>5.3</strong> —
+Regras para a Navegação Estimada;
+</li>
+
+<li>
+<strong>5.4</strong> —
+Fatores que influenciam
+a posição estimada;
+</li>
+
+<li>
+<strong>5.5</strong> —
+Termos empregados
+na Navegação Estimada;
+</li>
+
+<li>
+<strong>5.6</strong> —
+Triângulo de Corrente;
+</li>
+
+<li>
+<strong>5.7</strong> —
+introdução à resolução gráfica
+dos principais problemas
+do Triângulo de Corrente.
+</li>
+
+</ul>
+
+<p>
+<strong>Páginas principais utilizadas:</strong>
+5-1 a 5-10.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 8
+========================================= -->
+
+<!-- =========================================
+     INÍCIO PARTE 9
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 9
+     PROBLEMAS DO TRIÂNGULO DE CORRENTE
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 9
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 9 — PROBLEMAS DO TRIÂNGULO DE CORRENTE
+</h2>
+
+<p>
+O
+<strong>Triângulo de Corrente</strong>
+permite resolver graficamente
+diversos problemas de Navegação Estimada.
+</p>
+
+<p>
+Segundo Miguens,
+como existem três vetores
+e cada vetor possui:
+</p>
+
+<ul>
+
+<li>
+uma
+<strong>direção;</strong>
+</li>
+
+<li>
+uma
+<strong>grandeza;</strong>
+</li>
+
+</ul>
+
+<p>
+o problema geral envolve
+<strong>seis elementos</strong>.
+</p>
+
+<p>
+Nos casos usuais,
+quatro desses elementos são conhecidos
+e os dois restantes
+devem ser determinados.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 59
+     ESTRUTURA DOS PROBLEMAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="problemas-triangulo-corrente"
+data-topico-id="problemas-triangulo-corrente">
+
+<h2>
+59. Estrutura dos problemas do Triângulo de Corrente
+</h2>
+
+<div class="widget">
+
+<p>
+Os três vetores utilizados são:
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Vetor</th>
+<th>Direção</th>
+<th>Grandeza</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>
+<strong>Superfície</strong>
+</td>
+<td>
+RN
+</td>
+<td>
+velN
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>Corrente</strong>
+</td>
+<td>
+Rcor
+</td>
+<td>
+velcor
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>Fundo</strong>
+</td>
+<td>
+Rfd
+</td>
+<td>
+velfd
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<div class="formula">
+
+<h3>
+Relação vetorial
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Vetor Superfície
++
+Vetor Corrente
+=
+Vetor Fundo
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Cinco problemas principais apresentados por Miguens
+</h3>
+
+<ol>
+
+<li>
+determinar
+<strong>Rcor</strong>
+e
+<strong>velcor</strong>
+a partir de duas posições observadas;
+</li>
+
+<li>
+determinar
+<strong>Rfd</strong>
+e
+<strong>velfd</strong>
+conhecendo RN,
+velN
+e a corrente;
+</li>
+
+<li>
+determinar
+<strong>RN</strong>
+e
+<strong>velN</strong>
+para alcançar determinado ponto
+conhecendo a corrente;
+</li>
+
+<li>
+determinar
+<strong>RN</strong>
+e
+<strong>velfd</strong>
+quando velN,
+Rfd
+e a corrente são conhecidos;
+</li>
+
+<li>
+determinar a
+<strong>posição estimada corrigida</strong>.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Atenção Operacional
+</h3>
+
+<p>
+O Triângulo de Corrente
+não serve apenas para descobrir
+“para onde a corrente leva o navio”.
+</p>
+
+<p>
+Ele também pode responder
+à pergunta inversa:
+</p>
+
+<p>
+<strong>
+“Que rumo devo governar
+para que o navio siga
+a derrota desejada no fundo?”
+</strong>
+</p>
+
+<p>
+Essa diferença é fundamental
+na condução prática do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 60
+     PROBLEMA 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="determinar-corrente"
+data-topico-id="determinar-corrente">
+
+<h2>
+60. Problema 1 — Determinação da Corrente
+</h2>
+
+<div class="widget">
+
+<p>
+Neste problema são conhecidos:
+</p>
+
+<ul>
+
+<li>
+<strong>RN;</strong>
+</li>
+
+<li>
+<strong>velN;</strong>
+</li>
+
+<li>
+duas
+<strong>posições observadas.</strong>
+</li>
+
+</ul>
+
+<p>
+Devem ser determinados:
+</p>
+
+<ul>
+
+<li>
+<strong>Rcor;</strong>
+</li>
+
+<li>
+<strong>velcor;</strong>
+</li>
+
+<li>
+e, adicionalmente,
+<strong>Rfd</strong>
+e
+<strong>velfd.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens
+</h3>
+
+<p>
+Às
+<strong>0300</strong>:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°05,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°19,0' W
+</strong>
+
+</p>
+
+<p>
+O navio governa:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 055°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 9,0 nós
+</strong>
+
+</p>
+
+<p>
+Às
+<strong>0400</strong>,
+nova posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°00,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°10,0' W
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+60.1 Posição estimada das 0400
+</h3>
+
+<p>
+O intervalo é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1 hora
+</strong>
+
+</p>
+
+<p>
+Logo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 9 × 1 = 9 NM
+</strong>
+
+</p>
+
+<p>
+Sobre RN = 055°,
+plota-se a posição estimada
+a 9 NM
+da posição das 0300.
+</p>
+
+
+
+<h3>
+60.2 Vetor Corrente
+</h3>
+
+<p>
+Liga-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+posição estimada 0400
+→
+posição observada 0400
+</strong>
+
+</p>
+
+<p>
+Esse vetor fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 101°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1,0 nó
+</strong>
+
+</p>
+
+
+
+<h3>
+60.3 Vetor Fundo
+</h3>
+
+<p>
+A ligação entre
+as duas posições observadas
+fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rfd = 059°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velfd = 9,7 nós
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Resultados adicionais
+</h3>
+
+<ul>
+
+<li>
+<strong>abatimento = 4° BE;</strong>
+</li>
+
+<li>
+<strong>avanço = 0,7 NM;</strong>
+</li>
+
+<li>
+<strong>caimento para BE = 0,7 NM.</strong>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG PROBLEMA 1
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 35 — Determinação do Vetor Corrente
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Triângulo de corrente real mostrando posição inicial, posição estimada e posição observada"
+style="width:100%; height:auto;"
+>
+
+
+<circle
+cx="180"
+cy="500"
+r="10"
+fill="currentColor"
+/>
+
+<circle
+cx="555"
+cy="185"
+r="10"
+fill="currentColor"
+/>
+
+<circle
+cx="745"
+cy="255"
+r="10"
+fill="currentColor"
+/>
+
+
+<!-- superfície -->
+
+<line
+x1="180"
+y1="500"
+x2="555"
+y2="185"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- corrente -->
+
+<line
+x1="555"
+y1="185"
+x2="745"
+y2="255"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- fundo -->
+
+<line
+x1="180"
+y1="500"
+x2="745"
+y2="255"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+
+<text
+x="285"
+y="295"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+RN 055° / 9 nós
+</text>
+
+<text
+x="575"
+y="155"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+Rcor 101° / 1 nó
+</text>
+
+<text
+x="410"
+y="455"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+Rfd 059° / 9,7 nós
+</text>
+
+
+<text
+x="95"
+y="545"
+font-size="20"
+fill="currentColor">
+0300 observada
+</text>
+
+<text
+x="485"
+y="145"
+font-size="20"
+fill="currentColor">
+0400 estimada
+</text>
+
+<text
+x="755"
+y="260"
+font-size="20"
+fill="currentColor">
+0400 observada
+</text>
+
+</svg>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Intervalo diferente de 1 hora
+</h3>
+
+<p>
+Se o intervalo
+entre as posições observadas
+não for exatamente de uma hora,
+a grandeza do vetor
+não poderá ser lida diretamente
+como velocidade.
+</p>
+
+<p>
+Deve-se aplicar:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = D / T
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 61
+     PROBLEMA 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="determinar-rumo-fundo"
+data-topico-id="determinar-rumo-fundo">
+
+<h2>
+61. Problema 2 — Determinação de Rfd e velfd
+</h2>
+
+<div class="widget">
+
+<p>
+Neste caso,
+são conhecidos:
+</p>
+
+<ul>
+
+<li>
+RN;
+</li>
+
+<li>
+velN;
+</li>
+
+<li>
+Rcor;
+</li>
+
+<li>
+velcor.
+</li>
+
+</ul>
+
+<p>
+Devem ser determinados:
+</p>
+
+<ul>
+
+<li>
+<strong>Rfd;</strong>
+</li>
+
+<li>
+<strong>velfd.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens
+</h3>
+
+<p>
+Às
+<strong>1300</strong>,
+posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°06,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°03,0' W
+</strong>
+
+</p>
+
+<p>
+O navio assume:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 315°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 8 nós
+</strong>
+
+</p>
+
+<p>
+Corrente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 270°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1,0 nó
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+61.1 Construção gráfica
+</h3>
+
+<ol>
+
+<li>
+da posição inicial,
+traça-se RN = 315°;
+</li>
+
+<li>
+sobre esse rumo,
+marca-se um vetor de
+<strong>8 NM</strong>;
+</li>
+
+<li>
+da extremidade,
+traça-se a corrente
+<strong>270° / 1 NM</strong>;
+</li>
+
+<li>
+liga-se a posição inicial
+à extremidade final.
+</li>
+
+</ol>
+
+<p>
+O vetor resultante fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rfd = 311°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velfd = 8,7 nós
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Interpretação
+</h3>
+
+<p>
+Embora o navio esteja governando
+<strong>315°</strong>,
+a corrente para Oeste
+faz com que sua trajetória efetiva
+sobre o fundo seja:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+311°
+</strong>
+
+</p>
+
+<p>
+Além disso,
+a corrente aumenta
+a velocidade resultante no fundo
+para:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+8,7 nós
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação ao ETA
+</h3>
+
+<p>
+Miguens destaca que prever corretamente
+<strong>Rfd</strong>
+e
+<strong>velfd</strong>
+é essencial para estimar
+a hora real de chegada.
+</p>
+
+<p>
+Um ETA calculado somente
+com a velocidade na superfície
+pode tornar-se incorreto
+quando existe corrente significativa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 62
+     PROBLEMA 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="determinar-rumo-velocidade-superficie"
+data-topico-id="determinar-rumo-velocidade-superficie">
+
+<h2>
+62. Problema 3 — Determinação de RN e velN
+</h2>
+
+<div class="widget">
+
+<p>
+Agora o problema é inverso.
+</p>
+
+<p>
+O navegante deseja alcançar
+<strong>uma posição específica
+em um horário específico</strong>.
+</p>
+
+<p>
+São conhecidos:
+</p>
+
+<ul>
+
+<li>
+posição inicial;
+</li>
+
+<li>
+posição desejada;
+</li>
+
+<li>
+Rcor;
+</li>
+
+<li>
+velcor.
+</li>
+
+</ul>
+
+<p>
+Devem ser determinados:
+</p>
+
+<ul>
+
+<li>
+<strong>RN;</strong>
+</li>
+
+<li>
+<strong>velN.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens
+</h3>
+
+<p>
+Às
+<strong>1500</strong>,
+posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°05,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°02,0' W
+</strong>
+
+</p>
+
+<p>
+O navio deseja estar às
+<strong>1600</strong>
+em:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 22°59,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°10,0' W
+</strong>
+
+</p>
+
+<p>
+Corrente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 270°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1,0 nó
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+62.1 Vetor Fundo necessário
+</h3>
+
+<p>
+A ligação entre
+a posição inicial
+e a posição desejada
+fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rfd = 310°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velfd = 9,6 nós
+</strong>
+
+</p>
+
+
+
+<h3>
+62.2 Aplicação da Corrente
+</h3>
+
+<p>
+Na posição inicial,
+aplica-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 270°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1,0 NM em 1 hora
+</strong>
+
+</p>
+
+<p>
+A partir da extremidade
+do vetor corrente,
+liga-se ao ponto desejado.
+</p>
+
+<p>
+Obtém-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 314°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 8,8 nós
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Ideia fundamental
+</h3>
+
+<p>
+Para seguir no fundo
+<strong>310°</strong>,
+não se deve governar
+necessariamente
+<strong>310°</strong>.
+</p>
+
+<p>
+Neste exemplo,
+é necessário governar:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+314°
+</strong>
+
+</p>
+
+<p>
+para compensar
+o efeito da corrente.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG PROBLEMA 3
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 36 — Rumo a governar para obter o Rfd desejado
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Triângulo de corrente inverso mostrando vetor corrente, vetor superfície e vetor fundo desejado"
+style="width:100%; height:auto;"
+>
+
+
+<circle
+cx="220"
+cy="500"
+r="10"
+fill="currentColor"
+/>
+
+<circle
+cx="160"
+cy="365"
+r="10"
+fill="currentColor"
+/>
+
+<circle
+cx="720"
+cy="145"
+r="10"
+fill="currentColor"
+/>
+
+
+<!-- corrente -->
+
+<line
+x1="220"
+y1="500"
+x2="160"
+y2="365"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- superfície -->
+
+<line
+x1="160"
+y1="365"
+x2="720"
+y2="145"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- fundo -->
+
+<line
+x1="220"
+y1="500"
+x2="720"
+y2="145"
+stroke="currentColor"
+stroke-width="7"
+/>
+
+
+<text
+x="80"
+y="455"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Corrente 270° / 1 nó
+</text>
+
+<text
+x="365"
+y="225"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+RN 314° / 8,8 nós
+</text>
+
+<text
+x="440"
+y="430"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+Rfd 310° / 9,6 nós
+</text>
+
+</svg>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação à praticagem
+</h3>
+
+<p>
+Este é um problema especialmente importante
+quando existe:
+</p>
+
+<ul>
+
+<li>
+um ponto de embarque do Prático;
+</li>
+
+<li>
+um waypoint obrigatório;
+</li>
+
+<li>
+uma posição de espera;
+</li>
+
+<li>
+um ponto de guinada;
+</li>
+
+<li>
+um horário específico
+a cumprir.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 63
+     PROBLEMA 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="determinar-rn-velfd"
+data-topico-id="determinar-rn-velfd">
+
+<h2>
+63. Problema 4 — Determinação de RN,
+velfd e ETA
+</h2>
+
+<div class="widget">
+
+<p>
+Neste problema:
+</p>
+
+<ul>
+
+<li>
+a velocidade do navio
+<strong>não pode ser alterada;</strong>
+</li>
+
+<li>
+o rumo no fundo desejado
+é conhecido;
+</li>
+
+<li>
+a corrente também é conhecida.
+</li>
+
+</ul>
+
+<p>
+Devem ser determinados:
+</p>
+
+<ul>
+
+<li>
+<strong>RN;</strong>
+</li>
+
+<li>
+<strong>velfd;</strong>
+</li>
+
+<li>
+<strong>ETA.</strong>
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens
+</h3>
+
+<p>
+Às
+<strong>1000</strong>,
+posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°05,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°18,0' W
+</strong>
+
+</p>
+
+<p>
+Velocidade do navio:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 6 nós
+</strong>
+
+</p>
+
+<p>
+Corrente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 100°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1,5 nó
+</strong>
+
+</p>
+
+<p>
+O ponto B
+está situado no alinhamento
+farol Rasa–farol Laje.
+</p>
+
+</div>
+
+
+
+<h3>
+63.1 Determinação do Rfd desejado
+</h3>
+
+<p>
+Ligando a posição inicial
+ao ponto B:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rfd = 072°
+</strong>
+
+</p>
+
+
+
+<h3>
+63.2 Construção do triângulo
+</h3>
+
+<p>
+Da posição inicial,
+aplica-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+corrente 100° / 1,5 nó
+</strong>
+
+</p>
+
+<p>
+Da extremidade do vetor corrente,
+com abertura do compasso
+igual a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 6 NM
+</strong>
+
+</p>
+
+<p>
+intercepta-se
+a linha de Rfd = 072°.
+</p>
+
+<p>
+O triângulo fornece:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 065°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velfd = 7,3 nós
+</strong>
+
+</p>
+
+
+
+<h3>
+63.3 Cálculo do ETA
+</h3>
+
+<p>
+Miguens mede:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+AB = 9 NM
+</strong>
+
+</p>
+
+<p>
+Assim:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = D / V
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = 9 / 7,3
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T ≈ 1,233 h
+</strong>
+
+</p>
+
+<p>
+Convertendo a fração:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+0,233 × 60 ≈ 14 min
+</strong>
+
+</p>
+
+<p>
+Logo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T ≈ 1 h 14 min
+</strong>
+
+</p>
+
+<p>
+Partindo às 1000:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+ETA = 1114
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Resultado completo
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Elemento</th>
+<th>Resultado</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Rfd desejado</td>
+<td><strong>072°</strong></td>
+</tr>
+
+<tr>
+<td>RN</td>
+<td><strong>065°</strong></td>
+</tr>
+
+<tr>
+<td>velfd</td>
+<td><strong>7,3 nós</strong></td>
+</tr>
+
+<tr>
+<td>Distância</td>
+<td><strong>9 NM</strong></td>
+</tr>
+
+<tr>
+<td>Tempo</td>
+<td><strong>1 h 14 min</strong></td>
+</tr>
+
+<tr>
+<td>ETA</td>
+<td><strong>1114</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Velocidade no fundo
+é a que interessa ao ETA
+</h3>
+
+<p>
+O navio está desenvolvendo
+<strong>6 nós na superfície</strong>,
+mas avança no fundo
+a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+7,3 nós
+</strong>
+
+</p>
+
+<p>
+Por isso,
+o cálculo do ETA
+deve utilizar
+<strong>velfd</strong>,
+e não simplesmente velN.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 64
+     PROBLEMA 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-estimada-corrigida"
+data-topico-id="posicao-estimada-corrigida">
+
+<h2>
+64. Problema 5 — Posição Estimada Corrigida
+</h2>
+
+<div class="widget">
+
+<p>
+Quando a corrente da região
+é conhecida,
+pode-se corrigir
+uma posição estimada
+aplicando diretamente
+o vetor corrente
+ao ponto estimado.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo de Miguens
+</h3>
+
+<p>
+Posição observada às
+<strong>0800</strong>:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°00,0' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°08,75' W
+</strong>
+
+</p>
+
+<p>
+O navio governa:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+RN = 120°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velN = 7 nós
+</strong>
+
+</p>
+
+<p>
+Corrente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 030°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 1,0 nó
+</strong>
+
+</p>
+
+</div>
+
+
+
+<h3>
+64.1 Posição estimada das 0900
+</h3>
+
+<p>
+Em 1 hora:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 7 NM
+</strong>
+
+</p>
+
+<p>
+Sobre RN = 120°,
+marca-se 7 NM.
+</p>
+
+
+
+<h3>
+64.2 Aplicação da corrente
+</h3>
+
+<p>
+A partir da posição estimada,
+aplica-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 030°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Dcor = 1 NM
+</strong>
+
+</p>
+
+<p>
+Na extremidade
+estará a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Posição Estimada Corrigida de 0900
+</strong>
+
+</p>
+
+
+
+<div class="destaque">
+
+<h3>
+Coordenadas obtidas por Miguens
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Lat 23°02,6' S
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Long 043°01,6' W
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>
+Símbolo gráfico
+</h3>
+
+<p>
+Miguens estabelece que
+a posição estimada corrigida
+seja representada
+por um:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+losango
+</strong>
+
+</p>
+
+<p>
+centrado na posição,
+acompanhado da hora
+e da abreviatura:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+EC
+</strong>
+
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG POSIÇÃO ESTIMADA CORRIGIDA
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 37 — Posição Estimada Corrigida
+</h3>
+
+<svg
+viewBox="0 0 1000 630"
+role="img"
+aria-label="Posição observada, posição estimada e posição estimada corrigida pela aplicação do vetor corrente"
+style="width:100%; height:auto;"
+>
+
+
+<!-- inicial -->
+
+<circle
+cx="190"
+cy="230"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- superfície -->
+
+<line
+x1="190"
+y1="230"
+x2="650"
+y2="500"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- estimada -->
+
+<line
+x1="635"
+y1="480"
+x2="665"
+y2="520"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<!-- corrente -->
+
+<line
+x1="650"
+y1="500"
+x2="765"
+y2="300"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+
+<!-- losango EC -->
+
+<polygon
+points="765,280 785,300 765,320 745,300"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<text
+x="95"
+y="190"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+0800 observada
+</text>
+
+<text
+x="550"
+y="550"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+0900 estimada
+</text>
+
+<text
+x="790"
+y="305"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+0900 EC
+</text>
+
+<text
+x="330"
+y="390"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+RN 120° / 7 NM
+</text>
+
+<text
+x="680"
+y="390"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+030° / 1 NM
+</text>
+
+</svg>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Manobras sucessivas
+</h3>
+
+<p>
+Miguens observa que,
+quando o navio executa
+várias mudanças sucessivas
+de rumo e velocidade,
+é conveniente:
+</p>
+
+<ol>
+
+<li>
+plotar as posições estimadas
+correspondentes às mudanças;
+</li>
+
+<li>
+prosseguir a estima
+ao longo das manobras;
+</li>
+
+<li>
+ao final,
+aplicar à última posição estimada
+o efeito acumulado da corrente
+durante todo o período.
+</li>
+
+</ol>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 65
+     PRECISÃO DA ESTIMA
+========================================= -->
+
+<section
+class="topico-aula"
+id="precisao-estima"
+data-topico-id="precisao-estima">
+
+<h2>
+65. Precisão e consistência da posição estimada
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens encerra o Capítulo 5
+ressaltando que,
+embora a obtenção gráfica
+do ponto estimado seja simples,
+sua confiabilidade depende
+da qualidade dos elementos utilizados.
+</p>
+
+<p>
+Devem ser conhecidos
+e acompanhados cuidadosamente
+os erros dos equipamentos
+que fornecem:
+</p>
+
+<ul>
+
+<li>
+rumo;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+distância percorrida.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>
+A posição estimada não é certeza
+</h3>
+
+<p>
+O ponto estimado representa
+apenas a posição
+em que o navio possui
+<strong>maior probabilidade de estar</strong>.
+</p>
+
+<p>
+Em situações perigosas,
+pode ser mais apropriado
+representá-lo como
+uma
+<strong>zona de probabilidade</strong>.
+</p>
+
+</div>
+
+
+
+<h3>
+65.1 Consistência do ponto estimado
+</h3>
+
+<p>
+O raio da circunferência
+de incerteza ao redor
+do ponto estimado
+é denominado por Miguens:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+consistência do ponto estimado
+</strong>
+
+</p>
+
+<p>
+Esse raio depende
+dos erros prováveis:
+</p>
+
+<ul>
+
+<li>
+no rumo;
+</li>
+
+<li>
+na distância percorrida;
+</li>
+
+<li>
+e do efeito da corrente.
+</li>
+
+</ul>
+
+
+
+<div class="formula">
+
+<h3>
+Regra empírica apresentada por Miguens
+</h3>
+
+<p>
+Admite-se que,
+mesmo com os cuidados adequados,
+a posição estimada possa apresentar
+uma consistência de aproximadamente:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+10% da distância percorrida
+desde a última posição observada
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+r ≈ 0,1 × D
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+Exemplo didático
+</h3>
+
+<p>
+Se o navio percorreu:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 20 NM
+</strong>
+
+</p>
+
+<p>
+desde a última posição observada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+r ≈ 0,1 × 20
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+r ≈ 2 NM
+</strong>
+
+</p>
+
+<p>
+Isso significa que,
+pela regra empírica,
+a posição estimada deve ser encarada
+dentro de uma zona de incerteza
+da ordem de
+<strong>2 NM</strong>.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG ZONA DE CONSISTÊNCIA
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 38 — Zona de consistência da posição estimada
+</h3>
+
+<svg
+viewBox="0 0 900 600"
+role="img"
+aria-label="Posição estimada no centro de uma circunferência representando a zona de probabilidade"
+style="width:100%; height:auto;"
+>
+
+
+<circle
+cx="450"
+cy="300"
+r="210"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+stroke-dasharray="10 7"
+/>
+
+
+<line
+x1="435"
+y1="280"
+x2="465"
+y2="320"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<line
+x1="465"
+y1="280"
+x2="435"
+y2="320"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+
+<line
+x1="450"
+y1="300"
+x2="660"
+y2="300"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<text
+x="495"
+y="275"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+posição estimada
+</text>
+
+<text
+x="515"
+y="330"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+r = consistência
+</text>
+
+<text
+x="285"
+y="555"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+zona de probabilidade
+</text>
+
+</svg>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Quanto maior o tempo
+e a distância navegados
+desde a última posição confiável,
+maior tende a ser
+a incerteza acumulada.
+</p>
+
+<p>
+Em proximidade de perigos,
+a posição estimada
+não deve ser tratada
+como um ponto geometricamente exato.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+🧭 Síntese — Problemas do Triângulo de Corrente
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Problema</th>
+<th>Conhecidos</th>
+<th>Determinar</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Corrente real</td>
+<td>
+RN, velN,
+duas posições observadas
+</td>
+<td>
+Rcor, velcor,
+Rfd, velfd
+</td>
+</tr>
+
+<tr>
+<td>Movimento no fundo</td>
+<td>
+RN, velN,
+Rcor, velcor
+</td>
+<td>
+Rfd, velfd
+</td>
+</tr>
+
+<tr>
+<td>Rumo e velocidade a governar</td>
+<td>
+Rfd, velfd,
+Rcor, velcor
+</td>
+<td>
+RN, velN
+</td>
+</tr>
+
+<tr>
+<td>Rumo a governar com velN fixa</td>
+<td>
+Rfd,
+velN,
+Rcor,
+velcor
+</td>
+<td>
+RN, velfd
+</td>
+</tr>
+
+<tr>
+<td>Posição estimada corrigida</td>
+<td>
+posição estimada
+e vetor corrente
+</td>
+<td>
+posição EC
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+📚 Referência desta parte
+</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte — Volume I.
+</strong>
+</p>
+
+<p>
+<strong>
+Capítulo 5 — Navegação Estimada.
+</strong>
+</p>
+
+<p>
+Conteúdo utilizado:
+</p>
+
+<ul>
+
+<li>
+<strong>5.6</strong> —
+O Triângulo de Corrente;
+</li>
+
+<li>
+<strong>5.7</strong> —
+Resolução gráfica dos principais
+problemas do Triângulo de Corrente;
+</li>
+
+<li>
+determinação dos elementos
+da corrente;
+</li>
+
+<li>
+determinação do rumo
+e velocidade no fundo;
+</li>
+
+<li>
+determinação do rumo
+e velocidade na superfície;
+</li>
+
+<li>
+cálculo de ETA
+com velocidade no fundo;
+</li>
+
+<li>
+posição estimada corrigida;
+</li>
+
+<li>
+<strong>5.8</strong> —
+Precisão e consistência
+da posição estimada.
+</li>
+
+</ul>
+
+<p>
+<strong>
+Páginas principais utilizadas:
+5-8 a 5-17.
+</strong>
+</p>
+
+<p>
+Os valores numéricos
+dos problemas principais
+foram mantidos conforme
+os exemplos apresentados
+por Miguens.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 9
+========================================= -->
+
+<!-- =========================================
+     INÍCIO PARTE 10
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 10
+     DETERMINAÇÃO DA POSIÇÃO POR
+     MARCAÇÕES SUCESSIVAS
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 10
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 10 — DETERMINAÇÃO DA POSIÇÃO
+POR MARCAÇÕES SUCESSIVAS
+</h2>
+
+<p>
+Na navegação costeira,
+nem sempre é possível observar
+simultaneamente dois ou mais pontos notáveis
+que permitam determinar imediatamente
+a posição do navio.
+</p>
+
+<p>
+Pode ocorrer que,
+ao longo da costa,
+apenas um ponto notável representado
+na carta náutica esteja disponível
+em determinado instante.
+</p>
+
+<p>
+Nessas circunstâncias,
+Miguens apresenta a técnica de
+<strong>determinação da posição
+por Linhas de Posição sucessivas</strong>.
+</p>
+
+<p>
+A ideia fundamental consiste em
+<strong>transportar uma Linha de Posição anterior</strong>
+para o instante de uma observação posterior,
+utilizando os elementos do movimento do navio.
+</p>
+
+<div class="destaque">
+
+<h3>
+Ligação com a Navegação Estimada
+</h3>
+
+<p>
+Este método utiliza diretamente
+os conceitos estudados
+na Navegação Estimada.
+</p>
+
+<p>
+Conhecendo:
+</p>
+
+<ul>
+
+<li>
+o intervalo de tempo
+entre as observações;
+</li>
+
+<li>
+o rumo verdadeiro;
+</li>
+
+<li>
+a velocidade
+ou a distância navegada;
+</li>
+
+</ul>
+
+<p>
+pode-se determinar
+quanto o navio avançou
+entre as duas observações
+e transportar a primeira LDP
+para o instante da segunda.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 66
+     CONCEITO FUNDAMENTAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-marcacoes-sucessivas"
+data-topico-id="conceito-marcacoes-sucessivas">
+
+<h2>
+66. Conceito de Linhas de Posição Sucessivas
+</h2>
+
+<div class="widget">
+
+<p>
+Na determinação convencional da posição
+por duas ou mais Linhas de Posição,
+procura-se obter as observações
+com o menor intervalo de tempo possível.
+</p>
+
+<p>
+Dessa maneira,
+mesmo que as observações
+não tenham sido realizadas
+exatamente no mesmo instante,
+podem ser consideradas,
+na prática,
+<strong>simultâneas</strong>.
+</p>
+
+<p>
+Entretanto,
+quando existe um intervalo de tempo
+significativo entre duas observações,
+o navio se desloca entre elas.
+</p>
+
+<p>
+Consequentemente,
+as duas LDP não podem simplesmente
+ser cruzadas em suas posições originais.
+</p>
+
+<div class="formula">
+
+<h3>
+Princípio do método
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+LDP no instante t
+</strong>
+
+</p>
+
+<p>
+é transportada segundo
+o movimento do navio até:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+t' = t + Δt
+</strong>
+
+</p>
+
+<p>
+obtendo-se:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP transportada para t'
+</strong>
+
+</p>
+
+</div>
+
+<p>
+A interseção dessa LDP transportada
+com a LDP obtida no instante
+<strong>t'</strong>
+permite determinar
+a posição correspondente
+à segunda observação.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Conceito essencial
+</h3>
+
+<p>
+Não se está transportando
+fisicamente o objeto observado.
+</p>
+
+<p>
+O que se transporta graficamente
+é a
+<strong>Linha de Posição</strong>,
+representando onde estaria,
+no instante posterior,
+o conjunto de posições compatíveis
+com a observação anterior,
+considerado o deslocamento do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 67
+     TRANSPORTE DE LDP
+========================================= -->
+
+<section
+class="topico-aula"
+id="transporte-ldp"
+data-topico-id="transporte-ldp">
+
+<h2>
+67. Transporte de uma Linha de Posição
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo Miguens,
+uma Linha de Posição resultante
+de uma observação realizada
+em determinado instante
+<strong>t</strong>
+pode ser traçada novamente
+para um instante posterior
+<strong>t'</strong>.
+</p>
+
+<p>
+Para realizar esse transporte,
+é necessário conhecer:
+</p>
+
+<ul>
+
+<li>
+<strong>rumo verdadeiro;</strong>
+</li>
+
+<li>
+<strong>distância navegada</strong>
+entre t e t'.
+</li>
+
+</ul>
+
+<p>
+A distância navegada
+pode ser obtida:
+</p>
+
+<ul>
+
+<li>
+pela diferença das leituras
+do <strong>odômetro</strong>;
+</li>
+
+<li>
+ou pela relação
+<strong>velocidade × tempo</strong>.
+</li>
+
+</ul>
+
+<div class="formula">
+
+<h3>
+Distância navegada
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+D = V × Δt
+</strong>
+
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>D</strong> =
+distância navegada;
+</li>
+
+<li>
+<strong>V</strong> =
+velocidade do navio;
+</li>
+
+<li>
+<strong>Δt</strong> =
+intervalo entre as observações.
+</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Significado físico do transporte
+</h3>
+
+<p>
+Se no instante
+<strong>t</strong>
+o navio estava em algum ponto
+de determinada LDP
+e depois navegou uma distância
+<strong>d</strong>
+sobre um rumo
+<strong>R</strong>,
+então, no instante:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+t' = t + Δt
+</strong>
+
+</p>
+
+<p>
+o navio estará sobre
+a mesma LDP,
+porém deslocada da distância
+<strong>d</strong>
+na direção do rumo
+<strong>R</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 68
+     CONSTRUÇÃO GRÁFICA
+========================================= -->
+
+<section
+class="topico-aula"
+id="construcao-transporte-ldp"
+data-topico-id="construcao-transporte-ldp">
+
+<h2>
+68. Construção gráfica do transporte da LDP
+</h2>
+
+<div class="widget">
+
+<p>
+O procedimento gráfico apresentado por Miguens
+pode ser organizado em quatro etapas.
+</p>
+
+<ol>
+
+<li>
+Traçar a LDP correspondente
+à primeira observação.
+</li>
+
+<li>
+Escolher qualquer ponto
+sobre essa LDP.
+</li>
+
+<li>
+A partir desse ponto,
+traçar uma linha paralela
+ao rumo verdadeiro do navio
+e marcar sobre ela
+a distância navegada
+entre as observações.
+</li>
+
+<li>
+Pela extremidade obtida,
+traçar uma nova linha
+<strong>paralela à LDP original</strong>.
+</li>
+
+</ol>
+
+<p>
+Essa nova linha é a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP transportada
+</strong>
+
+</p>
+
+
+<!-- =========================================
+     SVG
+     TRANSPORTE DE LDP
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 39 — Princípio do transporte de uma LDP
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Transporte de uma linha de posição segundo o rumo e a distância navegada"
+style="width:100%; height:auto;"
+>
+
+<!-- LDP original -->
+
+<line
+x1="160"
+y1="500"
+x2="450"
+y2="160"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="125"
+y="540"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+LDP no instante t
+</text>
+
+
+<!-- ponto A -->
+
+<circle
+cx="300"
+cy="336"
+r="9"
+fill="currentColor"
+/>
+
+<text
+x="270"
+y="320"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+A
+</text>
+
+
+<!-- deslocamento -->
+
+<line
+x1="300"
+y1="336"
+x2="650"
+y2="336"
+stroke="currentColor"
+stroke-width="6"
+/>
+
+<polyline
+points="615,320 650,336 615,352"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="405"
+y="310"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+R / distância d
+</text>
+
+
+<!-- ponto A' -->
+
+<circle
+cx="650"
+cy="336"
+r="9"
+fill="currentColor"
+/>
+
+<text
+x="665"
+y="320"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+A'
+</text>
+
+
+<!-- LDP transportada -->
+
+<line
+x1="510"
+y1="500"
+x2="800"
+y2="160"
+stroke="currentColor"
+stroke-width="5"
+stroke-dasharray="12 7"
+/>
+
+<text
+x="625"
+y="545"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+LDP transportada para t'
+</text>
+
+
+<!-- paralelismo -->
+
+<text
+x="410"
+y="595"
+font-size="21"
+fill="currentColor">
+As duas LDP permanecem paralelas
+</text>
+
+</svg>
+
+<p>
+A orientação da LDP
+não é modificada.
+Ela apenas é deslocada
+segundo o movimento estimado do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 69
+     EXEMPLO FIGURA 6.1
+========================================= -->
+
+<section
+class="topico-aula"
+id="exemplo-transporte-ldp"
+data-topico-id="exemplo-transporte-ldp">
+
+<h2>
+69. Exemplo de Miguens — Transporte de uma Reta de Marcação
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta,
+na Figura 6.1,
+um exemplo direto
+de transporte de uma reta de marcação.
+</p>
+
+<div class="formula">
+
+<h3>
+📘 Dados
+</h3>
+
+<p>
+Às
+<strong>1300</strong>,
+o navio apresenta:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 000°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velocidade = 10 nós
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+odômetro = 0107,0
+</strong>
+
+</p>
+
+<p>
+Nesse instante,
+é marcada uma
+<strong>Caixa d'Água — ponto A</strong>
+a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+M = 284°
+</strong>
+
+</p>
+
+<p>
+Às
+<strong>1330</strong>:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+odômetro = 0112,0
+</strong>
+
+</p>
+
+</div>
+
+
+<h3>
+69.1 Distância navegada pelo odômetro
+</h3>
+
+<div class="formula">
+
+<p class="formula-linha">
+
+<strong>
+D = 0112,0 − 0107,0
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 5,0 NM
+</strong>
+
+</p>
+
+</div>
+
+
+<h3>
+69.2 Conferência por velocidade e tempo
+</h3>
+
+<p>
+O intervalo é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δt = 30 min = 0,5 h
+</strong>
+
+</p>
+
+<p>
+Assim:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = V × T
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 10 × 0,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 5 NM
+</strong>
+
+</p>
+
+<div class="destaque">
+
+<h3>
+Construção
+</h3>
+
+<p>
+Traça-se inicialmente
+a reta de marcação das 1300.
+</p>
+
+<p>
+Por qualquer ponto dessa reta,
+traça-se uma linha paralela
+ao rumo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 000°
+</strong>
+
+</p>
+
+<p>
+e sobre ela são marcadas:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+5 NM
+</strong>
+
+</p>
+
+<p>
+Da extremidade obtida,
+traça-se uma paralela
+à reta de marcação original.
+</p>
+
+<p>
+Essa linha representa:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP 1300 transportada para 1330
+</strong>
+
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ O ponto escolhido na LDP é arbitrário
+</h3>
+
+<p>
+O transporte pode começar
+pelo próprio ponto observado
+ou por
+<strong>qualquer ponto da reta de marcação</strong>.
+</p>
+
+<p>
+O resultado será o mesmo,
+desde que o deslocamento
+tenha:
+</p>
+
+<ul>
+
+<li>
+a direção correta;
+</li>
+
+<li>
+o sentido correto;
+</li>
+
+<li>
+a distância correta.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 70
+     TRANSPORTE DE ALINHAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="transporte-alinhamento"
+data-topico-id="transporte-alinhamento">
+
+<h2>
+70. Transporte de uma Linha de Alinhamento
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens ressalta que
+o princípio não está restrito
+às retas de marcação.
+</p>
+
+<p>
+Se o navio cruzou
+uma
+<strong>linha de alinhamento</strong>,
+essa LDP também pode ser transportada.
+</p>
+
+<p>
+O procedimento é essencialmente o mesmo:
+</p>
+
+<ol>
+
+<li>
+traçar o alinhamento correspondente
+ao instante inicial;
+</li>
+
+<li>
+determinar o movimento do navio
+até o instante posterior;
+</li>
+
+<li>
+deslocar a LDP
+segundo esse movimento;
+</li>
+
+<li>
+manter a nova LDP
+paralela à original.
+</li>
+
+</ol>
+
+<div class="destaque">
+
+<h3>
+Generalização
+</h3>
+
+<p>
+Embora qualquer LDP
+possa ser transportada,
+Miguens concentra o estudo
+nos casos mais comuns:
+</p>
+
+<ul>
+
+<li>
+<strong>retas de marcação;</strong>
+</li>
+
+<li>
+<strong>alinhamentos.</strong>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 71
+     LIMITAÇÃO TEMPORAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="limitacoes-transporte-ldp"
+data-topico-id="limitacoes-transporte-ldp">
+
+<h2>
+71. Limitações do transporte de LDP
+</h2>
+
+<div class="widget">
+
+<p>
+O transporte da Linha de Posição
+depende da estimativa
+do movimento ocorrido
+entre as observações.
+</p>
+
+<p>
+Durante esse intervalo,
+o movimento real do navio
+pode ser alterado por fatores como:
+</p>
+
+<ul>
+
+<li>
+corrente;
+</li>
+
+<li>
+vento;
+</li>
+
+<li>
+estado do mar
+e ação das vagas;
+</li>
+
+<li>
+erros do timoneiro;
+</li>
+
+<li>
+outras diferenças
+entre o movimento previsto
+e o efetivamente realizado.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limite recomendado por Miguens
+</h3>
+
+<p>
+Por ser um
+<strong>processo estimado</strong>,
+Miguens recomenda evitar,
+na navegação costeira,
+o transporte de LDP
+com diferenças de tempo superiores a:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+30 minutos
+</strong>
+
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Hierarquia de precisão
+</h3>
+
+<p>
+Miguens caracteriza a posição
+por marcações sucessivas como
+um processo
+<strong>aproximado</strong>.
+</p>
+
+<p>
+Em termos comparativos,
+ela é:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+melhor que a Navegação Estimada pura
+</strong>
+
+</p>
+
+<p>
+porém:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+menos precisa que uma boa posição
+por LDP simultâneas
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 72
+     MESMO OBJETO
+========================================= -->
+
+<section
+class="topico-aula"
+id="duas-marcacoes-mesmo-objeto"
+data-topico-id="duas-marcacoes-mesmo-objeto">
+
+<h2>
+72. Duas marcações sucessivas do mesmo objeto
+</h2>
+
+<div class="widget">
+
+<p>
+A primeira situação apresentada por Miguens
+consiste em observar
+<strong>o mesmo ponto notável duas vezes</strong>,
+com determinado intervalo de tempo
+entre as observações.
+</p>
+
+<p>
+A primeira marcação produz:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP₁ no instante t₁
+</strong>
+
+</p>
+
+<p>
+A segunda marcação produz:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP₂ no instante t₂
+</strong>
+
+</p>
+
+<p>
+Como o navio se deslocou
+entre t₁ e t₂,
+a primeira LDP deve ser transportada
+para o instante t₂.
+</p>
+
+<div class="formula">
+
+<h3>
+Determinação da posição
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+Posição em t₂
+=
+LDP₁ transportada ∩ LDP₂
+</strong>
+
+</p>
+
+</div>
+
+
+<!-- =========================================
+     SVG
+     MARCAÇÕES SUCESSIVAS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 40 — Posição por duas marcações sucessivas
+do mesmo objeto
+</h3>
+
+<svg
+viewBox="0 0 1000 700"
+role="img"
+aria-label="Duas marcações sucessivas do mesmo objeto com transporte da primeira linha de posição"
+style="width:100%; height:auto;"
+>
+
+<!-- objeto -->
+
+<polygon
+points="500,70 485,105 515,105"
+fill="currentColor"
+/>
+
+<text
+x="530"
+y="95"
+font-size="23"
+font-weight="bold"
+fill="currentColor">
+Ponto notável
+</text>
+
+
+<!-- primeira LDP -->
+
+<line
+x1="500"
+y1="90"
+x2="180"
+y2="540"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="125"
+y="575"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+LDP₁
+</text>
+
+
+<!-- segunda LDP -->
+
+<line
+x1="500"
+y1="90"
+x2="790"
+y2="550"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<text
+x="795"
+y="580"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+LDP₂
+</text>
+
+
+<!-- LDP transportada -->
+
+<line
+x1="700"
+y1="90"
+x2="380"
+y2="540"
+stroke="currentColor"
+stroke-width="5"
+stroke-dasharray="12 7"
+/>
+
+<text
+x="595"
+y="135"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+LDP₁ transportada
+</text>
+
+
+<!-- posição -->
+
+<circle
+cx="550"
+cy="170"
+r="15"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="575"
+y="195"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+posição em t₂
+</text>
+
+
+<!-- movimento -->
+
+<line
+x1="300"
+y1="610"
+x2="660"
+y2="610"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<polyline
+points="625,594 660,610 625,626"
+fill="none"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<text
+x="380"
+y="655"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+movimento do navio
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 73
+     EXEMPLO FIGURA 6.3
+========================================= -->
+
+<section
+class="topico-aula"
+id="exemplo-marcacoes-sucessivas"
+data-topico-id="exemplo-marcacoes-sucessivas">
+
+<h2>
+73. Exemplo de Miguens — Posição às 1830
+</h2>
+
+<div class="widget">
+
+<p>
+Na Figura 6.3,
+Miguens apresenta
+uma determinação de posição
+por duas marcações sucessivas
+de uma mesma torre.
+</p>
+
+<div class="formula">
+
+<h3>
+📘 Dados
+</h3>
+
+<p>
+Primeira observação:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1805
+</strong>
+
+</p>
+
+<p>
+Odômetro:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+0120,0
+</strong>
+
+</p>
+
+<p>
+Segunda observação:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1830
+</strong>
+
+</p>
+
+<p>
+Odômetro:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+0125,0
+</strong>
+
+</p>
+
+<p>
+Movimento mantido:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 090°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 12 nós
+</strong>
+
+</p>
+
+</div>
+
+
+<h3>
+73.1 Distância navegada pelo odômetro
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+D = 0125,0 − 0120,0
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 5 NM
+</strong>
+
+</p>
+
+
+<h3>
+73.2 Conferência pelo tempo
+</h3>
+
+<p>
+Entre 1805 e 1830:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δt = 25 min
+</strong>
+
+</p>
+
+<p>
+Convertendo para horas:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+T = 25 / 60 h
+</strong>
+
+</p>
+
+<p>
+Então:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 12 × 25/60
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 5 NM
+</strong>
+
+</p>
+
+
+<h3>
+73.3 Construção
+</h3>
+
+<ol>
+
+<li>
+Traçar a LDP obtida às
+<strong>1805</strong>.
+</li>
+
+<li>
+Traçar a LDP obtida às
+<strong>1830</strong>.
+</li>
+
+<li>
+Sobre uma direção paralela
+ao rumo
+<strong>090°</strong>,
+transportar a primeira LDP
+<strong>5 NM</strong>.
+</li>
+
+<li>
+Encontrar a interseção
+entre a primeira LDP transportada
+e a LDP das 1830.
+</li>
+
+</ol>
+
+<div class="destaque">
+
+<h3>
+Resultado geométrico
+</h3>
+
+<p>
+O cruzamento:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP 1805 transportada para 1830
+</strong>
+
+</p>
+
+<p>
+com:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP 1830
+</strong>
+
+</p>
+
+<p>
+determina a
+<strong>posição do navio às 1830</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 74
+     MUDANÇA DE RUMO E VELOCIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="mudanca-rumo-velocidade-ldp"
+data-topico-id="mudanca-rumo-velocidade-ldp">
+
+<h2>
+74. Mudança de rumo ou velocidade entre as marcações
+</h2>
+
+<div class="widget">
+
+<p>
+O método não deixa de ser aplicável
+se houver mudança:
+</p>
+
+<ul>
+
+<li>
+de rumo;
+</li>
+
+<li>
+de velocidade;
+</li>
+
+<li>
+ou de ambos.
+</li>
+
+</ul>
+
+<p>
+Nesse caso,
+não existe apenas um único vetor simples
+representando todo o movimento.
+</p>
+
+<p>
+Miguens orienta determinar
+as
+<strong>posições estimadas</strong>
+correspondentes aos instantes
+das duas observações.
+</p>
+
+<p>
+Em seguida,
+essas duas posições estimadas
+são unidas.
+</p>
+
+<div class="destaque">
+
+<h3>
+Ideia geométrica
+</h3>
+
+<p>
+O vetor compreendido entre:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+posição estimada em t₁
+→
+posição estimada em t₂
+</strong>
+
+</p>
+
+<p>
+representa o deslocamento resultante
+a ser utilizado
+no transporte da primeira LDP.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     SVG
+     MÚLTIPLAS PERNAS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 41 — Transporte com mudanças de rumo
+</h3>
+
+<svg
+viewBox="0 0 1000 650"
+role="img"
+aria-label="Movimento do navio em várias pernas e vetor resultante utilizado no transporte da linha de posição"
+style="width:100%; height:auto;"
+>
+
+
+<!-- trajetória -->
+
+<circle
+cx="180"
+cy="500"
+r="10"
+fill="currentColor"
+/>
+
+<line
+x1="180"
+y1="500"
+x2="380"
+y2="340"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<line
+x1="380"
+y1="340"
+x2="590"
+y2="390"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<line
+x1="590"
+y1="390"
+x2="780"
+y2="190"
+stroke="currentColor"
+stroke-width="5"
+/>
+
+<circle
+cx="780"
+cy="190"
+r="10"
+fill="currentColor"
+/>
+
+
+<!-- resultante -->
+
+<line
+x1="180"
+y1="500"
+x2="780"
+y2="190"
+stroke="currentColor"
+stroke-width="4"
+stroke-dasharray="12 8"
+/>
+
+<polyline
+points="745,194 780,190 760,220"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<text
+x="90"
+y="545"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+posição estimada t₁
+</text>
+
+<text
+x="745"
+y="155"
+font-size="21"
+font-weight="bold"
+fill="currentColor">
+posição estimada t₂
+</text>
+
+<text
+x="390"
+y="290"
+font-size="22"
+font-weight="bold"
+fill="currentColor">
+deslocamento resultante
+</text>
+
+</svg>
+
+<p>
+Mesmo com várias pernas,
+o transporte pode ser realizado
+utilizando o deslocamento resultante
+entre as posições estimadas
+correspondentes às duas observações.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 75
+     CORRENTE CONHECIDA
+========================================= -->
+
+<section
+class="topico-aula"
+id="marcacoes-sucessivas-corrente"
+data-topico-id="marcacoes-sucessivas-corrente">
+
+<h2>
+75. Marcações sucessivas com corrente conhecida
+</h2>
+
+<div class="widget">
+
+<p>
+Quando os elementos da corrente
+são conhecidos,
+Miguens recomenda aplicá-los
+ao movimento do navio
+entre as duas observações,
+aumentando a precisão
+da determinação.
+</p>
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da Figura 6.5
+</h3>
+
+<p>
+Navio:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 095°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 12 nós
+</strong>
+
+</p>
+
+<p>
+Corrente estimada:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 190°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+velcor = 3,0 nós
+</strong>
+
+</p>
+
+<p>
+Primeira observação:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1215 — odômetro 0310,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+M = 020°
+</strong>
+
+</p>
+
+<p>
+Segunda observação:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1245 — odômetro 0316,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+M = 330°
+</strong>
+
+</p>
+
+</div>
+
+
+<h3>
+75.1 Distância navegada na superfície
+</h3>
+
+<p class="formula-linha">
+
+<strong>
+D = 0316,5 − 0310,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 6,0 NM
+</strong>
+
+</p>
+
+<p>
+Conferindo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 12 × 0,5 = 6 NM
+</strong>
+
+</p>
+
+
+<h3>
+75.2 Efeito da corrente em 30 minutos
+</h3>
+
+<p>
+A corrente possui velocidade:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+3,0 nós
+</strong>
+
+</p>
+
+<p>
+Em meia hora:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Dcor = 3,0 × 0,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Dcor = 1,5 NM
+</strong>
+
+</p>
+
+<p>
+Esse deslocamento deve ser aplicado
+na direção:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Rcor = 190°
+</strong>
+
+</p>
+
+
+<h3>
+75.3 Procedimento de Miguens
+</h3>
+
+<ol>
+
+<li>
+Plotar as duas LDP.
+</li>
+
+<li>
+Plotar as posições estimadas
+correspondentes aos dois instantes.
+</li>
+
+<li>
+Aplicar à posição estimada
+das 1245
+o efeito da corrente ocorrido
+durante os 30 minutos.
+</li>
+
+<li>
+Obter a
+<strong>posição estimada corrigida — EC</strong>
+das 1245.
+</li>
+
+<li>
+Unir a posição estimada
+correspondente à primeira observação
+à EC da segunda observação.
+</li>
+
+<li>
+Transportar a primeira LDP
+paralelamente a essa direção,
+pela distância entre essas posições.
+</li>
+
+<li>
+Cruzar a LDP transportada
+com a LDP das 1245.
+</li>
+
+</ol>
+
+<div class="destaque">
+
+<h3>
+Resultado
+</h3>
+
+<p>
+O cruzamento da
+<strong>primeira LDP transportada</strong>
+com a
+<strong>segunda LDP</strong>
+determina a posição
+do navio às:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1245
+</strong>
+
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Atenção do Prático
+</h3>
+
+<p>
+Aqui aparece uma ligação direta
+entre os Capítulos 5 e 6.
+</p>
+
+<p>
+Primeiro,
+utiliza-se a
+<strong>Navegação Estimada Corrigida</strong>
+para representar melhor
+o deslocamento real do navio.
+</p>
+
+<p>
+Depois,
+esse deslocamento corrigido
+é utilizado para transportar
+a primeira Linha de Posição.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 76
+     OBJETOS DIFERENTES
+========================================= -->
+
+<section
+class="topico-aula"
+id="marcacoes-objetos-diferentes"
+data-topico-id="marcacoes-objetos-diferentes">
+
+<h2>
+76. Marcações sucessivas de objetos diferentes
+</h2>
+
+<div class="widget">
+
+<p>
+Nem sempre o mesmo objeto
+permanece visível durante tempo suficiente
+para a obtenção das duas marcações.
+</p>
+
+<p>
+Miguens mostra que
+o método continua válido
+quando as duas observações
+correspondem a
+<strong>objetos diferentes</strong>.
+</p>
+
+<p>
+A condição essencial
+continua sendo conhecer
+o deslocamento do navio
+entre as duas observações.
+</p>
+
+<div class="formula">
+
+<h3>
+📘 Exemplo da Figura 6.6
+</h3>
+
+<p>
+Às
+<strong>0900</strong>,
+o navio:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+R = 195°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+V = 10 nós
+</strong>
+
+</p>
+
+<p>
+marca um farol:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+M = 270°
+</strong>
+
+</p>
+
+<p>
+Às
+<strong>0930</strong>,
+mantendo rumo e velocidade,
+marca um monumento:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+M = 247°
+</strong>
+
+</p>
+
+</div>
+
+
+<h3>
+76.1 Distância navegada
+</h3>
+
+<p>
+Intervalo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δt = 30 min = 0,5 h
+</strong>
+
+</p>
+
+<p>
+Logo:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = V × T
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 10 × 0,5
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+D = 5 NM
+</strong>
+
+</p>
+
+
+<h3>
+76.2 Construção
+</h3>
+
+<ol>
+
+<li>
+Traçar a LDP das 0900
+correspondente ao farol.
+</li>
+
+<li>
+Traçar a LDP das 0930
+correspondente ao monumento.
+</li>
+
+<li>
+Transportar a LDP das 0900
+na direção:
+<strong>195°</strong>.
+</li>
+
+<li>
+Utilizar a distância:
+<strong>5 NM</strong>.
+</li>
+
+<li>
+Encontrar o cruzamento
+da LDP transportada
+com a LDP das 0930.
+</li>
+
+</ol>
+
+<div class="destaque">
+
+<h3>
+Posição obtida
+</h3>
+
+<p>
+A interseção:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP do farol transportada para 0930
+</strong>
+
+</p>
+
+<p>
+com:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+LDP do monumento às 0930
+</strong>
+
+</p>
+
+<p>
+determina a posição
+do navio às:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+0930
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 77
+     CRITÉRIOS DE QUALIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="qualidade-marcacoes-sucessivas"
+data-topico-id="qualidade-marcacoes-sucessivas">
+
+<h2>
+77. Condições que melhoram a determinação
+por marcações sucessivas
+</h2>
+
+<div class="widget">
+
+<p>
+As observações apresentadas por Miguens
+permitem estabelecer condições importantes
+para a utilização do método.
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Condição</th>
+<th>Efeito</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Intervalo pequeno entre as marcações
+</td>
+
+<td>
+Reduz a acumulação
+dos erros da estima.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Posição observada recente
+antes da primeira marcação
+</td>
+
+<td>
+Melhora a qualidade
+da base utilizada
+para acompanhar o movimento.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Corrente pouco significativa
+</td>
+
+<td>
+Reduz a diferença
+entre movimento estimado
+e movimento real.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Corrente conhecida
+</td>
+
+<td>
+Permite corrigir
+o deslocamento utilizado
+no transporte da LDP.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Rumo e velocidade bem conhecidos
+</td>
+
+<td>
+Melhora a precisão
+da distância e direção
+do transporte.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Regra prática importante
+</h3>
+
+<p>
+Na navegação costeira,
+não se deve transformar
+uma técnica aproximada
+em uma falsa sensação
+de precisão.
+</p>
+
+<p>
+Quanto maior o intervalo
+entre as observações,
+maior a dependência
+dos elementos da Navegação Estimada.
+</p>
+
+<p>
+Por essa razão,
+o limite de
+<strong>30 minutos</strong>
+destacado por Miguens
+deve receber especial atenção.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 78
+     TERMOS TÉCNICOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="termos-marcacoes-sucessivas"
+data-topico-id="termos-marcacoes-sucessivas">
+
+<h2>
+78. Terminologia técnica
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Line of Position — LOP</strong>
+</td>
+
+<td>
+Linha de Posição — LDP
+</td>
+
+<td>
+Linha sobre a qual
+se encontra o navio
+em consequência
+de determinada observação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Running Fix</strong>
+</td>
+
+<td>
+Posição por LDP sucessivas
+</td>
+
+<td>
+Determinação obtida
+utilizando LDP tomadas
+em instantes diferentes,
+com transporte da LDP anterior.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Advanced LOP</strong>
+</td>
+
+<td>
+LDP transportada
+</td>
+
+<td>
+Linha de Posição anterior
+deslocada para representar
+o instante de uma observação posterior.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Bearing</strong>
+</td>
+
+<td>
+Marcação
+</td>
+
+<td>
+Direção de um objeto
+observado pelo navegante.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Range</strong>
+</td>
+
+<td>
+Distância
+</td>
+
+<td>
+Distância entre o navio
+e um objeto ou ponto considerado.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Log</strong>
+</td>
+
+<td>
+Odômetro
+</td>
+
+<td>
+Equipamento ou indicação
+utilizada para acompanhar
+a distância percorrida pelo navio.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 10
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+🧭 Síntese — Marcações Sucessivas
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Situação</th>
+<th>Procedimento fundamental</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+LDP obtidas em instantes diferentes
+</td>
+
+<td>
+Transportar a primeira LDP
+para o instante da segunda.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Rumo e velocidade constantes
+</td>
+
+<td>
+Transportar segundo
+R e D = V × T.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Odômetro disponível
+</td>
+
+<td>
+Utilizar a diferença
+entre as leituras
+para determinar a distância navegada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Mudança de rumo/velocidade
+</td>
+
+<td>
+Utilizar o deslocamento resultante
+entre as posições estimadas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Corrente conhecida
+</td>
+
+<td>
+Corrigir o movimento
+antes de transportar a LDP.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Objetos diferentes
+</td>
+
+<td>
+O método permanece válido;
+transporta-se a primeira LDP
+até o instante da segunda.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Intervalo excessivo
+</td>
+
+<td>
+Aumenta a incerteza;
+Miguens recomenda evitar
+intervalos superiores a 30 minutos.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE 10
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>
+📚 Referência desta parte
+</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte —
+Volume I.
+</strong>
+</p>
+
+<p>
+<strong>
+Capítulo 6 —
+Determinação da Posição
+por Marcações Sucessivas.
+</strong>
+</p>
+
+<p>
+Conteúdo utilizado nesta parte:
+</p>
+
+<ul>
+
+<li>
+<strong>6.1 — Conceitos Preliminares;</strong>
+</li>
+
+<li>
+<strong>6.2 — Transporte de uma Linha de Posição;</strong>
+</li>
+
+<li>
+<strong>6.3.1 — Introdução;</strong>
+</li>
+
+<li>
+<strong>6.3.2 — Posição por duas marcações
+de um mesmo objeto;</strong>
+</li>
+
+<li>
+mudança de rumo e velocidade
+entre as LDP;
+</li>
+
+<li>
+aplicação dos elementos da corrente;
+</li>
+
+<li>
+<strong>6.3.3 — Posição por duas marcações
+de objetos diferentes.</strong>
+</li>
+
+</ul>
+
+<p>
+<strong>
+Páginas principais utilizadas:
+6-1 a 6-6.
+</strong>
+</p>
+
+<p>
+Os dados dos exemplos
+das Figuras 6.1,
+6.3,
+6.5
+e
+6.6
+foram mantidos conforme
+os exemplos apresentados
+na publicação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 10
+========================================= -->
+
+     
