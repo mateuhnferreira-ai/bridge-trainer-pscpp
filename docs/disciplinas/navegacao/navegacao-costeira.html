@@ -1077,3 +1077,2019 @@ e dos métodos de navegação costeira.
 <!-- =========================================
      FINAL PARTE 1
 ========================================= -->
+<!-- =========================================
+     INÍCIO PARTE 2
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 2
+     COORDENADAS GEOGRÁFICAS
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 2 — COORDENADAS GEOGRÁFICAS
+</h2>
+
+<p>
+Para determinar a posição de uma embarcação
+sobre a superfície terrestre,
+a navegação utiliza um sistema de referências
+baseado em
+<strong>paralelos</strong>
+e
+<strong>meridianos</strong>.
+</p>
+
+<p>
+A partir dessas referências são definidas
+as duas coordenadas fundamentais utilizadas
+para expressar uma posição:
+<strong>latitude</strong>
+e
+<strong>longitude</strong>.
+</p>
+
+<p>
+Antes de trabalhar diretamente com essas coordenadas,
+é necessário compreender as principais linhas,
+pontos e planos utilizados para representar
+geometricamente a Terra.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+     PRINCIPAIS LINHAS, PONTOS E PLANOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="coordenadas-geograficas"
+data-topico-id="coordenadas-geograficas">
+
+<h2>
+2. Principais linhas, pontos e planos do globo terrestre
+</h2>
+
+<div class="widget">
+
+<p>
+O sistema de coordenadas geográficas utilizado
+na navegação é construído a partir de referências
+geométricas definidas sobre o globo terrestre.
+</p>
+
+<p>
+Entre essas referências destacam-se
+o eixo da Terra,
+os polos,
+o plano equatorial,
+o Equador,
+os paralelos
+e os meridianos.
+</p>
+
+
+<h3>Eixo da Terra</h3>
+
+<p>
+O <strong>eixo da Terra</strong>
+é a linha em torno da qual a Terra executa
+seu movimento de rotação.
+</p>
+
+<p>
+Esse movimento ocorre de
+<strong>Oeste para Leste</strong>.
+</p>
+
+
+<h3>Polos</h3>
+
+<p>
+Os <strong>polos</strong>
+são os pontos nos quais o eixo da Terra
+intercepta sua superfície.
+</p>
+
+<ul>
+
+<li>
+<strong>Polo Norte</strong>;
+</li>
+
+<li>
+<strong>Polo Sul</strong>.
+</li>
+
+</ul>
+
+
+<h3>Círculo máximo</h3>
+
+<p>
+Um <strong>círculo máximo</strong>
+resulta da interseção da superfície terrestre
+com um plano que contém o centro da Terra.
+</p>
+
+
+<h3>Círculo menor</h3>
+
+<p>
+Um <strong>círculo menor</strong>
+resulta da interseção da superfície terrestre
+com um plano que
+<strong>não contém</strong>
+o centro da Terra.
+</p>
+
+
+<h3>Plano equatorial e Equador</h3>
+
+<p>
+O
+<strong>plano equatorial</strong>
+é perpendicular ao eixo de rotação
+e contém o centro da Terra.
+</p>
+
+<p>
+Sua interseção com a superfície terrestre
+forma o
+<strong>Equador</strong>,
+que é um círculo máximo.
+</p>
+
+<p>
+O Equador divide a Terra em:
+</p>
+
+<ul>
+
+<li>
+<strong>Hemisfério Norte</strong>;
+</li>
+
+<li>
+<strong>Hemisfério Sul</strong>.
+</li>
+
+</ul>
+
+
+
+<!-- =========================================
+     FIGURA SVG
+     PARALELOS E MERIDIANOS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 1 — Referências fundamentais do globo terrestre
+</h3>
+
+<svg
+viewBox="0 0 900 570"
+role="img"
+aria-label="Representação didática do Equador, paralelos, meridianos, polos e eixo terrestre"
+style="width:100%; height:auto;"
+>
+
+<!-- esfera -->
+
+<circle
+cx="450"
+cy="280"
+r="205"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- eixo terrestre -->
+
+<line
+x1="450"
+y1="35"
+x2="450"
+y2="525"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+
+<!-- equador -->
+
+<ellipse
+cx="450"
+cy="280"
+rx="205"
+ry="48"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- paralelos -->
+
+<ellipse
+cx="450"
+cy="190"
+rx="180"
+ry="39"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<ellipse
+cx="450"
+cy="370"
+rx="180"
+ry="39"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+
+<!-- meridiano frontal -->
+
+<ellipse
+cx="450"
+cy="280"
+rx="83"
+ry="205"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- segundo meridiano -->
+
+<ellipse
+cx="450"
+cy="280"
+rx="150"
+ry="205"
+fill="none"
+stroke="currentColor"
+stroke-width="1.5"
+stroke-dasharray="6 5"
+/>
+
+
+<!-- polos -->
+
+<circle
+cx="450"
+cy="75"
+r="6"
+fill="currentColor"
+/>
+
+<circle
+cx="450"
+cy="485"
+r="6"
+fill="currentColor"
+/>
+
+
+<!-- rótulos -->
+
+<text
+x="475"
+y="62"
+font-size="20"
+fill="currentColor"
+>
+Polo Norte
+</text>
+
+<text
+x="475"
+y="510"
+font-size="20"
+fill="currentColor"
+>
+Polo Sul
+</text>
+
+<text
+x="665"
+y="273"
+font-size="20"
+fill="currentColor"
+>
+Equador
+</text>
+
+<text
+x="650"
+y="188"
+font-size="19"
+fill="currentColor"
+>
+Paralelo
+</text>
+
+<text
+x="300"
+y="115"
+font-size="19"
+fill="currentColor"
+>
+Meridiano
+</text>
+
+<text
+x="465"
+y="300"
+font-size="18"
+fill="currentColor"
+>
+Eixo
+</text>
+
+</svg>
+
+<p>
+<strong>Representação didática.</strong>
+Os paralelos materializam a direção geral
+<strong>E–W</strong>,
+enquanto os meridianos materializam
+a direção
+<strong>N–S</strong>.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Paralelos</h3>
+
+<p>
+Os <strong>paralelos</strong>
+são círculos menores paralelos ao Equador
+e perpendiculares ao eixo da Terra.
+</p>
+
+<p>
+Entre os paralelos destacados
+na representação geográfica terrestre estão:
+</p>
+
+<ul>
+
+<li>
+Trópico de Câncer — aproximadamente 23,5° N;
+</li>
+
+<li>
+Trópico de Capricórnio — aproximadamente 23,5° S;
+</li>
+
+<li>
+Círculo Polar Ártico — aproximadamente 66,5° N;
+</li>
+
+<li>
+Círculo Polar Antártico — aproximadamente 66,5° S.
+</li>
+
+</ul>
+
+<p>
+Os paralelos materializam a direção
+<strong>Leste–Oeste (E–W)</strong>.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Meridianos</h3>
+
+<p>
+Os <strong>meridianos</strong>
+são círculos máximos
+que contêm os polos da Terra.
+</p>
+
+<p>
+O meridiano utilizado como origem
+para a contagem das longitudes é o
+<strong>Meridiano de Greenwich</strong>.
+</p>
+
+<p>
+Os meridianos materializam a direção
+<strong>Norte–Sul (N–S)</strong>.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Equator</strong></td>
+<td>Equador</td>
+<td>
+Círculo máximo que divide a Terra
+nos hemisférios Norte e Sul.
+</td>
+</tr>
+
+<tr>
+<td><strong>Parallel</strong></td>
+<td>Paralelo</td>
+<td>
+Círculo paralelo ao Equador,
+utilizado como referência para latitude.
+</td>
+</tr>
+
+<tr>
+<td><strong>Meridian</strong></td>
+<td>Meridiano</td>
+<td>
+Círculo máximo que passa pelos polos.
+</td>
+</tr>
+
+<tr>
+<td><strong>Greenwich Meridian</strong></td>
+<td>Meridiano de Greenwich</td>
+<td>
+Meridiano utilizado como origem
+para a contagem das longitudes.
+</td>
+</tr>
+
+<tr>
+<td><strong>Great Circle</strong></td>
+<td>Círculo máximo</td>
+<td>
+Círculo cujo plano contém
+o centro da Terra.
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+     LATITUDE
+========================================= -->
+
+<section
+class="topico-aula"
+id="latitude"
+data-topico-id="latitude">
+
+<h2>3. Latitude</h2>
+
+<div class="widget">
+
+<p>
+A
+<strong>latitude</strong>,
+representada pela letra grega
+<strong>φ</strong>,
+é o arco de meridiano compreendido
+entre o
+<strong>Equador</strong>
+e o
+<strong>paralelo do lugar</strong>.
+</p>
+
+<p>
+A latitude é contada:
+</p>
+
+<ul>
+
+<li>
+de <strong>0° a 90° Norte</strong>
+do Equador;
+</li>
+
+<li>
+de <strong>0° a 90° Sul</strong>
+do Equador.
+</li>
+
+</ul>
+
+<p>
+Portanto,
+a latitude sempre recebe a indicação
+<strong>N</strong>
+ou
+<strong>S</strong>,
+exceto quando o ponto está exatamente
+sobre o Equador.
+</p>
+
+
+
+<!-- =========================================
+     SVG LATITUDE
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 2 — Representação geométrica da latitude
+</h3>
+
+<svg
+viewBox="0 0 900 500"
+role="img"
+aria-label="Representação da latitude de um ponto ao norte do Equador"
+style="width:100%; height:auto;"
+>
+
+<!-- globo -->
+
+<circle
+cx="440"
+cy="250"
+r="190"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- equador -->
+
+<line
+x1="250"
+y1="250"
+x2="630"
+y2="250"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- eixo -->
+
+<line
+x1="440"
+y1="40"
+x2="440"
+y2="460"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="7 6"
+/>
+
+
+<!-- raio equador -->
+
+<line
+x1="440"
+y1="250"
+x2="630"
+y2="250"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+
+<!-- ponto -->
+
+<circle
+cx="575"
+cy="116"
+r="7"
+fill="currentColor"
+/>
+
+
+<!-- raio até ponto -->
+
+<line
+x1="440"
+y1="250"
+x2="575"
+y2="116"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- arco angular -->
+
+<path
+d="M 510 250 A 70 70 0 0 0 489 200"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- paralelo do lugar -->
+
+<line
+x1="305"
+y1="116"
+x2="575"
+y2="116"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="7 6"
+/>
+
+
+<!-- textos -->
+
+<text
+x="640"
+y="258"
+font-size="20"
+fill="currentColor"
+>
+Equador
+</text>
+
+<text
+x="590"
+y="112"
+font-size="20"
+fill="currentColor"
+>
+Ponto P
+</text>
+
+<text
+x="300"
+y="105"
+font-size="19"
+fill="currentColor"
+>
+Paralelo do lugar
+</text>
+
+<text
+x="510"
+y="205"
+font-size="25"
+font-weight="bold"
+fill="currentColor"
+>
+φ
+</text>
+
+<text
+x="458"
+y="70"
+font-size="18"
+fill="currentColor"
+>
+N
+</text>
+
+<text
+x="458"
+y="445"
+font-size="18"
+fill="currentColor"
+>
+S
+</text>
+
+</svg>
+
+<p>
+A latitude identifica a posição
+do paralelo do lugar
+em relação ao Equador.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>Limites da latitude</h3>
+
+<p class="formula-linha">
+
+<strong>
+0° ≤ φ ≤ 90°
+</strong>
+
+</p>
+
+<p>
+com indicação
+<strong>N</strong>
+ou
+<strong>S</strong>.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Latitude não é medida
+a partir do Meridiano de Greenwich.
+</p>
+
+<p>
+A referência da
+<strong>latitude é o Equador</strong>.
+</p>
+
+<p>
+O Meridiano de Greenwich será
+a referência para a
+<strong>longitude</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+     LONGITUDE
+========================================= -->
+
+<section
+class="topico-aula"
+id="longitude"
+data-topico-id="longitude">
+
+<h2>4. Longitude</h2>
+
+<div class="widget">
+
+<p>
+A
+<strong>longitude</strong>,
+representada pela letra grega
+<strong>λ</strong>,
+é o arco do Equador,
+ou o correspondente ângulo no polo,
+compreendido entre o
+<strong>Meridiano de Greenwich</strong>
+e o
+<strong>meridiano do lugar</strong>.
+</p>
+
+<p>
+A longitude é contada:
+</p>
+
+<ul>
+
+<li>
+de <strong>0° a 180° para Leste — E</strong>;
+</li>
+
+<li>
+de <strong>0° a 180° para Oeste — W</strong>.
+</li>
+
+</ul>
+
+<p>
+O Meridiano de Greenwich,
+utilizado como origem da contagem,
+é denominado
+<strong>Primeiro Meridiano</strong>.
+</p>
+
+
+
+<!-- =========================================
+     SVG LONGITUDE
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 3 — Representação conceitual da longitude
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Vista polar mostrando o Meridiano de Greenwich, o meridiano do lugar e o ângulo de longitude"
+style="width:100%; height:auto;"
+>
+
+<!-- vista polar -->
+
+<circle
+cx="440"
+cy="255"
+r="195"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- polo -->
+
+<circle
+cx="440"
+cy="255"
+r="7"
+fill="currentColor"
+/>
+
+
+<!-- Greenwich -->
+
+<line
+x1="440"
+y1="255"
+x2="440"
+y2="60"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- meridiano do lugar -->
+
+<line
+x1="440"
+y1="255"
+x2="585"
+y2="125"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- arco longitude -->
+
+<path
+d="M 440 175 A 80 80 0 0 1 499 201"
+fill="none"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- ponto -->
+
+<circle
+cx="585"
+cy="125"
+r="7"
+fill="currentColor"
+/>
+
+
+<!-- textos -->
+
+<text
+x="280"
+y="45"
+font-size="19"
+fill="currentColor"
+>
+Meridiano de Greenwich
+</text>
+
+<text
+x="600"
+y="120"
+font-size="19"
+fill="currentColor"
+>
+Meridiano do lugar
+</text>
+
+<text
+x="500"
+y="185"
+font-size="26"
+font-weight="bold"
+fill="currentColor"
+>
+λ
+</text>
+
+<text
+x="410"
+y="285"
+font-size="18"
+fill="currentColor"
+>
+Polo
+</text>
+
+<text
+x="650"
+y="260"
+font-size="20"
+fill="currentColor"
+>
+E
+</text>
+
+<text
+x="215"
+y="260"
+font-size="20"
+fill="currentColor"
+>
+W
+</text>
+
+</svg>
+
+<p>
+Nesta vista esquemática a longitude
+corresponde ao ângulo entre
+o Meridiano de Greenwich
+e o meridiano do lugar.
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>Limites da longitude</h3>
+
+<p class="formula-linha">
+
+<strong>
+0° ≤ λ ≤ 180°
+</strong>
+
+</p>
+
+<p>
+com indicação
+<strong>E</strong>
+ou
+<strong>W</strong>.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Não confundir</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Coordenada</th>
+<th>Referência</th>
+<th>Limites</th>
+<th>Designação</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Latitude — φ</strong></td>
+<td>Equador</td>
+<td>0° a 90°</td>
+<td>N ou S</td>
+</tr>
+
+<tr>
+<td><strong>Longitude — λ</strong></td>
+<td>Greenwich</td>
+<td>0° a 180°</td>
+<td>E ou W</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+     DIFERENÇA DE LATITUDE E LONGITUDE
+========================================= -->
+
+<section
+class="topico-aula"
+id="diferenca-latitude-longitude"
+data-topico-id="diferenca-latitude-longitude">
+
+<h2>
+5. Diferença de latitude e diferença de longitude
+</h2>
+
+<div class="widget">
+
+<p>
+Conhecer as coordenadas de dois pontos
+permite determinar quanto houve
+de variação em latitude
+e em longitude entre eles.
+</p>
+
+<p>
+Essas grandezas aparecem repetidamente
+nos cálculos posteriores
+da navegação estimada.
+</p>
+
+
+<h3>
+5.1 Diferença de latitude — Δφ
+</h3>
+
+<p>
+A
+<strong>diferença de latitude</strong>,
+representada por
+<strong>Δφ</strong>,
+é o arco de meridiano compreendido
+entre os paralelos que passam
+pelos dois lugares considerados.
+</p>
+
+<div class="destaque">
+
+<h3>Regra de cálculo</h3>
+
+<p>
+Quando as latitudes são de
+<strong>mesmo nome</strong>
+— ambas N ou ambas S —
+seus valores são
+<strong>subtraídos</strong>.
+</p>
+
+<p>
+Quando são de
+<strong>nomes contrários</strong>
+— uma N e outra S —
+seus valores são
+<strong>somados</strong>.
+</p>
+
+<p>
+Além do valor,
+deve-se observar o
+<strong>sentido do deslocamento</strong>,
+N ou S.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     EXEMPLO MIGUENS
+========================================= -->
+
+<div class="formula">
+
+<h3>
+📘 Exemplo — Diferença de latitude
+</h3>
+
+<p>
+Considere os pontos apresentados
+no exemplo de
+<em>Navegação: A Ciência e a Arte</em>:
+</p>
+
+<ul>
+
+<li>
+<strong>Ponto A:</strong>
+φ<sub>A</sub> = 30° N;
+</li>
+
+<li>
+<strong>Ponto B:</strong>
+φ<sub>B</sub> = 45° N.
+</li>
+
+</ul>
+
+<p>
+Como as duas latitudes são
+de mesmo nome,
+calculamos a diferença:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δφ = 45° − 30°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δφ = 15°
+</strong>
+
+</p>
+
+<p>
+Entretanto,
+o sentido depende da ordem
+em que o deslocamento é considerado.
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Deslocamento</th>
+<th>Resultado</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>A → B</td>
+<td><strong>Δφ = 15° N</strong></td>
+</tr>
+
+<tr>
+<td>B → A</td>
+<td><strong>Δφ = 15° S</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Interpretação</h3>
+
+<p>
+O valor angular é o mesmo nos dois sentidos:
+<strong>15°</strong>.
+</p>
+
+<p>
+O que muda é o nome da diferença de latitude,
+pois ele informa se o segundo ponto está
+ao Norte ou ao Sul do primeiro.
+</p>
+
+</div>
+
+
+
+<h3>
+5.2 Latitude média — φ<sub>m</sub>
+</h3>
+
+<p>
+A
+<strong>latitude média</strong>
+é a latitude correspondente
+ao paralelo médio entre os paralelos
+que passam pelos dois lugares.
+</p>
+
+<p>
+Para pontos situados no
+<strong>mesmo hemisfério</strong>,
+obtém-se a latitude média
+pela semissoma das latitudes.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo — Pontos no mesmo hemisfério
+</h3>
+
+<p>
+Utilizando novamente:
+</p>
+
+<p>
+A = 30° N
+</p>
+
+<p>
+B = 45° N
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+(30° + 45°) / 2
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+75° / 2
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+37,5° N
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo — Pontos em hemisférios diferentes
+</h3>
+
+<p>
+O exemplo da publicação considera:
+</p>
+
+<ul>
+
+<li>
+<strong>Ponto C:</strong>
+40° N;
+</li>
+
+<li>
+<strong>Ponto D:</strong>
+12° S.
+</li>
+
+</ul>
+
+<p>
+Como estão em hemisférios diferentes,
+utiliza-se a semidiferença.
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+(40° − 12°) / 2
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+28° / 2
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+φ<sub>m</sub> =
+14° N
+</strong>
+
+</p>
+
+<p>
+O nome é
+<strong>N</strong>
+porque a latitude de maior valor
+é a latitude Norte.
+</p>
+
+</div>
+
+
+
+<h3>
+5.3 Diferença de longitude — Δλ
+</h3>
+
+<p>
+A
+<strong>diferença de longitude</strong>,
+representada por
+<strong>Δλ</strong>,
+é o arco do Equador compreendido
+entre os meridianos que passam
+pelos dois lugares.
+</p>
+
+<p>
+A lógica de cálculo é semelhante
+à utilizada para a diferença de latitude.
+</p>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo — Longitudes de mesmo nome
+</h3>
+
+<p>
+A publicação apresenta:
+</p>
+
+<ul>
+
+<li>
+<strong>Ponto E:</strong>
+λ<sub>E</sub> = 045° W;
+</li>
+
+<li>
+<strong>Ponto F:</strong>
+λ<sub>F</sub> = 075° W.
+</li>
+
+</ul>
+
+<p>
+Como as longitudes são de mesmo nome:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δλ = 075° − 045°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δλ = 30°
+</strong>
+
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Deslocamento</th>
+<th>Resultado</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>E → F</td>
+<td><strong>Δλ = 30° W</strong></td>
+</tr>
+
+<tr>
+<td>F → E</td>
+<td><strong>Δλ = 30° E</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="formula">
+
+<h3>
+📘 Exemplo — Longitudes de nomes contrários
+</h3>
+
+<p>
+Considere:
+</p>
+
+<ul>
+
+<li>
+<strong>Ponto G:</strong>
+λ<sub>G</sub> = 015° W;
+</li>
+
+<li>
+<strong>Ponto H:</strong>
+λ<sub>H</sub> = 010° E.
+</li>
+
+</ul>
+
+<p>
+Como as longitudes possuem
+nomes contrários,
+os valores são somados:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δλ = 15° + 10°
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+Δλ = 25° E
+</strong>
+
+</p>
+
+<p>
+O sentido é
+<strong>Leste</strong>,
+pois o deslocamento considerado
+é de G para H.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG DLat E DLo
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 4 — Interpretação geométrica de Δφ e Δλ
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Grade de paralelos e meridianos mostrando diferença de latitude e diferença de longitude entre dois pontos"
+style="width:100%; height:auto;"
+>
+
+<!-- paralelos -->
+
+<line x1="180" y1="110" x2="730" y2="110"
+stroke="currentColor" stroke-width="2"/>
+
+<line x1="180" y1="220" x2="730" y2="220"
+stroke="currentColor" stroke-width="2"/>
+
+<line x1="180" y1="330" x2="730" y2="330"
+stroke="currentColor" stroke-width="2"/>
+
+<line x1="180" y1="440" x2="730" y2="440"
+stroke="currentColor" stroke-width="2"/>
+
+
+<!-- meridianos -->
+
+<line x1="250" y1="70" x2="250" y2="470"
+stroke="currentColor" stroke-width="2"/>
+
+<line x1="420" y1="70" x2="420" y2="470"
+stroke="currentColor" stroke-width="2"/>
+
+<line x1="590" y1="70" x2="590" y2="470"
+stroke="currentColor" stroke-width="2"/>
+
+
+<!-- pontos -->
+
+<circle cx="250" cy="330" r="8"
+fill="currentColor"/>
+
+<circle cx="590" cy="110" r="8"
+fill="currentColor"/>
+
+
+<!-- deslocamento -->
+
+<line
+x1="250"
+y1="330"
+x2="590"
+y2="110"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- DLat -->
+
+<line
+x1="775"
+y1="330"
+x2="775"
+y2="110"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polyline
+points="765,125 775,110 785,125"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<polyline
+points="765,315 775,330 785,315"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- DLo -->
+
+<line
+x1="250"
+y1="485"
+x2="590"
+y2="485"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polyline
+points="265,475 250,485 265,495"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<polyline
+points="575,475 590,485 575,495"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- labels -->
+
+<text
+x="225"
+y="355"
+font-size="22"
+font-weight="bold"
+fill="currentColor"
+>
+A
+</text>
+
+<text
+x="605"
+y="100"
+font-size="22"
+font-weight="bold"
+fill="currentColor"
+>
+B
+</text>
+
+<text
+x="790"
+y="225"
+font-size="22"
+font-weight="bold"
+fill="currentColor"
+>
+Δφ
+</text>
+
+<text
+x="400"
+y="510"
+font-size="22"
+font-weight="bold"
+fill="currentColor"
+>
+Δλ
+</text>
+
+</svg>
+
+<p>
+A diferença de latitude representa
+a separação angular na direção
+<strong>N–S</strong>.
+</p>
+
+<p>
+A diferença de longitude representa
+a separação angular entre os meridianos,
+na direção
+<strong>E–W</strong>.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP — sinal e sentido</h3>
+
+<p>
+Não memorize apenas
+“mesmo nome subtrai,
+nomes contrários soma”.
+</p>
+
+<p>
+Nos problemas de navegação,
+é necessário também identificar
+<strong>para qual direção ocorreu o deslocamento</strong>.
+</p>
+
+<p>
+Assim,
+uma mesma separação entre dois paralelos
+pode ser denominada
+<strong>Δφ N</strong>
+ou
+<strong>Δφ S</strong>,
+dependendo do sentido considerado.
+</p>
+
+<p>
+O mesmo raciocínio se aplica
+à diferença de longitude:
+<strong>Δλ E</strong>
+ou
+<strong>Δλ W</strong>.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Termo</th>
+<th>Português</th>
+<th>Símbolo / aplicação</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Latitude</strong></td>
+<td>Latitude</td>
+<td>φ</td>
+</tr>
+
+<tr>
+<td><strong>Longitude</strong></td>
+<td>Longitude</td>
+<td>λ</td>
+</tr>
+
+<tr>
+<td><strong>Difference of Latitude</strong></td>
+<td>Diferença de latitude</td>
+<td>Δφ</td>
+</tr>
+
+<tr>
+<td><strong>Difference of Longitude</strong></td>
+<td>Diferença de longitude</td>
+<td>Δλ</td>
+</tr>
+
+<tr>
+<td><strong>Mean Latitude</strong></td>
+<td>Latitude média</td>
+<td>φ<sub>m</sub></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+     MILHA NÁUTICA
+========================================= -->
+
+<section
+class="topico-aula"
+id="milha-nautica"
+data-topico-id="milha-nautica">
+
+<h2>
+6. Distância na superfície da Terra e milha náutica
+</h2>
+
+<div class="widget">
+
+<p>
+Na navegação,
+as distâncias são normalmente expressas
+em
+<strong>milhas náuticas</strong>.
+</p>
+
+<p>
+A milha náutica está diretamente relacionada
+à geometria utilizada para medir posições
+sobre a superfície terrestre.
+</p>
+
+<p>
+De forma resumida,
+ela corresponde ao comprimento
+de um arco de
+<strong>1 minuto de latitude</strong>.
+</p>
+
+
+
+<div class="formula">
+
+<h3>Milha náutica</h3>
+
+<p class="formula-linha">
+
+<strong>
+1 NM = 1' de latitude
+</strong>
+
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1 NM = 1.852 m
+</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Consequência cartográfica</h3>
+
+<p>
+Nas Cartas de Mercator,
+as distâncias devem ser medidas
+na
+<strong>escala das latitudes</strong>.
+</p>
+
+<p>
+Assim:
+</p>
+
+<p class="formula-linha">
+
+<strong>
+1 minuto de latitude = 1 milha náutica
+</strong>
+
+</p>
+
+<p>
+A razão para esse procedimento
+será aprofundada quando estudarmos
+a
+<strong>Projeção de Mercator</strong>.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+A relação entre minuto de latitude
+e milha náutica permite que o navegante
+obtenha diretamente distâncias
+na carta utilizando sua escala lateral
+de latitudes.
+</p>
+
+<p>
+Esse procedimento será utilizado
+repetidamente na plotagem
+e no acompanhamento da navegação costeira.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Em uma Carta de Mercator,
+não se deve utilizar a escala horizontal
+de longitudes como uma régua geral
+para medir distâncias.
+</p>
+
+<p>
+A distância deve ser obtida
+na
+<strong>escala de latitudes</strong>,
+preferencialmente na latitude
+correspondente à região da medida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIA DA PARTE
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h3>📚 Referência desta parte</h3>
+
+<p>
+<strong>
+MIGUENS, Altineu Pires.
+Navegação: A Ciência e a Arte — Volume I.
+</strong>
+</p>
+
+<p>
+<strong>Capítulo 1 — O Problema Geral da Navegação.</strong>
+</p>
+
+<p>
+Conteúdo utilizado nesta parte:
+principais linhas,
+pontos e planos do globo terrestre;
+sistema de coordenadas geográficas;
+latitude;
+longitude;
+diferença de latitude;
+latitude média;
+diferença de longitude;
+e fundamentos da milha náutica.
+</p>
+
+<p>
+<strong>Seções principais:</strong>
+1.5, 1.6 e início da seção 1.7.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 2
+========================================= -->
