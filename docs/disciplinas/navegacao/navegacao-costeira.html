@@ -1,1 +1,1079 @@
+<!-- =========================================
+     INÍCIO PARTE 1
+========================================= -->
 
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Navegação Costeira - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="navegacao-costeira"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Navegação Costeira
+</h2>
+
+<p>
+<strong>
+Coastal Navigation
+</strong>
+</p>
+
+<p>
+A navegação costeira utiliza referências naturais
+e artificiais observadas da embarcação,
+associadas às informações disponíveis nas
+<strong>cartas náuticas</strong>,
+para determinar e acompanhar a posição do navio.
+</p>
+
+<p>
+Para compreender corretamente esses procedimentos,
+é necessário dominar inicialmente as referências
+geográficas utilizadas na navegação,
+as coordenadas de
+<strong>latitude</strong>
+e
+<strong>longitude</strong>,
+as direções,
+as distâncias
+e a representação da superfície terrestre
+na carta náutica.
+</p>
+
+<p>
+A aula avançará progressivamente para
+<strong>rumos</strong>,
+<strong>marcações</strong>,
+<strong>linhas de posição</strong>,
+determinação da posição por observações costeiras
+e
+<strong>navegação estimada</strong>.
+</p>
+
+<p>
+Os procedimentos de cálculo apresentados em
+<strong>Navegação: A Ciência e a Arte — Volume I</strong>
+serão desenvolvidos passo a passo,
+com interpretação geométrica e aplicação prática.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Navegação Costeira
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Coastal Navigation
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<!-- FASE ATUAL -->
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+III — Navegação em Águas Restritas
+</strong>
+</p>
+
+<p>
+<strong>
+Navegação Costeira
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="fundamentos-navegacao">
+fundamentos e problema geral da navegação;
+</li>
+
+<li data-progresso-topico="coordenadas-geograficas">
+coordenadas geográficas;
+</li>
+
+<li data-progresso-topico="latitude">
+latitude;
+</li>
+
+<li data-progresso-topico="longitude">
+longitude;
+</li>
+
+<li data-progresso-topico="diferenca-latitude-longitude">
+diferença de latitude e diferença de longitude;
+</li>
+
+<li data-progresso-topico="milha-nautica">
+milha náutica, distância, velocidade e tempo;
+</li>
+
+<li data-progresso-topico="carta-nautica">
+carta náutica;
+</li>
+
+<li data-progresso-topico="projecao-mercator">
+projeção de Mercator;
+</li>
+
+<li data-progresso-topico="escala-carta">
+escala e medição de distâncias na carta;
+</li>
+
+<li data-progresso-topico="direcoes-navegacao">
+direções utilizadas na navegação;
+</li>
+
+<li data-progresso-topico="rumos">
+rumos;
+</li>
+
+<li data-progresso-topico="marcacoes">
+marcações;
+</li>
+
+<li data-progresso-topico="declinacao-desvio">
+declinação magnética, desvio da agulha
+e correção total;
+</li>
+
+<li data-progresso-topico="linhas-posicao">
+linhas de posição;
+</li>
+
+<li data-progresso-topico="posicao-marcacoes">
+determinação da posição por marcações;
+</li>
+
+<li data-progresso-topico="marcacoes-sucessivas">
+marcações sucessivas;
+</li>
+
+<li data-progresso-topico="navegacao-estimada">
+navegação estimada;
+</li>
+
+<li data-progresso-topico="problemas-estimada">
+problemas direto e inverso
+da navegação estimada;
+</li>
+
+<li data-progresso-topico="linhas-seguranca">
+linhas de posição de segurança;
+</li>
+
+<li data-progresso-topico="aplicacao-integrada">
+aplicação integrada da navegação costeira.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+compreender o problema fundamental
+da determinação da posição no mar;
+</li>
+
+<li>
+identificar latitude e longitude
+como coordenadas geográficas;
+</li>
+
+<li>
+calcular diferenças de latitude
+e de longitude nos casos estudados;
+</li>
+
+<li>
+relacionar o minuto de latitude
+à medição de distâncias náuticas;
+</li>
+
+<li>
+resolver problemas envolvendo
+distância, velocidade e tempo;
+</li>
+
+<li>
+interpretar as informações fundamentais
+de uma carta náutica;
+</li>
+
+<li>
+compreender as propriedades essenciais
+da projeção de Mercator;
+</li>
+
+<li>
+medir direções e distâncias
+na carta náutica;
+</li>
+
+<li>
+distinguir norte verdadeiro,
+norte magnético e norte da agulha;
+</li>
+
+<li>
+distinguir rumo de marcação;
+</li>
+
+<li>
+trabalhar com rumos e marcações
+verdadeiras, magnéticas e da agulha;
+</li>
+
+<li>
+aplicar corretamente declinação magnética,
+desvio e correção total;
+</li>
+
+<li>
+compreender o conceito
+de linha de posição;
+</li>
+
+<li>
+determinar uma posição
+por meio de observações costeiras;
+</li>
+
+<li>
+compreender e aplicar
+marcações sucessivas;
+</li>
+
+<li>
+executar os cálculos fundamentais
+da navegação estimada;
+</li>
+
+<li>
+interpretar linhas de posição
+de segurança;
+</li>
+
+<li>
+relacionar cada procedimento matemático
+à sua utilização operacional;
+</li>
+
+<li>
+familiarizar-se com os principais termos
+técnicos correspondentes em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Navegação: A Ciência e a Arte — Volume I
+</h3>
+
+<p>
+Publicação-base para o desenvolvimento
+dos fundamentos da navegação,
+coordenadas geográficas,
+carta náutica,
+rumos,
+marcações,
+navegação costeira
+e navegação estimada.
+</p>
+
+<p>
+<strong>Autor:</strong>
+Altineu Pires Miguens.
+</p>
+
+<p>
+<strong>Edição utilizada:</strong>
+versão disponibilizada para estudo — 2023.
+</p>
+
+<p>
+Os exemplos numéricos pertinentes
+à navegação costeira serão desenvolvidos
+ao longo da aula,
+preservando o método apresentado
+pela publicação.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+Esta aula utilizará apenas os conteúdos
+do Volume I relacionados diretamente
+à construção dos fundamentos
+e aos métodos de navegação costeira.
+</p>
+
+<p>
+Assuntos que possuam aulas próprias no
+Bridge Trainer PSCPP,
+como
+<strong>ECDIS</strong>,
+<strong>AIS e VTS</strong>,
+<strong>COLREG</strong>
+e
+<strong>Planejamento da Navegação</strong>,
+não serão antecipados de forma detalhada
+nesta página.
+</p>
+
+<p>
+Quando algum desses assuntos for necessário
+para contextualizar um conceito,
+será feita somente a referência indispensável,
+evitando duplicação de conteúdo.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+fundamentos e problema geral da navegação;
+</li>
+
+<li>
+Terra, coordenadas geográficas,
+latitude e longitude;
+</li>
+
+<li>
+diferenças de latitude e longitude;
+</li>
+
+<li>
+milha náutica, distância,
+velocidade e tempo;
+</li>
+
+<li>
+carta náutica e representação
+da superfície terrestre;
+</li>
+
+<li>
+projeção de Mercator;
+</li>
+
+<li>
+escala e medição de distâncias;
+</li>
+
+<li>
+direções utilizadas na navegação;
+</li>
+
+<li>
+nortes verdadeiro, magnético
+e da agulha;
+</li>
+
+<li>
+rumos e marcações;
+</li>
+
+<li>
+declinação magnética,
+desvio e correção total;
+</li>
+
+<li>
+linhas de posição;
+</li>
+
+<li>
+determinação da posição
+por observações costeiras;
+</li>
+
+<li>
+marcações sucessivas;
+</li>
+
+<li>
+navegação estimada;
+</li>
+
+<li>
+problemas direto e inverso
+da navegação estimada;
+</li>
+
+<li>
+linhas de posição de segurança;
+</li>
+
+<li>
+problema integrado de navegação costeira;
+</li>
+
+<li>
+terminologia técnica
+em inglês marítimo;
+</li>
+
+<li>
+revisão e questões
+no padrão PSCPP.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DA NAVEGAÇÃO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA NAVEGAÇÃO
+</h2>
+
+<p>
+Antes de traçar rumos,
+obter marcações
+ou determinar a posição do navio
+por referências costeiras,
+é necessário compreender
+o problema fundamental da navegação.
+</p>
+
+<p>
+A navegação depende da capacidade
+de estabelecer a
+<strong>posição da embarcação</strong>
+sobre a superfície terrestre
+e acompanhar sua evolução
+ao longo do tempo.
+</p>
+
+<p>
+Para isso,
+o navegante utiliza um sistema
+de coordenadas geográficas,
+direções,
+distâncias,
+observações
+e representações cartográficas.
+</p>
+
+<p>
+Nesta primeira parte,
+serão estabelecidas as bases
+sobre as quais os procedimentos
+de navegação costeira serão construídos.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     PROBLEMA FUNDAMENTAL DA NAVEGAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="fundamentos-navegacao"
+data-topico-id="fundamentos-navegacao">
+
+<h2>1. O problema fundamental da navegação</h2>
+
+<div class="widget">
+
+<p>
+A condução segura de uma embarcação
+exige conhecer sua posição
+e acompanhar continuamente
+o seu movimento em relação
+à derrota pretendida,
+à costa
+e aos perigos à navegação.
+</p>
+
+<p>
+Em sua forma mais elementar,
+o problema da navegação envolve
+determinar
+<strong>onde a embarcação se encontra</strong>
+e utilizar essa informação
+para conduzi-la com segurança
+até outro ponto.
+</p>
+
+<p>
+Essa tarefa exige relacionar
+a posição do navio
+a referências definidas
+sobre a superfície terrestre.
+</p>
+
+
+<div class="destaque">
+
+<h3>Ideia central</h3>
+
+<p>
+A navegação não consiste apenas
+em saber a direção para a qual
+o navio aponta.
+</p>
+
+<p>
+É necessário conhecer
+ou estimar sua
+<strong>posição</strong>,
+acompanhar seu deslocamento
+e verificar se a embarcação
+permanece dentro da derrota
+e das margens de segurança previstas.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Navigation</strong>
+</td>
+
+<td>
+Navegação
+</td>
+
+<td>
+Conjunto de procedimentos utilizados
+para determinar e controlar
+o movimento da embarcação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Position</strong>
+</td>
+
+<td>
+Posição
+</td>
+
+<td>
+Localização da embarcação
+em determinado instante.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Track</strong>
+</td>
+
+<td>
+Derrota / trajetória
+</td>
+
+<td>
+Linha associada ao movimento
+planejado ou efetivamente realizado,
+conforme o contexto.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Coastal Navigation</strong>
+</td>
+
+<td>
+Navegação costeira
+</td>
+
+<td>
+Navegação realizada utilizando,
+entre outros recursos,
+referências relacionadas à costa
+para determinar e acompanhar
+a posição da embarcação.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Em águas próximas à costa
+ou em aproximações de áreas restritas,
+conhecer somente o rumo indicado
+pela agulha não é suficiente.
+</p>
+
+<p>
+O navegante precisa confirmar
+onde o navio realmente está
+em relação à derrota,
+aos perigos,
+às margens de segurança
+e aos pontos de alteração de rumo.
+</p>
+
+<p>
+Essa necessidade de
+<strong>verificar continuamente a posição</strong>
+será a base para o estudo posterior
+das linhas de posição
+e dos métodos de navegação costeira.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 1
+========================================= -->
