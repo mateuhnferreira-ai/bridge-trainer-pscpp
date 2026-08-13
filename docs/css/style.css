@@ -1,124 +1,47 @@
 /* =====================================================
    BRIDGE TRAINER PSCPP
-   ESTILO PRINCIPAL v2.0
-   INTERFACE MODERNA E LEVE
-
-   OBJETIVOS:
-
-   - preservar a estrutura HTML existente;
-   - preservar todos os JavaScripts;
-   - modernizar cards, dashboard e controles;
-   - reduzir sombras pesadas;
-   - melhorar leitura em tablet;
-   - manter identidade naval azul + dourado.
+   STYLE.CSS — VISUAL MODERNO
+   Interface clara, leve e responsiva
 ===================================================== */
 
 
 /* =====================================================
-   VARIÁVEIS VISUAIS
+   VARIÁVEIS GLOBAIS
 ===================================================== */
 
 :root {
 
-    --cor-fundo:
-        #eef4f8;
+    --cor-fundo: #eef5f9;
+    --cor-superficie: #ffffff;
+    --cor-superficie-secundaria: #f7fafc;
 
-    --cor-fundo-secundario:
-        #e6eef4;
+    --cor-azul-escuro: #0b3a53;
+    --cor-azul: #176b87;
+    --cor-azul-claro: #e7f2f8;
+    --cor-azul-borda: #d5e5ee;
 
-    --cor-superficie:
-        #ffffff;
+    --cor-dourado: #c9a227;
+    --cor-dourado-claro: #e2cc72;
 
-    --cor-superficie-suave:
-        #f8fbfd;
+    --cor-texto: #17384a;
+    --cor-texto-secundario: #607784;
+    --cor-texto-suave: #82939c;
 
-    --cor-superficie-destaque:
-        #f2f7fa;
+    --cor-sucesso: #2f855a;
+    --cor-sucesso-fundo: #e7f5ec;
 
+    --cor-erro: #c53030;
+    --cor-erro-fundo: #fdeaea;
 
-    --cor-azul-escuro:
-        #0b344d;
-
-    --cor-azul:
-        #145575;
-
-    --cor-azul-claro:
-        #d8e9f2;
-
-    --cor-azul-borda:
-        #d5e2e9;
-
-
-    --cor-dourado:
-        #c6a438;
-
-    --cor-dourado-suave:
-        #eadfae;
-
-
-    --cor-texto:
-        #203746;
-
-    --cor-texto-secundario:
-        #637887;
-
-    --cor-texto-suave:
-        #81919d;
-
-
-    --cor-verde:
-        #2e8b68;
-
-    --cor-verde-fundo:
-        #e9f6f0;
-
-
-    --cor-vermelho:
-        #c64b4b;
-
-    --cor-vermelho-fundo:
-        #fceded;
-
-
-    --cor-amarelo:
-        #b88c2f;
-
-    --cor-amarelo-fundo:
-        #fff8df;
-
-
-    --raio-pequeno:
-        10px;
-
-    --raio-medio:
-        16px;
-
-    --raio-grande:
-        22px;
-
+    --raio-pequeno: 10px;
+    --raio-medio: 16px;
+    --raio-grande: 22px;
 
     --sombra-card:
-        0 8px 24px
-        rgba(
-            15,
-            52,
-            76,
-            0.08
-        );
+        0 8px 24px rgba(20, 55, 75, 0.08);
 
-
-    --sombra-card-hover:
-        0 14px 34px
-        rgba(
-            15,
-            52,
-            76,
-            0.13
-        );
-
-
-    --transicao:
-        0.22s ease;
+    --sombra-hover:
+        0 12px 30px rgba(20, 55, 75, 0.13);
 
 }
 
@@ -130,9 +53,7 @@
 * {
 
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
 
 }
@@ -148,52 +69,19 @@ html {
 body {
 
     font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
         Arial,
         Helvetica,
         sans-serif;
 
-
     background:
-
-        linear-gradient(
-            180deg,
-            #edf4f8 0%,
-            #e8f1f6 100%
-        );
-
+        var(--cor-fundo);
 
     color:
         var(--cor-texto);
 
-
     min-height: 100vh;
 
-
     line-height: 1.55;
-
-}
-
-
-/* =====================================================
-   LINKS
-===================================================== */
-
-a {
-
-    color:
-        var(--cor-azul);
-
-}
-
-
-a:hover {
-
-    color:
-        var(--cor-dourado);
 
 }
 
@@ -205,116 +93,72 @@ a:hover {
 .topo {
 
     background:
-
         linear-gradient(
             135deg,
-            #0b344d,
-            #124d6c
+            #07344d,
+            #0d4c68
         );
 
+    padding: 28px 20px;
 
-    padding:
-        28px 24px;
-
-
-    text-align:
-        center;
-
+    text-align: center;
 
     border-bottom:
-        2px solid
-        rgba(
-            198,
-            164,
-            56,
-            0.75
-        );
+        3px solid
+        var(--cor-dourado);
 
 }
 
 
 .logo h1 {
 
-    margin-bottom:
-        7px;
+    font-size: 31px;
 
+    margin-bottom: 7px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-
-    font-size:
-        clamp(
-            25px,
-            3vw,
-            32px
-        );
-
-
-    font-weight:
-        700;
-
-
-    letter-spacing:
-        -0.3px;
+    letter-spacing: -0.4px;
 
 }
 
 
 .logo p {
 
-    color:
-        #c9dbe5;
+    font-size: 15px;
 
-
-    font-size:
-        15px;
+    color: #d8e6ed;
 
 }
 
 
 /* =====================================================
-   MENU SUPERIOR
+   MENU
 ===================================================== */
 
 .navbar {
 
-    display:
-        flex;
+    display: flex;
 
+    justify-content: center;
 
-    justify-content:
-        center;
+    align-items: center;
 
+    gap: 10px;
 
-    align-items:
-        center;
+    flex-wrap: wrap;
 
+    padding: 12px 18px;
 
-    flex-wrap:
-        wrap;
-
-
-    gap:
-        10px;
-
-
-    padding:
-        12px 20px;
-
-
-    background:
-        #102f43;
-
+    background: #ffffff;
 
     border-bottom:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.06
-        );
+        var(--cor-azul-borda);
+
+    box-shadow:
+        0 3px 12px
+        rgba(20, 55, 75, 0.05);
 
 }
 
@@ -322,71 +166,32 @@ a:hover {
 .navbar a,
 .navbar button {
 
-    display:
-        inline-flex;
+    text-decoration: none;
 
+    color:
+        var(--cor-azul-escuro);
 
-    align-items:
-        center;
-
-
-    justify-content:
-        center;
-
-
-    gap:
-        6px;
-
-
-    padding:
-        9px 15px;
-
+    background:
+        var(--cor-azul-claro);
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.08
-        );
+        var(--cor-azul-borda);
 
+    padding:
+        9px 16px;
 
     border-radius:
-        9px;
+        var(--raio-pequeno);
 
+    cursor: pointer;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.07
-        );
+    font-size: 14px;
 
-
-    color:
-        #eef7fb;
-
-
-    text-decoration:
-        none;
-
-
-    font-size:
-        14px;
-
-
-    font-weight:
-        500;
-
-
-    cursor:
-        pointer;
-
+    font-weight: 600;
 
     transition:
-        var(--transicao);
+        0.2s ease;
 
 }
 
@@ -395,29 +200,13 @@ a:hover {
 .navbar button:hover {
 
     background:
-        rgba(
-            198,
-            164,
-            56,
-            0.18
-        );
-
-
-    border-color:
-        rgba(
-            198,
-            164,
-            56,
-            0.55
-        );
-
+        var(--cor-azul);
 
     color:
         #ffffff;
 
-
-    transform:
-        translateY(-1px);
+    border-color:
+        var(--cor-azul);
 
 }
 
@@ -428,70 +217,47 @@ a:hover {
 
 main {
 
-    width:
-        min(
-            92%,
-            1280px
-        );
+    width: 92%;
 
+    max-width: 1280px;
 
     margin:
-        28px auto 40px auto;
-
-}
-
-
-section {
-
-    margin-bottom:
-        28px;
+        32px auto;
 
 }
 
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
 
-    line-height:
-        1.2;
+    line-height: 1.25;
 
 }
 
 
 h2 {
 
-    margin-bottom:
-        18px;
-
+    margin-bottom: 18px;
 
     color:
         var(--cor-dourado);
 
-
-    font-size:
-        clamp(
-            22px,
-            2.3vw,
-            28px
-        );
+}
 
 
-    font-weight:
-        700;
+p {
 
-
-    letter-spacing:
-        -0.25px;
+    color:
+        var(--cor-texto-secundario);
 
 }
 
 
-h3 {
+a {
 
     color:
-        var(--cor-azul-escuro);
+        #22577a;
 
 }
 
@@ -502,126 +268,120 @@ h3 {
 
 .dashboard {
 
-    padding:
-        26px;
-
-
-    margin-bottom:
-        30px;
-
-
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.82
-        );
+        var(--cor-superficie);
 
-
-    border:
-        1px solid
-        rgba(
-            31,
-            78,
-            104,
-            0.07
-        );
-
+    padding: 26px;
 
     border-radius:
         var(--raio-grande);
 
-
-    box-shadow:
-        var(--sombra-card);
-
-
-    backdrop-filter:
-        blur(5px);
-
-}
-
-
-.dashboard p {
-
-    color:
-        var(--cor-texto-secundario);
-
-}
-
-
-/* =====================================================
-   GRID DE CARDS
-===================================================== */
-
-.cards {
-
-    display:
-        grid;
-
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                245px,
-                1fr
-            )
-        );
-
-
-    gap:
-        18px;
-
-}
-
-
-/* =====================================================
-   CARD
-===================================================== */
-
-.card {
-
-    position:
-        relative;
-
-
-    display:
-        block;
-
-
-    padding:
-        20px;
-
-
-    background:
-        var(--cor-superficie);
-
+    margin-bottom: 30px;
 
     border:
         1px solid
         var(--cor-azul-borda);
 
+    box-shadow:
+        var(--sombra-card);
+
+}
+
+
+.barra-progresso {
+
+    width: 100%;
+
+    height: 14px;
+
+    background:
+        #dce8ee;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progresso {
+
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #176b87,
+            #2d91ad
+        );
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+#porcentagem-geral {
+
+    margin-top: 10px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    background:
+        var(--cor-superficie);
+
+    padding: 22px;
 
     border-radius:
         var(--raio-medio);
 
+    text-decoration: none;
 
     color:
         var(--cor-texto);
 
-
-    text-decoration:
-        none;
-
+    border:
+        1px solid
+        var(--cor-azul-borda);
 
     box-shadow:
         var(--sombra-card);
 
-
     transition:
-        var(--transicao);
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 
 }
 
@@ -631,38 +391,21 @@ h3 {
     transform:
         translateY(-3px);
 
-
     border-color:
-        rgba(
-            198,
-            164,
-            56,
-            0.45
-        );
-
+        #aacbdc;
 
     box-shadow:
-        var(--sombra-card-hover);
+        var(--sombra-hover);
 
 }
 
 
 .card h3 {
 
-    margin-bottom:
-        14px;
-
+    margin-bottom: 16px;
 
     color:
         var(--cor-azul-escuro);
-
-
-    font-size:
-        18px;
-
-
-    font-weight:
-        700;
 
 }
 
@@ -672,207 +415,102 @@ h3 {
     color:
         var(--cor-texto-secundario);
 
+}
 
-    line-height:
-        1.45;
+
+.card ul {
+
+    padding-left: 20px;
 
 }
 
 
-.card span {
+.card li {
 
-    display:
-        block;
-
-
-    margin-top:
-        8px;
+    color:
+        var(--cor-texto);
 
 }
 
 
 /* =====================================================
-   BARRAS DE PROGRESSO
+   MINI BARRAS
 ===================================================== */
-
-.barra-progresso {
-
-    width:
-        100%;
-
-
-    height:
-        10px;
-
-
-    margin-top:
-        10px;
-
-
-    background:
-        #d8e5ec;
-
-
-    border-radius:
-        999px;
-
-
-    overflow:
-        hidden;
-
-}
-
-
-.progresso {
-
-    height:
-        100%;
-
-
-    min-width:
-        0;
-
-
-    width:
-        0%;
-
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #d0ae42,
-            #b99529
-        );
-
-
-    border-radius:
-        inherit;
-
-
-    transition:
-        width 0.7s ease;
-
-
-    font-size:
-        0;
-
-}
-
 
 .mini-barra {
 
-    height:
-        7px;
-
+    height: 8px;
 
     background:
-        #dbe7ed;
+        #dce8ee;
 
+    border-radius: 10px;
 
-    border-radius:
-        999px;
-
-
-    overflow:
-        hidden;
+    overflow: hidden;
 
 }
 
 
 .mini-progresso {
 
-    height:
-        100%;
-
+    height: 100%;
 
     background:
-
-        linear-gradient(
-            90deg,
-            #cbaa3c,
-            #d7bb5c
-        );
-
-
-    border-radius:
-        inherit;
+        var(--cor-azul);
 
 }
 
 
-#porcentagem-geral {
+.card span {
 
-    margin-top:
-        10px;
+    display: block;
 
-
-    color:
-        var(--cor-azul-escuro);
-
-
-    font-size:
-        21px;
-
-
-    font-weight:
-        700;
+    margin-top: 8px;
 
 }
 
 
 /* =====================================================
-   PAINEL / WIDGETS
+   PAINEL / CENTRO DE COMANDO
 ===================================================== */
 
 .painel {
 
-    display:
-        grid;
-
+    display: grid;
 
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(
-                245px,
-                1fr
-            )
+            minmax(250px, 1fr)
         );
 
+    gap: 20px;
 
-    gap:
-        18px;
-
-
-    margin-top:
-        34px;
+    margin-top: 38px;
 
 }
 
 
+/* =====================================================
+   WIDGETS
+===================================================== */
+
 .widget {
-
-    padding:
-        20px;
-
 
     background:
         var(--cor-superficie);
 
+    padding: 22px;
+
+    border-radius:
+        var(--raio-medio);
 
     border:
         1px solid
         var(--cor-azul-borda);
 
-
-    border-radius:
-        var(--raio-medio);
-
-
     box-shadow:
         var(--sombra-card);
-
 
     color:
         var(--cor-texto);
@@ -900,7 +538,334 @@ h3 {
 .widget li {
 
     margin:
-        8px 0;
+        9px 0;
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+/* =====================================================
+   TÓPICOS DAS AULAS
+===================================================== */
+
+.topico-aula {
+
+    margin:
+        26px 0;
+
+    padding:
+        24px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.42
+        );
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+    border-radius:
+        var(--raio-medio);
+
+}
+
+
+.topico-aula > h2 {
+
+    color:
+        var(--cor-azul-escuro);
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.topico-aula > h3 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+/* =====================================================
+   ABERTURA DAS PARTES DA AULA
+===================================================== */
+
+/*
+   Novo padrão visual.
+
+   A abertura deixa de utilizar o grande bloco
+   azul escuro.
+
+   Isso torna as aulas mais leves e evita
+   problemas de contraste com widgets internos.
+*/
+
+.abertura-parte {
+
+    margin:
+        34px 0 22px 0;
+
+    padding:
+        24px 26px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+    border-left:
+        5px solid
+        var(--cor-azul);
+
+    border-radius:
+        var(--raio-medio);
+
+    box-shadow:
+        var(--sombra-card);
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+.abertura-parte h1,
+.abertura-parte h2,
+.abertura-parte h3 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+.abertura-parte h2 {
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.abertura-parte p {
+
+    color:
+        var(--cor-texto-secundario);
+
+}
+
+
+/* =====================================================
+   WIDGET DENTRO DA ABERTURA DA PARTE
+   CORREÇÃO DE CONTRASTE
+===================================================== */
+
+.abertura-parte .widget {
+
+    background:
+        #ffffff;
+
+    color:
+        var(--cor-texto);
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+    box-shadow:
+        none;
+
+}
+
+
+.abertura-parte .widget p {
+
+    color:
+        var(--cor-texto-secundario);
+
+}
+
+
+.abertura-parte .widget strong {
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+.abertura-parte .widget h2,
+.abertura-parte .widget h3 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+/* =====================================================
+   CAIXAS DE DESTAQUE
+===================================================== */
+
+.destaque {
+
+    margin:
+        20px 0;
+
+    padding:
+        18px 20px;
+
+    background:
+        #eef7fb;
+
+    border-left:
+        4px solid
+        var(--cor-azul);
+
+    border-radius:
+        var(--raio-pequeno);
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+.destaque p {
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+/* =====================================================
+   ATENÇÃO DO PRÁTICO
+===================================================== */
+
+.atencao-pratico {
+
+    margin:
+        20px 0;
+
+    padding:
+        18px 20px;
+
+    background:
+        #fff9e7;
+
+    border-left:
+        4px solid
+        var(--cor-dourado);
+
+    border-radius:
+        var(--raio-pequeno);
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+.atencao-pratico p {
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+/* =====================================================
+   TERMOS TÉCNICOS
+===================================================== */
+
+.termos-tecnicos {
+
+    margin:
+        20px 0;
+
+    padding:
+        20px;
+
+    background:
+        #f4f9fc;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+    border-radius:
+        var(--raio-medio);
+
+}
+
+
+.termos-tecnicos h2,
+.termos-tecnicos h3 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+.termos-tecnicos p,
+.termos-tecnicos li {
+
+    color:
+        var(--cor-texto);
+
+}
+
+
+/* =====================================================
+   FIGURAS DAS AULAS
+===================================================== */
+
+.figura-aula {
+
+    margin:
+        24px auto;
+
+    padding:
+        18px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+    border-radius:
+        var(--raio-medio);
+
+    box-shadow:
+        0 5px 16px
+        rgba(20, 55, 75, 0.06);
+
+    overflow-x: auto;
+
+}
+
+
+.figura-aula img,
+.figura-aula svg {
+
+    max-width: 100%;
+
+    height: auto;
 
 }
 
@@ -909,73 +874,47 @@ h3 {
    BOTÕES GERAIS
 ===================================================== */
 
-.botao,
-button {
-
-    font-family:
-        inherit;
-
-}
-
-
 .botao {
 
     display:
         inline-flex;
 
-
     align-items:
         center;
-
 
     justify-content:
         center;
 
-
     gap:
         6px;
-
 
     padding:
         9px 14px;
 
-
     border:
         1px solid
-        rgba(
-            20,
-            85,
-            117,
-            0.18
-        );
-
+        var(--cor-azul-borda);
 
     border-radius:
-        9px;
-
+        var(--raio-pequeno);
 
     background:
-        #eef6f9;
-
+        var(--cor-azul-claro);
 
     color:
-        var(--cor-azul);
-
+        var(--cor-azul-escuro);
 
     text-decoration:
         none;
 
-
-    font-weight:
-        600;
-
-
     cursor:
         pointer;
 
+    font-size:
+        14px;
 
     transition:
-        var(--transicao);
+        0.2s ease;
 
 }
 
@@ -983,24 +922,13 @@ button {
 .botao:hover {
 
     background:
-        #e0eef4;
-
+        var(--cor-azul);
 
     border-color:
-        rgba(
-            20,
-            85,
-            117,
-            0.35
-        );
-
+        var(--cor-azul);
 
     color:
-        var(--cor-azul-escuro);
-
-
-    transform:
-        translateY(-1px);
+        #ffffff;
 
 }
 
@@ -1011,141 +939,66 @@ button {
 
 .botao-inicio {
 
-    position:
-        fixed;
+    position: fixed;
 
+    right: 24px;
 
-    right:
-        24px;
+    bottom: 24px;
 
+    width: 54px;
 
-    bottom:
-        24px;
+    height: 54px;
 
+    display: flex;
 
-    z-index:
-        100;
+    justify-content: center;
 
-
-    width:
-        52px;
-
-
-    height:
-        52px;
-
-
-    display:
-        flex;
-
-
-    align-items:
-        center;
-
-
-    justify-content:
-        center;
-
+    align-items: center;
 
     background:
         var(--cor-dourado);
 
-
     color:
-        #173546;
+        var(--cor-azul-escuro);
 
+    border-radius: 50%;
 
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.6
-        );
+    text-decoration: none;
 
-
-    border-radius:
-        50%;
-
-
-    text-decoration:
-        none;
-
-
-    font-size:
-        22px;
-
+    font-size: 23px;
 
     box-shadow:
         0 8px 22px
-        rgba(
-            74,
-            62,
-            25,
-            0.2
-        );
+        rgba(20, 55, 75, 0.22);
 
-
-    transition:
-        var(--transicao);
-
-}
-
-
-.botao-inicio:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
-
-    color:
-        #173546;
+    z-index: 100;
 
 }
 
 
 /* =====================================================
-   STATUS
+   RODAPÉ
 ===================================================== */
 
-.status {
+footer {
 
-    margin-top:
-        12px;
+    text-align: center;
 
+    padding: 22px;
 
-    font-size:
-        14px;
+    background:
+        var(--cor-azul-escuro);
 
+    margin-top: 42px;
 
-    font-weight:
-        600;
-
-}
-
-
-.status.pendente {
-
-    color:
-        var(--cor-texto-suave);
+    color: #dce8ee;
 
 }
 
 
-.status.em-estudo {
+footer p {
 
-    color:
-        var(--cor-amarelo);
-
-}
-
-
-.status.concluido {
-
-    color:
-        var(--cor-verde);
+    color: #dce8ee;
 
 }
 
@@ -1156,389 +1009,265 @@ button {
 
 .secao-pomodoro {
 
-    margin-top:
-        12px;
-
-
-    margin-bottom:
-        26px;
+    margin-top: 10px;
+    margin-bottom: 24px;
 
 }
 
 
 .pomodoro-widget {
 
-    max-width:
-        100%;
+    max-width: 100%;
 
+    padding: 24px;
 
-    padding:
-        26px;
+    text-align: center;
 
-
-    text-align:
-        center;
-
-
-    overflow:
-        hidden;
+    overflow: hidden;
 
 }
 
 
+/* CABEÇALHO */
+
 .pomodoro-cabecalho {
 
-    display:
-        flex;
+    display: flex;
 
+    justify-content: center;
 
-    justify-content:
-        center;
+    align-items: center;
 
+    gap: 14px;
 
-    align-items:
-        center;
-
-
-    gap:
-        13px;
-
-
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
 
 .pomodoro-icone {
 
-    display:
-        flex;
+    display: flex;
 
+    justify-content: center;
 
-    align-items:
-        center;
+    align-items: center;
 
+    width: 54px;
 
-    justify-content:
-        center;
+    height: 54px;
 
-
-    width:
-        50px;
-
-
-    height:
-        50px;
-
-
-    border-radius:
-        14px;
-
+    border-radius: 50%;
 
     background:
-        #edf4f7;
+        var(--cor-azul-claro);
 
-
-    font-size:
-        25px;
+    font-size: 28px;
 
 }
 
 
 .pomodoro-rotulo {
 
-    display:
-        block;
+    display: block;
 
+    margin-bottom: 3px;
 
-    margin-bottom:
-        2px;
-
+    font-size: 14px;
 
     color:
         var(--cor-texto-secundario);
-
-
-    font-size:
-        13px;
 
 }
 
 
 .pomodoro-cabecalho h3 {
 
-    margin:
-        0;
-
+    margin: 0;
 
     color:
         var(--cor-azul-escuro);
 
-
-    font-size:
-        21px;
+    font-size: 22px;
 
 }
 
 
+/* TEMPO PRINCIPAL */
+
 .pomodoro-tempo-principal {
 
-    max-width:
-        360px;
-
+    max-width: 360px;
 
     margin:
-        0 auto 20px auto;
+        0 auto 22px auto;
 
+    padding: 18px;
 
-    padding:
-        20px;
-
+    border-radius:
+        var(--raio-medio);
 
     background:
-        var(--cor-superficie-destaque);
-
+        #f1f7fa;
 
     border:
         1px solid
         var(--cor-azul-borda);
-
-
-    border-radius:
-        var(--raio-medio);
 
 }
 
 
 .pomodoro-tempo-label {
 
-    display:
-        block;
+    display: block;
 
-
-    margin-bottom:
-        6px;
-
+    margin-bottom: 6px;
 
     color:
         var(--cor-texto-secundario);
 
-
-    font-size:
-        13px;
+    font-size: 14px;
 
 }
 
 
 #pomodoro-restante {
 
-    display:
-        block;
-
+    display: block;
 
     color:
         var(--cor-azul-escuro);
 
+    font-size: 44px;
 
-    font-size:
-        clamp(
-            38px,
-            5vw,
-            48px
-        );
+    line-height: 1;
 
-
-    font-weight:
-        700;
-
-
-    line-height:
-        1;
-
-
-    letter-spacing:
-        1px;
+    letter-spacing: 2px;
 
 }
 
 
+/* INFORMAÇÕES */
+
 .pomodoro-informacoes {
 
-    display:
-        grid;
-
+    display: grid;
 
     grid-template-columns:
         repeat(
             2,
-            minmax(
-                0,
-                1fr
-            )
+            minmax(0, 1fr)
         );
 
+    gap: 14px;
 
-    gap:
-        12px;
-
-
-    margin-bottom:
-        20px;
+    margin-bottom: 22px;
 
 }
 
 
 .pomodoro-caixa {
 
-    display:
-        flex;
+    display: flex;
 
+    justify-content: center;
 
-    justify-content:
-        center;
+    align-items: center;
 
+    gap: 12px;
 
-    align-items:
-        center;
+    min-height: 92px;
 
+    padding: 16px;
 
-    gap:
-        11px;
-
-
-    min-height:
-        88px;
-
-
-    padding:
-        14px;
-
+    border-radius:
+        var(--raio-medio);
 
     background:
-        #fbfdfe;
-
+        var(--cor-superficie-secundaria);
 
     border:
         1px solid
         var(--cor-azul-borda);
-
-
-    border-radius:
-        13px;
 
 }
 
 
 .pomodoro-caixa-icone {
 
-    font-size:
-        24px;
+    font-size: 27px;
 
 }
 
 
 .pomodoro-caixa-titulo {
 
-    display:
-        block;
+    display: block;
 
-
-    margin-bottom:
-        4px;
-
+    margin-bottom: 5px;
 
     color:
         var(--cor-texto-secundario);
 
-
-    font-size:
-        13px;
+    font-size: 14px;
 
 }
 
 
 .pomodoro-caixa strong {
 
-    display:
-        block;
-
+    display: block;
 
     color:
         var(--cor-azul-escuro);
 
-
-    font-size:
-        22px;
+    font-size: 24px;
 
 }
 
 
+/* CONTROLES */
+
 .pomodoro-controles {
 
-    display:
-        flex;
+    display: flex;
 
+    justify-content: center;
 
-    justify-content:
-        center;
+    align-items: center;
 
+    flex-wrap: wrap;
 
-    align-items:
-        center;
-
-
-    flex-wrap:
-        wrap;
-
-
-    gap:
-        9px;
+    gap: 10px;
 
 }
 
 
 .pomodoro-botao {
 
-    min-width:
-        125px;
-
+    min-width: 130px;
 
     padding:
-        10px 15px;
-
+        11px 16px;
 
     border:
         1px solid
         var(--cor-azul-borda);
 
-
     border-radius:
-        9px;
+        var(--raio-pequeno);
 
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
 
     background:
-        #eef5f8;
-
+        #ffffff;
 
     color:
         var(--cor-azul-escuro);
-
-
-    cursor:
-        pointer;
-
-
-    font-size:
-        14px;
-
-
-    font-weight:
-        600;
-
-
-    transition:
-        var(--transicao);
 
 }
 
@@ -1548,13 +1277,11 @@ button {
     background:
         var(--cor-azul);
 
+    color:
+        #ffffff;
 
     border-color:
         var(--cor-azul);
-
-
-    color:
-        #ffffff;
 
 }
 
@@ -1572,10 +1299,8 @@ button {
     cursor:
         not-allowed;
 
-
     opacity:
-        0.4;
-
+        0.45;
 
     transform:
         none;
@@ -1585,71 +1310,55 @@ button {
 
 .pomodoro-orientacao {
 
-    max-width:
-        620px;
-
+    max-width: 620px;
 
     margin:
-        18px auto 0 auto;
-
+        20px auto 0 auto;
 
     color:
         var(--cor-texto-secundario);
 
+    font-size: 14px;
 
-    font-size:
-        13px;
-
-
-    line-height:
-        1.5;
+    line-height: 1.5;
 
 }
 
 
 /* =====================================================
-   EXERCÍCIOS
+   EXERCÍCIOS INTERATIVOS
 ===================================================== */
 
 .questao {
 
-    margin:
-        20px 0;
-
-
-    padding:
-        21px;
-
-
     background:
         var(--cor-superficie);
 
+    padding: 22px;
+
+    margin:
+        22px 0;
+
+    border-radius:
+        var(--raio-medio);
+
+    box-shadow:
+        var(--sombra-card);
 
     border:
         1px solid
         var(--cor-azul-borda);
 
-
     border-left:
-        4px solid
+        5px solid
         var(--cor-azul);
-
-
-    border-radius:
-        var(--raio-medio);
-
-
-    box-shadow:
-        var(--sombra-card);
 
 }
 
 
 .questao h3 {
 
-    margin-bottom:
-        14px;
-
+    margin-bottom: 16px;
 
     color:
         var(--cor-azul-escuro);
@@ -1659,12 +1368,12 @@ button {
 
 .questao p {
 
-    margin-bottom:
-        13px;
+    margin-bottom: 14px;
 
+    line-height: 1.6;
 
-    line-height:
-        1.6;
+    color:
+        var(--cor-texto);
 
 }
 
@@ -1684,61 +1393,39 @@ button {
 .alternativa,
 .alternativa-questao {
 
-    display:
-        block;
+    display: block;
 
-
-    width:
-        100%;
-
+    width: 100%;
 
     margin:
-        9px 0;
-
+        10px 0;
 
     padding:
-        13px 15px;
+        14px 16px;
 
+    text-align: left;
 
-    text-align:
-        left;
+    font-size: 15px;
 
-
-    font-family:
-        inherit;
-
-
-    font-size:
-        14px;
-
-
-    line-height:
-        1.5;
-
+    line-height: 1.5;
 
     color:
         var(--cor-texto);
 
-
     background:
         #f5f9fb;
-
 
     border:
         1px solid
         var(--cor-azul-borda);
 
-
     border-radius:
-        10px;
+        var(--raio-pequeno);
 
-
-    cursor:
-        pointer;
-
+    cursor: pointer;
 
     transition:
-        var(--transicao);
+        0.2s ease;
 
 }
 
@@ -1747,17 +1434,10 @@ button {
 .alternativa-questao:hover {
 
     background:
-        #edf5f8;
-
+        var(--cor-azul-claro);
 
     border-color:
-        rgba(
-            20,
-            85,
-            117,
-            0.4
-        );
-
+        var(--cor-azul);
 
     transform:
         translateY(-1px);
@@ -1768,20 +1448,20 @@ button {
 .alternativa-selecionada {
 
     background:
-        #e5f1f5;
-
+        #dceff7;
 
     border:
         2px solid
         var(--cor-azul);
 
-
     color:
         var(--cor-azul-escuro);
 
+    font-weight: bold;
 
-    font-weight:
-        600;
+    box-shadow:
+        0 3px 10px
+        rgba(23, 107, 135, 0.15);
 
 }
 
@@ -1791,13 +1471,7 @@ button {
 
     outline:
         3px solid
-        rgba(
-            198,
-            164,
-            56,
-            0.22
-        );
-
+        rgba(201, 162, 39, 0.30);
 
     outline-offset:
         2px;
@@ -1806,24 +1480,42 @@ button {
 
 
 /* =====================================================
-   CORREÇÃO DAS QUESTÕES
+   RESUMO DOS EXERCÍCIOS
+===================================================== */
+
+#resumo-selecao-exercicios {
+
+    margin: 0;
+
+    padding: 12px;
+
+    color:
+        var(--cor-azul-escuro);
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   CORREÇÃO DOS EXERCÍCIOS
 ===================================================== */
 
 .alternativa-correta {
 
     background:
-        var(--cor-verde-fundo)
+        var(--cor-sucesso-fundo)
         !important;
-
 
     border:
         2px solid
-        var(--cor-verde)
+        var(--cor-sucesso)
         !important;
 
-
     color:
-        #246147
+        #1f5138
         !important;
 
 }
@@ -1832,18 +1524,16 @@ button {
 .alternativa-incorreta {
 
     background:
-        var(--cor-vermelho-fundo)
+        var(--cor-erro-fundo)
         !important;
-
 
     border:
         2px solid
-        var(--cor-vermelho)
+        var(--cor-erro)
         !important;
 
-
     color:
-        #873737
+        #742a2a
         !important;
 
 }
@@ -1852,7 +1542,7 @@ button {
 .questao-correta {
 
     border-left-color:
-        var(--cor-verde);
+        var(--cor-sucesso);
 
 }
 
@@ -1860,7 +1550,7 @@ button {
 .questao-incorreta {
 
     border-left-color:
-        var(--cor-vermelho);
+        var(--cor-erro);
 
 }
 
@@ -1868,87 +1558,47 @@ button {
 .alternativa:disabled,
 .alternativa-questao:disabled {
 
-    cursor:
-        default;
+    cursor: default;
 
-
-    opacity:
-        1;
+    opacity: 1;
 
 }
 
 
 .botao-corrigir-exercicios:disabled {
 
-    cursor:
-        default;
+    cursor: default;
 
+    opacity: 0.7;
 
-    opacity:
-        0.65;
-
-
-    transform:
-        none;
-
-}
-
-
-#resumo-selecao-exercicios {
-
-    margin:
-        0;
-
-
-    padding:
-        12px;
-
-
-    color:
-        var(--cor-azul-escuro);
-
-
-    font-size:
-        16px;
-
-
-    line-height:
-        1.5;
+    transform: none;
 
 }
 
 
 /* =====================================================
-   HISTÓRICO DE EXERCÍCIOS
+   HISTÓRICO DOS EXERCÍCIOS
 ===================================================== */
 
 .historico-exercicios-pscpp {
 
-    margin-top:
-        22px;
+    margin-top: 22px;
 
+    padding: 20px;
 
-    padding:
-        20px;
-
+    border-radius:
+        var(--raio-medio);
 
     background:
         var(--cor-superficie);
-
 
     border:
         1px solid
         var(--cor-azul-borda);
 
-
     border-left:
-        4px solid
+        5px solid
         var(--cor-dourado);
-
-
-    border-radius:
-        var(--raio-medio);
-
 
     box-shadow:
         var(--sombra-card);
@@ -1958,9 +1608,7 @@ button {
 
 .historico-exercicios-pscpp h3 {
 
-    margin-bottom:
-        10px;
-
+    margin-bottom: 10px;
 
     color:
         var(--cor-azul-escuro);
@@ -1970,37 +1618,28 @@ button {
 
 .lista-historico-exercicios {
 
-    display:
-        grid;
+    display: grid;
 
+    gap: 12px;
 
-    gap:
-        10px;
-
-
-    margin-top:
-        14px;
+    margin-top: 16px;
 
 }
 
 
 .item-historico-exercicio {
 
-    padding:
-        14px;
+    padding: 14px;
 
+    border-radius:
+        var(--raio-pequeno);
 
     background:
-        var(--cor-superficie-destaque);
-
+        var(--cor-superficie-secundaria);
 
     border:
         1px solid
         var(--cor-azul-borda);
-
-
-    border-radius:
-        10px;
 
 }
 
@@ -2015,349 +1654,55 @@ button {
 
 .item-historico-exercicio span {
 
-    display:
-        block;
+    display: block;
 
-
-    margin-top:
-        4px;
-
+    margin-top: 4px;
 
     color:
         var(--cor-texto-secundario);
 
-
-    font-size:
-        13px;
+    font-size: 13px;
 
 }
 
 
 .item-historico-exercicio p {
 
-    margin-top:
-        7px;
+    margin-top: 8px;
 
+    margin-bottom: 0;
 
-    margin-bottom:
-        0;
+    color:
+        var(--cor-texto-secundario);
 
 }
 
 
 /* =====================================================
-   TÓPICOS DAS AULAS
-===================================================== */
-
-.topico-aula {
-
-    margin:
-        22px 0;
-
-
-    padding:
-        22px;
-
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.68
-        );
-
-
-    border:
-        1px solid
-        rgba(
-            20,
-            85,
-            117,
-            0.08
-        );
-
-
-    border-radius:
-        var(--raio-medio);
-
-}
-
-
-.topico-aula h2 {
-
-    color:
-        var(--cor-azul-escuro);
-
-}
-
-
-.topico-estudado {
-
-    border-color:
-        rgba(
-            46,
-            139,
-            104,
-            0.32
-        );
-
-}
-
-
-/* =====================================================
-   BOTÃO DO TÓPICO ESTUDADO
-===================================================== */
-
-.controle-progresso-topico {
-
-    margin-top:
-        18px;
-
-
-    padding-top:
-        14px;
-
-
-    border-top:
-        1px solid
-        #e5edf1;
-
-}
-
-
-.botao-topico-estudado {
-
-    padding:
-        8px 13px;
-
-
-    background:
-        #eef5f8;
-
-
-    border:
-        1px solid
-        var(--cor-azul-borda);
-
-
-    border-radius:
-        8px;
-
-
-    color:
-        var(--cor-azul);
-
-
-    font-weight:
-        600;
-
-
-    cursor:
-        pointer;
-
-}
-
-
-.botao-topico-estudado.topico-concluido {
-
-    background:
-        var(--cor-verde-fundo);
-
-
-    border-color:
-        rgba(
-            46,
-            139,
-            104,
-            0.35
-        );
-
-
-    color:
-        var(--cor-verde);
-
-}
-
-
-/* =====================================================
-   ABERTURA DE PARTES DAS AULAS
-===================================================== */
-
-.abertura-parte {
-
-    margin:
-        32px 0 20px 0;
-
-
-    padding:
-        22px;
-
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #0d3b55,
-            #155775
-        );
-
-
-    color:
-        #ffffff;
-
-
-    border-radius:
-        var(--raio-medio);
-
-
-    box-shadow:
-        var(--sombra-card);
-
-}
-
-
-.abertura-parte h2 {
-
-    color:
-        #e0c96f;
-
-
-    margin-bottom:
-        10px;
-
-}
-
-
-.abertura-parte p {
-
-    color:
-        #e2edf3;
-
-}
-
-
-/* =====================================================
-   DESTAQUES
-===================================================== */
-
-.destaque,
-.atencao-pratico,
-.termos-tecnicos {
-
-    margin:
-        18px 0;
-
-
-    padding:
-        17px;
-
-
-    border-radius:
-        12px;
-
-}
-
-
-.destaque {
-
-    background:
-        #f2f7fa;
-
-
-    border-left:
-        4px solid
-        var(--cor-azul);
-
-}
-
-
-.atencao-pratico {
-
-    background:
-        var(--cor-amarelo-fundo);
-
-
-    border-left:
-        4px solid
-        var(--cor-dourado);
-
-}
-
-
-.termos-tecnicos {
-
-    background:
-        #edf6f4;
-
-
-    border-left:
-        4px solid
-        #4d9b87;
-
-}
-
-
-/* =====================================================
-   RODAPÉ
-===================================================== */
-
-footer {
-
-    margin-top:
-        42px;
-
-
-    padding:
-        18px;
-
-
-    text-align:
-        center;
-
-
-    background:
-        #0b344d;
-
-
-    color:
-        #c8d7df;
-
-
-    font-size:
-        14px;
-
-}
-
-
-/* =====================================================
-   TABLET
+   RESPONSIVIDADE — TABLET
 ===================================================== */
 
 @media (
-    max-width:
-        900px
+    max-width: 900px
 ) {
 
     main {
 
-        width:
-            94%;
+        width: 94%;
 
     }
 
 
-    .cards,
-    .painel {
+    .dashboard {
 
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(
-                    0,
-                    1fr
-                )
-            );
+        padding: 22px;
+
+    }
+
+
+    .topico-aula {
+
+        padding: 20px;
 
     }
 
@@ -2365,18 +1710,16 @@ footer {
 
 
 /* =====================================================
-   CELULAR
+   RESPONSIVIDADE — CELULAR
 ===================================================== */
 
 @media (
-    max-width:
-        600px
+    max-width: 600px
 ) {
 
     .logo h1 {
 
-        font-size:
-            24px;
+        font-size: 24px;
 
     }
 
@@ -2384,15 +1727,16 @@ footer {
     .topo {
 
         padding:
-            22px 15px;
+            22px 14px;
 
     }
 
 
     .navbar {
 
-        gap:
-            7px;
+        gap: 8px;
+
+        padding: 10px;
 
     }
 
@@ -2403,39 +1747,36 @@ footer {
         flex:
             1 1 auto;
 
-
-        min-width:
-            120px;
-
+        text-align:
+            center;
 
         padding:
-            9px 10px;
+            9px 12px;
 
     }
 
 
     main {
 
-        width:
-            94%;
+        width: 95%;
 
-
-        margin-top:
-            20px;
+        margin:
+            22px auto;
 
     }
 
 
     .dashboard {
 
-        padding:
-            19px;
+        padding: 18px;
+
+        border-radius:
+            var(--raio-medio);
 
     }
 
 
-    .cards,
-    .painel {
+    .cards {
 
         grid-template-columns:
             1fr;
@@ -2443,11 +1784,36 @@ footer {
     }
 
 
-    .card,
+    .card {
+
+        padding: 18px;
+
+    }
+
+
+    .topico-aula {
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .abertura-parte {
+
+        padding:
+            18px;
+
+        border-left-width:
+            4px;
+
+    }
+
+
     .widget {
 
         padding:
-            17px;
+            18px;
 
     }
 
@@ -2486,8 +1852,7 @@ footer {
 
     .pomodoro-botao {
 
-        width:
-            100%;
+        width: 100%;
 
     }
 
@@ -2495,7 +1860,7 @@ footer {
     .questao {
 
         padding:
-            17px 14px;
+            18px 14px;
 
     }
 
@@ -2504,8 +1869,7 @@ footer {
     .alternativa-questao {
 
         padding:
-            12px;
-
+            13px 12px;
 
         font-size:
             14px;
@@ -2513,23 +1877,22 @@ footer {
     }
 
 
-    .topico-aula {
-
-        padding:
-            17px;
-
-    }
-
-
     .botao-inicio {
 
-        right:
-            16px;
+        right: 16px;
 
+        bottom: 16px;
 
-        bottom:
-            16px;
+        width: 50px;
+
+        height: 50px;
 
     }
 
 }
+
+
+/* =====================================================
+   FIM STYLE.CSS
+   BRIDGE TRAINER PSCPP
+===================================================== */
