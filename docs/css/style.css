@@ -1,913 +1,1744 @@
-/* ==================================
+/* =====================================================
    BRIDGE TRAINER PSCPP
-   ESTILO PRINCIPAL - VERSÃO AZUL CLARO
-================================== */
+   ESTILO PRINCIPAL v2.0
+   INTERFACE MODERNA E LEVE
+
+   OBJETIVOS:
+
+   - preservar a estrutura HTML existente;
+   - preservar todos os JavaScripts;
+   - modernizar cards, dashboard e controles;
+   - reduzir sombras pesadas;
+   - melhorar leitura em tablet;
+   - manter identidade naval azul + dourado.
+===================================================== */
 
 
-/* RESET */
+/* =====================================================
+   VARIÁVEIS VISUAIS
+===================================================== */
+
+:root {
+
+    --cor-fundo:
+        #eef4f8;
+
+    --cor-fundo-secundario:
+        #e6eef4;
+
+    --cor-superficie:
+        #ffffff;
+
+    --cor-superficie-suave:
+        #f8fbfd;
+
+    --cor-superficie-destaque:
+        #f2f7fa;
+
+
+    --cor-azul-escuro:
+        #0b344d;
+
+    --cor-azul:
+        #145575;
+
+    --cor-azul-claro:
+        #d8e9f2;
+
+    --cor-azul-borda:
+        #d5e2e9;
+
+
+    --cor-dourado:
+        #c6a438;
+
+    --cor-dourado-suave:
+        #eadfae;
+
+
+    --cor-texto:
+        #203746;
+
+    --cor-texto-secundario:
+        #637887;
+
+    --cor-texto-suave:
+        #81919d;
+
+
+    --cor-verde:
+        #2e8b68;
+
+    --cor-verde-fundo:
+        #e9f6f0;
+
+
+    --cor-vermelho:
+        #c64b4b;
+
+    --cor-vermelho-fundo:
+        #fceded;
+
+
+    --cor-amarelo:
+        #b88c2f;
+
+    --cor-amarelo-fundo:
+        #fff8df;
+
+
+    --raio-pequeno:
+        10px;
+
+    --raio-medio:
+        16px;
+
+    --raio-grande:
+        22px;
+
+
+    --sombra-card:
+        0 8px 24px
+        rgba(
+            15,
+            52,
+            76,
+            0.08
+        );
+
+
+    --sombra-card-hover:
+        0 14px 34px
+        rgba(
+            15,
+            52,
+            76,
+            0.13
+        );
+
+
+    --transicao:
+        0.22s ease;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
 
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
 
 }
 
 
 body {
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    background: #dceaf5;
 
-    color: #102a43;
+    background:
+
+        linear-gradient(
+            180deg,
+            #edf4f8 0%,
+            #e8f1f6 100%
+        );
+
+
+    color:
+        var(--cor-texto);
+
 
     min-height: 100vh;
+
+
+    line-height: 1.55;
 
 }
 
 
+/* =====================================================
+   LINKS
+===================================================== */
 
-/* ==================================
+a {
+
+    color:
+        var(--cor-azul);
+
+}
+
+
+a:hover {
+
+    color:
+        var(--cor-dourado);
+
+}
+
+
+/* =====================================================
    CABEÇALHO
-================================== */
-
+===================================================== */
 
 .topo {
 
-    background: #003b5c;
+    background:
 
-    padding: 25px;
+        linear-gradient(
+            135deg,
+            #0b344d,
+            #124d6c
+        );
 
-    text-align: center;
 
-    border-bottom: 3px solid #c9a227;
+    padding:
+        28px 24px;
+
+
+    text-align:
+        center;
+
+
+    border-bottom:
+        2px solid
+        rgba(
+            198,
+            164,
+            56,
+            0.75
+        );
 
 }
 
 
 .logo h1 {
 
-    font-size: 32px;
+    margin-bottom:
+        7px;
 
-    margin-bottom: 10px;
 
-    color: white;
+    color:
+        #ffffff;
+
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            32px
+        );
+
+
+    font-weight:
+        700;
+
+
+    letter-spacing:
+        -0.3px;
 
 }
 
 
 .logo p {
 
-    font-size: 16px;
+    color:
+        #c9dbe5;
 
-    color: #d8e3ec;
+
+    font-size:
+        15px;
 
 }
 
 
-
-
-
-/* ==================================
-   MENU
-================================== */
-
+/* =====================================================
+   MENU SUPERIOR
+===================================================== */
 
 .navbar {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    gap: 15px;
 
-    flex-wrap: wrap;
+    align-items:
+        center;
 
-    padding: 15px;
 
-    background: #0b304d;
+    flex-wrap:
+        wrap;
+
+
+    gap:
+        10px;
+
+
+    padding:
+        12px 20px;
+
+
+    background:
+        #102f43;
+
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
 
 }
-
 
 
 .navbar a,
 .navbar button {
 
+    display:
+        inline-flex;
 
-    text-decoration: none;
 
-    color: white;
+    align-items:
+        center;
 
-    background: #1b5a85;
 
-    border: none;
+    justify-content:
+        center;
 
-    padding: 10px 18px;
 
-    border-radius: 8px;
+    gap:
+        6px;
 
-    cursor: pointer;
 
-    font-size: 15px;
+    padding:
+        9px 15px;
 
-    transition: 0.3s;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+
+    border-radius:
+        9px;
+
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+
+    color:
+        #eef7fb;
+
+
+    text-decoration:
+        none;
+
+
+    font-size:
+        14px;
+
+
+    font-weight:
+        500;
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+        var(--transicao);
 
 }
-
 
 
 .navbar a:hover,
 .navbar button:hover {
 
+    background:
+        rgba(
+            198,
+            164,
+            56,
+            0.18
+        );
 
-    background: #c9a227;
 
-    color: #102a43;
+    border-color:
+        rgba(
+            198,
+            164,
+            56,
+            0.55
+        );
+
+
+    color:
+        #ffffff;
+
+
+    transform:
+        translateY(-1px);
 
 }
 
 
-
-
-
-
-/* ==================================
+/* =====================================================
    CONTEÚDO PRINCIPAL
-================================== */
-
+===================================================== */
 
 main {
 
-    width: 90%;
+    width:
+        min(
+            92%,
+            1280px
+        );
 
-    max-width: 1200px;
 
-    margin: 30px auto;
+    margin:
+        28px auto 40px auto;
 
 }
 
 
+section {
+
+    margin-bottom:
+        28px;
+
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+
+    line-height:
+        1.2;
+
+}
 
 
 h2 {
 
-    margin-bottom: 20px;
+    margin-bottom:
+        18px;
 
-    color: #c9a227;
+
+    color:
+        var(--cor-dourado);
+
+
+    font-size:
+        clamp(
+            22px,
+            2.3vw,
+            28px
+        );
+
+
+    font-weight:
+        700;
+
+
+    letter-spacing:
+        -0.25px;
 
 }
 
 
+h3 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
 
 
-
-
-/* ==================================
+/* =====================================================
    DASHBOARD
-================================== */
-
+===================================================== */
 
 .dashboard {
 
-
-    background: #f8fbfd;
-
-    padding: 25px;
-
-    border-radius: 15px;
-
-    margin-bottom: 30px;
-
-    box-shadow: 0 5px 15px #00000030;
-
-}
+    padding:
+        26px;
 
 
-
-.barra-progresso {
-
-
-    width: 100%;
-
-    height: 25px;
-
-    background: #b9d3e8;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-}
+    margin-bottom:
+        30px;
 
 
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
 
-.progresso {
+
+    border:
+        1px solid
+        rgba(
+            31,
+            78,
+            104,
+            0.07
+        );
 
 
-    height: 100%;
+    border-radius:
+        var(--raio-grande);
 
-    width: 0%;
 
-    background: #c9a227;
+    box-shadow:
+        var(--sombra-card);
 
-    transition: 1s;
+
+    backdrop-filter:
+        blur(5px);
 
 }
 
 
+.dashboard p {
 
-#porcentagem-geral {
-
-    margin-top: 10px;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    color: #102a43;
+    color:
+        var(--cor-texto-secundario);
 
 }
 
 
-
-
-
-
-/* ==================================
-   CARDS DISCIPLINAS
-================================== */
-
+/* =====================================================
+   GRID DE CARDS
+===================================================== */
 
 .cards {
 
+    display:
+        grid;
 
-    display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                245px,
+                1fr
+            )
+        );
 
-    gap: 20px;
+
+    gap:
+        18px;
 
 }
 
 
+/* =====================================================
+   CARD
+===================================================== */
 
 .card {
 
+    position:
+        relative;
 
-    background: #f8fbfd;
 
-    padding: 20px;
+    display:
+        block;
 
-    border-radius: 15px;
 
-    text-decoration: none;
+    padding:
+        20px;
 
-    color: #102a43;
 
-    box-shadow: 0 5px 15px #00000030;
+    background:
+        var(--cor-superficie);
 
-    transition: 0.3s;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        var(--raio-medio);
+
+
+    color:
+        var(--cor-texto);
+
+
+    text-decoration:
+        none;
+
+
+    box-shadow:
+        var(--sombra-card);
+
+
+    transition:
+        var(--transicao);
 
 }
-
 
 
 .card:hover {
 
+    transform:
+        translateY(-3px);
 
-    transform: translateY(-5px);
 
-    border: 1px solid #c9a227;
+    border-color:
+        rgba(
+            198,
+            164,
+            56,
+            0.45
+        );
+
+
+    box-shadow:
+        var(--sombra-card-hover);
 
 }
-
 
 
 .card h3 {
 
-
-    margin-bottom: 20px;
-
-    color: #003b5c;
-
-}
+    margin-bottom:
+        14px;
 
 
+    color:
+        var(--cor-azul-escuro);
 
 
-.mini-barra {
+    font-size:
+        18px;
 
 
-    height: 10px;
-
-    background: #b9d3e8;
-
-    border-radius: 10px;
-
-    overflow: hidden;
+    font-weight:
+        700;
 
 }
 
 
+.card p {
 
-.mini-progresso {
+    color:
+        var(--cor-texto-secundario);
 
 
-    height: 100%;
-
-    background: #c9a227;
+    line-height:
+        1.45;
 
 }
-
 
 
 .card span {
 
+    display:
+        block;
 
-    display: block;
 
-    margin-top: 10px;
+    margin-top:
+        8px;
 
 }
 
 
+/* =====================================================
+   BARRAS DE PROGRESSO
+===================================================== */
+
+.barra-progresso {
+
+    width:
+        100%;
 
 
+    height:
+        10px;
 
 
-/* ==================================
-   CENTRO DE COMANDO
-================================== */
+    margin-top:
+        10px;
 
+
+    background:
+        #d8e5ec;
+
+
+    border-radius:
+        999px;
+
+
+    overflow:
+        hidden;
+
+}
+
+
+.progresso {
+
+    height:
+        100%;
+
+
+    min-width:
+        0;
+
+
+    width:
+        0%;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #d0ae42,
+            #b99529
+        );
+
+
+    border-radius:
+        inherit;
+
+
+    transition:
+        width 0.7s ease;
+
+
+    font-size:
+        0;
+
+}
+
+
+.mini-barra {
+
+    height:
+        7px;
+
+
+    background:
+        #dbe7ed;
+
+
+    border-radius:
+        999px;
+
+
+    overflow:
+        hidden;
+
+}
+
+
+.mini-progresso {
+
+    height:
+        100%;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #cbaa3c,
+            #d7bb5c
+        );
+
+
+    border-radius:
+        inherit;
+
+}
+
+
+#porcentagem-geral {
+
+    margin-top:
+        10px;
+
+
+    color:
+        var(--cor-azul-escuro);
+
+
+    font-size:
+        21px;
+
+
+    font-weight:
+        700;
+
+}
+
+
+/* =====================================================
+   PAINEL / WIDGETS
+===================================================== */
 
 .painel {
 
+    display:
+        grid;
 
-    display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                245px,
+                1fr
+            )
+        );
 
-    gap: 20px;
 
-    margin-top: 40px;
+    gap:
+        18px;
+
+
+    margin-top:
+        34px;
 
 }
-
 
 
 .widget {
 
+    padding:
+        20px;
 
-    background: #f8fbfd;
 
-    padding: 20px;
+    background:
+        var(--cor-superficie);
 
-    border-radius: 15px;
 
-    box-shadow: 0 5px 15px #00000030;
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        var(--raio-medio);
+
+
+    box-shadow:
+        var(--sombra-card);
+
+
+    color:
+        var(--cor-texto);
 
 }
 
 
-
+.widget h2,
 .widget h3 {
 
-    color: #003b5c;
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+.widget p {
+
+    color:
+        var(--cor-texto-secundario);
 
 }
 
 
 .widget li {
 
-
-    margin: 10px 0;
+    margin:
+        8px 0;
 
 }
 
 
+/* =====================================================
+   BOTÕES GERAIS
+===================================================== */
+
+.botao,
+button {
+
+    font-family:
+        inherit;
+
+}
 
 
+.botao {
+
+    display:
+        inline-flex;
 
 
-/* ==================================
+    align-items:
+        center;
+
+
+    justify-content:
+        center;
+
+
+    gap:
+        6px;
+
+
+    padding:
+        9px 14px;
+
+
+    border:
+        1px solid
+        rgba(
+            20,
+            85,
+            117,
+            0.18
+        );
+
+
+    border-radius:
+        9px;
+
+
+    background:
+        #eef6f9;
+
+
+    color:
+        var(--cor-azul);
+
+
+    text-decoration:
+        none;
+
+
+    font-weight:
+        600;
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+        var(--transicao);
+
+}
+
+
+.botao:hover {
+
+    background:
+        #e0eef4;
+
+
+    border-color:
+        rgba(
+            20,
+            85,
+            117,
+            0.35
+        );
+
+
+    color:
+        var(--cor-azul-escuro);
+
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =====================================================
    BOTÃO FLUTUANTE
-================================== */
-
+===================================================== */
 
 .botao-inicio {
 
-
-    position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    width: 55px;
-
-    height: 55px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    position:
+        fixed;
 
 
-    background: #c9a227;
-
-    color: #102a43;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    font-size: 25px;
-
-    box-shadow: 0 5px 15px #00000050;
-
-}
+    right:
+        24px;
 
 
+    bottom:
+        24px;
 
 
-
-/* ==================================
-   RODAPÉ
-================================== */
+    z-index:
+        100;
 
 
-footer {
+    width:
+        52px;
 
 
-    text-align: center;
-
-    padding: 20px;
-
-    background: #003b5c;
-
-    margin-top: 40px;
-
-    color: #d8e3ec;
-
-}
+    height:
+        52px;
 
 
+    display:
+        flex;
 
 
+    align-items:
+        center;
 
 
-
-/* ==================================
-   CELULAR
-================================== */
+    justify-content:
+        center;
 
 
-@media(max-width:600px){
+    background:
+        var(--cor-dourado);
 
 
-.logo h1 {
-
-    font-size: 24px;
-
-}
+    color:
+        #173546;
 
 
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.6
+        );
 
-.navbar {
 
-    flex-direction: column;
+    border-radius:
+        50%;
+
+
+    text-decoration:
+        none;
+
+
+    font-size:
+        22px;
+
+
+    box-shadow:
+        0 8px 22px
+        rgba(
+            74,
+            62,
+            25,
+            0.2
+        );
+
+
+    transition:
+        var(--transicao);
 
 }
 
 
+.botao-inicio:hover {
 
-.navbar a,
-.navbar button {
-
-    width: 90%;
-
-}
+    transform:
+        translateY(-3px)
+        scale(1.03);
 
 
-
-main {
-
-    width: 95%;
+    color:
+        #173546;
 
 }
 
 
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+
+    margin-top:
+        12px;
+
+
+    font-size:
+        14px;
+
+
+    font-weight:
+        600;
+
 }
 
-/* ==================================
-   CRONÔMETRO POMODORO
-================================== */
+
+.status.pendente {
+
+    color:
+        var(--cor-texto-suave);
+
+}
+
+
+.status.em-estudo {
+
+    color:
+        var(--cor-amarelo);
+
+}
+
+
+.status.concluido {
+
+    color:
+        var(--cor-verde);
+
+}
+
+
+/* =====================================================
+   POMODORO
+===================================================== */
 
 .secao-pomodoro {
 
-    margin-top: 10px;
-    margin-bottom: 24px;
+    margin-top:
+        12px;
+
+
+    margin-bottom:
+        26px;
 
 }
 
 
 .pomodoro-widget {
 
-    max-width: 100%;
+    max-width:
+        100%;
 
-    padding: 24px;
 
-    text-align: center;
+    padding:
+        26px;
 
-    overflow: hidden;
+
+    text-align:
+        center;
+
+
+    overflow:
+        hidden;
 
 }
 
 
-/* CABEÇALHO */
-
 .pomodoro-cabecalho {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    gap: 14px;
 
-    margin-bottom: 20px;
+    align-items:
+        center;
+
+
+    gap:
+        13px;
+
+
+    margin-bottom:
+        20px;
 
 }
 
 
 .pomodoro-icone {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
 
-    align-items: center;
+    align-items:
+        center;
 
-    width: 54px;
 
-    height: 54px;
+    justify-content:
+        center;
 
-    border-radius: 50%;
 
-    background: #dceaf5;
+    width:
+        50px;
 
-    font-size: 28px;
+
+    height:
+        50px;
+
+
+    border-radius:
+        14px;
+
+
+    background:
+        #edf4f7;
+
+
+    font-size:
+        25px;
 
 }
 
 
 .pomodoro-rotulo {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 3px;
 
-    font-size: 14px;
+    margin-bottom:
+        2px;
 
-    color: #526d82;
+
+    color:
+        var(--cor-texto-secundario);
+
+
+    font-size:
+        13px;
 
 }
 
 
 .pomodoro-cabecalho h3 {
 
-    margin: 0;
+    margin:
+        0;
 
-    color: #123f5a;
 
-    font-size: 22px;
+    color:
+        var(--cor-azul-escuro);
+
+
+    font-size:
+        21px;
 
 }
 
 
-/* TEMPO PRINCIPAL */
-
 .pomodoro-tempo-principal {
 
-    max-width: 360px;
+    max-width:
+        360px;
 
-    margin: 0 auto 22px auto;
 
-    padding: 18px;
+    margin:
+        0 auto 20px auto;
 
-    border-radius: 18px;
 
-    background: #edf6fc;
+    padding:
+        20px;
 
-    border: 1px solid #c3dcea;
+
+    background:
+        var(--cor-superficie-destaque);
+
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        var(--raio-medio);
 
 }
 
 
 .pomodoro-tempo-label {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 6px;
 
-    color: #526d82;
+    margin-bottom:
+        6px;
 
-    font-size: 14px;
+
+    color:
+        var(--cor-texto-secundario);
+
+
+    font-size:
+        13px;
 
 }
 
 
 #pomodoro-restante {
 
-    display: block;
+    display:
+        block;
 
-    color: #003b5c;
 
-    font-size: 44px;
+    color:
+        var(--cor-azul-escuro);
 
-    line-height: 1;
 
-    letter-spacing: 2px;
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            48px
+        );
+
+
+    font-weight:
+        700;
+
+
+    line-height:
+        1;
+
+
+    letter-spacing:
+        1px;
 
 }
 
 
-/* CAIXAS DE INFORMAÇÃO */
-
 .pomodoro-informacoes {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 14px;
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
 
-    margin-bottom: 22px;
+
+    gap:
+        12px;
+
+
+    margin-bottom:
+        20px;
 
 }
 
 
 .pomodoro-caixa {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    gap: 12px;
 
-    min-height: 92px;
+    align-items:
+        center;
 
-    padding: 16px;
 
-    border-radius: 16px;
+    gap:
+        11px;
 
-    background: #f7fbfe;
 
-    border: 1px solid #d2e4ef;
+    min-height:
+        88px;
 
-    box-shadow: 0 4px 10px rgba(16, 42, 67, 0.08);
+
+    padding:
+        14px;
+
+
+    background:
+        #fbfdfe;
+
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        13px;
 
 }
 
 
 .pomodoro-caixa-icone {
 
-    font-size: 27px;
+    font-size:
+        24px;
 
 }
 
 
 .pomodoro-caixa-titulo {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 5px;
 
-    color: #526d82;
+    margin-bottom:
+        4px;
 
-    font-size: 14px;
+
+    color:
+        var(--cor-texto-secundario);
+
+
+    font-size:
+        13px;
 
 }
 
 
 .pomodoro-caixa strong {
 
-    display: block;
+    display:
+        block;
 
-    color: #123f5a;
 
-    font-size: 24px;
+    color:
+        var(--cor-azul-escuro);
+
+
+    font-size:
+        22px;
 
 }
 
 
-/* BOTÕES */
-
 .pomodoro-controles {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    flex-wrap: wrap;
 
-    gap: 10px;
+    align-items:
+        center;
+
+
+    flex-wrap:
+        wrap;
+
+
+    gap:
+        9px;
 
 }
 
 
 .pomodoro-botao {
 
-    min-width: 130px;
+    min-width:
+        125px;
 
-    padding: 11px 16px;
 
-    border: none;
+    padding:
+        10px 15px;
 
-    border-radius: 10px;
 
-    cursor: pointer;
+    border:
+        1px solid
+        var(--cor-azul-borda);
 
-    font-size: 15px;
 
-    font-weight: bold;
+    border-radius:
+        9px;
+
+
+    background:
+        #eef5f8;
+
+
+    color:
+        var(--cor-azul-escuro);
+
+
+    cursor:
+        pointer;
+
+
+    font-size:
+        14px;
+
+
+    font-weight:
+        600;
+
+
+    transition:
+        var(--transicao);
 
 }
 
 
 .pomodoro-botao-iniciar {
 
-    background: #176b87;
+    background:
+        var(--cor-azul);
 
-    color: white;
+
+    border-color:
+        var(--cor-azul);
+
+
+    color:
+        #ffffff;
 
 }
 
 
 .pomodoro-botao:hover {
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 
 }
 
 
 .pomodoro-botao:disabled {
 
-    cursor: not-allowed;
+    cursor:
+        not-allowed;
 
-    opacity: 0.45;
 
-    transform: none;
+    opacity:
+        0.4;
+
+
+    transform:
+        none;
 
 }
 
 
 .pomodoro-orientacao {
 
-    max-width: 620px;
+    max-width:
+        620px;
 
-    margin: 20px auto 0 auto;
 
-    color: #526d82;
+    margin:
+        18px auto 0 auto;
 
-    font-size: 14px;
 
-    line-height: 1.5;
+    color:
+        var(--cor-texto-secundario);
+
+
+    font-size:
+        13px;
+
+
+    line-height:
+        1.5;
 
 }
 
 
-/* RESPONSIVIDADE */
-
-@media (max-width: 600px) {
-
-    .pomodoro-widget {
-
-        padding: 18px 14px;
-
-    }
-
-
-    .pomodoro-informacoes {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    #pomodoro-restante {
-
-        font-size: 38px;
-
-    }
-
-
-    .pomodoro-controles {
-
-        flex-direction: column;
-
-    }
-
-
-    .pomodoro-botao {
-
-        width: 100%;
-
-    }
-
-   }
-/* ==================================
-   EXERCÍCIOS INTERATIVOS PSCPP
-================================== */
-
-
-/* QUESTÃO */
+/* =====================================================
+   EXERCÍCIOS
+===================================================== */
 
 .questao {
 
-    background: #f8fbfd;
+    margin:
+        20px 0;
 
-    padding: 22px;
 
-    margin: 22px 0;
+    padding:
+        21px;
 
-    border-radius: 15px;
 
-    box-shadow: 0 5px 15px #00000030;
+    background:
+        var(--cor-superficie);
 
-    border-left: 5px solid #1b5a85;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-left:
+        4px solid
+        var(--cor-azul);
+
+
+    border-radius:
+        var(--raio-medio);
+
+
+    box-shadow:
+        var(--sombra-card);
 
 }
 
 
 .questao h3 {
 
-    margin-bottom: 16px;
+    margin-bottom:
+        14px;
 
-    color: #003b5c;
+
+    color:
+        var(--cor-azul-escuro);
 
 }
 
 
 .questao p {
 
-    margin-bottom: 14px;
+    margin-bottom:
+        13px;
 
-    line-height: 1.6;
+
+    line-height:
+        1.6;
 
 }
 
-
-/* QUESTÃO RESPONDIDA */
 
 .questao-respondida {
 
-    border-left-color: #c9a227;
+    border-left-color:
+        var(--cor-dourado);
 
 }
 
 
-/* ALTERNATIVAS */
+/* =====================================================
+   ALTERNATIVAS
+===================================================== */
 
 .alternativa,
 .alternativa-questao {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
 
-    margin: 10px 0;
+    width:
+        100%;
 
-    padding: 14px 16px;
 
-    text-align: left;
+    margin:
+        9px 0;
 
-    font-size: 15px;
 
-    line-height: 1.5;
+    padding:
+        13px 15px;
 
-    color: #102a43;
 
-    background: #edf6fc;
+    text-align:
+        left;
 
-    border: 1px solid #c3dcea;
 
-    border-radius: 10px;
+    font-family:
+        inherit;
 
-    cursor: pointer;
 
-    transition: 0.2s;
+    font-size:
+        14px;
+
+
+    line-height:
+        1.5;
+
+
+    color:
+        var(--cor-texto);
+
+
+    background:
+        #f5f9fb;
+
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        10px;
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+        var(--transicao);
 
 }
 
@@ -915,118 +1746,121 @@ main {
 .alternativa:hover,
 .alternativa-questao:hover {
 
-    background: #dceaf5;
+    background:
+        #edf5f8;
 
-    border-color: #1b5a85;
 
-    transform: translateY(-1px);
+    border-color:
+        rgba(
+            20,
+            85,
+            117,
+            0.4
+        );
+
+
+    transform:
+        translateY(-1px);
 
 }
 
-
-/* ALTERNATIVA SELECIONADA */
 
 .alternativa-selecionada {
 
-    background: #d8edf7;
+    background:
+        #e5f1f5;
 
-    border: 2px solid #176b87;
 
-    color: #003b5c;
+    border:
+        2px solid
+        var(--cor-azul);
 
-    font-weight: bold;
 
-    box-shadow: 0 3px 10px rgba(23, 107, 135, 0.18);
+    color:
+        var(--cor-azul-escuro);
+
+
+    font-weight:
+        600;
 
 }
 
-
-/* FOCO PELO TECLADO */
 
 .alternativa:focus,
 .alternativa-questao:focus {
 
-    outline: 3px solid rgba(201, 162, 39, 0.35);
+    outline:
+        3px solid
+        rgba(
+            198,
+            164,
+            56,
+            0.22
+        );
 
-    outline-offset: 2px;
 
-}
-
-
-/* RESUMO DAS RESPOSTAS */
-
-#resumo-selecao-exercicios {
-
-    margin: 0;
-
-    padding: 12px;
-
-    color: #003b5c;
-
-    font-size: 17px;
-
-    line-height: 1.5;
+    outline-offset:
+        2px;
 
 }
 
 
-/* RESPONSIVIDADE */
-
-@media (max-width: 600px) {
-
-    .questao {
-
-        padding: 18px 14px;
-
-    }
-
-
-    .alternativa,
-    .alternativa-questao {
-
-        padding: 13px 12px;
-
-        font-size: 14px;
-
-    }
-
-}
-/* ==================================
-   CORREÇÃO DOS EXERCÍCIOS
-================================== */
+/* =====================================================
+   CORREÇÃO DAS QUESTÕES
+===================================================== */
 
 .alternativa-correta {
 
-    background: #dff4e5 !important;
+    background:
+        var(--cor-verde-fundo)
+        !important;
 
-    border: 2px solid #2f855a !important;
 
-    color: #1f5138 !important;
+    border:
+        2px solid
+        var(--cor-verde)
+        !important;
+
+
+    color:
+        #246147
+        !important;
 
 }
 
 
 .alternativa-incorreta {
 
-    background: #fde2e2 !important;
+    background:
+        var(--cor-vermelho-fundo)
+        !important;
 
-    border: 2px solid #c53030 !important;
 
-    color: #742a2a !important;
+    border:
+        2px solid
+        var(--cor-vermelho)
+        !important;
+
+
+    color:
+        #873737
+        !important;
 
 }
 
 
 .questao-correta {
 
-    border-left-color: #2f855a;
+    border-left-color:
+        var(--cor-verde);
 
 }
 
 
 .questao-incorreta {
 
-    border-left-color: #c53030;
+    border-left-color:
+        var(--cor-vermelho);
 
 }
 
@@ -1034,101 +1868,668 @@ main {
 .alternativa:disabled,
 .alternativa-questao:disabled {
 
-    cursor: default;
+    cursor:
+        default;
 
-    opacity: 1;
+
+    opacity:
+        1;
 
 }
 
 
 .botao-corrigir-exercicios:disabled {
 
-    cursor: default;
+    cursor:
+        default;
 
-    opacity: 0.7;
 
-    transform: none;
+    opacity:
+        0.65;
+
+
+    transform:
+        none;
 
 }
 
-/* ==================================
-   HISTÓRICO DOS EXERCÍCIOS
-================================== */
+
+#resumo-selecao-exercicios {
+
+    margin:
+        0;
+
+
+    padding:
+        12px;
+
+
+    color:
+        var(--cor-azul-escuro);
+
+
+    font-size:
+        16px;
+
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =====================================================
+   HISTÓRICO DE EXERCÍCIOS
+===================================================== */
 
 .historico-exercicios-pscpp {
 
-    margin-top: 22px;
+    margin-top:
+        22px;
 
-    padding: 20px;
 
-    border-radius: 15px;
+    padding:
+        20px;
 
-    background: #f8fbfd;
 
-    border-left: 5px solid #c9a227;
+    background:
+        var(--cor-superficie);
 
-    box-shadow: 0 5px 15px #00000020;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-left:
+        4px solid
+        var(--cor-dourado);
+
+
+    border-radius:
+        var(--raio-medio);
+
+
+    box-shadow:
+        var(--sombra-card);
 
 }
 
 
 .historico-exercicios-pscpp h3 {
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
 
-    color: #003b5c;
+
+    color:
+        var(--cor-azul-escuro);
 
 }
 
 
 .lista-historico-exercicios {
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 12px;
 
-    margin-top: 16px;
+    gap:
+        10px;
+
+
+    margin-top:
+        14px;
 
 }
 
 
 .item-historico-exercicio {
 
-    padding: 14px;
+    padding:
+        14px;
 
-    border-radius: 10px;
 
-    background: #edf6fc;
+    background:
+        var(--cor-superficie-destaque);
 
-    border: 1px solid #c3dcea;
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        10px;
 
 }
 
 
 .item-historico-exercicio strong {
 
-    color: #003b5c;
+    color:
+        var(--cor-azul-escuro);
 
 }
 
 
 .item-historico-exercicio span {
 
-    display: block;
+    display:
+        block;
 
-    margin-top: 4px;
 
-    color: #526d82;
+    margin-top:
+        4px;
 
-    font-size: 13px;
+
+    color:
+        var(--cor-texto-secundario);
+
+
+    font-size:
+        13px;
 
 }
 
 
 .item-historico-exercicio p {
 
-    margin-top: 8px;
+    margin-top:
+        7px;
 
-    margin-bottom: 0;
+
+    margin-bottom:
+        0;
+
+}
+
+
+/* =====================================================
+   TÓPICOS DAS AULAS
+===================================================== */
+
+.topico-aula {
+
+    margin:
+        22px 0;
+
+
+    padding:
+        22px;
+
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.68
+        );
+
+
+    border:
+        1px solid
+        rgba(
+            20,
+            85,
+            117,
+            0.08
+        );
+
+
+    border-radius:
+        var(--raio-medio);
+
+}
+
+
+.topico-aula h2 {
+
+    color:
+        var(--cor-azul-escuro);
+
+}
+
+
+.topico-estudado {
+
+    border-color:
+        rgba(
+            46,
+            139,
+            104,
+            0.32
+        );
+
+}
+
+
+/* =====================================================
+   BOTÃO DO TÓPICO ESTUDADO
+===================================================== */
+
+.controle-progresso-topico {
+
+    margin-top:
+        18px;
+
+
+    padding-top:
+        14px;
+
+
+    border-top:
+        1px solid
+        #e5edf1;
+
+}
+
+
+.botao-topico-estudado {
+
+    padding:
+        8px 13px;
+
+
+    background:
+        #eef5f8;
+
+
+    border:
+        1px solid
+        var(--cor-azul-borda);
+
+
+    border-radius:
+        8px;
+
+
+    color:
+        var(--cor-azul);
+
+
+    font-weight:
+        600;
+
+
+    cursor:
+        pointer;
+
+}
+
+
+.botao-topico-estudado.topico-concluido {
+
+    background:
+        var(--cor-verde-fundo);
+
+
+    border-color:
+        rgba(
+            46,
+            139,
+            104,
+            0.35
+        );
+
+
+    color:
+        var(--cor-verde);
+
+}
+
+
+/* =====================================================
+   ABERTURA DE PARTES DAS AULAS
+===================================================== */
+
+.abertura-parte {
+
+    margin:
+        32px 0 20px 0;
+
+
+    padding:
+        22px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0d3b55,
+            #155775
+        );
+
+
+    color:
+        #ffffff;
+
+
+    border-radius:
+        var(--raio-medio);
+
+
+    box-shadow:
+        var(--sombra-card);
+
+}
+
+
+.abertura-parte h2 {
+
+    color:
+        #e0c96f;
+
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.abertura-parte p {
+
+    color:
+        #e2edf3;
+
+}
+
+
+/* =====================================================
+   DESTAQUES
+===================================================== */
+
+.destaque,
+.atencao-pratico,
+.termos-tecnicos {
+
+    margin:
+        18px 0;
+
+
+    padding:
+        17px;
+
+
+    border-radius:
+        12px;
+
+}
+
+
+.destaque {
+
+    background:
+        #f2f7fa;
+
+
+    border-left:
+        4px solid
+        var(--cor-azul);
+
+}
+
+
+.atencao-pratico {
+
+    background:
+        var(--cor-amarelo-fundo);
+
+
+    border-left:
+        4px solid
+        var(--cor-dourado);
+
+}
+
+
+.termos-tecnicos {
+
+    background:
+        #edf6f4;
+
+
+    border-left:
+        4px solid
+        #4d9b87;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer {
+
+    margin-top:
+        42px;
+
+
+    padding:
+        18px;
+
+
+    text-align:
+        center;
+
+
+    background:
+        #0b344d;
+
+
+    color:
+        #c8d7df;
+
+
+    font-size:
+        14px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (
+    max-width:
+        900px
+) {
+
+    main {
+
+        width:
+            94%;
+
+    }
+
+
+    .cards,
+    .painel {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (
+    max-width:
+        600px
+) {
+
+    .logo h1 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .topo {
+
+        padding:
+            22px 15px;
+
+    }
+
+
+    .navbar {
+
+        gap:
+            7px;
+
+    }
+
+
+    .navbar a,
+    .navbar button {
+
+        flex:
+            1 1 auto;
+
+
+        min-width:
+            120px;
+
+
+        padding:
+            9px 10px;
+
+    }
+
+
+    main {
+
+        width:
+            94%;
+
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .dashboard {
+
+        padding:
+            19px;
+
+    }
+
+
+    .cards,
+    .painel {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .card,
+    .widget {
+
+        padding:
+            17px;
+
+    }
+
+
+    .pomodoro-widget {
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .pomodoro-informacoes {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    #pomodoro-restante {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .pomodoro-controles {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .pomodoro-botao {
+
+        width:
+            100%;
+
+    }
+
+
+    .questao {
+
+        padding:
+            17px 14px;
+
+    }
+
+
+    .alternativa,
+    .alternativa-questao {
+
+        padding:
+            12px;
+
+
+        font-size:
+            14px;
+
+    }
+
+
+    .topico-aula {
+
+        padding:
+            17px;
+
+    }
+
+
+    .botao-inicio {
+
+        right:
+            16px;
+
+
+        bottom:
+            16px;
+
+    }
 
 }
