@@ -1,18 +1,49 @@
 // =====================================
 // GUIA DE ESTUDOS PSCPP
-// PAINEL DE CONTROLE INTELIGENTE v4.0
+// PAINEL DE CONTROLE INTELIGENTE v5.0
 // Bridge Trainer PSCPP
 //
-// A partir da v4.0, o status de cada assunto
-// (Não iniciado / Em estudo / Concluído) não vem mais
-// do banco-conteudo.js — é calculado em tempo real a
-// partir do progresso salvo por progresso.js
-// (obterProgressoAula), usando o campo "id" de cada
-// assunto como idAula.
+// Integra:
+//
+// - progresso.js
+// - banco-conteudo.js
+// - configuracao-estudo.js
+// - motor-planejamento.js
+//
+// RESPONSABILIDADES:
+//
+// 1. Exibir visão geral dos estudos.
+// 2. Calcular progresso estratégico.
+// 3. Mostrar carga estimada.
+// 4. Mostrar assuntos concluídos.
+// 5. Consultar o MESMO motor do Planejamento
+//    para determinar o Próximo Foco.
+// 6. Gerar automaticamente os cards do
+//    conteúdo programático.
+//
+// IMPORTANTE:
+//
+// O Guia NÃO possui mais motor próprio
+// de recomendação.
+//
+// A decisão estratégica vem de:
+//
+// obterProximoEstudo()
+//
+// do motor-planejamento.js.
+//
+// Assim:
+//
+// Guia de Estudos
+// Planejamento
+//
+// passam a apresentar a mesma decisão.
 // =====================================
 
 
-console.log("APP GUIA CARREGADO");
+console.log(
+    "APP GUIA PSCPP v5.0 CARREGADO"
+);
 
 
 // =====================================
@@ -30,51 +61,88 @@ let assuntosConcluidos = 0;
 let horasConcluidas = 0;
 
 
-// Controle estratégico
+// Controle estratégico de progresso
 
 let pesoTotal = 0;
 
 let pesoConcluido = 0;
 
 
-// Recomendação
+// =====================================
+// ÍCONES DAS DISCIPLINAS
+// =====================================
 
-let proximoEstudo = null;
+const iconesDisciplinasGuia = {
 
-let maiorPrioridade = 0;
+    manobrabilidade:
+        "🚢",
+
+    "arte-naval":
+        "⚓",
+
+    navegacao:
+        "🧭",
+
+    meteorologia:
+        "🌦",
+
+    regulamentacao:
+        "📜",
+
+    comunicacoes:
+        "📡",
+
+    "conhecimentos-gerais":
+        "🌍"
+
+};
 
 
 // =====================================
 // STATUS REAL DE UM ASSUNTO
 // =====================================
-//
-// Consulta progresso.js (já carregado antes deste
-// script) para saber o percentual real de conclusão
-// do assunto, usando idDisciplina + assunto.id.
 
 function obterStatusRealDoAssunto(
     idDisciplina,
     assunto
 ) {
 
+    if (
+        typeof obterProgressoAula !==
+        "function"
+    ) {
+
+        return "Não iniciado";
+
+    }
+
+
     const percentual =
-        obterProgressoAula(
+        Number(
 
-            idDisciplina,
+            obterProgressoAula(
 
-            assunto.id
+                idDisciplina,
 
-        );
+                assunto.id
+
+            )
+
+        ) || 0;
 
 
-    if (percentual >= 100) {
+    if (
+        percentual >= 100
+    ) {
 
         return "Concluído";
 
     }
 
 
-    if (percentual > 0) {
+    if (
+        percentual > 0
+    ) {
 
         return "Em estudo";
 
@@ -87,26 +155,75 @@ function obterStatusRealDoAssunto(
 
 
 // =====================================
+// OBTER PROGRESSO REAL DO ASSUNTO
+// =====================================
+
+function obterPercentualRealAssuntoGuia(
+    idDisciplina,
+    assunto
+) {
+
+    if (
+        typeof obterProgressoAula !==
+        "function"
+    ) {
+
+        return 0;
+
+    }
+
+
+    return Math.max(
+
+        0,
+
+        Math.min(
+
+            100,
+
+            Number(
+
+                obterProgressoAula(
+
+                    idDisciplina,
+
+                    assunto.id
+
+                )
+
+            ) || 0
+
+        )
+
+    );
+
+}
+
+
+// =====================================
 // PROCESSAMENTO DO BANCO DE CONTEÚDO
 // =====================================
 
 function processarConteudo() {
 
-
-    if (typeof conteudoPSCPP === "undefined") {
+    if (
+        typeof conteudoPSCPP ===
+        "undefined" ||
+        !conteudoPSCPP
+    ) {
 
         console.error(
             "Banco de conteúdo PSCPP não encontrado."
         );
+
 
         return;
 
     }
 
 
-    // Reinicia os acumuladores — importante caso esta
-    // função seja chamada mais de uma vez (ex: após o
-    // usuário marcar um tópico como estudado em outra aba)
+    // Reiniciar acumuladores
+
     totalDisciplinas = 0;
 
     totalAssuntos = 0;
@@ -121,44 +238,621 @@ function processarConteudo() {
 
     pesoConcluido = 0;
 
-    proximoEstudo = null;
-
-    maiorPrioridade = 0;
-
 
     totalDisciplinas =
-        Object.keys(conteudoPSCPP).length;
+        Object.keys(
+            conteudoPSCPP
+        ).length;
 
 
-    for (let idDisciplina in conteudoPSCPP) {
+    for (
+        const idDisciplina
+        in conteudoPSCPP
+    ) {
+
+        const dadosDisciplina =
+            conteudoPSCPP[
+                idDisciplina
+            ];
 
 
-        let dadosDisciplina =
-            conteudoPSCPP[idDisciplina];
+        const assuntos =
+            Array.isArray(
+                dadosDisciplina.assuntos
+            )
+                ? dadosDisciplina.assuntos
+                : [];
 
 
-        let assuntos =
-            dadosDisciplina.assuntos || [];
+        assuntos.forEach(
+            assunto => {
+
+                totalAssuntos++;
 
 
-        assuntos.forEach(assunto => {
+                const horas =
+                    Number(
+                        assunto.horas
+                    ) || 0;
 
 
-            totalAssuntos++;
+                totalHoras +=
+                    horas;
 
 
-            totalHoras += assunto.horas;
+                const pesoAssunto =
+
+                    horas *
+
+                    (
+                        Number(
+                            assunto.peso
+                        ) || 1
+                    );
 
 
-            let pesoAssunto =
-                assunto.horas *
-                assunto.peso;
+                pesoTotal +=
+                    pesoAssunto;
 
 
-            pesoTotal += pesoAssunto;
+                const percentual =
+                    obterPercentualRealAssuntoGuia(
+
+                        idDisciplina,
+
+                        assunto
+
+                    );
 
 
-            const statusReal =
+                if (
+                    percentual >= 100
+                ) {
+
+                    assuntosConcluidos++;
+
+                }
+
+
+                // =================================
+                // HORAS EQUIVALENTES CONCLUÍDAS
+                // =================================
+                //
+                // Antes só contávamos uma aula
+                // quando chegava a 100%.
+                //
+                // Agora uma aula 50% concluída
+                // também contribui proporcionalmente.
+
+                horasConcluidas +=
+
+                    horas *
+
+                    (
+                        percentual /
+                        100
+                    );
+
+
+                pesoConcluido +=
+
+                    pesoAssunto *
+
+                    (
+                        percentual /
+                        100
+                    );
+
+            }
+        );
+
+    }
+
+}
+
+
+// =====================================
+// CÁLCULO DO PROGRESSO ESTRATÉGICO
+// =====================================
+
+function calcularProgressoEstrategico() {
+
+    if (
+        pesoTotal <= 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    return Math.round(
+
+        (
+            pesoConcluido /
+            pesoTotal
+        ) *
+        100
+
+    );
+
+}
+
+
+// =====================================
+// ARREDONDAR HORAS
+// =====================================
+
+function arredondarHorasGuia(
+    valor
+) {
+
+    const numero =
+        Number(valor) || 0;
+
+
+    return (
+        Math.round(
+            numero * 10
+        ) /
+        10
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR ELEMENTO HTML
+// =====================================
+
+function atualizarElemento(
+    id,
+    valor
+) {
+
+    const elemento =
+        document.getElementById(
+            id
+        );
+
+
+    if (
+        elemento
+    ) {
+
+        elemento.textContent =
+            valor;
+
+    }
+
+}
+
+
+// =====================================================
+// PRÓXIMO FOCO
+// =====================================================
+
+
+// =====================================
+// OBTER PRÓXIMO FOCO DO MOTOR
+// =====================================
+//
+// Esta é a mudança principal da v5.0.
+//
+// O Guia NÃO calcula mais prioridade.
+//
+// Ele consulta:
+//
+// motor-planejamento.js
+//
+// através de:
+//
+// obterProximoEstudo()
+
+function obterProximoFocoGuia() {
+
+    if (
+        typeof obterProximoEstudo !==
+        "function"
+    ) {
+
+        console.error(
+            "motor-planejamento.js não está disponível."
+        );
+
+
+        return null;
+
+    }
+
+
+    return obterProximoEstudo();
+
+}
+
+
+// =====================================
+// CRIAR PAINEL INTELIGENTE
+// =====================================
+
+function criarPainelInteligente() {
+
+    const progresso =
+        calcularProgressoEstrategico();
+
+
+    const dashboard =
+        document.querySelector(
+            ".dashboard"
+        );
+
+
+    if (
+        !dashboard
+    ) {
+
+        return;
+
+    }
+
+
+    const cards =
+        dashboard.querySelector(
+            ".cards"
+        );
+
+
+    if (
+        !cards
+    ) {
+
+        return;
+
+    }
+
+
+    // =================================
+    // REMOVER CARDS DINÂMICOS ANTIGOS
+    // =================================
+
+    const paineisAntigos =
+        cards.querySelectorAll(
+            "[data-painel-inteligente]"
+        );
+
+
+    paineisAntigos.forEach(
+        painel => {
+
+            painel.remove();
+
+        }
+    );
+
+
+    // =================================
+    // PROGRESSO ESTRATÉGICO
+    // =================================
+
+    const progressoBox =
+        document.createElement(
+            "div"
+        );
+
+
+    progressoBox.className =
+        "card";
+
+
+    progressoBox.dataset
+        .painelInteligente =
+        "progresso";
+
+
+    progressoBox.innerHTML = `
+
+        <h3>
+        📈 Progresso Estratégico
+        </h3>
+
+        <p>
+        ${progresso}% concluído
+        </p>
+
+        <p>
+        ${assuntosConcluidos}
+        de
+        ${totalAssuntos}
+        assuntos
+        </p>
+
+        <p>
+        ${arredondarHorasGuia(
+            horasConcluidas
+        )}h equivalentes concluídas
+        </p>
+
+    `;
+
+
+    cards.appendChild(
+        progressoBox
+    );
+
+
+    // =================================
+    // PRÓXIMO FOCO
+    // =================================
+
+    const focoBox =
+        document.createElement(
+            "div"
+        );
+
+
+    focoBox.className =
+        "card";
+
+
+    focoBox.dataset
+        .painelInteligente =
+        "foco";
+
+
+    const proximo =
+        obterProximoFocoGuia();
+
+
+    if (
+        proximo
+    ) {
+
+        const icone =
+
+            iconesDisciplinasGuia[
+                proximo.idDisciplina
+            ] ||
+
+            "🎯";
+
+
+        let textoCiclo =
+            "";
+
+
+        if (
+            proximo.continuidadePomodoro
+        ) {
+
+            textoCiclo = `
+
+                <p>
+                🍅 Ciclo:
+                ${proximo.blocosCompletosNoCiclo}
+                de
+                3 blocos completos
+                </p>
+
+            `;
+
+        }
+
+
+        let textoCarga =
+            "";
+
+
+        if (
+            proximo.cargaCognitiva
+        ) {
+
+            textoCarga = `
+
+                <p>
+                Carga cognitiva:
+                ${proximo.cargaCognitiva}
+                </p>
+
+            `;
+
+        }
+
+
+        focoBox.innerHTML = `
+
+            <h3>
+            🎯 Próximo Foco
+            </h3>
+
+            <p>
+            <strong>
+            ${icone}
+            ${proximo.disciplina}
+            </strong>
+            </p>
+
+            <p>
+            ${proximo.assunto}
+            </p>
+
+            ${textoCarga}
+
+            ${textoCiclo}
+
+        `;
+
+
+        // =================================
+        // LINK PARA A AULA
+        // =================================
+
+        const link =
+            document.createElement(
+                "a"
+            );
+
+
+        link.href =
+
+            "../disciplinas/" +
+
+            proximo.idDisciplina +
+
+            "/" +
+
+            proximo.idAssunto +
+
+            ".html";
+
+
+        link.textContent =
+            "Ir para a aula";
+
+
+        focoBox.appendChild(
+            link
+        );
+
+    }
+    else {
+
+        focoBox.innerHTML = `
+
+            <h3>
+            🎯 Próximo Foco
+            </h3>
+
+            <p>
+            ✅ Todos os assuntos cadastrados
+            foram concluídos.
+            </p>
+
+        `;
+
+    }
+
+
+    cards.appendChild(
+        focoBox
+    );
+
+}
+
+
+// =====================================================
+// CONTEÚDO PROGRAMÁTICO DINÂMICO
+// =====================================================
+
+
+// =====================================
+// CRIAR STATUS DO ASSUNTO
+// =====================================
+
+function obterIconeStatusAssuntoGuia(
+    status
+) {
+
+    if (
+        status ===
+        "Concluído"
+    ) {
+
+        return "✅";
+
+    }
+
+
+    if (
+        status ===
+        "Em estudo"
+    ) {
+
+        return "🟡";
+
+    }
+
+
+    return "⬜";
+
+}
+
+
+// =====================================
+// CRIAR CARD DE DISCIPLINA
+// =====================================
+
+function criarCardDisciplinaGuia(
+    idDisciplina,
+    dadosDisciplina
+) {
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className =
+        "card";
+
+
+    const titulo =
+        document.createElement(
+            "h3"
+        );
+
+
+    const icone =
+
+        iconesDisciplinasGuia[
+            idDisciplina
+        ] ||
+
+        "📚";
+
+
+    titulo.textContent =
+
+        icone +
+
+        " " +
+
+        dadosDisciplina.nome;
+
+
+    card.appendChild(
+        titulo
+    );
+
+
+    // =================================
+    // LISTA DE ASSUNTOS
+    // =================================
+
+    const lista =
+        document.createElement(
+            "ul"
+        );
+
+
+    const assuntos =
+        Array.isArray(
+            dadosDisciplina.assuntos
+        )
+            ? dadosDisciplina.assuntos
+            : [];
+
+
+    assuntos.forEach(
+        assunto => {
+
+            const item =
+                document.createElement(
+                    "li"
+                );
+
+
+            const status =
                 obterStatusRealDoAssunto(
 
                     idDisciplina,
@@ -168,322 +862,140 @@ function processarConteudo() {
                 );
 
 
-            if (statusReal === "Concluído") {
+            const iconeStatus =
+                obterIconeStatusAssuntoGuia(
+                    status
+                );
 
 
-                assuntosConcluidos++;
+            item.textContent =
 
-                horasConcluidas += assunto.horas;
+                iconeStatus +
 
-                pesoConcluido += pesoAssunto;
+                " " +
 
-
-            }
-
-
-            // ============================
-            // RECOMENDAÇÃO INTELIGENTE
-            // ============================
-
-            if (statusReal !== "Concluído") {
+                assunto.nome;
 
 
-                let prioridadeAtual =
+            lista.appendChild(
+                item
+            );
 
-                    assunto.peso *
-                    (dadosDisciplina.pesoDisciplina || 1);
-
-
-                if (
-                    prioridadeAtual >
-                    maiorPrioridade
-                ) {
-
-
-                    maiorPrioridade =
-                        prioridadeAtual;
-
-
-                    proximoEstudo = {
-
-
-                        idDisciplina:
-                            idDisciplina,
-
-                        idAssunto:
-                            assunto.id,
-
-                        disciplina:
-                            dadosDisciplina.nome,
-
-                        assunto:
-                            assunto.nome,
-
-                        peso:
-                            assunto.peso,
-
-                        horas:
-                            assunto.horas,
-
-                        status:
-                            statusReal
-
-                    };
-
-
-                }
-
-
-            }
-
-
-        });
-
-
-    }
-
-
-}
-
-
-// =====================================
-// CÁLCULO DO PROGRESSO
-// =====================================
-
-function calcularProgressoEstrategico() {
-
-
-    if (pesoTotal === 0) {
-
-        return 0;
-
-    }
-
-
-    return Math.round(
-
-        (pesoConcluido /
-        pesoTotal) * 100
-
+        }
     );
 
 
-}
-
-
-// =====================================
-// ATUALIZA ELEMENTOS HTML
-// =====================================
-
-function atualizarElemento(id, valor) {
-
-
-    let elemento =
-        document.getElementById(id);
-
-
-    if (elemento) {
-
-        elemento.innerHTML =
-            valor;
-
-    }
-
-
-}
-
-
-// =====================================
-// CRIA CARDS INTELIGENTES
-// =====================================
-
-function criarPainelInteligente() {
-
-
-    let progresso =
-        calcularProgressoEstrategico();
-
-
-    let dashboard =
-        document.querySelector(".dashboard");
-
-
-    if (!dashboard) {
-
-        return;
-
-    }
-
-
-    let cards =
-        dashboard.querySelector(".cards");
-
-
-    if (!cards) {
-
-        return;
-
-    }
-
-
-    // Remove painéis inteligentes de uma execução
-    // anterior, para não duplicar cards ao reprocessar
-    const paineisAntigos =
-        cards.querySelectorAll(
-            "[data-painel-inteligente]"
-        );
-
-    paineisAntigos.forEach(
-        painel => painel.remove()
+    card.appendChild(
+        lista
     );
 
 
-    let progressoBox =
-        document.createElement("div");
+    // =================================
+    // LINK DA DISCIPLINA
+    // =================================
+
+    const link =
+        document.createElement(
+            "a"
+        );
 
 
-    progressoBox.className =
-        "card";
+    link.href =
 
-    progressoBox.dataset.painelInteligente =
-        "progresso";
+        "../disciplinas/" +
 
+        idDisciplina +
 
-    progressoBox.innerHTML = `
-
-    <h3>
-    📈 Progresso Estratégico
-    </h3>
-
-    <p>
-    ${progresso}% concluído
-    </p>
-
-    <p>
-    ${assuntosConcluidos}
-    de
-    ${totalAssuntos}
-    assuntos
-    </p>
-
-    <p>
-    ${horasConcluidas}h estudadas
-    </p>
-
-    `;
+        "/index.html";
 
 
-    cards.appendChild(progressoBox);
+    link.textContent =
+        "Acessar disciplina";
 
 
-    let focoBox =
-        document.createElement("div");
+    card.appendChild(
+        link
+    );
 
 
-    focoBox.className =
-        "card";
-
-    focoBox.dataset.painelInteligente =
-        "foco";
-
-
-    if (proximoEstudo) {
-
-
-        focoBox.innerHTML = `
-
-
-        <h3>
-        🎯 Próximo Foco
-        </h3>
-
-
-        <p>
-        <strong>
-        ${proximoEstudo.disciplina}
-        </strong>
-        </p>
-
-
-        <p>
-        ${proximoEstudo.assunto}
-        </p>
-
-
-        <p>
-        Peso:
-        ${proximoEstudo.peso}
-        </p>
-
-
-        <p>
-        Carga:
-        ${proximoEstudo.horas}
-        horas
-        </p>
-
-
-        `;
-
-
-    }
-    else {
-
-
-        focoBox.innerHTML = `
-
-
-        <h3>
-        🎯 Próximo Foco
-        </h3>
-
-
-        <p>
-        Todos os assuntos concluídos.
-        </p>
-
-
-        `;
-
-
-    }
-
-
-    cards.appendChild(focoBox);
-
+    return card;
 
 }
 
 
 // =====================================
-// INICIALIZAÇÃO
+// RENDERIZAR CONTEÚDO PROGRAMÁTICO
 // =====================================
-//
-// carregarDadosProgresso() é assíncrona (lê localStorage
-// ou busca data/progresso.json). É preciso esperar essa
-// promessa resolver antes de processar o conteúdo —
-// senão dadosProgresso ainda estará vazio e todo assunto
-// apareceria como "Não iniciado" mesmo com progresso
-// real salvo.
 
-async function inicializarGuiaDeEstudos() {
+function renderizarConteudoProgramaticoGuia() {
 
-
-    if (typeof carregarDadosProgresso !== "function") {
-
-        console.error(
-            "progresso.js não foi carregado antes de " +
-            "app-guia.js. Inclua <script src=\"../js/progresso.js\">" +
-            " antes deste arquivo."
+    const container =
+        document.getElementById(
+            "conteudo-programatico-guia"
         );
+
+
+    if (
+        !container
+    ) {
 
         return;
 
     }
 
 
-    await carregarDadosProgresso();
+    container.innerHTML =
+        "";
 
+
+    if (
+        typeof conteudoPSCPP ===
+            "undefined" ||
+        !conteudoPSCPP
+    ) {
+
+        return;
+
+    }
+
+
+    Object.entries(
+        conteudoPSCPP
+    ).forEach(
+
+        (
+            [
+                idDisciplina,
+                dadosDisciplina
+            ]
+        ) => {
+
+            const card =
+                criarCardDisciplinaGuia(
+
+                    idDisciplina,
+
+                    dadosDisciplina
+
+                );
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR TODO O GUIA
+// =====================================
+
+function atualizarGuiaCompleto() {
 
     processarConteudo();
 
@@ -502,22 +1014,112 @@ async function inicializarGuiaDeEstudos() {
 
     atualizarElemento(
         "total-horas",
-        totalHoras + " horas"
+        arredondarHorasGuia(
+            totalHoras
+        ) +
+        " horas"
     );
 
 
     criarPainelInteligente();
 
 
+    renderizarConteudoProgramaticoGuia();
+
 }
 
 
+// =====================================
+// INICIALIZAÇÃO
+// =====================================
+
+async function inicializarGuiaDeEstudos() {
+
+    if (
+        typeof carregarDadosProgresso !==
+        "function"
+    ) {
+
+        console.error(
+            "progresso.js não foi carregado antes de app-guia.js."
+        );
+
+
+        return;
+
+    }
+
+
+    if (
+        typeof conteudoPSCPP ===
+        "undefined"
+    ) {
+
+        console.error(
+            "banco-conteudo.js não foi carregado antes de app-guia.js."
+        );
+
+
+        return;
+
+    }
+
+
+    await carregarDadosProgresso();
+
+
+    atualizarGuiaCompleto();
+
+}
+
+
+// =====================================
+// ATUALIZAR APÓS ALTERAÇÃO DO PROGRESSO
+// =====================================
+
 document.addEventListener(
-    "DOMContentLoaded",
-    inicializarGuiaDeEstudos
+
+    "progressoPSCPPAtualizado",
+
+    function () {
+
+        atualizarGuiaCompleto();
+
+    }
+
 );
 
 
 // =====================================
-// FIM APP-GUIA v4.0
+// ATUALIZAR APÓS NOVO BLOCO POMODORO
+// =====================================
+
+document.addEventListener(
+
+    "planejamentoPSCPPAtualizado",
+
+    function () {
+
+        atualizarGuiaCompleto();
+
+    }
+
+);
+
+
+// =====================================
+// CARREGAMENTO AUTOMÁTICO
+// =====================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    inicializarGuiaDeEstudos
+
+);
+
+
+// =====================================
+// FIM APP-GUIA v5.0
 // =====================================
