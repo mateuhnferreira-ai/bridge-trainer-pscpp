@@ -1,5 +1,5 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP v3.3
+// MOTOR DE PLANEJAMENTO PSCPP v3.4
 // Bridge Trainer PSCPP
 //
 // CAMADAS CONSIDERADAS:
@@ -12,8 +12,16 @@
 // 6. Atraso relativo da disciplina.
 // 7. Carga cognitiva.
 // 8. Histórico real do Pomodoro.
-// 9. Continuidade de até 3 Pomodoros.
-// 10. Alternância cognitiva após o ciclo.
+// 9. Ciclo Pomodoro acumulativo por assunto.
+// 10. Continuidade de até 3 Pomodoros.
+// 11. Alternância cognitiva após o ciclo.
+//
+// NOVO NA v3.4:
+//
+// - ciclo Pomodoro acumulativo;
+// - interrupções não zeram 1/3 ou 2/3;
+// - o ciclo só reinicia após 3/3;
+// - correção da penalidade por mesma disciplina.
 //
 // O motor responde:
 //
@@ -29,12 +37,17 @@
 // CONFIGURAÇÕES
 // =====================================
 
-const MOTOR_LIMITE_PLANO_PADRAO = 20;
+const MOTOR_LIMITE_PLANO_PADRAO =
+    20;
 
-const MOTOR_BLOCOS_POR_CICLO = 3;
+
+const MOTOR_BLOCOS_POR_CICLO =
+    3;
+
 
 const MOTOR_SEGUNDOS_BLOCO_COMPLETO =
     30 * 60;
+
 
 const MOTOR_CHAVE_HISTORICO_POMODORO =
     "bridgeTrainerPSCPP_historicoPomodoro";
@@ -51,8 +64,10 @@ const MOTOR_BONUS_ASSUNTO_INICIADO =
 const MOTOR_PENALIDADE_ALTA_SEGUIDA =
     0.55;
 
+
 const MOTOR_BONUS_RECUPERACAO =
     1.25;
+
 
 const MOTOR_PENALIDADE_MESMA_DISCIPLINA =
     0.92;
@@ -61,12 +76,6 @@ const MOTOR_PENALIDADE_MESMA_DISCIPLINA =
 // =====================================
 // PRESSÃO DE PRAZO
 // =====================================
-//
-// Multiplicadores globais.
-//
-// Eles não escolhem a disciplina diretamente.
-// Apenas tornam o motor mais agressivo quando
-// o planejamento começa a ficar apertado.
 
 const MOTOR_FATOR_PRAZO = {
 
@@ -93,9 +102,6 @@ const MOTOR_FATOR_PRAZO = {
 
 };
 
-
-// Máximo bônus individual aplicado
-// a uma disciplina atrasada.
 
 const MOTOR_BONUS_MAX_ATRASO_DISCIPLINA =
     1.35;
@@ -154,18 +160,6 @@ function obterProgressoSeguro(
 // =====================================
 // OBTER PESO DA CONFIGURAÇÃO
 // =====================================
-//
-// IMPORTANTE:
-//
-// Agora utilizamos diretamente
-// o ID estável da disciplina.
-//
-// Exemplo:
-//
-// manobrabilidade
-// arte-naval
-// navegacao
-// regulamentacao
 
 function obterPesoConfiguracao(
     idDisciplina
@@ -207,8 +201,11 @@ function normalizarCargaCognitiva(
         String(
             carga || "Média"
         )
+
         .toLowerCase()
+
         .normalize("NFD")
+
         .replace(
             /[\u0300-\u036f]/g,
             ""
@@ -216,7 +213,8 @@ function normalizarCargaCognitiva(
 
 
     if (
-        valor === "alta"
+        valor ===
+        "alta"
     ) {
 
         return "Alta";
@@ -225,7 +223,8 @@ function normalizarCargaCognitiva(
 
 
     if (
-        valor === "baixa"
+        valor ===
+        "baixa"
     ) {
 
         return "Baixa";
@@ -311,26 +310,6 @@ function obterFatorGlobalPrazo(
 // =====================================
 // BÔNUS POR ATRASO DA DISCIPLINA
 // =====================================
-//
-// Compara:
-//
-// progresso esperado geral
-//
-// com
-//
-// progresso ponderado da disciplina.
-//
-// Exemplo:
-//
-// Esperado hoje: 30%
-// Manobrabilidade: 18%
-//
-// Defasagem = 12 pontos.
-//
-// A disciplina recebe pequeno reforço.
-//
-// O bônus é limitado para impedir que
-// uma única disciplina domine o plano.
 
 function obterFatorAtrasoDisciplina(
     idDisciplina,
@@ -372,15 +351,15 @@ function obterFatorAtrasoDisciplina(
 
     const real =
         Number(
-            dadosDisciplina.progresso
+            dadosDisciplina
+                .progresso
         ) || 0;
 
 
     const atraso =
-        esperado - real;
+        esperado -
+        real;
 
-
-    // Disciplina não está atrasada.
 
     if (
         atraso <= 0
@@ -391,16 +370,15 @@ function obterFatorAtrasoDisciplina(
     }
 
 
-    // Cada 10 pontos percentuais
-    // de atraso gera aproximadamente
-    // 5% de bônus.
-
     let fator =
+
         1 +
+
         (
             atraso /
             10
         ) *
+
         0.05;
 
 
@@ -416,7 +394,7 @@ function obterFatorAtrasoDisciplina(
 
 
 // =====================================
-// CARREGAR HISTÓRICO DO POMODORO
+// CARREGAR HISTÓRICO POMODORO
 // =====================================
 
 function obterHistoricoPomodoroMotor() {
@@ -466,11 +444,13 @@ function obterHistoricoPomodoroMotor() {
             );
 
 
-        return Array.isArray(
-            dados
-        )
-            ? dados
-            : [];
+        return (
+            Array.isArray(
+                dados
+            )
+                ? dados
+                : []
+        );
 
     }
     catch (erro) {
@@ -519,7 +499,8 @@ function obterUltimoBlocoPomodoroMotor() {
 
 
     if (
-        historico.length === 0
+        historico.length ===
+        0
     ) {
 
         return null;
@@ -528,9 +509,12 @@ function obterUltimoBlocoPomodoroMotor() {
 
 
     return (
+
         historico[
-            historico.length - 1
+            historico.length -
+            1
         ] || null
+
     );
 
 }
@@ -569,38 +553,277 @@ function blocoPomodoroFoiCompleto(
 
 
 // =====================================
-// ANALISAR CICLO POMODORO
+// OBTER BLOCOS COMPLETOS DE UM ASSUNTO
+// =====================================
+//
+// Conta TODOS os blocos completos daquele
+// disciplina + aula no histórico.
+//
+// Interrupções ou estudo de outros assuntos
+// NÃO zeram mais a contagem.
 // =====================================
 
-function analisarCicloPomodoroAtual() {
+function obterBlocosCompletosAssunto(
+    idDisciplina,
+    idAula
+) {
 
     const historico =
         obterHistoricoPomodoroMotor();
 
 
+    let total =
+        0;
+
+
+    historico.forEach(
+        bloco => {
+
+            if (
+                !bloco
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                bloco.disciplina !==
+                    idDisciplina ||
+                bloco.aula !==
+                    idAula
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                blocoPomodoroFoiCompleto(
+                    bloco
+                )
+            ) {
+
+                total++;
+
+            }
+
+        }
+    );
+
+
+    return total;
+
+}
+
+
+// =====================================
+// CALCULAR CICLO ATUAL DO ASSUNTO
+// =====================================
+//
+// Exemplos:
+//
+// 0 blocos -> 0/3
+// 1 bloco   -> 1/3
+// 2 blocos -> 2/3
+// 3 blocos -> ciclo concluído
+// 4 blocos -> novo ciclo 1/3
+// 5 blocos -> novo ciclo 2/3
+// 6 blocos -> novo ciclo concluído
+//
+// Portanto:
+//
+// total % 3
+//
+// define a posição do ciclo atual.
+// =====================================
+
+function calcularPosicaoCicloPomodoro(
+    totalBlocosCompletos
+) {
+
+    const total =
+        Math.max(
+            0,
+            Number(
+                totalBlocosCompletos
+            ) || 0
+        );
+
+
     if (
-        historico.length === 0
+        total ===
+        0
     ) {
 
         return {
 
-            disciplina: null,
+            blocosCompletos:
+                0,
 
-            aula: null,
+            cicloCompleto:
+                false,
 
-            blocosCompletos: 0,
-
-            cicloCompleto: false
+            ciclosConcluidos:
+                0
 
         };
 
     }
 
 
+    const resto =
+        total %
+        MOTOR_BLOCOS_POR_CICLO;
+
+
+    const ciclosConcluidos =
+        Math.floor(
+            total /
+            MOTOR_BLOCOS_POR_CICLO
+        );
+
+
+    // =================================
+    // EXATAMENTE MÚLTIPLO DE 3
+    // =================================
+    //
+    // Exemplo:
+    //
+    // 3, 6, 9...
+    //
+    // O último ciclo foi concluído.
+    // Não existe ciclo incompleto ativo.
+    // =================================
+
+    if (
+        resto ===
+        0
+    ) {
+
+        return {
+
+            blocosCompletos:
+                MOTOR_BLOCOS_POR_CICLO,
+
+            cicloCompleto:
+                true,
+
+            ciclosConcluidos:
+                ciclosConcluidos
+
+        };
+
+    }
+
+
+    return {
+
+        blocosCompletos:
+            resto,
+
+        cicloCompleto:
+            false,
+
+        ciclosConcluidos:
+            ciclosConcluidos
+
+    };
+
+}
+
+
+// =====================================
+// ANALISAR CICLO POMODORO DE UM ASSUNTO
+// =====================================
+
+function analisarCicloPomodoroAssunto(
+    idDisciplina,
+    idAula
+) {
+
+    if (
+        !idDisciplina ||
+        !idAula
+    ) {
+
+        return {
+
+            disciplina:
+                null,
+
+            aula:
+                null,
+
+            blocosCompletos:
+                0,
+
+            cicloCompleto:
+                false,
+
+            ciclosConcluidos:
+                0
+
+        };
+
+    }
+
+
+    const totalBlocos =
+        obterBlocosCompletosAssunto(
+
+            idDisciplina,
+
+            idAula
+
+        );
+
+
+    const posicao =
+        calcularPosicaoCicloPomodoro(
+            totalBlocos
+        );
+
+
+    return {
+
+        disciplina:
+            idDisciplina,
+
+        aula:
+            idAula,
+
+        totalBlocosCompletos:
+            totalBlocos,
+
+        blocosCompletos:
+            posicao.blocosCompletos,
+
+        cicloCompleto:
+            posicao.cicloCompleto,
+
+        ciclosConcluidos:
+            posicao.ciclosConcluidos
+
+    };
+
+}
+
+
+// =====================================
+// ANALISAR CICLO POMODORO ATUAL
+// =====================================
+//
+// Usa o último assunto efetivamente estudado,
+// mas a contagem é acumulativa.
+// =====================================
+
+function analisarCicloPomodoroAtual() {
+
     const ultimoBloco =
-        historico[
-            historico.length - 1
-        ];
+        obterUltimoBlocoPomodoroMotor();
 
 
     if (
@@ -611,95 +834,33 @@ function analisarCicloPomodoroAtual() {
 
         return {
 
-            disciplina: null,
+            disciplina:
+                null,
 
-            aula: null,
+            aula:
+                null,
 
-            blocosCompletos: 0,
+            blocosCompletos:
+                0,
 
-            cicloCompleto: false
+            cicloCompleto:
+                false,
+
+            ciclosConcluidos:
+                0
 
         };
 
     }
 
 
-    const disciplinaAlvo =
-        ultimoBloco.disciplina;
+    return analisarCicloPomodoroAssunto(
 
+        ultimoBloco.disciplina,
 
-    const aulaAlvo =
-        ultimoBloco.aula;
+        ultimoBloco.aula
 
-
-    let blocosCompletos = 0;
-
-
-    for (
-        let indice =
-            historico.length - 1;
-
-        indice >= 0;
-
-        indice--
-    ) {
-
-        const bloco =
-            historico[
-                indice
-            ];
-
-
-        if (
-            !bloco
-        ) {
-
-            continue;
-
-        }
-
-
-        if (
-            bloco.disciplina !==
-                disciplinaAlvo ||
-            bloco.aula !==
-                aulaAlvo
-        ) {
-
-            break;
-
-        }
-
-
-        if (
-            blocoPomodoroFoiCompleto(
-                bloco
-            )
-        ) {
-
-            blocosCompletos++;
-
-        }
-
-    }
-
-
-    return {
-
-        disciplina:
-            disciplinaAlvo,
-
-        aula:
-            aulaAlvo,
-
-        blocosCompletos:
-            blocosCompletos,
-
-        cicloCompleto:
-            blocosCompletos >=
-            MOTOR_BLOCOS_POR_CICLO
-
-    };
+    );
 
 }
 
@@ -707,13 +868,6 @@ function analisarCicloPomodoroAtual() {
 // =====================================
 // CALCULAR PRIORIDADE BASE
 // =====================================
-//
-// Agora recebe explicitamente:
-//
-// idDisciplina
-//
-// Isso corrige o problema existente
-// no v3.2.
 
 function calcularPrioridadeBase(
     idDisciplina,
@@ -767,13 +921,11 @@ function calcularPrioridadeBase(
         fatorPrazo;
 
 
-    // =================================
-    // CONTINUIDADE PEDAGÓGICA
-    // =================================
-
     if (
-        percentualConcluido > 0 &&
-        percentualConcluido < 100
+        percentualConcluido >
+            0 &&
+        percentualConcluido <
+            100
     ) {
 
         prioridade *=
@@ -793,7 +945,8 @@ function calcularPrioridadeBase(
 
 function gerarPlanoBruto() {
 
-    const plano = [];
+    const plano =
+        [];
 
 
     if (
@@ -811,9 +964,6 @@ function gerarPlanoBruto() {
 
     }
 
-
-    // Calculado apenas uma vez por
-    // geração do plano.
 
     const planejamento =
         obterDiagnosticoPrazoMotor();
@@ -852,7 +1002,8 @@ function gerarPlanoBruto() {
 
 
                 if (
-                    percentualConcluido >= 100
+                    percentualConcluido >=
+                    100
                 ) {
 
                     return;
@@ -950,7 +1101,11 @@ function gerarPlanoBruto() {
 
 
     plano.sort(
-        (a, b) =>
+        (
+            a,
+            b
+        ) =>
+
             b.prioridadeBase -
             a.prioridadeBase
     );
@@ -1012,13 +1167,15 @@ function obterUltimoItemRealEstudado() {
 
 
     const assunto =
-        dadosDisciplina.assuntos.find(
+        dadosDisciplina
+            .assuntos
+            .find(
 
-            item =>
-                item.id ===
-                ultimoBloco.aula
+                item =>
+                    item.id ===
+                    ultimoBloco.aula
 
-        );
+            );
 
 
     if (
@@ -1050,10 +1207,12 @@ function obterUltimoItemRealEstudado() {
             ),
 
         ultimoBlocoSegundos:
-            ultimoBloco.segundos || 0,
+            ultimoBloco.segundos ||
+            0,
 
         ultimoBlocoFim:
-            ultimoBloco.fim || null
+            ultimoBloco.fim ||
+            null
 
     };
 
@@ -1063,18 +1222,24 @@ function obterUltimoItemRealEstudado() {
 // =====================================
 // CONTINUIDADE DO CICLO
 // =====================================
+//
+// Agora:
+// - 1/3 continua como 1/3 mesmo após interrupção;
+// - 2/3 continua como 2/3;
+// - 3/3 encerra o ciclo;
+// - somente o 4º bloco inicia novo ciclo.
+// =====================================
 
 function obterItemDeContinuidade(
     planoBruto
 ) {
 
-    const ciclo =
-        analisarCicloPomodoroAtual();
+    const ultimoItem =
+        obterUltimoItemRealEstudado();
 
 
     if (
-        !ciclo.disciplina ||
-        !ciclo.aula
+        !ultimoItem
     ) {
 
         return null;
@@ -1082,8 +1247,39 @@ function obterItemDeContinuidade(
     }
 
 
+    const ciclo =
+        analisarCicloPomodoroAssunto(
+
+            ultimoItem.idDisciplina,
+
+            ultimoItem.idAssunto
+
+        );
+
+
+    // =================================
+    // CICLO COMPLETO
+    // =================================
+    //
+    // Não força continuidade.
+    // O motor pode alternar normalmente.
+    // =================================
+
     if (
         ciclo.cicloCompleto
+    ) {
+
+        return null;
+
+    }
+
+
+    // Sem qualquer bloco completo,
+    // também não há ciclo a preservar.
+
+    if (
+        ciclo.blocosCompletos <=
+        0
     ) {
 
         return null;
@@ -1097,10 +1293,10 @@ function obterItemDeContinuidade(
             candidato =>
 
                 candidato.idDisciplina ===
-                    ciclo.disciplina &&
+                    ultimoItem.idDisciplina &&
 
                 candidato.idAssunto ===
-                    ciclo.aula
+                    ultimoItem.idAssunto
 
         );
 
@@ -1132,7 +1328,10 @@ function obterItemDeContinuidade(
                 MOTOR_BLOCOS_POR_CICLO -
                 ciclo.blocosCompletos
 
-            )
+            ),
+
+        ciclosPomodoroConcluidos:
+            ciclo.ciclosConcluidos
 
     };
 
@@ -1173,11 +1372,11 @@ function calcularPrioridadeContextual(
         );
 
 
-    // Alta -> Alta
-
     if (
-        cargaAnterior === "Alta" &&
-        cargaAtual === "Alta"
+        cargaAnterior ===
+            "Alta" &&
+        cargaAtual ===
+            "Alta"
     ) {
 
         prioridade *=
@@ -1186,13 +1385,14 @@ function calcularPrioridadeContextual(
     }
 
 
-    // Alta -> Média/Baixa
-
     if (
-        cargaAnterior === "Alta" &&
+        cargaAnterior ===
+            "Alta" &&
         (
-            cargaAtual === "Média" ||
-            cargaAtual === "Baixa"
+            cargaAtual ===
+                "Média" ||
+            cargaAtual ===
+                "Baixa"
         )
     ) {
 
@@ -1209,6 +1409,12 @@ function calcularPrioridadeContextual(
 
 // =====================================
 // PENALIDADE POR MESMA DISCIPLINA
+// =====================================
+//
+// CORREÇÃO v3.4:
+//
+// Evita retorno undefined causado por
+// quebra de linha após "return".
 // =====================================
 
 function calcularPenalidadeDisciplina(
@@ -1230,8 +1436,7 @@ function calcularPenalidadeDisciplina(
         ultimoItem.idDisciplina
     ) {
 
-        return
-            MOTOR_PENALIDADE_MESMA_DISCIPLINA;
+        return MOTOR_PENALIDADE_MESMA_DISCIPLINA;
 
     }
 
@@ -1250,7 +1455,9 @@ function escolherProximoItem(
     ultimoItem
 ) {
 
-    let melhor = null;
+    let melhor =
+        null;
+
 
     let melhorPontuacao =
         -Infinity;
@@ -1280,12 +1487,24 @@ function escolherProximoItem(
 
 
             if (
+                !Number.isFinite(
+                    pontuacao
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            if (
                 pontuacao >
                 melhorPontuacao
             ) {
 
                 melhorPontuacao =
                     pontuacao;
+
 
                 melhor =
                     item;
@@ -1304,7 +1523,8 @@ function escolherProximoItem(
             Math.round(
                 melhorPontuacao *
                 100
-            ) / 100;
+            ) /
+            100;
 
     }
 
@@ -1338,7 +1558,7 @@ function gerarSequenciaEquilibrada(
 
 
     // =================================
-    // CONTINUIDADE DOS 3 POMODOROS
+    // CONTINUIDADE DO CICLO POMODORO
     // =================================
 
     const continuidade =
@@ -1394,8 +1614,10 @@ function gerarSequenciaEquilibrada(
     // =================================
 
     while (
-        candidatos.length > 0 &&
-        sequencia.length < limite
+        candidatos.length >
+            0 &&
+        sequencia.length <
+            limite
     ) {
 
         const escolhido =
@@ -1488,9 +1710,13 @@ function obterProximoEstudo() {
 
 
     return (
-        plano.length > 0
+
+        plano.length >
+        0
+
             ? plano[0]
             : null
+
     );
 
 }
@@ -1501,7 +1727,8 @@ function obterProximoEstudo() {
 // =====================================
 
 function obterProximosEstudos(
-    quantidade = 3
+    quantidade =
+        3
 ) {
 
     const quantidadeSegura =
@@ -1568,7 +1795,14 @@ function obterSituacaoCicloPomodoro() {
             ),
 
         cicloCompleto:
-            ciclo.cicloCompleto
+            ciclo.cicloCompleto,
+
+        ciclosConcluidos:
+            ciclo.ciclosConcluidos,
+
+        totalBlocosCompletos:
+            ciclo.totalBlocosCompletos ||
+            0
 
     };
 
@@ -1578,9 +1812,6 @@ function obterSituacaoCicloPomodoro() {
 // =====================================
 // DIAGNÓSTICO ESTRATÉGICO
 // =====================================
-//
-// Disponibiliza uma visão unificada
-// para a futura interface/coaching.
 
 function obterDiagnosticoEstrategico() {
 
@@ -1653,10 +1884,10 @@ document.addEventListener(
 // =====================================
 
 console.log(
-    "MOTOR DE PLANEJAMENTO PSCPP v3.3 CARREGADO"
+    "MOTOR DE PLANEJAMENTO PSCPP v3.4 CARREGADO"
 );
 
 
 // =====================================
-// FIM MOTOR v3.3
+// FIM MOTOR v3.4
 // =====================================
