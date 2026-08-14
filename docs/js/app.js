@@ -5,34 +5,51 @@
    CAMADA DE COACHING
 
    Responsabilidades:
-   - Próxima aula estratégica
+
+   - Próximo estudo estratégico
    - Meta da semana estratégica
    - Última aula estudada
    - Próxima revisão inteligente
 
    Integração:
+
    - progresso.js v4.2
    - banco-conteudo.js
    - configuracao-estudo.js
-   - motor-planejamento.js
+   - calculo-planejamento.js
+   - motor-planejamento.js v3.4
+
+   ARQUITETURA:
+
+   progresso.js
+        ↓
+   banco-conteudo.js
+        ↓
+   configuracao-estudo.js
+        ↓
+   calculo-planejamento.js
+        ↓
+   motor-planejamento.js
+        ↓
+   app.js
 
    IMPORTANTE:
 
    progresso.js continua sendo a fonte única
-   do progresso e das revisões.
+   dos dados de progresso e revisão.
 
    motor-planejamento.js passa a ser a fonte
    única da decisão:
 
    "O que estudar agora?"
 
-   Portanto:
+   Assim:
 
+   - Página Principal
    - Guia de Estudos
    - Planejamento
-   - Página Principal
 
-   passam a utilizar a mesma recomendação.
+   podem utilizar a mesma recomendação estratégica.
 ===================================================== */
 
 
@@ -40,7 +57,8 @@
 // CONFIGURAÇÕES
 // =====================================
 
-let catalogoDisciplinasPSCPP = null;
+let catalogoDisciplinasPSCPP =
+    null;
 
 
 // =====================================
@@ -212,7 +230,8 @@ function aguardarDadosProgressoApp() {
     return new Promise(
         resolve => {
 
-            let tentativas = 0;
+            let tentativas =
+                0;
 
 
             const verificar =
@@ -229,11 +248,14 @@ function aguardarDadosProgressoApp() {
                             .disciplinas;
 
 
-                    if (disponivel) {
+                    if (
+                        disponivel
+                    ) {
 
                         resolve(
                             true
                         );
+
 
                         return;
 
@@ -244,7 +266,8 @@ function aguardarDadosProgressoApp() {
 
 
                     if (
-                        tentativas >= 100
+                        tentativas >=
+                        100
                     ) {
 
                         console.warn(
@@ -256,14 +279,18 @@ function aguardarDadosProgressoApp() {
                             false
                         );
 
+
                         return;
 
                     }
 
 
                     window.setTimeout(
+
                         verificar,
+
                         50
+
                     );
 
                 };
@@ -309,7 +336,6 @@ function encontrarDisciplinaCatalogo(
         catalogoDisciplinasPSCPP
             .disciplinas
             .find(
-
                 disciplina =>
 
                     normalizarIdApp(
@@ -364,7 +390,6 @@ function encontrarModuloCatalogo(
         disciplina
             .modulos
             .find(
-
                 modulo =>
 
                     normalizarIdApp(
@@ -382,7 +407,7 @@ function encontrarModuloCatalogo(
 
 
 // =====================================
-// OBTER DADOS SALVOS DA AULA
+// OBTER DADOS DE UMA AULA SALVA
 // =====================================
 
 function obterAulaSalvaApp(
@@ -446,7 +471,7 @@ function obterAulaSalvaApp(
 
 
 // =====================================
-// AULA CONCLUÍDA?
+// AULA ESTÁ CONCLUÍDA?
 // =====================================
 
 function aulaConcluidaApp(
@@ -470,11 +495,14 @@ function aulaConcluidaApp(
 
     return (
 
-        aula.concluida === true ||
+        aula.concluida ===
+            true ||
 
         Number(
-            aula.progresso || 0
-        ) >= 100
+            aula.progresso ||
+            0
+        ) >=
+            100
 
     );
 
@@ -489,6 +517,18 @@ function criarCaminhoAulaApp(
     disciplina,
     modulo
 ) {
+
+    if (
+        !disciplina ||
+        !modulo ||
+        !disciplina.pasta ||
+        !modulo.arquivo
+    ) {
+
+        return null;
+
+    }
+
 
     return (
 
@@ -508,141 +548,75 @@ function criarCaminhoAulaApp(
 // =====================================================
 // PRÓXIMO ESTUDO ESTRATÉGICO
 // =====================================================
-
-
-// =====================================
-// OBTER DECISÃO DO MOTOR
-// =====================================
 //
-// REGRA PRINCIPAL DA v4.2:
+// A partir da v4.2:
 //
-// A página principal NÃO decide mais
-// qual aula estudar.
+// A HOME NÃO ESCOLHE MAIS SOZINHA
+// QUAL AULA DEVE SER ESTUDADA.
 //
-// Ela consulta:
+// A decisão vem exclusivamente de:
+//
+// motor-planejamento.js
+//
+// através de:
 //
 // obterProximoEstudo()
 //
-// do motor-planejamento.js.
-
-function obterProximoEstudoEstrategicoApp() {
-
-    if (
-        typeof obterProximoEstudo ===
-        "function"
-    ) {
-
-        const proximo =
-            obterProximoEstudo();
-
-
-        if (proximo) {
-
-            return proximo;
-
-        }
-
-    }
-
-
-    console.warn(
-        "Motor estratégico indisponível. " +
-        "Usando fallback do catálogo."
-    );
-
-
-    return null;
-
-}
-
-
-// =====================================
-// CAMINHO DO ITEM ESTRATÉGICO
-// =====================================
-
-function criarCaminhoEstudoEstrategicoApp(
-    item
-) {
-
-    if (!item) {
-
-        return "#";
-
-    }
-
-
-    const disciplina =
-        encontrarDisciplinaCatalogo(
-            item.idDisciplina
-        );
-
-
-    const modulo =
-        encontrarModuloCatalogo(
-
-            item.idDisciplina,
-
-            item.idAssunto
-
-        );
-
-
-    // Preferência:
-    // usar o catálogo central.
-
-    if (
-        disciplina &&
-        modulo
-    ) {
-
-        return criarCaminhoAulaApp(
-
-            disciplina,
-
-            modulo
-
-        );
-
-    }
-
-
-    // Fallback:
-    // IDs atuais do banco de conteúdo.
-
-    return (
-
-        "disciplinas/" +
-
-        item.idDisciplina +
-
-        "/" +
-
-        item.idAssunto +
-
-        ".html"
-
-    );
-
-}
-
-
-// =====================================================
-// FALLBACK ANTIGO
-// =====================================================
+// Portanto:
 //
-// Mantido apenas como segurança.
+// Planejamento
+// Home
+// Guia
 //
-// Não deve ser utilizado quando
-// motor-planejamento.js estiver carregado.
+// podem utilizar a mesma decisão.
+// =====================================================
 
 function encontrarProximaAulaApp() {
 
+    // =================================
+    // MOTOR ESTRATÉGICO
+    // =================================
+
     if (
-        !catalogoDisciplinasPSCPP ||
-        !Array.isArray(
-            catalogoDisciplinasPSCPP
-                .disciplinas
-        )
+        typeof obterProximoEstudo !==
+        "function"
+    ) {
+
+        console.warn(
+            "Motor de planejamento não disponível."
+        );
+
+
+        return null;
+
+    }
+
+
+    let proximo =
+        null;
+
+
+    try {
+
+        proximo =
+            obterProximoEstudo();
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao consultar o motor de planejamento:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !proximo
     ) {
 
         return null;
@@ -650,94 +624,123 @@ function encontrarProximaAulaApp() {
     }
 
 
-    const disciplinas =
-        catalogoDisciplinasPSCPP
-            .disciplinas;
+    // =================================
+    // CATÁLOGO
+    // =================================
+
+    const disciplina =
+        encontrarDisciplinaCatalogo(
+            proximo.idDisciplina
+        );
 
 
-    for (
-        let i = 0;
-        i < disciplinas.length;
-        i++
-    ) {
+    const modulo =
+        encontrarModuloCatalogo(
 
-        const disciplina =
-            disciplinas[i];
+            proximo.idDisciplina,
 
+            proximo.idAssunto
 
-        if (
-            disciplina.status !==
-                "ativo" ||
-
-            !Array.isArray(
-                disciplina.modulos
-            ) ||
-
-            disciplina.modulos.length === 0
-        ) {
-
-            continue;
-
-        }
+        );
 
 
-        for (
-            let j = 0;
-            j < disciplina.modulos.length;
-            j++
-        ) {
+    // =================================
+    // CAMINHO DA AULA
+    // =================================
 
-            const modulo =
-                disciplina.modulos[j];
-
-
-            if (
-                !aulaConcluidaApp(
-
-                    disciplina.id,
-
-                    modulo.id
-
-                )
-            ) {
-
-                return {
-
-                    disciplinaId:
-                        disciplina.id,
-
-                    disciplinaNome:
-                        disciplina.nome,
-
-                    disciplinaIcone:
-                        disciplina.icone ||
-                        "📚",
-
-                    aulaId:
-                        modulo.id,
-
-                    aulaTitulo:
-                        modulo.titulo,
-
-                    arquivo:
-                        modulo.arquivo,
-
-                    caminho:
-                        criarCaminhoAulaApp(
-                            disciplina,
-                            modulo
-                        )
-
-                };
-
-            }
-
-        }
-
-    }
+    const caminho =
+        (
+            disciplina &&
+            modulo
+        )
+            ? criarCaminhoAulaApp(
+                disciplina,
+                modulo
+            )
+            : null;
 
 
-    return null;
+    // =================================
+    // RESULTADO PADRONIZADO
+    // =================================
+
+    return {
+
+        disciplinaId:
+            proximo.idDisciplina,
+
+        disciplinaNome:
+            proximo.disciplina,
+
+        disciplinaIcone:
+            disciplina
+                ?.icone ||
+            "📚",
+
+        aulaId:
+            proximo.idAssunto,
+
+        aulaTitulo:
+            proximo.assunto,
+
+        arquivo:
+            modulo
+                ?.arquivo ||
+            null,
+
+        caminho:
+            caminho,
+
+        percentualConcluido:
+            Number(
+                proximo
+                    .percentualConcluido ||
+                0
+            ),
+
+        prioridade:
+            Number(
+
+                proximo.prioridade ||
+
+                proximo.prioridadeBase ||
+
+                0
+
+            ),
+
+        cargaCognitiva:
+            proximo
+                .cargaCognitiva ||
+            "Média",
+
+        continuidadePomodoro:
+            proximo
+                .continuidadePomodoro ===
+            true,
+
+        blocosCompletosNoCiclo:
+            Number(
+                proximo
+                    .blocosCompletosNoCiclo ||
+                0
+            ),
+
+        blocosRestantesNoCiclo:
+            Number(
+                proximo
+                    .blocosRestantesNoCiclo ||
+                0
+            ),
+
+        ciclosPomodoroConcluidos:
+            Number(
+                proximo
+                    .ciclosPomodoroConcluidos ||
+                0
+            )
+
+    };
 
 }
 
@@ -770,91 +773,31 @@ function atualizarProximaAulaApp() {
     }
 
 
-    // =================================
-    // MOTOR ESTRATÉGICO
-    // =================================
-
-    const estrategico =
-        obterProximoEstudoEstrategicoApp();
-
-
-    if (estrategico) {
-
-        const disciplinaCatalogo =
-            encontrarDisciplinaCatalogo(
-                estrategico.idDisciplina
-            );
-
-
-        const icone =
-
-            disciplinaCatalogo
-                ?.icone ||
-
-            "📚";
-
-
-        if (elemento) {
-
-            elemento.textContent =
-
-                icone +
-
-                " " +
-
-                estrategico.assunto;
-
-        }
-
-
-        if (link) {
-
-            link.href =
-                criarCaminhoEstudoEstrategicoApp(
-                    estrategico
-                );
-
-
-            link.textContent =
-
-                estrategico
-                    .continuidadePomodoro
-
-                    ? "Continuar aula"
-
-                    : "Iniciar aula";
-
-
-            link.style.display =
-                "";
-
-        }
-
-
-        return;
-
-    }
-
-
-    // =================================
-    // FALLBACK
-    // =================================
-
     const proxima =
         encontrarProximaAulaApp();
 
 
-    if (!proxima) {
+    // =================================
+    // CONTEÚDO CONCLUÍDO
+    // =================================
 
-        if (elemento) {
+    if (
+        !proxima
+    ) {
+
+        if (
+            elemento
+        ) {
 
             elemento.textContent =
-                "✅ Todas as aulas cadastradas foram concluídas.";
+                "✅ Todo o conteúdo cadastrado foi concluído.";
 
         }
 
 
-        if (link) {
+        if (
+            link
+        ) {
 
             link.style.display =
                 "none";
@@ -867,7 +810,13 @@ function atualizarProximaAulaApp() {
     }
 
 
-    if (elemento) {
+    // =================================
+    // TEXTO
+    // =================================
+
+    if (
+        elemento
+    ) {
 
         elemento.textContent =
 
@@ -880,18 +829,49 @@ function atualizarProximaAulaApp() {
     }
 
 
-    if (link) {
+    // =================================
+    // LINK
+    // =================================
 
-        link.href =
-            proxima.caminho;
+    if (
+        link
+    ) {
+
+        if (
+            proxima.caminho
+        ) {
+
+            link.href =
+                proxima.caminho;
 
 
-        link.textContent =
-            "Iniciar aula";
+            link.textContent =
+
+                proxima
+                    .percentualConcluido >
+                0
+
+                    ? "Continuar aula"
+                    : "Iniciar aula";
 
 
-        link.style.display =
-            "";
+            link.style.display =
+                "";
+
+        }
+        else {
+
+            link.style.display =
+                "none";
+
+
+            console.warn(
+                "O assunto recomendado pelo motor não foi localizado em disciplinas.json:",
+                proxima.disciplinaId,
+                proxima.aulaId
+            );
+
+        }
 
     }
 
@@ -902,11 +882,10 @@ function atualizarProximaAulaApp() {
 // META DA SEMANA
 // =====================================
 //
-// A meta agora utiliza exatamente
-// a mesma decisão estratégica.
-//
-// Não percorre mais o catálogo
-// procurando a primeira aula pendente.
+// A meta utiliza EXATAMENTE a mesma
+// recomendação estratégica utilizada
+// pela Próxima Aula.
+// =====================================
 
 function atualizarMetas() {
 
@@ -916,79 +895,25 @@ function atualizarMetas() {
         );
 
 
-    if (!elemento) {
+    if (
+        !elemento
+    ) {
 
         return;
 
     }
 
-
-    const estrategico =
-        obterProximoEstudoEstrategicoApp();
-
-
-    if (estrategico) {
-
-        let texto =
-
-            estrategico
-                .continuidadePomodoro
-
-                ? "Continuar "
-
-                : "Estudar ";
-
-
-        texto +=
-
-            estrategico.assunto +
-
-            " — " +
-
-            estrategico.disciplina;
-
-
-        if (
-            estrategico
-                .continuidadePomodoro
-        ) {
-
-            texto +=
-
-                " (" +
-
-                estrategico
-                    .blocosCompletosNoCiclo +
-
-                "/3 blocos)";
-
-        }
-
-
-        texto += ".";
-
-
-        elemento.textContent =
-            texto;
-
-
-        return;
-
-    }
-
-
-    // =================================
-    // FALLBACK
-    // =================================
 
     const proxima =
         encontrarProximaAulaApp();
 
 
-    if (!proxima) {
+    if (
+        !proxima
+    ) {
 
         elemento.textContent =
-            "✅ Meta alcançada: todas as aulas cadastradas foram concluídas.";
+            "✅ Todo o conteúdo cadastrado foi concluído.";
 
 
         return;
@@ -996,17 +921,43 @@ function atualizarMetas() {
     }
 
 
-    elemento.textContent =
+    let texto =
 
-        "Concluir " +
+        "Priorizar " +
 
         proxima.aulaTitulo +
 
         " — " +
 
-        proxima.disciplinaNome +
+        proxima.disciplinaNome;
 
+
+    // =================================
+    // CICLO POMODORO INCOMPLETO
+    // =================================
+
+    if (
+        proxima.continuidadePomodoro
+    ) {
+
+        texto +=
+
+            " | ciclo Pomodoro " +
+
+            proxima
+                .blocosCompletosNoCiclo +
+
+            "/3";
+
+    }
+
+
+    texto +=
         ".";
+
+
+    elemento.textContent =
+        texto;
 
 }
 
@@ -1159,13 +1110,6 @@ function encontrarUltimaAtividadeApp() {
 // =====================================
 // ÚLTIMA AULA ESTUDADA
 // =====================================
-//
-// PRESERVADA.
-//
-// Não utiliza o motor.
-//
-// Continua mostrando aquilo que
-// realmente foi estudado por último.
 
 function ultimaAula() {
 
@@ -1175,7 +1119,9 @@ function ultimaAula() {
         );
 
 
-    if (!elemento) {
+    if (
+        !elemento
+    ) {
 
         return;
 
@@ -1186,7 +1132,9 @@ function ultimaAula() {
         encontrarUltimaAtividadeApp();
 
 
-    if (!ultima) {
+    if (
+        !ultima
+    ) {
 
         elemento.textContent =
             "Nenhuma aula registrada.";
@@ -1246,7 +1194,9 @@ function formatarDataApp(
     valor
 ) {
 
-    if (!valor) {
+    if (
+        !valor
+    ) {
 
         return "—";
 
@@ -1256,8 +1206,11 @@ function formatarDataApp(
     const data =
 
         valor instanceof Date
+
             ? valor
-            : new Date(valor);
+            : new Date(
+                valor
+            );
 
 
     if (
@@ -1332,7 +1285,9 @@ function criarCaminhoRevisaoApp(
     revisao
 ) {
 
-    if (!revisao) {
+    if (
+        !revisao
+    ) {
 
         return "#";
 
@@ -1365,11 +1320,17 @@ function criarCaminhoRevisaoApp(
     }
 
 
-    return criarCaminhoAulaApp(
+    return (
 
-        disciplina,
+        criarCaminhoAulaApp(
 
-        modulo
+            disciplina,
+
+            modulo
+
+        ) ||
+
+        "#"
 
     );
 
@@ -1377,14 +1338,16 @@ function criarCaminhoRevisaoApp(
 
 
 // =====================================
-// OBTER TÍTULO DA REVISÃO
+// TÍTULO DA REVISÃO
 // =====================================
 
 function obterTituloRevisaoApp(
     revisao
 ) {
 
-    if (!revisao) {
+    if (
+        !revisao
+    ) {
 
         return "";
 
@@ -1424,7 +1387,9 @@ function obterDisciplinaRevisaoApp(
     revisao
 ) {
 
-    if (!revisao) {
+    if (
+        !revisao
+    ) {
 
         return "";
 
@@ -1453,14 +1418,16 @@ function obterDisciplinaRevisaoApp(
 
 
 // =====================================
-// CRIAR ÁREA DE CONTROLES
+// ÁREA DE CONTROLES DA REVISÃO
 // =====================================
 
 function obterOuCriarControlesRevisaoApp(
     elementoRevisao
 ) {
 
-    if (!elementoRevisao) {
+    if (
+        !elementoRevisao
+    ) {
 
         return null;
 
@@ -1468,13 +1435,18 @@ function obterOuCriarControlesRevisaoApp(
 
 
     const card =
+
         elementoRevisao.closest(
             ".card, .widget"
         ) ||
-        elementoRevisao.parentElement;
+
+        elementoRevisao
+            .parentElement;
 
 
-    if (!card) {
+    if (
+        !card
+    ) {
 
         return null;
 
@@ -1487,7 +1459,9 @@ function obterOuCriarControlesRevisaoApp(
         );
 
 
-    if (controles) {
+    if (
+        controles
+    ) {
 
         return controles;
 
@@ -1538,7 +1512,9 @@ function registrarRevisaoHojeApp(
     revisao
 ) {
 
-    if (!revisao) {
+    if (
+        !revisao
+    ) {
 
         return;
 
@@ -1570,7 +1546,9 @@ function registrarRevisaoHojeApp(
         );
 
 
-    if (!resultado) {
+    if (
+        !resultado
+    ) {
 
         window.alert(
             "Não foi possível registrar a revisão."
@@ -1588,7 +1566,7 @@ function registrarRevisaoHojeApp(
 
 
 // =====================================
-// RENDERIZAR CONTROLES DA REVISÃO
+// CONTROLES DA REVISÃO
 // =====================================
 
 function renderizarControlesRevisaoApp(
@@ -1602,7 +1580,9 @@ function renderizarControlesRevisaoApp(
         );
 
 
-    if (!controles) {
+    if (
+        !controles
+    ) {
 
         return;
 
@@ -1613,7 +1593,13 @@ function renderizarControlesRevisaoApp(
         "";
 
 
-    if (!revisao) {
+    // =================================
+    // SEM REVISÃO
+    // =================================
+
+    if (
+        !revisao
+    ) {
 
         const quadro =
             document.createElement(
@@ -1643,6 +1629,10 @@ function renderizarControlesRevisaoApp(
     }
 
 
+    // =================================
+    // ABRIR AULA
+    // =================================
+
     const caminho =
         criarCaminhoRevisaoApp(
             revisao
@@ -1650,7 +1640,8 @@ function renderizarControlesRevisaoApp(
 
 
     if (
-        caminho !== "#"
+        caminho !==
+        "#"
     ) {
 
         const abrir =
@@ -1677,6 +1668,10 @@ function renderizarControlesRevisaoApp(
 
     }
 
+
+    // =================================
+    // REVISADA HOJE
+    // =================================
 
     const revisadaHoje =
         document.createElement(
@@ -1716,6 +1711,10 @@ function renderizarControlesRevisaoApp(
     );
 
 
+    // =================================
+    // QUADRO
+    // =================================
+
     const quadro =
         document.createElement(
             "a"
@@ -1753,7 +1752,9 @@ function revisar() {
         );
 
 
-    if (!elemento) {
+    if (
+        !elemento
+    ) {
 
         return;
 
@@ -1764,7 +1765,13 @@ function revisar() {
         encontrarProximaRevisaoApp();
 
 
-    if (!revisao) {
+    // =================================
+    // NENHUMA REVISÃO
+    // =================================
+
+    if (
+        !revisao
+    ) {
 
         elemento.innerHTML =
             "Nenhuma revisão programada.";
@@ -1797,7 +1804,8 @@ function revisar() {
 
 
     const status =
-        revisao.status || {};
+        revisao.status ||
+        {};
 
 
     const icone =
@@ -1823,9 +1831,17 @@ function revisar() {
         );
 
 
+    // =================================
+    // LIMPAR
+    // =================================
+
     elemento.innerHTML =
         "";
 
+
+    // =================================
+    // STATUS
+    // =================================
 
     const linhaStatus =
         document.createElement(
@@ -1854,6 +1870,10 @@ function revisar() {
     );
 
 
+    // =================================
+    // AULA
+    // =================================
+
     const linhaAula =
         document.createElement(
             "span"
@@ -1876,6 +1896,10 @@ function revisar() {
     );
 
 
+    // =================================
+    // DISCIPLINA
+    // =================================
+
     const linhaDisciplina =
         document.createElement(
             "small"
@@ -1897,6 +1921,10 @@ function revisar() {
         )
     );
 
+
+    // =================================
+    // DATA
+    // =================================
 
     const linhaData =
         document.createElement(
@@ -1928,8 +1956,13 @@ function revisar() {
     );
 
 
+    // =================================
+    // HISTÓRICO
+    // =================================
+
     if (
-        totalRevisoes > 0
+        totalRevisoes >
+        0
     ) {
 
         elemento.appendChild(
@@ -1950,10 +1983,10 @@ function revisar() {
             totalRevisoes +
 
             (
-                totalRevisoes === 1
+                totalRevisoes ===
+                1
 
                     ? " revisão realizada"
-
                     : " revisões realizadas"
             );
 
@@ -2040,15 +2073,15 @@ document.addEventListener(
 
 
 // =====================================
-// ALTERAÇÃO DO PLANEJAMENTO
+// ALTERAÇÃO DO PLANEJAMENTO / POMODORO
 // =====================================
 //
-// Novo na v4.2.
+// motor-planejamento.js dispara este evento
+// quando um novo bloco Pomodoro é registrado.
 //
-// Se um novo bloco Pomodoro alterar
-// a recomendação estratégica,
-// a página principal acompanha
-// imediatamente.
+// Assim a Home passa a reagir imediatamente
+// à nova decisão estratégica.
+// =====================================
 
 document.addEventListener(
 
@@ -2110,7 +2143,7 @@ document.addEventListener(
 // =====================================
 
 console.log(
-    "APP.JS v4.2 - COACHING ESTRATÉGICO + REVISÕES CARREGADO"
+    "APP.JS v4.2 — COACHING ESTRATÉGICO CARREGADO"
 );
 
 
