@@ -1898,22 +1898,24 @@ footer p {
 ===================================================== */
 
 /* =====================================================
-   CENTRO DE DESEMPENHO PSCPP v2.0
-   HIERARQUIA DISCIPLINA > AULA > TÓPICO
+   CENTRO DE DESEMPENHO PSCPP v2.1
+   VISUAL HIERÁRQUICO LIMPO
 ===================================================== */
 
 
-/* BARRA EXCLUSIVA DO DESEMPENHO */
+/* =====================================================
+   BARRAS DE DESEMPENHO
+===================================================== */
 
 .barra-desempenho {
 
     width: 100%;
 
-    height: 9px;
+    height: 7px;
 
-    margin-top: 10px;
+    margin-top: 12px;
 
-    background: #dce7ed;
+    background: #e4edf2;
 
     border-radius: 999px;
 
@@ -1930,7 +1932,7 @@ footer p {
         linear-gradient(
             90deg,
             #176b87,
-            #2d91ad
+            #2b8ca7
         );
 
     border-radius: inherit;
@@ -1941,34 +1943,42 @@ footer p {
 }
 
 
-/* CONTAINER PRINCIPAL */
+/* =====================================================
+   ÁREA PRINCIPAL
+===================================================== */
 
 .desempenho-hierarquico {
 
     display: grid;
 
-    gap: 14px;
+    gap: 16px;
 
-    margin-top: 18px;
+    margin-top: 20px;
 
 }
 
 
-/* DISCIPLINA */
+/* =====================================================
+   DISCIPLINA
+===================================================== */
 
 .desempenho-disciplina {
 
     background: #ffffff;
 
     border:
-        1px solid
-        var(--cor-azul-borda);
+        1px solid #dce7ed;
 
-    border-radius:
-        var(--raio-medio);
+    border-radius: 18px;
 
     box-shadow:
-        var(--sombra-card);
+        0 7px 20px
+        rgba(
+            20,
+            55,
+            75,
+            0.06
+        );
 
     overflow: hidden;
 
@@ -1977,11 +1987,24 @@ footer p {
 
 .desempenho-disciplina > summary {
 
-    padding: 20px;
+    position: relative;
+
+    padding:
+        20px 22px 20px 48px;
 
     cursor: pointer;
 
     list-style: none;
+
+    transition:
+        background 0.2s ease;
+
+}
+
+
+.desempenho-disciplina > summary:hover {
+
+    background: #f8fbfd;
 
 }
 
@@ -1995,16 +2018,21 @@ footer p {
 
 .desempenho-disciplina > summary::before {
 
-    content: "▶";
+    content: "›";
 
-    display: inline-block;
+    position: absolute;
 
-    margin-right: 9px;
+    left: 21px;
 
-    color:
-        var(--cor-azul);
+    top: 22px;
 
-    font-size: 13px;
+    color: #176b87;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    line-height: 1;
 
     transition:
         transform 0.2s ease;
@@ -2012,7 +2040,8 @@ footer p {
 }
 
 
-.desempenho-disciplina[open] > summary::before {
+.desempenho-disciplina[open]
+> summary::before {
 
     transform:
         rotate(90deg);
@@ -2020,31 +2049,50 @@ footer p {
 }
 
 
-.desempenho-titulo-disciplina {
+.desempenho-disciplina[open]
+> summary {
 
-    color:
-        var(--cor-azul-escuro);
-
-    font-size: 19px;
+    border-bottom:
+        1px solid #e4edf2;
 
 }
 
 
-/* CONTEÚDO DO SUMMARY */
+/* =====================================================
+   CABEÇALHO DA DISCIPLINA / AULA
+===================================================== */
 
 .desempenho-summary-conteudo {
 
     display: flex;
 
-    justify-content: space-between;
+    align-items: center;
 
-    align-items: flex-start;
+    justify-content: space-between;
 
     gap: 18px;
 
-    margin-top: -20px;
+    margin: 0;
 
-    margin-left: 24px;
+}
+
+
+.desempenho-summary-conteudo > div {
+
+    min-width: 0;
+
+}
+
+
+.desempenho-titulo-disciplina {
+
+    display: block;
+
+    color: #0b3a53;
+
+    font-size: 19px;
+
+    font-weight: 700;
 
 }
 
@@ -2053,30 +2101,44 @@ footer p {
 
     display: block;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
-    color:
-        var(--cor-texto-secundario);
+    color: #718692;
 
     font-size: 13px;
 
+    line-height: 1.45;
+
 }
 
+
+/* =====================================================
+   PERCENTUAL EM "PÍLULA"
+===================================================== */
 
 .desempenho-percentual {
 
     flex-shrink: 0;
 
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 66px;
+
     padding:
-        5px 10px;
+        7px 11px;
+
+    background: #edf6fa;
+
+    border:
+        1px solid #d7e8ef;
 
     border-radius: 999px;
 
-    background:
-        var(--cor-azul-claro);
-
-    color:
-        var(--cor-azul-escuro);
+    color: #12536f;
 
     font-size: 14px;
 
@@ -2085,40 +2147,45 @@ footer p {
 }
 
 
-/* AULAS */
+/* =====================================================
+   AULAS
+===================================================== */
 
 .desempenho-aulas {
 
-    display: grid;
-
-    gap: 10px;
-
     padding:
-        0 18px 18px 18px;
+        14px 18px 18px 18px;
 
 }
 
 
 .desempenho-aula {
 
-    background:
-        #f7fafc;
+    margin-top: 8px;
 
-    border:
-        1px solid
-        var(--cor-azul-borda);
+    background: transparent;
 
-    border-radius:
-        12px;
+    border: 0;
 
-    overflow: hidden;
+    border-bottom:
+        1px solid #e6eef2;
+
+}
+
+
+.desempenho-aula:last-child {
+
+    border-bottom: 0;
 
 }
 
 
 .desempenho-aula > summary {
 
-    padding: 16px;
+    position: relative;
+
+    padding:
+        16px 8px 16px 34px;
 
     cursor: pointer;
 
@@ -2136,16 +2203,19 @@ footer p {
 
 .desempenho-aula > summary::before {
 
-    content: "▶";
+    content: "›";
 
-    display: inline-block;
+    position: absolute;
 
-    margin-right: 8px;
+    left: 8px;
 
-    color:
-        var(--cor-texto-secundario);
+    top: 16px;
 
-    font-size: 11px;
+    color: #7b909b;
+
+    font-size: 20px;
+
+    line-height: 1;
 
     transition:
         transform 0.2s ease;
@@ -2153,7 +2223,8 @@ footer p {
 }
 
 
-.desempenho-aula[open] > summary::before {
+.desempenho-aula[open]
+> summary::before {
 
     transform:
         rotate(90deg);
@@ -2161,31 +2232,53 @@ footer p {
 }
 
 
-/* TÓPICOS */
+.desempenho-aula
+.desempenho-summary-conteudo strong {
+
+    color: #17465d;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   TÓPICOS
+===================================================== */
 
 .desempenho-topicos {
 
-    display: grid;
+    margin:
+        0 8px 8px 34px;
 
-    gap: 10px;
+    padding-left: 18px;
 
-    padding:
-        4px 14px 14px 14px;
+    border-left:
+        2px solid #e2ebef;
 
 }
 
 
 .desempenho-topico {
 
-    padding: 14px;
+    padding:
+        14px 6px;
 
-    background: #ffffff;
+    background: transparent;
 
-    border:
-        1px solid
-        #e0e9ee;
+    border: 0;
 
-    border-radius: 10px;
+    border-bottom:
+        1px solid #edf2f5;
+
+    border-radius: 0;
+
+}
+
+
+.desempenho-topico:last-child {
+
+    border-bottom: 0;
 
 }
 
@@ -2194,68 +2287,143 @@ footer p {
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
 
-    align-items: flex-start;
-
-    gap: 12px;
+    gap: 15px;
 
 }
 
 
 .desempenho-topico-cabecalho strong {
 
-    color:
-        var(--cor-azul-escuro);
+    color: #294b5d;
+
+    font-size: 14px;
+
+    font-weight: 600;
 
 }
 
 
 .desempenho-resumo {
 
-    margin-top: 6px;
+    margin-top: 5px;
 
-    margin-bottom: 0;
+    color: #7c8f99;
 
-    color:
-        var(--cor-texto-secundario);
-
-    font-size: 13px;
+    font-size: 12px;
 
 }
 
 
-/* PRIORIDADES */
+/* =====================================================
+   ASSUNTOS PRIORITÁRIOS
+===================================================== */
 
 .desempenho-prioridade {
 
     padding:
-        14px 0;
+        15px 0;
 
     border-bottom:
-        1px solid
-        var(--cor-azul-borda);
+        1px solid #e4edf2;
 
 }
 
 
 .desempenho-prioridade:last-child {
 
-    border-bottom: none;
+    border-bottom: 0;
 
 }
 
 
-/* EVOLUÇÃO */
+/* =====================================================
+   EVOLUÇÃO
+===================================================== */
 
 .desempenho-evolucao {
 
-    padding-top: 6px;
+    padding-top: 4px;
 
 }
 
 
-/* TABLET / CELULAR */
+/* =====================================================
+   MELHORAR NÚMEROS DO RESUMO GERAL
+===================================================== */
+
+.numero-destaque {
+
+    margin-top: 12px;
+
+    color: #0b3a53 !important;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.numero-destaque-menor {
+
+    font-size: 18px;
+
+}
+
+
+/* =====================================================
+   PREPARAÇÃO PSCPP
+===================================================== */
+
+#desempenho-indice-preparacao {
+
+    color: #176b87 !important;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (
+    max-width: 800px
+) {
+
+    .desempenho-disciplina
+    > summary {
+
+        padding:
+            18px 18px 18px 44px;
+
+    }
+
+
+    .desempenho-summary-conteudo {
+
+        gap: 12px;
+
+    }
+
+
+    .desempenho-percentual {
+
+        min-width: 60px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
 
 @media (
     max-width: 600px
@@ -2263,23 +2431,31 @@ footer p {
 
     .desempenho-summary-conteudo {
 
-        flex-direction: column;
+        align-items: flex-start;
 
-        gap: 8px;
+    }
+
+
+    .desempenho-titulo-disciplina {
+
+        font-size: 17px;
+
+    }
+
+
+    .desempenho-summary-info {
+
+        font-size: 12px;
 
     }
 
 
     .desempenho-percentual {
 
-        align-self: flex-start;
+        padding:
+            6px 9px;
 
-    }
-
-
-    .desempenho-disciplina > summary {
-
-        padding: 16px;
+        font-size: 13px;
 
     }
 
@@ -2287,16 +2463,23 @@ footer p {
     .desempenho-aulas {
 
         padding:
-            0 10px 10px 10px;
+            8px 12px 14px 12px;
+
+    }
+
+
+    .desempenho-topicos {
+
+        margin-left: 24px;
+
+        padding-left: 12px;
 
     }
 
 
     .desempenho-topico-cabecalho {
 
-        flex-direction: column;
-
-        gap: 6px;
+        align-items: flex-start;
 
     }
 
