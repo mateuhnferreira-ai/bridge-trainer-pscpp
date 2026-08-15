@@ -4694,3 +4694,9119 @@ para proa e popa.
 <!-- =========================================
      FINAL PARTE 2
 ========================================= -->
+
+
+<!-- =========================================
+     INÍCIO PARTE 3
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 3
+     DADOS TÁTICOS DO NAVIO
+     E CURVA DE GIRO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — DADOS TÁTICOS DO NAVIO
+E CURVA DE GIRO
+</h2>
+
+<p>
+Nas partes anteriores,
+o navio foi tratado como uma embarcação
+que ocupa espaço
+e precisa permanecer dentro
+de margens de segurança.
+</p>
+
+<p>
+Agora acrescentaremos um elemento fundamental:
+<strong>
+o navio não responde instantaneamente
+às ordens de manobra.
+</strong>
+</p>
+
+<p>
+Quando o leme é carregado,
+a embarcação necessita
+de tempo
+e de espaço
+para desenvolver a guinada.
+</p>
+
+<p>
+Da mesma forma,
+uma alteração de máquina
+não modifica instantaneamente
+a velocidade do navio.
+</p>
+
+<p>
+Esse comportamento é representado
+pelas suas
+<strong>características de manobra</strong>,
+designadas por Miguens,
+no contexto apresentado na publicação,
+como
+<strong>dados táticos do navio</strong>.
+</p>
+
+<p>
+Em águas abertas,
+parte desses efeitos
+pode ser pouco perceptível
+do ponto de vista da navegação.
+</p>
+
+<p>
+Em águas restritas,
+entretanto,
+uma diferença de algumas dezenas
+ou centenas de metros
+pode determinar
+se uma curva será executada
+dentro ou fora
+da área navegável disponível.
+</p>
+
+<div class="destaque">
+
+<h3>Ideia central da Parte 3</h3>
+
+<p>
+<strong>
+Toda ordem de manobra
+consome TEMPO
+e consome ESPAÇO.
+</strong>
+</p>
+
+<p>
+Os dados táticos permitem
+estimar antecipadamente
+quanto espaço será necessário.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+     DADOS TÁTICOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="dados-taticos"
+data-topico-id="dados-taticos">
+
+<h2>
+11. O que são os dados táticos do navio?
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens observa que,
+na navegação oceânica
+e mesmo em muitos problemas
+de navegação costeira,
+é comum representar uma alteração
+de rumo como se o navio
+guinasse instantaneamente em um ponto.
+</p>
+
+<p>
+Essa representação é útil
+para determinadas construções gráficas,
+mas não descreve
+o comportamento físico real
+da embarcação.
+</p>
+
+<p>
+Na prática,
+após uma ordem de leme,
+o navio continua avançando
+enquanto a guinada
+se desenvolve progressivamente.
+</p>
+
+<p>
+Da mesma forma,
+quando se altera o regime de máquinas,
+é necessário determinado intervalo
+para que a embarcação
+atinja uma nova condição de velocidade.
+</p>
+
+<p>
+As distâncias
+e os tempos envolvidos
+dependem das
+<strong>características de manobra do navio</strong>.
+</p>
+
+<p>
+Segundo Miguens,
+os dados táticos normalmente abrangem:
+</p>
+
+<ul>
+
+<li>
+elementos das
+<strong>curvas de giro</strong>;
+</li>
+
+<li>
+tabelas de aceleração;
+</li>
+
+<li>
+tabelas de desaceleração;
+</li>
+
+<li>
+relações entre
+RPM e velocidade;
+</li>
+
+<li>
+correspondência entre
+ordens de telégrafo de manobra,
+rotações
+e velocidades.
+</li>
+
+</ul>
+
+<p>
+Essas informações são determinadas
+nas provas de mar
+realizadas após a construção
+ou modernização do navio.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Por que isso se torna crítico em águas restritas?</h3>
+
+<p>
+Porque o navio pode estar limitado
+simultaneamente:
+</p>
+
+<ul>
+
+<li>
+pelo calado;
+</li>
+
+<li>
+pela largura disponível;
+</li>
+
+<li>
+pela geometria do canal;
+</li>
+
+<li>
+pela proximidade de perigos;
+</li>
+
+<li>
+ou por uma combinação
+desses fatores.
+</li>
+
+</ul>
+
+<p>
+Quanto menor a área disponível,
+maior a necessidade
+de prever precisamente
+o desenvolvimento da manobra.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Antes de iniciar
+uma passagem restrita,
+o Prático deve conhecer
+as características de manobra
+da embarcação que irá conduzir.
+</p>
+
+<p>
+Não é suficiente saber apenas:
+</p>
+
+<p>
+<strong>
+“o navio consegue guinar?”
+</strong>
+</p>
+
+<p>
+É necessário saber:
+</p>
+
+<p>
+<strong>
+“quanto ele avançará
+enquanto estiver guinando?”
+</strong>
+</p>
+
+<p>
+<strong>
+“quanto se deslocará lateralmente?”
+</strong>
+</p>
+
+<p>
+<strong>
+“quanto espaço a curva exigirá?”
+</strong>
+</p>
+
+<p>
+<strong>
+“quanto tempo levará
+para desenvolver essa manobra?”
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+     CURVA DE GIRO
+========================================= -->
+
+<section
+class="topico-aula"
+id="curva-giro"
+data-topico-id="curva-giro">
+
+<h2>
+12. Curva de giro — Turning Circle
+</h2>
+
+<div class="widget">
+
+<p>
+Durante as provas de mar,
+são executados giros completos
+em determinadas condições
+de velocidade
+e ângulo de leme.
+</p>
+
+<p>
+Os resultados permitem construir
+a
+<strong>curva de giro</strong>,
+ou
+<strong>turning circle</strong>,
+da embarcação.
+</p>
+
+<p>
+Miguens define a curva de giro
+como a trajetória descrita
+pelo
+<strong>centro de gravidade</strong>
+do navio
+durante uma evolução de 360°,
+para determinada velocidade
+e determinado ângulo de leme.
+</p>
+
+<p>
+A curva não deve ser imaginada
+como uma circunferência perfeita
+desde o primeiro instante.
+</p>
+
+<p>
+Depois que o leme é carregado,
+ocorre inicialmente
+um período de transição.
+</p>
+
+<p>
+O centro de gravidade
+continua avançando,
+surge movimento lateral,
+a velocidade angular aumenta
+e somente depois
+a trajetória tende
+a estabilizar-se.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 760"
+role="img"
+aria-label="Curva de giro mostrando avanço, afastamento, abatimento, diâmetro tático e diâmetro final">
+
+<rect
+x="30"
+y="30"
+width="1040"
+height="690"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="75"
+text-anchor="middle"
+font-size="29"
+font-weight="700"
+fill="#173f5f">
+
+CURVA DE GIRO — PRINCIPAIS ELEMENTOS
+
+</text>
+
+
+<!-- RUMO INICIAL -->
+
+<line
+x1="250"
+y1="650"
+x2="250"
+y2="115"
+stroke="#405d6c"
+stroke-width="3"
+stroke-dasharray="12 10"
+/>
+
+<text
+x="215"
+y="150"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#405d6c"
+transform="rotate(-90 215 150)">
+
+RUMO INICIAL
+
+</text>
+
+
+<!-- PONTO DE APLICAÇÃO DO LEME -->
+
+<circle
+cx="250"
+cy="620"
+r="9"
+fill="#c0392b"
+/>
+
+<text
+x="270"
+y="650"
+font-size="17"
+font-weight="700"
+fill="#a9342b">
+
+LEME CARREGADO
+
+</text>
+
+
+<!-- TRAJETÓRIA -->
+
+<path
+d="
+M250 620
+C245 560 260 500 315 445
+C375 385 470 340 575 325
+C710 305 820 365 850 465
+C880 565 810 640 705 655
+C600 670 510 625 490 545
+C470 465 530 405 615 395
+C700 385 755 430 755 495
+C755 555 710 590 650 590
+"
+fill="none"
+stroke="#176c91"
+stroke-width="6"
+/>
+
+
+<!-- DIREÇÃO -->
+
+<polygon
+points="308,438 334,442 317,462"
+fill="#176c91"
+/>
+
+
+<!-- AVANÇO -->
+
+<line
+x1="250"
+y1="620"
+x2="250"
+y2="325"
+stroke="#2f7b49"
+stroke-width="5"
+/>
+
+<line
+x1="230"
+y1="620"
+x2="270"
+y2="620"
+stroke="#2f7b49"
+stroke-width="4"
+/>
+
+<line
+x1="230"
+y1="325"
+x2="270"
+y2="325"
+stroke="#2f7b49"
+stroke-width="4"
+/>
+
+<text
+x="190"
+y="470"
+text-anchor="middle"
+font-size="21"
+font-weight="700"
+fill="#2f7b49"
+transform="rotate(-90 190 470)">
+
+AVANÇO / ADVANCE
+
+</text>
+
+
+<!-- AFASTAMENTO -->
+
+<line
+x1="250"
+y1="325"
+x2="575"
+y2="325"
+stroke="#7a52a1"
+stroke-width="5"
+/>
+
+<line
+x1="575"
+y1="305"
+x2="575"
+y2="345"
+stroke="#7a52a1"
+stroke-width="4"
+/>
+
+<text
+x="415"
+y="300"
+text-anchor="middle"
+font-size="20"
+font-weight="700"
+fill="#68448e">
+
+AFASTAMENTO / TRANSFER
+
+</text>
+
+
+<!-- ABATIMENTO -->
+
+<path
+d="M250 620 C240 590 240 560 245 535"
+fill="none"
+stroke="#d4831f"
+stroke-width="5"
+/>
+
+<line
+x1="245"
+y1="535"
+x2="225"
+y2="535"
+stroke="#d4831f"
+stroke-width="4"
+/>
+
+<text
+x="110"
+y="555"
+font-size="18"
+font-weight="700"
+fill="#b46c16">
+
+ABATIMENTO INICIAL
+
+</text>
+
+
+<!-- DIÂMETRO TÁTICO -->
+
+<line
+x1="250"
+y1="465"
+x2="850"
+y2="465"
+stroke="#b23d35"
+stroke-width="5"
+/>
+
+<line
+x1="250"
+y1="445"
+x2="250"
+y2="485"
+stroke="#b23d35"
+stroke-width="4"
+/>
+
+<line
+x1="850"
+y1="445"
+x2="850"
+y2="485"
+stroke="#b23d35"
+stroke-width="4"
+/>
+
+<text
+x="550"
+y="445"
+text-anchor="middle"
+font-size="21"
+font-weight="700"
+fill="#b23d35">
+
+DIÂMETRO TÁTICO
+
+</text>
+
+
+<!-- DIÂMETRO FINAL -->
+
+<line
+x1="490"
+y1="545"
+x2="755"
+y2="545"
+stroke="#1b766f"
+stroke-width="5"
+/>
+
+<text
+x="622"
+y="525"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#1b766f">
+
+DIÂMETRO FINAL
+
+</text>
+
+
+<!-- LEGENDA -->
+
+<text
+x="550"
+y="700"
+text-anchor="middle"
+font-size="17"
+fill="#333">
+
+Representação conceitual baseada nos elementos definidos por Miguens.
+Não utilizar para medição.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 7.</strong>
+Representação didática dos principais
+elementos de uma curva de giro:
+avanço,
+afastamento,
+abatimento,
+diâmetro tático
+e diâmetro final.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+A curva apresentada
+nos dados de manobra
+é válida para determinadas
+condições de teste.
+</p>
+
+<p>
+Ela não deve ser interpretada
+como uma trajetória
+que o navio repetirá
+exatamente em qualquer situação.
+</p>
+
+<p>
+Vento,
+corrente,
+profundidade,
+carregamento
+e outras condições
+podem modificar
+o comportamento observado.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+     ADVANCE E TRANSFER
+========================================= -->
+
+<section
+class="topico-aula"
+id="advance-transfer"
+data-topico-id="advance-transfer">
+
+<h2>
+13. Advance e Transfer — avanço e afastamento
+</h2>
+
+<div class="widget">
+
+<h3>
+Advance — Avanço
+</h3>
+
+<p>
+Miguens define
+<strong>avanço</strong>
+como a distância medida
+na direção do rumo inicial,
+a partir do ponto
+em que o leme foi carregado,
+até o instante correspondente
+à nova orientação considerada
+durante a guinada.
+</p>
+
+<p>
+O avanço alcança
+seu valor máximo
+quando a alteração
+de rumo atinge 90°.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Interpretação física</h3>
+
+<p>
+O avanço responde
+à pergunta:
+</p>
+
+<p>
+<strong>
+“quanto o navio continuará avançando
+na direção geral do rumo inicial
+antes que a guinada se desenvolva?”
+</strong>
+</p>
+
+</div>
+
+
+
+<h3>
+Transfer — Afastamento
+</h3>
+
+<p>
+Miguens utiliza o termo
+<strong>afastamento</strong>
+para a distância medida
+perpendicularmente ao rumo inicial,
+desde o ponto
+em que o leme foi carregado
+até a posição correspondente
+à nova orientação considerada.
+</p>
+
+<p>
+Na terminologia marítima
+em inglês,
+esse componente é associado
+ao termo
+<strong>transfer</strong>.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Interpretação física</h3>
+
+<p>
+O afastamento responde
+à pergunta:
+</p>
+
+<p>
+<strong>
+“quanto o navio se deslocou
+lateralmente em relação
+à sua derrota inicial?”
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Imagine um navio
+aproximando-se de uma curva
+de 90° em um canal.
+</p>
+
+<p>
+Mesmo depois de aplicar o leme,
+o navio continuará avançando.
+</p>
+
+<p>
+Portanto,
+se a ordem for dada
+somente quando a proa
+alcançar geometricamente
+o ponto onde começa
+o novo trecho,
+a embarcação tenderá
+a ultrapassar a trajetória
+pretendida.
+</p>
+
+<p>
+O ponto de início da guinada
+precisa ser antecipado.
+</p>
+
+<p>
+Essa antecipação será estudada
+mais adiante
+no
+<strong>wheel-over point</strong>.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Advance</strong>
+</td>
+
+<td>
+Avanço
+</td>
+
+<td>
+Distância desenvolvida
+na direção do rumo inicial
+durante a evolução.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Transfer</strong>
+</td>
+
+<td>
+Afastamento
+</td>
+
+<td>
+Deslocamento transversal
+em relação
+à direção do rumo inicial.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Turning Circle</strong>
+</td>
+
+<td>
+Curva de giro
+</td>
+
+<td>
+Trajetória desenvolvida
+pelo navio
+durante uma evolução completa
+sob condições especificadas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Rudder Angle</strong>
+</td>
+
+<td>
+Ângulo de leme
+</td>
+
+<td>
+Ângulo aplicado ao leme
+durante a manobra.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+     ABATIMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="abatimento-curva-giro"
+data-topico-id="abatimento-curva-giro">
+
+<h2>
+14. Abatimento inicial da curva
+</h2>
+
+<div class="widget">
+
+<p>
+Um dos elementos
+que pode passar despercebido
+quando se imagina uma guinada
+apenas geometricamente
+é o
+<strong>abatimento inicial</strong>.
+</p>
+
+<p>
+Miguens define abatimento,
+neste contexto,
+como o caimento do navio
+para o bordo contrário
+ao da guinada,
+no início da evolução,
+medido normalmente
+ao rumo inicial.
+</p>
+
+<p>
+Quando o leme é carregado,
+a força hidrodinâmica produzida
+na região da popa
+inicia a rotação da embarcação.
+</p>
+
+<p>
+A proa passa a guinar
+para o bordo desejado,
+enquanto a popa
+é deslocada inicialmente
+para o bordo oposto.
+</p>
+
+<p>
+Por um curto intervalo,
+o centro de gravidade
+ainda mantém importante componente
+de movimento associada
+ao rumo anterior.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1050 650"
+role="img"
+aria-label="Movimento inicial de uma guinada mostrando proa para o bordo da guinada e popa para o bordo oposto">
+
+<rect
+x="35"
+y="35"
+width="980"
+height="570"
+rx="18"
+fill="#f6f9fb"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="525"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+INÍCIO DA GUINADA
+
+</text>
+
+
+<!-- RUMO INICIAL -->
+
+<line
+x1="525"
+y1="550"
+x2="525"
+y2="120"
+stroke="#527d91"
+stroke-width="3"
+stroke-dasharray="14 12"
+/>
+
+<text
+x="550"
+y="145"
+font-size="17"
+font-weight="700"
+fill="#527d91">
+
+RUMO INICIAL
+
+</text>
+
+
+<!-- NAVIO -->
+
+<g transform="rotate(10 525 335)">
+
+<path
+d="
+M525 185
+C490 205 477 240 477 285
+L477 405
+C477 437 495 460 525 478
+C555 460 573 437 573 405
+L573 285
+C573 240 560 205 525 185
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+</g>
+
+
+<!-- BOW ARROW -->
+
+<path
+d="M545 205 Q650 175 720 210"
+fill="none"
+stroke="#2f7b49"
+stroke-width="6"
+/>
+
+<polygon
+points="720,210 694,194 700,222"
+fill="#2f7b49"
+/>
+
+<text
+x="735"
+y="190"
+font-size="18"
+font-weight="700"
+fill="#2f7b49">
+
+PROA PARA O BORDO
+DA GUINADA
+
+</text>
+
+
+<!-- STERN ARROW -->
+
+<path
+d="M500 455 Q405 485 330 455"
+fill="none"
+stroke="#b23d35"
+stroke-width="6"
+/>
+
+<polygon
+points="330,455 356,441 350,469"
+fill="#b23d35"
+/>
+
+<text
+x="165"
+y="440"
+font-size="18"
+font-weight="700"
+fill="#b23d35">
+
+POPA PARA O
+BORDO OPOSTO
+
+</text>
+
+
+<!-- CG PATH -->
+
+<path
+d="M525 470 C520 430 520 385 530 340"
+fill="none"
+stroke="#d48820"
+stroke-width="5"
+stroke-dasharray="10 8"
+/>
+
+<text
+x="680"
+y="420"
+font-size="18"
+font-weight="700"
+fill="#b97417">
+
+MOVIMENTO INICIAL
+DO NAVIO
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 8.</strong>
+Representação conceitual
+do início de uma guinada:
+a proa inicia a alteração
+para o bordo da manobra,
+enquanto a popa se desloca
+para o bordo oposto.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Regra mental</h3>
+
+<p>
+<strong>
+Leme para um bordo:
+proa entra,
+popa abre.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Em espaço lateral limitado,
+a primeira preocupação
+ao iniciar uma guinada
+não deve ser somente
+se existe espaço
+para a proa entrar na curva.
+</p>
+
+<p>
+Também deve existir
+espaço suficiente
+do lado contrário
+para acomodar
+o movimento inicial da popa.
+</p>
+
+<p>
+Esse princípio torna-se crítico
+próximo a:
+</p>
+
+<ul>
+
+<li>
+margens;</li>
+
+<li>
+cais;</li>
+
+<li>
+boias;</li>
+
+<li>
+estruturas portuárias;</li>
+
+<li>
+outras embarcações;</li>
+
+<li>
+limites estreitos de canal.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+     DIÂMETROS
+========================================= -->
+
+<section
+class="topico-aula"
+id="diametros-curva-giro"
+data-topico-id="diametros-curva-giro">
+
+<h2>
+15. Diâmetro tático e diâmetro final
+</h2>
+
+<div class="widget">
+
+<h3>
+Diâmetro Tático — Tactical Diameter
+</h3>
+
+<p>
+Miguens define
+<strong>diâmetro tático</strong>
+como a distância medida
+na direção perpendicular
+ao rumo inicial
+quando o navio completa
+uma guinada de 180°.
+</p>
+
+<p>
+Corresponde,
+na construção apresentada,
+ao
+<strong>afastamento máximo</strong>
+da evolução.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Interpretação operacional</h3>
+
+<p>
+O diâmetro tático
+fornece uma indicação
+da quantidade de espaço lateral
+que o navio exige
+para executar uma grande evolução.
+</p>
+
+</div>
+
+
+
+<h3>
+Diâmetro Final — Final Diameter
+</h3>
+
+<p>
+O
+<strong>diâmetro final</strong>
+é o diâmetro da circunferência
+descrita na fase final
+da trajetória,
+depois que o movimento
+se encontra estabilizado
+com ângulo de leme constante.
+</p>
+
+<p>
+Segundo Miguens,
+o diâmetro final
+é menor que
+o diâmetro tático.
+</p>
+
+<p>
+Se a evolução continuar
+nas mesmas condições,
+o navio tende a permanecer
+na trajetória circular
+estabelecida nessa fase.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Não confunda</h3>
+
+<p>
+<strong>
+Tactical Diameter
+≠
+Final Diameter
+</strong>
+</p>
+
+<p>
+O primeiro está associado
+ao afastamento total
+atingido na evolução de 180°.
+</p>
+
+<p>
+O segundo descreve
+a circunferência correspondente
+à fase estabilizada da curva.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Terminologia</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Termo</th>
+<th>Português</th>
+<th>Referência operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Tactical Diameter</strong>
+</td>
+
+<td>
+Diâmetro tático
+</td>
+
+<td>
+Afastamento transversal
+correspondente
+a uma evolução de 180°.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Final Diameter</strong>
+</td>
+
+<td>
+Diâmetro final
+</td>
+
+<td>
+Diâmetro da trajetória circular
+estabilizada
+na fase final da evolução.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Turning Data</strong>
+</td>
+
+<td>
+Dados de giro
+</td>
+
+<td>
+Informações utilizadas
+para antecipar
+o desenvolvimento espacial
+da curva.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 16
+     ÂNGULO DE DERIVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="angulo-deriva-curva"
+data-topico-id="angulo-deriva-curva">
+
+<h2>
+16. Ângulo de deriva durante a curva
+</h2>
+
+<div class="widget">
+
+<p>
+Durante uma guinada,
+o eixo longitudinal
+do navio
+não coincide necessariamente
+com a direção instantânea
+de seu movimento.
+</p>
+
+<p>
+Miguens denomina
+<strong>ângulo de deriva</strong>
+o ângulo formado,
+em determinado ponto
+da curva de giro,
+entre:
+</p>
+
+<ul>
+
+<li>
+a tangente à trajetória;
+</li>
+
+<li>
+e o eixo longitudinal do navio.
+</li>
+
+</ul>
+
+<p>
+Isso significa
+que a embarcação
+não está simplesmente
+“apontando”
+exatamente para o lugar
+para onde seu centro
+está se deslocando.
+</p>
+
+<p>
+Existe componente
+de movimento lateral.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1000 620"
+role="img"
+aria-label="Ângulo de deriva entre eixo longitudinal do navio e tangente à trajetória durante a curva">
+
+<rect
+x="35"
+y="35"
+width="930"
+height="540"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="500"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+ÂNGULO DE DERIVA NA CURVA
+
+</text>
+
+
+<!-- TRAJETÓRIA -->
+
+<path
+d="M170 500 Q430 180 820 200"
+fill="none"
+stroke="#267da5"
+stroke-width="6"
+stroke-dasharray="14 10"
+/>
+
+
+<!-- NAVIO -->
+
+<g transform="rotate(35 520 315)">
+
+<path
+d="
+M520 205
+C490 222 478 250 478 285
+L478 370
+C478 397 495 418 520 432
+C545 418 562 397 562 370
+L562 285
+C562 250 550 222 520 205
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+<line
+x1="520"
+y1="185"
+x2="520"
+y2="455"
+stroke="#2f7b49"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- TANGENTE -->
+
+<line
+x1="365"
+y1="400"
+x2="705"
+y2="255"
+stroke="#b23d35"
+stroke-width="5"
+/>
+
+<text
+x="740"
+y="245"
+font-size="18"
+font-weight="700"
+fill="#b23d35">
+
+TANGENTE À TRAJETÓRIA
+
+</text>
+
+
+<!-- ANGLE -->
+
+<path
+d="M520 315
+A75 75 0 0 1 585 280"
+fill="none"
+stroke="#d2871d"
+stroke-width="5"
+/>
+
+<text
+x="600"
+y="325"
+font-size="22"
+font-weight="700"
+fill="#b46d15">
+
+β
+
+</text>
+
+
+<text
+x="235"
+y="180"
+font-size="18"
+font-weight="700"
+fill="#2f7b49">
+
+EIXO LONGITUDINAL
+DO NAVIO
+
+</text>
+
+
+<text
+x="500"
+y="545"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+β representa a diferença angular
+entre a orientação do casco
+e a tangente à trajetória.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 9.</strong>
+Representação conceitual
+do ângulo de deriva
+durante uma curva de giro.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+O ângulo de deriva
+ajuda a compreender
+por que uma embarcação
+em curva ocupa
+uma faixa de água
+maior do que sua boca.
+</p>
+
+<p>
+Para o Prático,
+a consequência é direta:
+</p>
+
+<p>
+<strong>
+não se deve projetar
+a passagem do navio
+considerando apenas
+a orientação da proa.
+</strong>
+</p>
+
+<p>
+Todo o casco
+está combinando:
+</p>
+
+<ul>
+
+<li>
+avanço;</li>
+
+<li>
+movimento lateral;</li>
+
+<li>
+rotação.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+     DESENVOLVIMENTO DA CURVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="desenvolvimento-curva-giro"
+data-topico-id="desenvolvimento-curva-giro">
+
+<h2>
+17. A curva de giro se desenvolve progressivamente
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens destaca que,
+depois do abatimento inicial,
+o centro de gravidade
+passa a descrever
+uma trajetória curva
+cujo raio ainda varia.
+</p>
+
+<p>
+Somente depois
+de aproximadamente 90°
+de evolução,
+na condição descrita pelo autor,
+a trajetória passa
+a aproximar-se
+de uma circunferência
+com centro praticamente fixo.
+</p>
+
+<p>
+O movimento,
+portanto,
+pode ser compreendido
+didaticamente em três etapas.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>1 — Início</h3>
+
+<p>
+O leme é aplicado.
+</p>
+
+<p>
+Surge o momento de guinada,
+mas o navio ainda conserva
+forte componente
+de movimento associada
+ao rumo inicial.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>2 — Desenvolvimento</h3>
+
+<p>
+A razão de guinada aumenta,
+o navio adquire
+movimento lateral
+e o raio da trajetória
+continua se modificando.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>3 — Curva estabelecida</h3>
+
+<p>
+A trajetória tende
+a adquirir característica
+aproximadamente circular,
+mantidas as condições
+da evolução.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Essa progressividade
+é fundamental para compreender
+o momento de iniciar
+e posteriormente reduzir
+uma guinada.
+</p>
+
+<p>
+O navio possui
+<strong>yaw momentum</strong>,
+ou movimento de guinada adquirido.
+</p>
+
+<p>
+Assim,
+a correção do leme
+não produz instantaneamente
+a interrupção da rotação.
+</p>
+
+<p>
+Esse princípio será essencial
+quando estudarmos
+<strong>wheel-over</strong>
+e controle da razão de guinada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+     ÂNGULO DO LEME
+========================================= -->
+
+<section
+class="topico-aula"
+id="influencia-angulo-leme-curva"
+data-topico-id="influencia-angulo-leme-curva">
+
+<h2>
+18. Influência do ângulo do leme
+</h2>
+
+<div class="widget">
+
+<p>
+Nas considerações práticas
+apresentadas por Miguens,
+o aumento do ângulo de leme
+modifica significativamente
+os elementos da curva.
+</p>
+
+<p>
+Para as condições analisadas
+na publicação,
+com o aumento
+do ângulo de leme:
+</p>
+
+<ul>
+
+<li>
+o avanço diminui;
+</li>
+
+<li>
+o afastamento diminui;
+</li>
+
+<li>
+o diâmetro tático diminui;
+</li>
+
+<li>
+o tempo de evolução diminui;
+</li>
+
+<li>
+o ângulo de deriva aumenta.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>Interpretação operacional</h3>
+
+<p>
+Um ângulo de leme maior
+pode fazer o navio
+desenvolver uma curva
+mais fechada.
+</p>
+
+<p>
+Entretanto,
+isso não significa
+que a aplicação
+de grandes ângulos de leme
+seja automaticamente
+a melhor decisão.
+</p>
+
+<p>
+A escolha deve considerar
+as características reais
+do navio,
+a velocidade,
+o espaço disponível
+e o objetivo da manobra.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+O Prático não deve pensar
+somente:
+</p>
+
+<p>
+<strong>
+“mais leme = mais guinada”.
+</strong>
+</p>
+
+<p>
+É necessário analisar
+como aquela embarcação específica
+responde,
+quanto avanço ainda terá,
+qual razão de guinada desenvolverá
+e como essa resposta
+se encaixa no espaço disponível.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+     INFLUÊNCIA DA VELOCIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="velocidade-curva-giro"
+data-topico-id="velocidade-curva-giro">
+
+<h2>
+19. Influência da velocidade na evolução
+</h2>
+
+<div class="widget">
+
+<p>
+A relação entre velocidade
+e curva de giro
+não deve ser reduzida
+à ideia simplista
+de que
+“quanto mais rápido,
+maior será sempre a curva”.
+</p>
+
+<p>
+Miguens registra
+que o comportamento
+dos elementos da curva
+em função da velocidade
+não é necessariamente linear.
+</p>
+
+<p>
+Na análise apresentada,
+avanço,
+afastamento
+e diâmetro tático
+variam com a velocidade
+segundo uma curva,
+diminuindo até determinada
+<strong>velocidade ótima de evolução</strong>
+e aumentando posteriormente.
+</p>
+
+<p>
+O autor também destaca
+que o
+<strong>tempo de evolução</strong>
+diminui quando
+a velocidade aumenta.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Cuidado com generalizações</h3>
+
+<p>
+Não memorize:
+</p>
+
+<p>
+<strong>
+“mais velocidade = curva sempre maior”
+</strong>
+</p>
+
+<p>
+como regra absoluta.
+</p>
+
+<p>
+Os dados reais
+da própria embarcação
+devem ser consultados.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+A informação decisiva
+não é uma regra genérica
+sobre navios.
+</p>
+
+<p>
+É a pergunta:
+</p>
+
+<p>
+<strong>
+“como ESTE navio
+se comporta NESTA velocidade
+e com ESTE ângulo de leme?”
+</strong>
+</p>
+
+<p>
+Essa resposta deve ser procurada
+nos dados de manobra
+disponíveis a bordo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+     ESPAÇO NECESSÁRIO À EVOLUÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="espaco-necessario-evolucao"
+data-topico-id="espaco-necessario-evolucao">
+
+<h2>
+20. Quanto espaço uma guinada realmente exige?
+</h2>
+
+<div class="widget">
+
+<p>
+Uma das conclusões práticas
+mais importantes
+do capítulo de Miguens
+é que,
+para avaliar
+o espaço necessário
+a uma evolução,
+devem ser considerados:
+</p>
+
+<ul>
+
+<li>
+<strong>avanço;</strong>
+</li>
+
+<li>
+<strong>afastamento;</strong>
+</li>
+
+<li>
+<strong>abatimento inicial;</strong>
+</li>
+
+<li>
+e,
+no caso de uma evolução de 180°,
+o
+<strong>diâmetro tático.</strong>
+</li>
+
+</ul>
+
+<p>
+Ou seja,
+uma curva não deve
+ser analisada apenas
+pelo raio aparente
+da trajetória final.
+</p>
+
+<p>
+O período inicial
+da manobra
+também ocupa espaço.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Memorização</h3>
+
+<p>
+Para uma curva segura,
+pense em:
+</p>
+
+<p>
+<strong>
+AVANÇAR
++
+AFASTAR
++
+ABATER
++
+GIRAR
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Uma curva pode caber
+geometricamente
+dentro de um canal
+quando analisada apenas
+pela sua parte circular,
+mas não caber
+quando se acrescenta
+o avanço inicial
+e a abertura lateral
+do navio.
+</p>
+
+<p>
+Essa é uma das razões
+pelas quais a avaliação
+de uma manobra
+deve começar
+<strong>antes</strong>
+do ponto em que a mudança
+de rumo aparece na carta.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+     DADOS DE MANOBRA A BORDO
+========================================= -->
+
+<section
+class="topico-aula"
+id="dados-manobra-bordo"
+data-topico-id="dados-manobra-bordo">
+
+<h2>
+21. Utilização dos dados de manobra a bordo
+</h2>
+
+<div class="widget">
+
+<p>
+As curvas obtidas
+durante as provas de mar
+podem ser transformadas
+em gráficos
+e tabelas
+para facilitar o uso
+durante a navegação.
+</p>
+
+<p>
+Miguens destaca
+que essas informações
+permitem obter,
+para condições conhecidas:
+</p>
+
+<ul>
+
+<li>
+avanço;</li>
+
+<li>
+afastamento;</li>
+
+<li>
+abatimento;</li>
+
+<li>
+diâmetro tático;</li>
+
+<li>
+tempo de evolução;</li>
+
+<li>
+e outros dados
+de interesse à manobra.
+</li>
+
+</ul>
+
+<p>
+Valores intermediários,
+no modelo de tabela
+apresentado pelo autor,
+podem ser estimados
+por interpolação
+quando aplicável.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Exemplo didático retirado da lógica de Miguens</h3>
+
+<p>
+Se determinada tabela
+fornece os dados
+para:
+</p>
+
+<ul>
+
+<li>
+uma velocidade específica;</li>
+
+<li>
+um determinado ângulo de leme;</li>
+
+<li>
+e diferentes ângulos de guinada;</li>
+
+</ul>
+
+<p>
+o navegante pode consultar
+o avanço
+e o afastamento esperados
+para a alteração
+de rumo pretendida.
+</p>
+
+<p>
+Esses valores podem então
+ser confrontados
+com o espaço disponível
+na carta
+e no canal.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+A informação não deve permanecer
+apenas no
+<strong>Manoeuvring Booklet</strong>
+ou no
+<strong>Wheelhouse Poster</strong>.
+</p>
+
+<p>
+Ela precisa ser transformada
+em decisão operacional.
+</p>
+
+<p>
+Antes da curva:
+</p>
+
+<ul>
+
+<li>
+qual será o avanço?</li>
+
+<li>
+qual será o afastamento?</li>
+
+<li>
+quanto espaço existe?</li>
+
+<li>
+qual corrente está atuando?</li>
+
+<li>
+a velocidade atual corresponde
+àquela usada como referência?</li>
+
+<li>
+o navio está nas condições
+para as quais os dados
+são representativos?</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+     LIMITAÇÕES DOS DADOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="limitacoes-dados-taticos"
+data-topico-id="limitacoes-dados-taticos">
+
+<h2>
+22. Dados táticos não são uma trajetória garantida
+</h2>
+
+<div class="widget">
+
+<p>
+As curvas utilizadas
+como dados de referência
+são obtidas sob condições
+determinadas.
+</p>
+
+<p>
+Miguens ressalta
+que as provas de curva
+devem ser realizadas
+em águas tranquilas,
+sem influência significativa
+de vento
+ou corrente
+e com profundidade suficiente
+para minimizar
+efeitos de águas rasas.
+</p>
+
+<p>
+Na situação operacional,
+essas condições
+raramente são reproduzidas
+de maneira perfeita.
+</p>
+
+<p>
+Uma curva real
+pode ser modificada
+por:
+</p>
+
+<ul>
+
+<li>
+vento;</li>
+
+<li>
+corrente;</li>
+
+<li>
+profundidade;</li>
+
+<li>
+restrição lateral;</li>
+
+<li>
+condição de carregamento;</li>
+
+<li>
+trim;</li>
+
+<li>
+estado do sistema propulsivo;</li>
+
+<li>
+resposta do sistema de governo.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Princípio essencial</h3>
+
+<p>
+<strong>
+Dados táticos são referência
+para antecipar a manobra.
+Não substituem
+o monitoramento da manobra real.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Depois que a guinada começa,
+o Prático precisa comparar
+continuamente:
+</p>
+
+<p>
+<strong>
+MANOBRA PREVISTA
+×
+MANOBRA OBSERVADA
+</strong>
+</p>
+
+<p>
+Se a razão de guinada,
+o avanço
+ou o deslocamento lateral
+não estiverem evoluindo
+como esperado,
+a decisão deve ser atualizada.
+</p>
+
+<p>
+O dado de manobra
+ajuda a prever.
+</p>
+
+<p>
+A observação do navio
+confirma
+o que realmente está acontecendo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+     SÍNTESE
+========================================= -->
+
+<section
+class="topico-aula"
+id="sintese-dados-taticos"
+data-topico-id="sintese-dados-taticos">
+
+<h2>
+23. Síntese operacional dos dados táticos
+</h2>
+
+<div class="widget">
+
+<p>
+Ao aproximar-se
+de uma alteração de rumo
+em águas restritas,
+o raciocínio do Prático
+pode ser organizado
+da seguinte maneira:
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Sequência mental</h3>
+
+<ol>
+
+<li>
+<strong>Qual é a velocidade?</strong>
+</li>
+
+<li>
+<strong>Qual alteração de rumo será executada?</strong>
+</li>
+
+<li>
+<strong>Qual ângulo de leme poderá ser utilizado?</strong>
+</li>
+
+<li>
+<strong>Qual avanço é esperado?</strong>
+</li>
+
+<li>
+<strong>Qual afastamento é esperado?</strong>
+</li>
+
+<li>
+<strong>Quanto ocorrerá de abertura inicial?</strong>
+</li>
+
+<li>
+<strong>Onde estarão proa e popa?</strong>
+</li>
+
+<li>
+<strong>Quanto espaço existe dentro do canal?</strong>
+</li>
+
+<li>
+<strong>Vento e corrente modificarão a curva?</strong>
+</li>
+
+<li>
+<strong>Quando a guinada precisa começar?</strong>
+</li>
+
+</ol>
+
+</div>
+
+
+
+<p>
+A última pergunta
+conduz diretamente
+ao próximo estágio
+da aula.
+</p>
+
+<p>
+Conhecer a curva
+não é suficiente.
+</p>
+
+<p>
+É necessário transformar
+os dados de giro
+em uma decisão concreta:
+</p>
+
+<p>
+<strong>
+em que posição devemos iniciar
+a aplicação do leme
+para que o navio
+entre corretamente
+na nova derrota?
+</strong>
+</p>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Próximo conceito</h3>
+
+<p>
+Essa posição é relacionada
+ao conceito de
+<strong>Wheel-Over Point — WOP</strong>.
+</p>
+
+<p>
+Na próxima parte,
+os dados táticos
+deixarão de ser apenas
+características do navio
+e passarão a ser utilizados
+diretamente
+no
+<strong>planejamento geométrico
+das curvas em águas restritas</strong>.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Terminologia essencial da Parte 3</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Manoeuvring Characteristics</strong>
+</td>
+
+<td>
+Características de manobra
+</td>
+
+<td>
+Comportamento do navio
+durante alterações
+de rumo e velocidade.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Turning Circle</strong>
+</td>
+
+<td>
+Curva de giro
+</td>
+
+<td>
+Trajetória desenvolvida
+durante uma evolução completa.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Advance</strong>
+</td>
+
+<td>
+Avanço
+</td>
+
+<td>
+Componente do deslocamento
+medida na direção
+do rumo inicial.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Transfer</strong>
+</td>
+
+<td>
+Afastamento
+</td>
+
+<td>
+Componente transversal
+do deslocamento.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Tactical Diameter</strong>
+</td>
+
+<td>
+Diâmetro tático
+</td>
+
+<td>
+Afastamento correspondente
+a uma evolução de 180°.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Final Diameter</strong>
+</td>
+
+<td>
+Diâmetro final
+</td>
+
+<td>
+Diâmetro correspondente
+à parte estabilizada
+da curva.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Drift Angle</strong>
+</td>
+
+<td>
+Ângulo de deriva
+</td>
+
+<td>
+Diferença angular
+entre o eixo longitudinal
+do navio
+e a tangente
+à trajetória.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Turning Data</strong>
+</td>
+
+<td>
+Dados de giro
+</td>
+
+<td>
+Informações utilizadas
+para prever
+a evolução espacial
+do navio.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Wheel-Over Point — WOP</strong>
+</td>
+
+<td>
+Ponto de início da guinada
+</td>
+
+<td>
+Posição planejada
+na qual a ação de governo
+é iniciada
+para desenvolver
+a alteração de rumo.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 3
+========================================= -->
+
+<!-- =========================================
+     INÍCIO PARTE 4
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 4
+     PLANEJAMENTO E EXECUÇÃO
+     DAS CURVAS EM CANAIS
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — PLANEJAMENTO E EXECUÇÃO
+DAS CURVAS EM CANAIS
+</h2>
+
+<p>
+Na Parte 3,
+estudamos como o navio
+desenvolve uma curva de giro.
+</p>
+
+<p>
+Agora surge a pergunta
+que transforma esse conhecimento
+em navegação prática:
+</p>
+
+<p>
+<strong>
+em que momento devemos iniciar
+a aplicação do leme
+para que a embarcação
+complete a curva
+na posição desejada?
+</strong>
+</p>
+
+<p>
+Em uma representação simplificada
+da derrota,
+duas pernas podem encontrar-se
+em um ponto geométrico.
+</p>
+
+<p>
+O navio real,
+entretanto,
+não chega a esse ponto,
+gira instantaneamente
+e segue sobre a próxima perna.
+</p>
+
+<p>
+Ele continua avançando
+enquanto desenvolve
+uma trajetória curva.
+</p>
+
+<p>
+Por isso,
+a alteração de rumo
+precisa ser iniciada
+<strong>antes</strong>
+do ponto geométrico
+de encontro das duas pernas.
+</p>
+
+<div class="destaque">
+
+<h3>Ideia fundamental</h3>
+
+<p>
+<strong>
+Navios descrevem curvas.
+Navios não fazem esquinas.
+</strong>
+</p>
+
+<p>
+A condução segura
+depende de transformar
+uma mudança geométrica de rumo
+em uma trajetória física
+compatível com:
+</p>
+
+<ul>
+
+<li>
+as características de manobra do navio;
+</li>
+
+<li>
+a largura do canal;
+</li>
+
+<li>
+a velocidade;
+</li>
+
+<li>
+a corrente;
+</li>
+
+<li>
+a posição da proa e da popa;
+</li>
+
+<li>
+e as margens disponíveis.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 24
+     TURNING POINT
+========================================= -->
+
+<section
+class="topico-aula"
+id="turning-point"
+data-topico-id="turning-point">
+
+<h2>
+24. Turning Point — o ponto geométrico da alteração de rumo
+</h2>
+
+<div class="widget">
+
+<p>
+No planejamento de uma derrota,
+duas pernas sucessivas
+podem encontrar-se
+em um ponto de alteração de rumo.
+</p>
+
+<p>
+Esse ponto pode ser designado
+como
+<strong>turning point</strong>.
+</p>
+
+<p>
+Ele representa
+uma referência geométrica
+para a mudança
+entre uma derrota
+e a seguinte.
+</p>
+
+<p>
+Entretanto,
+o turning point
+não deve ser confundido
+com o instante físico
+em que o navio
+começa a guinar.
+</p>
+
+<p>
+Como vimos anteriormente,
+o navio necessita
+de determinada quantidade
+de
+<strong>advance</strong>
+para desenvolver
+a alteração de rumo.
+</p>
+
+<div class="destaque">
+
+<h3>Não confunda</h3>
+
+<p>
+<strong>
+Turning Point
+≠
+início físico instantâneo da curva.
+</strong>
+</p>
+
+<p>
+O turning point
+é uma referência
+do planejamento.
+</p>
+
+<p>
+A aplicação do leme
+precisa considerar
+a resposta real do navio
+antes que esse ponto seja alcançado.
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 690"
+role="img"
+aria-label="Comparação entre encontro geométrico das pernas da derrota e curva real do navio iniciada antes do turning point">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="610"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="82"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+TURNING POINT × TRAJETÓRIA REAL DO NAVIO
+
+</text>
+
+
+<!-- PRIMEIRA PERNA -->
+
+<line
+x1="130"
+y1="510"
+x2="610"
+y2="510"
+stroke="#4b6978"
+stroke-width="5"
+/>
+
+
+<!-- SEGUNDA PERNA -->
+
+<line
+x1="610"
+y1="510"
+x2="610"
+y2="135"
+stroke="#4b6978"
+stroke-width="5"
+/>
+
+
+<!-- TURNING POINT -->
+
+<circle
+cx="610"
+cy="510"
+r="11"
+fill="#c0392b"
+/>
+
+<text
+x="640"
+y="545"
+font-size="19"
+font-weight="700"
+fill="#a93226">
+
+TURNING POINT
+
+</text>
+
+
+<!-- TRAJETÓRIA CURVA -->
+
+<path
+d="
+M130 510
+L390 510
+C510 510 610 410 610 290
+L610 135
+"
+fill="none"
+stroke="#17729a"
+stroke-width="7"
+/>
+
+
+<!-- INÍCIO DA CURVA -->
+
+<circle
+cx="390"
+cy="510"
+r="10"
+fill="#2f7d49"
+/>
+
+<text
+x="390"
+y="555"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#2f7d49">
+
+INÍCIO DA GUINADA
+
+</text>
+
+
+<!-- SETA ADVANCE -->
+
+<line
+x1="390"
+y1="470"
+x2="590"
+y2="470"
+stroke="#d0811d"
+stroke-width="5"
+/>
+
+<polygon
+points="590,470 566,458 566,482"
+fill="#d0811d"
+/>
+
+<text
+x="490"
+y="450"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#ad6815">
+
+ESPAÇO NECESSÁRIO
+PARA DESENVOLVER A CURVA
+
+</text>
+
+
+<!-- LEGENDA -->
+
+<text
+x="550"
+y="610"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+A linha quebrada representa a derrota geométrica.
+A trajetória azul representa conceitualmente
+o movimento real da embarcação.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 10.</strong>
+A alteração física de rumo
+precisa ser iniciada antes
+do encontro geométrico
+das duas pernas,
+pois o navio necessita de espaço
+para desenvolver a guinada.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Se o Prático esperar
+que a proa alcance
+o ponto geométrico da mudança de rumo
+antes de aplicar o leme,
+o navio continuará avançando
+durante o desenvolvimento da curva.
+</p>
+
+<p>
+O resultado pode ser
+uma trajetória
+para fora da derrota desejada
+ou uma aproximação excessiva
+ao limite externo do canal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+     WHEEL-OVER POINT
+========================================= -->
+
+<section
+class="topico-aula"
+id="wheel-over"
+data-topico-id="wheel-over">
+
+<h2>
+25. Wheel-Over Point — início planejado da guinada
+</h2>
+
+<div class="widget">
+
+<p>
+No planejamento de uma alteração de rumo,
+é necessário estabelecer
+uma posição anterior
+ao turning point
+na qual a ação de governo
+será iniciada.
+</p>
+
+<p>
+Essa referência é normalmente denominada
+<strong>Wheel-Over Point — WOP</strong>.
+</p>
+
+<p>
+Em termos operacionais,
+o WOP representa
+a posição planejada
+a partir da qual
+o navio deve começar
+a desenvolver a guinada
+necessária para alcançar
+a nova derrota.
+</p>
+
+<p>
+O WOP não deve ser tratado
+como um valor independente
+do comportamento da embarcação.
+</p>
+
+<p>
+Sua posição depende,
+entre outros fatores,
+da quantidade de espaço
+que o navio necessita
+para desenvolver a curva.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Relação fundamental</h3>
+
+<p>
+<strong>
+TURNING POINT
+</strong>
+</p>
+
+<p>
+é a referência geométrica
+da mudança de derrota.
+</p>
+
+<p>
+<strong>
+WHEEL-OVER POINT
+</strong>
+</p>
+
+<p>
+é a referência operacional
+para começar a produzir
+essa mudança.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+O WOP não deve ser encarado
+como um “ponto mágico”
+que garante automaticamente
+uma curva perfeita.
+</p>
+
+<p>
+Ele é uma referência
+para iniciar a manobra.
+</p>
+
+<p>
+Depois da aplicação do leme,
+a evolução precisa ser
+continuamente observada
+e ajustada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+     ONDE COMEÇAR A CURVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="onde-iniciar-curva"
+data-topico-id="onde-iniciar-curva">
+
+<h2>
+26. Onde começar uma curva em um canal?
+</h2>
+
+<div class="widget">
+
+<p>
+Em
+<strong>Shiphandling for the Mariner</strong>,
+MacElrevey apresenta
+duas questões básicas
+para uma curva em canal:
+</p>
+
+<ul>
+
+<li>
+<strong>onde iniciar a curva;</strong>
+</li>
+
+<li>
+<strong>quanto leme utilizar.</strong>
+</li>
+
+</ul>
+
+<p>
+O autor destaca
+que uma curva iniciada
+no lugar errado
+dificilmente poderá
+ser executada corretamente.
+</p>
+
+<h3>
+Curva iniciada tarde
+</h3>
+
+<p>
+Quando o início ocorre tarde,
+o navio pode exigir:
+</p>
+
+<ul>
+
+<li>
+maior ângulo de leme;
+</li>
+
+<li>
+maior esforço de máquinas;
+</li>
+
+<li>
+maior razão de guinada;
+</li>
+
+<li>
+correções mais agressivas
+para permanecer no canal.
+</li>
+
+</ul>
+
+
+
+<h3>
+Curva iniciada cedo demais
+</h3>
+
+<p>
+O erro oposto
+também pode ocorrer.
+</p>
+
+<p>
+Se a guinada for iniciada
+muito cedo,
+pode ser necessário:
+</p>
+
+<ul>
+
+<li>
+reduzir o swing;
+</li>
+
+<li>
+interromper parcialmente a curva;
+</li>
+
+<li>
+esperar;
+</li>
+
+<li>
+e iniciar novamente a guinada
+mais adiante.
+</li>
+
+</ul>
+
+<p>
+MacElrevey chama atenção
+para o fato de que
+isso pode ser especialmente indesejável
+em um canal onde
+efeitos de margem
+e sucção estejam presentes.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Regra operacional</h3>
+
+<p>
+<strong>
+Tarde demais:
+falta espaço.
+</strong>
+</p>
+
+<p>
+<strong>
+Cedo demais:
+pode ser necessário matar a guinada
+e reconstruí-la.
+</strong>
+</p>
+
+<p>
+O objetivo é chegar
+ao ponto planejado
+com o movimento de guinada
+corretamente desenvolvido.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+     PIVOT POINT COMO REFERÊNCIA
+========================================= -->
+
+<section
+class="topico-aula"
+id="pivot-point-curva-canal"
+data-topico-id="pivot-point-curva-canal">
+
+<h2>
+27. Pivot Point como referência para iniciar a curva
+</h2>
+
+<div class="widget">
+
+<p>
+Um ponto especialmente importante
+na abordagem de
+<strong>Shiphandling for the Mariner</strong>
+é que a decisão
+de início da curva
+não deve ser baseada
+simplesmente na posição
+da proa
+ou do passadiço.
+</p>
+
+<p>
+O autor orienta
+que o início seja avaliado
+pela posição do
+<strong>pivot point</strong>
+em relação
+ao ponto de referência da curva.
+</p>
+
+<p>
+Durante o seguimento avante,
+o pivot point aparente
+encontra-se normalmente
+na região de vante
+da embarcação,
+embora sua posição
+não seja fixa.
+</p>
+
+<p>
+Isso significa
+que:
+</p>
+
+<ul>
+
+<li>
+a proa pode já ter ultrapassado
+determinada referência;
+</li>
+
+<li>
+o passadiço pode ainda estar
+bem atrás dela;
+</li>
+
+<li>
+e o ponto em torno do qual
+a embarcação parece desenvolver
+a rotação
+pode estar em outra posição.
+</li>
+
+</ul>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 700"
+role="img"
+aria-label="Navio se aproximando de uma curva com proa, passadiço e pivot point marcados separadamente">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="620"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+QUAL PARTE DO NAVIO ESTÁ NO PONTO DE CURVA?
+
+</text>
+
+
+<!-- CANAL -->
+
+<rect
+x="100"
+y="210"
+width="650"
+height="250"
+fill="#dceff6"
+stroke="#356d89"
+stroke-width="4"
+/>
+
+<rect
+x="625"
+y="100"
+width="250"
+height="360"
+fill="#dceff6"
+stroke="#356d89"
+stroke-width="4"
+/>
+
+
+<!-- CENTRELINES -->
+
+<line
+x1="100"
+y1="335"
+x2="625"
+y2="335"
+stroke="#567d91"
+stroke-width="3"
+stroke-dasharray="13 10"
+/>
+
+<line
+x1="750"
+y1="100"
+x2="750"
+y2="335"
+stroke="#567d91"
+stroke-width="3"
+stroke-dasharray="13 10"
+/>
+
+
+<!-- NAVIO -->
+
+<g transform="rotate(90 510 335)">
+
+<path
+d="
+M510 210
+C478 228 466 258 466 295
+L466 392
+C466 423 484 446 510 460
+C536 446 554 423 554 392
+L554 295
+C554 258 542 228 510 210
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+</g>
+
+
+<!-- BOW -->
+
+<circle
+cx="635"
+cy="335"
+r="9"
+fill="#2f7d49"
+/>
+
+<text
+x="635"
+y="305"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#2f7d49">
+
+BOW
+
+</text>
+
+
+<!-- BRIDGE -->
+
+<circle
+cx="430"
+cy="335"
+r="9"
+fill="#d08a20"
+/>
+
+<text
+x="430"
+y="305"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#b46e18">
+
+BRIDGE
+
+</text>
+
+
+<!-- PIVOT -->
+
+<circle
+cx="565"
+cy="335"
+r="12"
+fill="#b23d35"
+/>
+
+<text
+x="565"
+y="375"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#b23d35">
+
+PIVOT POINT
+
+</text>
+
+
+<!-- CENTRE TURN -->
+
+<circle
+cx="750"
+cy="335"
+r="11"
+fill="#65489d"
+/>
+
+<text
+x="795"
+y="370"
+font-size="18"
+font-weight="700"
+fill="#65489d">
+
+REFERÊNCIA
+DA CURVA
+
+</text>
+
+
+<!-- CURVA -->
+
+<path
+d="M565 335 Q750 335 750 150"
+fill="none"
+stroke="#17729a"
+stroke-width="6"
+stroke-dasharray="13 9"
+/>
+
+<text
+x="550"
+y="605"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+Proa, passadiço e pivot point são referências distintas.
+Confundi-las altera o momento percebido para iniciar a curva.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 11.</strong>
+Representação conceitual
+das diferentes referências
+que podem ser utilizadas
+durante a aproximação
+a uma curva de canal.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Um Prático experiente
+não observa apenas
+“quando a proa chega à boia”.
+</p>
+
+<p>
+Ele interpreta
+a posição daquela referência
+em relação
+ao movimento do navio
+e ao ponto em torno do qual
+a embarcação está
+ou passará a desenvolver
+sua rotação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+     TURNING CIRCLE NO CANAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="turning-circle-canal"
+data-topico-id="turning-circle-canal">
+
+<h2>
+28. Visualizando o círculo de giro dentro do canal
+</h2>
+
+<div class="widget">
+
+<p>
+MacElrevey utiliza
+uma ideia operacional
+particularmente útil:
+</p>
+
+<p>
+<strong>
+imaginar o círculo
+que o navio precisa descrever
+dentro da geometria do canal.
+</strong>
+</p>
+
+<p>
+O Prático que conhece
+o comportamento da embarcação
+pode visualizar mentalmente:
+</p>
+
+<ul>
+
+<li>
+o avanço esperado;
+</li>
+
+<li>
+o raio aproximado da curva;
+</li>
+
+<li>
+o centro estimado
+da trajetória curva;
+</li>
+
+<li>
+e o espaço lateral
+necessário para completá-la.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Imagem mental</h3>
+
+<p>
+Não pense:
+</p>
+
+<p>
+<strong>
+“vou sair desta reta
+e entrar naquela reta”.
+</strong>
+</p>
+
+<p>
+Pense:
+</p>
+
+<p>
+<strong>
+“preciso encaixar
+um arco de trajetória
+entre estas duas pernas”.
+</strong>
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1080 700"
+role="img"
+aria-label="Canal com duas pernas a noventa graus e círculo de giro estimado encaixado entre elas">
+
+<rect
+x="35"
+y="35"
+width="1010"
+height="620"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="540"
+y="82"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+ENCAIXANDO A CURVA NO CANAL
+
+</text>
+
+
+<!-- CHANNEL -->
+
+<path
+d="
+M110 520
+L700 520
+L700 115
+L900 115
+L900 620
+L110 620
+Z"
+fill="#d9eef6"
+stroke="#356d89"
+stroke-width="4"
+/>
+
+
+<!-- TRACKS -->
+
+<line
+x1="110"
+y1="570"
+x2="750"
+y2="570"
+stroke="#516f80"
+stroke-width="3"
+stroke-dasharray="14 10"
+/>
+
+<line
+x1="800"
+y1="570"
+x2="800"
+y2="115"
+stroke="#516f80"
+stroke-width="3"
+stroke-dasharray="14 10"
+/>
+
+
+<!-- TURN ARC -->
+
+<path
+d="
+M480 570
+A320 320 0 0 1 800 250
+"
+fill="none"
+stroke="#18769d"
+stroke-width="8"
+/>
+
+
+<!-- ESTIMATED CENTRE -->
+
+<circle
+cx="480"
+cy="250"
+r="10"
+fill="#c0392b"
+/>
+
+<line
+x1="480"
+y1="250"
+x2="480"
+y2="570"
+stroke="#c0392b"
+stroke-width="3"
+stroke-dasharray="10 8"
+/>
+
+<line
+x1="480"
+y1="250"
+x2="800"
+y2="250"
+stroke="#c0392b"
+stroke-width="3"
+stroke-dasharray="10 8"
+/>
+
+<text
+x="345"
+y="235"
+font-size="18"
+font-weight="700"
+fill="#a93226">
+
+CENTRO ESTIMADO
+DA CURVA
+
+</text>
+
+
+<!-- START -->
+
+<circle
+cx="480"
+cy="570"
+r="10"
+fill="#2f7d49"
+/>
+
+<text
+x="480"
+y="610"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#2f7d49">
+
+INÍCIO DA CURVA
+
+</text>
+
+
+<text
+x="540"
+y="675"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+Representação conceitual:
+a trajetória curva deve caber dentro
+da área navegável disponível.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 12.</strong>
+Visualização conceitual
+do arco de giro
+entre duas pernas sucessivas
+de um canal.
+
+</figcaption>
+
+</figure>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+     REFERÊNCIAS VISUAIS NA CURVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="referencias-visuais-curva"
+data-topico-id="referencias-visuais-curva">
+
+<h2>
+29. Utilização de referências durante a curva
+</h2>
+
+<div class="widget">
+
+<p>
+Uma vez iniciada a guinada,
+o Prático precisa avaliar
+se a embarcação
+está desenvolvendo
+a razão de giro adequada.
+</p>
+
+<p>
+<strong>Shiphandling for the Mariner</strong>
+mostra que auxílios à navegação
+próximos da curva
+podem ser utilizados
+como referências relativas
+para acompanhar
+o desenvolvimento da manobra.
+</p>
+
+<p>
+Uma boia,
+por exemplo,
+pode ser observada
+em relação a um ponto fixo
+do passadiço,
+como:
+</p>
+
+<ul>
+
+<li>
+um montante;
+</li>
+
+<li>
+uma janela;
+</li>
+
+<li>
+um stay;
+</li>
+
+<li>
+ou outra referência visual fixa.
+</li>
+
+</ul>
+
+<p>
+A forma como a referência
+se desloca visualmente
+em relação ao navio
+fornece informação
+sobre a evolução relativa
+da curva.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Conceito operacional</h3>
+
+<p>
+Durante uma curva,
+não observe apenas
+o rumo apresentado
+pela agulha.
+</p>
+
+<p>
+Observe também
+<strong>
+como o ambiente está se movimentando
+em relação ao navio.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Uma referência visual
+que permanece aproximadamente
+em uma determinada posição relativa
+pode fornecer ao Prático
+uma indicação imediata
+da geometria da curva.
+</p>
+
+<p>
+A leitura visual
+não substitui
+radar,
+ECDIS
+ou outros meios de navegação.
+</p>
+
+<p>
+Ela constitui mais uma fonte
+de informação
+para confirmar
+o comportamento real
+da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+     RATE OF TURN
+========================================= -->
+
+<section
+class="topico-aula"
+id="rate-of-turn-curva"
+data-topico-id="rate-of-turn-curva">
+
+<h2>
+30. Rate of Turn — razão de guinada
+</h2>
+
+<div class="widget">
+
+<p>
+Depois que o leme é aplicado,
+a razão de guinada
+não atinge instantaneamente
+seu valor final.
+</p>
+
+<p>
+Ela se desenvolve
+progressivamente.
+</p>
+
+<p>
+O
+<strong>Rate of Turn — ROT</strong>
+expressa a velocidade angular
+com que o rumo
+da embarcação está mudando.
+</p>
+
+<p>
+Para o Prático,
+o ROT constitui
+uma das informações mais importantes
+para avaliar
+se a curva está:
+</p>
+
+<ul>
+
+<li>
+começando lentamente demais;
+</li>
+
+<li>
+desenvolvendo-se conforme esperado;
+</li>
+
+<li>
+ou tornando-se excessiva.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Três perguntas durante a curva</h3>
+
+<p>
+<strong>
+A guinada começou?
+</strong>
+</p>
+
+<p>
+<strong>
+A razão de guinada está aumentando
+como esperado?
+</strong>
+</p>
+
+<p>
+<strong>
+Quando devo começar
+a reduzir essa razão?
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+     CHECKING THE SWING
+========================================= -->
+
+<section
+class="topico-aula"
+id="controle-da-guinada"
+data-topico-id="controle-da-guinada">
+
+<h2>
+31. Iniciar a curva é apenas metade da manobra
+</h2>
+
+<div class="widget">
+
+<p>
+Uma curva bem executada
+não depende apenas
+de iniciar a guinada
+no lugar correto.
+</p>
+
+<p>
+Também é necessário
+controlar o
+<strong>swing</strong>
+adquirido pela embarcação.
+</p>
+
+<p>
+Depois que o navio
+desenvolve razão de guinada,
+sua inércia rotacional
+faz com que a mudança de rumo
+continue mesmo depois
+de o ângulo de leme
+ser reduzido.
+</p>
+
+<p>
+Por isso,
+a ação para diminuir
+a razão de guinada
+precisa ser iniciada
+<strong>antes</strong>
+de a proa alcançar
+o rumo final desejado.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Sequência da curva</h3>
+
+<p>
+<strong>
+1. Iniciar o swing.
+</strong>
+</p>
+
+<p>
+<strong>
+2. Desenvolver o ROT.
+</strong>
+</p>
+
+<p>
+<strong>
+3. Avaliar a trajetória.
+</strong>
+</p>
+
+<p>
+<strong>
+4. Check the swing.
+</strong>
+</p>
+
+<p>
+<strong>
+5. Estabilizar no novo rumo.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Esperar que o navio
+alcance exatamente
+o rumo final
+para então tentar
+parar a guinada
+pode produzir
+<strong>overshoot</strong>.
+</p>
+
+<p>
+O controle adequado
+exige antecipar
+também o final da curva.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+     OVERSHOOT E UNDERSHOOT
+========================================= -->
+
+<section
+class="topico-aula"
+id="overshoot-undershoot"
+data-topico-id="overshoot-undershoot">
+
+<h2>
+32. Overshoot e Undershoot
+</h2>
+
+<div class="widget">
+
+<h3>
+Overshoot
+</h3>
+
+<p>
+O
+<strong>overshoot</strong>
+ocorre quando a embarcação
+ultrapassa o rumo
+ou a trajetória pretendida
+durante a conclusão da curva.
+</p>
+
+<p>
+Entre as causas possíveis
+estão:
+</p>
+
+<ul>
+
+<li>
+início tardio do controle do swing;
+</li>
+
+<li>
+razão de guinada excessiva;
+</li>
+
+<li>
+excesso de velocidade;
+</li>
+
+<li>
+corrente favorável ao desenvolvimento da curva;
+</li>
+
+<li>
+resposta de governo diferente da esperada.
+</li>
+
+</ul>
+
+
+
+<h3>
+Undershoot
+</h3>
+
+<p>
+O termo
+<strong>undershoot</strong>
+pode ser utilizado
+para descrever uma condição
+na qual a embarcação
+não desenvolve
+a alteração necessária
+para atingir adequadamente
+a trajetória pretendida.
+</p>
+
+<p>
+Isso pode ocorrer,
+por exemplo,
+quando:
+</p>
+
+<ul>
+
+<li>
+a guinada é interrompida cedo demais;
+</li>
+
+<li>
+o ângulo de leme é insuficiente;
+</li>
+
+<li>
+a resposta do navio é menor que a esperada;
+</li>
+
+<li>
+uma força externa se opõe à curva.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Objetivo</h3>
+
+<p>
+Uma boa curva
+não é aquela
+que apresenta o maior ROT.
+</p>
+
+<p>
+É aquela
+que coloca o navio
+<strong>
+na posição certa,
+no rumo certo
+e com a razão de guinada controlada
+ao entrar na próxima perna.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+     PROA E POPA DURANTE A CURVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="trajetoria-proa-popa"
+data-topico-id="trajetoria-proa-popa">
+
+<h2>
+33. Trajetória da proa e trajetória da popa
+</h2>
+
+<div class="widget">
+
+<p>
+Até aqui,
+falamos principalmente
+da trajetória utilizada
+para representar
+o movimento geral do navio.
+</p>
+
+<p>
+Mas,
+durante a guinada,
+proa
+e popa
+descrevem trajetórias diferentes.
+</p>
+
+<p>
+Em razão da rotação
+em torno do
+<strong>pivot point</strong>,
+a região de ré
+pode percorrer
+um arco lateral significativo.
+</p>
+
+<p>
+Essa abertura da popa
+é denominada
+<strong>stern swing</strong>.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 700"
+role="img"
+aria-label="Vista superior mostrando trajetórias diferentes da proa e da popa durante uma curva">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="620"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="82"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+TRAJETÓRIAS DA PROA E DA POPA
+
+</text>
+
+
+<!-- SHIP INITIAL -->
+
+<path
+d="
+M270 520
+C245 505 235 480 235 450
+L235 370
+C235 345 250 325 270 315
+C290 325 305 345 305 370
+L305 450
+C305 480 295 505 270 520
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+transform="rotate(90 270 420)"
+/>
+
+
+<!-- PIVOT -->
+
+<circle
+cx="355"
+cy="420"
+r="10"
+fill="#c0392b"
+/>
+
+<text
+x="355"
+y="390"
+text-anchor="middle"
+font-size="17"
+font-weight="700"
+fill="#c0392b">
+
+PIVOT POINT
+
+</text>
+
+
+<!-- BOW TRACK -->
+
+<path
+d="
+M355 420
+Q620 420 750 180
+"
+fill="none"
+stroke="#247ca3"
+stroke-width="7"
+/>
+
+<text
+x="770"
+y="170"
+font-size="18"
+font-weight="700"
+fill="#247ca3">
+
+BOW TRACK
+
+</text>
+
+
+<!-- STERN TRACK -->
+
+<path
+d="
+M185 420
+Q500 590 760 360
+"
+fill="none"
+stroke="#b23d35"
+stroke-width="7"
+/>
+
+<text
+x="775"
+y="370"
+font-size="18"
+font-weight="700"
+fill="#b23d35">
+
+STERN TRACK
+
+</text>
+
+
+<!-- SWEEP -->
+
+<path
+d="
+M190 430
+Q375 590 525 520
+"
+fill="none"
+stroke="#d28b23"
+stroke-width="4"
+stroke-dasharray="11 8"
+/>
+
+<text
+x="340"
+y="590"
+font-size="18"
+font-weight="700"
+fill="#b97518">
+
+STERN SWING
+
+</text>
+
+
+<text
+x="550"
+y="630"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+Durante a rotação,
+a popa pode varrer
+uma área lateral significativa
+no bordo externo da curva.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 13.</strong>
+Representação esquemática
+das diferentes trajetórias
+descritas pela proa
+e pela popa
+durante uma alteração de rumo.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Ao iniciar uma curva
+para boreste,
+a atenção não deve
+se concentrar apenas
+no espaço disponível
+a boreste para a proa.
+</p>
+
+<p>
+Também deve ser verificado
+o espaço disponível
+a bombordo
+para a abertura da popa.
+</p>
+
+<p>
+Em determinadas situações,
+<strong>
+o perigo inicial da curva
+está no bordo oposto
+ao bordo para o qual a proa está guinando.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+     SWEPT PATH
+========================================= -->
+
+<section
+class="topico-aula"
+id="swept-path"
+data-topico-id="swept-path">
+
+<h2>
+34. Swept Path — área varrida pelo navio
+</h2>
+
+<div class="widget">
+
+<p>
+A trajetória de um único ponto
+não representa
+toda a área ocupada
+pela embarcação
+durante uma curva.
+</p>
+
+<p>
+O navio possui:
+</p>
+
+<ul>
+
+<li>
+comprimento;
+</li>
+
+<li>
+boca;
+</li>
+
+<li>
+ângulo de deriva;
+</li>
+
+<li>
+rotação;
+</li>
+
+<li>
+movimento lateral.
+</li>
+
+</ul>
+
+<p>
+Consequentemente,
+todo o casco
+varre uma determinada
+faixa de água
+durante a manobra.
+</p>
+
+<p>
+Essa ideia pode ser representada
+pelo conceito de
+<strong>swept path</strong>.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Não acompanhe apenas uma linha</h3>
+
+<p>
+Uma linha representa
+a trajetória de um ponto.
+</p>
+
+<p>
+O navio real
+ocupa uma
+<strong>faixa</strong>.
+</p>
+
+<p>
+Em águas restritas,
+é essa faixa
+que precisa caber
+dentro da área segura.
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 700"
+role="img"
+aria-label="Área varrida pelo casco durante uma curva em canal">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="620"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="82"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+SWEPT PATH — ÁREA VARRIDA PELO NAVIO
+
+</text>
+
+
+<!-- OUTER BOUNDARY -->
+
+<path
+d="
+M130 540
+L380 540
+C620 540 800 360 800 130
+"
+fill="none"
+stroke="#b44a3a"
+stroke-width="90"
+opacity="0.25"
+/>
+
+
+<!-- INNER BOUNDARY -->
+
+<path
+d="
+M130 540
+L380 540
+C620 540 800 360 800 130
+"
+fill="none"
+stroke="#2b80a7"
+stroke-width="6"
+/>
+
+
+<!-- LABEL -->
+
+<text
+x="560"
+y="445"
+font-size="22"
+font-weight="700"
+fill="#a23e32">
+
+SWEPT AREA
+
+</text>
+
+
+<!-- SHIPS -->
+
+<g transform="translate(300 500) rotate(90)">
+
+<path
+d="
+M0 -65
+C-25 -50 -35 -25 -35 10
+L-35 70
+C-35 95 -18 115 0 125
+C18 115 35 95 35 70
+L35 10
+C35 -25 25 -50 0 -65
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<g transform="translate(690 390) rotate(40)">
+
+<path
+d="
+M0 -65
+C-25 -50 -35 -25 -35 10
+L-35 70
+C-35 95 -18 115 0 125
+C18 115 35 95 35 70
+L35 10
+C35 -25 25 -50 0 -65
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<g transform="translate(800 215)">
+
+<path
+d="
+M0 -65
+C-25 -50 -35 -25 -35 10
+L-35 70
+C-35 95 -18 115 0 125
+C18 115 35 95 35 70
+L35 10
+C35 -25 25 -50 0 -65
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<text
+x="550"
+y="635"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+A área necessária à manobra
+é maior que a trajetória
+de qualquer ponto isolado do navio.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 14.</strong>
+Representação conceitual
+da faixa de água
+ocupada pelo casco
+durante o desenvolvimento
+de uma curva.
+
+</figcaption>
+
+</figure>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 35
+     CURVA PLANEJADA × CURVA REAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="curva-planejada-real"
+data-topico-id="curva-planejada-real">
+
+<h2>
+35. Curva planejada × curva realmente executada
+</h2>
+
+<div class="widget">
+
+<p>
+O planejamento estabelece
+uma trajetória pretendida.
+</p>
+
+<p>
+Entretanto,
+a curva real
+será influenciada
+pelas condições encontradas
+durante a execução.
+</p>
+
+<p>
+Entre elas:
+</p>
+
+<ul>
+
+<li>
+velocidade real;
+</li>
+
+<li>
+corrente;
+</li>
+
+<li>
+vento;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+efeitos de margem;
+</li>
+
+<li>
+tráfego;
+</li>
+
+<li>
+resposta do sistema de governo;
+</li>
+
+<li>
+condição de carregamento;
+</li>
+
+<li>
+ação aplicada pelo timoneiro.
+</li>
+
+</ul>
+
+<p>
+Por isso,
+a curva planejada
+serve como referência.
+</p>
+
+<p>
+A curva real
+precisa ser continuamente
+comparada com ela.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Princípio de monitoramento</h3>
+
+<p>
+<strong>
+Planejar → executar → observar → comparar → corrigir.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Um plano não deve
+ser seguido cegamente
+quando as condições reais
+se afastam das previstas.
+</p>
+
+<p>
+A função do planejamento
+é aumentar a capacidade
+de antecipação,
+não eliminar
+o julgamento profissional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 36
+     ERRO MAIS COMUM
+========================================= -->
+
+<section
+class="topico-aula"
+id="erros-curva-canal"
+data-topico-id="erros-curva-canal">
+
+<h2>
+36. Erros típicos na execução de curvas em canais
+</h2>
+
+<div class="widget">
+
+<p>
+A compreensão dos conceitos anteriores
+permite reconhecer
+alguns padrões de erro.
+</p>
+
+
+
+<h3>
+1. Iniciar tarde
+</h3>
+
+<p>
+O navio ultrapassa
+a trajetória desejada
+antes de desenvolver
+a guinada necessária.
+</p>
+
+
+
+<h3>
+2. Iniciar cedo demais
+</h3>
+
+<p>
+O navio entra prematuramente
+na parte interna da curva
+e pode ser necessário
+interromper o swing.
+</p>
+
+
+
+<h3>
+3. Aplicar leme excessivo
+</h3>
+
+<p>
+O ROT cresce rapidamente
+e exige ação intensa
+para ser controlado
+ao final.
+</p>
+
+
+
+<h3>
+4. Fixar a atenção apenas no heading
+</h3>
+
+<p>
+O rumo pode parecer adequado
+enquanto a trajetória real
+está deslocada
+pela corrente.
+</p>
+
+
+
+<h3>
+5. Observar apenas a proa
+</h3>
+
+<p>
+A popa pode aproximar-se
+do limite externo
+durante o início da guinada.
+</p>
+
+
+
+<h3>
+6. Aguardar demais para check the swing
+</h3>
+
+<p>
+O navio ultrapassa
+o rumo planejado
+e entra na próxima perna
+com ROT residual.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Curva bem executada</h3>
+
+<p>
+Uma boa curva termina com:
+</p>
+
+<ul>
+
+<li>
+navio na posição correta;
+</li>
+
+<li>
+proa no rumo desejado;
+</li>
+
+<li>
+popa dentro da margem;
+</li>
+
+<li>
+ROT controlado;
+</li>
+
+<li>
+e movimento estabilizado
+para a próxima perna.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 37
+     MODELO MENTAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="modelo-mental-curva"
+data-topico-id="modelo-mental-curva">
+
+<h2>
+37. Modelo mental completo de uma curva
+</h2>
+
+<div class="widget">
+
+<p>
+Antes de cada alteração
+de rumo em águas restritas,
+o Prático pode organizar
+seu raciocínio
+em três fases.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>ANTES DA CURVA</h3>
+
+<ul>
+
+<li>
+qual será a alteração de rumo?
+</li>
+
+<li>
+qual a velocidade?
+</li>
+
+<li>
+qual o turning point?
+</li>
+
+<li>
+onde iniciarei a guinada?
+</li>
+
+<li>
+qual advance espero?
+</li>
+
+<li>
+quanto espaço existe?
+</li>
+
+<li>
+qual corrente está atuando?
+</li>
+
+<li>
+onde a popa irá abrir?
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>DURANTE A CURVA</h3>
+
+<ul>
+
+<li>
+o swing começou como esperado?
+</li>
+
+<li>
+qual o ROT?
+</li>
+
+<li>
+como as referências visuais
+estão se movendo?
+</li>
+
+<li>
+onde estão proa e popa?
+</li>
+
+<li>
+a trajetória permanece
+dentro da área segura?
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>SAINDO DA CURVA</h3>
+
+<ul>
+
+<li>
+quando devo check the swing?
+</li>
+
+<li>
+qual ROT ainda permanece?
+</li>
+
+<li>
+o navio entrará
+na nova perna
+na posição desejada?
+</li>
+
+<li>
+há necessidade
+de correção lateral?
+</li>
+
+<li>
+o navio está estabilizado
+para o próximo trecho?
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Síntese operacional</h3>
+
+<p>
+A curva não começa
+quando o navio vira.
+</p>
+
+<p>
+Ela começa
+<strong>
+quando o Prático decide
+onde e como o navio deverá virar.
+</strong>
+</p>
+
+<p>
+Da mesma forma,
+a curva não termina
+quando a proa
+alcança o novo rumo.
+</p>
+
+<p>
+Ela termina
+quando:
+</p>
+
+<p>
+<strong>
+posição,
+heading,
+trajetória
+e rate of turn
+estão novamente sob controle.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Terminologia essencial da Parte 4</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Turning Point</strong>
+</td>
+
+<td>
+Ponto de alteração de rumo
+</td>
+
+<td>
+Referência geométrica
+entre duas pernas sucessivas
+da derrota.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Wheel-Over Point — WOP</strong>
+</td>
+
+<td>
+Ponto de início da guinada
+</td>
+
+<td>
+Posição planejada
+para iniciar
+a ação de governo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Pivot Point</strong>
+</td>
+
+<td>
+Ponto de giro aparente
+</td>
+
+<td>
+Referência aparente
+em torno da qual
+o navio parece desenvolver
+sua rotação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Rate of Turn — ROT</strong>
+</td>
+
+<td>
+Razão de guinada
+</td>
+
+<td>
+Velocidade angular
+com que o heading
+está mudando.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Check the Swing</strong>
+</td>
+
+<td>
+Conter / reduzir a guinada
+</td>
+
+<td>
+Ação destinada
+a reduzir
+a razão de guinada adquirida.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Overshoot</strong>
+</td>
+
+<td>
+Ultrapassagem
+</td>
+
+<td>
+Condição em que
+o navio ultrapassa
+o rumo ou trajetória desejada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Stern Swing</strong>
+</td>
+
+<td>
+Abertura da popa
+</td>
+
+<td>
+Movimento lateral
+da popa
+durante a guinada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Bow Track</strong>
+</td>
+
+<td>
+Trajetória da proa
+</td>
+
+<td>
+Caminho descrito
+pela extremidade de vante
+durante a evolução.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Swept Path</strong>
+</td>
+
+<td>
+Faixa / área varrida
+</td>
+
+<td>
+Área total ocupada
+pelo casco
+durante o movimento.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Turning Reference</strong>
+</td>
+
+<td>
+Referência de curva
+</td>
+
+<td>
+Objeto ou posição
+utilizada para avaliar
+o desenvolvimento
+da alteração de rumo.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 4
+========================================= -->
+
+<!-- =========================================
+     INÍCIO PARTE 5
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 5
+     NAVEGAÇÃO DE SEGURANÇA,
+     LIMITES E MONITORAMENTO
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — NAVEGAÇÃO DE SEGURANÇA,
+LIMITES E MONITORAMENTO
+</h2>
+
+<p>
+Nas partes anteriores,
+estudamos principalmente
+<strong>como o navio se movimenta</strong>
+e
+<strong>quanto espaço precisa para manobrar</strong>.
+</p>
+
+<p>
+Agora passaremos a estudar
+como transformar os perigos
+representados na carta
+em
+<strong>limites objetivos de segurança</strong>
+que possam ser acompanhados
+durante a navegação.
+</p>
+
+<p>
+Esse é um princípio fundamental
+da navegação em águas restritas.
+</p>
+
+<p>
+Não basta conhecer
+a localização de uma pedra,
+baixio,
+molhe
+ou margem.
+</p>
+
+<p>
+É muito mais útil
+estabelecer previamente:
+</p>
+
+<p>
+<strong>
+“até onde posso ir
+sem entrar em uma área perigosa?”
+</strong>
+</p>
+
+<p>
+Miguens desenvolve essa abordagem
+por meio das
+<strong>
+Linhas de Posição de Segurança — LDP de segurança
+</strong>.
+</p>
+
+<p>
+O
+<strong>Bridge Procedures Guide</strong>,
+por sua vez,
+complementa esse raciocínio
+com técnicas de monitoramento,
+incluindo:
+</p>
+
+<ul>
+
+<li>
+<strong>heading transits;</strong>
+</li>
+
+<li>
+<strong>beam transits;</strong>
+</li>
+
+<li>
+<strong>clearing bearings;</strong>
+</li>
+
+<li>
+<strong>radar ranges;</strong>
+</li>
+
+<li>
+<strong>parallel indexing.</strong>
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>🧠 Mudança de raciocínio</h3>
+
+<p>
+Em vez de perguntar apenas:
+</p>
+
+<p>
+<strong>
+“onde está o perigo?”
+</strong>
+</p>
+
+<p>
+o navegante procura estabelecer:
+</p>
+
+<p>
+<strong>
+“qual é o limite que não devo ultrapassar?”
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 38
+     NAVEGAÇÃO DE SEGURANÇA
+========================================= -->
+
+<section
+class="topico-aula"
+id="linhas-seguranca-aguas-restritas"
+data-topico-id="linhas-seguranca-aguas-restritas">
+
+<h2>
+38. Navegação de segurança em águas restritas
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta
+o emprego das
+<strong>Linhas de Posição de Segurança</strong>
+como procedimento particularmente importante
+quando o navio precisa passar
+a salvo de perigos,
+inclusive em situações
+nas quais sua posição
+não possa ser determinada
+com a precisão desejada.
+</p>
+
+<p>
+A ideia é estabelecer
+uma referência
+em relação à qual
+o movimento da embarcação
+possa ser continuamente avaliado.
+</p>
+
+<p>
+Antes da passagem,
+o navegante identifica
+na carta:
+</p>
+
+<ul>
+
+<li>
+águas consideradas seguras;
+</li>
+
+<li>
+áreas que devem ser evitadas;
+</li>
+
+<li>
+profundidades limitantes;
+</li>
+
+<li>
+distâncias mínimas aos perigos;
+</li>
+
+<li>
+referências visuais ou radar disponíveis;
+</li>
+
+<li>
+e limites que possam ser monitorados
+durante a execução.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>Princípio fundamental</h3>
+
+<p>
+<strong>
+O perigo deve ser transformado
+em um limite observável.
+</strong>
+</p>
+
+<p>
+Assim,
+em vez de esperar
+até determinar exatamente
+se o navio entrou
+em determinada área perigosa,
+o navegante pode reconhecer
+antecipadamente
+a aproximação desse limite.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Para o Prático,
+esse raciocínio possui enorme valor.
+</p>
+
+<p>
+Em uma aproximação estreita,
+podem existir simultaneamente:
+</p>
+
+<ul>
+
+<li>
+um limite mínimo de profundidade;
+</li>
+
+<li>
+um limite lateral por bombordo;
+</li>
+
+<li>
+outro limite por boreste;
+</li>
+
+<li>
+uma distância mínima a um molhe;
+</li>
+
+<li>
+e uma linha de alinhamento
+para conduzir o navio.
+</li>
+
+</ul>
+
+<p>
+A segurança resulta
+da observação conjunta
+dessas referências.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 39
+     LINHA DE PERIGO
+========================================= -->
+
+<section
+class="topico-aula"
+id="linha-perigo"
+data-topico-id="linha-perigo">
+
+<h2>
+39. Linha de perigo — Danger Line
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens emprega
+o conceito de
+<strong>linha de perigo</strong>
+para delimitar áreas
+que devem ser evitadas
+pela embarcação.
+</p>
+
+<p>
+Essa delimitação pode ser construída,
+entre outros critérios,
+com base:
+</p>
+
+<ul>
+
+<li>
+na profundidade;
+</li>
+
+<li>
+ou na distância
+ao perigo mais próximo.
+</li>
+
+</ul>
+
+
+
+<h3>
+Critério de profundidade
+</h3>
+
+<p>
+Pelo critério das profundidades,
+o navegante identifica
+uma profundidade mínima
+compatível com:
+</p>
+
+<ul>
+
+<li>
+o calado do navio;
+</li>
+
+<li>
+a margem de segurança
+abaixo da quilha;
+</li>
+
+<li>
+a maré;
+</li>
+
+<li>
+o squat;
+</li>
+
+<li>
+as condições meteoceanográficas
+pertinentes.
+</li>
+
+</ul>
+
+<p>
+A partir disso,
+as áreas que não oferecem
+a profundidade considerada segura
+podem ser destacadas
+como áreas a evitar.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Importante</h3>
+
+<p>
+Miguens mostra claramente
+que a segurança vertical
+não depende apenas
+do valor nominal do calado.
+</p>
+
+<p>
+Deve existir uma
+<strong>margem adicional de segurança</strong>
+entre a quilha
+e o fundo.
+</p>
+
+<p>
+Esse assunto será aprofundado
+na parte específica sobre
+<strong>UKC e squat</strong>.
+</p>
+
+</div>
+
+
+
+<h3>
+Critério de distância ao perigo
+</h3>
+
+<p>
+Outro procedimento descrito
+por Miguens consiste
+em estabelecer previamente
+a menor distância
+que se deseja manter
+dos perigos da área.
+</p>
+
+<p>
+Uma linha pode então
+ser construída
+ligando pontos
+situados à distância estabelecida
+dos perigos.
+</p>
+
+<p>
+O resultado é uma fronteira
+que separa,
+para aquela passagem,
+a área considerada aceitável
+da área que deve ser evitada.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 40
+     GO / NO-GO AREAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="go-no-go-areas"
+data-topico-id="go-no-go-areas">
+
+<h2>
+40. Áreas navegáveis e áreas a evitar
+</h2>
+
+<div class="widget">
+
+<p>
+O raciocínio desenvolvido por Miguens
+pode ser visualizado
+como a separação da carta
+em duas grandes categorias:
+</p>
+
+<ul>
+
+<li>
+áreas compatíveis
+com a navegação planejada;
+</li>
+
+<li>
+áreas que não devem ser utilizadas
+pela embarcação.
+</li>
+
+</ul>
+
+<p>
+Na terminologia moderna
+de planejamento,
+é comum encontrar
+a expressão:
+</p>
+
+<p>
+<strong>
+No-Go Area
+</strong>
+</p>
+
+<p>
+para identificar uma região
+que não deverá ser penetrada
+durante a passagem.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 700"
+role="img"
+aria-label="Carta esquemática mostrando área navegável, área de perigo e linha de segurança">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="620"
+rx="18"
+fill="#f6fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+ÁREA SEGURA × NO-GO AREA
+
+</text>
+
+
+<!-- ÁGUA -->
+
+<rect
+x="100"
+y="120"
+width="900"
+height="460"
+fill="#dceff6"
+/>
+
+
+<!-- COSTA -->
+
+<path
+d="
+M100 120
+L100 580
+L260 580
+L280 530
+L245 480
+L310 430
+L270 380
+L325 320
+L295 260
+L350 210
+L330 120
+Z"
+fill="#d8c79f"
+stroke="#8b744b"
+stroke-width="4"
+/>
+
+
+<!-- ÁREA PERIGOSA -->
+
+<path
+d="
+M330 150
+C420 190 420 270 375 330
+C345 375 390 420 355 485
+C330 530 305 550 260 565
+L260 580
+L100 580
+L100 120
+L330 120
+Z"
+fill="#eaa5a0"
+opacity="0.75"
+/>
+
+
+<!-- LINHA DE PERIGO -->
+
+<path
+d="
+M375 145
+C465 200 455 280 415 340
+C385 385 435 435 395 505
+"
+fill="none"
+stroke="#c0382d"
+stroke-width="6"
+stroke-dasharray="13 9"
+/>
+
+
+<!-- DERROTA -->
+
+<path
+d="
+M510 540
+L575 420
+L640 310
+L745 180
+"
+fill="none"
+stroke="#247ca3"
+stroke-width="7"
+/>
+
+
+<!-- LABELS -->
+
+<text
+x="205"
+y="360"
+text-anchor="middle"
+font-size="22"
+font-weight="700"
+fill="#8e2923">
+
+NO-GO AREA
+
+</text>
+
+<text
+x="720"
+y="420"
+text-anchor="middle"
+font-size="22"
+font-weight="700"
+fill="#2f7046">
+
+ÁREA NAVEGÁVEL
+
+</text>
+
+<text
+x="470"
+y="290"
+font-size="18"
+font-weight="700"
+fill="#b43129">
+
+LINHA DE PERIGO
+
+</text>
+
+
+<!-- SHIP -->
+
+<g transform="translate(575 420) rotate(30)">
+
+<path
+d="
+M0 -55
+C-20 -42 -28 -20 -28 10
+L-28 60
+C-28 82 -14 98 0 106
+C14 98 28 82 28 60
+L28 10
+C28 -20 20 -42 0 -55
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<text
+x="550"
+y="625"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+A linha de perigo transforma
+uma região insegura
+em um limite claramente identificável.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 15.</strong>
+Representação conceitual
+de uma linha de perigo
+separando uma área a evitar
+da região destinada
+à passagem segura.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Uma área segura
+não significa necessariamente
+uma área ideal
+para qualquer manobra.
+</p>
+
+<p>
+Ainda devem ser consideradas:
+</p>
+
+<ul>
+
+<li>
+dimensões do navio;
+</li>
+
+<li>
+swept path;
+</li>
+
+<li>
+corrente;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+efeitos de margem;
+</li>
+
+<li>
+tráfego;
+</li>
+
+<li>
+capacidade de resposta da embarcação.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 41
+     ALINHAMENTOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="alinhamentos-seguranca"
+data-topico-id="alinhamentos-seguranca">
+
+<h2>
+41. Alinhamentos como LDP de segurança
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens destaca
+os
+<strong>alinhamentos</strong>
+como uma das mais precisas
+Linhas de Posição de Segurança.
+</p>
+
+<p>
+Quando dois objetos
+adequadamente posicionados
+aparecem alinhados,
+o navio encontra-se
+sobre uma linha geográfica
+bem definida.
+</p>
+
+<p>
+Em um canal,
+essa referência pode permitir
+que o navegante mantenha:
+</p>
+
+<ul>
+
+<li>
+a proa sobre o alinhamento;
+</li>
+
+<li>
+ou,
+em determinadas situações,
+a popa sobre o alinhamento.
+</li>
+
+</ul>
+
+<p>
+Enquanto essa condição
+for mantida,
+o navio seguirá
+a direção correspondente
+ao alinhamento
+ou à sua recíproca.
+</p>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 680"
+role="img"
+aria-label="Navio navegando por um canal utilizando duas marcas de alinhamento">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="600"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+ALINHAMENTO — LEADING LINE
+
+</text>
+
+
+<!-- CHANNEL -->
+
+<rect
+x="360"
+y="120"
+width="380"
+height="470"
+fill="#dceff6"
+stroke="#356d89"
+stroke-width="4"
+/>
+
+
+<!-- ALIGNMENT -->
+
+<line
+x1="550"
+y1="565"
+x2="550"
+y2="140"
+stroke="#c0392b"
+stroke-width="4"
+stroke-dasharray="12 9"
+/>
+
+
+<!-- FRONT MARK -->
+
+<rect
+x="530"
+y="175"
+width="40"
+height="80"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<polygon
+points="550,145 520,180 580,180"
+fill="#d04337"
+/>
+
+
+<!-- REAR MARK -->
+
+<rect
+x="520"
+y="105"
+width="60"
+height="75"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<polygon
+points="550,65 510,110 590,110"
+fill="#d04337"
+/>
+
+
+<!-- SHIP -->
+
+<g transform="translate(550 450)">
+
+<path
+d="
+M0 -70
+C-27 -52 -37 -24 -37 15
+L-37 75
+C-37 100 -19 120 0 130
+C19 120 37 100 37 75
+L37 15
+C37 -24 27 -52 0 -70
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+</g>
+
+
+<text
+x="550"
+y="615"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+Quando as duas marcas permanecem alinhadas,
+o navio está sobre a linha definida pelo alinhamento.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 16.</strong>
+Princípio de utilização
+de duas marcas de alinhamento
+como referência
+para condução do navio.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Vantagem</h3>
+
+<p>
+O alinhamento fornece
+uma indicação visual direta
+do desvio transversal.
+</p>
+
+<p>
+Quando as duas marcas
+deixam de coincidir,
+o navegante percebe
+imediatamente
+que o navio saiu
+da linha estabelecida.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Transit</strong>
+</td>
+
+<td>
+Alinhamento
+</td>
+
+<td>
+Alinhamento visual
+entre dois objetos
+que define uma linha conhecida.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Leading Line</strong>
+</td>
+
+<td>
+Linha de enfiamento / alinhamento
+</td>
+
+<td>
+Linha destinada
+a orientar a embarcação
+ao longo de uma direção definida.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Heading Transit</strong>
+</td>
+
+<td>
+Alinhamento de proa
+</td>
+
+<td>
+Referência utilizada
+para acompanhar
+uma direção segura de governo.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 42
+     MARCAÇÃO DE SEGURANÇA
+========================================= -->
+
+<section
+class="topico-aula"
+id="clearing-bearing"
+data-topico-id="clearing-bearing">
+
+<h2>
+42. Marcação de segurança — Clearing Bearing
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta
+a
+<strong>marcação de segurança</strong>,
+também chamada
+<strong>marcação de perigo</strong>,
+como uma LDP
+capaz de indicar
+o limite de uma região perigosa.
+</p>
+
+<p>
+O método utiliza
+um objeto bem definido,
+como:
+</p>
+
+<ul>
+
+<li>
+um farol;
+</li>
+
+<li>
+uma torre;
+</li>
+
+<li>
+um tanque;
+</li>
+
+<li>
+ou outro ponto notável
+representado na carta.
+</li>
+
+</ul>
+
+<p>
+A linha correspondente
+é estabelecida tangenciando
+o limite da área perigosa.
+</p>
+
+<p>
+Durante a passagem,
+a marcação observada
+do objeto
+é comparada
+com a marcação limite previamente calculada.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>⚠ Detalhe importante de Miguens</h3>
+
+<p>
+A marcação de segurança
+é determinada:
+</p>
+
+<p>
+<strong>
+DO NAVIO PARA O PONTO DE REFERÊNCIA.
+</strong>
+</p>
+
+<p>
+Ou seja,
+a direção considerada
+é do largo
+para o objeto utilizado.
+</p>
+
+<p>
+Não se utiliza,
+para esse propósito,
+a recíproca da marcação.
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 680"
+role="img"
+aria-label="Marcação de segurança tangente a uma área perigosa">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="600"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="82"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+CLEARING BEARING — MARCAÇÃO DE SEGURANÇA
+
+</text>
+
+
+<!-- WATER -->
+
+<rect
+x="100"
+y="120"
+width="900"
+height="450"
+fill="#dceff6"
+/>
+
+
+<!-- DANGER -->
+
+<ellipse
+cx="780"
+cy="340"
+rx="150"
+ry="120"
+fill="#e8a29c"
+stroke="#b63830"
+stroke-width="4"
+/>
+
+<text
+x="780"
+y="345"
+text-anchor="middle"
+font-size="20"
+font-weight="700"
+fill="#8d2923">
+
+ÁREA DE PERIGO
+
+</text>
+
+
+<!-- LIGHTHOUSE -->
+
+<rect
+x="835"
+y="125"
+width="35"
+height="80"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<polygon
+points="852,95 820,130 884,130"
+fill="#d4473c"
+/>
+
+<text
+x="900"
+y="135"
+font-size="18"
+font-weight="700"
+fill="#173f5f">
+
+FAROL
+
+</text>
+
+
+<!-- TANGENT -->
+
+<line
+x1="250"
+y1="530"
+x2="852"
+y2="155"
+stroke="#c0392b"
+stroke-width="6"
+/>
+
+
+<!-- SHIP -->
+
+<g transform="translate(250 530) rotate(58)">
+
+<path
+d="
+M0 -50
+C-20 -38 -27 -18 -27 10
+L-27 55
+C-27 75 -14 90 0 98
+C14 90 27 75 27 55
+L27 10
+C27 -18 20 -38 0 -50
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<text
+x="425"
+y="430"
+font-size="19"
+font-weight="700"
+fill="#b0332b">
+
+MARCAÇÃO LIMITE
+
+</text>
+
+
+<text
+x="550"
+y="615"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+A linha tangente à área perigosa
+define uma marcação limite
+que pode ser monitorada durante a passagem.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 17.</strong>
+Princípio geométrico
+de uma marcação de segurança:
+a linha tangencia
+o limite da área perigosa.
+
+</figcaption>
+
+</figure>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Uma clearing bearing
+é extremamente útil
+porque permite transformar
+uma informação complexa da carta
+em uma verificação simples:
+</p>
+
+<p>
+<strong>
+“a marcação observada
+ainda está do lado seguro
+do valor limite?”
+</strong>
+</p>
+
+<p>
+O Prático não precisa
+esperar uma nova posição completa
+para perceber
+que o navio está se aproximando
+de determinada área perigosa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 43
+     PERIGOS EM DOIS BORDOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="clearing-bearings-dois-bordos"
+data-topico-id="clearing-bearings-dois-bordos">
+
+<h2>
+43. Limites de segurança nos dois bordos
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens apresenta também
+uma situação especialmente importante
+para águas restritas:
+</p>
+
+<p>
+<strong>
+perigos existentes
+nos dois bordos
+da derrota.
+</strong>
+</p>
+
+<p>
+Nesse caso,
+podem ser estabelecidas
+duas marcações de segurança:
+</p>
+
+<ul>
+
+<li>
+uma representando
+o limite de um bordo;
+</li>
+
+<li>
+outra representando
+o limite do bordo oposto.
+</li>
+
+</ul>
+
+<p>
+Forma-se,
+assim,
+uma espécie de
+<strong>corredor angular de segurança</strong>.
+</p>
+
+<p>
+Enquanto a marcação observada
+permanecer entre os dois valores,
+o navio permanecerá
+dentro da faixa delimitada
+por aquelas referências.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Conceito para memorizar</h3>
+
+<p>
+Uma clearing bearing
+pode dizer:
+</p>
+
+<p>
+<strong>
+“NÃO ULTRAPASSE ESTE LIMITE.”
+</strong>
+</p>
+
+<p>
+Duas clearing bearings
+podem dizer:
+</p>
+
+<p>
+<strong>
+“PERMANEÇA ENTRE ESTES DOIS LIMITES.”
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+O valor da marcação isoladamente
+não é suficiente.
+</p>
+
+<p>
+É necessário conhecer previamente:
+</p>
+
+<ul>
+
+<li>
+qual bordo corresponde
+a cada limite;
+</li>
+
+<li>
+qual sentido de variação
+indica aproximação do perigo;
+</li>
+
+<li>
+e que correção deve ser executada
+caso o limite seja aproximado.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 44
+     LUZES DE SETOR
+========================================= -->
+
+<section
+class="topico-aula"
+id="luzes-setor-seguranca"
+data-topico-id="luzes-setor-seguranca">
+
+<h2>
+44. Luzes de setor como limites de segurança
+</h2>
+
+<div class="widget">
+
+<p>
+Miguens mostra que
+os limites navegáveis
+podem também
+ser indicados
+por
+<strong>luzes de setor</strong>.
+</p>
+
+<p>
+Um setor central
+pode indicar
+a região destinada à navegação,
+enquanto setores coloridos
+indicam que o navio
+cruzou determinado limite.
+</p>
+
+<p>
+Na configuração descrita
+pela publicação,
+um setor branco estreito
+pode representar
+a área navegável principal,
+enquanto setores coloridos
+funcionam como advertência
+de desvio.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Característica importante</h3>
+
+<p>
+A luz de setor
+fornece essencialmente
+uma indicação:
+</p>
+
+<p>
+<strong>
+DENTRO / FORA
+</strong>
+</p>
+
+<p>
+ou,
+nas palavras do raciocínio operacional:
+</p>
+
+<p>
+<strong>
+SEGURO / LIMITE ULTRAPASSADO.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Limitação importante</h3>
+
+<p>
+Miguens destaca
+que,
+depois de entrar
+em um setor colorido,
+o navegante sabe
+que ultrapassou o limite,
+mas não consegue determinar
+apenas pela cor
+<strong>quanto avançou</strong>
+dentro daquele setor.
+</p>
+
+<p>
+Por isso,
+a correção deve ser iniciada
+sem demora,
+considerando ainda
+o espaço necessário
+para que o navio responda.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 45
+     DISTÂNCIA DE PERIGO
+========================================= -->
+
+<section
+class="topico-aula"
+id="distancia-perigo"
+data-topico-id="distancia-perigo">
+
+<h2>
+45. Distância de perigo — Clearing Range
+</h2>
+
+<div class="widget">
+
+<p>
+Outra forma de criar
+um limite de segurança
+é utilizar uma
+<strong>distância de perigo</strong>.
+</p>
+
+<p>
+Miguens apresenta
+o caso em que
+a distância de um farol
+ou outra referência
+é utilizada
+para garantir que o navio
+permaneça afastado
+de perigos existentes
+na área.
+</p>
+
+<p>
+Durante a passagem,
+a distância observada
+é repetidamente comparada
+com os limites previamente definidos.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Marcação × Distância</h3>
+
+<p>
+Uma
+<strong>marcação de segurança</strong>
+estabelece um limite angular.
+</p>
+
+<p>
+Uma
+<strong>distância de perigo</strong>
+estabelece um limite radial.
+</p>
+
+<p>
+Ambas transformam
+a geometria da carta
+em uma informação
+que pode ser monitorada
+continuamente.
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1000 640"
+role="img"
+aria-label="Distância de segurança representada por arco em torno de um farol">
+
+<rect
+x="35"
+y="35"
+width="930"
+height="560"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="500"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+CLEARING RANGE — DISTÂNCIA DE PERIGO
+
+</text>
+
+
+<!-- REFERENCE -->
+
+<circle
+cx="700"
+cy="300"
+r="14"
+fill="#c0392b"
+/>
+
+<text
+x="700"
+y="265"
+text-anchor="middle"
+font-size="19"
+font-weight="700"
+fill="#a8322b">
+
+REFERÊNCIA
+
+</text>
+
+
+<!-- RANGE ARC -->
+
+<circle
+cx="700"
+cy="300"
+r="190"
+fill="none"
+stroke="#c0392b"
+stroke-width="5"
+stroke-dasharray="13 9"
+/>
+
+
+<!-- DANGER -->
+
+<ellipse
+cx="815"
+cy="375"
+rx="75"
+ry="55"
+fill="#e7a29d"
+stroke="#b13c34"
+stroke-width="3"
+/>
+
+<text
+x="815"
+y="382"
+text-anchor="middle"
+font-size="17"
+font-weight="700"
+fill="#8a2924">
+
+PERIGO
+
+</text>
+
+
+<!-- SHIP -->
+
+<g transform="translate(375 420) rotate(45)">
+
+<path
+d="
+M0 -50
+C-20 -37 -27 -17 -27 10
+L-27 55
+C-27 74 -14 89 0 97
+C14 89 27 74 27 55
+L27 10
+C27 -17 20 -37 0 -50
+Z"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+</g>
+
+
+<!-- RANGE -->
+
+<line
+x1="395"
+y1="405"
+x2="690"
+y2="310"
+stroke="#2d7447"
+stroke-width="4"
+/>
+
+<text
+x="520"
+y="335"
+text-anchor="middle"
+font-size="19"
+font-weight="700"
+fill="#2d7447">
+
+RANGE
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 18.</strong>
+Uma distância limite
+pode ser utilizada
+para acompanhar
+a aproximação do navio
+a uma região perigosa.
+
+</figcaption>
+
+</figure>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 46
+     MONITORAMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="monitoramento-passagem"
+data-topico-id="monitoramento-passagem">
+
+<h2>
+46. Monitoramento da passagem
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Bridge Procedures Guide</strong>
+destaca diversas técnicas
+para monitoramento
+em águas costeiras
+e de praticagem.
+</p>
+
+<p>
+Entre elas estão:
+</p>
+
+<ul>
+
+<li>
+marcações azimutais
+de objetos representados na carta;
+</li>
+
+<li>
+heading transits;
+</li>
+
+<li>
+beam transits;
+</li>
+
+<li>
+clearing bearings;
+</li>
+
+<li>
+radar bearings;
+</li>
+
+<li>
+radar ranges;
+</li>
+
+<li>
+parallel indexing.
+</li>
+
+</ul>
+
+<p>
+A lógica é importante:
+</p>
+
+<p>
+<strong>
+o passage plan
+não termina
+quando a execução começa.
+</strong>
+</p>
+
+<p>
+O navio precisa ser
+continuamente comparado
+com aquilo que foi planejado.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Planejamento e monitoramento</h3>
+
+<p>
+<strong>
+PLANO:
+onde deveríamos estar.
+</strong>
+</p>
+
+<p>
+<strong>
+MONITORAMENTO:
+onde realmente estamos
+e para onde estamos indo.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 47
+     PARALLEL INDEXING
+========================================= -->
+
+<section
+class="topico-aula"
+id="parallel-indexing"
+data-topico-id="parallel-indexing">
+
+<h2>
+47. Parallel Indexing — Índice Paralelo
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Bridge Procedures Guide</strong>
+recomenda o
+<strong>parallel indexing</strong>
+como técnica
+para ajudar a garantir
+que a trajetória planejada
+do navio seja mantida.
+</p>
+
+<p>
+A técnica utiliza
+um objeto fixo
+claramente identificado
+pelo radar,
+como:
+</p>
+
+<ul>
+
+<li>
+um cabo;
+</li>
+
+<li>
+uma ilha;
+</li>
+
+<li>
+uma estrutura costeira;
+</li>
+
+<li>
+um quebra-mar;
+</li>
+
+<li>
+ou outro eco fixo adequado.
+</li>
+
+</ul>
+
+<p>
+É traçada
+uma
+<strong>Parallel Index Line — PI Line</strong>
+paralela à derrota planejada
+sobre o fundo.
+</p>
+
+<p>
+Essa linha é posicionada
+de forma que corresponda
+à distância de passagem
+que se deseja manter
+do objeto fixo.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Definição operacional</h3>
+
+<p>
+O BPG descreve
+parallel indexing
+como uma técnica
+para avaliar:
+</p>
+
+<p>
+<strong>
+a distância pela qual
+o navio passará
+de um objeto fixo
+ao seguir determinado curso.
+</strong>
+</p>
+
+</div>
+
+
+
+<figure class="figura-aula">
+
+<svg
+viewBox="0 0 1100 700"
+role="img"
+aria-label="Representação radar de parallel indexing com derrota do navio e linha paralela passando por um objeto fixo">
+
+<rect
+x="35"
+y="35"
+width="1030"
+height="620"
+rx="18"
+fill="#f7fafc"
+stroke="#1f4f6f"
+stroke-width="3"
+/>
+
+<text
+x="550"
+y="80"
+text-anchor="middle"
+font-size="28"
+font-weight="700"
+fill="#173f5f">
+
+PARALLEL INDEXING
+
+</text>
+
+
+<!-- RADAR -->
+
+<circle
+cx="550"
+cy="355"
+r="245"
+fill="#e4f0f4"
+stroke="#356d89"
+stroke-width="4"
+/>
+
+<circle
+cx="550"
+cy="355"
+r="160"
+fill="none"
+stroke="#8aaab7"
+stroke-width="2"
+/>
+
+<circle
+cx="550"
+cy="355"
+r="80"
+fill="none"
+stroke="#8aaab7"
+stroke-width="2"
+/>
+
+
+<!-- SHIP -->
+
+<circle
+cx="550"
+cy="355"
+r="8"
+fill="#173f5f"
+/>
+
+<line
+x1="550"
+y1="355"
+x2="550"
+y2="125"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<text
+x="570"
+y="145"
+font-size="17"
+font-weight="700"
+fill="#173f5f">
+
+SHIP'S TRACK
+
+</text>
+
+
+<!-- PI -->
+
+<line
+x1="700"
+y1="540"
+x2="700"
+y2="150"
+stroke="#c0392b"
+stroke-width="6"
+/>
+
+<text
+x="730"
+y="215"
+font-size="18"
+font-weight="700"
+fill="#b1322a">
+
+PI LINE
+
+</text>
+
+
+<!-- FIXED OBJECT -->
+
+<ellipse
+cx="700"
+cy="245"
+rx="37"
+ry="22"
+fill="#658b45"
+/>
+
+<text
+x="805"
+y="250"
+font-size="18"
+font-weight="700"
+fill="#46652f">
+
+FIXED OBJECT
+
+</text>
+
+
+<!-- DISTANCE -->
+
+<line
+x1="550"
+y1="470"
+x2="700"
+y2="470"
+stroke="#d08620"
+stroke-width="5"
+/>
+
+<text
+x="625"
+y="450"
+text-anchor="middle"
+font-size="18"
+font-weight="700"
+fill="#b46d16">
+
+PASSING DISTANCE
+
+</text>
+
+
+<text
+x="550"
+y="645"
+text-anchor="middle"
+font-size="18"
+fill="#333">
+
+A PI line permanece paralela
+ao track planejado
+na distância de passagem desejada.
+
+</text>
+
+</svg>
+
+<figcaption>
+
+<strong>Figura 19.</strong>
+Princípio básico
+do Parallel Indexing:
+a linha de índice é paralela
+ao track planejado
+e posicionada segundo
+a distância desejada
+ao objeto fixo.
+
+</figcaption>
+
+</figure>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 48
+     COMO FUNCIONA PI
+========================================= -->
+
+<section
+class="topico-aula"
+id="funcionamento-parallel-indexing"
+data-topico-id="funcionamento-parallel-indexing">
+
+<h2>
+48. Como interpretar o Parallel Indexing
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o
+<strong>Bridge Procedures Guide</strong>,
+a linha de índice
+é traçada:
+</p>
+
+<p>
+<strong>
+paralela ao ground track planejado
+</strong>
+</p>
+
+<p>
+e toca a extremidade
+do eco radar
+de um objeto fixo
+na distância correspondente
+à distância de passagem desejada.
+</p>
+
+<p>
+Em apresentação
+de
+<strong>relative motion</strong>,
+o objeto fixo
+aparenta mover-se
+ao longo da linha de índice
+em direção
+e velocidade recíprocas
+às do movimento do navio
+sobre o fundo.
+</p>
+
+<p>
+Se o eco permanece
+sobre a PI line
+conforme esperado,
+isso fornece
+uma indicação imediata
+de que a geometria
+da passagem
+está sendo mantida.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Forma simples de visualizar</h3>
+
+<p>
+O navio permanece
+no centro da apresentação.
+</p>
+
+<p>
+O objeto parece mover-se.
+</p>
+
+<p>
+<strong>
+Se ele percorre
+a linha planejada,
+a geometria da passagem
+está sendo mantida.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+A grande vantagem
+do Parallel Indexing
+é permitir acompanhar
+<strong>tendência</strong>,
+e não apenas posições isoladas.
+</p>
+
+<p>
+O Prático consegue perceber
+progressivamente
+se o navio:
+</p>
+
+<ul>
+
+<li>
+está mantendo
+a distância planejada;
+</li>
+
+<li>
+está aproximando-se
+do objeto;
+</li>
+
+<li>
+ou está afastando-se
+da trajetória desejada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 49
+     PI NÃO É FIX
+========================================= -->
+
+<section
+class="topico-aula"
+id="parallel-indexing-nao-e-fix"
+data-topico-id="parallel-indexing-nao-e-fix">
+
+<h2>
+49. Parallel Indexing não é simplesmente uma posição
+</h2>
+
+<div class="widget">
+
+<p>
+O parallel indexing
+não deve ser confundido
+com a obtenção
+de uma posição completa
+por radar.
+</p>
+
+<p>
+Seu valor operacional
+está principalmente
+na capacidade
+de acompanhar
+a relação relativa
+entre:
+</p>
+
+<ul>
+
+<li>
+a derrota do navio;
+</li>
+
+<li>
+um objeto fixo;
+</li>
+
+<li>
+e a distância de passagem planejada.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>Fix × Parallel Index</h3>
+
+<p>
+<strong>Position Fix:</strong>
+</p>
+
+<p>
+“onde está o navio?”
+</p>
+
+<p>
+<strong>Parallel Index:</strong>
+</p>
+
+<p>
+“o navio está mantendo
+a relação planejada
+com este limite?”
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+O Parallel Indexing
+deve ser utilizado
+como parte
+de um sistema de monitoramento.
+</p>
+
+<p>
+Ele não elimina
+a necessidade de:
+</p>
+
+<ul>
+
+<li>
+monitorar a posição;
+</li>
+
+<li>
+verificar o heading;
+</li>
+
+<li>
+acompanhar o ROT;
+</li>
+
+<li>
+observar referências visuais;
+</li>
+
+<li>
+e utilizar outros meios independentes
+disponíveis.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 50
+     PI EM CURVAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="parallel-indexing-curvas"
+data-topico-id="parallel-indexing-curvas">
+
+<h2>
+50. Parallel Indexing antes e depois de uma curva
+</h2>
+
+<div class="widget">
+
+<p>
+Em águas restritas,
+as linhas de índice
+podem ser planejadas
+para diferentes pernas
+da derrota.
+</p>
+
+<p>
+Assim,
+antes de uma curva,
+uma PI line
+pode ajudar a confirmar
+que o navio
+está corretamente posicionado
+na perna de aproximação.
+</p>
+
+<p>
+Depois da alteração de rumo,
+uma nova PI line
+pode ser utilizada
+para verificar
+se a embarcação
+entrou adequadamente
+na próxima perna.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>Integração com a Parte 4</h3>
+
+<p>
+Antes da curva:
+</p>
+
+<p>
+<strong>
+WOP + referência visual + PI.
+</strong>
+</p>
+
+<p>
+Durante a curva:
+</p>
+
+<p>
+<strong>
+ROT + proa + popa + swept path.
+</strong>
+</p>
+
+<p>
+Depois da curva:
+</p>
+
+<p>
+<strong>
+novo heading + nova trajetória + nova PI.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 51
+     TÉCNICAS INDEPENDENTES
+========================================= -->
+
+<section
+class="topico-aula"
+id="fontes-independentes-monitoramento"
+data-topico-id="fontes-independentes-monitoramento">
+
+<h2>
+51. Monitoramento por referências independentes
+</h2>
+
+<div class="widget">
+
+<p>
+Uma passagem segura
+não deve depender
+de uma única indicação.
+</p>
+
+<p>
+O
+<strong>Bridge Procedures Guide</strong>
+combina técnicas visuais
+e eletrônicas
+para acompanhamento
+da navegação.
+</p>
+
+<p>
+Em uma passagem restrita,
+podem ser utilizados simultaneamente:
+</p>
+
+<ul>
+
+<li>
+um alinhamento visual;
+</li>
+
+<li>
+uma clearing bearing;
+</li>
+
+<li>
+uma distância radar;
+</li>
+
+<li>
+uma parallel index line;
+</li>
+
+<li>
+posição GNSS/ECDIS;
+</li>
+
+<li>
+batimetria observada;
+</li>
+
+<li>
+e referências visuais locais.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Princípio de robustez</h3>
+
+<p>
+<strong>
+Uma informação confirma.
+Duas informações independentes aumentam a confiança.
+Uma discrepância exige investigação.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Se uma fonte
+indica que o navio
+está perfeitamente na derrota,
+mas:
+</p>
+
+<ul>
+
+<li>
+o alinhamento visual
+mostra deslocamento;
+</li>
+
+<li>
+a PI está divergindo;
+</li>
+
+<li>
+ou a distância radar
+não corresponde ao esperado;
+</li>
+
+</ul>
+
+<p>
+a discrepância
+não deve ser ignorada.
+</p>
+
+<p>
+Antes de aceitar
+qualquer fonte como correta,
+a causa precisa ser avaliada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 52
+     MODELO MENTAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="modelo-mental-navegacao-seguranca"
+data-topico-id="modelo-mental-navegacao-seguranca">
+
+<h2>
+52. Modelo mental da navegação de segurança
+</h2>
+
+<div class="widget">
+
+<p>
+O conteúdo desta parte
+pode ser organizado
+em quatro perguntas.
+</p>
+
+
+
+<div class="destaque">
+
+<h3>1 — ONDE ESTÁ O PERIGO?</h3>
+
+<p>
+Identifique:
+</p>
+
+<ul>
+
+<li>
+baixios;
+</li>
+
+<li>
+pedras;
+</li>
+
+<li>
+margens;
+</li>
+
+<li>
+estruturas;
+</li>
+
+<li>
+profundidades limitantes.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>2 — QUAL LIMITE NÃO POSSO ULTRAPASSAR?</h3>
+
+<p>
+Defina:
+</p>
+
+<ul>
+
+<li>
+linha de perigo;
+</li>
+
+<li>
+clearing bearing;
+</li>
+
+<li>
+clearing range;
+</li>
+
+<li>
+setor seguro;
+</li>
+
+<li>
+ou outro limite aplicável.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>3 — COMO VOU MONITORAR ESSE LIMITE?</h3>
+
+<p>
+Utilize,
+conforme disponível:
+</p>
+
+<ul>
+
+<li>
+visual bearings;
+</li>
+
+<li>
+transits;
+</li>
+
+<li>
+radar bearings;
+</li>
+
+<li>
+radar ranges;
+</li>
+
+<li>
+parallel indexing.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>4 — O QUE FAREI SE A MARGEM COMEÇAR A DIMINUIR?</h3>
+
+<p>
+A correção
+não deve ser improvisada
+quando o perigo
+já estiver próximo.
+</p>
+
+<p>
+A ação possível
+deve ser considerada
+ainda no planejamento.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Síntese Operacional</h3>
+
+<p>
+A navegação de segurança
+transforma a carta
+em um conjunto
+de
+<strong>limites operacionais observáveis</strong>.
+</p>
+
+<p>
+O Prático não precisa
+esperar que o navio
+chegue ao perigo.
+</p>
+
+<p>
+Ele procura reconhecer
+<strong>
+a aproximação da fronteira
+antes que a margem segura
+seja consumida.
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Terminologia essencial da Parte 5</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Safety Line</strong>
+</td>
+
+<td>
+Linha de segurança
+</td>
+
+<td>
+Linha utilizada
+como referência
+para manter o navio
+afastado de uma região perigosa.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Danger Line</strong>
+</td>
+
+<td>
+Linha de perigo
+</td>
+
+<td>
+Limite estabelecido
+em torno de uma região
+que deve ser evitada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Clearing Bearing</strong>
+</td>
+
+<td>
+Marcação de segurança
+</td>
+
+<td>
+Marcação limite
+utilizada para verificar
+se o navio permanece
+do lado seguro
+de um perigo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Clearing Range</strong>
+</td>
+
+<td>
+Distância de segurança /
+distância de perigo
+</td>
+
+<td>
+Distância limite
+utilizada para manter
+separação segura
+de determinada referência
+ou perigo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Transit</strong>
+</td>
+
+<td>
+Alinhamento
+</td>
+
+<td>
+Coincidência visual
+de duas referências
+que define
+uma linha conhecida.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Leading Line</strong>
+</td>
+
+<td>
+Linha de enfiamento
+</td>
+
+<td>
+Direção estabelecida
+por marcas alinhadas
+para orientar a navegação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Sector Light</strong>
+</td>
+
+<td>
+Luz de setor
+</td>
+
+<td>
+Auxílio luminoso
+cujos setores indicam
+regiões ou limites
+de navegação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Parallel Indexing</strong>
+</td>
+
+<td>
+Índice paralelo
+</td>
+
+<td>
+Técnica radar
+para acompanhar
+a distância planejada
+a um objeto fixo
+ao longo de uma derrota.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>PI Line</strong>
+</td>
+
+<td>
+Linha de índice paralelo
+</td>
+
+<td>
+Linha paralela
+ao ground track planejado,
+posicionada segundo
+a distância de passagem desejada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>No-Go Area</strong>
+</td>
+
+<td>
+Área a evitar
+</td>
+
+<td>
+Região que não deve
+ser penetrada
+durante a passagem planejada.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Passage Monitoring</strong>
+</td>
+
+<td>
+Monitoramento da passagem
+</td>
+
+<td>
+Verificação contínua
+da evolução real do navio
+em relação ao plano.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 5
+========================================= -->     
