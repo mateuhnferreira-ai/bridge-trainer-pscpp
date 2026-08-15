@@ -1,1 +1,1895 @@
+<!-- =========================================
+     INÍCIO PARTE 1
+========================================= -->
 
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Navegação em Águas Restritas - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="navegacao-aguas-restritas"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Navegação em Águas Restritas
+</h2>
+
+<p>
+<strong>
+Navigation in Restricted and Confined Waters
+</strong>
+</p>
+
+<p>
+A navegação em águas restritas representa uma das
+situações de maior exigência para o navegante
+e para o Prático.
+</p>
+
+<p>
+Nessas áreas,
+a embarcação opera com
+<strong>margens reduzidas de segurança</strong>
+e sua condução pode ser condicionada simultaneamente
+pela profundidade disponível,
+largura do canal,
+proximidade das margens,
+correntes,
+marés,
+tráfego,
+características de manobra
+e limitações do espaço navegável.
+</p>
+
+<p>
+Por essa razão,
+não é suficiente conhecer apenas
+a posição instantânea do navio.
+</p>
+
+<p>
+É necessário compreender continuamente
+<strong>onde a embarcação está</strong>,
+<strong>como está se movimentando</strong>,
+<strong>quanto espaço possui</strong>
+e
+<strong>quanto espaço precisará nos instantes seguintes</strong>.
+</p>
+
+<p>
+A aula será desenvolvida progressivamente,
+partindo dos fundamentos da navegação
+em águas restritas e avançando para
+dados táticos,
+linhas de segurança,
+planejamento de curvas,
+profundidade e
+<strong>Under Keel Clearance — UKC</strong>,
+correntes,
+navegação em canais e rios,
+efeitos de margem,
+interação entre embarcações,
+monitoramento da passagem
+e aplicações diretamente relacionadas
+à praticagem.
+</p>
+
+<p>
+Os conceitos serão estudados utilizando,
+de forma integrada,
+<strong>Navegação: A Ciência e a Arte</strong>,
+<strong>Bridge Team Management</strong>,
+<strong>Bridge Procedures Guide</strong>
+e
+<strong>Theory and Practices of Marine Pilotage</strong>,
+além das publicações complementares
+previstas na bibliografia do PSCPP.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Navegação em Águas Restritas
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Navigation in Restricted and Confined Waters
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<!-- FASE ATUAL -->
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+III — Navegação em Águas Restritas
+</strong>
+</p>
+
+<p>
+<strong>
+Navegação em Águas Restritas
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="fundamentos-aguas-restritas">
+fundamentos da navegação em águas restritas;
+</li>
+
+<li data-progresso-topico="caracteristicas-aguas-restritas">
+características das águas restritas
+e redução das margens de segurança;
+</li>
+
+<li data-progresso-topico="espaco-navegavel">
+espaço navegável e posicionamento seguro do navio;
+</li>
+
+<li data-progresso-topico="dimensoes-navio-canal">
+relação entre dimensões do navio
+e dimensões do canal;
+</li>
+
+<li data-progresso-topico="dados-taticos">
+emprego dos dados táticos do navio;
+</li>
+
+<li data-progresso-topico="advance-transfer">
+advance, transfer,
+tactical diameter
+e características da curva de giro;
+</li>
+
+<li data-progresso-topico="wheel-over">
+wheel-over point
+e antecipação das alterações de rumo;
+</li>
+
+<li data-progresso-topico="trajetoria-proa-popa">
+trajetórias da proa e da popa
+durante a guinada;
+</li>
+
+<li data-progresso-topico="stern-swing">
+stern swing
+e espaço lateral necessário à manobra;
+</li>
+
+<li data-progresso-topico="linhas-seguranca-aguas-restritas">
+linhas de posição de segurança;
+</li>
+
+<li data-progresso-topico="clearing-bearing">
+clearing bearings
+e limites de segurança;
+</li>
+
+<li data-progresso-topico="parallel-indexing">
+parallel indexing
+aplicado à navegação em águas restritas;
+</li>
+
+<li data-progresso-topico="profundidade-disponivel">
+profundidade disponível
+e segurança vertical;
+</li>
+
+<li data-progresso-topico="ukc">
+Under Keel Clearance — UKC;
+</li>
+
+<li data-progresso-topico="squat-navegacao">
+squat
+e sua influência sobre a margem de segurança;
+</li>
+
+<li data-progresso-topico="shallow-water-navegacao">
+efeitos operacionais das águas rasas;
+</li>
+
+<li data-progresso-topico="bank-effect-navegacao">
+efeitos de margem
+e posicionamento no canal;
+</li>
+
+<li data-progresso-topico="correntes-aguas-restritas">
+navegação com corrente;
+</li>
+
+<li data-progresso-topico="set-drift">
+set,
+drift
+e trajetória sobre o fundo;
+</li>
+
+<li data-progresso-topico="corrente-curvas">
+influência da corrente
+nas curvas e alterações de rumo;
+</li>
+
+<li data-progresso-topico="mares-correntes-mare">
+marés
+e correntes de maré;
+</li>
+
+<li data-progresso-topico="navegacao-canais">
+navegação em canais;
+</li>
+
+<li data-progresso-topico="posicionamento-canal">
+posicionamento seguro da embarcação
+no canal;
+</li>
+
+<li data-progresso-topico="navegacao-fluvial">
+navegação fluvial
+e navegabilidade dos rios;
+</li>
+
+<li data-progresso-topico="curvas-rios">
+navegação em curvas
+e trechos fluviais restritos;
+</li>
+
+<li data-progresso-topico="navegacao-batimetrica">
+navegação batimétrica;
+</li>
+
+<li data-progresso-topico="interacao-navios">
+interação entre embarcações
+em águas restritas;
+</li>
+
+<li data-progresso-topico="meeting-passing-overtaking">
+meeting,
+passing
+e overtaking
+em áreas de espaço limitado;
+</li>
+
+<li data-progresso-topico="velocidade-seguranca">
+velocidade
+e margem disponível para reação;
+</li>
+
+<li data-progresso-topico="monitoramento-passagem">
+monitoramento contínuo da passagem;
+</li>
+
+<li data-progresso-topico="situational-awareness">
+situational awareness
+em águas restritas;
+</li>
+
+<li data-progresso-topico="navegacao-mau-tempo">
+navegação em condições meteorológicas adversas;
+</li>
+
+<li data-progresso-topico="pilotage-waters">
+entrada em águas de praticagem;
+</li>
+
+<li data-progresso-topico="harbour-limits">
+condução do navio
+dentro dos limites portuários;
+</li>
+
+<li data-progresso-topico="contingencias-aguas-restritas">
+contingências
+e alternativas de segurança;
+</li>
+
+<li data-progresso-topico="aplicacao-integrada-aguas-restritas">
+aplicação integrada
+da navegação em águas restritas.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula,
+o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+compreender as características
+que tornam a navegação em águas restritas
+mais exigente que a navegação em águas abertas;
+</li>
+
+<li>
+avaliar as margens laterais,
+verticais
+e longitudinais disponíveis à embarcação;
+</li>
+
+<li>
+compreender que a segurança depende
+da posição e da trajetória de
+<strong>todo o navio</strong>,
+e não somente de um ponto de referência;
+</li>
+
+<li>
+relacionar comprimento,
+boca,
+calado
+e características de manobra
+ao espaço navegável disponível;
+</li>
+
+<li>
+empregar os dados táticos do navio
+no planejamento e execução
+de alterações de rumo;
+</li>
+
+<li>
+interpretar
+advance,
+transfer,
+tactical diameter
+e demais elementos relevantes
+da curva de giro;
+</li>
+
+<li>
+compreender o conceito
+de
+<strong>wheel-over point</strong>
+e a necessidade de antecipação
+das manobras;
+</li>
+
+<li>
+acompanhar simultaneamente
+a trajetória da proa
+e o movimento lateral da popa;
+</li>
+
+<li>
+aplicar linhas de posição
+e limites de segurança
+ao monitoramento da navegação;
+</li>
+
+<li>
+compreender o emprego operacional
+de
+<strong>clearing bearings</strong>
+e
+<strong>parallel indexing</strong>;
+</li>
+
+<li>
+avaliar a profundidade disponível
+e a
+<strong>Under Keel Clearance — UKC</strong>;
+</li>
+
+<li>
+relacionar squat,
+águas rasas
+e proximidade das margens
+à segurança da passagem;
+</li>
+
+<li>
+compreender os efeitos da corrente
+sobre o movimento real do navio;
+</li>
+
+<li>
+interpretar
+<strong>set</strong>
+e
+<strong>drift</strong>
+na condução da embarcação;
+</li>
+
+<li>
+avaliar a influência da corrente
+antes,
+durante
+e após uma alteração de rumo;
+</li>
+
+<li>
+compreender a importância
+das marés e correntes de maré
+na navegação em áreas restritas;
+</li>
+
+<li>
+avaliar o posicionamento seguro
+de uma embarcação dentro de um canal;
+</li>
+
+<li>
+compreender particularidades
+da navegação fluvial;
+</li>
+
+<li>
+reconhecer os efeitos operacionais
+da interação entre navios
+em espaço limitado;
+</li>
+
+<li>
+relacionar velocidade
+ao tempo e ao espaço disponíveis
+para detectar e corrigir desvios;
+</li>
+
+<li>
+manter consciência situacional
+durante a passagem;
+</li>
+
+<li>
+integrar informações visuais,
+cartográficas,
+de radar
+e dos demais recursos disponíveis
+sem depender de uma única fonte;
+</li>
+
+<li>
+antecipar situações críticas
+e identificar alternativas
+antes que a margem de segurança
+seja consumida;
+</li>
+
+<li>
+relacionar os conceitos estudados
+à atuação prática do Prático;
+</li>
+
+<li>
+utilizar corretamente
+os principais termos técnicos
+em inglês marítimo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Navegação: A Ciência e a Arte — Volume I
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Altineu Pires Miguens.
+</p>
+
+<p>
+Publicação-base para os fundamentos
+de navegação de segurança,
+linhas de posição de segurança,
+emprego dos dados táticos do navio,
+marés,
+correntes
+e métodos de acompanhamento
+da navegação.
+</p>
+
+<p>
+Nesta aula,
+terão importância especial os conteúdos
+relacionados ao
+<strong>emprego de linhas de posição de segurança</strong>,
+ao
+<strong>uso dos dados táticos do navio
+na navegação em águas restritas</strong>
+e ao estudo de
+<strong>marés e correntes</strong>.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Navegação: A Ciência e a Arte — Volume III
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Altineu Pires Miguens.
+</p>
+
+<p>
+Publicação utilizada principalmente
+para complementar o estudo
+da navegação fluvial,
+das características dos rios
+e de outros procedimentos pertinentes
+à navegação em áreas restritas.
+</p>
+
+<p>
+Será particularmente relevante
+o conteúdo relacionado
+à
+<strong>navegabilidade dos rios</strong>.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Bridge Team Management: A Practical Guide
+</h3>
+
+<p>
+<strong>Autores:</strong>
+A. J. Swift
+e T. J. Bailey.
+</p>
+
+<p>
+Referência para
+avaliação da passagem,
+planejamento,
+execução,
+monitoramento do progresso do navio,
+trabalho da equipe de passadiço
+e navegação com Prático a bordo.
+</p>
+
+<p>
+Nesta aula,
+esses conceitos serão utilizados
+principalmente para compreender
+a necessidade de planejamento,
+monitoramento contínuo
+e antecipação em áreas
+de margem reduzida.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Bridge Procedures Guide
+</h3>
+
+<p>
+<strong>Autor institucional:</strong>
+International Chamber of Shipping — ICS.
+</p>
+
+<p>
+<strong>Edição utilizada:</strong>
+6ª edição — 2022.
+</p>
+
+<p>
+Referência operacional
+para organização do passadiço,
+planejamento da passagem,
+monitoramento,
+emprego dos equipamentos de navegação
+e procedimentos relacionados
+à pilotagem.
+</p>
+
+<p>
+Será utilizada especialmente
+para integrar os conhecimentos técnicos
+da navegação ao processo contínuo
+de
+<strong>monitoring</strong>
+e
+<strong>situational awareness</strong>.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Theory and Practices of Marine Pilotage
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Capt. Santosha K. Nayak.
+</p>
+
+<p>
+Referência diretamente relacionada
+à visão operacional do Prático.
+</p>
+
+<p>
+Serão utilizados especialmente
+os capítulos indicados pela bibliografia
+do PSCPP relativos à
+<strong>entrada em águas de praticagem</strong>,
+ao
+<strong>posicionamento seguro da embarcação no canal</strong>
+e à
+<strong>manobra dentro dos limites portuários</strong>.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Russell Sydnor Crenshaw.
+</p>
+
+<p>
+Será utilizado como referência complementar
+para compreender as forças
+e os movimentos do navio
+que se tornam operacionalmente relevantes
+quando o espaço disponível
+é reduzido.
+</p>
+
+</div>
+
+
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+Referência complementar
+para relacionar os princípios
+de manobra do navio
+às situações operacionais
+encontradas em canais,
+águas rasas
+e áreas de espaço limitado.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+A aula será construída
+a partir das publicações fornecidas
+e dos capítulos indicados
+na bibliografia oficial do PSCPP.
+</p>
+
+<p>
+A obra
+<strong>Navegação Integrada</strong>
+faz parte da bibliografia oficial,
+mas não está disponível atualmente
+entre os arquivos utilizados
+para a elaboração desta versão.
+</p>
+
+<p>
+Por essa razão,
+nenhum conteúdo será atribuído
+a essa publicação
+sem que sua fonte esteja disponível.
+</p>
+
+<p>
+Assuntos que possuem aulas próprias
+no Bridge Trainer PSCPP,
+como
+<strong>ECDIS</strong>,
+<strong>AIS e VTS</strong>,
+<strong>COLREG</strong>,
+<strong>Planejamento da Navegação</strong>,
+<strong>Pilotagem</strong>
+e
+<strong>Bridge Resource Management</strong>,
+serão utilizados nesta aula somente
+na medida necessária
+para compreender sua aplicação
+em águas restritas.
+</p>
+
+<p>
+O aprofundamento específico
+permanecerá nas respectivas aulas,
+evitando duplicação desnecessária.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+fundamentos da navegação
+em águas restritas;
+</li>
+
+<li>
+espaço navegável,
+margens de segurança
+e posicionamento do navio;
+</li>
+
+<li>
+dados táticos
+aplicados à navegação;
+</li>
+
+<li>
+advance,
+transfer
+e desenvolvimento da curva de giro;
+</li>
+
+<li>
+wheel-over point
+e antecipação da guinada;
+</li>
+
+<li>
+trajetória da proa,
+trajetória da popa
+e stern swing;
+</li>
+
+<li>
+linhas de posição de segurança;
+</li>
+
+<li>
+clearing bearings,
+clearing lines
+e limites de segurança;
+</li>
+
+<li>
+parallel indexing
+e monitoramento da derrota;
+</li>
+
+<li>
+profundidade disponível,
+calado
+e Under Keel Clearance — UKC;
+</li>
+
+<li>
+squat
+e águas rasas;
+</li>
+
+<li>
+bank effect
+e proximidade das margens;
+</li>
+
+<li>
+correntes,
+set
+e drift;
+</li>
+
+<li>
+efeito da corrente
+nas alterações de rumo;
+</li>
+
+<li>
+marés
+e correntes de maré;
+</li>
+
+<li>
+navegação
+e posicionamento em canais;
+</li>
+
+<li>
+navegação fluvial
+e navegabilidade dos rios;
+</li>
+
+<li>
+curvas,
+trechos críticos
+e navegação batimétrica;
+</li>
+
+<li>
+interação entre embarcações
+em águas restritas;
+</li>
+
+<li>
+meeting,
+passing
+e overtaking;
+</li>
+
+<li>
+velocidade,
+tempo de reação
+e margem disponível;
+</li>
+
+<li>
+monitoramento contínuo
+e situational awareness;
+</li>
+
+<li>
+navegação em condições
+meteorológicas adversas;
+</li>
+
+<li>
+entrada em águas de praticagem
+e navegação dentro dos limites portuários;
+</li>
+
+<li>
+contingências
+e alternativas de segurança;
+</li>
+
+<li>
+terminologia técnica
+em inglês marítimo;
+</li>
+
+<li>
+aplicações operacionais
+voltadas à atuação do Prático;
+</li>
+
+<li>
+revisão
+e questões no padrão PSCPP.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DA NAVEGAÇÃO
+     EM ÁGUAS RESTRITAS
+========================================= -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA NAVEGAÇÃO
+EM ÁGUAS RESTRITAS
+</h2>
+
+<p>
+Antes de estudar
+dados táticos,
+correntes,
+UKC,
+efeitos de margem
+ou técnicas de condução em canais,
+é necessário compreender
+o problema fundamental
+da navegação em águas restritas.
+</p>
+
+<p>
+Em mar aberto,
+o navegante normalmente dispõe
+de grande quantidade de espaço
+para reconhecer um desvio
+e corrigi-lo.
+</p>
+
+<p>
+À medida que o navio entra
+em um canal,
+rio,
+estreito,
+aproximação portuária
+ou outra região limitada,
+esse espaço pode diminuir
+consideravelmente.
+</p>
+
+<p>
+Ao mesmo tempo,
+o navio continua possuindo
+massa,
+inércia,
+comprimento,
+boca,
+calado
+e características próprias
+de aceleração,
+desaceleração
+e guinada.
+</p>
+
+<p>
+Surge então o princípio central
+que acompanhará toda esta aula:
+</p>
+
+<p>
+<strong>
+em águas restritas,
+não basta determinar onde o navio está;
+é necessário antecipar
+onde todo o navio estará
+durante os próximos instantes
+do seu movimento.
+</strong>
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     PROBLEMA FUNDAMENTAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="fundamentos-aguas-restritas"
+data-topico-id="fundamentos-aguas-restritas">
+
+<h2>
+1. O problema fundamental da navegação em águas restritas
+</h2>
+
+<div class="widget">
+
+<p>
+A navegação segura exige
+determinar e acompanhar
+a posição da embarcação
+em relação à derrota,
+aos perigos
+e às margens de segurança.
+</p>
+
+<p>
+Em águas restritas,
+essa necessidade adquire
+uma dimensão adicional.
+</p>
+
+<p>
+A embarcação não pode ser tratada
+operacionalmente como um simples ponto
+sobre a carta.
+</p>
+
+<p>
+Ela possui
+<strong>comprimento</strong>,
+<strong>boca</strong>,
+<strong>calado</strong>
+e uma determinada condição de movimento.
+</p>
+
+<p>
+Além disso,
+uma alteração de rumo
+não modifica instantaneamente
+a trajetória do navio,
+da mesma forma que uma ordem de máquina
+não elimina instantaneamente
+seu seguimento.
+</p>
+
+<p>
+Por isso,
+a condução em águas restritas
+depende da avaliação conjunta de:
+</p>
+
+<ul>
+
+<li>
+posição atual do navio;
+</li>
+
+<li>
+orientação da embarcação;
+</li>
+
+<li>
+trajetória efetiva;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+razão de guinada,
+quando existente;
+</li>
+
+<li>
+espaço lateral disponível;
+</li>
+
+<li>
+profundidade disponível;
+</li>
+
+<li>
+espaço longitudinal disponível;
+</li>
+
+<li>
+corrente;
+</li>
+
+<li>
+vento,
+quando operacionalmente relevante;
+</li>
+
+<li>
+tráfego;
+</li>
+
+<li>
+perigos à navegação;
+</li>
+
+<li>
+características de manobra
+da própria embarcação.
+</li>
+
+</ul>
+
+
+
+<div class="destaque">
+
+<h3>Ideia central</h3>
+
+<p>
+Em águas restritas,
+a pergunta
+<strong>
+“onde está o navio?”
+</strong>
+é necessária,
+mas não é suficiente.
+</p>
+
+<p>
+O Prático precisa acrescentar:
+</p>
+
+<p>
+<strong>
+“para onde o navio está realmente se movendo?”
+</strong>
+</p>
+
+<p>
+<strong>
+“quanto espaço existe para esse movimento?”
+</strong>
+</p>
+
+<p>
+e,
+principalmente:
+</p>
+
+<p>
+<strong>
+“onde estarão a proa,
+a popa
+e o restante do casco
+quando esse movimento se desenvolver?”
+</strong>
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚓ Aplicação Operacional</h3>
+
+<p>
+Considere um navio
+aproximando-se de uma curva
+em um canal estreito.
+</p>
+
+<p>
+A posição da proa
+pode ainda parecer perfeitamente segura.
+</p>
+
+<p>
+Entretanto,
+a decisão de iniciar a guinada
+deve considerar antecipadamente
+a velocidade,
+a corrente,
+a resposta do leme,
+os dados táticos do navio,
+a largura disponível
+e o movimento futuro da popa.
+</p>
+
+<p>
+Se a ação for iniciada tarde,
+o fato de a proa ainda estar
+dentro do canal
+não significa que exista espaço suficiente
+para que toda a embarcação
+complete a curva com segurança.
+</p>
+
+<p>
+Essa diferença entre
+<strong>posição instantânea</strong>
+e
+<strong>posição futura prevista</strong>
+é uma das bases
+da praticagem em águas restritas.
+</p>
+
+</div>
+
+
+
+<div class="destaque">
+
+<h3>🧠 Modelo mental para memorizar</h3>
+
+<p>
+Durante toda esta aula,
+utilize quatro perguntas:
+</p>
+
+<p>
+<strong>
+POSIÇÃO
+→ MOVIMENTO
+→ ESPAÇO
+→ TEMPO
+</strong>
+</p>
+
+<p>
+<strong>Posição:</strong>
+onde está o navio?
+</p>
+
+<p>
+<strong>Movimento:</strong>
+para onde ele está realmente indo?
+</p>
+
+<p>
+<strong>Espaço:</strong>
+quanto espaço existe para continuar ou corrigir?
+</p>
+
+<p>
+<strong>Tempo:</strong>
+quanto tempo resta para que uma ação produza
+o efeito necessário?
+</p>
+
+<p>
+Grande parte das decisões
+em águas restritas
+pode ser analisada
+a partir dessa sequência.
+</p>
+
+</div>
+
+
+
+<div class="termos-tecnicos">
+
+<h3>🌐 Termos técnicos</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Inglês marítimo</th>
+<th>Português</th>
+<th>Significado operacional</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<strong>Restricted Waters</strong>
+</td>
+
+<td>
+Águas restritas
+</td>
+
+<td>
+Áreas em que as condições disponíveis
+para navegação e manobra
+são limitadas em comparação
+com águas abertas.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Confined Waters</strong>
+</td>
+
+<td>
+Águas confinadas
+</td>
+
+<td>
+Expressão frequentemente utilizada
+no contexto de pilotagem e shiphandling
+para situações em que o espaço disponível
+condiciona fortemente
+a condução do navio.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Sea-room</strong>
+</td>
+
+<td>
+Espaço disponível para manobra
+</td>
+
+<td>
+Espaço de que o navio dispõe
+para continuar sua trajetória,
+alterar rumo,
+reduzir velocidade
+ou executar outra ação
+sem alcançar um perigo.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Safe Positioning</strong>
+</td>
+
+<td>
+Posicionamento seguro
+</td>
+
+<td>
+Manutenção da embarcação
+dentro das margens consideradas seguras
+para a passagem.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Channel</strong>
+</td>
+
+<td>
+Canal
+</td>
+
+<td>
+Faixa navegável cuja largura,
+profundidade
+e geometria
+podem limitar a trajetória disponível
+à embarcação.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Channel Limits</strong>
+</td>
+
+<td>
+Limites do canal
+</td>
+
+<td>
+Limites laterais
+da área navegável considerada
+para a passagem.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Under Keel Clearance — UKC</strong>
+</td>
+
+<td>
+Folga abaixo da quilha
+</td>
+
+<td>
+Margem vertical disponível
+entre a parte mais baixa relevante
+da embarcação
+e o fundo,
+consideradas as condições aplicáveis.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Heading</strong>
+</td>
+
+<td>
+Orientação / rumo da proa
+</td>
+
+<td>
+Direção para a qual
+o eixo longitudinal do navio
+está orientado.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Track</strong>
+</td>
+
+<td>
+Derrota / trajetória
+</td>
+
+<td>
+Linha associada
+ao movimento planejado
+ou efetivamente realizado
+pela embarcação,
+conforme o contexto.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<strong>Situational Awareness</strong>
+</td>
+
+<td>
+Consciência situacional
+</td>
+
+<td>
+Compreensão continuamente atualizada
+da condição do navio,
+do ambiente,
+dos perigos
+e da evolução provável da situação.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção do Prático</h3>
+
+<p>
+Uma das armadilhas mais importantes
+em águas restritas
+é concentrar a atenção
+somente na proa.
+</p>
+
+<p>
+Durante uma alteração de rumo,
+ou mesmo sob ação de corrente
+e efeitos hidrodinâmicos,
+partes diferentes da embarcação
+podem desenvolver movimentos distintos
+em relação aos limites do canal.
+</p>
+
+<p>
+A posição segura deve,
+portanto,
+ser analisada para
+<strong>todo o comprimento e toda a boca do navio</strong>.
+</p>
+
+<p>
+Nas próximas partes,
+esse princípio será aprofundado
+por meio da trajetória da proa,
+do movimento da popa,
+do
+<strong>stern swing</strong>,
+do
+<strong>pivot point</strong>
+e dos dados táticos da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL PARTE 1
+========================================= -->
+
+  
