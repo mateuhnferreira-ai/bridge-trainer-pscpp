@@ -1,1 +1,6422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Rebocadores - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="rebocadores"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+
+     ALTERAR SOMENTE:
+
+     [ID-DISCIPLINA]
+     [ID-AULA]
+     [NOME DA DISCIPLINA]
+     [TÍTULO DA AULA]
+     [TERMO EM INGLÊS]
+
+     REGRAS:
+
+     data-disciplina deve coincidir com:
+     - banco-conteudo.js
+     - disciplinas.json
+     - pasta lógica da disciplina
+
+     data-aula deve coincidir com:
+     - assunto.id em banco-conteudo.js
+     - modulo.id em disciplinas.json
+     - data-assunto no index da disciplina
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+🚢 Rebocadores
+</h2>
+
+<p>
+<strong>
+Tugs and Tug Assistance
+</strong>
+</p>
+
+<p>
+Estudo da atuação dos rebocadores na manobra do navio,
+com ênfase nas forças aplicadas, pontos de atuação,
+momentos de guinada, métodos de assistência
+e efeitos sobre o movimento do navio.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Rebocadores
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Tugs and Tug Assistance
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+
+     A PARTIR DAQUI:
+     DESENVOLVER O CONTEÚDO TÉCNICO
+
+     NÃO ALTERAR:
+     - data-disciplina
+     - data-aula
+     - nomes das classes estruturais
+     - IDs do progresso
+     - scripts do final da página
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+II — ARTE NAVAL — Utilização de rebocadores portuários
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="topico-1">
+26.1. Fatores de projeto de rebocadores portuários
+</li>
+
+<li data-progresso-topico="topico-2">
+26.2. Tipos de rebocadores portuários
+</li>
+
+<li data-progresso-topico="topico-3">
+26.3. Métodos de assistência
+</li>
+
+<li data-progresso-topico="topico-4">
+26.4. Capacidades e limitações dos rebocadores
+</li>
+
+<li data-progresso-topico="topico-5">
+26.4.1. Limites ambientais para operações com rebocadores
+</li>
+
+<li data-progresso-topico="topico-6">
+26.5. Tonelagem de Tração Estática Necessária — Bollard Pull — BP
+</li>
+
+<li data-progresso-topico="topico-7">
+26.6. Efeitos de interação na segurança e no desempenho do rebocador
+</li>
+
+<li data-progresso-topico="topico-8">
+26.7. Segurança do Rebocador
+</li>
+
+<li data-progresso-topico="topico-9">
+26.8. Operação com cabos de reboque
+</li>
+
+<li data-progresso-topico="topico-10">
+26.9. Rebocadores Escort
+</li>
+
+<li data-progresso-topico="topico-11">
+31. Métodos de utilização de rebocadores empregados no Brasil
+</li>
+
+<li data-progresso-topico="topico-12">
+32. Princípios básicos de estabilidade
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+identificar os fatores que determinam o projeto,
+a seleção e o emprego de rebocadores portuários;
+</li>
+
+<li>
+distinguir os principais tipos de rebocadores,
+suas configurações de propulsão e suas características
+operacionais;
+</li>
+
+<li>
+compreender os diferentes métodos de assistência
+e sua relação com o tipo de rebocador empregado;
+</li>
+
+<li>
+avaliar capacidades e limitações dos rebocadores
+durante uma manobra;
+</li>
+
+<li>
+interpretar a influência das condições ambientais
+sobre a eficiência e a segurança da assistência;
+</li>
+
+<li>
+compreender o conceito e a aplicação operacional
+do <strong>bollard pull</strong>;
+</li>
+
+<li>
+reconhecer os efeitos de interação entre o navio
+assistido e o rebocador;
+</li>
+
+<li>
+identificar riscos próprios das operações com
+rebocadores e os princípios de segurança associados;
+</li>
+
+<li>
+compreender os princípios da operação com cabos
+de reboque;
+</li>
+
+<li>
+compreender os fundamentos das operações com
+<strong>escort tugs</strong>;
+</li>
+
+<li>
+reconhecer os métodos de utilização de rebocadores
+empregados no Brasil;
+</li>
+
+<li>
+compreender os princípios básicos de estabilidade
+aplicáveis aos rebocadores;
+</li>
+
+<li>
+interpretar terminologia e trechos técnicos em inglês
+utilizados nas publicações oficiais da bibliografia.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Tug Use in Port — A Practical Guide
+</h3>
+
+<p>
+<strong>Henk Hensen — Fourth Revised Edition, 2021.</strong>
+</p>
+
+<p>
+É a principal referência internacional utilizada
+para o desenvolvimento desta aula.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Chapters 1 a 7 e Chapter 9, conforme estabelecido
+na Bibliografia oficial do PSCPP.
+</p>
+
+<p>
+Nesta Parte 1, a referência principal é:
+<strong>Chapter 1 — Tug Design Factors</strong>,
+especialmente as Sections 1.1 a 1.5.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Rebocadores Portuários
+</h3>
+
+<p>
+<strong>
+Otávio Fragoso e Marcelo Cajaty — 2002.
+</strong>
+</p>
+
+<p>
+Referência brasileira utilizada para complementar
+o estudo dos rebocadores portuários e, especialmente,
+para relacionar os conceitos internacionais à terminologia
+e às práticas encontradas no Brasil.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+partes da obra diretamente relacionadas aos tópicos
+do conteúdo programático.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Utilização de Rebocadores nos Portos
+</h3>
+
+<p>
+Publicação em língua portuguesa baseada na obra
+de Henk Hensen, empregada como apoio à terminologia
+técnica e à compreensão dos conceitos de utilização
+de rebocadores.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta Parte 1:</strong>
+Capítulo 1 — Fatores de projeto do rebocador.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Estabilidade dos Rebocadores — Um Guia Prático para Operações Seguras
+</h3>
+
+<p>
+<strong>
+Henk Hensen e Markus van der Laan — 2022.
+</strong>
+</p>
+
+<p>
+Será utilizada especificamente na parte da aula destinada
+aos princípios de estabilidade.
+</p>
+
+<p>
+<strong>Trecho utilizado:</strong>
+Capítulo 2 — Princípios básicos de estabilidade,
+conforme a Bibliografia oficial.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1 — Fatores de projeto dos rebocadores portuários</strong>
+</li>
+
+<li>
+Parte 2 — Tipos de rebocadores portuários
+</li>
+
+<li>
+Parte 3 — Métodos de assistência
+</li>
+
+<li>
+Parte 4 — Capacidades e limitações dos rebocadores
+</li>
+
+<li>
+Parte 5 — Limites ambientais das operações
+</li>
+
+<li>
+Parte 6 — Bollard Pull e força requerida
+</li>
+
+<li>
+Parte 7 — Interação navio–rebocador
+</li>
+
+<li>
+Parte 8 — Segurança nas operações com rebocadores
+</li>
+
+<li>
+Parte 9 — Operação com cabos de reboque
+</li>
+
+<li>
+Parte 10 — Escort Tugs
+</li>
+
+<li>
+Parte 11 — Métodos de utilização empregados no Brasil
+</li>
+
+<li>
+Parte 12 — Princípios básicos de estabilidade dos rebocadores
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FATORES DE PROJETO DOS REBOCADORES PORTUÁRIOS
+</h2>
+
+<p>
+O estudo dos rebocadores portuários não começa pela
+comparação entre ASD, tratores, rebocadores convencionais
+ou outros arranjos.
+</p>
+
+<p>
+Antes disso, é necessário compreender
+<strong>por que existem diferentes tipos de rebocadores</strong>
+e quais condições determinam as características
+necessárias para uma determinada operação.
+</p>
+
+<p>
+Hensen inicia sua análise demonstrando que os métodos
+de assistência encontrados nos portos variam em função
+das condições locais, das situações específicas e,
+frequentemente, de costumes e práticas desenvolvidos
+ao longo do tempo.
+</p>
+
+<p>
+Essas diferenças operacionais refletem-se diretamente
+nos requisitos impostos aos rebocadores e ajudam a
+explicar o desenvolvimento de diferentes tipos e
+configurações.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-1"
+data-topico-id="topico-1"
+>
+
+<h2>
+1. Fatores de projeto dos rebocadores portuários
+</h2>
+
+<div class="widget">
+
+<p>
+Os rebocadores portuários evoluíram de forma significativa.
+Hensen destaca o desenvolvimento de unidades com
+<strong>elevada manobrabilidade</strong>,
+maior potência instalada, modernos sistemas de governo,
+novos equipamentos de reboque e novos materiais
+empregados nos cabos.
+</p>
+
+<p>
+Esses desenvolvimentos não afetam apenas o projeto
+do rebocador.
+</p>
+
+<p>
+Eles também influenciam:
+</p>
+
+<ul>
+
+<li>
+os métodos de assistência disponíveis;
+</li>
+
+<li>
+a forma como a força do rebocador pode ser aplicada;
+</li>
+
+<li>
+a quantidade de rebocadores utilizada na assistência;
+</li>
+
+<li>
+as possibilidades operacionais em diferentes
+condições de porto e de acesso.
+</li>
+
+</ul>
+
+<p>
+Ao mesmo tempo, muitos navios modernos apresentam
+melhores recursos próprios de manobra, enquanto os
+rebocadores modernos oferecem melhor desempenho
+de reboque.
+</p>
+
+<p>
+A combinação desses fatores pode permitir, em determinadas
+operações, a utilização de um número menor de rebocadores.
+</p>
+
+<p>
+Entretanto, Hensen chama atenção para uma consequência
+operacional importante:
+<strong>quanto menor o número de rebocadores empregados,
+mais crítica se torna a função de cada unidade individual</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A redução da quantidade de rebocadores utilizados
+em uma manobra aumenta a importância da
+<strong>segurança operacional</strong>,
+da <strong>confiabilidade</strong>
+e da <strong>adequação de cada rebocador à tarefa</strong>.
+</p>
+
+<p>
+Portanto, a análise não pode ser limitada à quantidade
+de rebocadores.
+</p>
+
+<p>
+É necessário avaliar se cada unidade possui as
+características necessárias para executar com segurança
+a função que lhe será atribuída.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Harbour tug</strong> —
+rebocador portuário;
+</li>
+
+<li>
+<strong>Tug design factors</strong> —
+fatores que influenciam o projeto e a seleção
+do rebocador;
+</li>
+
+<li>
+<strong>Tug assistance</strong> —
+assistência prestada por rebocadores;
+</li>
+
+<li>
+<strong>Assisting method</strong> —
+método de assistência;
+</li>
+
+<li>
+<strong>Towing performance</strong> —
+desempenho do rebocador durante o reboque ou assistência;
+</li>
+
+<li>
+<strong>Operational safety</strong> —
+segurança operacional;
+</li>
+
+<li>
+<strong>Reliability</strong> —
+confiabilidade;
+</li>
+
+<li>
+<strong>Suitability</strong> —
+adequação da unidade à tarefa ou operação prevista;
+</li>
+
+<li>
+<strong>Towing appliances</strong> —
+equipamentos ou dispositivos utilizados para reboque;
+</li>
+
+<li>
+<strong>Towline</strong> —
+cabo de reboque.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não associe automaticamente
+<strong>menor número de rebocadores</strong>
+a menor segurança ou a menor capacidade de assistência.
+</p>
+
+<p>
+A análise depende das características dos rebocadores,
+do navio assistido, do método de assistência e das
+condições da operação.
+</p>
+
+<p>
+Por outro lado, quando poucos rebocadores são empregados,
+uma falha ou inadequação de uma única unidade passa a
+ter importância proporcionalmente maior para a manobra.
+</p>
+<!-- =========================================
+     FIGURA — FATORES DE SELEÇÃO DO REBOCADOR
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+⚓ Fatores que determinam os requisitos do rebocador
+</h3>
+
+<svg
+viewBox="0 0 900 500"
+role="img"
+aria-label="Diagrama dos fatores que determinam os requisitos de um rebocador portuário"
+>
+
+<!-- PORTO -->
+<rect
+x="40"
+y="50"
+width="210"
+height="70"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="145"
+y="78"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+PORTO E ACESSOS
+</text>
+
+<text
+x="145"
+y="102"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Port • Approaches
+</text>
+
+
+<!-- AMBIENTE -->
+<rect
+x="345"
+y="50"
+width="210"
+height="70"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="450"
+y="78"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+AMBIENTE
+</text>
+
+<text
+x="450"
+y="102"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Wind • Current • Waves
+</text>
+
+
+<!-- NAVIO -->
+<rect
+x="650"
+y="50"
+width="210"
+height="70"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="755"
+y="78"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+NAVIO
+</text>
+
+<text
+x="755"
+y="102"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Ship type • Size
+</text>
+
+
+<!-- SERVIÇO -->
+<rect
+x="190"
+y="190"
+width="210"
+height="70"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="295"
+y="218"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+SERVIÇO
+</text>
+
+<text
+x="295"
+y="242"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Required service
+</text>
+
+
+<!-- MÉTODO -->
+<rect
+x="500"
+y="190"
+width="210"
+height="70"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="605"
+y="218"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+MÉTODO
+</text>
+
+<text
+x="605"
+y="242"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Assisting method
+</text>
+
+
+<!-- LINHAS PARA RESULTANTE -->
+
+<line
+x1="145"
+y1="120"
+x2="400"
+y2="330"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<line
+x1="450"
+y1="120"
+x2="450"
+y2="330"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<line
+x1="755"
+y1="120"
+x2="500"
+y2="330"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<line
+x1="295"
+y1="260"
+x2="410"
+y2="330"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<line
+x1="605"
+y1="260"
+x2="490"
+y2="330"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+
+<!-- RESULTADO -->
+<rect
+x="290"
+y="330"
+width="320"
+height="100"
+rx="16"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="450"
+y="365"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+REQUISITOS DO REBOCADOR
+</text>
+
+<text
+x="450"
+y="395"
+text-anchor="middle"
+font-size="16"
+fill="currentColor">
+Tug Requirements
+</text>
+
+<text
+x="450"
+y="418"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+capacidade • configuração • equipamento
+</text>
+
+</svg>
+
+<p>
+<strong>Leitura da figura:</strong>
+Hensen trata a escolha do rebocador como resultado de um
+conjunto de condições operacionais. Porto, ambiente,
+navio, serviço e método de assistência estabelecem
+os requisitos que deverão ser atendidos pelo rebocador.
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-2"
+data-topico-id="topico-2"
+>
+
+<h2>
+2. O porto e suas vias de acesso
+</h2>
+
+<div class="widget">
+
+<p>
+Entre os primeiros fatores que devem ser avaliados
+estão o
+<strong>tipo de porto</strong>,
+suas <strong>vias de acesso</strong>,
+possíveis desenvolvimentos futuros e as condições
+geográficas e ambientais existentes.
+</p>
+
+<p>
+Hensen divide os portos, de maneira geral, em quatro
+categorias:
+</p>
+
+<ul>
+
+<li>
+<strong>conventional ports</strong> —
+portos convencionais;
+</li>
+
+<li>
+portos constituídos predominantemente por terminais;
+</li>
+
+<li>
+portos constituídos predominantemente por
+<strong>piers</strong> e <strong>jetties</strong>;
+</li>
+
+<li>
+instalações de amarração localizadas em áreas remotas
+ou offshore.
+</li>
+
+</ul>
+
+<p>
+Essa classificação é operacionalmente importante porque
+a configuração física do porto interfere diretamente
+na forma como o rebocador poderá trabalhar.
+</p>
+
+
+<h3>
+Portos convencionais
+</h3>
+
+<p>
+Nos portos convencionais podem existir bacias portuárias,
+docas, berços fluviais, pontes e eclusas.
+</p>
+
+<p>
+Alguns possuem ligação curta e relativamente simples
+com o mar aberto, enquanto outros apresentam longos
+trechos de rios ou canais entre a entrada do porto
+e os locais de atracação.
+</p>
+
+<p>
+Nessas situações, o rebocador pode precisar ser adequado
+não apenas à assistência junto ao cais, mas também
+à operação:
+</p>
+
+<ul>
+
+<li>
+em rios;
+</li>
+
+<li>
+em canais;
+</li>
+
+<li>
+durante a passagem de pontes;
+</li>
+
+<li>
+durante a entrada e saída de eclusas;
+</li>
+
+<li>
+em áreas mais expostas próximas ao mar.
+</li>
+
+</ul>
+
+<p>
+Hensen observa ainda que o desenvolvimento físico de
+portos tradicionais nem sempre acompanha o aumento
+das dimensões dos navios que os frequentam.
+</p>
+
+<p>
+O resultado pode ser o aumento da complexidade das
+manobras de entrada e saída e, consequentemente,
+novas exigências relativas à potência,
+manobrabilidade e dimensões dos rebocadores.
+</p>
+
+
+<h3>
+Portos predominantemente constituídos por terminais
+</h3>
+
+<p>
+Quando existe grande área disponível para manobra
+junto aos terminais, as operações podem apresentar
+maior possibilidade de padronização.
+</p>
+
+<p>
+Hensen destaca nesse contexto a utilização do método
+<strong>push-pull</strong>,
+no qual o rebocador trabalha junto ao costado e pode
+alternar entre empurrar e puxar o navio assistido.
+</p>
+
+
+<h3>
+Piers e jetties
+</h3>
+
+<p>
+Em determinadas instalações desse tipo, a geometria
+permite que rebocadores operem dos dois bordos
+do navio assistido.
+</p>
+
+<p>
+Isso contrasta com muitas atracações convencionais
+junto a um cais, nas quais o próprio cais restringe
+a atuação de rebocadores em um dos bordos.
+</p>
+
+
+<h3>
+Instalações offshore ou remotas
+</h3>
+
+<p>
+A assistência em instalações offshore pode ocorrer
+em condições de vento e ondas mais severas.
+</p>
+
+<p>
+Hensen relaciona essas operações a requisitos específicos,
+que podem envolver:
+</p>
+
+<ul>
+
+<li>
+boa estabilidade;
+</li>
+
+<li>
+defensas adequadas;
+</li>
+
+<li>
+elevada potência;
+</li>
+
+<li>
+equipamentos de reboque apropriados à operação.
+</li>
+
+</ul>
+<!-- =========================================
+     FIGURA — CONFIGURAÇÕES DE OPERAÇÃO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+⚓ Diferentes ambientes de operação do rebocador
+</h3>
+
+<svg
+viewBox="0 0 1000 560"
+role="img"
+aria-label="Representação esquemática de diferentes ambientes portuários para emprego de rebocadores"
+>
+
+
+<!-- =====================================
+     1 — PORTO CONVENCIONAL
+===================================== -->
+
+<rect
+x="30"
+y="40"
+width="450"
+height="210"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="255"
+y="70"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="currentColor">
+1 — CONVENTIONAL PORT
+</text>
+
+
+<!-- margens/canal -->
+
+<line
+x1="70"
+y1="110"
+x2="430"
+y2="110"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<line
+x1="70"
+y1="220"
+x2="430"
+y2="220"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+
+<!-- navio -->
+
+<rect
+x="180"
+y="145"
+width="160"
+height="40"
+rx="18"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="260"
+y="170"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+SHIP
+</text>
+
+
+<!-- rebocador -->
+
+<ellipse
+cx="135"
+cy="165"
+rx="38"
+ry="22"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="135"
+y="170"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+
+<!-- =====================================
+     2 — TERMINAL
+===================================== -->
+
+<rect
+x="520"
+y="40"
+width="450"
+height="210"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="745"
+y="70"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="currentColor">
+2 — TERMINAL
+</text>
+
+
+<!-- cais -->
+
+<line
+x1="560"
+y1="210"
+x2="930"
+y2="210"
+stroke="currentColor"
+stroke-width="8"
+/>
+
+
+<!-- navio -->
+
+<rect
+x="670"
+y="145"
+width="180"
+height="42"
+rx="18"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="760"
+y="171"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+SHIP
+</text>
+
+
+<!-- rebocadores -->
+
+<ellipse
+cx="620"
+cy="165"
+rx="38"
+ry="22"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="620"
+y="170"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+<ellipse
+cx="890"
+cy="165"
+rx="38"
+ry="22"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="890"
+y="170"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+
+<!-- =====================================
+     3 — PIER / JETTY
+===================================== -->
+
+<rect
+x="30"
+y="300"
+width="450"
+height="210"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="255"
+y="330"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="currentColor">
+3 — PIER / JETTY
+</text>
+
+
+<!-- pier -->
+
+<line
+x1="80"
+y1="460"
+x2="420"
+y2="460"
+stroke="currentColor"
+stroke-width="8"
+/>
+
+<line
+x1="250"
+y1="460"
+x2="250"
+y2="500"
+stroke="currentColor"
+stroke-width="8"
+/>
+
+
+<!-- navio -->
+
+<rect
+x="165"
+y="395"
+width="180"
+height="42"
+rx="18"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="255"
+y="421"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+SHIP
+</text>
+
+
+<!-- tugs dos dois bordos -->
+
+<ellipse
+cx="110"
+cy="415"
+rx="36"
+ry="21"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="110"
+y="420"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+<ellipse
+cx="400"
+cy="415"
+rx="36"
+ry="21"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="400"
+y="420"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+
+<!-- =====================================
+     4 — OFFSHORE
+===================================== -->
+
+<rect
+x="520"
+y="300"
+width="450"
+height="210"
+rx="12"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="745"
+y="330"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="currentColor">
+4 — OFFSHORE LOCATION
+</text>
+
+
+<!-- ondas -->
+
+<path
+d="M550 455
+Q580 435 610 455
+Q640 475 670 455
+Q700 435 730 455
+Q760 475 790 455
+Q820 435 850 455
+Q880 475 920 455"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- navio -->
+
+<rect
+x="670"
+y="385"
+width="170"
+height="42"
+rx="18"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="755"
+y="411"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+SHIP
+</text>
+
+
+<!-- tug -->
+
+<ellipse
+cx="610"
+cy="407"
+rx="38"
+ry="22"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="610"
+y="412"
+text-anchor="middle"
+font-size="12"
+fill="currentColor">
+TUG
+</text>
+
+</svg>
+
+<p>
+<strong>Interpretação operacional:</strong>
+a geometria da área modifica as posições disponíveis
+para o rebocador, o espaço de manobra, a exposição
+às condições ambientais e, consequentemente,
+as características necessárias para executar
+a assistência.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A configuração física do porto não determina apenas
+<strong>quanto esforço</strong> será necessário.
+</p>
+
+<p>
+Ela também determina
+<strong>onde</strong>,
+<strong>como</strong>
+e <strong>em quais condições</strong>
+o rebocador deverá ser capaz de produzir esse esforço.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Port approach</strong> —
+via de acesso ou aproximação ao porto;
+</li>
+
+<li>
+<strong>Conventional port</strong> —
+porto convencional;
+</li>
+
+<li>
+<strong>Harbour basin</strong> —
+bacia portuária;
+</li>
+
+<li>
+<strong>Dock</strong> —
+doca;
+</li>
+
+<li>
+<strong>Jetty</strong> —
+estrutura de atracação projetada para fora da margem;
+</li>
+
+<li>
+<strong>Pier</strong> —
+píer;
+</li>
+
+<li>
+<strong>Lock</strong> —
+eclusa;
+</li>
+
+<li>
+<strong>Push-pull method</strong> —
+método de assistência no qual o rebocador atua
+junto ao costado empurrando ou puxando o navio;
+</li>
+
+<li>
+<strong>Offshore location</strong> —
+instalação ou local de operação afastado da costa.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Um rebocador adequado para assistência exclusivamente
+dentro de uma bacia protegida não é necessariamente
+adequado para trabalhar em uma longa aproximação
+exposta a mar e ondulação.
+</p>
+
+<p>
+Da mesma forma, grande potência instalada não resolve
+uma incompatibilidade de dimensões, calado,
+manobrabilidade ou configuração operacional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-3"
+data-topico-id="topico-3"
+>
+
+<h2>
+3. Condições ambientais
+</h2>
+
+<div class="widget">
+
+<p>
+As condições ambientais exercem influência direta
+sobre a escolha e o desempenho dos rebocadores.
+</p>
+
+<p>
+Hensen destaca que muitos portos tradicionais estão
+localizados em estuários e podem sofrer forte influência
+de marés, correntes e variações sazonais.
+</p>
+
+<p>
+Ao longo de uma mesma derrota entre a entrada do porto
+e o berço podem existir diferenças importantes de:
+</p>
+
+<ul>
+
+<li>
+profundidade;
+</li>
+
+<li>
+corrente;
+</li>
+
+<li>
+espaço disponível;
+</li>
+
+<li>
+exposição ao vento;
+</li>
+
+<li>
+exposição a ondas e swell;
+</li>
+
+<li>
+necessidade de passagem por pontes;
+</li>
+
+<li>
+necessidade de passagem por eclusas.
+</li>
+
+</ul>
+
+<p>
+Consequentemente, as exigências impostas ao rebocador
+podem se modificar ao longo da própria manobra.
+</p>
+
+<p>
+Hensen observa que, em determinados portos,
+esse problema é solucionado inclusive pela utilização
+de diferentes tipos de rebocadores em diferentes
+trechos da rota.
+</p>
+
+<p>
+Em áreas próximas ao mar e em instalações offshore,
+ondas e <strong>swell</strong> podem impor requisitos adicionais.
+</p>
+
+<p>
+Em regiões frias, a presença de gelo também pode
+condicionar o projeto e a operação do rebocador.
+</p>
+
+<p>
+Quando a profundidade disponível é limitada,
+o próprio <strong>calado do rebocador</strong>
+torna-se uma característica crítica.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O rebocador deve permanecer capaz de atuar
+efetivamente nas condições ambientais previstas
+para sua área de operação, respeitando os limites
+de segurança.
+</p>
+
+<p>
+A avaliação deve considerar não apenas a condição
+junto ao berço, mas também os acessos e demais áreas
+nas quais sua assistência poderá ser necessária.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Wind</strong> —
+vento;
+</li>
+
+<li>
+<strong>Current</strong> —
+corrente;
+</li>
+
+<li>
+<strong>Waves</strong> —
+ondas;
+</li>
+
+<li>
+<strong>Swell</strong> —
+ondulação proveniente de sistemas de ondas
+gerados fora da área local;
+</li>
+
+<li>
+<strong>Ice</strong> —
+gelo;
+</li>
+
+<li>
+<strong>Water depth</strong> —
+profundidade da água;
+</li>
+
+<li>
+<strong>Restricted water depth</strong> —
+profundidade limitada;
+</li>
+
+<li>
+<strong>Manoeuvring space</strong> —
+espaço disponível para manobra;
+</li>
+
+<li>
+<strong>Tug draft</strong> —
+calado do rebocador.
+</li>
+
+</ul>
+
+</div>
+<!-- =========================================
+     FIGURA — INFLUÊNCIA DO AMBIENTE
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+🌊 Influência das condições ambientais
+</h3>
+
+<svg
+viewBox="0 0 900 520"
+role="img"
+aria-label="Influência de vento corrente profundidade e espaço disponível sobre a operação do rebocador"
+>
+
+
+<!-- NAVIO -->
+
+<rect
+x="320"
+y="210"
+width="260"
+height="75"
+rx="35"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="450"
+y="242"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="currentColor">
+NAVIO ASSISTIDO
+</text>
+
+<text
+x="450"
+y="267"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Assisted ship
+</text>
+
+
+<!-- REBOCADOR -->
+
+<ellipse
+cx="675"
+cy="250"
+rx="68"
+ry="38"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="675"
+y="255"
+text-anchor="middle"
+font-size="16"
+font-weight="bold"
+fill="currentColor">
+TUG
+</text>
+
+
+<!-- cabo -->
+
+<line
+x1="580"
+y1="250"
+x2="607"
+y2="250"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+
+<!-- VENTO -->
+
+<line
+x1="130"
+y1="105"
+x2="330"
+y2="190"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polygon
+points="330,190 310,168 302,194"
+fill="currentColor"
+/>
+
+<text
+x="135"
+y="90"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+WIND
+</text>
+
+<text
+x="135"
+y="112"
+font-size="14"
+fill="currentColor">
+Vento
+</text>
+
+
+<!-- CORRENTE -->
+
+<line
+x1="130"
+y1="375"
+x2="330"
+y2="300"
+stroke="currentColor"
+stroke-width="4"
+/>
+
+<polygon
+points="330,300 306,297 315,320"
+fill="currentColor"
+/>
+
+<text
+x="120"
+y="400"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+CURRENT
+</text>
+
+<text
+x="120"
+y="422"
+font-size="14"
+fill="currentColor">
+Corrente
+</text>
+
+
+<!-- ONDAS / SWELL -->
+
+<path
+d="M610 390
+Q640 370 670 390
+Q700 410 730 390
+Q760 370 790 390"
+fill="none"
+stroke="currentColor"
+stroke-width="3"
+/>
+
+<text
+x="700"
+y="440"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="currentColor">
+WAVES / SWELL
+</text>
+
+
+<!-- PROFUNDIDADE -->
+
+<line
+x1="280"
+y1="350"
+x2="580"
+y2="350"
+stroke="currentColor"
+stroke-width="2"
+stroke-dasharray="8 6"
+/>
+
+<line
+x1="450"
+y1="285"
+x2="450"
+y2="350"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<text
+x="450"
+y="375"
+text-anchor="middle"
+font-size="17"
+font-weight="bold"
+fill="currentColor">
+WATER DEPTH
+</text>
+
+<text
+x="450"
+y="397"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Profundidade
+</text>
+
+
+<!-- ESPAÇO -->
+
+<line
+x1="610"
+y1="110"
+x2="800"
+y2="110"
+stroke="currentColor"
+stroke-width="2"
+/>
+
+<polygon
+points="610,110 625,102 625,118"
+fill="currentColor"
+/>
+
+<polygon
+points="800,110 785,102 785,118"
+fill="currentColor"
+/>
+
+<text
+x="705"
+y="90"
+text-anchor="middle"
+font-size="17"
+font-weight="bold"
+fill="currentColor">
+MANOEUVRING SPACE
+</text>
+
+<text
+x="705"
+y="135"
+text-anchor="middle"
+font-size="14"
+fill="currentColor">
+Espaço de manobra
+</text>
+
+</svg>
+
+
+<div class="destaque">
+
+<h3>
+Leitura operacional
+</h3>
+
+<p>
+A capacidade efetivamente disponível durante uma operação
+não depende apenas das características nominais do rebocador.
+</p>
+
+<p>
+O rebocador deve produzir a ação requerida enquanto
+opera dentro das restrições impostas pelo
+<strong>vento</strong>,
+<strong>corrente</strong>,
+<strong>ondas ou swell</strong>,
+<strong>profundidade</strong>
+e <strong>espaço disponível</strong>.
+</p>
+
+</div>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não analise o desempenho do rebocador considerando
+apenas a situação estática junto ao cais.
+</p>
+
+<p>
+Um mesmo rebocador pode apresentar condições operacionais
+muito diferentes quando submetido a corrente,
+vento, ondas, swell, profundidade limitada ou espaço
+restrito.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-4"
+data-topico-id="topico-4"
+>
+
+<h2>
+4. Características dos navios assistidos
+</h2>
+
+<div class="widget">
+
+<p>
+Outro fator fundamental destacado por Hensen é
+<strong>o tipo de navio que será assistido</strong>.
+</p>
+
+<p>
+A publicação cita, entre outros:
+</p>
+
+<ul>
+
+<li>
+LNG carriers;
+</li>
+
+<li>
+LPG carriers;
+</li>
+
+<li>
+bulk carriers;
+</li>
+
+<li>
+oil tankers;
+</li>
+
+<li>
+container ships;
+</li>
+
+<li>
+car carriers;
+</li>
+
+<li>
+Ro-Ro ships;
+</li>
+
+<li>
+unidades offshore específicas.
+</li>
+
+</ul>
+
+<p>
+Diferentes tipos e dimensões de navios produzem
+diferentes requisitos para os rebocadores.
+</p>
+
+<p>
+Entre as características que podem ser influenciadas
+estão:
+</p>
+
+<ul>
+
+<li>
+potência;
+</li>
+
+<li>
+equipamentos de reboque;
+</li>
+
+<li>
+sistema de defensas;
+</li>
+
+<li>
+manobrabilidade;
+</li>
+
+<li>
+configuração da superestrutura;
+</li>
+
+<li>
+requisitos específicos de segurança.
+</li>
+
+</ul>
+
+<p>
+Em um terminal que recebe uma faixa relativamente
+uniforme de navios, a determinação dos requisitos
+dos rebocadores tende a ser mais específica.
+</p>
+
+<p>
+Em um porto que recebe grande variedade de navios,
+os requisitos impostos à frota de rebocadores
+também tendem a ser mais variados.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A seleção do rebocador deve considerar
+<strong>as características do navio que será assistido</strong>
+e não apenas as características do próprio porto.
+</p>
+
+<p>
+Porto e navio constituem partes do mesmo problema
+operacional.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>LNG carrier</strong> —
+navio transportador de gás natural liquefeito;
+</li>
+
+<li>
+<strong>LPG carrier</strong> —
+navio transportador de gás liquefeito de petróleo;
+</li>
+
+<li>
+<strong>Bulk carrier</strong> —
+navio graneleiro;
+</li>
+
+<li>
+<strong>Oil tanker</strong> —
+navio-petroleiro;
+</li>
+
+<li>
+<strong>Container ship</strong> —
+navio porta-contentores;
+</li>
+
+<li>
+<strong>Car carrier</strong> —
+navio transportador de veículos;
+</li>
+
+<li>
+<strong>Ro-Ro ship</strong> —
+navio roll-on/roll-off;
+</li>
+
+<li>
+<strong>Fendering</strong> —
+sistema de defensas do rebocador;
+</li>
+
+<li>
+<strong>Manoeuvrability</strong> —
+manobrabilidade.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O <strong>bollard pull</strong> não deve ser utilizado
+isoladamente para definir se um rebocador é adequado
+a determinado navio.
+</p>
+
+<p>
+Potência, configuração, equipamento de reboque,
+defensas, manobrabilidade, segurança e método de
+assistência também integram a análise.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-5"
+data-topico-id="topico-5"
+>
+
+<h2>
+5. Serviços exigidos dos rebocadores
+</h2>
+
+<div class="widget">
+
+<p>
+A atividade de um rebocador portuário pode ultrapassar
+a simples assistência durante a atracação ou
+desatracação de navios mercantes.
+</p>
+
+<p>
+Hensen relaciona outras atividades que podem ser
+executadas por rebocadores, incluindo:
+</p>
+
+<ul>
+
+<li>
+assistência em estaleiros;
+</li>
+
+<li>
+reboque de equipamentos offshore;
+</li>
+
+<li>
+reboque de barcaças;
+</li>
+
+<li>
+reboque de guindastes flutuantes;
+</li>
+
+<li>
+assistência a comboios de empurra;
+</li>
+
+<li>
+combate a incêndio;
+</li>
+
+<li>
+controle de poluição;
+</li>
+
+<li>
+operações em terminais e instalações offshore.
+</li>
+
+</ul>
+
+<p>
+Cada uma dessas atividades pode impor requisitos próprios
+em relação ao tamanho do rebocador,
+manobrabilidade, equipamento e método de reboque.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O projeto de um rebocador deve considerar
+<strong>o conjunto de serviços para os quais ele será utilizado</strong>.
+</p>
+
+<p>
+Uma embarcação projetada exclusivamente para determinada
+forma de assistência pode não oferecer a mesma
+versatilidade para outras tarefas.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Ship assistance</strong> —
+assistência ao navio;
+</li>
+
+<li>
+<strong>Dockyard</strong> —
+estaleiro;
+</li>
+
+<li>
+<strong>Crane barge</strong> —
+barcaça-guindaste;
+</li>
+
+<li>
+<strong>Floating crane</strong> —
+guindaste flutuante;
+</li>
+
+<li>
+<strong>Fire-fighting</strong> —
+combate a incêndio;
+</li>
+
+<li>
+<strong>Pollution control</strong> —
+controle de poluição.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda
+<strong>capacidade de produzir força</strong>
+com
+<strong>capacidade de executar qualquer serviço</strong>.
+</p>
+
+<p>
+A operação pode exigir equipamentos, configuração,
+manobrabilidade e características específicas que
+não são representadas apenas pelo valor do
+bollard pull.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-6"
+data-topico-id="topico-6"
+>
+
+<h2>
+6. Relação entre método de assistência e tipo de rebocador
+</h2>
+
+<div class="widget">
+
+<p>
+Hensen estabelece uma relação direta entre
+<strong>o método de assistência empregado</strong>
+e <strong>o tipo de rebocador necessário</strong>.
+</p>
+
+<p>
+O método utilizado pode depender de:
+</p>
+
+<ul>
+
+<li>
+configuração do porto, terminal, jetty ou instalação offshore;
+</li>
+
+<li>
+tipo de navio;
+</li>
+
+<li>
+condições ambientais;
+</li>
+
+<li>
+complexidade de rios, canais e acessos;
+</li>
+
+<li>
+presença de pontes;
+</li>
+
+<li>
+presença de eclusas;
+</li>
+
+<li>
+necessidade de escort;
+</li>
+
+<li>
+tradições e práticas locais.
+</li>
+
+</ul>
+
+<p>
+O tipo de rebocador deve, tanto quanto possível,
+atender às exigências impostas pelo método de assistência.
+</p>
+
+<p>
+Ao mesmo tempo, as características dos rebocadores
+disponíveis influenciam os métodos que podem ser
+utilizados no porto.
+</p>
+
+<p>
+Hensen cita situações em que os rebocadores podem
+ser necessários para:
+</p>
+
+<ul>
+
+<li>
+empurrar o navio pelo costado;
+</li>
+
+<li>
+puxar por meio do cabo de reboque;
+</li>
+
+<li>
+reduzir e controlar a velocidade do navio;
+</li>
+
+<li>
+auxiliar na aproximação a pontes e eclusas;
+</li>
+
+<li>
+contribuir para o controle da velocidade e do rumo
+em situações de falha de propulsão do navio.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Existe uma relação de influência mútua:
+</p>
+
+<p>
+<strong>
+método de assistência ↔ tipo de rebocador.
+</strong>
+</p>
+
+<p>
+O método cria requisitos para o rebocador,
+enquanto as capacidades e limitações do rebocador
+condicionam a maneira como a assistência pode ser
+executada.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Towing on a line</strong> —
+assistência com o rebocador trabalhando afastado
+do navio através de um cabo de reboque;
+</li>
+
+<li>
+<strong>Operating at the ship's side</strong> —
+operação do rebocador junto ao costado do navio;
+</li>
+
+<li>
+<strong>Push-pull</strong> —
+método no qual o rebocador trabalha junto ao costado
+e pode empurrar ou puxar;
+</li>
+
+<li>
+<strong>Braking</strong> —
+ação de frenagem ou redução da velocidade;
+</li>
+
+<li>
+<strong>Heading control</strong> —
+controle do rumo;
+</li>
+
+<li>
+<strong>Escort</strong> —
+assistência destinada ao controle do navio durante
+determinados trechos da navegação.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não trate o método de assistência como uma escolha
+independente do tipo de rebocador.
+</p>
+
+<p>
+Um método pode exigir características que determinado
+rebocador não possui ou pode explorar capacidades
+específicas de determinada configuração.
+</p>
+
+<p>
+Essa relação será aprofundada nas Partes 2 e 3.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-7"
+data-topico-id="topico-7"
+>
+
+<h2>
+7. Experiência operacional, treinamento e segurança
+</h2>
+
+<div class="widget">
+
+<p>
+A experiência disponível no porto também deve ser
+considerada quando um novo tipo de rebocador ou um
+novo método de assistência é introduzido.
+</p>
+
+<p>
+Práticos e comandantes de rebocadores desenvolvem,
+ao longo do tempo, conhecimento específico sobre:
+</p>
+
+<ul>
+
+<li>
+os métodos de assistência empregados localmente;
+</li>
+
+<li>
+os tipos de rebocadores disponíveis;
+</li>
+
+<li>
+suas capacidades;
+</li>
+
+<li>
+suas limitações;
+</li>
+
+<li>
+suas vantagens e deficiências;
+</li>
+
+<li>
+o comportamento das tripulações durante as operações.
+</li>
+
+</ul>
+
+<p>
+Esse conhecimento permite antecipar o comportamento
+do rebocador durante a manobra.
+</p>
+
+<p>
+A substituição por um sistema substancialmente diferente
+pode exigir adaptação, treinamento e instrução.
+</p>
+
+<p>
+Hensen também ressalta que a assistência por rebocadores
+sempre envolve riscos para a embarcação e sua tripulação.
+</p>
+
+<p>
+Esses riscos podem ser reduzidos por meio de:
+</p>
+
+<ul>
+
+<li>
+treinamento adequado;
+</li>
+
+<li>
+projeto apropriado;
+</li>
+
+<li>
+equipamentos adequados;
+</li>
+
+<li>
+seleção correta do tipo de rebocador;
+</li>
+
+<li>
+consideração das condições locais e do método de assistência.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A introdução de tecnologia mais avançada não elimina
+a necessidade de conhecimento operacional.
+</p>
+
+<p>
+Quanto mais diferentes forem o novo rebocador e seu
+modo de operação em relação ao sistema anteriormente
+utilizado, maior será a importância de uma transição
+planejada e de treinamento apropriado.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Tug master</strong> —
+comandante ou mestre do rebocador;
+</li>
+
+<li>
+<strong>Tug crew</strong> —
+tripulação do rebocador;
+</li>
+
+<li>
+<strong>Available experience</strong> —
+experiência operacional disponível;
+</li>
+
+<li>
+<strong>Training</strong> —
+treinamento;
+</li>
+
+<li>
+<strong>Instruction</strong> —
+instrução;
+</li>
+
+<li>
+<strong>Safety requirements</strong> —
+requisitos de segurança;
+</li>
+
+<li>
+<strong>Hazardous area</strong> —
+área perigosa ou sujeita a requisitos especiais
+de segurança.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Um rebocador tecnologicamente mais moderno não deve
+ser automaticamente considerado operacionalmente
+superior em qualquer circunstância.
+</p>
+
+<p>
+É necessário conhecer suas capacidades, limitações,
+modo de operação e adequação às condições locais.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-8"
+data-topico-id="topico-8"
+>
+
+<h2>
+8. Síntese dos fatores que determinam a escolha do rebocador
+</h2>
+
+<div class="widget">
+
+<p>
+O Chapter 1 de <strong>Tug Use in Port</strong>
+conduz a uma conclusão central:
+<strong>não existe uma solução universal para a escolha
+do rebocador portuário</strong>.
+</p>
+
+<p>
+Cada porto apresenta combinação própria de:
+</p>
+
+<ul>
+
+<li>
+configuração física;
+</li>
+
+<li>
+vias de acesso;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+condições ambientais;
+</li>
+
+<li>
+tipos e dimensões de navios;
+</li>
+
+<li>
+serviços necessários;
+</li>
+
+<li>
+métodos de assistência;
+</li>
+
+<li>
+experiência operacional;
+</li>
+
+<li>
+requisitos de segurança.
+</li>
+
+</ul>
+
+<p>
+A escolha de um rebocador exige, portanto,
+avaliação conjunta desses fatores.
+</p>
+
+<p>
+Hensen destaca que não basta determinar
+<strong>quais forças</strong> estarão envolvidas.
+É necessário compreender
+<strong>como, quando e sob quais condições</strong>
+essas forças serão necessárias.
+</p>
+
+<p>
+Entre as condições que devem ser consideradas estão
+a velocidade do navio, o espaço disponível,
+as condições ambientais e a folga abaixo da quilha.
+</p>
+
+<p>
+Ao mesmo tempo, existe interesse operacional em utilizar
+rebocadores com a maior versatilidade possível,
+reduzindo a necessidade de manter grande quantidade
+de tipos diferentes dentro da mesma frota.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A questão correta não é:
+</p>
+
+<p>
+<strong>
+“Qual é o melhor tipo de rebocador?”
+</strong>
+</p>
+
+<p>
+A análise deve procurar determinar:
+</p>
+
+<p>
+<strong>
+“Qual rebocador apresenta as capacidades adequadas
+para executar esta tarefa, neste porto, com este navio,
+sob estas condições e utilizando este método de assistência?”
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Capabilities</strong> —
+capacidades;
+</li>
+
+<li>
+<strong>Limitations</strong> —
+limitações;
+</li>
+
+<li>
+<strong>Confined area</strong> —
+área confinada ou restrita;
+</li>
+
+<li>
+<strong>Underkeel clearance</strong> —
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>Versatile tug</strong> —
+rebocador capaz de executar diferentes tipos
+de serviço ou assistência;
+</li>
+
+<li>
+<strong>Tug requirements</strong> —
+requisitos impostos ao rebocador.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Este é um dos princípios mais importantes de toda
+a aula:
+</p>
+
+<p>
+<strong>
+potência ou bollard pull, isoladamente,
+não definem a adequação operacional de um rebocador.
+</strong>
+</p>
+
+<p>
+A análise deve integrar:
+</p>
+
+<p>
+<strong>
+porto + acesso + ambiente + navio + serviço +
+método de assistência + capacidades + limitações +
+segurança.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-9"
+data-topico-id="topico-9"
+>
+
+<h2>
+9. Technical English — leitura técnica do Chapter 1
+</h2>
+
+<div class="widget">
+
+<p>
+A própria publicação resume o raciocínio central
+do capítulo em uma formulação curta e importante
+para interpretação de questões em inglês:
+</p>
+
+
+<div class="destaque">
+
+<h3>
+📖 Original
+</h3>
+
+<p>
+<em>
+“No two ports are the same. Many factors influence
+the choice of tug type.”
+</em>
+</p>
+
+</div>
+
+
+<h3>
+🇧🇷 Tradução técnica
+</h3>
+
+<p>
+<strong>
+“Não existem dois portos iguais. Muitos fatores
+influenciam a escolha do tipo de rebocador.”
+</strong>
+</p>
+
+
+<h3>
+Interpretação
+</h3>
+
+<p>
+A frase não significa simplesmente que os portos
+possuem geometrias diferentes.
+</p>
+
+<p>
+Dentro do contexto do capítulo, as diferenças incluem
+condições ambientais, profundidade, tipos de navios,
+métodos de assistência, requisitos de escort,
+tradições locais e demais condições operacionais.
+</p>
+
+<p>
+Por isso, a escolha do rebocador deve resultar
+da análise da operação como um sistema.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Vocabulário para prova
+</h3>
+
+<ul>
+
+<li>
+<strong>Choice of tug type</strong> —
+escolha do tipo de rebocador;
+</li>
+
+<li>
+<strong>Local conditions</strong> —
+condições locais;
+</li>
+
+<li>
+<strong>Specific situations</strong> —
+situações específicas;
+</li>
+
+<li>
+<strong>Customs and traditions</strong> —
+costumes e tradições;
+</li>
+
+<li>
+<strong>Operational requirements</strong> —
+requisitos operacionais;
+</li>
+
+<li>
+<strong>Port approaches</strong> —
+acessos ou aproximações ao porto;
+</li>
+
+<li>
+<strong>Suitable tug</strong> —
+rebocador adequado;
+</li>
+
+<li>
+<strong>Well-trained crews</strong> —
+tripulações bem treinadas.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Em uma questão formulada em inglês,
+<strong>tug requirements</strong>,
+<strong>tug capabilities</strong>
+e <strong>tug limitations</strong>
+não são expressões equivalentes.
+</p>
+
+<p>
+<strong>Requirements</strong> representam aquilo que
+a operação exige do rebocador.
+</p>
+
+<p>
+<strong>Capabilities</strong> representam aquilo que
+o rebocador consegue realizar.
+</p>
+
+<p>
+<strong>Limitations</strong> representam as restrições
+dentro das quais essa capacidade pode ser empregada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+     FINAL — PARTE 1
+========================================= -->
+<!-- =========================================
+     INÍCIO — PARTE 2
+========================================= -->
+
+
+<!-- =========================================
+     PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 2 — TIPOS DE REBOCADORES PORTUÁRIOS
+</h2>
+
+<p>
+Depois de compreender os fatores que condicionam
+a escolha de um rebocador, é necessário identificar
+<strong>como os diferentes tipos de rebocadores são
+configurados e por que essas diferenças alteram
+seu comportamento operacional</strong>.
+</p>
+
+<p>
+Hensen chama atenção inicialmente para uma dificuldade
+terminológica importante.
+</p>
+
+<p>
+Ao longo do desenvolvimento dos rebocadores,
+diferentes denominações passaram a ser utilizadas
+com base em características como:
+</p>
+
+<ul>
+
+<li>
+tipo de propulsão;
+</li>
+
+<li>
+fabricante do sistema propulsivo;
+</li>
+
+<li>
+posição dos propulsores;
+</li>
+
+<li>
+posição do ponto de reboque;
+</li>
+
+<li>
+forma pela qual o rebocador normalmente opera.
+</li>
+
+</ul>
+
+<p>
+Por esse motivo, para compreender corretamente
+o comportamento operacional de um rebocador,
+é especialmente importante identificar:
+</p>
+
+<ul>
+
+<li>
+<strong>onde está localizada a propulsão;</strong>
+</li>
+
+<li>
+<strong>onde está localizado o ponto de reboque;</strong>
+</li>
+
+<li>
+<strong>qual extremidade é normalmente utilizada
+durante a assistência.</strong>
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A posição relativa entre
+<strong>propulsão</strong>
+e
+<strong>ponto de reboque</strong>
+é um dos elementos fundamentais para compreender
+as capacidades, limitações e comportamento
+dos diferentes tipos de rebocadores.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 10
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-10"
+data-topico-id="topico-10"
+>
+
+<h2>
+10. Classificação básica dos rebocadores
+</h2>
+
+<div class="widget">
+
+<p>
+Hensen utiliza como critério fundamental de classificação
+a localização relativa entre:
+</p>
+
+<ul>
+
+<li>
+o sistema de propulsão;
+</li>
+
+<li>
+o ponto principal de reboque.
+</li>
+
+</ul>
+
+
+<h3>
+Propulsão localizada a ré
+</h3>
+
+<p>
+Nos rebocadores convencionais,
+o sistema propulsivo encontra-se normalmente
+<strong>na região de ré</strong>,
+enquanto o ponto principal de reboque encontra-se
+mais à vante, aproximadamente na região central
+do rebocador.
+</p>
+
+
+<h3>
+Propulsão localizada a vante
+</h3>
+
+<p>
+Nos
+<strong>tractor tugs</strong>,
+a disposição é essencialmente inversa.
+</p>
+
+<p>
+Os propulsores ficam instalados
+<strong>a vante da região de meia-nau</strong>,
+enquanto o ponto de reboque principal está situado
+<strong>a ré</strong>.
+</p>
+
+
+<p>
+A partir desses conceitos básicos encontram-se,
+entre outros:
+</p>
+
+<ul>
+
+<li>
+<strong>conventional tugs</strong>;
+</li>
+
+<li>
+<strong>tractor tugs</strong>;
+</li>
+
+<li>
+<strong>reverse-tractor tugs</strong>;
+</li>
+
+<li>
+<strong>Azimuth Stern Drive — ASD tugs</strong>;
+</li>
+
+<li>
+<strong>combi-tugs</strong>;
+</li>
+
+<li>
+tipos especiais derivados dessas configurações.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Critério de identificação
+</h3>
+
+<p>
+Antes de tentar classificar um rebocador pelo nome,
+procure determinar:
+</p>
+
+<p>
+<strong>
+propulsão → towing point → extremidade de trabalho.
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Propulsion aft</strong> —
+propulsão localizada a ré;
+</li>
+
+<li>
+<strong>Propulsion forward</strong> —
+propulsão localizada a vante;
+</li>
+
+<li>
+<strong>Towing point</strong> —
+ponto pelo qual a força do cabo é transmitida
+ao rebocador;
+</li>
+
+<li>
+<strong>Midships</strong> —
+região de meia-nau;
+</li>
+
+<li>
+<strong>Conventional tug</strong> —
+rebocador convencional;
+</li>
+
+<li>
+<strong>Tractor tug</strong> —
+rebocador do tipo tractor.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não utilize apenas o tipo de propulsor para classificar
+o rebocador.
+</p>
+
+<p>
+Um propulsor azimutal pode ser empregado tanto em
+<strong>tractor tugs</strong>
+quanto em
+<strong>reverse-tractor</strong>
+e
+<strong>ASD tugs</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-11"
+data-topico-id="topico-11"
+>
+
+<h2>
+11. Requisitos gerais de desempenho
+</h2>
+
+<div class="widget">
+
+<p>
+Antes da comparação entre os diferentes tipos,
+Hensen apresenta características gerais desejáveis
+em um rebocador portuário.
+</p>
+
+
+<h3>
+Tempo de resposta
+</h3>
+
+<p>
+O rebocador deve responder rapidamente às ordens
+e às alterações da situação operacional.
+</p>
+
+<p>
+A capacidade de mudar rapidamente:
+</p>
+
+<ul>
+
+<li>
+a direção do empuxo;
+</li>
+
+<li>
+a intensidade da força;
+</li>
+
+<li>
+a posição relativa ao navio;
+</li>
+
+</ul>
+
+<p>
+é particularmente importante em áreas restritas.
+</p>
+
+
+<h3>
+Efetividade
+</h3>
+
+<p>
+A efetividade operacional não depende exclusivamente
+do
+<strong>bollard pull</strong>.
+</p>
+
+<p>
+Também dependem do desempenho:
+</p>
+
+<ul>
+
+<li>
+manobrabilidade;
+</li>
+
+<li>
+configuração do casco;
+</li>
+
+<li>
+estabilidade;
+</li>
+
+<li>
+equipamentos de reboque;
+</li>
+
+<li>
+capacidade de direcionar a força requerida;
+</li>
+
+<li>
+tempo de resposta.
+</li>
+
+</ul>
+
+
+<h3>
+Espaço de manobra
+</h3>
+
+<p>
+Em áreas confinadas é especialmente vantajoso
+que o rebocador consiga alterar posição e orientação
+utilizando pouco espaço.
+</p>
+
+
+<h3>
+Visibilidade
+</h3>
+
+<p>
+Da estação de manobra, o comandante deve possuir
+visibilidade adequada do:
+</p>
+
+<ul>
+
+<li>
+cabo de reboque;
+</li>
+
+<li>
+equipamento de reboque;
+</li>
+
+<li>
+convés de trabalho;
+</li>
+
+<li>
+navio assistido;
+</li>
+
+<li>
+zona de contato entre rebocador e navio;
+</li>
+
+<li>
+outros rebocadores;
+</li>
+
+<li>
+direção de movimento.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Um bom rebocador não precisa apenas
+<strong>gerar força</strong>.
+</p>
+
+<p>
+Ele precisa ser capaz de
+<strong>produzir e direcionar essa força rapidamente,
+com segurança e dentro do espaço disponível</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Response time</strong> —
+tempo de resposta;
+</li>
+
+<li>
+<strong>Manoeuvring space</strong> —
+espaço necessário para manobra;
+</li>
+
+<li>
+<strong>Working deck</strong> —
+convés de trabalho;
+</li>
+
+<li>
+<strong>Wheelhouse</strong> —
+passadiço;
+</li>
+
+<li>
+<strong>Manoeuvring station</strong> —
+estação de manobra;
+</li>
+
+<li>
+<strong>All-round visibility</strong> —
+visibilidade em todas as direções.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Um bollard pull elevado não compensa necessariamente
+baixa manobrabilidade ou demora para posicionar
+a força na direção requerida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-12"
+data-topico-id="topico-12"
+>
+
+<h2>
+12. Rebocadores convencionais — Conventional Tugs
+</h2>
+
+<div class="widget">
+
+<p>
+Nos
+<strong>conventional tugs</strong>,
+o sistema propulsivo principal encontra-se
+na região de ré.
+</p>
+
+<p>
+O ponto de reboque encontra-se mais à vante
+em relação aos propulsores,
+normalmente próximo da região central do rebocador.
+</p>
+
+<p>
+O grupo inclui diferentes configurações,
+entre elas:
+</p>
+
+<ul>
+
+<li>
+rebocadores de um hélice;
+</li>
+
+<li>
+rebocadores de dois hélices;
+</li>
+
+<li>
+hélices de passo fixo;
+</li>
+
+<li>
+hélices de passo controlável;
+</li>
+
+<li>
+hélices abertas;
+</li>
+
+<li>
+hélices instaladas em nozzle;
+</li>
+
+<li>
+diferentes sistemas de governo.
+</li>
+
+</ul>
+
+
+<h3>
+Propeller nozzle
+</h3>
+
+<p>
+O uso de
+<strong>nozzle</strong>
+é particularmente importante em rebocadores porque
+essas embarcações frequentemente trabalham
+com:
+</p>
+
+<ul>
+
+<li>
+velocidade relativamente baixa;
+</li>
+
+<li>
+elevado carregamento da hélice;
+</li>
+
+<li>
+grande demanda de empuxo.
+</li>
+
+</ul>
+
+<p>
+Nessas condições, o nozzle pode proporcionar
+aumento significativo da eficiência propulsiva.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conventional tug
+</h3>
+
+<p>
+O elemento estrutural mais importante para sua
+identificação é:
+</p>
+
+<p>
+<strong>
+propulsão a ré + towing point localizado mais à vante.
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Single-screw tug</strong> —
+rebocador de um hélice;
+</li>
+
+<li>
+<strong>Twin-screw tug</strong> —
+rebocador de dois hélices;
+</li>
+
+<li>
+<strong>Fixed Pitch Propeller — FPP</strong> —
+hélice de passo fixo;
+</li>
+
+<li>
+<strong>Controllable Pitch Propeller — CPP</strong> —
+hélice de passo controlável;
+</li>
+
+<li>
+<strong>Nozzle</strong> —
+duto ao redor da hélice;
+</li>
+
+<li>
+<strong>Ahead thrust</strong> —
+empuxo avante;
+</li>
+
+<li>
+<strong>Astern thrust</strong> —
+empuxo a ré.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não presuma que um rebocador convencional produza
+o mesmo empuxo avante e a ré.
+</p>
+
+<p>
+O desempenho depende da configuração do conjunto:
+</p>
+
+<p>
+<strong>
+hélice + nozzle + leme + casco.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-13"
+data-topico-id="topico-13"
+>
+
+<h2>
+13. Combi-Tug
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>combi-tug</strong>
+é uma configuração destinada a ampliar as capacidades
+operacionais de determinados rebocadores convencionais.
+</p>
+
+<p>
+Hensen descreve configurações que combinam:
+</p>
+
+<ul>
+
+<li>
+propulsão principal convencional a ré;
+</li>
+
+<li>
+um propulsor azimutal auxiliar a vante;
+</li>
+
+<li>
+um ponto de reboque adicional próximo à popa.
+</li>
+
+</ul>
+
+<p>
+Essa combinação permite ampliar significativamente
+a capacidade de posicionamento e manobra.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O nome
+<strong>combi</strong>
+decorre justamente da combinação de características
+de diferentes conceitos de rebocadores.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda
+<strong>combi-tug</strong>
+com
+<strong>ASD tug</strong>.
+</p>
+
+<p>
+No combi-tug,
+a propulsão principal permanece convencional,
+havendo um propulsor azimutal complementar.
+</p>
+
+<p>
+No ASD, os principais propulsores são
+azimutais e ficam localizados a ré.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-14"
+data-topico-id="topico-14"
+>
+
+<h2>
+14. Tractor Tug com propulsão Voith-Schneider
+</h2>
+
+<div class="widget">
+
+<p>
+No
+<strong>tractor tug</strong>,
+os propulsores encontram-se instalados
+<strong>a vante da região de meia-nau</strong>,
+enquanto o ponto principal de reboque encontra-se
+na região de ré.
+</p>
+
+<p>
+Uma das configurações clássicas utiliza o
+<strong>Voith-Schneider Propeller — VSP</strong>.
+</p>
+
+
+<!-- =========================================
+     IMAGEM — PROPULSÃO VOITH-SCHNEIDER
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+⚙ Propulsão Voith-Schneider — VSP
+</h3>
+
+<img
+src="../../img/manobrabilidade/rebocadores_propulsao_voith_schneider.png"
+alt="Rebocadores equipados com propulsão Voith-Schneider e detalhes dos propulsores cicloidais instalados sob o casco"
+loading="lazy"
+style="max-width:100%; height:auto;"
+>
+
+<p>
+<strong>Propulsão Voith-Schneider — VSP.</strong>
+A imagem permite visualizar rebocadores equipados
+com esse tipo de propulsão e, em detalhe,
+os rotores de eixo vertical instalados sob o casco.
+</p>
+
+</div>
+
+
+<h3>
+Princípio de funcionamento
+</h3>
+
+<p>
+O Voith-Schneider utiliza um conjunto de
+<strong>pás aproximadamente verticais</strong>
+que gira em torno de um eixo vertical.
+</p>
+
+<p>
+Durante cada revolução,
+o ângulo das pás varia continuamente.
+</p>
+
+<p>
+Essa variação cíclica permite controlar:
+</p>
+
+<ul>
+
+<li>
+a intensidade do empuxo;
+</li>
+
+<li>
+a direção do empuxo.
+</li>
+
+</ul>
+
+<p>
+Dessa forma, o sistema consegue modificar rapidamente
+a direção da força produzida sem depender de um
+leme convencional instalado atrás de uma hélice.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Observe na imagem
+</h3>
+
+<p>
+O
+<strong>Voith-Schneider Propeller</strong>
+não é uma hélice convencional orientável.
+</p>
+
+<p>
+As pás permanecem aproximadamente verticais
+e executam movimento circular em torno de um
+eixo vertical.
+</p>
+
+<p>
+A direção da força resultante depende da
+variação controlada do passo das pás ao longo
+de cada rotação.
+</p>
+
+</div>
+
+
+<h3>
+Características operacionais
+</h3>
+
+<p>
+Hensen associa os tractor tugs Voith a
+elevada manobrabilidade.
+</p>
+
+<p>
+Entre as capacidades características encontram-se:
+</p>
+
+<ul>
+
+<li>
+rápida alteração da direção do empuxo;
+</li>
+
+<li>
+capacidade de girar praticamente sobre o próprio ponto;
+</li>
+
+<li>
+boa capacidade de movimento em diferentes direções;
+</li>
+
+<li>
+boa capacidade de operação a ré.
+</li>
+
+</ul>
+
+
+<h3>
+Skeg
+</h3>
+
+<p>
+Nos tractor tugs,
+o
+<strong>skeg</strong>
+possui importante função hidrodinâmica.
+</p>
+
+<p>
+Ele contribui para:
+</p>
+
+<ul>
+
+<li>
+estabilidade direcional;
+</li>
+
+<li>
+posição do centro das forças hidrodinâmicas;
+</li>
+
+<li>
+comportamento quando o rebocador está sujeito
+às forças do cabo e do escoamento.
+</li>
+
+</ul>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Voith-Schneider Propeller — VSP</strong> —
+propulsor cicloidal de eixo vertical;
+</li>
+
+<li>
+<strong>Cycloidal propulsion</strong> —
+propulsão cicloidal;
+</li>
+
+<li>
+<strong>Vertical blades</strong> —
+pás aproximadamente verticais;
+</li>
+
+<li>
+<strong>Thrust direction</strong> —
+direção do empuxo;
+</li>
+
+<li>
+<strong>Skeg</strong> —
+apêndice hidrodinâmico importante para
+o comportamento do tractor tug.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda um
+<strong>Voith-Schneider Propeller</strong>
+com um
+<strong>azimuth thruster</strong>.
+</p>
+
+<p>
+Os dois sistemas permitem grande capacidade
+de direcionamento do empuxo,
+mas utilizam princípios mecânicos diferentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-15"
+data-topico-id="topico-15"
+>
+
+<h2>
+15. Propulsão azimutal — Azimuth Thruster
+</h2>
+
+<div class="widget">
+
+<p>
+Outro sistema fundamental empregado nos rebocadores
+modernos é o
+<strong>azimuth thruster</strong>.
+</p>
+
+<p>
+Nesse sistema, a unidade propulsora pode girar
+em torno de um eixo aproximadamente vertical,
+permitindo orientar diretamente o empuxo.
+</p>
+
+
+<!-- =========================================
+     IMAGEM — PROPULSOR AZIMUTAL
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+⚙ Propulsão azimutal — Azimuth Thruster
+</h3>
+
+<img
+src="../../img/manobrabilidade/rebocadores_propulsao_azimutal.png"
+alt="Rebocadores equipados com propulsão azimutal e detalhes das unidades propulsoras instaladas sob o casco"
+loading="lazy"
+style="max-width:100%; height:auto;"
+>
+
+<p>
+<strong>Propulsão azimutal.</strong>
+A imagem mostra rebocadores dotados de unidades
+propulsoras capazes de alterar sua orientação
+em torno de um eixo vertical.
+</p>
+
+</div>
+
+
+<h3>
+Princípio de funcionamento
+</h3>
+
+<p>
+A hélice faz parte de uma unidade que pode
+ser orientada em azimute.
+</p>
+
+<p>
+Consequentemente, o empuxo pode ser direcionado
+pela própria orientação do conjunto propulsor.
+</p>
+
+<p>
+Isso elimina, em muitas configurações,
+a necessidade de um leme convencional para
+produzir as principais alterações na direção
+do empuxo.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+<strong>
+Azimuth thruster ≠ ASD.
+</strong>
+</p>
+
+<p>
+O
+<strong>azimuth thruster</strong>
+é um
+<strong>sistema de propulsão</strong>.
+</p>
+
+<p>
+O
+<strong>ASD — Azimuth Stern Drive</strong>
+é uma
+<strong>configuração de rebocador</strong>
+na qual os principais propulsores azimutais
+estão localizados a ré.
+</p>
+
+<p>
+Um
+<strong>azimuth tractor tug</strong>
+também utiliza propulsores azimutais,
+mas eles ficam localizados a vante.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Azimuth thruster</strong> —
+propulsor azimutal;
+</li>
+
+<li>
+<strong>Azimuthing unit</strong> —
+unidade orientável em azimute;
+</li>
+
+<li>
+<strong>Thrust vector</strong> —
+vetor de empuxo;
+</li>
+
+<li>
+<strong>Thrust direction</strong> —
+direção do empuxo;
+</li>
+
+<li>
+<strong>360° rotation</strong> —
+capacidade de rotação em torno de um eixo vertical.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A simples presença de propulsores azimutais
+não permite concluir que um rebocador seja ASD.
+</p>
+
+<p>
+É necessário determinar:
+</p>
+
+<ul>
+
+<li>
+onde estão instalados os propulsores;
+</li>
+
+<li>
+onde está o towing point;
+</li>
+
+<li>
+qual extremidade é empregada durante a assistência.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 16
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-16"
+data-topico-id="topico-16"
+>
+
+<h2>
+16. Azimuth Tractor Tug
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>azimuth tractor tug</strong>
+mantém o princípio estrutural de um tractor:
+</p>
+
+<ul>
+
+<li>
+propulsores localizados a vante;
+</li>
+
+<li>
+ponto de reboque localizado a ré.
+</li>
+
+</ul>
+
+<p>
+A diferença em relação ao tractor Voith está
+no sistema propulsivo.
+</p>
+
+<p>
+Em vez de propulsores cicloidais,
+são utilizados
+<strong>azimuth thrusters</strong>.
+</p>
+
+<p>
+A orientação das unidades propulsoras permite
+direcionar rapidamente o empuxo para diferentes
+direções.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Comparação
+</h3>
+
+<p>
+<strong>Voith tractor:</strong>
+propulsão a vante por VSP.
+</p>
+
+<p>
+<strong>Azimuth tractor:</strong>
+propulsão a vante por azimuth thrusters.
+</p>
+
+<p>
+Nos dois casos,
+o towing point principal permanece localizado a ré.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Tractor</strong>
+é uma configuração do rebocador.
+</p>
+
+<p>
+<strong>Voith-Schneider</strong>
+e
+<strong>azimuth thruster</strong>
+são sistemas de propulsão.
+</p>
+
+<p>
+Não confunda a configuração do rebocador
+com o tipo de propulsor utilizado.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-17"
+data-topico-id="topico-17"
+>
+
+<h2>
+17. Reverse-Tractor Tug
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>reverse-tractor tug</strong>
+possui os propulsores principais instalados
+<strong>a ré</strong>
+e o ponto principal de reboque localizado
+<strong>a vante</strong>.
+</p>
+
+<p>
+Durante sua operação típica,
+a proa do rebocador funciona como principal
+extremidade de trabalho.
+</p>
+
+<p>
+A relação funcional é semelhante à do tractor:
+o towing point permanece voltado para o navio
+assistido, enquanto os propulsores ficam
+na extremidade oposta.
+</p>
+
+<p>
+Entretanto, a orientação geral do casco é inversa
+em relação ao tractor clássico.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O termo
+<strong>reverse-tractor</strong>
+não significa simplesmente que o rebocador
+esteja navegando “de ré”.
+</p>
+
+<p>
+Ele descreve uma configuração específica:
+</p>
+
+<p>
+<strong>
+propulsão azimutal a ré + towing point a vante.
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Reverse-tractor tug</strong> —
+rebocador com propulsão azimutal a ré
+e towing point principal a vante;
+</li>
+
+<li>
+<strong>Operate over the bow</strong> —
+operar utilizando a proa como principal
+extremidade de trabalho;
+</li>
+
+<li>
+<strong>Forward towing point</strong> —
+ponto de reboque localizado a vante.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Existe proximidade conceitual entre
+<strong>reverse-tractor</strong>
+e
+<strong>ASD</strong>.
+</p>
+
+<p>
+A diferença deve ser analisada pela configuração
+completa e pela versatilidade operacional da unidade,
+e não apenas pela posição dos propulsores.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-18"
+data-topico-id="topico-18"
+>
+
+<h2>
+18. Azimuth Stern Drive — ASD Tug
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Azimuth Stern Drive tug — ASD</strong>
+possui dois propulsores azimutais principais
+instalados na região de
+<strong>ré</strong>.
+</p>
+
+
+<!-- =========================================
+     IMAGEM — ASD / PROPULSORES AZIMUTAIS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+⚓ ASD — Azimuth Stern Drive
+</h3>
+
+<img
+src="../../img/manobrabilidade/rebocadores_propulsao_azimutal.png"
+alt="Rebocadores com propulsores azimutais instalados sob a região de popa"
+loading="lazy"
+style="max-width:100%; height:auto;"
+>
+
+<p>
+No
+<strong>Azimuth Stern Drive — ASD</strong>,
+os principais propulsores azimutais estão instalados
+na região de ré.
+</p>
+
+</div>
+
+
+<p>
+A configuração pode parecer semelhante
+à de um reverse-tractor.
+</p>
+
+<p>
+Entretanto, Hensen apresenta o ASD como um conceito
+de grande versatilidade operacional.
+</p>
+
+<p>
+Dependendo de sua configuração e dos equipamentos
+de reboque instalados, ele pode operar:
+</p>
+
+<ul>
+
+<li>
+pela proa, de maneira semelhante a um reverse-tractor;
+</li>
+
+<li>
+pela popa, desempenhando funções semelhantes
+às de um rebocador convencional.
+</li>
+
+</ul>
+
+
+<p>
+Por essa razão, muitos ASD possuem:
+</p>
+
+<ul>
+
+<li>
+guincho de reboque a vante;
+</li>
+
+<li>
+equipamento de reboque adicional a ré;
+</li>
+
+<li>
+configuração destinada ao trabalho por ambas
+as extremidades.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Não confunda
+</h3>
+
+<p>
+<strong>Azimuth thruster</strong> =
+tipo de propulsor.
+</p>
+
+<p>
+<strong>ASD tug</strong> =
+configuração do rebocador com os principais
+propulsores azimutais localizados a ré.
+</p>
+
+<p>
+<strong>Azimuth tractor tug</strong> =
+tractor com propulsores azimutais localizados
+a vante.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Azimuth Stern Drive — ASD</strong> —
+configuração com propulsores azimutais principais
+localizados a ré;
+</li>
+
+<li>
+<strong>Multi-purpose tug</strong> —
+rebocador multipropósito;
+</li>
+
+<li>
+<strong>Forward towing winch</strong> —
+guincho de reboque a vante;
+</li>
+
+<li>
+<strong>Aft towing winch</strong> —
+guincho de reboque a ré;
+</li>
+
+<li>
+<strong>Quick release system</strong> —
+sistema de liberação rápida.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A característica do ASD não é apenas possuir
+propulsores azimutais.
+</p>
+
+<p>
+Para identificá-lo corretamente,
+considere:
+</p>
+
+<p>
+<strong>
+propulsores principais a ré +
+configuração de reboque +
+capacidade operacional pelas extremidades.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-19"
+data-topico-id="topico-19"
+>
+
+<h2>
+19. Comparação entre VSP e propulsão azimutal
+</h2>
+
+<div class="widget">
+
+<p>
+Os sistemas
+<strong>Voith-Schneider</strong>
+e
+<strong>azimutal</strong>
+permitem elevada capacidade de controle da direção
+do empuxo.
+</p>
+
+<p>
+Entretanto, os princípios mecânicos são diferentes.
+</p>
+
+
+<h3>
+Voith-Schneider
+</h3>
+
+<p>
+Utiliza pás aproximadamente verticais girando
+ao redor de um eixo vertical.
+</p>
+
+<p>
+A direção do empuxo é determinada pela variação
+cíclica do ângulo dessas pás.
+</p>
+
+
+<h3>
+Azimuth Thruster
+</h3>
+
+<p>
+Utiliza uma hélice integrada a uma unidade orientável.
+</p>
+
+<p>
+A direção do empuxo muda quando o próprio conjunto
+propulsor gira em azimute.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Resumo visual
+</h3>
+
+<p>
+<strong>VSP:</strong>
+o propulsor permanece estruturalmente na mesma posição
+e o movimento cíclico das pás modifica o vetor resultante.
+</p>
+
+<p>
+<strong>Azimuth thruster:</strong>
+a própria unidade propulsora gira para orientar
+o vetor de empuxo.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma questão pode apresentar apenas a expressão
+<strong>360° thrust</strong>
+ou
+<strong>thrust in any direction</strong>.
+</p>
+
+<p>
+Isso não é suficiente, isoladamente,
+para identificar VSP ou azimuth thruster.
+</p>
+
+<p>
+É necessário observar o princípio mecânico descrito.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-20"
+data-topico-id="topico-20"
+>
+
+<h2>
+20. Tipos relacionados e desenvolvimentos especiais
+</h2>
+
+<div class="widget">
+
+<p>
+Além das configurações fundamentais,
+Hensen apresenta diversos
+<strong>related tug types</strong>
+e desenvolvimentos derivados.
+</p>
+
+<p>
+Entre eles encontram-se:
+</p>
+
+<ul>
+
+<li>
+<strong>Rotortug</strong>;
+</li>
+
+<li>
+<strong>Z-Tech tug</strong>;
+</li>
+
+<li>
+<strong>RSD tug</strong>;
+</li>
+
+<li>
+<strong>Carrousel tug</strong>;
+</li>
+
+<li>
+<strong>DOT tug</strong>;
+</li>
+
+<li>
+<strong>All-Rounder AR360T</strong>.
+</li>
+
+</ul>
+
+
+<h3>
+Rotortug
+</h3>
+
+<p>
+O
+<strong>Rotortug</strong>
+utiliza três propulsores azimutais
+dispostos em configuração característica.
+</p>
+
+<p>
+A finalidade é proporcionar elevada versatilidade
+e grande capacidade de controle da força.
+</p>
+
+
+<h3>
+Z-Tech
+</h3>
+
+<p>
+O
+<strong>Z-Tech</strong>
+é outro desenvolvimento relacionado aos conceitos
+de tractor e ASD,
+com projeto voltado para operação eficiente
+em diferentes direções.
+</p>
+
+
+<h3>
+RSD
+</h3>
+
+<p>
+O
+<strong>Reversed Stern Drive — RSD</strong>
+combina características derivadas das configurações
+ASD e tractor/reverse-tractor.
+</p>
+
+
+<h3>
+FAST tug concepts
+</h3>
+
+<p>
+Hensen apresenta ainda conceitos agrupados sob
+a expressão:
+</p>
+
+<p>
+<strong>
+FAST — Forward-Aft-Single-Thruster.
+</strong>
+</p>
+
+<p>
+Entre os exemplos citados encontram-se:
+</p>
+
+<ul>
+
+<li>
+<strong>Ship Docking Module — SDM</strong>;
+</li>
+
+<li>
+<strong>EDDY</strong>;
+</li>
+
+<li>
+<strong>Carrousel RAVE Tug — CRT</strong>;
+</li>
+
+<li>
+<strong>Giano tug</strong>.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Os novos projetos não eliminam a utilidade
+da classificação básica.
+</p>
+
+<p>
+Eles continuam sendo compreendidos pela análise
+de:
+</p>
+
+<p>
+<strong>
+posição dos propulsores +
+towing points +
+casco +
+extremidade de trabalho.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-21"
+data-topico-id="topico-21"
+>
+
+<h2>
+21. Rebocadores destinados a serviços específicos
+</h2>
+
+<div class="widget">
+
+<p>
+Além da configuração propulsiva,
+a finalidade operacional também pode produzir
+rebocadores com requisitos particulares.
+</p>
+
+<p>
+Hensen aborda, entre outros:
+</p>
+
+<ul>
+
+<li>
+rebocadores destinados à assistência de LNG carriers;
+</li>
+
+<li>
+eco-tugs;
+</li>
+
+<li>
+rebocadores híbridos ou elétricos;
+</li>
+
+<li>
+rebocadores destinados à operação em gelo.
+</li>
+
+</ul>
+
+
+<h3>
+LNG terminal tugs
+</h3>
+
+<p>
+A assistência a
+<strong>LNG carriers</strong>
+pode estabelecer requisitos específicos de:
+</p>
+
+<ul>
+
+<li>
+segurança;
+</li>
+
+<li>
+confiabilidade;
+</li>
+
+<li>
+equipamentos;
+</li>
+
+<li>
+combate a incêndio;
+</li>
+
+<li>
+compatibilidade com o terminal.
+</li>
+
+</ul>
+
+
+<h3>
+Eco-tugs
+</h3>
+
+<p>
+O desenvolvimento de sistemas híbridos,
+elétricos e outras soluções busca reduzir:
+</p>
+
+<ul>
+
+<li>
+consumo de combustível;
+</li>
+
+<li>
+emissões;
+</li>
+
+<li>
+impacto ambiental.
+</li>
+
+</ul>
+
+<p>
+Entretanto, do ponto de vista do shiphandling,
+a capacidade de disponibilizar rapidamente
+a potência requerida continua sendo essencial.
+</p>
+
+
+<h3>
+Ice tugs
+</h3>
+
+<p>
+A operação em gelo exige características específicas
+de casco, propulsão e projeto,
+adaptadas ao ambiente de operação.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Dois rebocadores com valores semelhantes de
+<strong>bollard pull</strong>
+podem possuir capacidades operacionais
+substancialmente diferentes.
+</p>
+
+<p>
+O valor do BP não descreve sozinho:
+</p>
+
+<ul>
+
+<li>
+configuração do rebocador;
+</li>
+
+<li>
+tipo de propulsão;
+</li>
+
+<li>
+manobrabilidade;
+</li>
+
+<li>
+equipamentos;
+</li>
+
+<li>
+serviço para o qual foi projetado.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-22"
+data-topico-id="topico-22"
+>
+
+<h2>
+22. Technical English — Types of Harbour Tug
+</h2>
+
+<div class="widget">
+
+<p>
+Uma ideia particularmente importante para interpretar
+a classificação apresentada por Hensen é:
+</p>
+
+
+<div class="destaque">
+
+<h3>
+📖 Original
+</h3>
+
+<p>
+<em>
+“It is better to classify tugs according to their location
+of propulsion and towing point.”
+</em>
+</p>
+
+</div>
+
+
+<h3>
+🇧🇷 Tradução técnica
+</h3>
+
+<p>
+<strong>
+“É melhor classificar os rebocadores de acordo
+com a localização da propulsão e do ponto de reboque.”
+</strong>
+</p>
+
+
+<h3>
+Interpretação
+</h3>
+
+<p>
+A frase enfatiza que a classificação deve ajudar
+a compreender o comportamento do rebocador
+durante a operação.
+</p>
+
+<p>
+Conhecendo:
+</p>
+
+<ul>
+
+<li>
+a posição da propulsão;
+</li>
+
+<li>
+a posição do towing point;
+</li>
+
+<li>
+a extremidade de trabalho;
+</li>
+
+</ul>
+
+<p>
+torna-se possível compreender com maior clareza
+as características dos diferentes tipos.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Vocabulário para prova
+</h3>
+
+<ul>
+
+<li>
+<strong>Basic tug types</strong> —
+tipos básicos de rebocadores;
+</li>
+
+<li>
+<strong>Conventional tug</strong> —
+rebocador convencional;
+</li>
+
+<li>
+<strong>Tractor tug</strong> —
+rebocador tractor;
+</li>
+
+<li>
+<strong>Reverse-tractor tug</strong> —
+rebocador reverse-tractor;
+</li>
+
+<li>
+<strong>Azimuth Stern Drive tug</strong> —
+rebocador ASD;
+</li>
+
+<li>
+<strong>Towing point location</strong> —
+posição do ponto de reboque;
+</li>
+
+<li>
+<strong>Thruster location</strong> —
+posição dos propulsores;
+</li>
+
+<li>
+<strong>Propulsion system</strong> —
+sistema de propulsão;
+</li>
+
+<li>
+<strong>Operate over the bow</strong> —
+operar pela proa;
+</li>
+
+<li>
+<strong>Operate over the stern</strong> —
+operar pela popa.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma questão em inglês pode apresentar a expressão
+<strong>azimuth propulsion</strong>
+e tentar induzir à resposta
+<strong>ASD</strong>.
+</p>
+
+<p>
+Essa associação automática é incorreta.
+</p>
+
+<p>
+Propulsores azimutais podem equipar:
+</p>
+
+<ul>
+
+<li>
+azimuth tractor tugs;
+</li>
+
+<li>
+reverse-tractor tugs;
+</li>
+
+<li>
+ASD tugs;
+</li>
+
+<li>
+outros projetos especiais.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-23"
+data-topico-id="topico-23"
+>
+
+<h2>
+23. Síntese técnica — Parte 2
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A nomenclatura dos rebocadores não é totalmente uniforme.
+</li>
+
+<li>
+A posição da propulsão e do ponto de reboque constitui
+um critério fundamental de classificação.
+</li>
+
+<li>
+No rebocador convencional,
+a propulsão fica a ré e o towing point fica mais à vante.
+</li>
+
+<li>
+No tractor,
+a propulsão fica a vante e o towing point fica a ré.
+</li>
+
+<li>
+O tractor pode empregar propulsão Voith-Schneider
+ou propulsão azimutal.
+</li>
+
+<li>
+O VSP produz empuxo por meio de pás verticais
+com variação cíclica do ângulo.
+</li>
+
+<li>
+O azimuth thruster direciona o empuxo girando
+a própria unidade propulsora.
+</li>
+
+<li>
+No reverse-tractor,
+os propulsores ficam a ré e o towing point
+fica a vante.
+</li>
+
+<li>
+No ASD,
+os principais propulsores azimutais ficam a ré
+e a configuração busca elevada versatilidade operacional.
+</li>
+
+<li>
+Combi-tug, Rotortug, Z-Tech, RSD e outros conceitos
+representam desenvolvimentos derivados ou relacionados.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+🧠 Regra mental para identificação
+</h3>
+
+<p>
+Ao encontrar um rebocador em uma questão,
+responda mentalmente:
+</p>
+
+<p>
+<strong>
+1. Onde estão os propulsores?
+</strong>
+</p>
+
+<p>
+<strong>
+2. Qual é o tipo de propulsão?
+</strong>
+</p>
+
+<p>
+<strong>
+3. Onde está o towing point?
+</strong>
+</p>
+
+<p>
+<strong>
+4. Por qual extremidade o rebocador trabalha?
+</strong>
+</p>
+
+<p>
+Essas quatro perguntas normalmente permitem
+identificar corretamente a configuração.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Preparação para a próxima parte
+</h3>
+
+<p>
+Conhecer o tipo de rebocador não determina,
+isoladamente,
+<strong>como ele será empregado durante a assistência</strong>.
+</p>
+
+<p>
+Esse será o assunto da próxima etapa:
+</p>
+
+<p>
+<strong>
+PARTE 3 — ASSISTING METHODS
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL — PARTE 2
+========================================= -->
+    
+<!-- =========================================
+     COPIAR O BLOCO ACIMA
+     PARA CADA NOVO TÓPICO
+
+     REGRA CRÍTICA:
+
+     data-topico-id deve ser:
+     - único;
+     - estável;
+     - sem acentos;
+     - sem espaços;
+     - nunca alterado após o estudo começar.
+
+     Exemplo:
+
+     data-topico-id="efeito-banco"
+========================================= -->
+
+
+
+<!-- =========================================
+     EXERCÍCIOS
+========================================= -->
+
+<section>
+
+<h2>
+📝 Questões de revisão
+</h2>
+
+
+<!-- =========================================
+     QUESTÃO MODELO
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="[ID-AULA]-q1"
+data-resposta="A"
+data-topico="[TÓPICO]"
+data-edital="[ITEM DO EDITAL]"
+data-bibliografia="[REFERÊNCIA]"
+>
+
+<h3>
+Questão 1
+</h3>
+
+<p>
+[ENUNCIADO]
+</p>
+
+<div class="alternativas-questao">
+
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
+A) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+B) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+C) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+D) [ALTERNATIVA]
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+     MANTER A ESTRUTURA
+========================================= -->
+
+<div class="widget">
+
+<h3>
+📋 Progresso das questões
+</h3>
+
+<p id="resumo-selecao-exercicios">
+
+0 de [TOTAL] questões respondidas
+
+</p>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios">
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>
+✅ Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+<hr>
+
+<h3>
+Questão 1 — Alternativa A ✅
+</h3>
+
+<p>
+[COMENTÁRIO DO GABARITO]
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS FINAIS
+========================================= -->
+
+<section>
+
+<h2>
+📚 Referências bibliográficas finais
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+[REFERÊNCIA 1]
+</li>
+
+<li>
+[REFERÊNCIA 2]
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Conclusão da aula
+</h2>
+
+<p>
+[SÍNTESE FINAL]
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+</main>
+
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR
+===================================================== -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     NÃO ALTERAR A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     CONTROLE DO GABARITO
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById(
+            "gabaritoAula"
+        );
+
+
+    if (!gabarito) {
+
+        return;
+
+    }
+
+
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
+
+        gabarito.style.display =
+            "block";
+
+    }
+    else {
+
+        gabarito.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
