@@ -1,1 +1,136 @@
+BRIDGE TRAINER PSCPP
+CHECKLIST DE IDENTIDADE DA AULA
 
+
+ANTES DE CRIAR UMA NOVA AULA:
+
+1. DEFINIR DISCIPLINA
+
+Nome:
+Ex.: Manobrabilidade
+
+ID:
+Ex.: manobrabilidade
+
+
+2. DEFINIR AULA
+
+Nome:
+Ex.: Estabilidade Direcional
+
+ID:
+Ex.: estabilidade-direcional
+
+Arquivo:
+Ex.: estabilidade-direcional.html
+
+
+3. CONFERIR OS 4 PONTOS OBRIGATÓRIOS
+
+
+A) HTML DA AULA
+
+<body
+data-disciplina="manobrabilidade"
+data-aula="estabilidade-direcional"
+>
+
+
+B) INDEX.HTML DA DISCIPLINA
+
+<a
+href="estabilidade-direcional.html"
+class="card"
+data-assunto="estabilidade-direcional"
+>
+
+
+C) banco-conteudo.js
+
+{
+id: "estabilidade-direcional",
+nome: "Estabilidade Direcional",
+...
+}
+
+
+D) disciplinas.json
+
+{
+"id": "estabilidade-direcional",
+"titulo": "Estabilidade Direcional",
+"arquivo": "estabilidade-direcional.html"
+}
+
+
+REGRA ABSOLUTA:
+
+data-aula
+=
+data-assunto
+=
+assunto.id
+=
+modulo.id
+
+
+4. TÓPICOS DA AULA
+
+Cada tópico deve possuir:
+
+<section
+class="topico-aula"
+data-topico-id="id-unico-do-topico"
+>
+
+O mesmo ID deve ser usado no conteúdo programático:
+
+<li data-progresso-topico="id-unico-do-topico">
+
+
+REGRA:
+
+data-topico-id
+=
+data-progresso-topico
+
+
+5. IDs NÃO DEVEM SER ALTERADOS
+DEPOIS QUE O ESTUDO COMEÇAR.
+
+Mudanças posteriores podem quebrar:
+
+- progresso;
+- histórico;
+- revisão;
+- planejamento;
+- desempenho;
+- Pomodoro.
+
+
+6. SCRIPTS OBRIGATÓRIOS
+
+Manter sempre:
+
+navigation.js
+progresso.js
+pomodoro.js
+exercicios.js
+
+
+7. ANTES DE PUBLICAR A AULA
+
+Confirmar:
+
+[ ] abre corretamente;
+[ ] botão Voltar funciona;
+[ ] barra da aula funciona;
+[ ] botão "Ir para onde parei" funciona;
+[ ] tópicos recebem botão de progresso;
+[ ] Pomodoro inicia;
+[ ] exercícios podem ser selecionados;
+[ ] correção funciona;
+[ ] gabarito abre/fecha;
+[ ] card da disciplina reconhece progresso;
+[ ] página principal reconhece progresso;
+[ ] planejamento reconhece a aula.
