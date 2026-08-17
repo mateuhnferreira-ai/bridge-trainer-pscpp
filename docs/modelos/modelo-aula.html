@@ -1,1 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+[TÍTULO DA AULA] - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="[ID-DISCIPLINA]"
+    data-aula="[ID-AULA]"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>[NOME DA DISCIPLINA]</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+
+     ALTERAR SOMENTE:
+
+     [ID-DISCIPLINA]
+     [ID-AULA]
+     [NOME DA DISCIPLINA]
+     [TÍTULO DA AULA]
+     [TERMO EM INGLÊS]
+
+     REGRAS:
+
+     data-disciplina deve coincidir com:
+     - banco-conteudo.js
+     - disciplinas.json
+     - pasta lógica da disciplina
+
+     data-aula deve coincidir com:
+     - assunto.id em banco-conteudo.js
+     - modulo.id em disciplinas.json
+     - data-assunto no index da disciplina
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ [TÍTULO DA AULA]
+</h2>
+
+<p>
+<strong>
+[TERMO TÉCNICO PRINCIPAL EM INGLÊS]
+</strong>
+</p>
+
+<p>
+[APRESENTAÇÃO BREVE DA AULA]
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+[NOME DA DISCIPLINA]
+</p>
+
+<p>
+<strong>Assunto:</strong>
+[TÍTULO DA AULA]
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+[TERMO TÉCNICO PRINCIPAL EM INGLÊS]
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+
+     A PARTIR DAQUI:
+     DESENVOLVER O CONTEÚDO TÉCNICO
+
+     NÃO ALTERAR:
+     - data-disciplina
+     - data-aula
+     - nomes das classes estruturais
+     - IDs do progresso
+     - scripts do final da página
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+[DISCIPLINA / ITEM DO CONTEÚDO PROGRAMÁTICO]
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="topico-1">
+[TÓPICO 1]
+</li>
+
+<li data-progresso-topico="topico-2">
+[TÓPICO 2]
+</li>
+
+<li data-progresso-topico="topico-3">
+[TÓPICO 3]
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+[OBJETIVO 1]
+</li>
+
+<li>
+[OBJETIVO 2]
+</li>
+
+<li>
+[OBJETIVO 3]
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+[PUBLICAÇÃO PRINCIPAL]
+</h3>
+
+<p>
+[DESCRIÇÃO]
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+[CAPÍTULOS / SEÇÕES / PÁGINAS]
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+[PARTE 1]
+</li>
+
+<li>
+[PARTE 2]
+</li>
+
+<li>
+[PARTE 3]
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — [TÍTULO DA PARTE]
+</h2>
+
+<p>
+[INTRODUÇÃO DA PARTE]
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-1"
+data-topico-id="topico-1"
+>
+
+<h2>
+1. [TÍTULO DO TÓPICO]
+</h2>
+
+<div class="widget">
+
+<p>
+[CONTEÚDO TÉCNICO]
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+[CONCEITO]
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>[TERM]</strong> — [SIGNIFICADO];
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+[PONTO DE ATENÇÃO]
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COPIAR O BLOCO ACIMA
+     PARA CADA NOVO TÓPICO
+
+     REGRA CRÍTICA:
+
+     data-topico-id deve ser:
+     - único;
+     - estável;
+     - sem acentos;
+     - sem espaços;
+     - nunca alterado após o estudo começar.
+
+     Exemplo:
+
+     data-topico-id="efeito-banco"
+========================================= -->
+
+
+
+<!-- =========================================
+     EXERCÍCIOS
+========================================= -->
+
+<section>
+
+<h2>
+📝 Questões de revisão
+</h2>
+
+
+<!-- =========================================
+     QUESTÃO MODELO
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="[ID-AULA]-q1"
+data-resposta="A"
+data-topico="[TÓPICO]"
+data-edital="[ITEM DO EDITAL]"
+data-bibliografia="[REFERÊNCIA]"
+>
+
+<h3>
+Questão 1
+</h3>
+
+<p>
+[ENUNCIADO]
+</p>
+
+<div class="alternativas-questao">
+
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
+A) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+B) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+C) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+D) [ALTERNATIVA]
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+     MANTER A ESTRUTURA
+========================================= -->
+
+<div class="widget">
+
+<h3>
+📋 Progresso das questões
+</h3>
+
+<p id="resumo-selecao-exercicios">
+
+0 de [TOTAL] questões respondidas
+
+</p>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios">
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>
+✅ Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+<hr>
+
+<h3>
+Questão 1 — Alternativa A ✅
+</h3>
+
+<p>
+[COMENTÁRIO DO GABARITO]
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS FINAIS
+========================================= -->
+
+<section>
+
+<h2>
+📚 Referências bibliográficas finais
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+[REFERÊNCIA 1]
+</li>
+
+<li>
+[REFERÊNCIA 2]
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Conclusão da aula
+</h2>
+
+<p>
+[SÍNTESE FINAL]
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+</main>
+
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR
+===================================================== -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     NÃO ALTERAR A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     CONTROLE DO GABARITO
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById(
+            "gabaritoAula"
+        );
+
+
+    if (!gabarito) {
+
+        return;
+
+    }
+
+
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
+
+        gabarito.style.display =
+            "block";
+
+    }
+    else {
+
+        gabarito.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
