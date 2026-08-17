@@ -1,45 +1,66 @@
 // =====================================
-// MOTOR DE PLANEJAMENTO PSCPP v3.4
+// MOTOR DE PLANEJAMENTO PSCPP v3.5
 // Bridge Trainer PSCPP
 //
-// CAMADAS CONSIDERADAS:
+// NOVA ARQUITETURA:
 //
-// 1. Peso da disciplina.
-// 2. Peso do assunto.
-// 3. Peso estratégico configurado.
-// 4. Progresso real.
-// 5. Prazo global.
-// 6. Atraso relativo da disciplina.
-// 7. Carga cognitiva.
-// 8. Histórico real do Pomodoro.
-// 9. Ciclo Pomodoro acumulativo por assunto.
-// 10. Continuidade de até 3 Pomodoros.
-// 11. Alternância cognitiva após o ciclo.
+// O planejamento trabalha com uma
+// DUPLA ATIVA DE ESTUDO:
 //
-// NOVO NA v3.4:
+// TRILHO PRINCIPAL
+// - carga cognitiva Alta
 //
-// - ciclo Pomodoro acumulativo;
-// - interrupções não zeram 1/3 ou 2/3;
-// - o ciclo só reinicia após 3/3;
-// - correção da penalidade por mesma disciplina.
+// TRILHO SECUNDÁRIO
+// - carga cognitiva Média ou Baixa
 //
-// O motor responde:
+// Os dois assuntos permanecem ativos
+// até sua conclusão.
 //
-// "O que estudar agora?"
+// O Pomodoro NÃO escolhe a matéria.
+//
+// O Pomodoro apenas controla a alternância:
+//
+// Principal
+// 1/3
+// 2/3
+// 3/3
+// ↓
+// Secundário
+// 1/3
+// 2/3
+// 3/3
+// ↓
+// Principal
+//
+// Quando um assunto chega a 100%:
+//
+// - somente aquele trilho é substituído;
+// - o outro assunto permanece;
+// - a substituição considera:
+//   sequência didática;
+//   assunto iniciado;
+//   prioridade estratégica;
+//   atraso;
+//   prazo;
+//   carga cognitiva.
+//
+// A ordem dos assuntos em
+// banco-conteudo.js é considerada
+// a sequência didática preferencial.
 //
 // calculo-planejamento.js responde:
 //
-// "Em que ritmo preciso avançar?"
+// "Em que ritmo estudar?"
+//
+// motor-planejamento.js responde:
+//
+// "Qual dos dois assuntos ativos estudar agora?"
 // =====================================
 
 
 // =====================================
-// CONFIGURAÇÕES
+// CONFIGURAÇÕES GERAIS
 // =====================================
-
-const MOTOR_LIMITE_PLANO_PADRAO =
-    20;
-
 
 const MOTOR_BLOCOS_POR_CICLO =
     3;
@@ -53,24 +74,32 @@ const MOTOR_CHAVE_HISTORICO_POMODORO =
     "bridgeTrainerPSCPP_historicoPomodoro";
 
 
-// Continuidade normal
+const MOTOR_CHAVE_DUPLA_ATIVA =
+    "bridgeTrainerPSCPP_duplaAtivaPlanejamento";
+
+
+// =====================================
+// PESOS DE PRIORIDADE
+// =====================================
 
 const MOTOR_BONUS_ASSUNTO_INICIADO =
+    1.35;
+
+
+const MOTOR_BONUS_DIDATICO_IMEDIATO =
+    1.60;
+
+
+const MOTOR_BONUS_DIDATICO_PROXIMO =
+    1.35;
+
+
+const MOTOR_BONUS_DIDATICO_MESMA_DISCIPLINA =
     1.15;
 
 
-// Carga cognitiva
-
-const MOTOR_PENALIDADE_ALTA_SEGUIDA =
-    0.55;
-
-
-const MOTOR_BONUS_RECUPERACAO =
-    1.25;
-
-
-const MOTOR_PENALIDADE_MESMA_DISCIPLINA =
-    0.92;
+const MOTOR_BONUS_MAX_ATRASO_DISCIPLINA =
+    1.35;
 
 
 // =====================================
@@ -103,12 +132,51 @@ const MOTOR_FATOR_PRAZO = {
 };
 
 
-const MOTOR_BONUS_MAX_ATRASO_DISCIPLINA =
-    1.35;
+// =====================================
+// NORMALIZAR CARGA COGNITIVA
+// =====================================
+
+function normalizarCargaCognitiva(
+    carga
+) {
+
+    const valor =
+        String(
+            carga || "Média"
+        )
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        );
+
+
+    if (
+        valor === "alta"
+    ) {
+
+        return "Alta";
+
+    }
+
+
+    if (
+        valor === "baixa"
+    ) {
+
+        return "Baixa";
+
+    }
+
+
+    return "Média";
+
+}
 
 
 // =====================================
-// OBTER PROGRESSO SEGURO
+// PROGRESSO SEGURO
 // =====================================
 
 function obterProgressoSeguro(
@@ -158,7 +226,7 @@ function obterProgressoSeguro(
 
 
 // =====================================
-// OBTER PESO DA CONFIGURAÇÃO
+// PESO CONFIGURADO DA DISCIPLINA
 // =====================================
 
 function obterPesoConfiguracao(
@@ -190,55 +258,7 @@ function obterPesoConfiguracao(
 
 
 // =====================================
-// NORMALIZAR CARGA COGNITIVA
-// =====================================
-
-function normalizarCargaCognitiva(
-    carga
-) {
-
-    const valor =
-        String(
-            carga || "Média"
-        )
-
-        .toLowerCase()
-
-        .normalize("NFD")
-
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        );
-
-
-    if (
-        valor ===
-        "alta"
-    ) {
-
-        return "Alta";
-
-    }
-
-
-    if (
-        valor ===
-        "baixa"
-    ) {
-
-        return "Baixa";
-
-    }
-
-
-    return "Média";
-
-}
-
-
-// =====================================
-// OBTER DIAGNÓSTICO DE PRAZO
+// DIAGNÓSTICO DO PRAZO
 // =====================================
 
 function obterDiagnosticoPrazoMotor() {
@@ -261,8 +281,7 @@ function obterDiagnosticoPrazoMotor() {
     catch (erro) {
 
         console.warn(
-            "Motor não conseguiu obter " +
-            "o diagnóstico de prazo:",
+            "Motor não conseguiu obter diagnóstico de prazo:",
             erro
         );
 
@@ -275,31 +294,24 @@ function obterDiagnosticoPrazoMotor() {
 
 
 // =====================================
-// PRESSÃO GLOBAL DE PRAZO
+// FATOR GLOBAL DE PRAZO
 // =====================================
 
 function obterFatorGlobalPrazo(
     planejamento
 ) {
 
-    if (
-        !planejamento
-    ) {
+    if (!planejamento) {
 
         return 1;
 
     }
 
 
-    const codigo =
-        planejamento
-            .codigoSituacaoPrazo;
-
-
     return (
 
         MOTOR_FATOR_PRAZO[
-            codigo
+            planejamento.codigoSituacaoPrazo
         ] || 1
 
     );
@@ -308,7 +320,7 @@ function obterFatorGlobalPrazo(
 
 
 // =====================================
-// BÔNUS POR ATRASO DA DISCIPLINA
+// ATRASO DA DISCIPLINA
 // =====================================
 
 function obterFatorAtrasoDisciplina(
@@ -326,16 +338,14 @@ function obterFatorAtrasoDisciplina(
     }
 
 
-    const dadosDisciplina =
+    const disciplina =
         planejamento
             .disciplinas[
                 idDisciplina
             ];
 
 
-    if (
-        !dadosDisciplina
-    ) {
+    if (!disciplina) {
 
         return 1;
 
@@ -344,21 +354,18 @@ function obterFatorAtrasoDisciplina(
 
     const esperado =
         Number(
-            planejamento
-                .progressoEsperado
+            planejamento.progressoEsperado
         ) || 0;
 
 
     const real =
         Number(
-            dadosDisciplina
-                .progresso
+            disciplina.progresso
         ) || 0;
 
 
     const atraso =
-        esperado -
-        real;
+        esperado - real;
 
 
     if (
@@ -370,7 +377,7 @@ function obterFatorAtrasoDisciplina(
     }
 
 
-    let fator =
+    const fator =
 
         1 +
 
@@ -378,7 +385,6 @@ function obterFatorAtrasoDisciplina(
             atraso /
             10
         ) *
-
         0.05;
 
 
@@ -394,7 +400,7 @@ function obterFatorAtrasoDisciplina(
 
 
 // =====================================
-// CARREGAR HISTÓRICO POMODORO
+// HISTÓRICO DO POMODORO
 // =====================================
 
 function obterHistoricoPomodoroMotor() {
@@ -429,9 +435,7 @@ function obterHistoricoPomodoroMotor() {
             );
 
 
-        if (
-            !salvo
-        ) {
+        if (!salvo) {
 
             return [];
 
@@ -444,19 +448,17 @@ function obterHistoricoPomodoroMotor() {
             );
 
 
-        return (
-            Array.isArray(
-                dados
-            )
-                ? dados
-                : []
-        );
+        return Array.isArray(
+            dados
+        )
+            ? dados
+            : [];
 
     }
     catch (erro) {
 
         console.warn(
-            "Não foi possível ler o histórico Pomodoro:",
+            "Não foi possível carregar histórico Pomodoro:",
             erro
         );
 
@@ -469,68 +471,14 @@ function obterHistoricoPomodoroMotor() {
 
 
 // =====================================
-// OBTER ÚLTIMO BLOCO
-// =====================================
-
-function obterUltimoBlocoPomodoroMotor() {
-
-    if (
-        typeof obterUltimoBlocoPomodoro ===
-        "function"
-    ) {
-
-        const bloco =
-            obterUltimoBlocoPomodoro();
-
-
-        if (
-            bloco
-        ) {
-
-            return bloco;
-
-        }
-
-    }
-
-
-    const historico =
-        obterHistoricoPomodoroMotor();
-
-
-    if (
-        historico.length ===
-        0
-    ) {
-
-        return null;
-
-    }
-
-
-    return (
-
-        historico[
-            historico.length -
-            1
-        ] || null
-
-    );
-
-}
-
-
-// =====================================
-// VERIFICAR BLOCO COMPLETO
+// BLOCO POMODORO COMPLETO
 // =====================================
 
 function blocoPomodoroFoiCompleto(
     bloco
 ) {
 
-    if (
-        !bloco
-    ) {
+    if (!bloco) {
 
         return false;
 
@@ -553,19 +501,12 @@ function blocoPomodoroFoiCompleto(
 
 
 // =====================================
-// OBTER BLOCOS COMPLETOS DE UM ASSUNTO
-// =====================================
-//
-// Conta TODOS os blocos completos daquele
-// disciplina + aula no histórico.
-//
-// Interrupções ou estudo de outros assuntos
-// NÃO zeram mais a contagem.
+// TOTAL DE BLOCOS DE UM ASSUNTO
 // =====================================
 
-function obterBlocosCompletosAssunto(
+function obterTotalBlocosCompletosAssunto(
     idDisciplina,
-    idAula
+    idAssunto
 ) {
 
     const historico =
@@ -580,19 +521,11 @@ function obterBlocosCompletosAssunto(
         bloco => {
 
             if (
-                !bloco
-            ) {
-
-                return;
-
-            }
-
-
-            if (
+                !bloco ||
                 bloco.disciplina !==
                     idDisciplina ||
                 bloco.aula !==
-                    idAula
+                    idAssunto
             ) {
 
                 return;
@@ -619,268 +552,26 @@ function obterBlocosCompletosAssunto(
 }
 
 
-// =====================================
-// CALCULAR CICLO ATUAL DO ASSUNTO
-// =====================================
-//
-// Exemplos:
-//
-// 0 blocos -> 0/3
-// 1 bloco   -> 1/3
-// 2 blocos -> 2/3
-// 3 blocos -> ciclo concluído
-// 4 blocos -> novo ciclo 1/3
-// 5 blocos -> novo ciclo 2/3
-// 6 blocos -> novo ciclo concluído
-//
-// Portanto:
-//
-// total % 3
-//
-// define a posição do ciclo atual.
-// =====================================
-
-function calcularPosicaoCicloPomodoro(
-    totalBlocosCompletos
-) {
-
-    const total =
-        Math.max(
-            0,
-            Number(
-                totalBlocosCompletos
-            ) || 0
-        );
-
-
-    if (
-        total ===
-        0
-    ) {
-
-        return {
-
-            blocosCompletos:
-                0,
-
-            cicloCompleto:
-                false,
-
-            ciclosConcluidos:
-                0
-
-        };
-
-    }
-
-
-    const resto =
-        total %
-        MOTOR_BLOCOS_POR_CICLO;
-
-
-    const ciclosConcluidos =
-        Math.floor(
-            total /
-            MOTOR_BLOCOS_POR_CICLO
-        );
-
-
-    // =================================
-    // EXATAMENTE MÚLTIPLO DE 3
-    // =================================
-    //
-    // Exemplo:
-    //
-    // 3, 6, 9...
-    //
-    // O último ciclo foi concluído.
-    // Não existe ciclo incompleto ativo.
-    // =================================
-
-    if (
-        resto ===
-        0
-    ) {
-
-        return {
-
-            blocosCompletos:
-                MOTOR_BLOCOS_POR_CICLO,
-
-            cicloCompleto:
-                true,
-
-            ciclosConcluidos:
-                ciclosConcluidos
-
-        };
-
-    }
-
-
-    return {
-
-        blocosCompletos:
-            resto,
-
-        cicloCompleto:
-            false,
-
-        ciclosConcluidos:
-            ciclosConcluidos
-
-    };
-
-}
+// =====================================================
+// PLANO BRUTO
+// =====================================================
 
 
 // =====================================
-// ANALISAR CICLO POMODORO DE UM ASSUNTO
-// =====================================
-
-function analisarCicloPomodoroAssunto(
-    idDisciplina,
-    idAula
-) {
-
-    if (
-        !idDisciplina ||
-        !idAula
-    ) {
-
-        return {
-
-            disciplina:
-                null,
-
-            aula:
-                null,
-
-            blocosCompletos:
-                0,
-
-            cicloCompleto:
-                false,
-
-            ciclosConcluidos:
-                0
-
-        };
-
-    }
-
-
-    const totalBlocos =
-        obterBlocosCompletosAssunto(
-
-            idDisciplina,
-
-            idAula
-
-        );
-
-
-    const posicao =
-        calcularPosicaoCicloPomodoro(
-            totalBlocos
-        );
-
-
-    return {
-
-        disciplina:
-            idDisciplina,
-
-        aula:
-            idAula,
-
-        totalBlocosCompletos:
-            totalBlocos,
-
-        blocosCompletos:
-            posicao.blocosCompletos,
-
-        cicloCompleto:
-            posicao.cicloCompleto,
-
-        ciclosConcluidos:
-            posicao.ciclosConcluidos
-
-    };
-
-}
-
-
-// =====================================
-// ANALISAR CICLO POMODORO ATUAL
-// =====================================
-//
-// Usa o último assunto efetivamente estudado,
-// mas a contagem é acumulativa.
-// =====================================
-
-function analisarCicloPomodoroAtual() {
-
-    const ultimoBloco =
-        obterUltimoBlocoPomodoroMotor();
-
-
-    if (
-        !ultimoBloco ||
-        !ultimoBloco.disciplina ||
-        !ultimoBloco.aula
-    ) {
-
-        return {
-
-            disciplina:
-                null,
-
-            aula:
-                null,
-
-            blocosCompletos:
-                0,
-
-            cicloCompleto:
-                false,
-
-            ciclosConcluidos:
-                0
-
-        };
-
-    }
-
-
-    return analisarCicloPomodoroAssunto(
-
-        ultimoBloco.disciplina,
-
-        ultimoBloco.aula
-
-    );
-
-}
-
-
-// =====================================
-// CALCULAR PRIORIDADE BASE
+// PRIORIDADE BASE
 // =====================================
 
 function calcularPrioridadeBase(
     idDisciplina,
     dadosDisciplina,
     assunto,
-    percentualConcluido,
+    progresso,
     planejamento
 ) {
 
     const pesoDisciplina =
         Number(
-            dadosDisciplina
-                .pesoDisciplina
+            dadosDisciplina.pesoDisciplina
         ) || 1;
 
 
@@ -921,11 +612,13 @@ function calcularPrioridadeBase(
         fatorPrazo;
 
 
+    // =================================
+    // ASSUNTO JÁ INICIADO
+    // =================================
+
     if (
-        percentualConcluido >
-            0 &&
-        percentualConcluido <
-            100
+        progresso > 0 &&
+        progresso < 100
     ) {
 
         prioridade *=
@@ -940,7 +633,7 @@ function calcularPrioridadeBase(
 
 
 // =====================================
-// GERAR PLANO BRUTO
+// GERAR CANDIDATOS
 // =====================================
 
 function gerarPlanoBruto() {
@@ -954,11 +647,6 @@ function gerarPlanoBruto() {
             "undefined" ||
         !conteudoPSCPP
     ) {
-
-        console.warn(
-            "conteudoPSCPP não está disponível."
-        );
-
 
         return plano;
 
@@ -989,9 +677,12 @@ function gerarPlanoBruto() {
 
 
         assuntos.forEach(
-            assunto => {
+            (
+                assunto,
+                indice
+            ) => {
 
-                const percentualConcluido =
+                const progresso =
                     obterProgressoSeguro(
 
                         idDisciplina,
@@ -1002,8 +693,7 @@ function gerarPlanoBruto() {
 
 
                 if (
-                    percentualConcluido >=
-                    100
+                    progresso >= 100
                 ) {
 
                     return;
@@ -1020,17 +710,7 @@ function gerarPlanoBruto() {
 
                         assunto,
 
-                        percentualConcluido,
-
-                        planejamento
-
-                    );
-
-
-                const fatorAtrasoDisciplina =
-                    obterFatorAtrasoDisciplina(
-
-                        idDisciplina,
+                        progresso,
 
                         planejamento
 
@@ -1058,6 +738,11 @@ function gerarPlanoBruto() {
                         assunto.importancia ||
                         "Média",
 
+                    cargaCognitiva:
+                        normalizarCargaCognitiva(
+                            assunto.cargaCognitiva
+                        ),
+
                     pesoDisciplina:
                         dadosDisciplina
                             .pesoDisciplina || 1,
@@ -1065,32 +750,17 @@ function gerarPlanoBruto() {
                     pesoAssunto:
                         assunto.peso || 1,
 
-                    pesoConfiguracao:
-                        obterPesoConfiguracao(
-                            idDisciplina
-                        ),
+                    percentualConcluido:
+                        progresso,
 
-                    cargaCognitiva:
-                        normalizarCargaCognitiva(
-                            assunto.cargaCognitiva
-                        ),
+                    indiceDidatico:
+                        indice,
 
                     prioridadeBase:
                         prioridadeBase,
 
                     prioridade:
-                        prioridadeBase,
-
-                    percentualConcluido:
-                        percentualConcluido,
-
-                    fatorAtrasoDisciplina:
-                        fatorAtrasoDisciplina,
-
-                    situacaoPrazo:
-                        planejamento
-                            ?.codigoSituacaoPrazo ||
-                        null
+                        prioridadeBase
 
                 });
 
@@ -1100,330 +770,84 @@ function gerarPlanoBruto() {
     }
 
 
-    plano.sort(
-        (
-            a,
-            b
-        ) =>
-
-            b.prioridadeBase -
-            a.prioridadeBase
-    );
-
-
     return plano;
 
 }
 
 
+// =====================================================
+// SEQUÊNCIA DIDÁTICA
+// =====================================================
+
+
 // =====================================
-// ÚLTIMO ITEM REAL ESTUDADO
+// LOCALIZAR ÍNDICE DO ASSUNTO
 // =====================================
 
-function obterUltimoItemRealEstudado() {
-
-    const ultimoBloco =
-        obterUltimoBlocoPomodoroMotor();
-
+function obterIndiceDidatico(
+    idDisciplina,
+    idAssunto
+) {
 
     if (
-        !ultimoBloco ||
-        !ultimoBloco.disciplina ||
-        !ultimoBloco.aula
+        !conteudoPSCPP ||
+        !conteudoPSCPP[
+            idDisciplina
+        ]
     ) {
 
-        return null;
+        return -1;
 
     }
 
 
-    if (
-        typeof conteudoPSCPP ===
-            "undefined" ||
-        !conteudoPSCPP
-    ) {
-
-        return null;
-
-    }
-
-
-    const dadosDisciplina =
+    const assuntos =
         conteudoPSCPP[
-            ultimoBloco.disciplina
-        ];
+            idDisciplina
+        ].assuntos || [];
 
 
-    if (
-        !dadosDisciplina ||
-        !Array.isArray(
-            dadosDisciplina.assuntos
-        )
-    ) {
+    return assuntos.findIndex(
 
-        return null;
+        assunto =>
+            assunto.id ===
+            idAssunto
 
-    }
-
-
-    const assunto =
-        dadosDisciplina
-            .assuntos
-            .find(
-
-                item =>
-                    item.id ===
-                    ultimoBloco.aula
-
-            );
-
-
-    if (
-        !assunto
-    ) {
-
-        return null;
-
-    }
-
-
-    return {
-
-        idDisciplina:
-            ultimoBloco.disciplina,
-
-        idAssunto:
-            assunto.id,
-
-        disciplina:
-            dadosDisciplina.nome,
-
-        assunto:
-            assunto.nome,
-
-        cargaCognitiva:
-            normalizarCargaCognitiva(
-                assunto.cargaCognitiva
-            ),
-
-        ultimoBlocoSegundos:
-            ultimoBloco.segundos ||
-            0,
-
-        ultimoBlocoFim:
-            ultimoBloco.fim ||
-            null
-
-    };
+    );
 
 }
 
 
 // =====================================
-// CONTINUIDADE DO CICLO
+// FATOR DIDÁTICO
 // =====================================
 //
-// Agora:
-// - 1/3 continua como 1/3 mesmo após interrupção;
-// - 2/3 continua como 2/3;
-// - 3/3 encerra o ciclo;
-// - somente o 4º bloco inicia novo ciclo.
-// =====================================
-
-function obterItemDeContinuidade(
-    planoBruto
-) {
-
-    const ultimoItem =
-        obterUltimoItemRealEstudado();
-
-
-    if (
-        !ultimoItem
-    ) {
-
-        return null;
-
-    }
-
-
-    const ciclo =
-        analisarCicloPomodoroAssunto(
-
-            ultimoItem.idDisciplina,
-
-            ultimoItem.idAssunto
-
-        );
-
-
-    // =================================
-    // CICLO COMPLETO
-    // =================================
-    //
-    // Não força continuidade.
-    // O motor pode alternar normalmente.
-    // =================================
-
-    if (
-        ciclo.cicloCompleto
-    ) {
-
-        return null;
-
-    }
-
-
-    // Sem qualquer bloco completo,
-    // também não há ciclo a preservar.
-
-    if (
-        ciclo.blocosCompletos <=
-        0
-    ) {
-
-        return null;
-
-    }
-
-
-    const item =
-        planoBruto.find(
-
-            candidato =>
-
-                candidato.idDisciplina ===
-                    ultimoItem.idDisciplina &&
-
-                candidato.idAssunto ===
-                    ultimoItem.idAssunto
-
-        );
-
-
-    if (
-        !item
-    ) {
-
-        return null;
-
-    }
-
-
-    return {
-
-        ...item,
-
-        continuidadePomodoro:
-            true,
-
-        blocosCompletosNoCiclo:
-            ciclo.blocosCompletos,
-
-        blocosRestantesNoCiclo:
-            Math.max(
-
-                0,
-
-                MOTOR_BLOCOS_POR_CICLO -
-                ciclo.blocosCompletos
-
-            ),
-
-        ciclosPomodoroConcluidos:
-            ciclo.ciclosConcluidos
-
-    };
-
-}
-
-
-// =====================================
-// PRIORIDADE CONTEXTUAL
-// =====================================
-
-function calcularPrioridadeContextual(
-    item,
-    ultimoItem
-) {
-
-    let prioridade =
-        item.prioridadeBase;
-
-
-    if (
-        !ultimoItem
-    ) {
-
-        return prioridade;
-
-    }
-
-
-    const cargaAtual =
-        normalizarCargaCognitiva(
-            item.cargaCognitiva
-        );
-
-
-    const cargaAnterior =
-        normalizarCargaCognitiva(
-            ultimoItem.cargaCognitiva
-        );
-
-
-    if (
-        cargaAnterior ===
-            "Alta" &&
-        cargaAtual ===
-            "Alta"
-    ) {
-
-        prioridade *=
-            MOTOR_PENALIDADE_ALTA_SEGUIDA;
-
-    }
-
-
-    if (
-        cargaAnterior ===
-            "Alta" &&
-        (
-            cargaAtual ===
-                "Média" ||
-            cargaAtual ===
-                "Baixa"
-        )
-    ) {
-
-        prioridade *=
-            MOTOR_BONUS_RECUPERACAO;
-
-    }
-
-
-    return prioridade;
-
-}
-
-
-// =====================================
-// PENALIDADE POR MESMA DISCIPLINA
-// =====================================
+// A ordem do banco-conteudo.js é utilizada
+// como sequência pedagógica preferencial.
 //
-// CORREÇÃO v3.4:
+// Exemplo:
 //
-// Evita retorno undefined causado por
-// quebra de linha após "return".
+// assunto anterior: índice 5
+//
+// candidato índice 6
+// → forte preferência
+//
+// candidato índice 7
+// → preferência moderada
+//
+// outro assunto da mesma disciplina
+// → pequeno bônus.
 // =====================================
 
-function calcularPenalidadeDisciplina(
-    item,
-    ultimoItem
+function obterFatorDidatico(
+    candidato,
+    referencia
 ) {
 
     if (
-        !ultimoItem
+        !referencia ||
+        candidato.idDisciplina !==
+            referencia.idDisciplina
     ) {
 
         return 1;
@@ -1431,12 +855,64 @@ function calcularPenalidadeDisciplina(
     }
 
 
+    const indiceAnterior =
+        obterIndiceDidatico(
+
+            referencia.idDisciplina,
+
+            referencia.idAssunto
+
+        );
+
+
+    const indiceCandidato =
+        obterIndiceDidatico(
+
+            candidato.idDisciplina,
+
+            candidato.idAssunto
+
+        );
+
+
     if (
-        item.idDisciplina ===
-        ultimoItem.idDisciplina
+        indiceAnterior < 0 ||
+        indiceCandidato < 0
     ) {
 
-        return MOTOR_PENALIDADE_MESMA_DISCIPLINA;
+        return 1;
+
+    }
+
+
+    const distancia =
+        indiceCandidato -
+        indiceAnterior;
+
+
+    if (
+        distancia === 1
+    ) {
+
+        return MOTOR_BONUS_DIDATICO_IMEDIATO;
+
+    }
+
+
+    if (
+        distancia === 2
+    ) {
+
+        return MOTOR_BONUS_DIDATICO_PROXIMO;
+
+    }
+
+
+    if (
+        distancia > 0
+    ) {
+
+        return MOTOR_BONUS_DIDATICO_MESMA_DISCIPLINA;
 
     }
 
@@ -1447,13 +923,25 @@ function calcularPenalidadeDisciplina(
 
 
 // =====================================
-// ESCOLHER PRÓXIMO ITEM
+// ESCOLHER MELHOR CANDIDATO
 // =====================================
 
-function escolherProximoItem(
+function escolherMelhorCandidato(
     candidatos,
-    ultimoItem
+    referencia = null
 ) {
+
+    if (
+        !Array.isArray(
+            candidatos
+        ) ||
+        candidatos.length === 0
+    ) {
+
+        return null;
+
+    }
+
 
     let melhor =
         null;
@@ -1464,35 +952,29 @@ function escolherProximoItem(
 
 
     candidatos.forEach(
-        item => {
+        candidato => {
 
             let pontuacao =
-                calcularPrioridadeContextual(
-
-                    item,
-
-                    ultimoItem
-
-                );
+                candidato.prioridadeBase;
 
 
             pontuacao *=
-                calcularPenalidadeDisciplina(
+                obterFatorDidatico(
 
-                    item,
+                    candidato,
 
-                    ultimoItem
+                    referencia
 
                 );
 
 
             if (
-                !Number.isFinite(
-                    pontuacao
-                )
+                candidato.percentualConcluido > 0 &&
+                candidato.percentualConcluido < 100
             ) {
 
-                return;
+                pontuacao *=
+                    MOTOR_BONUS_ASSUNTO_INICIADO;
 
             }
 
@@ -1507,7 +989,7 @@ function escolherProximoItem(
 
 
                 melhor =
-                    item;
+                    candidato;
 
             }
 
@@ -1519,12 +1001,18 @@ function escolherProximoItem(
         melhor
     ) {
 
-        melhor.prioridade =
-            Math.round(
-                melhorPontuacao *
+        melhor = {
+
+            ...melhor,
+
+            prioridade:
+                Math.round(
+                    melhorPontuacao *
+                    100
+                ) /
                 100
-            ) /
-            100;
+
+        };
 
     }
 
@@ -1534,167 +1022,749 @@ function escolherProximoItem(
 }
 
 
+// =====================================================
+// DUPLA ATIVA
+// =====================================================
+
+
 // =====================================
-// GERAR SEQUÊNCIA
+// ESTRUTURA INICIAL
 // =====================================
 
-function gerarSequenciaEquilibrada(
-    planoBruto,
-    limite
-) {
+function criarEstruturaDuplaAtiva() {
 
-    const candidatos =
-        [
-            ...planoBruto
-        ];
+    return {
 
+        versao:
+            "1.0",
 
-    const sequencia =
-        [];
+        trilhoAtual:
+            "principal",
 
+        principal:
+            null,
 
-    let ultimoItem =
-        obterUltimoItemRealEstudado();
+        secundario:
+            null,
 
+        ultimaAtualizacao:
+            new Date()
+                .toISOString()
 
-    // =================================
-    // CONTINUIDADE DO CICLO POMODORO
-    // =================================
-
-    const continuidade =
-        obterItemDeContinuidade(
-            candidatos
-        );
-
-
-    if (
-        continuidade &&
-        limite > 0
-    ) {
-
-        sequencia.push(
-            continuidade
-        );
-
-
-        const indice =
-            candidatos.findIndex(
-
-                item =>
-
-                    item.idDisciplina ===
-                        continuidade.idDisciplina &&
-
-                    item.idAssunto ===
-                        continuidade.idAssunto
-
-            );
-
-
-        if (
-            indice >= 0
-        ) {
-
-            candidatos.splice(
-                indice,
-                1
-            );
-
-        }
-
-
-        ultimoItem =
-            continuidade;
-
-    }
-
-
-    // =================================
-    // SEQUÊNCIA ESTRATÉGICA
-    // =================================
-
-    while (
-        candidatos.length >
-            0 &&
-        sequencia.length <
-            limite
-    ) {
-
-        const escolhido =
-            escolherProximoItem(
-
-                candidatos,
-
-                ultimoItem
-
-            );
-
-
-        if (
-            !escolhido
-        ) {
-
-            break;
-
-        }
-
-
-        sequencia.push(
-            escolhido
-        );
-
-
-        const indice =
-            candidatos.indexOf(
-                escolhido
-            );
-
-
-        if (
-            indice >= 0
-        ) {
-
-            candidatos.splice(
-                indice,
-                1
-            );
-
-        }
-
-
-        ultimoItem =
-            escolhido;
-
-    }
-
-
-    return sequencia;
+    };
 
 }
 
 
 // =====================================
-// GERAR PLANO
+// CARREGAR DUPLA
 // =====================================
 
-function gerarPlanoEstudo(
-    limite =
-        MOTOR_LIMITE_PLANO_PADRAO
+function carregarDuplaAtiva() {
+
+    try {
+
+        const salvo =
+            localStorage.getItem(
+                MOTOR_CHAVE_DUPLA_ATIVA
+            );
+
+
+        if (!salvo) {
+
+            return criarEstruturaDuplaAtiva();
+
+        }
+
+
+        const dados =
+            JSON.parse(
+                salvo
+            );
+
+
+        if (
+            !dados ||
+            typeof dados !==
+                "object"
+        ) {
+
+            return criarEstruturaDuplaAtiva();
+
+        }
+
+
+        if (
+            dados.trilhoAtual !==
+                "principal" &&
+            dados.trilhoAtual !==
+                "secundario"
+        ) {
+
+            dados.trilhoAtual =
+                "principal";
+
+        }
+
+
+        return dados;
+
+    }
+    catch (erro) {
+
+        console.warn(
+            "Não foi possível carregar a dupla ativa:",
+            erro
+        );
+
+
+        return criarEstruturaDuplaAtiva();
+
+    }
+
+}
+
+
+// =====================================
+// SALVAR DUPLA
+// =====================================
+
+function salvarDuplaAtiva(
+    dupla
 ) {
+
+    if (!dupla) {
+
+        return;
+
+    }
+
+
+    dupla.ultimaAtualizacao =
+        new Date()
+            .toISOString();
+
+
+    localStorage.setItem(
+
+        MOTOR_CHAVE_DUPLA_ATIVA,
+
+        JSON.stringify(
+            dupla
+        )
+
+    );
+
+}
+
+
+// =====================================
+// ITEM DA DUPLA AINDA É VÁLIDO?
+// =====================================
+
+function itemDuplaEstaDisponivel(
+    item,
+    planoBruto
+) {
+
+    if (
+        !item ||
+        !Array.isArray(
+            planoBruto
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    return planoBruto.some(
+
+        candidato =>
+
+            candidato.idDisciplina ===
+                item.idDisciplina &&
+
+            candidato.idAssunto ===
+                item.idAssunto
+
+    );
+
+}
+
+
+// =====================================
+// LOCALIZAR ITEM ATUALIZADO
+// =====================================
+
+function localizarItemNoPlano(
+    item,
+    planoBruto
+) {
+
+    if (
+        !item
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+
+        planoBruto.find(
+
+            candidato =>
+
+                candidato.idDisciplina ===
+                    item.idDisciplina &&
+
+                candidato.idAssunto ===
+                    item.idAssunto
+
+        ) ||
+
+        null
+
+    );
+
+}
+
+
+// =====================================
+// CRIAR REGISTRO DO TRILHO
+// =====================================
+
+function criarRegistroTrilho(
+    item
+) {
+
+    if (!item) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        idDisciplina:
+            item.idDisciplina,
+
+        idAssunto:
+            item.idAssunto,
+
+        disciplina:
+            item.disciplina,
+
+        assunto:
+            item.assunto,
+
+        cargaCognitiva:
+            item.cargaCognitiva,
+
+        blocosBase:
+            obterTotalBlocosCompletosAssunto(
+
+                item.idDisciplina,
+
+                item.idAssunto
+
+            ),
+
+        dataEntrada:
+            new Date()
+                .toISOString()
+
+    };
+
+}
+
+
+// =====================================
+// CANDIDATOS DO TRILHO PRINCIPAL
+// =====================================
+
+function obterCandidatosPrincipais(
+    planoBruto
+) {
+
+    return planoBruto.filter(
+
+        item =>
+            item.cargaCognitiva ===
+            "Alta"
+
+    );
+
+}
+
+
+// =====================================
+// CANDIDATOS DO TRILHO SECUNDÁRIO
+// =====================================
+
+function obterCandidatosSecundarios(
+    planoBruto
+) {
+
+    return planoBruto.filter(
+
+        item =>
+
+            item.cargaCognitiva ===
+                "Média" ||
+
+            item.cargaCognitiva ===
+                "Baixa"
+
+    );
+
+}
+
+
+// =====================================
+// SELECIONAR NOVO PRINCIPAL
+// =====================================
+
+function selecionarNovoPrincipal(
+    planoBruto,
+    referencia = null
+) {
+
+    const candidatos =
+        obterCandidatosPrincipais(
+            planoBruto
+        );
+
+
+    return escolherMelhorCandidato(
+
+        candidatos,
+
+        referencia
+
+    );
+
+}
+
+
+// =====================================
+// SELECIONAR NOVO SECUNDÁRIO
+// =====================================
+
+function selecionarNovoSecundario(
+    planoBruto,
+    referencia = null
+) {
+
+    const candidatos =
+        obterCandidatosSecundarios(
+            planoBruto
+        );
+
+
+    return escolherMelhorCandidato(
+
+        candidatos,
+
+        referencia
+
+    );
+
+}
+
+
+// =====================================
+// GARANTIR DUPLA ATIVA
+// =====================================
+//
+// A dupla só muda se:
+//
+// - o assunto foi concluído;
+// - deixou de existir no banco;
+// - ainda não havia sido selecionado.
+//
+// Caso contrário:
+//
+// permanece exatamente a mesma.
+// =====================================
+
+function garantirDuplaAtiva(
+    planoBruto
+) {
+
+    const dupla =
+        carregarDuplaAtiva();
+
+
+    // =================================
+    // PRINCIPAL
+    // =================================
+
+    if (
+        !itemDuplaEstaDisponivel(
+            dupla.principal,
+            planoBruto
+        )
+    ) {
+
+        const referencia =
+            dupla.principal;
+
+
+        const novoPrincipal =
+            selecionarNovoPrincipal(
+
+                planoBruto,
+
+                referencia
+
+            );
+
+
+        dupla.principal =
+            criarRegistroTrilho(
+                novoPrincipal
+            );
+
+    }
+
+
+    // =================================
+    // SECUNDÁRIO
+    // =================================
+
+    if (
+        !itemDuplaEstaDisponivel(
+            dupla.secundario,
+            planoBruto
+        )
+    ) {
+
+        const referencia =
+            dupla.secundario;
+
+
+        const novoSecundario =
+            selecionarNovoSecundario(
+
+                planoBruto,
+
+                referencia
+
+            );
+
+
+        dupla.secundario =
+            criarRegistroTrilho(
+                novoSecundario
+            );
+
+    }
+
+
+    // =================================
+    // CASO NÃO HAJA MAIS CARGA ALTA
+    // =================================
+
+    if (
+        !dupla.principal &&
+        dupla.secundario
+    ) {
+
+        dupla.trilhoAtual =
+            "secundario";
+
+    }
+
+
+    // =================================
+    // CASO NÃO HAJA MAIS SECUNDÁRIO
+    // =================================
+
+    if (
+        !dupla.secundario &&
+        dupla.principal
+    ) {
+
+        dupla.trilhoAtual =
+            "principal";
+
+    }
+
+
+    salvarDuplaAtiva(
+        dupla
+    );
+
+
+    return dupla;
+
+}
+
+
+// =====================================================
+// CONTROLE DO CICLO POMODORO
+// =====================================================
+
+
+// =====================================
+// PROGRESSO DO CICLO DO TRILHO
+// =====================================
+
+function obterProgressoCicloTrilho(
+    trilho
+) {
+
+    if (!trilho) {
+
+        return {
+
+            blocos:
+                0,
+
+            restante:
+                MOTOR_BLOCOS_POR_CICLO,
+
+            completo:
+                false
+
+        };
+
+    }
+
+
+    const totalAtual =
+        obterTotalBlocosCompletosAssunto(
+
+            trilho.idDisciplina,
+
+            trilho.idAssunto
+
+        );
+
+
+    const base =
+        Number(
+            trilho.blocosBase || 0
+        );
+
+
+    const novosBlocos =
+        Math.max(
+            0,
+            totalAtual - base
+        );
+
+
+    return {
+
+        blocos:
+            Math.min(
+                MOTOR_BLOCOS_POR_CICLO,
+                novosBlocos
+            ),
+
+        restante:
+            Math.max(
+
+                0,
+
+                MOTOR_BLOCOS_POR_CICLO -
+                novosBlocos
+
+            ),
+
+        completo:
+            novosBlocos >=
+            MOTOR_BLOCOS_POR_CICLO,
+
+        totalAtual:
+            totalAtual
+
+    };
+
+}
+
+
+// =====================================
+// ALTERNAR QUANDO CICLO COMPLETA
+// =====================================
+
+function sincronizarAlternanciaPomodoro(
+    dupla
+) {
+
+    if (!dupla) {
+
+        return dupla;
+
+    }
+
+
+    const trilhoAtual =
+        dupla[
+            dupla.trilhoAtual
+        ];
+
+
+    if (!trilhoAtual) {
+
+        return dupla;
+
+    }
+
+
+    const ciclo =
+        obterProgressoCicloTrilho(
+            trilhoAtual
+        );
+
+
+    if (
+        !ciclo.completo
+    ) {
+
+        return dupla;
+
+    }
+
+
+    // =================================
+    // CONSUMIR CICLO
+    // =================================
+    //
+    // O histórico continua intacto.
+    //
+    // Apenas registramos que esses
+    // blocos já foram considerados
+    // para alternância.
+    // =================================
+
+    trilhoAtual.blocosBase =
+        ciclo.totalAtual;
+
+
+    // =================================
+    // ALTERNAR
+    // =================================
+
+    if (
+        dupla.trilhoAtual ===
+            "principal" &&
+        dupla.secundario
+    ) {
+
+        dupla.trilhoAtual =
+            "secundario";
+
+    }
+    else if (
+        dupla.trilhoAtual ===
+            "secundario" &&
+        dupla.principal
+    ) {
+
+        dupla.trilhoAtual =
+            "principal";
+
+    }
+
+
+    salvarDuplaAtiva(
+        dupla
+    );
+
+
+    return dupla;
+
+}
+
+
+// =====================================================
+// ESTADO COMPLETO DA DUPLA
+// =====================================================
+
+function obterEstadoDuplaAtiva() {
 
     const planoBruto =
         gerarPlanoBruto();
 
 
-    return gerarSequenciaEquilibrada(
+    const dupla =
+        garantirDuplaAtiva(
+            planoBruto
+        );
 
-        planoBruto,
 
-        limite
-
+    sincronizarAlternanciaPomodoro(
+        dupla
     );
 
+
+    const principal =
+        localizarItemNoPlano(
+
+            dupla.principal,
+
+            planoBruto
+
+        );
+
+
+    const secundario =
+        localizarItemNoPlano(
+
+            dupla.secundario,
+
+            planoBruto
+
+        );
+
+
+    const cicloPrincipal =
+        obterProgressoCicloTrilho(
+            dupla.principal
+        );
+
+
+    const cicloSecundario =
+        obterProgressoCicloTrilho(
+            dupla.secundario
+        );
+
+
+    return {
+
+        dupla:
+            dupla,
+
+        principal:
+            principal,
+
+        secundario:
+            secundario,
+
+        trilhoAtual:
+            dupla.trilhoAtual,
+
+        cicloPrincipal:
+            cicloPrincipal,
+
+        cicloSecundario:
+            cicloSecundario
+
+    };
+
 }
+
+
+// =====================================================
+// API DO MOTOR
+// =====================================================
 
 
 // =====================================
@@ -1703,21 +1773,205 @@ function gerarPlanoEstudo(
 
 function obterProximoEstudo() {
 
+    const estado =
+        obterEstadoDuplaAtiva();
+
+
+    const trilho =
+        estado.trilhoAtual;
+
+
+    const item =
+
+        trilho ===
+            "secundario"
+
+            ? estado.secundario
+            : estado.principal;
+
+
+    if (!item) {
+
+        const alternativo =
+
+            estado.principal ||
+            estado.secundario;
+
+
+        return alternativo || null;
+
+    }
+
+
+    const ciclo =
+
+        trilho ===
+            "secundario"
+
+            ? estado.cicloSecundario
+            : estado.cicloPrincipal;
+
+
+    return {
+
+        ...item,
+
+        trilhoAtivo:
+            trilho,
+
+        duplaAtiva:
+            true,
+
+        continuidadePomodoro:
+            ciclo.blocos > 0,
+
+        blocosCompletosNoCiclo:
+            ciclo.blocos,
+
+        blocosRestantesNoCiclo:
+            ciclo.restante
+
+    };
+
+}
+
+
+// =====================================
+// OBTER DUPLA DE ESTUDO
+// =====================================
+
+function obterDuplaAtivaEstudo() {
+
+    const estado =
+        obterEstadoDuplaAtiva();
+
+
+    return {
+
+        trilhoAtual:
+            estado.trilhoAtual,
+
+        principal:
+            estado.principal
+                ? {
+
+                    ...estado.principal,
+
+                    ciclo:
+                        estado.cicloPrincipal
+
+                }
+                : null,
+
+        secundario:
+            estado.secundario
+                ? {
+
+                    ...estado.secundario,
+
+                    ciclo:
+                        estado.cicloSecundario
+
+                }
+                : null
+
+    };
+
+}
+
+
+// =====================================
+// GERAR PLANO DE ESTUDO
+// =====================================
+//
+// A partir da v3.5:
+//
+// O plano operacional NÃO lista
+// dezenas de assuntos.
+//
+// Ele apresenta a DUPLA ATIVA.
+//
+// Isso impede alternância aleatória
+// entre várias disciplinas.
+// =====================================
+
+function gerarPlanoEstudo(
+    limite = 2
+) {
+
+    const estado =
+        obterEstadoDuplaAtiva();
+
+
     const plano =
-        gerarPlanoEstudo(
-            1
-        );
+        [];
 
 
-    return (
+    const atual =
 
-        plano.length >
-        0
+        estado.trilhoAtual ===
+            "secundario"
 
-            ? plano[0]
-            : null
+            ? estado.secundario
+            : estado.principal;
 
-    );
+
+    const outro =
+
+        estado.trilhoAtual ===
+            "secundario"
+
+            ? estado.principal
+            : estado.secundario;
+
+
+    if (atual) {
+
+        plano.push({
+
+            ...atual,
+
+            trilhoAtivo:
+                estado.trilhoAtual,
+
+            prioridadeAtual:
+                true
+
+        });
+
+    }
+
+
+    if (
+        outro &&
+        plano.length <
+            Math.max(
+                1,
+                Number(limite) || 2
+            )
+    ) {
+
+        plano.push({
+
+            ...outro,
+
+            trilhoAtivo:
+
+                estado.trilhoAtual ===
+                    "principal"
+
+                    ? "secundario"
+                    : "principal",
+
+            prioridadeAtual:
+                false
+
+        });
+
+    }
+
+
+    return plano;
 
 }
 
@@ -1727,24 +1981,11 @@ function obterProximoEstudo() {
 // =====================================
 
 function obterProximosEstudos(
-    quantidade =
-        3
+    quantidade = 2
 ) {
 
-    const quantidadeSegura =
-        Math.max(
-
-            1,
-
-            Number(
-                quantidade
-            ) || 1
-
-        );
-
-
     return gerarPlanoEstudo(
-        quantidadeSegura
+        quantidade
     );
 
 }
@@ -1756,14 +1997,33 @@ function obterProximosEstudos(
 
 function obterSituacaoCicloPomodoro() {
 
+    const estado =
+        obterEstadoDuplaAtiva();
+
+
+    const trilho =
+        estado.trilhoAtual;
+
+
+    const item =
+
+        trilho ===
+            "secundario"
+
+            ? estado.secundario
+            : estado.principal;
+
+
     const ciclo =
-        analisarCicloPomodoroAtual();
+
+        trilho ===
+            "secundario"
+
+            ? estado.cicloSecundario
+            : estado.cicloPrincipal;
 
 
-    if (
-        !ciclo.disciplina ||
-        !ciclo.aula
-    ) {
+    if (!item) {
 
         return null;
 
@@ -1773,36 +2033,25 @@ function obterSituacaoCicloPomodoro() {
     return {
 
         disciplina:
-            ciclo.disciplina,
+            item.idDisciplina,
 
         aula:
-            ciclo.aula,
+            item.idAssunto,
+
+        trilho:
+            trilho,
 
         blocosCompletos:
-            ciclo.blocosCompletos,
+            ciclo.blocos,
 
         totalBlocos:
             MOTOR_BLOCOS_POR_CICLO,
 
         blocosRestantes:
-            Math.max(
-
-                0,
-
-                MOTOR_BLOCOS_POR_CICLO -
-                ciclo.blocosCompletos
-
-            ),
+            ciclo.restante,
 
         cicloCompleto:
-            ciclo.cicloCompleto,
-
-        ciclosConcluidos:
-            ciclo.ciclosConcluidos,
-
-        totalBlocosCompletos:
-            ciclo.totalBlocosCompletos ||
-            0
+            ciclo.completo
 
     };
 
@@ -1815,28 +2064,19 @@ function obterSituacaoCicloPomodoro() {
 
 function obterDiagnosticoEstrategico() {
 
-    const planejamento =
-        obterDiagnosticoPrazoMotor();
-
-
-    const proximo =
-        obterProximoEstudo();
-
-
-    const ciclo =
-        obterSituacaoCicloPomodoro();
-
-
     return {
 
         planejamento:
-            planejamento,
+            obterDiagnosticoPrazoMotor(),
 
         proximoEstudo:
-            proximo,
+            obterProximoEstudo(),
+
+        duplaAtiva:
+            obterDuplaAtivaEstudo(),
 
         cicloPomodoro:
-            ciclo
+            obterSituacaoCicloPomodoro()
 
     };
 
@@ -1844,7 +2084,49 @@ function obterDiagnosticoEstrategico() {
 
 
 // =====================================
-// RECALCULAR APÓS POMODORO
+// RESET MANUAL DA DUPLA
+// =====================================
+//
+// Função de manutenção.
+//
+// Não interfere no progresso,
+// Pomodoro ou revisões.
+//
+// Pode ser usada no console caso
+// precisemos reconstruir a dupla.
+// =====================================
+
+function redefinirDuplaAtivaPlanejamento() {
+
+    localStorage.removeItem(
+        MOTOR_CHAVE_DUPLA_ATIVA
+    );
+
+
+    const nova =
+        obterDuplaAtivaEstudo();
+
+
+    document.dispatchEvent(
+
+        new CustomEvent(
+            "planejamentoPSCPPAtualizado",
+            {
+                detail:
+                    obterDiagnosticoEstrategico()
+            }
+        )
+
+    );
+
+
+    return nova;
+
+}
+
+
+// =====================================
+// ATUALIZAÇÃO APÓS POMODORO
 // =====================================
 
 document.addEventListener(
@@ -1880,14 +2162,57 @@ document.addEventListener(
 
 
 // =====================================
-// DEBUG
+// ATUALIZAÇÃO APÓS PROGRESSO
+// =====================================
+//
+// Quando uma aula chega a 100%,
+// a dupla é reavaliada.
+//
+// Somente o trilho concluído
+// será substituído.
 // =====================================
 
-console.log(
-    "MOTOR DE PLANEJAMENTO PSCPP v3.4 CARREGADO"
+document.addEventListener(
+
+    "progressoPSCPPAtualizado",
+
+    function () {
+
+        const diagnostico =
+            obterDiagnosticoEstrategico();
+
+
+        document.dispatchEvent(
+
+            new CustomEvent(
+
+                "planejamentoPSCPPAtualizado",
+
+                {
+
+                    detail:
+                        diagnostico
+
+                }
+
+            )
+
+        );
+
+    }
+
 );
 
 
 // =====================================
-// FIM MOTOR v3.4
+// DEBUG
+// =====================================
+
+console.log(
+    "MOTOR DE PLANEJAMENTO PSCPP v3.5 — DUPLA ATIVA CARREGADA"
+);
+
+
+// =====================================
+// FIM MOTOR v3.5
 // =====================================
