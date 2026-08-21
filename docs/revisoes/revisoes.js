@@ -1,14 +1,16 @@
 // =====================================
 // SISTEMA DE AULA DE REVISÃO PSCPP
 // Bridge Trainer PSCPP
-// Versão 1.0
+// Versão 1.1
 //
-// PRIMEIRA ETAPA:
+// Funções atuais:
 //
-// - ler disciplina da URL;
-// - ler aula da URL;
-// - preencher a página de revisão;
-// - preparar a base para futuras camadas.
+// - ler disciplina e aula da URL;
+// - identificar a revisão;
+// - localizar automaticamente a aula original;
+// - carregar o HTML da aula;
+// - preparar sua estrutura para extração;
+// - manter a base para revisão inteligente.
 //
 // Exemplo:
 //
@@ -24,7 +26,11 @@ let revisaoAtual = {
 
     disciplina: null,
 
-    aula: null
+    aula: null,
+
+    caminhoAulaOriginal: null,
+
+    documentoAulaOriginal: null
 
 };
 
@@ -78,8 +84,8 @@ function normalizarIdRevisao(
 //
 // Temporário.
 //
-// Depois buscaremos os nomes reais em
-// disciplinas.json / banco-conteudo.js.
+// Depois poderemos buscar nomes reais
+// em disciplinas.json.
 // =====================================
 
 function formatarTituloRevisao(
@@ -137,29 +143,21 @@ function obterParametrosRevisao() {
         );
 
 
-    const disciplina =
-        normalizarIdRevisao(
-            parametros.get(
-                "disciplina"
-            )
-        );
-
-
-    const aula =
-        normalizarIdRevisao(
-            parametros.get(
-                "aula"
-            )
-        );
-
-
     return {
 
         disciplina:
-            disciplina,
+            normalizarIdRevisao(
+                parametros.get(
+                    "disciplina"
+                )
+            ),
 
         aula:
-            aula
+            normalizarIdRevisao(
+                parametros.get(
+                    "aula"
+                )
+            )
 
     };
 
@@ -167,7 +165,7 @@ function obterParametrosRevisao() {
 
 
 // =====================================
-// ATUALIZAR TEXTO SE ELEMENTO EXISTIR
+// ATUALIZAR TEXTO
 // =====================================
 
 function atualizarTextoRevisao(
@@ -195,7 +193,135 @@ function atualizarTextoRevisao(
 
 
 // =====================================
-// MOSTRAR ERRO DE IDENTIFICAÇÃO
+// ATUALIZAR HTML
+// =====================================
+
+function atualizarHTMLRevisao(
+    id,
+    html
+) {
+
+    const elemento =
+        document.getElementById(
+            id
+        );
+
+
+    if (!elemento) {
+
+        return;
+
+    }
+
+
+    elemento.innerHTML =
+        html;
+
+}
+
+
+// =====================================
+// ESCAPAR HTML
+// =====================================
+
+function escaparHTMLRevisao(
+    texto
+) {
+
+    return String(
+        texto ?? ""
+    )
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+// =====================================
+// CAMINHO DA AULA ORIGINAL
+// =====================================
+//
+// Estrutura atual:
+//
+// docs/
+// ├── disciplinas/
+// │   └── manobrabilidade/
+// │       └── controlabilidade.html
+// │
+// └── revisoes/
+//     └── aula.html
+//
+// Portanto:
+//
+// ../disciplinas/{disciplina}/{aula}.html
+//
+// OBSERVAÇÃO:
+//
+// Isto pressupõe que:
+// id da aula = nome do arquivo.
+//
+// Depois poderemos substituir esta regra
+// pela leitura do disciplinas.json,
+// caso necessário.
+// =====================================
+
+function criarCaminhoAulaOriginal(
+    disciplina,
+    aula
+) {
+
+    if (
+        !disciplina ||
+        !aula
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+
+        "../disciplinas/" +
+
+        disciplina +
+
+        "/" +
+
+        aula +
+
+        ".html"
+
+    );
+
+}
+
+
+// =====================================
+// MOSTRAR ERRO
 // =====================================
 
 function mostrarErroRevisao(
@@ -220,41 +346,32 @@ function mostrarErroRevisao(
     );
 
 
-    const painel =
-        document.getElementById(
-            "painel-foco-revisao"
-        );
+    atualizarHTMLRevisao(
 
+        "painel-foco-revisao",
 
-    if (painel) {
+        `
 
-        painel.innerHTML = `
+        <p>
+            Não foi possível preparar
+            esta aula de revisão.
+        </p>
 
-            <p>
-                Não foi possível identificar
-                corretamente a aula que deve
-                ser revisada.
-            </p>
+        <p>
+            ${escaparHTMLRevisao(
+                mensagem
+            )}
+        </p>
 
-            <p>
-                A página precisa receber os parâmetros:
-            </p>
+        `
 
-            <p>
-                <strong>
-                ?disciplina=...&aula=...
-                </strong>
-            </p>
-
-        `;
-
-    }
+    );
 
 }
 
 
 // =====================================
-// PREENCHER IDENTIDADE DA REVISÃO
+// PREENCHER IDENTIDADE
 // =====================================
 
 function preencherIdentidadeRevisao() {
@@ -311,39 +428,404 @@ function preencherIdentidadeRevisao() {
 
     );
 
+}
 
-    const painel =
-        document.getElementById(
-            "painel-foco-revisao"
+
+// =====================================
+// CARREGAR HTML DA AULA ORIGINAL
+// =====================================
+
+async function carregarAulaOriginal() {
+
+    const caminho =
+        criarCaminhoAulaOriginal(
+
+            revisaoAtual.disciplina,
+
+            revisaoAtual.aula
+
         );
 
 
-    if (painel) {
+    if (!caminho) {
 
-        painel.innerHTML = `
+        throw new Error(
+            "Não foi possível criar o caminho da aula original."
+        );
+
+    }
+
+
+    revisaoAtual
+        .caminhoAulaOriginal =
+        caminho;
+
+
+    const resposta =
+        await fetch(
+            caminho
+        );
+
+
+    if (!resposta.ok) {
+
+        throw new Error(
+
+            "A aula original não foi encontrada em: " +
+            caminho
+
+        );
+
+    }
+
+
+    const html =
+        await resposta.text();
+
+
+    if (!html) {
+
+        throw new Error(
+            "A aula original foi carregada, mas seu conteúdo está vazio."
+        );
+
+    }
+
+
+    return html;
+
+}
+
+
+// =====================================
+// TRANSFORMAR HTML EM DOCUMENTO
+// =====================================
+//
+// Isso NÃO abre a aula na tela.
+//
+// O HTML é convertido em um documento
+// temporário apenas para leitura.
+//
+// Depois poderemos consultar:
+//
+// .topico-aula
+// .destaque
+// .atencao-pratico
+// .termos-tecnicos
+// .questao
+// etc.
+// =====================================
+
+function criarDocumentoAulaOriginal(
+    html
+) {
+
+    const parser =
+        new DOMParser();
+
+
+    return parser.parseFromString(
+
+        html,
+
+        "text/html"
+
+    );
+
+}
+
+
+// =====================================
+// VALIDAR AULA ORIGINAL
+// =====================================
+
+function validarDocumentoAulaOriginal(
+    documento
+) {
+
+    if (!documento) {
+
+        return false;
+
+    }
+
+
+    const body =
+        documento.body;
+
+
+    if (!body) {
+
+        return false;
+
+    }
+
+
+    const disciplina =
+        normalizarIdRevisao(
+            body.dataset.disciplina
+        );
+
+
+    const aula =
+        normalizarIdRevisao(
+            body.dataset.aula
+        );
+
+
+    if (
+        disciplina !==
+            revisaoAtual.disciplina ||
+        aula !==
+            revisaoAtual.aula
+    ) {
+
+        console.warn(
+            "A identidade encontrada na aula original " +
+            "não coincide com a URL da revisão.",
+            {
+                esperado: {
+                    disciplina:
+                        revisaoAtual.disciplina,
+                    aula:
+                        revisaoAtual.aula
+                },
+                encontrado: {
+                    disciplina:
+                        disciplina,
+                    aula:
+                        aula
+                }
+            }
+        );
+
+    }
+
+
+    return true;
+
+}
+
+
+// =====================================
+// CONTAR ELEMENTOS IMPORTANTES
+// =====================================
+//
+// Nesta etapa serve apenas para confirmar
+// que conseguimos acessar a estrutura da aula.
+// =====================================
+
+function obterResumoEstruturaAula(
+    documento
+) {
+
+    return {
+
+        topicos:
+            documento
+                .querySelectorAll(
+                    ".topico-aula"
+                )
+                .length,
+
+        destaques:
+            documento
+                .querySelectorAll(
+                    ".destaque"
+                )
+                .length,
+
+        atencoes:
+            documento
+                .querySelectorAll(
+                    ".atencao-pratico"
+                )
+                .length,
+
+        termosTecnicos:
+            documento
+                .querySelectorAll(
+                    ".termos-tecnicos"
+                )
+                .length,
+
+        questoes:
+            documento
+                .querySelectorAll(
+                    ".questao"
+                )
+                .length
+
+    };
+
+}
+
+
+// =====================================
+// MOSTRAR SUCESSO DO CARREGAMENTO
+// =====================================
+
+function mostrarAulaOriginalCarregada(
+    resumo
+) {
+
+    atualizarHTMLRevisao(
+
+        "painel-foco-revisao",
+
+        `
+
+        <p>
+            <strong>
+                Aula original localizada com sucesso.
+            </strong>
+        </p>
+
+        <p>
+            A estrutura da aula já está disponível
+            para o motor de revisão.
+        </p>
+
+        <ul>
+
+            <li>
+                Tópicos encontrados:
+                <strong>
+                    ${resumo.topicos}
+                </strong>
+            </li>
+
+            <li>
+                Destaques encontrados:
+                <strong>
+                    ${resumo.destaques}
+                </strong>
+            </li>
+
+            <li>
+                Pontos de atenção:
+                <strong>
+                    ${resumo.atencoes}
+                </strong>
+            </li>
+
+            <li>
+                Blocos de termos técnicos:
+                <strong>
+                    ${resumo.termosTecnicos}
+                </strong>
+            </li>
+
+            <li>
+                Questões disponíveis:
+                <strong>
+                    ${resumo.questoes}
+                </strong>
+            </li>
+
+        </ul>
+
+        `
+
+    );
+
+}
+
+
+// =====================================
+// PREPARAR AULA ORIGINAL
+// =====================================
+
+async function prepararAulaOriginal() {
+
+    try {
+
+        const html =
+            await carregarAulaOriginal();
+
+
+        const documento =
+            criarDocumentoAulaOriginal(
+                html
+            );
+
+
+        if (
+            !validarDocumentoAulaOriginal(
+                documento
+            )
+        ) {
+
+            throw new Error(
+                "A estrutura da aula original é inválida."
+            );
+
+        }
+
+
+        revisaoAtual
+            .documentoAulaOriginal =
+            documento;
+
+
+        const resumo =
+            obterResumoEstruturaAula(
+                documento
+            );
+
+
+        mostrarAulaOriginalCarregada(
+            resumo
+        );
+
+
+        console.log(
+            "Aula original preparada:",
+            {
+                revisao:
+                    revisaoAtual,
+                estrutura:
+                    resumo
+            }
+        );
+
+
+        return true;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar aula original:",
+            erro
+        );
+
+
+        atualizarHTMLRevisao(
+
+            "painel-foco-revisao",
+
+            `
 
             <p>
-                Aula identificada com sucesso.
+                <strong>
+                    ⚠ Não foi possível carregar
+                    a aula original.
+                </strong>
             </p>
 
             <p>
-                <strong>Disciplina:</strong>
-                ${nomeDisciplina}
+                ${escaparHTMLRevisao(
+                    erro.message
+                )}
             </p>
 
-            <p>
-                <strong>Aula:</strong>
-                ${nomeAula}
-            </p>
+            `
 
-            <p>
-                Na próxima etapa,
-                esta página passará a carregar
-                automaticamente os dados reais
-                da aula original.
-            </p>
+        );
 
-        `;
+
+        return false;
 
     }
 
@@ -351,10 +833,10 @@ function preencherIdentidadeRevisao() {
 
 
 // =====================================
-// INICIALIZAR PÁGINA DE REVISÃO
+// INICIALIZAR AULA DE REVISÃO
 // =====================================
 
-function inicializarAulaRevisao() {
+async function inicializarAulaRevisao() {
 
     const parametros =
         obterParametrosRevisao();
@@ -366,9 +848,7 @@ function inicializarAulaRevisao() {
     ) {
 
         mostrarErroRevisao(
-
             "Disciplina ou aula não informada na URL."
-
         );
 
 
@@ -388,10 +868,7 @@ function inicializarAulaRevisao() {
     preencherIdentidadeRevisao();
 
 
-    console.log(
-        "Aula de revisão identificada:",
-        revisaoAtual
-    );
+    await prepararAulaOriginal();
 
 }
 
@@ -418,10 +895,10 @@ document.addEventListener(
 // =====================================
 
 console.log(
-    "SISTEMA DE AULA DE REVISÃO v1.0 CARREGADO"
+    "SISTEMA DE AULA DE REVISÃO v1.1 CARREGADO"
 );
 
 
 // =====================================
-// FIM revisoes.js v1.0
+// FIM revisoes.js v1.1
 // =====================================
