@@ -7034,9 +7034,146 @@ function gerarGabaritoComentadoRevisao() {
 
 }
 
-alert(
-    "v1.8.2 carregada"
-);
+
+
 /* =====================================================
    FIM CORREÇÃO v1.8.2
+===================================================== */
+/* =====================================================
+   CORREÇÃO v1.8.3
+   LOCALIZAÇÃO CORRETA DO GABARITO
+
+   Problema corrigido:
+
+   A v1.8.2 podia identificar a própria seção
+   de questões como se fosse o gabarito,
+   porque ambas possuem títulos:
+
+   <h3>Questão N</h3>
+
+   Agora somente uma seção explicitamente
+   identificada como GABARITO pode ser usada.
+===================================================== */
+
+
+// =====================================================
+// LOCALIZAR SOMENTE A SEÇÃO REAL DO GABARITO
+// =====================================================
+
+function localizarSecaoGabaritoOriginal(
+    documento
+) {
+
+    if (!documento) {
+
+        return null;
+
+    }
+
+
+    // =================================
+    // PRIORIDADE 1
+    //
+    // ID contendo "gabarito"
+    //
+    // Exemplo:
+    //
+    // id="gabarito-controlabilidade"
+    // =================================
+
+    const porId =
+        Array.from(
+            documento.querySelectorAll(
+                "section[id]"
+            )
+        )
+        .find(
+            secao => {
+
+                const id =
+                    normalizarTextoComparacao(
+                        secao.id
+                    );
+
+
+                return id.includes(
+                    "gabarito"
+                );
+
+            }
+        );
+
+
+    if (porId) {
+
+        return porId;
+
+    }
+
+
+    // =================================
+    // PRIORIDADE 2
+    //
+    // Section cujo H2 seja
+    // "Gabarito comentado"
+    // =================================
+
+    const secoes =
+        Array.from(
+            documento.querySelectorAll(
+                "section"
+            )
+        );
+
+
+    const porTitulo =
+        secoes.find(
+            secao => {
+
+                const titulo =
+                    secao.querySelector(
+                        ":scope h2"
+                    );
+
+
+                if (!titulo) {
+
+                    return false;
+
+                }
+
+
+                const texto =
+                    normalizarTextoComparacao(
+                        titulo.textContent
+                    );
+
+
+                return texto.includes(
+                    "gabarito comentado"
+                );
+
+            }
+        );
+
+
+    if (porTitulo) {
+
+        return porTitulo;
+
+    }
+
+
+    console.warn(
+        "Revisão: seção real de gabarito não localizada."
+    );
+
+
+    return null;
+
+}
+
+
+/* =====================================================
+   FIM CORREÇÃO v1.8.3
 ===================================================== */
