@@ -522,6 +522,12 @@ function obterCaminhoProgressoJSON() {
     if (
         caminhoAtual.includes(
             "/guia-estudos/"
+        ) ||
+        caminhoAtual.includes(
+            "/revisoes/"
+        ) ||
+        caminhoAtual.includes(
+            "/desempenho/"
         )
     ) {
 
