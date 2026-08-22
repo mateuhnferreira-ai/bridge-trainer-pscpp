@@ -2708,3 +2708,560 @@ console.log(
 // =====================================================
 // FIM
 // =====================================================
+
+
+/* =====================================================
+   EXTENSÃO v1.5
+   PONTOS DE ATENÇÃO DA REVISÃO
+
+   Bridge Trainer PSCPP
+
+   Função:
+
+   - reunir automaticamente os pontos de atenção
+     existentes na aula original;
+
+   - priorizar os tópicos que fazem parte do
+     núcleo conceitual da revisão;
+
+   - complementar com outros pontos importantes
+     da aula;
+
+   - eliminar repetições;
+
+   - não depender do desempenho do aluno;
+
+   - não inventar conteúdo novo.
+===================================================== */
+
+
+// =====================================
+// CONFIGURAÇÕES
+// =====================================
+
+const REVISAO_MAX_PONTOS_ATENCAO_GERAL =
+    10;
+
+
+// =====================================
+// CRIAR REGISTRO DE ATENÇÃO
+// =====================================
+
+function criarRegistroAtencaoRevisao(
+    topico,
+    texto
+) {
+
+    if (
+        !topico ||
+        !texto
+    ) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        idTopico:
+            topico.id || "",
+
+        tituloTopico:
+            topico.titulo ||
+            "Ponto de atenção",
+
+        texto:
+            limparTextoRevisao(
+                texto
+            ),
+
+        importancia:
+            Number(
+                topico.importancia || 0
+            )
+
+    };
+
+}
+
+
+// =====================================
+// COLETAR ATENÇÕES DOS NÚCLEOS
+// =====================================
+
+function coletarAtencoesDosNucleos(
+    nucleos
+) {
+
+    const resultado =
+        [];
+
+
+    (
+        nucleos || []
+    ).forEach(
+        topico => {
+
+            (
+                topico.atencoes || []
+            ).forEach(
+                texto => {
+
+                    const registro =
+                        criarRegistroAtencaoRevisao(
+                            topico,
+                            texto
+                        );
+
+
+                    if (
+                        registro
+                    ) {
+
+                        resultado.push(
+                            registro
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// COLETAR ATENÇÕES COMPLEMENTARES
+// =====================================
+
+function coletarAtencoesComplementares(
+    topicos,
+    nucleos
+) {
+
+    const idsNucleos =
+        new Set(
+
+            (
+                nucleos || []
+            ).map(
+                item =>
+                    item.id
+            )
+
+        );
+
+
+    const candidatos =
+        (
+            topicos || []
+        )
+
+        .filter(
+            topico =>
+
+                !idsNucleos.has(
+                    topico.id
+                ) &&
+
+                Array.isArray(
+                    topico.atencoes
+                ) &&
+
+                topico.atencoes.length >
+                    0
+
+        )
+
+        .sort(
+            (
+                a,
+                b
+            ) =>
+
+                Number(
+                    b.importancia || 0
+                ) -
+
+                Number(
+                    a.importancia || 0
+                )
+
+        );
+
+
+    const resultado =
+        [];
+
+
+    candidatos.forEach(
+        topico => {
+
+            topico.atencoes
+                .forEach(
+                    texto => {
+
+                        const registro =
+                            criarRegistroAtencaoRevisao(
+                                topico,
+                                texto
+                            );
+
+
+                        if (
+                            registro
+                        ) {
+
+                            resultado.push(
+                                registro
+                            );
+
+                        }
+
+                    }
+                );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// DEDUPLICAR PONTOS DE ATENÇÃO
+// =====================================
+
+function deduplicarPontosAtencaoRevisao(
+    registros
+) {
+
+    const resultado =
+        [];
+
+
+    const textosRegistrados =
+        [];
+
+
+    (
+        registros || []
+    ).forEach(
+        registro => {
+
+            if (
+                !registro ||
+                !registro.texto
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                textoJaRepresentado(
+
+                    registro.texto,
+
+                    textosRegistrados
+
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            textosRegistrados.push(
+                registro.texto
+            );
+
+
+            resultado.push(
+                registro
+            );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// SELECIONAR PONTOS DE ATENÇÃO
+// =====================================
+
+function selecionarPontosAtencaoRevisao(
+    topicos,
+    nucleos
+) {
+
+    // Primeiro:
+    // pontos pertencentes ao núcleo
+    // conceitual obrigatório.
+
+    const principais =
+        coletarAtencoesDosNucleos(
+            nucleos
+        );
+
+
+    // Depois:
+    // pontos relevantes existentes
+    // em outros tópicos da aula.
+
+    const complementares =
+        coletarAtencoesComplementares(
+
+            topicos,
+
+            nucleos
+
+        );
+
+
+    const combinados = [
+
+        ...principais,
+
+        ...complementares
+
+    ];
+
+
+    return deduplicarPontosAtencaoRevisao(
+        combinados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_PONTOS_ATENCAO_GERAL
+        );
+
+}
+
+
+// =====================================
+// RENDERIZAR PONTOS DE ATENÇÃO
+// =====================================
+
+function renderizarPontosAtencaoRevisao(
+    pontos
+) {
+
+    const container =
+        document.getElementById(
+            "lista-atencao-revisao"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    if (
+        !Array.isArray(
+            pontos
+        ) ||
+        pontos.length ===
+            0
+    ) {
+
+        container.innerHTML = `
+
+            <div class="widget">
+
+                <p>
+                    Nenhum ponto de atenção específico
+                    foi identificado nesta aula.
+                </p>
+
+            </div>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    container.innerHTML = `
+
+        <div class="widget">
+
+            <p>
+                Os pontos abaixo merecem atenção especial
+                durante a revisão porque representam
+                distinções, limitações ou interpretações
+                destacadas na própria aula.
+            </p>
+
+        </div>
+
+
+        ${pontos
+
+            .map(
+                (
+                    ponto,
+                    indice
+                ) => `
+
+                <div
+                    class="atencao-pratico"
+                    data-revisao-atencao="${
+                        escaparHTMLRevisao(
+                            ponto.idTopico
+                        )
+                    }"
+                >
+
+                    <h3>
+
+                        ⚠ ${indice + 1}.
+                        ${escaparHTMLRevisao(
+                            ponto.tituloTopico
+                        )}
+
+                    </h3>
+
+                    <p>
+
+                        ${escaparHTMLRevisao(
+                            ponto.texto
+                        )}
+
+                    </p>
+
+                </div>
+
+                `
+            )
+
+            .join("")
+        }
+
+    `;
+
+}
+
+
+// =====================================
+// GERAR CAMADA DE ATENÇÃO
+// =====================================
+
+function gerarPontosAtencaoRevisao() {
+
+    const pontos =
+        selecionarPontosAtencaoRevisao(
+
+            revisaoAtual
+                .topicosAnalisados,
+
+            revisaoAtual
+                .nucleosSelecionados
+
+        );
+
+
+    renderizarPontosAtencaoRevisao(
+        pontos
+    );
+
+
+    console.log(
+
+        "REVISÃO v1.5 — pontos de atenção:",
+
+        pontos
+
+    );
+
+}
+
+
+// =====================================================
+// SOBRESCREVER GERAÇÃO DO NÚCLEO
+//
+// Mantém toda a lógica da v1.4
+// e acrescenta a nova camada de atenção.
+// =====================================================
+
+function gerarNucleoRevisao(
+    documento
+) {
+
+    const topicos =
+        analisarTopicosAula(
+            documento
+        );
+
+
+    revisaoAtual
+        .topicosAnalisados =
+        topicos;
+
+
+    const nucleos =
+        selecionarNucleosPrincipais(
+            topicos
+        );
+
+
+    revisaoAtual
+        .nucleosSelecionados =
+        nucleos;
+
+
+    // Mini-aula conceitual
+
+    renderizarNucleosConceituais(
+        nucleos
+    );
+
+
+    // Pontos de atenção globais
+
+    gerarPontosAtencaoRevisao();
+
+
+    console.log(
+
+        "REVISÃO v1.5 — núcleo + atenção:",
+
+        {
+
+            nucleos:
+                nucleos.length,
+
+            topicos:
+                topicos.length
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   FIM EXTENSÃO v1.5
+===================================================== */
