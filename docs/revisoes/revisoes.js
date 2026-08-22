@@ -6457,123 +6457,584 @@ function gerarGabaritoComentadoRevisao() {
 
 
 /* =====================================================
-   DEBUG VISUAL DO GABARITO
+   CORREÇÃO v1.8.2
+   EXTRAÇÃO ROBUSTA DO GABARITO COMENTADO
 ===================================================== */
 
-function mostrarDiagnosticoGabaritoRevisao() {
+
+// =====================================================
+// IDENTIFICAR TÍTULO DE QUESTÃO DE GABARITO
+// =====================================================
+
+function analisarTituloQuestaoGabarito(
+    texto
+) {
+
+    const limpo =
+        limparTextoRevisao(
+            texto
+        );
+
+
+    if (!limpo) {
+
+        return null;
+
+    }
+
+
+    /*
+     * Aceita exemplos como:
+     *
+     * Questão 1 — C
+     * Questão 2 - D
+     * Questão 3 – B
+     * Questao 4 — A
+     */
+
+    const resultado =
+        limpo.match(
+            /quest(?:ã|a)o\s*(\d+)\s*[—–-]?\s*(?:alternativa\s*)?([A-E])?/i
+        );
+
+
+    if (!resultado) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        numero:
+            Number(
+                resultado[1]
+            ),
+
+        resposta:
+            resultado[2]
+                ? resultado[2]
+                    .toUpperCase()
+                : ""
+
+    };
+
+}
+
+
+// =====================================================
+// LOCALIZAR A VERDADEIRA SEÇÃO DO GABARITO
+// =====================================================
+
+function localizarSecaoGabaritoOriginal(
+    documento
+) {
+
+    if (!documento) {
+
+        return null;
+
+    }
+
+
+    const secoes =
+        Array.from(
+            documento.querySelectorAll(
+                "section"
+            )
+        );
+
+
+    // =================================
+    // PRIORIDADE 1
+    //
+    // Procurar uma seção que realmente
+    // contenha títulos "Questão N".
+    // =================================
+
+    const secaoComQuestoes =
+        secoes.find(
+            secao => {
+
+                const titulos =
+                    Array.from(
+                        secao.querySelectorAll(
+                            "h3"
+                        )
+                    );
+
+
+                return titulos.some(
+                    titulo =>
+                        Boolean(
+                            analisarTituloQuestaoGabarito(
+                                titulo.textContent
+                            )
+                        )
+                );
+
+            }
+        );
+
+
+    if (secaoComQuestoes) {
+
+        return secaoComQuestoes;
+
+    }
+
+
+    // =================================
+    // PRIORIDADE 2
+    //
+    // Fallback pelo título
+    // "Gabarito comentado".
+    // =================================
+
+    return secoes.find(
+        secao => {
+
+            const h2 =
+                secao.querySelector(
+                    "h2"
+                );
+
+
+            if (!h2) {
+
+                return false;
+
+            }
+
+
+            return normalizarTextoComparacao(
+                h2.textContent
+            ).includes(
+                "gabarito comentado"
+            );
+
+        }
+    ) || null;
+
+}
+
+
+// =====================================================
+// EXTRAIR TODOS OS GABARITOS
+// =====================================================
+
+function extrairGabaritosOriginais(
+    documento
+) {
+
+    const secao =
+        localizarSecaoGabaritoOriginal(
+            documento
+        );
+
+
+    if (!secao) {
+
+        console.warn(
+            "Revisão: gabarito original não localizado."
+        );
+
+        return [];
+
+    }
+
+
+    const titulos =
+        Array.from(
+            secao.querySelectorAll(
+                "h3"
+            )
+        );
+
+
+    const resultado =
+        [];
+
+
+    titulos.forEach(
+        titulo => {
+
+            const dadosTitulo =
+                analisarTituloQuestaoGabarito(
+                    titulo.textContent
+                );
+
+
+            if (!dadosTitulo) {
+
+                return;
+
+            }
+
+
+            const elementos =
+                [];
+
+
+            let atual =
+                titulo.nextElementSibling;
+
+
+            // =================================
+            // CAPTURAR CONTEÚDO ATÉ
+            // A PRÓXIMA QUESTÃO
+            // =================================
+
+            while (atual) {
+
+                if (
+                    atual.tagName === "H3" &&
+                    analisarTituloQuestaoGabarito(
+                        atual.textContent
+                    )
+                ) {
+
+                    break;
+
+                }
+
+
+                /*
+                 * Evitar copiar elementos
+                 * que não fazem parte do comentário.
+                 */
+
+                if (
+                    atual.tagName !== "SCRIPT" &&
+                    atual.tagName !== "BUTTON"
+                ) {
+
+                    elementos.push(
+                        atual.cloneNode(
+                            true
+                        )
+                    );
+
+                }
+
+
+                atual =
+                    atual.nextElementSibling;
+
+            }
+
+
+            resultado.push({
+
+                numero:
+                    dadosTitulo.numero,
+
+                resposta:
+                    dadosTitulo.resposta,
+
+                elementos:
+                    elementos
+
+            });
+
+        }
+    );
+
+
+    console.log(
+        "REVISÃO v1.8.2 — comentários encontrados:",
+        resultado.length
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================================
+// RENDERIZAR GABARITO DA REVISÃO
+// =====================================================
+
+function renderizarGabaritoRevisao(
+    questoesSelecionadas
+) {
 
     const container =
         document.getElementById(
             "gabarito-revisao"
         );
 
+
     if (!container) {
+
         return;
+
     }
 
 
-    const documento =
-        revisaoAtual
-            .documentoAulaOriginal;
+    const gabaritos =
+        extrairGabaritosOriginais(
+
+            revisaoAtual
+                .documentoAulaOriginal
+
+        );
 
 
-    const questoes =
-        revisaoAtual
-            .questoesSelecionadas || [];
+    container.innerHTML =
+        "";
 
 
-    let secao = null;
+    if (
+        gabaritos.length === 0
+    ) {
 
-    let gabaritos = [];
+        container.innerHTML = `
+
+            <p>
+                Nenhum comentário de gabarito
+                pôde ser extraído da aula original.
+            </p>
+
+        `;
+
+        return;
+
+    }
 
 
-    try {
+    let totalRelacionados =
+        0;
 
-        secao =
-            localizarSecaoGabaritoOriginal(
-                documento
+
+    (
+        questoesSelecionadas || []
+    ).forEach(
+        (
+            questao,
+            indiceRevisao
+        ) => {
+
+            const numeroOriginal =
+                Number(
+                    questao.indice
+                ) + 1;
+
+
+            const gabarito =
+                gabaritos.find(
+                    item =>
+                        item.numero ===
+                        numeroOriginal
+                );
+
+
+            if (!gabarito) {
+
+                return;
+
+            }
+
+
+            totalRelacionados++;
+
+
+            const bloco =
+                document.createElement(
+                    "div"
+                );
+
+
+            bloco.className =
+                "widget gabarito-item-revisao";
+
+
+            // =================================
+            // TÍTULO
+            // =================================
+
+            const titulo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titulo.textContent =
+
+                "Questão " +
+
+                (indiceRevisao + 1) +
+
+                (
+                    gabarito.resposta
+                        ? " — " +
+                          gabarito.resposta
+                        : ""
+                );
+
+
+            bloco.appendChild(
+                titulo
             );
 
-    }
-    catch (erro) {
 
-        console.error(
-            "Erro ao localizar seção do gabarito:",
-            erro
-        );
+            // =================================
+            // COMENTÁRIO
+            // =================================
 
-    }
+            gabarito.elementos.forEach(
+                elemento => {
 
+                    bloco.appendChild(
+                        elemento.cloneNode(
+                            true
+                        )
+                    );
 
-    try {
-
-        gabaritos =
-            extrairGabaritosOriginais(
-                documento
-            ) || [];
-
-    }
-    catch (erro) {
-
-        console.error(
-            "Erro ao extrair gabaritos:",
-            erro
-        );
-
-    }
+                }
+            );
 
 
-    container.style.display =
-        "block";
+            // =================================
+            // REFERÊNCIA
+            // =================================
+
+            const referencia =
+                document.createElement(
+                    "p"
+                );
 
 
-    container.innerHTML = `
+            referencia.style.fontSize =
+                "0.85rem";
 
-        <div class="widget">
 
-            <h3>
-                🔧 Diagnóstico do gabarito
-            </h3>
+            referencia.style.opacity =
+                "0.7";
+
+
+            referencia.textContent =
+
+                "Correspondente à questão " +
+
+                numeroOriginal +
+
+                " da aula original.";
+
+
+            bloco.appendChild(
+                referencia
+            );
+
+
+            container.appendChild(
+                bloco
+            );
+
+        }
+    );
+
+
+    if (
+        totalRelacionados === 0
+    ) {
+
+        container.innerHTML = `
 
             <p>
-                <strong>
-                    Questões selecionadas:
-                </strong>
-                ${questoes.length}
+                Os comentários foram encontrados,
+                mas não foi possível relacioná-los
+                às questões selecionadas.
             </p>
 
-            <p>
-                <strong>
-                    Seção de gabarito encontrada:
-                </strong>
-                ${secao ? "SIM" : "NÃO"}
-            </p>
+        `;
 
-            <p>
-                <strong>
-                    Comentários encontrados:
-                </strong>
-                ${gabaritos.length}
-            </p>
-
-        </div>
-
-    `;
+    }
 
 }
 
 
-document.addEventListener(
+// =====================================================
+// BOTÃO DO GABARITO
+// =====================================================
 
-    "DOMContentLoaded",
+function prepararBotaoGabaritoRevisao() {
 
-    function () {
-
-        setTimeout(
-            mostrarDiagnosticoGabaritoRevisao,
-            1500
+    const botao =
+        document.getElementById(
+            "botao-gabarito-revisao"
         );
+
+
+    const gabarito =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+
+    if (
+        !botao ||
+        !gabarito
+    ) {
+
+        return;
 
     }
 
-);
+
+    gabarito.style.display =
+        "none";
+
+
+    botao.textContent =
+        "Mostrar Gabarito";
+
+
+    botao.onclick =
+        function () {
+
+            const abrir =
+                gabarito.style.display ===
+                "none";
+
+
+            gabarito.style.display =
+                abrir
+                    ? "block"
+                    : "none";
+
+
+            botao.textContent =
+                abrir
+                    ? "Ocultar Gabarito"
+                    : "Mostrar Gabarito";
+
+        };
+
+}
+
+
+// =====================================================
+// GERAR GABARITO
+// =====================================================
+
+function gerarGabaritoComentadoRevisao() {
+
+    renderizarGabaritoRevisao(
+
+        revisaoAtual
+            .questoesSelecionadas || []
+
+    );
+
+
+    prepararBotaoGabaritoRevisao();
+
+}
+
+
+/* =====================================================
+   FIM CORREÇÃO v1.8.2
+===================================================== */
