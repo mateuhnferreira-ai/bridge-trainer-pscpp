@@ -1,32 +1,24 @@
 // =====================================================
 // SISTEMA DE AULA DE REVISÃO PSCPP
 // Bridge Trainer PSCPP
-// Versão 1.3
+// Versão 1.4
 //
-// OBJETIVO:
+// REFINAMENTO DA REVISÃO CONCEITUAL
 //
-// Gerar automaticamente uma verdadeira
-// mini-aula de revisão a partir da aula original.
+// PRINCIPAIS MELHORIAS:
 //
-// A revisão NÃO depende exclusivamente do desempenho.
+// - deduplicação de conteúdo;
+// - fórmulas separadas do texto conceitual;
+// - destaques não repetem fórmulas;
+// - interpretação não repete conceito;
+// - aplicação operacional isolada;
+// - atenção PSCPP isolada;
+// - terminologia técnica limpa;
+// - preservação do núcleo conceitual obrigatório;
+// - nenhuma informação técnica nova é inventada.
 //
-// O núcleo conceitual é obrigatório e procura extrair:
-//
-// - conceito;
-// - explicação;
-// - relações físicas;
-// - fórmulas;
-// - interpretação;
-// - aplicação operacional;
-// - atenção PSCPP;
-// - termos técnicos.
-//
-// PRÓXIMAS CAMADAS:
-//
-// - desempenho adaptativo;
-// - pontos prioritários;
-// - questões inteligentes;
-// - registro automático da revisão.
+// A revisão continua sendo extraída
+// exclusivamente da aula original.
 // =====================================================
 
 
@@ -39,15 +31,35 @@ const REVISAO_MAX_NUCLEOS =
 
 
 const REVISAO_MAX_PARAGRAFOS_CONCEITO =
+    4;
+
+
+const REVISAO_MAX_DESTAQUES =
+    2;
+
+
+const REVISAO_MAX_INTERPRETACOES =
+    2;
+
+
+const REVISAO_MAX_APLICACOES =
+    2;
+
+
+const REVISAO_MAX_ATENCOES =
     3;
 
 
-const REVISAO_MAX_TERMOS_POR_NUCLEO =
+const REVISAO_MAX_TERMOS =
     8;
 
 
+const REVISAO_MAX_FORMULAS =
+    4;
+
+
 // =====================================================
-// ESTADO DA REVISÃO
+// ESTADO
 // =====================================================
 
 let revisaoAtual = {
@@ -68,7 +80,7 @@ let revisaoAtual = {
 
 
 // =====================================================
-// NORMALIZAÇÃO
+// NORMALIZAR ID
 // =====================================================
 
 function normalizarIdRevisao(
@@ -106,6 +118,42 @@ function normalizarIdRevisao(
             /^-+|-+$/g,
             ""
         );
+
+}
+
+
+// =====================================================
+// NORMALIZAR TEXTO PARA COMPARAÇÃO
+// =====================================================
+
+function normalizarTextoComparacao(
+    texto
+) {
+
+    return String(
+        texto || ""
+    )
+
+        .normalize("NFD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .toLowerCase()
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .replace(
+            /[.,;:!?()[\]{}"'`´]/g,
+            ""
+        )
+
+        .trim();
 
 }
 
@@ -178,7 +226,7 @@ function escaparHTMLRevisao(
 
 
 // =====================================================
-// FORMATAR IDENTIFICADOR
+// FORMATAR ID COMO TÍTULO
 // =====================================================
 
 function formatarTituloRevisao(
@@ -225,7 +273,151 @@ function formatarTituloRevisao(
 
 
 // =====================================================
-// PARÂMETROS DA URL
+// DEDUPLICAR TEXTOS
+// =====================================================
+
+function deduplicarTextosRevisao(
+    textos
+) {
+
+    const resultado =
+        [];
+
+
+    const vistos =
+        new Set();
+
+
+    (
+        textos || []
+    ).forEach(
+        texto => {
+
+            const limpo =
+                limparTextoRevisao(
+                    texto
+                );
+
+
+            if (!limpo) {
+
+                return;
+
+            }
+
+
+            const chave =
+                normalizarTextoComparacao(
+                    limpo
+                );
+
+
+            if (!chave) {
+
+                return;
+
+            }
+
+
+            if (
+                vistos.has(
+                    chave
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            vistos.add(
+                chave
+            );
+
+
+            resultado.push(
+                limpo
+            );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================================
+// TEXTO JÁ EXISTE EM OUTRA CAMADA?
+// =====================================================
+
+function textoJaRepresentado(
+    texto,
+    referencias
+) {
+
+    const alvo =
+        normalizarTextoComparacao(
+            texto
+        );
+
+
+    if (!alvo) {
+
+        return false;
+
+    }
+
+
+    return (
+        referencias || []
+    ).some(
+        referencia => {
+
+            const base =
+                normalizarTextoComparacao(
+                    referencia
+                );
+
+
+            if (!base) {
+
+                return false;
+
+            }
+
+
+            return (
+
+                alvo === base ||
+
+                (
+                    alvo.length >
+                        35 &&
+                    base.includes(
+                        alvo
+                    )
+                ) ||
+
+                (
+                    base.length >
+                        35 &&
+                    alvo.includes(
+                        base
+                    )
+                )
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// URL
 // =====================================================
 
 function obterParametrosRevisao() {
@@ -258,7 +450,7 @@ function obterParametrosRevisao() {
 
 
 // =====================================================
-// ATUALIZAÇÃO DA INTERFACE
+// INTERFACE
 // =====================================================
 
 function atualizarTextoRevisao(
@@ -272,15 +464,12 @@ function atualizarTextoRevisao(
         );
 
 
-    if (!elemento) {
+    if (elemento) {
 
-        return;
+        elemento.textContent =
+            texto;
 
     }
-
-
-    elemento.textContent =
-        texto;
 
 }
 
@@ -296,21 +485,18 @@ function atualizarHTMLRevisao(
         );
 
 
-    if (!elemento) {
+    if (elemento) {
 
-        return;
+        elemento.innerHTML =
+            html;
 
     }
-
-
-    elemento.innerHTML =
-        html;
 
 }
 
 
 // =====================================================
-// CAMINHO DA AULA ORIGINAL
+// CAMINHO DA AULA
 // =====================================================
 
 function criarCaminhoAulaOriginal(
@@ -457,7 +643,7 @@ function preencherIdentidadeRevisao() {
 
 
 // =====================================================
-// CARREGAR AULA ORIGINAL
+// CARREGAR AULA
 // =====================================================
 
 async function carregarAulaOriginal() {
@@ -504,26 +690,13 @@ async function carregarAulaOriginal() {
     }
 
 
-    const html =
-        await resposta.text();
-
-
-    if (!html) {
-
-        throw new Error(
-            "A aula original foi carregada, mas está vazia."
-        );
-
-    }
-
-
-    return html;
+    return await resposta.text();
 
 }
 
 
 // =====================================================
-// CRIAR DOCUMENTO TEMPORÁRIO
+// DOCUMENTO TEMPORÁRIO
 // =====================================================
 
 function criarDocumentoAulaOriginal(
@@ -546,77 +719,19 @@ function criarDocumentoAulaOriginal(
 
 
 // =====================================================
-// VALIDAR AULA
+// VALIDAÇÃO
 // =====================================================
 
 function validarDocumentoAulaOriginal(
     documento
 ) {
 
-    if (
-        !documento ||
-        !documento.body
-    ) {
+    return Boolean(
 
-        return false;
+        documento &&
+        documento.body
 
-    }
-
-
-    const disciplinaEncontrada =
-        normalizarIdRevisao(
-            documento.body
-                .dataset
-                .disciplina
-        );
-
-
-    const aulaEncontrada =
-        normalizarIdRevisao(
-            documento.body
-                .dataset
-                .aula
-        );
-
-
-    if (
-        disciplinaEncontrada !==
-            revisaoAtual.disciplina ||
-        aulaEncontrada !==
-            revisaoAtual.aula
-    ) {
-
-        console.warn(
-            "A identidade interna da aula diverge da URL.",
-            {
-
-                esperado: {
-
-                    disciplina:
-                        revisaoAtual.disciplina,
-
-                    aula:
-                        revisaoAtual.aula
-
-                },
-
-                encontrado: {
-
-                    disciplina:
-                        disciplinaEncontrada,
-
-                    aula:
-                        aulaEncontrada
-
-                }
-
-            }
-        );
-
-    }
-
-
-    return true;
+    );
 
 }
 
@@ -632,39 +747,29 @@ function obterResumoEstruturaAula(
     return {
 
         topicos:
-            documento
-                .querySelectorAll(
-                    ".topico-aula"
-                )
-                .length,
+            documento.querySelectorAll(
+                ".topico-aula"
+            ).length,
 
         destaques:
-            documento
-                .querySelectorAll(
-                    ".destaque"
-                )
-                .length,
+            documento.querySelectorAll(
+                ".destaque"
+            ).length,
 
         atencoes:
-            documento
-                .querySelectorAll(
-                    ".atencao-pratico"
-                )
-                .length,
+            documento.querySelectorAll(
+                ".atencao-pratico"
+            ).length,
 
         termosTecnicos:
-            documento
-                .querySelectorAll(
-                    ".termos-tecnicos"
-                )
-                .length,
+            documento.querySelectorAll(
+                ".termos-tecnicos"
+            ).length,
 
         questoes:
-            documento
-                .querySelectorAll(
-                    ".questao"
-                )
-                .length
+            documento.querySelectorAll(
+                ".questao"
+            ).length
 
     };
 
@@ -672,7 +777,7 @@ function obterResumoEstruturaAula(
 
 
 // =====================================================
-// TÍTULO DO TÓPICO
+// TÍTULO
 // =====================================================
 
 function obterTituloTopicoRevisao(
@@ -685,16 +790,11 @@ function obterTituloTopicoRevisao(
         );
 
 
-    if (!titulo) {
-
-        return "";
-
-    }
-
-
-    return limparTextoRevisao(
-        titulo.textContent
-    );
+    return titulo
+        ? limparTextoRevisao(
+            titulo.textContent
+        )
+        : "";
 
 }
 
@@ -722,445 +822,23 @@ function removerNumeroTituloRevisao(
 
 
 // =====================================================
-// OBTER WIDGET PRINCIPAL
+// WIDGET PRINCIPAL
 // =====================================================
 
 function obterWidgetPrincipalTopico(
     topico
 ) {
 
-    if (!topico) {
+    return (
 
-        return null;
+        topico.querySelector(
+            ":scope > .widget"
+        ) ||
 
-    }
-
-
-    return topico.querySelector(
-        ":scope > .widget"
-    ) ||
-
-    topico.querySelector(
-        ".widget"
-    );
-
-}
-
-
-// =====================================================
-// PARÁGRAFOS DO CONCEITO
-// =====================================================
-//
-// Captura até três parágrafos principais,
-// antes das caixas especiais.
-//
-// Assim deixamos de produzir apenas
-// uma frase isolada.
-// =====================================================
-
-function obterParagrafosConceituais(
-    topico
-) {
-
-    const widget =
-        obterWidgetPrincipalTopico(
-            topico
-        );
-
-
-    if (!widget) {
-
-        return [];
-
-    }
-
-
-    const resultados =
-        [];
-
-
-    const filhos =
-        Array.from(
-            widget.children
-        );
-
-
-    for (
-        const filho of filhos
-    ) {
-
-        if (
-            filho.matches &&
-            filho.matches(
-                ".destaque, " +
-                ".atencao-pratico, " +
-                ".termos-tecnicos, " +
-                ".figura-aula"
-            )
-        ) {
-
-            continue;
-
-        }
-
-
-        if (
-            filho.tagName ===
-            "P"
-        ) {
-
-            const texto =
-                limparTextoRevisao(
-                    filho.textContent
-                );
-
-
-            if (
-                texto.length >=
-                25
-            ) {
-
-                resultados.push(
-                    texto
-                );
-
-            }
-
-        }
-
-
-        if (
-            resultados.length >=
-            REVISAO_MAX_PARAGRAFOS_CONCEITO
-        ) {
-
-            break;
-
-        }
-
-    }
-
-
-    return resultados;
-
-}
-
-
-// =====================================================
-// DESTAQUES
-// =====================================================
-
-function obterDestaquesTopico(
-    topico
-) {
-
-    const blocos =
-        Array.from(
-            topico.querySelectorAll(
-                ".destaque"
-            )
-        );
-
-
-    return blocos
-
-        .map(
-            bloco => {
-
-                const titulo =
-                    bloco.querySelector(
-                        "h3, h4"
-                    );
-
-
-                const paragrafos =
-                    Array.from(
-                        bloco.querySelectorAll(
-                            "p"
-                        )
-                    )
-
-                    .map(
-                        p =>
-                            limparTextoRevisao(
-                                p.textContent
-                            )
-                    )
-
-                    .filter(
-                        texto =>
-                            texto.length >
-                            10
-                    );
-
-
-                return {
-
-                    titulo:
-                        titulo
-                            ? limparTextoRevisao(
-                                titulo.textContent
-                            )
-                            : "Conceito fundamental",
-
-                    textos:
-                        paragrafos
-
-                };
-
-            }
+        topico.querySelector(
+            ".widget"
         )
 
-        .filter(
-            bloco =>
-                bloco.textos.length >
-                0
-        );
-
-}
-
-
-// =====================================================
-// PONTOS DE ATENÇÃO
-// =====================================================
-
-function obterAtencoesTopico(
-    topico
-) {
-
-    return Array.from(
-
-        topico.querySelectorAll(
-            ".atencao-pratico"
-        )
-
-    )
-
-        .map(
-            bloco => {
-
-                const paragrafos =
-                    Array.from(
-                        bloco.querySelectorAll(
-                            "p"
-                        )
-                    );
-
-
-                return paragrafos
-
-                    .map(
-                        p =>
-                            limparTextoRevisao(
-                                p.textContent
-                            )
-                    )
-
-                    .filter(
-                        texto =>
-                            texto.length >
-                            10
-                    );
-
-            }
-        )
-
-        .flat();
-
-}
-
-
-// =====================================================
-// TERMOS TÉCNICOS
-// =====================================================
-
-function obterTermosTecnicosTopico(
-    topico
-) {
-
-    const itens =
-        Array.from(
-
-            topico.querySelectorAll(
-                ".termos-tecnicos li"
-            )
-
-        );
-
-
-    const termos =
-        itens
-
-            .map(
-                item =>
-                    limparTextoRevisao(
-                        item.textContent
-                    )
-            )
-
-            .filter(
-                texto =>
-                    texto.length >
-                    2
-            );
-
-
-    return termos.slice(
-        0,
-        REVISAO_MAX_TERMOS_POR_NUCLEO
-    );
-
-}
-
-
-// =====================================================
-// APLICAÇÃO OPERACIONAL
-// =====================================================
-//
-// Procura classes específicas e também
-// caixas cujo título contenha palavras
-// relacionadas à aplicação operacional.
-// =====================================================
-
-function obterAplicacoesOperacionais(
-    topico
-) {
-
-    const resultados =
-        [];
-
-
-    const seletores = [
-
-        ".aplicacao-operacional",
-
-        ".aplicacao-pratica",
-
-        ".aplicacao",
-
-        ".operacional"
-
-    ];
-
-
-    seletores.forEach(
-        seletor => {
-
-            topico
-                .querySelectorAll(
-                    seletor
-                )
-                .forEach(
-                    bloco => {
-
-                        const texto =
-                            limparTextoRevisao(
-                                bloco.textContent
-                            );
-
-
-                        if (
-                            texto.length >
-                            20
-                        ) {
-
-                            resultados.push(
-                                texto
-                            );
-
-                        }
-
-                    }
-                );
-
-        }
-    );
-
-
-    const caixas =
-        Array.from(
-            topico.querySelectorAll(
-                ".widget, .destaque"
-            )
-        );
-
-
-    caixas.forEach(
-        caixa => {
-
-            const titulo =
-                caixa.querySelector(
-                    "h3, h4"
-                );
-
-
-            if (!titulo) {
-
-                return;
-
-            }
-
-
-            const nome =
-                limparTextoRevisao(
-                    titulo.textContent
-                )
-                .toLowerCase();
-
-
-            if (
-                nome.includes(
-                    "aplicação"
-                ) ||
-                nome.includes(
-                    "aplicacao"
-                ) ||
-                nome.includes(
-                    "operacional"
-                )
-            ) {
-
-                const paragrafos =
-                    Array.from(
-                        caixa.querySelectorAll(
-                            "p"
-                        )
-                    );
-
-
-                paragrafos.forEach(
-                    paragrafo => {
-
-                        const texto =
-                            limparTextoRevisao(
-                                paragrafo.textContent
-                            );
-
-
-                        if (
-                            texto.length >
-                            20
-                        ) {
-
-                            resultados.push(
-                                texto
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-        }
-    );
-
-
-    return Array.from(
-        new Set(
-            resultados
-        )
     );
 
 }
@@ -1169,31 +847,10 @@ function obterAplicacoesOperacionais(
 // =====================================================
 // DETECTAR FÓRMULA
 // =====================================================
-//
-// Muitas fórmulas das aulas não usam
-// uma classe própria.
-//
-// Por isso procuramos também padrões
-// matemáticos no texto.
-//
-// Exemplos:
-//
-// Nv = ∂N / ∂v
-// Yv = ∂Y / ∂v
-// F = m × a
-// V ∝ √L
-// =====================================================
 
 function pareceFormulaRevisao(
     texto
 ) {
-
-    if (!texto) {
-
-        return false;
-
-    }
-
 
     const valor =
         limparTextoRevisao(
@@ -1202,8 +859,9 @@ function pareceFormulaRevisao(
 
 
     if (
+        !valor ||
         valor.length >
-        180
+            180
     ) {
 
         return false;
@@ -1211,39 +869,39 @@ function pareceFormulaRevisao(
     }
 
 
-    const possuiIgual =
-        valor.includes(
-            "="
-        );
+    const simbolos =
+        /[∂∑∆√≈∝≤≥×÷]/;
 
 
-    const possuiSimbolo =
-        /[∂∑∆√≈∝≤≥×÷]/.test(
-            valor
-        );
+    const igualdade =
+        /=/;
 
 
-    const possuiDerivada =
-        /\bd[a-zA-Z]\s*\/\s*d[a-zA-Z]/.test(
-            valor
-        );
+    const derivada =
+        /\b[d∂][A-Za-z]\s*\/\s*[d∂][A-Za-z]/;
 
 
-    const possuiVariaveis =
-        /^[A-Za-z][A-Za-z0-9()_\s]*\s*=/.test(
-            valor
-        );
+    const formaAlgebrica =
+        /^[A-Za-z][A-Za-z0-9_'′()]*\s*[≈=∝]/;
 
 
     return (
 
-        possuiSimbolo ||
+        simbolos.test(
+            valor
+        ) ||
 
-        possuiDerivada ||
+        derivada.test(
+            valor
+        ) ||
 
         (
-            possuiIgual &&
-            possuiVariaveis
+            igualdade.test(
+                valor
+            ) &&
+            formaAlgebrica.test(
+                valor
+            )
         )
 
     );
@@ -1252,7 +910,7 @@ function pareceFormulaRevisao(
 
 
 // =====================================================
-// EXTRAIR FÓRMULAS
+// FÓRMULAS
 // =====================================================
 
 function obterFormulasTopico(
@@ -1307,32 +965,247 @@ function obterFormulasTopico(
     );
 
 
-    const candidatos =
-        Array.from(
-            topico.querySelectorAll(
-                "p, strong"
-            )
+    topico
+        .querySelectorAll(
+            "p, strong"
+        )
+        .forEach(
+            elemento => {
+
+                const texto =
+                    limparTextoRevisao(
+                        elemento.textContent
+                    );
+
+
+                if (
+                    pareceFormulaRevisao(
+                        texto
+                    )
+                ) {
+
+                    resultados.push(
+                        texto
+                    );
+
+                }
+
+            }
         );
 
 
-    candidatos.forEach(
-        elemento => {
+    return deduplicarTextosRevisao(
+        resultados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_FORMULAS
+        );
+
+}
+
+
+// =====================================================
+// PARÁGRAFOS CONCEITUAIS
+// =====================================================
+
+function obterParagrafosConceituais(
+    topico,
+    formulas
+) {
+
+    const widget =
+        obterWidgetPrincipalTopico(
+            topico
+        );
+
+
+    if (!widget) {
+
+        return [];
+
+    }
+
+
+    const resultados =
+        [];
+
+
+    Array.from(
+        widget.children
+    )
+    .forEach(
+        filho => {
+
+            if (
+                filho.matches &&
+                filho.matches(
+
+                    ".destaque, " +
+                    ".atencao-pratico, " +
+                    ".termos-tecnicos, " +
+                    ".figura-aula"
+
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                filho.tagName !==
+                "P"
+            ) {
+
+                return;
+
+            }
+
 
             const texto =
                 limparTextoRevisao(
-                    elemento.textContent
+                    filho.textContent
                 );
 
 
             if (
+                texto.length <
+                    25 ||
                 pareceFormulaRevisao(
                     texto
+                ) ||
+                textoJaRepresentado(
+                    texto,
+                    formulas
                 )
             ) {
 
-                resultados.push(
-                    texto
+                return;
+
+            }
+
+
+            resultados.push(
+                texto
+            );
+
+        }
+    );
+
+
+    return deduplicarTextosRevisao(
+        resultados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_PARAGRAFOS_CONCEITO
+        );
+
+}
+
+
+// =====================================================
+// DESTAQUES
+// =====================================================
+
+function obterDestaquesTopico(
+    topico,
+    formulas,
+    conceito
+) {
+
+    const resultado =
+        [];
+
+
+    Array.from(
+        topico.querySelectorAll(
+            ".destaque"
+        )
+    )
+    .forEach(
+        bloco => {
+
+            const titulo =
+                bloco.querySelector(
+                    "h3, h4"
                 );
+
+
+            const textos =
+                [];
+
+
+            bloco
+                .querySelectorAll(
+                    "p"
+                )
+                .forEach(
+                    p => {
+
+                        const texto =
+                            limparTextoRevisao(
+                                p.textContent
+                            );
+
+
+                        if (
+                            texto.length <
+                                15 ||
+                            pareceFormulaRevisao(
+                                texto
+                            ) ||
+                            textoJaRepresentado(
+                                texto,
+                                formulas
+                            ) ||
+                            textoJaRepresentado(
+                                texto,
+                                conceito
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        textos.push(
+                            texto
+                        );
+
+                    }
+                );
+
+
+            const textosLimpos =
+                deduplicarTextosRevisao(
+                    textos
+                );
+
+
+            if (
+                textosLimpos.length >
+                0
+            ) {
+
+                resultado.push({
+
+                    titulo:
+                        titulo
+                            ? limparTextoRevisao(
+                                titulo.textContent
+                            )
+                            : "Conceito fundamental",
+
+                    textos:
+                        textosLimpos
+
+                });
 
             }
 
@@ -1340,42 +1213,22 @@ function obterFormulasTopico(
     );
 
 
-    return Array.from(
-        new Set(
-            resultados
-        )
-    )
-
-        .slice(
-            0,
-            4
-        );
+    return resultado.slice(
+        0,
+        REVISAO_MAX_DESTAQUES
+    );
 
 }
 
 
 // =====================================================
-// INTERPRETAÇÃO FÍSICA
-// =====================================================
-//
-// Procura parágrafos que já contenham
-// linguagem interpretativa.
-//
-// Não cria informação nova.
-// Apenas seleciona o que está na aula.
+// INTERPRETAÇÃO
 // =====================================================
 
 function obterInterpretacoesTopico(
-    topico
+    topico,
+    referencias
 ) {
-
-    const paragrafos =
-        Array.from(
-            topico.querySelectorAll(
-                "p"
-            )
-        );
-
 
     const marcadores = [
 
@@ -1383,29 +1236,25 @@ function obterInterpretacoesTopico(
 
         "fisicamente",
 
-        "na prática",
-
-        "na pratica",
-
         "representa",
 
         "indica",
 
-        "tende",
+        "implica",
 
-        "efeito",
+        "tende",
 
         "consequência",
 
         "consequencia",
 
-        "implica",
-
         "quando o navio",
 
-        "para o prático",
+        "o efeito",
 
-        "para o pratico"
+        "em termos físicos",
+
+        "em termos fisicos"
 
     ];
 
@@ -1414,55 +1263,341 @@ function obterInterpretacoesTopico(
         [];
 
 
-    paragrafos.forEach(
-        paragrafo => {
+    topico
+        .querySelectorAll(
+            "p"
+        )
+        .forEach(
+            p => {
 
-            const texto =
-                limparTextoRevisao(
-                    paragrafo.textContent
-                );
-
-
-            const minusculo =
-                texto.toLowerCase();
-
-
-            const combina =
-                marcadores.some(
-                    marcador =>
-                        minusculo.includes(
-                            marcador
-                        )
-                );
+                const texto =
+                    limparTextoRevisao(
+                        p.textContent
+                    );
 
 
-            if (
-                combina &&
-                texto.length >=
-                    35 &&
-                texto.length <=
-                    550
-            ) {
+                if (
+                    texto.length <
+                        35 ||
+                    texto.length >
+                        550 ||
+                    pareceFormulaRevisao(
+                        texto
+                    ) ||
+                    textoJaRepresentado(
+                        texto,
+                        referencias
+                    )
+                ) {
 
-                resultados.push(
-                    texto
-                );
+                    return;
+
+                }
+
+
+                const minusculo =
+                    texto.toLowerCase();
+
+
+                if (
+                    marcadores.some(
+                        marcador =>
+                            minusculo.includes(
+                                marcador
+                            )
+                    )
+                ) {
+
+                    resultados.push(
+                        texto
+                    );
+
+                }
 
             }
+        );
+
+
+    return deduplicarTextosRevisao(
+        resultados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_INTERPRETACOES
+        );
+
+}
+
+
+// =====================================================
+// APLICAÇÃO OPERACIONAL
+// =====================================================
+
+function obterAplicacoesOperacionais(
+    topico,
+    referencias
+) {
+
+    const resultados =
+        [];
+
+
+    const seletores = [
+
+        ".aplicacao-operacional",
+
+        ".aplicacao-pratica",
+
+        ".aplicacao",
+
+        ".operacional"
+
+    ];
+
+
+    seletores.forEach(
+        seletor => {
+
+            topico
+                .querySelectorAll(
+                    seletor
+                )
+                .forEach(
+                    bloco => {
+
+                        bloco
+                            .querySelectorAll(
+                                "p"
+                            )
+                            .forEach(
+                                p => {
+
+                                    const texto =
+                                        limparTextoRevisao(
+                                            p.textContent
+                                        );
+
+
+                                    if (
+                                        texto.length >
+                                            25 &&
+                                        !textoJaRepresentado(
+                                            texto,
+                                            referencias
+                                        )
+                                    ) {
+
+                                        resultados.push(
+                                            texto
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                    }
+                );
 
         }
     );
 
 
-    return Array.from(
-        new Set(
-            resultados
+    topico
+        .querySelectorAll(
+            ".widget, .destaque"
         )
+        .forEach(
+            caixa => {
+
+                const titulo =
+                    caixa.querySelector(
+                        "h3, h4"
+                    );
+
+
+                if (!titulo) {
+
+                    return;
+
+                }
+
+
+                const nome =
+                    normalizarTextoComparacao(
+                        titulo.textContent
+                    );
+
+
+                if (
+                    !nome.includes(
+                        "aplicacao"
+                    ) &&
+                    !nome.includes(
+                        "operacional"
+                    ) &&
+                    !nome.includes(
+                        "pratico"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                caixa
+                    .querySelectorAll(
+                        "p"
+                    )
+                    .forEach(
+                        p => {
+
+                            const texto =
+                                limparTextoRevisao(
+                                    p.textContent
+                                );
+
+
+                            if (
+                                texto.length >
+                                    25 &&
+                                !textoJaRepresentado(
+                                    texto,
+                                    referencias
+                                )
+                            ) {
+
+                                resultados.push(
+                                    texto
+                                );
+
+                            }
+
+                        }
+                    );
+
+            }
+        );
+
+
+    return deduplicarTextosRevisao(
+        resultados
     )
 
         .slice(
             0,
-            2
+            REVISAO_MAX_APLICACOES
+        );
+
+}
+
+
+// =====================================================
+// ATENÇÃO PSCPP
+// =====================================================
+
+function obterAtencoesTopico(
+    topico,
+    referencias
+) {
+
+    const resultados =
+        [];
+
+
+    topico
+        .querySelectorAll(
+            ".atencao-pratico p"
+        )
+        .forEach(
+            p => {
+
+                const texto =
+                    limparTextoRevisao(
+                        p.textContent
+                    );
+
+
+                if (
+                    texto.length >
+                        15 &&
+                    !textoJaRepresentado(
+                        texto,
+                        referencias
+                    )
+                ) {
+
+                    resultados.push(
+                        texto
+                    );
+
+                }
+
+            }
+        );
+
+
+    return deduplicarTextosRevisao(
+        resultados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_ATENCOES
+        );
+
+}
+
+
+// =====================================================
+// TERMOS TÉCNICOS
+// =====================================================
+
+function obterTermosTecnicosTopico(
+    topico
+) {
+
+    const resultados =
+        [];
+
+
+    topico
+        .querySelectorAll(
+            ".termos-tecnicos li"
+        )
+        .forEach(
+            li => {
+
+                const texto =
+                    limparTextoRevisao(
+                        li.textContent
+                    );
+
+
+                if (
+                    texto.length >
+                    2
+                ) {
+
+                    resultados.push(
+                        texto
+                    );
+
+                }
+
+            }
+        );
+
+
+    return deduplicarTextosRevisao(
+        resultados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_TERMOS
         );
 
 }
@@ -1473,7 +1608,8 @@ function obterInterpretacoesTopico(
 // =====================================================
 
 function calcularImportanciaTopico(
-    topico
+    topico,
+    formulas
 ) {
 
     let pontos =
@@ -1486,8 +1622,7 @@ function calcularImportanciaTopico(
         )
     ) {
 
-        pontos +=
-            4;
+        pontos += 4;
 
     }
 
@@ -1498,8 +1633,7 @@ function calcularImportanciaTopico(
         )
     ) {
 
-        pontos +=
-            3;
+        pontos += 3;
 
     }
 
@@ -1510,46 +1644,29 @@ function calcularImportanciaTopico(
         )
     ) {
 
-        pontos +=
-            1;
+        pontos += 1;
 
     }
 
 
     if (
-        obterFormulasTopico(
-            topico
-        ).length >
+        formulas.length >
         0
     ) {
 
-        pontos +=
-            4;
-
-    }
-
-
-    if (
-        obterAplicacoesOperacionais(
-            topico
-        ).length >
-        0
-    ) {
-
-        pontos +=
-            2;
+        pontos += 4;
 
     }
 
 
     if (
         topico.querySelector(
-            ".figura-aula, figure, svg"
+            ".aplicacao-operacional, " +
+            ".aplicacao-pratica"
         )
     ) {
 
-        pontos +=
-            1;
+        pontos += 2;
 
     }
 
@@ -1575,10 +1692,6 @@ function analisarTopicosAula(
         );
 
 
-    const total =
-        elementos.length;
-
-
     return elementos
 
         .map(
@@ -1597,39 +1710,92 @@ function analisarTopicosAula(
                     );
 
 
-                const conceito =
-                    obterParagrafosConceituais(
-                        topico
-                    );
-
-
-                const destaques =
-                    obterDestaquesTopico(
-                        topico
-                    );
-
-
                 const formulas =
                     obterFormulasTopico(
                         topico
                     );
 
 
+                const conceito =
+                    obterParagrafosConceituais(
+
+                        topico,
+
+                        formulas
+
+                    );
+
+
+                const destaques =
+                    obterDestaquesTopico(
+
+                        topico,
+
+                        formulas,
+
+                        conceito
+
+                    );
+
+
+                const referenciasBase =
+                    [
+
+                        ...formulas,
+
+                        ...conceito,
+
+                        ...destaques.flatMap(
+                            item =>
+                                item.textos
+                        )
+
+                    ];
+
+
                 const interpretacoes =
                     obterInterpretacoesTopico(
-                        topico
+
+                        topico,
+
+                        referenciasBase
+
                     );
+
+
+                const referenciasComInterpretacao =
+                    [
+
+                        ...referenciasBase,
+
+                        ...interpretacoes
+
+                    ];
 
 
                 const aplicacoes =
                     obterAplicacoesOperacionais(
-                        topico
+
+                        topico,
+
+                        referenciasComInterpretacao
+
                     );
 
 
                 const atencoes =
                     obterAtencoesTopico(
-                        topico
+
+                        topico,
+
+                        [
+
+                            ...referenciasComInterpretacao,
+
+                            ...aplicacoes
+
+                        ]
+
                     );
 
 
@@ -1643,14 +1809,6 @@ function analisarTopicosAula(
 
                     indice:
                         indice,
-
-                    posicao:
-                        total > 1
-                            ? indice /
-                                (
-                                    total - 1
-                                )
-                            : 0,
 
                     id:
                         normalizarIdRevisao(
@@ -1690,7 +1848,11 @@ function analisarTopicosAula(
 
                     importancia:
                         calcularImportanciaTopico(
-                            topico
+
+                            topico,
+
+                            formulas
+
                         )
 
                 };
@@ -1699,36 +1861,28 @@ function analisarTopicosAula(
         )
 
         .filter(
-            item => {
+            item =>
 
-                return (
+                item.titulo &&
 
-                    item.titulo &&
+                (
+                    item.conceito.length >
+                        0 ||
 
-                    (
-                        item.conceito.length >
-                            0 ||
+                    item.destaques.length >
+                        0 ||
 
-                        item.destaques.length >
-                            0
-                    )
+                    item.formulas.length >
+                        0
+                )
 
-                );
-
-            }
         );
 
 }
 
 
 // =====================================================
-// SELEÇÃO DISTRIBUÍDA
-// =====================================================
-//
-// Mantemos cobertura da aula inteira.
-//
-// Uma aula longa é dividida em faixas.
-// Cada faixa fornece um núcleo principal.
+// SELECIONAR NÚCLEOS
 // =====================================================
 
 function selecionarNucleosPrincipais(
@@ -1849,43 +2003,29 @@ function selecionarNucleosPrincipais(
     }
 
 
-    return selecionados
-
-        .sort(
-            (
-                a,
-                b
-            ) =>
-
-                a.indice -
-                b.indice
-        );
+    return selecionados.sort(
+        (
+            a,
+            b
+        ) =>
+            a.indice -
+            b.indice
+    );
 
 }
 
 
 // =====================================================
-// GERAR PARÁGRAFOS
+// PARÁGRAFOS HTML
 // =====================================================
 
 function gerarParagrafosRevisao(
     textos
 ) {
 
-    if (
-        !Array.isArray(
-            textos
-        ) ||
-        textos.length ===
-            0
-    ) {
-
-        return "";
-
-    }
-
-
-    return textos
+    return (
+        textos || []
+    )
 
         .map(
             texto => `
@@ -1905,7 +2045,7 @@ function gerarParagrafosRevisao(
 
 
 // =====================================================
-// GERAR DESTAQUES
+// DESTAQUE HTML
 // =====================================================
 
 function gerarDestaquesRevisao(
@@ -1913,9 +2053,7 @@ function gerarDestaquesRevisao(
 ) {
 
     if (
-        !Array.isArray(
-            destaques
-        ) ||
+        !destaques ||
         destaques.length ===
             0
     ) {
@@ -1930,20 +2068,19 @@ function gerarDestaquesRevisao(
         .map(
             bloco => `
 
-                <div class="destaque">
+            <div class="destaque">
 
-                    <h3>
-                        💡
-                        ${escaparHTMLRevisao(
-                            bloco.titulo
-                        )}
-                    </h3>
-
-                    ${gerarParagrafosRevisao(
-                        bloco.textos
+                <h3>
+                    💡 ${escaparHTMLRevisao(
+                        bloco.titulo
                     )}
+                </h3>
 
-                </div>
+                ${gerarParagrafosRevisao(
+                    bloco.textos
+                )}
+
+            </div>
 
             `
         )
@@ -1954,7 +2091,7 @@ function gerarDestaquesRevisao(
 
 
 // =====================================================
-// GERAR FÓRMULAS
+// FÓRMULAS HTML
 // =====================================================
 
 function gerarFormulasRevisao(
@@ -1962,9 +2099,7 @@ function gerarFormulasRevisao(
 ) {
 
     if (
-        !Array.isArray(
-            formulas
-        ) ||
+        !formulas ||
         formulas.length ===
             0
     ) {
@@ -1976,40 +2111,41 @@ function gerarFormulasRevisao(
 
     return `
 
-        <div class="destaque">
+    <div class="destaque">
 
-            <h3>
-                🧮 Relações e fórmulas
-            </h3>
+        <h3>
+            🧮 Relações e fórmulas
+        </h3>
 
-            ${formulas
+        ${formulas
 
-                .map(
-                    formula => `
+            .map(
+                formula => `
 
-                        <p
-                        style="
-                            text-align:center;
-                            font-size:1.15rem;
-                            margin:14px 0;
-                        "
-                        >
+                <p
+                style="
+                    text-align:center;
+                    font-size:1.2rem;
+                    margin:18px 0;
+                    line-height:1.6;
+                "
+                >
 
-                            <strong>
-                                ${escaparHTMLRevisao(
-                                    formula
-                                )}
-                            </strong>
+                    <strong>
+                        ${escaparHTMLRevisao(
+                            formula
+                        )}
+                    </strong>
 
-                        </p>
+                </p>
 
-                    `
-                )
+                `
+            )
 
-                .join("")
-            }
+            .join("")
+        }
 
-        </div>
+    </div>
 
     `;
 
@@ -2017,18 +2153,16 @@ function gerarFormulasRevisao(
 
 
 // =====================================================
-// GERAR INTERPRETAÇÃO
+// INTERPRETAÇÃO HTML
 // =====================================================
 
 function gerarInterpretacoesRevisao(
-    interpretacoes
+    textos
 ) {
 
     if (
-        !Array.isArray(
-            interpretacoes
-        ) ||
-        interpretacoes.length ===
+        !textos ||
+        textos.length ===
             0
     ) {
 
@@ -2039,17 +2173,17 @@ function gerarInterpretacoesRevisao(
 
     return `
 
-        <div class="widget">
+    <div class="widget">
 
-            <h3>
-                🔎 Interpretação
-            </h3>
+        <h3>
+            🔎 Interpretação física
+        </h3>
 
-            ${gerarParagrafosRevisao(
-                interpretacoes
-            )}
+        ${gerarParagrafosRevisao(
+            textos
+        )}
 
-        </div>
+    </div>
 
     `;
 
@@ -2057,18 +2191,16 @@ function gerarInterpretacoesRevisao(
 
 
 // =====================================================
-// GERAR APLICAÇÃO OPERACIONAL
+// APLICAÇÃO HTML
 // =====================================================
 
 function gerarAplicacoesRevisao(
-    aplicacoes
+    textos
 ) {
 
     if (
-        !Array.isArray(
-            aplicacoes
-        ) ||
-        aplicacoes.length ===
+        !textos ||
+        textos.length ===
             0
     ) {
 
@@ -2079,20 +2211,17 @@ function gerarAplicacoesRevisao(
 
     return `
 
-        <div class="destaque">
+    <div class="destaque">
 
-            <h3>
-                ⚓ Aplicação operacional
-            </h3>
+        <h3>
+            ⚓ Aplicação operacional
+        </h3>
 
-            ${gerarParagrafosRevisao(
-                aplicacoes.slice(
-                    0,
-                    2
-                )
-            )}
+        ${gerarParagrafosRevisao(
+            textos
+        )}
 
-        </div>
+    </div>
 
     `;
 
@@ -2100,18 +2229,16 @@ function gerarAplicacoesRevisao(
 
 
 // =====================================================
-// GERAR ATENÇÃO PSCPP
+// ATENÇÃO HTML
 // =====================================================
 
 function gerarAtencoesRevisao(
-    atencoes
+    textos
 ) {
 
     if (
-        !Array.isArray(
-            atencoes
-        ) ||
-        atencoes.length ===
+        !textos ||
+        textos.length ===
             0
     ) {
 
@@ -2122,20 +2249,17 @@ function gerarAtencoesRevisao(
 
     return `
 
-        <div class="atencao-pratico">
+    <div class="atencao-pratico">
 
-            <h3>
-                ⚠ Atenção PSCPP
-            </h3>
+        <h3>
+            ⚠ Atenção PSCPP
+        </h3>
 
-            ${gerarParagrafosRevisao(
-                atencoes.slice(
-                    0,
-                    3
-                )
-            )}
+        ${gerarParagrafosRevisao(
+            textos
+        )}
 
-        </div>
+    </div>
 
     `;
 
@@ -2143,7 +2267,7 @@ function gerarAtencoesRevisao(
 
 
 // =====================================================
-// GERAR TERMOS TÉCNICOS
+// TERMOS HTML
 // =====================================================
 
 function gerarTermosRevisao(
@@ -2151,9 +2275,7 @@ function gerarTermosRevisao(
 ) {
 
     if (
-        !Array.isArray(
-            termos
-        ) ||
+        !termos ||
         termos.length ===
             0
     ) {
@@ -2165,34 +2287,34 @@ function gerarTermosRevisao(
 
     return `
 
-        <div class="termos-tecnicos">
+    <div class="termos-tecnicos">
 
-            <h3>
-                🌐 Terminologia técnica
-            </h3>
+        <h3>
+            🌐 Termos técnicos
+        </h3>
 
-            <ul>
+        <ul>
 
-                ${termos
+            ${termos
 
-                    .map(
-                        termo => `
+                .map(
+                    termo => `
 
-                            <li>
-                                ${escaparHTMLRevisao(
-                                    termo
-                                )}
-                            </li>
+                    <li>
+                        ${escaparHTMLRevisao(
+                            termo
+                        )}
+                    </li>
 
-                        `
-                    )
+                    `
+                )
 
-                    .join("")
-                }
+                .join("")
+            }
 
-            </ul>
+        </ul>
 
-        </div>
+    </div>
 
     `;
 
@@ -2200,7 +2322,7 @@ function gerarTermosRevisao(
 
 
 // =====================================================
-// RENDERIZAR NÚCLEOS CONCEITUAIS
+// RENDERIZAR NÚCLEOS
 // =====================================================
 
 function renderizarNucleosConceituais(
@@ -2220,40 +2342,27 @@ function renderizarNucleosConceituais(
     }
 
 
-    // =================================
-    // IMPORTANTE
-    //
-    // Para uma mini-aula, os núcleos
-    // ficam em uma coluna.
-    //
-    // Não queremos mais cards pequenos
-    // lado a lado.
-    // =================================
-
     container.style
         .gridTemplateColumns =
         "1fr";
 
 
     if (
-        !Array.isArray(
-            nucleos
-        ) ||
+        !nucleos ||
         nucleos.length ===
             0
     ) {
 
         container.innerHTML = `
 
-            <div class="widget">
+        <div class="widget">
 
-                <p>
-                    Não foi possível gerar
-                    automaticamente o núcleo
-                    conceitual desta aula.
-                </p>
+            <p>
+                Não foi possível gerar
+                o núcleo conceitual.
+            </p>
 
-            </div>
+        </div>
 
         `;
 
@@ -2263,97 +2372,95 @@ function renderizarNucleosConceituais(
     }
 
 
-    const html =
+    container.innerHTML =
         nucleos
 
             .map(
                 (
                     nucleo,
                     indice
-                ) => {
+                ) => `
 
-                    return `
-
-                    <article
+                <article
                     class="widget"
                     data-revisao-topico="${
                         escaparHTMLRevisao(
                             nucleo.id
                         )
                     }"
-                    >
+                >
 
-                        <h2>
-
-                            ${indice + 1}.
-                            ${escaparHTMLRevisao(
-                                nucleo.titulo
-                            )}
-
-                        </h2>
-
-
-                        <div>
-
-                            <h3>
-                                📘 Estrutura conceitual
-                            </h3>
-
-                            ${gerarParagrafosRevisao(
-                                nucleo.conceito
-                            )}
-
-                        </div>
-
-
-                        ${gerarDestaquesRevisao(
-                            nucleo.destaques
+                    <h2>
+                        ${indice + 1}.
+                        ${escaparHTMLRevisao(
+                            nucleo.titulo
                         )}
+                    </h2>
 
 
-                        ${gerarFormulasRevisao(
-                            nucleo.formulas
-                        )}
+                    ${
+                        nucleo.conceito.length >
+                        0
+                            ? `
+
+                            <div>
+
+                                <h3>
+                                    📘 Estrutura conceitual
+                                </h3>
+
+                                ${gerarParagrafosRevisao(
+                                    nucleo.conceito
+                                )}
+
+                            </div>
+
+                            `
+                            : ""
+                    }
 
 
-                        ${gerarInterpretacoesRevisao(
-                            nucleo.interpretacoes
-                        )}
+                    ${gerarDestaquesRevisao(
+                        nucleo.destaques
+                    )}
 
 
-                        ${gerarAplicacoesRevisao(
-                            nucleo.aplicacoes
-                        )}
+                    ${gerarFormulasRevisao(
+                        nucleo.formulas
+                    )}
 
 
-                        ${gerarAtencoesRevisao(
-                            nucleo.atencoes
-                        )}
+                    ${gerarInterpretacoesRevisao(
+                        nucleo.interpretacoes
+                    )}
 
 
-                        ${gerarTermosRevisao(
-                            nucleo.termos
-                        )}
+                    ${gerarAplicacoesRevisao(
+                        nucleo.aplicacoes
+                    )}
 
 
-                    </article>
+                    ${gerarAtencoesRevisao(
+                        nucleo.atencoes
+                    )}
 
-                    `;
 
-                }
+                    ${gerarTermosRevisao(
+                        nucleo.termos
+                    )}
+
+                </article>
+
+                `
             )
 
             .join("");
-
-
-    container.innerHTML =
-        html;
 
 }
 
 
 // =====================================================
-// GERAR NÚCLEO DA REVISÃO
+// GERAR NÚCLEO
 // =====================================================
 
 function gerarNucleoRevisao(
@@ -2388,16 +2495,8 @@ function gerarNucleoRevisao(
 
 
     console.log(
-        "Núcleo conceitual expandido:",
-        {
-
-            topicosAnalisados:
-                topicos.length,
-
-            nucleosSelecionados:
-                nucleos
-
-        }
+        "REVISÃO v1.4 — núcleos:",
+        nucleos
     );
 
 }
@@ -2419,66 +2518,24 @@ function mostrarAulaOriginalCarregada(
 
         <p>
             <strong>
-                Aula original localizada com sucesso.
+                Aula original localizada.
             </strong>
         </p>
 
         <p>
-            O sistema está utilizando a estrutura
-            completa da aula original para produzir
-            uma revisão conceitual automática.
+            A revisão abaixo foi construída
+            automaticamente a partir da
+            estrutura técnica da aula.
         </p>
-
-        <ul>
-
-            <li>
-                Tópicos analisáveis:
-                <strong>
-                    ${resumo.topicos}
-                </strong>
-            </li>
-
-            <li>
-                Conceitos destacados:
-                <strong>
-                    ${resumo.destaques}
-                </strong>
-            </li>
-
-            <li>
-                Pontos de atenção:
-                <strong>
-                    ${resumo.atencoes}
-                </strong>
-            </li>
-
-            <li>
-                Blocos de terminologia:
-                <strong>
-                    ${resumo.termosTecnicos}
-                </strong>
-            </li>
-
-            <li>
-                Questões disponíveis:
-                <strong>
-                    ${resumo.questoes}
-                </strong>
-            </li>
-
-        </ul>
 
         <p>
             <strong>
-                Método:
+                ${resumo.topicos}
             </strong>
-
-            núcleo conceitual obrigatório
-            + relações físicas
-            + fórmulas
-            + aplicação operacional
-            + atenção PSCPP
-            + terminologia técnica.
+            tópicos analisados,
+            com conceitos, fórmulas,
+            interpretação, aplicações,
+            pontos de atenção e terminologia.
         </p>
 
         `
@@ -2489,7 +2546,7 @@ function mostrarAulaOriginalCarregada(
 
 
 // =====================================================
-// PREPARAR AULA ORIGINAL
+// PREPARAR AULA
 // =====================================================
 
 async function prepararAulaOriginal() {
@@ -2513,7 +2570,7 @@ async function prepararAulaOriginal() {
         ) {
 
             throw new Error(
-                "A estrutura da aula original é inválida."
+                "A aula original possui estrutura inválida."
             );
 
         }
@@ -2540,19 +2597,13 @@ async function prepararAulaOriginal() {
         );
 
 
-        console.log(
-            "Aula de revisão preparada:",
-            revisaoAtual
-        );
-
-
         return true;
 
     }
     catch (erro) {
 
         console.error(
-            "Erro ao preparar revisão:",
+            "Erro na revisão:",
             erro
         );
 
@@ -2565,8 +2616,7 @@ async function prepararAulaOriginal() {
 
             <p>
                 <strong>
-                    ⚠ Não foi possível preparar
-                    a aula de revisão.
+                    ⚠ Erro ao preparar revisão.
                 </strong>
             </p>
 
@@ -2589,7 +2639,7 @@ async function prepararAulaOriginal() {
 
 
 // =====================================================
-// INICIALIZAÇÃO
+// INICIALIZAR
 // =====================================================
 
 async function inicializarAulaRevisao() {
@@ -2630,7 +2680,7 @@ async function inicializarAulaRevisao() {
 
 
 // =====================================================
-// CARREGAMENTO AUTOMÁTICO
+// CARREGAMENTO
 // =====================================================
 
 document.addEventListener(
@@ -2651,10 +2701,10 @@ document.addEventListener(
 // =====================================================
 
 console.log(
-    "SISTEMA DE AULA DE REVISÃO PSCPP v1.3 CARREGADO"
+    "SISTEMA DE REVISÃO PSCPP v1.4 CARREGADO"
 );
 
 
 // =====================================================
-// FIM revisoes.js v1.3
+// FIM
 // =====================================================
