@@ -1278,7 +1278,7 @@ function encontrarProximaRevisaoApp() {
 
 
 // =====================================
-// CRIAR CAMINHO DA REVISÃO
+// CRIAR CAMINHO DA REVISÃO INTELIGENTE
 // =====================================
 
 function criarCaminhoRevisaoApp(
@@ -1286,7 +1286,9 @@ function criarCaminhoRevisaoApp(
 ) {
 
     if (
-        !revisao
+        !revisao ||
+        !revisao.idDisciplina ||
+        !revisao.idAula
     ) {
 
         return "#";
@@ -1295,42 +1297,30 @@ function criarCaminhoRevisaoApp(
 
 
     const disciplina =
-        encontrarDisciplinaCatalogo(
+        normalizarIdApp(
             revisao.idDisciplina
         );
 
 
-    const modulo =
-        encontrarModuloCatalogo(
-
-            revisao.idDisciplina,
-
+    const aula =
+        normalizarIdApp(
             revisao.idAula
-
         );
-
-
-    if (
-        !disciplina ||
-        !modulo
-    ) {
-
-        return "#";
-
-    }
 
 
     return (
 
-        criarCaminhoAulaApp(
+        "revisoes/aula.html" +
 
-            disciplina,
+        "?disciplina=" +
+        encodeURIComponent(
+            disciplina
+        ) +
 
-            modulo
-
-        ) ||
-
-        "#"
+        "&aula=" +
+        encodeURIComponent(
+            aula
+        )
 
     );
 
