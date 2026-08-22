@@ -3560,47 +3560,202 @@ function deduplicarTermosRevisao(
 }
 
 
-// =====================================
-// SELECIONAR TERMOS TÉCNICOS
-// =====================================
+// =====================================================
+// TERMOS TÉCNICOS
+// =====================================================
+//
+// Extração flexível.
+//
+// Aceita diferentes estruturas usadas nas aulas:
+//
+// .termos-tecnicos
+// ├── ul > li
+// ├── ol > li
+// ├── p
+// └── elementos textuais internos
+//
+// Prioridade:
+//
+// 1. itens <li>
+// 2. parágrafos <p>
+// 3. texto direto do bloco
+//
+// Isso permite que aulas antigas e novas
+// alimentem automaticamente a revisão.
+// =====================================================
 
-function selecionarTermosTecnicosRevisao(
-    topicos,
-    nucleos
+function obterTermosTecnicosTopico(
+    topico
 ) {
 
-    const principais =
-        coletarTermosDosNucleos(
-            nucleos
+    const resultados =
+        [];
+
+
+    if (!topico) {
+
+        return resultados;
+
+    }
+
+
+    const blocos =
+        Array.from(
+
+            topico.querySelectorAll(
+                ".termos-tecnicos"
+            )
+
         );
 
 
-    const complementares =
-        coletarTermosComplementares(
+    blocos.forEach(
+        bloco => {
 
-            topicos,
+            // =================================
+            // 1. LISTAS
+            // =================================
 
-            nucleos
-
-        );
-
-
-    const combinados = [
-
-        ...principais,
-
-        ...complementares
-
-    ];
+            const itens =
+                Array.from(
+                    bloco.querySelectorAll(
+                        "li"
+                    )
+                );
 
 
-    return deduplicarTermosRevisao(
-        combinados
+            if (
+                itens.length >
+                0
+            ) {
+
+                itens.forEach(
+                    item => {
+
+                        const texto =
+                            limparTextoRevisao(
+                                item.textContent
+                            );
+
+
+                        if (
+                            texto.length >
+                            2
+                        ) {
+
+                            resultados.push(
+                                texto
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                return;
+
+            }
+
+
+            // =================================
+            // 2. PARÁGRAFOS
+            // =================================
+
+            const paragrafos =
+                Array.from(
+                    bloco.querySelectorAll(
+                        "p"
+                    )
+                );
+
+
+            if (
+                paragrafos.length >
+                0
+            ) {
+
+                paragrafos.forEach(
+                    paragrafo => {
+
+                        const texto =
+                            limparTextoRevisao(
+                                paragrafo.textContent
+                            );
+
+
+                        if (
+                            texto.length >
+                            2
+                        ) {
+
+                            resultados.push(
+                                texto
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                return;
+
+            }
+
+
+            // =================================
+            // 3. FALLBACK
+            // =================================
+            //
+            // Para blocos antigos que possuam
+            // apenas texto ou <strong>.
+            // =================================
+
+            const clone =
+                bloco.cloneNode(
+                    true
+                );
+
+
+            clone
+                .querySelectorAll(
+                    "h1, h2, h3, h4, h5, h6"
+                )
+                .forEach(
+                    titulo =>
+                        titulo.remove()
+                );
+
+
+            const texto =
+                limparTextoRevisao(
+                    clone.textContent
+                );
+
+
+            if (
+                texto.length >
+                2
+            ) {
+
+                resultados.push(
+                    texto
+                );
+
+            }
+
+        }
+    );
+
+
+    return deduplicarTextosRevisao(
+        resultados
     )
 
         .slice(
             0,
-            REVISAO_MAX_TERMOS_GERAIS
+            REVISAO_MAX_TERMOS
         );
 
 }
