@@ -5871,3 +5871,585 @@ function gerarQuestoesInterativasRevisao() {
 /* =====================================================
    FIM EXTENSÃO v1.8
 ===================================================== */
+/* =====================================================
+   CORREÇÃO v1.8.1
+   GABARITO COMENTADO DA REVISÃO
+
+   Compatível com o padrão real das aulas:
+
+   <section ... hidden>
+       <h2>Gabarito comentado</h2>
+
+       <h3>Questão 1 — C</h3>
+       <p>Comentário...</p>
+
+       <h3>Questão 2 — D</h3>
+       <p>Comentário...</p>
+   </section>
+===================================================== */
+
+
+// =====================================================
+// LOCALIZAR GABARITO ORIGINAL
+// =====================================================
+
+function localizarSecaoGabaritoOriginal(
+    documento
+) {
+
+    if (!documento) {
+
+        return null;
+
+    }
+
+
+    // Primeiro procura qualquer section
+    // contendo um H2 de Gabarito Comentado.
+
+    const secoes =
+        Array.from(
+            documento.querySelectorAll(
+                "section"
+            )
+        );
+
+
+    return secoes.find(
+        secao => {
+
+            const titulo =
+                secao.querySelector(
+                    "h2"
+                );
+
+
+            if (!titulo) {
+
+                return false;
+
+            }
+
+
+            const texto =
+                normalizarTextoComparacao(
+                    titulo.textContent
+                );
+
+
+            return texto.includes(
+                "gabarito comentado"
+            );
+
+        }
+    ) || null;
+
+}
+
+
+// =====================================================
+// NÚMERO DA QUESTÃO
+// =====================================================
+
+function obterNumeroQuestaoGabarito(
+    texto
+) {
+
+    const limpo =
+        limparTextoRevisao(
+            texto
+        );
+
+
+    const correspondencia =
+        limpo.match(
+            /Quest[aã]o\s+(\d+)/i
+        );
+
+
+    if (!correspondencia) {
+
+        return null;
+
+    }
+
+
+    return Number(
+        correspondencia[1]
+    );
+
+}
+
+
+// =====================================================
+// EXTRAIR RESPOSTA CORRETA DO TÍTULO
+// =====================================================
+
+function obterRespostaTituloGabarito(
+    texto
+) {
+
+    const limpo =
+        limparTextoRevisao(
+            texto
+        );
+
+
+    const correspondencia =
+        limpo.match(
+            /Quest[aã]o\s+\d+\s*[—\-–]\s*([A-E])/i
+        );
+
+
+    return correspondencia
+        ? correspondencia[1].toUpperCase()
+        : "";
+
+}
+
+
+// =====================================================
+// EXTRAIR GABARITOS
+// =====================================================
+
+function extrairGabaritosOriginais(
+    documento
+) {
+
+    const secao =
+        localizarSecaoGabaritoOriginal(
+            documento
+        );
+
+
+    if (!secao) {
+
+        console.warn(
+            "Revisão: seção de gabarito original não localizada."
+        );
+
+
+        return [];
+
+    }
+
+
+    const titulos =
+        Array.from(
+            secao.querySelectorAll(
+                "h3"
+            )
+        );
+
+
+    const resultado =
+        [];
+
+
+    titulos.forEach(
+        titulo => {
+
+            const numero =
+                obterNumeroQuestaoGabarito(
+                    titulo.textContent
+                );
+
+
+            if (!numero) {
+
+                return;
+
+            }
+
+
+            const resposta =
+                obterRespostaTituloGabarito(
+                    titulo.textContent
+                );
+
+
+            const elementos =
+                [];
+
+
+            let atual =
+                titulo.nextElementSibling;
+
+
+            while (atual) {
+
+                // Encontrou a próxima questão:
+                // encerra o comentário atual.
+
+                if (
+                    atual.tagName === "H3" &&
+                    obterNumeroQuestaoGabarito(
+                        atual.textContent
+                    )
+                ) {
+
+                    break;
+
+                }
+
+
+                elementos.push(
+                    atual.cloneNode(
+                        true
+                    )
+                );
+
+
+                atual =
+                    atual.nextElementSibling;
+
+            }
+
+
+            resultado.push({
+
+                numero:
+                    numero,
+
+                resposta:
+                    resposta,
+
+                titulo:
+                    limparTextoRevisao(
+                        titulo.textContent
+                    ),
+
+                elementos:
+                    elementos
+
+            });
+
+        }
+    );
+
+
+    console.log(
+        "Revisão — gabaritos encontrados:",
+        resultado.length,
+        resultado
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================================
+// RENDERIZAR GABARITO DA REVISÃO
+// =====================================================
+
+function renderizarGabaritoRevisao(
+    questoesSelecionadas
+) {
+
+    const container =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+
+    if (!container) {
+
+        console.warn(
+            "Revisão: container #gabarito-revisao não existe."
+        );
+
+
+        return;
+
+    }
+
+
+    const documento =
+        revisaoAtual
+            .documentoAulaOriginal;
+
+
+    const gabaritos =
+        extrairGabaritosOriginais(
+            documento
+        );
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        !Array.isArray(
+            questoesSelecionadas
+        ) ||
+        questoesSelecionadas.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Nenhuma questão foi selecionada
+                para esta revisão.
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    let totalEncontrados =
+        0;
+
+
+    questoesSelecionadas.forEach(
+        (
+            questao,
+            indiceRevisao
+        ) => {
+
+            // A propriedade indice vem da posição
+            // original da questão na aula.
+
+            const numeroOriginal =
+                Number(
+                    questao.indice
+                ) + 1;
+
+
+            const gabarito =
+                gabaritos.find(
+                    item =>
+                        item.numero ===
+                        numeroOriginal
+                );
+
+
+            if (!gabarito) {
+
+                console.warn(
+                    "Gabarito não encontrado para questão original:",
+                    numeroOriginal
+                );
+
+
+                return;
+
+            }
+
+
+            totalEncontrados++;
+
+
+            const bloco =
+                document.createElement(
+                    "div"
+                );
+
+
+            bloco.className =
+                "widget gabarito-item-revisao";
+
+
+            // =================================
+            // TÍTULO
+            // =================================
+
+            const titulo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titulo.textContent =
+
+                "Questão " +
+
+                (indiceRevisao + 1) +
+
+                " — Alternativa " +
+
+                (
+                    gabarito.resposta ||
+                    "—"
+                );
+
+
+            bloco.appendChild(
+                titulo
+            );
+
+
+            // =================================
+            // COMENTÁRIO ORIGINAL
+            // =================================
+
+            gabarito.elementos.forEach(
+                elemento => {
+
+                    bloco.appendChild(
+                        elemento.cloneNode(
+                            true
+                        )
+                    );
+
+                }
+            );
+
+
+            // =================================
+            // REFERÊNCIA DA QUESTÃO ORIGINAL
+            // =================================
+
+            const referencia =
+                document.createElement(
+                    "p"
+                );
+
+
+            referencia.style.fontSize =
+                "0.85rem";
+
+
+            referencia.style.opacity =
+                "0.7";
+
+
+            referencia.textContent =
+
+                "Questão original " +
+
+                numeroOriginal +
+
+                " da aula.";
+
+
+            bloco.appendChild(
+                referencia
+            );
+
+
+            container.appendChild(
+                bloco
+            );
+
+        }
+    );
+
+
+    if (
+        totalEncontrados === 0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Não foi possível relacionar
+                as questões da revisão aos
+                comentários da aula original.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+// =====================================================
+// MOSTRAR / OCULTAR
+// =====================================================
+
+function prepararBotaoGabaritoRevisao() {
+
+    const botao =
+        document.getElementById(
+            "botao-gabarito-revisao"
+        );
+
+
+    const container =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+
+    if (
+        !botao ||
+        !container
+    ) {
+
+        return;
+
+    }
+
+
+    // Remove qualquer configuração anterior
+    // simplesmente substituindo onclick.
+
+    botao.onclick =
+        function () {
+
+            const estaOculto =
+
+                container.style.display ===
+                    "none" ||
+
+                container.style.display ===
+                    "";
+
+
+            container.style.display =
+
+                estaOculto
+                    ? "block"
+                    : "none";
+
+
+            botao.textContent =
+
+                estaOculto
+                    ? "Ocultar Gabarito"
+                    : "Mostrar Gabarito";
+
+        };
+
+
+    botao.textContent =
+        "Mostrar Gabarito";
+
+}
+
+
+// =====================================================
+// GERAR GABARITO
+// =====================================================
+
+function gerarGabaritoComentadoRevisao() {
+
+    renderizarGabaritoRevisao(
+
+        revisaoAtual
+            .questoesSelecionadas
+
+    );
+
+
+    prepararBotaoGabaritoRevisao();
+
+
+    console.log(
+        "REVISÃO v1.8.1 — gabarito preparado."
+    );
+
+}
+
+
+// =====================================================
+// FIM CORREÇÃO v1.8.1
+// =====================================================
