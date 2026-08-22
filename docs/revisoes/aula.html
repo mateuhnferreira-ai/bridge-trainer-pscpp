@@ -71,6 +71,10 @@ onclick="voltarPagina()"
 <main>
 
 
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
+
 <section class="dashboard">
 
 <h2 id="titulo-revisao">
@@ -86,6 +90,11 @@ Carregando dados da aula...
 </section>
 
 
+
+<!-- =========================================
+     SITUAÇÃO DA REVISÃO
+========================================= -->
+
 <section>
 
 <h2>
@@ -96,36 +105,52 @@ Carregando dados da aula...
 
 <p>
 <strong>Disciplina:</strong>
+
 <span id="revisao-disciplina">
 —
 </span>
+
 </p>
+
 
 <p>
 <strong>Aula:</strong>
+
 <span id="revisao-aula">
 —
 </span>
+
 </p>
+
 
 <p>
 <strong>Última revisão:</strong>
+
 <span id="revisao-ultima-data">
 —
 </span>
+
 </p>
+
 
 <p>
 <strong>Próxima revisão:</strong>
+
 <span id="revisao-proxima-data">
 —
 </span>
+
 </p>
 
 </div>
 
 </section>
 
+
+
+<!-- =========================================
+     FOCO DA REVISÃO
+========================================= -->
 
 <section>
 
@@ -139,13 +164,18 @@ id="painel-foco-revisao"
 >
 
 <p>
-Analisando progresso, desempenho e histórico...
+Analisando a estrutura da aula original...
 </p>
 
 </div>
 
 </section>
 
+
+
+<!-- =========================================
+     PONTOS PRINCIPAIS
+========================================= -->
 
 <section>
 
@@ -171,6 +201,11 @@ Os pontos principais da aula aparecerão aqui.
 </section>
 
 
+
+<!-- =========================================
+     PONTOS DE ATENÇÃO
+========================================= -->
+
 <section>
 
 <h2>
@@ -184,8 +219,7 @@ id="lista-atencao-revisao"
 <div class="widget">
 
 <p>
-Os tópicos com maior necessidade de revisão
-aparecerão aqui.
+Os pontos de atenção da aula aparecerão aqui.
 </p>
 
 </div>
@@ -194,6 +228,11 @@ aparecerão aqui.
 
 </section>
 
+
+
+<!-- =========================================
+     TERMOS TÉCNICOS
+========================================= -->
 
 <section>
 
@@ -215,6 +254,11 @@ aparecerão aqui.
 
 </section>
 
+
+
+<!-- =========================================
+     QUESTÕES DE REVISÃO
+========================================= -->
 
 <section>
 
@@ -239,17 +283,9 @@ As questões serão selecionadas automaticamente.
 </section>
 
 
-<section>
 
-<div class="widget">
-
-<button
-type="button"
-class="botao-estudo"
-id="botao-revisao-concluida"
->
 <!-- =========================================
-     GABARITO COMENTADO DA REVISÃO
+     GABARITO COMENTADO
 ========================================= -->
 
 <section>
@@ -265,7 +301,9 @@ type="button"
 class="botao-estudo"
 id="botao-gabarito-revisao"
 >
+
 Mostrar / Ocultar Gabarito
+
 </button>
 
 
@@ -284,6 +322,23 @@ será carregado automaticamente.
 </div>
 
 </section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO DA REVISÃO
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<button
+type="button"
+class="botao-estudo"
+id="botao-revisao-concluida"
+>
+
 ✅ Marcar revisão como concluída
 
 </button>
@@ -295,6 +350,11 @@ será carregado automaticamente.
 
 </main>
 
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
 
 <footer>
 
@@ -309,18 +369,34 @@ Sistema de Revisão Inteligente
 </footer>
 
 
+
+<!-- =========================================
+     BOTÃO INÍCIO
+========================================= -->
+
 <a
 href="../index.html"
 class="botao-inicio"
+aria-label="Voltar ao início"
 >
 🏠
 </a>
 
 
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
 <script src="../js/navigation.js"></script>
+
 <script src="../js/progresso.js"></script>
+
 <script src="../js/exercicios.js"></script>
+
 <script src="revisoes.js?v=1.9"></script>
+
+
 </body>
 
 </html>
