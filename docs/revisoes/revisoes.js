@@ -7177,3 +7177,603 @@ function localizarSecaoGabaritoOriginal(
 /* =====================================================
    FIM CORREÇÃO v1.8.3
 ===================================================== */
+/* =====================================================
+   EXTENSÃO v1.9
+   CONCLUSÃO E AGENDAMENTO DA REVISÃO
+
+   Bridge Trainer PSCPP
+
+   Integração direta com:
+   progresso.js v4.2
+
+   Funções utilizadas:
+
+   - obterDadosRevisaoAula()
+   - marcarAulaRevisadaHoje()
+   - formatarDataRevisao()
+
+   A revisão NÃO altera o progresso da aula.
+
+   Ela apenas:
+
+   - registra a data realizada;
+   - atualiza última revisão;
+   - calcula próxima revisão;
+   - avança o ciclo 7 / 30 / 90 dias;
+   - impede registro duplicado no mesmo dia.
+===================================================== */
+
+
+// =====================================================
+// GARANTIR PROGRESSO CARREGADO
+// =====================================================
+
+async function garantirProgressoCarregadoRevisao() {
+
+    if (
+        typeof dadosProgresso !==
+            "undefined" &&
+        dadosProgresso
+    ) {
+
+        return true;
+
+    }
+
+
+    if (
+        typeof carregarDadosProgresso ===
+        "function"
+    ) {
+
+        await carregarDadosProgresso();
+
+
+        return Boolean(
+            dadosProgresso
+        );
+
+    }
+
+
+    console.warn(
+        "Revisão: progresso.js não está disponível."
+    );
+
+
+    return false;
+
+}
+
+
+// =====================================================
+// VERIFICAR SE DATA É HOJE
+// =====================================================
+
+function revisaoFoiRegistradaHoje(
+    dataISO
+) {
+
+    if (!dataISO) {
+
+        return false;
+
+    }
+
+
+    const data =
+        new Date(
+            dataISO
+        );
+
+
+    if (
+        Number.isNaN(
+            data.getTime()
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    const hoje =
+        new Date();
+
+
+    return (
+
+        data.getFullYear() ===
+            hoje.getFullYear() &&
+
+        data.getMonth() ===
+            hoje.getMonth() &&
+
+        data.getDate() ===
+            hoje.getDate()
+
+    );
+
+}
+
+
+// =====================================================
+// FORMATAR DATA DA REVISÃO
+// =====================================================
+
+function formatarDataPainelRevisao(
+    data
+) {
+
+    if (
+        typeof formatarDataRevisao ===
+        "function"
+    ) {
+
+        return formatarDataRevisao(
+            data
+        );
+
+    }
+
+
+    if (!data) {
+
+        return "—";
+
+    }
+
+
+    const objeto =
+        new Date(
+            data
+        );
+
+
+    if (
+        Number.isNaN(
+            objeto.getTime()
+        )
+    ) {
+
+        return "—";
+
+    }
+
+
+    return objeto.toLocaleDateString(
+        "pt-BR"
+    );
+
+}
+
+
+// =====================================================
+// ATUALIZAR SITUAÇÃO DA REVISÃO
+// =====================================================
+
+async function atualizarSituacaoRevisaoAutomatica() {
+
+    const carregado =
+        await garantirProgressoCarregadoRevisao();
+
+
+    if (!carregado) {
+
+        return;
+
+    }
+
+
+    if (
+        !revisaoAtual.disciplina ||
+        !revisaoAtual.aula
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        typeof obterDadosRevisaoAula !==
+        "function"
+    ) {
+
+        return;
+
+    }
+
+
+    const dados =
+        obterDadosRevisaoAula(
+
+            revisaoAtual.disciplina,
+
+            revisaoAtual.aula
+
+        );
+
+
+    if (!dados) {
+
+        return;
+
+    }
+
+
+    atualizarTextoRevisao(
+
+        "revisao-ultima-data",
+
+        formatarDataPainelRevisao(
+            dados.ultimaRevisao
+        )
+
+    );
+
+
+    atualizarTextoRevisao(
+
+        "revisao-proxima-data",
+
+        formatarDataPainelRevisao(
+            dados.proximaRevisao
+        )
+
+    );
+
+
+    atualizarEstadoBotaoConclusaoRevisao(
+        dados
+    );
+
+}
+
+
+// =====================================================
+// ATUALIZAR BOTÃO
+// =====================================================
+
+function atualizarEstadoBotaoConclusaoRevisao(
+    dados
+) {
+
+    const botao =
+        document.getElementById(
+            "botao-revisao-concluida"
+        );
+
+
+    if (!botao) {
+
+        return;
+
+    }
+
+
+    if (
+        dados &&
+        revisaoFoiRegistradaHoje(
+            dados.ultimaRevisao
+        )
+    ) {
+
+        botao.disabled =
+            true;
+
+
+        botao.textContent =
+            "✅ Revisão registrada hoje";
+
+
+        return;
+
+    }
+
+
+    botao.disabled =
+        false;
+
+
+    botao.textContent =
+        "✅ Marcar revisão como concluída";
+
+}
+
+
+// =====================================================
+// REGISTRAR REVISÃO
+// =====================================================
+
+async function concluirRevisaoAutomatica() {
+
+    const botao =
+        document.getElementById(
+            "botao-revisao-concluida"
+        );
+
+
+    if (
+        !revisaoAtual.disciplina ||
+        !revisaoAtual.aula
+    ) {
+
+        window.alert(
+            "Não foi possível identificar esta revisão."
+        );
+
+
+        return;
+
+    }
+
+
+    const carregado =
+        await garantirProgressoCarregadoRevisao();
+
+
+    if (!carregado) {
+
+        window.alert(
+            "Não foi possível acessar os dados de progresso."
+        );
+
+
+        return;
+
+    }
+
+
+    if (
+        typeof obterDadosRevisaoAula !==
+        "function" ||
+        typeof marcarAulaRevisadaHoje !==
+        "function"
+    ) {
+
+        window.alert(
+            "O sistema de revisões do progresso não está disponível."
+        );
+
+
+        return;
+
+    }
+
+
+    // =================================
+    // EVITAR DUPLICAÇÃO NO MESMO DIA
+    // =================================
+
+    const dadosAntes =
+        obterDadosRevisaoAula(
+
+            revisaoAtual.disciplina,
+
+            revisaoAtual.aula
+
+        );
+
+
+    if (
+        dadosAntes &&
+        revisaoFoiRegistradaHoje(
+            dadosAntes.ultimaRevisao
+        )
+    ) {
+
+        atualizarEstadoBotaoConclusaoRevisao(
+            dadosAntes
+        );
+
+
+        return;
+
+    }
+
+
+    if (botao) {
+
+        botao.disabled =
+            true;
+
+
+        botao.textContent =
+            "Registrando revisão...";
+
+    }
+
+
+    // =================================
+    // USAR MOTOR OFICIAL
+    // progresso.js v4.2
+    // =================================
+
+    const resultado =
+        marcarAulaRevisadaHoje(
+
+            revisaoAtual.disciplina,
+
+            revisaoAtual.aula
+
+        );
+
+
+    if (!resultado) {
+
+        if (botao) {
+
+            botao.disabled =
+                false;
+
+
+            botao.textContent =
+                "✅ Marcar revisão como concluída";
+
+        }
+
+
+        window.alert(
+
+            "A revisão não pôde ser registrada. " +
+            "Verifique se a aula original está concluída."
+
+        );
+
+
+        return;
+
+    }
+
+
+    // =================================
+    // ATUALIZAR PAINEL
+    // =================================
+
+    atualizarTextoRevisao(
+
+        "revisao-ultima-data",
+
+        formatarDataPainelRevisao(
+            resultado.ultimaRevisao
+        )
+
+    );
+
+
+    atualizarTextoRevisao(
+
+        "revisao-proxima-data",
+
+        formatarDataPainelRevisao(
+            resultado.proximaRevisao
+        )
+
+    );
+
+
+    if (botao) {
+
+        botao.disabled =
+            true;
+
+
+        botao.textContent =
+            "✅ Revisão registrada hoje";
+
+    }
+
+
+    console.log(
+
+        "REVISÃO v1.9 — revisão registrada:",
+
+        resultado
+
+    );
+
+}
+
+
+// =====================================================
+// PREPARAR BOTÃO
+// =====================================================
+
+function prepararBotaoConclusaoRevisao() {
+
+    const botao =
+        document.getElementById(
+            "botao-revisao-concluida"
+        );
+
+
+    if (!botao) {
+
+        return;
+
+    }
+
+
+    if (
+        botao.dataset
+            .revisaoPreparada ===
+        "true"
+    ) {
+
+        return;
+
+    }
+
+
+    botao.addEventListener(
+
+        "click",
+
+        concluirRevisaoAutomatica
+
+    );
+
+
+    botao.dataset
+        .revisaoPreparada =
+        "true";
+
+}
+
+
+// =====================================================
+// INICIAR CONTROLE DE REVISÃO
+// =====================================================
+
+async function inicializarControleRevisaoAutomatica() {
+
+    prepararBotaoConclusaoRevisao();
+
+
+    await atualizarSituacaoRevisaoAutomatica();
+
+
+    console.log(
+        "REVISÃO PSCPP v1.9 — controle de revisão ativo."
+    );
+
+}
+
+
+// =====================================================
+// INICIALIZAÇÃO
+// =====================================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function () {
+
+        /*
+         * revisoes.js já identificará disciplina
+         * e aula no início do carregamento.
+         *
+         * Pequeno atraso apenas garante que
+         * progresso.js tenha finalizado
+         * sua inicialização assíncrona.
+         */
+
+        window.setTimeout(
+
+            inicializarControleRevisaoAutomatica,
+
+            300
+
+        );
+
+    }
+
+);
+
+
+/* =====================================================
+   FIM EXTENSÃO v1.9
+===================================================== */
