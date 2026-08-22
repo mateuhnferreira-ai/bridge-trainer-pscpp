@@ -4047,3 +4047,1216 @@ function gerarNucleoRevisao(
 /* =====================================================
    FIM EXTENSÃO v1.6
 ===================================================== */
+
+
+/* =====================================================
+   EXTENSÃO v1.7
+   QUESTÕES INTERATIVAS DE REVISÃO
+
+   Bridge Trainer PSCPP
+
+   OBJETIVOS:
+
+   - selecionar questões existentes na aula original;
+   - distribuir as questões entre diferentes conceitos;
+   - evitar concentração excessiva em um único tópico;
+   - preservar integralmente:
+       .questao
+       .alternativa
+       data-resposta
+       data-topico
+       data-edital
+       data-bibliografia;
+   - reutilizar exercicios.js v3.0;
+   - manter correção automática;
+   - manter histórico;
+   - manter integração com desempenho.
+
+   IMPORTANTE:
+
+   Nenhuma questão nova é inventada.
+   A revisão reutiliza questões reais
+   existentes na aula original.
+===================================================== */
+
+
+// =====================================================
+// CONFIGURAÇÕES
+// =====================================================
+
+const REVISAO_MAX_QUESTOES =
+    10;
+
+
+// =====================================================
+// NORMALIZAR TÓPICO DA QUESTÃO
+// =====================================================
+
+function normalizarTopicoQuestaoRevisao(
+    texto
+) {
+
+    return normalizarTextoComparacao(
+        texto || ""
+    );
+
+}
+
+
+// =====================================================
+// EXTRAIR QUESTÕES DA AULA ORIGINAL
+// =====================================================
+
+function obterQuestoesOriginaisRevisao(
+    documento
+) {
+
+    if (!documento) {
+
+        return [];
+
+    }
+
+
+    return Array.from(
+        documento.querySelectorAll(
+            ".questao"
+        )
+    )
+
+        .map(
+            (
+                questao,
+                indice
+            ) => {
+
+                const topico =
+                    limparTextoRevisao(
+                        questao.dataset.topico ||
+                        ""
+                    );
+
+
+                const resposta =
+                    limparTextoRevisao(
+
+                        questao.dataset.resposta ||
+
+                        questao.dataset
+                            .respostaCorreta ||
+
+                        ""
+
+                    );
+
+
+                const alternativas =
+                    questao.querySelectorAll(
+                        ".alternativa, .alternativa-questao"
+                    );
+
+
+                return {
+
+                    indice:
+                        indice,
+
+                    elemento:
+                        questao,
+
+                    id:
+                        limparTextoRevisao(
+
+                            questao.dataset
+                                .questaoId ||
+
+                            "questao-original-" +
+                            (indice + 1)
+
+                        ),
+
+                    topico:
+                        topico,
+
+                    topicoNormalizado:
+                        normalizarTopicoQuestaoRevisao(
+                            topico
+                        ),
+
+                    resposta:
+                        resposta,
+
+                    valida:
+                        Boolean(
+                            resposta &&
+                            alternativas.length >= 2
+                        )
+
+                };
+
+            }
+        )
+
+        .filter(
+            questao =>
+                questao.valida
+        );
+
+}
+
+
+// =====================================================
+// CALCULAR RELAÇÃO ENTRE QUESTÃO E NÚCLEO
+// =====================================================
+
+function calcularRelacaoQuestaoNucleo(
+    questao,
+    nucleo
+) {
+
+    if (
+        !questao ||
+        !nucleo
+    ) {
+
+        return 0;
+
+    }
+
+
+    const topicoQuestao =
+        questao.topicoNormalizado;
+
+
+    const tituloNucleo =
+        normalizarTextoComparacao(
+            nucleo.titulo
+        );
+
+
+    const idNucleo =
+        normalizarTextoComparacao(
+            nucleo.id
+        );
+
+
+    if (
+        !topicoQuestao
+    ) {
+
+        return 0;
+
+    }
+
+
+    // Correspondência direta
+
+    if (
+        tituloNucleo &&
+        topicoQuestao ===
+            tituloNucleo
+    ) {
+
+        return 100;
+
+    }
+
+
+    // ID do núcleo contido no tópico
+
+    if (
+        idNucleo &&
+        (
+            topicoQuestao.includes(
+                idNucleo
+            ) ||
+            idNucleo.includes(
+                topicoQuestao
+            )
+        )
+    ) {
+
+        return 80;
+
+    }
+
+
+    // Título parcialmente correspondente
+
+    if (
+        tituloNucleo &&
+        (
+            topicoQuestao.includes(
+                tituloNucleo
+            ) ||
+            tituloNucleo.includes(
+                topicoQuestao
+            )
+        )
+    ) {
+
+        return 70;
+
+    }
+
+
+    // Comparação por palavras relevantes
+
+    const palavrasQuestao =
+        topicoQuestao
+            .split(" ")
+            .filter(
+                palavra =>
+                    palavra.length >= 4
+            );
+
+
+    const palavrasNucleo =
+        tituloNucleo
+            .split(" ")
+            .filter(
+                palavra =>
+                    palavra.length >= 4
+            );
+
+
+    let coincidencias =
+        0;
+
+
+    palavrasQuestao.forEach(
+        palavra => {
+
+            if (
+                palavrasNucleo.includes(
+                    palavra
+                )
+            ) {
+
+                coincidencias++;
+
+            }
+
+        }
+    );
+
+
+    return coincidencias * 10;
+
+}
+
+
+// =====================================================
+// SELECIONAR QUESTÕES PARA OS NÚCLEOS
+// =====================================================
+
+function selecionarQuestoesDosNucleos(
+    questoes,
+    nucleos
+) {
+
+    const selecionadas =
+        [];
+
+
+    const idsUsados =
+        new Set();
+
+
+    (
+        nucleos || []
+    ).forEach(
+        nucleo => {
+
+            let melhor =
+                null;
+
+
+            let melhorPontuacao =
+                0;
+
+
+            questoes.forEach(
+                questao => {
+
+                    if (
+                        idsUsados.has(
+                            questao.id
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const pontuacao =
+                        calcularRelacaoQuestaoNucleo(
+
+                            questao,
+
+                            nucleo
+
+                        );
+
+
+                    if (
+                        pontuacao >
+                        melhorPontuacao
+                    ) {
+
+                        melhorPontuacao =
+                            pontuacao;
+
+
+                        melhor =
+                            questao;
+
+                    }
+
+                }
+            );
+
+
+            if (
+                melhor &&
+                melhorPontuacao > 0
+            ) {
+
+                selecionadas.push(
+                    melhor
+                );
+
+
+                idsUsados.add(
+                    melhor.id
+                );
+
+            }
+
+        }
+    );
+
+
+    return {
+
+        selecionadas:
+            selecionadas,
+
+        idsUsados:
+            idsUsados
+
+    };
+
+}
+
+
+// =====================================================
+// COMPLETAR QUESTÕES DE FORMA DIVERSIFICADA
+// =====================================================
+
+function completarQuestoesRevisao(
+    questoes,
+    selecionadas,
+    idsUsados
+) {
+
+    const topicosUsados =
+        new Set(
+
+            selecionadas.map(
+                questao =>
+                    questao.topicoNormalizado
+            )
+
+        );
+
+
+    // =================================
+    // PRIMEIRO:
+    // priorizar tópicos ainda não usados
+    // =================================
+
+    for (
+        const questao of questoes
+    ) {
+
+        if (
+            selecionadas.length >=
+            REVISAO_MAX_QUESTOES
+        ) {
+
+            break;
+
+        }
+
+
+        if (
+            idsUsados.has(
+                questao.id
+            )
+        ) {
+
+            continue;
+
+        }
+
+
+        if (
+            topicosUsados.has(
+                questao.topicoNormalizado
+            )
+        ) {
+
+            continue;
+
+        }
+
+
+        selecionadas.push(
+            questao
+        );
+
+
+        idsUsados.add(
+            questao.id
+        );
+
+
+        topicosUsados.add(
+            questao.topicoNormalizado
+        );
+
+    }
+
+
+    // =================================
+    // SEGUNDO:
+    // completar caso ainda faltem
+    // questões
+    // =================================
+
+    for (
+        const questao of questoes
+    ) {
+
+        if (
+            selecionadas.length >=
+            REVISAO_MAX_QUESTOES
+        ) {
+
+            break;
+
+        }
+
+
+        if (
+            idsUsados.has(
+                questao.id
+            )
+        ) {
+
+            continue;
+
+        }
+
+
+        selecionadas.push(
+            questao
+        );
+
+
+        idsUsados.add(
+            questao.id
+        );
+
+    }
+
+
+    return selecionadas;
+
+}
+
+
+// =====================================================
+// SELEÇÃO FINAL
+// =====================================================
+
+function selecionarQuestoesRevisao(
+    documento,
+    nucleos
+) {
+
+    const questoes =
+        obterQuestoesOriginaisRevisao(
+            documento
+        );
+
+
+    if (
+        questoes.length === 0
+    ) {
+
+        return [];
+
+    }
+
+
+    const selecaoInicial =
+        selecionarQuestoesDosNucleos(
+
+            questoes,
+
+            nucleos
+
+        );
+
+
+    return completarQuestoesRevisao(
+
+        questoes,
+
+        selecaoInicial.selecionadas,
+
+        selecaoInicial.idsUsados
+
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_QUESTOES
+        );
+
+}
+
+
+// =====================================================
+// LOCALIZAR ÁREA DE QUESTÕES
+// =====================================================
+//
+// Primeiro procura um ID específico.
+//
+// Caso o aula.html antigo ainda não tenha
+// esse ID, procura automaticamente a seção
+// cujo título contém "Questões de revisão".
+//
+// Assim não precisamos alterar agora
+// todas as versões do template.
+// =====================================================
+
+function obterContainerQuestoesRevisao() {
+
+    let container =
+        document.getElementById(
+            "lista-questoes-revisao"
+        );
+
+
+    if (container) {
+
+        return container;
+
+    }
+
+
+    const titulos =
+        Array.from(
+            document.querySelectorAll(
+                "h2"
+            )
+        );
+
+
+    const tituloQuestoes =
+        titulos.find(
+            titulo => {
+
+                const texto =
+                    normalizarTextoComparacao(
+                        titulo.textContent
+                    );
+
+
+                return (
+
+                    texto.includes(
+                        "questoes de revisao"
+                    )
+
+                );
+
+            }
+        );
+
+
+    if (!tituloQuestoes) {
+
+        return null;
+
+    }
+
+
+    const section =
+        tituloQuestoes.closest(
+            "section"
+        );
+
+
+    if (!section) {
+
+        return null;
+
+    }
+
+
+    container =
+        section.querySelector(
+            ".widget"
+        );
+
+
+    if (!container) {
+
+        container =
+            document.createElement(
+                "div"
+            );
+
+
+        container.className =
+            "widget";
+
+
+        section.appendChild(
+            container
+        );
+
+    }
+
+
+    container.id =
+        "lista-questoes-revisao";
+
+
+    return container;
+
+}
+
+
+// =====================================================
+// PREPARAR CLONE DA QUESTÃO
+// =====================================================
+
+function prepararCloneQuestaoRevisao(
+    registro,
+    numero
+) {
+
+    const clone =
+        registro.elemento.cloneNode(
+            true
+        );
+
+
+    // =================================
+    // NOVO ID PARA A REVISÃO
+    //
+    // Evita conflito caso no futuro
+    // aula original e revisão coexistam.
+    // =================================
+
+    clone.dataset.questaoId =
+
+        "revisao-" +
+
+        revisaoAtual.aula +
+
+        "-" +
+
+        registro.id;
+
+
+    // =================================
+    // REMOVER ESTADOS VISUAIS
+    // =================================
+
+    clone.classList.remove(
+
+        "questao-respondida",
+
+        "questao-correta",
+
+        "questao-incorreta"
+
+    );
+
+
+    delete clone.dataset.respondida;
+
+    delete clone.dataset.resultado;
+
+    delete clone.dataset.respostaSelecionada;
+
+
+    clone
+        .querySelectorAll(
+            ".alternativa, .alternativa-questao"
+        )
+        .forEach(
+            alternativa => {
+
+                alternativa.classList.remove(
+
+                    "alternativa-selecionada",
+
+                    "alternativa-correta",
+
+                    "alternativa-incorreta"
+
+                );
+
+
+                alternativa.disabled =
+                    false;
+
+
+                alternativa.removeAttribute(
+                    "aria-pressed"
+                );
+
+
+                delete alternativa.dataset
+                    .exercicioPreparado;
+
+            }
+        );
+
+
+    // =================================
+    // RENÚMERAR TÍTULO VISUAL
+    // =================================
+
+    const titulo =
+        clone.querySelector(
+            "h3"
+        );
+
+
+    if (titulo) {
+
+        titulo.textContent =
+            "Questão " +
+            numero;
+
+    }
+
+
+    return clone;
+
+}
+
+
+// =====================================================
+// CRIAR CONTROLES DOS EXERCÍCIOS
+// =====================================================
+
+function criarControlesQuestoesRevisao(
+    container,
+    total
+) {
+
+    const controle =
+        document.createElement(
+            "div"
+        );
+
+
+    controle.className =
+        "widget";
+
+
+    controle.innerHTML = `
+
+        <h3>
+            📋 Progresso das questões
+        </h3>
+
+        <p id="resumo-selecao-exercicios">
+
+            0 de ${total}
+            questões respondidas
+
+        </p>
+
+        <button
+            type="button"
+            id="botao-corrigir-exercicios"
+            class="botao-estudo"
+        >
+            ✅ Corrigir Exercício
+        </button>
+
+    `;
+
+
+    container.appendChild(
+        controle
+    );
+
+
+    const resultado =
+        document.createElement(
+            "div"
+        );
+
+
+    resultado.id =
+        "resultado-exercicios";
+
+
+    resultado.className =
+        "widget";
+
+
+    resultado.style.display =
+        "none";
+
+
+    resultado.innerHTML = `
+
+        <h3>
+            📊 Resultado da tentativa
+        </h3>
+
+        <p id="texto-resultado-exercicios">
+        </p>
+
+    `;
+
+
+    container.appendChild(
+        resultado
+    );
+
+}
+
+
+// =====================================================
+// RENDERIZAR QUESTÕES
+// =====================================================
+
+function renderizarQuestoesRevisao(
+    questoes
+) {
+
+    const container =
+        obterContainerQuestoesRevisao();
+
+
+    if (!container) {
+
+        console.warn(
+            "Área de questões de revisão não encontrada."
+        );
+
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        !Array.isArray(
+            questoes
+        ) ||
+        questoes.length ===
+            0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Nenhuma questão válida foi encontrada
+                na aula original.
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    const introducao =
+        document.createElement(
+            "p"
+        );
+
+
+    introducao.textContent =
+
+        questoes.length +
+
+        " questões foram selecionadas " +
+
+        "automaticamente para revisar " +
+
+        "diferentes conceitos desta aula.";
+
+
+    container.appendChild(
+        introducao
+    );
+
+
+    questoes.forEach(
+        (
+            registro,
+            indice
+        ) => {
+
+            const clone =
+                prepararCloneQuestaoRevisao(
+
+                    registro,
+
+                    indice + 1
+
+                );
+
+
+            container.appendChild(
+                clone
+            );
+
+        }
+    );
+
+
+    criarControlesQuestoesRevisao(
+
+        container,
+
+        questoes.length
+
+    );
+
+}
+
+
+// =====================================================
+// PREPARAR EXERCICIOS.JS PARA A REVISÃO
+// =====================================================
+
+function inicializarQuestoesInterativasRevisao() {
+
+    // =================================
+    // IDENTIDADE PARA O HISTÓRICO
+    //
+    // Mantemos disciplina e aula originais.
+    //
+    // Assim o desempenho da revisão
+    // reforça os dados daquele mesmo assunto.
+    //
+    // A URL continua diferente e permite
+    // distinguir a página de revisão
+    // pelo campo "pagina".
+    // =================================
+
+    document.body.dataset.disciplina =
+        revisaoAtual.disciplina;
+
+
+    document.body.dataset.aula =
+        revisaoAtual.aula;
+
+
+    // =================================
+    // LIMPAR ESTADO GLOBAL DO
+    // exercicios.js
+    //
+    // Como a página inicialmente não
+    // tinha questões, agora precisamos
+    // garantir uma tentativa nova.
+    // =================================
+
+    if (
+        typeof limparRespostasExerciciosPSCPP ===
+        "function"
+    ) {
+
+        limparRespostasExerciciosPSCPP();
+
+    }
+
+
+    // =================================
+    // ATIVAR O MESMO MOTOR DAS AULAS
+    // =================================
+
+    if (
+        typeof inicializarExerciciosPSCPP ===
+        "function"
+    ) {
+
+        inicializarExerciciosPSCPP();
+
+    }
+    else {
+
+        console.warn(
+            "exercicios.js não está disponível na página de revisão."
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// GERAR QUESTÕES DA REVISÃO
+// =====================================================
+
+function gerarQuestoesInterativasRevisao() {
+
+    const documento =
+        revisaoAtual
+            .documentoAulaOriginal;
+
+
+    const nucleos =
+        revisaoAtual
+            .nucleosSelecionados;
+
+
+    if (!documento) {
+
+        return;
+
+    }
+
+
+    const questoes =
+        selecionarQuestoesRevisao(
+
+            documento,
+
+            nucleos
+
+        );
+
+
+    renderizarQuestoesRevisao(
+        questoes
+    );
+
+
+    inicializarQuestoesInterativasRevisao();
+
+
+    console.log(
+
+        "REVISÃO v1.7 — questões selecionadas:",
+
+        questoes.map(
+            questao => ({
+
+                id:
+                    questao.id,
+
+                topico:
+                    questao.topico
+
+            })
+        )
+
+    );
+
+}
+
+
+// =====================================================
+// SOBRESCREVER GERAÇÃO PRINCIPAL
+//
+// Mantém:
+//
+// v1.4 → núcleos conceituais
+// v1.5 → pontos de atenção
+// v1.6 → termos técnicos
+//
+// Acrescenta:
+//
+// v1.7 → questões interativas
+// =====================================================
+
+function gerarNucleoRevisao(
+    documento
+) {
+
+    const topicos =
+        analisarTopicosAula(
+            documento
+        );
+
+
+    revisaoAtual
+        .topicosAnalisados =
+        topicos;
+
+
+    const nucleos =
+        selecionarNucleosPrincipais(
+            topicos
+        );
+
+
+    revisaoAtual
+        .nucleosSelecionados =
+        nucleos;
+
+
+    // =================================
+    // NÚCLEO CONCEITUAL
+    // =================================
+
+    renderizarNucleosConceituais(
+        nucleos
+    );
+
+
+    // =================================
+    // PONTOS DE ATENÇÃO
+    // =================================
+
+    gerarPontosAtencaoRevisao();
+
+
+    // =================================
+    // TERMOS TÉCNICOS
+    // =================================
+
+    gerarTermosTecnicosGeraisRevisao();
+
+
+    // =================================
+    // QUESTÕES INTERATIVAS
+    // =================================
+
+    gerarQuestoesInterativasRevisao();
+
+
+    console.log(
+        "REVISÃO PSCPP v1.7 carregada."
+    );
+
+}
+
+
+/* =====================================================
+   FIM EXTENSÃO v1.7
+===================================================== */
