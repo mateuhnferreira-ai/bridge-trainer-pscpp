@@ -6453,3 +6453,127 @@ function gerarGabaritoComentadoRevisao() {
 // =====================================================
 // FIM CORREÇÃO v1.8.1
 // =====================================================
+
+
+
+/* =====================================================
+   DEBUG VISUAL DO GABARITO
+===================================================== */
+
+function mostrarDiagnosticoGabaritoRevisao() {
+
+    const container =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+    if (!container) {
+        return;
+    }
+
+
+    const documento =
+        revisaoAtual
+            .documentoAulaOriginal;
+
+
+    const questoes =
+        revisaoAtual
+            .questoesSelecionadas || [];
+
+
+    let secao = null;
+
+    let gabaritos = [];
+
+
+    try {
+
+        secao =
+            localizarSecaoGabaritoOriginal(
+                documento
+            );
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao localizar seção do gabarito:",
+            erro
+        );
+
+    }
+
+
+    try {
+
+        gabaritos =
+            extrairGabaritosOriginais(
+                documento
+            ) || [];
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao extrair gabaritos:",
+            erro
+        );
+
+    }
+
+
+    container.style.display =
+        "block";
+
+
+    container.innerHTML = `
+
+        <div class="widget">
+
+            <h3>
+                🔧 Diagnóstico do gabarito
+            </h3>
+
+            <p>
+                <strong>
+                    Questões selecionadas:
+                </strong>
+                ${questoes.length}
+            </p>
+
+            <p>
+                <strong>
+                    Seção de gabarito encontrada:
+                </strong>
+                ${secao ? "SIM" : "NÃO"}
+            </p>
+
+            <p>
+                <strong>
+                    Comentários encontrados:
+                </strong>
+                ${gabaritos.length}
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function () {
+
+        setTimeout(
+            mostrarDiagnosticoGabaritoRevisao,
+            1500
+        );
+
+    }
+
+);
