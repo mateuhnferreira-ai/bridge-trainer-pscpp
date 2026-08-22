@@ -3491,7 +3491,56 @@ function coletarTermosComplementares(
     return resultado;
 
 }
+// =====================================
+// SELECIONAR TERMOS TÉCNICOS
+// =====================================
 
+function selecionarTermosTecnicosRevisao(
+    topicos,
+    nucleos
+) {
+
+    // Primeiro entram os termos pertencentes
+    // aos núcleos conceituais da revisão.
+
+    const principais =
+        coletarTermosDosNucleos(
+            nucleos
+        );
+
+
+    // Depois acrescentamos termos relevantes
+    // dos demais tópicos da aula.
+
+    const complementares =
+        coletarTermosComplementares(
+
+            topicos,
+
+            nucleos
+
+        );
+
+
+    const combinados = [
+
+        ...principais,
+
+        ...complementares
+
+    ];
+
+
+    return deduplicarTermosRevisao(
+        combinados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_TERMOS_GERAIS
+        );
+
+}
 
 // =====================================
 // DEDUPLICAR TERMOS
