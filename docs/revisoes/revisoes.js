@@ -3265,3 +3265,581 @@ function gerarNucleoRevisao(
 /* =====================================================
    FIM EXTENSÃO v1.5
 ===================================================== */
+
+
+/* =====================================================
+   EXTENSÃO v1.6
+   TERMOS TÉCNICOS DA REVISÃO
+
+   Bridge Trainer PSCPP
+
+   Objetivos:
+
+   - extrair termos técnicos da aula original;
+   - priorizar termos ligados aos núcleos principais;
+   - complementar com termos de outros tópicos relevantes;
+   - eliminar duplicações;
+   - preservar o texto técnico da aula original;
+   - não inventar traduções nem explicações.
+===================================================== */
+
+
+// =====================================
+// CONFIGURAÇÕES
+// =====================================
+
+const REVISAO_MAX_TERMOS_GERAIS =
+    20;
+
+
+// =====================================
+// CRIAR REGISTRO DE TERMO
+// =====================================
+
+function criarRegistroTermoRevisao(
+    topico,
+    texto
+) {
+
+    if (
+        !topico ||
+        !texto
+    ) {
+
+        return null;
+
+    }
+
+
+    const termoLimpo =
+        limparTextoRevisao(
+            texto
+        );
+
+
+    if (!termoLimpo) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        idTopico:
+            topico.id || "",
+
+        tituloTopico:
+            topico.titulo ||
+            "Terminologia",
+
+        texto:
+            termoLimpo,
+
+        importancia:
+            Number(
+                topico.importancia || 0
+            )
+
+    };
+
+}
+
+
+// =====================================
+// COLETAR TERMOS DOS NÚCLEOS
+// =====================================
+
+function coletarTermosDosNucleos(
+    nucleos
+) {
+
+    const resultado =
+        [];
+
+
+    (
+        nucleos || []
+    ).forEach(
+        topico => {
+
+            (
+                topico.termos || []
+            ).forEach(
+                texto => {
+
+                    const registro =
+                        criarRegistroTermoRevisao(
+                            topico,
+                            texto
+                        );
+
+
+                    if (registro) {
+
+                        resultado.push(
+                            registro
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// COLETAR TERMOS COMPLEMENTARES
+// =====================================
+
+function coletarTermosComplementares(
+    topicos,
+    nucleos
+) {
+
+    const idsNucleos =
+        new Set(
+
+            (
+                nucleos || []
+            ).map(
+                item =>
+                    item.id
+            )
+
+        );
+
+
+    const candidatos =
+        (
+            topicos || []
+        )
+
+        .filter(
+            topico =>
+
+                !idsNucleos.has(
+                    topico.id
+                ) &&
+
+                Array.isArray(
+                    topico.termos
+                ) &&
+
+                topico.termos.length >
+                    0
+
+        )
+
+        .sort(
+            (
+                a,
+                b
+            ) =>
+
+                Number(
+                    b.importancia || 0
+                ) -
+
+                Number(
+                    a.importancia || 0
+                )
+
+        );
+
+
+    const resultado =
+        [];
+
+
+    candidatos.forEach(
+        topico => {
+
+            topico.termos
+                .forEach(
+                    texto => {
+
+                        const registro =
+                            criarRegistroTermoRevisao(
+                                topico,
+                                texto
+                            );
+
+
+                        if (registro) {
+
+                            resultado.push(
+                                registro
+                            );
+
+                        }
+
+                    }
+                );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// DEDUPLICAR TERMOS
+// =====================================
+
+function deduplicarTermosRevisao(
+    registros
+) {
+
+    const resultado =
+        [];
+
+
+    const vistos =
+        new Set();
+
+
+    (
+        registros || []
+    ).forEach(
+        registro => {
+
+            if (
+                !registro ||
+                !registro.texto
+            ) {
+
+                return;
+
+            }
+
+
+            const chave =
+                normalizarTextoComparacao(
+                    registro.texto
+                );
+
+
+            if (
+                !chave ||
+                vistos.has(
+                    chave
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            vistos.add(
+                chave
+            );
+
+
+            resultado.push(
+                registro
+            );
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+// =====================================
+// SELECIONAR TERMOS TÉCNICOS
+// =====================================
+
+function selecionarTermosTecnicosRevisao(
+    topicos,
+    nucleos
+) {
+
+    const principais =
+        coletarTermosDosNucleos(
+            nucleos
+        );
+
+
+    const complementares =
+        coletarTermosComplementares(
+
+            topicos,
+
+            nucleos
+
+        );
+
+
+    const combinados = [
+
+        ...principais,
+
+        ...complementares
+
+    ];
+
+
+    return deduplicarTermosRevisao(
+        combinados
+    )
+
+        .slice(
+            0,
+            REVISAO_MAX_TERMOS_GERAIS
+        );
+
+}
+
+
+// =====================================
+// RENDERIZAR TERMOS TÉCNICOS
+// =====================================
+
+function renderizarTermosTecnicosRevisao(
+    termos
+) {
+
+    const container =
+        document.getElementById(
+            "lista-termos-revisao"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    if (
+        !Array.isArray(
+            termos
+        ) ||
+        termos.length ===
+            0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Nenhuma terminologia técnica específica
+                foi identificada automaticamente
+                nesta aula.
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    container.innerHTML = `
+
+        <p>
+            Os termos abaixo foram selecionados
+            automaticamente a partir da terminologia
+            técnica utilizada na aula original.
+        </p>
+
+
+        <div
+        style="
+            display:grid;
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+            gap:14px;
+            margin-top:18px;
+        "
+        >
+
+            ${termos
+
+                .map(
+                    termo => `
+
+                    <div
+                    class="termos-tecnicos"
+                    data-revisao-termo="${
+                        escaparHTMLRevisao(
+                            termo.idTopico
+                        )
+                    }"
+                    >
+
+                        <p>
+                            <strong>
+                                ${escaparHTMLRevisao(
+                                    termo.texto
+                                )}
+                            </strong>
+                        </p>
+
+                        <p
+                        style="
+                            margin-top:8px;
+                            font-size:0.85rem;
+                            opacity:0.75;
+                        "
+                        >
+
+                            Relacionado a:
+                            ${escaparHTMLRevisao(
+                                termo.tituloTopico
+                            )}
+
+                        </p>
+
+                    </div>
+
+                    `
+                )
+
+                .join("")
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+// =====================================
+// GERAR CAMADA DE TERMOS
+// =====================================
+
+function gerarTermosTecnicosGeraisRevisao() {
+
+    const termos =
+        selecionarTermosTecnicosRevisao(
+
+            revisaoAtual
+                .topicosAnalisados,
+
+            revisaoAtual
+                .nucleosSelecionados
+
+        );
+
+
+    renderizarTermosTecnicosRevisao(
+        termos
+    );
+
+
+    console.log(
+
+        "REVISÃO v1.6 — termos técnicos:",
+
+        termos
+
+    );
+
+}
+
+
+// =====================================================
+// SOBRESCREVER NOVAMENTE A GERAÇÃO DO NÚCLEO
+//
+// Mantém:
+//
+// v1.4 → mini-aula conceitual
+// v1.5 → pontos de atenção
+//
+// Acrescenta:
+//
+// v1.6 → glossário técnico geral
+// =====================================================
+
+function gerarNucleoRevisao(
+    documento
+) {
+
+    const topicos =
+        analisarTopicosAula(
+            documento
+        );
+
+
+    revisaoAtual
+        .topicosAnalisados =
+        topicos;
+
+
+    const nucleos =
+        selecionarNucleosPrincipais(
+            topicos
+        );
+
+
+    revisaoAtual
+        .nucleosSelecionados =
+        nucleos;
+
+
+    // =================================
+    // NÚCLEO CONCEITUAL
+    // =================================
+
+    renderizarNucleosConceituais(
+        nucleos
+    );
+
+
+    // =================================
+    // PONTOS DE ATENÇÃO
+    // =================================
+
+    gerarPontosAtencaoRevisao();
+
+
+    // =================================
+    // TERMOS TÉCNICOS
+    // =================================
+
+    gerarTermosTecnicosGeraisRevisao();
+
+
+    console.log(
+
+        "REVISÃO v1.6 — revisão expandida:",
+
+        {
+
+            topicos:
+                topicos.length,
+
+            nucleos:
+                nucleos.length
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   FIM EXTENSÃO v1.6
+===================================================== */
