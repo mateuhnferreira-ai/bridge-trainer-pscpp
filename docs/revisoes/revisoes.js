@@ -1,24 +1,29 @@
 // =====================================================
 // SISTEMA DE AULA DE REVISÃO PSCPP
 // Bridge Trainer PSCPP
-// Versão 1.4
 //
-// REFINAMENTO DA REVISÃO CONCEITUAL
+// Base funcional:
 //
-// PRINCIPAIS MELHORIAS:
+// v1.4 → revisão conceitual
+// v1.5 → pontos de atenção
+// v1.6 → termos técnicos
+// v1.7 → questões interativas
+// v1.8 → gabarito comentado
+// v1.9 → conclusão e agendamento
 //
-// - deduplicação de conteúdo;
-// - fórmulas separadas do texto conceitual;
-// - destaques não repetem fórmulas;
-// - interpretação não repete conceito;
-// - aplicação operacional isolada;
-// - atenção PSCPP isolada;
-// - terminologia técnica limpa;
-// - preservação do núcleo conceitual obrigatório;
-// - nenhuma informação técnica nova é inventada.
+// PADRONIZAÇÃO DE CAMINHOS:
 //
-// A revisão continua sendo extraída
-// exclusivamente da aula original.
+// A identificação lógica permanece:
+//
+// disciplina.id + modulo.id
+//
+// O caminho físico passa a ser obtido de:
+//
+// disciplinas.json
+//
+// Portanto:
+//
+// ID lógico ≠ obrigatoriamente nome do arquivo.
 // =====================================================
 
 
@@ -74,9 +79,27 @@ let revisaoAtual = {
 
     topicosAnalisados: [],
 
-    nucleosSelecionados: []
+    nucleosSelecionados: [],
+
+    questoesSelecionadas: []
 
 };
+
+
+// =====================================================
+// CATÁLOGO FÍSICO DAS DISCIPLINAS
+// =====================================================
+//
+// Fonte única para localizar:
+//
+// - pasta física da disciplina;
+// - arquivo físico da aula.
+//
+// Os parâmetros da revisão continuam usando
+// os IDs lógicos oficiais.
+
+let catalogoDisciplinasRevisao =
+    null;
 
 
 // =====================================================
@@ -393,16 +416,14 @@ function textoJaRepresentado(
                 alvo === base ||
 
                 (
-                    alvo.length >
-                        35 &&
+                    alvo.length > 35 &&
                     base.includes(
                         alvo
                     )
                 ) ||
 
                 (
-                    base.length >
-                        35 &&
+                    base.length > 35 &&
                     alvo.includes(
                         base
                     )
@@ -496,6 +517,98 @@ function atualizarHTMLRevisao(
 
 
 // =====================================================
+// CARREGAR CATÁLOGO DE DISCIPLINAS
+// =====================================================
+
+async function carregarCatalogoDisciplinasRevisao() {
+
+    if (
+        catalogoDisciplinasRevisao
+    ) {
+
+        return catalogoDisciplinasRevisao;
+
+    }
+
+
+    try {
+
+        const resposta =
+            await fetch(
+                "../data/disciplinas.json"
+            );
+
+
+        if (
+            !resposta.ok
+        ) {
+
+            throw new Error(
+                "Não foi possível carregar disciplinas.json."
+            );
+
+        }
+
+
+        catalogoDisciplinasRevisao =
+            await resposta.json();
+
+
+        return catalogoDisciplinasRevisao;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Revisão: erro ao carregar disciplinas.json:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+// =====================================================
+// OBTER DISCIPLINA NO CATÁLOGO
+// =====================================================
+
+function obterDisciplinaCatalogoRevisao(
+    idDisciplina
+) {
+
+    if (
+        !catalogoDisciplinasRevisao ||
+        !Array.isArray(
+            catalogoDisciplinasRevisao.disciplinas
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+        catalogoDisciplinasRevisao
+            .disciplinas
+            .find(
+
+                disciplina =>
+                    disciplina.id ===
+                    idDisciplina
+
+            ) ||
+        null
+    );
+
+}
+
+
+// =====================================================
 // CAMINHO DA AULA
 // =====================================================
 
@@ -514,17 +627,80 @@ function criarCaminhoAulaOriginal(
     }
 
 
+    const dadosDisciplina =
+        obterDisciplinaCatalogoRevisao(
+            disciplina
+        );
+
+
+    if (!dadosDisciplina) {
+
+        console.error(
+            "Revisão: disciplina não encontrada no catálogo:",
+            disciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    const modulos =
+        Array.isArray(
+            dadosDisciplina.modulos
+        )
+            ? dadosDisciplina.modulos
+            : [];
+
+
+    const modulo =
+        modulos.find(
+
+            item =>
+                item.id ===
+                aula
+
+        );
+
+
+    if (!modulo) {
+
+        console.error(
+            "Revisão: aula não encontrada no catálogo:",
+            disciplina,
+            aula
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !dadosDisciplina.pasta ||
+        !modulo.arquivo
+    ) {
+
+        console.error(
+            "Revisão: pasta ou arquivo físico não definido:",
+            disciplina,
+            aula
+        );
+
+
+        return null;
+
+    }
+
+
     return (
 
         "../disciplinas/" +
-
-        disciplina +
-
+        dadosDisciplina.pasta +
         "/" +
-
-        aula +
-
-        ".html"
+        modulo.arquivo
 
     );
 
@@ -860,8 +1036,7 @@ function pareceFormulaRevisao(
 
     if (
         !valor ||
-        valor.length >
-            180
+        valor.length > 180
     ) {
 
         return false;
@@ -1072,8 +1247,7 @@ function obterParagrafosConceituais(
 
 
             if (
-                texto.length <
-                    25 ||
+                texto.length < 25 ||
                 pareceFormulaRevisao(
                     texto
                 ) ||
@@ -1154,8 +1328,7 @@ function obterDestaquesTopico(
 
 
                         if (
-                            texto.length <
-                                15 ||
+                            texto.length < 15 ||
                             pareceFormulaRevisao(
                                 texto
                             ) ||
@@ -1189,8 +1362,7 @@ function obterDestaquesTopico(
 
 
             if (
-                textosLimpos.length >
-                0
+                textosLimpos.length > 0
             ) {
 
                 resultado.push({
@@ -1277,10 +1449,8 @@ function obterInterpretacoesTopico(
 
 
                 if (
-                    texto.length <
-                        35 ||
-                    texto.length >
-                        550 ||
+                    texto.length < 35 ||
+                    texto.length > 550 ||
                     pareceFormulaRevisao(
                         texto
                     ) ||
@@ -1380,8 +1550,7 @@ function obterAplicacoesOperacionais(
 
 
                                     if (
-                                        texto.length >
-                                            25 &&
+                                        texto.length > 25 &&
                                         !textoJaRepresentado(
                                             texto,
                                             referencias
@@ -1461,8 +1630,7 @@ function obterAplicacoesOperacionais(
 
 
                             if (
-                                texto.length >
-                                    25 &&
+                                texto.length > 25 &&
                                 !textoJaRepresentado(
                                     texto,
                                     referencias
@@ -1521,8 +1689,7 @@ function obterAtencoesTopico(
 
 
                 if (
-                    texto.length >
-                        15 &&
+                    texto.length > 15 &&
                     !textoJaRepresentado(
                         texto,
                         referencias
@@ -1563,32 +1730,140 @@ function obterTermosTecnicosTopico(
         [];
 
 
-    topico
-        .querySelectorAll(
-            ".termos-tecnicos li"
-        )
-        .forEach(
-            li => {
+    if (!topico) {
 
-                const texto =
-                    limparTextoRevisao(
-                        li.textContent
-                    );
+        return resultados;
+
+    }
 
 
-                if (
-                    texto.length >
-                    2
-                ) {
+    const blocos =
+        Array.from(
 
-                    resultados.push(
-                        texto
-                    );
+            topico.querySelectorAll(
+                ".termos-tecnicos"
+            )
 
-                }
+        );
+
+
+    blocos.forEach(
+        bloco => {
+
+            const itens =
+                Array.from(
+                    bloco.querySelectorAll(
+                        "li"
+                    )
+                );
+
+
+            if (
+                itens.length > 0
+            ) {
+
+                itens.forEach(
+                    item => {
+
+                        const texto =
+                            limparTextoRevisao(
+                                item.textContent
+                            );
+
+
+                        if (
+                            texto.length > 2
+                        ) {
+
+                            resultados.push(
+                                texto
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                return;
 
             }
-        );
+
+
+            const paragrafos =
+                Array.from(
+                    bloco.querySelectorAll(
+                        "p"
+                    )
+                );
+
+
+            if (
+                paragrafos.length > 0
+            ) {
+
+                paragrafos.forEach(
+                    paragrafo => {
+
+                        const texto =
+                            limparTextoRevisao(
+                                paragrafo.textContent
+                            );
+
+
+                        if (
+                            texto.length > 2
+                        ) {
+
+                            resultados.push(
+                                texto
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                return;
+
+            }
+
+
+            const clone =
+                bloco.cloneNode(
+                    true
+                );
+
+
+            clone
+                .querySelectorAll(
+                    "h1, h2, h3, h4, h5, h6"
+                )
+                .forEach(
+                    titulo =>
+                        titulo.remove()
+                );
+
+
+            const texto =
+                limparTextoRevisao(
+                    clone.textContent
+                );
+
+
+            if (
+                texto.length > 2
+            ) {
+
+                resultados.push(
+                    texto
+                );
+
+            }
+
+        }
+    );
 
 
     return deduplicarTextosRevisao(
@@ -1650,8 +1925,7 @@ function calcularImportanciaTopico(
 
 
     if (
-        formulas.length >
-        0
+        formulas.length > 0
     ) {
 
         pontos += 4;
@@ -1866,14 +2140,11 @@ function analisarTopicosAula(
                 item.titulo &&
 
                 (
-                    item.conceito.length >
-                        0 ||
+                    item.conceito.length > 0 ||
 
-                    item.destaques.length >
-                        0 ||
+                    item.destaques.length > 0 ||
 
-                    item.formulas.length >
-                        0
+                    item.formulas.length > 0
                 )
 
         );
@@ -1893,8 +2164,7 @@ function selecionarNucleosPrincipais(
         !Array.isArray(
             topicos
         ) ||
-        topicos.length ===
-            0
+        topicos.length === 0
     ) {
 
         return [];
@@ -1990,8 +2260,7 @@ function selecionarNucleosPrincipais(
 
 
         if (
-            candidatos.length >
-            0
+            candidatos.length > 0
         ) {
 
             selecionados.push(
@@ -2054,8 +2323,7 @@ function gerarDestaquesRevisao(
 
     if (
         !destaques ||
-        destaques.length ===
-            0
+        destaques.length === 0
     ) {
 
         return "";
@@ -2100,8 +2368,7 @@ function gerarFormulasRevisao(
 
     if (
         !formulas ||
-        formulas.length ===
-            0
+        formulas.length === 0
     ) {
 
         return "";
@@ -2162,8 +2429,7 @@ function gerarInterpretacoesRevisao(
 
     if (
         !textos ||
-        textos.length ===
-            0
+        textos.length === 0
     ) {
 
         return "";
@@ -2200,8 +2466,7 @@ function gerarAplicacoesRevisao(
 
     if (
         !textos ||
-        textos.length ===
-            0
+        textos.length === 0
     ) {
 
         return "";
@@ -2238,8 +2503,7 @@ function gerarAtencoesRevisao(
 
     if (
         !textos ||
-        textos.length ===
-            0
+        textos.length === 0
     ) {
 
         return "";
@@ -2276,8 +2540,7 @@ function gerarTermosRevisao(
 
     if (
         !termos ||
-        termos.length ===
-            0
+        termos.length === 0
     ) {
 
         return "";
@@ -2349,8 +2612,7 @@ function renderizarNucleosConceituais(
 
     if (
         !nucleos ||
-        nucleos.length ===
-            0
+        nucleos.length === 0
     ) {
 
         container.innerHTML = `
@@ -2399,8 +2661,7 @@ function renderizarNucleosConceituais(
 
 
                     ${
-                        nucleo.conceito.length >
-                        0
+                        nucleo.conceito.length > 0
                             ? `
 
                             <div>
@@ -2460,292 +2721,12 @@ function renderizarNucleosConceituais(
 
 
 // =====================================================
-// GERAR NÚCLEO
+// PONTOS DE ATENÇÃO GERAIS
 // =====================================================
-
-function gerarNucleoRevisao(
-    documento
-) {
-
-    const topicos =
-        analisarTopicosAula(
-            documento
-        );
-
-
-    revisaoAtual
-        .topicosAnalisados =
-        topicos;
-
-
-    const nucleos =
-        selecionarNucleosPrincipais(
-            topicos
-        );
-
-
-    revisaoAtual
-        .nucleosSelecionados =
-        nucleos;
-
-
-    renderizarNucleosConceituais(
-        nucleos
-    );
-
-
-    console.log(
-        "REVISÃO v1.4 — núcleos:",
-        nucleos
-    );
-
-}
-
-
-// =====================================================
-// PAINEL DE FOCO
-// =====================================================
-
-function mostrarAulaOriginalCarregada(
-    resumo
-) {
-
-    atualizarHTMLRevisao(
-
-        "painel-foco-revisao",
-
-        `
-
-        <p>
-            <strong>
-                Aula original localizada.
-            </strong>
-        </p>
-
-        <p>
-            A revisão abaixo foi construída
-            automaticamente a partir da
-            estrutura técnica da aula.
-        </p>
-
-        <p>
-            <strong>
-                ${resumo.topicos}
-            </strong>
-            tópicos analisados,
-            com conceitos, fórmulas,
-            interpretação, aplicações,
-            pontos de atenção e terminologia.
-        </p>
-
-        `
-
-    );
-
-}
-
-
-// =====================================================
-// PREPARAR AULA
-// =====================================================
-
-async function prepararAulaOriginal() {
-
-    try {
-
-        const html =
-            await carregarAulaOriginal();
-
-
-        const documento =
-            criarDocumentoAulaOriginal(
-                html
-            );
-
-
-        if (
-            !validarDocumentoAulaOriginal(
-                documento
-            )
-        ) {
-
-            throw new Error(
-                "A aula original possui estrutura inválida."
-            );
-
-        }
-
-
-        revisaoAtual
-            .documentoAulaOriginal =
-            documento;
-
-
-        const resumo =
-            obterResumoEstruturaAula(
-                documento
-            );
-
-
-        mostrarAulaOriginalCarregada(
-            resumo
-        );
-
-
-        gerarNucleoRevisao(
-            documento
-        );
-
-
-        return true;
-
-    }
-    catch (erro) {
-
-        console.error(
-            "Erro na revisão:",
-            erro
-        );
-
-
-        atualizarHTMLRevisao(
-
-            "painel-foco-revisao",
-
-            `
-
-            <p>
-                <strong>
-                    ⚠ Erro ao preparar revisão.
-                </strong>
-            </p>
-
-            <p>
-                ${escaparHTMLRevisao(
-                    erro.message
-                )}
-            </p>
-
-            `
-
-        );
-
-
-        return false;
-
-    }
-
-}
-
-
-// =====================================================
-// INICIALIZAR
-// =====================================================
-
-async function inicializarAulaRevisao() {
-
-    const parametros =
-        obterParametrosRevisao();
-
-
-    if (
-        !parametros.disciplina ||
-        !parametros.aula
-    ) {
-
-        mostrarErroRevisao(
-            "Disciplina ou aula não informada na URL."
-        );
-
-
-        return;
-
-    }
-
-
-    revisaoAtual.disciplina =
-        parametros.disciplina;
-
-
-    revisaoAtual.aula =
-        parametros.aula;
-
-
-    preencherIdentidadeRevisao();
-
-
-    await prepararAulaOriginal();
-
-}
-
-
-// =====================================================
-// CARREGAMENTO
-// =====================================================
-
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    function () {
-
-        inicializarAulaRevisao();
-
-    }
-
-);
-
-
-// =====================================================
-// DEBUG
-// =====================================================
-
-console.log(
-    "SISTEMA DE REVISÃO PSCPP v1.4 CARREGADO"
-);
-
-
-// =====================================================
-// FIM
-// =====================================================
-
-
-/* =====================================================
-   EXTENSÃO v1.5
-   PONTOS DE ATENÇÃO DA REVISÃO
-
-   Bridge Trainer PSCPP
-
-   Função:
-
-   - reunir automaticamente os pontos de atenção
-     existentes na aula original;
-
-   - priorizar os tópicos que fazem parte do
-     núcleo conceitual da revisão;
-
-   - complementar com outros pontos importantes
-     da aula;
-
-   - eliminar repetições;
-
-   - não depender do desempenho do aluno;
-
-   - não inventar conteúdo novo.
-===================================================== */
-
-
-// =====================================
-// CONFIGURAÇÕES
-// =====================================
 
 const REVISAO_MAX_PONTOS_ATENCAO_GERAL =
     10;
 
-
-// =====================================
-// CRIAR REGISTRO DE ATENÇÃO
-// =====================================
 
 function criarRegistroAtencaoRevisao(
     topico,
@@ -2786,10 +2767,6 @@ function criarRegistroAtencaoRevisao(
 }
 
 
-// =====================================
-// COLETAR ATENÇÕES DOS NÚCLEOS
-// =====================================
-
 function coletarAtencoesDosNucleos(
     nucleos
 ) {
@@ -2815,9 +2792,7 @@ function coletarAtencoesDosNucleos(
                         );
 
 
-                    if (
-                        registro
-                    ) {
+                    if (registro) {
 
                         resultado.push(
                             registro
@@ -2836,10 +2811,6 @@ function coletarAtencoesDosNucleos(
 
 }
 
-
-// =====================================
-// COLETAR ATENÇÕES COMPLEMENTARES
-// =====================================
 
 function coletarAtencoesComplementares(
     topicos,
@@ -2875,8 +2846,7 @@ function coletarAtencoesComplementares(
                     topico.atencoes
                 ) &&
 
-                topico.atencoes.length >
-                    0
+                topico.atencoes.length > 0
 
         )
 
@@ -2915,9 +2885,7 @@ function coletarAtencoesComplementares(
                             );
 
 
-                        if (
-                            registro
-                        ) {
+                        if (registro) {
 
                             resultado.push(
                                 registro
@@ -2936,10 +2904,6 @@ function coletarAtencoesComplementares(
 
 }
 
-
-// =====================================
-// DEDUPLICAR PONTOS DE ATENÇÃO
-// =====================================
 
 function deduplicarPontosAtencaoRevisao(
     registros
@@ -3001,28 +2965,16 @@ function deduplicarPontosAtencaoRevisao(
 }
 
 
-// =====================================
-// SELECIONAR PONTOS DE ATENÇÃO
-// =====================================
-
 function selecionarPontosAtencaoRevisao(
     topicos,
     nucleos
 ) {
-
-    // Primeiro:
-    // pontos pertencentes ao núcleo
-    // conceitual obrigatório.
 
     const principais =
         coletarAtencoesDosNucleos(
             nucleos
         );
 
-
-    // Depois:
-    // pontos relevantes existentes
-    // em outros tópicos da aula.
 
     const complementares =
         coletarAtencoesComplementares(
@@ -3034,17 +2986,16 @@ function selecionarPontosAtencaoRevisao(
         );
 
 
-    const combinados = [
-
-        ...principais,
-
-        ...complementares
-
-    ];
-
-
     return deduplicarPontosAtencaoRevisao(
-        combinados
+
+        [
+
+            ...principais,
+
+            ...complementares
+
+        ]
+
     )
 
         .slice(
@@ -3054,10 +3005,6 @@ function selecionarPontosAtencaoRevisao(
 
 }
 
-
-// =====================================
-// RENDERIZAR PONTOS DE ATENÇÃO
-// =====================================
 
 function renderizarPontosAtencaoRevisao(
     pontos
@@ -3080,8 +3027,7 @@ function renderizarPontosAtencaoRevisao(
         !Array.isArray(
             pontos
         ) ||
-        pontos.length ===
-            0
+        pontos.length === 0
     ) {
 
         container.innerHTML = `
@@ -3164,10 +3110,6 @@ function renderizarPontosAtencaoRevisao(
 }
 
 
-// =====================================
-// GERAR CAMADA DE ATENÇÃO
-// =====================================
-
 function gerarPontosAtencaoRevisao() {
 
     const pontos =
@@ -3186,115 +3128,16 @@ function gerarPontosAtencaoRevisao() {
         pontos
     );
 
-
-    console.log(
-
-        "REVISÃO v1.5 — pontos de atenção:",
-
-        pontos
-
-    );
-
 }
 
 
 // =====================================================
-// SOBRESCREVER GERAÇÃO DO NÚCLEO
-//
-// Mantém toda a lógica da v1.4
-// e acrescenta a nova camada de atenção.
+// TERMOS TÉCNICOS GERAIS
 // =====================================================
-
-function gerarNucleoRevisao(
-    documento
-) {
-
-    const topicos =
-        analisarTopicosAula(
-            documento
-        );
-
-
-    revisaoAtual
-        .topicosAnalisados =
-        topicos;
-
-
-    const nucleos =
-        selecionarNucleosPrincipais(
-            topicos
-        );
-
-
-    revisaoAtual
-        .nucleosSelecionados =
-        nucleos;
-
-
-    // Mini-aula conceitual
-
-    renderizarNucleosConceituais(
-        nucleos
-    );
-
-
-    // Pontos de atenção globais
-
-    gerarPontosAtencaoRevisao();
-
-
-    console.log(
-
-        "REVISÃO v1.5 — núcleo + atenção:",
-
-        {
-
-            nucleos:
-                nucleos.length,
-
-            topicos:
-                topicos.length
-
-        }
-
-    );
-
-}
-
-
-/* =====================================================
-   FIM EXTENSÃO v1.5
-===================================================== */
-
-
-/* =====================================================
-   EXTENSÃO v1.6
-   TERMOS TÉCNICOS DA REVISÃO
-
-   Bridge Trainer PSCPP
-
-   Objetivos:
-
-   - extrair termos técnicos da aula original;
-   - priorizar termos ligados aos núcleos principais;
-   - complementar com termos de outros tópicos relevantes;
-   - eliminar duplicações;
-   - preservar o texto técnico da aula original;
-   - não inventar traduções nem explicações.
-===================================================== */
-
-
-// =====================================
-// CONFIGURAÇÕES
-// =====================================
 
 const REVISAO_MAX_TERMOS_GERAIS =
     20;
 
-
-// =====================================
-// CRIAR REGISTRO DE TERMO
-// =====================================
 
 function criarRegistroTermoRevisao(
     topico,
@@ -3346,10 +3189,6 @@ function criarRegistroTermoRevisao(
 }
 
 
-// =====================================
-// COLETAR TERMOS DOS NÚCLEOS
-// =====================================
-
 function coletarTermosDosNucleos(
     nucleos
 ) {
@@ -3395,10 +3234,6 @@ function coletarTermosDosNucleos(
 }
 
 
-// =====================================
-// COLETAR TERMOS COMPLEMENTARES
-// =====================================
-
 function coletarTermosComplementares(
     topicos,
     nucleos
@@ -3433,8 +3268,7 @@ function coletarTermosComplementares(
                     topico.termos
                 ) &&
 
-                topico.termos.length >
-                    0
+                topico.termos.length > 0
 
         )
 
@@ -3491,60 +3325,7 @@ function coletarTermosComplementares(
     return resultado;
 
 }
-// =====================================
-// SELECIONAR TERMOS TÉCNICOS
-// =====================================
 
-function selecionarTermosTecnicosRevisao(
-    topicos,
-    nucleos
-) {
-
-    // Primeiro entram os termos pertencentes
-    // aos núcleos conceituais da revisão.
-
-    const principais =
-        coletarTermosDosNucleos(
-            nucleos
-        );
-
-
-    // Depois acrescentamos termos relevantes
-    // dos demais tópicos da aula.
-
-    const complementares =
-        coletarTermosComplementares(
-
-            topicos,
-
-            nucleos
-
-        );
-
-
-    const combinados = [
-
-        ...principais,
-
-        ...complementares
-
-    ];
-
-
-    return deduplicarTermosRevisao(
-        combinados
-    )
-
-        .slice(
-            0,
-            REVISAO_MAX_TERMOS_GERAIS
-        );
-
-}
-
-// =====================================
-// DEDUPLICAR TERMOS
-// =====================================
 
 function deduplicarTermosRevisao(
     registros
@@ -3609,210 +3390,46 @@ function deduplicarTermosRevisao(
 }
 
 
-// =====================================================
-// TERMOS TÉCNICOS
-// =====================================================
-//
-// Extração flexível.
-//
-// Aceita diferentes estruturas usadas nas aulas:
-//
-// .termos-tecnicos
-// ├── ul > li
-// ├── ol > li
-// ├── p
-// └── elementos textuais internos
-//
-// Prioridade:
-//
-// 1. itens <li>
-// 2. parágrafos <p>
-// 3. texto direto do bloco
-//
-// Isso permite que aulas antigas e novas
-// alimentem automaticamente a revisão.
-// =====================================================
-
-function obterTermosTecnicosTopico(
-    topico
+function selecionarTermosTecnicosRevisao(
+    topicos,
+    nucleos
 ) {
 
-    const resultados =
-        [];
+    const principais =
+        coletarTermosDosNucleos(
+            nucleos
+        );
 
 
-    if (!topico) {
+    const complementares =
+        coletarTermosComplementares(
 
-        return resultados;
+            topicos,
 
-    }
-
-
-    const blocos =
-        Array.from(
-
-            topico.querySelectorAll(
-                ".termos-tecnicos"
-            )
+            nucleos
 
         );
 
 
-    blocos.forEach(
-        bloco => {
+    return deduplicarTermosRevisao(
 
-            // =================================
-            // 1. LISTAS
-            // =================================
+        [
 
-            const itens =
-                Array.from(
-                    bloco.querySelectorAll(
-                        "li"
-                    )
-                );
+            ...principais,
 
+            ...complementares
 
-            if (
-                itens.length >
-                0
-            ) {
+        ]
 
-                itens.forEach(
-                    item => {
-
-                        const texto =
-                            limparTextoRevisao(
-                                item.textContent
-                            );
-
-
-                        if (
-                            texto.length >
-                            2
-                        ) {
-
-                            resultados.push(
-                                texto
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                return;
-
-            }
-
-
-            // =================================
-            // 2. PARÁGRAFOS
-            // =================================
-
-            const paragrafos =
-                Array.from(
-                    bloco.querySelectorAll(
-                        "p"
-                    )
-                );
-
-
-            if (
-                paragrafos.length >
-                0
-            ) {
-
-                paragrafos.forEach(
-                    paragrafo => {
-
-                        const texto =
-                            limparTextoRevisao(
-                                paragrafo.textContent
-                            );
-
-
-                        if (
-                            texto.length >
-                            2
-                        ) {
-
-                            resultados.push(
-                                texto
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                return;
-
-            }
-
-
-            // =================================
-            // 3. FALLBACK
-            // =================================
-            //
-            // Para blocos antigos que possuam
-            // apenas texto ou <strong>.
-            // =================================
-
-            const clone =
-                bloco.cloneNode(
-                    true
-                );
-
-
-            clone
-                .querySelectorAll(
-                    "h1, h2, h3, h4, h5, h6"
-                )
-                .forEach(
-                    titulo =>
-                        titulo.remove()
-                );
-
-
-            const texto =
-                limparTextoRevisao(
-                    clone.textContent
-                );
-
-
-            if (
-                texto.length >
-                2
-            ) {
-
-                resultados.push(
-                    texto
-                );
-
-            }
-
-        }
-    );
-
-
-    return deduplicarTextosRevisao(
-        resultados
     )
 
         .slice(
             0,
-            REVISAO_MAX_TERMOS
+            REVISAO_MAX_TERMOS_GERAIS
         );
 
 }
 
-
-// =====================================
-// RENDERIZAR TERMOS TÉCNICOS
-// =====================================
 
 function renderizarTermosTecnicosRevisao(
     termos
@@ -3835,8 +3452,7 @@ function renderizarTermosTecnicosRevisao(
         !Array.isArray(
             termos
         ) ||
-        termos.length ===
-            0
+        termos.length === 0
     ) {
 
         container.innerHTML = `
@@ -3929,10 +3545,6 @@ function renderizarTermosTecnicosRevisao(
 }
 
 
-// =====================================
-// GERAR CAMADA DE TERMOS
-// =====================================
-
 function gerarTermosTecnicosGeraisRevisao() {
 
     const termos =
@@ -3951,146 +3563,16 @@ function gerarTermosTecnicosGeraisRevisao() {
         termos
     );
 
-
-    console.log(
-
-        "REVISÃO v1.6 — termos técnicos:",
-
-        termos
-
-    );
-
 }
 
 
 // =====================================================
-// SOBRESCREVER NOVAMENTE A GERAÇÃO DO NÚCLEO
-//
-// Mantém:
-//
-// v1.4 → mini-aula conceitual
-// v1.5 → pontos de atenção
-//
-// Acrescenta:
-//
-// v1.6 → glossário técnico geral
-// =====================================================
-
-function gerarNucleoRevisao(
-    documento
-) {
-
-    const topicos =
-        analisarTopicosAula(
-            documento
-        );
-
-
-    revisaoAtual
-        .topicosAnalisados =
-        topicos;
-
-
-    const nucleos =
-        selecionarNucleosPrincipais(
-            topicos
-        );
-
-
-    revisaoAtual
-        .nucleosSelecionados =
-        nucleos;
-
-
-    // =================================
-    // NÚCLEO CONCEITUAL
-    // =================================
-
-    renderizarNucleosConceituais(
-        nucleos
-    );
-
-
-    // =================================
-    // PONTOS DE ATENÇÃO
-    // =================================
-
-    gerarPontosAtencaoRevisao();
-
-
-    // =================================
-    // TERMOS TÉCNICOS
-    // =================================
-
-    gerarTermosTecnicosGeraisRevisao();
-
-
-    console.log(
-
-        "REVISÃO v1.6 — revisão expandida:",
-
-        {
-
-            topicos:
-                topicos.length,
-
-            nucleos:
-                nucleos.length
-
-        }
-
-    );
-
-}
-
-
-/* =====================================================
-   FIM EXTENSÃO v1.6
-===================================================== */
-
-
-/* =====================================================
-   EXTENSÃO v1.7
-   QUESTÕES INTERATIVAS DE REVISÃO
-
-   Bridge Trainer PSCPP
-
-   OBJETIVOS:
-
-   - selecionar questões existentes na aula original;
-   - distribuir as questões entre diferentes conceitos;
-   - evitar concentração excessiva em um único tópico;
-   - preservar integralmente:
-       .questao
-       .alternativa
-       data-resposta
-       data-topico
-       data-edital
-       data-bibliografia;
-   - reutilizar exercicios.js v3.0;
-   - manter correção automática;
-   - manter histórico;
-   - manter integração com desempenho.
-
-   IMPORTANTE:
-
-   Nenhuma questão nova é inventada.
-   A revisão reutiliza questões reais
-   existentes na aula original.
-===================================================== */
-
-
-// =====================================================
-// CONFIGURAÇÕES
+// QUESTÕES INTERATIVAS
 // =====================================================
 
 const REVISAO_MAX_QUESTOES =
     10;
 
-
-// =====================================================
-// NORMALIZAR TÓPICO DA QUESTÃO
-// =====================================================
 
 function normalizarTopicoQuestaoRevisao(
     texto
@@ -4102,10 +3584,6 @@ function normalizarTopicoQuestaoRevisao(
 
 }
 
-
-// =====================================================
-// EXTRAIR QUESTÕES DA AULA ORIGINAL
-// =====================================================
 
 function obterQuestoesOriginaisRevisao(
     documento
@@ -4205,10 +3683,6 @@ function obterQuestoesOriginaisRevisao(
 }
 
 
-// =====================================================
-// CALCULAR RELAÇÃO ENTRE QUESTÃO E NÚCLEO
-// =====================================================
-
 function calcularRelacaoQuestaoNucleo(
     questao,
     nucleo
@@ -4240,29 +3714,22 @@ function calcularRelacaoQuestaoNucleo(
         );
 
 
-    if (
-        !topicoQuestao
-    ) {
+    if (!topicoQuestao) {
 
         return 0;
 
     }
 
 
-    // Correspondência direta
-
     if (
         tituloNucleo &&
-        topicoQuestao ===
-            tituloNucleo
+        topicoQuestao === tituloNucleo
     ) {
 
         return 100;
 
     }
 
-
-    // ID do núcleo contido no tópico
 
     if (
         idNucleo &&
@@ -4281,8 +3748,6 @@ function calcularRelacaoQuestaoNucleo(
     }
 
 
-    // Título parcialmente correspondente
-
     if (
         tituloNucleo &&
         (
@@ -4299,8 +3764,6 @@ function calcularRelacaoQuestaoNucleo(
 
     }
 
-
-    // Comparação por palavras relevantes
 
     const palavrasQuestao =
         topicoQuestao
@@ -4345,10 +3808,6 @@ function calcularRelacaoQuestaoNucleo(
 
 }
 
-
-// =====================================================
-// SELECIONAR QUESTÕES PARA OS NÚCLEOS
-// =====================================================
 
 function selecionarQuestoesDosNucleos(
     questoes,
@@ -4451,10 +3910,6 @@ function selecionarQuestoesDosNucleos(
 }
 
 
-// =====================================================
-// COMPLETAR QUESTÕES DE FORMA DIVERSIFICADA
-// =====================================================
-
 function completarQuestoesRevisao(
     questoes,
     selecionadas,
@@ -4471,11 +3926,6 @@ function completarQuestoesRevisao(
 
         );
 
-
-    // =================================
-    // PRIMEIRO:
-    // priorizar tópicos ainda não usados
-    // =================================
 
     for (
         const questao of questoes
@@ -4530,12 +3980,6 @@ function completarQuestoesRevisao(
     }
 
 
-    // =================================
-    // SEGUNDO:
-    // completar caso ainda faltem
-    // questões
-    // =================================
-
     for (
         const questao of questoes
     ) {
@@ -4577,10 +4021,6 @@ function completarQuestoesRevisao(
 
 }
 
-
-// =====================================================
-// SELEÇÃO FINAL
-// =====================================================
 
 function selecionarQuestoesRevisao(
     documento,
@@ -4630,20 +4070,6 @@ function selecionarQuestoesRevisao(
 }
 
 
-// =====================================================
-// LOCALIZAR ÁREA DE QUESTÕES
-// =====================================================
-//
-// Primeiro procura um ID específico.
-//
-// Caso o aula.html antigo ainda não tenha
-// esse ID, procura automaticamente a seção
-// cujo título contém "Questões de revisão".
-//
-// Assim não precisamos alterar agora
-// todas as versões do template.
-// =====================================================
-
 function obterContainerQuestoesRevisao() {
 
     let container =
@@ -4677,12 +4103,8 @@ function obterContainerQuestoesRevisao() {
                     );
 
 
-                return (
-
-                    texto.includes(
-                        "questoes de revisao"
-                    )
-
+                return texto.includes(
+                    "questoes de revisao"
                 );
 
             }
@@ -4743,10 +4165,6 @@ function obterContainerQuestoesRevisao() {
 }
 
 
-// =====================================================
-// PREPARAR CLONE DA QUESTÃO
-// =====================================================
-
 function prepararCloneQuestaoRevisao(
     registro,
     numero
@@ -4758,13 +4176,6 @@ function prepararCloneQuestaoRevisao(
         );
 
 
-    // =================================
-    // NOVO ID PARA A REVISÃO
-    //
-    // Evita conflito caso no futuro
-    // aula original e revisão coexistam.
-    // =================================
-
     clone.dataset.questaoId =
 
         "revisao-" +
@@ -4775,10 +4186,6 @@ function prepararCloneQuestaoRevisao(
 
         registro.id;
 
-
-    // =================================
-    // REMOVER ESTADOS VISUAIS
-    // =================================
 
     clone.classList.remove(
 
@@ -4832,10 +4239,6 @@ function prepararCloneQuestaoRevisao(
         );
 
 
-    // =================================
-    // RENÚMERAR TÍTULO VISUAL
-    // =================================
-
     const titulo =
         clone.querySelector(
             "h3"
@@ -4855,10 +4258,6 @@ function prepararCloneQuestaoRevisao(
 
 }
 
-
-// =====================================================
-// CRIAR CONTROLES DOS EXERCÍCIOS
-// =====================================================
 
 function criarControlesQuestoesRevisao(
     container,
@@ -4941,10 +4340,6 @@ function criarControlesQuestoesRevisao(
 }
 
 
-// =====================================================
-// RENDERIZAR QUESTÕES
-// =====================================================
-
 function renderizarQuestoesRevisao(
     questoes
 ) {
@@ -4973,8 +4368,7 @@ function renderizarQuestoesRevisao(
         !Array.isArray(
             questoes
         ) ||
-        questoes.length ===
-            0
+        questoes.length === 0
     ) {
 
         container.innerHTML = `
@@ -5049,24 +4443,7 @@ function renderizarQuestoesRevisao(
 }
 
 
-// =====================================================
-// PREPARAR EXERCICIOS.JS PARA A REVISÃO
-// =====================================================
-
 function inicializarQuestoesInterativasRevisao() {
-
-    // =================================
-    // IDENTIDADE PARA O HISTÓRICO
-    //
-    // Mantemos disciplina e aula originais.
-    //
-    // Assim o desempenho da revisão
-    // reforça os dados daquele mesmo assunto.
-    //
-    // A URL continua diferente e permite
-    // distinguir a página de revisão
-    // pelo campo "pagina".
-    // =================================
 
     document.body.dataset.disciplina =
         revisaoAtual.disciplina;
@@ -5075,15 +4452,6 @@ function inicializarQuestoesInterativasRevisao() {
     document.body.dataset.aula =
         revisaoAtual.aula;
 
-
-    // =================================
-    // LIMPAR ESTADO GLOBAL DO
-    // exercicios.js
-    //
-    // Como a página inicialmente não
-    // tinha questões, agora precisamos
-    // garantir uma tentativa nova.
-    // =================================
 
     if (
         typeof limparRespostasExerciciosPSCPP ===
@@ -5094,10 +4462,6 @@ function inicializarQuestoesInterativasRevisao() {
 
     }
 
-
-    // =================================
-    // ATIVAR O MESMO MOTOR DAS AULAS
-    // =================================
 
     if (
         typeof inicializarExerciciosPSCPP ===
@@ -5119,1351 +4483,7 @@ function inicializarQuestoesInterativasRevisao() {
 
 
 // =====================================================
-// GERAR QUESTÕES DA REVISÃO
-// =====================================================
-
-function gerarQuestoesInterativasRevisao() {
-
-    const documento =
-        revisaoAtual
-            .documentoAulaOriginal;
-
-
-    const nucleos =
-        revisaoAtual
-            .nucleosSelecionados;
-
-
-    if (!documento) {
-
-        return;
-
-    }
-
-
-    const questoes =
-        selecionarQuestoesRevisao(
-
-            documento,
-
-            nucleos
-
-        );
-
-
-    renderizarQuestoesRevisao(
-        questoes
-    );
-
-
-    inicializarQuestoesInterativasRevisao();
-
-
-    console.log(
-
-        "REVISÃO v1.7 — questões selecionadas:",
-
-        questoes.map(
-            questao => ({
-
-                id:
-                    questao.id,
-
-                topico:
-                    questao.topico
-
-            })
-        )
-
-    );
-
-}
-
-
-// =====================================================
-// SOBRESCREVER GERAÇÃO PRINCIPAL
-//
-// Mantém:
-//
-// v1.4 → núcleos conceituais
-// v1.5 → pontos de atenção
-// v1.6 → termos técnicos
-//
-// Acrescenta:
-//
-// v1.7 → questões interativas
-// =====================================================
-
-function gerarNucleoRevisao(
-    documento
-) {
-
-    const topicos =
-        analisarTopicosAula(
-            documento
-        );
-
-
-    revisaoAtual
-        .topicosAnalisados =
-        topicos;
-
-
-    const nucleos =
-        selecionarNucleosPrincipais(
-            topicos
-        );
-
-
-    revisaoAtual
-        .nucleosSelecionados =
-        nucleos;
-
-
-    // =================================
-    // NÚCLEO CONCEITUAL
-    // =================================
-
-    renderizarNucleosConceituais(
-        nucleos
-    );
-
-
-    // =================================
-    // PONTOS DE ATENÇÃO
-    // =================================
-
-    gerarPontosAtencaoRevisao();
-
-
-    // =================================
-    // TERMOS TÉCNICOS
-    // =================================
-
-    gerarTermosTecnicosGeraisRevisao();
-
-
-    // =================================
-    // QUESTÕES INTERATIVAS
-    // =================================
-
-    gerarQuestoesInterativasRevisao();
-
-
-    console.log(
-        "REVISÃO PSCPP v1.7 carregada."
-    );
-
-}
-
-
-/* =====================================================
-   FIM EXTENSÃO v1.7
-===================================================== */
-/* =====================================================
-   EXTENSÃO v1.8
-   GABARITO COMENTADO AUTOMÁTICO
-
-   Bridge Trainer PSCPP
-
-   OBJETIVO:
-
-   - localizar o gabarito comentado da aula original;
-   - identificar cada comentário pelo número da questão;
-   - mostrar somente os comentários correspondentes
-     às questões selecionadas para a revisão;
-   - manter o botão Mostrar / Ocultar;
-   - não criar explicações novas;
-   - preservar o conteúdo da aula original.
-===================================================== */
-
-
-// =====================================================
-// ESTADO DAS QUESTÕES DA REVISÃO
-// =====================================================
-
-revisaoAtual.questoesSelecionadas =
-    [];
-
-
-// =====================================================
-// LOCALIZAR SEÇÃO DE GABARITO ORIGINAL
-// =====================================================
-
-function localizarSecaoGabaritoOriginal(
-    documento
-) {
-
-    if (!documento) {
-
-        return null;
-
-    }
-
-
-    const titulos =
-        Array.from(
-            documento.querySelectorAll(
-                "h2"
-            )
-        );
-
-
-    const tituloGabarito =
-        titulos.find(
-            titulo => {
-
-                const texto =
-                    normalizarTextoComparacao(
-                        titulo.textContent
-                    );
-
-
-                return (
-                    texto.includes(
-                        "gabarito comentado"
-                    )
-                );
-
-            }
-        );
-
-
-    if (!tituloGabarito) {
-
-        return null;
-
-    }
-
-
-    return tituloGabarito.closest(
-        "section"
-    );
-
-}
-
-
-// =====================================================
-// EXTRAIR NÚMERO DO GABARITO
-// =====================================================
-
-function obterNumeroQuestaoGabarito(
-    titulo
-) {
-
-    const texto =
-        limparTextoRevisao(
-            titulo
-        );
-
-
-    const resultado =
-        texto.match(
-            /quest[aã]o\s+(\d+)/i
-        );
-
-
-    if (!resultado) {
-
-        return null;
-
-    }
-
-
-    return Number(
-        resultado[1]
-    );
-
-}
-
-
-// =====================================================
-// EXTRAIR GABARITOS DA AULA
-// =====================================================
-
-function extrairGabaritosOriginais(
-    documento
-) {
-
-    const secao =
-        localizarSecaoGabaritoOriginal(
-            documento
-        );
-
-
-    if (!secao) {
-
-        return [];
-
-    }
-
-
-    const titulos =
-        Array.from(
-            secao.querySelectorAll(
-                "h3"
-            )
-        );
-
-
-    const gabaritos =
-        [];
-
-
-    titulos.forEach(
-        titulo => {
-
-            const numero =
-                obterNumeroQuestaoGabarito(
-                    titulo.textContent
-                );
-
-
-            if (!numero) {
-
-                return;
-
-            }
-
-
-            const elementos =
-                [];
-
-
-            let atual =
-                titulo.nextElementSibling;
-
-
-            while (atual) {
-
-                // Para no próximo gabarito.
-
-                if (
-                    atual.tagName === "H3" &&
-                    obterNumeroQuestaoGabarito(
-                        atual.textContent
-                    )
-                ) {
-
-                    break;
-
-                }
-
-
-                // HR costuma separar as questões,
-                // mas não encerra obrigatoriamente
-                // a leitura se houver outro conteúdo.
-
-                if (
-                    atual.tagName === "HR"
-                ) {
-
-                    const proximo =
-                        atual.nextElementSibling;
-
-
-                    if (
-                        proximo &&
-                        proximo.tagName === "H3" &&
-                        obterNumeroQuestaoGabarito(
-                            proximo.textContent
-                        )
-                    ) {
-
-                        break;
-
-                    }
-
-                }
-
-
-                elementos.push(
-                    atual.cloneNode(
-                        true
-                    )
-                );
-
-
-                atual =
-                    atual.nextElementSibling;
-
-            }
-
-
-            gabaritos.push({
-
-                numero:
-                    numero,
-
-                titulo:
-                    limparTextoRevisao(
-                        titulo.textContent
-                    ),
-
-                elementos:
-                    elementos
-
-            });
-
-        }
-    );
-
-
-    return gabaritos;
-
-}
-
-
-// =====================================================
-// RENDERIZAR GABARITO SELECIONADO
-// =====================================================
-
-function renderizarGabaritoRevisao(
-    questoesSelecionadas
-) {
-
-    const container =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (!container) {
-
-        return;
-
-    }
-
-
-    const documento =
-        revisaoAtual
-            .documentoAulaOriginal;
-
-
-    const gabaritos =
-        extrairGabaritosOriginais(
-            documento
-        );
-
-
-    if (
-        gabaritos.length === 0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                A aula original não possui
-                gabarito comentado identificável.
-            </p>
-
-        `;
-
-
-        return;
-
-    }
-
-
-    container.innerHTML =
-        "";
-
-
-    questoesSelecionadas.forEach(
-        (
-            questao,
-            indiceRevisao
-        ) => {
-
-            // O índice original começa em zero.
-            // O número da questão começa em um.
-
-            const numeroOriginal =
-                questao.indice + 1;
-
-
-            const gabarito =
-                gabaritos.find(
-                    item =>
-                        item.numero ===
-                        numeroOriginal
-                );
-
-
-            if (!gabarito) {
-
-                return;
-
-            }
-
-
-            const bloco =
-                document.createElement(
-                    "div"
-                );
-
-
-            bloco.className =
-                "gabarito-item-revisao";
-
-
-            const titulo =
-                document.createElement(
-                    "h3"
-                );
-
-
-            titulo.textContent =
-
-                "Questão " +
-
-                (indiceRevisao + 1) +
-
-                " — comentário";
-
-
-            bloco.appendChild(
-                titulo
-            );
-
-
-            gabarito.elementos
-                .forEach(
-                    elemento => {
-
-                        bloco.appendChild(
-                            elemento.cloneNode(
-                                true
-                            )
-                        );
-
-                    }
-                );
-
-
-            const separador =
-                document.createElement(
-                    "hr"
-                );
-
-
-            bloco.appendChild(
-                separador
-            );
-
-
-            container.appendChild(
-                bloco
-            );
-
-        }
-    );
-
-
-    if (
-        container.children.length ===
-        0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                Não foi possível relacionar
-                as questões selecionadas aos
-                comentários da aula original.
-            </p>
-
-        `;
-
-    }
-
-}
-
-
-// =====================================================
-// BOTÃO MOSTRAR / OCULTAR
-// =====================================================
-
-function prepararBotaoGabaritoRevisao() {
-
-    const botao =
-        document.getElementById(
-            "botao-gabarito-revisao"
-        );
-
-
-    const gabarito =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (
-        !botao ||
-        !gabarito
-    ) {
-
-        return;
-
-    }
-
-
-    if (
-        botao.dataset
-            .gabaritoPreparado ===
-        "true"
-    ) {
-
-        return;
-
-    }
-
-
-    botao.addEventListener(
-
-        "click",
-
-        function () {
-
-            const oculto =
-
-                gabarito.style.display ===
-                    "none" ||
-
-                window
-                    .getComputedStyle(
-                        gabarito
-                    )
-                    .display ===
-                    "none";
-
-
-            gabarito.style.display =
-
-                oculto
-                    ? "block"
-                    : "none";
-
-        }
-
-    );
-
-
-    botao.dataset
-        .gabaritoPreparado =
-        "true";
-
-}
-
-
-// =====================================================
-// GERAR GABARITO DA REVISÃO
-// =====================================================
-
-function gerarGabaritoComentadoRevisao() {
-
-    renderizarGabaritoRevisao(
-
-        revisaoAtual
-            .questoesSelecionadas
-
-    );
-
-
-    prepararBotaoGabaritoRevisao();
-
-
-    console.log(
-
-        "REVISÃO v1.8 — gabarito carregado.",
-
-        revisaoAtual
-            .questoesSelecionadas
-            .length,
-
-        "questões."
-
-    );
-
-}
-
-
-// =====================================================
-// SOBRESCREVER GERAÇÃO DAS QUESTÕES
-//
-// Mantemos toda a seleção da v1.7.
-//
-// Apenas guardamos quais questões foram
-// escolhidas para que a v1.8 possa localizar
-// seus comentários.
-// =====================================================
-
-function gerarQuestoesInterativasRevisao() {
-
-    const documento =
-        revisaoAtual
-            .documentoAulaOriginal;
-
-
-    const nucleos =
-        revisaoAtual
-            .nucleosSelecionados;
-
-
-    if (!documento) {
-
-        return;
-
-    }
-
-
-    const questoes =
-        selecionarQuestoesRevisao(
-
-            documento,
-
-            nucleos
-
-        );
-
-
-    revisaoAtual
-        .questoesSelecionadas =
-        questoes;
-
-
-    renderizarQuestoesRevisao(
-        questoes
-    );
-
-
-    inicializarQuestoesInterativasRevisao();
-
-
-    // =================================
-    // GABARITO COMENTADO
-    // =================================
-
-    gerarGabaritoComentadoRevisao();
-
-
-    console.log(
-
-        "REVISÃO v1.8 — questões + gabarito:",
-
-        questoes.map(
-            questao => ({
-
-                original:
-                    questao.indice + 1,
-
-                topico:
-                    questao.topico
-
-            })
-        )
-
-    );
-
-}
-
-
-/* =====================================================
-   FIM EXTENSÃO v1.8
-===================================================== */
-/* =====================================================
-   CORREÇÃO v1.8.1
-   GABARITO COMENTADO DA REVISÃO
-
-   Compatível com o padrão real das aulas:
-
-   <section ... hidden>
-       <h2>Gabarito comentado</h2>
-
-       <h3>Questão 1 — C</h3>
-       <p>Comentário...</p>
-
-       <h3>Questão 2 — D</h3>
-       <p>Comentário...</p>
-   </section>
-===================================================== */
-
-
-// =====================================================
-// LOCALIZAR GABARITO ORIGINAL
-// =====================================================
-
-function localizarSecaoGabaritoOriginal(
-    documento
-) {
-
-    if (!documento) {
-
-        return null;
-
-    }
-
-
-    // Primeiro procura qualquer section
-    // contendo um H2 de Gabarito Comentado.
-
-    const secoes =
-        Array.from(
-            documento.querySelectorAll(
-                "section"
-            )
-        );
-
-
-    return secoes.find(
-        secao => {
-
-            const titulo =
-                secao.querySelector(
-                    "h2"
-                );
-
-
-            if (!titulo) {
-
-                return false;
-
-            }
-
-
-            const texto =
-                normalizarTextoComparacao(
-                    titulo.textContent
-                );
-
-
-            return texto.includes(
-                "gabarito comentado"
-            );
-
-        }
-    ) || null;
-
-}
-
-
-// =====================================================
-// NÚMERO DA QUESTÃO
-// =====================================================
-
-function obterNumeroQuestaoGabarito(
-    texto
-) {
-
-    const limpo =
-        limparTextoRevisao(
-            texto
-        );
-
-
-    const correspondencia =
-        limpo.match(
-            /Quest[aã]o\s+(\d+)/i
-        );
-
-
-    if (!correspondencia) {
-
-        return null;
-
-    }
-
-
-    return Number(
-        correspondencia[1]
-    );
-
-}
-
-
-// =====================================================
-// EXTRAIR RESPOSTA CORRETA DO TÍTULO
-// =====================================================
-
-function obterRespostaTituloGabarito(
-    texto
-) {
-
-    const limpo =
-        limparTextoRevisao(
-            texto
-        );
-
-
-    const correspondencia =
-        limpo.match(
-            /Quest[aã]o\s+\d+\s*[—\-–]\s*([A-E])/i
-        );
-
-
-    return correspondencia
-        ? correspondencia[1].toUpperCase()
-        : "";
-
-}
-
-
-// =====================================================
-// EXTRAIR GABARITOS
-// =====================================================
-
-function extrairGabaritosOriginais(
-    documento
-) {
-
-    const secao =
-        localizarSecaoGabaritoOriginal(
-            documento
-        );
-
-
-    if (!secao) {
-
-        console.warn(
-            "Revisão: seção de gabarito original não localizada."
-        );
-
-
-        return [];
-
-    }
-
-
-    const titulos =
-        Array.from(
-            secao.querySelectorAll(
-                "h3"
-            )
-        );
-
-
-    const resultado =
-        [];
-
-
-    titulos.forEach(
-        titulo => {
-
-            const numero =
-                obterNumeroQuestaoGabarito(
-                    titulo.textContent
-                );
-
-
-            if (!numero) {
-
-                return;
-
-            }
-
-
-            const resposta =
-                obterRespostaTituloGabarito(
-                    titulo.textContent
-                );
-
-
-            const elementos =
-                [];
-
-
-            let atual =
-                titulo.nextElementSibling;
-
-
-            while (atual) {
-
-                // Encontrou a próxima questão:
-                // encerra o comentário atual.
-
-                if (
-                    atual.tagName === "H3" &&
-                    obterNumeroQuestaoGabarito(
-                        atual.textContent
-                    )
-                ) {
-
-                    break;
-
-                }
-
-
-                elementos.push(
-                    atual.cloneNode(
-                        true
-                    )
-                );
-
-
-                atual =
-                    atual.nextElementSibling;
-
-            }
-
-
-            resultado.push({
-
-                numero:
-                    numero,
-
-                resposta:
-                    resposta,
-
-                titulo:
-                    limparTextoRevisao(
-                        titulo.textContent
-                    ),
-
-                elementos:
-                    elementos
-
-            });
-
-        }
-    );
-
-
-    console.log(
-        "Revisão — gabaritos encontrados:",
-        resultado.length,
-        resultado
-    );
-
-
-    return resultado;
-
-}
-
-
-// =====================================================
-// RENDERIZAR GABARITO DA REVISÃO
-// =====================================================
-
-function renderizarGabaritoRevisao(
-    questoesSelecionadas
-) {
-
-    const container =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (!container) {
-
-        console.warn(
-            "Revisão: container #gabarito-revisao não existe."
-        );
-
-
-        return;
-
-    }
-
-
-    const documento =
-        revisaoAtual
-            .documentoAulaOriginal;
-
-
-    const gabaritos =
-        extrairGabaritosOriginais(
-            documento
-        );
-
-
-    container.innerHTML =
-        "";
-
-
-    if (
-        !Array.isArray(
-            questoesSelecionadas
-        ) ||
-        questoesSelecionadas.length === 0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                Nenhuma questão foi selecionada
-                para esta revisão.
-            </p>
-
-        `;
-
-
-        return;
-
-    }
-
-
-    let totalEncontrados =
-        0;
-
-
-    questoesSelecionadas.forEach(
-        (
-            questao,
-            indiceRevisao
-        ) => {
-
-            // A propriedade indice vem da posição
-            // original da questão na aula.
-
-            const numeroOriginal =
-                Number(
-                    questao.indice
-                ) + 1;
-
-
-            const gabarito =
-                gabaritos.find(
-                    item =>
-                        item.numero ===
-                        numeroOriginal
-                );
-
-
-            if (!gabarito) {
-
-                console.warn(
-                    "Gabarito não encontrado para questão original:",
-                    numeroOriginal
-                );
-
-
-                return;
-
-            }
-
-
-            totalEncontrados++;
-
-
-            const bloco =
-                document.createElement(
-                    "div"
-                );
-
-
-            bloco.className =
-                "widget gabarito-item-revisao";
-
-
-            // =================================
-            // TÍTULO
-            // =================================
-
-            const titulo =
-                document.createElement(
-                    "h3"
-                );
-
-
-            titulo.textContent =
-
-                "Questão " +
-
-                (indiceRevisao + 1) +
-
-                " — Alternativa " +
-
-                (
-                    gabarito.resposta ||
-                    "—"
-                );
-
-
-            bloco.appendChild(
-                titulo
-            );
-
-
-            // =================================
-            // COMENTÁRIO ORIGINAL
-            // =================================
-
-            gabarito.elementos.forEach(
-                elemento => {
-
-                    bloco.appendChild(
-                        elemento.cloneNode(
-                            true
-                        )
-                    );
-
-                }
-            );
-
-
-            // =================================
-            // REFERÊNCIA DA QUESTÃO ORIGINAL
-            // =================================
-
-            const referencia =
-                document.createElement(
-                    "p"
-                );
-
-
-            referencia.style.fontSize =
-                "0.85rem";
-
-
-            referencia.style.opacity =
-                "0.7";
-
-
-            referencia.textContent =
-
-                "Questão original " +
-
-                numeroOriginal +
-
-                " da aula.";
-
-
-            bloco.appendChild(
-                referencia
-            );
-
-
-            container.appendChild(
-                bloco
-            );
-
-        }
-    );
-
-
-    if (
-        totalEncontrados === 0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                Não foi possível relacionar
-                as questões da revisão aos
-                comentários da aula original.
-            </p>
-
-        `;
-
-    }
-
-}
-
-
-// =====================================================
-// MOSTRAR / OCULTAR
-// =====================================================
-
-function prepararBotaoGabaritoRevisao() {
-
-    const botao =
-        document.getElementById(
-            "botao-gabarito-revisao"
-        );
-
-
-    const container =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (
-        !botao ||
-        !container
-    ) {
-
-        return;
-
-    }
-
-
-    // Remove qualquer configuração anterior
-    // simplesmente substituindo onclick.
-
-    botao.onclick =
-        function () {
-
-            const estaOculto =
-
-                container.style.display ===
-                    "none" ||
-
-                container.style.display ===
-                    "";
-
-
-            container.style.display =
-
-                estaOculto
-                    ? "block"
-                    : "none";
-
-
-            botao.textContent =
-
-                estaOculto
-                    ? "Ocultar Gabarito"
-                    : "Mostrar Gabarito";
-
-        };
-
-
-    botao.textContent =
-        "Mostrar Gabarito";
-
-}
-
-
-// =====================================================
-// GERAR GABARITO
-// =====================================================
-
-function gerarGabaritoComentadoRevisao() {
-
-    renderizarGabaritoRevisao(
-
-        revisaoAtual
-            .questoesSelecionadas
-
-    );
-
-
-    prepararBotaoGabaritoRevisao();
-
-
-    console.log(
-        "REVISÃO v1.8.1 — gabarito preparado."
-    );
-
-}
-
-
-// =====================================================
-// FIM CORREÇÃO v1.8.1
-// =====================================================
-
-
-
-/* =====================================================
-   CORREÇÃO v1.8.2
-   EXTRAÇÃO ROBUSTA DO GABARITO COMENTADO
-===================================================== */
-
-
-// =====================================================
-// IDENTIFICAR TÍTULO DE QUESTÃO DE GABARITO
+// GABARITO COMENTADO
 // =====================================================
 
 function analisarTituloQuestaoGabarito(
@@ -6482,15 +4502,6 @@ function analisarTituloQuestaoGabarito(
 
     }
 
-
-    /*
-     * Aceita exemplos como:
-     *
-     * Questão 1 — C
-     * Questão 2 - D
-     * Questão 3 – B
-     * Questao 4 — A
-     */
 
     const resultado =
         limpo.match(
@@ -6523,10 +4534,6 @@ function analisarTituloQuestaoGabarito(
 }
 
 
-// =====================================================
-// LOCALIZAR A VERDADEIRA SEÇÃO DO GABARITO
-// =====================================================
-
 function localizarSecaoGabaritoOriginal(
     documento
 ) {
@@ -6537,549 +4544,6 @@ function localizarSecaoGabaritoOriginal(
 
     }
 
-
-    const secoes =
-        Array.from(
-            documento.querySelectorAll(
-                "section"
-            )
-        );
-
-
-    // =================================
-    // PRIORIDADE 1
-    //
-    // Procurar uma seção que realmente
-    // contenha títulos "Questão N".
-    // =================================
-
-    const secaoComQuestoes =
-        secoes.find(
-            secao => {
-
-                const titulos =
-                    Array.from(
-                        secao.querySelectorAll(
-                            "h3"
-                        )
-                    );
-
-
-                return titulos.some(
-                    titulo =>
-                        Boolean(
-                            analisarTituloQuestaoGabarito(
-                                titulo.textContent
-                            )
-                        )
-                );
-
-            }
-        );
-
-
-    if (secaoComQuestoes) {
-
-        return secaoComQuestoes;
-
-    }
-
-
-    // =================================
-    // PRIORIDADE 2
-    //
-    // Fallback pelo título
-    // "Gabarito comentado".
-    // =================================
-
-    return secoes.find(
-        secao => {
-
-            const h2 =
-                secao.querySelector(
-                    "h2"
-                );
-
-
-            if (!h2) {
-
-                return false;
-
-            }
-
-
-            return normalizarTextoComparacao(
-                h2.textContent
-            ).includes(
-                "gabarito comentado"
-            );
-
-        }
-    ) || null;
-
-}
-
-
-// =====================================================
-// EXTRAIR TODOS OS GABARITOS
-// =====================================================
-
-function extrairGabaritosOriginais(
-    documento
-) {
-
-    const secao =
-        localizarSecaoGabaritoOriginal(
-            documento
-        );
-
-
-    if (!secao) {
-
-        console.warn(
-            "Revisão: gabarito original não localizado."
-        );
-
-        return [];
-
-    }
-
-
-    const titulos =
-        Array.from(
-            secao.querySelectorAll(
-                "h3"
-            )
-        );
-
-
-    const resultado =
-        [];
-
-
-    titulos.forEach(
-        titulo => {
-
-            const dadosTitulo =
-                analisarTituloQuestaoGabarito(
-                    titulo.textContent
-                );
-
-
-            if (!dadosTitulo) {
-
-                return;
-
-            }
-
-
-            const elementos =
-                [];
-
-
-            let atual =
-                titulo.nextElementSibling;
-
-
-            // =================================
-            // CAPTURAR CONTEÚDO ATÉ
-            // A PRÓXIMA QUESTÃO
-            // =================================
-
-            while (atual) {
-
-                if (
-                    atual.tagName === "H3" &&
-                    analisarTituloQuestaoGabarito(
-                        atual.textContent
-                    )
-                ) {
-
-                    break;
-
-                }
-
-
-                /*
-                 * Evitar copiar elementos
-                 * que não fazem parte do comentário.
-                 */
-
-                if (
-                    atual.tagName !== "SCRIPT" &&
-                    atual.tagName !== "BUTTON"
-                ) {
-
-                    elementos.push(
-                        atual.cloneNode(
-                            true
-                        )
-                    );
-
-                }
-
-
-                atual =
-                    atual.nextElementSibling;
-
-            }
-
-
-            resultado.push({
-
-                numero:
-                    dadosTitulo.numero,
-
-                resposta:
-                    dadosTitulo.resposta,
-
-                elementos:
-                    elementos
-
-            });
-
-        }
-    );
-
-
-    console.log(
-        "REVISÃO v1.8.2 — comentários encontrados:",
-        resultado.length
-    );
-
-
-    return resultado;
-
-}
-
-
-// =====================================================
-// RENDERIZAR GABARITO DA REVISÃO
-// =====================================================
-
-function renderizarGabaritoRevisao(
-    questoesSelecionadas
-) {
-
-    const container =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (!container) {
-
-        return;
-
-    }
-
-
-    const gabaritos =
-        extrairGabaritosOriginais(
-
-            revisaoAtual
-                .documentoAulaOriginal
-
-        );
-
-
-    container.innerHTML =
-        "";
-
-
-    if (
-        gabaritos.length === 0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                Nenhum comentário de gabarito
-                pôde ser extraído da aula original.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-
-    let totalRelacionados =
-        0;
-
-
-    (
-        questoesSelecionadas || []
-    ).forEach(
-        (
-            questao,
-            indiceRevisao
-        ) => {
-
-            const numeroOriginal =
-                Number(
-                    questao.indice
-                ) + 1;
-
-
-            const gabarito =
-                gabaritos.find(
-                    item =>
-                        item.numero ===
-                        numeroOriginal
-                );
-
-
-            if (!gabarito) {
-
-                return;
-
-            }
-
-
-            totalRelacionados++;
-
-
-            const bloco =
-                document.createElement(
-                    "div"
-                );
-
-
-            bloco.className =
-                "widget gabarito-item-revisao";
-
-
-            // =================================
-            // TÍTULO
-            // =================================
-
-            const titulo =
-                document.createElement(
-                    "h3"
-                );
-
-
-            titulo.textContent =
-
-                "Questão " +
-
-                (indiceRevisao + 1) +
-
-                (
-                    gabarito.resposta
-                        ? " — " +
-                          gabarito.resposta
-                        : ""
-                );
-
-
-            bloco.appendChild(
-                titulo
-            );
-
-
-            // =================================
-            // COMENTÁRIO
-            // =================================
-
-            gabarito.elementos.forEach(
-                elemento => {
-
-                    bloco.appendChild(
-                        elemento.cloneNode(
-                            true
-                        )
-                    );
-
-                }
-            );
-
-
-            // =================================
-            // REFERÊNCIA
-            // =================================
-
-            const referencia =
-                document.createElement(
-                    "p"
-                );
-
-
-            referencia.style.fontSize =
-                "0.85rem";
-
-
-            referencia.style.opacity =
-                "0.7";
-
-
-            referencia.textContent =
-
-                "Correspondente à questão " +
-
-                numeroOriginal +
-
-                " da aula original.";
-
-
-            bloco.appendChild(
-                referencia
-            );
-
-
-            container.appendChild(
-                bloco
-            );
-
-        }
-    );
-
-
-    if (
-        totalRelacionados === 0
-    ) {
-
-        container.innerHTML = `
-
-            <p>
-                Os comentários foram encontrados,
-                mas não foi possível relacioná-los
-                às questões selecionadas.
-            </p>
-
-        `;
-
-    }
-
-}
-
-
-// =====================================================
-// BOTÃO DO GABARITO
-// =====================================================
-
-function prepararBotaoGabaritoRevisao() {
-
-    const botao =
-        document.getElementById(
-            "botao-gabarito-revisao"
-        );
-
-
-    const gabarito =
-        document.getElementById(
-            "gabarito-revisao"
-        );
-
-
-    if (
-        !botao ||
-        !gabarito
-    ) {
-
-        return;
-
-    }
-
-
-    gabarito.style.display =
-        "none";
-
-
-    botao.textContent =
-        "Mostrar Gabarito";
-
-
-    botao.onclick =
-        function () {
-
-            const abrir =
-                gabarito.style.display ===
-                "none";
-
-
-            gabarito.style.display =
-                abrir
-                    ? "block"
-                    : "none";
-
-
-            botao.textContent =
-                abrir
-                    ? "Ocultar Gabarito"
-                    : "Mostrar Gabarito";
-
-        };
-
-}
-
-
-// =====================================================
-// GERAR GABARITO
-// =====================================================
-
-function gerarGabaritoComentadoRevisao() {
-
-    renderizarGabaritoRevisao(
-
-        revisaoAtual
-            .questoesSelecionadas || []
-
-    );
-
-
-    prepararBotaoGabaritoRevisao();
-
-}
-
-
-
-/* =====================================================
-   FIM CORREÇÃO v1.8.2
-===================================================== */
-/* =====================================================
-   CORREÇÃO v1.8.3
-   LOCALIZAÇÃO CORRETA DO GABARITO
-
-   Problema corrigido:
-
-   A v1.8.2 podia identificar a própria seção
-   de questões como se fosse o gabarito,
-   porque ambas possuem títulos:
-
-   <h3>Questão N</h3>
-
-   Agora somente uma seção explicitamente
-   identificada como GABARITO pode ser usada.
-===================================================== */
-
-
-// =====================================================
-// LOCALIZAR SOMENTE A SEÇÃO REAL DO GABARITO
-// =====================================================
-
-function localizarSecaoGabaritoOriginal(
-    documento
-) {
-
-    if (!documento) {
-
-        return null;
-
-    }
-
-
-    // =================================
-    // PRIORIDADE 1
-    //
-    // ID contendo "gabarito"
-    //
-    // Exemplo:
-    //
-    // id="gabarito-controlabilidade"
-    // =================================
 
     const porId =
         Array.from(
@@ -7110,13 +4574,6 @@ function localizarSecaoGabaritoOriginal(
 
     }
 
-
-    // =================================
-    // PRIORIDADE 2
-    //
-    // Section cujo H2 seja
-    // "Gabarito comentado"
-    // =================================
 
     const secoes =
         Array.from(
@@ -7174,38 +4631,644 @@ function localizarSecaoGabaritoOriginal(
 }
 
 
-/* =====================================================
-   FIM CORREÇÃO v1.8.3
-===================================================== */
-/* =====================================================
-   EXTENSÃO v1.9
-   CONCLUSÃO E AGENDAMENTO DA REVISÃO
+function extrairGabaritosOriginais(
+    documento
+) {
 
-   Bridge Trainer PSCPP
+    const secao =
+        localizarSecaoGabaritoOriginal(
+            documento
+        );
 
-   Integração direta com:
-   progresso.js v4.2
 
-   Funções utilizadas:
+    if (!secao) {
 
-   - obterDadosRevisaoAula()
-   - marcarAulaRevisadaHoje()
-   - formatarDataRevisao()
+        return [];
 
-   A revisão NÃO altera o progresso da aula.
+    }
 
-   Ela apenas:
 
-   - registra a data realizada;
-   - atualiza última revisão;
-   - calcula próxima revisão;
-   - avança o ciclo 7 / 30 / 90 dias;
-   - impede registro duplicado no mesmo dia.
-===================================================== */
+    const titulos =
+        Array.from(
+            secao.querySelectorAll(
+                "h3"
+            )
+        );
+
+
+    const resultado =
+        [];
+
+
+    titulos.forEach(
+        titulo => {
+
+            const dadosTitulo =
+                analisarTituloQuestaoGabarito(
+                    titulo.textContent
+                );
+
+
+            if (!dadosTitulo) {
+
+                return;
+
+            }
+
+
+            const elementos =
+                [];
+
+
+            let atual =
+                titulo.nextElementSibling;
+
+
+            while (atual) {
+
+                if (
+                    atual.tagName === "H3" &&
+                    analisarTituloQuestaoGabarito(
+                        atual.textContent
+                    )
+                ) {
+
+                    break;
+
+                }
+
+
+                if (
+                    atual.tagName !== "SCRIPT" &&
+                    atual.tagName !== "BUTTON"
+                ) {
+
+                    elementos.push(
+                        atual.cloneNode(
+                            true
+                        )
+                    );
+
+                }
+
+
+                atual =
+                    atual.nextElementSibling;
+
+            }
+
+
+            resultado.push({
+
+                numero:
+                    dadosTitulo.numero,
+
+                resposta:
+                    dadosTitulo.resposta,
+
+                elementos:
+                    elementos
+
+            });
+
+        }
+    );
+
+
+    return resultado;
+
+}
+
+
+function renderizarGabaritoRevisao(
+    questoesSelecionadas
+) {
+
+    const container =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    const gabaritos =
+        extrairGabaritosOriginais(
+
+            revisaoAtual
+                .documentoAulaOriginal
+
+        );
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        gabaritos.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Nenhum comentário de gabarito
+                pôde ser extraído da aula original.
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    let totalRelacionados =
+        0;
+
+
+    (
+        questoesSelecionadas || []
+    ).forEach(
+        (
+            questao,
+            indiceRevisao
+        ) => {
+
+            const numeroOriginal =
+                Number(
+                    questao.indice
+                ) + 1;
+
+
+            const gabarito =
+                gabaritos.find(
+                    item =>
+                        item.numero ===
+                        numeroOriginal
+                );
+
+
+            if (!gabarito) {
+
+                return;
+
+            }
+
+
+            totalRelacionados++;
+
+
+            const bloco =
+                document.createElement(
+                    "div"
+                );
+
+
+            bloco.className =
+                "widget gabarito-item-revisao";
+
+
+            const titulo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titulo.textContent =
+
+                "Questão " +
+
+                (indiceRevisao + 1) +
+
+                (
+                    gabarito.resposta
+                        ? " — " +
+                          gabarito.resposta
+                        : ""
+                );
+
+
+            bloco.appendChild(
+                titulo
+            );
+
+
+            gabarito.elementos.forEach(
+                elemento => {
+
+                    bloco.appendChild(
+                        elemento.cloneNode(
+                            true
+                        )
+                    );
+
+                }
+            );
+
+
+            const referencia =
+                document.createElement(
+                    "p"
+                );
+
+
+            referencia.style.fontSize =
+                "0.85rem";
+
+
+            referencia.style.opacity =
+                "0.7";
+
+
+            referencia.textContent =
+
+                "Correspondente à questão " +
+
+                numeroOriginal +
+
+                " da aula original.";
+
+
+            bloco.appendChild(
+                referencia
+            );
+
+
+            container.appendChild(
+                bloco
+            );
+
+        }
+    );
+
+
+    if (
+        totalRelacionados === 0
+    ) {
+
+        container.innerHTML = `
+
+            <p>
+                Os comentários foram encontrados,
+                mas não foi possível relacioná-los
+                às questões selecionadas.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+function prepararBotaoGabaritoRevisao() {
+
+    const botao =
+        document.getElementById(
+            "botao-gabarito-revisao"
+        );
+
+
+    const gabarito =
+        document.getElementById(
+            "gabarito-revisao"
+        );
+
+
+    if (
+        !botao ||
+        !gabarito
+    ) {
+
+        return;
+
+    }
+
+
+    gabarito.style.display =
+        "none";
+
+
+    botao.textContent =
+        "Mostrar Gabarito";
+
+
+    botao.onclick =
+        function () {
+
+            const abrir =
+                gabarito.style.display ===
+                "none";
+
+
+            gabarito.style.display =
+                abrir
+                    ? "block"
+                    : "none";
+
+
+            botao.textContent =
+                abrir
+                    ? "Ocultar Gabarito"
+                    : "Mostrar Gabarito";
+
+        };
+
+}
+
+
+function gerarGabaritoComentadoRevisao() {
+
+    renderizarGabaritoRevisao(
+
+        revisaoAtual
+            .questoesSelecionadas || []
+
+    );
+
+
+    prepararBotaoGabaritoRevisao();
+
+}
 
 
 // =====================================================
-// GARANTIR PROGRESSO CARREGADO
+// GERAR QUESTÕES DA REVISÃO
+// =====================================================
+
+function gerarQuestoesInterativasRevisao() {
+
+    const documento =
+        revisaoAtual
+            .documentoAulaOriginal;
+
+
+    const nucleos =
+        revisaoAtual
+            .nucleosSelecionados;
+
+
+    if (!documento) {
+
+        return;
+
+    }
+
+
+    const questoes =
+        selecionarQuestoesRevisao(
+
+            documento,
+
+            nucleos
+
+        );
+
+
+    revisaoAtual
+        .questoesSelecionadas =
+        questoes;
+
+
+    renderizarQuestoesRevisao(
+        questoes
+    );
+
+
+    inicializarQuestoesInterativasRevisao();
+
+
+    gerarGabaritoComentadoRevisao();
+
+}
+
+
+// =====================================================
+// GERAR NÚCLEO COMPLETO
+// =====================================================
+
+function gerarNucleoRevisao(
+    documento
+) {
+
+    const topicos =
+        analisarTopicosAula(
+            documento
+        );
+
+
+    revisaoAtual
+        .topicosAnalisados =
+        topicos;
+
+
+    const nucleos =
+        selecionarNucleosPrincipais(
+            topicos
+        );
+
+
+    revisaoAtual
+        .nucleosSelecionados =
+        nucleos;
+
+
+    renderizarNucleosConceituais(
+        nucleos
+    );
+
+
+    gerarPontosAtencaoRevisao();
+
+
+    gerarTermosTecnicosGeraisRevisao();
+
+
+    gerarQuestoesInterativasRevisao();
+
+
+    console.log(
+
+        "REVISÃO PSCPP — revisão gerada:",
+
+        {
+
+            topicos:
+                topicos.length,
+
+            nucleos:
+                nucleos.length,
+
+            questoes:
+                revisaoAtual
+                    .questoesSelecionadas
+                    .length
+
+        }
+
+    );
+
+}
+
+
+// =====================================================
+// PAINEL DE FOCO
+// =====================================================
+
+function mostrarAulaOriginalCarregada(
+    resumo
+) {
+
+    atualizarHTMLRevisao(
+
+        "painel-foco-revisao",
+
+        `
+
+        <p>
+            <strong>
+                Aula original localizada.
+            </strong>
+        </p>
+
+        <p>
+            A revisão abaixo foi construída
+            automaticamente a partir da
+            estrutura técnica da aula.
+        </p>
+
+        <p>
+            <strong>
+                ${resumo.topicos}
+            </strong>
+            tópicos analisados,
+            com conceitos, fórmulas,
+            interpretação, aplicações,
+            pontos de atenção e terminologia.
+        </p>
+
+        `
+
+    );
+
+}
+
+
+// =====================================================
+// PREPARAR AULA
+// =====================================================
+
+async function prepararAulaOriginal() {
+
+    try {
+
+        const catalogo =
+            await carregarCatalogoDisciplinasRevisao();
+
+
+        if (!catalogo) {
+
+            throw new Error(
+                "O catálogo de disciplinas não pôde ser carregado."
+            );
+
+        }
+
+
+        const html =
+            await carregarAulaOriginal();
+
+
+        const documento =
+            criarDocumentoAulaOriginal(
+                html
+            );
+
+
+        if (
+            !validarDocumentoAulaOriginal(
+                documento
+            )
+        ) {
+
+            throw new Error(
+                "A aula original possui estrutura inválida."
+            );
+
+        }
+
+
+        revisaoAtual
+            .documentoAulaOriginal =
+            documento;
+
+
+        const resumo =
+            obterResumoEstruturaAula(
+                documento
+            );
+
+
+        mostrarAulaOriginalCarregada(
+            resumo
+        );
+
+
+        gerarNucleoRevisao(
+            documento
+        );
+
+
+        return true;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro na revisão:",
+            erro
+        );
+
+
+        atualizarHTMLRevisao(
+
+            "painel-foco-revisao",
+
+            `
+
+            <p>
+                <strong>
+                    ⚠ Erro ao preparar revisão.
+                </strong>
+            </p>
+
+            <p>
+                ${escaparHTMLRevisao(
+                    erro.message
+                )}
+            </p>
+
+            `
+
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+// =====================================================
+// CONTROLE DE REVISÃO 7 / 30 / 90
 // =====================================================
 
 async function garantirProgressoCarregadoRevisao() {
@@ -7245,10 +5308,6 @@ async function garantirProgressoCarregadoRevisao() {
 
 }
 
-
-// =====================================================
-// VERIFICAR SE DATA É HOJE
-// =====================================================
 
 function revisaoFoiRegistradaHoje(
     dataISO
@@ -7298,10 +5357,6 @@ function revisaoFoiRegistradaHoje(
 }
 
 
-// =====================================================
-// FORMATAR DATA DA REVISÃO
-// =====================================================
-
 function formatarDataPainelRevisao(
     data
 ) {
@@ -7348,10 +5403,6 @@ function formatarDataPainelRevisao(
 
 }
 
-
-// =====================================================
-// ATUALIZAR SITUAÇÃO DA REVISÃO
-// =====================================================
 
 async function atualizarSituacaoRevisaoAutomatica() {
 
@@ -7432,10 +5483,6 @@ async function atualizarSituacaoRevisaoAutomatica() {
 }
 
 
-// =====================================================
-// ATUALIZAR BOTÃO
-// =====================================================
-
 function atualizarEstadoBotaoConclusaoRevisao(
     dados
 ) {
@@ -7482,10 +5529,6 @@ function atualizarEstadoBotaoConclusaoRevisao(
 
 }
 
-
-// =====================================================
-// REGISTRAR REVISÃO
-// =====================================================
 
 async function concluirRevisaoAutomatica() {
 
@@ -7543,10 +5586,6 @@ async function concluirRevisaoAutomatica() {
     }
 
 
-    // =================================
-    // EVITAR DUPLICAÇÃO NO MESMO DIA
-    // =================================
-
     const dadosAntes =
         obterDadosRevisaoAula(
 
@@ -7586,11 +5625,6 @@ async function concluirRevisaoAutomatica() {
     }
 
 
-    // =================================
-    // USAR MOTOR OFICIAL
-    // progresso.js v4.2
-    // =================================
-
     const resultado =
         marcarAulaRevisadaHoje(
 
@@ -7628,10 +5662,6 @@ async function concluirRevisaoAutomatica() {
     }
 
 
-    // =================================
-    // ATUALIZAR PAINEL
-    // =================================
-
     atualizarTextoRevisao(
 
         "revisao-ultima-data",
@@ -7668,7 +5698,7 @@ async function concluirRevisaoAutomatica() {
 
     console.log(
 
-        "REVISÃO v1.9 — revisão registrada:",
+        "REVISÃO — revisão registrada:",
 
         resultado
 
@@ -7676,10 +5706,6 @@ async function concluirRevisaoAutomatica() {
 
 }
 
-
-// =====================================================
-// PREPARAR BOTÃO
-// =====================================================
 
 function prepararBotaoConclusaoRevisao() {
 
@@ -7723,10 +5749,6 @@ function prepararBotaoConclusaoRevisao() {
 }
 
 
-// =====================================================
-// INICIAR CONTROLE DE REVISÃO
-// =====================================================
-
 async function inicializarControleRevisaoAutomatica() {
 
     prepararBotaoConclusaoRevisao();
@@ -7734,32 +5756,62 @@ async function inicializarControleRevisaoAutomatica() {
 
     await atualizarSituacaoRevisaoAutomatica();
 
+}
 
-    console.log(
-        "REVISÃO PSCPP v1.9 — controle de revisão ativo."
-    );
+
+// =====================================================
+// INICIALIZAR AULA DE REVISÃO
+// =====================================================
+
+async function inicializarAulaRevisao() {
+
+    const parametros =
+        obterParametrosRevisao();
+
+
+    if (
+        !parametros.disciplina ||
+        !parametros.aula
+    ) {
+
+        mostrarErroRevisao(
+            "Disciplina ou aula não informada na URL."
+        );
+
+
+        return;
+
+    }
+
+
+    revisaoAtual.disciplina =
+        parametros.disciplina;
+
+
+    revisaoAtual.aula =
+        parametros.aula;
+
+
+    preencherIdentidadeRevisao();
+
+
+    await prepararAulaOriginal();
 
 }
 
 
 // =====================================================
-// INICIALIZAÇÃO
+// CARREGAMENTO
 // =====================================================
 
 document.addEventListener(
 
     "DOMContentLoaded",
 
-    function () {
+    async function () {
 
-        /*
-         * revisoes.js já identificará disciplina
-         * e aula no início do carregamento.
-         *
-         * Pequeno atraso apenas garante que
-         * progresso.js tenha finalizado
-         * sua inicialização assíncrona.
-         */
+        await inicializarAulaRevisao();
+
 
         window.setTimeout(
 
@@ -7774,6 +5826,15 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   FIM EXTENSÃO v1.9
-===================================================== */
+// =====================================================
+// DEBUG
+// =====================================================
+
+console.log(
+    "SISTEMA DE REVISÃO PSCPP CARREGADO"
+);
+
+
+// =====================================================
+// FIM
+// =====================================================
