@@ -1,6 +1,6 @@
 // =====================================
 // GUIA DE ESTUDOS PSCPP
-// PAINEL DE CONTROLE INTELIGENTE v5.0
+// PAINEL DE CONTROLE INTELIGENTE v5.1
 // Bridge Trainer PSCPP
 //
 // Integra:
@@ -9,6 +9,7 @@
 // - banco-conteudo.js
 // - configuracao-estudo.js
 // - motor-planejamento.js
+// - disciplinas.json
 //
 // RESPONSABILIDADES:
 //
@@ -20,10 +21,12 @@
 //    para determinar o Próximo Foco.
 // 6. Gerar automaticamente os cards do
 //    conteúdo programático.
+// 7. Resolver caminhos físicos das aulas
+//    através de disciplinas.json.
 //
 // IMPORTANTE:
 //
-// O Guia NÃO possui mais motor próprio
+// O Guia NÃO possui motor próprio
 // de recomendação.
 //
 // A decisão estratégica vem de:
@@ -32,17 +35,27 @@
 //
 // do motor-planejamento.js.
 //
+// Os IDs lógicos vêm do banco de conteúdo
+// e do motor.
+//
+// Os caminhos físicos vêm de:
+//
+// disciplinas.json
+//
 // Assim:
 //
 // Guia de Estudos
 // Planejamento
 //
-// passam a apresentar a mesma decisão.
+// passam a trabalhar com os mesmos IDs,
+// sem pressupor que:
+//
+// ID lógico = nome físico do arquivo.
 // =====================================
 
 
 console.log(
-    "APP GUIA PSCPP v5.0 CARREGADO"
+    "APP GUIA PSCPP v5.1 CARREGADO"
 );
 
 
@@ -66,6 +79,21 @@ let horasConcluidas = 0;
 let pesoTotal = 0;
 
 let pesoConcluido = 0;
+
+
+// =====================================
+// CATÁLOGO FÍSICO DAS DISCIPLINAS
+// =====================================
+//
+// Fonte única para:
+//
+// - pasta física da disciplina;
+// - arquivo físico da aula.
+//
+// Os IDs lógicos continuam vindo do
+// banco-conteudo.js e do motor.
+
+let catalogoDisciplinasGuia = null;
 
 
 // =====================================
@@ -318,11 +346,8 @@ function processarConteudo() {
                 // HORAS EQUIVALENTES CONCLUÍDAS
                 // =================================
                 //
-                // Antes só contávamos uma aula
-                // quando chegava a 100%.
-                //
-                // Agora uma aula 50% concluída
-                // também contribui proporcionalmente.
+                // Uma aula parcialmente concluída
+                // contribui proporcionalmente.
 
                 horasConcluidas +=
 
@@ -428,6 +453,246 @@ function atualizarElemento(
 }
 
 
+// =====================================
+// CARREGAR CATÁLOGO DE DISCIPLINAS
+// =====================================
+
+async function carregarCatalogoDisciplinasGuia() {
+
+    if (
+        catalogoDisciplinasGuia
+    ) {
+
+        return catalogoDisciplinasGuia;
+
+    }
+
+
+    try {
+
+        const resposta =
+            await fetch(
+                "../data/disciplinas.json"
+            );
+
+
+        if (
+            !resposta.ok
+        ) {
+
+            throw new Error(
+                "Não foi possível carregar disciplinas.json"
+            );
+
+        }
+
+
+        catalogoDisciplinasGuia =
+            await resposta.json();
+
+
+        return catalogoDisciplinasGuia;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar catálogo de disciplinas:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+// =====================================
+// OBTER DISCIPLINA NO CATÁLOGO
+// =====================================
+
+function obterDisciplinaCatalogoGuia(
+    idDisciplina
+) {
+
+    if (
+        !catalogoDisciplinasGuia ||
+        !Array.isArray(
+            catalogoDisciplinasGuia.disciplinas
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+        catalogoDisciplinasGuia
+            .disciplinas
+            .find(
+
+                disciplina =>
+                    disciplina.id ===
+                    idDisciplina
+
+            ) ||
+        null
+    );
+
+}
+
+
+// =====================================
+// RESOLVER CAMINHO FÍSICO DA DISCIPLINA
+// =====================================
+
+function resolverCaminhoDisciplinaGuia(
+    idDisciplina
+) {
+
+    const disciplina =
+        obterDisciplinaCatalogoGuia(
+            idDisciplina
+        );
+
+
+    if (!disciplina) {
+
+        console.error(
+            "Disciplina não encontrada em disciplinas.json:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !disciplina.pasta
+    ) {
+
+        console.error(
+            "Pasta da disciplina não definida em disciplinas.json:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    const paginaInicial =
+        disciplina.paginaInicial ||
+        "index.html";
+
+
+    return (
+
+        "../disciplinas/" +
+        disciplina.pasta +
+        "/" +
+        paginaInicial
+
+    );
+
+}
+
+
+// =====================================
+// RESOLVER CAMINHO FÍSICO DA AULA
+// =====================================
+
+function resolverCaminhoAulaGuia(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        obterDisciplinaCatalogoGuia(
+            idDisciplina
+        );
+
+
+    if (!disciplina) {
+
+        console.error(
+            "Disciplina não encontrada em disciplinas.json:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    const modulos =
+        Array.isArray(
+            disciplina.modulos
+        )
+            ? disciplina.modulos
+            : [];
+
+
+    const modulo =
+        modulos.find(
+
+            item =>
+                item.id ===
+                idAula
+
+        );
+
+
+    if (!modulo) {
+
+        console.error(
+            "Aula não encontrada em disciplinas.json:",
+            idDisciplina,
+            idAula
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !disciplina.pasta ||
+        !modulo.arquivo
+    ) {
+
+        console.error(
+            "Pasta ou arquivo físico não definido:",
+            idDisciplina,
+            idAula
+        );
+
+
+        return null;
+
+    }
+
+
+    return (
+
+        "../disciplinas/" +
+        disciplina.pasta +
+        "/" +
+        modulo.arquivo
+
+    );
+
+}
+
+
 // =====================================================
 // PRÓXIMO FOCO
 // =====================================================
@@ -437,9 +702,7 @@ function atualizarElemento(
 // OBTER PRÓXIMO FOCO DO MOTOR
 // =====================================
 //
-// Esta é a mudança principal da v5.0.
-//
-// O Guia NÃO calcula mais prioridade.
+// O Guia NÃO calcula prioridade.
 //
 // Ele consulta:
 //
@@ -686,32 +949,39 @@ function criarPainelInteligente() {
         // LINK PARA A AULA
         // =================================
 
-        const link =
-            document.createElement(
-                "a"
+        const caminhoAula =
+            resolverCaminhoAulaGuia(
+
+                proximo.idDisciplina,
+
+                proximo.idAssunto
+
             );
 
 
-        link.href =
+        if (
+            caminhoAula
+        ) {
 
-            "../disciplinas/" +
-
-            proximo.idDisciplina +
-
-            "/" +
-
-            proximo.idAssunto +
-
-            ".html";
+            const link =
+                document.createElement(
+                    "a"
+                );
 
 
-        link.textContent =
-            "Ir para a aula";
+            link.href =
+                caminhoAula;
 
 
-        focoBox.appendChild(
-            link
-        );
+            link.textContent =
+                "Ir para a aula";
+
+
+            focoBox.appendChild(
+                link
+            );
+
+        }
 
     }
     else {
@@ -894,28 +1164,35 @@ function criarCardDisciplinaGuia(
     // LINK DA DISCIPLINA
     // =================================
 
-    const link =
-        document.createElement(
-            "a"
+    const caminhoDisciplina =
+        resolverCaminhoDisciplinaGuia(
+            idDisciplina
         );
 
 
-    link.href =
+    if (
+        caminhoDisciplina
+    ) {
 
-        "../disciplinas/" +
-
-        idDisciplina +
-
-        "/index.html";
-
-
-    link.textContent =
-        "Acessar disciplina";
+        const link =
+            document.createElement(
+                "a"
+            );
 
 
-    card.appendChild(
-        link
-    );
+        link.href =
+            caminhoDisciplina;
+
+
+        link.textContent =
+            "Acessar disciplina";
+
+
+        card.appendChild(
+            link
+        );
+
+    }
 
 
     return card;
@@ -1068,6 +1345,9 @@ async function inicializarGuiaDeEstudos() {
     await carregarDadosProgresso();
 
 
+    await carregarCatalogoDisciplinasGuia();
+
+
     atualizarGuiaCompleto();
 
 }
@@ -1121,5 +1401,5 @@ document.addEventListener(
 
 
 // =====================================
-// FIM APP-GUIA v5.0
+// FIM APP-GUIA v5.1
 // =====================================
