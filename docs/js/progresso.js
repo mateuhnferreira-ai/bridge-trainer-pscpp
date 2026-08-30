@@ -578,13 +578,20 @@ function prepararEstruturaProgresso() {
 // MIGRAÇÕES DE IDENTIFICADORES ANTIGOS
 // =====================================
 //
-// Preserva progresso salvo antes da
+// Preserva o progresso salvo antes da
 // padronização definitiva dos IDs.
 //
-// manobrabilidade
+// Migrações atuais:
+//
+// manobrabilidade:
 // resistencia-navio
 //        ↓
 // resistencia
+//
+// navegacao:
+// navegacao-aguas-restritas
+//        ↓
+// aguas-restritas
 // =====================================
 
 function migrarIdentificadoresAntigosProgresso() {
@@ -603,49 +610,309 @@ function migrarIdentificadoresAntigosProgresso() {
         false;
 
 
-    const disciplina =
-        dadosProgresso
-            .disciplinas[
-                "manobrabilidade"
+    // =================================
+    // FUNÇÃO INTERNA DE MIGRAÇÃO
+    // =================================
+
+    function migrarAula(
+        idDisciplina,
+        idAntigo,
+        idNovo
+    ) {
+
+        const disciplina =
+            dadosProgresso
+                .disciplinas[
+                    idDisciplina
+                ];
+
+
+        if (
+            !disciplina ||
+            !disciplina.aulas
+        ) {
+
+            return false;
+
+        }
+
+
+        const aulaAntiga =
+            disciplina.aulas[
+                idAntigo
             ];
 
 
-    if (
-        !disciplina ||
-        !disciplina.aulas
-    ) {
+        if (!aulaAntiga) {
 
-        return false;
+            return false;
 
-    }
+        }
 
 
-    const idAntigo =
-        "resistencia-navio";
+        const aulaNova =
+            disciplina.aulas[
+                idNovo
+            ];
 
 
-    const idNovo =
-        "resistencia";
+        // =============================
+        // DESTINO NÃO EXISTE
+        // =============================
+
+        if (!aulaNova) {
+
+            disciplina.aulas[
+                idNovo
+            ] =
+                aulaAntiga;
 
 
-    const aulaAntiga =
-        disciplina.aulas[
+            delete disciplina.aulas[
+                idAntigo
+            ];
+
+
+            return true;
+
+        }
+
+
+        // =============================
+        // DESTINO JÁ EXISTE
+        // =============================
+
+        if (!aulaNova.topicos) {
+
+            aulaNova.topicos = {};
+
+        }
+
+
+        const topicosAntigos =
+            aulaAntiga.topicos || {};
+
+
+        Object.entries(
+            topicosAntigos
+        ).forEach(
+
+            (
+                [
+                    idTopico,
+                    dadosTopico
+                ]
+            ) => {
+
+                const atual =
+                    aulaNova.topicos[
+                        idTopico
+                    ];
+
+
+                if (!atual) {
+
+                    aulaNova.topicos[
+                        idTopico
+                    ] =
+                        dadosTopico;
+
+
+                    return;
+
+                }
+
+
+                if (
+                    dadosTopico.concluido ===
+                    true
+                ) {
+
+                    atual.concluido =
+                        true;
+
+                }
+
+
+                if (
+                    !atual.dataConclusao &&
+                    dadosTopico.dataConclusao
+                ) {
+
+                    atual.dataConclusao =
+                        dadosTopico
+                            .dataConclusao;
+
+                }
+
+            }
+
+        );
+
+
+        aulaNova.totalTopicos =
+            Math.max(
+
+                aulaNova.totalTopicos ||
+                    0,
+
+                aulaAntiga.totalTopicos ||
+                    0
+
+            );
+
+
+        if (
+            aulaAntiga.concluida ===
+            true
+        ) {
+
+            aulaNova.concluida =
+                true;
+
+        }
+
+
+        aulaNova.progresso =
+            Math.max(
+
+                aulaNova.progresso ||
+                    0,
+
+                aulaAntiga.progresso ||
+                    0
+
+            );
+
+
+        if (
+            !aulaNova.dataConclusao &&
+            aulaAntiga.dataConclusao
+        ) {
+
+            aulaNova.dataConclusao =
+                aulaAntiga
+                    .dataConclusao;
+
+        }
+
+
+        // =============================
+        // PRESERVAR REVISÕES
+        // =============================
+
+        if (
+            !aulaNova.revisoes &&
+            aulaAntiga.revisoes
+        ) {
+
+            aulaNova.revisoes =
+                aulaAntiga.revisoes;
+
+        }
+
+
+        delete disciplina.aulas[
             idAntigo
         ];
 
 
-    if (!aulaAntiga) {
-
-        return false;
+        return true;
 
     }
 
 
-    const aulaNova =
-        disciplina.aulas[
-            idNovo
-        ];
+    // =================================
+    // MANOBRABILIDADE
+    // =================================
 
+    const migrouResistencia =
+        migrarAula(
+
+            "manobrabilidade",
+
+            "resistencia-navio",
+
+            "resistencia"
+
+        );
+
+
+    if (migrouResistencia) {
+
+        houveMigracao =
+            true;
+
+
+        recalcularProgressoAula(
+
+            "manobrabilidade",
+
+            "resistencia"
+
+        );
+
+
+        recalcularProgressoDisciplina(
+            "manobrabilidade"
+        );
+
+
+        console.log(
+            "Migração concluída: " +
+            "resistencia-navio → resistencia"
+        );
+
+    }
+
+
+    // =================================
+    // NAVEGAÇÃO
+    // =================================
+
+    const migrouAguasRestritas =
+        migrarAula(
+
+            "navegacao",
+
+            "navegacao-aguas-restritas",
+
+            "aguas-restritas"
+
+        );
+
+
+    if (migrouAguasRestritas) {
+
+        houveMigracao =
+            true;
+
+
+        recalcularProgressoAula(
+
+            "navegacao",
+
+            "aguas-restritas"
+
+        );
+
+
+        recalcularProgressoDisciplina(
+            "navegacao"
+        );
+
+
+        console.log(
+            "Migração concluída: " +
+            "navegacao-aguas-restritas → aguas-restritas"
+        );
+
+    }
+
+
+    return houveMigracao;
+
+}
 
     // =================================
     // DESTINO NÃO EXISTE
