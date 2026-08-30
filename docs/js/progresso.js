@@ -914,27 +914,6 @@ function migrarIdentificadoresAntigosProgresso() {
 
 }
 
-    // =================================
-    // DESTINO NÃO EXISTE
-    // =================================
-
-    if (!aulaNova) {
-
-        disciplina.aulas[
-            idNovo
-        ] =
-            aulaAntiga;
-
-
-        delete disciplina.aulas[
-            idAntigo
-        ];
-
-
-        houveMigracao =
-            true;
-
-    }
 
 
     // =================================
