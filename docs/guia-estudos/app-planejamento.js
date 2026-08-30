@@ -1,5 +1,5 @@
 // =====================================
-// APLICATIVO DE PLANEJAMENTO PSCPP v3.1
+// APLICATIVO DE PLANEJAMENTO PSCPP v3.2
 // Bridge Trainer PSCPP
 //
 // Integra:
@@ -7,9 +7,10 @@
 // - progresso.js
 // - banco-conteudo.js
 // - configuracao-estudo.js
-// - calculo-planejamento.js v2.1
-// - motor-planejamento.js v3.3
-// - histórico analítico do Pomodoro v3.1
+// - calculo-planejamento.js
+// - motor-planejamento.js
+// - histórico analítico do Pomodoro
+// - disciplinas.json
 //
 // Exibe:
 //
@@ -28,6 +29,20 @@
 // 13. Distribuição por disciplina.
 // 14. Próximos estudos.
 // 15. Ciclo Pomodoro.
+//
+// IMPORTANTE:
+//
+// Os IDs lógicos vêm do banco de conteúdo
+// e do motor.
+//
+// Os caminhos físicos vêm de:
+//
+// disciplinas.json
+//
+// Portanto:
+//
+// ID lógico ≠ obrigatoriamente nome
+// físico do arquivo.
 // =====================================
 
 
@@ -41,6 +56,10 @@ let ultimoPlanejamentoRenderizado =
 
 let ultimoPlanoEstudoRenderizado =
     [];
+
+
+let catalogoDisciplinasPlanejamento =
+    null;
 
 
 // =====================================
@@ -132,6 +151,246 @@ function formatarSaldoHorasPlanejamento(
         ) +
         numero +
         " h"
+    );
+
+}
+
+
+// =====================================
+// CARREGAR CATÁLOGO DE DISCIPLINAS
+// =====================================
+
+async function carregarCatalogoDisciplinasPlanejamento() {
+
+    if (
+        catalogoDisciplinasPlanejamento
+    ) {
+
+        return catalogoDisciplinasPlanejamento;
+
+    }
+
+
+    try {
+
+        const resposta =
+            await fetch(
+                "../data/disciplinas.json"
+            );
+
+
+        if (
+            !resposta.ok
+        ) {
+
+            throw new Error(
+                "Não foi possível carregar disciplinas.json"
+            );
+
+        }
+
+
+        catalogoDisciplinasPlanejamento =
+            await resposta.json();
+
+
+        return catalogoDisciplinasPlanejamento;
+
+    }
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar catálogo de disciplinas:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+// =====================================
+// OBTER DISCIPLINA NO CATÁLOGO
+// =====================================
+
+function obterDisciplinaCatalogoPlanejamento(
+    idDisciplina
+) {
+
+    if (
+        !catalogoDisciplinasPlanejamento ||
+        !Array.isArray(
+            catalogoDisciplinasPlanejamento.disciplinas
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+        catalogoDisciplinasPlanejamento
+            .disciplinas
+            .find(
+
+                disciplina =>
+                    disciplina.id ===
+                    idDisciplina
+
+            ) ||
+        null
+    );
+
+}
+
+
+// =====================================
+// RESOLVER CAMINHO DA DISCIPLINA
+// =====================================
+
+function resolverCaminhoDisciplinaPlanejamento(
+    idDisciplina
+) {
+
+    const disciplina =
+        obterDisciplinaCatalogoPlanejamento(
+            idDisciplina
+        );
+
+
+    if (!disciplina) {
+
+        console.error(
+            "Disciplina não encontrada em disciplinas.json:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !disciplina.pasta
+    ) {
+
+        console.error(
+            "Pasta da disciplina não definida:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    const paginaInicial =
+        disciplina.paginaInicial ||
+        "index.html";
+
+
+    return (
+
+        "../disciplinas/" +
+        disciplina.pasta +
+        "/" +
+        paginaInicial
+
+    );
+
+}
+
+
+// =====================================
+// RESOLVER CAMINHO DA AULA
+// =====================================
+
+function resolverCaminhoAulaPlanejamento(
+    idDisciplina,
+    idAula
+) {
+
+    const disciplina =
+        obterDisciplinaCatalogoPlanejamento(
+            idDisciplina
+        );
+
+
+    if (!disciplina) {
+
+        console.error(
+            "Disciplina não encontrada em disciplinas.json:",
+            idDisciplina
+        );
+
+
+        return null;
+
+    }
+
+
+    const modulos =
+        Array.isArray(
+            disciplina.modulos
+        )
+            ? disciplina.modulos
+            : [];
+
+
+    const modulo =
+        modulos.find(
+
+            item =>
+                item.id ===
+                idAula
+
+        );
+
+
+    if (!modulo) {
+
+        console.error(
+            "Aula não encontrada em disciplinas.json:",
+            idDisciplina,
+            idAula
+        );
+
+
+        return null;
+
+    }
+
+
+    if (
+        !disciplina.pasta ||
+        !modulo.arquivo
+    ) {
+
+        console.error(
+            "Pasta ou arquivo físico não definido:",
+            idDisciplina,
+            idAula
+        );
+
+
+        return null;
+
+    }
+
+
+    return (
+
+        "../disciplinas/" +
+        disciplina.pasta +
+        "/" +
+        modulo.arquivo
+
     );
 
 }
@@ -440,8 +699,6 @@ function obterDescricaoTendenciaRitmo(
         ) || 0;
 
 
-    // Ainda não existe histórico suficiente.
-
     if (
         ritmo7 === 0 &&
         ritmo14 === 0 &&
@@ -486,10 +743,6 @@ function renderizarDashboardPlanejamento(
     dadosPlanejamento
 ) {
 
-    // =================================
-    // SEMANA
-    // =================================
-
     const semanaElemento =
         document.getElementById(
             "semana-atual"
@@ -516,10 +769,6 @@ function renderizarDashboardPlanejamento(
 
     }
 
-
-    // =================================
-    // DISPONIBILIDADE
-    // =================================
 
     const horasElemento =
         document.getElementById(
@@ -558,10 +807,6 @@ function renderizarDashboardPlanejamento(
     limparIndicadoresDinamicosPlanejamento();
 
 
-    // =================================
-    // FASE
-    // =================================
-
     container.appendChild(
 
         criarCardIndicadorPlanejamento(
@@ -580,10 +825,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // RITMO NECESSÁRIO
-    // =================================
 
     container.appendChild(
 
@@ -605,10 +846,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // RITMO REAL
-    // =================================
 
     container.appendChild(
 
@@ -632,10 +869,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // SALDO DO RITMO REAL
-    // =================================
 
     const saldoReal =
         Number(
@@ -667,10 +900,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // TENDÊNCIA 7 / 14 / 30
-    // =================================
 
     const textoTendencia =
 
@@ -714,10 +943,6 @@ function renderizarDashboardPlanejamento(
     );
 
 
-    // =================================
-    // MARGEM DA CAPACIDADE
-    // =================================
-
     const margem =
         Number(
             dadosPlanejamento
@@ -749,10 +974,6 @@ function renderizarDashboardPlanejamento(
     );
 
 
-    // =================================
-    // CONTEÚDO RESTANTE
-    // =================================
-
     container.appendChild(
 
         criarCardIndicadorPlanejamento(
@@ -781,10 +1002,6 @@ function renderizarDashboardPlanejamento(
     );
 
 
-    // =================================
-    // CAPACIDADE × PRAZO
-    // =================================
-
     container.appendChild(
 
         criarCardIndicadorPlanejamento(
@@ -806,10 +1023,6 @@ function renderizarDashboardPlanejamento(
     );
 
 
-    // =================================
-    // RITMO REAL × META
-    // =================================
-
     container.appendChild(
 
         criarCardIndicadorPlanejamento(
@@ -830,10 +1043,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // PROGRESSO × CRONOGRAMA
-    // =================================
 
     const progressoReal =
         arredondarAppPlanejamento(
@@ -892,10 +1101,6 @@ function renderizarDashboardPlanejamento(
 
     );
 
-
-    // =================================
-    // CICLO POMODORO
-    // =================================
 
     if (
         typeof obterSituacaoCicloPomodoro ===
@@ -1116,11 +1321,20 @@ function renderizarDistribuicaoPlanejamento(
                 "card";
 
 
-            card.href =
+            const caminhoDisciplina =
+                resolverCaminhoDisciplinaPlanejamento(
+                    idDisciplina
+                );
 
-                "../disciplinas/" +
-                idDisciplina +
-                "/index.html";
+
+            if (
+                caminhoDisciplina
+            ) {
+
+                card.href =
+                    caminhoDisciplina;
+
+            }
 
 
             const titulo =
@@ -1248,6 +1462,25 @@ function criarLinkAulaPlanejamento(
     item
 ) {
 
+    const caminhoAula =
+        resolverCaminhoAulaPlanejamento(
+
+            item.idDisciplina,
+
+            item.idAssunto
+
+        );
+
+
+    if (
+        !caminhoAula
+    ) {
+
+        return null;
+
+    }
+
+
     const link =
         document.createElement(
             "a"
@@ -1259,12 +1492,7 @@ function criarLinkAulaPlanejamento(
 
 
     link.href =
-
-        "../disciplinas/" +
-        item.idDisciplina +
-        "/" +
-        item.idAssunto +
-        ".html";
+        caminhoAula;
 
 
     link.textContent =
@@ -1463,13 +1691,21 @@ function renderizarProximosEstudos(
                 }
 
 
-                estudo.appendChild(
-
+                const linkAula =
                     criarLinkAulaPlanejamento(
                         item
-                    )
+                    );
 
-                );
+
+                if (
+                    linkAula
+                ) {
+
+                    estudo.appendChild(
+                        linkAula
+                    );
+
+                }
 
 
                 lista.appendChild(
@@ -1615,6 +1851,9 @@ async function inicializarPlanejamento() {
     }
 
 
+    await carregarCatalogoDisciplinasPlanejamento();
+
+
     renderizarPlanejamentoCompleto();
 
 }
@@ -1640,9 +1879,6 @@ document.addEventListener(
 // =====================================
 // ATUALIZAÇÃO APÓS PROGRESSO
 // =====================================
-//
-// Permite recalcular o painel também quando
-// algum tópico/aula for marcado como estudado.
 
 document.addEventListener(
 
@@ -1675,10 +1911,10 @@ document.addEventListener(
 // =====================================
 
 console.log(
-    "APP-PLANEJAMENTO PSCPP v3.1 CARREGADO"
+    "APP-PLANEJAMENTO PSCPP v3.2 CARREGADO"
 );
 
 
 // =====================================
-// FIM APP-PLANEJAMENTO v3.1
+// FIM APP-PLANEJAMENTO v3.2
 // =====================================
