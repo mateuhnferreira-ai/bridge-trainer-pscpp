@@ -75,9 +75,9 @@
       "id": "manobras-especiais-sts-sbm",
       "titulo": "Manobras Especiais — STS e SBM",
       "arquivo": "manobras-especiais-sts-sbm.html"
-    }
+       }
   ]
-}
+},
 
     {
       "id": "manobrabilidade",
@@ -167,7 +167,7 @@
           "arquivo": "14-manobras-de-emergencia.html"
         }
       ]
-    }
+    },
 
     {
       "id": "navegacao",
