@@ -2,28 +2,21 @@
 // SISTEMA DE AULA DE REVISÃO PSCPP
 // Bridge Trainer PSCPP
 //
-// Base funcional:
+// Revisão conceitual + pontos de atenção
+// + termos técnicos + questões
+// + gabarito comentado
+// + revisão 7 / 30 / 90
 //
-// v1.4 → revisão conceitual
-// v1.5 → pontos de atenção
-// v1.6 → termos técnicos
-// v1.7 → questões interativas
-// v1.8 → gabarito comentado
-// v1.9 → conclusão e agendamento
+// CAMINHOS FÍSICOS:
+// disciplinas.json é a fonte oficial.
 //
-// PADRONIZAÇÃO DE CAMINHOS:
+// disciplina.id
+//      ↓
+// disciplina.pasta
 //
-// A identificação lógica permanece:
-//
-// disciplina.id + modulo.id
-//
-// O caminho físico passa a ser obtido de:
-//
-// disciplinas.json
-//
-// Portanto:
-//
-// ID lógico ≠ obrigatoriamente nome do arquivo.
+// modulo.id
+//      ↓
+// modulo.arquivo
 // =====================================================
 
 
@@ -31,36 +24,27 @@
 // CONFIGURAÇÕES
 // =====================================================
 
-const REVISAO_MAX_NUCLEOS =
-    8;
+const REVISAO_MAX_NUCLEOS = 8;
 
+const REVISAO_MAX_PARAGRAFOS_CONCEITO = 4;
 
-const REVISAO_MAX_PARAGRAFOS_CONCEITO =
-    4;
+const REVISAO_MAX_DESTAQUES = 2;
 
+const REVISAO_MAX_INTERPRETACOES = 2;
 
-const REVISAO_MAX_DESTAQUES =
-    2;
+const REVISAO_MAX_APLICACOES = 2;
 
+const REVISAO_MAX_ATENCOES = 3;
 
-const REVISAO_MAX_INTERPRETACOES =
-    2;
+const REVISAO_MAX_TERMOS = 8;
 
+const REVISAO_MAX_FORMULAS = 4;
 
-const REVISAO_MAX_APLICACOES =
-    2;
+const REVISAO_MAX_PONTOS_ATENCAO_GERAL = 10;
 
+const REVISAO_MAX_TERMOS_GERAIS = 20;
 
-const REVISAO_MAX_ATENCOES =
-    3;
-
-
-const REVISAO_MAX_TERMOS =
-    8;
-
-
-const REVISAO_MAX_FORMULAS =
-    4;
+const REVISAO_MAX_QUESTOES = 10;
 
 
 // =====================================================
@@ -86,29 +70,14 @@ let revisaoAtual = {
 };
 
 
-// =====================================================
-// CATÁLOGO FÍSICO DAS DISCIPLINAS
-// =====================================================
-//
-// Fonte única para localizar:
-//
-// - pasta física da disciplina;
-// - arquivo físico da aula.
-//
-// Os parâmetros da revisão continuam usando
-// os IDs lógicos oficiais.
-
-let catalogoDisciplinasRevisao =
-    null;
+let catalogoDisciplinasRevisao = null;
 
 
 // =====================================================
 // NORMALIZAR ID
 // =====================================================
 
-function normalizarIdRevisao(
-    texto
-) {
+function normalizarIdRevisao(texto) {
 
     if (!texto) {
 
@@ -149,9 +118,7 @@ function normalizarIdRevisao(
 // NORMALIZAR TEXTO PARA COMPARAÇÃO
 // =====================================================
 
-function normalizarTextoComparacao(
-    texto
-) {
+function normalizarTextoComparacao(texto) {
 
     return String(
         texto || ""
@@ -185,9 +152,7 @@ function normalizarTextoComparacao(
 // LIMPAR TEXTO
 // =====================================================
 
-function limparTextoRevisao(
-    texto
-) {
+function limparTextoRevisao(texto) {
 
     if (!texto) {
 
@@ -212,9 +177,7 @@ function limparTextoRevisao(
 // ESCAPAR HTML
 // =====================================================
 
-function escaparHTMLRevisao(
-    texto
-) {
+function escaparHTMLRevisao(texto) {
 
     return String(
         texto ?? ""
@@ -303,12 +266,9 @@ function deduplicarTextosRevisao(
     textos
 ) {
 
-    const resultado =
-        [];
+    const resultado = [];
 
-
-    const vistos =
-        new Set();
+    const vistos = new Set();
 
 
     (
@@ -335,17 +295,9 @@ function deduplicarTextosRevisao(
                 );
 
 
-            if (!chave) {
-
-                return;
-
-            }
-
-
             if (
-                vistos.has(
-                    chave
-                )
+                !chave ||
+                vistos.has(chave)
             ) {
 
                 return;
@@ -353,14 +305,9 @@ function deduplicarTextosRevisao(
             }
 
 
-            vistos.add(
-                chave
-            );
+            vistos.add(chave);
 
-
-            resultado.push(
-                limpo
-            );
+            resultado.push(limpo);
 
         }
     );
@@ -372,7 +319,7 @@ function deduplicarTextosRevisao(
 
 
 // =====================================================
-// TEXTO JÁ EXISTE EM OUTRA CAMADA?
+// TEXTO JÁ REPRESENTADO?
 // =====================================================
 
 function textoJaRepresentado(
@@ -417,16 +364,12 @@ function textoJaRepresentado(
 
                 (
                     alvo.length > 35 &&
-                    base.includes(
-                        alvo
-                    )
+                    base.includes(alvo)
                 ) ||
 
                 (
                     base.length > 35 &&
-                    alvo.includes(
-                        base
-                    )
+                    alvo.includes(base)
                 )
 
             );
@@ -438,7 +381,7 @@ function textoJaRepresentado(
 
 
 // =====================================================
-// URL
+// PARÂMETROS DA URL
 // =====================================================
 
 function obterParametrosRevisao() {
@@ -517,7 +460,72 @@ function atualizarHTMLRevisao(
 
 
 // =====================================================
-// CARREGAR CATÁLOGO DE DISCIPLINAS
+// RAIZ DO APLICATIVO
+// =====================================================
+//
+// Exemplo:
+//
+// /bridge-trainer-pscpp/revisoes/aula.html
+//
+// vira:
+//
+// /bridge-trainer-pscpp/
+// =====================================================
+
+function obterRaizAplicacaoRevisao() {
+
+    const caminho =
+        window.location.pathname;
+
+
+    const marcador =
+        "/revisoes/";
+
+
+    const indice =
+        caminho.indexOf(
+            marcador
+        );
+
+
+    if (
+        indice !== -1
+    ) {
+
+        return caminho.substring(
+            0,
+            indice + 1
+        );
+
+    }
+
+
+    return "/";
+
+}
+
+
+// =====================================================
+// URL DO CATÁLOGO
+// =====================================================
+
+function obterURLCatalogoRevisao() {
+
+    return (
+
+        window.location.origin +
+
+        obterRaizAplicacaoRevisao() +
+
+        "data/disciplinas.json"
+
+    );
+
+}
+
+
+// =====================================================
+// CARREGAR CATÁLOGO
 // =====================================================
 
 async function carregarCatalogoDisciplinasRevisao() {
@@ -531,33 +539,52 @@ async function carregarCatalogoDisciplinasRevisao() {
     }
 
 
-    const caminhoCatalogo =
-        "../data/disciplinas.json";
+    const urlCatalogo =
+        obterURLCatalogoRevisao();
+
+
+    console.log(
+        "Revisão: carregando catálogo:",
+        urlCatalogo
+    );
 
 
     try {
 
         const resposta =
             await fetch(
-                caminhoCatalogo,
+                urlCatalogo,
                 {
                     cache: "no-store"
                 }
             );
 
 
-        if (
-            !resposta.ok
-        ) {
+        if (!resposta.ok) {
 
             throw new Error(
 
-                "disciplinas.json não foi encontrado. " +
-                "HTTP " +
-                resposta.status +
-                " — " +
-                resposta.url
+                "Falha HTTP " +
 
+                resposta.status +
+
+                " ao carregar " +
+
+                urlCatalogo
+
+            );
+
+        }
+
+
+        const texto =
+            await resposta.text();
+
+
+        if (!texto) {
+
+            throw new Error(
+                "disciplinas.json foi carregado vazio."
             );
 
         }
@@ -569,7 +596,14 @@ async function carregarCatalogoDisciplinasRevisao() {
         try {
 
             catalogo =
-                await resposta.json();
+                JSON.parse(
+
+                    texto.replace(
+                        /^\uFEFF/,
+                        ""
+                    )
+
+                );
 
         }
         catch (erroJSON) {
@@ -577,7 +611,7 @@ async function carregarCatalogoDisciplinasRevisao() {
             throw new Error(
 
                 "disciplinas.json foi localizado, " +
-                "mas contém JSON inválido. " +
+                "mas o JSON não pôde ser interpretado: " +
                 erroJSON.message
 
             );
@@ -594,9 +628,8 @@ async function carregarCatalogoDisciplinasRevisao() {
 
             throw new Error(
 
-                "disciplinas.json foi carregado, " +
-                "mas não possui a estrutura esperada: " +
-                "catalogo.disciplinas."
+                "disciplinas.json não possui " +
+                "a propriedade disciplinas[] esperada."
 
             );
 
@@ -609,11 +642,9 @@ async function carregarCatalogoDisciplinasRevisao() {
 
         console.log(
 
-            "Revisão: catálogo carregado com sucesso.",
+            "Revisão: catálogo carregado.",
 
-            catalogoDisciplinasRevisao
-                .disciplinas
-                .length,
+            catalogo.disciplinas.length,
 
             "disciplinas."
 
@@ -626,35 +657,12 @@ async function carregarCatalogoDisciplinasRevisao() {
     catch (erro) {
 
         console.error(
-            "Revisão: erro ao carregar disciplinas.json:",
+            "Revisão: erro no catálogo:",
             erro
         );
 
 
-        atualizarHTMLRevisao(
-
-            "painel-foco-revisao",
-
-            `
-
-            <p>
-                <strong>
-                    ⚠ Erro ao carregar o catálogo.
-                </strong>
-            </p>
-
-            <p>
-                ${escaparHTMLRevisao(
-                    erro.message
-                )}
-            </p>
-
-            `
-
-        );
-
-
-        return null;
+        throw erro;
 
     }
 
@@ -662,7 +670,7 @@ async function carregarCatalogoDisciplinasRevisao() {
 
 
 // =====================================================
-// OBTER DISCIPLINA NO CATÁLOGO
+// LOCALIZAR DISCIPLINA
 // =====================================================
 
 function obterDisciplinaCatalogoRevisao(
@@ -682,6 +690,7 @@ function obterDisciplinaCatalogoRevisao(
 
 
     return (
+
         catalogoDisciplinasRevisao
             .disciplinas
             .find(
@@ -691,17 +700,19 @@ function obterDisciplinaCatalogoRevisao(
                     idDisciplina
 
             ) ||
+
         null
+
     );
 
 }
 
 
 // =====================================================
-// CAMINHO DA AULA
+// RESOLVER CAMINHO DA AULA
 // =====================================================
 
-function criarCaminhoAulaOriginal(
+async function criarCaminhoAulaOriginal(
     disciplina,
     aula
 ) {
@@ -716,6 +727,9 @@ function criarCaminhoAulaOriginal(
     }
 
 
+    await carregarCatalogoDisciplinasRevisao();
+
+
     const dadosDisciplina =
         obterDisciplinaCatalogoRevisao(
             disciplina
@@ -724,45 +738,56 @@ function criarCaminhoAulaOriginal(
 
     if (!dadosDisciplina) {
 
-        console.error(
-            "Revisão: disciplina não encontrada no catálogo:",
+        throw new Error(
+
+            "Disciplina não encontrada " +
+            "em disciplinas.json: " +
             disciplina
+
         );
-
-
-        return null;
 
     }
 
 
-    const modulos =
-        Array.isArray(
+    if (
+        !Array.isArray(
             dadosDisciplina.modulos
         )
-            ? dadosDisciplina.modulos
-            : [];
+    ) {
+
+        throw new Error(
+
+            "A disciplina " +
+            disciplina +
+            " não possui módulos válidos."
+
+        );
+
+    }
 
 
     const modulo =
-        modulos.find(
+        dadosDisciplina
+            .modulos
+            .find(
 
-            item =>
-                item.id ===
-                aula
+                item =>
+                    item.id === aula
 
-        );
+            );
 
 
     if (!modulo) {
 
-        console.error(
-            "Revisão: aula não encontrada no catálogo:",
-            disciplina,
-            aula
+        throw new Error(
+
+            "A aula " +
+            aula +
+            " não foi encontrada na disciplina " +
+            disciplina +
+            "."
+
         );
-
-
-        return null;
 
     }
 
@@ -772,26 +797,42 @@ function criarCaminhoAulaOriginal(
         !modulo.arquivo
     ) {
 
-        console.error(
-            "Revisão: pasta ou arquivo físico não definido:",
-            disciplina,
-            aula
+        throw new Error(
+
+            "A aula foi encontrada, " +
+            "mas pasta ou arquivo físico " +
+            "não estão definidos."
+
         );
-
-
-        return null;
 
     }
 
 
-    return (
+    const caminho =
 
-        "../disciplinas/" +
+        window.location.origin +
+
+        obterRaizAplicacaoRevisao() +
+
+        "disciplinas/" +
+
         dadosDisciplina.pasta +
+
         "/" +
-        modulo.arquivo
+
+        modulo.arquivo;
+
+
+    console.log(
+
+        "Revisão: aula original resolvida:",
+
+        caminho
 
     );
+
+
+    return caminho;
 
 }
 
@@ -908,13 +949,13 @@ function preencherIdentidadeRevisao() {
 
 
 // =====================================================
-// CARREGAR AULA
+// CARREGAR AULA ORIGINAL
 // =====================================================
 
 async function carregarAulaOriginal() {
 
     const caminho =
-        criarCaminhoAulaOriginal(
+        await criarCaminhoAulaOriginal(
 
             revisaoAtual.disciplina,
 
@@ -926,7 +967,7 @@ async function carregarAulaOriginal() {
     if (!caminho) {
 
         throw new Error(
-            "Não foi possível criar o caminho da aula original."
+            "Não foi possível determinar o caminho da aula."
         );
 
     }
@@ -939,7 +980,10 @@ async function carregarAulaOriginal() {
 
     const resposta =
         await fetch(
-            caminho
+            caminho,
+            {
+                cache: "no-store"
+            }
         );
 
 
@@ -947,7 +991,10 @@ async function carregarAulaOriginal() {
 
         throw new Error(
 
-            "A aula original não foi encontrada em: " +
+            "A aula original não foi encontrada. " +
+            "HTTP " +
+            resposta.status +
+            ": " +
             caminho
 
         );
@@ -984,7 +1031,7 @@ function criarDocumentoAulaOriginal(
 
 
 // =====================================================
-// VALIDAÇÃO
+// VALIDAR DOCUMENTO
 // =====================================================
 
 function validarDocumentoAulaOriginal(
@@ -1042,7 +1089,7 @@ function obterResumoEstruturaAula(
 
 
 // =====================================================
-// TÍTULO
+// TÍTULO DO TÓPICO
 // =====================================================
 
 function obterTituloTopicoRevisao(
@@ -1063,10 +1110,6 @@ function obterTituloTopicoRevisao(
 
 }
 
-
-// =====================================================
-// REMOVER NUMERAÇÃO
-// =====================================================
 
 function removerNumeroTituloRevisao(
     titulo
@@ -1151,21 +1194,13 @@ function pareceFormulaRevisao(
 
     return (
 
-        simbolos.test(
-            valor
-        ) ||
+        simbolos.test(valor) ||
 
-        derivada.test(
-            valor
-        ) ||
+        derivada.test(valor) ||
 
         (
-            igualdade.test(
-                valor
-            ) &&
-            formaAlgebrica.test(
-                valor
-            )
+            igualdade.test(valor) &&
+            formaAlgebrica.test(valor)
         )
 
     );
@@ -1181,8 +1216,7 @@ function obterFormulasTopico(
     topico
 ) {
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     const seletores = [
@@ -1292,8 +1326,7 @@ function obterParagrafosConceituais(
     }
 
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     Array.from(
@@ -1320,8 +1353,7 @@ function obterParagrafosConceituais(
 
 
             if (
-                filho.tagName !==
-                "P"
+                filho.tagName !== "P"
             ) {
 
                 return;
@@ -1337,9 +1369,11 @@ function obterParagrafosConceituais(
 
             if (
                 texto.length < 25 ||
+
                 pareceFormulaRevisao(
                     texto
                 ) ||
+
                 textoJaRepresentado(
                     texto,
                     formulas
@@ -1381,8 +1415,7 @@ function obterDestaquesTopico(
     conceito
 ) {
 
-    const resultado =
-        [];
+    const resultado = [];
 
 
     Array.from(
@@ -1399,8 +1432,7 @@ function obterDestaquesTopico(
                 );
 
 
-            const textos =
-                [];
+            const textos = [];
 
 
             bloco
@@ -1418,13 +1450,16 @@ function obterDestaquesTopico(
 
                         if (
                             texto.length < 15 ||
+
                             pareceFormulaRevisao(
                                 texto
                             ) ||
+
                             textoJaRepresentado(
                                 texto,
                                 formulas
                             ) ||
+
                             textoJaRepresentado(
                                 texto,
                                 conceito
@@ -1483,7 +1518,7 @@ function obterDestaquesTopico(
 
 
 // =====================================================
-// INTERPRETAÇÃO
+// INTERPRETAÇÕES
 // =====================================================
 
 function obterInterpretacoesTopico(
@@ -1520,8 +1555,7 @@ function obterInterpretacoesTopico(
     ];
 
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     topico
@@ -1539,10 +1573,13 @@ function obterInterpretacoesTopico(
 
                 if (
                     texto.length < 35 ||
+
                     texto.length > 550 ||
+
                     pareceFormulaRevisao(
                         texto
                     ) ||
+
                     textoJaRepresentado(
                         texto,
                         referencias
@@ -1590,7 +1627,7 @@ function obterInterpretacoesTopico(
 
 
 // =====================================================
-// APLICAÇÃO OPERACIONAL
+// APLICAÇÕES OPERACIONAIS
 // =====================================================
 
 function obterAplicacoesOperacionais(
@@ -1598,8 +1635,7 @@ function obterAplicacoesOperacionais(
     referencias
 ) {
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     const seletores = [
@@ -1692,9 +1728,11 @@ function obterAplicacoesOperacionais(
                     !nome.includes(
                         "aplicacao"
                     ) &&
+
                     !nome.includes(
                         "operacional"
                     ) &&
+
                     !nome.includes(
                         "pratico"
                     )
@@ -1752,7 +1790,7 @@ function obterAplicacoesOperacionais(
 
 
 // =====================================================
-// ATENÇÃO PSCPP
+// ATENÇÕES
 // =====================================================
 
 function obterAtencoesTopico(
@@ -1760,8 +1798,7 @@ function obterAtencoesTopico(
     referencias
 ) {
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     topico
@@ -1808,15 +1845,14 @@ function obterAtencoesTopico(
 
 
 // =====================================================
-// TERMOS TÉCNICOS
+// TERMOS TÉCNICOS DO TÓPICO
 // =====================================================
 
 function obterTermosTecnicosTopico(
     topico
 ) {
 
-    const resultados =
-        [];
+    const resultados = [];
 
 
     if (!topico) {
@@ -1968,7 +2004,7 @@ function obterTermosTecnicosTopico(
 
 
 // =====================================================
-// IMPORTÂNCIA ESTRUTURAL
+// IMPORTÂNCIA DO TÓPICO
 // =====================================================
 
 function calcularImportanciaTopico(
@@ -1976,8 +2012,7 @@ function calcularImportanciaTopico(
     formulas
 ) {
 
-    let pontos =
-        1;
+    let pontos = 1;
 
 
     if (
@@ -2101,19 +2136,18 @@ function analisarTopicosAula(
                     );
 
 
-                const referenciasBase =
-                    [
+                const referenciasBase = [
 
-                        ...formulas,
+                    ...formulas,
 
-                        ...conceito,
+                    ...conceito,
 
-                        ...destaques.flatMap(
-                            item =>
-                                item.textos
-                        )
+                    ...destaques.flatMap(
+                        item =>
+                            item.textos
+                    )
 
-                    ];
+                ];
 
 
                 const interpretacoes =
@@ -2126,14 +2160,13 @@ function analisarTopicosAula(
                     );
 
 
-                const referenciasComInterpretacao =
-                    [
+                const referenciasComInterpretacao = [
 
-                        ...referenciasBase,
+                    ...referenciasBase,
 
-                        ...interpretacoes
+                    ...interpretacoes
 
-                    ];
+                ];
 
 
                 const aplicacoes =
@@ -2276,8 +2309,7 @@ function selecionarNucleosPrincipais(
         quantidade;
 
 
-    const selecionados =
-        [];
+    const selecionados = [];
 
 
     for (
@@ -2374,7 +2406,7 @@ function selecionarNucleosPrincipais(
 
 
 // =====================================================
-// PARÁGRAFOS HTML
+// HTML DE PARÁGRAFOS
 // =====================================================
 
 function gerarParagrafosRevisao(
@@ -2403,7 +2435,7 @@ function gerarParagrafosRevisao(
 
 
 // =====================================================
-// DESTAQUE HTML
+// DESTAQUES HTML
 // =====================================================
 
 function gerarDestaquesRevisao(
@@ -2509,7 +2541,7 @@ function gerarFormulasRevisao(
 
 
 // =====================================================
-// INTERPRETAÇÃO HTML
+// INTERPRETAÇÕES HTML
 // =====================================================
 
 function gerarInterpretacoesRevisao(
@@ -2546,7 +2578,7 @@ function gerarInterpretacoesRevisao(
 
 
 // =====================================================
-// APLICAÇÃO HTML
+// APLICAÇÕES HTML
 // =====================================================
 
 function gerarAplicacoesRevisao(
@@ -2583,7 +2615,7 @@ function gerarAplicacoesRevisao(
 
 
 // =====================================================
-// ATENÇÃO HTML
+// ATENÇÕES HTML
 // =====================================================
 
 function gerarAtencoesRevisao(
@@ -2813,10 +2845,6 @@ function renderizarNucleosConceituais(
 // PONTOS DE ATENÇÃO GERAIS
 // =====================================================
 
-const REVISAO_MAX_PONTOS_ATENCAO_GERAL =
-    10;
-
-
 function criarRegistroAtencaoRevisao(
     topico,
     texto
@@ -2860,8 +2888,7 @@ function coletarAtencoesDosNucleos(
     nucleos
 ) {
 
-    const resultado =
-        [];
+    const resultado = [];
 
 
     (
@@ -2919,10 +2946,9 @@ function coletarAtencoesComplementares(
         );
 
 
-    const candidatos =
-        (
-            topicos || []
-        )
+    return (
+        topicos || []
+    )
 
         .filter(
             topico =>
@@ -2953,43 +2979,24 @@ function coletarAtencoesComplementares(
                     a.importancia || 0
                 )
 
-        );
+        )
 
+        .flatMap(
+            topico =>
 
-    const resultado =
-        [];
+                topico.atencoes
 
-
-    candidatos.forEach(
-        topico => {
-
-            topico.atencoes
-                .forEach(
-                    texto => {
-
-                        const registro =
+                    .map(
+                        texto =>
                             criarRegistroAtencaoRevisao(
                                 topico,
                                 texto
-                            );
+                            )
+                    )
 
+                    .filter(Boolean)
 
-                        if (registro) {
-
-                            resultado.push(
-                                registro
-                            );
-
-                        }
-
-                    }
-                );
-
-        }
-    );
-
-
-    return resultado;
+        );
 
 }
 
@@ -2998,12 +3005,9 @@ function deduplicarPontosAtencaoRevisao(
     registros
 ) {
 
-    const resultado =
-        [];
+    const resultado = [];
 
-
-    const textosRegistrados =
-        [];
+    const textosRegistrados = [];
 
 
     (
@@ -3138,21 +3142,9 @@ function renderizarPontosAtencaoRevisao(
     }
 
 
-    container.innerHTML = `
+    container.innerHTML =
 
-        <div class="widget">
-
-            <p>
-                Os pontos abaixo merecem atenção especial
-                durante a revisão porque representam
-                distinções, limitações ou interpretações
-                destacadas na própria aula.
-            </p>
-
-        </div>
-
-
-        ${pontos
+        pontos
 
             .map(
                 (
@@ -3179,11 +3171,9 @@ function renderizarPontosAtencaoRevisao(
                     </h3>
 
                     <p>
-
                         ${escaparHTMLRevisao(
                             ponto.texto
                         )}
-
                     </p>
 
                 </div>
@@ -3191,10 +3181,7 @@ function renderizarPontosAtencaoRevisao(
                 `
             )
 
-            .join("")
-        }
-
-    `;
+            .join("");
 
 }
 
@@ -3223,10 +3210,6 @@ function gerarPontosAtencaoRevisao() {
 // =====================================================
 // TERMOS TÉCNICOS GERAIS
 // =====================================================
-
-const REVISAO_MAX_TERMOS_GERAIS =
-    20;
-
 
 function criarRegistroTermoRevisao(
     topico,
@@ -3278,12 +3261,25 @@ function criarRegistroTermoRevisao(
 }
 
 
-function coletarTermosDosNucleos(
+function selecionarTermosTecnicosRevisao(
+    topicos,
     nucleos
 ) {
 
-    const resultado =
-        [];
+    const idsNucleos =
+        new Set(
+
+            (
+                nucleos || []
+            ).map(
+                item =>
+                    item.id
+            )
+
+        );
+
+
+    const registros = [];
 
 
     (
@@ -3305,7 +3301,7 @@ function coletarTermosDosNucleos(
 
                     if (registro) {
 
-                        resultado.push(
+                        registros.push(
                             registro
                         );
 
@@ -3318,47 +3314,15 @@ function coletarTermosDosNucleos(
     );
 
 
-    return resultado;
-
-}
-
-
-function coletarTermosComplementares(
-    topicos,
-    nucleos
-) {
-
-    const idsNucleos =
-        new Set(
-
-            (
-                nucleos || []
-            ).map(
-                item =>
-                    item.id
-            )
-
-        );
-
-
-    const candidatos =
-        (
-            topicos || []
-        )
+    (
+        topicos || []
+    )
 
         .filter(
             topico =>
-
                 !idsNucleos.has(
                     topico.id
-                ) &&
-
-                Array.isArray(
-                    topico.termos
-                ) &&
-
-                topico.termos.length > 0
-
+                )
         )
 
         .sort(
@@ -3366,27 +3330,20 @@ function coletarTermosComplementares(
                 a,
                 b
             ) =>
-
                 Number(
                     b.importancia || 0
                 ) -
-
                 Number(
                     a.importancia || 0
                 )
+        )
 
-        );
+        .forEach(
+            topico => {
 
-
-    const resultado =
-        [];
-
-
-    candidatos.forEach(
-        topico => {
-
-            topico.termos
-                .forEach(
+                (
+                    topico.termos || []
+                ).forEach(
                     texto => {
 
                         const registro =
@@ -3398,7 +3355,7 @@ function coletarTermosComplementares(
 
                         if (registro) {
 
-                            resultado.push(
+                            registros.push(
                                 registro
                             );
 
@@ -3407,110 +3364,41 @@ function coletarTermosComplementares(
                     }
                 );
 
-        }
-    );
-
-
-    return resultado;
-
-}
-
-
-function deduplicarTermosRevisao(
-    registros
-) {
-
-    const resultado =
-        [];
+            }
+        );
 
 
     const vistos =
         new Set();
 
 
-    (
-        registros || []
-    ).forEach(
-        registro => {
+    return registros
 
-            if (
-                !registro ||
-                !registro.texto
-            ) {
+        .filter(
+            registro => {
 
-                return;
-
-            }
+                const chave =
+                    normalizarTextoComparacao(
+                        registro.texto
+                    );
 
 
-            const chave =
-                normalizarTextoComparacao(
-                    registro.texto
-                );
+                if (
+                    !chave ||
+                    vistos.has(chave)
+                ) {
+
+                    return false;
+
+                }
 
 
-            if (
-                !chave ||
-                vistos.has(
-                    chave
-                )
-            ) {
+                vistos.add(chave);
 
-                return;
+                return true;
 
             }
-
-
-            vistos.add(
-                chave
-            );
-
-
-            resultado.push(
-                registro
-            );
-
-        }
-    );
-
-
-    return resultado;
-
-}
-
-
-function selecionarTermosTecnicosRevisao(
-    topicos,
-    nucleos
-) {
-
-    const principais =
-        coletarTermosDosNucleos(
-            nucleos
-        );
-
-
-    const complementares =
-        coletarTermosComplementares(
-
-            topicos,
-
-            nucleos
-
-        );
-
-
-    return deduplicarTermosRevisao(
-
-        [
-
-            ...principais,
-
-            ...complementares
-
-        ]
-
-    )
+        )
 
         .slice(
             0,
@@ -3562,72 +3450,35 @@ function renderizarTermosTecnicosRevisao(
 
     container.innerHTML = `
 
-        <p>
-            Os termos abaixo foram selecionados
-            automaticamente a partir da terminologia
-            técnica utilizada na aula original.
-        </p>
+        ${termos
 
+            .map(
+                termo => `
 
-        <div
-        style="
-            display:grid;
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(280px, 1fr)
-                );
-            gap:14px;
-            margin-top:18px;
-        "
-        >
-
-            ${termos
-
-                .map(
-                    termo => `
-
-                    <div
+                <div
                     class="termos-tecnicos"
                     data-revisao-termo="${
                         escaparHTMLRevisao(
                             termo.idTopico
                         )
                     }"
-                    >
+                >
 
-                        <p>
-                            <strong>
-                                ${escaparHTMLRevisao(
-                                    termo.texto
-                                )}
-                            </strong>
-                        </p>
-
-                        <p
-                        style="
-                            margin-top:8px;
-                            font-size:0.85rem;
-                            opacity:0.75;
-                        "
-                        >
-
-                            Relacionado a:
+                    <p>
+                        <strong>
                             ${escaparHTMLRevisao(
-                                termo.tituloTopico
+                                termo.texto
                             )}
+                        </strong>
+                    </p>
 
-                        </p>
+                </div>
 
-                    </div>
+                `
+            )
 
-                    `
-                )
-
-                .join("")
-            }
-
-        </div>
+            .join("")
+        }
 
     `;
 
@@ -3656,12 +3507,8 @@ function gerarTermosTecnicosGeraisRevisao() {
 
 
 // =====================================================
-// QUESTÕES INTERATIVAS
+// QUESTÕES
 // =====================================================
-
-const REVISAO_MAX_QUESTOES =
-    10;
-
 
 function normalizarTopicoQuestaoRevisao(
     texto
@@ -3772,6 +3619,10 @@ function obterQuestoesOriginaisRevisao(
 }
 
 
+// =====================================================
+// RELAÇÃO QUESTÃO / NÚCLEO
+// =====================================================
+
 function calcularRelacaoQuestaoNucleo(
     questao,
     nucleo
@@ -3812,7 +3663,8 @@ function calcularRelacaoQuestaoNucleo(
 
     if (
         tituloNucleo &&
-        topicoQuestao === tituloNucleo
+        topicoQuestao ===
+        tituloNucleo
     ) {
 
         return 100;
@@ -3856,7 +3708,9 @@ function calcularRelacaoQuestaoNucleo(
 
     const palavrasQuestao =
         topicoQuestao
+
             .split(" ")
+
             .filter(
                 palavra =>
                     palavra.length >= 4
@@ -3865,15 +3719,16 @@ function calcularRelacaoQuestaoNucleo(
 
     const palavrasNucleo =
         tituloNucleo
+
             .split(" ")
+
             .filter(
                 palavra =>
                     palavra.length >= 4
             );
 
 
-    let coincidencias =
-        0;
+    let coincidencias = 0;
 
 
     palavrasQuestao.forEach(
@@ -3898,14 +3753,31 @@ function calcularRelacaoQuestaoNucleo(
 }
 
 
-function selecionarQuestoesDosNucleos(
-    questoes,
+// =====================================================
+// SELECIONAR QUESTÕES
+// =====================================================
+
+function selecionarQuestoesRevisao(
+    documento,
     nucleos
 ) {
 
-    const selecionadas =
-        [];
+    const questoes =
+        obterQuestoesOriginaisRevisao(
+            documento
+        );
 
+
+    if (
+        questoes.length === 0
+    ) {
+
+        return [];
+
+    }
+
+
+    const selecionadas = [];
 
     const idsUsados =
         new Set();
@@ -3916,12 +3788,9 @@ function selecionarQuestoesDosNucleos(
     ).forEach(
         nucleo => {
 
-            let melhor =
-                null;
+            let melhor = null;
 
-
-            let melhorPontuacao =
-                0;
+            let melhorPontuacao = 0;
 
 
             questoes.forEach(
@@ -3956,7 +3825,6 @@ function selecionarQuestoesDosNucleos(
                         melhorPontuacao =
                             pontuacao;
 
-
                         melhor =
                             questao;
 
@@ -3975,7 +3843,6 @@ function selecionarQuestoesDosNucleos(
                     melhor
                 );
 
-
                 idsUsados.add(
                     melhor.id
                 );
@@ -3986,31 +3853,12 @@ function selecionarQuestoesDosNucleos(
     );
 
 
-    return {
-
-        selecionadas:
-            selecionadas,
-
-        idsUsados:
-            idsUsados
-
-    };
-
-}
-
-
-function completarQuestoesRevisao(
-    questoes,
-    selecionadas,
-    idsUsados
-) {
-
     const topicosUsados =
         new Set(
 
             selecionadas.map(
-                questao =>
-                    questao.topicoNormalizado
+                item =>
+                    item.topicoNormalizado
             )
 
         );
@@ -4106,58 +3954,17 @@ function completarQuestoesRevisao(
     }
 
 
-    return selecionadas;
+    return selecionadas.slice(
+        0,
+        REVISAO_MAX_QUESTOES
+    );
 
 }
 
 
-function selecionarQuestoesRevisao(
-    documento,
-    nucleos
-) {
-
-    const questoes =
-        obterQuestoesOriginaisRevisao(
-            documento
-        );
-
-
-    if (
-        questoes.length === 0
-    ) {
-
-        return [];
-
-    }
-
-
-    const selecaoInicial =
-        selecionarQuestoesDosNucleos(
-
-            questoes,
-
-            nucleos
-
-        );
-
-
-    return completarQuestoesRevisao(
-
-        questoes,
-
-        selecaoInicial.selecionadas,
-
-        selecaoInicial.idsUsados
-
-    )
-
-        .slice(
-            0,
-            REVISAO_MAX_QUESTOES
-        );
-
-}
-
+// =====================================================
+// CONTAINER DE QUESTÕES
+// =====================================================
 
 function obterContainerQuestoesRevisao() {
 
@@ -4254,6 +4061,10 @@ function obterContainerQuestoesRevisao() {
 }
 
 
+// =====================================================
+// CLONAR QUESTÃO
+// =====================================================
+
 function prepararCloneQuestaoRevisao(
     registro,
     numero
@@ -4312,8 +4123,7 @@ function prepararCloneQuestaoRevisao(
                 );
 
 
-                alternativa.disabled =
-                    false;
+                alternativa.disabled = false;
 
 
                 alternativa.removeAttribute(
@@ -4347,6 +4157,10 @@ function prepararCloneQuestaoRevisao(
 
 }
 
+
+// =====================================================
+// CONTROLES DAS QUESTÕES
+// =====================================================
 
 function criarControlesQuestoesRevisao(
     container,
@@ -4429,6 +4243,10 @@ function criarControlesQuestoesRevisao(
 }
 
 
+// =====================================================
+// RENDERIZAR QUESTÕES
+// =====================================================
+
 function renderizarQuestoesRevisao(
     questoes
 ) {
@@ -4449,8 +4267,7 @@ function renderizarQuestoesRevisao(
     }
 
 
-    container.innerHTML =
-        "";
+    container.innerHTML = "";
 
 
     if (
@@ -4532,6 +4349,10 @@ function renderizarQuestoesRevisao(
 }
 
 
+// =====================================================
+// EXERCÍCIOS INTERATIVOS
+// =====================================================
+
 function inicializarQuestoesInterativasRevisao() {
 
     document.body.dataset.disciplina =
@@ -4563,7 +4384,7 @@ function inicializarQuestoesInterativasRevisao() {
     else {
 
         console.warn(
-            "exercicios.js não está disponível na página de revisão."
+            "exercicios.js não está disponível."
         );
 
     }
@@ -4572,7 +4393,7 @@ function inicializarQuestoesInterativasRevisao() {
 
 
 // =====================================================
-// GABARITO COMENTADO
+// GABARITO
 // =====================================================
 
 function analisarTituloQuestaoGabarito(
@@ -4623,6 +4444,10 @@ function analisarTituloQuestaoGabarito(
 }
 
 
+// =====================================================
+// LOCALIZAR GABARITO
+// =====================================================
+
 function localizarSecaoGabaritoOriginal(
     documento
 ) {
@@ -4641,19 +4466,15 @@ function localizarSecaoGabaritoOriginal(
             )
         )
         .find(
-            secao => {
+            secao =>
 
-                const id =
-                    normalizarTextoComparacao(
-                        secao.id
-                    );
-
-
-                return id.includes(
+                normalizarTextoComparacao(
+                    secao.id
+                )
+                .includes(
                     "gabarito"
-                );
+                )
 
-            }
         );
 
 
@@ -4664,16 +4485,14 @@ function localizarSecaoGabaritoOriginal(
     }
 
 
-    const secoes =
+    return (
+
         Array.from(
             documento.querySelectorAll(
                 "section"
             )
-        );
-
-
-    const porTitulo =
-        secoes.find(
+        )
+        .find(
             secao => {
 
                 const titulo =
@@ -4689,36 +4508,26 @@ function localizarSecaoGabaritoOriginal(
                 }
 
 
-                const texto =
-                    normalizarTextoComparacao(
-                        titulo.textContent
-                    );
-
-
-                return texto.includes(
+                return normalizarTextoComparacao(
+                    titulo.textContent
+                )
+                .includes(
                     "gabarito comentado"
                 );
 
             }
-        );
+        ) ||
 
+        null
 
-    if (porTitulo) {
-
-        return porTitulo;
-
-    }
-
-
-    console.warn(
-        "Revisão: seção real de gabarito não localizada."
     );
-
-
-    return null;
 
 }
 
+
+// =====================================================
+// EXTRAIR GABARITO
+// =====================================================
 
 function extrairGabaritosOriginais(
     documento
@@ -4737,19 +4546,15 @@ function extrairGabaritosOriginais(
     }
 
 
-    const titulos =
-        Array.from(
-            secao.querySelectorAll(
-                "h3"
-            )
-        );
+    const resultado = [];
 
 
-    const resultado =
-        [];
-
-
-    titulos.forEach(
+    Array.from(
+        secao.querySelectorAll(
+            "h3"
+        )
+    )
+    .forEach(
         titulo => {
 
             const dadosTitulo =
@@ -4765,9 +4570,7 @@ function extrairGabaritosOriginais(
             }
 
 
-            const elementos =
-                [];
-
+            const elementos = [];
 
             let atual =
                 titulo.nextElementSibling;
@@ -4829,6 +4632,10 @@ function extrairGabaritosOriginais(
 }
 
 
+// =====================================================
+// RENDERIZAR GABARITO
+// =====================================================
+
 function renderizarGabaritoRevisao(
     questoesSelecionadas
 ) {
@@ -4855,8 +4662,7 @@ function renderizarGabaritoRevisao(
         );
 
 
-    container.innerHTML =
-        "";
+    container.innerHTML = "";
 
 
     if (
@@ -4878,8 +4684,7 @@ function renderizarGabaritoRevisao(
     }
 
 
-    let totalRelacionados =
-        0;
+    let totalRelacionados = 0;
 
 
     (
@@ -4962,34 +4767,6 @@ function renderizarGabaritoRevisao(
             );
 
 
-            const referencia =
-                document.createElement(
-                    "p"
-                );
-
-
-            referencia.style.fontSize =
-                "0.85rem";
-
-
-            referencia.style.opacity =
-                "0.7";
-
-
-            referencia.textContent =
-
-                "Correspondente à questão " +
-
-                numeroOriginal +
-
-                " da aula original.";
-
-
-            bloco.appendChild(
-                referencia
-            );
-
-
             container.appendChild(
                 bloco
             );
@@ -5017,6 +4794,10 @@ function renderizarGabaritoRevisao(
 }
 
 
+// =====================================================
+// BOTÃO DO GABARITO
+// =====================================================
+
 function prepararBotaoGabaritoRevisao() {
 
     const botao =
@@ -5041,9 +4822,7 @@ function prepararBotaoGabaritoRevisao() {
     }
 
 
-    gabarito.style.display =
-        "none";
-
+    gabarito.style.display = "none";
 
     botao.textContent =
         "Mostrar Gabarito";
@@ -5073,23 +4852,8 @@ function prepararBotaoGabaritoRevisao() {
 }
 
 
-function gerarGabaritoComentadoRevisao() {
-
-    renderizarGabaritoRevisao(
-
-        revisaoAtual
-            .questoesSelecionadas || []
-
-    );
-
-
-    prepararBotaoGabaritoRevisao();
-
-}
-
-
 // =====================================================
-// GERAR QUESTÕES DA REVISÃO
+// GERAR QUESTÕES E GABARITO
 // =====================================================
 
 function gerarQuestoesInterativasRevisao() {
@@ -5097,11 +4861,6 @@ function gerarQuestoesInterativasRevisao() {
     const documento =
         revisaoAtual
             .documentoAulaOriginal;
-
-
-    const nucleos =
-        revisaoAtual
-            .nucleosSelecionados;
 
 
     if (!documento) {
@@ -5116,7 +4875,8 @@ function gerarQuestoesInterativasRevisao() {
 
             documento,
 
-            nucleos
+            revisaoAtual
+                .nucleosSelecionados
 
         );
 
@@ -5134,13 +4894,18 @@ function gerarQuestoesInterativasRevisao() {
     inicializarQuestoesInterativasRevisao();
 
 
-    gerarGabaritoComentadoRevisao();
+    renderizarGabaritoRevisao(
+        questoes
+    );
+
+
+    prepararBotaoGabaritoRevisao();
 
 }
 
 
 // =====================================================
-// GERAR NÚCLEO COMPLETO
+// GERAR REVISÃO
 // =====================================================
 
 function gerarNucleoRevisao(
@@ -5185,7 +4950,7 @@ function gerarNucleoRevisao(
 
     console.log(
 
-        "REVISÃO PSCPP — revisão gerada:",
+        "Revisão gerada:",
 
         {
 
@@ -5208,7 +4973,7 @@ function gerarNucleoRevisao(
 
 
 // =====================================================
-// PAINEL DE FOCO
+// FOCO DA REVISÃO
 // =====================================================
 
 function mostrarAulaOriginalCarregada(
@@ -5237,10 +5002,7 @@ function mostrarAulaOriginalCarregada(
             <strong>
                 ${resumo.topicos}
             </strong>
-            tópicos analisados,
-            com conceitos, fórmulas,
-            interpretação, aplicações,
-            pontos de atenção e terminologia.
+            tópicos analisados.
         </p>
 
         `
@@ -5251,25 +5013,12 @@ function mostrarAulaOriginalCarregada(
 
 
 // =====================================================
-// PREPARAR AULA
+// PREPARAR AULA ORIGINAL
 // =====================================================
 
 async function prepararAulaOriginal() {
 
     try {
-
-        const catalogo =
-            await carregarCatalogoDisciplinasRevisao();
-
-
-        if (!catalogo) {
-
-            throw new Error(
-                "O catálogo de disciplinas não pôde ser carregado."
-            );
-
-        }
-
 
         const html =
             await carregarAulaOriginal();
@@ -5357,7 +5106,7 @@ async function prepararAulaOriginal() {
 
 
 // =====================================================
-// CONTROLE DE REVISÃO 7 / 30 / 90
+// SISTEMA DE REVISÃO 7 / 30 / 90
 // =====================================================
 
 async function garantirProgressoCarregadoRevisao() {
@@ -5388,15 +5137,14 @@ async function garantirProgressoCarregadoRevisao() {
     }
 
 
-    console.warn(
-        "Revisão: progresso.js não está disponível."
-    );
-
-
     return false;
 
 }
 
+
+// =====================================================
+// REVISÃO REALIZADA HOJE?
+// =====================================================
 
 function revisaoFoiRegistradaHoje(
     dataISO
@@ -5446,6 +5194,10 @@ function revisaoFoiRegistradaHoje(
 }
 
 
+// =====================================================
+// FORMATAR DATA
+// =====================================================
+
 function formatarDataPainelRevisao(
     data
 ) {
@@ -5492,6 +5244,59 @@ function formatarDataPainelRevisao(
 
 }
 
+
+// =====================================================
+// ESTADO DO BOTÃO
+// =====================================================
+
+function atualizarEstadoBotaoConclusaoRevisao(
+    dados
+) {
+
+    const botao =
+        document.getElementById(
+            "botao-revisao-concluida"
+        );
+
+
+    if (!botao) {
+
+        return;
+
+    }
+
+
+    if (
+        dados &&
+        revisaoFoiRegistradaHoje(
+            dados.ultimaRevisao
+        )
+    ) {
+
+        botao.disabled = true;
+
+
+        botao.textContent =
+            "✅ Revisão registrada hoje";
+
+
+        return;
+
+    }
+
+
+    botao.disabled = false;
+
+
+    botao.textContent =
+        "✅ Marcar revisão como concluída";
+
+}
+
+
+// =====================================================
+// ATUALIZAR SITUAÇÃO
+// =====================================================
 
 async function atualizarSituacaoRevisaoAutomatica() {
 
@@ -5572,52 +5377,9 @@ async function atualizarSituacaoRevisaoAutomatica() {
 }
 
 
-function atualizarEstadoBotaoConclusaoRevisao(
-    dados
-) {
-
-    const botao =
-        document.getElementById(
-            "botao-revisao-concluida"
-        );
-
-
-    if (!botao) {
-
-        return;
-
-    }
-
-
-    if (
-        dados &&
-        revisaoFoiRegistradaHoje(
-            dados.ultimaRevisao
-        )
-    ) {
-
-        botao.disabled =
-            true;
-
-
-        botao.textContent =
-            "✅ Revisão registrada hoje";
-
-
-        return;
-
-    }
-
-
-    botao.disabled =
-        false;
-
-
-    botao.textContent =
-        "✅ Marcar revisão como concluída";
-
-}
-
+// =====================================================
+// CONCLUIR REVISÃO
+// =====================================================
 
 async function concluirRevisaoAutomatica() {
 
@@ -5625,21 +5387,6 @@ async function concluirRevisaoAutomatica() {
         document.getElementById(
             "botao-revisao-concluida"
         );
-
-
-    if (
-        !revisaoAtual.disciplina ||
-        !revisaoAtual.aula
-    ) {
-
-        window.alert(
-            "Não foi possível identificar esta revisão."
-        );
-
-
-        return;
-
-    }
 
 
     const carregado =
@@ -5660,13 +5407,14 @@ async function concluirRevisaoAutomatica() {
 
     if (
         typeof obterDadosRevisaoAula !==
-        "function" ||
+            "function" ||
+
         typeof marcarAulaRevisadaHoje !==
-        "function"
+            "function"
     ) {
 
         window.alert(
-            "O sistema de revisões do progresso não está disponível."
+            "O sistema de revisões não está disponível."
         );
 
 
@@ -5704,9 +5452,7 @@ async function concluirRevisaoAutomatica() {
 
     if (botao) {
 
-        botao.disabled =
-            true;
-
+        botao.disabled = true;
 
         botao.textContent =
             "Registrando revisão...";
@@ -5728,9 +5474,7 @@ async function concluirRevisaoAutomatica() {
 
         if (botao) {
 
-            botao.disabled =
-                false;
-
+            botao.disabled = false;
 
             botao.textContent =
                 "✅ Marcar revisão como concluída";
@@ -5741,7 +5485,7 @@ async function concluirRevisaoAutomatica() {
         window.alert(
 
             "A revisão não pôde ser registrada. " +
-            "Verifique se a aula original está concluída."
+            "Verifique se a aula está concluída."
 
         );
 
@@ -5773,28 +5517,16 @@ async function concluirRevisaoAutomatica() {
     );
 
 
-    if (botao) {
-
-        botao.disabled =
-            true;
-
-
-        botao.textContent =
-            "✅ Revisão registrada hoje";
-
-    }
-
-
-    console.log(
-
-        "REVISÃO — revisão registrada:",
-
+    atualizarEstadoBotaoConclusaoRevisao(
         resultado
-
     );
 
 }
 
+
+// =====================================================
+// PREPARAR BOTÃO DE CONCLUSÃO
+// =====================================================
 
 function prepararBotaoConclusaoRevisao() {
 
@@ -5838,6 +5570,10 @@ function prepararBotaoConclusaoRevisao() {
 }
 
 
+// =====================================================
+// CONTROLE DA REVISÃO
+// =====================================================
+
 async function inicializarControleRevisaoAutomatica() {
 
     prepararBotaoConclusaoRevisao();
@@ -5849,7 +5585,7 @@ async function inicializarControleRevisaoAutomatica() {
 
 
 // =====================================================
-// INICIALIZAR AULA DE REVISÃO
+// INICIALIZAR PÁGINA
 // =====================================================
 
 async function inicializarAulaRevisao() {
