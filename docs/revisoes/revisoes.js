@@ -531,11 +531,18 @@ async function carregarCatalogoDisciplinasRevisao() {
     }
 
 
+    const caminhoCatalogo =
+        "../data/disciplinas.json";
+
+
     try {
 
         const resposta =
             await fetch(
-                "../data/disciplinas.json"
+                caminhoCatalogo,
+                {
+                    cache: "no-store"
+                }
             );
 
 
@@ -544,14 +551,73 @@ async function carregarCatalogoDisciplinasRevisao() {
         ) {
 
             throw new Error(
-                "Não foi possível carregar disciplinas.json."
+
+                "disciplinas.json não foi encontrado. " +
+                "HTTP " +
+                resposta.status +
+                " — " +
+                resposta.url
+
+            );
+
+        }
+
+
+        let catalogo;
+
+
+        try {
+
+            catalogo =
+                await resposta.json();
+
+        }
+        catch (erroJSON) {
+
+            throw new Error(
+
+                "disciplinas.json foi localizado, " +
+                "mas contém JSON inválido. " +
+                erroJSON.message
+
+            );
+
+        }
+
+
+        if (
+            !catalogo ||
+            !Array.isArray(
+                catalogo.disciplinas
+            )
+        ) {
+
+            throw new Error(
+
+                "disciplinas.json foi carregado, " +
+                "mas não possui a estrutura esperada: " +
+                "catalogo.disciplinas."
+
             );
 
         }
 
 
         catalogoDisciplinasRevisao =
-            await resposta.json();
+            catalogo;
+
+
+        console.log(
+
+            "Revisão: catálogo carregado com sucesso.",
+
+            catalogoDisciplinasRevisao
+                .disciplinas
+                .length,
+
+            "disciplinas."
+
+        );
 
 
         return catalogoDisciplinasRevisao;
@@ -562,6 +628,29 @@ async function carregarCatalogoDisciplinasRevisao() {
         console.error(
             "Revisão: erro ao carregar disciplinas.json:",
             erro
+        );
+
+
+        atualizarHTMLRevisao(
+
+            "painel-foco-revisao",
+
+            `
+
+            <p>
+                <strong>
+                    ⚠ Erro ao carregar o catálogo.
+                </strong>
+            </p>
+
+            <p>
+                ${escaparHTMLRevisao(
+                    erro.message
+                )}
+            </p>
+
+            `
+
         );
 
 
