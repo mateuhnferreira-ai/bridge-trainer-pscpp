@@ -1,23 +1,15 @@
 // =====================================
-// CONFIGURAÇÃO DE SIMULADOS PSCPP v1.0
+// CONFIGURAÇÃO DE SIMULADOS PSCPP v1.1
 // Bridge Trainer PSCPP
 //
 // Responsabilidades:
 //
-// 1. Definir os tipos de simulado.
-// 2. Definir as disciplinas disponíveis.
-// 3. Definir as quantidades permitidas.
-// 4. Armazenar a configuração atual.
-// 5. Validar a configuração escolhida.
-// 6. Salvar temporariamente o simulado
-//    atual no sessionStorage.
-// 7. Preparar suporte a provas anteriores.
-//
-// Este arquivo NÃO:
-// - contém questões;
-// - sorteia questões;
-// - corrige questões;
-// - calcula desempenho.
+// 1. Definir disciplinas disponíveis.
+// 2. Permitir seleção de uma ou várias.
+// 3. Definir quantidade de questões.
+// 4. Salvar configuração atual.
+// 5. Validar configuração.
+// 6. Preparar suporte a provas anteriores.
 // =====================================
 
 
@@ -35,11 +27,8 @@ const CHAVE_CONFIGURACAO_SIMULADO_PSCPP =
 
 const TIPOS_SIMULADO_PSCPP = {
 
-    GERAL:
-        "geral",
-
-    DISCIPLINA:
-        "disciplina",
+    PERSONALIZADO:
+        "personalizado",
 
     PROVA_ANTERIOR:
         "prova-anterior"
@@ -64,19 +53,7 @@ const QUANTIDADES_SIMULADO_PSCPP = [
 
 
 // =====================================
-// DISCIPLINAS DO BANCO DE QUESTÕES
-// =====================================
-//
-// Os IDs abaixo devem permanecer estáveis.
-//
-// Eles serão utilizados por:
-//
-// - banco de questões;
-// - motor de simulados;
-// - desempenho;
-// - histórico;
-// - filtros;
-// - provas anteriores.
+// DISCIPLINAS DISPONÍVEIS
 // =====================================
 
 const DISCIPLINAS_SIMULADO_PSCPP = [
@@ -115,16 +92,17 @@ const DISCIPLINAS_SIMULADO_PSCPP = [
 
 
 // =====================================
-// ESTADO PADRÃO DA CONFIGURAÇÃO
+// CRIAR CONFIGURAÇÃO PADRÃO
 // =====================================
 
 function criarConfiguracaoPadraoSimuladoPSCPP() {
 
     return {
 
-        tipo: null,
+        tipo:
+            TIPOS_SIMULADO_PSCPP.PERSONALIZADO,
 
-        disciplina: null,
+        disciplinas: [],
 
         quantidade: null,
 
@@ -147,9 +125,7 @@ let configuracaoSimuladoPSCPP =
 // NORMALIZAR TEXTO
 // =====================================
 
-function normalizarTextoSimuladoPSCPP(
-    valor
-) {
+function normalizarTextoSimuladoPSCPP(valor) {
 
     if (
         valor === null ||
@@ -160,7 +136,6 @@ function normalizarTextoSimuladoPSCPP(
 
     }
 
-
     return valor
         .toString()
         .trim();
@@ -169,15 +144,13 @@ function normalizarTextoSimuladoPSCPP(
 
 
 // =====================================
-// OBTER LISTA DE DISCIPLINAS
+// OBTER DISCIPLINAS
 // =====================================
 
 function obterDisciplinasSimuladoPSCPP() {
 
     return DISCIPLINAS_SIMULADO_PSCPP.map(
-        function (
-            disciplina
-        ) {
+        function(disciplina) {
 
             return {
                 ...disciplina
@@ -204,13 +177,9 @@ function disciplinaSimuladoValidaPSCPP(
 
 
     return DISCIPLINAS_SIMULADO_PSCPP.some(
-        function (
-            disciplina
-        ) {
+        function(disciplina) {
 
-            return (
-                disciplina.id === id
-            );
+            return disciplina.id === id;
 
         }
     );
@@ -240,278 +209,21 @@ function quantidadeSimuladoValidaPSCPP(
 
 
 // =====================================
-// DEFINIR SIMULADO GERAL
+// LIMPAR DISCIPLINAS
 // =====================================
 
-function configurarSimuladoGeralPSCPP(
-    quantidade
-) {
+function limparDisciplinasSimuladoPSCPP() {
 
-    const numero =
-        Number(
-            quantidade
-        );
-
-
-    if (
-        !quantidadeSimuladoValidaPSCPP(
-            numero
-        )
-    ) {
-
-        console.error(
-            "Bridge Trainer PSCPP: quantidade inválida para simulado geral.",
-            quantidade
-        );
-
-
-        return false;
-
-    }
-
-
-    configuracaoSimuladoPSCPP = {
-
-        tipo:
-            TIPOS_SIMULADO_PSCPP.GERAL,
-
-        disciplina:
-            null,
-
-        quantidade:
-            numero,
-
-        provaAnterior:
-            null
-
-    };
-
-
-    return true;
+    configuracaoSimuladoPSCPP.disciplinas = [];
 
 }
 
 
 // =====================================
-// DEFINIR SIMULADO POR DISCIPLINA
+// ADICIONAR DISCIPLINA
 // =====================================
 
-function configurarSimuladoDisciplinaPSCPP(
-    disciplinaId,
-    quantidade
-) {
-
-    const disciplina =
-        normalizarTextoSimuladoPSCPP(
-            disciplinaId
-        );
-
-
-    const numero =
-        Number(
-            quantidade
-        );
-
-
-    if (
-        !disciplinaSimuladoValidaPSCPP(
-            disciplina
-        )
-    ) {
-
-        console.error(
-            "Bridge Trainer PSCPP: disciplina inválida.",
-            disciplinaId
-        );
-
-
-        return false;
-
-    }
-
-
-    if (
-        !quantidadeSimuladoValidaPSCPP(
-            numero
-        )
-    ) {
-
-        console.error(
-            "Bridge Trainer PSCPP: quantidade inválida.",
-            quantidade
-        );
-
-
-        return false;
-
-    }
-
-
-    configuracaoSimuladoPSCPP = {
-
-        tipo:
-            TIPOS_SIMULADO_PSCPP.DISCIPLINA,
-
-        disciplina:
-            disciplina,
-
-        quantidade:
-            numero,
-
-        provaAnterior:
-            null
-
-    };
-
-
-    return true;
-
-}
-
-
-// =====================================
-// DEFINIR PROVA ANTERIOR
-// =====================================
-
-function configurarProvaAnteriorPSCPP(
-    provaId
-) {
-
-    const prova =
-        normalizarTextoSimuladoPSCPP(
-            provaId
-        );
-
-
-    if (!prova) {
-
-        console.error(
-            "Bridge Trainer PSCPP: identificador da prova anterior não informado."
-        );
-
-
-        return false;
-
-    }
-
-
-    configuracaoSimuladoPSCPP = {
-
-        tipo:
-            TIPOS_SIMULADO_PSCPP.PROVA_ANTERIOR,
-
-        disciplina:
-            null,
-
-        quantidade:
-            null,
-
-        provaAnterior:
-            prova
-
-    };
-
-
-    return true;
-
-}
-
-
-// =====================================
-// DEFINIR TIPO MANUALMENTE
-// =====================================
-//
-// Função auxiliar para a futura interface.
-// =====================================
-
-function definirTipoSimuladoPSCPP(
-    tipo
-) {
-
-    const tipoNormalizado =
-        normalizarTextoSimuladoPSCPP(
-            tipo
-        );
-
-
-    const tiposValidos =
-        Object.values(
-            TIPOS_SIMULADO_PSCPP
-        );
-
-
-    if (
-        !tiposValidos.includes(
-            tipoNormalizado
-        )
-    ) {
-
-        console.error(
-            "Bridge Trainer PSCPP: tipo de simulado inválido.",
-            tipo
-        );
-
-
-        return false;
-
-    }
-
-
-    configuracaoSimuladoPSCPP.tipo =
-        tipoNormalizado;
-
-
-    if (
-        tipoNormalizado ===
-        TIPOS_SIMULADO_PSCPP.GERAL
-    ) {
-
-        configuracaoSimuladoPSCPP.disciplina =
-            null;
-
-
-        configuracaoSimuladoPSCPP.provaAnterior =
-            null;
-
-    }
-
-
-    if (
-        tipoNormalizado ===
-        TIPOS_SIMULADO_PSCPP.DISCIPLINA
-    ) {
-
-        configuracaoSimuladoPSCPP.provaAnterior =
-            null;
-
-    }
-
-
-    if (
-        tipoNormalizado ===
-        TIPOS_SIMULADO_PSCPP.PROVA_ANTERIOR
-    ) {
-
-        configuracaoSimuladoPSCPP.disciplina =
-            null;
-
-
-        configuracaoSimuladoPSCPP.quantidade =
-            null;
-
-    }
-
-
-    return true;
-
-}
-
-
-// =====================================
-// DEFINIR DISCIPLINA MANUALMENTE
-// =====================================
-
-function definirDisciplinaSimuladoPSCPP(
+function adicionarDisciplinaSimuladoPSCPP(
     disciplinaId
 ) {
 
@@ -532,18 +244,26 @@ function definirDisciplinaSimuladoPSCPP(
             disciplinaId
         );
 
-
         return false;
 
     }
 
 
+    if (
+        !configuracaoSimuladoPSCPP.disciplinas.includes(
+            disciplina
+        )
+    ) {
+
+        configuracaoSimuladoPSCPP.disciplinas.push(
+            disciplina
+        );
+
+    }
+
+
     configuracaoSimuladoPSCPP.tipo =
-        TIPOS_SIMULADO_PSCPP.DISCIPLINA;
-
-
-    configuracaoSimuladoPSCPP.disciplina =
-        disciplina;
+        TIPOS_SIMULADO_PSCPP.PERSONALIZADO;
 
 
     configuracaoSimuladoPSCPP.provaAnterior =
@@ -556,7 +276,180 @@ function definirDisciplinaSimuladoPSCPP(
 
 
 // =====================================
-// DEFINIR QUANTIDADE MANUALMENTE
+// REMOVER DISCIPLINA
+// =====================================
+
+function removerDisciplinaSimuladoPSCPP(
+    disciplinaId
+) {
+
+    const disciplina =
+        normalizarTextoSimuladoPSCPP(
+            disciplinaId
+        );
+
+
+    configuracaoSimuladoPSCPP.disciplinas =
+        configuracaoSimuladoPSCPP.disciplinas.filter(
+            function(item) {
+
+                return item !== disciplina;
+
+            }
+        );
+
+
+    return true;
+
+}
+
+
+// =====================================
+// ALTERNAR DISCIPLINA
+// =====================================
+//
+// Útil para checkbox da futura interface.
+// =====================================
+
+function alternarDisciplinaSimuladoPSCPP(
+    disciplinaId,
+    selecionada
+) {
+
+    if (selecionada) {
+
+        return adicionarDisciplinaSimuladoPSCPP(
+            disciplinaId
+        );
+
+    }
+
+
+    return removerDisciplinaSimuladoPSCPP(
+        disciplinaId
+    );
+
+}
+
+
+// =====================================
+// DEFINIR VÁRIAS DISCIPLINAS
+// =====================================
+
+function definirDisciplinasSimuladoPSCPP(
+    disciplinas
+) {
+
+    if (
+        !Array.isArray(
+            disciplinas
+        )
+    ) {
+
+        console.error(
+            "Bridge Trainer PSCPP: lista de disciplinas inválida."
+        );
+
+        return false;
+
+    }
+
+
+    const disciplinasValidas = [];
+
+
+    disciplinas.forEach(
+        function(disciplinaId) {
+
+            const disciplina =
+                normalizarTextoSimuladoPSCPP(
+                    disciplinaId
+                );
+
+
+            if (
+                disciplinaSimuladoValidaPSCPP(
+                    disciplina
+                ) &&
+                !disciplinasValidas.includes(
+                    disciplina
+                )
+            ) {
+
+                disciplinasValidas.push(
+                    disciplina
+                );
+
+            }
+
+        }
+    );
+
+
+    configuracaoSimuladoPSCPP.disciplinas =
+        disciplinasValidas;
+
+
+    configuracaoSimuladoPSCPP.tipo =
+        TIPOS_SIMULADO_PSCPP.PERSONALIZADO;
+
+
+    configuracaoSimuladoPSCPP.provaAnterior =
+        null;
+
+
+    return true;
+
+}
+
+
+// =====================================
+// SELECIONAR TODAS
+// =====================================
+
+function selecionarTodasDisciplinasSimuladoPSCPP() {
+
+    configuracaoSimuladoPSCPP.disciplinas =
+        DISCIPLINAS_SIMULADO_PSCPP.map(
+            function(disciplina) {
+
+                return disciplina.id;
+
+            }
+        );
+
+
+    configuracaoSimuladoPSCPP.tipo =
+        TIPOS_SIMULADO_PSCPP.PERSONALIZADO;
+
+
+    configuracaoSimuladoPSCPP.provaAnterior =
+        null;
+
+
+    return true;
+
+}
+
+
+// =====================================
+// VERIFICAR SE TODAS ESTÃO SELECIONADAS
+// =====================================
+
+function todasDisciplinasSelecionadasPSCPP() {
+
+    return (
+        configuracaoSimuladoPSCPP
+            .disciplinas
+            .length ===
+        DISCIPLINAS_SIMULADO_PSCPP.length
+    );
+
+}
+
+
+// =====================================
+// DEFINIR QUANTIDADE
 // =====================================
 
 function definirQuantidadeSimuladoPSCPP(
@@ -580,7 +473,6 @@ function definirQuantidadeSimuladoPSCPP(
             quantidade
         );
 
-
         return false;
 
     }
@@ -596,10 +488,46 @@ function definirQuantidadeSimuladoPSCPP(
 
 
 // =====================================
-// DEFINIR PROVA ANTERIOR MANUALMENTE
+// CONFIGURAR SIMULADO PERSONALIZADO
 // =====================================
 
-function definirProvaAnteriorSimuladoPSCPP(
+function configurarSimuladoPersonalizadoPSCPP(
+    disciplinas,
+    quantidade
+) {
+
+    const disciplinasOk =
+        definirDisciplinasSimuladoPSCPP(
+            disciplinas
+        );
+
+
+    const quantidadeOk =
+        definirQuantidadeSimuladoPSCPP(
+            quantidade
+        );
+
+
+    if (
+        !disciplinasOk ||
+        !quantidadeOk
+    ) {
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+// =====================================
+// CONFIGURAR PROVA ANTERIOR
+// =====================================
+
+function configurarProvaAnteriorPSCPP(
     provaId
 ) {
 
@@ -612,29 +540,27 @@ function definirProvaAnteriorSimuladoPSCPP(
     if (!prova) {
 
         console.error(
-            "Bridge Trainer PSCPP: prova anterior inválida."
+            "Bridge Trainer PSCPP: identificador da prova anterior não informado."
         );
-
 
         return false;
 
     }
 
 
-    configuracaoSimuladoPSCPP.tipo =
-        TIPOS_SIMULADO_PSCPP.PROVA_ANTERIOR;
+    configuracaoSimuladoPSCPP = {
 
+        tipo:
+            TIPOS_SIMULADO_PSCPP.PROVA_ANTERIOR,
 
-    configuracaoSimuladoPSCPP.provaAnterior =
-        prova;
+        disciplinas: [],
 
+        quantidade: null,
 
-    configuracaoSimuladoPSCPP.disciplina =
-        null;
+        provaAnterior:
+            prova
 
-
-    configuracaoSimuladoPSCPP.quantidade =
-        null;
+    };
 
 
     return true;
@@ -652,33 +578,20 @@ function validarConfiguracaoSimuladoPSCPP() {
         configuracaoSimuladoPSCPP;
 
 
-    if (!config.tipo) {
-
-        return {
-
-            valida: false,
-
-            mensagem:
-                "Selecione o tipo de simulado."
-
-        };
-
-    }
-
-
     // =================================
-    // SIMULADO GERAL
+    // SIMULADO PERSONALIZADO
     // =================================
 
     if (
         config.tipo ===
-        TIPOS_SIMULADO_PSCPP.GERAL
+        TIPOS_SIMULADO_PSCPP.PERSONALIZADO
     ) {
 
         if (
-            !quantidadeSimuladoValidaPSCPP(
-                config.quantidade
-            )
+            !Array.isArray(
+                config.disciplinas
+            ) ||
+            config.disciplinas.length === 0
         ) {
 
             return {
@@ -686,46 +599,33 @@ function validarConfiguracaoSimuladoPSCPP() {
                 valida: false,
 
                 mensagem:
-                    "Selecione uma quantidade válida de questões."
+                    "Selecione pelo menos uma disciplina."
 
             };
 
         }
 
 
-        return {
+        const disciplinasValidas =
+            config.disciplinas.every(
+                function(disciplinaId) {
 
-            valida: true,
+                    return disciplinaSimuladoValidaPSCPP(
+                        disciplinaId
+                    );
 
-            mensagem:
-                "Configuração válida."
-
-        };
-
-    }
+                }
+            );
 
 
-    // =================================
-    // SIMULADO POR DISCIPLINA
-    // =================================
-
-    if (
-        config.tipo ===
-        TIPOS_SIMULADO_PSCPP.DISCIPLINA
-    ) {
-
-        if (
-            !disciplinaSimuladoValidaPSCPP(
-                config.disciplina
-            )
-        ) {
+        if (!disciplinasValidas) {
 
             return {
 
                 valida: false,
 
                 mensagem:
-                    "Selecione uma disciplina válida."
+                    "Existe uma disciplina inválida na configuração."
 
             };
 
@@ -806,7 +706,7 @@ function validarConfiguracaoSimuladoPSCPP() {
         valida: false,
 
         mensagem:
-            "Configuração de simulado inválida."
+            "Configuração inválida."
 
     };
 
@@ -814,14 +714,18 @@ function validarConfiguracaoSimuladoPSCPP() {
 
 
 // =====================================
-// OBTER CONFIGURAÇÃO ATUAL
+// OBTER CONFIGURAÇÃO
 // =====================================
 
 function obterConfiguracaoSimuladoPSCPP() {
 
     return {
 
-        ...configuracaoSimuladoPSCPP
+        ...configuracaoSimuladoPSCPP,
+
+        disciplinas: [
+            ...configuracaoSimuladoPSCPP.disciplinas
+        ]
 
     };
 
@@ -830,15 +734,6 @@ function obterConfiguracaoSimuladoPSCPP() {
 
 // =====================================
 // SALVAR CONFIGURAÇÃO
-// =====================================
-//
-// Utilizamos sessionStorage porque a
-// configuração pertence ao simulado
-// que está sendo realizado naquele
-// momento.
-//
-// O histórico de desempenho será
-// armazenado separadamente.
 // =====================================
 
 function salvarConfiguracaoSimuladoPSCPP() {
@@ -853,7 +748,6 @@ function salvarConfiguracaoSimuladoPSCPP() {
             "Bridge Trainer PSCPP:",
             validacao.mensagem
         );
-
 
         return false;
 
@@ -880,10 +774,9 @@ function salvarConfiguracaoSimuladoPSCPP() {
     catch (erro) {
 
         console.error(
-            "Bridge Trainer PSCPP: não foi possível salvar a configuração do simulado.",
+            "Bridge Trainer PSCPP: não foi possível salvar a configuração.",
             erro
         );
-
 
         return false;
 
@@ -923,16 +816,19 @@ function carregarConfiguracaoSimuladoPSCPP() {
 
             ...criarConfiguracaoPadraoSimuladoPSCPP(),
 
-            ...configuracao
+            ...configuracao,
+
+            disciplinas:
+                Array.isArray(
+                    configuracao.disciplinas
+                )
+                    ? configuracao.disciplinas
+                    : []
 
         };
 
 
-        return {
-
-            ...configuracaoSimuladoPSCPP
-
-        };
+        return obterConfiguracaoSimuladoPSCPP();
 
     }
 
@@ -942,7 +838,6 @@ function carregarConfiguracaoSimuladoPSCPP() {
             "Bridge Trainer PSCPP: não foi possível carregar a configuração.",
             erro
         );
-
 
         return null;
 
@@ -982,76 +877,47 @@ function limparConfiguracaoSimuladoPSCPP() {
 
 
 // =====================================
-// RESUMO DA CONFIGURAÇÃO
+// OBTER NOMES DAS DISCIPLINAS
 // =====================================
-//
-// Será útil posteriormente na tela
-// antes de iniciar o simulado.
+
+function obterNomesDisciplinasSelecionadasPSCPP() {
+
+    return configuracaoSimuladoPSCPP
+        .disciplinas
+        .map(
+            function(disciplinaId) {
+
+                const disciplina =
+                    DISCIPLINAS_SIMULADO_PSCPP.find(
+                        function(item) {
+
+                            return (
+                                item.id ===
+                                disciplinaId
+                            );
+
+                        }
+                    );
+
+
+                return disciplina
+                    ? disciplina.nome
+                    : disciplinaId;
+
+            }
+        );
+
+}
+
+
+// =====================================
+// RESUMO DA CONFIGURAÇÃO
 // =====================================
 
 function obterResumoConfiguracaoSimuladoPSCPP() {
 
     const config =
         obterConfiguracaoSimuladoPSCPP();
-
-
-    if (
-        config.tipo ===
-        TIPOS_SIMULADO_PSCPP.GERAL
-    ) {
-
-        return {
-
-            tipo:
-                "Simulado Geral",
-
-            disciplina:
-                "Todas as disciplinas",
-
-            quantidade:
-                config.quantidade
-
-        };
-
-    }
-
-
-    if (
-        config.tipo ===
-        TIPOS_SIMULADO_PSCPP.DISCIPLINA
-    ) {
-
-        const disciplina =
-            DISCIPLINAS_SIMULADO_PSCPP.find(
-                function (
-                    item
-                ) {
-
-                    return (
-                        item.id ===
-                        config.disciplina
-                    );
-
-                }
-            );
-
-
-        return {
-
-            tipo:
-                "Simulado por Disciplina",
-
-            disciplina:
-                disciplina
-                    ? disciplina.nome
-                    : config.disciplina,
-
-            quantidade:
-                config.quantidade
-
-        };
-
-    }
 
 
     if (
@@ -1072,10 +938,22 @@ function obterResumoConfiguracaoSimuladoPSCPP() {
     }
 
 
+    const nomes =
+        obterNomesDisciplinasSelecionadasPSCPP();
+
+
     return {
 
         tipo:
-            "Não configurado"
+            todasDisciplinasSelecionadasPSCPP()
+                ? "Simulado Geral"
+                : "Simulado Personalizado",
+
+        disciplinas:
+            nomes,
+
+        quantidade:
+            config.quantidade
 
     };
 
@@ -1087,5 +965,5 @@ function obterResumoConfiguracaoSimuladoPSCPP() {
 // =====================================
 
 console.info(
-    "Bridge Trainer PSCPP: configuração de simulados v1.0 carregada."
+    "Bridge Trainer PSCPP: configuração de simulados v1.1 carregada."
 );
