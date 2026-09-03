@@ -22,7 +22,7 @@
 
 const questoesManobrabilidadePSCPP = [
 
-   const questoesManobrabilidadePSCPP = [
+ 
 
     // =====================================
     // MAN-0001
