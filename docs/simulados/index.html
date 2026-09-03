@@ -10,331 +10,53 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Simulados PSCPP — Bridge Trainer
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
+    <title>Simulados PSCPP</title>
 
 </head>
 
 
 <body>
 
+    <h1>
+        ⚓ Bridge Trainer PSCPP
+    </h1>
 
-<!-- =========================================
-     CABEÇALHO
-========================================= -->
+    <h2>
+        📝 Simulados PSCPP
+    </h2>
 
-<header class="topo">
+    <p>
+        Se você está vendo esta mensagem,
+        a página de Simulados está funcionando.
+    </p>
 
-    <div class="logo">
+    <hr>
 
-        <h1>
-            ⚓ Bridge Trainer PSCPP
-        </h1>
+    <h2>
+        🎯 Criar Simulado
+    </h2>
 
-        <p>
-            Preparação para o Processo Seletivo
-            de Praticante de Prático
-        </p>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================================
-     NAVEGAÇÃO
-========================================= -->
-
-<nav class="navbar">
-
-    <button
-        type="button"
-        onclick="voltarPagina()"
-    >
-        ⬅ Voltar
+    <button>
+        Criar Simulado
     </button>
 
 
-    <a href="../index.html">
+    <h2>
+        📄 Provas Anteriores
+    </h2>
 
-        🏠 Início
+    <button>
+        Provas Anteriores
+    </button>
 
-    </a>
 
+    <h2>
+        📊 Meu Desempenho
+    </h2>
 
-    <a href="../guia-estudos/index.html">
-
-        📚 Guia de Estudos
-
-    </a>
-
-
-    <a href="index.html">
-
-        📝 Simulados
-
-    </a>
-
-</nav>
-
-
-
-<!-- =========================================
-     CONTEÚDO PRINCIPAL
-========================================= -->
-
-<main class="dashboard">
-
-
-    <!-- =====================================
-         ABERTURA
-    ====================================== -->
-
-    <section class="widget">
-
-        <h2>
-            📝 Simulados PSCPP
-        </h2>
-
-        <p>
-            Área de treinamento destinada à
-            resolução de questões,
-            simulados personalizados e
-            provas anteriores do PSCPP.
-        </p>
-
-        <p>
-            Os resultados obtidos nesta área
-            serão utilizados para acompanhar
-            seu desempenho por disciplina
-            e por assunto.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================
-         CRIAR SIMULADO
-    ====================================== -->
-
-    <section class="widget">
-
-        <h2>
-            🎯 Criar Simulado
-        </h2>
-
-        <p>
-            Monte um simulado personalizado
-            escolhendo as disciplinas e a
-            quantidade de questões.
-        </p>
-
-        <p>
-            Será possível realizar:
-        </p>
-
-        <ul>
-
-            <li>
-                Simulado Geral
-            </li>
-
-            <li>
-                Simulado por Disciplina
-            </li>
-
-            <li>
-                10, 20, 30, 40, 50
-                ou 70 questões
-            </li>
-
-        </ul>
-
-
-        <button
-            type="button"
-            onclick="abrirConfiguracaoSimulado()"
-        >
-            🎯 Criar Simulado
-        </button>
-
-    </section>
-
-
-
-    <!-- =====================================
-         PROVAS ANTERIORES
-    ====================================== -->
-
-    <section class="widget">
-
-        <h2>
-            📄 Provas Anteriores
-        </h2>
-
-        <p>
-            Resolva provas anteriores
-            mantendo a estrutura e a
-            numeração originais das questões.
-        </p>
-
-        <p>
-            As questões poderão ser
-            classificadas internamente por
-            disciplina e assunto para
-            composição das estatísticas
-            de desempenho.
-        </p>
-
-
-        <button
-            type="button"
-            onclick="abrirProvasAnteriores()"
-        >
-            📄 Provas Anteriores
-        </button>
-
-    </section>
-
-
-
-    <!-- =====================================
-         DESEMPENHO
-    ====================================== -->
-
-    <section class="widget">
-
-        <h2>
-            📊 Meu Desempenho
-        </h2>
-
-        <p>
-            Consulte seus resultados nos
-            exercícios, simulados e provas
-            realizadas.
-        </p>
-
-        <p>
-            O sistema será preparado para
-            identificar pontos fortes e
-            assuntos que precisam de maior
-            revisão.
-        </p>
-
-
-        <button
-            type="button"
-            onclick="abrirDesempenhoSimulados()"
-        >
-            📊 Ver Desempenho
-        </button>
-
-    </section>
-
-
-
-    <!-- =====================================
-         DISCIPLINAS
-    ====================================== -->
-
-    <section class="widget">
-
-        <h2>
-            📚 Disciplinas
-        </h2>
-
-        <p>
-            O banco de questões dos
-            simulados será organizado nas
-            seguintes disciplinas:
-        </p>
-
-        <ul>
-
-            <li>
-                Arte Naval
-            </li>
-
-            <li>
-                Manobrabilidade
-            </li>
-
-            <li>
-                Conhecimentos Gerais
-            </li>
-
-            <li>
-                Legislação e Regulamentação
-            </li>
-
-            <li>
-                Meteorologia
-            </li>
-
-            <li>
-                Navegação
-            </li>
-
-        </ul>
-
-    </section>
-
-
-
-</main>
-
-
-
-<!-- =========================================
-     FUNÇÕES TEMPORÁRIAS DA INTERFACE
-========================================= -->
-
-<script>
-
-function abrirConfiguracaoSimulado() {
-
-    alert(
-        "A configuração do simulado será implementada na próxima etapa."
-    );
-
-}
-
-
-function abrirProvasAnteriores() {
-
-    alert(
-        "O módulo de provas anteriores será implementado posteriormente."
-    );
-
-}
-
-
-function abrirDesempenhoSimulados() {
-
-    alert(
-        "O painel de desempenho será conectado ao sistema de resultados."
-    );
-
-}
-
-</script>
-
-
-
-<!-- =========================================
-     NAVEGAÇÃO DO BRIDGE TRAINER
-========================================= -->
-
-<script src="../js/navigation.js"></script>
-
+    <button>
+        Ver Desempenho
+    </button>
 
 </body>
 
