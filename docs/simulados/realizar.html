@@ -1,1 +1,1273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Realizar Simulado | Bridge Trainer PSCPP</title>
+
+<link
+    rel="stylesheet"
+    href="../css/style.css?v=2.0"
+>
+
+</head>
+
+
+<body
+    data-tipo-pagina="simulado"
+    data-disciplina="simulado"
+    data-aula="simulado-pscpp"
+>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+    <div class="logo">
+
+        <h1>
+            ⚓ Bridge Trainer PSCPP
+        </h1>
+
+        <p>
+            Simulado PSCPP
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+    <button onclick="voltarPagina()">
+        ⬅ Voltar
+    </button>
+
+    <a href="../index.html">
+        🏠 Início
+    </a>
+
+    <a href="index.html">
+        📝 Simulados
+    </a>
+
+    <a href="../desempenho/index.html">
+        📊 Desempenho
+    </a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     CABEÇALHO DO SIMULADO
+========================================= -->
+
+<section class="dashboard">
+
+    <h2>
+        📝 Simulado PSCPP
+    </h2>
+
+    <p id="descricao-simulado">
+        Preparando simulado...
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     CONTROLE DA TENTATIVA
+========================================= -->
+
+<section
+    class="painel"
+    id="painel-controle"
+    style="display: none;"
+>
+
+    <div class="widget">
+
+        <h3>
+            📊 Andamento
+        </h3>
+
+        <p>
+            <strong>Questões:</strong>
+            <span id="total-questoes">
+                0
+            </span>
+        </p>
+
+        <p>
+            <strong>Respondidas:</strong>
+            <span id="questoes-respondidas">
+                0
+            </span>
+            /
+            <span id="questoes-total-contador">
+                0
+            </span>
+        </p>
+
+        <p>
+            <strong>Disciplinas:</strong>
+            <span id="disciplinas-simulado">
+                —
+            </span>
+        </p>
+
+        <h3>
+            ⏱️ Tempo
+        </h3>
+
+        <p
+            id="cronometro-simulado"
+            style="
+                font-size: 1.8rem;
+                font-weight: bold;
+            "
+        >
+            00:00:00
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ÁREA DE MENSAGEM
+========================================= -->
+
+<section
+    class="painel"
+    id="painel-mensagem"
+    style="display: none;"
+>
+
+    <div
+        class="widget"
+        id="mensagem-simulado"
+    >
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     QUESTÕES
+========================================= -->
+
+<section
+    class="painel"
+    id="painel-questoes"
+    style="display: none;"
+>
+
+    <h2>
+        📚 Questões
+    </h2>
+
+    <div id="container-questoes">
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FINALIZAR
+========================================= -->
+
+<section
+    class="painel"
+    id="painel-finalizar"
+    style="display: none;"
+>
+
+    <div class="widget">
+
+        <h3>
+            🏁 Finalizar Simulado
+        </h3>
+
+        <p>
+            Confira se todas as questões foram
+            respondidas antes de finalizar.
+        </p>
+
+        <button
+            type="button"
+            class="botao"
+            id="botao-finalizar-simulado"
+        >
+            Finalizar Simulado
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     RESULTADO
+========================================= -->
+
+<section
+    class="painel"
+    id="painel-resultado"
+    style="display: none;"
+>
+
+    <h2>
+        📊 Resultado
+    </h2>
+
+    <div
+        class="widget"
+        id="resultado-simulado"
+    >
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     BOTÃO INÍCIO
+========================================= -->
+
+<a
+    href="../index.html"
+    class="botao-inicio"
+>
+    🏠
+</a>
+
+
+<footer>
+
+    <p>
+        Bridge Trainer PSCPP
+    </p>
+
+</footer>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<script src="../js/navigation.js"></script>
+
+
+<!-- =========================================
+     BANCOS DE QUESTÕES
+========================================= -->
+
+<script src="../data/questoes/arte-naval/questoes.js"></script>
+
+<script src="../data/questoes/manobrabilidade/questoes.js"></script>
+
+<script src="../data/questoes/conhecimentos-gerais/questoes.js"></script>
+
+<script src="../data/questoes/regulamentacao/questoes.js"></script>
+
+<script src="../data/questoes/meteorologia/questoes.js"></script>
+
+<script src="../data/questoes/navegacao/questoes.js"></script>
+
+
+<!-- =========================================
+     SISTEMA DE SIMULADOS
+========================================= -->
+
+<script src="../js/simulados/configuracao-simulado.js"></script>
+
+<script src="../js/simulados/motor-simulado.js"></script>
+
+
+<!-- =========================================
+     EXECUÇÃO DA PÁGINA
+========================================= -->
+
+<script>
+
+
+// =====================================
+// ESTADO DA TENTATIVA
+// =====================================
+
+let inicioSimuladoPSCPP = null;
+
+let intervaloCronometroPSCPP = null;
+
+let respostasSimuladoPSCPP = {};
+
+let simuladoFinalizadoTelaPSCPP = false;
+
+
+// =====================================
+// ELEMENTOS
+// =====================================
+
+const painelControle =
+    document.getElementById(
+        "painel-controle"
+    );
+
+const painelMensagem =
+    document.getElementById(
+        "painel-mensagem"
+    );
+
+const mensagemSimulado =
+    document.getElementById(
+        "mensagem-simulado"
+    );
+
+const painelQuestoes =
+    document.getElementById(
+        "painel-questoes"
+    );
+
+const containerQuestoes =
+    document.getElementById(
+        "container-questoes"
+    );
+
+const painelFinalizar =
+    document.getElementById(
+        "painel-finalizar"
+    );
+
+const painelResultado =
+    document.getElementById(
+        "painel-resultado"
+    );
+
+const resultadoSimulado =
+    document.getElementById(
+        "resultado-simulado"
+    );
+
+const elementoCronometro =
+    document.getElementById(
+        "cronometro-simulado"
+    );
+
+
+// =====================================
+// ESCAPAR HTML
+// =====================================
+
+function escaparHTMLSimuladoPSCPP(valor) {
+
+    const elemento =
+        document.createElement("div");
+
+    elemento.textContent =
+        valor === null ||
+        valor === undefined
+            ? ""
+            : String(valor);
+
+    return elemento.innerHTML;
+
+}
+
+
+// =====================================
+// FORMATAR TEMPO
+// =====================================
+
+function formatarTempoSimuladoPSCPP(
+    segundos
+) {
+
+    const horas =
+        Math.floor(
+            segundos / 3600
+        );
+
+    const minutos =
+        Math.floor(
+            (segundos % 3600) / 60
+        );
+
+    const segundosRestantes =
+        segundos % 60;
+
+
+    return [
+
+        horas,
+        minutos,
+        segundosRestantes
+
+    ]
+
+    .map(
+        function(numero) {
+
+            return String(numero)
+                .padStart(
+                    2,
+                    "0"
+                );
+
+        }
+    )
+
+    .join(":");
+
+}
+
+
+// =====================================
+// TEMPO DECORRIDO
+// =====================================
+
+function obterTempoDecorridoSimuladoPSCPP() {
+
+    if (!inicioSimuladoPSCPP) {
+
+        return 0;
+
+    }
+
+
+    return Math.floor(
+
+        (
+            Date.now() -
+            inicioSimuladoPSCPP
+        ) / 1000
+
+    );
+
+}
+
+
+// =====================================
+// ATUALIZAR CRONÔMETRO
+// =====================================
+
+function atualizarCronometroSimuladoPSCPP() {
+
+    const segundos =
+        obterTempoDecorridoSimuladoPSCPP();
+
+
+    elementoCronometro.textContent =
+        formatarTempoSimuladoPSCPP(
+            segundos
+        );
+
+}
+
+
+// =====================================
+// INICIAR CRONÔMETRO
+// =====================================
+
+function iniciarCronometroSimuladoPSCPP() {
+
+    inicioSimuladoPSCPP =
+        Date.now();
+
+
+    atualizarCronometroSimuladoPSCPP();
+
+
+    intervaloCronometroPSCPP =
+        setInterval(
+            atualizarCronometroSimuladoPSCPP,
+            1000
+        );
+
+}
+
+
+// =====================================
+// PARAR CRONÔMETRO
+// =====================================
+
+function pararCronometroSimuladoPSCPP() {
+
+    if (
+        intervaloCronometroPSCPP
+    ) {
+
+        clearInterval(
+            intervaloCronometroPSCPP
+        );
+
+
+        intervaloCronometroPSCPP =
+            null;
+
+    }
+
+}
+
+
+// =====================================
+// EXIBIR MENSAGEM
+// =====================================
+
+function mostrarMensagemSimuladoPSCPP(
+    texto
+) {
+
+    mensagemSimulado.innerHTML = `
+
+        <p>
+            ${escaparHTMLSimuladoPSCPP(texto)}
+        </p>
+
+    `;
+
+
+    painelMensagem.style.display =
+        "block";
+
+}
+
+
+// =====================================
+// NOMES DAS DISCIPLINAS
+// =====================================
+
+function obterNomesDisciplinasTelaPSCPP(
+    ids
+) {
+
+    const disciplinas =
+        obterDisciplinasSimuladoPSCPP();
+
+
+    return ids.map(
+        function(id) {
+
+            const encontrada =
+                disciplinas.find(
+                    function(item) {
+
+                        return (
+                            item.id === id
+                        );
+
+                    }
+                );
+
+
+            return encontrada
+                ? encontrada.nome
+                : id;
+
+        }
+    );
+
+}
+
+
+// =====================================
+// BIBLIOGRAFIA PARA DATASET
+// =====================================
+
+function obterTextoBibliografiaPSCPP(
+    bibliografia
+) {
+
+    if (
+        !Array.isArray(
+            bibliografia
+        )
+    ) {
+
+        return "";
+
+    }
+
+
+    return bibliografia
+        .map(
+            function(item) {
+
+                let texto =
+                    item.publicacao || "";
+
+
+                if (item.capitulo) {
+
+                    texto +=
+                        " — " +
+                        item.capitulo;
+
+                }
+
+
+                if (item.pagina) {
+
+                    texto +=
+                        " — p. " +
+                        item.pagina;
+
+                }
+
+
+                return texto;
+
+            }
+        )
+        .join(" | ");
+
+}
+
+
+// =====================================
+// CRIAR QUESTÃO
+// =====================================
+
+function criarElementoQuestaoSimuladoPSCPP(
+    questao,
+    indice
+) {
+
+    const bloco =
+        document.createElement("div");
+
+
+    bloco.className =
+        "widget questao";
+
+
+    bloco.dataset.questaoId =
+        questao.id;
+
+
+    bloco.dataset.resposta =
+        questao.resposta || "";
+
+
+    bloco.dataset.topico =
+        questao.topico ||
+        questao.assunto ||
+        "";
+
+
+    bloco.dataset.edital =
+        questao.edital || "";
+
+
+    bloco.dataset.bibliografia =
+        obterTextoBibliografiaPSCPP(
+            questao.bibliografia
+        );
+
+
+    const titulo =
+        document.createElement("h3");
+
+
+    titulo.textContent =
+        "Questão " +
+        (indice + 1);
+
+
+    bloco.appendChild(
+        titulo
+    );
+
+
+    const enunciado =
+        document.createElement("p");
+
+
+    enunciado.textContent =
+        questao.enunciado || "";
+
+
+    bloco.appendChild(
+        enunciado
+    );
+
+
+    const alternativas =
+        document.createElement("div");
+
+
+    alternativas.className =
+        "alternativas-questao";
+
+
+    const letras = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ];
+
+
+    letras.forEach(
+        function(letra) {
+
+            if (
+                !questao.alternativas ||
+                !Object.prototype.hasOwnProperty.call(
+                    questao.alternativas,
+                    letra
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            const botao =
+                document.createElement(
+                    "button"
+                );
+
+
+            botao.type =
+                "button";
+
+
+            botao.className =
+                "alternativa";
+
+
+            botao.dataset.opcao =
+                letra;
+
+
+            botao.textContent =
+                letra +
+                ") " +
+                questao.alternativas[letra];
+
+
+            botao.addEventListener(
+                "click",
+                function() {
+
+                    selecionarAlternativaSimuladoPSCPP(
+                        bloco,
+                        questao.id,
+                        letra,
+                        botao
+                    );
+
+                }
+            );
+
+
+            alternativas.appendChild(
+                botao
+            );
+
+        }
+    );
+
+
+    bloco.appendChild(
+        alternativas
+    );
+
+
+    return bloco;
+
+}
+
+
+// =====================================
+// SELECIONAR ALTERNATIVA
+// =====================================
+
+function selecionarAlternativaSimuladoPSCPP(
+    blocoQuestao,
+    questaoId,
+    letra,
+    botaoSelecionado
+) {
+
+    if (
+        simuladoFinalizadoTelaPSCPP
+    ) {
+
+        return;
+
+    }
+
+
+    respostasSimuladoPSCPP[
+        questaoId
+    ] = letra;
+
+
+    const alternativas =
+        blocoQuestao.querySelectorAll(
+            ".alternativa"
+        );
+
+
+    alternativas.forEach(
+        function(botao) {
+
+            botao.classList.remove(
+                "alternativa-selecionada"
+            );
+
+        }
+    );
+
+
+    botaoSelecionado.classList.add(
+        "alternativa-selecionada"
+    );
+
+
+    atualizarContadorRespondidasPSCPP();
+
+}
+
+
+// =====================================
+// CONTADOR
+// =====================================
+
+function atualizarContadorRespondidasPSCPP() {
+
+    document.getElementById(
+        "questoes-respondidas"
+    ).textContent =
+        Object.keys(
+            respostasSimuladoPSCPP
+        ).length;
+
+}
+
+
+// =====================================
+// RENDERIZAR QUESTÕES
+// =====================================
+
+function renderizarQuestoesSimuladoPSCPP(
+    questoes
+) {
+
+    containerQuestoes.innerHTML =
+        "";
+
+
+    questoes.forEach(
+        function(questao, indice) {
+
+            containerQuestoes.appendChild(
+
+                criarElementoQuestaoSimuladoPSCPP(
+                    questao,
+                    indice
+                )
+
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// CORRIGIR SIMULADO
+// =====================================
+
+function corrigirSimuladoTelaPSCPP() {
+
+    const questoes =
+        obterQuestoesSimuladoAtualPSCPP();
+
+
+    let acertos = 0;
+
+
+    questoes.forEach(
+        function(questao) {
+
+            const respostaUsuario =
+                respostasSimuladoPSCPP[
+                    questao.id
+                ];
+
+
+            const respostaCorreta =
+                questao.resposta;
+
+
+            if (
+                respostaUsuario ===
+                respostaCorreta
+            ) {
+
+                acertos++;
+
+            }
+
+
+            const bloco =
+                document.querySelector(
+                    '[data-questao-id="' +
+                    questao.id +
+                    '"]'
+                );
+
+
+            if (!bloco) {
+
+                return;
+
+            }
+
+
+            const alternativas =
+                bloco.querySelectorAll(
+                    ".alternativa"
+                );
+
+
+            alternativas.forEach(
+                function(botao) {
+
+                    const opcao =
+                        botao.dataset.opcao;
+
+
+                    botao.disabled =
+                        true;
+
+
+                    if (
+                        opcao ===
+                        respostaCorreta
+                    ) {
+
+                        botao.classList.add(
+                            "alternativa-correta"
+                        );
+
+                    }
+
+
+                    if (
+                        opcao ===
+                        respostaUsuario &&
+                        respostaUsuario !==
+                        respostaCorreta
+                    ) {
+
+                        botao.classList.add(
+                            "alternativa-incorreta"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    return acertos;
+
+}
+
+
+// =====================================
+// FINALIZAR
+// =====================================
+
+function finalizarSimuladoTelaPSCPP() {
+
+    if (
+        simuladoFinalizadoTelaPSCPP
+    ) {
+
+        return;
+
+    }
+
+
+    const total =
+        obterQuantidadeQuestoesSimuladoAtualPSCPP();
+
+
+    const respondidas =
+        Object.keys(
+            respostasSimuladoPSCPP
+        ).length;
+
+
+    if (
+        respondidas < total
+    ) {
+
+        mostrarMensagemSimuladoPSCPP(
+
+            "Ainda existem " +
+            (total - respondidas) +
+            " questões sem resposta."
+
+        );
+
+
+        return;
+
+    }
+
+
+    const tempoTotal =
+        obterTempoDecorridoSimuladoPSCPP();
+
+
+    pararCronometroSimuladoPSCPP();
+
+
+    simuladoFinalizadoTelaPSCPP =
+        true;
+
+
+    marcarSimuladoComoFinalizadoPSCPP();
+
+
+    const acertos =
+        corrigirSimuladoTelaPSCPP();
+
+
+    const erros =
+        total - acertos;
+
+
+    const percentual =
+        total > 0
+            ? Math.round(
+                (
+                    acertos /
+                    total
+                ) * 100
+            )
+            : 0;
+
+
+    const tempoMedio =
+        total > 0
+            ? tempoTotal / total
+            : 0;
+
+
+    painelResultado.style.display =
+        "block";
+
+
+    resultadoSimulado.innerHTML = `
+
+        <h3>
+            Resultado da tentativa
+        </h3>
+
+        <p>
+            <strong>Acertos:</strong>
+            ${acertos} / ${total}
+        </p>
+
+        <p>
+            <strong>Erros:</strong>
+            ${erros}
+        </p>
+
+        <p>
+            <strong>Aproveitamento:</strong>
+            ${percentual}%
+        </p>
+
+        <p>
+            <strong>Tempo total:</strong>
+            ${formatarTempoSimuladoPSCPP(
+                tempoTotal
+            )}
+        </p>
+
+        <p>
+            <strong>
+                Tempo médio por questão:
+            </strong>
+
+            ${formatarTempoSimuladoPSCPP(
+                Math.round(
+                    tempoMedio
+                )
+            )}
+        </p>
+
+    `;
+
+
+    document.getElementById(
+        "botao-finalizar-simulado"
+    ).disabled =
+        true;
+
+
+    painelResultado.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// =====================================
+// INICIAR TENTATIVA
+// =====================================
+
+function iniciarTentativaSimuladoPSCPP() {
+
+    const preparacao =
+        prepararSimuladoPSCPP();
+
+
+    if (
+        !preparacao.sucesso
+    ) {
+
+        mostrarMensagemSimuladoPSCPP(
+            preparacao.mensagem
+        );
+
+
+        document.getElementById(
+            "descricao-simulado"
+        ).textContent =
+            "Não foi possível iniciar o simulado.";
+
+
+        return;
+
+    }
+
+
+    const simulado =
+        obterSimuladoAtualPSCPP();
+
+
+    const questoes =
+        simulado.questoes;
+
+
+    const nomesDisciplinas =
+        obterNomesDisciplinasTelaPSCPP(
+            simulado.configuracao.disciplinas
+        );
+
+
+    document.getElementById(
+        "descricao-simulado"
+    ).textContent =
+
+        questoes.length +
+        " questões selecionadas.";
+
+
+    document.getElementById(
+        "total-questoes"
+    ).textContent =
+        questoes.length;
+
+
+    document.getElementById(
+        "questoes-total-contador"
+    ).textContent =
+        questoes.length;
+
+
+    document.getElementById(
+        "disciplinas-simulado"
+    ).textContent =
+        nomesDisciplinas.join(", ");
+
+
+    painelControle.style.display =
+        "block";
+
+
+    painelQuestoes.style.display =
+        "block";
+
+
+    painelFinalizar.style.display =
+        "block";
+
+
+    renderizarQuestoesSimuladoPSCPP(
+        questoes
+    );
+
+
+    marcarSimuladoComoIniciadoPSCPP();
+
+
+    iniciarCronometroSimuladoPSCPP();
+
+}
+
+
+// =====================================
+// BOTÃO FINALIZAR
+// =====================================
+
+document.getElementById(
+    "botao-finalizar-simulado"
+).addEventListener(
+    "click",
+    finalizarSimuladoTelaPSCPP
+);
+
+
+// =====================================
+// INICIALIZAÇÃO
+// =====================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    iniciarTentativaSimuladoPSCPP
+);
+
+
+</script>
+
+
+</body>
+
+</html>
