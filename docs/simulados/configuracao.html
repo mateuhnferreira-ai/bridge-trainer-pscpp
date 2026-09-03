@@ -1,1 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Configurar Simulado | Bridge Trainer PSCPP</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css?v=2.0"
+    >
+
+</head>
+
+
+<body data-tipo-pagina="simulados">
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+    <div class="logo">
+
+        <h1>⚓ Bridge Trainer PSCPP</h1>
+
+        <p>
+            Preparação para o Processo Seletivo
+            de Praticante de Prático
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+    <button onclick="voltarPagina()">
+        ⬅ Voltar
+    </button>
+
+    <a href="../index.html">
+        🏠 Início
+    </a>
+
+    <a href="../guia-estudos/index.html">
+        📚 Guia de Estudos
+    </a>
+
+    <a href="index.html">
+        📝 Simulados
+    </a>
+
+    <a href="../guia-estudos/planejamento.html">
+        📅 Planejamento
+    </a>
+
+    <a href="../desempenho/index.html">
+        📊 Desempenho
+    </a>
+
+</nav>
+
+
+<!-- =========================================
+     CONTEÚDO
+========================================= -->
+
+<main>
+
+
+<!-- =========================================
+     ABERTURA
+========================================= -->
+
+<section class="dashboard">
+
+    <h2>
+        🎯 Configurar Simulado
+    </h2>
+
+    <p>
+        Escolha as disciplinas e a quantidade
+        de questões para montar seu treinamento.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     DISCIPLINAS
+========================================= -->
+
+<section class="painel">
+
+    <h2>
+        📚 Disciplinas
+    </h2>
+
+    <div class="widget">
+
+        <p>
+            Você pode selecionar uma ou várias
+            disciplinas.
+        </p>
+
+        <p>
+            <strong>
+                Selecione as áreas que deseja incluir:
+            </strong>
+        </p>
+
+
+        <!-- ARTE NAVAL -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="arte-naval"
+                >
+
+                ⚓ Arte Naval
+
+            </label>
+
+        </p>
+
+
+        <!-- MANOBRABILIDADE -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="manobrabilidade"
+                >
+
+                🚢 Manobrabilidade
+
+            </label>
+
+        </p>
+
+
+        <!-- CONHECIMENTOS GERAIS -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="conhecimentos-gerais"
+                >
+
+                📘 Conhecimentos Gerais
+
+            </label>
+
+        </p>
+
+
+        <!-- REGULAMENTAÇÃO -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="regulamentacao"
+                >
+
+                ⚖️ Legislação e Regulamentação
+
+            </label>
+
+        </p>
+
+
+        <!-- METEOROLOGIA -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="meteorologia"
+                >
+
+                🌦️ Meteorologia
+
+            </label>
+
+        </p>
+
+
+        <!-- NAVEGAÇÃO -->
+
+        <p>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    class="disciplina-simulado"
+                    value="navegacao"
+                >
+
+                🧭 Navegação
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <button
+                type="button"
+                class="botao"
+                id="selecionar-todas"
+            >
+                Selecionar todas
+            </button>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     QUANTIDADE DE QUESTÕES
+========================================= -->
+
+<section class="painel">
+
+    <h2>
+        🔢 Quantidade de Questões
+    </h2>
+
+    <div class="widget">
+
+        <p>
+            Escolha o tamanho do simulado.
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="10"
+                >
+
+                10 questões
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="20"
+                >
+
+                20 questões
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="30"
+                >
+
+                30 questões
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="40"
+                >
+
+                40 questões
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="50"
+                >
+
+                50 questões
+
+            </label>
+
+        </p>
+
+
+        <p>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="quantidade-simulado"
+                    value="70"
+                >
+
+                <strong>
+                    70 questões — Simulado Completo
+                </strong>
+
+            </label>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     RESUMO
+========================================= -->
+
+<section class="painel">
+
+    <h2>
+        📋 Resumo
+    </h2>
+
+    <div
+        class="widget"
+        id="resumo-configuracao"
+    >
+
+        <p>
+            <strong>Disciplinas:</strong>
+            nenhuma selecionada
+        </p>
+
+        <p>
+            <strong>Questões:</strong>
+            não definido
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     MENSAGEM
+========================================= -->
+
+<section
+    class="painel"
+    id="area-mensagem"
+    style="display: none;"
+>
+
+    <div
+        class="widget"
+        id="mensagem-configuracao"
+    >
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     INICIAR
+========================================= -->
+
+<section class="painel">
+
+    <div class="widget">
+
+        <h3>
+            ⏱️ Simulado Cronometrado
+        </h3>
+
+        <p>
+            O cronômetro será iniciado
+            automaticamente quando o simulado começar.
+        </p>
+
+        <p>
+            O tempo total será registrado junto
+            com o resultado da tentativa.
+        </p>
+
+        <p>
+
+            <button
+                type="button"
+                class="botao"
+                id="iniciar-simulado"
+            >
+                ▶ Iniciar Simulado
+            </button>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     BOTÃO INÍCIO
+========================================= -->
+
+<a
+    href="../index.html"
+    class="botao-inicio"
+>
+    🏠
+</a>
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+    <p>
+        Bridge Trainer PSCPP
+    </p>
+
+</footer>
+
+
+<!-- =========================================
+     SCRIPTS DO PROJETO
+========================================= -->
+
+<script src="../js/navigation.js"></script>
+
+<script
+    src="../js/simulados/configuracao-simulado.js"
+></script>
+
+
+<!-- =========================================
+     CONTROLE DA TELA
+========================================= -->
+
+<script>
+
+
+// =====================================
+// ELEMENTOS
+// =====================================
+
+const checkboxesDisciplinas =
+    document.querySelectorAll(
+        ".disciplina-simulado"
+    );
+
+
+const radiosQuantidade =
+    document.querySelectorAll(
+        'input[name="quantidade-simulado"]'
+    );
+
+
+const botaoSelecionarTodas =
+    document.getElementById(
+        "selecionar-todas"
+    );
+
+
+const botaoIniciar =
+    document.getElementById(
+        "iniciar-simulado"
+    );
+
+
+const resumoConfiguracao =
+    document.getElementById(
+        "resumo-configuracao"
+    );
+
+
+const areaMensagem =
+    document.getElementById(
+        "area-mensagem"
+    );
+
+
+const mensagemConfiguracao =
+    document.getElementById(
+        "mensagem-configuracao"
+    );
+
+
+// =====================================
+// OBTER DISCIPLINAS MARCADAS
+// =====================================
+
+function obterDisciplinasMarcadasTela() {
+
+    return Array.from(
+        checkboxesDisciplinas
+    )
+
+    .filter(
+        function(checkbox) {
+
+            return checkbox.checked;
+
+        }
+    )
+
+    .map(
+        function(checkbox) {
+
+            return checkbox.value;
+
+        }
+    );
+
+}
+
+
+// =====================================
+// OBTER QUANTIDADE
+// =====================================
+
+function obterQuantidadeMarcadaTela() {
+
+    const radio =
+        document.querySelector(
+            'input[name="quantidade-simulado"]:checked'
+        );
+
+
+    if (!radio) {
+
+        return null;
+
+    }
+
+
+    return Number(
+        radio.value
+    );
+
+}
+
+
+// =====================================
+// NOME DA DISCIPLINA
+// =====================================
+
+function obterNomeDisciplinaTela(
+    disciplinaId
+) {
+
+    const disciplinas =
+        obterDisciplinasSimuladoPSCPP();
+
+
+    const disciplina =
+        disciplinas.find(
+            function(item) {
+
+                return (
+                    item.id ===
+                    disciplinaId
+                );
+
+            }
+        );
+
+
+    return disciplina
+        ? disciplina.nome
+        : disciplinaId;
+
+}
+
+
+// =====================================
+// ATUALIZAR RESUMO
+// =====================================
+
+function atualizarResumoTela() {
+
+    const disciplinas =
+        obterDisciplinasMarcadasTela();
+
+
+    const quantidade =
+        obterQuantidadeMarcadaTela();
+
+
+    let textoDisciplinas =
+        "nenhuma selecionada";
+
+
+    if (disciplinas.length > 0) {
+
+        textoDisciplinas =
+            disciplinas
+                .map(
+                    obterNomeDisciplinaTela
+                )
+                .join(", ");
+
+    }
+
+
+    resumoConfiguracao.innerHTML = `
+
+        <p>
+            <strong>Disciplinas:</strong>
+            ${textoDisciplinas}
+        </p>
+
+        <p>
+            <strong>Questões:</strong>
+            ${
+                quantidade
+                    ? quantidade
+                    : "não definido"
+            }
+        </p>
+
+    `;
+
+}
+
+
+// =====================================
+// MENSAGEM
+// =====================================
+
+function mostrarMensagemTela(
+    texto
+) {
+
+    mensagemConfiguracao.innerHTML = `
+
+        <p>
+            ${texto}
+        </p>
+
+    `;
+
+
+    areaMensagem.style.display =
+        "block";
+
+}
+
+
+// =====================================
+// ALTERAÇÃO DE DISCIPLINAS
+// =====================================
+
+checkboxesDisciplinas.forEach(
+    function(checkbox) {
+
+        checkbox.addEventListener(
+            "change",
+            function() {
+
+                areaMensagem.style.display =
+                    "none";
+
+
+                atualizarResumoTela();
+
+            }
+        );
+
+    }
+);
+
+
+// =====================================
+// ALTERAÇÃO DA QUANTIDADE
+// =====================================
+
+radiosQuantidade.forEach(
+    function(radio) {
+
+        radio.addEventListener(
+            "change",
+            function() {
+
+                areaMensagem.style.display =
+                    "none";
+
+
+                atualizarResumoTela();
+
+            }
+        );
+
+    }
+);
+
+
+// =====================================
+// SELECIONAR TODAS
+// =====================================
+
+botaoSelecionarTodas.addEventListener(
+    "click",
+    function() {
+
+        const todasMarcadas =
+            Array.from(
+                checkboxesDisciplinas
+            )
+            .every(
+                function(checkbox) {
+
+                    return checkbox.checked;
+
+                }
+            );
+
+
+        checkboxesDisciplinas.forEach(
+            function(checkbox) {
+
+                checkbox.checked =
+                    !todasMarcadas;
+
+            }
+        );
+
+
+        botaoSelecionarTodas.textContent =
+            todasMarcadas
+                ? "Selecionar todas"
+                : "Desmarcar todas";
+
+
+        areaMensagem.style.display =
+            "none";
+
+
+        atualizarResumoTela();
+
+    }
+);
+
+
+// =====================================
+// INICIAR SIMULADO
+// =====================================
+
+botaoIniciar.addEventListener(
+    "click",
+    function() {
+
+        const disciplinas =
+            obterDisciplinasMarcadasTela();
+
+
+        const quantidade =
+            obterQuantidadeMarcadaTela();
+
+
+        limparConfiguracaoSimuladoPSCPP();
+
+
+        configurarSimuladoPersonalizadoPSCPP(
+            disciplinas,
+            quantidade
+        );
+
+
+        const validacao =
+            validarConfiguracaoSimuladoPSCPP();
+
+
+        if (!validacao.valida) {
+
+            mostrarMensagemTela(
+                "⚠️ " +
+                validacao.mensagem
+            );
+
+
+            return;
+
+        }
+
+
+        const salvo =
+            salvarConfiguracaoSimuladoPSCPP();
+
+
+        if (!salvo) {
+
+            mostrarMensagemTela(
+                "⚠️ Não foi possível salvar a configuração."
+            );
+
+
+            return;
+
+        }
+
+
+        const resumo =
+            obterResumoConfiguracaoSimuladoPSCPP();
+
+
+        mostrarMensagemTela(
+
+            "✅ Simulado preparado: " +
+
+            resumo.quantidade +
+
+            " questões — " +
+
+            resumo.disciplinas.join(", ") +
+
+            "."
+
+        );
+
+
+        /*
+        =====================================
+        PRÓXIMA ETAPA
+
+        Aqui será conectado o motor:
+
+        window.location.href =
+            "realizar.html";
+
+        Ainda NÃO ativamos esse redirecionamento
+        porque a página de execução será criada
+        na próxima etapa.
+        =====================================
+        */
+
+    }
+);
+
+
+// =====================================
+// INICIALIZAÇÃO
+// =====================================
+
+atualizarResumoTela();
+
+
+</script>
+
+
+</body>
+
+</html>
