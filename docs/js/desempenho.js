@@ -1,23 +1,32 @@
 // =====================================================
 // CENTRO DE DESEMPENHO PSCPP
 // Bridge Trainer PSCPP
-// Versão 2.0
+// Versão 3.0
 //
-// Estrutura:
+// FONTES DE DADOS:
+//
+// 1. Exercícios das aulas
+//    bridgeTrainerPSCPP_historicoExercicios
+//
+// 2. Simulados PSCPP
+//    bridgeTrainerPSCPP_desempenhoSimulados
+//
+// Estrutura de análise:
 //
 // Disciplina
-// └── Aula
-//     └── Tópicos
+// └── Aula / Assunto
+//     └── Tópico
 //
-// Melhorias:
+// Recursos:
 //
-// - organização hierárquica;
+// - integração exercícios + simulados;
+// - preservação dos históricos existentes;
+// - resumo geral unificado;
 // - disciplinas recolhíveis;
-// - aulas recolhíveis;
-// - tópicos exibidos somente quando solicitados;
-// - barras independentes do sistema de progresso;
-// - correção do Índice de Preparação;
-// - preservação integral do histórico existente;
+// - aulas/assuntos recolhíveis;
+// - tópicos detalhados;
+// - barras independentes do progresso.js;
+// - índice de preparação;
 // - assuntos prioritários;
 // - evolução;
 // - recomendação automática.
@@ -30,6 +39,10 @@
 
 const CHAVE_HISTORICO_EXERCICIOS =
     "bridgeTrainerPSCPP_historicoExercicios";
+
+
+const CHAVE_HISTORICO_SIMULADOS =
+    "bridgeTrainerPSCPP_desempenhoSimulados";
 
 
 let historicoTentativas = [];
@@ -60,7 +73,7 @@ else {
 
 
 // =====================================================
-// INICIAR CENTRO DE DESEMPENHO
+// INICIAR CENTRO
 // =====================================================
 
 function iniciarCentroDesempenho() {
@@ -83,10 +96,10 @@ function iniciarCentroDesempenho() {
 
 
 // =====================================================
-// NORMALIZAR HISTÓRICO
+// NORMALIZAR HISTÓRICO DOS EXERCÍCIOS
 // =====================================================
 
-function normalizarHistoricoDesempenho(
+function normalizarHistoricoExerciciosPSCPP(
     historicoSalvo
 ) {
 
@@ -116,8 +129,8 @@ function normalizarHistoricoDesempenho(
 
 
             // =========================================
-            // FORMATO ANTIGO:
-            // questão salva individualmente
+            // FORMATO ANTIGO
+            // Questão salva individualmente
             // =========================================
 
             if (
@@ -125,9 +138,15 @@ function normalizarHistoricoDesempenho(
                 "undefined"
             ) {
 
-                questoesNormalizadas.push(
-                    tentativa
-                );
+                questoesNormalizadas.push({
+
+                    ...tentativa,
+
+                    origem:
+                        tentativa.origem ||
+                        "exercicio"
+
+                });
 
 
                 return;
@@ -136,7 +155,7 @@ function normalizarHistoricoDesempenho(
 
 
             // =========================================
-            // FORMATO ATUAL:
+            // FORMATO ATUAL
             // tentativa.questoes[]
             // =========================================
 
@@ -163,6 +182,9 @@ function normalizarHistoricoDesempenho(
 
                     questoesNormalizadas.push({
 
+                        origem:
+                            "exercicio",
+
                         tentativaId:
                             tentativa.id || "",
 
@@ -176,6 +198,10 @@ function normalizarHistoricoDesempenho(
                         aula:
                             tentativa.aula ||
                             "Aula não informada",
+
+                        assunto:
+                            tentativa.aula ||
+                            "",
 
                         pagina:
                             tentativa.pagina || "",
@@ -217,66 +243,309 @@ function normalizarHistoricoDesempenho(
 
 
 // =====================================================
-// CARREGAR HISTÓRICO
+// NORMALIZAR HISTÓRICO DOS SIMULADOS
 // =====================================================
 
-function carregarHistorico() {
+function normalizarHistoricoSimuladosPSCPP(
+    dadosSimulados
+) {
+
+    if (
+        !dadosSimulados ||
+        typeof dadosSimulados !==
+        "object"
+    ) {
+
+        return {
+
+            tentativas: [],
+            questoes: []
+
+        };
+
+    }
+
+
+    const historico =
+        Array.isArray(
+            dadosSimulados.historico
+        )
+            ? dadosSimulados.historico
+            : [];
+
+
+    const tentativas =
+        [];
+
+
+    const questoes =
+        [];
+
+
+    historico.forEach(
+        tentativa => {
+
+            if (!tentativa) {
+
+                return;
+
+            }
+
+
+            tentativas.push({
+
+                ...tentativa,
+
+                origem:
+                    "simulado"
+
+            });
+
+
+            if (
+                !Array.isArray(
+                    tentativa.questoes
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            tentativa.questoes.forEach(
+                questao => {
+
+                    if (!questao) {
+
+                        return;
+
+                    }
+
+
+                    const assunto =
+                        obterNomeValido(
+                            questao.assunto,
+                            "Simulado PSCPP"
+                        );
+
+
+                    questoes.push({
+
+                        origem:
+                            "simulado",
+
+                        tentativaId:
+                            tentativa.id || "",
+
+                        data:
+                            tentativa.data || "",
+
+                        disciplina:
+                            questao.disciplina ||
+                            "Disciplina não informada",
+
+                        // O Centro existente trabalha com:
+                        // Disciplina > Aula > Tópico.
+                        //
+                        // Para questões de simulado,
+                        // usamos o assunto como segundo nível.
+
+                        aula:
+                            assunto,
+
+                        assunto:
+                            assunto,
+
+                        pagina:
+                            "",
+
+                        questaoId:
+                            questao.questaoId || "",
+
+                        topico:
+                            questao.topico ||
+                            assunto ||
+                            "Tópico não informado",
+
+                        edital:
+                            questao.edital || "",
+
+                        bibliografia:
+                            Array.isArray(
+                                questao.bibliografia
+                            )
+                                ? questao.bibliografia
+                                : [],
+
+                        respostaUsuario:
+                            questao.respostaUsuario || "",
+
+                        respostaCorreta:
+                            questao.respostaCorreta || "",
+
+                        acertou:
+                            questao.acertou === true
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    return {
+
+        tentativas:
+            tentativas,
+
+        questoes:
+            questoes
+
+    };
+
+}
+
+
+// =====================================================
+// LER JSON DO LOCALSTORAGE
+// =====================================================
+
+function lerJSONLocalStorage(
+    chave,
+    valorPadrao
+) {
 
     try {
 
         const dados =
             localStorage.getItem(
-                CHAVE_HISTORICO_EXERCICIOS
+                chave
             );
 
 
         if (!dados) {
 
-            historicoTentativas = [];
-
-            historicoExercicios = [];
-
-
-            return;
+            return valorPadrao;
 
         }
 
 
-        const historicoSalvo =
-            JSON.parse(
-                dados
-            );
-
-
-        historicoTentativas =
-
-            Array.isArray(
-                historicoSalvo
-            )
-
-                ? historicoSalvo
-                : [];
-
-
-        historicoExercicios =
-            normalizarHistoricoDesempenho(
-                historicoTentativas
-            );
+        return JSON.parse(
+            dados
+        );
 
     }
     catch (erro) {
 
         console.error(
-            "Erro ao carregar histórico de exercícios:",
+
+            "Erro ao ler armazenamento:",
+
+            chave,
+
             erro
+
         );
 
 
-        historicoTentativas = [];
-
-        historicoExercicios = [];
+        return valorPadrao;
 
     }
+
+}
+
+
+// =====================================================
+// CARREGAR HISTÓRICO UNIFICADO
+// =====================================================
+
+function carregarHistorico() {
+
+    // =========================================
+    // EXERCÍCIOS
+    // =========================================
+
+    const historicoSalvoExercicios =
+        lerJSONLocalStorage(
+
+            CHAVE_HISTORICO_EXERCICIOS,
+
+            []
+
+        );
+
+
+    const tentativasExercicios =
+        Array.isArray(
+            historicoSalvoExercicios
+        )
+            ? historicoSalvoExercicios
+            : [];
+
+
+    const questoesExercicios =
+        normalizarHistoricoExerciciosPSCPP(
+            tentativasExercicios
+        );
+
+
+    // =========================================
+    // SIMULADOS
+    // =========================================
+
+    const dadosSimulados =
+        lerJSONLocalStorage(
+
+            CHAVE_HISTORICO_SIMULADOS,
+
+            {
+
+                historico: []
+
+            }
+
+        );
+
+
+    const simuladosNormalizados =
+        normalizarHistoricoSimuladosPSCPP(
+            dadosSimulados
+        );
+
+
+    // =========================================
+    // HISTÓRICO UNIFICADO
+    // =========================================
+
+    historicoTentativas = [
+
+        ...tentativasExercicios.map(
+            tentativa => ({
+
+                ...tentativa,
+
+                origem:
+                    tentativa.origem ||
+                    "exercicio"
+
+            })
+        ),
+
+        ...simuladosNormalizados.tentativas
+
+    ];
+
+
+    historicoExercicios = [
+
+        ...questoesExercicios,
+
+        ...simuladosNormalizados.questoes
+
+    ];
 
 }
 
@@ -524,20 +793,6 @@ function calcularPercentual(
 // =====================================================
 // BARRA DE DESEMPENHO
 // =====================================================
-//
-// IMPORTANTE:
-//
-// Não usa mais:
-//
-// .progresso
-//
-// nem:
-//
-// .barra-progresso-preenchimento
-//
-// Assim o Centro de Desempenho fica independente
-// das barras utilizadas pelo progresso.js.
-// =====================================================
 
 function gerarBarraDesempenho(
     percentual
@@ -634,6 +889,62 @@ function obterAproveitamentoGeral() {
         obterTotalQuestoes()
 
     );
+
+}
+
+
+// =====================================================
+// CONTAGENS ESPECÍFICAS
+// =====================================================
+
+function obterTotalTentativasExercicios() {
+
+    return historicoTentativas
+        .filter(
+            tentativa =>
+                tentativa.origem !==
+                "simulado"
+        )
+        .length;
+
+}
+
+
+function obterTotalTentativasSimulados() {
+
+    return historicoTentativas
+        .filter(
+            tentativa =>
+                tentativa.origem ===
+                "simulado"
+        )
+        .length;
+
+}
+
+
+function obterTotalQuestoesExercicios() {
+
+    return historicoExercicios
+        .filter(
+            registro =>
+                registro.origem !==
+                "simulado"
+        )
+        .length;
+
+}
+
+
+function obterTotalQuestoesSimulados() {
+
+    return historicoExercicios
+        .filter(
+            registro =>
+                registro.origem ===
+                "simulado"
+        )
+        .length;
 
 }
 
@@ -839,7 +1150,7 @@ function obterQuantidadeAulasAvaliadas() {
             const aula =
                 obterNomeValido(
                     registro.aula,
-                    "Aula não informada"
+                    "Aula/Assunto não informado"
                 );
 
 
@@ -879,7 +1190,7 @@ function obterQuantidadeTopicosAvaliados() {
             const aula =
                 obterNomeValido(
                     registro.aula,
-                    "Aula não informada"
+                    "Aula/Assunto não informado"
                 );
 
 
@@ -911,10 +1222,6 @@ function obterQuantidadeTopicosAvaliados() {
 
 // =====================================================
 // PREPARAÇÃO PARA O PSCPP
-// =====================================================
-//
-// O índice atual representa o aproveitamento
-// acumulado das questões respondidas.
 // =====================================================
 
 function atualizarPreparacaoPSCPP() {
@@ -1033,7 +1340,7 @@ function criarEstruturaHierarquicaDesempenho() {
             const nomeAula =
                 obterNomeValido(
                     registro.aula,
-                    "Aula não informada"
+                    "Aula/Assunto não informado"
                 );
 
 
@@ -1043,10 +1350,6 @@ function criarEstruturaHierarquicaDesempenho() {
                     "Tópico não informado"
                 );
 
-
-            // =========================================
-            // DISCIPLINA
-            // =========================================
 
             if (
                 !disciplinas[
@@ -1094,10 +1397,6 @@ function criarEstruturaHierarquicaDesempenho() {
 
             }
 
-
-            // =========================================
-            // AULA
-            // =========================================
 
             if (
                 !disciplina
@@ -1148,10 +1447,6 @@ function criarEstruturaHierarquicaDesempenho() {
 
             }
 
-
-            // =========================================
-            // TÓPICO
-            // =========================================
 
             if (
                 !aula
@@ -1319,7 +1614,7 @@ function gerarTopicoHierarquico(
 
 
 // =====================================================
-// GERAR AULA
+// GERAR AULA / ASSUNTO
 // =====================================================
 
 function gerarAulaHierarquica(
@@ -1495,7 +1790,7 @@ function gerarDisciplinaHierarquica(
                         <span class="desempenho-summary-info">
 
                             ${aulas.length}
-                            aula(s)
+                            aula(s)/assunto(s)
 
                             •
                             ${resumo.total}
@@ -1595,7 +1890,7 @@ function atualizarDesempenhoHierarquico() {
             <div class="widget">
 
                 <p>
-                    Nenhum exercício respondido ainda.
+                    Nenhum exercício ou simulado respondido ainda.
                 </p>
 
             </div>
@@ -1726,7 +2021,7 @@ function atualizarAssuntosPrioritarios() {
                 const aula =
                     obterNomeValido(
                         registro.aula,
-                        "Aula não informada"
+                        "Aula/Assunto não informado"
                     );
 
 
@@ -1910,7 +2205,7 @@ function atualizarAssuntosPrioritarios() {
 
 
 // =====================================================
-// EVOLUÇÃO DO DESEMPENHO
+// EVOLUÇÃO
 // =====================================================
 
 function atualizarEvolucao() {
@@ -2109,7 +2404,7 @@ function atualizarRecomendacao() {
 
         atualizarTexto(
             "texto-recomendacao-desempenho",
-            "Resolva exercícios para gerar recomendações de estudo."
+            "Resolva exercícios ou simulados para gerar recomendações de estudo."
         );
 
 
@@ -2133,7 +2428,7 @@ function atualizarRecomendacao() {
                 const aula =
                     obterNomeValido(
                         registro.aula,
-                        "Aula não informada"
+                        "Aula/Assunto não informado"
                     );
 
 
@@ -2370,8 +2665,13 @@ window.addEventListener(
     evento => {
 
         if (
+
             evento.key ===
-            CHAVE_HISTORICO_EXERCICIOS
+                CHAVE_HISTORICO_EXERCICIOS ||
+
+            evento.key ===
+                CHAVE_HISTORICO_SIMULADOS
+
         ) {
 
             atualizarCentroDesempenho();
@@ -2411,6 +2711,28 @@ window.obterHistoricoDesempenho =
     };
 
 
+window.obterResumoFontesDesempenho =
+    function () {
+
+        return {
+
+            tentativasExercicios:
+                obterTotalTentativasExercicios(),
+
+            tentativasSimulados:
+                obterTotalTentativasSimulados(),
+
+            questoesExercicios:
+                obterTotalQuestoesExercicios(),
+
+            questoesSimulados:
+                obterTotalQuestoesSimulados()
+
+        };
+
+    };
+
+
 // =====================================================
 // DEBUG
 // =====================================================
@@ -2419,13 +2741,43 @@ window.exibirResumoDesempenho =
     function () {
 
         console.group(
-            "Centro de Desempenho PSCPP v2.0"
+            "Centro de Desempenho PSCPP v3.0"
         );
 
 
         console.log(
-            "Questões:",
+            "Questões totais:",
             obterTotalQuestoes()
+        );
+
+
+        console.log(
+            "Questões de exercícios:",
+            obterTotalQuestoesExercicios()
+        );
+
+
+        console.log(
+            "Questões de simulados:",
+            obterTotalQuestoesSimulados()
+        );
+
+
+        console.log(
+            "Tentativas totais:",
+            obterTotalTentativas()
+        );
+
+
+        console.log(
+            "Tentativas de exercícios:",
+            obterTotalTentativasExercicios()
+        );
+
+
+        console.log(
+            "Tentativas de simulados:",
+            obterTotalTentativasSimulados()
         );
 
 
@@ -2456,7 +2808,7 @@ window.exibirResumoDesempenho =
 
 
         console.log(
-            "Aulas avaliadas:",
+            "Aulas/assuntos avaliados:",
             obterQuantidadeAulasAvaliadas()
         );
 
@@ -2473,5 +2825,5 @@ window.exibirResumoDesempenho =
 
 
 // =====================================================
-// FIM DESEMPENHO.JS v2.0
+// FIM DESEMPENHO.JS v3.0
 // =====================================================
