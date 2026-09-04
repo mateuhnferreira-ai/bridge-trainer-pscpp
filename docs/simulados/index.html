@@ -23,6 +23,10 @@
 <body data-tipo-pagina="simulados">
 
 
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
 <header class="topo">
 
     <div class="logo">
@@ -37,6 +41,10 @@
 
 </header>
 
+
+<!-- =========================================
+     MENU
+========================================= -->
 
 <nav class="navbar">
 
@@ -88,15 +96,14 @@
     <h2>📝 Simulados PSCPP</h2>
 
     <p>
-        Área destinada ao treinamento por questões,
-        realização de simulados personalizados
-        e resolução de provas anteriores.
+        Treinamento por questões baseado
+        no conteúdo programático e na
+        bibliografia do PSCPP.
     </p>
 
     <p>
-        Os resultados desta área serão utilizados
-        para acompanhar sua evolução por disciplina,
-        assunto e tópico do conteúdo programático.
+        Os resultados são integrados
+        ao Centro de Desempenho.
     </p>
 
 </section>
@@ -104,7 +111,7 @@
 
 
 <!-- =========================================
-     OPÇÕES PRINCIPAIS
+     TREINAMENTO
 ========================================= -->
 
 <section>
@@ -119,14 +126,16 @@
              CRIAR SIMULADO
         ================================== -->
 
-        <a href="configuracao.html" class="card">
+        <a
+            href="configuracao.html"
+            class="card"
+        >
 
             <h3>🎯 Criar Simulado</h3>
 
             <p>
-                Monte um simulado personalizado,
-                escolhendo a modalidade e a
-                quantidade de questões.
+                Escolha uma ou mais disciplinas
+                e defina a quantidade de questões.
             </p>
 
             <span class="status pendente">
@@ -151,8 +160,7 @@
 
             <p>
                 Resolva provas oficiais anteriores
-                preservando a estrutura e a
-                numeração originais.
+                preservando sua estrutura original.
             </p>
 
             <span class="status pendente">
@@ -176,9 +184,8 @@
 
             <p>
                 Consulte acertos, erros,
-                evolução por disciplina
-                e assuntos que precisam
-                de revisão.
+                evolução e assuntos
+                prioritários para revisão.
             </p>
 
             <span class="status pendente">
@@ -195,75 +202,7 @@
 
 
 <!-- =========================================
-     MODALIDADES DE SIMULADO
-========================================= -->
-
-<section class="painel">
-
-
-    <div class="widget">
-
-        <h2>🌐 Simulado Geral</h2>
-
-        <p>
-            Questões distribuídas entre
-            todas as disciplinas que fazem
-            parte do banco de simulados.
-        </p>
-
-        <p>
-            Quantidades disponíveis:
-        </p>
-
-        <p>
-            <strong>
-                10 • 20 • 30 • 40 • 50 • 70 questões
-            </strong>
-        </p>
-
-    </div>
-
-
-
-    <div class="widget">
-
-        <h2>📚 Simulado por Disciplina</h2>
-
-        <p>
-            Permite concentrar o treinamento
-            em uma única disciplina.
-        </p>
-
-        <p>
-            Ideal para reforçar conteúdos
-            específicos durante o estudo.
-        </p>
-
-    </div>
-
-
-
-    <div class="widget">
-
-        <h2>🏁 Simulado Completo</h2>
-
-        <p>
-            A opção de
-            <strong>70 questões</strong>
-            permitirá treinamento em formato
-            equivalente ao número total de
-            questões da prova.
-        </p>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =========================================
-     DISCIPLINAS
+     DISCIPLINAS DO BANCO
 ========================================= -->
 
 <section>
@@ -279,10 +218,9 @@
             <h3>🚢 Manobrabilidade</h3>
 
             <p>
-                Resistência, propulsão,
-                hélices, lemes,
-                controlabilidade e
-                manobra do navio.
+                Resistência, propulsão, hélices,
+                lemes, controlabilidade
+                e manobra do navio.
             </p>
 
         </div>
@@ -353,8 +291,7 @@
                 Planejamento portuário,
                 fatores humanos,
                 economia marítima
-                e outros temas previstos
-                no conteúdo programático.
+                e demais temas do programa.
             </p>
 
         </div>
@@ -365,66 +302,13 @@
 </section>
 
 
-
-<!-- =========================================
-     INFORMAÇÕES
-========================================= -->
-
-<section class="painel">
-
-
-    <div class="widget">
-
-        <h2>📖 Banco de Questões</h2>
-
-        <p>
-            As questões serão organizadas
-            por disciplina, assunto e tópico,
-            mantendo referência à bibliografia
-            utilizada.
-        </p>
-
-    </div>
-
-
-
-    <div class="widget">
-
-        <h2>📊 Análise de Resultados</h2>
-
-        <p>
-            Os resultados dos simulados
-            poderão ser utilizados para
-            identificar pontos fortes,
-            dificuldades recorrentes
-            e assuntos prioritários
-            para revisão.
-        </p>
-
-    </div>
-
-
-
-    <div class="widget">
-
-        <h2>🔁 Revisão de Erros</h2>
-
-        <p>
-            A arquitetura permitirá
-            posteriormente gerar treinamentos
-            específicos a partir das questões
-            respondidas incorretamente.
-        </p>
-
-    </div>
-
-
-</section>
-
-
 </main>
 
 
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
 
 <footer>
 
@@ -447,18 +331,16 @@
 
 
 <!-- =========================================
-     FUNÇÕES TEMPORÁRIAS
+     FUNÇÃO TEMPORÁRIA
+     PROVAS ANTERIORES
 ========================================= -->
 
 <script>
 
-
-
-
 function abrirProvasAnteriores() {
 
     alert(
-        "As provas anteriores serão conectadas depois que o banco estiver estruturado."
+        "As provas anteriores serão conectadas quando o banco correspondente estiver disponível."
     );
 
 }
@@ -472,8 +354,6 @@ function abrirProvasAnteriores() {
 ========================================= -->
 
 <script src="../js/navigation.js"></script>
-
-<script src="../js/simulados/configuracao-simulado.js"></script>
 
 
 </body>
