@@ -1,19 +1,23 @@
 // =====================================
-// MOTOR DE SIMULADOS PSCPP v1.0
+// MOTOR DE SIMULADOS PSCPP v1.1
 // Bridge Trainer PSCPP
 //
 // Responsabilidades:
 //
-// 1. Ler a configuração salva.
-// 2. Reunir questões das disciplinas escolhidas.
-// 3. Embaralhar o banco disponível.
-// 4. Selecionar a quantidade solicitada.
-// 5. Preparar uma tentativa de simulado.
-// 6. Não corrigir respostas.
-// 7. Não controlar cronômetro.
+// 1. Preparar simulados personalizados
+// 2. Reunir questões das disciplinas
+// 3. Eliminar questões duplicadas
+// 4. Embaralhar simulados personalizados
+// 5. Carregar provas anteriores
+// 6. Preservar a ordem original das provas
 //
-// O cronômetro e a execução visual ficarão
-// na página realizar.html.
+// IMPORTANTE:
+//
+// Simulado personalizado:
+// banco normal -> embaralhamento -> seleção
+//
+// Prova anterior:
+// prova oficial -> ordem original -> todas as questões
 // =====================================
 
 
@@ -29,47 +33,42 @@ let simuladoAtualPSCPP = {
 
     iniciado: false,
 
-    finalizado: false
+    finalizado: false,
+
+    provaAnterior: null
 
 };
 
 
 // =====================================
-// UTILITÁRIO DE EMBARALHAMENTO
-// =====================================
-//
-// Algoritmo Fisher-Yates
+// EMBARALHAR QUESTÕES
 // =====================================
 
 function embaralharQuestoesPSCPP(lista) {
 
-    const copia = [
-        ...lista
-    ];
+    const copia = [...lista];
 
 
     for (
+
         let i = copia.length - 1;
+
         i > 0;
+
         i--
+
     ) {
 
-        const j =
-            Math.floor(
-                Math.random() * (i + 1)
-            );
+        const j = Math.floor(
+            Math.random() * (i + 1)
+        );
 
 
-        const temporario =
-            copia[i];
+        const temporario = copia[i];
 
+        copia[i] = copia[j];
 
-        copia[i] =
-            copia[j];
-
-
-        copia[j] =
-            temporario;
+        copia[j] = temporario;
 
     }
 
@@ -80,18 +79,7 @@ function embaralharQuestoesPSCPP(lista) {
 
 
 // =====================================
-// OBTER QUESTÕES DE UMA DISCIPLINA
-// =====================================
-//
-// Cada arquivo de banco deverá disponibilizar
-// sua própria função:
-//
-// obterQuestoesArteNavalPSCPP()
-// obterQuestoesManobrabilidadePSCPP()
-// obterQuestoesConhecimentosGeraisPSCPP()
-// obterQuestoesRegulamentacaoPSCPP()
-// obterQuestoesMeteorologiaPSCPP()
-// obterQuestoesNavegacaoPSCPP()
+// OBTER QUESTÕES POR DISCIPLINA
 // =====================================
 
 function obterQuestoesPorDisciplinaPSCPP(
@@ -187,12 +175,6 @@ function obterQuestoesPorDisciplinaPSCPP(
     }
 
 
-    console.warn(
-        "Bridge Trainer PSCPP: banco não encontrado para a disciplina:",
-        disciplinaId
-    );
-
-
     return [];
 
 }
@@ -206,47 +188,36 @@ function reunirQuestoesDisciplinasPSCPP(
     disciplinas
 ) {
 
-    if (
-        !Array.isArray(
-            disciplinas
-        )
-    ) {
+    let banco = [];
 
-        return [];
+
+    if (!Array.isArray(disciplinas)) {
+
+        return banco;
 
     }
 
 
-    let questoes = [];
-
-
     disciplinas.forEach(
+
         function(disciplinaId) {
 
-            const questoesDisciplina =
+            const questoes =
                 obterQuestoesPorDisciplinaPSCPP(
                     disciplinaId
                 );
 
 
-            if (
-                Array.isArray(
-                    questoesDisciplina
-                )
-            ) {
-
-                questoes =
-                    questoes.concat(
-                        questoesDisciplina
-                    );
-
-            }
+            banco = banco.concat(
+                questoes
+            );
 
         }
+
     );
 
 
-    return questoes;
+    return banco;
 
 }
 
@@ -259,11 +230,11 @@ function removerQuestoesDuplicadasPSCPP(
     questoes
 ) {
 
-    const idsUtilizados =
-        new Set();
+    const mapa = new Map();
 
 
-    return questoes.filter(
+    questoes.forEach(
+
         function(questao) {
 
             if (
@@ -271,30 +242,31 @@ function removerQuestoesDuplicadasPSCPP(
                 !questao.id
             ) {
 
-                return false;
+                return;
 
             }
 
 
             if (
-                idsUtilizados.has(
+                !mapa.has(
                     questao.id
                 )
             ) {
 
-                return false;
+                mapa.set(
+                    questao.id,
+                    questao
+                );
 
             }
 
-
-            idsUtilizados.add(
-                questao.id
-            );
-
-
-            return true;
-
         }
+
+    );
+
+
+    return Array.from(
+        mapa.values()
     );
 
 }
@@ -302,6 +274,7 @@ function removerQuestoesDuplicadasPSCPP(
 
 // =====================================
 // SELECIONAR QUESTÕES
+// SIMULADO PERSONALIZADO
 // =====================================
 
 function selecionarQuestoesSimuladoPSCPP(
@@ -309,33 +282,371 @@ function selecionarQuestoesSimuladoPSCPP(
     quantidade
 ) {
 
-    const numero =
-        Number(
-            quantidade
+    const bancoSemDuplicadas =
+        removerQuestoesDuplicadasPSCPP(
+            banco
+        );
+
+
+    const bancoEmbaralhado =
+        embaralharQuestoesPSCPP(
+            bancoSemDuplicadas
+        );
+
+
+    return bancoEmbaralhado.slice(
+        0,
+        quantidade
+    );
+
+}
+
+
+// =====================================
+// PROVAS ANTERIORES DISPONÍVEIS
+// =====================================
+
+function obterProvasAnterioresDisponiveisPSCPP() {
+
+    const provas = [];
+
+
+    if (
+        typeof obterQuestoesProva2006PSCPP ===
+        "function"
+    ) {
+
+        provas.push({
+
+            id: "prova-2006",
+
+            ano: 2006,
+
+            nome:
+                "Prova Escrita PSCPP — 2006",
+
+            total:
+                obterQuestoesProva2006PSCPP()
+                    .length
+
+        });
+
+    }
+
+
+    return provas;
+
+}
+
+
+// =====================================
+// NORMALIZAR ID DA PROVA
+// =====================================
+
+function normalizarIdProvaAnteriorPSCPP(
+    provaId
+) {
+
+    if (!provaId) {
+
+        return "";
+
+    }
+
+
+    const id = provaId
+        .toString()
+        .trim()
+        .toLowerCase();
+
+
+    if (
+        id === "2006" ||
+        id === "prova2006" ||
+        id === "prova-2006" ||
+        id === "pscpp-2006"
+    ) {
+
+        return "prova-2006";
+
+    }
+
+
+    return id;
+
+}
+
+
+// =====================================
+// OBTER QUESTÕES DE PROVA ANTERIOR
+// =====================================
+
+function obterQuestoesProvaAnteriorPSCPP(
+    provaId
+) {
+
+    const idNormalizado =
+        normalizarIdProvaAnteriorPSCPP(
+            provaId
+        );
+
+
+    switch (idNormalizado) {
+
+
+        // =====================================
+        // PROVA 2006
+        // =====================================
+
+        case "prova-2006":
+
+            if (
+                typeof obterQuestoesProva2006PSCPP ===
+                "function"
+            ) {
+
+                return obterQuestoesProva2006PSCPP();
+
+            }
+
+            break;
+
+    }
+
+
+    return [];
+
+}
+
+
+// =====================================
+// OBTER DADOS DA PROVA ANTERIOR
+// =====================================
+
+function obterDadosProvaAnteriorPSCPP(
+    provaId
+) {
+
+    const idNormalizado =
+        normalizarIdProvaAnteriorPSCPP(
+            provaId
+        );
+
+
+    switch (idNormalizado) {
+
+
+        case "prova-2006":
+
+            if (
+                typeof obterDadosProva2006PSCPP ===
+                "function"
+            ) {
+
+                return obterDadosProva2006PSCPP();
+
+            }
+
+
+            return {
+
+                id:
+                    "prova-2006",
+
+                nome:
+                    "Prova Escrita PSCPP — 2006",
+
+                ano:
+                    2006,
+
+                origem:
+                    "prova-anterior",
+
+                questoes:
+                    obterQuestoesProvaAnteriorPSCPP(
+                        idNormalizado
+                    )
+
+            };
+
+    }
+
+
+    return null;
+
+}
+
+
+// =====================================
+// PREPARAR PROVA ANTERIOR
+// =====================================
+
+function prepararProvaAnteriorPSCPP(
+    configuracao
+) {
+
+    const provaId =
+        normalizarIdProvaAnteriorPSCPP(
+            configuracao.provaAnterior
+        );
+
+
+    if (!provaId) {
+
+        return {
+
+            sucesso: false,
+
+            mensagem:
+                "Nenhuma prova anterior foi selecionada."
+
+        };
+
+    }
+
+
+    const questoes =
+        obterQuestoesProvaAnteriorPSCPP(
+            provaId
         );
 
 
     if (
-        !Array.isArray(
-            banco
-        )
+        !questoes ||
+        questoes.length === 0
     ) {
 
-        return [];
+        return {
+
+            sucesso: false,
+
+            mensagem:
+                "A prova selecionada não está disponível ou seu arquivo de questões não foi carregado."
+
+        };
 
     }
 
 
-    if (
-        !Number.isInteger(
-            numero
-        ) ||
-        numero <= 0
-    ) {
+    const dadosProva =
+        obterDadosProvaAnteriorPSCPP(
+            provaId
+        );
 
-        return [];
 
-    }
+    // =====================================
+    // NÃO EMBARALHAR
+    //
+    // A ordem oficial da prova deve ser
+    // preservada integralmente.
+    // =====================================
+
+    const questoesOrdenadas =
+        [...questoes].sort(
+
+            function(a, b) {
+
+                const numeroA =
+                    Number(
+                        a.numeroOriginal
+                    ) || 0;
+
+
+                const numeroB =
+                    Number(
+                        b.numeroOriginal
+                    ) || 0;
+
+
+                return numeroA - numeroB;
+
+            }
+
+        );
+
+
+    simuladoAtualPSCPP = {
+
+        configuracao:
+            configuracao,
+
+        questoes:
+            questoesOrdenadas,
+
+        iniciado:
+            false,
+
+        finalizado:
+            false,
+
+        provaAnterior: {
+
+            id:
+                provaId,
+
+            nome:
+                dadosProva
+                    ? dadosProva.nome
+                    : provaId,
+
+            ano:
+                dadosProva
+                    ? dadosProva.ano
+                    : null,
+
+            total:
+                questoesOrdenadas.length
+
+        }
+
+    };
+
+
+    return {
+
+        sucesso: true,
+
+        tipo:
+            "prova-anterior",
+
+        mensagem:
+            "Prova anterior preparada com sucesso.",
+
+        total:
+            questoesOrdenadas.length,
+
+        questoes:
+            [...questoesOrdenadas],
+
+        provaAnterior:
+            simuladoAtualPSCPP
+                .provaAnterior
+
+    };
+
+}
+
+
+// =====================================
+// PREPARAR SIMULADO PERSONALIZADO
+// =====================================
+
+function prepararSimuladoPersonalizadoPSCPP(
+    configuracao
+) {
+
+    const disciplinas =
+        configuracao.disciplinas;
+
+
+    const quantidade =
+        configuracao.quantidade;
+
+
+    const banco =
+        reunirQuestoesDisciplinasPSCPP(
+            disciplinas
+        );
 
 
     const bancoSemDuplicadas =
@@ -344,25 +655,117 @@ function selecionarQuestoesSimuladoPSCPP(
         );
 
 
-    const embaralhadas =
-        embaralharQuestoesPSCPP(
-            bancoSemDuplicadas
+    if (
+        bancoSemDuplicadas.length === 0
+    ) {
+
+        return {
+
+            sucesso: false,
+
+            mensagem:
+                "Não há questões disponíveis nas disciplinas selecionadas."
+
+        };
+
+    }
+
+
+    if (
+        bancoSemDuplicadas.length <
+        quantidade
+    ) {
+
+        return {
+
+            sucesso: false,
+
+            mensagem:
+                "O banco possui apenas " +
+                bancoSemDuplicadas.length +
+                " questões disponíveis para as disciplinas selecionadas, mas foram solicitadas " +
+                quantidade +
+                " questões."
+
+        };
+
+    }
+
+
+    const questoesSelecionadas =
+        selecionarQuestoesSimuladoPSCPP(
+
+            bancoSemDuplicadas,
+
+            quantidade
+
         );
 
 
-    return embaralhadas.slice(
-        0,
-        numero
-    );
+    simuladoAtualPSCPP = {
+
+        configuracao:
+            configuracao,
+
+        questoes:
+            questoesSelecionadas,
+
+        iniciado:
+            false,
+
+        finalizado:
+            false,
+
+        provaAnterior:
+            null
+
+    };
+
+
+    return {
+
+        sucesso: true,
+
+        tipo:
+            "personalizado",
+
+        mensagem:
+            "Simulado preparado com sucesso.",
+
+        total:
+            questoesSelecionadas.length,
+
+        questoes:
+            [...questoesSelecionadas]
+
+    };
 
 }
 
 
 // =====================================
 // PREPARAR SIMULADO
+// FUNÇÃO PRINCIPAL
 // =====================================
 
 function prepararSimuladoPSCPP() {
+
+    if (
+        typeof carregarConfiguracaoSimuladoPSCPP !==
+        "function"
+    ) {
+
+        return {
+
+            sucesso: false,
+
+            mensagem:
+                "O sistema de configuração do simulado não foi carregado."
+
+        };
+
+    }
+
 
     const configuracao =
         carregarConfiguracaoSimuladoPSCPP();
@@ -382,147 +785,66 @@ function prepararSimuladoPSCPP() {
     }
 
 
-    const validacao =
-        validarConfiguracaoSimuladoPSCPP();
-
-
     if (
-        !validacao.valida
+        typeof validarConfiguracaoSimuladoPSCPP ===
+        "function"
     ) {
 
-        return {
+        const validacao =
+            validarConfiguracaoSimuladoPSCPP(
+                configuracao
+            );
 
-            sucesso: false,
 
-            mensagem:
-                validacao.mensagem
+        if (
+            validacao &&
+            validacao.valido === false
+        ) {
 
-        };
+            return {
+
+                sucesso: false,
+
+                mensagem:
+                    validacao.mensagem ||
+                    "A configuração do simulado é inválida."
+
+            };
+
+        }
 
     }
 
 
-    // =================================
-    // PROVAS ANTERIORES
-    // =================================
+    // =====================================
+    // PROVA ANTERIOR
+    // =====================================
 
     if (
         configuracao.tipo ===
-        TIPOS_SIMULADO_PSCPP.PROVA_ANTERIOR
+        "prova-anterior"
     ) {
 
-        return {
-
-            sucesso: false,
-
-            mensagem:
-                "O carregamento de provas anteriores será implementado em módulo próprio."
-
-        };
+        return prepararProvaAnteriorPSCPP(
+            configuracao
+        );
 
     }
 
 
-    // =================================
+    // =====================================
     // SIMULADO PERSONALIZADO
-    // =================================
+    // =====================================
 
-    const banco =
-        reunirQuestoesDisciplinasPSCPP(
-            configuracao.disciplinas
-        );
-
-
-    if (
-        banco.length === 0
-    ) {
-
-        return {
-
-            sucesso: false,
-
-            mensagem:
-                "Não há questões disponíveis nas disciplinas selecionadas."
-
-        };
-
-    }
-
-
-    if (
-        banco.length <
-        configuracao.quantidade
-    ) {
-
-        return {
-
-            sucesso: false,
-
-            mensagem:
-                "O banco possui apenas " +
-                banco.length +
-                " questões disponíveis para essa seleção. " +
-                "O simulado solicitado possui " +
-                configuracao.quantidade +
-                " questões."
-
-        };
-
-    }
-
-
-    const questoesSelecionadas =
-        selecionarQuestoesSimuladoPSCPP(
-
-            banco,
-
-            configuracao.quantidade
-
-        );
-
-
-    simuladoAtualPSCPP = {
-
-        configuracao: {
-            ...configuracao,
-            disciplinas: [
-                ...configuracao.disciplinas
-            ]
-        },
-
-        questoes:
-            questoesSelecionadas,
-
-        iniciado:
-            false,
-
-        finalizado:
-            false
-
-    };
-
-
-    return {
-
-        sucesso: true,
-
-        mensagem:
-            "Simulado preparado com sucesso.",
-
-        quantidade:
-            simuladoAtualPSCPP.questoes.length,
-
-        disciplinas: [
-            ...configuracao.disciplinas
-        ]
-
-    };
+    return prepararSimuladoPersonalizadoPSCPP(
+        configuracao
+    );
 
 }
 
 
 // =====================================
-// OBTER SIMULADO ATUAL
+// OBTER ESTADO ATUAL
 // =====================================
 
 function obterSimuladoAtualPSCPP() {
@@ -530,27 +852,31 @@ function obterSimuladoAtualPSCPP() {
     return {
 
         configuracao:
-            simuladoAtualPSCPP.configuracao
-                ? {
-                    ...simuladoAtualPSCPP.configuracao,
+            simuladoAtualPSCPP
+                .configuracao,
 
-                    disciplinas: [
-                        ...simuladoAtualPSCPP
-                            .configuracao
-                            .disciplinas
-                    ]
-                }
-                : null,
-
-        questoes: [
-            ...simuladoAtualPSCPP.questoes
-        ],
+        questoes:
+            [
+                ...simuladoAtualPSCPP
+                    .questoes
+            ],
 
         iniciado:
-            simuladoAtualPSCPP.iniciado,
+            simuladoAtualPSCPP
+                .iniciado,
 
         finalizado:
-            simuladoAtualPSCPP.finalizado
+            simuladoAtualPSCPP
+                .finalizado,
+
+        provaAnterior:
+            simuladoAtualPSCPP
+                .provaAnterior
+                ? {
+                    ...simuladoAtualPSCPP
+                        .provaAnterior
+                }
+                : null
 
     };
 
@@ -571,7 +897,7 @@ function obterQuestoesSimuladoAtualPSCPP() {
 
 
 // =====================================
-// OBTER QUANTIDADE
+// OBTER QUANTIDADE DE QUESTÕES
 // =====================================
 
 function obterQuantidadeQuestoesSimuladoAtualPSCPP() {
@@ -589,23 +915,8 @@ function obterQuantidadeQuestoesSimuladoAtualPSCPP() {
 
 function marcarSimuladoComoIniciadoPSCPP() {
 
-    if (
-        simuladoAtualPSCPP
-            .questoes
-            .length === 0
-    ) {
-
-        return false;
-
-    }
-
-
     simuladoAtualPSCPP.iniciado =
         true;
-
-
-    simuladoAtualPSCPP.finalizado =
-        false;
 
 
     return true;
@@ -619,15 +930,6 @@ function marcarSimuladoComoIniciadoPSCPP() {
 
 function marcarSimuladoComoFinalizadoPSCPP() {
 
-    if (
-        !simuladoAtualPSCPP.iniciado
-    ) {
-
-        return false;
-
-    }
-
-
     simuladoAtualPSCPP.finalizado =
         true;
 
@@ -638,20 +940,43 @@ function marcarSimuladoComoFinalizadoPSCPP() {
 
 
 // =====================================
-// LIMPAR SIMULADO
+// IDENTIFICAR PROVA ANTERIOR
 // =====================================
 
-function limparSimuladoAtualPSCPP() {
+function simuladoAtualEhProvaAnteriorPSCPP() {
 
-    simuladoAtualPSCPP = {
+    return !!(
+        simuladoAtualPSCPP &&
+        simuladoAtualPSCPP.configuracao &&
+        simuladoAtualPSCPP
+            .configuracao
+            .tipo ===
+            "prova-anterior"
+    );
 
-        configuracao: null,
+}
 
-        questoes: [],
 
-        iniciado: false,
+// =====================================
+// OBTER PROVA ANTERIOR ATUAL
+// =====================================
 
-        finalizado: false
+function obterProvaAnteriorAtualPSCPP() {
+
+    if (
+        !simuladoAtualPSCPP
+            .provaAnterior
+    ) {
+
+        return null;
+
+    }
+
+
+    return {
+
+        ...simuladoAtualPSCPP
+            .provaAnterior
 
     };
 
@@ -659,9 +984,9 @@ function limparSimuladoAtualPSCPP() {
 
 
 // =====================================
-// INFORMAÇÃO DE INICIALIZAÇÃO
+// LOG DE CARREGAMENTO
 // =====================================
 
-console.info(
-    "Bridge Trainer PSCPP: motor de simulados v1.0 carregado."
+console.log(
+    "Motor de Simulados PSCPP v1.1 carregado."
 );
