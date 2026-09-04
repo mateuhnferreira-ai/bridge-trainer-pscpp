@@ -1126,7 +1126,13 @@ function finalizarSimuladoTelaPSCPP() {
 
     painelResultado.style.display =
         "block";
+document.getElementById(
+    "painel-gabarito"
+).style.display =
+    "block";
 
+
+gerarGabaritoComentadoPSCPP();
 
     resultadoSimulado.innerHTML = `
 
