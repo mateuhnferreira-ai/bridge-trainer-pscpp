@@ -247,7 +247,43 @@
     </div>
 
 </section>
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
 
+<section
+    class="painel"
+    id="painel-gabarito"
+    style="display: none;"
+>
+
+    <div class="widget">
+
+        <h2>
+            📘 Gabarito Comentado
+        </h2>
+
+        <button
+            type="button"
+            class="botao"
+            id="botao-toggle-gabarito"
+            onclick="alternarGabaritoComentadoPSCPP()"
+        >
+            Mostrar gabarito
+        </button>
+
+        <div
+            id="conteudo-gabarito"
+            style="
+                display: none;
+                margin-top: 20px;
+            "
+        >
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
@@ -1254,7 +1290,284 @@ document.getElementById(
     finalizarSimuladoTelaPSCPP
 );
 
+// =====================================
+// FORMATAR BIBLIOGRAFIA DO GABARITO
+// =====================================
 
+function formatarBibliografiaGabaritoPSCPP(
+    bibliografia
+) {
+
+    if (
+        !Array.isArray(
+            bibliografia
+        ) ||
+        bibliografia.length === 0
+    ) {
+
+        return "Referência bibliográfica não informada.";
+
+    }
+
+
+    return bibliografia
+        .map(
+            function(item) {
+
+                let texto = "";
+
+
+                if (item.publicacao) {
+
+                    texto += item.publicacao;
+
+                }
+
+
+                if (item.capitulo) {
+
+                    texto +=
+                        " — " +
+                        item.capitulo;
+
+                }
+
+
+                if (item.pagina) {
+
+                    texto +=
+                        " — " +
+                        item.pagina;
+
+                }
+
+
+                return texto;
+
+            }
+        )
+        .join("<br>");
+
+}
+
+
+// =====================================
+// GERAR GABARITO COMENTADO
+// =====================================
+
+function gerarGabaritoComentadoPSCPP() {
+
+    const questoes =
+        obterQuestoesSimuladoAtualPSCPP();
+
+
+    const container =
+        document.getElementById(
+            "conteudo-gabarito"
+        );
+
+
+    container.innerHTML = "";
+
+
+    questoes.forEach(
+        function(
+            questao,
+            indice
+        ) {
+
+            const respostaUsuario =
+                respostasSimuladoPSCPP[
+                    questao.id
+                ] || "Não respondida";
+
+
+            const acertou =
+                respostaUsuario ===
+                questao.resposta;
+
+
+            const bloco =
+                document.createElement(
+                    "div"
+                );
+
+
+            bloco.className =
+                "widget";
+
+
+            bloco.style.marginBottom =
+                "18px";
+
+
+            const titulo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titulo.textContent =
+                "Questão " +
+                (indice + 1);
+
+
+            bloco.appendChild(
+                titulo
+            );
+
+
+            const enunciado =
+                document.createElement(
+                    "p"
+                );
+
+
+            enunciado.innerHTML =
+                "<strong>Enunciado:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    questao.enunciado
+                );
+
+
+            bloco.appendChild(
+                enunciado
+            );
+
+
+            const resposta =
+                document.createElement(
+                    "p"
+                );
+
+
+            resposta.innerHTML =
+                "<strong>Gabarito:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    questao.resposta
+                );
+
+
+            bloco.appendChild(
+                resposta
+            );
+
+
+            const respostaUsuarioElemento =
+                document.createElement(
+                    "p"
+                );
+
+
+            respostaUsuarioElemento.innerHTML =
+                "<strong>Sua resposta:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    respostaUsuario
+                ) +
+                " — " +
+                (
+                    acertou
+                        ? "✅ Correta"
+                        : "❌ Incorreta"
+                );
+
+
+            bloco.appendChild(
+                respostaUsuarioElemento
+            );
+
+
+            const comentario =
+                document.createElement(
+                    "p"
+                );
+
+
+            comentario.innerHTML =
+                "<strong>Comentário:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    questao.comentario ||
+                    "Comentário técnico não informado."
+                );
+
+
+            bloco.appendChild(
+                comentario
+            );
+
+
+            const referencia =
+                document.createElement(
+                    "p"
+                );
+
+
+            referencia.innerHTML =
+                "<strong>Referência:</strong><br>" +
+                formatarBibliografiaGabaritoPSCPP(
+                    questao.bibliografia
+                );
+
+
+            bloco.appendChild(
+                referencia
+            );
+
+
+            container.appendChild(
+                bloco
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// MOSTRAR / OCULTAR GABARITO
+// =====================================
+
+function alternarGabaritoComentadoPSCPP() {
+
+    const conteudo =
+        document.getElementById(
+            "conteudo-gabarito"
+        );
+
+
+    const botao =
+        document.getElementById(
+            "botao-toggle-gabarito"
+        );
+
+
+    if (
+        conteudo.style.display ===
+        "none"
+    ) {
+
+        conteudo.style.display =
+            "block";
+
+
+        botao.textContent =
+            "Ocultar gabarito";
+
+    }
+
+    else {
+
+        conteudo.style.display =
+            "none";
+
+
+        botao.textContent =
+            "Mostrar gabarito";
+
+    }
+
+}
 // =====================================
 // INICIALIZAÇÃO
 // =====================================
