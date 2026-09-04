@@ -247,8 +247,10 @@
     </div>
 
 </section>
+
+
 <!-- =========================================
-     GABARITO COMENTADO
+     GABARITO COMENTADO GERAL
 ========================================= -->
 
 <section
@@ -284,6 +286,7 @@
     </div>
 
 </section>
+
 
 </main>
 
@@ -628,6 +631,74 @@ function obterNomesDisciplinasTelaPSCPP(
 
 
 // =====================================
+// FORMATAR BIBLIOGRAFIA
+// =====================================
+
+function formatarBibliografiaGabaritoPSCPP(
+    bibliografia
+) {
+
+    if (
+        !Array.isArray(
+            bibliografia
+        ) ||
+        bibliografia.length === 0
+    ) {
+
+        return "Referência bibliográfica não informada.";
+
+    }
+
+
+    return bibliografia
+        .map(
+            function(item) {
+
+                let texto = "";
+
+
+                if (item.publicacao) {
+
+                    texto +=
+                        escaparHTMLSimuladoPSCPP(
+                            item.publicacao
+                        );
+
+                }
+
+
+                if (item.capitulo) {
+
+                    texto +=
+                        " — " +
+                        escaparHTMLSimuladoPSCPP(
+                            item.capitulo
+                        );
+
+                }
+
+
+                if (item.pagina) {
+
+                    texto +=
+                        " — " +
+                        escaparHTMLSimuladoPSCPP(
+                            item.pagina
+                        );
+
+                }
+
+
+                return texto;
+
+            }
+        )
+        .join("<br>");
+
+}
+
+
+// =====================================
 // BIBLIOGRAFIA PARA DATASET
 // =====================================
 
@@ -666,7 +737,7 @@ function obterTextoBibliografiaPSCPP(
                 if (item.pagina) {
 
                     texto +=
-                        " — p. " +
+                        " — " +
                         item.pagina;
 
                 }
@@ -722,6 +793,10 @@ function criarElementoQuestaoSimuladoPSCPP(
         );
 
 
+    // =================================
+    // TÍTULO
+    // =================================
+
     const titulo =
         document.createElement("h3");
 
@@ -736,6 +811,10 @@ function criarElementoQuestaoSimuladoPSCPP(
     );
 
 
+    // =================================
+    // ENUNCIADO
+    // =================================
+
     const enunciado =
         document.createElement("p");
 
@@ -748,6 +827,10 @@ function criarElementoQuestaoSimuladoPSCPP(
         enunciado
     );
 
+
+    // =================================
+    // ALTERNATIVAS
+    // =================================
 
     const alternativas =
         document.createElement("div");
@@ -831,6 +914,211 @@ function criarElementoQuestaoSimuladoPSCPP(
 
     bloco.appendChild(
         alternativas
+    );
+
+
+    // =================================
+    // GABARITO INDIVIDUAL
+    // =================================
+
+    const areaGabarito =
+        document.createElement("div");
+
+
+    areaGabarito.style.marginTop =
+        "16px";
+
+
+    const botaoGabarito =
+        document.createElement("button");
+
+
+    botaoGabarito.type =
+        "button";
+
+
+    botaoGabarito.className =
+        "botao botao-gabarito-individual";
+
+
+    botaoGabarito.textContent =
+        "📘 Ver gabarito comentado";
+
+
+    botaoGabarito.disabled =
+        true;
+
+
+    botaoGabarito.dataset.questaoId =
+        questao.id;
+
+
+    const conteudoGabarito =
+        document.createElement("div");
+
+
+    conteudoGabarito.className =
+        "gabarito-individual";
+
+
+    conteudoGabarito.style.display =
+        "none";
+
+
+    conteudoGabarito.style.marginTop =
+        "14px";
+
+
+    // =================================
+    // GABARITO
+    // =================================
+
+    const respostaCorreta =
+        document.createElement("p");
+
+
+    const textoAlternativaCorreta =
+        questao.alternativas &&
+        questao.alternativas[
+            questao.resposta
+        ]
+            ? questao.alternativas[
+                questao.resposta
+            ]
+            : "";
+
+
+    respostaCorreta.innerHTML =
+        "<strong>Gabarito:</strong> " +
+        escaparHTMLSimuladoPSCPP(
+            questao.resposta
+        ) +
+        (
+            textoAlternativaCorreta
+                ? " — " +
+                  escaparHTMLSimuladoPSCPP(
+                      textoAlternativaCorreta
+                  )
+                : ""
+        );
+
+
+    conteudoGabarito.appendChild(
+        respostaCorreta
+    );
+
+
+    // =================================
+    // RESPOSTA DO USUÁRIO
+    // =================================
+
+    const respostaUsuario =
+        document.createElement("p");
+
+
+    respostaUsuario.className =
+        "resposta-usuario-gabarito";
+
+
+    respostaUsuario.innerHTML =
+        "<strong>Sua resposta:</strong> —";
+
+
+    conteudoGabarito.appendChild(
+        respostaUsuario
+    );
+
+
+    // =================================
+    // COMENTÁRIO
+    // =================================
+
+    const comentario =
+        document.createElement("p");
+
+
+    comentario.innerHTML =
+        "<strong>Comentário técnico:</strong> " +
+        escaparHTMLSimuladoPSCPP(
+            questao.comentario ||
+            "Comentário técnico não informado."
+        );
+
+
+    conteudoGabarito.appendChild(
+        comentario
+    );
+
+
+    // =================================
+    // REFERÊNCIA
+    // =================================
+
+    const referencia =
+        document.createElement("p");
+
+
+    referencia.innerHTML =
+        "<strong>Referência:</strong><br>" +
+        formatarBibliografiaGabaritoPSCPP(
+            questao.bibliografia
+        );
+
+
+    conteudoGabarito.appendChild(
+        referencia
+    );
+
+
+    // =================================
+    // BOTÃO MOSTRAR / OCULTAR
+    // =================================
+
+    botaoGabarito.addEventListener(
+        "click",
+        function() {
+
+            if (
+                conteudoGabarito.style.display ===
+                "none"
+            ) {
+
+                conteudoGabarito.style.display =
+                    "block";
+
+
+                botaoGabarito.textContent =
+                    "📕 Ocultar gabarito";
+
+            }
+
+            else {
+
+                conteudoGabarito.style.display =
+                    "none";
+
+
+                botaoGabarito.textContent =
+                    "📘 Ver gabarito comentado";
+
+            }
+
+        }
+    );
+
+
+    areaGabarito.appendChild(
+        botaoGabarito
+    );
+
+
+    areaGabarito.appendChild(
+        conteudoGabarito
+    );
+
+
+    bloco.appendChild(
+        areaGabarito
     );
 
 
@@ -1033,11 +1321,321 @@ function corrigirSimuladoTelaPSCPP() {
                 }
             );
 
+
+            // =================================
+            // LIBERAR GABARITO INDIVIDUAL
+            // =================================
+
+            const botaoGabarito =
+                bloco.querySelector(
+                    ".botao-gabarito-individual"
+                );
+
+
+            if (botaoGabarito) {
+
+                botaoGabarito.disabled =
+                    false;
+
+            }
+
+
+            // =================================
+            // SUA RESPOSTA
+            // =================================
+
+            const respostaUsuarioGabarito =
+                bloco.querySelector(
+                    ".resposta-usuario-gabarito"
+                );
+
+
+            if (
+                respostaUsuarioGabarito
+            ) {
+
+                const textoRespostaUsuario =
+                    questao.alternativas &&
+                    questao.alternativas[
+                        respostaUsuario
+                    ]
+                        ? questao.alternativas[
+                            respostaUsuario
+                        ]
+                        : "";
+
+
+                const acertou =
+                    respostaUsuario ===
+                    respostaCorreta;
+
+
+                respostaUsuarioGabarito.innerHTML =
+                    "<strong>Sua resposta:</strong> " +
+                    escaparHTMLSimuladoPSCPP(
+                        respostaUsuario
+                    ) +
+                    (
+                        textoRespostaUsuario
+                            ? " — " +
+                              escaparHTMLSimuladoPSCPP(
+                                  textoRespostaUsuario
+                              )
+                            : ""
+                    ) +
+                    (
+                        acertou
+                            ? " — ✅ Correta"
+                            : " — ❌ Incorreta"
+                    );
+
+            }
+
         }
     );
 
 
     return acertos;
+
+}
+
+
+// =====================================
+// GERAR GABARITO GERAL
+// =====================================
+
+function gerarGabaritoComentadoPSCPP() {
+
+    const questoes =
+        obterQuestoesSimuladoAtualPSCPP();
+
+
+    const container =
+        document.getElementById(
+            "conteudo-gabarito"
+        );
+
+
+    container.innerHTML =
+        "";
+
+
+    questoes.forEach(
+        function(
+            questao,
+            indice
+        ) {
+
+            const respostaUsuario =
+                respostasSimuladoPSCPP[
+                    questao.id
+                ] || "Não respondida";
+
+
+            const acertou =
+                respostaUsuario ===
+                questao.resposta;
+
+
+            const bloco =
+                document.createElement(
+                    "div"
+                );
+
+
+            bloco.className =
+                "widget";
+
+
+            bloco.style.marginBottom =
+                "18px";
+
+
+            const titulo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titulo.textContent =
+                "Questão " +
+                (indice + 1);
+
+
+            bloco.appendChild(
+                titulo
+            );
+
+
+            const resposta =
+                document.createElement(
+                    "p"
+                );
+
+
+            const textoAlternativaCorreta =
+                questao.alternativas &&
+                questao.alternativas[
+                    questao.resposta
+                ]
+                    ? questao.alternativas[
+                        questao.resposta
+                    ]
+                    : "";
+
+
+            resposta.innerHTML =
+                "<strong>Gabarito:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    questao.resposta
+                ) +
+                (
+                    textoAlternativaCorreta
+                        ? " — " +
+                          escaparHTMLSimuladoPSCPP(
+                              textoAlternativaCorreta
+                          )
+                        : ""
+                );
+
+
+            bloco.appendChild(
+                resposta
+            );
+
+
+            const respostaUsuarioElemento =
+                document.createElement(
+                    "p"
+                );
+
+
+            const textoRespostaUsuario =
+                questao.alternativas &&
+                questao.alternativas[
+                    respostaUsuario
+                ]
+                    ? questao.alternativas[
+                        respostaUsuario
+                    ]
+                    : "";
+
+
+            respostaUsuarioElemento.innerHTML =
+                "<strong>Sua resposta:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    respostaUsuario
+                ) +
+                (
+                    textoRespostaUsuario
+                        ? " — " +
+                          escaparHTMLSimuladoPSCPP(
+                              textoRespostaUsuario
+                          )
+                        : ""
+                ) +
+                " — " +
+                (
+                    acertou
+                        ? "✅ Correta"
+                        : "❌ Incorreta"
+                );
+
+
+            bloco.appendChild(
+                respostaUsuarioElemento
+            );
+
+
+            const comentario =
+                document.createElement(
+                    "p"
+                );
+
+
+            comentario.innerHTML =
+                "<strong>Comentário técnico:</strong> " +
+                escaparHTMLSimuladoPSCPP(
+                    questao.comentario ||
+                    "Comentário técnico não informado."
+                );
+
+
+            bloco.appendChild(
+                comentario
+            );
+
+
+            const referencia =
+                document.createElement(
+                    "p"
+                );
+
+
+            referencia.innerHTML =
+                "<strong>Referência:</strong><br>" +
+                formatarBibliografiaGabaritoPSCPP(
+                    questao.bibliografia
+                );
+
+
+            bloco.appendChild(
+                referencia
+            );
+
+
+            container.appendChild(
+                bloco
+            );
+
+        }
+    );
+
+}
+
+
+// =====================================
+// MOSTRAR / OCULTAR GABARITO GERAL
+// =====================================
+
+function alternarGabaritoComentadoPSCPP() {
+
+    const conteudo =
+        document.getElementById(
+            "conteudo-gabarito"
+        );
+
+
+    const botao =
+        document.getElementById(
+            "botao-toggle-gabarito"
+        );
+
+
+    if (
+        conteudo.style.display ===
+        "none"
+    ) {
+
+        conteudo.style.display =
+            "block";
+
+
+        botao.textContent =
+            "Ocultar gabarito";
+
+    }
+
+    else {
+
+        conteudo.style.display =
+            "none";
+
+
+        botao.textContent =
+            "Mostrar gabarito";
+
+    }
 
 }
 
@@ -1126,13 +1724,16 @@ function finalizarSimuladoTelaPSCPP() {
 
     painelResultado.style.display =
         "block";
-document.getElementById(
-    "painel-gabarito"
-).style.display =
-    "block";
 
 
-gerarGabaritoComentadoPSCPP();
+    document.getElementById(
+        "painel-gabarito"
+    ).style.display =
+        "block";
+
+
+    gerarGabaritoComentadoPSCPP();
+
 
     resultadoSimulado.innerHTML = `
 
@@ -1296,284 +1897,7 @@ document.getElementById(
     finalizarSimuladoTelaPSCPP
 );
 
-// =====================================
-// FORMATAR BIBLIOGRAFIA DO GABARITO
-// =====================================
 
-function formatarBibliografiaGabaritoPSCPP(
-    bibliografia
-) {
-
-    if (
-        !Array.isArray(
-            bibliografia
-        ) ||
-        bibliografia.length === 0
-    ) {
-
-        return "Referência bibliográfica não informada.";
-
-    }
-
-
-    return bibliografia
-        .map(
-            function(item) {
-
-                let texto = "";
-
-
-                if (item.publicacao) {
-
-                    texto += item.publicacao;
-
-                }
-
-
-                if (item.capitulo) {
-
-                    texto +=
-                        " — " +
-                        item.capitulo;
-
-                }
-
-
-                if (item.pagina) {
-
-                    texto +=
-                        " — " +
-                        item.pagina;
-
-                }
-
-
-                return texto;
-
-            }
-        )
-        .join("<br>");
-
-}
-
-
-// =====================================
-// GERAR GABARITO COMENTADO
-// =====================================
-
-function gerarGabaritoComentadoPSCPP() {
-
-    const questoes =
-        obterQuestoesSimuladoAtualPSCPP();
-
-
-    const container =
-        document.getElementById(
-            "conteudo-gabarito"
-        );
-
-
-    container.innerHTML = "";
-
-
-    questoes.forEach(
-        function(
-            questao,
-            indice
-        ) {
-
-            const respostaUsuario =
-                respostasSimuladoPSCPP[
-                    questao.id
-                ] || "Não respondida";
-
-
-            const acertou =
-                respostaUsuario ===
-                questao.resposta;
-
-
-            const bloco =
-                document.createElement(
-                    "div"
-                );
-
-
-            bloco.className =
-                "widget";
-
-
-            bloco.style.marginBottom =
-                "18px";
-
-
-            const titulo =
-                document.createElement(
-                    "h3"
-                );
-
-
-            titulo.textContent =
-                "Questão " +
-                (indice + 1);
-
-
-            bloco.appendChild(
-                titulo
-            );
-
-
-            const enunciado =
-                document.createElement(
-                    "p"
-                );
-
-
-            enunciado.innerHTML =
-                "<strong>Enunciado:</strong> " +
-                escaparHTMLSimuladoPSCPP(
-                    questao.enunciado
-                );
-
-
-            bloco.appendChild(
-                enunciado
-            );
-
-
-            const resposta =
-                document.createElement(
-                    "p"
-                );
-
-
-            resposta.innerHTML =
-                "<strong>Gabarito:</strong> " +
-                escaparHTMLSimuladoPSCPP(
-                    questao.resposta
-                );
-
-
-            bloco.appendChild(
-                resposta
-            );
-
-
-            const respostaUsuarioElemento =
-                document.createElement(
-                    "p"
-                );
-
-
-            respostaUsuarioElemento.innerHTML =
-                "<strong>Sua resposta:</strong> " +
-                escaparHTMLSimuladoPSCPP(
-                    respostaUsuario
-                ) +
-                " — " +
-                (
-                    acertou
-                        ? "✅ Correta"
-                        : "❌ Incorreta"
-                );
-
-
-            bloco.appendChild(
-                respostaUsuarioElemento
-            );
-
-
-            const comentario =
-                document.createElement(
-                    "p"
-                );
-
-
-            comentario.innerHTML =
-                "<strong>Comentário:</strong> " +
-                escaparHTMLSimuladoPSCPP(
-                    questao.comentario ||
-                    "Comentário técnico não informado."
-                );
-
-
-            bloco.appendChild(
-                comentario
-            );
-
-
-            const referencia =
-                document.createElement(
-                    "p"
-                );
-
-
-            referencia.innerHTML =
-                "<strong>Referência:</strong><br>" +
-                formatarBibliografiaGabaritoPSCPP(
-                    questao.bibliografia
-                );
-
-
-            bloco.appendChild(
-                referencia
-            );
-
-
-            container.appendChild(
-                bloco
-            );
-
-        }
-    );
-
-}
-
-
-// =====================================
-// MOSTRAR / OCULTAR GABARITO
-// =====================================
-
-function alternarGabaritoComentadoPSCPP() {
-
-    const conteudo =
-        document.getElementById(
-            "conteudo-gabarito"
-        );
-
-
-    const botao =
-        document.getElementById(
-            "botao-toggle-gabarito"
-        );
-
-
-    if (
-        conteudo.style.display ===
-        "none"
-    ) {
-
-        conteudo.style.display =
-            "block";
-
-
-        botao.textContent =
-            "Ocultar gabarito";
-
-    }
-
-    else {
-
-        conteudo.style.display =
-            "none";
-
-
-        botao.textContent =
-            "Mostrar gabarito";
-
-    }
-
-}
 // =====================================
 // INICIALIZAÇÃO
 // =====================================
