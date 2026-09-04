@@ -721,91 +721,9 @@ alínea b), do item II, do art. 8° da LESTA.
         }
     ]
 
-}
-
-];
+},
 
 
-// =====================================
-// DADOS DA PROVA
-// =====================================
-
-const prova2006PSCPP = {
-
-    id: "prova-2006",
-
-    nome: "Prova Escrita PSCPP — 2006",
-
-    ano: 2006,
-
-    origem: "prova-anterior",
-
-    versao: "1.0",
-
-    totalQuestoesDocumentoOriginal: 70,
-
-    questoesCarregadas: questoesProva2006PSCPP.length,
-
-    questoes: questoesProva2006PSCPP
-
-};
-
-
-// =====================================
-// FUNÇÕES DE ACESSO
-// =====================================
-
-function obterQuestoesProva2006PSCPP() {
-
-    return [...questoesProva2006PSCPP];
-
-}
-
-
-function obterQuestaoProva2006PorIdPSCPP(questaoId) {
-
-    return questoesProva2006PSCPP.find(
-
-        function(questao) {
-
-            return questao.id === questaoId;
-
-        }
-
-    ) || null;
-
-}
-
-
-function obterQuantidadeQuestoesProva2006PSCPP() {
-
-    return questoesProva2006PSCPP.length;
-
-}
-
-
-function obterDadosProva2006PSCPP() {
-
-    return {
-
-        ...prova2006PSCPP,
-
-        questoes: [...questoesProva2006PSCPP]
-
-    };
-
-}
-
-
-// =====================================
-// LOG DE CARREGAMENTO
-// =====================================
-
-console.log(
-    "Prova PSCPP 2006 carregada:",
-    questoesProva2006PSCPP.length,
-    "questões."
-);
 
 // =====================================
 // QUESTÃO 11
@@ -4297,4 +4215,83 @@ Internacional de Sinais (CIS), quando questionado pela Autoridade Marítima, por
 
 ];
 
+// =====================================
+// DADOS DA PROVA
+// =====================================
 
+const prova2006PSCPP = {
+
+    id: "prova-2006",
+
+    nome: "Prova Escrita PSCPP — 2006",
+
+    ano: 2006,
+
+    origem: "prova-anterior",
+
+    versao: "1.0",
+
+    totalQuestoesDocumentoOriginal: 70,
+
+    questoesCarregadas: questoesProva2006PSCPP.length,
+
+    questoes: questoesProva2006PSCPP
+
+};
+
+
+// =====================================
+// FUNÇÕES DE ACESSO
+// =====================================
+
+function obterQuestoesProva2006PSCPP() {
+
+    return [...questoesProva2006PSCPP];
+
+}
+
+
+function obterQuestaoProva2006PorIdPSCPP(questaoId) {
+
+    return questoesProva2006PSCPP.find(
+
+        function(questao) {
+
+            return questao.id === questaoId;
+
+        }
+
+    ) || null;
+
+}
+
+
+function obterQuantidadeQuestoesProva2006PSCPP() {
+
+    return questoesProva2006PSCPP.length;
+
+}
+
+
+function obterDadosProva2006PSCPP() {
+
+    return {
+
+        ...prova2006PSCPP,
+
+        questoes: [...questoesProva2006PSCPP]
+
+    };
+
+}
+
+
+// =====================================
+// LOG DE CARREGAMENTO
+// =====================================
+
+console.log(
+    "Prova PSCPP 2006 carregada:",
+    questoesProva2006PSCPP.length,
+    "questões."
+);
