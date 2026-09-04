@@ -344,6 +344,8 @@
 
 <script src="../js/simulados/motor-simulado.js"></script>
 
+<script src="../js/simulados/desempenho-simulado.js"></script>
+
 
 <!-- =========================================
      EXECUÇÃO DA PÁGINA
@@ -793,10 +795,6 @@ function criarElementoQuestaoSimuladoPSCPP(
         );
 
 
-    // =================================
-    // TÍTULO
-    // =================================
-
     const titulo =
         document.createElement("h3");
 
@@ -811,10 +809,6 @@ function criarElementoQuestaoSimuladoPSCPP(
     );
 
 
-    // =================================
-    // ENUNCIADO
-    // =================================
-
     const enunciado =
         document.createElement("p");
 
@@ -827,10 +821,6 @@ function criarElementoQuestaoSimuladoPSCPP(
         enunciado
     );
 
-
-    // =================================
-    // ALTERNATIVAS
-    // =================================
 
     const alternativas =
         document.createElement("div");
@@ -949,10 +939,6 @@ function criarElementoQuestaoSimuladoPSCPP(
         true;
 
 
-    botaoGabarito.dataset.questaoId =
-        questao.id;
-
-
     const conteudoGabarito =
         document.createElement("div");
 
@@ -968,10 +954,6 @@ function criarElementoQuestaoSimuladoPSCPP(
     conteudoGabarito.style.marginTop =
         "14px";
 
-
-    // =================================
-    // GABARITO
-    // =================================
 
     const respostaCorreta =
         document.createElement("p");
@@ -1008,10 +990,6 @@ function criarElementoQuestaoSimuladoPSCPP(
     );
 
 
-    // =================================
-    // RESPOSTA DO USUÁRIO
-    // =================================
-
     const respostaUsuario =
         document.createElement("p");
 
@@ -1028,10 +1006,6 @@ function criarElementoQuestaoSimuladoPSCPP(
         respostaUsuario
     );
 
-
-    // =================================
-    // COMENTÁRIO
-    // =================================
 
     const comentario =
         document.createElement("p");
@@ -1050,10 +1024,6 @@ function criarElementoQuestaoSimuladoPSCPP(
     );
 
 
-    // =================================
-    // REFERÊNCIA
-    // =================================
-
     const referencia =
         document.createElement("p");
 
@@ -1069,10 +1039,6 @@ function criarElementoQuestaoSimuladoPSCPP(
         referencia
     );
 
-
-    // =================================
-    // BOTÃO MOSTRAR / OCULTAR
-    // =================================
 
     botaoGabarito.addEventListener(
         "click",
@@ -1322,10 +1288,6 @@ function corrigirSimuladoTelaPSCPP() {
             );
 
 
-            // =================================
-            // LIBERAR GABARITO INDIVIDUAL
-            // =================================
-
             const botaoGabarito =
                 bloco.querySelector(
                     ".botao-gabarito-individual"
@@ -1339,10 +1301,6 @@ function corrigirSimuladoTelaPSCPP() {
 
             }
 
-
-            // =================================
-            // SUA RESPOSTA
-            // =================================
 
             const respostaUsuarioGabarito =
                 bloco.querySelector(
@@ -1641,6 +1599,138 @@ function alternarGabaritoComentadoPSCPP() {
 
 
 // =====================================
+// REGISTRAR DESEMPENHO
+// =====================================
+
+function registrarDesempenhoTentativaAtualPSCPP(
+    total,
+    acertos,
+    erros,
+    percentual,
+    tempoTotal,
+    tempoMedio
+) {
+
+    const simuladoAtual =
+        obterSimuladoAtualPSCPP();
+
+
+    if (
+        !simuladoAtual ||
+        !Array.isArray(
+            simuladoAtual.questoes
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const questoesTentativa =
+        simuladoAtual.questoes.map(
+            function(questao) {
+
+                const respostaUsuario =
+                    respostasSimuladoPSCPP[
+                        questao.id
+                    ] || "";
+
+
+                return {
+
+                    questaoId:
+                        questao.id,
+
+                    disciplina:
+                        questao.disciplina ||
+                        "",
+
+                    assunto:
+                        questao.assunto ||
+                        "",
+
+                    topico:
+                        questao.topico ||
+                        "",
+
+                    edital:
+                        questao.edital ||
+                        "",
+
+                    bibliografia:
+                        Array.isArray(
+                            questao.bibliografia
+                        )
+                            ? questao.bibliografia
+                            : [],
+
+                    respostaUsuario:
+                        respostaUsuario,
+
+                    respostaCorreta:
+                        questao.resposta ||
+                        "",
+
+                    acertou:
+                        respostaUsuario ===
+                        questao.resposta
+
+                };
+
+            }
+        );
+
+
+    registrarTentativaSimuladoPSCPP({
+
+        tipo:
+            simuladoAtual.configuracao &&
+            simuladoAtual.configuracao.tipo
+                ? simuladoAtual.configuracao.tipo
+                : "personalizado",
+
+        disciplinas:
+            simuladoAtual.configuracao &&
+            Array.isArray(
+                simuladoAtual.configuracao.disciplinas
+            )
+                ? [
+                    ...simuladoAtual
+                        .configuracao
+                        .disciplinas
+                ]
+                : [],
+
+        total:
+            total,
+
+        acertos:
+            acertos,
+
+        erros:
+            erros,
+
+        percentual:
+            percentual,
+
+        tempoTotalSegundos:
+            tempoTotal,
+
+        tempoMedioSegundos:
+            Math.round(
+                tempoMedio
+            ),
+
+        questoes:
+            questoesTentativa
+
+    });
+
+}
+
+
+// =====================================
 // FINALIZAR
 // =====================================
 
@@ -1733,6 +1823,20 @@ function finalizarSimuladoTelaPSCPP() {
 
 
     gerarGabaritoComentadoPSCPP();
+
+
+    // =================================
+    // SALVAR DESEMPENHO
+    // =================================
+
+    registrarDesempenhoTentativaAtualPSCPP(
+        total,
+        acertos,
+        erros,
+        percentual,
+        tempoTotal,
+        tempoMedio
+    );
 
 
     resultadoSimulado.innerHTML = `
@@ -1838,7 +1942,6 @@ function iniciarTentativaSimuladoPSCPP() {
     document.getElementById(
         "descricao-simulado"
     ).textContent =
-
         questoes.length +
         " questões selecionadas.";
 
