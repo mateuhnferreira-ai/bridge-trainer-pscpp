@@ -1,1 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Provas Anteriores — Bridge Trainer PSCPP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css?v=2.0"
+    >
+
+</head>
+
+
+<body data-tipo-pagina="simulados">
+
+
+<header class="topo">
+
+    <div class="logo">
+
+        <h1>
+            ⚓ Bridge Trainer PSCPP
+        </h1>
+
+        <p>
+            Preparação para o Processo Seletivo
+            de Praticante de Prático
+        </p>
+
+    </div>
+
+</header>
+
+
+<nav class="navbar">
+
+    <button onclick="voltarPagina()">
+        ⬅ Voltar
+    </button>
+
+    <a href="../index.html">
+        🏠 Início
+    </a>
+
+    <a href="../guia-estudos/index.html">
+        📚 Guia de Estudos
+    </a>
+
+    <a href="index.html">
+        📝 Simulados
+    </a>
+
+</nav>
+
+
+<main>
+
+
+<section class="dashboard">
+
+    <h2>
+        📄 Provas Anteriores
+    </h2>
+
+    <p>
+        Resolva provas oficiais anteriores
+        do processo seletivo no mesmo formato
+        interativo do Bridge Trainer PSCPP.
+    </p>
+
+</section>
+
+
+<section class="painel">
+
+    <div class="widget">
+
+        <h3>
+            Provas disponíveis
+        </h3>
+
+        <p>
+            As questões são apresentadas
+            na ordem original da prova,
+            sem embaralhamento.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="cards">
+
+
+    <!-- =====================================
+         PROVA 2006
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            📄 Prova Escrita PSCPP — 2006
+        </h3>
+
+        <p>
+            70 questões
+        </p>
+
+        <p>
+            Prova oficial completa,
+            preservada na ordem original.
+        </p>
+
+        <button
+            type="button"
+            class="botao botao-inicio"
+            onclick="iniciarProvaAnteriorPSCPP('prova-2006')"
+        >
+            ▶ Iniciar prova
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PROVA 2008
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            📄 Prova Escrita PSCPP — 2008
+        </h3>
+
+        <p>
+            Em preparação
+        </p>
+
+        <button
+            type="button"
+            class="botao"
+            disabled
+        >
+            Em breve
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PROVA 2011
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            📄 Prova Escrita PSCPP — 2011
+        </h3>
+
+        <p>
+            Em preparação
+        </p>
+
+        <button
+            type="button"
+            class="botao"
+            disabled
+        >
+            Em breve
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PROVA 2012
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            📄 Prova Escrita PSCPP — 2012
+        </h3>
+
+        <p>
+            Em preparação
+        </p>
+
+        <button
+            type="button"
+            class="botao"
+            disabled
+        >
+            Em breve
+        </button>
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        Bridge Trainer PSCPP
+    </p>
+
+</footer>
+
+
+<script src="../js/navigation.js"></script>
+
+<script src="../js/simulados/configuracao-simulado.js"></script>
+
+
+<script>
+
+// =====================================
+// INICIAR PROVA ANTERIOR
+// =====================================
+
+function iniciarProvaAnteriorPSCPP(
+    provaId
+) {
+
+    if (
+        typeof limparConfiguracaoSimuladoPSCPP ===
+        "function"
+    ) {
+
+        limparConfiguracaoSimuladoPSCPP();
+
+    }
+
+
+    // =====================================
+    // UTILIZAR FUNÇÃO DO SISTEMA
+    // =====================================
+
+    if (
+        typeof configurarProvaAnteriorPSCPP ===
+        "function"
+    ) {
+
+        configurarProvaAnteriorPSCPP(
+            provaId
+        );
+
+    }
+
+    else {
+
+        console.error(
+            "Função configurarProvaAnteriorPSCPP não encontrada."
+        );
+
+        alert(
+            "Não foi possível configurar a prova anterior."
+        );
+
+        return;
+
+    }
+
+
+    // =====================================
+    // SALVAR CONFIGURAÇÃO
+    // =====================================
+
+    if (
+        typeof salvarConfiguracaoSimuladoPSCPP ===
+        "function"
+    ) {
+
+        salvarConfiguracaoSimuladoPSCPP();
+
+    }
+
+
+    // =====================================
+    // ABRIR EXECUTOR
+    // =====================================
+
+    window.location.href =
+        "realizar.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
