@@ -4558,6 +4558,1841 @@ const questoesManobrabilidadePSCPP = [
             }
         ]
     }
+
+    // =====================================
+    // MAN-0071
+    // PASSO E RAZÃO DE PASSO
+    // =====================================
+
+    {
+        id: "MAN-0071",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Passo do propulsor e razão P/D",
+
+        edital:
+            "Propulsão — geometria e características dos propulsores",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O passo de um propulsor (P) é definido como a distância que o hélice avançaria em uma revolução em um meio sólido. Sobre a razão de passo (P/D), assinale a alternativa correta:",
+
+        alternativas: {
+
+            A:
+                "Um aumento no passo, mantendo o diâmetro constante, invariavelmente aumenta a eficiência em baixas velocidades de avanço.",
+
+            B:
+                "O passo geométrico é medido na face da pá, enquanto o passo efetivo considera o ângulo de ataque de portância nula.",
+
+            C:
+                "Em hélices de passo controlável (CPP), o passo é fixado para a velocidade de cruzeiro e não pode ser alterado sob carga.",
+
+            D:
+                "O passo médio é geralmente calculado no raio de 0,2R, onde a carga de empuxo é máxima.",
+
+            E:
+                "A razão de passo não influencia o aparecimento da cavitação de dorso (back cavitation)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O passo geométrico decorre da geometria da pá. O passo efetivo considera a condição aerodinâmica/hidrodinâmica correspondente ao ângulo de ataque de sustentação nula.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0072
+    // ÁREAS DO PROPULSOR
+    // =====================================
+
+    {
+        id: "MAN-0072",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Developed Area Ratio — DAR",
+
+        edital:
+            "Propulsão — geometria dos propulsores",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A Razão de Área Desenvolvida (DAR) é um parâmetro fundamental no projeto de hélices. Sobre as definições de área, é correto afirmar que:",
+
+        alternativas: {
+
+            A:
+                "A área projetada (AP) é sempre maior que a área desenvolvida (AD).",
+
+            B:
+                "A área desenvolvida (AD) é a projeção da face das pás em um plano transversal ao eixo.",
+
+            C:
+                "A área de disco (A0) é a área total das faces das pás multiplicada pelo número de pás.",
+
+            D:
+                "A área desenvolvida é a área real da superfície da pá se esta fosse desenrolada em um plano.",
+
+            E:
+                "O coeficiente DAR é inversamente proporcional ao risco de cavitação por erosão."
+
+        },
+
+        resposta: "D",
+
+        comentario:
+            "A developed area corresponde à área obtida quando a superfície helicoidal das pás é desenvolvida ou desenrolada em um plano.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0073
+    // SEMELHANÇA E ROTAÇÃO
+    // =====================================
+
+    {
+        id: "MAN-0073",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Escala de rotação do propulsor",
+
+        edital:
+            "Propulsão — ensaios de modelos e semelhança",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Considere um propulsor e seu modelo em escala λ. Para garantir a semelhança de Froude em testes de águas abertas (open water), a relação entre as rotações do navio (nS) e do modelo (nM) deve ser:",
+
+        alternativas: {
+
+            A:
+                "nS = nM × √λ.",
+
+            B:
+                "nS = nM / √λ.",
+
+            C:
+                "nS = nM / λ.",
+
+            D:
+                "nS = nM × λ^(1/3).",
+
+            E:
+                "nS = nM."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Pela semelhança de Froude, VS/VM = √λ. Como a grandeza característica nD deve acompanhar a escala de velocidade e DS/DM = λ, resulta nS = nM/√λ.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0074
+    // COEFICIENTE DE AVANÇO
+    // =====================================
+
+    {
+        id: "MAN-0074",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Advance Coefficient — J",
+
+        edital:
+            "Propulsão — curvas características do propulsor",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Os coeficientes adimensionais de Empuxo (KT) e Torque (KQ) são expressos em função do Coeficiente de Avanço (J). A definição correta de J é:",
+
+        alternativas: {
+
+            A:
+                "J = V / (n · D).",
+
+            B:
+                "J = VA / (n · D).",
+
+            C:
+                "J = n · D / VA.",
+
+            D:
+                "J = P / D.",
+
+            E:
+                "J = RT / (ρ · n² · D⁴)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O advance coefficient utiliza a velocidade de avanço efetivamente encontrada pelo hélice, VA, e é definido por J = VA/(nD).",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0075
+    // SKEW
+    // =====================================
+
+    {
+        id: "MAN-0075",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Propeller Skew",
+
+        edital:
+            "Propulsão — geometria das pás",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Sobre o efeito de Skew, inclinação lateral das pás no plano do disco, assinale a alternativa tecnicamente precisa:",
+
+        alternativas: {
+
+            A:
+                "O skew é utilizado primordialmente para aumentar o empuxo máximo do hélice.",
+
+            B:
+                "Pás com alto skew tendem a reduzir as flutuações de pressão induzidas pelo hélice no casco, diminuindo vibrações.",
+
+            C:
+                "O skew reduz a eficiência do hélice em marcha à ré de forma mais severa que o rake.",
+
+            D:
+                "O uso de skew elimina a necessidade de controle do número de Reynolds em modelos.",
+
+            E:
+                "Hélices com skew nulo são imunes à cavitação de vórtice de ponta."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O skew distribui no tempo a passagem das diferentes regiões da pá através de campos de esteira não uniformes, contribuindo para reduzir pulsações de pressão e vibração.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0076
+    // EFICIÊNCIA DE CASCO
+    // =====================================
+
+    {
+        id: "MAN-0076",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Hull Efficiency",
+
+        edital:
+            "Propulsão — interação casco-propulsor",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A Eficiência de Casco (ηH) relaciona a potência efetiva (PE) com a potência de empuxo (PT). É correto afirmar que:",
+
+        alternativas: {
+
+            A:
+                "ηH = (1 - w) / (1 - t).",
+
+            B:
+                "A eficiência de casco é sempre menor que a unidade devido às perdas viscosas.",
+
+            C:
+                "ηH = (1 - t) / (1 - w), podendo ser maior que 1 devido à recuperação de energia da esteira.",
+
+            D:
+                "O coeficiente de dedução de empuxo (t) é sempre igual à fração de esteira (w).",
+
+            E:
+                "A eficiência de casco independe da forma da popa do navio."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A hull efficiency é dada por ηH = (1-t)/(1-w). Como não representa uma eficiência termodinâmica isolada, seu valor pode ser superior à unidade.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0077
+    // FRAÇÃO DE ESTEIRA
+    // =====================================
+
+    {
+        id: "MAN-0077",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Wake Fraction",
+
+        edital:
+            "Propulsão — interação casco-propulsor e esteira",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A fração de esteira de Taylor (w) para um navio de um único eixo é influenciada por três componentes principais. São eles:",
+
+        alternativas: {
+
+            A:
+                "Esteira de fricção, esteira de ondas e esteira de corrente.",
+
+            B:
+                "Esteira de fricção, esteira potencial (forma) e esteira de ondas.",
+
+            C:
+                "Esteira de apêndices, esteira aerodinâmica e esteira de turbulência.",
+
+            D:
+                "Esteira nominal, esteira efetiva e esteira de torque.",
+
+            E:
+                "Esteira de proa, esteira de ombro e esteira de popa."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Na decomposição apresentada, a esteira resulta das contribuições de fricção, efeitos potenciais associados à forma do casco e componentes relacionadas ao sistema de ondas.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0078
+    // THRUST DEDUCTION
+    // =====================================
+
+    {
+        id: "MAN-0078",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Thrust Deduction Factor",
+
+        edital:
+            "Propulsão — interação casco-propulsor",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O Coeficiente de Dedução de Empuxo (t) representa:",
+
+        alternativas: {
+
+            A:
+                "O aumento da resistência do casco devido à sucção do hélice na região da popa.",
+
+            B:
+                "A perda de potência mecânica nos mancais de escora.",
+
+            C:
+                "A redução da velocidade de avanço devido à viscosidade.",
+
+            D:
+                "A diferença entre o passo geométrico e o passo real.",
+
+            E:
+                "O efeito da cavitação no torque do motor."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "A operação do hélice modifica o campo de pressão na popa e aumenta a resistência aparente do casco. Essa interação é representada pelo thrust deduction factor.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0079
+    // POTÊNCIA ENTREGUE
+    // =====================================
+
+    {
+        id: "MAN-0079",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Delivered Power — PD",
+
+        edital:
+            "Propulsão — cadeia de potências",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A Potência Entregue ao Propulsor (PD) é definida como:",
+
+        alternativas: {
+
+            A:
+                "A potência medida no freio do motor principal (PB).",
+
+            B:
+                "A potência útil para vencer a resistência do casco (PE).",
+
+            C:
+                "A potência efetivamente aplicada ao hélice, após as perdas de transmissão e mancais.",
+
+            D:
+                "O produto da resistência total pela velocidade do navio.",
+
+            E:
+                "A potência indicada nos cilindros do motor (PI)."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Delivered power é a potência efetivamente disponibilizada ao propulsor depois das perdas existentes entre a máquina e o hélice.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0080
+    // ESCORREGAMENTO APARENTE
+    // =====================================
+
+    {
+        id: "MAN-0080",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Apparent Slip",
+
+        edital:
+            "Propulsão — passo, rotação e velocidade",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Durante uma prova de mar, observa-se que o escorregamento aparente (sA) é negativo. Hidrodinamicamente, isso indica que:",
+
+        alternativas: {
+
+            A:
+                "O hélice está cavitando severamente.",
+
+            B:
+                "O navio está sendo auxiliado por uma corrente favorável ou vento de popa.",
+
+            C:
+                "O passo do hélice é insuficiente para a velocidade de serviço.",
+
+            D:
+                "Há uma obstrução no fluxo de entrada do propulsor.",
+
+            E:
+                "O motor está operando acima da rotação de projeto."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O apparent slip pode assumir valor negativo quando a velocidade observada do navio excede a velocidade geométrica correspondente ao produto passo × rotação, situação possível quando há auxílio ambiental.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0081
+    // NÚMERO DE CAVITAÇÃO
+    // =====================================
+
+    {
+        id: "MAN-0081",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Cavitation Number",
+
+        edital:
+            "Propulsão — cavitação",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A cavitação ocorre quando a pressão local no fluido cai abaixo da pressão de vapor (pV). O número de cavitação (σ) é inversamente proporcional a:",
+
+        alternativas: {
+
+            A:
+                "Velocidade de avanço ao quadrado (V²).",
+
+            B:
+                "Pressão estática na profundidade do eixo.",
+
+            C:
+                "Diâmetro do hélice.",
+
+            D:
+                "Área de superfície molhada.",
+
+            E:
+                "Coeficiente de bloco (CB)."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "O número de cavitação possui pressão dinâmica no denominador, proporcional a ρV²/2. Assim, para as demais grandezas constantes, seu valor diminui com o aumento do quadrado da velocidade.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0082
+    // BURRILL
+    // =====================================
+
+    {
+        id: "MAN-0082",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Burrill Cavitation Diagram",
+
+        edital:
+            "Propulsão — cavitação e carregamento das pás",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O diagrama de Burrill é amplamente utilizado na praticagem e engenharia naval para:",
+
+        alternativas: {
+
+            A:
+                "Estimar o diâmetro ótimo do hélice.",
+
+            B:
+                "Prever a ocorrência de cavitação de dorso com base na carga por unidade de área.",
+
+            C:
+                "Calcular a potência efetiva em águas rasas.",
+
+            D:
+                "Determinar o ângulo de skew necessário para reduzir vibrações.",
+
+            E:
+                "Avaliar a eficiência do leme no rastro do hélice."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O diagrama de Burrill relaciona condições de carregamento do propulsor e cavitação, sendo utilizado como método de avaliação da susceptibilidade à cavitação das pás.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0083
+    // AZIPOD
+    // =====================================
+
+    {
+        id: "MAN-0083",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Azipod — operação",
+
+        edital:
+            "Propulsão — propulsores azimutais e manobra",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Sobre o sistema de propulsão Azipod, assinale a alternativa correta:",
+
+        alternativas: {
+
+            A:
+                "Azipods sempre operam no modo pulling, com hélice à vante do pod, para máxima eficiência.",
+
+            B:
+                "No modo bicycle, os pods são colocados em oposição a 90 graus para frenagem súbita.",
+
+            C:
+                "O uso de controle por computador (joystick) é recomendado pela boa marinharia durante toda a aproximação do cais até o contato com as defensas.",
+
+            D:
+                "A regra de um comprimento de navio sugere mudar do controle automático para o manual ao se aproximar de perigos ou berços.",
+
+            E:
+                "Azipods eliminam a necessidade de qualquer interação com rebocadores, independentemente do vento."
+
+        },
+
+        resposta: "D",
+
+        comentario:
+            "A orientação operacional fornecida considera prudente a transição para controle manual antes da fase de aproximação próxima a perigos ou ao berço.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0084
+    // TIP VORTEX CAVITATION
+    // =====================================
+
+    {
+        id: "MAN-0084",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Tip Vortex Cavitation",
+
+        edital:
+            "Propulsão — tipos de cavitação",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A cavitação por vórtice de ponta (tip vortex cavitation) caracteriza-se por:",
+
+        alternativas: {
+
+            A:
+                "Formar-se no bordo de ataque da pá sob altas cargas.",
+
+            B:
+                "Ser a forma mais destrutiva de cavitação por erosão.",
+
+            C:
+                "Originar-se nas extremidades das pás e estender-se pelo rastro como um filamento espiral.",
+
+            D:
+                "Ocorrer apenas em velocidades de avanço nulas (bolardo).",
+
+            E:
+                "Ser eliminada pelo uso de proas bulbosas."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "O tip vortex é gerado pela circulação na extremidade da pá e pode apresentar cavitação na forma de um núcleo espiralado que prossegue para jusante no escoamento.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0085
+    // EFICIÊNCIA ROTATIVA RELATIVA
+    // =====================================
+
+    {
+        id: "MAN-0085",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Relative Rotative Efficiency",
+
+        edital:
+            "Propulsão — eficiência propulsiva",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A Eficiência Rotativa Relativa (ηR) é a razão entre a eficiência do hélice operando atrás do casco e sua eficiência em águas abertas. Para navios de um único eixo, seu valor típico é:",
+
+        alternativas: {
+
+            A:
+                "Entre 0,50 e 0,60.",
+
+            B:
+                "Exatamente 1,00 em todas as condições.",
+
+            C:
+                "Geralmente entre 1,00 e 1,07.",
+
+            D:
+                "Menor que 0,90 devido à turbulência.",
+
+            E:
+                "Independente do Número de Reynolds."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Para navios de um único eixo, a eficiência rotativa relativa pode assumir valores ligeiramente superiores à unidade em razão das características do campo de esteira no qual o hélice opera.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0086
+    // RIGHT-HAND PROPELLER ASTERN
+    // =====================================
+
+    {
+        id: "MAN-0086",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Efeito transversal — máquina a ré",
+
+        edital:
+            "Propulsão — efeitos operacionais do propulsor",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Um navio equipado com hélice de passo fixo de rotação direita (right-hand) dá marcha à ré. A tendência imediata da proa é:",
+
+        alternativas: {
+
+            A:
+                "Cair para boreste.",
+
+            B:
+                "Cair para bombordo.",
+
+            C:
+                "Manter o rumo devido ao efeito do leme.",
+
+            D:
+                "Guinar violentamente para bombordo apenas se o calado for reduzido.",
+
+            E:
+                "Subir em relação à linha d'água devido ao squat."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "No comportamento clássico do right-handed fixed-pitch propeller em máquina a ré, o efeito transversal tende a deslocar a popa para bombordo e, consequentemente, a proa para boreste.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0087
+    // CPP
+    // =====================================
+
+    {
+        id: "MAN-0087",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Controllable Pitch Propeller",
+
+        edital:
+            "Propulsão — hélices de passo controlável",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Hélices de passo controlável (CPP) apresentam uma característica peculiar durante a manobra:",
+
+        alternativas: {
+
+            A:
+                "O motor deve ser parado e reiniciado para inverter a marcha.",
+
+            B:
+                "A rotação do hélice (RPM) geralmente permanece alta e constante, alterando-se apenas o ângulo das pás.",
+
+            C:
+                "Eles são mais eficientes em marcha à ré do que os hélices de passo fixo (FPP).",
+
+            D:
+                "Não sofrem efeito de corrente de descarga (discharge current) sobre o leme.",
+
+            E:
+                "O efeito de guinada para bombordo em marcha à ré é mais pronunciado que no FPP."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Uma CPP permite alterar o sentido e a intensidade do empuxo modificando o passo das pás sem necessariamente inverter a rotação do eixo.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0088
+    // PILOT CARD
+    // =====================================
+
+    {
+        id: "MAN-0088",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Pilot Card — dados de máquina",
+
+        edital:
+            "Propulsão — informações de manobra disponíveis ao Prático",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Segundo a NORMAM-311 e os princípios de intercâmbio Piloto-Comandante (IMO A.960), o cartão de pilotagem (Pilot Card) deve conter:",
+
+        alternativas: {
+
+            A:
+                "A curva ITTC-1957 de fricção do navio.",
+
+            B:
+                "A tabela de rotações (RPM) por velocidade para diversas condições de carregamento.",
+
+            C:
+                "A pressão de vapor da água do porto.",
+
+            D:
+                "O número de Reynolds crítico para o hélice.",
+
+            E:
+                "A potência indicada (PI) de cada cilindro."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O Pilot Card reúne informações relevantes para a condução segura da manobra, incluindo dados de máquinas e relações entre ordens, rotações e velocidades do navio.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "IMO Resolution A.960 — Recommendations on Training and Certification and on Operational Procedures for Maritime Pilots",
+                capitulo: "",
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "NORMAM-311",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0089
+    // PULLING WATER
+    // =====================================
+
+    {
+        id: "MAN-0089",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Pulling Water em águas restritas",
+
+        edital:
+            "Propulsão — comportamento operacional em canais restritos",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O fenômeno de pulling water, descrito em canais restritos, está associado a:",
+
+        alternativas: {
+
+            A:
+                "Um aumento na eficiência do hélice devido ao confinamento.",
+
+            B:
+                "Uma redução súbita na resistência residual.",
+
+            C:
+                "Um aumento no rastro, vibrações severas e alteração no padrão de ondas na popa.",
+
+            D:
+                "Uma melhora na autoridade do leme.",
+
+            E:
+                "À estabilização do squat."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A expressão operacional pulling water descreve a forte demanda de fluxo ao redor e sob o casco em condições restritas, podendo estar associada a mudanças perceptíveis na esteira, ondas e vibrações.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0090
+    // TWIN SCREW
+    // =====================================
+
+    {
+        id: "MAN-0090",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Twin-Screw Maneuvering",
+
+        edital:
+            "Propulsão — manobra com dois eixos",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Em navios de dois eixos (twin-screw), para realizar um giro sobre o próprio eixo para boreste, o Prático deve:",
+
+        alternativas: {
+
+            A:
+                "Colocar o motor de boreste à frente e o de bombordo atrás.",
+
+            B:
+                "Colocar o motor de bombordo à frente e o de boreste atrás.",
+
+            C:
+                "Colocar ambos os motores à frente com leme a bombordo.",
+
+            D:
+                "Usar apenas o motor de boreste à ré.",
+
+            E:
+                "Aguardar a ação da esteira potencial."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Com bombordo adiante e boreste atrás, as forças longitudinais opostas produzem um momento de guinada para boreste com reduzido avanço longitudinal resultante.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0091
+    // ADVANCE VELOCITY
+    // =====================================
+
+    {
+        id: "MAN-0091",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Advance Velocity and Wake",
+
+        edital:
+            "Propulsão — wake fraction",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "The advance velocity (VA) of a propeller is usually lower than the ship's speed (V) due to the wake effect. The relationship is expressed as:",
+
+        alternativas: {
+
+            A:
+                "VA = V(1 + w).",
+
+            B:
+                "VA = V / (1 - w).",
+
+            C:
+                "VA = V(1 - w).",
+
+            D:
+                "VA = V · t.",
+
+            E:
+                "VA = V · ηH."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Using the Taylor wake fraction, the effective advance velocity at the propeller is VA = V(1-w).",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0092
+    // CAVITATION INCEPTION
+    // =====================================
+
+    {
+        id: "MAN-0092",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Cavitation Inception",
+
+        edital:
+            "Propulsão — cavitação",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Which of the following describes the cavitation inception?",
+
+        alternativas: {
+
+            A:
+                "The moment when bubbles collapse on the blade's leading edge.",
+
+            B:
+                "The condition where the local pressure equals the fluid's vapor pressure.",
+
+            C:
+                "The increase in noise and vibration due to flow separation.",
+
+            D:
+                "The point where thrust breakdown occurs.",
+
+            E:
+                "The maximum speed a ship can achieve without wave making."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Cavitation inception occurs when the local pressure reaches the vapor-pressure condition and vapor cavities begin to form.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0093
+    // CPP — ENGLISH
+    // =====================================
+
+    {
+        id: "MAN-0093",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Controllable Pitch Propeller",
+
+        edital:
+            "Propulsão — CPP",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "In Controllable Pitch Propeller (CPP) vessels, the propeller blades:",
+
+        alternativas: {
+
+            A:
+                "Are welded to the hub to prevent vibration.",
+
+            B:
+                "Can be rotated to change the pitch angle without reversing the shaft rotation.",
+
+            C:
+                "Must always be stopped before engaging a tug.",
+
+            D:
+                "Are designed to eliminate the thrust deduction factor.",
+
+            E:
+                "Operate exclusively under laminar flow conditions."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A CPP changes thrust by rotating the blades about their own axes, allowing pitch reversal without reversing the normal direction of shaft rotation.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0094
+    // PROPELLER WASH
+    // =====================================
+
+    {
+        id: "MAN-0094",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Propeller Wash / Quickwater",
+
+        edital:
+            "Propulsão — aplicação operacional",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "The term propeller wash (or quickwater) is operationally used by pilots to:",
+
+        alternativas: {
+
+            A:
+                "Measure the ship's draft in real-time.",
+
+            B:
+                "Estimate speed through the water when electronic logs are unavailable.",
+
+            C:
+                "Reduce the impact of bank suction.",
+
+            D:
+                "Clean the hull's surface from biofouling.",
+
+            E:
+                "Signal the engine room to increase fuel consumption."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Observation of propeller wash or quickwater relative to the ship may provide an operational indication of movement through the surrounding water.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0095
+    // RIGHT-HAND PROPELLER AHEAD
+    // =====================================
+
+    {
+        id: "MAN-0095",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Transverse Thrust — Ahead",
+
+        edital:
+            "Propulsão — efeito transversal do hélice",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A right-handed fixed pitch propeller moving ahead creates a transverse force (paddle wheel effect) that tends to:",
+
+        alternativas: {
+
+            A:
+                "Push the stern to starboard and the bow to port.",
+
+            B:
+                "Push the stern to port and the bow to starboard.",
+
+            C:
+                "Sink the bow deeper into the water.",
+
+            D:
+                "Increase the hull's resistance by 20%.",
+
+            E:
+                "Cancel the rudder's effectiveness."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "For the conventional right-handed fixed-pitch propeller behavior stated in the source material, the transverse effect ahead tends to move the stern to starboard and the bow to port.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0096
+    // PROPELLER LOADING
+    // =====================================
+
+    {
+        id: "MAN-0096",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Propeller Loading Coefficient",
+
+        edital:
+            "Propulsão — teoria do propulsor",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O coeficiente de carga do hélice (CTh), definido por T / (0,5 · ρ · A0 · VA²), é um indicador de:",
+
+        alternativas: {
+
+            A:
+                "Eficiência mecânica dos eixos.",
+
+            B:
+                "Grau de carregamento do disco; quanto maior o CTh, menor a eficiência ideal do hélice.",
+
+            C:
+                "Espessura da camada limite na popa.",
+
+            D:
+                "Ângulo de rake necessário.",
+
+            E:
+                "Rugosidade das pás."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O thrust loading coefficient representa a intensidade com que o disco propulsor está carregado. Em teoria ideal, cargas de disco mais elevadas exigem maior aceleração do escoamento e estão associadas a menor eficiência propulsiva ideal.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0097
+    // CIRCULATION THEORY
+    // =====================================
+
+    {
+        id: "MAN-0097",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Circulation / Lifting-Line Theory",
+
+        edital:
+            "Propulsão — teorias do propulsor",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A teoria de Circulação, ou teoria de linha sustentadora, aplicada a hélices:",
+
+        alternativas: {
+
+            A:
+                "Considera o hélice como um disco atuador que gera saltos de pressão.",
+
+            B:
+                "Baseia-se na lei de Kutta-Joukowski para calcular a portância em seções de pás como aerofólios.",
+
+            C:
+                "Ignora os efeitos da viscosidade e da esteira.",
+
+            D:
+                "É utilizada apenas para propulsores Voith-Schneider.",
+
+            E:
+                "Assume que o fluido é compressível."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A lifting-line ou circulation theory representa as pás por elementos sustentadores e utiliza os conceitos de circulação e a relação de Kutta-Joukowski para determinar forças hidrodinâmicas.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0098
+    // REBOCADORES E PROPULSÃO
+    // =====================================
+
+    {
+        id: "MAN-0098",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Propulsor, leme e assistência de rebocadores",
+
+        edital:
+            "Propulsão — aplicação operacional em manobra",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Sobre o uso de rebocadores em conjunto com propulsores, a marinharia profissional dita que:",
+
+        alternativas: {
+
+            A:
+                "Rebocadores devem ser mantidos em cabos curtos quando o hélice estiver em A Toda Força para evitar o rastro.",
+
+            B:
+                "O uso do hélice à frente melhora a eficácia do leme, auxiliando o trabalho dos rebocadores na proa.",
+
+            C:
+                "Rebocadores de popa nunca devem trabalhar no rastro do hélice do navio.",
+
+            D:
+                "A potência do hélice deve ser sempre superior à soma das forças dos rebocadores.",
+
+            E:
+                "O Prático deve ignorar o escoamento do propulsor ao dar ordens aos rebocadores."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Uma aplicação de máquina à frente aumenta o fluxo sobre o leme, podendo elevar significativamente a força lateral produzida por ele e complementar as forças fornecidas pelos rebocadores durante a manobra.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0099
+    // SHAFT POWER
+    // =====================================
+
+    {
+        id: "MAN-0099",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Shaft Power",
+
+        edital:
+            "Propulsão — medição de potência",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A Potência de Eixo (PS) é medida:",
+
+        alternativas: {
+
+            A:
+                "No acoplamento do motor.",
+
+            B:
+                "Através de um torcímetro localizado no eixo o mais próximo possível do hélice.",
+
+            C:
+                "Pela pressão média indicada nos cilindros.",
+
+            D:
+                "Somando-se a resistência friccional ao empuxo.",
+
+            E:
+                "Pela velocidade de rotação do hélice no vácuo."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A potência transmitida pelo eixo é determinada a partir do torque e da velocidade angular, sendo o torque medido por instrumentação instalada na linha de eixo.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0100
+    // RECUPERAÇÃO DE ENERGIA ROTACIONAL
+    // =====================================
+
+    {
+        id: "MAN-0100",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Propulsão",
+
+        topico: "Energy Recovery — Rudder",
+
+        edital:
+            "Propulsão — interação hélice-leme",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Qual apêndice de popa é frequentemente projetado para recuperar parte da energia rotacional deixada pelo hélice na esteira?",
+
+        alternativas: {
+
+            A:
+                "Quilha de balanço.",
+
+            B:
+                "Leme, especialmente rudders tipo twisted ou com características de recuperação de energia.",
+
+            C:
+                "Bossagens de eixo.",
+
+            D:
+                "Anodos de sacrifício.",
+
+            E:
+                "Pés de galinha em V."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O leme situado diretamente no escoamento do propulsor pode ser projetado para aproveitar parte da componente rotacional da esteira, convertendo-a em força útil e reduzindo perdas energéticas.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    }
 ];
 
 
