@@ -2649,6 +2649,1915 @@ const questoesManobrabilidadePSCPP = [
         ]
  }
 
+    // =====================================
+    // MAN-0041
+    // SEMELHANÇA DE FROUDE
+    // =====================================
+
+    {
+        id: "MAN-0041",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Semelhança de Froude — velocidade de modelo",
+
+        edital:
+            "Resistência do Navio — ensaios de modelos e leis de semelhança",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Um navio de 250 metros de comprimento deve operar a uma velocidade de serviço de 16 nós. Um modelo em escala λ = 25 é testado em um tanque de provas. Para garantir a semelhança de Froude (Fn), a velocidade do modelo (VM) deve ser:",
+
+        alternativas: {
+
+            A: "0,64 nós.",
+
+            B: "3,20 nós.",
+
+            C: "4,00 nós.",
+
+            D: "0,32 nós.",
+
+            E: "1,60 nós."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Pela semelhança de Froude, VM = VS/√λ. Portanto, VM = 16/√25 = 16/5 = 3,20 nós.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Model Testing and Froude Scaling",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0042
+    // DECOMPOSIÇÃO DA RESISTÊNCIA
+    // =====================================
+
+    {
+        id: "MAN-0042",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Resistência friccional e residual",
+
+        edital:
+            "Resistência do Navio — decomposição da resistência total",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Sobre a decomposição clássica da resistência total (RT = RF + RR), é correto afirmar que:",
+
+        alternativas: {
+
+            A:
+                "A resistência residual (RR) é composta exclusivamente pela resistência de formação de ondas (RW).",
+
+            B:
+                "A resistência de fricção (RF) depende primordialmente do Número de Froude, por envolver a gravidade.",
+
+            C:
+                "A resistência residual (RR) inclui a resistência de ondas e componentes viscosos de pressão (forma).",
+
+            D:
+                "O coeficiente de resistência total (CT) aumenta proporcionalmente ao Número de Reynolds (Rn).",
+
+            E:
+                "A resistência de fricção independe da área de superfície molhada (S)."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Na decomposição clássica, a resistência residual corresponde ao que permanece da resistência total após a retirada da parcela friccional de referência. Ela não deve ser tratada simplesmente como sinônimo de resistência de formação de ondas.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Components of Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0043
+    // VELOCIDADE CRÍTICA EM ÁGUAS RASAS
+    // =====================================
+
+    {
+        id: "MAN-0043",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Velocidade crítica em águas rasas",
+
+        edital:
+            "Resistência do Navio — efeitos de águas rasas e restritas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Durante uma manobra em canal de acesso com profundidade crítica, o Prático observa um aumento súbito na resistência e no squat. De acordo com a teoria de escoamento em águas rasas, a velocidade crítica de onda é definida por:",
+
+        alternativas: {
+
+            A: "V = √(g · L).",
+
+            B: "V = √(g · h).",
+
+            C: "V = √(2g · h).",
+
+            D: "V = √(g / h).",
+
+            E: "V = √(L / h)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Para ondas longas em águas rasas, a velocidade característica é √(gh). A condição crítica corresponde a um número de Froude baseado na profundidade próximo da unidade.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Resistance and Propulsion; Shallow Water",
+
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Shallow-Water Effects",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0044
+    // POTÊNCIA EFETIVA
+    // =====================================
+
+    {
+        id: "MAN-0044",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Potência efetiva",
+
+        edital:
+            "Resistência do Navio — relação entre resistência, velocidade e potência",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A potência efetiva (PE) necessária para que um navio vença uma resistência total de 1.000 kN à velocidade de 10 m/s é de:",
+
+        alternativas: {
+
+            A: "100 kW.",
+
+            B: "1.000 kW.",
+
+            C: "10.000 kW.",
+
+            D: "5.000 kW.",
+
+            E: "20.000 kW."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "PE = RT × V. Como 1.000 kN = 1.000.000 N, PE = 1.000.000 × 10 = 10.000.000 W = 10.000 kW.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Resistance and Effective Power",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0045
+    // FATOR DE FORMA
+    // =====================================
+
+    {
+        id: "MAN-0045",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Fator de forma",
+
+        edital:
+            "Resistência do Navio — resistência viscosa e fator de forma",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O fator de forma (k) é utilizado no método ITTC-1957 para:",
+
+        alternativas: {
+
+            A:
+                "Corrigir a resistência de ondas para efeitos de escala.",
+
+            B:
+                "Representar o aumento da resistência viscosa devido à forma tridimensional do casco em relação a uma placa plana.",
+
+            C:
+                "Calcular a resistência do ar nas obras mortas.",
+
+            D:
+                "Ajustar a velocidade do modelo para o Número de Reynolds do navio.",
+
+            E:
+                "Compensar a perda de empuxo (thrust deduction)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O fator (1+k) representa o acréscimo da resistência viscosa associado aos efeitos tridimensionais da forma do casco em comparação com a resistência friccional de uma placa plana equivalente.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Form Factor",
+
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Resistance and Propulsion",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0046
+    // NÚMERO DE REYNOLDS
+    // =====================================
+
+    {
+        id: "MAN-0046",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Número de Reynolds",
+
+        edital:
+            "Resistência do Navio — efeitos viscosos",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Em relação ao Número de Reynolds (Rn), é correto afirmar que ele representa a razão entre:",
+
+        alternativas: {
+
+            A:
+                "Forças de inércia e forças gravitacionais.",
+
+            B:
+                "Forças de pressão e forças viscosas.",
+
+            C:
+                "Forças de inércia e forças viscosas.",
+
+            D:
+                "Forças de gravidade e forças de tensão superficial.",
+
+            E:
+                "Velocidade do navio e velocidade do som na água."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "O Número de Reynolds expressa a relação entre os efeitos de inércia e os efeitos viscosos do escoamento e é fundamental na análise da resistência friccional.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Reynolds Number and Frictional Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0047
+    // ESCALA DE FORÇA
+    // =====================================
+
+    {
+        id: "MAN-0047",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Escala da resistência residual",
+
+        edital:
+            "Resistência do Navio — ensaios de modelos e transposição de escala",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Considere um navio e seu modelo (λ = 100). Se a força de resistência residual medida no modelo é de 10 N, a força de resistência residual do navio, em água de mesma densidade, será:",
+
+        alternativas: {
+
+            A: "1.000 N.",
+
+            B: "100.000 N.",
+
+            C: "1.000.000 N.",
+
+            D: "10.000.000 N.",
+
+            E: "10.000 N."
+
+        },
+
+        resposta: "D",
+
+        comentario:
+            "Sob semelhança de Froude e mesma densidade, a força residual escala com λ³. Assim, RS/RM = 100³ = 1.000.000 e RS = 10 × 1.000.000 = 10.000.000 N.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Model-Ship Correlation",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0048
+    // FOULING
+    // =====================================
+
+    {
+        id: "MAN-0048",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Rugosidade e incrustação do casco",
+
+        edital:
+            "Resistência do Navio — resistência friccional e rugosidade",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Um navio cargueiro apresenta incrustação severa no casco após longo período fundeado. Hidrodinamicamente, isso resulta em:",
+
+        alternativas: {
+
+            A:
+                "Redução do Número de Froude.",
+
+            B:
+                "Aumento da tensão de cisalhamento e, consequentemente, da resistência friccional.",
+
+            C:
+                "Redução da resistência de ondas por amortecimento.",
+
+            D:
+                "Aumento da velocidade crítica em águas rasas.",
+
+            E:
+                "Redução da camada-limite na popa."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O aumento da rugosidade superficial provocado por fouling eleva o arrasto de cisalhamento e, consequentemente, a resistência friccional do casco.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Surface Roughness and Friction",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0049
+    // KELVIN WAVE PATTERN
+    // =====================================
+
+    {
+        id: "MAN-0049",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Sistema de ondas de Kelvin",
+
+        edital:
+            "Resistência do Navio — formação de ondas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O sistema de ondas de Kelvin gerado por um navio avançando em águas profundas é contido em um setor cujo semi-ângulo de abertura é de aproximadamente:",
+
+        alternativas: {
+
+            A: "10° 15'.",
+
+            B: "19° 28'.",
+
+            C: "35° 00'.",
+
+            D: "45° 00'.",
+
+            E: "90° 00'."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O padrão clássico de Kelvin apresenta um semiângulo aproximadamente igual a 19°28' em relação à direção de avanço.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Wave Pattern",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0050
+    // BULBO DE PROA
+    // =====================================
+
+    {
+        id: "MAN-0050",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Bulbous Bow",
+
+        edital:
+            "Resistência do Navio — interferência dos sistemas de ondas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Sobre o bulbo de proa, assinale a alternativa tecnicamente precisa:",
+
+        alternativas: {
+
+            A:
+                "O bulbo sempre reduz a resistência total, independente da velocidade do navio.",
+
+            B:
+                "O bulbo reduz a resistência de ondas por criar uma interferência destrutiva com o sistema de ondas da proa.",
+
+            C:
+                "O bulbo atua aumentando a resistência friccional para estabilizar o fluxo.",
+
+            D:
+                "Em baixas velocidades (Fn < 0.1), o bulbo é o fator principal de redução de RT.",
+
+            E:
+                "O bulbo elimina a formação da esteira viscosa."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Um bulbo adequadamente projetado pode produzir um sistema de ondas cuja interferência com o sistema gerado pelo casco reduz a resistência de formação de ondas na faixa de velocidade para a qual foi projetado.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Wave Interference and Bulbous Bow",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0051
+    // ESCALA DE POTÊNCIA
+    // =====================================
+
+    {
+        id: "MAN-0051",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Escala da potência efetiva",
+
+        edital:
+            "Resistência do Navio — leis de semelhança",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A lei de semelhança de Froude exige que o modelo seja testado em uma velocidade correspondente à do navio. Se a razão de escala é λ, a razão entre a potência efetiva do navio (PES) e a do modelo (PEM) é:",
+
+        alternativas: {
+
+            A: "λ³.",
+
+            B: "λ^3,5.",
+
+            C: "λ^0,5.",
+
+            D: "λ².",
+
+            E: "λ^2,5."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Sob semelhança de Froude, a força escala com λ³ e a velocidade com √λ. Como potência é força multiplicada pela velocidade, a razão de potência é λ³ × λ^0,5 = λ^3,5.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Model Scaling",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0052
+    // FLOW SEPARATION
+    // =====================================
+
+    {
+        id: "MAN-0052",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Separação do escoamento",
+
+        edital:
+            "Resistência do Navio — resistência viscosa de pressão",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A separação do escoamento na popa de navios de formas cheias, como petroleiros VLCC, causa:",
+
+        alternativas: {
+
+            A:
+                "Aumento da recuperação de pressão na popa.",
+
+            B:
+                "Redução da resistência viscosa de pressão.",
+
+            C:
+                "Aumento da resistência viscosa de pressão (forma).",
+
+            D:
+                "Redução do coeficiente de bloco (CB).",
+
+            E:
+                "Extinção da esteira nominal."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A separação do escoamento prejudica a recuperação de pressão na região de popa e aumenta a componente viscosa de pressão da resistência.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Viscous Pressure Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0053
+    // HUMPS E HOLLOWS
+    // =====================================
+
+    {
+        id: "MAN-0053",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Humps e Hollows",
+
+        edital:
+            "Resistência do Navio — interferência de ondas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O fenômeno de Humps e Hollows na curva de resistência de ondas deve-se a:",
+
+        alternativas: {
+
+            A:
+                "Variações na viscosidade da água com a temperatura.",
+
+            B:
+                "Interferência construtiva e destrutiva entre os sistemas de ondas de proa e popa.",
+
+            C:
+                "Mudança do regime laminar para turbulento.",
+
+            D:
+                "Efeito de águas restritas no canal.",
+
+            E:
+                "Alteração no passo do hélice."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A interferência entre os sistemas de ondas produzidos em diferentes regiões do casco pode reforçar ou reduzir a elevação da superfície, originando humps e hollows na curva de resistência.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Wave-Making Humps and Hollows",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0054
+    // RESISTÊNCIA DE APÊNDICES
+    // =====================================
+
+    {
+        id: "MAN-0054",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Resistência de apêndices",
+
+        edital:
+            "Resistência do Navio — apêndices",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A resistência de apêndices, como leme, pés-de-galinha e quilhas de balanço, é geralmente tratada como uma parcela da:",
+
+        alternativas: {
+
+            A: "Resistência de ondas.",
+
+            B: "Resistência viscosa.",
+
+            C: "Resistência do ar.",
+
+            D: "Resistência residual apenas.",
+
+            E: "Resistência de squat."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Os apêndices apresentam área molhada própria e produzem efeitos de cisalhamento e pressão. Sua contribuição é, portanto, predominantemente associada à resistência viscosa.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Resistance and Propulsion; Appendages",
+
+                pagina:
+                    "aprox. pp. 94–95"
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0055
+    // ITTC-1957
+    // =====================================
+
+    {
+        id: "MAN-0055",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "ITTC-1957 Friction Line",
+
+        edital:
+            "Resistência do Navio — coeficiente de resistência friccional",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A linha ITTC-1957 define o coeficiente de fricção (CF) pela fórmula:",
+
+        alternativas: {
+
+            A:
+                "CF = 0,075 / (log10 Rn - 2)².",
+
+            B:
+                "CF = 1,327 / √Rn.",
+
+            C:
+                "CF = 0,455 / (log10 Rn)^2,58.",
+
+            D:
+                "CF = RF / (ρ · S · V).",
+
+            E:
+                "CF = 0,075 / (log10 Fn - 2)²."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "A ITTC-1957 Model-Ship Correlation Line utiliza CF = 0,075/(log10 Rn - 2)².",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; ITTC-1957 Model-Ship Correlation Line",
+
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Resistance and Propulsion",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0056
+    // VELOCIDADE ATRAVÉS DA ÁGUA
+    // =====================================
+
+    {
+        id: "MAN-0056",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Velocidade relativa à água",
+
+        edital:
+            "Resistência do Navio — aplicação operacional",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "De acordo com os princípios de manobra, ao navegar contra uma correnteza de 2 nós, um navio que mantém 10 nós de velocidade no fundo experimentará uma resistência baseada em qual velocidade?",
+
+        alternativas: {
+
+            A: "10 nós.",
+
+            B: "8 nós.",
+
+            C: "12 nós.",
+
+            D: "2 nós.",
+
+            E: "10,2 nós."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "As forças hidrodinâmicas dependem da velocidade do navio relativamente à água. Para manter 10 nós sobre o fundo contra uma corrente de 2 nós, a velocidade através da água é 12 nós.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Shiphandling for the Mariner — 5th Edition",
+
+                capitulo:
+                    "Shiphandling Forces — Speed Through the Water",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0057
+    // NO-SLIP CONDITION
+    // =====================================
+
+    {
+        id: "MAN-0057",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "No-slip condition",
+
+        edital:
+            "Resistência do Navio — escoamento viscoso e camada-limite",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A condição de não-deslizamento (no-slip condition) implica que:",
+
+        alternativas: {
+
+            A:
+                "A água desliza sem atrito sobre o casco.",
+
+            B:
+                "A velocidade relativa da partícula de fluido em contato com o casco é zero.",
+
+            C:
+                "A camada-limite tem espessura infinita.",
+
+            D:
+                "A resistência de ondas é nula.",
+
+            E:
+                "O escoamento é puramente potencial (ideal)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Para um fluido viscoso junto a uma superfície sólida, a velocidade do fluido na interface acompanha a velocidade da superfície. No referencial do casco, a velocidade relativa na parede é zero.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Ship Resistance and Flow",
+
+                capitulo:
+                    "Viscous Flow and Boundary Layer",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0058
+    // RESISTÊNCIA DO AR
+    // =====================================
+
+    {
+        id: "MAN-0058",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Air Resistance Correction",
+
+        edital:
+            "Resistência do Navio — resistência aerodinâmica",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A resistência do ar (RAA) é calculada utilizando a área projetada das obras mortas. Em relação ao coeficiente CAA na escala navio-modelo, é correto afirmar:",
+
+        alternativas: {
+
+            A:
+                "Ele é medido no modelo e multiplicado por λ³.",
+
+            B:
+                "Ele é desprezado no modelo e adicionado como correção no cálculo do navio real.",
+
+            C:
+                "Ele depende linearmente do Número de Froude.",
+
+            D:
+                "Ele é maior em navios carregados do que em navios em lastro.",
+
+            E:
+                "Ele substitui a margem de correlação (CA)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A contribuição aerodinâmica do navio real não é reproduzida diretamente pelo ensaio hidrodinâmico do modelo submerso equivalente e é introduzida separadamente na correlação para o navio.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Air Resistance Correction",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0059
+    // COMPRIMENTO DE ONDA EM ÁGUAS RASAS
+    // =====================================
+
+    {
+        id: "MAN-0059",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Ondas em águas rasas",
+
+        edital:
+            "Resistência do Navio — efeitos da profundidade",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A profundidade da água afeta a resistência de ondas. Em águas rasas, o comprimento das ondas produzidas pelo navio para uma mesma velocidade, comparado às águas profundas, tende a ser:",
+
+        alternativas: {
+
+            A: "Maior.",
+
+            B: "Igual.",
+
+            C: "Menor.",
+
+            D: "Independente da profundidade.",
+
+            E: "Nulo."
+
+        },
+
+        resposta: "A",
+
+        comentario:
+            "Na abordagem utilizada pelas fontes de manobrabilidade do projeto e já cobrada em prova oficial do PSCPP, as ondas produzidas pelo navio em águas rasas tendem a apresentar maior comprimento para a mesma velocidade do navio.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture",
+
+                capitulo:
+                    "Resistance in Shallow Water",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0060
+    // NAVIOS DE FORMAS CHEIAS
+    // =====================================
+
+    {
+        id: "MAN-0060",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Formas cheias e resistência viscosa",
+
+        edital:
+            "Resistência do Navio — influência da forma do casco",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Um navio petroleiro possui formas muito cheias (CB alto). Para este navio, a parcela dominante da resistência total em velocidade de serviço é a:",
+
+        alternativas: {
+
+            A:
+                "Resistência de ondas.",
+
+            B:
+                "Resistência viscosa (fricção e forma).",
+
+            C:
+                "Resistência aerodinâmica.",
+
+            D:
+                "Resistência de apêndices.",
+
+            E:
+                "Resistência de indução."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Em navios relativamente lentos e de formas cheias, as componentes viscosas — fricção e resistência viscosa de pressão — podem representar a maior parcela da resistência total.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Components of Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0061
+    // MÉTODO DE FROUDE
+    // =====================================
+
+    {
+        id: "MAN-0061",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Hipótese de Froude",
+
+        edital:
+            "Resistência do Navio — ensaios de modelos",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O coeficiente de resistência residual (CR) é obtido experimentalmente subtraindo-se o coeficiente de fricção calculado (CF) do coeficiente de resistência total medido (CT). Este procedimento baseia-se na hipótese de:",
+
+        alternativas: {
+
+            A: "Reynolds.",
+
+            B: "Bernoulli.",
+
+            C: "Froude.",
+
+            D: "Michell.",
+
+            E: "Taylor."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "O método clássico de Froude separa a resistência em uma componente friccional calculada e uma resistência residual obtida a partir dos resultados do modelo.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Froude's Method",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0062
+    // CAMADA-LIMITE
+    // =====================================
+
+    {
+        id: "MAN-0062",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Desenvolvimento da camada-limite",
+
+        edital:
+            "Resistência do Navio — escoamento viscoso",
+
+        dificuldade: "facil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A espessura da camada-limite viscosa ao longo do comprimento do navio:",
+
+        alternativas: {
+
+            A:
+                "Diminui da proa para a popa.",
+
+            B:
+                "Mantém-se constante.",
+
+            C:
+                "Aumenta da proa para a popa.",
+
+            D:
+                "É independente do comprimento.",
+
+            E:
+                "Só existe na região do hélice."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A camada-limite desenvolve-se a partir da região de vante e sua espessura aumenta progressivamente no sentido da popa.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Ship Resistance and Flow",
+
+                capitulo:
+                    "Boundary-Layer Development",
+
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Boundary Layer",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0063
+    // FROUDE DE PROFUNDIDADE
+    // =====================================
+
+    {
+        id: "MAN-0063",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Depth Froude Number",
+
+        edital:
+            "Resistência do Navio — águas rasas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O Número de Froude baseado na profundidade (Fnh) é expresso por:",
+
+        alternativas: {
+
+            A: "V / √(g · L).",
+
+            B: "V / √(g · h).",
+
+            C: "V² / (g · h).",
+
+            D: "h / √(g · V).",
+
+            E: "g · h / V²."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O número de Froude de profundidade relaciona a velocidade do navio à velocidade característica das ondas longas em profundidade h: Fnh = V/√(gh).",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Shallow Water",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0064
+    // FROUDE E RESISTÊNCIA DE ONDAS
+    // =====================================
+
+    {
+        id: "MAN-0064",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Número de Froude elevado",
+
+        edital:
+            "Resistência do Navio — resistência de formação de ondas",
+
+        dificuldade: "dificil",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Quando o Número de Froude (Fn) de um navio de deslocamento ultrapassa aproximadamente 0,40, observa-se:",
+
+        alternativas: {
+
+            A:
+                "Redução drástica na resistência total.",
+
+            B:
+                "O aparecimento necessário de um Hollow na curva de resistência.",
+
+            C:
+                "Um aumento acentuado da importância da resistência de ondas.",
+
+            D:
+                "A estabilização do sistema de ondas de popa.",
+
+            E:
+                "A predominância do Número de Reynolds sobre o de Froude."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Em números de Froude elevados para um casco de deslocamento, a resistência associada à geração de ondas cresce fortemente e pode tornar-se uma parcela dominante do aumento da resistência total.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Wave-Making Resistance and Froude Number",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0065
+    // SPC
+    // =====================================
+
+    {
+        id: "MAN-0065",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Self-Polishing Copolymer coatings",
+
+        edital:
+            "Resistência do Navio — rugosidade do casco",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O uso de tintas autopolimerizáveis ou autopolimentantes (SPC) visa reduzir a resistência ao longo do tempo por meio da:",
+
+        alternativas: {
+
+            A:
+                "Eliminação do sistema de ondas de Kelvin.",
+
+            B:
+                "Redução da rugosidade média do casco pelo desgaste controlado da tinta.",
+
+            C:
+                "Aumento da viscosidade cinemática da água próxima ao casco.",
+
+            D:
+                "Alteração do ponto de separação do escoamento na proa.",
+
+            E:
+                "Redução da área de superfície molhada."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Sistemas SPC promovem renovação controlada da superfície do revestimento, ajudando a manter uma superfície hidrodinamicamente mais favorável e a limitar o aumento de resistência associado à rugosidade e incrustação.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Hull Roughness and Coatings",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0066
+    // RESISTÊNCIA VISCOSA DE PRESSÃO
+    // =====================================
+
+    {
+        id: "MAN-0066",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Viscous Pressure Resistance",
+
+        edital:
+            "Resistência do Navio — resistência de forma",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A resistência viscosa de pressão, também associada à resistência de forma, é causada por:",
+
+        alternativas: {
+
+            A:
+                "Atrito tangencial isoladamente.",
+
+            B:
+                "Diferença de pressão entre proa e popa associada aos efeitos viscosos e ao desenvolvimento da camada-limite.",
+
+            C:
+                "Energia dissipada exclusivamente na crista da onda de proa.",
+
+            D:
+                "Movimento lateral do navio (deriva).",
+
+            E:
+                "Vento atuando nas superestruturas."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Os efeitos viscosos modificam a distribuição e a recuperação de pressão ao redor do casco. A diferença resultante entre as contribuições de pressão de vante e de ré produz a resistência viscosa de pressão.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Viscous Pressure Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0067
+    // BLOCKAGE EFFECT
+    // =====================================
+
+    {
+        id: "MAN-0067",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Blockage Effect",
+
+        edital:
+            "Resistência do Navio — canais e águas restritas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "Em um canal restrito, o efeito de bloqueio (blockage effect) tende a:",
+
+        alternativas: {
+
+            A:
+                "Diminuir a resistência total.",
+
+            B:
+                "Aumentar a velocidade crítica de Froude.",
+
+            C:
+                "Aumentar a velocidade do escoamento ao redor do casco, elevando a resistência.",
+
+            D:
+                "Reduzir o squat.",
+
+            E:
+                "Manter a resistência idêntica à de mar aberto."
+
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A restrição da seção disponível para o escoamento força a água a acelerar ao redor do casco. Isso altera o campo de pressão, aumenta os efeitos de águas restritas e pode elevar significativamente a resistência.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Resistance and Propulsion; Restricted and Shallow Water",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0068
+    // WAVE BREAKING RESISTANCE
+    // =====================================
+
+    {
+        id: "MAN-0068",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Wave Breaking Resistance",
+
+        edital:
+            "Resistência do Navio — resistência de quebra de ondas",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A resistência de quebra de ondas (wave breaking resistance) ocorre principalmente em:",
+
+        alternativas: {
+
+            A:
+                "Navios muito finos a baixas velocidades.",
+
+            B:
+                "Navios com formas de proa muito rombudas (blunt bows).",
+
+            C:
+                "Navios navegando em marcha à ré.",
+
+            D:
+                "Submarinos em imersão profunda.",
+
+            E:
+                "Tanques de provas com modelos em escala reduzida (λ > 100)."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Formas de proa muito cheias ou rombudas podem produzir forte elevação e quebra local da superfície livre, originando uma componente adicional de resistência associada ao wave breaking.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance; Wave-Breaking Resistance",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0069
+    // CADEIA DE POTÊNCIAS
+    // =====================================
+
+    {
+        id: "MAN-0069",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Potência efetiva e potência indicada",
+
+        edital:
+            "Resistência do Navio — potência e eficiência propulsiva",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "A potência indicada (PI) difere da potência efetiva (PE) por considerar:",
+
+        alternativas: {
+
+            A:
+                "Apenas a resistência de ondas.",
+
+            B:
+                "As perdas e rendimentos existentes entre a potência desenvolvida no motor e a potência efetivamente utilizada para vencer a resistência do casco.",
+
+            C:
+                "Apenas a resistência viscosa.",
+
+            D:
+                "A influência do bulbo de proa.",
+
+            E:
+                "A correção de águas rasas."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A potência efetiva é PE = RT·V e representa a potência necessária para vencer a resistência do casco. A potência indicada situa-se na origem da cadeia propulsiva, de modo que entre PI e PE intervêm perdas mecânicas e eficiências do sistema propulsivo.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Resistance, Propulsion and Propulsive Efficiency",
+
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0070
+    // RESISTÊNCIA × VELOCIDADE
+    // =====================================
+
+    {
+        id: "MAN-0070",
+
+        disciplina: "manobrabilidade",
+
+        assunto: "Resistência do Navio",
+
+        topico: "Influência da velocidade",
+
+        edital:
+            "Resistência do Navio — comportamento da resistência com a velocidade",
+
+        dificuldade: "media",
+
+        tipo: "multipla-escolha",
+
+        origem: "banco",
+
+        enunciado:
+            "O Prático, ao solicitar A Toda Força em um canal estreito, deve estar ciente de que a resistência total cresce, em termos gerais, com:",
+
+        alternativas: {
+
+            A:
+                "O logaritmo da velocidade.",
+
+            B:
+                "Aproximadamente o quadrado da velocidade para importantes parcelas viscosas, enquanto a resistência associada à formação de ondas pode crescer de maneira ainda mais acentuada em determinadas faixas.",
+
+            C:
+                "A raiz quadrada da velocidade.",
+
+            D:
+                "Inversamente à velocidade.",
+
+            E:
+                "De forma necessariamente linear com a rotação do hélice."
+
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A resistência não possui uma única lei de potência válida para todas as parcelas e velocidades. A resistência viscosa apresenta forte dependência da velocidade, aproximadamente quadrática em muitas análises práticas, enquanto a componente de ondas pode crescer muito rapidamente em determinadas faixas de número de Froude. Em águas restritas, os efeitos de profundidade e bloqueio podem agravar ainda mais esse aumento.",
+
+        bibliografia: [
+            {
+                publicacao:
+                    "Principles of Naval Architecture — Volume II: Resistance, Propulsion and Vibration",
+
+                capitulo:
+                    "Chapter V — Resistance",
+
+                pagina: ""
+            },
+            {
+                publicacao:
+                    "Practical Ship Hydrodynamics — 2nd Edition",
+
+                capitulo:
+                    "Chapter 3 — Resistance and Propulsion",
+
+                pagina: ""
+            }
+        ]
+    }
 ];
 
 
