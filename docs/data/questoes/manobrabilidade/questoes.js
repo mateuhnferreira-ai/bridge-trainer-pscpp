@@ -6393,6 +6393,1254 @@ const questoesManobrabilidadePSCPP = [
             }
         ]
     }
+    // =====================================
+    // MAN-0101
+    // VELOCIDADE NO LEME
+    // =====================================
+
+    {
+        id: "MAN-0101",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Propeller Race e velocidade no leme",
+        edital: "Lemes — interação hélice-leme",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "De acordo com os princípios de escoamento em apêndices, o leme operando no rastro (race) de um hélice em carga experimenta uma velocidade de fluxo (VR) que é, tipicamente:",
+
+        alternativas: {
+            A: "10% menor que a velocidade do navio devido ao efeito de esteira (wake).",
+            B: "Igual à velocidade do navio no fundo (SOG).",
+            C: "Aproximadamente 10% maior que a velocidade do navio devido à aceleração do fluxo pelo hélice.",
+            D: "Independente da carga do hélice, baseando-se apenas no Número de Froude.",
+            E: "Reduzida à metade quando o navio inicia uma guinada brusca."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A descarga do hélice acelera o escoamento que incide sobre o leme, aumentando a velocidade efetiva local e, consequentemente, a força hidrodinâmica disponível. O valor numérico aproximado indicado nesta questão deverá ser confrontado posteriormente com a referência específica utilizada.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            },
+            {
+                publicacao: "Practical Ship Hydrodynamics",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0102
+    // TRIM E ESTABILIDADE DIRECIONAL
+    // =====================================
+
+    {
+        id: "MAN-0102",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Trim e estabilidade direcional",
+        edital: "Lemes — estabilidade direcional e governo",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Sobre a estabilidade direcional e o efeito do trim, assinale a alternativa correta:",
+
+        alternativas: {
+            A: "Um navio trimado pela proa apresenta maior estabilidade direcional e exige menos leme para manter o rumo.",
+            B: "O trim pela popa desloca o centro de pressão hidrodinâmico para vante do centro de gravidade, tornando o navio instável.",
+            C: "Navios com grandes coeficientes de bloco (CB) tendem a ser inerentemente estáveis, independentemente do trim.",
+            D: "Um navio trimado pela proa torna-se 'cranky' (instável), exigindo grandes ângulos de leme por períodos prolongados para sustar uma guinada.",
+            E: "O aumento do calado em águas profundas invariavelmente reduz a autoridade do leme."
+        },
+
+        resposta: "D",
+
+        comentario:
+            "O trim pela proa pode reduzir a estabilidade direcional e tornar o navio mais suscetível a desenvolver ou manter uma guinada, exigindo maior intervenção do leme para controlar o movimento.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0103
+    // PERFIS NACA
+    // =====================================
+
+    {
+        id: "MAN-0103",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Perfis NACA aplicados a lemes",
+        edital: "Lemes — geometria e perfis hidrodinâmicos",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Ao projetar lemes para navios que operam em amplas faixas de ângulos de ataque, como rebocadores e navios de manobra restrita, a série de perfis NACA preferível é:",
+
+        alternativas: {
+            A: "Série 63, por possuir o menor arrasto em ângulos de ataque nulos.",
+            B: "Série 65, devido à sua cavitação tardia em altas velocidades.",
+            C: "Série de 4 dígitos, como NACA 0012, por apresentar elevado coeficiente de sustentação máxima antes do stall.",
+            D: "Perfil em cunha, ideal para regimes subcríticos de escoamento.",
+            E: "Perfis assimétricos, para compensar o torque do hélice em marchas à ré."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Perfis simétricos da série NACA de quatro dígitos são tradicionalmente empregados em aplicações de lemes e apresentam comportamento adequado em uma ampla faixa de ângulos de ataque.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            },
+            {
+                publicacao: "Principles of Yacht Design — Lars Larsson",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0104
+    // STALL
+    // =====================================
+
+    {
+        id: "MAN-0104",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Stall do leme",
+        edital: "Lemes — separação do escoamento e perda de sustentação",
+        dificuldade: "facil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O fenômeno de perda súbita de sustentação do leme devido à separação do escoamento no dorso da pá é tecnicamente denominado:",
+
+        alternativas: {
+            A: "Cavitação por vórtice de ponta.",
+            B: "Ventilação superficial.",
+            C: "Stall (Estol).",
+            D: "Efeito de escala (Scale effect).",
+            E: "Dedução de empuxo (Thrust deduction)."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Stall é a perda acentuada de sustentação causada pela separação do escoamento sobre o perfil quando o ângulo de ataque ultrapassa determinada faixa.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0105
+    // PILOT CARD
+    // =====================================
+
+    {
+        id: "MAN-0105",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Pilot Card — sistema de governo",
+        edital: "Lemes — informações de manobra",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Segundo a Resolução IMO A.960 e os procedimentos de intercâmbio Piloto-Comandante, as informações sobre o leme contidas no Pilot Card devem incluir:",
+
+        alternativas: {
+            A: "O tempo de reversão do motor principal.",
+            B: "A pressão máxima de trabalho das bombas da máquina do leme.",
+            C: "O tipo de leme e a velocidade de resposta (hard-over to hard-over).",
+            D: "O coeficiente de viscosidade cinemática da água de projeto.",
+            E: "O diagrama de Burrill para cavitação das pás."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "O Pilot Card deve fornecer ao Prático informações relevantes sobre as características de manobra e governo do navio. A atribuição normativa específica desta formulação será objeto de conferência direta na documentação IMO aplicável.",
+
+        bibliografia: [
+            {
+                publicacao: "IMO Resolution A.960",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0106
+    // BALANCED SPADE RUDDER
+    // =====================================
+
+    {
+        id: "MAN-0106",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Balanced Spade Rudder",
+        edital: "Lemes — tipos e limitações operacionais",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Em navios equipados com lemes compensados (balanced spade rudders), o Prático deve estar alerta para o fato de que:",
+
+        alternativas: {
+            A: "Eles são imunes ao stall em grandes ângulos de leme.",
+            B: "O uso de ângulos superiores a 35° pode causar turbulência severa e perda de eficácia de governo.",
+            C: "A compensação elimina a necessidade de energia na máquina do leme.",
+            D: "Eles aumentam a estabilidade direcional de navios trimados pela proa.",
+            E: "O centro de pressão desses lemes situa-se sempre à ré da madre."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Ângulos muito elevados podem provocar separação significativa do escoamento e reduzir o ganho adicional de força lateral, podendo ocorrer stall dependendo do perfil e das condições de escoamento.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0107
+    // INDUCED RESISTANCE
+    // =====================================
+
+    {
+        id: "MAN-0107",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Induced Resistance",
+        edital: "Lemes — sustentação e resistência induzida",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A resistência induzida (induced resistance) em um leme ocorre devido:",
+
+        alternativas: {
+            A: "Ao atrito tangencial da água com a superfície da pá.",
+            B: "À geração de sustentação (lift) que produz vórtices de extremidade.",
+            C: "À rugosidade excessiva causada por incrustações.",
+            D: "À diferença de temperatura entre as faces do leme.",
+            E: "Exclusivamente ao impacto frontal da água na madre."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A diferença de pressão necessária à produção de lift gera escoamento tridimensional nas extremidades do leme e vórtices de ponta, produzindo resistência induzida.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0108
+    // TWIN-SCREW / SINGLE RUDDER
+    // =====================================
+
+    {
+        id: "MAN-0108",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Twin-Screw com leme central",
+        edital: "Lemes — governo em baixa velocidade",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Um navio de dois eixos e um único leme central (twin-screw, single rudder) navega a velocidades muito baixas. Para melhorar a autoridade do leme sem ganhar excessivo seguimento, a técnica recomendada é:",
+
+        alternativas: {
+            A: "Manter ambos os motores à frente em RPM constante.",
+            B: "Parar os motores e permitir que o fluxo natural da esteira atue no leme.",
+            C: "Dar kicks de máquina à frente, utilizando apenas o motor de bombordo para guinar para boreste.",
+            D: "Usar o motor de boreste à ré e o de bombordo à frente, mantendo o leme a meio.",
+            E: "Reduzir o ângulo de leme para evitar o efeito de ventilação."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Gabarito mantido conforme o conjunto fornecido. Esta questão deverá ser confrontada diretamente com o trecho correspondente de Shiphandling for the Mariner, pois sua aplicação depende fortemente da configuração geométrica dos hélices em relação ao leme central.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0109
+    // ÁGUAS RASAS
+    // =====================================
+
+    {
+        id: "MAN-0109",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Governo em águas rasas",
+        edital: "Lemes — influência da profundidade",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Sobre o efeito de águas rasas (shallow water) no governo, assinale a alternativa tecnicamente correta:",
+
+        alternativas: {
+            A: "O navio torna-se sempre mais instável e difícil de controlar.",
+            B: "O raio de giro diminui significativamente devido ao efeito Bernoulli.",
+            C: "A estabilidade direcional melhora, mas o raio de giro pode aumentar significativamente em relação ao valor em águas profundas.",
+            D: "O leme perde eficácia total quando a folga abaixo da quilha (UKC) é menor que 10%.",
+            E: "O efeito de smelling the bottom impede qualquer resposta ao leme."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A restrição vertical do escoamento tende a aumentar a estabilidade direcional do casco, fazendo-o resistir mais à mudança de rumo. Consequentemente, a resposta de giro pode tornar-se mais lenta e o diâmetro de giro aumentar.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0110
+    // ASPECT RATIO
+    // =====================================
+
+    {
+        id: "MAN-0110",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Aspect Ratio",
+        edital: "Lemes — geometria e eficiência",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A teoria de linha sustentadora (lifting line theory) aplicada ao leme demonstra que o aumento da razão de aspecto (aspect ratio) resulta em:",
+
+        alternativas: {
+            A: "Maior arrasto induzido para a mesma sustentação.",
+            B: "Redução da inclinação da curva de sustentação.",
+            C: "Aumento da sustentação para um mesmo ângulo de ataque, melhorando a eficiência do leme.",
+            D: "Antecipação do stall para ângulos menores de 5°.",
+            E: "Eliminação da camada limite viscosa."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Uma maior aspect ratio reduz relativamente os efeitos tridimensionais de extremidade, elevando a eficiência hidrodinâmica do leme e reduzindo a componente induzida para condições comparáveis.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0111
+    // QUICKWATER
+    // =====================================
+
+    {
+        id: "MAN-0111",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Quickwater em seguimento a ré",
+        edital: "Lemes — efeitos operacionais do propulsor",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "According to Shiphandling for the Mariner, when a ship is going astern and moving at approximately 2 knots, the propeller wash (quickwater) typically starts to:",
+
+        alternativas: {
+            A: "Stay far behind the transom.",
+            B: "Move up the starboard side of the ship.",
+            C: "Reach the bow area immediately.",
+            D: "Create a vacuum that improves rudder effectiveness.",
+            E: "Disappear due to the wake fraction."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "According to the operational description supplied, the quickwater becomes visible moving forward along the starboard side as the vessel develops sternway.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0112
+    // NEGATIVE DIRECTIONAL STABILITY
+    // =====================================
+
+    {
+        id: "MAN-0112",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Negative Directional Stability",
+        edital: "Lemes — estabilidade direcional",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A ship with negative directional stability is characterized by:",
+
+        alternativas: {
+            A: "Returning to its original heading when the rudder is put amidships.",
+            B: "Increasing its rate of turn even after the rudder is returned to the midship position.",
+            C: "Having the net pressure point located well aft of the center of gravity.",
+            D: "Being unaffected by changes in trim or draft.",
+            E: "Requiring smaller rudder angles than a stable ship to check a swing."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "A directionally unstable ship tends to continue or develop the yawing motion after the control input is removed, requiring corrective rudder to check the swing.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0113
+    // RUDDER LIFT
+    // =====================================
+
+    {
+        id: "MAN-0113",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Rudder Lift",
+        edital: "Lemes — geração de força lateral",
+        dificuldade: "facil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "The lifting effect of a rudder is primarily a result of:",
+
+        alternativas: {
+            A: "Tangential shear stresses on the blade surface.",
+            B: "Pressure differences between the leeward (low pressure) and windward (high pressure) sides.",
+            C: "The weight of the rudder acting against the water density.",
+            D: "Air bubbles trapped in the boundary layer.",
+            E: "The rotation of the propeller shaft itself."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "The dominant lateral force is generated by the pressure difference between the two sides of the hydrodynamic profile.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0114
+    // BANK EFFECT
+    // =====================================
+
+    {
+        id: "MAN-0114",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Bank Cushion e Bank Suction",
+        edital: "Lemes — governo em canais estreitos",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "When maneuvering in a narrow channel with a bank on the starboard side, the combination of bank suction on the quarter and bank cushion on the bow tends to:",
+
+        alternativas: {
+            A: "Push the ship bodily away from the bank.",
+            B: "Sheer the ship's bow toward the bank.",
+            C: "Sheer the ship's bow away from the bank and pull the stern toward it.",
+            D: "Increase the speed through the water by 20%.",
+            E: "Neutralize the rudder's authority completely."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Bank cushion tends to repel the bow from the nearby bank, while bank suction draws the stern or quarter toward the bank, producing a yawing moment away from it.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0115
+    // MASTER/PILOT EXCHANGE
+    // =====================================
+
+    {
+        id: "MAN-0115",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Master/Pilot Exchange",
+        edital: "Lemes — informações de manobra",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "IMO Resolution A.960 states that the Master/Pilot Exchange should include a review of the Pilot Card, which must contain:",
+
+        alternativas: {
+            A: "The ship's current fuel consumption.",
+            B: "Maneuvering characteristics such as turning circles and stopping distances.",
+            C: "The names of all engine room staff.",
+            D: "The history of previous port calls.",
+            E: "The specific gravity of the hull's steel."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "The Master/Pilot information exchange must provide the pilot with relevant information concerning the ship's maneuvering characteristics and limitations.",
+
+        bibliografia: [
+            {
+                publicacao: "IMO Resolution A.960",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0116
+    // VISCOSIDADE E STALL
+    // =====================================
+
+    {
+        id: "MAN-0116",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Coeficiente de sustentação e stall",
+        edital: "Lemes — comportamento hidrodinâmico",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O coeficiente de sustentação (CL) de um leme em escoamento ideal é uma função linear do ângulo de ataque (α). No entanto, em um fluido real, a viscosidade causa:",
+
+        alternativas: {
+            A: "O aumento infinito do CL.",
+            B: "A redução da inclinação da curva de sustentação e a ocorrência do stall em ângulos elevados.",
+            C: "A inversão da força de sustentação para ângulos maiores que 10°.",
+            D: "O desaparecimento da resistência induzida.",
+            E: "O deslocamento do centro de pressão para o bordo de ataque."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Os efeitos viscosos limitam a resposta real do perfil. Em ângulos elevados ocorre separação do escoamento, culminando no stall e na redução do lift.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0117
+    // CRABBING
+    // =====================================
+
+    {
+        id: "MAN-0117",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Twin-Rudder Crabbing",
+        edital: "Lemes — aplicações especiais de governo",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Navios de passageiros modernos com dois eixos e dois lemes (twin-rudder) podem realizar manobras laterais sem auxílio de rebocadores ao:",
+
+        alternativas: {
+            A: "Colocar ambos os motores à frente e leme a meio.",
+            B: "Usar um motor à frente e outro atrás, com os lemes em ângulos adequados para produzir forças laterais resultantes (crabbing).",
+            C: "Manter os lemes sempre em ângulos menores que 5°.",
+            D: "Desligar o sistema de automação e usar apenas o leme manual de emergência.",
+            E: "Esperar a ação do vento para empurrar o navio lateralmente."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Em determinadas configurações twin-screw/twin-rudder, a combinação coordenada de empuxos longitudinais opostos e forças laterais dos lemes permite produzir uma resultante predominantemente transversal.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0118
+    // STEERING GEAR — 28 s
+    // =====================================
+
+    {
+        id: "MAN-0118",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Desempenho da máquina do leme",
+        edital: "Lemes — sistema de governo e requisitos de desempenho",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "De acordo com os requisitos internacionais aplicáveis ao sistema principal de governo, a máquina do leme deve ser capaz de levar o leme de 35° de um bordo a 30° do outro bordo, nas condições especificadas pela norma, em no máximo:",
+
+        alternativas: {
+            A: "15 segundos.",
+            B: "28 segundos.",
+            C: "45 segundos.",
+            D: "60 segundos.",
+            E: "10 segundos."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O requisito clássico do SOLAS para o sistema principal de governo estabelece o movimento de 35° de um bordo para 30° do outro em até 28 segundos, nas condições de carregamento e velocidade determinadas pela regra.",
+
+        bibliografia: [
+            {
+                publicacao: "SOLAS",
+                capitulo: "Chapter II-1 — Steering Gear",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0119
+    // SKEG
+    // =====================================
+
+    {
+        id: "MAN-0119",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Skeg",
+        edital: "Lemes — apêndices de estabilidade direcional",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O uso de skeg à vante do leme tem como principal objetivo:",
+
+        alternativas: {
+            A: "Reduzir o arrasto friccional do casco.",
+            B: "Aumentar a estabilidade direcional do navio e proporcionar suporte ou proteção estrutural na região do leme.",
+            C: "Facilitar a ventilação das pás do hélice.",
+            D: "Substituir a necessidade de máquina do leme.",
+            E: "Aumentar a velocidade crítica em águas rasas."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "O skeg atua como uma superfície vertical fixa que contribui para a estabilidade direcional e pode desempenhar funções estruturais e de proteção na região de popa.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0120
+    // ENGINE KICK
+    // =====================================
+
+    {
+        id: "MAN-0120",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Engine Kick e autoridade do leme",
+        edital: "Lemes — governo em baixa velocidade",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Durante uma manobra de backing and filling, o Prático nota que a eficácia do leme diminui à medida que o navio perde seguimento à vante. Para recuperar o swing sem ganhar muita velocidade à vante, ele deve:",
+
+        alternativas: {
+            A: "Manter o motor em Slow Ahead continuamente.",
+            B: "Usar o motor em Half Astern com o leme para o bordo oposto.",
+            C: "Dar um kick de máquina à frente com leme todo carregado e, assim que o swing for restabelecido, reduzir ou parar o motor.",
+            D: "Aumentar o calado de vante via tanques de lastro.",
+            E: "Solicitar que o rebocador empurre a proa na direção oposta ao giro."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Um curto engine kick à frente aumenta rapidamente o propeller race sobre o leme e produz força lateral elevada sem necessariamente permitir que o navio desenvolva grande seguimento à vante.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0121
+    // CENTRO DE PRESSÃO
+    // =====================================
+
+    {
+        id: "MAN-0121",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Centro de pressão",
+        edital: "Lemes — forças e momentos hidrodinâmicos",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O centro aerodinâmico de um perfil simétrico convencional em regime subcrítico situa-se aproximadamente a qual distância do bordo de ataque?",
+
+        alternativas: {
+            A: "50% da corda.",
+            B: "100% da corda, no bordo de fuga.",
+            C: "25% da corda.",
+            D: "Na linha da madre, independentemente do formato.",
+            E: "No topo da pá, próximo à superfície livre."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Para perfis convencionais em escoamento subsônico ou incompressível, o centro aerodinâmico situa-se aproximadamente a um quarto da corda. Deve-se distinguir esse conceito da posição variável do centro de pressão.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0122
+    // RUDDER BALANCE
+    // =====================================
+
+    {
+        id: "MAN-0122",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Rudder Balance",
+        edital: "Lemes — lemes compensados",
+        dificuldade: "facil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A compensação de um leme (rudder balance) refere-se a:",
+
+        alternativas: {
+            A: "O uso de pesos de chumbo para equilibrar o leme estaticamente.",
+            B: "A área da pá situada à vante da madre, visando reduzir o torque necessário para girar o leme.",
+            C: "O alinhamento do leme com o plano de simetria do hélice.",
+            D: "A correção do erro de agulha magnética pelo timoneiro.",
+            E: "O aumento da área do leme para compensar o trim pela proa."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Ao posicionar parte da área do leme à vante do eixo de rotação, parte do momento hidrodinâmico atua no sentido de reduzir o torque requerido da máquina do leme.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0123
+    // LEME COM MÁQUINA A RÉ
+    // =====================================
+
+    {
+        id: "MAN-0123",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Eficácia do leme com máquina a ré",
+        edital: "Lemes — governo com seguimento a ré",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Qual o efeito do hélice em marcha à ré sobre a eficácia do leme de um navio de um único eixo (single-screw)?",
+
+        alternativas: {
+            A: "Aumenta a eficácia devido à aspiração de água.",
+            B: "O leme torna-se pouco eficaz até que o navio desenvolva seguimento à ré suficiente, pois a descarga principal do hélice em marcha à ré é dirigida para vante e não incide sobre o leme como ocorre com máquina à frente.",
+            C: "O fluxo de descarga do hélice bate no leme e melhora a guinada para boreste.",
+            D: "Reduz a resistência de ondas na popa.",
+            E: "Estabiliza o navio, eliminando a tendência de girar para bombordo."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Com máquina à ré, o propeller race é dirigido para vante. Assim, o leme localizado atrás do hélice deixa de receber a forte descarga que o torna particularmente eficaz quando a máquina está à frente. Sua autoridade cresce novamente quando existe sternway suficiente.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0124
+    // VENTILAÇÃO
+    // =====================================
+
+    {
+        id: "MAN-0124",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Ventilação do leme",
+        edital: "Lemes — perda de eficiência",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O fenômeno de ventilação do leme ocorre frequentemente quando:",
+
+        alternativas: {
+            A: "O navio navega em águas muito profundas.",
+            B: "O leme está operando próximo à superfície livre e aspira ar, reduzindo drasticamente a força lateral.",
+            C: "A temperatura da água excede 30°C.",
+            D: "O número de Reynolds é inferior a 100.",
+            E: "O casco está excessivamente rugoso."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Ventilação ocorre quando ar atmosférico alcança a superfície de baixa pressão do apêndice. Ela é distinta de cavitação, que envolve vaporização do próprio líquido.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0125
+    // WILLIAMSON TURN
+    // =====================================
+
+    {
+        id: "MAN-0125",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Williamson Turn",
+        edital: "Lemes — aplicação operacional em manobras de emergência",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Em uma manobra de emergência do tipo Williamson Turn, segundo a aplicação específica indicada no material de Shiphandling utilizado na elaboração desta questão, o momento para inverter o leme de hard-over para o bordo oposto em um navio de grande porte e instável ocorre quando a proa variou:",
+
+        alternativas: {
+            A: "60° do rumo original.",
+            B: "Aproximadamente 35° do rumo original.",
+            C: "90° do rumo original.",
+            D: "Assim que o objeto cair na água.",
+            E: "Somente após o navio parar totalmente o seguimento."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Gabarito mantido conforme o material fornecido. Como procedimentos de Williamson Turn podem ser apresentados com referências angulares distintas conforme navio, fonte e técnica empregada, esta questão permanece marcada para conferência textual direta em Shiphandling for the Mariner.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0126
+    // FORÇA NORMAL DO LEME
+    // =====================================
+
+    {
+        id: "MAN-0126",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Normal Force",
+        edital: "Lemes — força hidrodinâmica",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A força total exercida sobre o leme (Normal Force) é proporcional a:",
+
+        alternativas: {
+            A: "Velocidade do fluxo ao cubo (V³).",
+            B: "Logaritmo da área da pá.",
+            C: "Quadrado da velocidade do fluxo (V²) e à área da pá.",
+            D: "Raiz quadrada do Número de Froude.",
+            E: "Apenas ao ângulo de inclinação do navio (Heel)."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "As forças hidrodinâmicas sobre o leme seguem a forma geral F = 0,5·ρ·S·V²·C. Portanto, para coeficiente e densidade dados, a força varia com a área e com o quadrado da velocidade incidente.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0127
+    // SCHILLING / FLAP RUDDER
+    // =====================================
+
+    {
+        id: "MAN-0127",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Schilling e Flap Rudders",
+        edital: "Lemes — lemes de alta sustentação",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "O uso de lemes do tipo Schilling ou com flap, como o Becker, permite:",
+
+        alternativas: {
+            A: "Operar apenas em velocidades superiores a 20 nós.",
+            B: "Gerar grandes forças laterais mesmo em ângulos de ataque nulos.",
+            C: "Obter maior deflexão efetiva do escoamento e elevada sustentação em baixas velocidades, facilitando manobras em portos.",
+            D: "Reduzir a resistência viscosa do casco para zero.",
+            E: "Dispensar o uso de motores propulsores."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "Lemes de alta sustentação utilizam geometrias especiais ou flaps para produzir maior deflexão do escoamento e forças laterais elevadas, sendo particularmente úteis em operações de baixa velocidade.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            },
+            {
+                publicacao: "Tug Use in Port",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0128
+    // CPP E LEME
+    // =====================================
+
+    {
+        id: "MAN-0128",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "CPP e eficácia do leme",
+        edital: "Lemes — interação entre sistema propulsivo e governo",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Qual a influência do hélice de passo controlável (CPP) na manobra com leme, comparado ao hélice de passo fixo (FPP)?",
+
+        alternativas: {
+            A: "O CPP é necessariamente mais previsível em marcha à ré.",
+            B: "O CPP pode manter elevada rotação do propulsor mesmo com pequeno ou nulo empuxo longitudinal, modificando significativamente o escoamento na região do leme.",
+            C: "O CPP exige que o motor pare para inverter a rotação.",
+            D: "O leme perde toda a eficácia no CPP quando em passo zero.",
+            E: "Não há diferença técnica entre os dois sistemas para o Prático."
+        },
+
+        resposta: "B",
+
+        comentario:
+            "Nos sistemas CPP, a rotação do eixo pode permanecer elevada enquanto o empuxo é controlado pelo passo. Isso cria condições de escoamento na popa diferentes das de um FPP e exige atenção do Prático à interação hélice-leme.",
+
+        bibliografia: [
+            {
+                publicacao: "Shiphandling for the Mariner — 5th Edition",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0129
+    // CAMADA LIMITE DO LEME
+    // =====================================
+
+    {
+        id: "MAN-0129",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Boundary Layer e separação",
+        edital: "Lemes — escoamento viscoso sobre a pá",
+        dificuldade: "media",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "A espessura da camada limite sobre a pá do leme afeta:",
+
+        alternativas: {
+            A: "Apenas a cor do leme.",
+            B: "A pressão estática interna da madre.",
+            C: "O arrasto friccional e o comportamento de separação do escoamento, influenciando o ângulo de stall.",
+            D: "O Número de Weber da carena.",
+            E: "A profundidade crítica da onda."
+        },
+
+        resposta: "C",
+
+        comentario:
+            "A evolução da boundary layer afeta tanto o cisalhamento superficial quanto a capacidade do escoamento de permanecer aderido ao perfil. A separação da camada limite está diretamente relacionada ao stall.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    },
+
+
+    // =====================================
+    // MAN-0130
+    // LOW ASPECT RATIO / SHALLOW WATER
+    // =====================================
+
+    {
+        id: "MAN-0130",
+        disciplina: "manobrabilidade",
+        assunto: "Lemes",
+        topico: "Razão de aspecto e águas rasas",
+        edital: "Lemes — geometria aplicada a restrições de calado",
+        dificuldade: "dificil",
+        tipo: "multipla-escolha",
+        origem: "banco",
+
+        enunciado:
+            "Um leme com baixa razão de aspecto, curto e largo, pode ser utilizado em navios com forte restrição de calado porque:",
+
+        alternativas: {
+            A: "Permite limitar a profundidade física do leme e, segundo a abordagem indicada na fonte utilizada para esta questão, a proximidade de superfícies adjacentes pode modificar os efeitos de extremidade.",
+            B: "Reduz a resistência de ondas a zero.",
+            C: "Aumenta necessariamente a velocidade de serviço do navio.",
+            D: "Elimina a esteira potencial.",
+            E: "Sua única vantagem é ser mais barato de fabricar."
+        },
+
+        resposta: "A",
+
+        comentario:
+            "A limitação de profundidade disponível condiciona o span do leme. O argumento específico de mirror-image effect apresentado no material fornecido deverá ser confrontado diretamente com PNA/Larsson antes de esta questão receber status de validação bibliográfica definitiva.",
+
+        bibliografia: [
+            {
+                publicacao: "Principles of Naval Architecture",
+                capitulo: "",
+                pagina: ""
+            },
+            {
+                publicacao: "Principles of Yacht Design — Lars Larsson",
+                capitulo: "",
+                pagina: ""
+            }
+        ]
+    }
 ];
 
 
