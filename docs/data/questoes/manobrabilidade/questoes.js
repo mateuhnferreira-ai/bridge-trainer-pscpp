@@ -7641,6 +7641,844 @@ const questoesManobrabilidadePSCPP = [
             }
         ]
     }
+// =====================================
+// MAN-0131
+// CONSTRAINED BY HER DRAUGHT
+// =====================================
+
+{
+    id: "MAN-0131",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Constrained by her Draught",
+    edital: "Águas restritas — efeitos da profundidade sobre a manobra",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Um VLCC navegando em um canal estreito com profundidade crítica experimenta efeitos de águas rasas severos. De acordo com a Regra 3(h) do COLREG, um navio é considerado 'restrito devido ao seu calado' quando:",
+
+    alternativas: {
+        A: "A profundidade é menor que 1,2 vezes o seu calado médio, impedindo qualquer alteração de rumo.",
+        B: "Devido ao seu calado em relação à profundidade e à largura disponíveis da água navegável, sua capacidade de se desviar do rumo que está seguindo é severamente restringida.",
+        C: "A folga abaixo da quilha (UKC) é inferior a 10% do calado, tornando o navio instável direcionalmente.",
+        D: "O fator de bloqueio do canal é superior a 0,5, impedindo a manobra de ultrapassagem.",
+        E: "O Número de Froude de profundidade (Fnh) atinge 0,9."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "A definição de vessel constrained by her draught é normativa e não estabelece percentuais fixos de UKC, relações profundidade/calado ou números de Froude. O elemento essencial é a severa restrição da capacidade de desviar-se do rumo em razão do calado em relação à profundidade e à largura disponíveis da água navegável.",
+
+    bibliografia: [
+        {
+            publicacao: "COLREG 1972",
+            capitulo: "Rule 3(h)",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0132
+// SQUAT — BARRASS
+// =====================================
+
+{
+    id: "MAN-0132",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Squat — fórmula de Barrass",
+    edital: "Águas rasas e confinadas — squat",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Segundo a formulação simplificada de Barrass apresentada para estimativa de squat, qual expressão corresponde ao valor indicado para águas confinadas no material utilizado nesta questão?",
+
+    alternativas: {
+        A: "S = Cb × V² / 100.",
+        B: "S = Cb × V² / 50, representando o dobro do valor da expressão simplificada para águas abertas.",
+        C: "S = 2 × (Cb × V² / 30), obrigatoriamente em metros para conformidade com a NORMAM.",
+        D: "S = Cb × V / 100, corrigido pelo coeficiente de bloqueio local.",
+        E: "S = (Cb × V² / 100) + 0,5 m, independente da largura do canal."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Gabarito mantido conforme o material fornecido. A formulação simplificada específica atribuída a Barrass deve permanecer vinculada às hipóteses e unidades estabelecidas pela fonte, não devendo ser tratada como uma relação universal para qualquer geometria de canal.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Shallow Water / Squat",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0133
+// PISTON EFFECT
+// =====================================
+
+{
+    id: "MAN-0133",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Piston Effect",
+    edital: "Águas restritas — eclusas e bloqueio",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Durante a aproximação de uma eclusa, um navio de grande porte experimenta o chamado piston effect. Sobre a dinâmica de parada nesse ambiente, é correto afirmar:",
+
+    alternativas: {
+        A: "O navio exige necessariamente uso vigoroso da máquina à ré para não colidir com as comportas.",
+        B: "O confinamento do escoamento pode produzir forte aumento da resistência ao avanço, fazendo um grande navio perder seguimento rapidamente.",
+        C: "A corrente de densidade causada pela mistura de água doce e salgada necessariamente acelera o navio em direção ao centro da eclusa.",
+        D: "O piston effect desaparece independentemente da relação entre as dimensões do navio e da eclusa.",
+        E: "A resistência total diminui proporcionalmente à raiz quadrada do fator de bloqueio."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Em uma eclusa ou passagem extremamente confinada, o navio desloca grande volume de água longitudinalmente através de espaços reduzidos ao redor do casco. O aumento da resistência hidrodinâmica pode provocar rápida perda de seguimento.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0134
+// TRANSCRITICAL FLOW
+// =====================================
+
+{
+    id: "MAN-0134",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Transcritical Flow",
+    edital: "Águas rasas — regimes de velocidade",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "In the transcritical speed range, with the depth Froude number close to unity, which physical phenomenon may be observed in a laterally restricted waterway?",
+
+    alternativas: {
+        A: "A series of diverging waves that necessarily decay at a rate of y^(-1/2).",
+        B: "The total disappearance of the wave system, with group velocity exceeding phase velocity.",
+        C: "A strong buildup of the wave system, with long waves that may propagate ahead of the vessel.",
+        D: "A significant reduction in dynamic sinkage caused by the Bernoulli constant.",
+        E: "The elimination of wave-making resistance at the bow."
+    },
+
+    resposta: "C",
+
+    comentario:
+        "Near the critical depth Froude condition, the vessel speed approaches the characteristic propagation speed of long shallow-water waves. Severe changes in the wave pattern and large wave amplitudes may result, particularly in restricted waterways.",
+
+    bibliografia: [
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Shallow Water Effects",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0135
+// VELOCIDADE E BANK EFFECT
+// =====================================
+
+{
+    id: "MAN-0135",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Velocidade, leme e bank effect",
+    edital: "Águas restritas — interação com margens",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Um navio com calado restritivo navega próximo a uma margem e precisa reduzir a velocidade. Do ponto de vista hidrodinâmico, qual consequência deve ser considerada pelo Prático?",
+
+    alternativas: {
+        A: "A bank suction permanece constante porque depende exclusivamente da distância lateral.",
+        B: "A redução da velocidade tende a diminuir a autoridade do leme e também a intensidade dos efeitos de interação com a margem, embora esses efeitos possam continuar operacionalmente relevantes.",
+        C: "O squat diminui linearmente com a redução das RPM, independentemente da velocidade através da água.",
+        D: "A estabilidade direcional necessariamente muda de positiva para negativa.",
+        E: "O coeficiente de resistência total aumenta obrigatoriamente com qualquer redução da velocidade."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "A força do leme e os efeitos de interação hidrodinâmica possuem forte dependência da velocidade do escoamento. Reduzir a velocidade tende a reduzir ambos; entretanto, a menor autoridade do leme pode dificultar a correção de uma interação já desenvolvida.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0136
+// DEPTH FROUDE NUMBER
+// =====================================
+
+{
+    id: "MAN-0136",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Depth Froude Number",
+    edital: "Águas rasas — regimes de escoamento",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "No estudo dos regimes de velocidade em águas rasas, o chamado low subcritical regime é associado, no material utilizado nesta questão, aproximadamente a:",
+
+    alternativas: {
+        A: "Fnh > 1,0.",
+        B: "Fnh < 0,4 exclusivamente.",
+        C: "Fnh ≤ 0,7.",
+        D: "0,7 ≤ Fnh ≤ 0,9.",
+        E: "Comprimento de onda exatamente igual a dez vezes a profundidade."
+    },
+
+    resposta: "C",
+
+    comentario:
+        "Gabarito mantido conforme a classificação apresentada no material fornecido. Os limites numéricos entre regimes devem ser interpretados segundo a convenção adotada pela referência, pois diferentes tratamentos podem subdividir a região subcrítica de maneiras distintas.",
+
+    bibliografia: [
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Shallow Water",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0137
+// BANK CUSHION
+// =====================================
+
+{
+    id: "MAN-0137",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Bank Cushion",
+    edital: "Águas restritas — efeito de margem",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "O efeito de bank cushion na proa é tecnicamente explicado por:",
+
+    alternativas: {
+        A: "Um aumento uniforme da velocidade do fluxo entre todo o casco e o banco, produzindo somente baixa pressão.",
+        B: "Uma região de pressão relativamente elevada junto à proa próxima da margem, tendendo a afastar a proa do banco.",
+        C: "Uma redução da camada limite viscosa na região do ombro.",
+        D: "Uma separação do escoamento na popa que necessariamente empurra a proa contra o banco.",
+        E: "Um fenômeno produzido exclusivamente pelo hélice."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O bank effect combina fenômenos distintos ao longo do casco. Na proa, a distribuição de pressão próxima à margem produz o chamado bank cushion, que tende a afastar a proa; mais à ré, a pressão reduzida pode atrair a popa em direção ao banco.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0138
+// INTERAÇÃO ENTRE NAVIOS
+// =====================================
+
+{
+    id: "MAN-0138",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Interação entre navios",
+    edital: "Águas restritas — encontro e ultrapassagem",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Quando dois navios se cruzam em um canal restrito, a interação hidrodinâmica entre os cascos pode produzir qual efeito sobre o squat?",
+
+    alternativas: {
+        A: "O squat permanece necessariamente inalterado quando a separação é maior que uma boca.",
+        B: "O squat pode aumentar significativamente durante a interação, dependendo da velocidade, separação e geometria do canal.",
+        C: "O squat sempre diminui por interferência destrutiva das ondas de proa.",
+        D: "O squat torna-se nulo quando as seções mestras ficam alinhadas.",
+        E: "Somente o navio de menor coeficiente de bloco sofre alteração."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "A presença de outro casco modifica o campo de velocidades e pressões e aumenta o confinamento efetivo do escoamento. A magnitude exata do aumento depende das condições geométricas e cinemáticas; por isso não se adota aqui como universal o valor de 50% a 100% indicado no texto original.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0139
+// BANK SHEER
+// =====================================
+
+{
+    id: "MAN-0139",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Bank Sheer",
+    edital: "Águas restritas — bank suction e bank cushion",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "When maneuvering a vessel near a bank, the combination of bank suction on the quarter and bank cushion on the bow creates a:",
+
+    alternativas: {
+        A: "Steady movement towards the center of the channel.",
+        B: "Dangerous sheer that may be difficult to check if speed is too high.",
+        C: "Reduction in the ship's tactical diameter during a turn.",
+        D: "Constant increase in delivered power.",
+        E: "Stable heading regardless of rudder angle."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Bank cushion tends to push the bow away from the bank while bank suction attracts the stern toward it. Together they generate a yawing moment that can develop into a severe sheer.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0140
+// FORM FACTOR
+// =====================================
+
+{
+    id: "MAN-0140",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Form Factor",
+    edital: "Resistência — componentes viscosas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "O fator de forma (1+k), utilizado nos métodos modernos de extrapolação de resistência, tem como função principal:",
+
+    alternativas: {
+        A: "Corrigir a resistência de ondas para efeitos de escala.",
+        B: "Representar a resistência viscosa adicional associada à forma tridimensional do casco em relação à resistência friccional de referência.",
+        C: "Substituir o cálculo do Número de Reynolds.",
+        D: "Compensar exclusivamente a resistência aerodinâmica.",
+        E: "Converter diretamente potência efetiva em potência no freio."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O form factor amplia a componente friccional de referência para representar efeitos viscosos relacionados à forma tridimensional do casco. É fundamental distinguir essa parcela dos efeitos de formação de ondas.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume II",
+            capitulo: "Resistance",
+            pagina: ""
+        },
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0141
+// SCHLICHTING
+// =====================================
+
+{
+    id: "MAN-0141",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Método de Schlichting",
+    edital: "Resistência em águas rasas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Na abordagem de Schlichting para estimar efeitos de águas rasas sobre a resistência, a correção está relacionada à comparação entre condições equivalentes de propagação de ondas em águas rasas e profundas. Assinale a alternativa correspondente:",
+
+    alternativas: {
+        A: "Relacionar velocidades em águas rasas e profundas por uma condição de equivalência do sistema de ondas.",
+        B: "Considerar a resistência friccional rigorosamente independente da profundidade.",
+        C: "Assumir que o navio sempre ganha velocidade ao entrar em águas rasas.",
+        D: "Considerar CT constante para qualquer Fnh.",
+        E: "Ignorar completamente a geometria da seção transversal do canal."
+    },
+
+    resposta: "A",
+
+    comentario:
+        "O método utiliza uma velocidade equivalente em águas profundas para representar efeitos de propagação das ondas observados em profundidade finita. A formulação completa deve ser utilizada para cálculos quantitativos.",
+
+    bibliografia: [
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Shallow Water Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0142
+// CRITICAL SPEED
+// =====================================
+
+{
+    id: "MAN-0142",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Critical Speed e ondas",
+    edital: "Águas rasas — velocidade crítica",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Em um canal lateralmente restrito, o que pode ocorrer com o sistema de ondas quando o navio opera próximo da velocidade crítica, Fnh ≈ 1?",
+
+    alternativas: {
+        A: "As ondas necessariamente se dispersam lateralmente e desaparecem.",
+        B: "Pode ocorrer forte acumulação de ondas longas, com perturbações capazes de propagar-se à frente do navio.",
+        C: "Toda a energia das ondas é convertida em resistência friccional.",
+        D: "O navio necessariamente apresenta elevação dinâmica da proa e redução de calado.",
+        E: "O ângulo do rastro de Kelvin torna-se exatamente 10°."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "A proximidade entre a velocidade do navio e a velocidade característica das ondas longas de águas rasas produz profundas alterações no sistema de ondas e pode gerar grandes perturbações em canais restritos.",
+
+    bibliografia: [
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Shallow Water",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0143
+// SQUAT E TRIM
+// =====================================
+
+{
+    id: "MAN-0143",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Squat — sinkage e trim",
+    edital: "Águas rasas — comportamento do casco",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Sobre o trim produzido pelo squat, assinale a alternativa tecnicamente mais adequada:",
+
+    alternativas: {
+        A: "Navios de formas cheias trimmam invariavelmente pela popa.",
+        B: "A distribuição de sinkage e trim depende da forma do casco e das condições de operação; determinados navios de formas cheias podem apresentar maior imersão de vante.",
+        C: "O squat altera apenas o calado médio, jamais o trim.",
+        D: "A seção mestra necessariamente se eleva quando ocorre squat.",
+        E: "O calado de vante sempre diminui com o aumento da velocidade."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Squat compreende sinkage e possível alteração de trim. Não é seguro transformar a tendência de determinados tipos de casco em uma regra universal. A distribuição depende da geometria, velocidade, profundidade e confinamento.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Shallow Water",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0144
+// NO-SLIP CONDITION
+// =====================================
+
+{
+    id: "MAN-0144",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "No-Slip Condition",
+    edital: "Resistência viscosa — camada limite",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "The no-slip condition on a ship's hull implies that:",
+
+    alternativas: {
+        A: "The fluid particles at the surface move relative to the hull at the ship's service speed.",
+        B: "The relative velocity of the fluid in direct contact with the hull is zero.",
+        C: "The boundary layer thickness is constant along the entire ship.",
+        D: "There is no friction between the hull and the water.",
+        E: "Flow separation is impossible in laminar conditions."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "At a viscous solid-fluid interface, the fluid immediately adjacent to the solid has zero velocity relative to that surface. This is the no-slip boundary condition and is fundamental to boundary-layer development.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume II",
+            capitulo: "Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0145
+// BULBO DE PROA
+// =====================================
+
+{
+    id: "MAN-0145",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Bulbous Bow",
+    edital: "Resistência de ondas — interferência",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Segundo os resultados atribuídos a Wigley no material utilizado para esta questão, a faixa de Número de Froude em que um bulbo de proa pode apresentar benefício na redução da resistência é:",
+
+    alternativas: {
+        A: "Fn < 0,10.",
+        B: "Fn aproximadamente entre 0,24 e 0,57.",
+        C: "Somente em regime supercrítico de profundidade.",
+        D: "Somente acima de 30 nós, independentemente do comprimento do navio.",
+        E: "Exclusivamente em Fn = 0,19."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Gabarito mantido conforme a faixa atribuída a Wigley no material fornecido. O desempenho real de um bulbous bow depende de sua geometria, condição de carregamento e faixa de velocidade, portanto a faixa não deve ser aplicada como regra universal de projeto.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume II",
+            capitulo: "Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0146
+// HUMPS E HOLLOWS
+// =====================================
+
+{
+    id: "MAN-0146",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Humps e Hollows",
+    edital: "Resistência de ondas — interferência",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "O fenômeno de humps, isto é, elevações na curva de resistência de ondas, ocorre quando:",
+
+    alternativas: {
+        A: "A crista da onda de proa coincide de modo destrutivo com o cavado da onda de popa.",
+        B: "Os sistemas de ondas associados ao casco apresentam interferência construtiva, aumentando a resistência de ondas.",
+        C: "O navio simplesmente atinge sua velocidade contratual.",
+        D: "O Número de Reynolds ultrapassa obrigatoriamente um único valor crítico.",
+        E: "A resistência friccional torna-se maior que a resistência residual."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Humps correspondem a condições de interferência construtiva do sistema de ondas, enquanto hollows correspondem a condições de interferência relativamente favorável ou destrutiva.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume II",
+            capitulo: "Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0147
+// DRY TRANSOM
+// =====================================
+
+{
+    id: "MAN-0147",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Transom Stern",
+    edital: "Resistência — efeitos de popa",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "What is a hydrodynamic consequence associated with a dry transom condition?",
+
+    alternativas: {
+        A: "An automatic increase in propulsive efficiency due to wake recovery.",
+        B: "The pressure and wave pattern at the stern differ from those of a fully wetted transom and may contribute to the resistance characteristics of the hull.",
+        C: "The complete elimination of viscous resistance.",
+        D: "The elimination of the stern wave system under all conditions.",
+        E: "A fixed decrease in tactical diameter."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Transom immersion and ventilation strongly affect the pressure distribution and wave-making characteristics at the stern. The original absolute statement about loss of hydrostatic pressure has been expressed more carefully because transom resistance depends on the operating regime.",
+
+    bibliografia: [
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0148
+// VISCOUS PRESSURE RESISTANCE
+// =====================================
+
+{
+    id: "MAN-0148",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Viscous Pressure Resistance",
+    edital: "Resistência viscosa — separação do escoamento",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "A separação do escoamento (flow separation) na popa de navios de formas cheias causa aumento da resistência porque:",
+
+    alternativas: {
+        A: "Acelera necessariamente o fluxo de água em direção ao hélice.",
+        B: "Prejudica a recuperação de pressão na região de popa, contribuindo para um desequilíbrio longitudinal de pressão.",
+        C: "Reduz a tensão de cisalhamento sobre o leme a zero.",
+        D: "Aumenta diretamente o Número de Froude do navio.",
+        E: "Elimina a esteira nominal."
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Flow separation altera a distribuição de pressão na região de popa e impede a recuperação ideal de pressão. Essa componente integra os efeitos de resistência viscosa de pressão ou resistência de forma.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume II",
+            capitulo: "Resistance",
+            pagina: ""
+        },
+        {
+            publicacao: "Practical Ship Hydrodynamics",
+            capitulo: "Viscous Resistance",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0149
+// DISPERSION RELATION
+// =====================================
+
+{
+    id: "MAN-0149",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Finite-Depth Wave Dispersion",
+    edital: "Águas rasas — ondas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "In finite-depth water, for waves having the same wavelength, their phase velocity compared with the corresponding deep-water value is:",
+
+    alternativas: {
+        A: "Higher.",
+        B: "Always identical.",
+        C: "Lower.",
+        D: "Independent of water depth.",
+        E: "Exactly doubled by blockage."
+    },
+
+    resposta: "C",
+
+    comentario:
+        "For linear gravity waves, c = √[(g/k) tanh(kh)]. For the same wavelength, k is fixed and tanh(kh) < 1 at finite depth, so the phase velocity is lower than the corresponding deep-water value.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture",
+            capitulo: "Waves / Shallow Water",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// MAN-0150
+// VELOCIDADE, SQUAT E BANK EFFECT
+// =====================================
+
+{
+    id: "MAN-0150",
+    disciplina: "manobrabilidade",
+    assunto: "Efeitos Hidrodinâmicos",
+    topico: "Velocidade em canal estreito",
+    edital: "Águas restritas — squat, UKC e interação de margem",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado:
+        "Um Prático conduzindo um navio sob forte corrente de vazante e visibilidade reduzida em um canal estreito decide aumentar a velocidade através da água para melhorar a autoridade do leme. Tecnicamente, esta ação:",
+
+    alternativas: {
+        A: "É isenta de riscos hidrodinâmicos se o navio possuir formas finas.",
+        B: "Reduz o squat devido ao aumento do Número de Reynolds.",
+        C: "Pode aumentar fortemente o squat e intensificar os efeitos de interação com as margens, reduzindo a margem disponível de UKC.",
+        D: "Necessariamente reduz o raio de giro em 50%.",
+        E: "Não altera a UKC porque a Regra 9 do COLREG elimina os efeitos hidrodinâmicos."
+    },
+
+    resposta: "C",
+
+    comentario:
+        "O aumento da velocidade através da água aumenta a força disponível no leme, mas também intensifica importantes efeitos hidrodinâmicos em águas restritas. Nas formulações simplificadas usuais, o squat apresenta forte dependência aproximadamente quadrática com a velocidade. O mesmo aumento de velocidade pode intensificar bank suction e bank cushion.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Shallow Water / Bank Effects",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture",
+            capitulo: "",
+            pagina: ""
+        }
+    ]
+}
 ];
 
 
