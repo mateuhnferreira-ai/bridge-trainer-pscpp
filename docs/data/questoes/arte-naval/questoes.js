@@ -1877,7 +1877,765 @@ const questoesArteNavalPSCPP = [
         }
     ]
 }
+,
+// =====================================
+// ART-0031
+// CENTRO DE CARENA
+// =====================================
 
+{
+    id: "ART-0031",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Centro de Carena",
+    edital: "Geometria do navio — centros e forças",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Centro de Carena (C) é o ponto de aplicação da força de empuxo e sua posição depende exclusivamente da forma da carena, estando sempre situado abaixo da linha d'água.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. O Centro de Carena é o centro de gravidade do volume de água deslocado e corresponde ao ponto de aplicação da força de empuxo. Sua posição depende da geometria da parte submersa do casco.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.22 — Centro de Carena",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0032
+// SAÍDAS DE ÁGUA
+// =====================================
+
+{
+    id: "ART-0032",
+    disciplina: "arte-naval",
+    assunto: "Nomenclatura do Navio",
+    topico: "Saídas de Água e Embornais",
+    edital: "Aberturas do casco e do convés",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "As saídas de água (freeing ports) são aberturas feitas no convés, junto ao trincaniz, destinadas ao escoamento das águas de baldeação ou de chuva.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. A afirmação descreve os embornais (scuppers). As saídas de água ou freeing ports são aberturas existentes na borda-falsa destinadas principalmente à saída das grandes massas de água embarcadas no convés em mar grosso.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "1.22 e 1.90–1.91",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0033
+// COEFICIENTE DE BLOCO
+// =====================================
+
+{
+    id: "ART-0033",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Coeficiente de Bloco — Cb",
+    edital: "Geometria do navio — coeficientes de forma",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Coeficiente de Bloco (Cb) representa a relação entre o volume do deslocamento (V) e o volume de um paralelepípedo cujas arestas são o comprimento entre perpendiculares (L), a boca máxima da parte imersa (B) e o calado médio (C).",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. O coeficiente de bloco representa a relação entre o volume de carena e o volume do paralelepípedo definido pelas dimensões principais consideradas na expressão.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.66 — Coeficientes de Forma",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0034
+// DESLOCAMENTO PADRÃO
+// =====================================
+
+{
+    id: "ART-0034",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Deslocamento Padrão",
+    edital: "Geometria do navio — condições de deslocamento",
+    dificuldade: "dificil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "Na condição de Deslocamento Padrão (standard displacement), o peso do navio inclui a guarnição completa, munição, provisões e água potável, inclusive o combustível e a água de reserva para caldeiras.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. O deslocamento padrão inclui o navio completo e os elementos necessários à sua operação, mas exclui o combustível e a água de alimentação de reserva.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.74–2.75 — Deslocamentos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0035
+// TOSAMENTO
+// =====================================
+
+{
+    id: "ART-0035",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Tosamento — Sheer",
+    edital: "Geometria do navio — curvaturas do casco",
+    dificuldade: "facil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Tosamento (sheer) é definido como a curvatura que apresenta o canto superior do costado em sua interseção com o convés, quando projetado sobre um plano vertical longitudinal.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. Tosamento ou sheer é a curvatura longitudinal observada no canto superior do costado em sua interseção com o convés.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.34 — Tosamento",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0036
+// ABAULAMENTO
+// =====================================
+
+{
+    id: "ART-0036",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Abaulamento — Camber",
+    edital: "Geometria do navio — curvaturas dos conveses",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Abaulamento (camber) das cobertas acima da linha d'água, assim como o do convés, apresenta uma flecha usual igual a 5% da boca do navio para facilitar o escoamento de água.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. Conforme Arte Naval, a flecha usual do abaulamento é da ordem de 2% da boca, e não 5%. A troca do valor numérico constitui uma típica armadilha de prova.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "6.18 f (3)",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0037
+// QUILHA DUTO
+// =====================================
+
+{
+    id: "ART-0037",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Quilha Duto — Duct Keel",
+    edital: "Estrutura do fundo e fundo duplo",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A Quilha Duto (duct keel) é uma estrutura em forma de caixa que permite a passagem de tubulações e o acesso ao interior de tanques, sendo comum em navios que possuem fundo duplo.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. A quilha duto forma uma passagem longitudinal protegida, permitindo a instalação de tubulações e facilitando acesso e inspeção na estrutura do fundo duplo.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "6.6 d — Quilha Duto",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0038
+// NUMERAÇÃO DAS CAVERNAS
+// =====================================
+
+{
+    id: "ART-0038",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Numeração das Cavernas",
+    edital: "Estrutura do casco — cavernamento",
+    dificuldade: "dificil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A numeração das cavernas de um navio é feita, por convenção internacional absoluta, de vante para ré, iniciando-se na perpendicular de vante como caverna zero.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. No sistema descrito em Arte Naval, as cavernas são numeradas de ré para vante, tomando-se como referência a caverna zero na região da perpendicular de ré. Além disso, não se trata de uma convenção internacional absoluta.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "6.10 e — Cavernas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0039
+// ANTEPARA DE COLISÃO
+// =====================================
+
+{
+    id: "ART-0039",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Antepara de Colisão Avante",
+    edital: "Compartimentação estanque do casco",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A antepara de colisão avante é a primeira antepara transversal estanque a contar de vante, devendo estender-se desde o fundo do casco até o convés de compartimentagem.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. A antepara de colisão avante constitui importante elemento de compartimentação estanque destinado a limitar a extensão de um possível alagamento decorrente de avaria na região de proa.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "1.58; 6.18 e (2)",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0040
+// BORDA-LIVRE EM NAVIOS DE GUERRA
+// =====================================
+
+{
+    id: "ART-0040",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Borda-Livre",
+    edital: "Geometria do navio — borda-livre",
+    dificuldade: "dificil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A Borda-livre (freeboard) em navios de guerra é definida como a distância vertical medida na proa, a meia-nau e na popa, referindo-se sempre à flutuação normal.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. Arte Naval distingue a apresentação da borda-livre nos navios de guerra, considerando valores na proa, a meia-nau e na popa, referidos à flutuação normal.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.28 — Borda-Livre",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0041
+// MEDIANIA
+// =====================================
+
+{
+    id: "ART-0041",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Mediania",
+    edital: "Geometria do navio — planos e linhas de referência",
+    dificuldade: "facil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A Mediania é a linha imaginária resultante da interseção de um pavimento com o plano diametral do navio, dividindo o casco longitudinalmente em dois bordos.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. A mediania corresponde à interseção de um pavimento com o plano diametral e separa longitudinalmente os lados de boreste e bombordo.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.18 — Mediania",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0042
+// DEADWEIGHT
+// =====================================
+
+{
+    id: "ART-0042",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Expoente de Carga — Deadweight",
+    edital: "Geometria do navio — deslocamento e pesos",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Expoente de Carga ou Peso Morto (deadweight) de um navio de carga corresponde ao peso do casco e das máquinas, excluindo-se o peso de combustíveis, tripulação e carga útil.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. O enunciado caracteriza essencialmente o peso leve. O deadweight representa a diferença entre o deslocamento carregado e o peso leve, abrangendo carga, combustíveis, água, provisões, tripulação e demais pesos variáveis.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.73 e 2.76",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0043
+// SICORDAS
+// =====================================
+
+{
+    id: "ART-0043",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Sicordas — Deck Girders",
+    edital: "Estrutura do casco — vigas longitudinais",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "As Sicordas (deck girders) são vigas longitudinais localizadas nos conveses, normalmente com alma na vertical, e integram a estrutura primária do navio.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. As sicordas são elementos longitudinais resistentes dos conveses, análogos estruturalmente às longarinas existentes em outras regiões do casco.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "1.52 e; 6.8",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0044
+// RODA DE PROA
+// =====================================
+
+{
+    id: "ART-0044",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Roda de Proa e Cadaste",
+    edital: "Estrutura do casco — extremos de proa e popa",
+    dificuldade: "facil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A Roda de Proa (stem) é a peça robusta que constitui o extremo do navio a ré, servindo de suporte para o leme e o hélice.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. A roda de proa ou stem pertence ao extremo de vante. Na região de ré encontra-se o cadaste ou sternframe, conforme o tipo de construção, associado estruturalmente à região do hélice e do leme.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "1.54 a–b",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0045
+// PÉS-DE-CARNEIRO
+// =====================================
+
+{
+    id: "ART-0045",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Pés-de-Carneiro — Pillars",
+    edital: "Estrutura do casco — elementos de suporte",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "Os Pés-de-carneiro (pillars) são pilares que suportam vigas primárias, como sicordas e vaus gigantes, com o objetivo de aumentar a rigidez da estrutura e distribuir esforços.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. Os pés-de-carneiro são elementos estruturais verticais sujeitos principalmente a esforços de compressão e utilizados para transmitir cargas entre estruturas de conveses e regiões inferiores do casco.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "1.54 c; 6.13",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0046
+// SISTEMA LONGITUDINAL
+// =====================================
+
+{
+    id: "ART-0046",
+    disciplina: "arte-naval",
+    assunto: "Estrutura do Navio",
+    topico: "Sistema de Construção Longitudinal",
+    edital: "Construção naval — sistemas estruturais",
+    dificuldade: "dificil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O sistema de construção longitudinal é o que mais se aproxima do sistema clássico de madeira, sendo o preferencial para a construção de embarcações de pequeno porte onde não há grandes esforços longitudinais.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. A descrição corresponde ao sistema transversal. O sistema longitudinal apresenta maior quantidade de elementos resistentes contínuos no sentido proa-popa e é particularmente apropriado a navios de maior comprimento submetidos a importantes esforços longitudinais.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "6.2 — Sistemas de Construção",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0047
+// PONTAL MOLDADO
+// =====================================
+
+{
+    id: "ART-0047",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Pontal Moldado",
+    edital: "Geometria do navio — dimensões principais",
+    dificuldade: "facil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Pontal Moldado é a distância vertical medida sobre o plano diametral, a meia-nau, entre a linha reta do vau do convés principal e a linha da base moldada.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. Essa é a definição geométrica de pontal moldado apresentada em Arte Naval.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.60 — Pontal Moldado",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0048
+// PLANO DA BASE MOLDADA
+// =====================================
+
+{
+    id: "ART-0048",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Plano da Base Moldada",
+    edital: "Geometria do navio — planos de referência",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "O Plano da Base Moldada é o plano horizontal tangente à parte inferior da superfície moldada, servindo de origem para todas as distâncias verticais denominadas alturas.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. O plano da base moldada constitui uma das principais referências geométricas do navio e é utilizado como origem para as alturas moldadas.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.40 a — Plano da Base Moldada",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0049
+// BOCA MÁXIMA
+// =====================================
+
+{
+    id: "ART-0049",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Boca Máxima",
+    edital: "Geometria do navio — dimensões principais",
+    dificuldade: "media",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "A Boca Máxima é a maior largura do casco medida entre as superfícies externas do chapeamento, incluindo-se a espessura da couraça ou do verdugo, caso existam.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "A",
+
+    comentario:
+        "VERDADEIRO. A boca máxima corresponde à maior largura externa do casco, distinguindo-se da boca moldada, que utiliza como referência a superfície moldada da estrutura.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.59 — Boca",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// ART-0050
+// LEITURA DA ESCALA DE CALADO
+// =====================================
+
+{
+    id: "ART-0050",
+    disciplina: "arte-naval",
+    assunto: "Geometria do Navio",
+    topico: "Escalas de Calado",
+    edital: "Geometria do navio — leitura de calados",
+    dificuldade: "dificil",
+    tipo: "verdadeiro-falso",
+    origem: "banco",
+
+    enunciado:
+        "Na leitura de escalas de calado em decímetros, se o nível da água estiver rasando o limbo superior do número 56, o calado lido corretamente é de 5,60 metros.",
+
+    alternativas: {
+        A: "Verdadeiro",
+        B: "Falso"
+    },
+
+    resposta: "B",
+
+    comentario:
+        "FALSO. O limbo inferior do número 56 corresponde a 5,60 m. Como o algarismo possui um decímetro de altura, seu limbo superior corresponde a 5,70 m. Esta é uma armadilha clássica envolvendo a leitura das marcas de calado.",
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "2.65 — Escalas de Calado",
+            pagina: ""
+        }
+    ]
+}
 ];
 
 
