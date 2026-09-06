@@ -19624,19 +19624,26 @@ id="resumo-selecao-exercicios"
 📊 Resultado dos exercícios
 </h3>
 
+<p>
+Responda às questões e pressione
+<strong>Corrigir exercícios</strong>.
+</p>
+
 <button
 type="button"
 id="botao-corrigir-exercicios"
+class="botao-estudo"
 onclick="corrigirExercicios()"
 >
-Corrigir exercícios
+✅ Corrigir exercícios
 </button>
 
-<div id="resultado-exercicios">
+<div
+id="resultado-exercicios"
+style="display:none;"
+>
 
 <p id="texto-resultado-exercicios">
-Responda às questões e pressione
-<strong>Corrigir exercícios</strong>.
 </p>
 
 </div>
@@ -19657,10 +19664,12 @@ Responda às questões e pressione
 
 <button
 type="button"
+class="botao-estudo"
 onclick="alternarGabaritoAula()"
 >
 Mostrar / ocultar gabarito comentado
 </button>
+
 
 <div
 id="gabaritoAula"
@@ -19669,6 +19678,10 @@ style="display:none;"
 
 <div class="destaque">
 
+
+<!-- =========================================
+     QUESTÕES 1 A 10
+========================================= -->
 
 <p>
 <strong>1 — C.</strong>
@@ -19730,8 +19743,8 @@ que o leme é colocado a meio.
 <p>
 <strong>8 — D.</strong>
 Heading e yaw rate são variáveis diferentes.
-Estar no heading correto não significa que a
-guinada tenha terminado.
+Estar no heading correto não significa que
+a guinada tenha terminado.
 </p>
 
 
@@ -19765,6 +19778,11 @@ Nv = ∂N / ∂v
 a uma alteração da velocidade lateral.
 </p>
 
+
+
+<!-- =========================================
+     QUESTÕES 11 A 20
+========================================= -->
 
 <p>
 <strong>11 — D.</strong>
@@ -19911,6 +19929,11 @@ condição mais instável.
 </p>
 
 
+
+<!-- =========================================
+     QUESTÕES 21 A 30
+========================================= -->
+
 <p>
 <strong>21 — C.</strong>
 </p>
@@ -19949,7 +19972,7 @@ também aumenta.
 <p>
 <strong>24 — A.</strong>
 MacElrevey descreve a Rate of Turn em shallow water
-como essencialmente a mesma de deep water,
+como essencialmente semelhante à de deep water,
 apesar do aumento do diâmetro da curva.
 </p>
 
@@ -20019,30 +20042,38 @@ O conjunto:
 <ul>
 
 <li>
-alto C<sub>B</sub>;</li>
+alto C<sub>B</sub>;
+</li>
 
 <li>
-seções cheias à vante;</li>
+seções cheias à vante;
+</li>
 
 <li>
-trim pela proa;</li>
+trim pela proa;
+</li>
 
 <li>
-ROT crescente com leme a meio;</li>
+ROT crescente com leme a meio;
+</li>
 
 <li>
-dificuldade para quebrar a guinada;</li>
+dificuldade para quebrar a guinada.
+</li>
 
 </ul>
 
 <p>
-é coerente com um navio de estabilidade
+É coerente com um navio de estabilidade
 direcional marginal ou negativa.
 Em canal, a antecipação da correção torna-se
 especialmente importante.
 </p>
+
+
+
 <!-- =========================================
-     GABARITO — QUESTÕES 31 A 40
+     QUESTÕES 31 A 40
 ========================================= -->
 
 <p>
@@ -20066,7 +20097,6 @@ após o leme ser colocado a meio.
 As duas abordagens são relacionadas,
 mas não rigorosamente equivalentes.
 </p>
-
 
 
 <p>
@@ -20127,7 +20157,6 @@ porém muito próxima da fronteira.
 </p>
 
 
-
 <p>
 <strong>33 — D.</strong>
 </p>
@@ -20145,7 +20174,6 @@ e os termos inerciais.
 </p>
 
 
-
 <p>
 <strong>34 — A.</strong>
 </p>
@@ -20161,7 +20189,6 @@ assim como o aumento de L/T provocado
 pela redução do calado, segundo a análise
 do PNA considerada na aula.
 </p>
-
 
 
 <p>
@@ -20186,7 +20213,6 @@ faz o fundo restringir o escoamento.
 Os dois fenômenos podem produzir tendências
 de estabilidade diferentes.
 </p>
-
 
 
 <p>
@@ -20220,7 +20246,6 @@ melhor turning ability.
 </p>
 
 
-
 <p>
 <strong>37 — D.</strong>
 </p>
@@ -20247,7 +20272,6 @@ e baixa yaw-checking ability.
 </p>
 
 
-
 <p>
 <strong>38 — A.</strong>
 </p>
@@ -20258,7 +20282,6 @@ indicam melhor capacidade de controlar
 e quebrar a guinada nas condições
 da manobra de zigzag considerada.
 </p>
-
 
 
 <p>
@@ -20297,7 +20320,6 @@ em direção ao valor permanente.
 </p>
 
 
-
 <p>
 <strong>40 — B.</strong>
 </p>
@@ -20308,17 +20330,34 @@ A combinação inicial:
 
 <ul>
 
-<li>alto C<sub>B</sub>;</li>
-<li>seções cheias à vante;</li>
-<li>trim pela proa;</li>
-<li>ROT crescente com o leme a meio;</li>
-<li>grande necessidade de counter-rudder;</li>
-<li>overshoot;</li>
+<li>
+alto C<sub>B</sub>;
+</li>
+
+<li>
+seções cheias à vante;
+</li>
+
+<li>
+trim pela proa;
+</li>
+
+<li>
+ROT crescente com leme a meio;
+</li>
+
+<li>
+grande necessidade de counter-rudder;
+</li>
+
+<li>
+overshoot.
+</li>
 
 </ul>
 
 <p>
-é compatível com baixa estabilidade
+É compatível com baixa estabilidade
 direcional ou condição marginal/negativa.
 </p>
 
@@ -20332,96 +20371,25 @@ curva menor ou resposta mais rápida ao leme.
 <p>
 A antecipação continua sendo essencial,
 especialmente em águas restritas.
-</p>    
+</p>
+
+
+</div>
+<!-- FECHA .destaque -->
+
+
+</div>
+<!-- FECHA #gabaritoAula -->
+
+
+</div>
+<!-- FECHA .widget DO GABARITO -->
 
 
 
 <!-- =========================================
-     CONTROLE DOS EXERCÍCIOS
-     MANTER A ESTRUTURA
+     FECHAMENTO DA SEÇÃO DOS EXERCÍCIOS
 ========================================= -->
-
-<div class="widget">
-
-<h3>
-📋 Progresso das questões
-</h3>
-
-<p id="resumo-selecao-exercicios">
-
-0 de [TOTAL] questões respondidas
-
-</p>
-
-<button
-type="button"
-id="botao-corrigir-exercicios"
-class="botao-estudo"
->
-✅ Corrigir Exercício
-</button>
-
-</div>
-
-
-<div
-id="resultado-exercicios"
-class="widget"
-style="display:none;"
->
-
-<h3>
-📊 Resultado da tentativa
-</h3>
-
-<p id="texto-resultado-exercicios">
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================
-     GABARITO COMENTADO
-========================================= -->
-
-<section>
-
-<h2>
-✅ Gabarito comentado
-</h2>
-
-<div class="widget">
-
-<button
-type="button"
-class="botao-estudo"
-onclick="alternarGabaritoAula()"
->
-Mostrar / Ocultar Gabarito
-</button>
-
-
-<div
-id="gabaritoAula"
-style="display:none;"
->
-
-<hr>
-
-<h3>
-Questão 1 — Alternativa A ✅
-</h3>
-
-<p>
-[COMENTÁRIO DO GABARITO]
-</p>
-
-</div>
-
-</div>
 
 </section>
 
@@ -20442,28 +20410,102 @@ Questão 1 — Alternativa A ✅
 <ul>
 
 <li>
+<strong>
 SHIPHANDLING FOR THE MARINER.
 5th Edition.
-Directional Stability, páginas 18–20.
+</strong>
+Directional Stability,
+páginas 18–20.
 </li>
 
 <li>
+<strong>
+SHIPHANDLING FOR THE MARINER.
+5th Edition.
+</strong>
+Effect of Trim on Handling Characteristics.
+</li>
+
+<li>
+<strong>
 LEWIS, Edward V. (Ed.).
 Principles of Naval Architecture.
 Volume III — Motions in Waves and Controllability.
-Section 3 — Motion Stability and Linear Equations.
+</strong>
+Chapter IX — Controllability.
 </li>
 
 <li>
+<strong>
+Principles of Naval Architecture.
+Volume III.
+</strong>
+Section 3 —
+Motion Stability and Linear Equations.
+</li>
+
+<li>
+<strong>
 MARINHA DO BRASIL.
 Arte Naval.
 Volume I.
 8ª edição.
+</strong>
 Conceitos de geometria e características do casco
 pertinentes ao estudo da estabilidade direcional.
 </li>
 
 </ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Nota sobre terminologia
+</h3>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+utiliza directional stability em sentido
+fortemente operacional.
+</p>
+
+<p>
+O PNA estabelece uma classificação formal
+mais rigorosa entre:
+</p>
+
+<ul>
+
+<li>
+straight-line stability;
+</li>
+
+<li>
+directional stability;
+</li>
+
+<li>
+positional stability;
+</li>
+
+<li>
+controls-fixed;
+</li>
+
+<li>
+controls-working.
+</li>
+
+</ul>
+
+<p>
+Essas abordagens foram mantidas distintas
+ao longo da aula.
+</p>
+
+</div>
 
 </div>
 
@@ -20491,6 +20533,81 @@ mas como uma característica diretamente relacionada
 de intervenção necessária para manter ou alterar
 o rumo com segurança.
 </p>
+
+
+<div class="destaque">
+
+<p>
+A análise operacional não deve se limitar
+ao heading instantâneo.
+</p>
+
+<p>
+É necessário observar simultaneamente:
+</p>
+
+<ul>
+
+<li>
+heading;
+</li>
+
+<li>
+Rate of Turn;
+</li>
+
+<li>
+tendência da Rate of Turn;
+</li>
+
+<li>
+resposta ao leme;
+</li>
+
+<li>
+capacidade de quebrar a guinada;
+</li>
+
+<li>
+trim;
+</li>
+
+<li>
+UKC;
+</li>
+
+<li>
+e espaço disponível para a manobra.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Síntese final
+</h3>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+O importante não é apenas saber
+quanto o navio está guinando.
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+É necessário compreender
+para onde essa guinada está evoluindo,
+quanto tempo será necessário para quebrá-la
+e quanto espaço estará disponível.
+</strong>
+</p>
+
+</div>
 
 </section>
 
@@ -20569,6 +20686,7 @@ function alternarGabaritoAula() {
             "block";
 
     }
+
     else {
 
         gabarito.style.display =
@@ -20584,3 +20702,4 @@ function alternarGabaritoAula() {
 </body>
 
 </html>
+
