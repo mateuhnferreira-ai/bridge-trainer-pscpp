@@ -12630,24 +12630,4769 @@ e consequências em canais e águas restritas.</li>
 </section>
 
 
-PARTE 7
+<!-- =========================================
+     PARTE 7
+     QUEBRAR A GUINADA
+========================================= -->
 
-quebrar-guinada
-leme-contrario
-antecipacao-leme
-controle-rate-of-turn
-navio-direcionalmente-estavel
-navio-direcionalmente-instavel
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 7 — QUEBRAR A GUINADA
+</h2>
+
+<p>
+Até este ponto analisamos:
+</p>
+
+<ul>
+
+<li>
+como a estabilidade direcional se manifesta;</li>
+
+<li>
+como surge hidrodinamicamente;</li>
+
+<li>
+como é representada pelas derivadas;</li>
+
+<li>
+e como geometria, trim e profundidade alteram
+essa característica.</li>
+
+</ul>
+
+<p>
+Agora o problema passa a ser diretamente operacional:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+o navio já está guinando.
+Como impedir que essa guinada continue crescendo?
+</strong>
+</p>
+
+</div>
+
+<p>
+No vocabulário operacional adotado nesta aula,
+<strong>checking the swing</strong>
+será tratado como:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+quebrar a guinada
+</strong>
+</p>
+
+<p>
+Quebrar a guinada não significa apenas colocar
+o leme a meio.
+</p>
+
+<p>
+Significa produzir uma ação capaz de
+<strong>reduzir efetivamente a Rate of Turn já existente</strong>.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Ponto fundamental
+</h3>
+
+<p>
+Enquanto a ROT permanecer diferente de zero,
+a proa continua mudando de direção.
+</p>
+
+<p>
+Portanto, o momento correto para iniciar a quebra
+da guinada ocorre
+<strong>antes</strong>
+de o navio atingir o rumo final desejado.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
-PARTE 8
 
-implicacoes-operacionais
-navegacao-canais
-governo-mar-aberto
-aplicacao-praticagem
-resumo-estabilidade-direcional
-glossario-estabilidade-direcional
+<!-- =========================================
+     TÓPICO 49
+     INICIAR x QUEBRAR
+========================================= -->
+
+<section
+class="topico-aula"
+id="iniciar-versus-quebrar-guinada"
+data-topico-id="iniciar-versus-quebrar-guinada"
+>
+
+<h2>
+49. Iniciar a guinada e quebrar a guinada são problemas diferentes
+</h2>
+
+<div class="widget">
+
+<p>
+Ao iniciar uma curva, o leme cria um momento
+que faz a yaw rate crescer a partir de um valor
+inicial próximo de zero.
+</p>
+
+<p>
+Ao quebrar a guinada, a situação é diferente:
+</p>
+
+<p>
+o navio já possui uma
+<strong>yaw rate estabelecida</strong>
+e o sistema de governo precisa produzir um efeito
+capaz de reduzir esse movimento.
+</p>
+
+<div class="destaque">
+
+<h3>
+Início da curva
+</h3>
+
+<p style="text-align:center;">
+<strong>
+r ≈ 0
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+leme aplicado
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+|r| aumenta
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Quebra da guinada
+</h3>
+
+<p style="text-align:center;">
+<strong>
+|r| já é significativo
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+ação corretiva
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+|r| deve diminuir
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+afirma explicitamente que,
+em navio direcionalmente instável,
+pode ser necessário:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+mais leme
++
+mais tempo
+</strong>
+</p>
+
+<p style="text-align:center;">
+para
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+quebrar a guinada
+</strong>
+</p>
+
+<p>
+do que foi necessário para iniciá-la.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 50
+     ROT E DISTÂNCIA
+========================================= -->
+
+<section
+class="topico-aula"
+id="rot-e-angulo-restante"
+data-topico-id="rot-e-angulo-restante"
+>
+
+<h2>
+50. Por que a correção precisa começar antes do rumo final?
+</h2>
+
+<div class="widget">
+
+<p>
+A Rate of Turn representa a velocidade com que
+o heading continua mudando.
+</p>
+
+<p>
+Se o navio possui:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT = 12°/min
+</strong>
+</p>
+
+<p>
+isso significa que, mantendo aproximadamente essa taxa,
+a proa mudará:
+</p>
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico
+</h3>
+
+<p>
+Em 30 segundos:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δt = 0,5 min
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+Δψ = ROT × Δt
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δψ = 12 × 0,5
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+Δψ = 6°
+</strong>
+</p>
+
+<p>
+Assim, mesmo que nenhuma nova aceleração angular
+ocorra, o navio ainda mudará cerca de
+<strong>6° de heading em 30 segundos</strong>
+enquanto mantiver essa ROT.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Interpretação operacional
+</h3>
+
+<p>
+Se faltam apenas 3° para o rumo desejado,
+mas o navio ainda apresenta 12°/min de ROT,
+esperar atingir o heading final para então começar
+a quebrar a guinada será tarde.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+Esse exemplo não é uma fórmula para definir
+o instante exato da correção.
+</p>
+
+<p>
+Na prática, a ROT não permanece necessariamente constante.
+</p>
+
+<p>
+O exemplo apenas mostra matematicamente por que
+<strong>heading restante e yaw rate precisam ser
+avaliados juntos</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 51
+     LEME CONTRÁRIO
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-contrario"
+data-topico-id="leme-contrario"
+>
+
+<h2>
+51. Leme contrário — Counter-Rudder
+</h2>
+
+<div class="widget">
+
+<p>
+Quando colocar o leme a meio não é suficiente
+para reduzir a guinada na taxa necessária,
+é preciso produzir um momento contrário.
+</p>
+
+<p>
+Para isso utiliza-se
+<strong>counter-rudder — leme contrário</strong>.
+</p>
+
+<p>
+O leme contrário é aplicado para o bordo oposto
+à guinada existente, com o objetivo de gerar
+um momento capaz de reduzir a yaw rate.
+</p>
+
+<div class="destaque">
+
+<h3>
+Sequência dinâmica
+</h3>
+
+<p style="text-align:center;">
+<strong>
+navio guinando para boreste
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+leme a bombordo
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+momento contrário à guinada
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+ROT de boreste diminui
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+O efeito do leme não aparece instantaneamente
+como mudança de heading.
+</p>
+
+<p>
+Primeiro ele precisa alterar
+<strong>a aceleração angular</strong>;
+depois a ROT diminui;
+somente posteriormente a mudança acumulada de heading
+passa a refletir plenamente essa correção.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SVG — QUEBRA DA GUINADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="sequencia-quebra-guinada"
+data-topico-id="sequencia-quebra-guinada"
+>
+
+<h2>
+52. Sequência correta da quebra da guinada
+</h2>
+
+<div class="widget">
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 620"
+width="100%"
+role="img"
+aria-labelledby="svg-quebra-titulo svg-quebra-desc"
+>
+
+<title id="svg-quebra-titulo">
+Sequência de quebra de uma guinada
+</title>
+
+<desc id="svg-quebra-desc">
+Vista superior mostrando o navio guinando para boreste,
+a aplicação de leme contrário para bombordo,
+a redução progressiva da Rate of Turn e a estabilização.
+</desc>
+
+<rect
+x="5"
+y="5"
+width="950"
+height="610"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- FASE 1 -->
+
+<text
+x="160"
+y="55"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#173f5f"
+>
+1 — Guinada estabelecida
+</text>
+
+<path
+d="
+M 70 230
+C 120 190,
+170 150,
+220 115
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<g transform="translate(145 175) rotate(55)">
+
+<path
+d="
+M 0 -38
+L 16 -15
+L 16 30
+L 0 43
+L -16 30
+L -16 -15
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+</g>
+
+<path
+d="
+M 95 125
+C 130 95,
+170 100,
+195 130
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="195,130 174,119 194,105"
+fill="#9a3412"
+/>
+
+<text
+x="110"
+y="100"
+font-size="17"
+font-weight="bold"
+fill="#9a3412"
+>
+ROT →
+</text>
+
+
+<!-- FASE 2 -->
+
+<text
+x="480"
+y="55"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#173f5f"
+>
+2 — Counter-rudder
+</text>
+
+<path
+d="
+M 350 230
+C 400 185,
+455 150,
+520 125
+"
+fill="none"
+stroke="#64748b"
+stroke-width="4"
+/>
+
+<g transform="translate(440 175) rotate(60)">
+
+<path
+d="
+M 0 -38
+L 16 -15
+L 16 30
+L 0 43
+L -16 30
+L -16 -15
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<!-- LEME CONTRÁRIO -->
+
+<line
+x1="0"
+y1="30"
+x2="-16"
+y2="55"
+stroke="#0f766e"
+stroke-width="5"
+/>
+
+</g>
+
+<text
+x="390"
+y="285"
+font-size="17"
+font-weight="bold"
+fill="#0f766e"
+>
+leme contrário
+</text>
+
+
+<!-- FASE 3 -->
+
+<text
+x="790"
+y="55"
+text-anchor="middle"
+font-size="21"
+font-weight="bold"
+fill="#173f5f"
+>
+3 — ROT diminuindo
+</text>
+
+<path
+d="
+M 650 230
+C 700 195,
+745 175,
+850 165
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<g transform="translate(745 185) rotate(75)">
+
+<path
+d="
+M 0 -38
+L 16 -15
+L 16 30
+L 0 43
+L -16 30
+L -16 -15
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+</g>
+
+<text
+x="700"
+y="275"
+font-size="17"
+font-weight="bold"
+fill="#0f766e"
+>
+|ROT| ↓
+</text>
+
+
+<!-- LINHA TEMPORAL -->
+
+<line
+x1="100"
+y1="380"
+x2="860"
+y2="380"
+stroke="#334155"
+stroke-width="3"
+/>
+
+<polygon
+points="860,380 838,369 838,391"
+fill="#334155"
+/>
+
+<text
+x="830"
+y="415"
+font-size="16"
+fill="#334155"
+>
+tempo
+</text>
+
+
+<!-- ROT -->
+
+<path
+d="
+M 120 470
+C 250 430,
+360 420,
+430 435
+C 520 455,
+610 505,
+790 525
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<line
+x1="110"
+y1="525"
+x2="820"
+y2="525"
+stroke="#64748b"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<text
+x="75"
+y="480"
+font-size="16"
+fill="#334155"
+>
+ROT
+</text>
+
+<text
+x="125"
+y="555"
+font-size="15"
+fill="#334155"
+>
+guinada existente
+</text>
+
+<text
+x="430"
+y="555"
+font-size="15"
+fill="#0f766e"
+>
+ação corretiva
+</text>
+
+<text
+x="720"
+y="555"
+font-size="15"
+fill="#334155"
+>
+ROT → 0
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação conceitual da quebra de uma guinada.
+A trajetória ainda continua curvando enquanto a ROT
+é reduzida; estabilizar a proa ocorre somente após
+o movimento angular ter sido suficientemente amortecido.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 53
+     NAVIO INSTÁVEL
+========================================= -->
+
+<section
+class="topico-aula"
+id="quebrar-guinada-navio-instavel"
+data-topico-id="quebrar-guinada-navio-instavel"
+>
+
+<h2>
+53. Quebrar a guinada de um navio direcionalmente instável
+</h2>
+
+<div class="widget">
+
+<p>
+Neste ponto aparece a consequência mais importante
+da estabilidade negativa.
+</p>
+
+<p>
+Se o navio é direcionalmente instável,
+colocar o leme a meio não produz necessariamente
+redução espontânea da ROT.
+</p>
+
+<p>
+Pelo contrário, o
+<strong>Shiphandling for the Mariner</strong>
+afirma que a ROT pode continuar aumentando.
+</p>
+
+<div class="destaque">
+
+<h3>
+Situação crítica
+</h3>
+
+<p style="text-align:center;">
+<strong>
+leme a meio
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+ROT continua aumentando
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+necessidade de counter-rudder mais intenso
+e por mais tempo
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico conceitual
+</h3>
+
+<p>
+Imagine uma guinada de boreste com:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT = 5°/min
+</strong>
+</p>
+
+<p>
+Depois de colocar o leme a meio:
+</p>
+
+<p style="text-align:center;">
+<strong>
+5 → 7 → 9°/min
+</strong>
+</p>
+
+<p>
+Nesse caso, esperar passivamente que a guinada
+diminua seria incompatível com a resposta
+direcional observada.
+</p>
+
+<p>
+O navio está se afastando da condição desejada.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+O MacElrevey alerta que,
+em navio direcionalmente instável:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+a guinada pode escapar do controle
+se o leme permanecer aplicado por tempo excessivo.
+</strong>
+</p>
+
+<p>
+Por isso, em navios de estabilidade marginal,
+o autor recomenda colocar o leme de volta a meio
+<strong>assim que a guinada começa</strong>,
+porque a ROT pode continuar aumentando
+mesmo com o leme a meio. 1
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 54
+     CANAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="quebrar-guinada-canal"
+data-topico-id="quebrar-guinada-canal"
+>
+
+<h2>
+54. Por que esse problema é crítico em canais?
+</h2>
+
+<div class="widget">
+
+<p>
+Em mar aberto, uma correção tardia pode significar
+apenas maior overshoot de heading.
+</p>
+
+<p>
+Em um canal estreito,
+a mesma demora pode transformar-se rapidamente
+em um problema de
+<strong>posição lateral</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+A sequência perigosa
+</h3>
+
+<p style="text-align:center;">
+<strong>
+ROT cresce
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+proa continua entrando na curva
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+popa continua transferindo lateralmente
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+distância disponível até a borda diminui
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+correção torna-se cada vez mais urgente
+</strong>
+</p>
+
+</div>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+é particularmente enfático:
+</p>
+
+<p>
+pode não ser possível quebrar a guinada de um
+navio direcionalmente instável
+<strong>antes de ele sair do canal</strong>,
+mesmo quando sua ROT pareça perfeitamente normal
+para um navio médio. 2
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Pegadinha PSCPP
+</h3>
+
+<p>
+Uma ROT de valor aparentemente "normal"
+não garante que a manobra esteja sob controle.
+</p>
+
+<p>
+O fator decisivo é:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+essa ROT pode ser quebrada
+dentro do espaço disponível?
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 55
+     TIME TO CHECK
+========================================= -->
+
+<section
+class="topico-aula"
+id="time-to-check-yaw"
+data-topico-id="time-to-check-yaw"
+>
+
+<h2>
+55. Time to Check Yaw
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA utiliza um parâmetro diretamente relacionado
+a esse problema:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+Time to Check Yaw
+</strong>
+</p>
+
+<p>
+Ele representa o tempo necessário para interromper
+a evolução da guinada após a ação corretiva
+em uma manobra transitória.
+</p>
+
+<p>
+O PNA destaca que a
+<strong>yaw-checking ability</strong>
+é importante tanto para:
+</p>
+
+<ul>
+
+<li>
+<strong>coursekeeping</strong>;</li>
+
+<li>
+quanto para <strong>maneuvering</strong>.</li>
+
+</ul>
+
+<p>
+Essa capacidade pode ser avaliada diretamente
+no <strong>zigzag maneuver</strong>
+por meio do tempo necessário para quebrar a guinada
+e, indiretamente, pelos ângulos de overshoot. 3
+</p>
+
+<div class="destaque">
+
+<h3>
+Interpretação
+</h3>
+
+<p>
+Quanto maior o
+<strong>time to check yaw</strong>,
+mais tempo o navio continua acumulando
+mudança de heading depois que a ação corretiva começa.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico simplificado
+</h3>
+
+<p>
+Considere dois navios iniciando a correção
+com aproximadamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT = 10°/min
+</strong>
+</p>
+
+<p>
+Navio A:
+</p>
+
+<p style="text-align:center;">
+<strong>
+time to check = 20 s
+</strong>
+</p>
+
+<p>
+Navio B:
+</p>
+
+<p style="text-align:center;">
+<strong>
+time to check = 50 s
+</strong>
+</p>
+
+<p>
+Mesmo sem calcular uma trajetória real,
+fica evidente que o Navio B permanecerá
+acumulando mudança de heading por período
+significativamente maior.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limite do exemplo
+</h3>
+
+<p>
+Não se deve calcular overshoot simplesmente
+multiplicando ROT inicial pelo time to check,
+porque a ROT varia durante a fase de correção.
+</p>
+
+<p>
+Para uma avaliação real é necessária
+a história temporal da resposta.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 56
+     OVERSHOOT
+========================================= -->
+
+<section
+class="topico-aula"
+id="overshoot-guinada"
+data-topico-id="overshoot-guinada"
+>
+
+<h2>
+56. Overshoot — a proa continua passando do heading de referência
+</h2>
+
+<div class="widget">
+
+<p>
+Durante uma manobra transitória,
+a ação corretiva pode começar antes de o navio
+alcançar determinado heading,
+mas a proa ainda continuará girando por algum tempo.
+</p>
+
+<p>
+A diferença angular acumulada além de uma referência
+é denominada
+<strong>yaw-angle overshoot</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Por que ocorre?
+</h3>
+
+<p>
+Porque a sequência física é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+leme contrário aplicado
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+momento corretivo surge
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+ROT começa a diminuir
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+somente depois ROT = 0
+</strong>
+</p>
+
+<p>
+Enquanto:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT ≠ 0
+</strong>
+</p>
+
+<p>
+o heading continua mudando.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo conceitual
+</h3>
+
+<p>
+Suponha que o leme seja invertido quando
+o heading atinge:
+</p>
+
+<p style="text-align:center;">
+<strong>
+20°
+</strong>
+</p>
+
+<p>
+mas a guinada só seja efetivamente quebrada
+quando a proa alcança:
+</p>
+
+<p style="text-align:center;">
+<strong>
+27°
+</strong>
+</p>
+
+<p>
+Então o overshoot correspondente seria:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+27° − 20° = 7°
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+No PNA, o overshoot é uma das grandezas úteis
+para avaliar
+<strong>yaw-checking ability</strong>
+em manobras de zigzag. 4
+</p>
+
+<p>
+Menor capacidade de quebrar a guinada tende
+a manifestar-se em maior resposta transitória,
+mas o valor depende do conjunto
+casco–leme–controle–condição operacional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 57
+     NÃO CONFUNDIR
+========================================= -->
+
+<section
+class="topico-aula"
+id="rot-zero-heading-final"
+data-topico-id="rot-zero-heading-final"
+>
+
+<h2>
+57. Quebrar a guinada não é o mesmo que atingir o rumo desejado
+</h2>
+
+<div class="widget">
+
+<p>
+Há duas variáveis diferentes:
+</p>
+
+<div class="destaque">
+
+<h3>
+Heading — ψ
+</h3>
+
+<p>
+Indica
+<strong>para onde a proa está apontando</strong>.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+Yaw Rate — r
+</h3>
+
+<p>
+Indica
+<strong>quão rapidamente essa direção está mudando</strong>.
+</p>
+
+</div>
+
+<p>
+Assim, um navio pode estar exatamente
+no rumo desejado e ainda possuir uma ROT elevada.
+</p>
+
+<div class="destaque">
+
+<h3>
+Exemplo
+</h3>
+
+<p>
+Heading desejado:
+</p>
+
+<p style="text-align:center;">
+<strong>
+090°
+</strong>
+</p>
+
+<p>
+No instante em que a proa chega a 090°:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT = +8°/min
+</strong>
+</p>
+
+<p>
+O navio ainda não está estabilizado.
+</p>
+
+<p>
+Se nada impedir a guinada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ψ continuará aumentando além de 090°
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Regra operacional
+</h3>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+heading correto + ROT elevada
+≠
+manobra concluída
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 58
+     NAVIO MARGINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="navio-estabilidade-marginal"
+data-topico-id="navio-estabilidade-marginal"
+>
+
+<h2>
+58. Estratégia em navio de estabilidade marginal
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+fornece uma orientação operacional específica
+para navios com estabilidade direcional marginal.
+</p>
+
+<p>
+O autor afirma que:
+</p>
+
+<ul>
+
+<li>
+o leme pode precisar permanecer aplicado por mais tempo
+para iniciar a guinada;</li>
+
+<li>
+depois que a guinada começa,
+grandes ângulos de leme podem ser necessários
+por períodos também maiores para quebrá-la;</li>
+
+<li>
+e o leme deve retornar a meio
+<strong>assim que a guinada começa</strong>,
+porque a ROT pode continuar aumentando
+mesmo com o leme a meio. 5
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Por que isso parece paradoxal?
+</h3>
+
+<p>
+O navio pode inicialmente parecer
+<strong>lento para começar a responder</strong>.
+</p>
+
+<p>
+Isso pode induzir o operador a manter o leme aplicado.
+</p>
+
+<p>
+Quando a guinada finalmente se estabelece,
+a instabilidade direcional pode fazer a ROT
+continuar crescendo.
+</p>
+
+<p>
+O resultado é:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+resposta inicialmente lenta
+→
+guinada posteriormente excessiva
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Esse é exatamente o tipo de navio em que
+<strong>esperar para "ver a proa andar"</strong>
+antes de aliviar o leme pode ser perigoso.
+</p>
+
+<p>
+O operador precisa antecipar o desenvolvimento
+posterior da ROT.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 59
+     ZIGZAG E YAW CHECKING
+========================================= -->
+
+<section
+class="topico-aula"
+id="zigzag-yaw-checking"
+data-topico-id="zigzag-yaw-checking"
+>
+
+<h2>
+59. Zigzag Maneuver e capacidade de quebrar a guinada
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA destaca o
+<strong>zigzag maneuver</strong>
+como um ensaio particularmente útil para observar
+a resposta transitória do conjunto:
+</p>
+
+<ul>
+
+<li>
+casco;</li>
+
+<li>
+leme;</li>
+
+<li>
+condição de carregamento;</li>
+
+<li>
+trim;</li>
+
+<li>
+e sistema de controle.</li>
+
+</ul>
+
+<p>
+Entre as informações obtidas estão:
+</p>
+
+<ul>
+
+<li>
+<strong>first overshoot angle</strong>;</li>
+
+<li>
+<strong>time to check yaw</strong>;</li>
+
+<li>
+quickness of response;</li>
+
+<li>
+e informações relacionadas à estabilidade dinâmica.</li>
+
+</ul>
+
+<p>
+Segundo o PNA,
+a yaw-checking ability é indicada diretamente
+pelo
+<strong>time to check yaw</strong>
+e indiretamente pela magnitude dos
+<strong>overshoot angles</strong>. 6
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O turning circle não fornece sozinho
+todas as informações necessárias para prever
+como o navio se comportará durante pequenas
+alterações de rumo em águas restritas.
+</p>
+
+<p>
+O próprio PNA observa que grande parte das manobras
+reais ocorre em
+<strong>fases transitórias de turning</strong>,
+nas quais rapidez de resposta e capacidade
+de quebrar a guinada podem ser mais importantes
+do que as dimensões finais de uma curva estabilizada. 7
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 60
+     INSTABILIDADE NÃO É NECESSARIAMENTE "RUIM"
+========================================= -->
+
+<section
+class="topico-aula"
+id="grau-instabilidade"
+data-topico-id="grau-instabilidade"
+>
+
+<h2>
+60. Instabilidade direcional não significa navio impossível de manobrar
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA acrescenta uma nuance importante.
+</p>
+
+<p>
+A obra afirma que
+<strong>directional instability is not necessarily bad</strong>.
+</p>
+
+<p>
+Grandes navios lentos com alguma instabilidade
+direcional podem ser manobrados de maneira
+satisfatória.
+</p>
+
+<p>
+O que importa é o:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+grau de instabilidade
+em relação ao tipo, tamanho e velocidade do navio.
+</strong>
+</p>
+
+</div>
+
+<p>
+Portanto, a classificação
+<strong>estável / instável</strong>
+não deve ser usada como julgamento absoluto
+da qualidade do navio.
+</p>
+
+<p>
+Ela descreve uma característica dinâmica que precisa
+ser considerada junto com:
+</p>
+
+<ul>
+
+<li>
+efetividade do leme;</li>
+
+<li>
+velocidade;</li>
+
+<li>
+escala do navio;</li>
+
+<li>
+espaço disponível;</li>
+
+<li>
+e capacidade do sistema de controle.</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A frase correta é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+instabilidade direcional aumenta a exigência
+de controle da guinada.
+</strong>
+</p>
+
+<p>
+Não:
+</p>
+
+<p style="text-align:center;">
+<strong>
+navio instável é necessariamente um navio
+com péssima manobrabilidade.
+</strong>
+</p>
+
+<p>
+O PNA ressalta expressamente essa diferença. 8
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 61
+     SÍNTESE OPERACIONAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="sintese-quebrar-guinada"
+data-topico-id="sintese-quebrar-guinada"
+>
+
+<h2>
+61. Sequência mental para o Prático
+</h2>
+
+<div class="widget">
+
+<p>
+Ao acompanhar uma mudança de rumo,
+a análise operacional pode ser organizada
+na seguinte sequência:
+</p>
+
+<div class="destaque">
+
+<h3>
+1 — Quanto o navio ainda precisa alterar o heading?
+</h3>
+
+<p>
+Observe o
+<strong>heading remaining</strong>.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+2 — Qual é a ROT atual?
+</h3>
+
+<p>
+Não observe apenas o valor.
+Pergunte se ela está:
+</p>
+
+<ul>
+
+<li>
+aumentando;</li>
+
+<li>
+constante;</li>
+
+<li>
+ou diminuindo.</li>
+
+</ul>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+3 — Como o navio responde quando o leme vai a meio?
+</h3>
+
+<p>
+Isso fornece uma indicação direta
+de sua tendência direcional.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+4 — Quando iniciar o counter-rudder?
+</h3>
+
+<p>
+Antes que o heading final seja alcançado,
+considerando a ROT e o tempo esperado
+para quebrar a guinada.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+5 — A ROT está realmente diminuindo?
+</h3>
+
+<p>
+A ação corretiva deve ser avaliada pelo movimento
+do navio, não somente pela posição do leme.
+</p>
+
+</div>
+
+<div class="destaque">
+
+<h3>
+6 — Existe espaço suficiente?
+</h3>
+
+<p>
+Em canais, o problema não é apenas angular.
+É também lateral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TERMOS TÉCNICOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="termos-quebrar-guinada"
+data-topico-id="termos-quebrar-guinada"
+>
+
+<h2>
+62. Termos técnicos desta parte
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Maritime English
+</h3>
+
+<ul>
+
+<li>
+<strong>Check the Swing</strong> —
+quebrar a guinada;</li>
+
+<li>
+<strong>Checking the Swing</strong> —
+ação de quebrar a guinada;</li>
+
+<li>
+<strong>Yaw-Checking Ability</strong> —
+capacidade de quebrar/controlar a guinada;</li>
+
+<li>
+<strong>Time to Check Yaw</strong> —
+tempo necessário para quebrar a guinada;</li>
+
+<li>
+<strong>Counter-Rudder</strong> —
+leme contrário;</li>
+
+<li>
+<strong>Rudder Amidships</strong> —
+leme a meio;</li>
+
+<li>
+<strong>Yaw Rate</strong> —
+taxa angular de guinada;</li>
+
+<li>
+<strong>Rate of Turn — ROT</strong> —
+taxa de guinada;</li>
+
+<li>
+<strong>Overshoot</strong> —
+ultrapassagem angular após a ação corretiva;</li>
+
+<li>
+<strong>First Overshoot Angle</strong> —
+primeiro ângulo de overshoot;</li>
+
+<li>
+<strong>Coursekeeping Ability</strong> —
+capacidade de manter o rumo;</li>
+
+<li>
+<strong>Directionally Unstable Ship</strong> —
+navio direcionalmente instável.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 7
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 7
+</h2>
+
+<p>
+Quebrar uma guinada significa
+<strong>reduzir a yaw rate existente</strong>,
+e não simplesmente colocar o leme a meio
+ou alcançar momentaneamente o heading desejado.
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+heading indica posição angular
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT indica movimento angular
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+uma manobra só está realmente estabilizada
+quando a guinada foi controlada
+</strong>
+</p>
+
+</div>
+
+<p>
+Em navio direcionalmente instável,
+a situação exige maior antecipação:
+</p>
+
+<ul>
+
+<li>
+a ROT pode continuar aumentando com o leme a meio;</li>
+
+<li>
+mais leme pode ser necessário para quebrar a guinada;</li>
+
+<li>
+esse leme pode precisar permanecer aplicado por mais tempo;</li>
+
+<li>
+e a correção pode consumir mais espaço do que o esperado.</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Regra operacional essencial
+</h3>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+Não espere o heading desejado
+para começar a quebrar a guinada.
+</strong>
+</p>
+
+<p>
+A decisão deve considerar simultaneamente:
+</p>
+
+<ul>
+
+<li>
+heading restante;</li>
+
+<li>
+ROT;</li>
+
+<li>
+tendência da ROT;</li>
+
+<li>
+resposta ao leme;</li>
+
+<li>
+e espaço disponível.</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 8
+</h3>
+
+<p>
+A próxima parte fechará a aula reunindo
+todo o conteúdo em uma
+<strong>visão operacional integrada</strong>.
+</p>
+
+<p>
+Serão consolidados:
+</p>
+
+<ul>
+
+<li>
+como reconhecer estabilidade positiva, neutra e negativa;</li>
+
+<li>
+como interpretar ROT e resposta ao leme;</li>
+
+<li>
+como geometria, trim e UKC alteram o comportamento;</li>
+
+<li>
+como antecipar a quebra da guinada;</li>
+
+<li>
+principais armadilhas conceituais do PSCPP;</li>
+
+<li>
+glossário consolidado;</li>
+
+<li>
+resumo técnico;</li>
+
+<li>
+e ligação com os ensaios de manobrabilidade.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 8
+     CONSOLIDAÇÃO OPERACIONAL E PSCPP
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 8 — CONSOLIDAÇÃO OPERACIONAL DA ESTABILIDADE DIRECIONAL
+</h2>
+
+<p>
+A estabilidade direcional deixa de ser apenas
+uma característica teórica quando o navio entra
+em águas restritas.
+</p>
+
+<p>
+Para o shiphandler, ela aparece na forma como o navio:
+</p>
+
+<ul>
+
+<li>
+inicia uma guinada;</li>
+
+<li>
+continua guinando depois que o leme vai a meio;</li>
+
+<li>
+responde ao leme contrário;</li>
+
+<li>
+quebra a guinada;</li>
+
+<li>
+mantém ou não uma trajetória;</li>
+
+<li>
+e utiliza o espaço lateral disponível.</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Pergunta operacional fundamental
+</h3>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+O que acontece com a Rate of Turn
+quando o leme é colocado a meio?
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+ROT diminui
+→
+estabilidade positiva
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT permanece aproximadamente constante
+→
+estabilidade neutra
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT aumenta
+→
+estabilidade negativa
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Ideia central para o PSCPP
+</h3>
+
+<p>
+Não avalie estabilidade apenas observando
+se o navio está guinando.
+</p>
+
+<p>
+Avalie:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+como a guinada evolui depois que a ação de leme
+que a iniciou é retirada.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 63
+     DIAGNÓSTICO RÁPIDO
+========================================= -->
+
+<section
+class="topico-aula"
+id="implicacoes-operacionais"
+data-topico-id="implicacoes-operacionais"
+>
+
+<h2>
+63. Diagnóstico rápido do comportamento direcional
+</h2>
+
+<div class="widget">
+
+<p>
+Ao assumir a manobra de um navio desconhecido,
+algumas observações são particularmente úteis
+para reconhecer sua tendência direcional.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+1 — Quanto leme foi necessário para iniciar a guinada?
+</h3>
+
+<p>
+Um navio de estabilidade marginal ou negativa
+pode inicialmente exigir tempo apreciável de leme
+antes que a proa comece a responder.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+2 — O que acontece quando o leme volta a meio?
+</h3>
+
+<p>
+Observe imediatamente a
+<strong>tendência da ROT</strong>.
+</p>
+
+<p>
+Esse comportamento constitui uma das indicações
+operacionais mais importantes da estabilidade
+direcional.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+3 — Quanto leme contrário é necessário?
+</h3>
+
+<p>
+Se grande quantidade de counter-rudder precisa
+permanecer aplicada por longo período para reduzir
+a ROT, a capacidade de quebrar a guinada merece
+atenção especial.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+4 — Existe overshoot significativo?
+</h3>
+
+<p>
+A proa pode continuar mudando de heading
+por período apreciável depois que a correção começa.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+5 — A resposta muda com trim ou profundidade?
+</h3>
+
+<p>
+O mesmo navio pode apresentar comportamento
+direcional diferente após alteração de draft,
+trim ou UKC.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+Nenhuma dessas observações deve ser usada
+isoladamente como diagnóstico matemático rigoroso.
+</p>
+
+<p>
+Elas representam manifestações operacionais
+do comportamento dinâmico estudado nas partes anteriores.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 64
+     MAPA MENTAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="mapa-estabilidade-direcional"
+data-topico-id="mapa-estabilidade-direcional"
+>
+
+<h2>
+64. Mapa mental da estabilidade direcional
+</h2>
+
+<div class="widget">
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 720"
+width="100%"
+role="img"
+aria-labelledby="svg-mapa-titulo svg-mapa-desc"
+>
+
+<title id="svg-mapa-titulo">
+Mapa mental da estabilidade direcional
+</title>
+
+<desc id="svg-mapa-desc">
+Fluxograma relacionando geometria do casco,
+forças hidrodinâmicas, derivadas de estabilidade,
+resposta da Rate of Turn e consequência operacional.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="710"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- BLOCO 1 -->
+
+<rect
+x="300"
+y="45"
+width="360"
+height="80"
+rx="14"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="77"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+GEOMETRIA + CONDIÇÃO
+</text>
+
+<text
+x="480"
+y="105"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+L/B • L/T • CB • trim • draft • UKC
+</text>
+
+
+<!-- SETA -->
+
+<line
+x1="480"
+y1="125"
+x2="480"
+y2="175"
+stroke="#334155"
+stroke-width="4"
+/>
+
+<polygon
+points="480,175 468,150 492,150"
+fill="#334155"
+/>
+
+
+<!-- BLOCO 2 -->
+
+<rect
+x="275"
+y="175"
+width="410"
+height="80"
+rx="14"
+fill="#ffffff"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="207"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#0f766e"
+>
+DISTRIBUIÇÃO HIDRODINÂMICA
+</text>
+
+<text
+x="480"
+y="235"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+pressões → forças laterais → momentos
+</text>
+
+
+<!-- SETA -->
+
+<line
+x1="480"
+y1="255"
+x2="480"
+y2="305"
+stroke="#334155"
+stroke-width="4"
+/>
+
+<polygon
+points="480,305 468,280 492,280"
+fill="#334155"
+/>
+
+
+<!-- BLOCO 3 -->
+
+<rect
+x="250"
+y="305"
+width="460"
+height="80"
+rx="14"
+fill="#ffffff"
+stroke="#7c3aed"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="337"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#7c3aed"
+>
+DERIVADAS HIDRODINÂMICAS
+</text>
+
+<text
+x="480"
+y="366"
+text-anchor="middle"
+font-size="18"
+fill="#334155"
+>
+Yv • Nv • Yr • Nr
+</text>
+
+
+<!-- SETA -->
+
+<line
+x1="480"
+y1="385"
+x2="480"
+y2="435"
+stroke="#334155"
+stroke-width="4"
+/>
+
+<polygon
+points="480,435 468,410 492,410"
+fill="#334155"
+/>
+
+
+<!-- BLOCO 4 -->
+
+<rect
+x="250"
+y="435"
+width="460"
+height="80"
+rx="14"
+fill="#ffffff"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="467"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#9a3412"
+>
+RESPOSTA DA GUINADA
+</text>
+
+<text
+x="480"
+y="496"
+text-anchor="middle"
+font-size="18"
+fill="#334155"
+>
+ROT ↓ • ROT ≈ constante • ROT ↑
+</text>
+
+
+<!-- SETA -->
+
+<line
+x1="480"
+y1="515"
+x2="480"
+y2="565"
+stroke="#334155"
+stroke-width="4"
+/>
+
+<polygon
+points="480,565 468,540 492,540"
+fill="#334155"
+/>
+
+
+<!-- BLOCO 5 -->
+
+<rect
+x="165"
+y="565"
+width="630"
+height="100"
+rx="14"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="600"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+CONSEQUÊNCIA PARA O SHIPHANDLER
+</text>
+
+<text
+x="480"
+y="632"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+manter rumo • iniciar curva • quebrar guinada
+</text>
+
+<text
+x="480"
+y="655"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+antecipar correção • controlar espaço lateral
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+A estabilidade direcional liga uma característica
+do casco a uma consequência diretamente percebida
+na ponte.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 65
+     ESTABILIDADE x TURNING ABILITY
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-versus-manobrabilidade"
+data-topico-id="estabilidade-versus-manobrabilidade"
+>
+
+<h2>
+65. Estabilidade direcional não é sinônimo de turning ability
+</h2>
+
+<div class="widget">
+
+<p>
+Uma das principais confusões conceituais é tratar
+<strong>course stability</strong> e
+<strong>turning ability</strong>
+como se fossem a mesma qualidade.
+</p>
+
+<p>
+Não são.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Course Stability
+</h3>
+
+<p>
+Relaciona-se à tendência de manter
+ou recuperar uma condição aproximadamente retilínea
+de movimento.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Turning Ability
+</h3>
+
+<p>
+Relaciona-se à capacidade do navio de desenvolver
+uma mudança de trajetória quando submetido
+a uma ação de controle.
+</p>
+
+</div>
+
+
+<p>
+O PNA mostra essa distinção também através
+dos parâmetros de Nomoto:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+T′ → associado à estabilidade / rapidez da resposta transitória
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+K′ → associado à turning ability
+e responsiveness to rudder
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Pegadinha PSCPP
+</h3>
+
+<p>
+Um navio pode apresentar:
+</p>
+
+<p style="text-align:center;">
+<strong>
+boa capacidade de giro
++
+baixa estabilidade de curso.
+</strong>
+</p>
+
+<p>
+O PNA ressalta justamente que um navio altamente
+manobrável pode combinar
+<strong>boa turning ability e elevada responsiveness
+com baixa course stability</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 66
+     NOMOTO CONSOLIDAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="nomoto-estabilidade"
+data-topico-id="nomoto-estabilidade"
+>
+
+<h2>
+66. T′ e K′ — leitura conceitual para o PSCPP
+</h2>
+
+<div class="widget">
+
+<p>
+O modelo de primeira ordem associado a Nomoto
+é frequentemente utilizado para representar
+a resposta direcional do navio.
+</p>
+
+<p>
+Na forma conceitual:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+T dr/dt + r = Kδ
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>r</strong> = yaw rate;</li>
+
+<li>
+<strong>δ</strong> = ângulo de leme;</li>
+
+<li>
+<strong>K</strong> = ganho de resposta ao leme;</li>
+
+<li>
+<strong>T</strong> = constante de tempo da resposta.</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico puramente didático
+</h3>
+
+<p>
+Em regime permanente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+dr/dt = 0
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+r = Kδ
+</strong>
+</p>
+
+<p>
+Suponha:
+</p>
+
+<p style="text-align:center;">
+<strong>
+K = 0,04 s⁻¹
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+δ = 10° = 0,1745 rad
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center;">
+<strong>
+r = 0,04 × 0,1745
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+r ≈ 0,00698 rad/s
+</strong>
+</p>
+
+<p>
+Convertendo aproximadamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+0,00698 × 57,3 ≈ 0,40°/s
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+≈ 24°/min
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limite do exemplo
+</h3>
+
+<p>
+Os números acima servem somente para mostrar
+a relação matemática do modelo.
+</p>
+
+<p>
+O PNA alerta que K′ e T′ derivam de análise linear
+e devem ser tratados como medidas comparativas,
+especialmente quando as amplitudes das manobras
+se tornam grandes.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Ponto conceitual importante
+</h3>
+
+<p>
+O PNA observa que T não altera a
+<strong>steady turning rate</strong>
+na forma simplificada do modelo.
+</p>
+
+<p>
+Ele influencia principalmente
+<strong>quanto tempo o navio leva para desenvolver
+essa resposta</strong>.
+</p>
+
+<p>
+Já K está diretamente relacionado ao nível
+da resposta permanente ao leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 67
+     PEGADINHAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="pegadinhas-estabilidade-direcional"
+data-topico-id="pegadinhas-estabilidade-direcional"
+>
+
+<h2>
+67. Pegadinhas clássicas para o PSCPP
+</h2>
+
+<div class="widget">
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 1 — “Navio positivo volta ao rumo original sozinho.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+Estabilidade direcional positiva,
+na interpretação operacional do MacElrevey,
+significa tendência de reduzir a ROT
+quando o leme vai a meio.
+</p>
+
+<p>
+Isso não implica necessariamente retorno
+ao heading anterior.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 2 — “Se continua guinando com o leme a meio, é instável.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+O navio pode continuar guinando enquanto a ROT
+está diminuindo.
+</p>
+
+<p>
+O critério operacional é a
+<strong>tendência da ROT</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 3 — “Estabilidade neutra significa heading constante.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+Se o navio já está guinando,
+a condição neutra significa tendência de continuar
+com aproximadamente a mesma rate of swing.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 4 — “Maior estabilidade significa curva menor.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+O MacElrevey mostra justamente que,
+em águas rasas,
+a estabilidade torna-se mais positiva
+enquanto o diâmetro de giro aumenta.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 5 — “N<sub>v</sub> sozinho determina a estabilidade.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+A condição de estabilidade surge do
+<strong>sistema acoplado sway–yaw</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 6 — “Leme a meio significa guinada interrompida.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+Leme a meio significa apenas que o comando do leme
+retornou à posição neutra.
+</p>
+
+<p>
+A ROT existente pode diminuir,
+permanecer aproximadamente constante
+ou aumentar.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 7 — “Navio instável é necessariamente ruim de manobra.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+O PNA ressalta que algum grau de instabilidade
+direcional não é necessariamente indesejável.
+</p>
+
+<p>
+O importante é o equilíbrio entre estabilidade,
+responsiveness, turning ability e controle.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ 8 — “Uma ROT aparentemente normal significa que o canal está seguro.”
+</h3>
+
+<p>
+<strong>FALSO.</strong>
+</p>
+
+<p>
+O MacElrevey alerta que um navio instável pode
+não conseguir quebrar uma ROT aparentemente normal
+antes de sair do canal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 68
+     RESUMO TÉCNICO
+========================================= -->
+
+<section
+class="topico-aula"
+id="resumo-tecnico-estabilidade-direcional"
+data-topico-id="resumo-tecnico-estabilidade-direcional"
+>
+
+<h2>
+68. Resumo técnico
+</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>
+Classificação operacional
+</h3>
+
+<p>
+<strong>Positiva:</strong>
+ROT tende a diminuir com o leme a meio.
+</p>
+
+<p>
+<strong>Neutra:</strong>
+ROT tende a permanecer aproximadamente constante.
+</p>
+
+<p>
+<strong>Negativa:</strong>
+ROT tende a aumentar.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Fundamento físico
+</h3>
+
+<p>
+Sway e yaw modificam o escoamento relativo
+e produzem distribuição de forças laterais
+e momentos ao longo do casco.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Derivadas principais
+</h3>
+
+<p style="text-align:center;">
+<strong>
+Y<sub>v</sub>,
+N<sub>v</sub>,
+Y<sub>r</sub>,
+N<sub>r</sub>
+</strong>
+</p>
+
+<p>
+A estabilidade não é decidida por apenas
+uma delas.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Geometria
+</h3>
+
+<p>
+Tendências apresentadas pelas referências incluem:
+</p>
+
+<ul>
+
+<li>
+L/B maior → tendência a maior estabilidade;</li>
+
+<li>
+C<sub>B</sub> maior → tendência a menor estabilidade;</li>
+
+<li>
+maior concentração de área à vante
+→ tendência a menor estabilidade;</li>
+
+<li>
+trim pela popa → tendência estabilizadora;</li>
+
+<li>
+trim pela proa → tendência desestabilizadora.</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Águas rasas
+</h3>
+
+<p style="text-align:center;">
+<strong>
+UKC ↓
+→
+estabilidade direcional ↑
+</strong>
+</p>
+
+<p>
+mas simultaneamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+turning diameter ↑
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Quebra da guinada
+</h3>
+
+<p>
+Navios instáveis podem exigir
+<strong>mais leme e por mais tempo</strong>
+para quebrar a guinada do que para iniciá-la.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Zigzag
+</h3>
+
+<p>
+Fornece informação sobre:
+</p>
+
+<ul>
+
+<li>
+quickness of response;</li>
+
+<li>
+first overshoot angle;</li>
+
+<li>
+time to check yaw;</li>
+
+<li>
+yaw-checking ability.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 69
+     GLOSSÁRIO FINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="glossario-estabilidade-direcional"
+data-topico-id="glossario-estabilidade-direcional"
+>
+
+<h2>
+69. Glossário consolidado
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Maritime English
+</h3>
+
+<ul>
+
+<li>
+<strong>Directional Stability</strong> —
+estabilidade direcional;</li>
+
+<li>
+<strong>Straight-Line Stability</strong> —
+estabilidade de movimento retilíneo;</li>
+
+<li>
+<strong>Controls-Fixed Stability</strong> —
+estabilidade com os controles fixos;</li>
+
+<li>
+<strong>Controls Working</strong> —
+condição com controles atuando;</li>
+
+<li>
+<strong>Course Stability</strong> —
+estabilidade de curso;</li>
+
+<li>
+<strong>Coursekeeping Ability</strong> —
+capacidade de manutenção do rumo;</li>
+
+<li>
+<strong>Turning Ability</strong> —
+capacidade de giro;</li>
+
+<li>
+<strong>Responsiveness to Rudder</strong> —
+rapidez/sensibilidade de resposta ao leme;</li>
+
+<li>
+<strong>Sway</strong> —
+movimento lateral;</li>
+
+<li>
+<strong>Sway Velocity</strong> —
+velocidade lateral;</li>
+
+<li>
+<strong>Yaw</strong> —
+guinada;</li>
+
+<li>
+<strong>Yaw Rate</strong> —
+taxa angular de guinada;</li>
+
+<li>
+<strong>Rate of Turn — ROT</strong> —
+taxa de guinada;</li>
+
+<li>
+<strong>Rate of Swing</strong> —
+taxa de guinada;</li>
+
+<li>
+<strong>Check the Swing</strong> —
+quebrar a guinada;</li>
+
+<li>
+<strong>Yaw-Checking Ability</strong> —
+capacidade de quebrar/controlar a guinada;</li>
+
+<li>
+<strong>Time to Check Yaw</strong> —
+tempo necessário para quebrar a guinada;</li>
+
+<li>
+<strong>Counter-Rudder</strong> —
+leme contrário;</li>
+
+<li>
+<strong>Rudder Amidships</strong> —
+leme a meio;</li>
+
+<li>
+<strong>Overshoot Angle</strong> —
+ângulo de ultrapassagem;</li>
+
+<li>
+<strong>Zigzag Maneuver</strong> —
+manobra de zigzag;</li>
+
+<li>
+<strong>Spiral Test</strong> —
+teste espiral;</li>
+
+<li>
+<strong>Pullout Test</strong> —
+ensaio de pullout;</li>
+
+<li>
+<strong>Block Coefficient</strong> —
+coeficiente de bloco;</li>
+
+<li>
+<strong>Drag</strong> —
+trim pela popa, no contexto utilizado pelo
+Shiphandling for the Mariner;</li>
+
+<li>
+<strong>Trim by the Head</strong> —
+trim pela proa;</li>
+
+<li>
+<strong>Under Keel Clearance — UKC</strong> —
+folga abaixo da quilha;</li>
+
+<li>
+<strong>Shallow Water</strong> —
+águas rasas;</li>
+
+<li>
+<strong>Deep Water</strong> —
+águas profundas;</li>
+
+<li>
+<strong>Hydrodynamic Derivative</strong> —
+derivada hidrodinâmica;</li>
+
+<li>
+<strong>Yaw Damping</strong> —
+amortecimento da guinada.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUESTÕES DE REVISÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="questoes-estabilidade-direcional"
+data-topico-id="questoes-estabilidade-direcional"
+>
+
+<h2>
+70. Questões de revisão — Estabilidade Direcional
+</h2>
+
+<div class="widget">
+
+<p>
+As questões abaixo foram elaboradas para revisão
+do conteúdo da aula.
+</p>
+
+<p>
+<strong>
+Não são apresentadas como questões históricas do PSCPP.
+</strong>
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 1
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q1"
+data-resposta="B"
+data-topico="Classificação da estabilidade direcional"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Directional Stability"
+>
+
+<h3>
+Questão 1
+</h3>
+
+<p>
+Um navio está guinando para boreste.
+Após o leme ser colocado a meio, sua Rate of Turn
+diminui progressivamente.
+Essa resposta caracteriza:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Estabilidade direcional negativa.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Estabilidade direcional positiva.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Estabilidade direcional neutra.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Ausência de yaw damping.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 2
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q2"
+data-resposta="C"
+data-topico="Estabilidade neutra"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Directional Stability"
+>
+
+<h3>
+Questão 2
+</h3>
+
+<p>
+Com o leme a meio, um navio continua guinando
+aproximadamente à mesma Rate of Turn.
+Essa condição é compatível com:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Estabilidade positiva.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Instabilidade necessariamente crescente.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Estabilidade neutra.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Positional stability.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 3
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q3"
+data-resposta="D"
+data-topico="Águas rasas"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Shallow Water; Directional Stability"
+>
+
+<h3>
+Questão 3
+</h3>
+
+<p>
+Segundo o Shiphandling for the Mariner,
+qual combinação representa corretamente
+a tendência de um navio entrando em águas rasas?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Estabilidade direcional diminui e
+o diâmetro da curva diminui.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Estabilidade direcional diminui e
+o diâmetro da curva aumenta.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Estabilidade direcional aumenta e
+o diâmetro da curva diminui.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Estabilidade direcional aumenta e
+o diâmetro da curva aumenta.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 4
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q4"
+data-resposta="A"
+data-topico="Trim"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Effect of Trim on Handling Characteristics"
+>
+
+<h3>
+Questão 4
+</h3>
+
+<p>
+Mantidas as demais condições,
+qual alteração tende a tornar a estabilidade
+direcional mais positiva segundo MacElrevey?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Aumento do drag.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Maior trim pela proa.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Maior concentração de área submersa à vante.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Aumento do coeficiente de bloco.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 5
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q5"
+data-resposta="B"
+data-topico="Quebra da guinada"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Directional Stability"
+>
+
+<h3>
+Questão 5
+</h3>
+
+<p>
+Em um navio direcionalmente instável,
+é correto afirmar que:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A guinada sempre cessa quando o leme vai a meio.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Pode ser necessário mais leme e por mais tempo
+para quebrar a guinada do que para iniciá-la.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Counter-rudder não deve ser utilizado.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Sua ROT necessariamente diminui em canal raso.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 6
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q6"
+data-resposta="C"
+data-topico="Derivadas hidrodinâmicas"
+data-edital="Estabilidade direcional"
+data-bibliografia="Principles of Naval Architecture, Vol. III, Chapter IX"
+>
+
+<h3>
+Questão 6
+</h3>
+
+<p>
+Sobre as derivadas hidrodinâmicas associadas
+à estabilidade direcional, assinale a correta:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) N<sub>v</sub> isoladamente determina
+a estabilidade direcional.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Y<sub>v</sub> representa exclusivamente
+o efeito da yaw rate.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A estabilidade resulta da interação entre
+as respostas de sway e yaw.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) N<sub>r</sub> não participa da dinâmica de guinada.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 7
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q7"
+data-resposta="D"
+data-topico="Yaw checking"
+data-edital="Estabilidade direcional"
+data-bibliografia="Principles of Naval Architecture, Vol. III, Chapter IX, Maneuvering Trials"
+>
+
+<h3>
+Questão 7
+</h3>
+
+<p>
+Segundo o PNA, qual ensaio fornece informação
+especialmente útil sobre yaw-checking ability?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Crash stop apenas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Turning circle apenas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Speed trial.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Zigzag maneuver.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 8
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q8"
+data-resposta="A"
+data-topico="Overshoot"
+data-edital="Estabilidade direcional"
+data-bibliografia="Principles of Naval Architecture, Vol. III, Chapter IX"
+>
+
+<h3>
+Questão 8
+</h3>
+
+<p>
+Em uma manobra zigzag, o overshoot angle
+está relacionado principalmente:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) À resposta transitória e à capacidade
+de quebrar a guinada.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Ao deslocamento hidrostático apenas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) À resistência de ondas exclusivamente.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) À potência máxima do motor exclusivamente.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 9
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q9"
+data-resposta="C"
+data-topico="Heading e ROT"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed.; Principles of Naval Architecture, Vol. III"
+>
+
+<h3>
+Questão 9
+</h3>
+
+<p>
+Um navio atinge exatamente o heading desejado,
+mas ainda apresenta ROT = 10°/min.
+Pode-se concluir que:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A manobra está necessariamente concluída.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O navio está com estabilidade neutra.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A proa continuará mudando de heading enquanto
+a ROT não for suficientemente reduzida.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) O leme deve necessariamente ser mantido no mesmo bordo.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 10
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q10"
+data-resposta="B"
+data-topico="Geometria"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Directional Stability"
+>
+
+<h3>
+Questão 10
+</h3>
+
+<p>
+Mantidas as demais condições,
+qual característica tende a reduzir
+a estabilidade direcional?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Maior relação L/B.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Maior coeficiente de bloco.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Maior drag.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Menor área relativa à vante.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 11
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q11"
+data-resposta="D"
+data-topico="Controls-fixed stability"
+data-edital="Estabilidade direcional"
+data-bibliografia="Principles of Naval Architecture, Vol. III, Chapter IX, Motion Stability"
+>
+
+<h3>
+Questão 11
+</h3>
+
+<p>
+Segundo o PNA, no plano horizontal,
+para um navio convencional autopropelido com
+controles fixos, a forma de estabilidade
+de movimento possível é:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Positional stability completa.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Directional stability no sentido de retorno
+automático à direção original.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Estabilidade hidrostática transversal.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Straight-line stability.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 12
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q12"
+data-resposta="A"
+data-topico="Turning ability"
+data-edital="Estabilidade direcional"
+data-bibliografia="Principles of Naval Architecture, Vol. III, Stability and Control"
+>
+
+<h3>
+Questão 12
+</h3>
+
+<p>
+Assinale a alternativa correta:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Boa turning ability pode coexistir
+com baixa course stability.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Quanto maior a course stability,
+necessariamente menor será o turning diameter
+em qualquer condição.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) K′ representa exclusivamente estabilidade de curso.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) T não possui qualquer influência
+sobre a resposta transitória.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 13
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q13"
+data-resposta="C"
+data-topico="Trim pela proa"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Effect of Trim on Handling Characteristics"
+>
+
+<h3>
+Questão 13
+</h3>
+
+<p>
+O trim pela proa tende a:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Deslocar relativamente a distribuição
+de área submersa para ré.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Aumentar necessariamente a UKC.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Favorecer uma condição direcionalmente
+mais instável.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Eliminar a necessidade de counter-rudder.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 14
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q14"
+data-resposta="B"
+data-topico="Rate of Turn"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed."
+>
+
+<h3>
+Questão 14
+</h3>
+
+<p>
+Um navio possui ROT = 12°/min.
+Se essa ROT permanecesse constante por 15 segundos,
+qual seria aproximadamente a mudança adicional
+de heading?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) 1°.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) 3°.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) 6°.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) 12°.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 15
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q15"
+data-resposta="D"
+data-topico="UKC"
+data-edital="Estabilidade direcional"
+data-bibliografia="Shiphandling for the Mariner, 5th ed., Shallow Water"
+>
+
+<h3>
+Questão 15
+</h3>
+
+<p>
+Um navio com calado de 9,5 m navega em profundidade
+de 12,0 m. Desconsiderando efeitos dinâmicos,
+qual é sua UKC geométrica?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) 1,5 m.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) 2,0 m.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) 2,25 m.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) 2,5 m.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     RESULTADO DOS EXERCÍCIOS
+========================================= -->
+
+<div
+class="widget"
+id="resumo-selecao-exercicios"
+>
+
+<h3>
+📊 Resultado dos exercícios
+</h3>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+onclick="corrigirExercicios()"
+>
+Corrigir exercícios
+</button>
+
+<div id="resultado-exercicios">
+
+<p id="texto-resultado-exercicios">
+Responda às questões e pressione
+<strong>Corrigir exercícios</strong>.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<div class="widget">
+
+<h3>
+✅ Gabarito comentado
+</h3>
+
+<button
+type="button"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / ocultar gabarito comentado
+</button>
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+<div class="destaque">
+
+<p>
+<strong>1 — B.</strong>
+Estabilidade positiva corresponde à tendência
+de redução da ROT quando o leme vai a meio.
+</p>
+
+<p>
+<strong>2 — C.</strong>
+Na condição neutra, não existe tendência intrínseca
+de aumentar ou reduzir a rate of swing.
+</p>
+
+<p>
+<strong>3 — D.</strong>
+O MacElrevey indica estabilidade mais positiva
+em águas rasas, enquanto o turning diameter aumenta.
+</p>
+
+<p>
+<strong>4 — A.</strong>
+Drag, no contexto da referência,
+tende a aumentar a estabilidade direcional.
+</p>
+
+<p>
+<strong>5 — B.</strong>
+Em navio instável, mais leme e por mais tempo
+podem ser necessários para quebrar a guinada.
+</p>
+
+<p>
+<strong>6 — C.</strong>
+O fenômeno é acoplado.
+Yv, Nv, Yr e Nr participam da dinâmica sway–yaw.
+</p>
+
+<p>
+<strong>7 — D.</strong>
+O zigzag fornece informações particularmente úteis
+sobre yaw-checking ability.
+</p>
+
+<p>
+<strong>8 — A.</strong>
+O overshoot está relacionado à resposta transitória
+e à capacidade de interromper a guinada.
+</p>
+
+<p>
+<strong>9 — C.</strong>
+Heading correto não implica ROT igual a zero.
+Enquanto existir yaw rate, o heading continuará mudando.
+</p>
+
+<p>
+<strong>10 — B.</strong>
+Segundo o MacElrevey,
+maior coeficiente de bloco tende a reduzir
+a estabilidade direcional.
+</p>
+
+<p>
+<strong>11 — D.</strong>
+O PNA estabelece que, para um navio convencional
+autopropelido no plano horizontal com controles fixos,
+a forma relevante possível é straight-line stability.
+</p>
+
+<p>
+<strong>12 — A.</strong>
+O PNA distingue claramente turning ability
+e course stability.
+Um navio pode possuir elevada responsiveness
+e boa capacidade de giro com baixa estabilidade de curso.
+</p>
+
+<p>
+<strong>13 — C.</strong>
+Trim pela proa desloca relativamente
+a distribuição submersa para vante
+e tende a prejudicar a estabilidade direcional.
+</p>
+
+<p>
+<strong>14 — B.</strong>
+15 s = 0,25 min.
+Logo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δψ = 12 × 0,25 = 3°
+</strong>
+</p>
+
+<p>
+<strong>15 — D.</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+UKC = 12,0 − 9,5 = 2,5 m
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS DA AULA
+========================================= -->
+
+<section
+class="topico-aula"
+id="referencias-estabilidade-direcional"
+data-topico-id="referencias-estabilidade-direcional"
+>
+
+<h2>
+71. Referências principais utilizadas
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+<strong>
+MacElrevey, Daniel H.; MacElrevey, Daniel E.
+Shiphandling for the Mariner.
+5th ed.
+</strong>
+Chapter 1 — Directional Stability,
+especialmente pp. 18–20.
+</li>
+
+<li>
+<strong>
+Shiphandling for the Mariner.
+</strong>
+Chapter 2 — Effect of Trim on Handling Characteristics,
+especialmente pp. 72–73.
+</li>
+
+<li>
+<strong>
+Lewis, Edward V. (ed.).
+Principles of Naval Architecture.
+Volume III — Motions in Waves and Controllability.
+</strong>
+Chapter IX — Controllability.
+</li>
+
+<li>
+<strong>
+PNA Volume III.
+</strong>
+Section 3 —
+Motion Stability and Linear Equations.
+</li>
+
+<li>
+<strong>
+PNA Volume III.
+</strong>
+Sections 4 and 5 —
+Coursekeeping, Controls-Fixed Stability,
+Stability and Control.
+</li>
+
+<li>
+<strong>
+PNA Volume III.
+</strong>
+Section 15 —
+Maneuvering Trials and Performance Requirements.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Nota sobre terminologia
+</h3>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+utiliza directional stability em sentido
+fortemente operacional.
+</p>
+
+<p>
+O PNA estabelece uma classificação formal
+mais rigorosa entre:
+</p>
+
+<ul>
+
+<li>
+straight-line stability;</li>
+
+<li>
+directional stability;</li>
+
+<li>
+positional stability;</li>
+
+<li>
+controls-fixed;</li>
+
+<li>
+e controls-working.</li>
+
+</ul>
+
+<p>
+Essas duas abordagens foram mantidas distintas
+ao longo da aula.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO FINAL DA AULA
+========================================= -->
+
+<section
+class="topico-aula"
+id="conclusao-estabilidade-direcional"
+data-topico-id="conclusao-estabilidade-direcional"
+>
+
+<h2>
+72. Conclusão
+</h2>
+
+<div class="widget">
+
+<p>
+A estabilidade direcional determina muito mais
+do que a simples tendência de um navio
+de manter um rumo.
+</p>
+
+<p>
+Ela condiciona:
+</p>
+
+<ul>
+
+<li>
+a carga de trabalho de governo;</li>
+
+<li>
+a antecipação necessária em mudanças de rumo;</li>
+
+<li>
+a quantidade e duração do counter-rudder;</li>
+
+<li>
+a capacidade de quebrar a guinada;</li>
+
+<li>
+o overshoot;</li>
+
+<li>
+e o espaço necessário para controlar
+o navio em águas restritas.</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Síntese definitiva
+</h3>
+
+<p style="text-align:center;">
+<strong>
+geometria + condição operacional
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+forças e momentos hidrodinâmicos
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+resposta sway–yaw
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+estabilidade direcional
+</strong>
+</p>
+
+<p style="text-align:center;">↓</p>
+
+<p style="text-align:center;">
+<strong>
+comportamento que o Prático precisa antecipar
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Atenção final do Prático
+</h3>
+
+<p>
+O ponto decisivo não é perguntar apenas:
+</p>
+
+<p style="text-align:center;">
+<strong>
+“Quanto o navio está guinando?”
+</strong>
+</p>
+
+<p>
+Mas:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+“Para onde essa Rate of Turn está evoluindo,
+quanto tempo levarei para quebrá-la
+e quanto espaço tenho disponível?”
+</strong>
+</p>
+
+<p>
+Essa é a ligação entre
+<strong>estabilidade direcional</strong>
+e
+<strong>shiphandling</strong>.
+</p>
+
+</div>
+
+</div>
+
+    </section>
 
 -->
 
