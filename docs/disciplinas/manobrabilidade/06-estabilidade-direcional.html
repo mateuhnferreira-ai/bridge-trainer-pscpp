@@ -6167,25 +6167,4339 @@ utilizado pelo PNA.
 </section>
 
 
-PARTE 4
+<!-- =========================================
+     PARTE 4
+     CRITÉRIO DE ESTABILIDADE DIRECIONAL
+========================================= -->
 
-criterio-estabilidade-direcional
-derivadas-estabilidade-direcional
-interpretacao-yv
-interpretacao-nv
-interpretacao-yr
-interpretacao-nr
-interacao-derivadas
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — CRITÉRIO HIDRODINÂMICO DE ESTABILIDADE
+</h2>
+
+<p>
+Nas partes anteriores analisamos primeiro o comportamento
+observável do navio e, em seguida, sua origem física.
+</p>
+
+<p>
+Agora essas duas perspectivas serão reunidas por meio
+das <strong>equações lineares de movimento</strong>.
+</p>
+
+<p>
+O objetivo não é transformar a aula em um exercício
+de álgebra abstrata.
+</p>
+
+<p>
+O que interessa é compreender por que
+<strong>Y<sub>v</sub>, N<sub>v</sub>,
+Y<sub>r</sub> e N<sub>r</sub></strong>
+não podem ser interpretados isoladamente quando
+se deseja determinar a estabilidade do movimento.
+</p>
+
+<div class="destaque">
+
+<h3>
+Ideia central desta parte
+</h3>
+
+<p>
+As quatro derivadas formam um
+<strong>sistema acoplado sway–yaw</strong>.
+</p>
+
+<p>
+Uma alteração de velocidade lateral modifica:
+</p>
+
+<ul>
+
+<li>
+a força lateral;
+</li>
+
+<li>
+e o momento de guinada.
+</li>
+
+</ul>
+
+<p>
+Da mesma forma, uma alteração da yaw rate modifica:
+</p>
+
+<ul>
+
+<li>
+a força lateral;
+</li>
+
+<li>
+e o momento de guinada.
+</li>
+
+</ul>
+
+<p>
+A estabilidade depende do
+<strong>resultado conjunto dessas quatro respostas</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
-PARTE 5
 
-geometria-casco
-distribuicao-area-lateral
-comprimento-navio
-boca-navio
-coeficiente-bloco
-secoes-proa-popa
+<!-- =========================================
+     TÓPICO 16
+     AS QUATRO DERIVADAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="derivadas-estabilidade-direcional"
+data-topico-id="derivadas-estabilidade-direcional"
+>
+
+<h2>
+16. As quatro derivadas fundamentais
+</h2>
+
+<div class="widget">
+
+<p>
+Na aproximação linear para pequenos movimentos
+em torno de uma condição inicial de navegação,
+as forças e momentos hidrodinâmicos podem ser
+representados pelas suas variações em relação
+às variáveis do movimento.
+</p>
+
+<div class="destaque">
+
+<h3>
+Velocidade lateral v
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Y<sub>v</sub> = ∂Y / ∂v
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N<sub>v</sub> = ∂N / ∂v
+</strong>
+</p>
+
+<p>
+Uma pequena alteração de
+<strong>v</strong>
+produz simultaneamente:
+</p>
+
+<ul>
+
+<li>
+alteração da força lateral Y;
+</li>
+
+<li>
+alteração do momento de guinada N.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Yaw rate r
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Y<sub>r</sub> = ∂Y / ∂r
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N<sub>r</sub> = ∂N / ∂r
+</strong>
+</p>
+
+<p>
+Uma pequena alteração da velocidade angular
+<strong>r</strong>
+também modifica simultaneamente:
+</p>
+
+<ul>
+
+<li>
+a força lateral;
+</li>
+
+<li>
+e o momento de guinada.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — MATRIZ SWAY / YAW
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 570"
+width="100%"
+role="img"
+aria-labelledby="svg-derivadas-titulo svg-derivadas-desc"
+>
+
+<title id="svg-derivadas-titulo">
+Acoplamento das quatro derivadas hidrodinâmicas
+</title>
+
+<desc id="svg-derivadas-desc">
+Diagrama mostrando que velocidade lateral v e yaw rate r
+produzem alterações tanto na força lateral Y quanto
+no momento de guinada N.
+</desc>
+
+<rect
+x="5"
+y="5"
+width="950"
+height="560"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- ENTRADAS -->
+
+<rect
+x="70"
+y="100"
+width="220"
+height="105"
+rx="14"
+fill="#ffffff"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="180"
+y="138"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#0f766e"
+>
+Sway velocity
+</text>
+
+<text
+x="180"
+y="175"
+text-anchor="middle"
+font-size="30"
+font-weight="bold"
+fill="#0f766e"
+>
+v
+</text>
+
+
+<rect
+x="70"
+y="350"
+width="220"
+height="105"
+rx="14"
+fill="#ffffff"
+stroke="#7c3aed"
+stroke-width="3"
+/>
+
+<text
+x="180"
+y="388"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#7c3aed"
+>
+Yaw rate
+</text>
+
+<text
+x="180"
+y="425"
+text-anchor="middle"
+font-size="30"
+font-weight="bold"
+fill="#7c3aed"
+>
+r
+</text>
+
+
+<!-- SAÍDAS -->
+
+<rect
+x="670"
+y="100"
+width="220"
+height="105"
+rx="14"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<text
+x="780"
+y="140"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#173f5f"
+>
+Força lateral
+</text>
+
+<text
+x="780"
+y="175"
+text-anchor="middle"
+font-size="30"
+font-weight="bold"
+fill="#173f5f"
+>
+Y
+</text>
+
+
+<rect
+x="670"
+y="350"
+width="220"
+height="105"
+rx="14"
+fill="#ffffff"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<text
+x="780"
+y="390"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#9a3412"
+>
+Momento de guinada
+</text>
+
+<text
+x="780"
+y="425"
+text-anchor="middle"
+font-size="30"
+font-weight="bold"
+fill="#9a3412"
+>
+N
+</text>
+
+
+<!-- Yv -->
+
+<line
+x1="290"
+y1="150"
+x2="670"
+y2="150"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="670,150 648,139 648,161"
+fill="#0f766e"
+/>
+
+<text
+x="480"
+y="135"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#0f766e"
+>
+Yv
+</text>
+
+
+<!-- Nv -->
+
+<line
+x1="290"
+y1="175"
+x2="670"
+y2="385"
+stroke="#9a3412"
+stroke-width="4"
+/>
+
+<polygon
+points="670,385 646,382 657,362"
+fill="#9a3412"
+/>
+
+<text
+x="445"
+y="275"
+font-size="19"
+font-weight="bold"
+fill="#9a3412"
+>
+Nv
+</text>
+
+
+<!-- Yr -->
+
+<line
+x1="290"
+y1="395"
+x2="670"
+y2="180"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<polygon
+points="670,180 657,202 646,182"
+fill="#173f5f"
+/>
+
+<text
+x="445"
+y="320"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+Yr
+</text>
+
+
+<!-- Nr -->
+
+<line
+x1="290"
+y1="405"
+x2="670"
+y2="405"
+stroke="#7c3aed"
+stroke-width="4"
+/>
+
+<polygon
+points="670,405 648,394 648,416"
+fill="#7c3aed"
+/>
+
+<text
+x="480"
+y="390"
+text-anchor="middle"
+font-size="19"
+font-weight="bold"
+fill="#7c3aed"
+>
+Nr
+</text>
+
+
+<!-- CONCLUSÃO -->
+
+<rect
+x="305"
+y="480"
+width="350"
+height="55"
+rx="10"
+fill="#ffffff"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+<text
+x="480"
+y="514"
+text-anchor="middle"
+font-size="17"
+font-weight="bold"
+fill="#334155"
+>
+Sway e yaw constituem um sistema acoplado
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Cada variável do movimento horizontal interfere
+tanto na força lateral quanto no momento de guinada.
+É essa interdependência que impede avaliar
+a estabilidade por uma única derivada.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+É incorreto afirmar genericamente que
+<strong>N<sub>v</sub> sozinho determina a estabilidade
+direcional</strong>.
+</p>
+
+<p>
+N<sub>v</sub> é extremamente importante,
+mas o critério de estabilidade apresentado pelo PNA
+resulta da combinação das várias derivadas do sistema.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+     Yv
+========================================= -->
+
+<section
+class="topico-aula"
+id="interpretacao-yv"
+data-topico-id="interpretacao-yv"
+>
+
+<h2>
+17. Y<sub>v</sub> — resposta lateral ao sway
+</h2>
+
+<div class="widget">
+
+<p>
+A derivada
+<strong>Y<sub>v</sub></strong>
+quantifica a sensibilidade da força lateral
+a uma pequena velocidade lateral.
+</p>
+
+<div class="destaque">
+
+<h3>
+Definição
+</h3>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+Y<sub>v</sub> = ∂Y / ∂v
+</strong>
+</p>
+
+</div>
+
+<p>
+Para pequenos incrementos, a relação pode ser
+interpretada aproximadamente como:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+ΔY ≈ Y<sub>v</sub> × Δv
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Suponha, apenas para ilustrar a relação matemática:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y<sub>v</sub> = −120 kN por (m/s)
+</strong>
+</p>
+
+<p>
+e uma pequena velocidade lateral:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δv = +0,20 m/s
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔY ≈ (−120) × 0,20
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔY ≈ −24 kN
+</strong>
+</p>
+
+<p>
+Neste exemplo, uma velocidade lateral positiva
+produz uma força lateral de sinal oposto,
+caracterizando uma resposta resistente
+ao movimento transversal.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Importante
+</h3>
+
+<p>
+Os valores
+<strong>−120 kN/(m/s)</strong>
+e
+<strong>0,20 m/s</strong>
+foram escolhidos exclusivamente para demonstrar
+a operação matemática.
+</p>
+
+<p>
+Eles não representam um navio específico nem
+valores fornecidos pelo PNA.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+     Nv
+========================================= -->
+
+<section
+class="topico-aula"
+id="interpretacao-nv"
+data-topico-id="interpretacao-nv"
+>
+
+<h2>
+18. N<sub>v</sub> — o momento produzido pelo sway
+</h2>
+
+<div class="widget">
+
+<p>
+A derivada
+<strong>N<sub>v</sub></strong>
+mede a alteração do momento de guinada associada
+a uma pequena alteração da velocidade lateral.
+</p>
+
+<div class="destaque">
+
+<h3>
+Definição
+</h3>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+N<sub>v</sub> = ∂N / ∂v
+</strong>
+</p>
+
+<p>
+Para pequenas variações:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+ΔN ≈ N<sub>v</sub> × Δv
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Considere:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N<sub>v</sub> = −8000 kN·m por (m/s)
+</strong>
+</p>
+
+<p>
+e:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δv = +0,15 m/s
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔN ≈ (−8000) × 0,15
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔN ≈ −1200 kN·m
+</strong>
+</p>
+
+<p>
+O sinal do momento deve ser interpretado segundo
+a convenção adotada.
+</p>
+
+<p>
+O aspecto fisicamente relevante é que uma pequena
+velocidade lateral é capaz de produzir
+<strong>um momento de guinada significativo</strong>
+por causa da distribuição longitudinal das pressões.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O sinal de
+<strong>N<sub>v</sub></strong>
+não deve ser memorizado sem conhecer:
+</p>
+
+<ul>
+
+<li>
+a convenção de eixos;
+</li>
+
+<li>
+a convenção de sinais;
+</li>
+
+<li>
+a posição da origem dos momentos;
+</li>
+
+<li>
+e a geometria do casco analisado.
+</li>
+
+</ul>
+
+<p>
+O PNA mostra inclusive que o sinal de N associado
+ao sway depende de qual região do casco —
+proa ou popa — domina a distribuição da força lateral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+     Yr
+========================================= -->
+
+<section
+class="topico-aula"
+id="interpretacao-yr"
+data-topico-id="interpretacao-yr"
+>
+
+<h2>
+19. Y<sub>r</sub> — força lateral produzida pela guinada
+</h2>
+
+<div class="widget">
+
+<p>
+Quando o navio desenvolve uma
+<strong>yaw rate r</strong>,
+proa e popa adquirem velocidades transversais
+locais de sentidos opostos.
+</p>
+
+<p>
+Essas velocidades modificam o escoamento
+sobre o casco e produzem forças laterais.
+</p>
+
+<div class="destaque">
+
+<h3>
+Definição
+</h3>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+Y<sub>r</sub> = ∂Y / ∂r
+</strong>
+</p>
+
+<p>
+Para pequenas variações:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+ΔY ≈ Y<sub>r</sub> × Δr
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Suponha:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y<sub>r</sub> = +900 kN por (rad/s)
+</strong>
+</p>
+
+<p>
+e:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δr = 0,010 rad/s
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔY ≈ 900 × 0,010
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔY ≈ 9 kN
+</strong>
+</p>
+
+<p>
+A yaw rate, portanto, pode gerar uma força lateral
+mesmo sem que se esteja analisando isoladamente
+uma velocidade de sway imposta ao navio.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+Como as contribuições de proa e popa para
+Y<sub>r</sub> podem se opor,
+a força lateral resultante associada à yaw rate
+pode ser relativamente pequena.
+</p>
+
+<p>
+Isso contrasta com o momento
+N<sub>r</sub>, para o qual essas contribuições
+podem se somar.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+     Nr
+========================================= -->
+
+<section
+class="topico-aula"
+id="interpretacao-nr"
+data-topico-id="interpretacao-nr"
+>
+
+<h2>
+20. N<sub>r</sub> — amortecimento da rotação
+</h2>
+
+<div class="widget">
+
+<p>
+A derivada
+<strong>N<sub>r</sub></strong>
+representa a alteração do momento de guinada
+decorrente de uma pequena alteração da yaw rate.
+</p>
+
+<div class="destaque">
+
+<h3>
+Definição
+</h3>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+N<sub>r</sub> = ∂N / ∂r
+</strong>
+</p>
+
+<p>
+Para pequenas variações:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+ΔN ≈ N<sub>r</sub> × Δr
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Suponha:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N<sub>r</sub> = −150000 kN·m por (rad/s)
+</strong>
+</p>
+
+<p>
+e uma yaw rate:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Δr = +0,008 rad/s
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔN ≈ (−150000) × 0,008
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ΔN ≈ −1200 kN·m
+</strong>
+</p>
+
+<p>
+Na convenção considerada neste exemplo,
+o momento aparece em sentido oposto
+à yaw rate positiva.
+</p>
+
+<p>
+Fisicamente isso representa o
+<strong>yaw damping</strong>:
+uma tendência hidrodinâmica de resistir
+à rotação já estabelecida.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Um valor de N<sub>r</sub> associado a forte
+amortecimento da rotação é favorável,
+mas novamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N<sub>r</sub> sozinho não decide a estabilidade.
+</strong>
+</p>
+
+<p>
+Ele precisa ser considerado junto com
+Y<sub>v</sub>, N<sub>v</sub> e Y<sub>r</sub>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+     CRITÉRIO DE ESTABILIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterio-estabilidade-direcional"
+data-topico-id="criterio-estabilidade-direcional"
+>
+
+<h2>
+21. O critério C de Dynamic Course Stability
+</h2>
+
+<div class="widget">
+
+<p>
+Ao resolver as equações lineares acopladas de
+sway e yaw, o PNA obtém uma condição matemática
+para determinar se pequenas perturbações do movimento
+serão amortecidas ou crescerão.
+</p>
+
+<p>
+O desenvolvimento produz coeficientes denominados
+<strong>B</strong> e <strong>C</strong>.
+</p>
+
+<p>
+O PNA observa que, para navios,
+<strong>B é uma grandeza positiva</strong>.
+</p>
+
+<p>
+Por isso, a condição de estabilidade reduz-se
+essencialmente a:
+</p>
+
+<div class="destaque">
+
+<h3>
+Critério fundamental
+</h3>
+
+<p style="text-align:center; font-size:1.45em;">
+<strong>
+C &gt; 0
+</strong>
+</p>
+
+<p>
+Se:
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &gt; 0 → movimento dinamicamente estável
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C = 0 → limite de estabilidade
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &lt; 0 → movimento dinamicamente instável
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Na forma adimensional apresentada pelo PNA,
+o discriminante pode ser escrito como:
+</p>
+
+<div class="destaque">
+
+<h3>
+Discriminante de estabilidade
+</h3>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+C =
+Y′<sub>v</sub>N′<sub>r</sub>
+−
+N′<sub>v</sub>
+(
+Y′<sub>r</sub> − A′
+)
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>Y′<sub>v</sub></strong> —
+derivada adimensional da força lateral
+em relação ao sway;
+</li>
+
+<li>
+<strong>N′<sub>v</sub></strong> —
+derivada adimensional do momento
+em relação ao sway;
+</li>
+
+<li>
+<strong>Y′<sub>r</sub></strong> —
+derivada adimensional da força lateral
+em relação à yaw rate;
+</li>
+
+<li>
+<strong>N′<sub>r</sub></strong> —
+derivada adimensional do momento
+em relação à yaw rate;
+</li>
+
+<li>
+<strong>A′</strong> —
+coeficiente adimensional associado
+à massa do navio no desenvolvimento do PNA.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção à notação
+</h3>
+
+<p>
+Os sinais de linha
+<strong>′</strong>
+indicam que estamos utilizando as
+<strong>grandezas adimensionais</strong>
+da formulação do PNA.
+</p>
+
+<p>
+Não se deve inserir diretamente nessa expressão
+valores dimensionais em kN, kN·m, m/s ou rad/s.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+     EXEMPLO NUMÉRICO C > 0
+========================================= -->
+
+<section
+class="topico-aula"
+id="interacao-derivadas"
+data-topico-id="interacao-derivadas"
+>
+
+<h2>
+22. Exemplo numérico: como as derivadas interagem
+</h2>
+
+<div class="widget">
+
+<p>
+Para compreender o critério,
+vamos utilizar um conjunto de valores
+<strong>puramente didáticos e adimensionais</strong>.
+</p>
+
+<p>
+Considere:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>v</sub> = −0,30
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+N′<sub>r</sub> = −0,08
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+N′<sub>v</sub> = −0,10
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>r</sub> = +0,05
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+A′ = 0,20
+</strong>
+</p>
+
+</div>
+
+
+<p>
+O critério é:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+C =
+Y′<sub>v</sub>N′<sub>r</sub>
+−
+N′<sub>v</sub>(Y′<sub>r</sub> − A′)
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Primeiro termo:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>v</sub>N′<sub>r</sub>
+=
+(−0,30)(−0,08)
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+= +0,024
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Agora:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>r</sub> − A′
+=
+0,05 − 0,20
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+= −0,15
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Multiplicando por
+N′<sub>v</sub>:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+N′<sub>v</sub>
+(Y′<sub>r</sub> − A′)
+=
+(−0,10)(−0,15)
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+= +0,015
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Finalmente:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+C = 0,024 − 0,015
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+C = +0,009
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+C &gt; 0
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+→ condição estável
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ O que realmente importa neste exemplo
+</h3>
+
+<p>
+Nenhuma das quatro derivadas foi examinada
+isoladamente.
+</p>
+
+<p>
+O resultado apareceu somente depois de comparar
+<strong>duas combinações de efeitos hidrodinâmicos</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+     EXEMPLO C < 0
+========================================= -->
+
+<section
+class="topico-aula"
+id="exemplo-instabilidade-criterio"
+data-topico-id="exemplo-instabilidade-criterio"
+>
+
+<h2>
+23. Pequena alteração das derivadas pode mudar a estabilidade
+</h2>
+
+<div class="widget">
+
+<p>
+Agora mantenha todos os valores anteriores,
+mas suponha uma alteração de
+N′<sub>v</sub>:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+N′<sub>v</sub> = −0,20
+</strong>
+</p>
+
+<p>
+Mantemos:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>v</sub> = −0,30
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+N′<sub>r</sub> = −0,08
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>r</sub> = +0,05
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+A′ = 0,20
+</strong>
+</p>
+
+</div>
+
+
+<p>
+O primeiro termo continua:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+(−0,30)(−0,08)
+=
++0,024
+</strong>
+</p>
+
+</div>
+
+
+<p>
+O segundo termo passa a ser:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+(−0,20)(−0,15)
+=
++0,030
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Logo:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+C = 0,024 − 0,030
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+C = −0,006
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+C &lt; 0
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+→ condição instável
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Interpretação física
+</h3>
+
+<p>
+Esse exemplo mostra por que uma alteração de uma
+característica do casco capaz de modificar uma
+derivada hidrodinâmica pode deslocar o navio
+de um lado para o outro da
+<strong>fronteira de estabilidade</strong>.
+</p>
+
+<p>
+A estabilidade não é uma propriedade desconectada
+da geometria do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 24
+     VISUALIZAÇÃO DO CRITÉRIO
+========================================= -->
+
+<section
+class="topico-aula"
+id="balanco-estabilidade"
+data-topico-id="balanco-estabilidade"
+>
+
+<h2>
+24. O critério C como um balanço hidrodinâmico
+</h2>
+
+<div class="widget">
+
+<p>
+Uma maneira útil de interpretar a expressão é vê-la
+como um <strong>balanço entre combinações de respostas</strong>.
+</p>
+
+
+<!-- =========================================
+     SVG — BALANÇO C
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 590"
+width="100%"
+role="img"
+aria-labelledby="svg-criterio-titulo svg-criterio-desc"
+>
+
+<title id="svg-criterio-titulo">
+Representação conceitual do discriminante C
+</title>
+
+<desc id="svg-criterio-desc">
+Diagrama de balanço entre o produto Yv Nr e o produto
+Nv multiplicado por Yr menos A, mostrando as condições
+C positivo, zero e negativo.
+</desc>
+
+<rect
+x="5"
+y="5"
+width="950"
+height="580"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- FÓRMULA -->
+
+<text
+x="480"
+y="70"
+text-anchor="middle"
+font-size="28"
+font-weight="bold"
+fill="#173f5f"
+>
+C = Y′v N′r − N′v (Y′r − A′)
+</text>
+
+
+<!-- LADO A -->
+
+<rect
+x="80"
+y="140"
+width="320"
+height="150"
+rx="14"
+fill="#ffffff"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="240"
+y="185"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#0f766e"
+>
+PRIMEIRA COMBINAÇÃO
+</text>
+
+<text
+x="240"
+y="235"
+text-anchor="middle"
+font-size="28"
+font-weight="bold"
+fill="#0f766e"
+>
+Y′v × N′r
+</text>
+
+
+<!-- LADO B -->
+
+<rect
+x="560"
+y="140"
+width="320"
+height="150"
+rx="14"
+fill="#ffffff"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<text
+x="720"
+y="185"
+text-anchor="middle"
+font-size="20"
+font-weight="bold"
+fill="#9a3412"
+>
+SEGUNDA COMBINAÇÃO
+</text>
+
+<text
+x="720"
+y="235"
+text-anchor="middle"
+font-size="25"
+font-weight="bold"
+fill="#9a3412"
+>
+N′v × (Y′r − A′)
+</text>
+
+
+<!-- SINAL DE MENOS -->
+
+<text
+x="480"
+y="235"
+text-anchor="middle"
+font-size="50"
+font-weight="bold"
+fill="#334155"
+>
+−
+</text>
+
+
+<!-- RESULTADOS -->
+
+<rect
+x="80"
+y="365"
+width="230"
+height="110"
+rx="12"
+fill="#ffffff"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="195"
+y="405"
+text-anchor="middle"
+font-size="23"
+font-weight="bold"
+fill="#0f766e"
+>
+C &gt; 0
+</text>
+
+<text
+x="195"
+y="445"
+text-anchor="middle"
+font-size="18"
+fill="#334155"
+>
+ESTÁVEL
+</text>
+
+
+<rect
+x="365"
+y="365"
+width="230"
+height="110"
+rx="12"
+fill="#ffffff"
+stroke="#64748b"
+stroke-width="3"
+/>
+
+<text
+x="480"
+y="405"
+text-anchor="middle"
+font-size="23"
+font-weight="bold"
+fill="#475569"
+>
+C = 0
+</text>
+
+<text
+x="480"
+y="445"
+text-anchor="middle"
+font-size="18"
+fill="#334155"
+>
+LIMITE
+</text>
+
+
+<rect
+x="650"
+y="365"
+width="230"
+height="110"
+rx="12"
+fill="#ffffff"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<text
+x="765"
+y="405"
+text-anchor="middle"
+font-size="23"
+font-weight="bold"
+fill="#9a3412"
+>
+C &lt; 0
+</text>
+
+<text
+x="765"
+y="445"
+text-anchor="middle"
+font-size="18"
+fill="#334155"
+>
+INSTÁVEL
+</text>
+
+
+<!-- RODAPÉ -->
+
+<text
+x="480"
+y="535"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+A estabilidade é resultado da combinação — não de um único derivado.
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Interpretação didática do discriminante C.
+O diagrama não representa forças fisicamente
+colocadas em uma balança; representa apenas
+a estrutura algébrica do critério.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+     O QUE C NÃO DIZ
+========================================= -->
+
+<section
+class="topico-aula"
+id="limites-criterio-estabilidade"
+data-topico-id="limites-criterio-estabilidade"
+>
+
+<h2>
+25. O critério informa estabilidade, não o grau de manobrabilidade
+</h2>
+
+<div class="widget">
+
+<p>
+O próprio PNA faz uma ressalva importante.
+</p>
+
+<p>
+As desigualdades associadas ao critério
+de <strong>dynamic course stability</strong>
+indicam se o navio é estável ou instável,
+mas não fornecem, sozinhas,
+<strong>uma medida quantitativa completa
+do comportamento do navio</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+C responde:
+</h3>
+
+<p style="text-align:center;">
+<strong>
+A pequena perturbação tende a ser amortecida
+ou tende a crescer?
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+C não responde sozinho:
+</h3>
+
+<ul>
+
+<li>
+quanto leme será necessário para iniciar uma curva;
+</li>
+
+<li>
+qual será o diâmetro tático;
+</li>
+
+<li>
+qual será o avanço;
+</li>
+
+<li>
+quanto tempo será necessário para quebrar a guinada;
+</li>
+
+<li>
+qual será a ROT em determinada manobra;
+</li>
+
+<li>
+quão confortável será o navio para o shiphandler.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — estabilidade ≠ manobrabilidade total
+</h3>
+
+<p>
+Um navio pode possuir boa estabilidade de curso
+e, ao mesmo tempo, exigir maior esforço de governo
+para produzir uma mudança rápida de direção.
+</p>
+
+<p>
+Da mesma forma, um navio muito disposto a guinar
+pode apresentar menor estabilidade de curso.
+</p>
+
+<p>
+Esse compromisso entre
+<strong>course stability</strong>
+e
+<strong>turning ability</strong>
+será importante para compreender posteriormente
+como as proporções do casco influenciam a manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+     SIGNIFICADO OPERACIONAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="significado-operacional-criterio"
+data-topico-id="significado-operacional-criterio"
+>
+
+<h2>
+26. Da equação para a ponte
+</h2>
+
+<div class="widget">
+
+<p>
+O Prático não calcula normalmente
+Y′<sub>v</sub>,
+N′<sub>v</sub>,
+Y′<sub>r</sub>,
+N′<sub>r</sub>
+ou C durante uma manobra.
+</p>
+
+<p>
+Entretanto, ele observa diariamente
+<strong>as consequências dessas grandezas</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Na teoria
+</h3>
+
+<p style="text-align:center;">
+<strong>
+derivadas hidrodinâmicas
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+critério C
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+estabilidade ou instabilidade dinâmica
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Na ponte
+</h3>
+
+<p style="text-align:center;">
+<strong>
+leme aplicado
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+navio desenvolve ROT
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+leme a meio
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT diminui, permanece ou aumenta
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+facilidade ou dificuldade para quebrar a guinada
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Ligação entre teoria e operação
+</h3>
+
+<p>
+O comportamento observado pelo
+<strong>Shiphandling for the Mariner</strong>
+é a manifestação operacional do sistema dinâmico
+que o PNA descreve matematicamente.
+</p>
+
+<p>
+As duas abordagens não competem.
+</p>
+
+<p>
+Uma explica
+<strong>por que o navio se comporta daquela forma</strong>;
+a outra mostra
+<strong>como esse comportamento aparece para quem o governa</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Dynamic Course Stability</strong> —
+estabilidade dinâmica de curso;
+</li>
+
+<li>
+<strong>Stability Criterion</strong> —
+critério de estabilidade;
+</li>
+
+<li>
+<strong>Stability Discriminant</strong> —
+discriminante de estabilidade;
+</li>
+
+<li>
+<strong>Hydrodynamic Derivatives</strong> —
+derivadas hidrodinâmicas;
+</li>
+
+<li>
+<strong>Coupled Motion</strong> —
+movimento acoplado;
+</li>
+
+<li>
+<strong>Sway–Yaw Coupling</strong> —
+acoplamento entre deriva lateral e guinada;
+</li>
+
+<li>
+<strong>Stable Course Stability</strong> —
+condição estável de curso;
+</li>
+
+<li>
+<strong>Unstable Course Stability</strong> —
+condição de instabilidade de curso.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 4
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 4
+</h2>
+
+<p>
+A estabilidade dinâmica de curso é uma propriedade
+do <strong>sistema acoplado sway–yaw</strong>.
+</p>
+
+<p>
+As quatro derivadas principais descrevem quatro
+ligações fundamentais:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center;">
+<strong>
+v → Y
+&nbsp;&nbsp;&nbsp;
+Y<sub>v</sub>
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+v → N
+&nbsp;&nbsp;&nbsp;
+N<sub>v</sub>
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+r → Y
+&nbsp;&nbsp;&nbsp;
+Y<sub>r</sub>
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+r → N
+&nbsp;&nbsp;&nbsp;
+N<sub>r</sub>
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Na formulação adimensional do PNA,
+essas respostas entram no discriminante:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+C =
+Y′<sub>v</sub>N′<sub>r</sub>
+−
+N′<sub>v</sub>
+(Y′<sub>r</sub> − A′)
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &gt; 0 → estável
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C = 0 → limite
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &lt; 0 → instável
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Regra para não esquecer
+</h3>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+Nenhuma derivada isolada define a estabilidade.
+</strong>
+</p>
+
+<p>
+A estabilidade surge da
+<strong>interação entre as respostas laterais,
+os momentos de guinada e as propriedades inerciais
+do navio</strong>.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 5
+</h3>
+
+<p>
+A próxima pergunta é inevitável:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+o que faz essas derivadas mudarem de um navio
+para outro?
+</strong>
+</p>
+
+<p>
+Na Parte 5 serão analisadas as características
+geométricas responsáveis por modificar esse
+equilíbrio hidrodinâmico, incluindo:
+</p>
+
+<ul>
+
+<li>
+relação comprimento/boca — L/B;
+</li>
+
+<li>
+relação comprimento/calado — L/T;
+</li>
+
+<li>
+coeficiente de bloco;
+</li>
+
+<li>
+distribuição longitudinal da área submersa;
+</li>
+
+<li>
+forma da proa e da popa;
+</li>
+
+<li>
+skeg, deadwood e demais áreas laterais à ré.
+</li>
+
+</ul>
+
+<p>
+Assim poderemos ligar:
+</p>
+
+<p style="text-align:center;">
+<strong>
+geometria do casco
+→ derivadas hidrodinâmicas
+→ estabilidade direcional
+→ comportamento observado pelo Prático.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 5
+     INFLUÊNCIA DAS CARACTERÍSTICAS DO NAVIO
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — INFLUÊNCIA DA GEOMETRIA DO CASCO
+</h2>
+
+<p>
+Na Parte 4 foi estabelecido que a estabilidade
+não depende de uma única derivada hidrodinâmica.
+</p>
+
+<p>
+As derivadas
+<strong>Y<sub>v</sub>, N<sub>v</sub>,
+Y<sub>r</sub> e N<sub>r</sub></strong>
+dependem, por sua vez, da geometria real do navio.
+</p>
+
+<p>
+Portanto, dois navios navegando à mesma velocidade
+podem apresentar respostas completamente diferentes
+a uma mesma perturbação porque possuem:
+</p>
+
+<ul>
+
+<li>
+proporções diferentes;</li>
+
+<li>
+distribuições diferentes de volume submerso;</li>
+
+<li>
+formas diferentes de proa e popa;</li>
+
+<li>
+coeficientes de bloco diferentes;</li>
+
+<li>
+e diferentes áreas laterais submersas.</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Ligação fundamental
+</h3>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+Geometria do casco
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+escoamento e distribuição de pressões
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+derivadas hidrodinâmicas
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+estabilidade direcional
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+comportamento percebido pelo Prático
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+     COMPRIMENTO / BOCA
+========================================= -->
+
+<section
+class="topico-aula"
+id="comprimento-navio"
+data-topico-id="comprimento-navio"
+>
+
+<h2>
+27. Relação comprimento / boca — L/B
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+estabelece duas tendências diretamente relacionadas:
+</p>
+
+<ul>
+
+<li>
+a estabilidade direcional torna-se
+<strong>mais positiva quando o comprimento aumenta</strong>;
+</li>
+
+<li>
+e diminui quando a
+<strong>boca aumenta para um mesmo comprimento</strong>.
+</li>
+
+</ul>
+
+<p>
+Essas duas afirmações podem ser reunidas pela
+relação geométrica:
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Relação de esbeltez horizontal
+</h3>
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+L / B
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>L</strong> = comprimento do navio;</li>
+
+<li>
+<strong>B</strong> = boca do navio.</li>
+
+</ul>
+
+<p>
+Quanto maior a relação
+<strong>L/B</strong>,
+mais comprido e relativamente estreito é o casco.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Considere dois navios com o mesmo comprimento:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L = 240 m
+</strong>
+</p>
+
+<p>
+Navio A:
+</p>
+
+<p style="text-align:center;">
+<strong>
+B = 30 m
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+L/B = 240 / 30 = 8,0
+</strong>
+</p>
+
+<p>
+Navio B:
+</p>
+
+<p style="text-align:center;">
+<strong>
+B = 40 m
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+L/B = 240 / 40 = 6,0
+</strong>
+</p>
+
+<p>
+Pela tendência indicada pelo
+<strong>Shiphandling for the Mariner</strong>,
+mantidas as demais condições relevantes,
+o Navio A tende a apresentar
+<strong>estabilidade direcional mais positiva</strong>
+que o Navio B.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+O que o PNA acrescenta
+</h3>
+
+<p>
+O PNA analisa experimentalmente séries de cascos
+com diferentes relações L/B.
+</p>
+
+<p>
+A obra conclui que o principal efeito do aumento
+de L/B, no conjunto estudado, está associado à
+<strong>redução do coeficiente de massa adimensional</strong>,
+o que melhora a estabilidade.
+</p>
+
+<p>
+Ou seja, não se trata simplesmente de dizer que
+"navio comprido é estável".
+</p>
+
+<p>
+A alteração das proporções modifica os termos
+que entram no próprio critério dinâmico.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A regra correta não é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+“navio maior é mais estável”.
+</strong>
+</p>
+
+<p>
+O que a referência estabelece é que,
+<strong>consideradas as demais condições</strong>,
+a estabilidade torna-se mais positiva com o
+aumento do comprimento e diminui quando a boca
+aumenta para um mesmo comprimento.
+</p>
+
+<p>
+Portanto, uma questão pode explorar diretamente
+a relação <strong>L/B</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+     L/T
+========================================= -->
+
+<section
+class="topico-aula"
+id="relacao-comprimento-calado"
+data-topico-id="relacao-comprimento-calado"
+>
+
+<h2>
+28. Relação comprimento / calado — L/T
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA chama atenção para outra proporção
+fundamental:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+L / T
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>L</strong> = comprimento;</li>
+
+<li>
+<strong>T</strong> = calado.</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Ao analisar as séries experimentais,
+o PNA observa que a relação
+<strong>L/T possui grande importância sobre as
+derivadas de estabilidade no plano horizontal</strong>.
+</p>
+
+<p>
+Os resultados apresentados indicam que o aumento
+de L/T pode produzir alterações estabilizadoras
+em algumas derivadas e desestabilizadoras em outras.
+</p>
+
+<p>
+No conjunto analisado pelo PNA,
+os efeitos desestabilizadores predominam.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conclusão apresentada pelo PNA
+</h3>
+
+<p>
+O aumento da relação
+<strong>L/T</strong>
+prejudica a estabilidade controls-fixed.
+</p>
+
+<p>
+Consequentemente, o PNA conclui que:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+o mesmo navio em calado leve tende a possuir
+menor controls-fixed stability do que em calado maior,
+desde que o trim pela popa não aumente simultaneamente.
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico
+</h3>
+
+<p>
+Considere um navio com:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L = 210 m
+</strong>
+</p>
+
+<p>
+Condição carregada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+T = 12 m
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+L/T = 210 / 12 = 17,5
+</strong>
+</p>
+
+<p>
+Condição leve:
+</p>
+
+<p style="text-align:center;">
+<strong>
+T = 8 m
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+L/T = 210 / 8 = 26,25
+</strong>
+</p>
+
+<p>
+A relação L/T aumentou significativamente
+na condição leve.
+</p>
+
+<p>
+Segundo a tendência analisada pelo PNA,
+isso atua no sentido de
+<strong>reduzir a estabilidade controls-fixed</strong>,
+se não houver um aumento compensatório
+do trim pela popa.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção
+</h3>
+
+<p>
+Esse efeito não deve ser confundido com o efeito
+de <strong>águas rasas</strong>.
+</p>
+
+<p>
+Aqui estamos modificando o
+<strong>calado do próprio navio</strong>
+e, portanto, sua geometria submersa.
+</p>
+
+<p>
+A influência da profundidade e da UKC será
+analisada separadamente na Parte 6.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+     COEFICIENTE DE BLOCO
+========================================= -->
+
+<section
+class="topico-aula"
+id="coeficiente-bloco"
+data-topico-id="coeficiente-bloco"
+>
+
+<h2>
+29. Coeficiente de bloco — Block Coefficient
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>coeficiente de bloco — C<sub>B</sub></strong>
+é uma medida da plenitude volumétrica do casco.
+</p>
+
+<p>
+Ele compara o volume realmente deslocado pelo navio
+com o volume de um paralelepípedo definido por suas
+dimensões principais.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Coeficiente de bloco
+</h3>
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+C<sub>B</sub> =
+∇ / (L × B × T)
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>∇</strong> = volume de deslocamento;</li>
+
+<li>
+<strong>L</strong> = comprimento de referência;</li>
+
+<li>
+<strong>B</strong> = boca;</li>
+
+<li>
+<strong>T</strong> = calado.</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico didático
+</h3>
+
+<p>
+Considere:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L = 200 m
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+B = 32 m
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+T = 10 m
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+∇ = 48.000 m³
+</strong>
+</p>
+
+<p>
+Então:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L × B × T =
+200 × 32 × 10
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+= 64.000 m³
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+C<sub>B</sub> =
+48.000 / 64.000
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+C<sub>B</sub> = 0,75
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Segundo o
+<strong>Shiphandling for the Mariner</strong>:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+C<sub>B</sub> ↑
+→
+estabilidade direcional ↓
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Navios com elevado coeficiente de bloco possuem
+formas mais cheias.
+</p>
+
+<p>
+O PNA confirma experimentalmente uma tendência
+de redução da estabilidade com o aumento de
+C<sub>B</sub>.
+</p>
+
+<p>
+Na análise apresentada pela obra,
+essa redução aparece principalmente associada
+ao aumento do
+<strong>coeficiente de massa adimensional A′</strong>,
+e não simplesmente a uma alteração isolada
+de uma única derivada hidrodinâmica.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+É inadequado resumir o fenômeno como:
+</p>
+
+<p style="text-align:center;">
+<strong>
+“navio cheio guina mais”.
+</strong>
+</p>
+
+<p>
+A afirmação suportada pela referência é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+o aumento do coeficiente de bloco reduz
+a estabilidade direcional.
+</strong>
+</p>
+
+<p>
+Isso descreve a tendência de estabilidade,
+não define isoladamente diâmetro tático,
+ROT ou capacidade total de manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+     DISTRIBUIÇÃO LONGITUDINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="distribuicao-area-lateral"
+data-topico-id="distribuicao-area-lateral"
+>
+
+<h2>
+30. A quantidade de volume não basta: importa onde ele está
+</h2>
+
+<div class="widget">
+
+<p>
+Dois navios podem possuir o mesmo deslocamento,
+comprimento, boca, calado e até valores próximos
+de coeficiente de bloco e, ainda assim,
+apresentar características direcionais diferentes.
+</p>
+
+<p>
+A razão é que o volume submerso pode estar
+<strong>distribuído longitudinalmente de maneiras
+diferentes</strong>.
+</p>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+destaca especificamente a relação entre as
+seções submersas de vante e de ré.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Tendência operacional
+</h3>
+
+<p>
+A estabilidade direcional diminui quando:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+a área das seções de vante aumenta
+em relação à área das seções de ré.
+</strong>
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — DISTRIBUIÇÃO DE SEÇÕES
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 600"
+width="100%"
+role="img"
+aria-labelledby="svg-secoes-titulo svg-secoes-desc"
+>
+
+<title id="svg-secoes-titulo">
+Comparação conceitual da distribuição longitudinal de volume submerso
+</title>
+
+<desc id="svg-secoes-desc">
+Dois navios em vista superior com distribuições
+diferentes de volume submerso. O segundo possui
+seções relativamente mais cheias à vante.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="590"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- NAVIO A -->
+
+<text
+x="240"
+y="55"
+text-anchor="middle"
+font-size="22"
+font-weight="bold"
+fill="#173f5f"
+>
+Distribuição mais equilibrada
+</text>
+
+<path
+d="
+M 65 200
+C 130 140,
+280 145,
+390 185
+C 425 198,
+445 220,
+455 245
+C 445 270,
+425 292,
+390 305
+C 280 345,
+130 350,
+65 290
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="80"
+y1="245"
+x2="440"
+y2="245"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="85"
+y="380"
+font-size="16"
+fill="#334155"
+>
+POPA
+</text>
+
+<text
+x="385"
+y="380"
+font-size="16"
+fill="#334155"
+>
+PROA
+</text>
+
+
+<!-- NAVIO B -->
+
+<text
+x="720"
+y="55"
+text-anchor="middle"
+font-size="22"
+font-weight="bold"
+fill="#9a3412"
+>
+Seções mais cheias à vante
+</text>
+
+<path
+d="
+M 535 215
+C 595 175,
+690 165,
+790 145
+C 855 150,
+895 195,
+910 245
+C 895 295,
+855 340,
+790 345
+C 690 325,
+595 315,
+535 275
+Z
+"
+fill="#fff7ed"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<line
+x1="550"
+y1="245"
+x2="895"
+y2="245"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="550"
+y="380"
+font-size="16"
+fill="#334155"
+>
+POPA
+</text>
+
+<text
+x="835"
+y="380"
+font-size="16"
+fill="#334155"
+>
+PROA
+</text>
+
+
+<!-- INDICAÇÃO -->
+
+<rect
+x="185"
+y="440"
+width="590"
+height="105"
+rx="12"
+fill="#ffffff"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+<text
+x="480"
+y="475"
+text-anchor="middle"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+Mais área relativa à vante
+</text>
+
+<text
+x="480"
+y="510"
+text-anchor="middle"
+font-size="18"
+fill="#9a3412"
+>
+→ tendência a menor estabilidade direcional
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação conceitual.
+O objetivo não é reproduzir linhas reais de casco,
+mas mostrar que a posição longitudinal do volume
+submerso altera a distribuição das pressões
+hidrodinâmicas.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não basta conhecer o valor de
+<strong>C<sub>B</sub></strong>.
+</p>
+
+<p>
+É necessário considerar também
+<strong>onde está distribuído o volume que produz
+esse coeficiente</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+     CURVA DE ÁREAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="curva-areas-secoes"
+data-topico-id="curva-areas-secoes"
+>
+
+<h2>
+31. Curve of Areas — curva das áreas das seções imersas
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+propõe uma ferramenta particularmente útil para
+visualizar essa distribuição:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+Curve of Areas of the Immersed Sections
+</strong>
+</p>
+
+<p>
+A curva é construída utilizando a área submersa
+de cada seção transversal do navio.
+</p>
+
+<p>
+Cada estação possui uma determinada área imersa.
+Essas áreas são representadas ao longo do
+comprimento e ligadas por uma curva contínua.
+</p>
+
+<div class="destaque">
+
+<h3>
+O que a curva revela
+</h3>
+
+<p>
+Ela permite observar:
+</p>
+
+<ul>
+
+<li>
+onde estão as maiores seções submersas;</li>
+
+<li>
+quanto volume está concentrado à vante;</li>
+
+<li>
+quanto volume está concentrado à ré;</li>
+
+<li>
+e como essa distribuição muda com
+<strong>draft</strong> e <strong>trim</strong>.</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — CURVA DE ÁREAS
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 580"
+width="100%"
+role="img"
+aria-labelledby="svg-curva-areas-titulo svg-curva-areas-desc"
+>
+
+<title id="svg-curva-areas-titulo">
+Curva conceitual das áreas das seções imersas
+</title>
+
+<desc id="svg-curva-areas-desc">
+Gráfico com posição longitudinal no eixo horizontal
+e área da seção imersa no eixo vertical.
+Duas curvas mostram distribuições longitudinalmente diferentes.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="570"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- EIXOS -->
+
+<line
+x1="120"
+y1="470"
+x2="860"
+y2="470"
+stroke="#334155"
+stroke-width="3"
+/>
+
+<line
+x1="120"
+y1="470"
+x2="120"
+y2="90"
+stroke="#334155"
+stroke-width="3"
+/>
+
+
+<text
+x="100"
+y="520"
+font-size="17"
+fill="#334155"
+>
+POPA
+</text>
+
+<text
+x="805"
+y="520"
+font-size="17"
+fill="#334155"
+>
+PROA
+</text>
+
+<text
+x="40"
+y="120"
+font-size="16"
+fill="#334155"
+>
+Área
+</text>
+
+<text
+x="40"
+y="143"
+font-size="16"
+fill="#334155"
+>
+imersa
+</text>
+
+
+<!-- CURVA 1 -->
+
+<path
+d="
+M 130 460
+C 200 400,
+260 270,
+380 205
+C 500 145,
+610 220,
+700 310
+C 770 380,
+820 430,
+850 460
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="5"
+/>
+
+<text
+x="320"
+y="165"
+font-size="17"
+font-weight="bold"
+fill="#0f766e"
+>
+Distribuição mais à ré
+</text>
+
+
+<!-- CURVA 2 -->
+
+<path
+d="
+M 130 460
+C 205 430,
+275 345,
+395 285
+C 530 210,
+660 150,
+755 215
+C 815 260,
+840 390,
+850 460
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<text
+x="625"
+y="125"
+font-size="17"
+font-weight="bold"
+fill="#9a3412"
+>
+Distribuição deslocada à vante
+</text>
+
+
+<!-- CENTRO -->
+
+<line
+x1="490"
+y1="90"
+x2="490"
+y2="470"
+stroke="#94a3b8"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<text
+x="505"
+y="450"
+font-size="15"
+fill="#64748b"
+>
+meio do navio
+</text>
+
+
+<!-- NOTA -->
+
+<rect
+x="220"
+y="515"
+width="520"
+height="42"
+rx="8"
+fill="#ffffff"
+stroke="#94a3b8"
+stroke-width="1"
+/>
+
+<text
+x="480"
+y="542"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+A posição longitudinal das maiores áreas modifica a resposta direcional.
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Curvas conceituais de áreas imersas.
+O gráfico mostra apenas a interpretação geométrica;
+não representa um navio real.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Ligação com estabilidade
+</h3>
+
+<p>
+O MacElrevey observa que,
+à medida que a maior concentração de área submersa
+se desloca para vante,
+a tendência de estabilidade direcional pode diminuir.
+</p>
+
+<p>
+Isso ajuda a explicar por que formas muito cheias
+à vante merecem atenção especial.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+     VLCC E FORMAS CHEIAS À VANTE
+========================================= -->
+
+<section
+class="topico-aula"
+id="secoes-proa-popa"
+data-topico-id="secoes-proa-popa"
+>
+
+<h2>
+32. Formas cheias à vante e grandes navios
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+utiliza o exemplo dos grandes VLCCs para mostrar
+a importância da distribuição longitudinal
+das seções.
+</p>
+
+<p>
+Navios com
+<strong>full sections forward</strong>
+possuem grande porcentagem do volume submerso
+concentrada nas regiões de vante.
+</p>
+
+<div class="destaque">
+
+<h3>
+Consequência hidrodinâmica
+</h3>
+
+<p>
+Durante a guinada,
+uma maior área submersa à vante pode produzir
+uma contribuição significativa para a distribuição
+de pressões nessa região.
+</p>
+
+<p>
+Se a resultante hidrodinâmica permanece
+demasiadamente à vante do centro de gravidade,
+o correspondente couple pode sustentar uma
+tendência direcionalmente instável.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+O MacElrevey chama atenção particularmente
+para navios:
+</p>
+
+<ul>
+
+<li>
+grandes;</li>
+
+<li>
+de elevado coeficiente de bloco;</li>
+
+<li>
+com elevada proporção de área submersa à vante.</li>
+
+</ul>
+
+<p>
+Nesses navios, mudanças de calado e trim podem
+alterar significativamente a distribuição de pressões
+e o comportamento de governo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+     SKEG / DEADWOOD
+========================================= -->
+
+<section
+class="topico-aula"
+id="apendices-estabilidade-direcional"
+data-topico-id="apendices-estabilidade-direcional"
+>
+
+<h2>
+33. Área lateral à ré — skeg e deadwood
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA inclui explicitamente
+<strong>skeg</strong> e
+<strong>deadwood</strong>
+em suas análises de derivadas e estabilidade.
+</p>
+
+<p>
+Essas superfícies acrescentam
+<strong>área lateral submersa na região de ré</strong>
+e, portanto, podem modificar as forças e momentos
+hidrodinâmicos do navio.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Princípio físico
+</h3>
+
+<p>
+Quanto mais afastada longitudinalmente do centro
+estiver uma força lateral,
+maior poderá ser seu braço de alavanca.
+</p>
+
+<p>
+Assim, uma superfície vertical localizada à ré
+pode produzir uma contribuição relevante para
+o momento de guinada.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo puramente mecânico
+</h3>
+
+<p>
+Considere uma força lateral de:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y = 40 kN
+</strong>
+</p>
+
+<p>
+atuando a:
+</p>
+
+<p style="text-align:center;">
+<strong>
+25 m
+</strong>
+</p>
+
+<p>
+à ré da origem dos momentos.
+</p>
+
+<p>
+A magnitude do momento associado seria:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N = Y × braço
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+N = 40 × 25
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N = 1000 kN·m
+</strong>
+</p>
+
+<p>
+Se a mesma força atuasse a apenas 10 m:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N = 40 × 10
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N = 400 kN·m
+</strong>
+</p>
+
+<p>
+O exemplo demonstra apenas o efeito do
+<strong>braço longitudinal</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limite da conclusão
+</h3>
+
+<p>
+Não se deve transformar isso na regra:
+</p>
+
+<p style="text-align:center;">
+<strong>
+“quanto maior o skeg, maior a estabilidade”.
+</strong>
+</p>
+
+<p>
+O PNA mostra que a contribuição de skeg,
+deadwood, leme e propulsor precisa entrar
+no cálculo das derivadas do conjunto.
+</p>
+
+<p>
+A geometria e a posição das superfícies,
+bem como sua interação hidrodinâmica,
+continuam sendo importantes.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Skeg</strong> —
+aleta ou quilha fixa vertical na região de ré;</li>
+
+<li>
+<strong>Deadwood</strong> —
+estrutura/área fixa submersa longitudinal na região
+de ré, conforme a configuração do casco;</li>
+
+<li>
+<strong>Hull Appendage</strong> —
+apêndice do casco;</li>
+
+<li>
+<strong>Afterbody</strong> —
+corpo de ré;</li>
+
+<li>
+<strong>Forebody</strong> —
+corpo de vante;</li>
+
+<li>
+<strong>Sectional Area Curve</strong> —
+curva das áreas das seções;</li>
+
+<li>
+<strong>Full Sections Forward</strong> —
+seções cheias à vante.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+     SÍNTESE DAS TENDÊNCIAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="geometria-casco"
+data-topico-id="geometria-casco"
+>
+
+<h2>
+34. Síntese: como a geometria altera a estabilidade
+</h2>
+
+<div class="widget">
+
+<p>
+As tendências diretamente indicadas pelo
+<strong>Shiphandling for the Mariner</strong>
+podem ser resumidas da seguinte maneira:
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Tendências para maior estabilidade direcional
+</h3>
+
+<ul>
+
+<li>
+<strong>comprimento maior</strong>;</li>
+
+<li>
+<strong>maior relação L/B</strong>;</li>
+
+<li>
+<strong>menor coeficiente de bloco</strong>;</li>
+
+<li>
+<strong>menor proporção de área das seções de vante
+em relação às de ré</strong>.</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Tendências para menor estabilidade direcional
+</h3>
+
+<ul>
+
+<li>
+<strong>maior boca para o mesmo comprimento</strong>;</li>
+
+<li>
+<strong>menor relação L/B</strong>;</li>
+
+<li>
+<strong>maior coeficiente de bloco</strong>;</li>
+
+<li>
+<strong>maior concentração de área submersa
+nas seções de vante</strong>.</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — cuidado com regras isoladas
+</h3>
+
+<p>
+Essas tendências descrevem
+<strong>efeitos individuais</strong>.
+</p>
+
+<p>
+Um navio real combina simultaneamente:
+</p>
+
+<ul>
+
+<li>
+L/B;</li>
+
+<li>
+L/T;</li>
+
+<li>
+C<sub>B</sub>;</li>
+
+<li>
+distribuição longitudinal de volume;</li>
+
+<li>
+trim;</li>
+
+<li>
+áreas laterais de ré;</li>
+
+<li>
+leme;</li>
+
+<li>
+propulsor;</li>
+
+<li>
+e condição de carregamento.</li>
+
+</ul>
+
+<p>
+Por isso, a estabilidade real é o resultado
+da interação entre todos esses fatores.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 5
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 5
+</h2>
+
+<p>
+A geometria do casco determina como o navio
+interage com o escoamento durante sway e yaw.
+</p>
+
+<p>
+Essa geometria modifica a distribuição longitudinal
+das pressões e, consequentemente,
+as forças laterais, os momentos e as
+derivadas hidrodinâmicas.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Sequência fundamental
+</h3>
+
+<p style="text-align:center;">
+<strong>
+L/B, L/T, C<sub>B</sub>,
+distribuição de áreas e apêndices
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+distribuição do escoamento e pressões
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y<sub>v</sub>, N<sub>v</sub>,
+Y<sub>r</sub>, N<sub>r</sub>
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+critério de estabilidade
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+resposta do navio à guinada
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 6
+</h3>
+
+<p>
+Até aqui tratamos principalmente de características
+inerentes ao navio.
+</p>
+
+<p>
+Na próxima parte analisaremos como
+<strong>a mesma geometria pode apresentar comportamento
+diferente quando a condição operacional muda</strong>.
+</p>
+
+<p>
+Entraremos em:
+</p>
+
+<ul>
+
+<li>
+<strong>trim pela popa — drag;</strong></li>
+
+<li>
+<strong>trim pela proa;</strong></li>
+
+<li>
+<strong>draft;</strong></li>
+
+<li>
+<strong>Under Keel Clearance — UKC;</strong></li>
+
+<li>
+<strong>deep water;</strong></li>
+
+<li>
+<strong>shallow water.</strong></li>
+
+</ul>
+
+<p>
+Essa transição é particularmente importante porque
+o <strong>Shiphandling for the Mariner</strong>
+mostra que poucos pés de drag podem alterar
+substancialmente o comportamento direcional
+de um mesmo navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
 PARTE 6
