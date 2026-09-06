@@ -1,1 +1,1184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Estabilidade Direcional - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="estabilidade-direcional"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade do Navio</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Estabilidade Direcional
+</h2>
+
+<p>
+<strong>
+Directional Stability
+</strong>
+</p>
+
+<p>
+Estudo aprofundado da tendência do navio de manter,
+recuperar ou afastar-se de uma condição de movimento
+direcional após uma perturbação, considerando as forças
+e os momentos hidrodinâmicos envolvidos e suas
+consequências para o governo do navio.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Estabilidade Direcional
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Directional Stability
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+MANOBRABILIDADE DO NAVIO — ESTABILIDADE DIRECIONAL
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="conceito-estabilidade-direcional">
+Conceito físico de estabilidade direcional
+</li>
+
+<li data-progresso-topico="estabilidade-movimento">
+Estabilidade de movimento e estados de equilíbrio
+</li>
+
+<li data-progresso-topico="estabilidade-positiva-neutra-negativa">
+Estabilidade direcional positiva, neutra e negativa
+</li>
+
+<li data-progresso-topico="guinada-rate-of-turn">
+Guinada, Rate of Turn e comportamento após leme a meio
+</li>
+
+<li data-progresso-topico="forcas-momentos-restauradores">
+Forças e momentos restauradores e desestabilizadores
+</li>
+
+<li data-progresso-topico="criterio-estabilidade-direcional">
+Critério hidrodinâmico de estabilidade
+</li>
+
+<li data-progresso-topico="derivadas-estabilidade-direcional">
+Derivadas hidrodinâmicas relacionadas à estabilidade
+</li>
+
+<li data-progresso-topico="geometria-casco">
+Influência da geometria do casco
+</li>
+
+<li data-progresso-topico="comprimento-coeficiente-bloco">
+Comprimento, boca e coeficiente de bloco
+</li>
+
+<li data-progresso-topico="trim-estabilidade-direcional">
+Influência do trim
+</li>
+
+<li data-progresso-topico="ukc-aguas-rasas">
+Under Keel Clearance e águas rasas
+</li>
+
+<li data-progresso-topico="quebrar-guinada">
+Quebrar a guinada — Checking the Swing
+</li>
+
+<li data-progresso-topico="implicacoes-operacionais">
+Implicações operacionais para o Prático
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Definir estabilidade direcional e distingui-la
+dos demais conceitos de estabilidade de movimento
+e controlabilidade anteriormente estudados.
+</li>
+
+<li>
+Interpretar fisicamente as condições de estabilidade
+direcional positiva, neutra e negativa.
+</li>
+
+<li>
+Relacionar estabilidade direcional à evolução da
+<strong>Rate of Turn — ROT</strong> quando o leme é
+colocado a meio.
+</li>
+
+<li>
+Explicar por que determinados navios apresentam maior
+ou menor facilidade para quebrar uma guinada.
+</li>
+
+<li>
+Relacionar forças laterais e momentos de guinada
+a tendências restauradoras ou desestabilizadoras.
+</li>
+
+<li>
+Relacionar as derivadas hidrodinâmicas pertinentes
+ao comportamento direcional do navio.
+</li>
+
+<li>
+Analisar a influência da forma do casco, comprimento,
+boca, coeficiente de bloco, distribuição das seções
+submersas e trim sobre a estabilidade direcional.
+</li>
+
+<li>
+Analisar a alteração da estabilidade direcional
+decorrente da redução da profundidade e da
+Under Keel Clearance — UKC.
+</li>
+
+<li>
+Interpretar as consequências operacionais de
+estabilidade direcional positiva, neutra ou negativa
+durante a condução do navio.
+</li>
+
+<li>
+Reconhecer situações em que a quebra da guinada
+exige maior ângulo de leme, antecipação da manobra
+ou manutenção do leme contrário por maior período.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner — 5th Edition
+</h3>
+
+<p>
+Referência operacional principal para o estudo
+da estabilidade direcional e de suas consequências
+sobre o governo e a condução prática do navio.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Directional Stability — páginas 18 a 20,
+além das passagens relacionadas a trim,
+águas rasas e características de manobra.
+</p>
+
+
+<hr>
+
+
+<h3>
+Principles of Naval Architecture — Volume III
+</h3>
+
+<p>
+Referência para o aprofundamento hidrodinâmico
+dos conceitos de estabilidade de movimento,
+estabilidade em linha reta, estabilidade direcional,
+equações de movimento e derivadas hidrodinâmicas.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Controllability —
+Section 3, Motion Stability and Linear Equations,
+incluindo Definitions of Motion Stability e
+os critérios de estabilidade associados.
+</p>
+
+
+<hr>
+
+
+<h3>
+Arte Naval — Volume I
+</h3>
+
+<p>
+Referência complementar para características
+geométricas do casco e conceitos necessários
+à análise da influência da forma do navio
+sobre seu comportamento direcional.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+conceitos pertinentes de geometria do casco,
+dimensões principais e coeficiente de bloco.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1 — Fundamentos da Estabilidade Direcional</strong><br>
+Estabilidade de movimento, equilíbrio e conceito
+de Directional Stability.
+</li>
+
+<li>
+<strong>Parte 2 — Resposta do Navio a uma Perturbação</strong><br>
+Estabilidade positiva, neutra e negativa,
+guinada, Rate of Turn e leme a meio.
+</li>
+
+<li>
+<strong>Parte 3 — Fundamento Hidrodinâmico</strong><br>
+Forças laterais, momentos de guinada
+e mecanismos restauradores ou desestabilizadores.
+</li>
+
+<li>
+<strong>Parte 4 — Critério de Estabilidade Direcional</strong><br>
+Derivadas hidrodinâmicas e interpretação
+física do critério de estabilidade.
+</li>
+
+<li>
+<strong>Parte 5 — Influência das Características do Navio</strong><br>
+Forma do casco, distribuição longitudinal das
+seções, comprimento, boca e coeficiente de bloco.
+</li>
+
+<li>
+<strong>Parte 6 — Trim, Profundidade e UKC</strong><br>
+Alterações da estabilidade direcional decorrentes
+do trim e da navegação em águas rasas.
+</li>
+
+<li>
+<strong>Parte 7 — Quebrar a Guinada</strong><br>
+Checking the Swing, antecipação do leme,
+leme contrário e controle da Rate of Turn.
+</li>
+
+<li>
+<strong>Parte 8 — Aplicação Operacional e Consolidação PSCPP</strong><br>
+Interpretação prática, pontos de atenção,
+glossário, resumo técnico e questões de revisão.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA ESTABILIDADE DIRECIONAL
+</h2>
+
+<p>
+Esta parte estabelece os conceitos necessários
+para compreender a estabilidade direcional como
+uma propriedade do movimento do navio.
+</p>
+
+<p>
+Os fundamentos de sway, yaw, forças laterais,
+momentos de guinada e derivadas hidrodinâmicas
+já estudados anteriormente serão retomados apenas
+quando necessários para explicar os mecanismos
+específicos da estabilidade direcional.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-estabilidade-direcional"
+data-topico-id="conceito-estabilidade-direcional"
+>
+
+<h2>
+1. Conceito de Estabilidade Direcional
+</h2>
+
+<div class="widget">
+
+<p>
+[CONTEÚDO TÉCNICO A SER DESENVOLVIDO]
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+[CONCEITO A SER DESENVOLVIDO]
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Directional Stability</strong> —
+Estabilidade direcional;
+</li>
+
+<li>
+<strong>Yaw</strong> —
+Guinada;
+</li>
+
+<li>
+<strong>Rate of Turn — ROT</strong> —
+Razão ou velocidade angular de guinada;
+</li>
+
+<li>
+<strong>Rudder Amidships</strong> —
+Leme a meio;
+</li>
+
+<li>
+<strong>Checking the Swing</strong> —
+Quebrar a guinada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Estabilidade direcional não deve ser confundida
+simplesmente com capacidade de realizar uma curva.
+Um navio pode apresentar características normais
+de giro e, ainda assim, exigir atuação significativa
+do leme para quebrar a guinada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DEMAIS TÓPICOS DA AULA
+
+     IDs RESERVADOS E DEFINITIVOS
+
+     NÃO ALTERAR ESTES IDs APÓS
+     O INÍCIO DO ESTUDO
+========================================= -->
+
+
+<!--
+
+PARTE 1
+
+conceito-estabilidade-direcional
+estabilidade-movimento
+equilibrio-estavel-instavel-indiferente
+
+
+PARTE 2
+
+estabilidade-positiva-neutra-negativa
+estabilidade-positiva
+estabilidade-neutra
+estabilidade-negativa
+guinada-rate-of-turn
+leme-a-meio
+
+
+PARTE 3
+
+forcas-momentos-restauradores
+forcas-laterais
+momentos-guinada
+momento-restaurador
+momento-desestabilizador
+
+
+PARTE 4
+
+criterio-estabilidade-direcional
+derivadas-estabilidade-direcional
+interpretacao-yv
+interpretacao-nv
+interpretacao-yr
+interpretacao-nr
+interacao-derivadas
+
+
+PARTE 5
+
+geometria-casco
+distribuicao-area-lateral
+comprimento-navio
+boca-navio
+coeficiente-bloco
+secoes-proa-popa
+
+
+PARTE 6
+
+trim-estabilidade-direcional
+trim-pela-popa
+trim-pela-proa
+ukc-aguas-rasas
+estabilidade-aguas-profundas
+estabilidade-aguas-rasas
+
+
+PARTE 7
+
+quebrar-guinada
+leme-contrario
+antecipacao-leme
+controle-rate-of-turn
+navio-direcionalmente-estavel
+navio-direcionalmente-instavel
+
+
+PARTE 8
+
+implicacoes-operacionais
+navegacao-canais
+governo-mar-aberto
+aplicacao-praticagem
+resumo-estabilidade-direcional
+glossario-estabilidade-direcional
+
+-->
+
+
+
+<!-- =========================================
+     EXERCÍCIOS
+========================================= -->
+
+<section>
+
+<h2>
+📝 Questões de revisão
+</h2>
+
+
+<!-- =========================================
+     QUESTÃO MODELO
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="estabilidade-direcional-q1"
+data-resposta="A"
+data-topico="Estabilidade Direcional"
+data-edital="Manobrabilidade do Navio — Estabilidade Direcional"
+data-bibliografia="Shiphandling for the Mariner — Directional Stability"
+>
+
+<h3>
+Questão 1
+</h3>
+
+<p>
+[ENUNCIADO DA QUESTÃO]
+</p>
+
+<div class="alternativas-questao">
+
+<button
+type="button"
+class="alternativa"
+data-opcao="A"
+>
+A) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="B"
+>
+B) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="C"
+>
+C) [ALTERNATIVA]
+</button>
+
+<button
+type="button"
+class="alternativa"
+data-opcao="D"
+>
+D) [ALTERNATIVA]
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+     MANTER A ESTRUTURA
+========================================= -->
+
+<div class="widget">
+
+<h3>
+📋 Progresso das questões
+</h3>
+
+<p id="resumo-selecao-exercicios">
+
+0 de [TOTAL] questões respondidas
+
+</p>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios">
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>
+✅ Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+<hr>
+
+<h3>
+Questão 1 — Alternativa A ✅
+</h3>
+
+<p>
+[COMENTÁRIO DO GABARITO]
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS FINAIS
+========================================= -->
+
+<section>
+
+<h2>
+📚 Referências bibliográficas finais
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+SHIPHANDLING FOR THE MARINER.
+5th Edition.
+Directional Stability, páginas 18–20.
+</li>
+
+<li>
+LEWIS, Edward V. (Ed.).
+Principles of Naval Architecture.
+Volume III — Motions in Waves and Controllability.
+Section 3 — Motion Stability and Linear Equations.
+</li>
+
+<li>
+MARINHA DO BRASIL.
+Arte Naval.
+Volume I.
+8ª edição.
+Conceitos de geometria e características do casco
+pertinentes ao estudo da estabilidade direcional.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Conclusão da aula
+</h2>
+
+<p>
+Ao término desta aula, a estabilidade direcional
+deverá ser compreendida não apenas como uma
+classificação teórica do comportamento do navio,
+mas como uma característica diretamente relacionada
+à sua resposta ao leme, à evolução da Rate of Turn,
+à capacidade de quebrar uma guinada e à quantidade
+de intervenção necessária para manter ou alterar
+o rumo com segurança.
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+</main>
+
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR
+===================================================== -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     NÃO ALTERAR A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     CONTROLE DO GABARITO
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById(
+            "gabaritoAula"
+        );
+
+
+    if (!gabarito) {
+
+        return;
+
+    }
+
+
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
+
+        gabarito.style.display =
+            "block";
+
+    }
+    else {
+
+        gabarito.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
