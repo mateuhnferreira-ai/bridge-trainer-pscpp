@@ -782,11 +782,1602 @@ do leme para quebrar a guinada.
 
 <!--
 
-PARTE 1
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DA ESTABILIDADE DIRECIONAL
+========================================= -->
 
-conceito-estabilidade-direcional
-estabilidade-movimento
-equilibrio-estavel-instavel-indiferente
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS DA ESTABILIDADE DIRECIONAL
+</h2>
+
+<p>
+Antes de analisar se um navio possui estabilidade
+direcional positiva, neutra ou negativa, é necessário
+definir com precisão <strong>qual característica do
+movimento está sendo considerada estável</strong>.
+</p>
+
+<p>
+Essa distinção é particularmente importante porque
+<strong>Principles of Naval Architecture — Volume III</strong>
+e <strong>Shiphandling for the Mariner</strong> utilizam
+a ideia de estabilidade direcional sob perspectivas
+complementares, porém não rigorosamente idênticas.
+</p>
+
+<p>
+O PNA desenvolve o assunto a partir da teoria da
+<strong>motion stability</strong>, classificando diferentes
+níveis de estabilidade segundo quais propriedades da
+trajetória original permanecem após uma perturbação.
+</p>
+
+<p>
+Já o <strong>Shiphandling for the Mariner</strong>
+adota uma perspectiva diretamente operacional:
+como o navio se comporta durante uma guinada,
+o que ocorre com sua <strong>Rate of Turn — ROT</strong>
+quando o leme é colocado a meio e quão facilmente
+essa guinada pode ser quebrada.
+</p>
+
+<div class="destaque">
+
+<h3>
+Ideia central desta parte
+</h3>
+
+<p>
+<strong>
+Não basta dizer que um navio é "estável".
+</strong>
+</p>
+
+<p>
+É necessário perguntar:
+<strong>estável em relação a quê?</strong>
+</p>
+
+<p>
+À forma retilínea da trajetória?
+À direção original?
+À própria posição da trajetória?
+Ou, operacionalmente, à tendência de reduzir ou
+aumentar sua guinada quando retirado o comando
+de leme?
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     CONCEITO DE ESTABILIDADE DE MOVIMENTO
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-estabilidade-direcional"
+data-topico-id="conceito-estabilidade-direcional"
+>
+
+<h2>
+1. Estabilidade como propriedade do movimento
+</h2>
+
+<div class="widget">
+
+<p>
+O ponto de partida utilizado pelo
+<strong>Principles of Naval Architecture — Volume III</strong>
+é o conceito de
+<strong>motion stability</strong>,
+ou estabilidade de movimento.
+</p>
+
+<p>
+Considere um navio inicialmente navegando com
+velocidade constante em uma trajetória retilínea.
+Enquanto nenhuma perturbação significativa atua,
+essa condição constitui o
+<strong>estado inicial de equilíbrio do movimento</strong>.
+</p>
+
+<p>
+Agora suponha que uma força ou um momento externo
+atue durante um curto intervalo de tempo.
+Uma rajada de vento ou uma onda são exemplos
+utilizados pelo PNA para representar esse tipo de
+perturbação.
+</p>
+
+<p>
+A questão fundamental não é apenas saber
+<strong>quanto o navio se desviou durante a perturbação</strong>.
+O que define sua estabilidade é principalmente
+<strong>o comportamento depois que a perturbação deixa
+de atuar</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Definição física utilizada pelo PNA
+</h3>
+
+<p>
+Um corpo é considerado estável em determinado
+estado de equilíbrio quando, após ser momentaneamente
+perturbado por uma força ou momento externo e depois
+liberado dessa perturbação, apresenta tendência de
+retornar ao estado de equilíbrio relevante que existia
+antes da perturbação.
+</p>
+
+</div>
+
+
+<p>
+A palavra <strong>relevante</strong> é importante.
+Dependendo do tipo de estabilidade estudado,
+não é obrigatório que todas as características
+anteriores sejam recuperadas.
+</p>
+
+<p>
+O navio pode, por exemplo, voltar a navegar em
+linha reta sem voltar à direção original.
+Isso já caracteriza uma forma de estabilidade,
+mas não a forma mais elevada da hierarquia
+definida pelo PNA.
+</p>
+
+
+
+<!-- =========================================
+     SVG — PERTURBAÇÃO E RESPOSTA
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 900 390"
+width="100%"
+role="img"
+aria-labelledby="svg-estabilidade-titulo svg-estabilidade-desc"
+>
+
+<title id="svg-estabilidade-titulo">
+Perturbação de um navio inicialmente em movimento retilíneo
+</title>
+
+<desc id="svg-estabilidade-desc">
+Vista superior mostrando o navio seguindo uma trajetória
+retilínea, recebendo uma perturbação lateral e desenvolvendo
+uma resposta direcional após a retirada da perturbação.
+</desc>
+
+
+<!-- MAR -->
+
+<rect
+x="5"
+y="5"
+width="890"
+height="380"
+rx="18"
+fill="#eef7fa"
+stroke="#55727c"
+stroke-width="2"
+/>
+
+
+<!-- TRAJETÓRIA INICIAL -->
+
+<line
+x1="70"
+y1="195"
+x2="805"
+y2="195"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="12 9"
+/>
+
+<text
+x="75"
+y="175"
+font-size="18"
+fill="#334155"
+>
+Trajetória inicial de equilíbrio
+</text>
+
+
+<!-- NAVIO ANTES DA PERTURBAÇÃO -->
+
+<g transform="translate(210 195) rotate(90)">
+
+<path
+d="
+M 0 -48
+L 19 -20
+L 19 38
+L 0 52
+L -19 38
+L -19 -20
+Z
+"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="0"
+y1="-38"
+x2="0"
+y2="38"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+</g>
+
+
+<!-- SETA AVANTE -->
+
+<line
+x1="265"
+y1="195"
+x2="350"
+y2="195"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<polygon
+points="350,195 333,185 333,205"
+fill="#173f5f"
+/>
+
+<text
+x="275"
+y="225"
+font-size="17"
+fill="#173f5f"
+>
+Movimento inicial
+</text>
+
+
+<!-- PERTURBAÇÃO -->
+
+<line
+x1="425"
+y1="90"
+x2="425"
+y2="163"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="425,163 413,143 437,143"
+fill="#9a3412"
+/>
+
+<text
+x="360"
+y="65"
+font-size="18"
+font-weight="bold"
+fill="#9a3412"
+>
+Perturbação externa
+</text>
+
+<text
+x="365"
+y="88"
+font-size="15"
+fill="#9a3412"
+>
+força ou momento
+</text>
+
+
+<!-- NAVIO PERTURBADO -->
+
+<g transform="translate(455 218) rotate(103)">
+
+<path
+d="
+M 0 -48
+L 19 -20
+L 19 38
+L 0 52
+L -19 38
+L -19 -20
+Z
+"
+fill="#fff7ed"
+stroke="#9a3412"
+stroke-width="3"
+/>
+
+<line
+x1="0"
+y1="-38"
+x2="0"
+y2="38"
+stroke="#9a3412"
+stroke-width="2"
+/>
+
+</g>
+
+
+<!-- TRAJETÓRIA PÓS-PERTURBAÇÃO -->
+
+<path
+d="
+M 470 220
+C 550 245,
+620 245,
+710 220
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="710,220 692,211 695,231"
+fill="#0f766e"
+/>
+
+
+<text
+x="535"
+y="285"
+font-size="18"
+fill="#0f766e"
+>
+Resposta após a perturbação
+</text>
+
+
+<!-- CAIXA EXPLICATIVA -->
+
+<rect
+x="625"
+y="45"
+width="225"
+height="105"
+rx="10"
+fill="#ffffff"
+stroke="#55727c"
+stroke-width="2"
+/>
+
+<text
+x="642"
+y="72"
+font-size="16"
+font-weight="bold"
+fill="#173f5f"
+>
+A estabilidade é avaliada
+</text>
+
+<text
+x="642"
+y="96"
+font-size="16"
+fill="#334155"
+>
+depois que a força
+</text>
+
+<text
+x="642"
+y="118"
+font-size="16"
+fill="#334155"
+>
+perturbadora deixa
+</text>
+
+<text
+x="642"
+y="140"
+font-size="16"
+fill="#334155"
+>
+de atuar.
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+A análise de estabilidade não termina no instante
+da perturbação. O comportamento subsequente do navio
+é que permite classificar sua estabilidade de movimento.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma rajada de vento produzindo uma alteração momentânea
+de rumo não significa, por si só, que o navio seja
+direcionalmente instável.
+</p>
+
+<p>
+É necessário observar o que acontece
+<strong>depois que a perturbação é retirada</strong>.
+A estabilidade é uma propriedade da resposta do sistema,
+não simplesmente da magnitude inicial do desvio.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Motion Stability</strong> —
+estabilidade de movimento;
+</li>
+
+<li>
+<strong>State of Equilibrium</strong> —
+estado de equilíbrio;
+</li>
+
+<li>
+<strong>Disturbance</strong> —
+perturbação;
+</li>
+
+<li>
+<strong>External Force</strong> —
+força externa;
+</li>
+
+<li>
+<strong>External Moment</strong> —
+momento externo;
+</li>
+
+<li>
+<strong>Path Keeping</strong> —
+manutenção da trajetória.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+     HIERARQUIA DE ESTABILIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-movimento"
+data-topico-id="estabilidade-movimento"
+>
+
+<h2>
+2. Straight-Line, Directional e Positional Stability
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA não trata todas as respostas estáveis como
+equivalentes.
+</p>
+
+<p>
+A classificação depende das propriedades da trajetória
+inicial que permanecem no movimento final do navio.
+Isso produz uma verdadeira
+<strong>hierarquia de estabilidade</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+1 — Straight-Line Stability
+</h3>
+
+<p>
+Na
+<strong>straight-line stability</strong>,
+também denominada pelo PNA
+<strong>dynamic stability</strong> nesse contexto,
+o navio volta a desenvolver uma trajetória retilínea
+após a perturbação.
+</p>
+
+<p>
+Entretanto, essa nova trajetória
+<strong>não precisa ter a mesma direção da trajetória
+original</strong>.
+</p>
+
+<p>
+Portanto:
+</p>
+
+<p>
+<strong>
+reta inicial → perturbação → nova reta,
+mas em outra direção.
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+2 — Directional Stability
+</h3>
+
+<p>
+Na definição rigorosa apresentada pelo PNA,
+a <strong>directional stability</strong> exige algo a mais.
+</p>
+
+<p>
+Depois da perturbação, a trajetória final deve:
+</p>
+
+<ul>
+
+<li>
+voltar a ser retilínea;
+</li>
+
+<li>
+e possuir a
+<strong>mesma direção da trajetória inicial</strong>.
+</li>
+
+</ul>
+
+<p>
+A trajetória final pode estar lateralmente deslocada.
+O que precisa ser recuperado é sua
+<strong>direção</strong>.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+3 — Positional Motion Stability
+</h3>
+
+<p>
+Na
+<strong>positional motion stability</strong>,
+a exigência é ainda maior.
+</p>
+
+<p>
+O navio retorna não apenas à mesma direção,
+mas à própria
+<strong>trajetória original em relação à superfície
+da Terra</strong>.
+</p>
+
+<p>
+Nesse caso são recuperadas:
+</p>
+
+<ul>
+
+<li>
+a forma retilínea da trajetória;
+</li>
+
+<li>
+a direção original;
+</li>
+
+<li>
+e sua posição transversal original.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — HIERARQUIA PNA
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 720"
+width="100%"
+role="img"
+aria-labelledby="svg-hierarquia-titulo svg-hierarquia-desc"
+>
+
+<title id="svg-hierarquia-titulo">
+Hierarquia das formas de estabilidade de movimento
+</title>
+
+<desc id="svg-hierarquia-desc">
+Três diagramas em vista superior comparando straight-line
+stability, directional stability e positional motion stability.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="710"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- =====================================
+     CASO 1
+===================================== -->
+
+<text
+x="40"
+y="45"
+font-size="23"
+font-weight="bold"
+fill="#173f5f"
+>
+1 — Straight-Line Stability
+</text>
+
+
+<!-- linha original -->
+
+<line
+x1="70"
+y1="110"
+x2="860"
+y2="110"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="12 8"
+/>
+
+<text
+x="70"
+y="92"
+font-size="15"
+fill="#475569"
+>
+Trajetória inicial
+</text>
+
+
+<!-- perturbação -->
+
+<circle
+cx="370"
+cy="110"
+r="9"
+fill="#9a3412"
+/>
+
+<text
+x="337"
+y="145"
+font-size="14"
+fill="#9a3412"
+>
+perturbação
+</text>
+
+
+<!-- trajetória final -->
+
+<path
+d="
+M 370 110
+C 445 125,
+500 155,
+560 185
+L 850 330
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="850,330 828,315 835,339"
+fill="#0f766e"
+/>
+
+<text
+x="610"
+y="235"
+font-size="16"
+fill="#0f766e"
+>
+reta final
+</text>
+
+<text
+x="610"
+y="257"
+font-size="16"
+font-weight="bold"
+fill="#9a3412"
+>
+direção diferente
+</text>
+
+
+<!-- =====================================
+     DIVISÓRIA
+===================================== -->
+
+<line
+x1="30"
+y1="355"
+x2="930"
+y2="355"
+stroke="#cbd5e1"
+stroke-width="2"
+/>
+
+
+<!-- =====================================
+     CASO 2
+===================================== -->
+
+<text
+x="40"
+y="395"
+font-size="23"
+font-weight="bold"
+fill="#173f5f"
+>
+2 — Directional Stability
+</text>
+
+
+<line
+x1="70"
+y1="455"
+x2="860"
+y2="455"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="12 8"
+/>
+
+<circle
+cx="365"
+cy="455"
+r="9"
+fill="#9a3412"
+/>
+
+<path
+d="
+M 365 455
+C 430 480,
+475 505,
+530 515
+C 595 525,
+640 495,
+700 495
+L 860 495
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="860,495 839,484 839,506"
+fill="#0f766e"
+/>
+
+<text
+x="570"
+y="548"
+font-size="16"
+fill="#0f766e"
+>
+mesma direção
+</text>
+
+<text
+x="570"
+y="570"
+font-size="16"
+fill="#475569"
+>
+posição lateral diferente
+</text>
+
+
+<!-- =====================================
+     CASO 3 — REPRESENTAÇÃO RESUMIDA
+===================================== -->
+
+<rect
+x="545"
+y="595"
+width="350"
+height="82"
+rx="10"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="565"
+y="620"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+Positional Motion Stability
+</text>
+
+<text
+x="565"
+y="645"
+font-size="16"
+fill="#334155"
+>
+mesma direção + mesma posição
+</text>
+
+<text
+x="565"
+y="667"
+font-size="16"
+fill="#334155"
+>
+da trajetória original
+</text>
+
+
+<!-- ESCADA DE HIERARQUIA -->
+
+<text
+x="60"
+y="620"
+font-size="16"
+font-weight="bold"
+fill="#334155"
+>
+Hierarquia crescente:
+</text>
+
+<text
+x="60"
+y="647"
+font-size="15"
+fill="#334155"
+>
+reta → direção → posição
+</text>
+
+<line
+x1="245"
+y1="640"
+x2="475"
+y2="640"
+stroke="#173f5f"
+stroke-width="4"
+/>
+
+<polygon
+points="475,640 454,629 454,651"
+fill="#173f5f"
+/>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Interpretação didática da classificação apresentada
+pelo PNA. Quanto maior o nível da hierarquia,
+maior a quantidade de características da trajetória
+original que precisa ser recuperada.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — diferença conceitual importante
+</h3>
+
+<p>
+Na linguagem corrente de manobra,
+<strong>"estabilidade direcional"</strong>
+é frequentemente utilizada de forma mais ampla do
+que na classificação matemática rigorosa do PNA.
+</p>
+
+<p>
+Essa diferença precisa ser reconhecida para evitar
+uma aparente contradição entre as referências.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+     CONTROLS FIXED x CONTROLS WORKING
+========================================= -->
+
+<section
+class="topico-aula"
+id="equilibrio-estavel-instavel-indiferente"
+data-topico-id="equilibrio-estavel-instavel-indiferente"
+>
+
+<h2>
+3. O ponto decisivo: Controls Fixed × Controls Working
+</h2>
+
+<div class="widget">
+
+<p>
+Aqui surge uma das distinções mais importantes
+de toda a aula.
+</p>
+
+<p>
+O PNA analisa a estabilidade considerando diferentes
+condições do sistema de governo:
+</p>
+
+<ul>
+
+<li>
+<strong>controls fixed</strong> —
+superfícies de controle mantidas em posição fixa;
+</li>
+
+<li>
+<strong>controls working</strong> —
+controles atuando, manual ou automaticamente.
+</li>
+
+</ul>
+
+<p>
+No uso normal da arquitetura naval,
+quando o termo estabilidade é empregado sem outra
+qualificação, o PNA observa que geralmente se está
+falando de
+<strong>controls-fixed stability</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+O que acontece no plano horizontal?
+</h3>
+
+<p>
+Para um navio de superfície convencional,
+autopropulsado e com propulsão a ré,
+o PNA estabelece uma limitação fundamental:
+</p>
+
+<p>
+<strong>
+no plano horizontal, com os controles fixos,
+o navio não pode possuir positional motion stability
+nem directional stability no sentido rigoroso
+dessas definições.
+</strong>
+</p>
+
+<p>
+A razão física indicada pelo PNA é que não existe,
+no plano horizontal, um mecanismo hidrostático
+equivalente ao que produz estabilidade no plano
+vertical.
+</p>
+
+<p>
+No plano horizontal, a forma de estabilidade de
+movimento possível para um navio autopropulsado
+com os controles fixos é a
+<strong>straight-line stability</strong>.
+</p>
+
+</div>
+
+
+<p>
+Esse ponto é extremamente importante porque explica
+por que o PNA, nas seções seguintes, passa a tratar
+principalmente da
+<strong>controls-fixed straight-line stability</strong>
+quando desenvolve as equações lineares de movimento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Então por que o Shiphandling for the Mariner fala em
+Directional Stability?
+</h3>
+
+<p>
+Porque a obra está observando o problema a partir
+da perspectiva operacional do
+<strong>shiphandler</strong>.
+</p>
+
+<p>
+Para o operador, interessa principalmente saber
+como o navio responde durante o governo:
+</p>
+
+<ul>
+
+<li>
+o que acontece quando o leme é colocado a meio;
+</li>
+
+<li>
+se a <strong>Rate of Turn</strong> diminui,
+permanece constante ou aumenta;
+</li>
+
+<li>
+e quanto leme contrário será necessário para
+<strong>quebrar a guinada</strong>.
+</li>
+
+</ul>
+
+<p>
+Assim, o termo
+<strong>directional stability</strong>
+do Shiphandling for the Mariner deve ser entendido
+dentro desse contexto operacional.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — DUAS PERSPECTIVAS
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 510"
+width="100%"
+role="img"
+aria-labelledby="svg-perspectivas-titulo svg-perspectivas-desc"
+>
+
+<title id="svg-perspectivas-titulo">
+Perspectiva do PNA e perspectiva operacional do Shiphandling
+</title>
+
+<desc id="svg-perspectivas-desc">
+Diagrama comparando a análise hidrodinâmica de estabilidade
+com controles fixos e a análise operacional da resposta
+do navio ao leme.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="500"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- PNA -->
+
+<rect
+x="40"
+y="55"
+width="405"
+height="375"
+rx="15"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<text
+x="65"
+y="92"
+font-size="23"
+font-weight="bold"
+fill="#173f5f"
+>
+PNA — análise hidrodinâmica
+</text>
+
+<text
+x="65"
+y="128"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+Controls fixed
+</text>
+
+<text
+x="65"
+y="165"
+font-size="16"
+fill="#334155"
+>
+Plano horizontal:
+</text>
+
+<text
+x="65"
+y="195"
+font-size="16"
+fill="#334155"
+>
+• estabilidade posicional: não
+</text>
+
+<text
+x="65"
+y="225"
+font-size="16"
+fill="#334155"
+>
+• directional stability estrita: não
+</text>
+
+<text
+x="65"
+y="255"
+font-size="16"
+fill="#334155"
+>
+• straight-line stability: possível
+</text>
+
+<line
+x1="80"
+y1="310"
+x2="385"
+y2="310"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="10 7"
+/>
+
+<path
+d="
+M 80 310
+C 170 320,
+220 350,
+285 362
+C 330 370,
+355 360,
+390 360
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<text
+x="100"
+y="402"
+font-size="15"
+fill="#0f766e"
+>
+A trajetória pode voltar a ser reta
+</text>
+
+
+<!-- SHIPHANDLING -->
+
+<rect
+x="515"
+y="55"
+width="405"
+height="375"
+rx="15"
+fill="#ffffff"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="540"
+y="92"
+font-size="22"
+font-weight="bold"
+fill="#0f766e"
+>
+Shiphandling — operação
+</text>
+
+<text
+x="540"
+y="128"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+Resposta do navio
+</text>
+
+<text
+x="540"
+y="170"
+font-size="16"
+fill="#334155"
+>
+Perguntas operacionais:
+</text>
+
+<text
+x="540"
+y="205"
+font-size="16"
+fill="#334155"
+>
+• O navio estabiliza?
+</text>
+
+<text
+x="540"
+y="235"
+font-size="16"
+fill="#334155"
+>
+• Como varia a ROT?
+</text>
+
+<text
+x="540"
+y="265"
+font-size="16"
+fill="#334155"
+>
+• Quanto leme contrário?
+</text>
+
+<text
+x="540"
+y="295"
+font-size="16"
+fill="#334155"
+>
+• É fácil quebrar a guinada?
+</text>
+
+
+<!-- leme -->
+
+<g transform="translate(700 355) rotate(90)">
+
+<path
+d="
+M 0 -43
+L 18 -18
+L 18 33
+L 0 45
+L -18 33
+L -18 -18
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="0"
+y1="31"
+x2="0"
+y2="58"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+</g>
+
+<text
+x="755"
+y="360"
+font-size="16"
+font-weight="bold"
+fill="#9a3412"
+>
+Rudder amidships
+</text>
+
+<text
+x="755"
+y="386"
+font-size="15"
+fill="#334155"
+>
+→ observar a ROT
+</text>
+
+
+<!-- CONEXÃO -->
+
+<text
+x="225"
+y="470"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+Mesma física — perspectivas de análise diferentes
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+A abordagem do PNA procura caracterizar matematicamente
+a estabilidade do sistema; o Shiphandling for the Mariner
+traduz a consequência dessa característica para o
+comportamento observado pelo operador.
+</p>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — não confundir as definições
+</h3>
+
+<p>
+Uma questão pode utilizar
+<strong>straight-line stability</strong>
+no sentido técnico do PNA ou
+<strong>directional stability</strong>
+no sentido operacional empregado pelo
+Shiphandling for the Mariner.
+</p>
+
+<p>
+A leitura deve considerar
+<strong>qual referência e qual condição de controle
+estão sendo utilizadas</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Controls Fixed</strong> —
+controles mantidos fixos;
+</li>
+
+<li>
+<strong>Controls Working</strong> —
+controles atuando, manual ou automaticamente;
+</li>
+
+<li>
+<strong>Straight-Line Stability</strong> —
+estabilidade em trajetória retilínea;
+</li>
+
+<li>
+<strong>Directional Stability</strong> —
+estabilidade direcional;
+</li>
+
+<li>
+<strong>Positional Motion Stability</strong> —
+estabilidade posicional do movimento;
+</li>
+
+<li>
+<strong>Rudder Amidships</strong> —
+leme a meio;
+</li>
+
+<li>
+<strong>Checking the Swing</strong> —
+quebrar a guinada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 1
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 1
+</h2>
+
+<p>
+A estabilidade direcional não deve ser tratada como
+uma propriedade genérica segundo a qual o navio
+simplesmente "volta ao rumo".
+</p>
+
+<p>
+O PNA estabelece uma hierarquia precisa:
+</p>
+
+<ul>
+
+<li>
+<strong>Straight-Line Stability:</strong>
+a trajetória final volta a ser reta,
+mas sua direção pode mudar;
+</li>
+
+<li>
+<strong>Directional Stability:</strong>
+a trajetória final recupera também
+a direção original;
+</li>
+
+<li>
+<strong>Positional Motion Stability:</strong>
+a trajetória recupera direção e posição originais.
+</li>
+
+</ul>
+
+<p>
+No plano horizontal de um navio autopropulsado
+convencional, a estabilidade possível com
+<strong>controls fixed</strong> é essencialmente
+a <strong>straight-line stability</strong>.
+</p>
+
+<p>
+Por outro lado, para o
+<strong>shiphandler</strong>,
+a expressão estabilidade direcional assume uma
+interpretação eminentemente operacional:
+observar como o navio responde depois que o leme
+é colocado a meio e quão facilmente é possível
+<strong>quebrar a guinada</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 2
+</h3>
+
+<p>
+Com essa base estabelecida, podemos agora analisar
+o comportamento que o Prático efetivamente observa:
+</p>
+
+<p>
+<strong>
+ROT diminuindo → ROT constante → ROT aumentando
+</strong>
+</p>
+
+<p>
+e relacionar essas três respostas às condições
+operacionais denominadas
+<strong>estabilidade direcional positiva,
+neutra e negativa</strong>.
+</p>
+
+</div>
+
+</div>
+
+    </section>
 
 
 PARTE 2
