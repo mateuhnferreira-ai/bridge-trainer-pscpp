@@ -19613,7 +19613,6 @@ D) O overshoot observado prova que o navio possui elevada positional stability.
 
 <!-- =========================================
      CONTROLE DOS EXERCÍCIOS
-     PADRÃO 1
 ========================================= -->
 
 <div class="widget">
@@ -19637,6 +19636,7 @@ class="botao-estudo"
 </div>
 
 
+
 <div
 id="resultado-exercicios"
 class="widget"
@@ -19647,10 +19647,45 @@ style="display:none;"
 📊 Resultado da tentativa
 </h3>
 
-<p id="texto-resultado-exercicios">
-</p>
+<p id="texto-resultado-exercicios"></p>
 
 </div>
+
+</section>
+
+
+
+<!-- =========================================
+     BOTÃO DO GABARITO
+========================================= -->
+
+<section>
+
+<h2>
+📘 Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<p>
+Abra o gabarito somente depois de responder e corrigir
+todas as questões.
+</p>
+
+<button
+type="button"
+class="botao-estudo"
+id="botao-gabarito-estabilidade"
+aria-expanded="false"
+aria-controls="gabarito-estabilidade"
+onclick="alternarGabaritoEstabilidade()"
+>
+📘 Mostrar gabarito comentado
+</button>
+
+</div>
+
+</section>
 
 
 
@@ -19658,101 +19693,171 @@ style="display:none;"
      GABARITO COMENTADO
 ========================================= -->
 
+<section
+id="gabarito-estabilidade"
+hidden
+>
+
 <div class="widget">
 
-<h3>
+<h2>
 ✅ Gabarito comentado
-</h3>
+</h2>
 
-<button
-type="button"
-class="botao-estudo"
-onclick="alternarGabaritoAula()"
->
-Mostrar / ocultar gabarito comentado
-</button>
-
-
-<div
-id="gabaritoAula"
-style="display:none;"
->
-
-<div class="destaque">
 
 
 <!-- =========================================
      QUESTÕES 1 A 10
 ========================================= -->
 
+<h3>
+Questão 1 — C
+</h3>
+
 <p>
-<strong>1 — C.</strong>
 O conceito de stability do PNA parte da resposta
-a uma perturbação: removida a perturbação,
-o sistema estável tende a retornar à condição
-de equilíbrio anterior.
+a uma perturbação.
 </p>
 
 <p>
-<strong>2 — B.</strong>
+Depois que a perturbação é retirada,
+um sistema estável tende a retornar
+à condição de equilíbrio considerada.
+</p>
+
+
+
+<h3>
+Questão 2 — B
+</h3>
+
+<p>
 Na straight-line stability,
 a propriedade retilínea da trajetória é recuperada,
-mas não há exigência de retorno à direção original.
+mas não existe exigência de retorno
+à direção original.
 </p>
 
+
+
+<h3>
+Questão 3 — D
+</h3>
+
 <p>
-<strong>3 — D.</strong>
 No plano horizontal de um navio convencional
 autopropelido, o PNA estabelece que
 straight-line stability é a forma possível
 de controls-fixed motion stability.
 </p>
 
-<p>
-<strong>4 — A.</strong>
-Controls working envolve atuação do sistema
-de controle, manual ou automática.
-</p>
+
+
+<h3>
+Questão 4 — A
+</h3>
 
 <p>
-<strong>5 — B.</strong>
-Na interpretação operacional do MacElrevey,
-a redução da ROT depois de colocar o leme a meio
-caracteriza estabilidade positiva.
+Controls working corresponde à condição
+em que existe atuação do sistema de controle,
+manual ou automática.
 </p>
 
+
+
+<h3>
+Questão 5 — B
+</h3>
+
 <p>
-<strong>6 — C.</strong>
+Na abordagem operacional do
+Shiphandling for the Mariner,
+a redução da Rate of Turn depois que
+o leme é colocado a meio caracteriza
+estabilidade direcional positiva.
+</p>
+
+
+
+<h3>
+Questão 6 — C
+</h3>
+
+<p>
 Na estabilidade neutra,
-a rate of swing não apresenta tendência intrínseca
-de crescer ou diminuir.
+a Rate of Turn não apresenta tendência
+intrínseca significativa de aumentar ou diminuir.
+</p>
+
+
+
+<h3>
+Questão 7 — A
+</h3>
+
+<p>
+Na estabilidade direcional negativa,
+a Rate of Turn pode continuar aumentando
+mesmo depois que o leme é colocado a meio.
+</p>
+
+
+
+<h3>
+Questão 8 — D
+</h3>
+
+<p>
+Heading e Rate of Turn são grandezas diferentes.
 </p>
 
 <p>
-<strong>7 — A.</strong>
-Na condição negativa,
-a ROT pode continuar aumentando mesmo depois
-que o leme é colocado a meio.
+O fato de o navio alcançar o heading desejado
+não significa que a guinada tenha terminado.
+</p>
+
+
+
+<h3>
+Questão 9 — B
+</h3>
+
+<p>
+A derivada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y<sub>v</sub> = ∂Y / ∂v
+</strong>
 </p>
 
 <p>
-<strong>8 — D.</strong>
-Heading e yaw rate são variáveis diferentes.
-Estar no heading correto não significa que
-a guinada tenha terminado.
+representa a variação da força lateral
+associada a uma pequena alteração
+da velocidade lateral.
+</p>
+
+
+
+<h3>
+Questão 10 — C
+</h3>
+
+<p>
+A derivada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N<sub>v</sub> = ∂N / ∂v
+</strong>
 </p>
 
 <p>
-<strong>9 — B.</strong>
-Y<sub>v</sub> = ∂Y / ∂v.
-Relaciona força lateral e velocidade lateral.
-</p>
-
-<p>
-<strong>10 — C.</strong>
-N<sub>v</sub> = ∂N / ∂v.
-É a alteração do momento de guinada associada
-a uma alteração da velocidade lateral.
+representa a alteração do momento de guinada
+associada a uma pequena alteração
+da velocidade lateral.
 </p>
 
 
@@ -19761,23 +19866,92 @@ a uma alteração da velocidade lateral.
      QUESTÕES 11 A 20
 ========================================= -->
 
+<h3>
+Questão 11 — D
+</h3>
+
 <p>
-<strong>11 — D.</strong>
-N<sub>r</sub> = ∂N / ∂r.
-Relaciona yawing moment e yaw rate.
+A derivada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N<sub>r</sub> = ∂N / ∂r
+</strong>
 </p>
 
 <p>
-<strong>12 — A.</strong>
-O critério de estabilidade é resultado do sistema
-acoplado sway–yaw.
-Não existe uma única derivada que,
-isoladamente, determine toda a estabilidade.
+relaciona o momento de guinada
+à yaw rate.
+</p>
+
+
+
+<h3>
+Questão 12 — A
+</h3>
+
+<p>
+O critério de estabilidade resulta
+da interação do sistema acoplado sway–yaw.
 </p>
 
 <p>
-<strong>13 — C.</strong>
-Aplicando os valores fornecidos:
+Nenhuma derivada isolada determina
+toda a estabilidade.
+</p>
+
+
+
+<h3>
+Questão 13 — C
+</h3>
+
+<p>
+Temos:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>v</sub>N′<sub>r</sub>
+=
+(−0,30)(−0,08)
+=
++0,024
+</strong>
+</p>
+
+<p>
+e:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>r</sub> − A′
+=
+0,05 − 0,20
+=
+−0,15
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N′<sub>v</sub>
+(Y′<sub>r</sub> − A′)
+=
+(−0,10)(−0,15)
+=
++0,015
+</strong>
+</p>
+
+<p>
+Portanto:
 </p>
 
 <p style="text-align:center;">
@@ -19786,55 +19960,123 @@ C = 0,024 − 0,015 = +0,009
 </strong>
 </p>
 
-<p>
-Portanto, a alternativa correta é C.
-</p>
+
+
+<h3>
+Questão 14 — B
+</h3>
 
 <p>
-<strong>14 — B.</strong>
 Na formulação estudada:
-C &gt; 0 indica condição estável;
-C = 0 representa o limite;
-C &lt; 0 indica condição instável.
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &gt; 0 → condição estável
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C = 0 → limite de estabilidade
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+C &lt; 0 → condição instável
+</strong>
+</p>
+
+
+
+<h3>
+Questão 15 — D
+</h3>
+
+<p>
+Para o Navio A:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L/B = 240 / 30 = 8
+</strong>
 </p>
 
 <p>
-<strong>15 — D.</strong>
-240/30 = 8 e 240/40 = 6.
+Para o Navio B:
+</p>
+
+<p style="text-align:center;">
+<strong>
+L/B = 240 / 40 = 6
+</strong>
+</p>
+
+
+
+<h3>
+Questão 16 — A
+</h3>
+
+<p>
+Mantidas as demais condições relevantes,
+maior relação L/B tende a favorecer
+maior estabilidade direcional.
+</p>
+
+
+
+<h3>
+Questão 17 — C
+</h3>
+
+<p>
+Segundo o Shiphandling for the Mariner,
+o aumento do block coefficient tende
+a reduzir a directional stability.
+</p>
+
+
+
+<h3>
+Questão 18 — B
+</h3>
+
+<p>
+Maior participação relativa das seções
+submersas de vante em relação às de ré
+tende a reduzir a estabilidade direcional.
+</p>
+
+
+
+<h3>
+Questão 19 — A
+</h3>
+
+<p>
+Drag corresponde ao trim pela popa
+no contexto utilizado pelo MacElrevey.
 </p>
 
 <p>
-<strong>16 — A.</strong>
-Mantidas as demais condições,
-maior L/B tende a favorecer maior estabilidade
-direcional.
+Sua tendência é tornar a estabilidade
+direcional mais positiva.
 </p>
 
-<p>
-<strong>17 — C.</strong>
-O MacElrevey associa maior block coefficient
-a menor directional stability.
-</p>
+
+
+<h3>
+Questão 20 — D
+</h3>
 
 <p>
-<strong>18 — B.</strong>
-Maior participação das seções submersas de vante
-em relação às de ré tende a reduzir a estabilidade
-direcional.
-</p>
-
-<p>
-<strong>19 — A.</strong>
-Drag significa trim pela popa no contexto utilizado.
-Ele tende a tornar a estabilidade direcional
-mais positiva.
-</p>
-
-<p>
-<strong>20 — D.</strong>
 O trim pela proa aumenta relativamente
-a participação das seções de vante e pode produzir
-condição mais instável.
+a participação das seções de vante
+e pode favorecer uma condição
+direcionalmente mais instável.
 </p>
 
 
@@ -19843,43 +20085,104 @@ condição mais instável.
      QUESTÕES 21 A 30
 ========================================= -->
 
-<p>
-<strong>21 — C.</strong>
-UKC = h − T = 12,5 − 10,0 = 2,5 m.
-</p>
+<h3>
+Questão 21 — C
+</h3>
 
 <p>
-<strong>22 — B.</strong>
+A UKC geométrica é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+UKC = h − T
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+UKC = 12,5 − 10,0 = 2,5 m
+</strong>
+</p>
+
+
+
+<h3>
+Questão 22 — B
+</h3>
+
+<p>
 Segundo o Shiphandling for the Mariner,
-a directional stability tende a tornar-se
-mais positiva à medida que a UKC diminui,
-ressalvados outros efeitos como alterações de trim.
+a estabilidade direcional tende a tornar-se
+mais positiva à medida que a UKC diminui
+em shallow water.
 </p>
 
-<p>
-<strong>23 — D.</strong>
-Em shallow water podem coexistir maior
-estabilidade direcional e maior turning diameter.
-</p>
+
+
+<h3>
+Questão 23 — D
+</h3>
 
 <p>
-<strong>24 — A.</strong>
-MacElrevey descreve a Rate of Turn em shallow water
-como essencialmente semelhante à de deep water,
+Em águas rasas podem ocorrer simultaneamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+estabilidade direcional ↑
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+turning diameter ↑
+</strong>
+</p>
+
+
+
+<h3>
+Questão 24 — A
+</h3>
+
+<p>
+MacElrevey descreve a Rate of Turn
+em shallow water como essencialmente semelhante
+à observada em deep water,
 apesar do aumento do diâmetro da curva.
 </p>
 
+
+
+<h3>
+Questão 25 — C
+</h3>
+
 <p>
-<strong>25 — C.</strong>
-Em navio direcionalmente instável,
+Em um navio direcionalmente instável,
 mais leme e por mais tempo podem ser necessários
-para quebrar a guinada.
+para quebrar a guinada do que para iniciá-la.
+</p>
+
+
+
+<h3>
+Questão 26 — B
+</h3>
+
+<p>
+20 segundos correspondem a:
+</p>
+
+<p style="text-align:center;">
+<strong>
+20 / 60 = 1/3 min
+</strong>
 </p>
 
 <p>
-<strong>26 — B.</strong>
-20 segundos = 1/3 de minuto.
-Logo:
+Então:
 </p>
 
 <p style="text-align:center;">
@@ -19888,33 +20191,90 @@ Logo:
 </strong>
 </p>
 
-<p>
-<strong>27 — D.</strong>
-O zigzag maneuver fornece informações importantes
-sobre a resposta transitória do conjunto
-casco–leme–controle.
-</p>
+
+
+<h3>
+Questão 27 — D
+</h3>
 
 <p>
-<strong>28 — A.</strong>
+O zigzag maneuver fornece informações importantes
+sobre a resposta transitória do conjunto
+casco–leme–sistema de controle.
+</p>
+
+
+
+<h3>
+Questão 28 — A
+</h3>
+
+<p>
 A yaw-checking ability pode ser avaliada,
-entre outros parâmetros, pelo first overshoot angle
+entre outros parâmetros,
+pelo first overshoot angle
 e pelo time to check yaw.
 </p>
 
+
+
+<h3>
+Questão 29 — C
+</h3>
+
 <p>
-<strong>29 — C.</strong>
-K está relacionado à turning ability/responsiveness,
-enquanto T fornece informação sobre a resposta
-transitória e a estabilidade dinâmica.
+Na interpretação utilizada:
 </p>
 
 <p>
-<strong>30 — B.</strong>
-Alto C<sub>B</sub>, seções cheias à vante,
-trim pela proa, ROT crescente com leme a meio
-e dificuldade para quebrar a guinada são compatíveis
-com estabilidade direcional marginal ou negativa.
+<strong>K</strong> está relacionado
+à turning ability e responsiveness.
+</p>
+
+<p>
+<strong>T</strong> está relacionado
+à resposta transitória
+e fornece informação sobre
+a característica dinâmica do navio.
+</p>
+
+
+
+<h3>
+Questão 30 — B
+</h3>
+
+<p>
+A combinação de:
+</p>
+
+<ul>
+
+<li>
+elevado C<sub>B</sub>;
+</li>
+
+<li>
+seções cheias à vante;
+</li>
+
+<li>
+trim pela proa;
+</li>
+
+<li>
+ROT crescente com leme a meio;
+</li>
+
+<li>
+e dificuldade para quebrar a guinada;
+</li>
+
+</ul>
+
+<p>
+é compatível com estabilidade direcional
+marginal ou negativa.
 </p>
 
 
@@ -19923,16 +20283,81 @@ com estabilidade direcional marginal ou negativa.
      QUESTÕES 31 A 40
 ========================================= -->
 
+<h3>
+Questão 31 — C
+</h3>
+
 <p>
-<strong>31 — C.</strong>
-I, II e IV são corretas.
-A terminologia formal do PNA e a abordagem
-operacional do Shiphandling são relacionadas,
-mas não rigorosamente equivalentes.
+As afirmações I, II e IV são corretas.
 </p>
 
 <p>
-<strong>32 — B.</strong>
+A straight-line stability do PNA
+não exige recuperação da direção original.
+</p>
+
+<p>
+Já a abordagem operacional de MacElrevey
+observa a evolução da Rate of Turn
+depois que o leme é colocado a meio.
+</p>
+
+<p>
+As duas abordagens são relacionadas,
+mas não rigorosamente equivalentes.
+</p>
+
+
+
+<h3>
+Questão 32 — B
+</h3>
+
+<p>
+Temos:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>v</sub>N′<sub>r</sub>
+=
+(−0,28)(−0,09)
+=
++0,0252
+</strong>
+</p>
+
+<p>
+e:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Y′<sub>r</sub> − A′
+=
+0,06 − 0,19
+=
+−0,13
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+N′<sub>v</sub>
+(Y′<sub>r</sub> − A′)
+=
+(−0,18)(−0,13)
+=
++0,0234
+</strong>
+</p>
+
+<p>
+Portanto:
 </p>
 
 <p style="text-align:center;">
@@ -19942,69 +20367,155 @@ C = 0,0252 − 0,0234 = +0,0018
 </p>
 
 <p>
-A condição permanece do lado estável do critério,
-porém muito próxima da fronteira.
+A condição permanece no lado estável
+do critério, porém muito próxima da fronteira.
 </p>
 
+
+
+<h3>
+Questão 33 — D
+</h3>
+
 <p>
-<strong>33 — D.</strong>
 Um N<sub>r</sub> fortemente amortecedor
-não determina sozinho a estabilidade.
-É necessário considerar o acoplamento das demais
-derivadas e dos termos inerciais.
+não determina sozinho toda a estabilidade.
 </p>
 
 <p>
-<strong>34 — A.</strong>
-Maior L/B e maior drag tendem a favorecer
-a estabilidade; maior C<sub>B</sub> e aumento de L/T
-tendem a prejudicá-la nas condições estudadas.
+É necessário considerar o acoplamento
+entre as demais derivadas e os termos inerciais.
+</p>
+
+
+
+<h3>
+Questão 34 — A
+</h3>
+
+<p>
+Maior L/B e maior drag tendem
+a favorecer a estabilidade.
 </p>
 
 <p>
-<strong>35 — C.</strong>
-Reduzir o calado em águas profundas e reduzir a UKC
-mantendo o calado são fenômenos diferentes.
-O primeiro altera a geometria submersa;
-o segundo introduz a influência crescente do fundo.
+Maior coeficiente de bloco
+e maior L/T tendem a prejudicá-la
+nas condições estudadas.
+</p>
+
+
+
+<h3>
+Questão 35 — C
+</h3>
+
+<p>
+Reduzir o calado em águas profundas
+e reduzir a UKC mantendo o calado
+são fenômenos fisicamente diferentes.
 </p>
 
 <p>
-<strong>36 — B.</strong>
-Em shallow water podem ocorrer simultaneamente:
+A redução do calado aumenta L/T
+e pode reduzir controls-fixed stability.
+</p>
+
+<p>
+A redução da UKC mantendo o navio inalterado
+faz crescer a influência hidrodinâmica do fundo
+e tende a tornar a estabilidade mais positiva.
+</p>
+
+
+
+<h3>
+Questão 36 — B
+</h3>
+
+<p>
+O comportamento é compatível com:
 </p>
 
 <p style="text-align:center;">
 <strong>
-estabilidade direcional ↑
-<br>
-turning diameter ↑
+maior estabilidade direcional
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+e
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+maior turning diameter
 </strong>
 </p>
 
 <p>
-Maior course stability não significa,
-portanto, melhor turning ability.
+em shallow water.
+</p>
+
+
+
+<h3>
+Questão 37 — D
+</h3>
+
+<p>
+A sequência:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ROT 4 → 5 → 7 → 9°/min
+</strong>
 </p>
 
 <p>
-<strong>37 — D.</strong>
-A ROT crescente com leme a meio,
-somada à demora na resposta ao counter-rudder,
-é compatível com estabilidade negativa
+com o leme a meio indica crescimento da guinada.
+</p>
+
+<p>
+Somada à demora para responder ao counter-rudder,
+a situação é compatível com estabilidade negativa
 e baixa yaw-checking ability.
 </p>
 
+
+
+<h3>
+Questão 38 — A
+</h3>
+
 <p>
-<strong>38 — A.</strong>
-Menor first overshoot angle e menor time to check yaw
+Menor first overshoot angle
+e menor time to check yaw
 indicam melhor yaw-checking ability
-nas condições do ensaio.
+nas condições do ensaio considerado.
+</p>
+
+
+
+<h3>
+Questão 39 — C
+</h3>
+
+<p>
+No modelo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+T dr/dt + r = Kδ
+</strong>
 </p>
 
 <p>
-<strong>39 — C.</strong>
-No regime permanente:
+em regime permanente:
 </p>
 
 <p style="text-align:center;">
@@ -20014,7 +20525,7 @@ dr/dt = 0
 </p>
 
 <p>
-portanto:
+logo:
 </p>
 
 <p style="text-align:center;">
@@ -20024,37 +20535,85 @@ r = Kδ
 </p>
 
 <p>
-T influencia a resposta transitória,
-não a steady turning rate nessa forma simplificada.
+T não determina a steady turning rate
+nessa forma simplificada.
 </p>
 
 <p>
-<strong>40 — B.</strong>
-O comportamento inicial é compatível com
-estabilidade marginal ou negativa.
-A redução da UKC tende a tornar a estabilidade
-mais positiva, mas não implica automaticamente
-menor turning diameter nem elimina a necessidade
-de antecipação para quebrar a guinada.
+T influencia a resposta transitória,
+isto é, a rapidez com que r evolui
+em direção ao valor permanente.
 </p>
 
 
-</div>
-<!-- fecha .destaque -->
+
+<h3>
+Questão 40 — B
+</h3>
+
+<p>
+O comportamento inicial é compatível
+com estabilidade marginal ou negativa.
+</p>
+
+<p>
+A combinação inclui:
+</p>
+
+<ul>
+
+<li>
+alto C<sub>B</sub>;
+</li>
+
+<li>
+seções cheias à vante;
+</li>
+
+<li>
+trim pela proa;
+</li>
+
+<li>
+ROT crescente com leme a meio;
+</li>
+
+<li>
+necessidade significativa de counter-rudder;
+</li>
+
+<li>
+e overshoot.
+</li>
+
+</ul>
+
+<p>
+Ao entrar em menor UKC,
+a estabilidade tende a tornar-se mais positiva.
+</p>
+
+<p>
+Isso não significa,
+entretanto,
+menor turning diameter,
+resposta necessariamente mais rápida ao leme
+ou eliminação da necessidade de antecipação.
+</p>
+
+
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoEstabilidade()"
+>
+🙈 Ocultar gabarito comentado
+</button>
 
 </div>
-<!-- fecha #gabaritoAula -->
-
-</div>
-<!-- fecha .widget do gabarito -->
-
 
 </section>
-<!-- fecha .topico-aula dos exercícios -->
-
-
-</section>
-<!-- fecha seção externa "Questões de revisão" -->
 
 
 
@@ -20073,12 +20632,19 @@ de antecipação para quebrar a guinada.
 <ul>
 
 <li>
-<strong>SHIPHANDLING FOR THE MARINER. 5th Edition.</strong>
-Directional Stability, páginas 18–20.
+<strong>
+SHIPHANDLING FOR THE MARINER.
+5th Edition.
+</strong>
+Directional Stability,
+páginas 18–20.
 </li>
 
 <li>
-<strong>SHIPHANDLING FOR THE MARINER. 5th Edition.</strong>
+<strong>
+SHIPHANDLING FOR THE MARINER.
+5th Edition.
+</strong>
 Effect of Trim on Handling Characteristics.
 </li>
 
@@ -20092,12 +20658,21 @@ Chapter IX — Controllability.
 </li>
 
 <li>
-<strong>Principles of Naval Architecture. Volume III.</strong>
-Section 3 — Motion Stability and Linear Equations.
+<strong>
+Principles of Naval Architecture.
+Volume III.
+</strong>
+Section 3 —
+Motion Stability and Linear Equations.
 </li>
 
 <li>
-<strong>MARINHA DO BRASIL. Arte Naval. Volume I. 8ª edição.</strong>
+<strong>
+MARINHA DO BRASIL.
+Arte Naval.
+Volume I.
+8ª edição.
+</strong>
 Conceitos de geometria e características do casco
 pertinentes ao estudo da estabilidade direcional.
 </li>
@@ -20112,17 +20687,40 @@ pertinentes ao estudo da estabilidade direcional.
 </h3>
 
 <p>
-O <strong>Shiphandling for the Mariner</strong>
+O
+<strong>Shiphandling for the Mariner</strong>
 utiliza directional stability em sentido
 fortemente operacional.
 </p>
 
 <p>
 O PNA estabelece uma classificação formal
-mais rigorosa entre straight-line stability,
-directional stability, positional stability,
-controls-fixed e controls-working.
+mais rigorosa entre:
 </p>
+
+<ul>
+
+<li>
+straight-line stability;
+</li>
+
+<li>
+directional stability;
+</li>
+
+<li>
+positional stability;
+</li>
+
+<li>
+controls-fixed;
+</li>
+
+<li>
+controls-working.
+</li>
+
+</ul>
 
 <p>
 Essas abordagens foram mantidas distintas
@@ -20148,14 +20746,16 @@ ao longo da aula.
 </h2>
 
 <p>
-Ao término desta aula, a estabilidade direcional
-deverá ser compreendida não apenas como uma
-classificação teórica do comportamento do navio,
+Ao término desta aula,
+a estabilidade direcional deverá ser compreendida
+não apenas como uma classificação teórica
+do comportamento do navio,
 mas como uma característica diretamente relacionada
-à sua resposta ao leme, à evolução da Rate of Turn,
-à capacidade de quebrar uma guinada e à quantidade
-de intervenção necessária para manter ou alterar
-o rumo com segurança.
+à resposta ao leme,
+à evolução da Rate of Turn,
+à capacidade de quebrar uma guinada
+e à intervenção necessária para manter
+ou alterar o rumo com segurança.
 </p>
 
 
@@ -20168,10 +20768,43 @@ ao heading instantâneo.
 
 <p>
 É necessário observar simultaneamente:
-heading, Rate of Turn, tendência da Rate of Turn,
-resposta ao leme, capacidade de quebrar a guinada,
-trim, UKC e espaço disponível para a manobra.
 </p>
+
+<ul>
+
+<li>
+heading;
+</li>
+
+<li>
+Rate of Turn;
+</li>
+
+<li>
+tendência da Rate of Turn;
+</li>
+
+<li>
+resposta ao leme;
+</li>
+
+<li>
+capacidade de quebrar a guinada;
+</li>
+
+<li>
+trim;
+</li>
+
+<li>
+UKC;
+</li>
+
+<li>
+e espaço disponível para a manobra.
+</li>
+
+</ul>
 
 </div>
 
@@ -20191,9 +20824,10 @@ quanto o navio está guinando.
 
 <p style="text-align:center; font-size:1.15em;">
 <strong>
-É necessário compreender para onde essa guinada
-está evoluindo, quanto tempo será necessário
-para quebrá-la e quanto espaço estará disponível.
+É necessário compreender
+para onde essa guinada está evoluindo,
+quanto tempo será necessário para quebrá-la
+e quanto espaço estará disponível.
 </strong>
 </p>
 
@@ -20206,6 +20840,7 @@ para quebrá-la e quanto espaço estará disponível.
 <!-- =====================================================
      FIM DO CONTEÚDO EDITÁVEL DA AULA
 ===================================================== -->
+
 
 </main>
 
@@ -20232,38 +20867,80 @@ Preparação para o Processo Seletivo de Praticante de Prático
 
 <!-- =========================================
      SCRIPTS OBRIGATÓRIOS
-     NÃO ALTERAR A ORDEM
 ========================================= -->
 
 <script src="../../js/navigation.js"></script>
+
 <script src="../../js/progresso.js"></script>
+
 <script src="../../js/pomodoro.js"></script>
+
 <script src="../../js/exercicios.js"></script>
 
 
 
 <!-- =========================================
-     CONTROLE DO GABARITO
+     CONTROLE DO GABARITO COMENTADO
 ========================================= -->
 
 <script>
 
-function alternarGabaritoAula() {
+function alternarGabaritoEstabilidade() {
 
     const gabarito =
-        document.getElementById("gabaritoAula");
+        document.getElementById(
+            "gabarito-estabilidade"
+        );
+
+
+    const botao =
+        document.getElementById(
+            "botao-gabarito-estabilidade"
+        );
+
 
     if (!gabarito) {
+
         return;
+
     }
 
-    if (gabarito.style.display === "none") {
 
-        gabarito.style.display = "block";
+    const estaOculto =
+        gabarito.hidden;
 
-    } else {
 
-        gabarito.style.display = "none";
+    gabarito.hidden =
+        !estaOculto;
+
+
+    if (botao) {
+
+        botao.setAttribute(
+            "aria-expanded",
+            estaOculto
+                ? "true"
+                : "false"
+        );
+
+
+        botao.textContent =
+            estaOculto
+                ? "🙈 Ocultar gabarito comentado"
+                : "📘 Mostrar gabarito comentado";
+
+    }
+
+
+    if (estaOculto) {
+
+        gabarito.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
 
     }
 
@@ -20275,3 +20952,8 @@ function alternarGabaritoAula() {
 </body>
 
 </html>
+
+
+<!-- =========================================
+     FIM DA AULA DE ESTABILIDADE DIRECIONAL
+========================================= -->
