@@ -2276,23 +2276,3895 @@ neutra e negativa</strong>.
     </section>
 
 
-PARTE 2
+<!-- =========================================
+     PARTE 2
+     RESPOSTA DO NAVIO A UMA PERTURBAÇÃO
+========================================= -->
 
-estabilidade-positiva-neutra-negativa
-estabilidade-positiva
-estabilidade-neutra
-estabilidade-negativa
-guinada-rate-of-turn
-leme-a-meio
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 2 — RESPOSTA DIRECIONAL DO NAVIO
+</h2>
+
+<p>
+Estabelecida a distinção entre as diferentes formas
+de estabilidade de movimento, podemos analisar agora
+a estabilidade direcional sob a perspectiva diretamente
+observável pelo <strong>shiphandler</strong>.
+</p>
+
+<p>
+O ponto central desta análise não é simplesmente
+verificar se o navio está guinando, mas observar
+<strong>como a velocidade dessa guinada evolui quando
+a ação do leme que iniciou ou sustentava a curva
+é retirada</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Pergunta operacional fundamental
+</h3>
+
+<p>
+Depois que o navio desenvolveu uma guinada e o
+leme foi colocado a meio,
+<strong>o que acontece com a Rate of Turn?</strong>
+</p>
+
+<ul>
+
+<li>
+se a ROT diminui → tendência estabilizadora;
+</li>
+
+<li>
+se a ROT permanece aproximadamente constante →
+condição neutra;
+</li>
+
+<li>
+se a ROT aumenta → tendência desestabilizadora.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
 
 
-PARTE 3
 
-forcas-momentos-restauradores
-forcas-laterais
-momentos-guinada
-momento-restaurador
-momento-desestabilizador
+<!-- =========================================
+     TÓPICO 4
+     ROT COMO VARIÁVEL DE OBSERVAÇÃO
+========================================= -->
+
+<section
+class="topico-aula"
+id="guinada-rate-of-turn"
+data-topico-id="guinada-rate-of-turn"
+>
+
+<h2>
+4. Rate of Turn e estabilidade direcional
+</h2>
+
+<div class="widget">
+
+<p>
+A <strong>Rate of Turn — ROT</strong> representa
+a velocidade angular com que a direção da proa
+está variando no tempo.
+</p>
+
+<p>
+De forma conceitual:
+</p>
+
+<div class="destaque">
+
+<h3>
+Rate of Turn
+</h3>
+
+<p style="text-align:center; font-size:1.35em;">
+<strong>
+ROT = Δψ / Δt
+</strong>
+</p>
+
+<p>
+onde:
+</p>
+
+<ul>
+
+<li>
+<strong>ψ</strong> representa o rumo ou ângulo
+de aproamento;
+</li>
+
+<li>
+<strong>Δψ</strong> representa a variação desse ângulo;
+</li>
+
+<li>
+<strong>Δt</strong> representa o intervalo de tempo.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Assim, dois navios podem estar guinando para o mesmo
+bordo e apresentar comportamentos direcionalmente
+muito diferentes.
+</p>
+
+<p>
+O primeiro pode estar aumentando continuamente
+sua ROT, enquanto o segundo já está reduzindo
+a velocidade angular da guinada.
+</p>
+
+<p>
+Por isso, para analisar estabilidade direcional,
+<strong>o sentido da guinada isoladamente não é
+informação suficiente</strong>.
+</p>
+
+<p>
+É necessário observar a
+<strong>tendência temporal da ROT</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo conceitual
+</h3>
+
+<p>
+Considere um navio guinando para boreste.
+</p>
+
+<p>
+Em três instantes sucessivos, o indicador apresenta:
+</p>
+
+<p style="text-align:center;">
+<strong>
+12°/min → 8°/min → 4°/min
+</strong>
+</p>
+
+<p>
+A proa continua guinando para boreste durante todo
+esse intervalo.
+</p>
+
+<p>
+Entretanto, a guinada está sendo
+<strong>progressivamente amortecida</strong>.
+</p>
+
+<p>
+Portanto, não se deve confundir:
+</p>
+
+<p style="text-align:center;">
+<strong>
+continuar guinando
+</strong>
+</p>
+
+<p style="text-align:center;">
+com
+</p>
+
+<p style="text-align:center;">
+<strong>
+aumentar a guinada.
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O valor instantâneo da ROT possui menos significado
+para esta análise do que sua
+<strong>tendência</strong>.
+</p>
+
+<p>
+Uma ROT de 10°/min pode estar aumentando,
+permanecendo constante ou diminuindo.
+</p>
+
+<p>
+São três situações dinamicamente diferentes.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Rate of Turn — ROT</strong> —
+taxa de guinada;
+</li>
+
+<li>
+<strong>Rate of Swing</strong> —
+taxa de guinada;
+</li>
+
+<li>
+<strong>Swing</strong> —
+guinada;
+</li>
+
+<li>
+<strong>Heading</strong> —
+rumo ou direção da proa;
+</li>
+
+<li>
+<strong>Rate-of-Turn Indicator</strong> —
+indicador de taxa de guinada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+     LEME A MEIO
+========================================= -->
+
+<section
+class="topico-aula"
+id="leme-a-meio"
+data-topico-id="leme-a-meio"
+>
+
+<h2>
+5. Por que observar o navio com o leme a meio?
+</h2>
+
+<div class="widget">
+
+<p>
+Durante uma curva comandada, a evolução da guinada
+resulta da interação entre casco, leme, propulsor
+e movimento do navio.
+</p>
+
+<p>
+Se o leme permanece aplicado para o bordo da curva,
+ele continua produzindo uma ação destinada a
+alterar o movimento.
+</p>
+
+<p>
+Por isso, o
+<strong>Shiphandling for the Mariner</strong>
+utiliza como observação operacional importante
+o comportamento do navio quando o leme é colocado
+<strong>amidships — a meio</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+O instante de observação
+</h3>
+
+<p>
+Considere a sequência:
+</p>
+
+<ol>
+
+<li>
+o leme é aplicado;
+</li>
+
+<li>
+o navio começa a guinar;
+</li>
+
+<li>
+uma determinada ROT é estabelecida;
+</li>
+
+<li>
+o leme é colocado a meio;
+</li>
+
+<li>
+observa-se a evolução subsequente da ROT.
+</li>
+
+</ol>
+
+<p>
+É essa resposta posterior que permite identificar,
+operacionalmente, a tendência direcional do navio.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     SVG — SEQUÊNCIA OPERACIONAL
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 450"
+width="100%"
+role="img"
+aria-labelledby="svg-leme-meio-titulo svg-leme-meio-desc"
+>
+
+<title id="svg-leme-meio-titulo">
+Sequência de observação da estabilidade direcional
+</title>
+
+<desc id="svg-leme-meio-desc">
+Vista superior mostrando o navio inicialmente em linha
+reta, iniciando uma guinada com leme aplicado e,
+posteriormente, com o leme a meio enquanto a taxa
+de guinada é observada.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="440"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- ETAPA 1 -->
+
+<text
+x="55"
+y="48"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+1 — Movimento inicial
+</text>
+
+<line
+x1="55"
+y1="135"
+x2="270"
+y2="135"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="10 7"
+/>
+
+<g transform="translate(145 135) rotate(90)">
+
+<path
+d="
+M 0 -42
+L 17 -18
+L 17 32
+L 0 45
+L -17 32
+L -17 -18
+Z
+"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+</g>
+
+
+<!-- ETAPA 2 -->
+
+<text
+x="365"
+y="48"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+2 — Leme aplicado
+</text>
+
+<path
+d="
+M 345 150
+C 410 145,
+470 120,
+520 75
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<g transform="translate(425 130) rotate(70)">
+
+<path
+d="
+M 0 -42
+L 17 -18
+L 17 32
+L 0 45
+L -17 32
+L -17 -18
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="0"
+y1="32"
+x2="12"
+y2="58"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+</g>
+
+<text
+x="370"
+y="210"
+font-size="16"
+fill="#9a3412"
+>
+ROT sendo desenvolvida
+</text>
+
+
+<!-- ETAPA 3 -->
+
+<text
+x="650"
+y="48"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+3 — Rudder amidships
+</text>
+
+<path
+d="
+M 630 170
+C 700 130,
+760 100,
+850 85
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<g transform="translate(715 125) rotate(65)">
+
+<path
+d="
+M 0 -42
+L 17 -18
+L 17 32
+L 0 45
+L -17 32
+L -17 -18
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="0"
+y1="32"
+x2="0"
+y2="59"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+</g>
+
+
+<!-- LINHA DE ANÁLISE -->
+
+<rect
+x="90"
+y="285"
+width="780"
+height="110"
+rx="12"
+fill="#ffffff"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="125"
+y="320"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+Depois que o leme vai a meio:
+</text>
+
+<text
+x="125"
+y="355"
+font-size="17"
+fill="#334155"
+>
+ROT diminui?
+</text>
+
+<text
+x="355"
+y="355"
+font-size="17"
+fill="#334155"
+>
+ROT permanece?
+</text>
+
+<text
+x="620"
+y="355"
+font-size="17"
+fill="#334155"
+>
+ROT aumenta?
+</text>
+
+<text
+x="125"
+y="380"
+font-size="16"
+font-weight="bold"
+fill="#0f766e"
+>
+POSITIVA
+</text>
+
+<text
+x="355"
+y="380"
+font-size="16"
+font-weight="bold"
+fill="#475569"
+>
+NEUTRA
+</text>
+
+<text
+x="620"
+y="380"
+font-size="16"
+font-weight="bold"
+fill="#9a3412"
+>
+NEGATIVA
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Sequência conceitual utilizada para observar a
+resposta direcional do navio. O ponto decisivo
+é a evolução da ROT depois que o leme é
+colocado a meio.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Colocar o leme a meio
+<strong>não significa que a guinada cessará
+imediatamente</strong>.
+</p>
+
+<p>
+O navio já possui movimento de guinada.
+O que se observa é a evolução desse movimento
+após a retirada do ângulo de leme que estava
+associado ao desenvolvimento da curva.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+     ESTABILIDADE POSITIVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-positiva"
+data-topico-id="estabilidade-positiva"
+>
+
+<h2>
+6. Estabilidade Direcional Positiva
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o
+<strong>Shiphandling for the Mariner</strong>,
+um navio possui
+<strong>positive directional stability</strong>
+quando apresenta tendência de
+<strong>steady up</strong> depois que o leme
+é colocado a meio.
+</p>
+
+<p>
+Isso significa que o movimento de guinada
+não se sustenta indefinidamente com a mesma
+intensidade.
+</p>
+
+<p>
+A tendência observada é de redução da
+<strong>Rate of Turn</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Comportamento característico
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Leme a meio → ROT ↓
+</strong>
+</p>
+
+<p>
+Enquanto a ROT ainda for diferente de zero,
+a proa continuará mudando de direção.
+</p>
+
+<p>
+Entretanto, cada unidade de tempo produz
+uma alteração de rumo progressivamente menor.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico conceitual
+</h3>
+
+<p>
+Após colocar o leme a meio:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+12°/min → 9°/min → 6°/min → 3°/min → 0
+</strong>
+</p>
+
+<p>
+O navio continua inicialmente guinando para o
+mesmo bordo, mas a taxa dessa guinada diminui.
+</p>
+
+<p>
+Esse é o comportamento operacional associado
+à estabilidade direcional positiva.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Estabilidade positiva não significa
+retorno automático ao rumo anterior.</strong>
+</p>
+
+<p>
+O navio pode estabilizar em um
+<strong>novo rumo</strong>.
+</p>
+
+<p>
+O critério operacional aqui é a tendência de
+reduzir a ROT depois que o leme vai a meio,
+não o retorno espontâneo ao heading existente
+antes da curva.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+     ESTABILIDADE NEUTRA
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-neutra"
+data-topico-id="estabilidade-neutra"
+>
+
+<h2>
+7. Estabilidade Direcional Neutra
+</h2>
+
+<div class="widget">
+
+<p>
+Na condição de
+<strong>neutral directional stability</strong>,
+o navio não apresenta tendência própria de
+aumentar nem de diminuir a taxa de guinada
+quando o leme permanece a meio.
+</p>
+
+<div class="destaque">
+
+<h3>
+Comportamento característico
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Leme a meio → ROT ≈ constante
+</strong>
+</p>
+
+<p>
+Se o navio já estiver guinando,
+ele tende a continuar guinando aproximadamente
+à taxa presente.
+</p>
+
+<p>
+Se estiver seguindo determinado rumo sem
+movimento de guinada, tende a continuar nessa
+condição até que forças externas modifiquem
+o movimento.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico conceitual
+</h3>
+
+<p>
+Após colocar o leme a meio:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+8°/min → 8°/min → 8°/min → 8°/min
+</strong>
+</p>
+
+<p>
+A ROT não apresenta tendência própria
+significativa de crescimento ou redução.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Neutra não significa navio parado
+ou proa constante.</strong>
+</p>
+
+<p>
+Se já existe ROT quando o leme vai a meio,
+o navio continua mudando de rumo.
+</p>
+
+<p>
+O que permanece aproximadamente constante
+é a <strong>taxa de guinada</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+     ESTABILIDADE NEGATIVA
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-negativa"
+data-topico-id="estabilidade-negativa"
+>
+
+<h2>
+8. Estabilidade Direcional Negativa
+</h2>
+
+<div class="widget">
+
+<p>
+Um navio apresenta
+<strong>negative directional stability</strong>
+quando, depois que o leme é colocado a meio,
+a guinada apresenta tendência de
+<strong>aumentar sua Rate of Turn</strong>.
+</p>
+
+<p>
+Essa é uma diferença operacional fundamental.
+A retirada do ângulo de leme não produz,
+por si só, uma redução da guinada.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Comportamento característico
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Leme a meio → ROT ↑
+</strong>
+</p>
+
+<p>
+O navio continua guinando e a velocidade angular
+da proa cresce mesmo sem manter o leme aplicado
+para o bordo da curva.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo numérico conceitual
+</h3>
+
+<p>
+Após colocar o leme a meio:
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+5°/min → 7°/min → 10°/min → 13°/min
+</strong>
+</p>
+
+<p>
+A curva está se desenvolvendo com intensidade
+crescente.
+</p>
+
+<p>
+Para interromper essa evolução será necessária
+uma ação corretiva do sistema de governo.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+destaca uma consequência operacional crítica:
+</p>
+
+<p>
+em um navio direcionalmente instável,
+pode ser necessário
+<strong>mais leme e por mais tempo para quebrar
+a guinada do que foi necessário para iniciá-la</strong>.
+</p>
+
+<p>
+Portanto, esperar que a proa se aproxime do rumo
+desejado para somente então começar a quebrar
+a guinada pode produzir uma correção tardia.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+     COMPARAÇÃO DAS TRÊS CONDIÇÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="estabilidade-positiva-neutra-negativa"
+data-topico-id="estabilidade-positiva-neutra-negativa"
+>
+
+<h2>
+9. Comparação direta das três respostas
+</h2>
+
+<div class="widget">
+
+<p>
+As três condições podem ser comparadas mantendo
+exatamente o mesmo estado inicial:
+</p>
+
+<p>
+o navio já está guinando e, no instante
+<strong>t = 0</strong>, o leme é colocado a meio.
+</p>
+
+
+<!-- =========================================
+     SVG — ROT x TEMPO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 620"
+width="100%"
+role="img"
+aria-labelledby="svg-rot-titulo svg-rot-desc"
+>
+
+<title id="svg-rot-titulo">
+Evolução conceitual da Rate of Turn para estabilidade
+direcional positiva, neutra e negativa
+</title>
+
+<desc id="svg-rot-desc">
+Gráfico conceitual de Rate of Turn em função do tempo
+após o leme ser colocado a meio. A estabilidade positiva
+apresenta ROT decrescente, a neutra ROT constante e
+a negativa ROT crescente.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="610"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- TÍTULO -->
+
+<text
+x="480"
+y="45"
+text-anchor="middle"
+font-size="22"
+font-weight="bold"
+fill="#173f5f"
+>
+Resposta após RUDDER AMIDSHIPS
+</text>
+
+
+<!-- EIXOS -->
+
+<line
+x1="125"
+y1="500"
+x2="855"
+y2="500"
+stroke="#334155"
+stroke-width="3"
+/>
+
+<polygon
+points="855,500 835,489 835,511"
+fill="#334155"
+/>
+
+<line
+x1="125"
+y1="500"
+x2="125"
+y2="100"
+stroke="#334155"
+stroke-width="3"
+/>
+
+<polygon
+points="125,100 114,121 136,121"
+fill="#334155"
+/>
+
+
+<!-- LABELS -->
+
+<text
+x="820"
+y="535"
+font-size="18"
+fill="#334155"
+>
+tempo
+</text>
+
+<text
+x="55"
+y="130"
+font-size="18"
+font-weight="bold"
+fill="#334155"
+>
+ROT
+</text>
+
+
+<!-- INSTANTE LEME A MEIO -->
+
+<line
+x1="260"
+y1="110"
+x2="260"
+y2="500"
+stroke="#64748b"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<text
+x="260"
+y="555"
+text-anchor="middle"
+font-size="16"
+font-weight="bold"
+fill="#334155"
+>
+t = 0
+</text>
+
+<text
+x="260"
+y="580"
+text-anchor="middle"
+font-size="15"
+fill="#334155"
+>
+leme a meio
+</text>
+
+
+<!-- PONTO INICIAL COMUM -->
+
+<circle
+cx="260"
+cy="300"
+r="7"
+fill="#173f5f"
+/>
+
+
+<!-- POSITIVA -->
+
+<path
+d="
+M 260 300
+C 380 320,
+500 380,
+700 475
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="5"
+/>
+
+<text
+x="620"
+y="440"
+font-size="18"
+font-weight="bold"
+fill="#0f766e"
+>
+POSITIVA
+</text>
+
+<text
+x="620"
+y="462"
+font-size="15"
+fill="#0f766e"
+>
+ROT diminui
+</text>
+
+
+<!-- NEUTRA -->
+
+<line
+x1="260"
+y1="300"
+x2="780"
+y2="300"
+stroke="#475569"
+stroke-width="5"
+/>
+
+<text
+x="650"
+y="280"
+font-size="18"
+font-weight="bold"
+fill="#475569"
+>
+NEUTRA
+</text>
+
+
+<!-- NEGATIVA -->
+
+<path
+d="
+M 260 300
+C 390 275,
+520 220,
+700 135
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<text
+x="620"
+y="125"
+font-size="18"
+font-weight="bold"
+fill="#9a3412"
+>
+NEGATIVA
+</text>
+
+<text
+x="620"
+y="150"
+font-size="15"
+fill="#9a3412"
+>
+ROT aumenta
+</text>
+
+
+<!-- LEGENDA -->
+
+<rect
+x="330"
+y="535"
+width="470"
+height="55"
+rx="10"
+fill="#ffffff"
+stroke="#94a3b8"
+stroke-width="1"
+/>
+
+<text
+x="350"
+y="568"
+font-size="16"
+fill="#334155"
+>
+Mesmo estado inicial — três tendências dinâmicas distintas
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação conceitual da evolução da ROT depois
+que o leme é colocado a meio. As curvas representam
+a tendência do movimento, não valores universais
+de ROT nem uma resposta temporal quantitativa
+aplicável a todos os navios.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Regra operacional de leitura
+</h3>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT ↓ → estabilidade positiva
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT ≈ constante → estabilidade neutra
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT ↑ → estabilidade negativa
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — pegadinha conceitual
+</h3>
+
+<p>
+O critério não é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+"o navio continua guinando ou não?"
+</strong>
+</p>
+
+<p>
+O critério é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+"como varia a ROT quando o leme está a meio?"
+</strong>
+</p>
+
+<p>
+Um navio positivamente estável pode continuar
+guinando durante algum tempo enquanto sua ROT
+diminui.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 10
+     CONSEQUÊNCIA PARA QUEBRAR A GUINADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="resposta-inicial-quebra-guinada"
+data-topico-id="resposta-inicial-quebra-guinada"
+>
+
+<h2>
+10. Primeira consequência operacional: quebrar a guinada
+</h2>
+
+<div class="widget">
+
+<p>
+A classificação positiva, neutra ou negativa
+deixa de ser apenas uma descrição teórica quando
+o Prático precisa controlar a evolução real da proa.
+</p>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+relaciona diretamente a estabilidade direcional
+ao grau de facilidade com que o navio pode ser
+<strong>checked when swinging</strong> —
+isto é, com que facilidade se consegue
+<strong>quebrar a guinada</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Navio com estabilidade positiva
+</h3>
+
+<p>
+Quando o leme vai a meio, a própria tendência
+do movimento é de redução da ROT.
+</p>
+
+<p>
+A ação de governo utilizada para quebrar a guinada
+atua, portanto, sobre um movimento cuja taxa já
+apresenta tendência de redução.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Navio com estabilidade negativa
+</h3>
+
+<p>
+Quando o leme vai a meio, a ROT apresenta tendência
+de aumentar.
+</p>
+
+<p>
+Consequentemente, a intervenção para quebrar a
+guinada precisa combater uma tendência dinâmica
+que continua desenvolvendo o movimento.
+</p>
+
+<p>
+É por isso que o autor alerta que pode ser necessário
+<strong>mais leme, aplicado durante mais tempo,
+para quebrar a guinada do que para iniciá-la</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Em águas restritas, a diferença entre iniciar
+uma guinada e conseguir quebrá-la pode ser crítica.
+</p>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+adverte que um navio direcionalmente instável pode
+não conseguir ter sua guinada quebrada antes de
+sair do canal, mesmo apresentando inicialmente uma
+ROT que seria considerada normal para um navio médio.
+</p>
+
+<p>
+Portanto:
+</p>
+
+<p style="text-align:center; font-size:1.15em;">
+<strong>
+ROT aparentemente normal ≠ garantia de que
+a guinada poderá ser quebrada no espaço disponível.
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Positive Directional Stability</strong> —
+estabilidade direcional positiva;
+</li>
+
+<li>
+<strong>Neutral Directional Stability</strong> —
+estabilidade direcional neutra;
+</li>
+
+<li>
+<strong>Negative Directional Stability</strong> —
+estabilidade direcional negativa;
+</li>
+
+<li>
+<strong>Directionally Unstable Ship</strong> —
+navio direcionalmente instável;
+</li>
+
+<li>
+<strong>Steady Up</strong> —
+estabilizar a guinada / reduzir a tendência de guinada,
+conforme o contexto;
+</li>
+
+<li>
+<strong>Rudder Amidships</strong> —
+leme a meio;
+</li>
+
+<li>
+<strong>Checking the Swing</strong> —
+quebrar a guinada;
+</li>
+
+<li>
+<strong>Check the Swing</strong> —
+quebrar a guinada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 2
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 2
+</h2>
+
+<p>
+Na abordagem operacional do
+<strong>Shiphandling for the Mariner</strong>,
+a estabilidade direcional pode ser identificada
+observando-se a evolução da
+<strong>Rate of Turn</strong> depois que o
+leme é colocado a meio.
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT diminui → POSITIVA
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT permanece → NEUTRA
+</strong>
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+ROT aumenta → NEGATIVA
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa classificação permite antecipar uma das
+consequências operacionais mais importantes da
+estabilidade direcional:
+<strong>a facilidade ou dificuldade para quebrar
+uma guinada já estabelecida</strong>.
+</p>
+
+<p>
+Em especial, um navio direcionalmente instável
+pode exigir maior ângulo de leme e maior tempo
+de aplicação do leme para quebrar a guinada
+do que exigiu para iniciá-la.
+</p>
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 3
+</h3>
+
+<p>
+A próxima etapa será explicar
+<strong>por que essas três respostas são diferentes</strong>.
+</p>
+
+<p>
+Para isso, a análise passará da manifestação
+observável — a variação da ROT — para sua origem
+hidrodinâmica:
+<strong>forças laterais, distribuição de pressões
+sobre o casco e momentos de guinada restauradores
+ou desestabilizadores</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 3
+     FUNDAMENTO HIDRODINÂMICO
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — FUNDAMENTO HIDRODINÂMICO DA ESTABILIDADE DIRECIONAL
+</h2>
+
+<p>
+Na Parte 2 observamos a manifestação externa da
+estabilidade direcional:
+a <strong>Rate of Turn — ROT</strong> pode diminuir,
+permanecer aproximadamente constante ou aumentar.
+</p>
+
+<p>
+Agora a análise passa para a causa física dessa resposta.
+</p>
+
+<p>
+Quando o navio desenvolve movimento lateral
+(<strong>sway</strong>), movimento de guinada
+(<strong>yaw</strong>) ou uma combinação dos dois,
+o casco passa a encontrar a água com diferentes
+velocidades relativas e ângulos de incidência ao longo
+de seu comprimento.
+</p>
+
+<p>
+O resultado é uma distribuição não uniforme de
+pressões hidrodinâmicas sobre a superfície submersa.
+Essas pressões podem ser representadas por:
+</p>
+
+<ul>
+
+<li>
+uma força lateral resultante,
+<strong>Y</strong>;
+</li>
+
+<li>
+e um momento de guinada resultante,
+<strong>N</strong>.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>
+Ideia central desta parte
+</h3>
+
+<p>
+Para a estabilidade direcional,
+não basta saber que existe uma força lateral.
+</p>
+
+<p>
+É necessário determinar:
+</p>
+
+<ul>
+
+<li>
+<strong>onde</strong> essa força atua;
+</li>
+
+<li>
+como ela se distribui entre proa e popa;
+</li>
+
+<li>
+qual braço de alavanca possui em relação
+ao centro de referência;
+</li>
+
+<li>
+e qual <strong>momento de guinada</strong>
+resulta dessa distribuição.
+</li>
+
+</ul>
+
+<p>
+É o balanço entre essas contribuições que pode
+produzir uma tendência de
+<strong>amortecer</strong> ou
+<strong>reforçar</strong> uma perturbação direcional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+     FORÇAS E MOMENTOS
+========================================= -->
+
+<section
+class="topico-aula"
+id="forcas-momentos-restauradores"
+data-topico-id="forcas-momentos-restauradores"
+>
+
+<h2>
+11. Força lateral e momento de guinada não são a mesma coisa
+</h2>
+
+<div class="widget">
+
+<p>
+Na análise do movimento horizontal do navio,
+duas grandezas devem ser mantidas conceitualmente
+separadas:
+</p>
+
+<div class="destaque">
+
+<h3>
+Força lateral — Y
+</h3>
+
+<p>
+A força lateral resultante representa o efeito global
+das pressões hidrodinâmicas na direção transversal
+ao eixo longitudinal do navio.
+</p>
+
+<p>
+Ela está diretamente associada à dinâmica do
+<strong>sway</strong>.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Momento de guinada — N
+</h3>
+
+<p>
+O momento de guinada representa a tendência das
+forças hidrodinâmicas de produzir rotação do navio
+no plano horizontal.
+</p>
+
+<p>
+Ele está diretamente associado à dinâmica do
+<strong>yaw</strong>.
+</p>
+
+</div>
+
+
+<p>
+Uma força lateral pode produzir um momento de guinada
+quando sua linha de ação não passa pelo ponto adotado
+como origem dos momentos.
+</p>
+
+<p>
+De forma conceitual:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.3em;">
+<strong>
+N ≈ Y × braço de alavanca
+</strong>
+</p>
+
+<p>
+Essa expressão não substitui as equações completas
+de movimento.
+</p>
+
+<p>
+Ela apenas mostra a relação física fundamental:
+<strong>a posição longitudinal da força é tão importante
+quanto sua intensidade</strong>.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — FORÇA E MOMENTO
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 520"
+width="100%"
+role="img"
+aria-labelledby="svg-forca-momento-titulo svg-forca-momento-desc"
+>
+
+<title id="svg-forca-momento-titulo">
+Força lateral aplicada fora do centro produzindo momento de guinada
+</title>
+
+<desc id="svg-forca-momento-desc">
+Vista superior de um navio com a proa para a direita.
+Uma força lateral atua à vante do centro de referência,
+criando um braço longitudinal e um momento de guinada.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="510"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- EIXO LONGITUDINAL -->
+
+<line
+x1="125"
+y1="260"
+x2="835"
+y2="260"
+stroke="#94a3b8"
+stroke-width="2"
+stroke-dasharray="10 8"
+/>
+
+
+<!-- NAVIO -->
+
+<path
+d="
+M 170 260
+L 225 205
+L 700 205
+L 805 260
+L 700 315
+L 225 315
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+
+<!-- LINHA CENTRAL -->
+
+<line
+x1="195"
+y1="260"
+x2="775"
+y2="260"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+
+<!-- IDENTIFICAÇÕES -->
+
+<text
+x="180"
+y="190"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+POPA
+</text>
+
+<text
+x="740"
+y="190"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+PROA
+</text>
+
+
+<!-- CENTRO -->
+
+<circle
+cx="475"
+cy="260"
+r="8"
+fill="#173f5f"
+/>
+
+<text
+x="445"
+y="350"
+font-size="17"
+fill="#173f5f"
+>
+origem dos momentos
+</text>
+
+
+<!-- FORÇA LATERAL -->
+
+<line
+x1="650"
+y1="250"
+x2="650"
+y2="105"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="650,105 638,128 662,128"
+fill="#9a3412"
+/>
+
+<text
+x="675"
+y="125"
+font-size="20"
+font-weight="bold"
+fill="#9a3412"
+>
+Y
+</text>
+
+<text
+x="675"
+y="150"
+font-size="16"
+fill="#9a3412"
+>
+força lateral
+</text>
+
+
+<!-- BRAÇO -->
+
+<line
+x1="475"
+y1="380"
+x2="650"
+y2="380"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<line
+x1="475"
+y1="365"
+x2="475"
+y2="395"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<line
+x1="650"
+y1="365"
+x2="650"
+y2="395"
+stroke="#0f766e"
+stroke-width="3"
+/>
+
+<text
+x="535"
+y="410"
+font-size="17"
+font-weight="bold"
+fill="#0f766e"
+>
+braço longitudinal
+</text>
+
+
+<!-- MOMENTO -->
+
+<path
+d="
+M 405 180
+C 360 210,
+350 285,
+390 325
+"
+fill="none"
+stroke="#7c3aed"
+stroke-width="5"
+/>
+
+<polygon
+points="390,325 369,313 389,300"
+fill="#7c3aed"
+/>
+
+<text
+x="315"
+y="175"
+font-size="20"
+font-weight="bold"
+fill="#7c3aed"
+>
+N
+</text>
+
+<text
+x="290"
+y="200"
+font-size="16"
+fill="#7c3aed"
+>
+momento de guinada
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Uma força lateral cuja linha de ação está afastada
+longitudinalmente da origem dos momentos produz
+também um momento de guinada.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não se pode determinar o efeito direcional de uma
+força apenas observando seu sentido.
+</p>
+
+<p>
+Uma mesma força lateral pode produzir momentos
+diferentes dependendo de
+<strong>onde sua resultante atua ao longo do casco</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Lateral Force</strong> —
+força lateral;
+</li>
+
+<li>
+<strong>Yawing Moment</strong> —
+momento de guinada;
+</li>
+
+<li>
+<strong>Lever Arm</strong> —
+braço de alavanca;
+</li>
+
+<li>
+<strong>Line of Action</strong> —
+linha de ação;
+</li>
+
+<li>
+<strong>Resultant Force</strong> —
+força resultante.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+     FORÇA DEVIDA AO SWAY
+========================================= -->
+
+<section
+class="topico-aula"
+id="forcas-laterais"
+data-topico-id="forcas-laterais"
+>
+
+<h2>
+12. Movimento lateral: como o sway gera força hidrodinâmica
+</h2>
+
+<div class="widget">
+
+<p>
+Considere inicialmente o caso isolado utilizado pelo
+PNA para compreender as derivadas hidrodinâmicas:
+um navio possui velocidade avante
+<strong>u</strong> e recebe uma pequena velocidade
+transversal <strong>v</strong>.
+</p>
+
+<p>
+O navio deixa de se deslocar exatamente na direção
+de seu eixo longitudinal.
+</p>
+
+<p>
+Para o casco, isso equivale ao aparecimento de um
+pequeno ângulo de incidência do escoamento relativo.
+</p>
+
+<p>
+As pressões desenvolvidas sobre o casco produzem
+então uma força hidrodinâmica lateral que, para o
+caso mostrado pelo PNA, atua em sentido contrário
+ao movimento lateral que lhe deu origem.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Interpretação de Y<sub>v</sub>
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+Y<sub>v</sub> = ∂Y / ∂v
+</strong>
+</p>
+
+<p>
+A derivada
+<strong>Y<sub>v</sub></strong>
+mede a variação da força lateral
+<strong>Y</strong>
+produzida por uma pequena variação da velocidade
+lateral <strong>v</strong>.
+</p>
+
+<p>
+Na convenção empregada pelo PNA para essa análise,
+uma velocidade lateral positiva produz uma força
+lateral resultante negativa.
+</p>
+
+<p>
+Fisicamente, isso corresponde ao caráter
+<strong>resistivo ou amortecedor</strong>
+da reação hidrodinâmica transversal do casco.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — SWAY E FORÇA LATERAL
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 560"
+width="100%"
+role="img"
+aria-labelledby="svg-sway-titulo svg-sway-desc"
+>
+
+<title id="svg-sway-titulo">
+Velocidade lateral e força hidrodinâmica sobre o casco
+</title>
+
+<desc id="svg-sway-desc">
+Vista superior de um navio com proa para a direita.
+O navio possui velocidade avante e pequena velocidade lateral
+para cima. A reação hidrodinâmica lateral atua no sentido oposto.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="550"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- NAVIO -->
+
+<path
+d="
+M 160 275
+L 220 215
+L 700 215
+L 820 275
+L 700 335
+L 220 335
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="190"
+y1="275"
+x2="790"
+y2="275"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="175"
+y="195"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+POPA
+</text>
+
+<text
+x="750"
+y="195"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+PROA
+</text>
+
+
+<!-- U -->
+
+<line
+x1="485"
+y1="275"
+x2="705"
+y2="275"
+stroke="#173f5f"
+stroke-width="5"
+/>
+
+<polygon
+points="705,275 681,263 681,287"
+fill="#173f5f"
+/>
+
+<text
+x="570"
+y="255"
+font-size="19"
+font-weight="bold"
+fill="#173f5f"
+>
+u
+</text>
+
+
+<!-- +v -->
+
+<line
+x1="485"
+y1="250"
+x2="485"
+y2="100"
+stroke="#0f766e"
+stroke-width="5"
+/>
+
+<polygon
+points="485,100 473,124 497,124"
+fill="#0f766e"
+/>
+
+<text
+x="510"
+y="120"
+font-size="19"
+font-weight="bold"
+fill="#0f766e"
+>
++v
+</text>
+
+<text
+x="510"
+y="145"
+font-size="15"
+fill="#0f766e"
+>
+velocidade lateral
+</text>
+
+
+<!-- Y -->
+
+<line
+x1="485"
+y1="300"
+x2="485"
+y2="455"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="485,455 473,431 497,431"
+fill="#9a3412"
+/>
+
+<text
+x="510"
+y="430"
+font-size="19"
+font-weight="bold"
+fill="#9a3412"
+>
+Y
+</text>
+
+<text
+x="510"
+y="455"
+font-size="15"
+fill="#9a3412"
+>
+reação hidrodinâmica
+</text>
+
+
+<!-- ESCOAMENTO RELATIVO -->
+
+<line
+x1="850"
+y1="130"
+x2="690"
+y2="215"
+stroke="#64748b"
+stroke-width="3"
+stroke-dasharray="8 6"
+/>
+
+<polygon
+points="690,215 710,193 717,216"
+fill="#64748b"
+/>
+
+<text
+x="735"
+y="115"
+font-size="16"
+fill="#475569"
+>
+escoamento relativo
+</text>
+
+
+<!-- NOTA -->
+
+<rect
+x="75"
+y="405"
+width="300"
+height="90"
+rx="10"
+fill="#ffffff"
+stroke="#94a3b8"
+stroke-width="2"
+/>
+
+<text
+x="95"
+y="435"
+font-size="16"
+font-weight="bold"
+fill="#334155"
+>
+Convenção ilustrada:
+</text>
+
+<text
+x="95"
+y="463"
+font-size="16"
+fill="#334155"
+>
++v → reação Y oposta
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação conceitual da reação hidrodinâmica
+associada a uma pequena velocidade lateral.
+A convenção gráfica acompanha a interpretação usada
+pelo PNA; não deve ser aplicada independentemente
+da convenção de sinais adotada em outra referência.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O caráter amortecedor da força lateral
+<strong>não determina sozinho a estabilidade
+direcional do navio</strong>.
+</p>
+
+<p>
+Ainda é necessário analisar o
+<strong>momento de guinada</strong>
+associado à distribuição dessas forças entre
+proa e popa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+     MOMENTO DEVIDO AO SWAY
+========================================= -->
+
+<section
+class="topico-aula"
+id="momentos-guinada"
+data-topico-id="momentos-guinada"
+>
+
+<h2>
+13. O ponto crítico: a distribuição entre proa e popa
+</h2>
+
+<div class="widget">
+
+<p>
+A velocidade lateral não produz necessariamente
+uma distribuição simétrica de forças hidrodinâmicas
+ao longo do navio.
+</p>
+
+<p>
+As características geométricas da proa e da popa,
+a distribuição da área submersa e a própria forma
+do escoamento fazem com que as contribuições
+hidrodinâmicas nas duas extremidades possam ter
+magnitudes diferentes.
+</p>
+
+<p>
+Por isso, além da força lateral
+<strong>Y</strong>, aparece um
+<strong>momento de guinada N</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Interpretação de N<sub>v</sub>
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N<sub>v</sub> = ∂N / ∂v
+</strong>
+</p>
+
+<p>
+A derivada
+<strong>N<sub>v</sub></strong>
+indica como o momento de guinada varia quando existe
+uma pequena alteração da velocidade lateral.
+</p>
+
+<p>
+O sinal e a magnitude desse momento dependem
+fundamentalmente da
+<strong>distribuição longitudinal das forças
+hidrodinâmicas</strong>.
+</p>
+
+</div>
+
+
+<p>
+O PNA mostra que, quando uma velocidade lateral
+é imposta ao navio, proa e popa contribuem para
+a força e para o momento.
+</p>
+
+<p>
+Se a contribuição da popa predomina sobre a da proa,
+a resultante produz um determinado sinal de momento.
+Se a contribuição da proa predomina, o sinal pode ser
+o oposto.
+</p>
+
+<p>
+Portanto:
+</p>
+
+<div class="destaque">
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+movimento lateral
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+distribuição de pressões no casco
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+forças diferentes à vante e à ré
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center; font-size:1.2em;">
+<strong>
+momento de guinada N
+</strong>
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — DISTRIBUIÇÃO PROA / POPA
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 590"
+width="100%"
+role="img"
+aria-labelledby="svg-distribuicao-titulo svg-distribuicao-desc"
+>
+
+<title id="svg-distribuicao-titulo">
+Distribuição longitudinal das forças laterais
+</title>
+
+<desc id="svg-distribuicao-desc">
+Vista superior de um navio com forças hidrodinâmicas
+representativas na região da proa e da popa.
+As forças atuam a diferentes distâncias do centro,
+produzindo contribuições para o momento de guinada.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="580"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- NAVIO -->
+
+<path
+d="
+M 145 285
+L 210 220
+L 700 220
+L 830 285
+L 700 350
+L 210 350
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="175"
+y1="285"
+x2="800"
+y2="285"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="155"
+y="198"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+POPA
+</text>
+
+<text
+x="760"
+y="198"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+PROA
+</text>
+
+
+<!-- CENTRO -->
+
+<circle
+cx="480"
+cy="285"
+r="8"
+fill="#173f5f"
+/>
+
+<line
+x1="480"
+y1="200"
+x2="480"
+y2="370"
+stroke="#64748b"
+stroke-width="2"
+stroke-dasharray="7 6"
+/>
+
+<text
+x="440"
+y="400"
+font-size="16"
+fill="#334155"
+>
+referência
+</text>
+
+
+<!-- FORÇA POPA -->
+
+<line
+x1="270"
+y1="265"
+x2="270"
+y2="105"
+stroke="#0f766e"
+stroke-width="5"
+/>
+
+<polygon
+points="270,105 258,130 282,130"
+fill="#0f766e"
+/>
+
+<text
+x="195"
+y="95"
+font-size="18"
+font-weight="bold"
+fill="#0f766e"
+>
+contribuição da popa
+</text>
+
+
+<!-- FORÇA PROA -->
+
+<line
+x1="690"
+y1="305"
+x2="690"
+y2="465"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="690,465 678,440 702,440"
+fill="#9a3412"
+/>
+
+<text
+x="645"
+y="500"
+font-size="18"
+font-weight="bold"
+fill="#9a3412"
+>
+contribuição da proa
+</text>
+
+
+<!-- BRAÇOS -->
+
+<line
+x1="270"
+y1="425"
+x2="480"
+y2="425"
+stroke="#94a3b8"
+stroke-width="3"
+/>
+
+<line
+x1="480"
+y1="425"
+x2="690"
+y2="425"
+stroke="#94a3b8"
+stroke-width="3"
+/>
+
+
+<!-- MOMENTO -->
+
+<path
+d="
+M 430 150
+C 500 105,
+575 130,
+600 190
+"
+fill="none"
+stroke="#7c3aed"
+stroke-width="5"
+/>
+
+<polygon
+points="600,190 578,177 600,164"
+fill="#7c3aed"
+/>
+
+<text
+x="500"
+y="105"
+font-size="20"
+font-weight="bold"
+fill="#7c3aed"
+>
+N resultante
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação didática da ideia de distribuição
+longitudinal. As setas não representam valores
+universais nem uma condição específica de casco;
+mostram apenas como forças atuando em regiões
+diferentes podem gerar um momento resultante.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Dizer apenas que
+<strong>Y<sub>v</sub></strong>
+é uma força resistente ao movimento lateral
+não permite concluir se o navio é direcionalmente
+estável.
+</p>
+
+<p>
+A estabilidade depende da
+<strong>interação entre força e momento</strong>,
+e não de uma única derivada isoladamente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+     YAW RATE
+========================================= -->
+
+<section
+class="topico-aula"
+id="momento-restaurador"
+data-topico-id="momento-restaurador"
+>
+
+<h2>
+14. A própria guinada também gera forças e momentos
+</h2>
+
+<div class="widget">
+
+<p>
+Até aqui consideramos principalmente o efeito de
+uma velocidade lateral <strong>v</strong>.
+</p>
+
+<p>
+Entretanto, durante uma guinada o navio possui
+também uma velocidade angular
+<strong>r</strong>,
+a <strong>yaw rate</strong>.
+</p>
+
+<p>
+Quando o navio gira, proa e popa apresentam
+velocidades transversais locais em sentidos opostos.
+</p>
+
+<p>
+Essa diferença cria ângulos de incidência hidrodinâmica
+também opostos nas duas extremidades do casco.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Consequência indicada pelo PNA
+</h3>
+
+<p>
+Para uma velocidade angular positiva
+na convenção utilizada pelo PNA:
+</p>
+
+<ul>
+
+<li>
+a região da proa desenvolve uma contribuição
+de força lateral;
+</li>
+
+<li>
+a região da popa desenvolve uma contribuição
+em sentido oposto;
+</li>
+
+<li>
+mas os momentos produzidos por essas forças
+podem atuar no
+<strong>mesmo sentido de oposição à rotação</strong>.
+</li>
+
+</ul>
+
+<p>
+Por isso, segundo o PNA, as contribuições de proa
+e popa podem se somar para produzir um
+<strong>grande momento N contrário à yaw rate</strong>.
+</p>
+
+</div>
+
+
+
+<!-- =========================================
+     SVG — YAW RATE
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 590"
+width="100%"
+role="img"
+aria-labelledby="svg-yaw-titulo svg-yaw-desc"
+>
+
+<title id="svg-yaw-titulo">
+Forças produzidas por uma velocidade angular de guinada
+</title>
+
+<desc id="svg-yaw-desc">
+Vista superior de um navio girando no plano horizontal.
+A proa e a popa apresentam velocidades laterais locais
+opostas e as forças hidrodinâmicas correspondentes
+produzem momento contrário à rotação.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="580"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- NAVIO -->
+
+<path
+d="
+M 150 290
+L 215 225
+L 700 225
+L 825 290
+L 700 355
+L 215 355
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+<line
+x1="180"
+y1="290"
+x2="795"
+y2="290"
+stroke="#173f5f"
+stroke-width="2"
+/>
+
+<text
+x="160"
+y="205"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+POPA
+</text>
+
+<text
+x="755"
+y="205"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+PROA
+</text>
+
+
+<!-- CENTRO -->
+
+<circle
+cx="480"
+cy="290"
+r="8"
+fill="#173f5f"
+/>
+
+
+<!-- ROTAÇÃO -->
+
+<path
+d="
+M 415 150
+C 500 100,
+590 130,
+620 205
+"
+fill="none"
+stroke="#7c3aed"
+stroke-width="6"
+/>
+
+<polygon
+points="620,205 598,188 622,180"
+fill="#7c3aed"
+/>
+
+<text
+x="490"
+y="105"
+font-size="21"
+font-weight="bold"
+fill="#7c3aed"
+>
+yaw rate r
+</text>
+
+
+<!-- VELOCIDADE LOCAL PROA -->
+
+<line
+x1="695"
+y1="265"
+x2="695"
+y2="120"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="695,120 684,142 706,142"
+fill="#0f766e"
+/>
+
+<text
+x="715"
+y="145"
+font-size="16"
+fill="#0f766e"
+>
+velocidade local
+</text>
+
+
+<!-- VELOCIDADE LOCAL POPA -->
+
+<line
+x1="270"
+y1="315"
+x2="270"
+y2="460"
+stroke="#0f766e"
+stroke-width="4"
+/>
+
+<polygon
+points="270,460 259,438 281,438"
+fill="#0f766e"
+/>
+
+<text
+x="120"
+y="490"
+font-size="16"
+fill="#0f766e"
+>
+velocidade local
+</text>
+
+
+<!-- FORÇAS HIDRODINÂMICAS -->
+
+<line
+x1="695"
+y1="310"
+x2="695"
+y2="425"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="695,425 683,401 707,401"
+fill="#9a3412"
+/>
+
+<line
+x1="270"
+y1="270"
+x2="270"
+y2="155"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="270,155 258,179 282,179"
+fill="#9a3412"
+/>
+
+
+<!-- MOMENTO HIDRODINÂMICO -->
+
+<path
+d="
+M 570 455
+C 485 510,
+390 480,
+355 405
+"
+fill="none"
+stroke="#173f5f"
+stroke-width="6"
+/>
+
+<polygon
+points="355,405 378,421 354,430"
+fill="#173f5f"
+/>
+
+<text
+x="410"
+y="535"
+font-size="18"
+font-weight="bold"
+fill="#173f5f"
+>
+momento hidrodinâmico oposto à rotação
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+Representação conceitual da análise apresentada pelo
+PNA para uma pequena yaw rate. Proa e popa possuem
+velocidades laterais locais opostas, mas seus momentos
+podem se somar no sentido de resistir à rotação.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Interpretação de N<sub>r</sub>
+</h3>
+
+<p style="text-align:center; font-size:1.25em;">
+<strong>
+N<sub>r</sub> = ∂N / ∂r
+</strong>
+</p>
+
+<p>
+A derivada
+<strong>N<sub>r</sub></strong>
+representa a variação do momento de guinada
+causada por uma pequena variação da yaw rate.
+</p>
+
+<p>
+Na convenção utilizada pelo PNA,
+o momento produzido pela rotação possui forte caráter
+de <strong>amortecimento da guinada</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Esse amortecimento hidrodinâmico da yaw rate
+não significa automaticamente que o navio possua
+estabilidade direcional positiva.
+</p>
+
+<p>
+A condição final depende da combinação entre
+as diversas forças e momentos associados a
+<strong>v</strong> e <strong>r</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+     RESTAURADOR x DESESTABILIZADOR
+========================================= -->
+
+<section
+class="topico-aula"
+id="momento-desestabilizador"
+data-topico-id="momento-desestabilizador"
+>
+
+<h2>
+15. Momento restaurador e momento desestabilizador
+</h2>
+
+<div class="widget">
+
+<p>
+Os termos
+<strong>restaurador</strong> e
+<strong>desestabilizador</strong>
+devem ser utilizados com cuidado.
+</p>
+
+<p>
+O que interessa não é simplesmente o sentido
+geométrico do momento — horário ou anti-horário —
+mas sua relação com a
+<strong>perturbação direcional existente</strong>.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Momento restaurador
+</h3>
+
+<p>
+Um momento possui efeito restaurador quando sua
+ação tende a
+<strong>reduzir a perturbação direcional</strong>
+que lhe deu origem.
+</p>
+
+<p>
+No contexto de uma yaw rate já estabelecida,
+um momento contrário à rotação atua como
+<strong>amortecimento de guinada</strong>.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Momento desestabilizador
+</h3>
+
+<p>
+Um momento possui efeito desestabilizador quando
+atua no sentido de
+<strong>reforçar a perturbação</strong>.
+</p>
+
+<p>
+Nesse caso, uma pequena alteração da condição
+de movimento pode produzir forças e momentos que
+fazem o navio afastar-se ainda mais do estado inicial.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     SVG — RESTAURADOR x DESESTABILIZADOR
+========================================= -->
+
+<div class="figura-aula">
+
+<svg
+viewBox="0 0 960 600"
+width="100%"
+role="img"
+aria-labelledby="svg-restaurador-titulo svg-restaurador-desc"
+>
+
+<title id="svg-restaurador-titulo">
+Comparação entre momento restaurador e desestabilizador
+</title>
+
+<desc id="svg-restaurador-desc">
+Dois painéis em vista superior.
+No primeiro, o momento hidrodinâmico se opõe à guinada.
+No segundo, o momento hidrodinâmico reforça a guinada.
+</desc>
+
+
+<rect
+x="5"
+y="5"
+width="950"
+height="590"
+rx="18"
+fill="#f8fafc"
+stroke="#64748b"
+stroke-width="2"
+/>
+
+
+<!-- DIVISÃO -->
+
+<line
+x1="480"
+y1="40"
+x2="480"
+y2="550"
+stroke="#cbd5e1"
+stroke-width="2"
+/>
+
+
+<!-- =====================================
+     PAINEL RESTAURADOR
+===================================== -->
+
+<text
+x="235"
+y="55"
+text-anchor="middle"
+font-size="22"
+font-weight="bold"
+fill="#0f766e"
+>
+EFEITO RESTAURADOR
+</text>
+
+
+<!-- NAVIO -->
+
+<path
+d="
+M 90 285
+L 130 245
+L 335 245
+L 405 285
+L 335 325
+L 130 325
+Z
+"
+fill="#eef7fa"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+
+<!-- GUINADA -->
+
+<path
+d="
+M 160 175
+C 230 130,
+305 150,
+335 205
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="335,205 313,191 335,180"
+fill="#9a3412"
+/>
+
+<text
+x="185"
+y="135"
+font-size="17"
+fill="#9a3412"
+>
+perturbação / guinada
+</text>
+
+
+<!-- MOMENTO OPOSTO -->
+
+<path
+d="
+M 330 385
+C 255 430,
+180 410,
+145 350
+"
+fill="none"
+stroke="#0f766e"
+stroke-width="6"
+/>
+
+<polygon
+points="145,350 166,365 145,377"
+fill="#0f766e"
+/>
+
+<text
+x="145"
+y="465"
+font-size="17"
+font-weight="bold"
+fill="#0f766e"
+>
+momento contrário
+</text>
+
+<text
+x="145"
+y="490"
+font-size="16"
+fill="#334155"
+>
+→ reduz a perturbação
+</text>
+
+
+<!-- =====================================
+     PAINEL DESESTABILIZADOR
+===================================== -->
+
+<text
+x="720"
+y="55"
+text-anchor="middle"
+font-size="22"
+font-weight="bold"
+fill="#9a3412"
+>
+EFEITO DESESTABILIZADOR
+</text>
+
+
+<path
+d="
+M 550 285
+L 590 245
+L 795 245
+L 865 285
+L 795 325
+L 590 325
+Z
+"
+fill="#fff7ed"
+stroke="#173f5f"
+stroke-width="3"
+/>
+
+
+<!-- GUINADA -->
+
+<path
+d="
+M 620 175
+C 690 130,
+765 150,
+795 205
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="5"
+/>
+
+<polygon
+points="795,205 773,191 795,180"
+fill="#9a3412"
+/>
+
+
+<!-- MOMENTO MESMO SENTIDO -->
+
+<path
+d="
+M 620 390
+C 690 345,
+765 365,
+795 420
+"
+fill="none"
+stroke="#9a3412"
+stroke-width="6"
+/>
+
+<polygon
+points="795,420 773,406 795,395"
+fill="#9a3412"
+/>
+
+<text
+x="610"
+y="465"
+font-size="17"
+font-weight="bold"
+fill="#9a3412"
+>
+momento no mesmo sentido
+</text>
+
+<text
+x="610"
+y="490"
+font-size="16"
+fill="#334155"
+>
+→ amplia a perturbação
+</text>
+
+
+<!-- RODAPÉ -->
+
+<rect
+x="170"
+y="525"
+width="620"
+height="42"
+rx="8"
+fill="#ffffff"
+stroke="#94a3b8"
+stroke-width="1"
+/>
+
+<text
+x="480"
+y="552"
+text-anchor="middle"
+font-size="16"
+fill="#334155"
+>
+O sentido absoluto não importa: importa a relação com a perturbação existente.
+</text>
+
+</svg>
+
+<p>
+<strong>Figura —</strong>
+A classificação de um momento como restaurador ou
+desestabilizador depende de sua relação com o movimento
+já existente, e não simplesmente de ser horário
+ou anti-horário.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — conceito essencial
+</h3>
+
+<p>
+Não existe uma equivalência simples do tipo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+“força lateral resistente = navio estável”.
+</strong>
+</p>
+
+<p>
+A estabilidade resulta da interação entre:
+</p>
+
+<ul>
+
+<li>
+força lateral produzida pelo sway;
+</li>
+
+<li>
+momento produzido pelo sway;
+</li>
+
+<li>
+força lateral produzida pela yaw rate;
+</li>
+
+<li>
+momento produzido pela yaw rate;
+</li>
+
+<li>
+e características inerciais do navio.
+</li>
+
+</ul>
+
+<p>
+É somente ao combinar essas parcelas nas equações
+de movimento que se pode estabelecer um
+<strong>critério de estabilidade dinâmica</strong>.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Restoring Moment</strong> —
+momento restaurador;
+</li>
+
+<li>
+<strong>Destabilizing Moment</strong> —
+momento desestabilizador;
+</li>
+
+<li>
+<strong>Hydrodynamic Damping</strong> —
+amortecimento hidrodinâmico;
+</li>
+
+<li>
+<strong>Sway Velocity</strong> —
+velocidade lateral;
+</li>
+
+<li>
+<strong>Yaw Rate</strong> —
+taxa angular de guinada;
+</li>
+
+<li>
+<strong>Hydrodynamic Derivative</strong> —
+derivada hidrodinâmica.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 3
+========================================= -->
+
+<section>
+
+<div class="widget">
+
+<h2>
+📌 Síntese da Parte 3
+</h2>
+
+<p>
+A estabilidade direcional nasce da forma como o casco
+transforma pequenas alterações de movimento em
+<strong>forças laterais e momentos de guinada</strong>.
+</p>
+
+<p>
+Uma pequena velocidade lateral modifica o ângulo
+de incidência do escoamento sobre o casco e gera
+uma força lateral.
+</p>
+
+<p>
+Como essa força não se distribui necessariamente
+de forma simétrica entre proa e popa, surge também
+um momento de guinada.
+</p>
+
+<p>
+A própria yaw rate produz velocidades laterais locais
+de sentidos opostos nas extremidades do navio,
+criando novas forças e novos momentos.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Sequência física fundamental
+</h3>
+
+<p style="text-align:center;">
+<strong>
+sway / yaw
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+alteração do escoamento relativo
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+distribuição de pressão sobre o casco
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+forças laterais Y
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+momentos de guinada N
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+tendência restauradora ou desestabilizadora
+</strong>
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Preparação para a Parte 4
+</h3>
+
+<p>
+Na próxima parte essa interpretação física será
+transformada em um
+<strong>critério matemático de estabilidade</strong>.
+</p>
+
+<p>
+Entraremos nas derivadas:
+</p>
+
+<ul>
+
+<li>
+<strong>Y<sub>v</sub></strong>;
+</li>
+
+<li>
+<strong>N<sub>v</sub></strong>;
+</li>
+
+<li>
+<strong>Y<sub>r</sub></strong>;
+</li>
+
+<li>
+<strong>N<sub>r</sub></strong>.
+</li>
+
+</ul>
+
+<p>
+O objetivo não será apenas memorizar sinais ou
+fórmulas, mas compreender
+<strong>como essas quatro respostas hidrodinâmicas
+interagem para decidir se uma pequena perturbação
+será amortecida ou ampliada</strong>.
+</p>
+
+<p>
+A partir delas será apresentado o critério de
+<strong>dynamic course stability</strong>
+utilizado pelo PNA.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
 PARTE 4
