@@ -1,1 +1,2001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Listening 02 - Helm & Steering Orders
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>
+🎧 Listening 02
+</h1>
+
+<p>
+Helm & Steering Orders
+</p>
+
+<p>
+English for Pilots
+</p>
+
+</div>
+
+</header>
+
+
+
+<nav class="navbar">
+
+<button onclick="voltarPagina()">
+⬅ Voltar
+</button>
+
+<a href="index.html">
+🎧 Listening
+</a>
+
+<a href="../index.html">
+🇬🇧 English for Pilots
+</a>
+
+<a href="../../index.html">
+🏠 Bridge Trainer
+</a>
+
+</nav>
+
+
+
+<main class="conteudo">
+
+
+<!-- =========================================
+     INTRODUÇÃO
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎯 Objective
+</h2>
+
+<div class="destaque">
+
+<p>
+Neste módulo,
+você treinará o reconhecimento auditivo das
+<strong>Standard Wheel Orders</strong>
+utilizadas no passadiço.
+</p>
+
+<p>
+O objetivo é chegar ao ponto em que uma ordem como:
+</p>
+
+<p style="text-align:center;">
+<strong>
+STARBOARD FIFTEEN
+</strong>
+</p>
+
+<p>
+seja compreendida imediatamente,
+sem necessidade de tradução mental.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+O fluxo de treinamento continua:
+</p>
+
+<p style="text-align:center;">
+<strong>
+LISTEN
+→ UNDERSTAND
+→ ANSWER
+→ REVEAL
+→ REPEAT
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUDIO SETTINGS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔊 Audio Settings
+</h2>
+
+<div class="destaque">
+
+<label for="listening-voice">
+
+<strong>
+Voice
+</strong>
+
+</label>
+
+<br><br>
+
+<select id="listening-voice">
+
+<option>
+Loading English voices...
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<label for="listening-rate">
+
+<strong>
+Listening Speed
+</strong>
+
+</label>
+
+<br><br>
+
+<select id="listening-rate">
+
+<option value="0.70">
+🐢 Training — Slow
+</option>
+
+<option
+    value="0.90"
+    selected
+>
+⚓ Normal
+</option>
+
+<option value="1.05">
+📻 Operational
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<p id="listening-status">
+Ready.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SMCP RULE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Standard Wheel Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+Segundo o SMCP,
+toda ordem de leme deve ser
+<strong>repetida pelo helmsman</strong>.
+</p>
+
+<p>
+A ordem deve ser mantida
+até que seja
+<strong>countermanded</strong>,
+isto é,
+substituída por uma nova ordem.
+</p>
+
+<p>
+O helmsman deve informar imediatamente
+se o navio
+<strong>does not answer the wheel</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Durante o treinamento auditivo,
+não pense apenas no significado da frase.
+</p>
+
+<p>
+Associe cada ordem diretamente à
+<strong>ação física do leme</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟢 Level 1 — Rudder Angle Recognition
+</h2>
+
+<div class="destaque">
+
+<p>
+Começaremos reconhecendo
+ordens isoladas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 1
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="midships"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Steady
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Midships
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Meet her
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Midships.
+</strong>
+</p>
+
+<p>
+Rudder to be held
+in the fore-and-aft position.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 2
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port ten"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What rudder order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port 10°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Starboard 10°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Port 20°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Port ten.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 3
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="starboard fifteen"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Starboard 50°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port 15°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Starboard 15°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Lembre-se:
+ângulos de leme são falados como
+<strong>números completos</strong>.
+</p>
+
+<p style="text-align:center;">
+<strong>
+FIFTEEN
+</strong>
+</p>
+
+<p>
+e não
+<strong>ONE-FIVE</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 4
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 4
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port twenty five"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What angle was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port 20°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port 25°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Starboard 25°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     HARD OVER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 5 — Hard Over
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="hard a starboard"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What does the order require?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Rudder fully over to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Rudder 15° to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Rudder amidships
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Hard-a-starboard.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟡 Level 2 — Controlling the Swing
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora entram ordens relacionadas
+ao controle da guinada:
+</p>
+
+<p style="text-align:center;">
+<strong>
+MEET HER
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+STEADY
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+EASE TO...
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MEET HER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 6 — Meet Her
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="meet her"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What is the purpose of the order?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Increase the vessel's swing
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Put the rudder amidships
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Check the swing of the vessel's head
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Meet her.
+</strong>
+</p>
+
+<p>
+Check the swing
+of the vessel's head
+in a turn.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STEADY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 7 — Steady
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="steady"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What does "Steady" require?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Increase rudder angle
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Reduce the swing as rapidly as possible
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stop the engine
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EASE TO
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 8 — Ease To
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="ease to ten"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What should the helmsman do?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Reduce rudder to 10° and hold
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Increase rudder to 20°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Put the rudder amidships
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NOTHING TO...
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 9 — Nothing To...
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="nothing to port"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What must be avoided?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — The stern moving to port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Any starboard rudder
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Allowing the vessel's head to go to port
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔴 Level 3 — Compass Steering Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+Quando é determinado um rumo pela bússola,
+o SMCP prevê que a direção inicial do leme seja dada
+e que os algarismos do rumo sejam pronunciados
+<strong>separadamente, inclusive zero</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE 182
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 10 — Course 182°
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port, steer one eight two"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which course was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 128°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 182°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 812°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE 082
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 11 — Course 082°
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="starboard, steer zero eight two"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which course was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 082°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 820°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 028°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE 305
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 12 — Course 305°
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port, steer three zero five"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which course was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 350°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 035°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 305°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STEADY AS SHE GOES
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 13 — Steady As She Goes
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="steady as she goes"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What should the helmsman do?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Put the rudder amidships immediately
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Steer a steady course on the present compass heading
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Turn to the reciprocal course
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CLOSED LOOP
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔁 Helm Order Read-Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Ouça a ordem:
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port, steer one eight two"
+>
+🔊 Officer
+</button>
+
+</div>
+
+
+<div class="destaque">
+
+<p>
+A resposta do helmsman deve repetir a ordem.
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port, steer one eight two"
+>
+🔊 Helmsman Read-Back
+</button>
+
+</div>
+
+
+<div class="destaque">
+
+<p>
+Quando o navio estiver estabilizado no rumo:
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="steady on one eight two"
+>
+🔊 Helmsman Report
+</button>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Esse padrão de
+<strong>order → repeat → execution → report</strong>
+é essencial para comunicação segura no passadiço.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OPERATIONAL SEQUENCE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Operational Sequence
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora escute uma sequência de manobra.
+</p>
+
+<p>
+Não tente traduzir palavra por palavra.
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="starboard twenty. meet her. ease to ten. steady. steady as she goes"
+>
+🔊 Play Sequence
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which sequence did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Starboard 20 → Meet her → Ease to 10 → Steady → Steady as she goes
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port 20 → Midships → Ease to 15 → Steady
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Starboard 10 → Hard-a-starboard → Midships
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Starboard twenty.
+</strong>
+</p>
+
+<p>
+<strong>
+Meet her.
+</strong>
+</p>
+
+<p>
+<strong>
+Ease to ten.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady as she goes.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CHALLENGE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🏆 Final Listening Challenge
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+Selecione
+<strong>Operational</strong>
+na velocidade.
+</p>
+
+<p>
+Ouça uma única vez
+antes de responder.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port fifteen. ease to ten. meet her. steady. starboard, steer zero eight two. steady on zero eight two"
+>
+🔊 Play Challenge
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What happened?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Starboard 15 → Ease to 10 → Course 028°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port 25 → Meet her → Course 820°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Port 15 → Ease to 10 → Check swing → Course 082°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Complete Transcript
+</summary>
+
+<p>
+<strong>
+Port fifteen.
+</strong>
+</p>
+
+<p>
+<strong>
+Ease to ten.
+</strong>
+</p>
+
+<p>
+<strong>
+Meet her.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady.
+</strong>
+</p>
+
+<p>
+<strong>
+Starboard, steer zero-eight-two.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady on zero-eight-two.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPEAK BACK
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎙 Speak Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Repita em voz alta:
+</p>
+
+<p>
+<strong>
+Port fifteen.
+</strong>
+</p>
+
+<p>
+<strong>
+Starboard twenty-five.
+</strong>
+</p>
+
+<p>
+<strong>
+Hard-a-port.
+</strong>
+</p>
+
+<p>
+<strong>
+Meet her.
+</strong>
+</p>
+
+<p>
+<strong>
+Ease to ten.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady.
+</strong>
+</p>
+
+<p>
+<strong>
+Steady as she goes.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SUMMARY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+📚 Module Summary
+</h2>
+
+<div class="destaque">
+
+<p>
+Você treinou o reconhecimento de:
+</p>
+
+<p>
+<strong>
+Midships
+</strong>
+</p>
+
+<p>
+<strong>
+Port / Starboard 5–25
+</strong>
+</p>
+
+<p>
+<strong>
+Hard-a-port / Hard-a-starboard
+</strong>
+</p>
+
+<p>
+<strong>
+Nothing to port / starboard
+</strong>
+</p>
+
+<p>
+<strong>
+Meet her
+</strong>
+</p>
+
+<p>
+<strong>
+Steady
+</strong>
+</p>
+
+<p>
+<strong>
+Ease to...
+</strong>
+</p>
+
+<p>
+<strong>
+Steady as she goes
+</strong>
+</p>
+
+<p>
+<strong>
+Compass steering orders
+</strong>
+</p>
+
+<p>
+<strong>
+Helmsman read-back
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEXT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+➡ Next Listening Module
+</h2>
+
+<div class="destaque">
+
+<p>
+O próximo módulo será:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ENGINE & THRUSTER ORDERS
+</strong>
+</p>
+
+<p>
+Vamos passar das ordens de governo
+para as ordens de propulsão.
+</p>
+
+</div>
+
+
+<a
+    class="botao"
+    href="03-engine-orders.html"
+>
+⚙ Listening 03 — Engine Orders
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+— English for Pilots
+</p>
+
+</footer>
+
+
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/english-listening.js"></script>
+
+
+</body>
+
+</html>
