@@ -1,1 +1,2472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Listening 03 - Engine & Thruster Orders
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>
+🎧 Listening 03
+</h1>
+
+<p>
+Engine & Thruster Orders
+</p>
+
+<p>
+English for Pilots
+</p>
+
+</div>
+
+</header>
+
+
+
+<nav class="navbar">
+
+<button onclick="voltarPagina()">
+⬅ Voltar
+</button>
+
+<a href="index.html">
+🎧 Listening
+</a>
+
+<a href="../index.html">
+🇬🇧 English for Pilots
+</a>
+
+<a href="../../index.html">
+🏠 Bridge Trainer
+</a>
+
+</nav>
+
+
+
+<main class="conteudo">
+
+
+<!-- =========================================
+     INTRODUÇÃO
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎯 Objective
+</h2>
+
+<div class="destaque">
+
+<p>
+Neste módulo,
+você treinará o reconhecimento auditivo
+das
+<strong>Standard Engine Orders</strong>
+e das ordens de
+<strong>bow and stern thrusters</strong>.
+</p>
+
+<p>
+O objetivo é identificar imediatamente:
+</p>
+
+<p style="text-align:center;">
+<strong>
+ENGINE
+→ DIRECTION
+→ POWER
+</strong>
+</p>
+
+<p>
+e, para thrusters:
+</p>
+
+<p style="text-align:center;">
+<strong>
+THRUSTER
+→ POWER
+→ DIRECTION
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Continue usando:
+</p>
+
+<p style="text-align:center;">
+<strong>
+LISTEN
+→ UNDERSTAND
+→ ANSWER
+→ REVEAL
+→ REPEAT
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUDIO SETTINGS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔊 Audio Settings
+</h2>
+
+<div class="destaque">
+
+<label for="listening-voice">
+<strong>Voice</strong>
+</label>
+
+<br><br>
+
+<select id="listening-voice">
+
+<option>
+Loading English voices...
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<label for="listening-rate">
+<strong>Listening Speed</strong>
+</label>
+
+<br><br>
+
+<select id="listening-rate">
+
+<option value="0.70">
+🐢 Training — Slow
+</option>
+
+<option
+    value="0.90"
+    selected
+>
+⚓ Normal
+</option>
+
+<option value="1.05">
+📻 Operational
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<p id="listening-status">
+Ready.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SMCP RULE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Standard Engine Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+Segundo o SMCP,
+qualquer ordem de máquina deve ser
+<strong>repetida</strong>
+pela pessoa que opera o
+<strong>bridge telegraph</strong>.
+</p>
+
+<p>
+O
+<strong>Officer of the Watch</strong>
+deve assegurar que a ordem seja executada
+corretamente e imediatamente.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+As palavras
+<strong>ahead</strong>
+e
+<strong>astern</strong>
+são críticas.
+</p>
+
+<p>
+Uma troca dessas palavras muda completamente
+o efeito da ordem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟢 Level 1 — Basic Engine Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+Começaremos com
+ordens isoladas
+de potência e direção.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 1
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="dead slow ahead"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Slow astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Half ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Dead slow ahead.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 2
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="slow ahead"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Slow ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Slow astern
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 3
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half ahead"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Full ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Half astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Half ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 4
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 4
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="full ahead"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Full ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Full astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Half ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ASTERN
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟢 Ahead × Astern
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+Agora concentre-se na última palavra.
+</p>
+
+<p style="text-align:center;">
+<strong>
+AHEAD
+</strong>
+</p>
+
+<p style="text-align:center;">
+ou
+</p>
+
+<p style="text-align:center;">
+<strong>
+ASTERN
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 5
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 5
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="dead slow astern"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Dead slow astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Full astern
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 6
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 6
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half astern"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Slow astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Half ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Half astern
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STOP
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 7 — Stop Engines
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="stop engines"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Stop engines
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Stand by engine
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Finished with engines
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EMERGENCY FULL
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 8 — Emergency
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="emergency full astern"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Full astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Emergency full astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Emergency full ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+<strong>
+Emergency full
+</strong>
+é uma ordem distinta
+do simples
+<strong>Full</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STAND BY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 9 — Stand By Engine
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="stand by engine"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What does the order indicate?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — No more manoeuvring
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Stop the engine immediately
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Engine-room personnel fully ready to manoeuvre
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINISHED
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 10 — Finished With Engines
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="finished with engines"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What does this mean?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — No more manoeuvring required
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Engines ready for immediate manoeuvring
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Emergency manoeuvring
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TWIN SCREW
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟡 Level 2 — Twin Propeller Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+Em navios com
+<strong>twin propellers</strong>,
+o SMCP utiliza
+<strong>both</strong>
+quando a ordem afeta os dois eixos.
+</p>
+
+<p>
+Exemplo:
+</p>
+
+<p style="text-align:center;">
+<strong>
+FULL AHEAD BOTH
+</strong>
+</p>
+
+<p>
+Para parar os dois:
+</p>
+
+<p style="text-align:center;">
+<strong>
+STOP ALL ENGINES
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 11
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 11 — Both Engines
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="slow astern both"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which engines are affected?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port engine only
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Both engines
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Starboard engine only
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 12
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 12 — Independent Engines
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="full ahead starboard"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which engine was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Both engines
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port engine
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Starboard engine
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 13
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 13
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half astern port"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port engine half astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Starboard engine half astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Both engines half ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     THRUSTERS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟡 Level 2 — Thruster Orders
+</h2>
+
+<div class="destaque">
+
+<p>
+O SMCP utiliza ordens padronizadas
+para:
+</p>
+
+<p style="text-align:center;">
+<strong>
+BOW THRUSTER
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+STERN THRUSTER
+</strong>
+</p>
+
+<p>
+com:
+</p>
+
+<p style="text-align:center;">
+<strong>
+FULL / HALF
+</strong>
+</p>
+
+<p>
+e direção:
+</p>
+
+<p style="text-align:center;">
+<strong>
+PORT / STARBOARD
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     BOW THRUSTER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 14 — Bow Thruster
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="bow thruster full to port"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Bow thruster half to port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Bow thruster full to port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stern thruster full to port
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     BOW THRUSTER 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 15 — Bow Thruster
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="bow thruster half to starboard"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Bow thruster half to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Bow thruster full to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stern thruster half to starboard
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     STERN THRUSTER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 16 — Stern Thruster
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="stern thruster full to starboard"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which order did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Bow thruster full to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Stern thruster half to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stern thruster full to starboard
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     THRUSTER STOP
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 17 — Stop Thruster
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="bow thruster stop"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Stern thruster stop
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Bow thruster stop
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stop all engines
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔴 Level 3 — Operational Sequence
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora as ordens aparecerão
+em sequência,
+como em uma manobra real.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SEQUENCE 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 18 — Engine Sequence
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="dead slow ahead. slow ahead. stop engines. dead slow astern"
+>
+🔊 Play Sequence
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which sequence did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow ahead → Slow ahead → Stop → Dead slow astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Slow ahead → Half ahead → Full astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Dead slow astern → Stop → Slow ahead
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Dead slow ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Slow ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Stop engines.
+</strong>
+</p>
+
+<p>
+<strong>
+Dead slow astern.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SEQUENCE 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 19 — Twin Screw Sequence
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="full ahead starboard. half astern port. stop all engines"
+>
+🔊 Play Sequence
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What did you hear?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Full ahead port / Half astern starboard / Stop all
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Full ahead both / Half astern both
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Full ahead starboard / Half astern port / Stop all engines
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENGINE + THRUSTER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 20 — Engine & Thruster
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="dead slow ahead. bow thruster full to port. stern thruster half to starboard"
+>
+🔊 Play Sequence
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which combination was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow astern / Bow full starboard / Stern half port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Dead slow ahead / Bow full port / Stern half starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Slow ahead / Bow half port / Stern full starboard
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     READBACK
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔁 Engine Order Read-Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Ouça a ordem:
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half ahead"
+>
+🔊 Conning Order
+</button>
+
+</div>
+
+
+<div class="destaque">
+
+<p>
+A pessoa operando o telégrafo
+repete:
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half ahead"
+>
+🔊 Read-Back
+</button>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+O objetivo é reduzir
+qualquer possibilidade
+de interpretação incorreta
+da ordem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CHALLENGE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🏆 Final Listening Challenge
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+Selecione
+<strong>Operational</strong>
+na velocidade.
+</p>
+
+<p>
+Ouça uma única vez
+antes de responder.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="stand by engine. dead slow ahead. half ahead. stop engines. dead slow astern. bow thruster full to starboard. bow thruster stop. finished with engines"
+>
+🔊 Play Challenge
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which sequence is correct?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Stand by → Slow ahead → Full ahead → Bow thruster port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Dead slow astern → Half astern → Emergency full ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stand by → Dead slow ahead → Half ahead → Stop → Dead slow astern → Bow thruster starboard → Stop thruster → Finished
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Complete Transcript
+</summary>
+
+<p>
+<strong>
+Stand by engine.
+</strong>
+</p>
+
+<p>
+<strong>
+Dead slow ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Half ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Stop engines.
+</strong>
+</p>
+
+<p>
+<strong>
+Dead slow astern.
+</strong>
+</p>
+
+<p>
+<strong>
+Bow thruster full to starboard.
+</strong>
+</p>
+
+<p>
+<strong>
+Bow thruster stop.
+</strong>
+</p>
+
+<p>
+<strong>
+Finished with engines.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPEAK BACK
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎙 Speak Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Repita em voz alta:
+</p>
+
+<p>
+<strong>
+Dead slow ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Half ahead.
+</strong>
+</p>
+
+<p>
+<strong>
+Full astern.
+</strong>
+</p>
+
+<p>
+<strong>
+Stop engines.
+</strong>
+</p>
+
+<p>
+<strong>
+Emergency full astern.
+</strong>
+</p>
+
+<p>
+<strong>
+Full ahead both.
+</strong>
+</p>
+
+<p>
+<strong>
+Half astern port.
+</strong>
+</p>
+
+<p>
+<strong>
+Bow thruster full to port.
+</strong>
+</p>
+
+<p>
+<strong>
+Stern thruster half to starboard.
+</strong>
+</p>
+
+<p>
+<strong>
+Finished with engines.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SUMMARY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+📚 Module Summary
+</h2>
+
+<div class="destaque">
+
+<p>
+Você treinou:
+</p>
+
+<p>
+<strong>
+Full / Half / Slow / Dead slow
+</strong>
+</p>
+
+<p>
+<strong>
+Ahead / Astern
+</strong>
+</p>
+
+<p>
+<strong>
+Stop engines
+</strong>
+</p>
+
+<p>
+<strong>
+Emergency full
+</strong>
+</p>
+
+<p>
+<strong>
+Stand by engine
+</strong>
+</p>
+
+<p>
+<strong>
+Finished with engines
+</strong>
+</p>
+
+<p>
+<strong>
+Twin-propeller orders
+</strong>
+</p>
+
+<p>
+<strong>
+Bow thruster orders
+</strong>
+</p>
+
+<p>
+<strong>
+Stern thruster orders
+</strong>
+</p>
+
+<p>
+<strong>
+Engine order read-back
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEXT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+➡ Next Listening Module
+</h2>
+
+<div class="destaque">
+
+<p>
+O próximo módulo será:
+</p>
+
+<p style="text-align:center;">
+<strong>
+PILOT BOARDING
+</strong>
+</p>
+
+<p>
+A partir dele,
+o treinamento começa a sair das ordens isoladas
+e entrar em
+<strong>radio communication and operational dialogue</strong>.
+</p>
+
+</div>
+
+
+<a
+    class="botao"
+    href="04-pilot-boarding.html"
+>
+🧑‍✈️ Listening 04 — Pilot Boarding
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+— English for Pilots
+</p>
+
+</footer>
+
+
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/english-listening.js"></script>
+
+
+</body>
+
+  </html>
