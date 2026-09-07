@@ -1,1 +1,3217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Listening 08 - VHF Communication
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>
+🎧 Listening 08
+</h1>
+
+<p>
+VHF Communication
+</p>
+
+<p>
+English for Pilots
+</p>
+
+</div>
+
+</header>
+
+
+
+<nav class="navbar">
+
+<button onclick="voltarPagina()">
+⬅ Voltar
+</button>
+
+<a href="index.html">
+🎧 Listening
+</a>
+
+<a href="../index.html">
+🇬🇧 English for Pilots
+</a>
+
+<a href="../../index.html">
+🏠 Bridge Trainer
+</a>
+
+</nav>
+
+
+
+<main class="conteudo">
+
+
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎯 Objective
+</h2>
+
+<div class="destaque">
+
+<p>
+Neste módulo,
+você treinará a compreensão auditiva
+de comunicações externas por
+<strong>VHF</strong>.
+</p>
+
+<p>
+O treinamento incluirá:
+</p>
+
+<p style="text-align:center;">
+<strong>
+CALLING & IDENTIFICATION
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+READABILITY
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+VHF CHANNELS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+MESSAGE MARKERS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+POSITION
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+COURSE & SPEED
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+TRAFFIC INFORMATION
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+VTS INSTRUCTIONS
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+A partir daqui,
+a mensagem pode conter
+vários dados simultaneamente.
+</p>
+
+<p>
+Treine para identificar:
+</p>
+
+<p style="text-align:center;">
+<strong>
+WHO
+→ WHERE
+→ WHAT
+→ ACTION
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUDIO SETTINGS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔊 Audio Settings
+</h2>
+
+<div class="destaque">
+
+<label for="listening-voice">
+<strong>Voice</strong>
+</label>
+
+<br><br>
+
+<select id="listening-voice">
+
+<option>
+Loading English voices...
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<label for="listening-rate">
+<strong>Listening Speed</strong>
+</label>
+
+<br><br>
+
+<select id="listening-rate">
+
+<option value="0.70">
+🐢 Training — Slow
+</option>
+
+<option
+    value="0.90"
+    selected
+>
+⚓ Normal
+</option>
+
+<option value="1.05">
+📻 Operational
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<p id="listening-status">
+Ready.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VHF CONCEPT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+📻 VHF Communication
+</h2>
+
+<div class="destaque">
+
+<p>
+<strong>VHF</strong>
+significa:
+</p>
+
+<p style="text-align:center;">
+<strong>
+Very High Frequency
+</strong>
+</p>
+
+<p>
+No contexto marítimo,
+o VHF permite comunicação
+entre:
+</p>
+
+<p>
+<strong>
+ship ↔ ship
+</strong>
+</p>
+
+<p>
+<strong>
+ship ↔ VTS
+</strong>
+</p>
+
+<p>
+<strong>
+ship ↔ pilot station
+</strong>
+</p>
+
+<p>
+<strong>
+ship ↔ tug
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+O SMCP busca tornar essas mensagens
+<strong>precisas, simples e não ambíguas</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     READABILITY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟢 Level 1 — Readability
+</h2>
+
+<div class="destaque">
+
+<p>
+Uma das verificações básicas
+de radiotelefonia é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+HOW DO YOU READ ME?
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 1 — Radio Check
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="how do you read me"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What is being requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Radio readability
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Vessel position
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel speed
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+How do you read me?
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 2 — Signal Quality
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="I read you good, four"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+How is the signal reported?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Poor / two
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Good / four
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Excellent / five
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 3 — Excellent Signal
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="I read you excellent, five"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What readability was reported?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Fair / three
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Good / four
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Excellent / five
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CHANNELS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟢 VHF Channels
+</h2>
+
+<div class="destaque">
+
+<p>
+O SMCP padroniza
+tanto a permanência
+quanto a mudança de canal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 4
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 4 — Stand By
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="stand by on VHF channel one two"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which channel must be monitored?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Channel 21
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Channel 16
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 5
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 5 — Confirmation
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="standing by on VHF channel one two"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What does the vessel confirm?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Leaving Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Standing by on Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Calling on Channel 16
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 6
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 6 — Change Channel
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="advise you change to VHF channel one four"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which channel is advised?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Channel 41
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Channel 14
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 7
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 7 — Channel Read-Back
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="changing to VHF channel one four"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What is the vessel doing?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Changing to Channel 14
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Remaining on Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Closing the radio
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MESSAGE MARKERS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟡 Level 2 — Message Markers
+</h2>
+
+<div class="destaque">
+
+<p>
+O SMCP utiliza oito
+<strong>Message Markers</strong>.
+</p>
+
+<p>
+<strong>INSTRUCTION</strong>
+</p>
+
+<p>
+<strong>ADVICE</strong>
+</p>
+
+<p>
+<strong>WARNING</strong>
+</p>
+
+<p>
+<strong>INFORMATION</strong>
+</p>
+
+<p>
+<strong>QUESTION</strong>
+</p>
+
+<p>
+<strong>ANSWER</strong>
+</p>
+
+<p>
+<strong>REQUEST</strong>
+</p>
+
+<p>
+<strong>INTENTION</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+O marker informa imediatamente
+a finalidade da mensagem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     WARNING
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 8 — Warning
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="warning. obstruction in the fairway"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What type of message is this?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Advice
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Warning
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Request
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INFORMATION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 9 — Information
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="information. vessel ahead of you is reducing speed"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What is being reported?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Vessel ahead is reducing speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Vessel ahead is increasing speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel ahead is anchoring
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INSTRUCTION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 10 — Instruction
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="instruction. do not cross the fairway"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What instruction was given?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Cross the fairway
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Anchor in the fairway
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Do not cross the fairway
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTENTION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 11 — Intention
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="intention. I will reduce my speed"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What does the vessel intend to do?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Reduce speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Increase speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Alter course
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REQUEST
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 12 — Request
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="request. I require two tugs"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is being requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — One pilot
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Two tugs
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Traffic clearance
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     VTS ROUTINE DATA
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🟡 Level 2 — VTS Routine Data
+</h2>
+
+<div class="destaque">
+
+<p>
+O VTS pode solicitar dados
+para construir a
+<strong>traffic image</strong>.
+</p>
+
+<p>
+Entre eles:
+</p>
+
+<p>
+<strong>
+vessel name
+</strong>
+</p>
+
+<p>
+<strong>
+call sign
+</strong>
+</p>
+
+<p>
+<strong>
+position
+</strong>
+</p>
+
+<p>
+<strong>
+course
+</strong>
+</p>
+
+<p>
+<strong>
+speed
+</strong>
+</p>
+
+<p>
+<strong>
+destination
+</strong>
+</p>
+
+<p>
+<strong>
+ETA
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NAME
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 13 — Vessel Identification
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="what is the name of your vessel and call sign"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What information is being requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Draft and speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Position and destination
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel name and call sign
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     POSITION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 14 — Position
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="what is your position"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What information does VTS require?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Position
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Draft
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE SPEED
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 15 — Course & Speed
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="what is your present course and speed"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which two items are requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Draft and destination
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Course and speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Position and draft
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE SPEED ANSWER
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 16 — Vessel Report
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="my present course is zero eight five degrees. my speed is eight knots"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What is the vessel reporting?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Course 058° / Speed 18 kn
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Course 085° / Speed 5 kn
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Course 085° / Speed 8 kn
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DESTINATION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 17 — Destination
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="what is your port of destination"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What information is requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port of destination
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Last port of call
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Present position
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ETA
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 18 — ETA
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="my E T A is one four three zero U T C"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is the ETA?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 13:40 UTC
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 14:30 UTC
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 14:03 UTC
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSE CONTROL
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔴 Level 3 — VTS Navigation Messages
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora o VTS passará
+a fornecer informação,
+advice ou instruction
+relacionada à navegação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PRESENT COURSE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 19 — Present Heading
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="what is your present heading"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What is VTS asking?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Present heading
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Destination
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Air draft
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     KEEP COURSE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 20 — Keep Course
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="advice. keep your present course"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is advised?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Alter course
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Keep present course
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Stop engines
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEW COURSE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 21 — New Course
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="advice. new course zero nine zero degrees"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which course is advised?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 009°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 900°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 090°
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DANGEROUS COURSE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 22 — Dangerous Course
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="warning. you are steering a dangerous course"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What danger is reported?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Vessel is steering a dangerous course
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Vessel is at anchor
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel has lost propulsion
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TRAFFIC CLEARANCE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 23 — Traffic Clearance
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="traffic clearance is required before entering the traffic lane"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is required before entering?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Pilot ladder
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Traffic clearance
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Tug assistance
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PERMISSION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 24 — Permission to Enter
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="you have permission to enter the traffic lane. traffic clearance granted"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What has been granted?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Permission to anchor
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Permission to berth
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Traffic clearance to enter
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REPORTING POINT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 25 — Reporting Point
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="report at the next way point"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What must the vessel do?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Report at the next way point
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Anchor at the next way point
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Change VHF channel
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TIDE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 26 — Tide
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="information. the tide is against you"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is the tidal condition?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Tide with the vessel
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Tide against the vessel
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — No tide
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CORRECTION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚠ Correction Procedure
+</h2>
+
+<div class="destaque">
+
+<p>
+Quando ocorre um erro
+durante uma transmissão,
+o SMCP utiliza:
+</p>
+
+<p style="text-align:center;">
+<strong>
+MISTAKE
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+CORRECTION
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EX 27
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Exercise 27 — Mistake & Correction
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="my present speed is one four knots. mistake. correction. my present speed is one two knots"
+>
+🔊 Listen
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What is the correct speed?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — 14 knots
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — 21 knots
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — 12 knots
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Considere sempre
+<strong>a informação após CORRECTION</strong>
+como a informação válida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OPERATIONAL VTS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Operational VTS Exchange
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora ouça uma sequência
+de comunicação semelhante
+a um contato operacional com VTS.
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="question. what is your present course and speed. answer. my present course is zero eight five degrees. my speed is eight knots. advice. keep your present course. report at the next way point"
+>
+🔊 Play Exchange
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which operational picture is correct?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Course 085° / Speed 8 kn / Keep course / Report next waypoint
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Course 058° / Speed 18 kn / Alter course
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Course 085° / Anchor immediately
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+QUESTION.
+What is your present course and speed?
+</strong>
+</p>
+
+<p>
+<strong>
+ANSWER.
+My present course is zero-eight-five degrees.
+My speed is eight knots.
+</strong>
+</p>
+
+<p>
+<strong>
+ADVICE.
+Keep your present course.
+</strong>
+</p>
+
+<p>
+<strong>
+Report at the next way point.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TRAFFIC WARNING
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Traffic Information
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="information. you will meet crossing traffic in position alpha. warning. vessel ahead of you is reducing speed"
+>
+🔊 Play Message
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What should the bridge team expect?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — No traffic ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Crossing traffic and a vessel ahead reducing speed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel ahead increasing speed only
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CHALLENGE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🏆 Final Listening Challenge
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+Selecione
+<strong>Operational</strong>.
+</p>
+
+<p>
+Ouça apenas uma vez.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Vessel Ocean Star, this is Harbour V T S. Question. what is your present course and speed. Answer. my present course is one two zero degrees. my speed is nine knots. Information. vessel ahead of you is reducing speed. Advice. reduce your speed. Instruction. do not enter the traffic lane before one five three zero U T C. stand by on VHF channel one two"
+>
+🔊 Play Final Challenge
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Select the correct operational picture.
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Course 210° / Speed 19 kn / Enter immediately
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Course 120° / Speed 9 kn / Increase speed / Channel 16
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Course 120° / Speed 9 kn / Traffic ahead reducing speed / Reduce speed / Do not enter before 1530 UTC / Stand by Channel 12
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Complete Transcript
+</summary>
+
+<p>
+<strong>
+Vessel Ocean Star,
+this is Harbour VTS.
+</strong>
+</p>
+
+<p>
+<strong>
+QUESTION.
+What is your present course and speed?
+</strong>
+</p>
+
+<p>
+<strong>
+ANSWER.
+My present course is
+one-two-zero degrees.
+My speed is nine knots.
+</strong>
+</p>
+
+<p>
+<strong>
+INFORMATION.
+Vessel ahead of you
+is reducing speed.
+</strong>
+</p>
+
+<p>
+<strong>
+ADVICE.
+Reduce your speed.
+</strong>
+</p>
+
+<p>
+<strong>
+INSTRUCTION.
+Do not enter the traffic lane
+before one-five-three-zero UTC.
+</strong>
+</p>
+
+<p>
+<strong>
+Stand by on VHF Channel
+one-two.
+</strong>
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPEAK BACK
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎙 Speak Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Repita em voz alta:
+</p>
+
+<p>
+<strong>
+How do you read me?
+</strong>
+</p>
+
+<p>
+<strong>
+I read you good, four.
+</strong>
+</p>
+
+<p>
+<strong>
+Stand by on VHF Channel one-two.
+</strong>
+</p>
+
+<p>
+<strong>
+Changing to VHF Channel one-four.
+</strong>
+</p>
+
+<p>
+<strong>
+What is your position?
+</strong>
+</p>
+
+<p>
+<strong>
+What is your present course and speed?
+</strong>
+</p>
+
+<p>
+<strong>
+My present course is
+zero-eight-five degrees.
+My speed is eight knots.
+</strong>
+</p>
+
+<p>
+<strong>
+ADVICE.
+Keep your present course.
+</strong>
+</p>
+
+<p>
+<strong>
+WARNING.
+You are steering a dangerous course.
+</strong>
+</p>
+
+<p>
+<strong>
+Report at the next way point.
+</strong>
+</p>
+
+<p>
+<strong>
+Mistake.
+Correction.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SUMMARY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+📚 Module Summary
+</h2>
+
+<div class="destaque">
+
+<p>
+Você treinou:
+</p>
+
+<p>
+<strong>
+VHF readability
+</strong>
+</p>
+
+<p>
+<strong>
+Channel changes
+</strong>
+</p>
+
+<p>
+<strong>
+Message Markers
+</strong>
+</p>
+
+<p>
+<strong>
+Vessel identification
+</strong>
+</p>
+
+<p>
+<strong>
+Position reports
+</strong>
+</p>
+
+<p>
+<strong>
+Course and speed
+</strong>
+</p>
+
+<p>
+<strong>
+Destination and ETA
+</strong>
+</p>
+
+<p>
+<strong>
+Traffic information
+</strong>
+</p>
+
+<p>
+<strong>
+VTS advice
+</strong>
+</p>
+
+<p>
+<strong>
+VTS instructions
+</strong>
+</p>
+
+<p>
+<strong>
+Traffic clearance
+</strong>
+</p>
+
+<p>
+<strong>
+Reporting points
+</strong>
+</p>
+
+<p>
+<strong>
+Mistake / Correction
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEXT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+➡ Next Listening Module
+</h2>
+
+<div class="destaque">
+
+<p>
+O próximo módulo será:
+</p>
+
+<p style="text-align:center;">
+<strong>
+BRIDGE TEAM COMMUNICATION
+</strong>
+</p>
+
+<p>
+O foco passará
+da comunicação externa
+para a comunicação
+<strong>dentro do passadiço</strong>.
+</p>
+
+</div>
+
+
+<a
+    class="botao"
+    href="09-bridge-team.html"
+>
+🌉 Listening 09 — Bridge Team
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+— English for Pilots
+</p>
+
+</footer>
+
+
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/english-listening.js"></script>
+
+
+</body>
+
+</html>
