@@ -164,14 +164,6 @@ peso: 4,
 cargaCognitiva: "Alta"
 },
 
-{
-id: "rebocadores",
-nome: "Rebocadores",
-horas: 7,
-importancia: "Muito Alta",
-peso: 5,
-cargaCognitiva: "Média"
-},
 
 {
 id: "manobras-portuarias",
