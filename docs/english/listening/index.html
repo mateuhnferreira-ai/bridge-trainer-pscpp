@@ -19,10 +19,434 @@ Listening Training
     href="../../css/style.css"
 >
 
+
+<style>
+
+/* =========================================
+   LISTENING INDEX
+   LAYOUT EXCLUSIVO DA PÁGINA
+========================================= */
+
+
+/* -----------------------------------------
+   CONTEÚDO MAIS AMPLO
+----------------------------------------- */
+
+.listening-container {
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+}
+
+
+/* -----------------------------------------
+   INTRODUÇÃO
+----------------------------------------- */
+
+.listening-intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+/* -----------------------------------------
+   MÉTODO
+----------------------------------------- */
+
+.metodo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 16px;
+
+}
+
+
+.metodo-item {
+
+    background: #eef8fc;
+
+    border-left:
+        4px solid #247c8a;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+}
+
+
+.metodo-item h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+
+}
+
+
+.metodo-item p {
+
+    margin: 0;
+
+    line-height: 1.45;
+
+}
+
+
+/* -----------------------------------------
+   NÍVEIS
+----------------------------------------- */
+
+.levels-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+}
+
+
+.level-card {
+
+    background: #eef8fc;
+
+    border-left:
+        4px solid #247c8a;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+}
+
+
+.level-card h3 {
+
+    margin-top: 0;
+
+}
+
+
+/* -----------------------------------------
+   GRADE DOS MÓDULOS
+----------------------------------------- */
+
+.listening-modules-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+
+}
+
+
+/* -----------------------------------------
+   CARD
+----------------------------------------- */
+
+.listening-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #d7e1e7;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 5px 16px
+        rgba(0, 0, 0, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+
+.listening-card h2 {
+
+    margin:
+
+        0
+        0
+        13px
+        0;
+
+    font-size: 1.22rem;
+
+    line-height: 1.3;
+
+}
+
+
+.listening-card-conteudo {
+
+    background: #eef8fc;
+
+    border-left:
+        4px solid #247c8a;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    flex: 1;
+
+}
+
+
+.listening-card-conteudo > p:first-child {
+
+    margin-top: 0;
+
+}
+
+
+.listening-card-conteudo > p {
+
+    line-height: 1.5;
+
+}
+
+
+/* -----------------------------------------
+   TAGS
+----------------------------------------- */
+
+.listening-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+
+}
+
+
+.listening-tags span {
+
+    display: inline-block;
+
+    background: #ffffff;
+
+    border:
+        1px solid #c9dce4;
+
+    border-radius: 18px;
+
+    padding:
+        5px
+        10px;
+
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+}
+
+
+/* -----------------------------------------
+   DESTAQUE ESPECIAL
+----------------------------------------- */
+
+.listening-card .atencao-pratico {
+
+    margin-top: 0;
+
+    margin-bottom: 14px;
+
+}
+
+
+/* -----------------------------------------
+   BOTÕES DOS CARDS
+----------------------------------------- */
+
+.listening-card .botao {
+
+    display: inline-block;
+
+    align-self: flex-start;
+
+    margin-top: auto;
+
+}
+
+
+/* -----------------------------------------
+   PROGRESSÃO
+----------------------------------------- */
+
+.progressao-horizontal {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+}
+
+
+.progressao-etapa {
+
+    background: #eef8fc;
+
+    border-left:
+        4px solid #247c8a;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    font-weight: 700;
+
+}
+
+
+/* -----------------------------------------
+   TABLET
+----------------------------------------- */
+
+@media
+(max-width: 1150px) {
+
+    .listening-modules-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .metodo-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   TABLET MENOR
+----------------------------------------- */
+
+@media
+(max-width: 850px) {
+
+    .listening-intro-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .levels-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .progressao-horizontal {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   CELULAR
+----------------------------------------- */
+
+@media
+(max-width: 650px) {
+
+    .listening-modules-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .metodo-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .progressao-horizontal {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .listening-card {
+
+        padding: 15px;
+
+    }
+
+}
+
+</style>
+
+
 </head>
 
 
+
 <body>
+
 
 
 <header class="topo">
@@ -68,6 +492,10 @@ Maritime Listening • Bridge Communication • Pilotage
 <main class="conteudo">
 
 
+<div class="listening-container">
+
+
+
 <!-- =========================================
      INTRODUÇÃO
 ========================================= -->
@@ -77,31 +505,44 @@ Maritime Listening • Bridge Communication • Pilotage
 <div class="widget">
 
 <h2>
-🎯 Listening Objective
+🎯 Listening Training
 </h2>
 
+
+<div class="listening-intro-grid">
+
+
 <div class="destaque">
+
+<h3>
+🎧 Listening Objective
+</h3>
 
 <p>
 O objetivo deste módulo
 é desenvolver a capacidade
 de compreender
-<strong>Maritime English
-pela audição</strong>.
+<strong>
+Maritime English pela audição
+</strong>.
 </p>
 
 <p>
 O treinamento começa
 com informações simples
 e evolui gradualmente
-até situações operacionais
-completas.
+até situações operacionais completas.
 </p>
 
 </div>
 
 
+
 <div class="atencao-pratico">
+
+<h3>
+⚓ Operational Goal
+</h3>
 
 <p>
 No bridge,
@@ -111,17 +552,18 @@ para traduzir mentalmente
 cada palavra.
 </p>
 
-<p>
-O objetivo é desenvolver:
-</p>
-
 <p style="text-align:center;">
+
 <strong>
 HEAR
 → UNDERSTAND
 → REACT
 </strong>
+
 </p>
+
+</div>
+
 
 </div>
 
@@ -143,7 +585,11 @@ HEAR
 🧠 Training Method
 </h2>
 
-<div class="destaque">
+
+<div class="metodo-grid">
+
+
+<div class="metodo-item">
 
 <h3>
 1 — LISTEN
@@ -151,14 +597,14 @@ HEAR
 
 <p>
 Ouça a frase
-sem olhar
-a transcrição.
+sem olhar a transcrição.
 </p>
 
 </div>
 
 
-<div class="destaque">
+
+<div class="metodo-item">
 
 <h3>
 2 — UNDERSTAND
@@ -166,31 +612,26 @@ a transcrição.
 
 <p>
 Identifique
-a informação principal:
-</p>
-
-<p>
-<strong>
 course,
 speed,
 order,
 position,
 equipment
 ou action.
-</strong>
 </p>
 
 </div>
 
 
-<div class="destaque">
+
+<div class="metodo-item">
 
 <h3>
 3 — ANSWER
 </h3>
 
 <p>
-Responda à pergunta
+Responda
 antes de revelar
 o texto.
 </p>
@@ -198,31 +639,37 @@ o texto.
 </div>
 
 
-<div class="destaque">
+
+<div class="metodo-item">
 
 <h3>
 4 — REVEAL
 </h3>
 
 <p>
-Compare aquilo
-que você ouviu
+Compare
+o que ouviu
 com a transcrição.
 </p>
 
 </div>
 
 
-<div class="destaque">
+
+<div class="metodo-item">
 
 <h3>
 5 — REPEAT
 </h3>
 
 <p>
-Repita a frase
+Repita
+a frase
 em voz alta.
 </p>
+
+</div>
+
 
 </div>
 
@@ -230,6 +677,7 @@ em voz alta.
 <div class="atencao-pratico">
 
 <p style="text-align:center;">
+
 <strong>
 LISTEN
 → UNDERSTAND
@@ -237,6 +685,7 @@ LISTEN
 → REVEAL
 → REPEAT
 </strong>
+
 </p>
 
 </div>
@@ -260,7 +709,10 @@ LISTEN
 </h2>
 
 
-<div class="destaque">
+<div class="levels-grid">
+
+
+<div class="level-card">
 
 <h3>
 LEVEL 1 — Recognition
@@ -272,10 +724,6 @@ de cada vez.
 </p>
 
 <p>
-Exemplo:
-</p>
-
-<p>
 <strong>
 Port fifteen.
 </strong>
@@ -284,7 +732,8 @@ Port fifteen.
 </div>
 
 
-<div class="destaque">
+
+<div class="level-card">
 
 <h3>
 LEVEL 2 — Information Extraction
@@ -293,10 +742,6 @@ LEVEL 2 — Information Extraction
 <p>
 Duas ou mais informações
 na mesma mensagem.
-</p>
-
-<p>
-Exemplo:
 </p>
 
 <p>
@@ -311,7 +756,8 @@ is one-two knots.
 </div>
 
 
-<div class="destaque">
+
+<div class="level-card">
 
 <h3>
 LEVEL 3 — Operational Understanding
@@ -319,28 +765,25 @@ LEVEL 3 — Operational Understanding
 
 <p>
 A informação aparece
-dentro de uma situação
-operacional.
-</p>
-
-<p>
-Exemplo:
+dentro de uma situação operacional.
 </p>
 
 <p>
 <strong>
 The forward tug is fast.
-The aft tug
-is still approaching.
+The aft tug is still approaching.
 </strong>
 </p>
 
 <p>
-O aluno deve compreender
-<strong>o que está acontecendo</strong>,
-e não apenas
-reconhecer palavras.
+O objetivo é compreender
+<strong>
+o que está acontecendo.
+</strong>
 </p>
+
+</div>
+
 
 </div>
 
@@ -351,7 +794,7 @@ reconhecer palavras.
 
 
 <!-- =========================================
-     MÓDULO 01
+     MÓDULOS
 ========================================= -->
 
 <section class="topico-aula">
@@ -359,10 +802,43 @@ reconhecer palavras.
 <div class="widget">
 
 <h2>
-01 — Numbers, Courses & Measurements
+🎧 Listening Modules
 </h2>
 
 <div class="destaque">
+
+<p>
+Escolha um módulo
+para iniciar o treinamento.
+</p>
+
+<p>
+A sequência foi organizada
+do reconhecimento básico
+à compreensão operacional
+e técnica.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="listening-modules-grid">
+
+
+
+<!-- =========================================
+     01
+========================================= -->
+
+<article class="listening-card">
+
+<h2>
+01 — Numbers, Courses & Measurements
+</h2>
+
+<div class="listening-card-conteudo">
 
 <p>
 Treinamento auditivo
@@ -370,59 +846,19 @@ de informações numéricas
 essenciais à navegação.
 </p>
 
-<p>
-<strong>
-Numbers
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Courses
-</strong>
-</p>
+<span>Numbers</span>
+<span>Courses</span>
+<span>Headings</span>
+<span>Bearings</span>
+<span>Speed</span>
+<span>Draft</span>
+<span>UKC</span>
+<span>Distance</span>
+<span>ETA</span>
 
-<p>
-<strong>
-Headings
-</strong>
-</p>
-
-<p>
-<strong>
-Bearings
-</strong>
-</p>
-
-<p>
-<strong>
-Speed
-</strong>
-</p>
-
-<p>
-<strong>
-Draft
-</strong>
-</p>
-
-<p>
-<strong>
-UKC
-</strong>
-</p>
-
-<p>
-<strong>
-Distance
-</strong>
-</p>
-
-<p>
-<strong>
-ETA
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -433,25 +869,21 @@ ETA
 🎧 Start Module 01
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 02
+     02
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 02 — Helm Orders
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
 Reconhecimento imediato
@@ -459,47 +891,17 @@ de ordens de leme
 e steering orders.
 </p>
 
-<p>
-<strong>
-Midships
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Port fifteen
-</strong>
-</p>
+<span>Midships</span>
+<span>Port fifteen</span>
+<span>Starboard twenty</span>
+<span>Hard-a-port</span>
+<span>Meet her</span>
+<span>Steady</span>
+<span>Steady as she goes</span>
 
-<p>
-<strong>
-Starboard twenty
-</strong>
-</p>
-
-<p>
-<strong>
-Hard-a-port
-</strong>
-</p>
-
-<p>
-<strong>
-Meet her
-</strong>
-</p>
-
-<p>
-<strong>
-Steady
-</strong>
-</p>
-
-<p>
-<strong>
-Steady as she goes
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -510,74 +912,39 @@ Steady as she goes
 🛞 Start Module 02
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 03
+     03
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 03 — Engine & Thruster Orders
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
 Compreensão auditiva
-das ordens
-de propulsão
+das ordens de propulsão
 e thrusters.
 </p>
 
-<p>
-<strong>
-Dead slow ahead
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Slow ahead
-</strong>
-</p>
+<span>Dead slow ahead</span>
+<span>Slow ahead</span>
+<span>Half ahead</span>
+<span>Full astern</span>
+<span>Stop engines</span>
+<span>Bow thruster</span>
+<span>Stern thruster</span>
 
-<p>
-<strong>
-Half ahead
-</strong>
-</p>
-
-<p>
-<strong>
-Full astern
-</strong>
-</p>
-
-<p>
-<strong>
-Stop engines
-</strong>
-</p>
-
-<p>
-<strong>
-Bow thruster
-</strong>
-</p>
-
-<p>
-<strong>
-Stern thruster
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -588,69 +955,39 @@ Stern thruster
 ⚙ Start Module 03
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 04
+     04
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 04 — Pilot Boarding
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Treinamento das comunicações
-relacionadas
+Comunicações relacionadas
 ao embarque
 e desembarque
 do Prático.
 </p>
 
-<p>
-<strong>
-Pilot station
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Pilot ladder
-</strong>
-</p>
+<span>Pilot station</span>
+<span>Pilot ladder</span>
+<span>Make a lee</span>
+<span>Boarding speed</span>
+<span>Accommodation ladder</span>
+<span>Pilot boat clear</span>
 
-<p>
-<strong>
-Make a lee
-</strong>
-</p>
-
-<p>
-<strong>
-Boarding speed
-</strong>
-</p>
-
-<p>
-<strong>
-Accommodation ladder
-</strong>
-</p>
-
-<p>
-<strong>
-Pilot boat clear
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -661,80 +998,42 @@ Pilot boat clear
 🧑‍✈️ Start Module 04
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 05
+     05
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 05 — Master–Pilot Exchange
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Compreensão de
-informações essenciais
-do
-<strong>Master–Pilot Exchange</strong>.
-</p>
-
-<p>
+Compreensão das informações
+essenciais do
 <strong>
-Draft
+Master–Pilot Exchange.
 </strong>
 </p>
 
-<p>
-<strong>
-Propulsion
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Steering
-</strong>
-</p>
+<span>Draft</span>
+<span>Propulsion</span>
+<span>Steering</span>
+<span>Thrusters</span>
+<span>Manoeuvring</span>
+<span>Limitations</span>
+<span>Passage plan</span>
+<span>Berthing plan</span>
 
-<p>
-<strong>
-Thrusters
-</strong>
-</p>
-
-<p>
-<strong>
-Manoeuvring characteristics
-</strong>
-</p>
-
-<p>
-<strong>
-Equipment limitations
-</strong>
-</p>
-
-<p>
-<strong>
-Passage plan
-</strong>
-</p>
-
-<p>
-<strong>
-Berthing plan
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -745,25 +1044,21 @@ Berthing plan
 ⚓ Start Module 05
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 06
+     06
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 06 — Tug Communication
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
 Treinamento de comunicação
@@ -772,47 +1067,17 @@ bridge
 e tugs.
 </p>
 
-<p>
-<strong>
-Forward tug
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Aft tug
-</strong>
-</p>
+<span>Forward tug</span>
+<span>Aft tug</span>
+<span>Push</span>
+<span>Pull</span>
+<span>Make fast</span>
+<span>Slack away</span>
+<span>Let go</span>
 
-<p>
-<strong>
-Push
-</strong>
-</p>
-
-<p>
-<strong>
-Pull
-</strong>
-</p>
-
-<p>
-<strong>
-Make fast
-</strong>
-</p>
-
-<p>
-<strong>
-Slack away
-</strong>
-</p>
-
-<p>
-<strong>
-Let go
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -823,81 +1088,40 @@ Let go
 🚢 Start Module 06
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 07
+     07
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 07 — Berthing & Unberthing
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Compreensão auditiva
-das comunicações
-utilizadas
+Comunicações utilizadas
 durante atracação
 e desatracação.
 </p>
 
-<p>
-<strong>
-Head line
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Stern line
-</strong>
-</p>
+<span>Head line</span>
+<span>Stern line</span>
+<span>Breast line</span>
+<span>Spring</span>
+<span>Heave on</span>
+<span>Slack away</span>
+<span>Make fast</span>
+<span>Let go</span>
 
-<p>
-<strong>
-Breast line
-</strong>
-</p>
-
-<p>
-<strong>
-Spring
-</strong>
-</p>
-
-<p>
-<strong>
-Heave on
-</strong>
-</p>
-
-<p>
-<strong>
-Slack away
-</strong>
-</p>
-
-<p>
-<strong>
-Make fast
-</strong>
-</p>
-
-<p>
-<strong>
-Let go
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -908,68 +1132,40 @@ Let go
 ⚓ Start Module 07
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 08
+     08
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 08 — VHF Communication
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Treinamento
-da sequência
-de comunicações
-por VHF.
+Treinamento das comunicações
+externas por VHF
+e VTS.
 </p>
 
-<p>
-<strong>
-Calling
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Identification
-</strong>
-</p>
+<span>Calling</span>
+<span>Identification</span>
+<span>Message Markers</span>
+<span>Position</span>
+<span>Course</span>
+<span>Speed</span>
+<span>VTS</span>
+<span>Read-back</span>
 
-<p>
-<strong>
-Message
-</strong>
-</p>
-
-<p>
-<strong>
-Confirmation
-</strong>
-</p>
-
-<p>
-<strong>
-Read-back
-</strong>
-</p>
-
-<p>
-<strong>
-Closing communication
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -980,61 +1176,41 @@ Closing communication
 📻 Start Module 08
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 09
+     09
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 09 — Bridge Team Communication
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Aqui várias pessoas
-passam a participar
-da comunicação.
+Comunicação,
+monitoramento
+e cross-checking
+da bridge team.
 </p>
 
-<p>
-<strong>
-Pilot
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Master
-</strong>
-</p>
+<span>Pilot</span>
+<span>Master</span>
+<span>OOW</span>
+<span>Helmsman</span>
+<span>Monitoring</span>
+<span>Cross-checking</span>
+<span>Rate of turn</span>
+<span>UKC</span>
 
-<p>
-<strong>
-Officer of the Watch
-</strong>
-</p>
-
-<p>
-<strong>
-Helmsman
-</strong>
-</p>
-
-<p>
-<strong>
-Engine control
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -1042,30 +1218,25 @@ Engine control
 <div class="atencao-pratico">
 
 <p>
-O objetivo passa a ser
-identificar:
-</p>
-
-<p style="text-align:center;">
 <strong>
 WHO SAID IT?
 </strong>
 </p>
 
-<p style="text-align:center;">
+<p>
 <strong>
 TO WHOM?
 </strong>
 </p>
 
-<p style="text-align:center;">
+<p>
 <strong>
-WHAT ACTION
-IS REQUIRED?
+WHAT ACTION IS REQUIRED?
 </strong>
 </p>
 
 </div>
+
 
 <a
     class="botao"
@@ -1074,67 +1245,40 @@ IS REQUIRED?
 🌉 Start Module 09
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 10
+     10
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 10 — Operational Listening
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Mini-situações operacionais
+Situações operacionais
 com várias informações
 em sequência.
 </p>
 
-<p>
-<strong>
-Approaching pilot station
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Pilot boarding
-</strong>
-</p>
+<span>Restricted waters</span>
+<span>Helm</span>
+<span>Engine</span>
+<span>VTS</span>
+<span>Tugs</span>
+<span>Berthing</span>
+<span>Bridge reports</span>
+<span>Ship response</span>
 
-<p>
-<strong>
-Restricted waters
-</strong>
-</p>
-
-<p>
-<strong>
-Tug assistance
-</strong>
-</p>
-
-<p>
-<strong>
-Berthing
-</strong>
-</p>
-
-<p>
-<strong>
-Unberthing
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -1145,79 +1289,41 @@ Unberthing
 🧭 Start Module 10
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 11
+     11
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 11 — Technical Listening
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Compreensão
-de pequenas explicações
-técnicas em inglês.
+Compreensão de explicações
+técnicas sobre
+shiphandling
+e manobrabilidade.
 </p>
 
-<p>
-<strong>
-Increase
-</strong>
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Decrease
-</strong>
-</p>
+<span>Controllability</span>
+<span>Turning</span>
+<span>Stopping</span>
+<span>Rudder</span>
+<span>Propulsion</span>
+<span>Shallow water</span>
+<span>Squat</span>
+<span>Bank effects</span>
 
-<p>
-<strong>
-Cause
-</strong>
-</p>
-
-<p>
-<strong>
-Effect
-</strong>
-</p>
-
-<p>
-<strong>
-Result in
-</strong>
-</p>
-
-<p>
-<strong>
-Due to
-</strong>
-</p>
-
-<p>
-<strong>
-However
-</strong>
-</p>
-
-<p>
-<strong>
-Depends on
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -1228,80 +1334,45 @@ Depends on
 📖 Start Module 11
 </a>
 
-</div>
-
-</section>
+</article>
 
 
 
 <!-- =========================================
-     MÓDULO 12
+     12
 ========================================= -->
 
-<section class="topico-aula">
-
-<div class="widget">
+<article class="listening-card">
 
 <h2>
 12 — Listening Challenge
 </h2>
 
-<div class="destaque">
+<div class="listening-card-conteudo">
 
 <p>
-Este é o estágio
-mais avançado
-do módulo.
+Estágio final
+do treinamento auditivo.
 </p>
 
 <p>
-Você receberá
-situações operacionais
-sem conhecer previamente
-todas as informações
-que serão transmitidas.
+Situações integradas
+sem antecipação
+de todas as informações.
 </p>
 
-<p>
-Será necessário
-identificar:
-</p>
+<div class="listening-tags">
 
-<p>
-<strong>
-Orders
-</strong>
-</p>
+<span>Orders</span>
+<span>Numbers</span>
+<span>Positions</span>
+<span>Actions</span>
+<span>Limitations</span>
+<span>VTS</span>
+<span>Tugs</span>
+<span>Operational situation</span>
 
-<p>
-<strong>
-Numbers
-</strong>
-</p>
-
-<p>
-<strong>
-Positions
-</strong>
-</p>
-
-<p>
-<strong>
-Actions
-</strong>
-</p>
-
-<p>
-<strong>
-Limitations
-</strong>
-</p>
-
-<p>
-<strong>
-Operational situation
-</strong>
-</p>
+</div>
 
 </div>
 
@@ -1309,8 +1380,11 @@ Operational situation
     class="botao"
     href="12-listening-challenge.html"
 >
-🏆 Start Listening Challenge
+🏆 Start Challenge
 </a>
+
+</article>
+
 
 </div>
 
@@ -1330,43 +1404,24 @@ Operational situation
 🧭 Learning Progression
 </h2>
 
-<div class="destaque">
 
-<p style="text-align:center;">
-<strong>
-VOCABULARY
-</strong>
-</p>
+<div class="progressao-horizontal">
 
-<p style="text-align:center;">
-↓
-</p>
+<div class="progressao-etapa">
+📚 VOCABULARY
+</div>
 
-<p style="text-align:center;">
-<strong>
-LISTENING
-</strong>
-</p>
+<div class="progressao-etapa">
+🎧 LISTENING
+</div>
 
-<p style="text-align:center;">
-↓
-</p>
+<div class="progressao-etapa">
+🗣 CONVERSATION
+</div>
 
-<p style="text-align:center;">
-<strong>
-CONVERSATION
-</strong>
-</p>
-
-<p style="text-align:center;">
-↓
-</p>
-
-<p style="text-align:center;">
-<strong>
-OPERATIONAL SCENARIOS
-</strong>
-</p>
+<div class="progressao-etapa">
+⚓ OPERATIONAL SCENARIOS
+</div>
 
 </div>
 
@@ -1374,18 +1429,16 @@ OPERATIONAL SCENARIOS
 <div class="atencao-pratico">
 
 <p>
-Neste módulo,
-a prioridade
-não será simplesmente
+A prioridade
+não é simplesmente
 “entender inglês”.
 </p>
 
 <p>
-Será aprender
-a reconhecer rapidamente
-a informação
-necessária
-para conduzir
+É reconhecer rapidamente
+a informação necessária
+para compreender
+e conduzir
 uma operação marítima.
 </p>
 
@@ -1398,7 +1451,7 @@ uma operação marítima.
 
 
 <!-- =========================================
-     PRÓXIMO
+     START
 ========================================= -->
 
 <section class="topico-aula">
@@ -1409,52 +1462,63 @@ uma operação marítima.
 ▶ Start Listening Training
 </h2>
 
+
+<div class="listening-intro-grid">
+
+
 <div class="destaque">
 
+<h3>
+Start with the basics
+</h3>
+
 <p>
-Começaremos
-pelo componente
+Começaremos pelo componente
 mais objetivo
 da comunicação marítima:
 </p>
 
-<p style="text-align:center;">
-<strong>
-NUMBERS
-</strong>
+<div class="listening-tags">
+
+<span>Numbers</span>
+<span>Courses</span>
+<span>Bearings</span>
+<span>Speed</span>
+<span>Draft</span>
+<span>Distance</span>
+
+</div>
+
+</div>
+
+
+
+<div class="atencao-pratico">
+
+<h3>
+Training Goal
+</h3>
+
+<p>
+Avance progressivamente
+até conseguir
+ouvir uma situação operacional
+e compreender diretamente:
 </p>
 
 <p style="text-align:center;">
-<strong>
-COURSES
-</strong>
-</p>
 
-<p style="text-align:center;">
 <strong>
-BEARINGS
+WHAT IS HAPPENING?
 </strong>
-</p>
 
-<p style="text-align:center;">
-<strong>
-SPEED
-</strong>
-</p>
-
-<p style="text-align:center;">
-<strong>
-DRAFT
-</strong>
-</p>
-
-<p style="text-align:center;">
-<strong>
-DISTANCE
-</strong>
 </p>
 
 </div>
+
+
+</div>
+
 
 <a
     class="botao"
@@ -1468,6 +1532,9 @@ DISTANCE
 </section>
 
 
+
+</div>
+
 </main>
 
 
@@ -1480,6 +1547,7 @@ DISTANCE
 </p>
 
 </footer>
+
 
 
 <script src="../../js/navigation.js"></script>
