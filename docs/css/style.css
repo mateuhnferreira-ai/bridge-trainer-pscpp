@@ -2484,3 +2484,39 @@ footer p {
     }
 
 }
+/* =========================================
+   ENGLISH FOR PILOTS
+   Caixa independente no menu principal
+========================================= */
+
+.card-english {
+    background: linear-gradient(
+        135deg,
+        #e8f2ff,
+        #d5e8ff
+    );
+
+    border-left: 6px solid #2563a8;
+}
+
+
+/* TÍTULO */
+
+.card-english h2 {
+    color: #174f86;
+}
+
+
+/* BOTÃO */
+
+.card-english .botao {
+    background-color: #2563a8;
+    color: white;
+}
+
+
+/* BOTÃO - TOQUE / MOUSE */
+
+.card-english .botao:hover {
+    background-color: #174f86;
+}
