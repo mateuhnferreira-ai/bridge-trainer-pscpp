@@ -1,1 +1,2206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Listening 10 - Operational Listening
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>
+🎧 Listening 10
+</h1>
+
+<p>
+Operational Listening
+</p>
+
+<p>
+English for Pilots
+</p>
+
+</div>
+
+</header>
+
+
+
+<nav class="navbar">
+
+<button onclick="voltarPagina()">
+⬅ Voltar
+</button>
+
+<a href="index.html">
+🎧 Listening
+</a>
+
+<a href="../index.html">
+🇬🇧 English for Pilots
+</a>
+
+<a href="../../index.html">
+🏠 Bridge Trainer
+</a>
+
+</nav>
+
+
+
+<main class="conteudo">
+
+
+<!-- =========================================
+     OBJECTIVE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎯 Objective
+</h2>
+
+<div class="destaque">
+
+<p>
+Nos módulos anteriores,
+cada tipo de comunicação
+foi treinado separadamente.
+</p>
+
+<p>
+Agora você deverá compreender
+<strong>situações operacionais completas</strong>.
+</p>
+
+<p>
+As mensagens poderão combinar:
+</p>
+
+<p style="text-align:center;">
+<strong>
+HELM ORDERS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+ENGINE ORDERS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+THRUSTERS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+TUG COMMANDS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+VHF / VTS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+BRIDGE TEAM REPORTS
+</strong>
+</p>
+
+<p style="text-align:center;">
+<strong>
+PILOTAGE INFORMATION
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Não tente traduzir
+cada palavra mentalmente.
+</p>
+
+<p>
+Construa uma
+<strong>operational picture</strong>.
+</p>
+
+<p style="text-align:center;">
+<strong>
+POSITION
+→ MOVEMENT
+→ COMMAND
+→ RESPONSE
+→ NEXT ACTION
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUDIO SETTINGS
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔊 Audio Settings
+</h2>
+
+<div class="destaque">
+
+<label for="listening-voice">
+<strong>Voice</strong>
+</label>
+
+<br><br>
+
+<select id="listening-voice">
+
+<option>
+Loading English voices...
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<label for="listening-rate">
+<strong>Listening Speed</strong>
+</label>
+
+<br><br>
+
+<select id="listening-rate">
+
+<option value="0.70">
+🐢 Training — Slow
+</option>
+
+<option
+    value="0.90"
+    selected
+>
+⚓ Normal
+</option>
+
+<option value="1.05">
+📻 Operational
+</option>
+
+</select>
+
+</div>
+
+
+<div class="destaque">
+
+<p id="listening-status">
+Ready.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     HOW TO LISTEN
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🧠 Operational Listening Method
+</h2>
+
+<div class="destaque">
+
+<p>
+Durante cada cenário,
+procure responder mentalmente:
+</p>
+
+<p>
+<strong>1. Where is the ship?</strong>
+</p>
+
+<p>
+<strong>2. What is the ship doing?</strong>
+</p>
+
+<p>
+<strong>3. What command was given?</strong>
+</p>
+
+<p>
+<strong>4. What is changing?</strong>
+</p>
+
+<p>
+<strong>5. What happens next?</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 1 — Entering Restricted Waters
+</h2>
+
+<div class="destaque">
+
+<p>
+Você está entrando
+em águas restritas.
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Pilot has the conn. course zero nine zero degrees. speed eight knots. stand by engine. starboard ten"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is the correct operational picture?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Master has the conn / Course 090° / Port 10
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Pilot has the conn / Course 090° / Speed 8 kn / Engine standing by / Starboard 10
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Pilot has the conn / Engines astern / Port 10
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+<strong>
+Pilot has the conn.
+</strong>
+</p>
+
+<p>
+Course zero-nine-zero degrees.
+</p>
+
+<p>
+Speed eight knots.
+</p>
+
+<p>
+Stand by engine.
+</p>
+
+<p>
+Starboard ten.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 2 — Checking the Swing
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="rate of turn increasing to starboard. meet her. steady. steady on one one five"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What happened?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Starboard swing increased, it was checked, and the vessel steadied on 115°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Port swing increased and the vessel steadied on 151°
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Engines were stopped
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Não confunda:
+</p>
+
+<p>
+<strong>Meet her</strong>
+→ check the swing.
+</p>
+
+<p>
+<strong>Steady</strong>
+→ reduce the swing rapidly.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 3 — Speed Reduction
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="half ahead. slow ahead. dead slow ahead. speed over ground five decimal five knots"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What is occurring?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Propulsion is progressively increasing
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Engines have gone astern
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Ahead propulsion is progressively reduced and SOG is 5.5 kn
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 4
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 4 — VTS Information
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="information. outbound vessel ahead of you is reducing speed. advice. keep your present course. stand by on VHF channel one two"
+>
+🔊 Play VTS Message
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What information must the Pilot retain?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Vessel astern is increasing speed / Change course
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Outbound vessel ahead is reducing speed / Keep course / Stand by Channel 12
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — No traffic / Channel 16
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 5
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 5 — Restricted Channel
+</h2>
+
+<div class="destaque">
+
+<p>
+Agora combine
+navigation,
+traffic
+e ship response.
+</p>
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="heading one two zero degrees. speed six decimal five knots. vessel is twenty metres to starboard of the planned track. traffic on port bow range one decimal five nautical miles"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Select the correct picture.
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Heading 120° / 6.5 kn / 20 m starboard of track / Traffic port bow 1.5 NM
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Heading 210° / 5.6 kn / 20 m port of track
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Heading 120° / Vessel on track / No traffic
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESTRICTED WATER NOTE
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🌊 Restricted Waters
+</h2>
+
+<div class="destaque">
+
+<p>
+Em águas restritas,
+a área disponível
+para navegação é limitada.
+</p>
+
+<p>
+Shallow water,
+channel geometry,
+banks,
+current,
+tide
+e interação com outros navios
+podem alterar
+o comportamento do navio.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Por isso,
+uma mesma ordem de leme
+não significa necessariamente
+a mesma resposta do navio
+em todas as condições.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 6
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 6 — Tug Assistance
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="forward tug, pull to port. aft tug, push at half power. bow thruster half to port"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which forces are being requested?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Forward tug pushes starboard / Aft tug stops
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Both tugs pull to starboard
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Forward tug pulls to port / Aft tug pushes half power / Bow thruster to port
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 7
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 7 — Approaching the Berth
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="dead slow ahead. starboard ten. midships. stop engines. bow thruster half to port"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which sequence was ordered?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Dead slow astern / Port 10 / Full bow thruster
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Dead slow ahead / Starboard 10 / Midships / Stop engines / Bow thruster half to port
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Half ahead / Hard-a-starboard
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 8
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 8 — Ship Still Moving Ahead
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="engine dead slow astern. vessel still making headway. speed two decimal zero knots"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+Which statement is correct?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Engine is astern but the vessel still has headway
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Vessel already has sternway
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel is dead in the water
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+Este é um conceito importante
+de shiphandling:
+</p>
+
+<p>
+<strong>
+engine movement
+</strong>
+e
+<strong>
+ship movement
+</strong>
+não são a mesma coisa.
+</p>
+
+<p>
+O motor pode estar em
+<strong>astern</strong>
+enquanto o navio ainda possui
+<strong>headway</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 9
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 9 — Sternway
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="vessel has sternway. speed one decimal five knots astern"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+What is the vessel's actual movement?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Headway 1.5 knots
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Dead in the water
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Sternway 1.5 knots
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 10
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 10 — Bridge Team Warning
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Pilot, cross track error is increasing. vessel is sixty metres to starboard of the planned track"
+>
+🔊 Play Report
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+What is the bridge team reporting?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Vessel is returning to track
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Track error is increasing and vessel is 60 m starboard of track
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel is 60 m port of track
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 11
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 11 — Corrective Action
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="port ten. rate of turn five degrees per minute to port. ease to five. steady"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What sequence occurred?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Port rudder / Port ROT / Rudder eased / Swing reduced
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Starboard rudder / Starboard ROT
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Engines astern
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCENARIO 12
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+⚓ Scenario 12 — Traffic and Manoeuvre
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="traffic on starboard bow range zero decimal eight nautical miles and closing. slow ahead. port five. report rate of turn"
+>
+🔊 Play Scenario
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Select the complete picture.
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Traffic port bow / Full ahead / Starboard 5
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Traffic starboard bow but opening
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Closing traffic starboard bow at 0.8 NM / Slow ahead / Port 5 / ROT requested
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     LEVEL 4
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🔴 Level 4 — Continuous Operational Listening
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+A partir daqui,
+não haverá pausa
+entre as informações.
+</p>
+
+<p>
+Use
+<strong>Operational Speed</strong>.
+</p>
+
+<p>
+Ouça a situação inteira
+antes de responder.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTINUOUS 1
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Continuous Scenario 1 — Channel Transit
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Pilot has the conn. heading zero seven five degrees. speed seven knots. starboard ten. rate of turn eight degrees per minute to starboard. ease to five. vessel is twenty five metres to port of the planned track. traffic ahead range one decimal eight nautical miles. slow ahead"
+>
+🔊 Play Once
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Which operational picture is correct?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Heading 057° / Port turn / Vessel starboard of track
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Pilot has conn / Heading 075° / 7 kn / Starboard turn / 25 m port of track / Traffic ahead 1.8 NM / Slow ahead
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Master has conn / Vessel stopped
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Transcript
+</summary>
+
+<p>
+Pilot has the conn.
+</p>
+
+<p>
+Heading zero-seven-five degrees.
+</p>
+
+<p>
+Speed seven knots.
+</p>
+
+<p>
+Starboard ten.
+</p>
+
+<p>
+Rate of turn eight degrees
+per minute to starboard.
+</p>
+
+<p>
+Ease to five.
+</p>
+
+<p>
+Vessel is twenty-five metres
+to port of the planned track.
+</p>
+
+<p>
+Traffic ahead,
+range one decimal eight nautical miles.
+</p>
+
+<p>
+Slow ahead.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTINUOUS 2
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Continuous Scenario 2 — Harbour Approach
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Harbour V T S. information. outbound traffic passing ahead. advice. reduce your speed. pilot, speed five decimal eight knots. dead slow ahead. stand by forward and aft tugs"
+>
+🔊 Play Once
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="A"
+>
+
+<h3>
+What is happening?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Outbound traffic ahead / Speed reduction advised / SOG 5.8 kn / Dead slow ahead / Tugs standing by
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — No traffic / Increase speed / Tugs dismissed
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Vessel proceeding astern
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTINUOUS 3
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎧 Continuous Scenario 3 — Final Approach
+</h2>
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="forward tug, pull to port. aft tug, push at half power. stop engines. bow thruster half to port. speed two knots. vessel still making headway"
+>
+🔊 Play Once
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="C"
+>
+
+<h3>
+Which statement is correct?
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Vessel has sternway
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Both tugs are stopped
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Tug and thruster forces are being used, engines are stopped, but vessel still has headway
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL OPERATION
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🏆 Final Operational Challenge
+</h2>
+
+<div class="atencao-pratico">
+
+<p>
+Este exercício reúne
+praticamente todo o treinamento
+dos módulos anteriores.
+</p>
+
+<p>
+Selecione
+<strong>Operational</strong>
+e ouça apenas uma vez.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<button
+    type="button"
+    class="botao"
+    data-listen
+    data-text="Pilot has the conn. heading one zero five degrees. speed seven decimal two knots. Harbour V T S information. outbound vessel ahead is reducing speed. advice. reduce your speed. slow ahead. starboard ten. rate of turn increasing to starboard. ease to five. steady. steady on one two zero. forward tug stand by. aft tug stand by. dead slow ahead. under keel clearance two decimal three metres. vessel is thirty metres to starboard of the planned track"
+>
+🔊 Play Final Challenge
+</button>
+
+</div>
+
+
+<div
+    class="destaque listening-question"
+    data-answer="B"
+>
+
+<h3>
+Select the complete operational picture.
+</h3>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="A"
+>
+A — Master has conn / Heading 150° / Traffic astern / Full ahead / Port turn
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="B"
+>
+B — Pilot has conn / Initial heading 105° / 7.2 kn / Outbound traffic ahead reducing speed / Speed reduced / Starboard turn checked / Steady 120° / Tugs standing by / Dead slow ahead / UKC 2.3 m / 30 m starboard of track
+</button>
+
+<br><br>
+
+<button
+    type="button"
+    class="botao listening-option"
+    data-option="C"
+>
+C — Pilot has conn / Vessel astern / Tugs dismissed / UKC 3.2 m
+</button>
+
+<p class="listening-feedback"></p>
+
+</div>
+
+
+<div class="destaque">
+
+<details>
+
+<summary>
+📝 Show Complete Transcript
+</summary>
+
+<p>
+<strong>
+Pilot has the conn.
+</strong>
+</p>
+
+<p>
+Heading one-zero-five degrees.
+</p>
+
+<p>
+Speed seven decimal two knots.
+</p>
+
+<p>
+Harbour VTS.
+Information.
+Outbound vessel ahead
+is reducing speed.
+</p>
+
+<p>
+Advice.
+Reduce your speed.
+</p>
+
+<p>
+Slow ahead.
+</p>
+
+<p>
+Starboard ten.
+</p>
+
+<p>
+Rate of turn increasing
+to starboard.
+</p>
+
+<p>
+Ease to five.
+</p>
+
+<p>
+Steady.
+</p>
+
+<p>
+Steady on one-two-zero.
+</p>
+
+<p>
+Forward tug stand by.
+</p>
+
+<p>
+Aft tug stand by.
+</p>
+
+<p>
+Dead slow ahead.
+</p>
+
+<p>
+Under-keel clearance
+two decimal three metres.
+</p>
+
+<p>
+Vessel is thirty metres
+to starboard of the planned track.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MENTAL MODEL
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🧠 From English to Shiphandling
+</h2>
+
+<div class="destaque">
+
+<p>
+O objetivo final
+não é simplesmente reconhecer
+palavras em inglês.
+</p>
+
+<p>
+Ao ouvir:
+</p>
+
+<p>
+<strong>
+Starboard ten.
+</strong>
+</p>
+
+<p>
+você deve imaginar
+o leme sendo aplicado.
+</p>
+
+<p>
+Ao ouvir:
+</p>
+
+<p>
+<strong>
+Rate of turn increasing.
+</strong>
+</p>
+
+<p>
+deve visualizar
+a guinada se desenvolvendo.
+</p>
+
+<p>
+Ao ouvir:
+</p>
+
+<p>
+<strong>
+Meet her.
+</strong>
+</p>
+
+<p>
+deve compreender
+que a guinada precisa ser controlada.
+</p>
+
+<p>
+Ao ouvir:
+</p>
+
+<p>
+<strong>
+Dead slow astern.
+</strong>
+</p>
+
+<p>
+não deve automaticamente concluir
+que o navio já possui sternway.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<p>
+A meta é:
+</p>
+
+<p style="text-align:center;">
+<strong>
+HEAR THE COMMAND
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+VISUALIZE THE SHIP
+</strong>
+</p>
+
+<p style="text-align:center;">
+↓
+</p>
+
+<p style="text-align:center;">
+<strong>
+UNDERSTAND THE RESPONSE
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPEAK BACK
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+🎙 Operational Speak Back
+</h2>
+
+<div class="destaque">
+
+<p>
+Repita as sequências completas,
+sem traduzir:
+</p>
+
+<p>
+<strong>
+Starboard ten.
+Rate of turn increasing.
+Meet her.
+Steady.
+</strong>
+</p>
+
+<p>
+<strong>
+Slow ahead.
+Dead slow ahead.
+Stop engines.
+</strong>
+</p>
+
+<p>
+<strong>
+Forward tug,
+pull to port.
+</strong>
+</p>
+
+<p>
+<strong>
+Bow thruster
+half to starboard.
+</strong>
+</p>
+
+<p>
+<strong>
+Vessel still making headway.
+</strong>
+</p>
+
+<p>
+<strong>
+Cross-track error
+is increasing.
+</strong>
+</p>
+
+<p>
+<strong>
+Traffic on starboard bow
+is closing.
+</strong>
+</p>
+
+<p>
+<strong>
+Under-keel clearance
+two decimal three metres.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SUMMARY
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+📚 Module Summary
+</h2>
+
+<div class="destaque">
+
+<p>
+Neste módulo,
+você deixou de ouvir
+frases isoladas
+e começou a construir
+uma imagem operacional completa.
+</p>
+
+<p>
+Foram integrados:
+</p>
+
+<p>
+<strong>
+Wheel orders
+</strong>
+</p>
+
+<p>
+<strong>
+Engine orders
+</strong>
+</p>
+
+<p>
+<strong>
+Thruster orders
+</strong>
+</p>
+
+<p>
+<strong>
+Tug communication
+</strong>
+</p>
+
+<p>
+<strong>
+VTS information
+</strong>
+</p>
+
+<p>
+<strong>
+Traffic
+</strong>
+</p>
+
+<p>
+<strong>
+Bridge team reports
+</strong>
+</p>
+
+<p>
+<strong>
+Restricted-water navigation
+</strong>
+</p>
+
+<p>
+<strong>
+Headway and sternway
+</strong>
+</p>
+
+<p>
+<strong>
+Rate of turn
+</strong>
+</p>
+
+<p>
+<strong>
+Track monitoring
+</strong>
+</p>
+
+<p>
+<strong>
+Under-keel clearance
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEXT
+========================================= -->
+
+<section class="topico-aula">
+
+<div class="widget">
+
+<h2>
+➡ Next Listening Module
+</h2>
+
+<div class="destaque">
+
+<p>
+O próximo módulo será:
+</p>
+
+<p style="text-align:center;">
+<strong>
+TECHNICAL LISTENING
+</strong>
+</p>
+
+<p>
+O foco mudará novamente.
+</p>
+
+<p>
+Em vez de ordens curtas,
+você ouvirá
+<strong>explicações técnicas em inglês</strong>
+sobre comportamento do navio,
+manobrabilidade,
+propulsão,
+leme,
+águas restritas
+e operações de praticagem.
+</p>
+
+<p>
+Isso aproxima o treinamento
+do inglês encontrado
+nas publicações técnicas
+e nas questões do PSCPP.
+</p>
+
+</div>
+
+
+<a
+    class="botao"
+    href="11-technical-listening.html"
+>
+📘 Listening 11 — Technical Listening
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+— English for Pilots
+</p>
+
+</footer>
+
+
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/english-listening.js"></script>
+
+
+</body>
+
+  </html>
