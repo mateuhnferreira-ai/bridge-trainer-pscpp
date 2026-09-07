@@ -101,158 +101,305 @@
 
 
    <!-- =========================================
-     ENGLISH TRAINER DASHBOARD
+     ENGLISH TRAINER - MENU COMPACTO
 ========================================= -->
 
-<section class="english-dashboard">
+<style>
+
+/* Grade exclusiva do English Trainer */
+
+.english-menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin: 20px 0 28px 0;
+
+}
 
 
-    <!-- LESSONS -->
+/* Caixa */
 
-    <a
-        href="lessons/index.html"
-        class="english-card"
-    >
+.english-menu-card {
 
-        <div class="english-card-icon">
-            📚
-        </div>
+    background: #ffffff;
 
-        <h2>
-            Lessons
-        </h2>
+    border: 1px solid #d8e2e8;
 
-        <p>
-            Maritime English,
-            grammar and technical reading.
-        </p>
+    border-radius: 14px;
 
-    </a>
+    padding: 18px 14px;
 
+    min-height: 125px;
 
+    display: flex;
 
-    <!-- VOCABULARY -->
+    flex-direction: column;
 
-    <a
-        href="vocabulary/index.html"
-        class="english-card"
-    >
+    justify-content: center;
 
-        <div class="english-card-icon">
-            🧠
-        </div>
+    align-items: center;
 
-        <h2>
-            Vocabulary
-        </h2>
+    text-align: center;
 
-        <p>
-            Shiphandling,
-            pilotage and bridge terminology.
-        </p>
+    text-decoration: none;
 
-    </a>
+    color: inherit;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.05);
+
+}
 
 
+/* Ícone */
 
-    <!-- LISTENING -->
+.english-menu-icon {
 
-    <a
-        href="listening/index.html"
-        class="english-card"
-    >
+    font-size: 1.8rem;
 
-        <div class="english-card-icon">
-            🎧
-        </div>
+    margin-bottom: 5px;
 
-        <h2>
-            Listening
-        </h2>
-
-        <p>
-            Commands,
-            numbers and maritime communication.
-        </p>
-
-    </a>
+}
 
 
+/* Título */
 
-    <!-- CONVERSATION -->
+.english-menu-card h2 {
 
-    <a
-        href="conversation/index.html"
-        class="english-card"
-    >
+    margin: 3px 0 7px 0;
 
-        <div class="english-card-icon">
-            🎙
-        </div>
+    font-size: 1.15rem;
 
-        <h2>
-            Conversation
-        </h2>
+    color: #0b5269;
 
-        <p>
-            Speak Maritime English
-            in bridge situations.
-        </p>
-
-    </a>
+}
 
 
+/* Texto */
 
-    <!-- OPERATIONAL SCENARIOS -->
+.english-menu-card p {
 
-    <a
-        href="scenarios/index.html"
-        class="english-card"
-    >
+    margin: 0;
 
-        <div class="english-card-icon">
-            ⚓
-        </div>
+    font-size: 0.88rem;
 
-        <h2>
-            Scenarios
-        </h2>
+    line-height: 1.3;
 
-        <p>
-            Pilotage,
-            berthing,
-            tugs and restricted waters.
-        </p>
+    color: #687a83;
 
-    </a>
+}
+
+
+/* Efeito visual */
+
+.english-menu-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(0,0,0,0.09);
+
+}
+
+
+/* Tablet menor */
+
+@media (max-width: 850px) {
+
+    .english-menu-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* Celular */
+
+@media (max-width: 500px) {
+
+    .english-menu-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+</style>
 
 
 
-    <!-- TESTS -->
+<section class="english-menu-grid">
 
-    <a
-        href="tests/index.html"
-        class="english-card"
-    >
 
-        <div class="english-card-icon">
-            📝
-        </div>
+<!-- =========================================
+     LESSONS
+========================================= -->
 
-        <h2>
-            PSCPP Tests
-        </h2>
+<a
+    href="lessons/index.html"
+    class="english-menu-card"
+>
 
-        <p>
-            Vocabulary,
-            interpretation and exam practice.
-        </p>
+<div class="english-menu-icon">
+📚
+</div>
 
-    </a>
+<h2>
+Lessons
+</h2>
+
+<p>
+Maritime English,
+grammar and technical reading.
+</p>
+
+</a>
+
+
+
+<!-- =========================================
+     VOCABULARY
+========================================= -->
+
+<a
+    href="vocabulary/index.html"
+    class="english-menu-card"
+>
+
+<div class="english-menu-icon">
+🧠
+</div>
+
+<h2>
+Vocabulary
+</h2>
+
+<p>
+Shiphandling,
+pilotage and bridge terminology.
+</p>
+
+</a>
+
+
+
+<!-- =========================================
+     LISTENING
+========================================= -->
+
+<a
+    href="listening/index.html"
+    class="english-menu-card"
+>
+
+<div class="english-menu-icon">
+🎧
+</div>
+
+<h2>
+Listening
+</h2>
+
+<p>
+Commands,
+numbers and maritime communication.
+</p>
+
+</a>
+
+
+
+<!-- =========================================
+     CONVERSATION
+========================================= -->
+
+<a
+    href="conversation/index.html"
+    class="english-menu-card"
+>
+
+<div class="english-menu-icon">
+🎙️
+</div>
+
+<h2>
+Conversation
+</h2>
+
+<p>
+Speak Maritime English
+in bridge situations.
+</p>
+
+</a>
+
+
+
+<!-- =========================================
+     SCENARIOS
+========================================= -->
+
+<a
+    href="scenarios/index.html"
+    class="english-menu-card"
+>
+
+<div class="english-menu-icon">
+⚓
+</div>
+
+<h2>
+Scenarios
+</h2>
+
+<p>
+Pilotage,
+berthing,
+tugs and restricted waters.
+</p>
+
+</a>
+
+
+
+<!-- =========================================
+     TESTS
+========================================= -->
+
+<a
+    href="tests/index.html"
+    class="english-menu-card"
+>
+
+<div class="english-menu-icon">
+📝
+</div>
+
+<h2>
+PSCPP Tests
+</h2>
+
+<p>
+Vocabulary,
+interpretation and exam practice.
+</p>
+
+</a>
 
 
 </section>
-
 
     <!-- =====================================
          METODOLOGIA
