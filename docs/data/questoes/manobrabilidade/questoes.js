@@ -8479,6 +8479,1667 @@ const questoesManobrabilidadePSCPP = [
         }
     ]
 }
+
+// =====================================
+// MAN-0151
+// ESTABILIDADE DIRECIONAL
+// ÁGUAS RASAS
+// =====================================
+
+{
+    id: "MAN-0151",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Estabilidade direcional em águas rasas",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio de grande porte navega em um canal estreito,
+em condição de baixa folga abaixo da quilha.
+
+Admitindo que o navio não adquira trim pela proa suficientemente
+acentuado para anular o efeito estabilizador da redução da profundidade,
+qual comportamento é esperado à medida que a água se torna rasa?
+`,
+
+    alternativas: {
+
+        A: "A estabilidade direcional diminui e o raio de giro necessariamente diminui.",
+
+        B: "A estabilidade direcional tende a tornar-se mais positiva, enquanto a capacidade de iniciar e desenvolver a guinada pode diminuir e o diâmetro de giro aumentar significativamente.",
+
+        C: "A estabilidade direcional permanece invariável, pois depende apenas da geometria do casco.",
+
+        D: "A taxa de giro aumenta proporcionalmente ao quadrado da velocidade.",
+
+        E: "O diâmetro de giro permanece igual ao de águas profundas."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Águas rasas tendem a aumentar a estabilidade direcional e reduzir a capacidade de giro. O PNA registra aumentos muito significativos do diâmetro de giro em pequena relação profundidade/calado, e MacElrevey indica que o diâmetro pode chegar a aproximadamente o dobro do observado em águas profundas. Deve-se lembrar da exceção operacional: squat com trim acentuado pela proa pode contrariar o ganho de estabilidade.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Controllability — Section 13.2 Shallow-Water Effects",
+            pagina: ""
+        },
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 1 — Approaching Shallow Water / Directional Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0152
+// TRIM PELA PROA E BOW THRUSTER
+// =====================================
+
+{
+    id: "MAN-0152",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Trim pela proa e recursos de manobra",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um graneleiro de elevado coeficiente de bloco entra em águas restritas
+e passa a apresentar trim pela proa.
+
+Qual alternativa melhor descreve a consequência operacional dessa condição
+e a limitação de um tunnel bow thruster?
+`,
+
+    alternativas: {
+
+        A: "O trim pela proa aumenta a estabilidade direcional e torna desnecessário o emprego do leme.",
+
+        B: "O trim pela proa produz estabilidade neutra e a eficácia do bow thruster independe da velocidade através da água.",
+
+        C: "O trim pela proa tende a prejudicar a estabilidade direcional, tornando o navio mais difícil de governar; além disso, a eficácia do bow thruster diminui rapidamente com o aumento da velocidade através da água.",
+
+        D: "O trim pela proa reduz necessariamente o diâmetro tático pela metade.",
+
+        E: "O bow thruster substitui integralmente a ação do leme em velocidades de navegação."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "MacElrevey relaciona trim pela proa com comportamento direcionalmente instável e necessidade de grandes ângulos de leme para sustar a guinada. Quanto ao tunnel bow thruster, o PNA indica eficácia geral até cerca de 4 nós e perda prática de eficácia acima disso; MacElrevey é ainda mais conservador operacionalmente, recomendando seu emprego principalmente a cerca de 2 nós ou menos.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 1 — Directional Stability / Bow and Stern Thrusters",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 17 — Maneuvering Devices",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0153
+// ESSO OSAKA
+// =====================================
+
+{
+    id: "MAN-0153",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Esso Osaka e estabilidade em águas rasas",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Os ensaios em escala real do Esso Osaka revelaram comportamento
+não monotônico da estabilidade de curso com controles fixos.
+
+Qual alternativa descreve corretamente o fenômeno observado?
+`,
+
+    alternativas: {
+
+        A: "A estabilidade aumentou continuamente à medida que a profundidade diminuiu.",
+
+        B: "A estabilidade inicialmente diminuiu ao passar de águas profundas para uma profundidade intermediária e depois aumentou quando a folga sob a quilha foi ainda mais reduzida.",
+
+        C: "O navio tornou-se totalmente instável quando a profundidade atingiu 1,2 vezes o calado.",
+
+        D: "A distância de parada triplicou nas menores profundidades.",
+
+        E: "A estabilidade permaneceu constante, alterando-se somente a resistência ao avanço."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Nos ensaios do Esso Osaka, checking e counterturning ability foram reduzidas ao passar de águas profundas para uma condição intermediária, aproximadamente 50% do calado de folga sob a quilha, e aumentaram novamente na condição de cerca de 20%. O PNA relaciona o fenômeno a uma reversão aparente da controls-fixed course stability.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 13.2 Shallow-Water Effects",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0154
+// HIERARQUIA DE ESTABILIDADE
+// =====================================
+
+{
+    id: "MAN-0154",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Directional stability",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Segundo a classificação formal de estabilidade de movimento do PNA,
+um navio sofre uma perturbação e posteriormente volta a descrever
+uma trajetória retilínea com a mesma direção da trajetória original,
+embora permaneça transversalmente deslocado dela.
+
+Essa condição corresponde a:
+`,
+
+    alternativas: {
+
+        A: "Straight-line stability.",
+
+        B: "Directional stability.",
+
+        C: "Positional motion stability.",
+
+        D: "Hydrostatic stability.",
+
+        E: "Neutral controls-fixed stability."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Directional stability exige recuperação da direção original, mas não necessariamente da posição transversal original. Straight-line stability exige apenas que a trajetória volte a ser retilínea, podendo possuir uma nova direção. Positional stability é mais rigorosa e exige recuperação da trajetória original.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 3 — Motion Stability and Linear Equations",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0155
+// VELOCIDADE E ÍNDICES DE ESTABILIDADE
+// =====================================
+
+{
+    id: "MAN-0155",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Índices de estabilidade e velocidade",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No plano horizontal, considerando a faixa de baixos e moderados
+números de Froude na qual o coeficiente de resistência total permanece
+essencialmente constante, qual afirmação sobre os índices de estabilidade
+é correta?
+`,
+
+    alternativas: {
+
+        A: "Variam diretamente com o quadrado da velocidade.",
+
+        B: "Um navio necessariamente muda de estável para instável sempre que sua velocidade aumenta.",
+
+        C: "Os índices de estabilidade são essencialmente independentes da velocidade nessa faixa porque as derivadas de estabilidade adimensionalizadas permanecem aproximadamente constantes.",
+
+        D: "A estabilidade só pode existir para número de Froude superior a 0,40.",
+
+        E: "O aumento da velocidade sempre aumenta a estabilidade."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "O PNA estabelece que os índices de estabilidade σ no plano horizontal não dependem da velocidade na faixa de baixos e moderados números de Froude em que CT é essencialmente constante, pois as derivadas adimensionalizadas permanecem sensivelmente constantes.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 4 — Controls-Fixed Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0156
+// DIEUDONNÉ SPIRAL
+// =====================================
+
+{
+    id: "MAN-0156",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Dieudonné spiral maneuver",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+According to the PNA, a properly conducted Dieudonné spiral maneuver
+produces a hysteresis loop in the steady yaw-rate versus rudder-angle
+relationship.
+
+What does this normally indicate?
+`,
+
+    alternativas: {
+
+        A: "High positive directional stability.",
+
+        B: "Controls-fixed directional instability.",
+
+        C: "An oversized rudder only.",
+
+        D: "Positional stability.",
+
+        E: "A zero turning moment."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Em um ensaio corretamente conduzido, a presença de hysteresis loop caracteriza instabilidade de curso com controles fixos. O PNA também alerta que intervalos insuficientes entre mudanças de leme podem produzir uma falsa aparência de histerese em um navio realmente estável.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 4 — Spiral Maneuvers",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0157
+// ZIGZAG E OVERSHOOT
+// =====================================
+
+{
+    id: "MAN-0157",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Zigzag maneuver e overshoot angle",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Regarding the first-order Nomoto representation and the zigzag maneuver,
+which statement best describes the overshoot angle?
+`,
+
+    alternativas: {
+
+        A: "It is independent of the ship's steering characteristics.",
+
+        B: "For a given rudder angle, it is related to the combined effects represented by the steering indexes K′ and T′.",
+
+        C: "It depends exclusively on ship displacement.",
+
+        D: "It is zero for every directionally unstable ship.",
+
+        E: "It is a direct measurement of stopping ability."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA registra que, para determinado ângulo de leme, Nomoto mostrou o overshoot angle aproximadamente proporcional ao produto K′T′. Portanto, não é correto atribuí-lo isoladamente à estabilidade ou apenas à eficácia do leme.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Sections 4 and 5 — Zigzag Maneuver / Stability and Control",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0158
+// SKEG
+// =====================================
+
+{
+    id: "MAN-0158",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Straightening effect do skeg",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos ensaios citados pelo PNA para o Model 842,
+com twin screws e um skeg estendendo-se até aproximadamente
+0,03L do bordo de ataque do leme, o straightening effect ε
+correspondia aproximadamente a qual parcela do ângulo
+geométrico de deriva no leme?
+`,
+
+    alternativas: {
+
+        A: "20%.",
+
+        B: "55%.",
+
+        C: "70%.",
+
+        D: "90%.",
+
+        E: "100%."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "Para a configuração experimental específica citada pelo PNA, o straightening effect foi aproximadamente 70% do geometric drift angle. O valor não deve ser generalizado automaticamente para qualquer navio ou geometria de skeg.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 16 — Application to Design",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0159
+// L/B
+// =====================================
+
+{
+    id: "MAN-0159",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Relação L/B",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos estudos sistemáticos com formas Series 60 apresentados pelo PNA,
+qual tendência geral foi encontrada quando a relação comprimento-boca
+L/B é aumentada?
+`,
+
+    alternativas: {
+
+        A: "A estabilidade é prejudicada em praticamente todos os casos.",
+
+        B: "O índice de estabilidade melhora em quase todos os casos.",
+
+        C: "A estabilidade permanece rigorosamente inalterada.",
+
+        D: "O navio torna-se necessariamente instável.",
+
+        E: "Somente a resistência friccional é afetada."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA apresenta como tendência geral dos estudos Series 60 que a estabilidade é melhorada, em quase todos os casos, pelo aumento de L/B. O mesmo conjunto de estudos mostra piora com aumento de Cb e, em geral, com aumento de L/T.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 16.3 — Effect of Hull Configuration on Controls-Fixed Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0160
+// TRIM PELA POPA
+// =====================================
+
+{
+    id: "MAN-0160",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Trim pela popa",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Segundo a explicação operacional apresentada por MacElrevey,
+por que o aumento moderado do trim pela popa tende a tornar
+o navio mais estável direcionalmente?
+`,
+
+    alternativas: {
+
+        A: "Porque elimina completamente a velocidade lateral do casco.",
+
+        B: "Porque, à medida que o giro se estabelece, a distribuição das pressões hidrodinâmicas desloca a resultante para uma posição mais favorável à estabilidade, relativamente ao centro de gravidade.",
+
+        C: "Porque reduz obrigatoriamente o coeficiente de bloco.",
+
+        D: "Porque elimina a resistência de ondas.",
+
+        E: "Porque desloca permanentemente o ponto pivô para a popa."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "MacElrevey explica o fenômeno pela alteração da forma submersa e da distribuição de pressões. Com trim pela popa, à medida que a curva se estabelece, a distribuição resultante torna-se favorável à estabilidade; com trim pela proa ocorre a tendência oposta.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 2 — Effect of Trim on Handling Characteristics",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0161
+// NOMOTO
+// =====================================
+
+{
+    id: "MAN-0161",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Índices de Nomoto K′ e T′",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Regarding the Nomoto steering indexes K′ and T′,
+which statement is technically correct?
+`,
+
+    alternativas: {
+
+        A: "A larger T′ always means faster rudder response.",
+
+        B: "Course stability increases as positive T′ decreases, while a negative T′ indicates unstable dynamic character.",
+
+        C: "K′ measures wind resistance only.",
+
+        D: "A negative T′ indicates superior straight-line stability.",
+
+        E: "K′ has no relationship with turning ability."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "No modelo apresentado pelo PNA, T′ atua como medida inversa da course stability: menor T′ positivo corresponde a maior estabilidade e resposta transitória mais rápida; T′ negativo caracteriza comportamento dinamicamente instável. K′ está associado à turning ability e responsiveness to rudder.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 5 — Stability and Control",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0162
+// RAÍZES DE ESTABILIDADE
+// =====================================
+
+{
+    id: "MAN-0162",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Raízes da equação característica",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na análise linear do PNA, considerando as raízes reais
+da equação característica associada à estabilidade
+com controles fixos, qual condição caracteriza
+decaimento das perturbações?
+`,
+
+    alternativas: {
+
+        A: "Raízes positivas.",
+
+        B: "Uma raiz positiva e outra negativa.",
+
+        C: "Raízes com partes reais negativas.",
+
+        D: "Raízes obrigatoriamente iguais a zero.",
+
+        E: "Somente raízes imaginárias puras."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "Uma resposta estável exige que os termos exponenciais associados às perturbações decaiam com o tempo; por isso, as partes reais das raízes de estabilidade devem ser negativas segundo a convenção utilizada pelo PNA.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Motion Stability and Controls-Fixed Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0163
+// MUNK MOMENT
+// =====================================
+
+{
+    id: "MAN-0163",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Munk moment",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+The Munk moment associated with an elongated
+three-dimensional body moving at an angle of attack
+in an ideal fluid tends to:
+`,
+
+    alternativas: {
+
+        A: "Restore the body to zero angle of attack.",
+
+        B: "Produce no moment because of d'Alembert's paradox.",
+
+        C: "Increase the angle of attack, producing a destabilizing tendency.",
+
+        D: "Act only as a longitudinal drag force.",
+
+        E: "Eliminate the body's added mass."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "O Munk moment é uma tendência de momento desestabilizador: para um corpo alongado oblíquo ao escoamento ideal, o momento tende a aumentar sua obliquidade em vez de restaurá-lo para alinhamento.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Hydrodynamic Forces and Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0164
+// INTERAÇÃO ENTRE NAVIOS
+// =====================================
+
+{
+    id: "MAN-0164",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Interação durante ultrapassagem",
+
+    edital: "Interação navio-navio em águas restritas",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante uma ultrapassagem em águas restritas,
+as forças de interação entre dois navios variam continuamente
+com a posição longitudinal relativa.
+
+Qual afirmação melhor representa o risco operacional?
+`,
+
+    alternativas: {
+
+        A: "A interação desaparece assim que os navios começam a ficar emparelhados.",
+
+        B: "Durante as fases de aproximação, emparelhamento e afastamento podem ocorrer combinações importantes de forças laterais e momentos de guinada, exigindo antecipação e controle contínuo.",
+
+        C: "A interação só existe se ambos os navios possuírem o mesmo calado.",
+
+        D: "A redução da velocidade elimina instantaneamente todas as forças de interação.",
+
+        E: "O fenômeno é exclusivamente consequência da resistência friccional."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Na ultrapassagem, a distribuição de pressão entre os cascos muda conforme a posição relativa, produzindo forças laterais e momentos de guinada que podem se reforçar em determinadas fases. Não é seguro reduzir o fenômeno a uma única posição geométrica universal.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 13 — Vessel Waterway Interactions",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0165
+// CANAL ESTREITO
+// =====================================
+
+{
+    id: "MAN-0165",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Derivadas de interação com margem",
+
+    edital: "Interação com margens e canais estreitos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na formulação linearizada de interação navio-margem,
+determinadas derivadas representam a sensibilidade das forças
+e dos momentos à posição e orientação do navio relativamente
+à parede do canal.
+
+Qual conclusão operacional é correta?
+`,
+
+    alternativas: {
+
+        A: "A presença da margem pode introduzir termos que favoreçam o crescimento do desvio e da guinada, portanto a interação pode possuir caráter desestabilizador.",
+
+        B: "A margem sempre produz um momento restaurador para o centro do canal.",
+
+        C: "As derivadas de interação desaparecem quando a rotação do hélice permanece constante.",
+
+        D: "O fenômeno só ocorre com propulsores CPP.",
+
+        E: "Essas derivadas representam exclusivamente correções de resistência friccional."
+
+    },
+
+    resposta: "A",
+
+    comentario:
+        "A proximidade da margem quebra a simetria do escoamento e introduz forças e momentos dependentes da posição e orientação do navio. Alguns desses termos podem ser desestabilizadores e contribuir para bank suction, bow cushion e desenvolvimento de sheer.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 13 — Vessel Waterway Interactions",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0166
+// NAVIO CRANKY
+// =====================================
+
+{
+    id: "MAN-0166",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Comportamento de navio direcionalmente instável",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio apresenta baixa ou negativa estabilidade direcional.
+
+Qual comportamento operacional é compatível com a descrição
+de MacElrevey?
+`,
+
+    alternativas: {
+
+        A: "Sempre inicia a guinada instantaneamente e a interrompe sem emprego de contra-leme.",
+
+        B: "Pode exigir tempo para iniciar a guinada e, principalmente, grandes ângulos de leme aplicados por períodos prolongados para sustá-la.",
+
+        C: "Possui necessariamente diâmetro de giro extremamente grande.",
+
+        D: "É incapaz de executar uma curva completa.",
+
+        E: "Sua taxa de guinada torna-se independente do leme."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "MacElrevey destaca que o navio direcionalmente instável pode exigir mais tempo para iniciar uma guinada e grandes ângulos de leme por períodos prolongados para quebrá-la. Esse é o comportamento operacional associado ao navio descrito como cranky.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 1 — Directional Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0167
+// TEMPO NO SPIRAL TEST
+// =====================================
+
+{
+    id: "MAN-0167",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Execução do Dieudonné spiral test",
+
+    edital: "Ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para evitar uma interpretação falsa da estabilidade
+durante um Dieudonné spiral test, o que deve ser feito
+após cada alteração do ângulo de leme?
+`,
+
+    alternativas: {
+
+        A: "Alterar imediatamente o leme para o próximo valor.",
+
+        B: "Aguardar tempo suficiente para que a taxa de guinada se aproxime da condição steady correspondente ao ângulo de leme.",
+
+        C: "Aguardar exatamente 60 segundos em todos os navios.",
+
+        D: "Parar o propulsor.",
+
+        E: "Executar obrigatoriamente uma curva de 360 graus."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA mostra que intervalos fixos insuficientes podem produzir uma aparente hysteresis loop em um navio que, quando se aguarda o estabelecimento das condições, revela-se estável. O tempo necessário depende da dinâmica da embarcação.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 4 — Spiral Maneuver",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0168
+// BECH REVERSE SPIRAL
+// =====================================
+
+{
+    id: "MAN-0168",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Bech reverse spiral maneuver",
+
+    edital: "Ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+The Bech reverse spiral maneuver differs from the direct
+Dieudonné spiral principally because:
+`,
+
+    alternativas: {
+
+        A: "The ship is steered at a prescribed constant yaw rate and the mean rudder angle required to maintain that rate is measured.",
+
+        B: "The ship must proceed astern.",
+
+        C: "It can only be used for submarines.",
+
+        D: "No rate-of-turn measurement is required.",
+
+        E: "The rudder remains permanently amidships."
+
+    },
+
+    resposta: "A",
+
+    comentario:
+        "No Bech reverse spiral, controla-se o navio para manter valores especificados de yaw rate e mede-se o mean rudder angle necessário. Dessa forma pode-se reconstruir a relação entre taxa de guinada e ângulo de leme inclusive dentro da região de histerese.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 4.4 — Bech Reverse Spiral and Pullout Maneuvers",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0169
+// PULLOUT
+// =====================================
+
+{
+    id: "MAN-0169",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Pullout maneuver",
+
+    edital: "Ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+What is the principal purpose of the pullout maneuver?
+`,
+
+    alternativas: {
+
+        A: "To measure maximum ahead speed.",
+
+        B: "To provide an indication of straight-course stability by observing the behavior of yaw rate after the rudder is returned to midships.",
+
+        C: "To determine squat.",
+
+        D: "To measure bow-thruster bollard pull.",
+
+        E: "To determine propeller cavitation."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "No pullout test, o navio é inicialmente colocado em giro e o leme é então levado a meio. Em um navio estável a taxa de guinada decai até zero; em um navio moderadamente instável pode permanecer uma taxa residual.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 4.4 — Bech Reverse Spiral and Pullout Maneuvers",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0170
+// VENTO PELA PROA
+// =====================================
+
+{
+    id: "MAN-0170",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Estabilidade sob vento — estudo de Eda",
+
+    edital: "Efeitos ambientais sobre a controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+For the specific full-load Mariner-class cargo ship analyzed
+by Eda and reproduced in the PNA, an unsteered ship experiences
+a relative wind from the bow with:
+
+3 < U'a < 11.
+
+How is the resulting motion classified?
+`,
+
+    alternativas: {
+
+        A: "Stable and nonoscillatory.",
+
+        B: "Neutral.",
+
+        C: "Stable and oscillatory.",
+
+        D: "Unstable and nonoscillatory.",
+
+        E: "Always uncontrollable by the rudder."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "No exemplo específico do Mariner-class estudado por Eda: 0 < U'a < 3 corresponde a estabilidade não oscilatória; 3 < U'a < 11 a estabilidade oscilatória; e U'a > 11 a instabilidade oscilatória. Esses limites pertencem ao modelo analisado e não constituem números universais para qualquer navio.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 12 — Effects of the Environment",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0171
+// VENTO PELA POPA
+// =====================================
+
+{
+    id: "MAN-0171",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Vento pela popa — estudo de Eda",
+
+    edital: "Efeitos ambientais sobre a controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+For the same full-load Mariner-class example analyzed by Eda,
+what was found for an unsteered ship when the relative wind
+came from astern, U'a < 0?
+`,
+
+    alternativas: {
+
+        A: "The ship became increasingly stable.",
+
+        B: "The ship remained neutral.",
+
+        C: "The ship was unstable, with the instability increasing monotonically as stern-wind speed increased.",
+
+        D: "The ship became stable and oscillatory.",
+
+        E: "The effect disappeared at high wind speeds."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "No caso analisado pelo PNA, vento relativo pela popa produziu instabilidade para todos os valores negativos de U'a estudados, e a taxa de divergência aumentou com o aumento da velocidade relativa do vento pela popa. Trata-se de resultado do modelo analisado, não de limite universal aplicável sem avaliação a toda embarcação.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 12 — Effects of the Environment",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0172
+// L/T
+// =====================================
+
+{
+    id: "MAN-0172",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Relação L/T",
+
+    edital: "Estabilidade direcional e geometria do casco",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Segundo os estudos sistemáticos das formas Series 60
+apresentados pelo PNA, qual é a tendência geral ao aumentar
+a relação comprimento-calado L/T, isto é, ao reduzir o calado?
+`,
+
+    alternativas: {
+
+        A: "A estabilidade melhora em todos os casos.",
+
+        B: "A estabilidade é prejudicada em quase todos os casos estudados.",
+
+        C: "O efeito se limita à resistência friccional.",
+
+        D: "O diâmetro de giro é obrigatoriamente reduzido pela metade.",
+
+        E: "Nenhuma derivada hidrodinâmica é alterada."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA resume três tendências das Series 60: aumento de Cb geralmente prejudica a estabilidade; aumento de L/B geralmente a melhora; e aumento de L/T, isto é, redução de calado, em quase todos os casos a prejudica.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 16.3 — Effect of Hull Configuration on Controls-Fixed Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0173
+// LCG
+// =====================================
+
+{
+    id: "MAN-0173",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Posição longitudinal do centro de gravidade",
+
+    edital: "Estabilidade direcional e geometria do casco",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na análise das formas Series 60 apresentada pelo PNA,
+por que foi necessário separar matematicamente os efeitos
+do coeficiente de bloco Cb e da posição longitudinal do centro
+de gravidade — LCG?
+`,
+
+    alternativas: {
+
+        A: "Porque a posição do LCG também afeta o índice de estabilidade e, na série analisada, variava juntamente com o coeficiente de bloco.",
+
+        B: "Porque o LCG influencia somente a resistência de ondas.",
+
+        C: "Porque o LCG não possui qualquer relação com as equações de movimento.",
+
+        D: "Porque Cb e LCG são sempre numericamente iguais.",
+
+        E: "Porque o LCG determina exclusivamente a potência do propulsor."
+
+    },
+
+    resposta: "A",
+
+    comentario:
+        "No conjunto Series 60, a mudança de Cb estava associada também a mudanças da posição do LCG. O PNA separa os efeitos para mostrar que a localização longitudinal do centro de gravidade também altera o stability index. Não é adequado reduzir o fenômeno a uma regra universal simples de 'LCG para vante' ou 'LCG para ré' sem considerar a geometria e a convenção utilizadas.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 16.3 — Effect of Hull Configuration on Controls-Fixed Stability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0174
+// ÁREA DO LEME
+// =====================================
+
+{
+    id: "MAN-0174",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Área do leme e estabilidade",
+
+    edital: "Leme e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em relação ao efeito da área do leme sobre estabilidade
+e capacidade de giro, qual afirmação está de acordo com o PNA?
+`,
+
+    alternativas: {
+
+        A: "Aumentar a área do leme sempre reduz o raio de giro.",
+
+        B: "Uma área de leme maior pode favorecer a estabilidade e o controle, particularmente em navios de formas cheias, mas seu aumento não garante em todos os casos uma redução do raio de giro.",
+
+        C: "A área do leme não afeta a estabilidade.",
+
+        D: "Navios de formas cheias necessitam proporcionalmente de lemes menores.",
+
+        E: "O aumento da área do leme sempre torna o navio instável."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA destaca que navios de formas cheias, geralmente menos estáveis, podem beneficiar-se de maior área de leme. Entretanto, a teoria linear também mostra que aumentar a área do leme não reduz necessariamente o turning radius em todos os casos. Estabilidade e turning ability não devem ser tratadas como a mesma propriedade.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Sections 16 and 17 — Application to Design / Rudder Design",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0175
+// HYSTERESIS LOOP 4°
+// =====================================
+
+{
+    id: "MAN-0175",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Largura do hysteresis loop",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos estudos de simulação de coursekeeping citados pelo PNA
+para determinada classe de navios, uma hysteresis loop width
+de aproximadamente 4° sugeriu:
+`,
+
+    alternativas: {
+
+        A: "Impossibilidade de governo manual.",
+
+        B: "Ausência de dificuldade apreciável para coursekeeping manual, desde que o leme possuísse dimensão adequada.",
+
+        C: "Estabilidade direcional absoluta.",
+
+        D: "Necessidade obrigatória de rebocadores.",
+
+        E: "Valor T′ necessariamente igual a zero."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA registra que, para a classe e condições analisadas, uma largura de histerese de aproximadamente 4° não deveria produzir dificuldade apreciável para o governo manual desde que o leme fosse adequadamente dimensionado. O número é um critério prático ligado ao caso estudado, não um limite universal.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 16 — Shiphandling Simulation",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0176
+// BANK EFFECT
+// =====================================
+
+{
+    id: "MAN-0176",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Sheer e bank effect",
+
+    edital: "Interação com margens e águas restritas",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Mesmo quando a redução da profundidade tende a aumentar
+a estabilidade direcional do casco, a proximidade assimétrica
+de uma margem em um canal estreito pode:
+`,
+
+    alternativas: {
+
+        A: "Produzir forças e momentos de bank effect capazes de desenvolver um sheer e exigir ação significativa de leme para manter a trajetória.",
+
+        B: "Tornar o navio infinitamente estável e impedir qualquer guinada.",
+
+        C: "Fixar o ponto pivô permanentemente no centro de gravidade.",
+
+        D: "Eliminar o squat.",
+
+        E: "Eliminar as forças hidrodinâmicas laterais."
+
+    },
+
+    resposta: "A",
+
+    comentario:
+        "Shallow-water stability e bank interaction são fenômenos relacionados, porém distintos. Em canal assimétrico, bow cushion, stern suction e os respectivos momentos podem produzir um sheer importante, sobretudo quando há pouco espaço e baixa margem de controle disponível.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 2 — Bank Effects",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 13 — Vessel Waterway Interactions",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0177
+// PERDA DE VELOCIDADE NA CURVA
+// =====================================
+
+{
+    id: "MAN-0177",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Desenvolvimento inicial da curva e perda de velocidade",
+
+    edital: "Curva de giro e estabilidade direcional",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante uma curva hard-over iniciada com seguimento avante,
+qual afirmação é tecnicamente mais adequada?
+`,
+
+    alternativas: {
+
+        A: "A velocidade permanece constante durante toda a curva.",
+
+        B: "Há normalmente perda significativa de velocidade durante a curva e, no estágio inicial, a distribuição de pressões sobre o casco apresenta uma tendência inicialmente desestabilizadora antes de se estabelecer a condição de giro.",
+
+        C: "A velocidade necessariamente cai exatamente 25% após 90° de alteração de rumo.",
+
+        D: "O efeito centrífugo produz aumento permanente da velocidade.",
+
+        E: "A perda de velocidade só ocorre em navios com hélice de passo fixo."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Curvas pronunciadas produzem perda significativa de velocidade, mas o valor percentual não é universal. MacElrevey também mostra que todos os navios apresentam, na fase inicial do giro, uma distribuição de pressões com caráter desestabilizador; o comportamento subsequente depende da forma do casco, trim e demais características.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 2 — Effect of Trim on Handling Characteristics",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Turning Ability",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0178
+// PROPULSOR E LEME
+// =====================================
+
+{
+    id: "MAN-0178",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Propeller slipstream e eficácia do leme",
+
+    edital: "Interação leme-hélice",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em uma configuração convencional na qual o leme está localizado
+a ré do propulsor, por que sua posição dentro do propeller stream
+é particularmente importante para a controlabilidade?
+`,
+
+    alternativas: {
+
+        A: "Porque elimina a resistência dos apêndices.",
+
+        B: "Porque o fluxo acelerado produzido pelo propulsor aumenta a velocidade local sobre o leme e pode gerar força de governo mesmo quando o seguimento do navio é muito pequeno.",
+
+        C: "Porque elimina a possibilidade de cavitação.",
+
+        D: "Porque reduz a massa adicional do casco a zero.",
+
+        E: "Porque torna a eficácia do leme independente da rotação do propulsor."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "O PNA recomenda que, em configuração convencional, o leme seja colocado próximo à popa e no propeller stream para boa controlabilidade. A aceleração local do escoamento sobre o leme aumenta sua capacidade de produzir força lateral, especialmente quando o seguimento do casco é pequeno.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 17.2 — Rudder Types and Location",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0179
+// VMAX
+// =====================================
+
+{
+    id: "MAN-0179",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "VMax — twin skeg, twin screw e twin rudder",
+
+    edital: "Estabilidade direcional e configuração do casco",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Navios VMax apresentam baixa relação L/B e utilizam uma configuração
+com twin skegs, twin screws e twin rudders.
+
+Segundo a experiência operacional descrita por MacElrevey,
+qual característica pode ser observada?
+`,
+
+    alternativas: {
+
+        A: "São necessariamente mais difíceis de governar que qualquer navio de eixo único.",
+
+        B: "Precisam obrigatoriamente de grandes ângulos de leme para iniciar qualquer curva.",
+
+        C: "Apesar de sua grande boca, podem apresentar excelentes características de governo, necessitando relativamente pouco leme para iniciar uma curva e mantendo capacidade de governo por algum tempo mesmo após redução ou parada das máquinas.",
+
+        D: "Possuem necessariamente diâmetro de giro maior que qualquer navio convencional.",
+
+        E: "Não podem operar em águas rasas."
+
+    },
+
+    resposta: "C",
+
+    comentario:
+        "MacElrevey apresenta os VMax como exemplo de que a geometria principal isoladamente não determina a qualidade final de governo. O conjunto twin-skeg, twin-screw e twin-rudder produz características de manobra surpreendentemente favoráveis apesar da baixa relação L/B.",
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Chapter 9 — Low Length-to-Beam Ratio Ships / VMax",
+            pagina: ""
+        }
+    ]
+
+},
+
+
+// =====================================
+// MAN-0180
+// HIERARQUIA FINAL
+// =====================================
+
+{
+    id: "MAN-0180",
+
+    disciplina: "manobrabilidade",
+    assunto: "Estabilidade Direcional",
+    topico: "Hierarquia das formas de estabilidade",
+
+    edital: "Estabilidade direcional e controlabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na classificação formal apresentada pelo PNA,
+qual sequência representa uma exigência progressivamente
+maior de recuperação do movimento após uma perturbação?
+`,
+
+    alternativas: {
+
+        A: "Positional stability → Directional stability → Straight-line stability.",
+
+        B: "Straight-line stability → Directional stability → Positional motion stability.",
+
+        C: "Directional stability → Straight-line stability → Positional motion stability.",
+
+        D: "Hydrostatic stability → Directional stability → Dynamic pressure stability.",
+
+        E: "As três formas são equivalentes."
+
+    },
+
+    resposta: "B",
+
+    comentario:
+        "Straight-line stability exige apenas o retorno a uma trajetória retilínea. Directional stability acrescenta a exigência de recuperação da direção original. Positional motion stability acrescenta ainda a recuperação da própria trajetória original em relação à Terra.",
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III: Motions in Waves and Controllability",
+            capitulo: "Chapter IX — Section 3 — Motion Stability and Linear Equations",
+            pagina: ""
+        }
+    ]
+
+},
 ];
 
 
