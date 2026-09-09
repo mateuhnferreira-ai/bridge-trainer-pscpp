@@ -8478,7 +8478,7 @@ const questoesManobrabilidadePSCPP = [
             pagina: ""
         }
     ]
-}
+}, 
 
 // =====================================
 // MAN-0151
