@@ -756,7 +756,8 @@ const questoesManobrabilidadePSCPP = [
 
         ]
 
-    }
+    },
+ 
     // =====================================
     // MAN-0011
     // STRAIGHT-LINE STABILITY
@@ -2647,7 +2648,7 @@ const questoesManobrabilidadePSCPP = [
                     ""
             }
         ]
- }
+ },
 
     // =====================================
     // MAN-0041
@@ -4557,7 +4558,7 @@ const questoesManobrabilidadePSCPP = [
                 pagina: ""
             }
         ]
-    }
+    },
 
     // =====================================
     // MAN-0071
@@ -6392,7 +6393,7 @@ const questoesManobrabilidadePSCPP = [
                 pagina: ""
             }
         ]
-    }
+    },
     // =====================================
     // MAN-0101
     // VELOCIDADE NO LEME
@@ -7640,7 +7641,7 @@ const questoesManobrabilidadePSCPP = [
                 pagina: ""
             }
         ]
-    }
+    },
 // =====================================
 // MAN-0131
 // CONSTRAINED BY HER DRAUGHT
