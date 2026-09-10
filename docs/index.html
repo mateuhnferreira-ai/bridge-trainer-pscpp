@@ -12,67 +12,158 @@
 
     <title>Bridge Trainer PSCPP</title>
 
-    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link
+        rel="stylesheet"
+        href="css/style.css?v=2.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/home-modern.css?v=1.0"
+    >
 
 </head>
 
 
-<body data-tipo-pagina="principal">
+<body
+    data-tipo-pagina="principal"
+    class="pagina-inicial"
+>
 
 
-<header class="topo">
+<header class="topo topo-app">
 
-    <div class="logo">
+    <div class="marca-app">
 
-        <h1>⚓ Bridge Trainer PSCPP</h1>
+        <span
+            class="marca-simbolo"
+            aria-hidden="true"
+        >
+            ⚓
+        </span>
 
-        <p>
-            Preparação para o Processo Seletivo de Praticante de Prático
-        </p>
+        <div class="logo">
+
+            <h1>
+                Bridge Trainer PSCPP
+            </h1>
+
+            <p>
+                Preparação para Praticante de Prático
+            </p>
+
+        </div>
 
     </div>
 
 </header>
 
 
-<nav class="navbar">
+<nav
+    class="navbar navbar-app"
+    aria-label="Navegação principal"
+>
 
     <button
         type="button"
         onclick="voltarPagina()"
     >
-        ⬅ Voltar
+        ←
+        <span>Voltar</span>
     </button>
 
-    <a href="index.html">
-        🏠 Início
+    <a
+        href="index.html"
+        aria-current="page"
+    >
+        ⌂
+        <span>Início</span>
     </a>
 
     <a href="guia-estudos/index.html">
-        📚 Guia de Estudos
+
+        ▤
+        <span>Guia</span>
+
     </a>
 
     <a href="simulados/index.html">
-    📝 Simulados
-</a>
+
+        ✓
+        <span>Simulados</span>
+
+    </a>
 
     <a href="guia-estudos/planejamento.html">
-        📅 Planejamento
+
+        □
+        <span>Planejamento</span>
+
     </a>
 
     <a href="desempenho/index.html">
-        📊 Desempenho
+
+        ◫
+        <span>Desempenho</span>
+
     </a>
 
 </nav>
 
 
-<main>
+<main class="home-main">
 
 
-<section class="dashboard">
+<section class="saudacao-home">
 
-    <h2>📊 Progresso Geral</h2>
+    <p class="rotulo-home">
+        CENTRO DE ESTUDOS PSCPP
+    </p>
+
+    <h2>
+        Olá, Mateus
+    </h2>
+
+    <p>
+        Disciplina hoje, um mar de conquistas amanhã.
+    </p>
+
+</section>
+
+
+<section class="dashboard dashboard-home">
+
+    <div class="progresso-resumo">
+
+        <div
+            class="progresso-circular"
+            aria-hidden="true"
+        >
+
+            <span id="porcentagem-geral">
+                0%
+            </span>
+
+        </div>
+
+        <div>
+
+            <span class="sobrelinha">
+                SEU PROGRESSO
+            </span>
+
+            <h2>
+                Progresso geral
+            </h2>
+
+            <p id="texto-progresso-geral">
+                0% do conteúdo concluído
+            </p>
+
+        </div>
+
+    </div>
+
 
     <div class="barra-progresso">
 
@@ -89,18 +180,164 @@
 
     </div>
 
-    <p id="texto-progresso-geral">
-        0% do conteúdo concluído
-    </p>
+</section>
+
+
+<section
+    class="atalhos-home"
+    aria-label="Atalhos de estudo"
+>
+
+
+    <a
+        class="atalho-home"
+        href="guia-estudos/index.html"
+    >
+
+        <span>▤</span>
+
+        <div>
+
+            <strong>
+                Guia de Estudos
+            </strong>
+
+            <small>
+                Conteúdo organizado
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <a
+        class="atalho-home"
+        href="guia-estudos/planejamento.html"
+    >
+
+        <span>□</span>
+
+        <div>
+
+            <strong>
+                Planejamento
+            </strong>
+
+            <small>
+                Organize sua rotina
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <a
+        class="atalho-home"
+        href="desempenho/index.html"
+    >
+
+        <span>◫</span>
+
+        <div>
+
+            <strong>
+                Desempenho
+            </strong>
+
+            <small>
+                Acompanhe sua evolução
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <a
+        class="atalho-home"
+        href="publicacoes/index.html"
+    >
+
+        <span>▥</span>
+
+        <div>
+
+            <strong>
+                Biblioteca
+            </strong>
+
+            <small>
+                Fontes técnicas
+            </small>
+
+        </div>
+
+    </a>
+
 
 </section>
 
 
-<section>
+<section class="proxima-aula-home">
 
-    <h2>📚 Disciplinas</h2>
+    <div>
 
-    <div class="cards">
+        <span class="sobrelinha">
+            PRÓXIMA AULA RECOMENDADA
+        </span>
+
+        <h2 id="proxima-aula">
+            🌊 Resistência do Navio
+        </h2>
+
+        <p id="meta-semana">
+
+            Iniciar o estudo de Resistência do Navio,
+            primeira aula de Manobrabilidade.
+
+        </p>
+
+    </div>
+
+
+    <a
+        href="disciplinas/manobrabilidade/resistencia.html"
+        class="botao botao-primario"
+        id="link-proxima-aula"
+    >
+        Continuar estudando →
+    </a>
+
+</section>
+
+
+<section class="secao-disciplinas">
+
+
+    <div class="cabecalho-secao">
+
+        <div>
+
+            <span class="sobrelinha">
+                CONTEÚDO PROGRAMÁTICO
+            </span>
+
+            <h2>
+                Disciplinas
+            </h2>
+
+        </div>
+
+        <a href="guia-estudos/index.html">
+            Ver guia completo →
+        </a>
+
+    </div>
+
+
+    <div class="cards cards-disciplinas">
 
 
         <a
@@ -109,11 +346,19 @@
             data-disciplina="manobrabilidade"
         >
 
-            <h3>🚢 Manobrabilidade</h3>
+            <span class="icone-card">
+                ⚙
+            </span>
+
+            <h3>
+                Manobrabilidade
+            </h3>
 
             <p>
+
                 Resistência, propulsão, hélices, lemes,
-                controlabilidade e manobras do navio.
+                controlabilidade e manobras.
+
             </p>
 
             <span
@@ -132,11 +377,19 @@
             data-disciplina="arte-naval"
         >
 
-            <h3>⚓ Arte Naval</h3>
+            <span class="icone-card">
+                ⚓
+            </span>
+
+            <h3>
+                Arte Naval
+            </h3>
 
             <p>
+
                 Estrutura, nomenclatura, estabilidade,
-                equipamentos e operação do navio.
+                equipamentos e operação.
+
             </p>
 
             <span
@@ -155,11 +408,19 @@
             data-disciplina="navegacao"
         >
 
-            <h3>🧭 Navegação</h3>
+            <span class="icone-card">
+                🧭
+            </span>
+
+            <h3>
+                Navegação
+            </h3>
 
             <p>
-                Navegação em águas restritas,
-                planejamento, posicionamento e segurança.
+
+                Águas restritas, planejamento,
+                posicionamento e segurança.
+
             </p>
 
             <span
@@ -178,11 +439,19 @@
             data-disciplina="meteorologia"
         >
 
-            <h3>🌦 Meteorologia e Oceanografia</h3>
+            <span class="icone-card">
+                🌦
+            </span>
+
+            <h3>
+                Meteorologia e Oceanografia
+            </h3>
 
             <p>
+
                 Atmosfera, ventos, sistemas meteorológicos,
                 ondas, marés e correntes.
+
             </p>
 
             <span
@@ -201,11 +470,19 @@
             data-disciplina="regulamentacao"
         >
 
-            <h3>📜 Regulamentação</h3>
+            <span class="icone-card">
+                §
+            </span>
+
+            <h3>
+                Regulamentação
+            </h3>
 
             <p>
-                NORMAM, convenções internacionais,
-                regras e legislação marítima aplicável.
+
+                NORMAM, convenções internacionais
+                e legislação marítima.
+
             </p>
 
             <span
@@ -224,11 +501,19 @@
             data-disciplina="conhecimentos-gerais"
         >
 
-            <h3>🌐 Conhecimentos Gerais</h3>
+            <span class="icone-card">
+                ◎
+            </span>
+
+            <h3>
+                Conhecimentos Gerais
+            </h3>
 
             <p>
-                Planejamento portuário, fatores humanos,
-                economia marítima e proteção ambiental.
+
+                Planejamento portuário, fatores humanos
+                e economia marítima.
+
             </p>
 
             <span
@@ -247,11 +532,19 @@
             data-disciplina="comunicacoes"
         >
 
-            <h3>📡 Comunicações</h3>
+            <span class="icone-card">
+                ⌁
+            </span>
+
+            <h3>
+                Comunicações
+            </h3>
 
             <p>
+
                 Comunicações marítimas,
                 procedimentos radiotelefônicos e SMCP.
+
             </p>
 
             <span
@@ -262,84 +555,55 @@
             </span>
 
         </a>
-<!-- =========================================
-     ENGLISH FOR PILOTS
-========================================= -->
 
-<div class="widget card-english">
 
-    <h2>🇬🇧 English for Pilots</h2>
+        <a
+            href="english/index.html"
+            class="card card-english"
+        >
 
-    <p>
-        Maritime English training for
-        Pilotage, Shiphandling and PSCPP.
-    </p>
+            <span class="icone-card">
+                EN
+            </span>
 
-    <p>
-        Vocabulary • Listening • Conversation •
-        Operational Scenarios • Technical Reading
-    </p>
+            <h3>
+                English for Pilots
+            </h3>
 
-    <a
-        class="botao"
-        href="english/index.html"
-    >
-        🇬🇧 Open English Trainer
-    </a>
+            <p>
 
-</div>
+                Vocabulary, listening, conversation,
+                scenarios and technical reading.
+
+            </p>
+
+            <span class="botao">
+                Open English Trainer
+            </span>
+
+        </a>
+
 
     </div>
 
 </section>
 
 
-<section class="painel">
+<section class="painel painel-home">
 
 
     <div class="widget">
 
-        <h2>🎯 Meta da Semana</h2>
+        <span class="sobrelinha">
+            ÚLTIMA AULA
+        </span>
 
-        <p id="meta-semana">
-
-            Iniciar o estudo de Resistência do Navio,
-            primeira aula de Manobrabilidade.
-
-        </p>
-
-    </div>
-
-
-    <div class="widget">
-
-        <h2>📖 Próxima Aula</h2>
-
-        <p id="proxima-aula">
-
-            🌊 Resistência do Navio
-
-        </p>
-
-        <a
-    href="disciplinas/manobrabilidade/resistencia.html"
-    class="botao"
-    id="link-proxima-aula"
->
-    Iniciar aula
-        </a>
-
-    </div>
-
-
-    <div class="widget">
-
-        <h2>🕘 Última Aula</h2>
+        <h2>
+            🕘 Histórico recente
+        </h2>
 
         <p id="ultima-aula">
-
             Nenhuma aula registrada.
-
         </p>
 
     </div>
@@ -347,33 +611,23 @@
 
     <div class="widget">
 
-        <h2>🔁 Próxima Revisão</h2>
+        <span class="sobrelinha">
+            PRÓXIMA REVISÃO
+        </span>
+
+        <h2>
+            🔁 Revisões
+        </h2>
 
         <p id="proxima-revisao">
-
             Nenhuma revisão programada.
-
-        </p>
-
-    </div>
-
-
-    <div class="widget">
-
-        <h2>📚 Biblioteca Técnica</h2>
-
-        <p>
-
-            Consulte as publicações e referências
-            utilizadas no desenvolvimento das aulas.
-
         </p>
 
         <a
-            href="publicacoes/index.html"
+            href="revisoes/index.html"
             class="botao"
         >
-            Abrir biblioteca
+            Abrir revisões
         </a>
 
     </div>
@@ -381,63 +635,27 @@
 
     <div class="widget">
 
-        <h2>📅 Planejamento PSCPP</h2>
+        <span class="sobrelinha">
+            TREINAMENTO
+        </span>
+
+        <h2>
+            ✓ Simulados PSCPP
+        </h2>
 
         <p>
-
-            Organize a distribuição das disciplinas,
-            horas disponíveis e prioridades de estudo.
-
+            Pratique questões e acompanhe seus resultados.
         </p>
 
         <a
-            href="guia-estudos/planejamento.html"
+            href="simulados/index.html"
             class="botao"
         >
-            Abrir planejamento
+            Iniciar simulado
         </a>
 
     </div>
 
-
-    <div class="widget">
-
-        <h2>📊 Centro de Desempenho</h2>
-
-        <p>
-
-            Acompanhe questões respondidas, acertos,
-            erros, evolução por disciplina e assuntos
-            que precisam de revisão.
-
-        </p>
-
-        <a
-            href="desempenho/index.html"
-            class="botao"
-        >
-            Abrir desempenho
-        </a>
-
-    </div>
-<div class="widget">
-
-    <h2>🔁 Revisões</h2>
-
-    <p>
-        Acesse o quadro de revisões e as aulas
-        de revisão geradas automaticamente
-        a partir das aulas já concluídas.
-    </p>
-
-    <a
-        href="revisoes/index.html"
-        class="botao"
-    >
-        Abrir revisões
-    </a>
-
-</div>
 
 </section>
 
@@ -459,7 +677,7 @@
     class="botao-inicio"
     aria-label="Voltar ao início"
 >
-    🏠
+    ⌂
 </a>
 
 
@@ -476,6 +694,7 @@
 <script src="guia-estudos/motor-planejamento.js"></script>
 
 <script src="js/app.js"></script>
+
 
 </body>
 
