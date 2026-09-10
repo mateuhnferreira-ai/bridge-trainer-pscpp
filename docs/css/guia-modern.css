@@ -1,1049 +1,715 @@
-/* =========================================
-   GUIA DE ESTUDOS — VISUAL MODERNO v2.0
-   Bridge Trainer PSCPP
-========================================= */
+/* =====================================================
+   BRIDGE TRAINER PSCPP
+   GUIA-MODERN.CSS — GUIA DE ESTUDOS
+   Extensão direta do visual da página inicial
+===================================================== */
 
 
-/* =========================================
-   VARIÁVEIS
-========================================= */
+/* =====================================================
+   ESTRUTURA GERAL
+===================================================== */
 
-.pagina-guia {
+.pagina-guia .guia-main {
 
-    --guia-azul-profundo: #032f46;
-    --guia-azul-escuro: #06445f;
-    --guia-azul: #08769a;
-    --guia-ciano: #08add8;
-    --guia-ciano-claro: #dff5fb;
+    max-width:
+        1180px;
 
-    --guia-dourado: #d6aa1f;
-    --guia-dourado-claro: #fff4c7;
+}
 
-    --guia-verde: #13866f;
-    --guia-verde-claro: #dcf5ee;
 
-    --guia-roxo: #6f5aa8;
-    --guia-roxo-claro: #eee9fb;
+/* =====================================================
+   ABERTURA
+===================================================== */
 
-    --guia-vermelho: #c45353;
-    --guia-vermelho-claro: #fce7e7;
+.saudacao-guia {
 
-    --guia-fundo: #edf6f9;
-    --guia-branco: #ffffff;
-    --guia-texto: #173746;
-    --guia-texto-suave: #657b85;
-    --guia-borda: #d4e4ea;
+    margin:
+        4px 0 22px;
 
-    --guia-sombra:
-        0 14px 35px rgba(18, 58, 76, 0.10);
+}
 
-    --guia-sombra-forte:
-        0 18px 42px rgba(3, 47, 70, 0.18);
 
-    background:
-        linear-gradient(
-            180deg,
-            #f6fbfd 0,
-            var(--guia-fundo) 460px,
-            #f7fafb 100%
+.saudacao-guia h2 {
+
+    margin:
+        3px 0;
+
+    color:
+        var(--navy-950);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            40px
         );
 
-    color: var(--guia-texto);
 }
 
 
-/* =========================================
-   NAVEGAÇÃO ATIVA
-========================================= */
+.saudacao-guia > p:last-child {
 
-.pagina-guia .navbar a.ativo {
+    margin:
+        6px 0 0;
 
-    color: var(--guia-azul-profundo);
-    background: #dff3f9;
-    border-color: #bee5f0;
+    color:
+        var(--texto-home-secundario);
+
 }
 
 
-/* =========================================
-   CONTEÚDO PRINCIPAL
-========================================= */
+/* =====================================================
+   DASHBOARD DO GUIA
+===================================================== */
 
-.pagina-guia .conteudo-guia {
+.dashboard-guia {
 
-    width: min(1360px, calc(100% - 48px));
-    margin: 0 auto;
-    padding: 38px 0 60px;
+    margin-bottom:
+        34px;
+
 }
 
 
-/* =========================================
-   ABERTURA DO GUIA
-========================================= */
+.cabecalho-dashboard-guia {
 
-.pagina-guia .abertura-guia {
+    display:
+        flex;
 
-    position: relative;
+    align-items:
+        flex-start;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+    justify-content:
+        space-between;
 
-    margin-bottom: 28px;
-    padding: 4px 4px 4px 0;
-}
+    gap:
+        20px;
 
-.pagina-guia .abertura-guia-texto {
+    margin-bottom:
+        22px;
 
-    max-width: 850px;
-}
-
-.pagina-guia .rotulo-secao {
-
-    margin: 0 0 8px;
-
-    color: var(--guia-azul);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-}
-
-.pagina-guia .abertura-guia h2 {
-
-    margin: 0 0 10px;
-
-    color: var(--guia-azul-profundo);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-}
-
-.pagina-guia .subtitulo-guia {
-
-    max-width: 760px;
-    margin: 0;
-
-    color: var(--guia-texto-suave);
-    font-size: 1.08rem;
-    line-height: 1.65;
-}
-
-.pagina-guia .abertura-guia-simbolo {
-
-    display: grid;
-    place-items: center;
-
-    width: 92px;
-    height: 92px;
-
-    flex: 0 0 92px;
-
-    color: #ffffff;
-    background:
-        linear-gradient(
-            145deg,
-            var(--guia-azul),
-            var(--guia-ciano)
-        );
-
-    border: 5px solid rgba(255, 255, 255, 0.75);
-    border-radius: 28px;
-
-    box-shadow: var(--guia-sombra-forte);
-
-    font-size: 3rem;
-
-    transform: rotate(3deg);
 }
 
 
-/* =========================================
-   PAINEL ESTRATÉGICO
-========================================= */
+.cabecalho-dashboard-guia h2 {
 
-.pagina-guia .painel-estrategico-guia {
+    margin:
+        4px 0 5px;
 
-    position: relative;
-    overflow: hidden;
+    color:
+        #ffffff;
 
-    margin-bottom: 46px;
-    padding: 34px;
+}
 
-    color: #ffffff;
+
+.cabecalho-dashboard-guia p {
+
+    margin:
+        0;
+
+    color:
+        #c8dce6;
+
+}
+
+
+.simbolo-dashboard-guia {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 54px;
+
+    width:
+        54px;
+
+    height:
+        54px;
+
+    border:
+        1px solid
+        rgba(91, 212, 255, 0.32);
+
+    border-radius:
+        16px;
 
     background:
-        radial-gradient(
-            circle at 92% 5%,
-            rgba(13, 183, 225, 0.24),
-            transparent 31%
-        ),
-        linear-gradient(
-            135deg,
-            #022d43 0%,
-            #064762 65%,
-            #086b86 100%
-        );
+        rgba(8, 169, 230, 0.12);
 
-    border: 1px solid rgba(127, 220, 242, 0.18);
-    border-radius: 26px;
+    color:
+        var(--cyan-claro);
 
-    box-shadow: var(--guia-sombra-forte);
-}
+    font-size:
+        25px;
 
-.pagina-guia .painel-estrategico-guia::after {
-
-    content: "⚓";
-
-    position: absolute;
-    right: -15px;
-    bottom: -58px;
-
-    color: rgba(255, 255, 255, 0.045);
-    font-size: 13rem;
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-.pagina-guia .painel-estrategico-cabecalho {
-
-    position: relative;
-    z-index: 1;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-
-    margin-bottom: 26px;
-}
-
-.pagina-guia .rotulo-painel {
-
-    margin: 0 0 8px;
-
-    color: #5ed8f3;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-}
-
-.pagina-guia .painel-estrategico-cabecalho h2 {
-
-    margin: 0 0 7px;
-
-    color: #ffffff;
-    font-size: clamp(1.65rem, 3vw, 2.25rem);
-}
-
-.pagina-guia .painel-estrategico-cabecalho p:not(.rotulo-painel) {
-
-    margin: 0;
-
-    color: rgba(255, 255, 255, 0.72);
-}
-
-.pagina-guia .painel-estrategico-emblema {
-
-    display: grid;
-    place-items: center;
-
-    width: 64px;
-    height: 64px;
-
-    flex: 0 0 64px;
-
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-
-    font-size: 2rem;
-
-    backdrop-filter: blur(8px);
 }
 
 
-/* =========================================
-   CARDS DA VISÃO GERAL
-========================================= */
+/* =====================================================
+   RESUMO DOS ESTUDOS
+===================================================== */
 
-.pagina-guia .resumo-estudos {
+.cards-resumo-guia {
 
-    position: relative;
-    z-index: 1;
+    display:
+        grid;
 
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+
 }
 
-.pagina-guia .resumo-estudos .card {
 
-    min-width: 0;
-}
+.cards-resumo-guia > .card {
 
-.pagina-guia .card-resumo {
+    min-width:
+        0;
 
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    padding:
+        18px;
 
-    min-height: 118px;
-    padding: 20px;
+    border:
+        1px solid
+        rgba(91, 212, 255, 0.18);
 
-    color: var(--guia-texto);
+    border-radius:
+        16px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.98),
-            rgba(241, 250, 253, 0.94)
-        );
+        rgba(255, 255, 255, 0.07);
 
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
+    color:
+        #ffffff;
 
     box-shadow:
-        0 10px 25px rgba(0, 24, 38, 0.17);
-}
+        none;
 
-.pagina-guia .card-resumo .card-icone {
-
-    display: grid;
-    place-items: center;
-
-    width: 62px;
-    height: 62px;
-
-    flex: 0 0 62px;
-
-    border-radius: 18px;
-
-    font-size: 2rem;
-}
-
-.pagina-guia .card-disciplinas .card-icone {
-
-    background: var(--guia-ciano-claro);
-}
-
-.pagina-guia .card-assuntos .card-icone {
-
-    background: var(--guia-dourado-claro);
-}
-
-.pagina-guia .card-carga .card-icone {
-
-    background: var(--guia-verde-claro);
-}
-
-.pagina-guia .card-conteudo {
-
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.pagina-guia .card-label {
-
-    margin-bottom: 3px;
-
-    color: var(--guia-texto-suave);
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.pagina-guia .card-resumo strong {
-
-    color: var(--guia-azul-profundo);
-    font-size: 1.7rem;
-    line-height: 1.2;
-}
-
-.pagina-guia .card-resumo small {
-
-    margin-top: 4px;
-
-    color: var(--guia-texto-suave);
-    font-size: 0.78rem;
 }
 
 
-/* =========================================
-   CARDS DINÂMICOS DO APP-GUIA
-========================================= */
+.card-resumo-guia {
 
-.pagina-guia .resumo-estudos > .card:not(.card-resumo) {
+    display:
+        flex;
 
-    position: relative;
+    align-items:
+        center;
 
-    min-height: 118px;
-    padding: 20px;
+    gap:
+        13px;
 
-    color: var(--guia-texto);
+}
+
+
+.icone-resumo-guia {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 43px;
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(91, 212, 255, 0.12);
+
+    color:
+        var(--cyan-claro);
+
+    font-size:
+        20px;
+
+}
+
+
+.card-resumo-guia > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    min-width:
+        0;
+
+}
+
+
+.label-resumo-guia {
+
+    color:
+        #b6ceda;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+}
+
+
+.card-resumo-guia strong {
+
+    display:
+        block;
+
+    margin:
+        3px 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        23px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.card-resumo-guia small {
+
+    color:
+        #a9c3cf;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   CARDS INSERIDOS PELO APP-GUIA.JS
+===================================================== */
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) {
+
+    position:
+        relative;
+
+}
+
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) h2,
+.cards-resumo-guia > .card:not(.card-resumo-guia) h3 {
+
+    margin:
+        0 0 8px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        17px;
+
+}
+
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) p {
+
+    margin:
+        5px 0;
+
+    color:
+        #b9d0dc;
+
+    font-size:
+        13px;
+
+}
+
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) strong {
+
+    color:
+        #ffffff;
+
+}
+
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) a {
+
+    display:
+        inline-block;
+
+    margin-top:
+        9px;
+
+    color:
+        var(--cyan-claro);
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+}
+
+
+.cards-resumo-guia > .card:not(.card-resumo-guia) a:hover {
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =====================================================
+   SEÇÃO DE DISCIPLINAS
+===================================================== */
+
+.secao-disciplinas-guia {
+
+    margin-bottom:
+        36px;
+
+}
+
+
+.descricao-secao-guia {
+
+    margin:
+        -7px 0 20px;
+
+    color:
+        var(--texto-home-secundario);
+
+}
+
+
+.cards-disciplinas-guia {
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+}
+
+
+/* Cards criados dinamicamente */
+
+.pagina-guia .cards-disciplinas-guia > .card {
+
+    min-height:
+        230px;
+
+    height:
+        auto;
+
+    padding:
+        21px;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia > .card h2,
+.pagina-guia .cards-disciplinas-guia > .card h3 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--texto-home);
+
+    font-size:
+        18px;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia > .card p {
+
+    color:
+        var(--texto-home-secundario);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia > .card ul {
+
+    margin:
+        14px 0 0;
+
+    padding-left:
+        19px;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia > .card li {
+
+    margin:
+        7px 0;
+
+    color:
+        #29495a;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.45;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia > .card a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+.pagina-guia .cards-disciplinas-guia .status {
+
+    position:
+        static;
+
+    display:
+        inline-block;
+
+    margin-top:
+        12px !important;
+
+}
+
+
+/* Linha ciano inferior igual à página inicial */
+
+.pagina-guia .cards-disciplinas-guia > .card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    left:
+        0;
+
+    height:
+        3px;
 
     background:
         linear-gradient(
-            145deg,
-            #ffffff,
-            #eef9fc
+            90deg,
+            var(--cyan),
+            var(--cyan-claro)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 25px rgba(0, 24, 38, 0.17);
-}
-
-.pagina-guia .resumo-estudos > .card:not(.card-resumo) h3 {
-
-    margin-top: 0;
-    color: var(--guia-azul-profundo);
-}
-
-.pagina-guia .resumo-estudos > .card:not(.card-resumo) p {
-
-    margin: 6px 0;
-    color: var(--guia-texto-suave);
-}
-
-.pagina-guia .resumo-estudos > .card:not(.card-resumo) a {
-
-    display: inline-flex;
-    margin-top: 8px;
-
-    color: var(--guia-azul);
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.pagina-guia .resumo-estudos > .card:not(.card-resumo) a:hover {
-
-    color: var(--guia-ciano);
-}
-
-
-/* =========================================
-   CABEÇALHOS DAS SEÇÕES
-========================================= */
-
-.pagina-guia .cabecalho-secao {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-
-    margin-bottom: 22px;
-}
-
-.pagina-guia .cabecalho-secao h2 {
-
-    margin: 0 0 7px;
-
-    color: var(--guia-azul-profundo);
-    font-size: clamp(1.55rem, 3vw, 2.15rem);
-}
-
-.pagina-guia .cabecalho-secao p:not(.rotulo-secao) {
-
-    max-width: 760px;
-    margin: 0;
-
-    color: var(--guia-texto-suave);
-    line-height: 1.6;
-}
-
-.pagina-guia .cabecalho-secao-icone {
-
-    display: grid;
-    place-items: center;
-
-    width: 70px;
-    height: 70px;
-
-    flex: 0 0 70px;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--guia-dourado-claro),
-            #ffffff
-        );
-
-    border: 1px solid #ecd67b;
-    border-radius: 22px;
-
-    box-shadow: var(--guia-sombra);
-
-    font-size: 2.25rem;
-}
-
-
-/* =========================================
-   CONTEÚDO PROGRAMÁTICO
-========================================= */
-
-.pagina-guia .secao-programa {
-
-    margin-bottom: 50px;
-}
-
-.pagina-guia .grade-disciplinas {
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.pagina-guia .grade-disciplinas > * {
-
-    position: relative;
-    overflow: hidden;
-
-    min-width: 0;
-    padding: 24px;
-
-    background: var(--guia-branco);
-
-    border: 1px solid var(--guia-borda);
-    border-top: 5px solid var(--guia-ciano);
-    border-radius: 20px;
-
-    box-shadow: var(--guia-sombra);
+    opacity:
+        0;
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-}
+        opacity 0.2s ease;
 
-.pagina-guia .grade-disciplinas > *:nth-child(2n) {
-
-    border-top-color: var(--guia-dourado);
-}
-
-.pagina-guia .grade-disciplinas > *:nth-child(3n) {
-
-    border-top-color: var(--guia-verde);
-}
-
-.pagina-guia .grade-disciplinas > *:nth-child(4n) {
-
-    border-top-color: var(--guia-roxo);
-}
-
-.pagina-guia .grade-disciplinas > *:hover {
-
-    transform: translateY(-4px);
-
-    border-color: #9edce9;
-
-    box-shadow:
-        0 18px 38px rgba(18, 58, 76, 0.15);
-}
-
-.pagina-guia .grade-disciplinas h2,
-.pagina-guia .grade-disciplinas h3 {
-
-    margin-top: 0;
-
-    color: var(--guia-azul-profundo);
-}
-
-.pagina-guia .grade-disciplinas p {
-
-    color: var(--guia-texto-suave);
-    line-height: 1.55;
-}
-
-.pagina-guia .grade-disciplinas a {
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 42px;
-    margin-top: 10px;
-    padding: 9px 17px;
-
-    color: #ffffff;
-    background:
-        linear-gradient(
-            135deg,
-            var(--guia-azul),
-            var(--guia-ciano)
-        );
-
-    border-radius: 11px;
-
-    font-weight: 800;
-    text-decoration: none;
-
-    box-shadow:
-        0 8px 18px rgba(8, 118, 154, 0.22);
-}
-
-.pagina-guia .grade-disciplinas a:hover {
-
-    filter: brightness(1.07);
 }
 
 
-/* =========================================
+.pagina-guia .cards-disciplinas-guia > .card:hover::after {
+
+    opacity:
+        1;
+
+}
+
+
+/* =====================================================
    FERRAMENTAS
-========================================= */
+===================================================== */
 
-.pagina-guia .secao-ferramentas {
+.secao-ferramentas-guia {
 
-    margin-bottom: 46px;
-}
+    margin-bottom:
+        34px;
 
-.pagina-guia .painel-ferramentas {
-
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.pagina-guia .ferramenta-card {
-
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-    min-height: 260px;
-    padding: 24px;
-
-    background: var(--guia-branco);
-    border: 1px solid var(--guia-borda);
-    border-radius: 21px;
-
-    box-shadow: var(--guia-sombra);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.pagina-guia .ferramenta-card::before {
-
-    content: "";
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    height: 5px;
-
-    background: var(--guia-ciano);
-}
-
-.pagina-guia .ferramenta-progresso::before {
-
-    background: var(--guia-verde);
-}
-
-.pagina-guia .ferramenta-revisoes::before {
-
-    background: var(--guia-roxo);
-}
-
-.pagina-guia .ferramenta-simulados::before {
-
-    background: var(--guia-dourado);
-}
-
-.pagina-guia .ferramenta-card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 18px 38px rgba(18, 58, 76, 0.15);
-}
-
-.pagina-guia .ferramenta-icone {
-
-    display: grid;
-    place-items: center;
-
-    width: 64px;
-    height: 64px;
-
-    margin-bottom: 19px;
-
-    background: var(--guia-ciano-claro);
-    border-radius: 19px;
-
-    font-size: 2rem;
-}
-
-.pagina-guia .ferramenta-progresso .ferramenta-icone {
-
-    background: var(--guia-verde-claro);
-}
-
-.pagina-guia .ferramenta-revisoes .ferramenta-icone {
-
-    background: var(--guia-roxo-claro);
-}
-
-.pagina-guia .ferramenta-simulados .ferramenta-icone {
-
-    background: var(--guia-dourado-claro);
-}
-
-.pagina-guia .ferramenta-conteudo {
-
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
-.pagina-guia .ferramenta-conteudo h3 {
-
-    margin: 0 0 9px;
-
-    color: var(--guia-azul-profundo);
-    font-size: 1.2rem;
-}
-
-.pagina-guia .ferramenta-conteudo p {
-
-    margin: 0 0 18px;
-
-    color: var(--guia-texto-suave);
-    line-height: 1.55;
-}
-
-.pagina-guia .acao-ferramenta {
-
-    display: inline-flex;
-    align-items: center;
-
-    width: fit-content;
-    margin-top: auto;
-
-    color: var(--guia-azul);
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.pagina-guia .acao-ferramenta:hover {
-
-    color: var(--guia-ciano);
 }
 
 
-/* =========================================
-   MENSAGEM FINAL
-========================================= */
+.atalhos-guia {
 
-.pagina-guia .mensagem-guia {
+    margin:
+        0;
 
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    gap: 24px;
-
-    padding: 30px 34px;
-
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--guia-azul-profundo),
-            var(--guia-azul-escuro)
-        );
-
-    border-radius: 24px;
-
-    box-shadow: var(--guia-sombra-forte);
-}
-
-.pagina-guia .mensagem-guia::after {
-
-    content: "🌊";
-
-    position: absolute;
-    right: 24px;
-    bottom: -18px;
-
-    opacity: 0.13;
-    font-size: 6rem;
-}
-
-.pagina-guia .mensagem-guia-icone {
-
-    display: grid;
-    place-items: center;
-
-    width: 72px;
-    height: 72px;
-
-    flex: 0 0 72px;
-
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 22px;
-
-    font-size: 2.3rem;
-}
-
-.pagina-guia .rotulo-mensagem {
-
-    margin: 0 0 6px;
-
-    color: #5ed8f3;
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-}
-
-.pagina-guia .mensagem-guia h2 {
-
-    position: relative;
-    z-index: 1;
-
-    margin: 0 0 7px;
-
-    color: #ffffff;
-    font-size: 1.45rem;
-}
-
-.pagina-guia .mensagem-guia p:last-child {
-
-    position: relative;
-    z-index: 1;
-
-    margin: 0;
-
-    color: rgba(255, 255, 255, 0.72);
 }
 
 
-/* =========================================
-   RODAPÉ
-========================================= */
+/* =====================================================
+   PAINEL COMPLEMENTAR
+===================================================== */
 
-.pagina-guia footer {
+.painel-guia {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    margin-top:
+        0;
 
-    padding: 25px;
-
-    color: #6f858e;
-    text-align: center;
-}
-
-.pagina-guia footer p {
-
-    margin: 0;
-    font-weight: 700;
-}
-
-.pagina-guia footer span {
-
-    font-size: 0.85rem;
 }
 
 
-/* =========================================
-   BOTÃO FLUTUANTE
-========================================= */
+.painel-guia .widget {
 
-.pagina-guia .botao-inicio {
+    min-height:
+        205px;
 
-    display: grid;
-    place-items: center;
-
-    width: 58px;
-    height: 58px;
-    padding: 0;
-
-    color: var(--guia-azul-profundo);
-    background:
-        linear-gradient(
-            145deg,
-            #f0ce57,
-            var(--guia-dourado)
-        );
-
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-
-    box-shadow:
-        0 11px 25px rgba(95, 76, 5, 0.28);
-
-    font-size: 1.4rem;
-    text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.pagina-guia .botao-inicio:hover {
-
-    transform: translateY(-3px) scale(1.04);
-
-    box-shadow:
-        0 15px 30px rgba(95, 76, 5, 0.34);
 }
 
 
-/* =========================================
-   TABLETS
-========================================= */
+.painel-guia .widget h2 {
 
-@media (max-width: 1100px) {
+    margin:
+        6px 0 10px;
 
-    .pagina-guia .resumo-estudos {
+    color:
+        var(--navy-950);
+
+}
+
+
+.painel-guia .widget p {
+
+    color:
+        var(--texto-home-secundario);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.painel-guia .botao {
+
+    margin-top:
+        14px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — TABLET
+===================================================== */
+
+@media (
+    max-width: 900px
+) {
+
+    .cards-resumo-guia {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2, 1fr);
+
     }
 
-    .pagina-guia .grade-disciplinas {
+
+    .cards-disciplinas-guia {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2, 1fr);
+
     }
 
-    .pagina-guia .painel-ferramentas {
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — CELULAR
+===================================================== */
+
+@media (
+    max-width: 600px
+) {
+
+    .cabecalho-dashboard-guia {
+
+        display:
+            block;
+
+    }
+
+
+    .simbolo-dashboard-guia {
+
+        display:
+            none;
+
+    }
+
+
+    .cards-resumo-guia {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            1fr;
+
+    }
+
+
+    .cards-disciplinas-guia {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .pagina-guia .cards-disciplinas-guia > .card {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .pagina-guia .cards-disciplinas-guia .status {
+
+        position:
+            static;
+
     }
 
 }
 
 
-/* =========================================
-   TABLETS VERTICAIS E CELULARES
-========================================= */
-
-@media (max-width: 720px) {
-
-    .pagina-guia .conteudo-guia {
-
-        width: min(100% - 28px, 1360px);
-        padding-top: 26px;
-    }
-
-    .pagina-guia .abertura-guia {
-
-        align-items: flex-start;
-    }
-
-    .pagina-guia .abertura-guia-simbolo {
-
-        width: 68px;
-        height: 68px;
-
-        flex-basis: 68px;
-
-        border-radius: 20px;
-
-        font-size: 2.2rem;
-    }
-
-    .pagina-guia .painel-estrategico-guia {
-
-        padding: 24px;
-        border-radius: 22px;
-    }
-
-    .pagina-guia .resumo-estudos,
-    .pagina-guia .grade-disciplinas,
-    .pagina-guia .painel-ferramentas {
-
-        grid-template-columns: 1fr;
-    }
-
-    .pagina-guia .ferramenta-card {
-
-        min-height: auto;
-    }
-
-    .pagina-guia .cabecalho-secao-icone {
-
-        display: none;
-    }
-
-    .pagina-guia .mensagem-guia {
-
-        align-items: flex-start;
-        padding: 25px;
-    }
-
-}
-
-
-/* =========================================
-   CELULARES PEQUENOS
-========================================= */
-
-@media (max-width: 480px) {
-
-    .pagina-guia .abertura-guia-simbolo,
-    .pagina-guia .painel-estrategico-emblema {
-
-        display: none;
-    }
-
-    .pagina-guia .abertura-guia h2 {
-
-        font-size: 1.9rem;
-    }
-
-    .pagina-guia .painel-estrategico-guia {
-
-        padding: 21px 17px;
-    }
-
-    .pagina-guia .card-resumo {
-
-        min-height: 105px;
-        padding: 17px;
-    }
-
-    .pagina-guia .card-resumo .card-icone {
-
-        width: 54px;
-        height: 54px;
-
-        flex-basis: 54px;
-
-        border-radius: 16px;
-
-        font-size: 1.7rem;
-    }
-
-    .pagina-guia .mensagem-guia {
-
-        gap: 15px;
-    }
-
-    .pagina-guia .mensagem-guia-icone {
-
-        width: 55px;
-        height: 55px;
-
-        flex-basis: 55px;
-
-        font-size: 1.8rem;
-    }
-
-}
+/* =====================================================
+   FIM GUIA-MODERN.CSS
+===================================================== */
