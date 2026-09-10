@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Guia de Estudos PSCPP</title>
+
+<link
+rel="stylesheet"
+href="../css/style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>📚 Guia de Estudos PSCPP</h1>
+
+<p>
+Planejamento estratégico para aprovação
+</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+type="button"
+onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+
+<a href="../index.html">
+🏠 Início
+</a>
+
+
+<a href="planejamento.html">
+📅 Planejamento
+</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     VISÃO GERAL
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+📊 Visão Geral dos Estudos
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+📚 Disciplinas
+</h3>
+
+<p id="total-disciplinas">
+0
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📖 Assuntos
+</h3>
+
+<p id="total-assuntos">
+0
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+⏱ Carga Estimada
+</h3>
+
+<p id="total-horas">
+0 horas
+</p>
+
+</div>
+
+
+<!--
+Os cards:
+
+📈 Progresso Estratégico
+🎯 Próximo Foco
+
+serão inseridos automaticamente
+por app-guia.js v5.0.
+-->
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>
+📚 Conteúdo Programático PSCPP
+</h2>
+
+
+<p>
+
+Organização dos estudos conforme
+a estrutura atual do Bridge Trainer PSCPP.
+
+As disciplinas e seus respectivos módulos
+são carregados automaticamente a partir
+do banco central de conteúdo.
+
+</p>
+
+
+<div
+id="conteudo-programatico-guia"
+class="cards"
+>
+
+<!--
+
+Os cards das disciplinas serão criados
+automaticamente por app-guia.js.
+
+Isso evita manter listas manuais
+desatualizadas nesta página.
+
+-->
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PAINEL COMPLEMENTAR
+========================================= -->
+
+<section class="painel">
+
+
+<div class="widget">
+
+<h2>
+📅 Planejamento
+</h2>
+
+<p>
+
+Cronograma estratégico de preparação
+até a prova PSCPP,
+considerando progresso,
+prioridade,
+carga cognitiva,
+ritmo de estudo
+e prazo disponível.
+
+</p>
+
+<a href="planejamento.html">
+Acessar Planejamento
+</a>
+
+</div>
+
+
+<div class="widget">
+
+<h2>
+📈 Progresso
+</h2>
+
+<p>
+
+Acompanhamento da evolução
+por disciplina,
+aulas concluídas
+e progresso estratégico.
+
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h2>
+🔁 Revisões
+</h2>
+
+<p>
+
+Acompanhamento das revisões
+programadas,
+revisões vencidas,
+histórico
+e manutenção dos conteúdos estudados.
+
+</p>
+
+<a href="../revisoes/index.html">
+Acessar Quadro de Revisões
+</a>
+
+</div>
+
+
+<div class="widget">
+
+<h2>
+🎯 Objetivo
+</h2>
+
+<p>
+
+Organizar a preparação para aprovação
+no PSCPP com estudo técnico,
+planejamento inteligente,
+revisões
+e simulados.
+
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+<p>
+Bridge Trainer PSCPP © 2026
+</p>
+
+</footer>
+
+
+<!-- =========================================
+     BOTÃO INÍCIO
+========================================= -->
+
+<a
+href="../index.html"
+class="botao-inicio"
+aria-label="Voltar ao início"
+>
+🏠
+</a>
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="../js/navigation.js"></script>
+
+<script src="../js/progresso.js"></script>
+
+<script src="banco-conteudo.js"></script>
+
+<script src="configuracao-estudo.js"></script>
+
+<script src="motor-planejamento.js"></script>
+
+<script src="app-guia.js"></script>
+
+
+</body>
+
+</html>
