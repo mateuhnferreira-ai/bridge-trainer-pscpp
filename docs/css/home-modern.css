@@ -1,0 +1,1289 @@
+/* =====================================================
+   BRIDGE TRAINER PSCPP
+   HOME-MODERN.CSS — PÁGINA INICIAL
+   Identidade náutica tecnológica
+===================================================== */
+
+
+/* =====================================================
+   VARIÁVEIS ESPECÍFICAS DA PÁGINA INICIAL
+===================================================== */
+
+.pagina-inicial {
+
+    --navy-950: #031d30;
+    --navy-900: #062a43;
+    --navy-800: #0a3d5b;
+
+    --cyan: #08a9e6;
+    --cyan-claro: #5bd4ff;
+
+    --linha-home: #dbe8ef;
+    --texto-home: #102f43;
+    --texto-home-secundario: #647c8a;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eaf4f9 0,
+            #f7fafc 420px
+        );
+
+    color:
+        var(--texto-home);
+
+}
+
+
+/* =====================================================
+   CABEÇALHO PRINCIPAL
+===================================================== */
+
+.pagina-inicial .topo-app {
+
+    padding:
+        20px max(4vw, 20px);
+
+    text-align:
+        left;
+
+    border:
+        0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-950),
+            var(--navy-800)
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(3, 29, 48, 0.20);
+
+}
+
+
+.marca-app {
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+}
+
+
+.marca-simbolo {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    border:
+        1px solid
+        rgba(91, 212, 255, 0.40);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(8, 169, 230, 0.12);
+
+    font-size:
+        25px;
+
+}
+
+
+.pagina-inicial .logo h1 {
+
+    margin:
+        0;
+
+    font-size:
+        26px;
+
+}
+
+
+.pagina-inicial .logo p {
+
+    margin-top:
+        3px;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   MENU PRINCIPAL
+===================================================== */
+
+.pagina-inicial .navbar-app {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        50;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    backdrop-filter:
+        blur(16px);
+
+    box-shadow:
+        0 8px 24px
+        rgba(3, 29, 48, 0.06);
+
+}
+
+
+.pagina-inicial .navbar-app a,
+.pagina-inicial .navbar-app button {
+
+    background:
+        transparent;
+
+    border-color:
+        transparent;
+
+}
+
+
+.pagina-inicial .navbar-app a[aria-current="page"] {
+
+    background:
+        #e5f6fc;
+
+    color:
+        #087eae;
+
+    border-color:
+        #bfe8f7;
+
+}
+
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
+
+.home-main {
+
+    max-width:
+        1180px;
+
+}
+
+
+/* =====================================================
+   SAUDAÇÃO
+===================================================== */
+
+.saudacao-home {
+
+    margin:
+        4px 0 22px;
+
+}
+
+
+.saudacao-home h2 {
+
+    margin:
+        3px 0;
+
+    color:
+        var(--navy-950);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            40px
+        );
+
+}
+
+
+.rotulo-home,
+.sobrelinha {
+
+    display:
+        block;
+
+    color:
+        #1488b3;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.13em;
+
+}
+
+
+/* =====================================================
+   DASHBOARD DE PROGRESSO
+===================================================== */
+
+.dashboard-home {
+
+    padding:
+        28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-950),
+            var(--navy-800)
+        );
+
+    border:
+        0;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 18px 45px
+        rgba(3, 29, 48, 0.18);
+
+}
+
+
+.progresso-resumo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+}
+
+
+.dashboard-home h2 {
+
+    margin:
+        3px 0 5px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.dashboard-home p {
+
+    color:
+        #c8dce6;
+
+}
+
+
+/* =====================================================
+   INDICADOR CIRCULAR
+===================================================== */
+
+.progresso-circular {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 94px;
+
+    height:
+        94px;
+
+    border-radius:
+        50%;
+
+    background:
+        conic-gradient(
+            var(--cyan-claro) 0deg,
+            #174e68 0
+        );
+
+    box-shadow:
+        inset 0 0 0 10px
+        rgba(3, 29, 48, 0.85);
+
+}
+
+
+.progresso-circular span {
+
+    margin:
+        0 !important;
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        24px !important;
+
+}
+
+
+/* =====================================================
+   BARRA DO DASHBOARD
+===================================================== */
+
+.dashboard-home .barra-progresso {
+
+    height:
+        7px;
+
+    margin-top:
+        22px;
+
+    background:
+        #174e68;
+
+}
+
+
+.dashboard-home .progresso {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--cyan-claro)
+        );
+
+    font-size:
+        0;
+
+}
+
+
+/* =====================================================
+   ATALHOS PRINCIPAIS
+===================================================== */
+
+.atalhos-home {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        14px;
+
+    margin:
+        20px 0 30px;
+
+}
+
+
+.atalho-home {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        17px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        var(--linha-home);
+
+    border-radius:
+        16px;
+
+    text-decoration:
+        none;
+
+    box-shadow:
+        0 7px 20px
+        rgba(11, 58, 83, 0.06);
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.atalho-home:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #8ed8f1;
+
+    box-shadow:
+        0 12px 28px
+        rgba(11, 58, 83, 0.11);
+
+}
+
+
+.atalho-home > span {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex-shrink:
+        0;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        12px;
+
+    background:
+        #e7f7fd;
+
+    color:
+        #087eae;
+
+    font-size:
+        21px;
+
+}
+
+
+.atalho-home strong,
+.atalho-home small {
+
+    display:
+        block;
+
+}
+
+
+.atalho-home strong {
+
+    color:
+        var(--texto-home);
+
+    font-size:
+        14px;
+
+}
+
+
+.atalho-home small {
+
+    margin-top:
+        2px;
+
+    color:
+        var(--texto-home-secundario);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   PRÓXIMA AULA
+===================================================== */
+
+.proxima-aula-home {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        24px;
+
+    padding:
+        24px 26px;
+
+    margin-bottom:
+        38px;
+
+    border:
+        1px solid
+        #bae6f5;
+
+    border-radius:
+        20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3fbfe,
+            #e5f6fc
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(11, 58, 83, 0.07);
+
+}
+
+
+.proxima-aula-home h2 {
+
+    margin:
+        5px 0;
+
+    color:
+        var(--navy-900);
+
+}
+
+
+.proxima-aula-home p {
+
+    max-width:
+        670px;
+
+}
+
+
+.pagina-inicial .botao-primario {
+
+    flex-shrink:
+        0;
+
+    padding:
+        12px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078fc6,
+            var(--cyan)
+        );
+
+    border:
+        0;
+
+    color:
+        #ffffff;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 8px 20px
+        rgba(8, 169, 230, 0.24);
+
+}
+
+
+.pagina-inicial .botao-primario:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #057daF,
+            #079bd2
+        );
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO DA SEÇÃO DE DISCIPLINAS
+===================================================== */
+
+.cabecalho-secao {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.cabecalho-secao h2 {
+
+    margin:
+        4px 0 0;
+
+    color:
+        var(--navy-950);
+
+    font-size:
+        28px;
+
+}
+
+
+.cabecalho-secao > a {
+
+    color:
+        #087eae;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+}
+
+
+/* =====================================================
+   CARDS DAS DISCIPLINAS
+===================================================== */
+
+.cards-disciplinas {
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+}
+
+
+.pagina-inicial .cards-disciplinas .card {
+
+    position:
+        relative;
+
+    min-height:
+        225px;
+
+    padding:
+        21px;
+
+    border-color:
+        var(--linha-home);
+
+    overflow:
+        hidden;
+
+}
+
+
+.pagina-inicial .cards-disciplinas .card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    left:
+        0;
+
+    height:
+        3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--cyan-claro)
+        );
+
+    opacity:
+        0;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+.pagina-inicial .cards-disciplinas .card:hover::after {
+
+    opacity:
+        1;
+
+}
+
+
+.icone-card {
+
+    display:
+        grid !important;
+
+    place-items:
+        center;
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    margin:
+        0 0 17px !important;
+
+    border-radius:
+        13px;
+
+    background:
+        #e7f7fd;
+
+    color:
+        #087eae;
+
+    font-size:
+        21px;
+
+    font-weight:
+        800;
+
+}
+
+
+.pagina-inicial .card h3 {
+
+    margin-bottom:
+        9px;
+
+}
+
+
+.pagina-inicial .card p {
+
+    font-size:
+        13px;
+
+}
+
+
+.pagina-inicial .status {
+
+    position:
+        absolute;
+
+    bottom:
+        18px;
+
+    left:
+        21px;
+
+    margin:
+        0 !important;
+
+    color:
+        #68818e;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   ENGLISH FOR PILOTS
+===================================================== */
+
+.pagina-inicial .card-english {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eef8ff
+        );
+
+    border-left:
+        1px solid
+        var(--linha-home);
+
+}
+
+
+.pagina-inicial .card-english .botao {
+
+    position:
+        absolute;
+
+    bottom:
+        16px;
+
+    left:
+        21px;
+
+    margin:
+        0;
+
+    background:
+        #176b87;
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =====================================================
+   PAINEL INFERIOR
+===================================================== */
+
+.painel-home {
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+}
+
+
+.painel-home .widget {
+
+    min-height:
+        190px;
+
+}
+
+
+.painel-home .widget h2 {
+
+    margin:
+        6px 0 10px;
+
+}
+
+
+.painel-home .botao {
+
+    margin-top:
+        14px;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+.pagina-inicial footer {
+
+    background:
+        var(--navy-950);
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — TABLET
+===================================================== */
+
+@media (
+    max-width: 900px
+) {
+
+    .atalhos-home {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .cards-disciplinas {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .painel-home {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — CELULAR
+===================================================== */
+
+@media (
+    max-width: 600px
+) {
+
+    .pagina-inicial {
+
+        padding-bottom:
+            72px;
+
+    }
+
+
+    /* CABEÇALHO */
+
+    .pagina-inicial .topo-app {
+
+        padding:
+            16px;
+
+    }
+
+
+    .marca-simbolo {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+    }
+
+
+    .pagina-inicial .logo h1 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .pagina-inicial .logo p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    /* NAVEGAÇÃO INFERIOR */
+
+    .pagina-inicial .navbar-app {
+
+        position:
+            fixed;
+
+        top:
+            auto;
+
+        right:
+            0;
+
+        bottom:
+            0;
+
+        left:
+            0;
+
+        padding:
+            7px 5px
+            calc(
+                7px + env(safe-area-inset-bottom)
+            );
+
+        gap:
+            2px;
+
+        border-top:
+            1px solid
+            var(--linha-home);
+
+        border-bottom:
+            0;
+
+    }
+
+
+    .pagina-inicial .navbar-app button {
+
+        display:
+            none;
+
+    }
+
+
+    .pagina-inicial .navbar-app a {
+
+        flex:
+            1;
+
+        min-width:
+            0;
+
+        padding:
+            7px 3px;
+
+        border-radius:
+            10px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .pagina-inicial .navbar-app a span {
+
+        display:
+            block;
+
+        margin-top:
+            2px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    /* SAUDAÇÃO */
+
+    .saudacao-home h2 {
+
+        font-size:
+            30px;
+
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard-home {
+
+        padding:
+            22px 18px;
+
+    }
+
+
+    .progresso-circular {
+
+        flex-basis:
+            78px;
+
+        height:
+            78px;
+
+    }
+
+
+    .progresso-circular span {
+
+        font-size:
+            20px !important;
+
+    }
+
+
+    /* ATALHOS */
+
+    .atalhos-home {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            10px;
+
+    }
+
+
+    .atalho-home {
+
+        padding:
+            12px;
+
+        gap:
+            9px;
+
+    }
+
+
+    .atalho-home > span {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+    }
+
+
+    /* PRÓXIMA AULA */
+
+    .proxima-aula-home {
+
+        display:
+            block;
+
+        padding:
+            21px;
+
+    }
+
+
+    .proxima-aula-home .botao {
+
+        width:
+            100%;
+
+        margin-top:
+            17px;
+
+    }
+
+
+    /* DISCIPLINAS */
+
+    .cabecalho-secao {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .cabecalho-secao > a {
+
+        display:
+            none;
+
+    }
+
+
+    .cards-disciplinas {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .pagina-inicial .cards-disciplinas .card {
+
+        min-height:
+            205px;
+
+    }
+
+
+    /* PAINEL */
+
+    .painel-home {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    /* BOTÃO FLUTUANTE */
+
+    .pagina-inicial .botao-inicio {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE — REDUÇÃO DE MOVIMENTO
+===================================================== */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .pagina-inicial * {
+
+        scroll-behavior:
+            auto !important;
+
+        transition:
+            none !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   FIM HOME-MODERN.CSS
+   BRIDGE TRAINER PSCPP
+===================================================== */
