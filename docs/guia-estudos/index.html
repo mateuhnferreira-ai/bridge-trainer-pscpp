@@ -12,16 +12,14 @@
 
     <title>Guia de Estudos | Bridge Trainer PSCPP</title>
 
-    <!-- Estilos gerais do aplicativo -->
     <link
         rel="stylesheet"
         href="../css/style.css?v=2.0"
     >
 
-    <!-- Estilo específico do Guia de Estudos -->
     <link
         rel="stylesheet"
-        href="../css/guia-modern.css?v=1.0"
+        href="../css/guia-modern.css?v=2.0"
     >
 
 </head>
@@ -78,42 +76,31 @@
         type="button"
         onclick="voltarPagina()"
     >
-        <span aria-hidden="true">←</span>
-        Voltar
+        ← Voltar
     </button>
 
-
     <a href="../index.html">
-        <span aria-hidden="true">⌂</span>
-        Início
+        🏠 Início
     </a>
-
 
     <a
         href="index.html"
         class="ativo"
         aria-current="page"
     >
-        <span aria-hidden="true">▤</span>
-        Guia
+        📚 Guia
     </a>
-
 
     <a href="../simulados/index.html">
-        <span aria-hidden="true">✓</span>
-        Simulados
+        ✅ Simulados
     </a>
-
 
     <a href="planejamento.html">
-        <span aria-hidden="true">□</span>
-        Planejamento
+        📅 Planejamento
     </a>
 
-
     <a href="../desempenho/index.html">
-        <span aria-hidden="true">◫</span>
-        Desempenho
+        📊 Desempenho
     </a>
 
 </nav>
@@ -127,53 +114,73 @@
 
 
 <!-- =========================================
-     APRESENTAÇÃO
+     ABERTURA
 ========================================= -->
 
 <section class="abertura-guia">
 
-    <p class="rotulo-secao">
-        CENTRO DE ESTUDOS PSCPP
-    </p>
+    <div class="abertura-guia-texto">
 
-    <h2>
-        Guia de Estudos
-    </h2>
+        <p class="rotulo-secao">
+            CENTRO DE ESTUDOS PSCPP
+        </p>
 
-    <p class="subtitulo-guia">
-        Conteúdo organizado, prioridades estratégicas
-        e acompanhamento da sua preparação.
-    </p>
+        <h2>
+            📚 Guia de Estudos
+        </h2>
+
+        <p class="subtitulo-guia">
+            Navegue pelo conteúdo programático,
+            acompanhe sua evolução e mantenha
+            o foco na próxima etapa da preparação.
+        </p>
+
+    </div>
+
+    <div
+        class="abertura-guia-simbolo"
+        aria-hidden="true"
+    >
+        🧭
+    </div>
 
 </section>
 
 
 <!-- =========================================
-     VISÃO GERAL
+     PAINEL ESTRATÉGICO
 ========================================= -->
 
 <section
-    class="dashboard dashboard-guia"
+    class="painel-estrategico-guia"
     aria-labelledby="titulo-visao-geral"
 >
 
-    <div class="cabecalho-secao">
+    <div class="painel-estrategico-cabecalho">
 
         <div>
 
-            <p class="rotulo-secao">
-                VISÃO GERAL
+            <p class="rotulo-painel">
+                ⚓ VISÃO GERAL
             </p>
 
             <h2 id="titulo-visao-geral">
                 Seu plano de preparação
             </h2>
 
+            <p>
+                Dados atualizados automaticamente
+                conforme seu avanço nos estudos.
+            </p>
+
         </div>
 
-        <span class="indicador-atualizacao">
-            Atualização automática
-        </span>
+        <div
+            class="painel-estrategico-emblema"
+            aria-hidden="true"
+        >
+            🎯
+        </div>
 
     </div>
 
@@ -181,13 +188,13 @@
     <div class="cards resumo-estudos">
 
 
-        <article class="card card-resumo">
+        <article class="card card-resumo card-disciplinas">
 
             <div
                 class="card-icone"
                 aria-hidden="true"
             >
-                ▤
+                📚
             </div>
 
             <div class="card-conteudo">
@@ -209,13 +216,13 @@
         </article>
 
 
-        <article class="card card-resumo">
+        <article class="card card-resumo card-assuntos">
 
             <div
                 class="card-icone"
                 aria-hidden="true"
             >
-                ◫
+                📖
             </div>
 
             <div class="card-conteudo">
@@ -237,13 +244,13 @@
         </article>
 
 
-        <article class="card card-resumo">
+        <article class="card card-resumo card-carga">
 
             <div
                 class="card-icone"
                 aria-hidden="true"
             >
-                ◷
+                ⏱️
             </div>
 
             <div class="card-conteudo">
@@ -266,11 +273,7 @@
 
 
         <!--
-        Os cards:
-
-        Progresso Estratégico
-        Próximo Foco
-
+        Os cards de Progresso Estratégico e Próximo Foco
         continuam sendo inseridos automaticamente
         pelo arquivo app-guia.js.
         -->
@@ -295,18 +298,25 @@
         <div>
 
             <p class="rotulo-secao">
-                PROGRAMA DE ESTUDOS
+                ROTA DE APRENDIZAGEM
             </p>
 
             <h2 id="titulo-conteudo-programatico">
-                Conteúdo Programático PSCPP
+                🗺️ Conteúdo Programático PSCPP
             </h2>
 
             <p>
-                Selecione uma disciplina para acessar suas aulas,
-                módulos e tópicos de estudo.
+                Escolha uma disciplina para acessar
+                suas aulas, módulos e tópicos.
             </p>
 
+        </div>
+
+        <div
+            class="cabecalho-secao-icone"
+            aria-hidden="true"
+        >
+            🚢
         </div>
 
     </div>
@@ -319,11 +329,8 @@
     >
 
         <!--
-        Os cards das disciplinas continuam sendo
-        criados automaticamente por app-guia.js.
-
-        O ID e a classe "cards" foram preservados
-        para manter a compatibilidade.
+        As disciplinas continuam sendo inseridas
+        automaticamente por app-guia.js.
         -->
 
     </div>
@@ -332,7 +339,7 @@
 
 
 <!-- =========================================
-     FERRAMENTAS DE ESTUDO
+     FERRAMENTAS
 ========================================= -->
 
 <section
@@ -345,12 +352,17 @@
         <div>
 
             <p class="rotulo-secao">
-                FERRAMENTAS
+                ESTAÇÃO DE ESTUDOS
             </p>
 
             <h2 id="titulo-ferramentas">
-                Organize sua preparação
+                🧰 Ferramentas de preparação
             </h2>
+
+            <p>
+                Recursos para organizar sua rotina
+                e acompanhar o aprendizado.
+            </p>
 
         </div>
 
@@ -360,13 +372,13 @@
     <div class="painel painel-ferramentas">
 
 
-        <article class="widget ferramenta-card">
+        <article class="widget ferramenta-card ferramenta-planejamento">
 
             <div
                 class="ferramenta-icone"
                 aria-hidden="true"
             >
-                □
+                📅
             </div>
 
             <div class="ferramenta-conteudo">
@@ -376,17 +388,16 @@
                 </h3>
 
                 <p>
-                    Cronograma estratégico até a prova,
-                    considerando progresso, prioridades,
-                    ritmo de estudo e prazo disponível.
+                    Organize sua preparação até a prova
+                    conforme prioridades, ritmo de estudo
+                    e prazo disponível.
                 </p>
 
                 <a
                     href="planejamento.html"
                     class="acao-ferramenta"
                 >
-                    Acessar planejamento
-                    <span aria-hidden="true">→</span>
+                    Acessar planejamento →
                 </a>
 
             </div>
@@ -394,13 +405,13 @@
         </article>
 
 
-        <article class="widget ferramenta-card">
+        <article class="widget ferramenta-card ferramenta-progresso">
 
             <div
                 class="ferramenta-icone"
                 aria-hidden="true"
             >
-                ◫
+                📊
             </div>
 
             <div class="ferramenta-conteudo">
@@ -410,16 +421,16 @@
                 </h3>
 
                 <p>
-                    Acompanhe sua evolução por disciplina,
-                    aulas concluídas e progresso estratégico.
+                    Acompanhe disciplinas,
+                    aulas concluídas e sua
+                    evolução estratégica.
                 </p>
 
                 <a
                     href="../desempenho/index.html"
                     class="acao-ferramenta"
                 >
-                    Ver desempenho
-                    <span aria-hidden="true">→</span>
+                    Ver desempenho →
                 </a>
 
             </div>
@@ -427,13 +438,13 @@
         </article>
 
 
-        <article class="widget ferramenta-card">
+        <article class="widget ferramenta-card ferramenta-revisoes">
 
             <div
                 class="ferramenta-icone"
                 aria-hidden="true"
             >
-                ↻
+                🔁
             </div>
 
             <div class="ferramenta-conteudo">
@@ -452,8 +463,7 @@
                     href="../revisoes/index.html"
                     class="acao-ferramenta"
                 >
-                    Acessar revisões
-                    <span aria-hidden="true">→</span>
+                    Acessar revisões →
                 </a>
 
             </div>
@@ -461,39 +471,71 @@
         </article>
 
 
-        <article class="widget ferramenta-card">
+        <article class="widget ferramenta-card ferramenta-simulados">
 
             <div
                 class="ferramenta-icone"
                 aria-hidden="true"
             >
-                ◎
+                🎯
             </div>
 
             <div class="ferramenta-conteudo">
 
                 <h3>
-                    Objetivo
+                    Simulados
                 </h3>
 
                 <p>
-                    Integrar estudo técnico, planejamento
-                    inteligente, revisões e simulados
-                    na preparação para o PSCPP.
+                    Teste seus conhecimentos,
+                    identifique pontos fracos
+                    e treine para o PSCPP.
                 </p>
 
                 <a
                     href="../simulados/index.html"
                     class="acao-ferramenta"
                 >
-                    Acessar simulados
-                    <span aria-hidden="true">→</span>
+                    Acessar simulados →
                 </a>
 
             </div>
 
         </article>
 
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     MENSAGEM DE MOTIVAÇÃO
+========================================= -->
+
+<section class="mensagem-guia">
+
+    <div
+        class="mensagem-guia-icone"
+        aria-hidden="true"
+    >
+        ⚓
+    </div>
+
+    <div>
+
+        <p class="rotulo-mensagem">
+            RUMO À APROVAÇÃO
+        </p>
+
+        <h2>
+            Cada tópico concluído aproxima você do objetivo.
+        </h2>
+
+        <p>
+            Mantenha a constância, revise os conteúdos
+            e avance uma etapa de cada vez.
+        </p>
 
     </div>
 
@@ -521,7 +563,7 @@
 
 
 <!-- =========================================
-     BOTÃO FLUTUANTE DE INÍCIO
+     BOTÃO FLUTUANTE
 ========================================= -->
 
 <a
@@ -530,7 +572,7 @@
     aria-label="Voltar ao início"
     title="Voltar ao início"
 >
-    ⌂
+    🏠
 </a>
 
 
