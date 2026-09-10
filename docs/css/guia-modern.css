@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Guia de Estudos | Bridge Trainer PSCPP</title>
+
+    <!-- Estilos gerais do aplicativo -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css?v=2.0"
+    >
+
+    <!-- Estilo específico do Guia de Estudos -->
+    <link
+        rel="stylesheet"
+        href="../css/guia-modern.css?v=1.0"
+    >
+
+</head>
+
+
+<body
+    data-tipo-pagina="guia-estudos"
+    class="pagina-guia"
+>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+    <div class="logo">
+
+        <div
+            class="marca-icone"
+            aria-hidden="true"
+        >
+            ⚓
+        </div>
+
+        <div class="marca-texto">
+
+            <h1>
+                Bridge Trainer PSCPP
+            </h1>
+
+            <p>
+                Preparação para Praticante de Prático
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav
+    class="navbar"
+    aria-label="Navegação principal"
+>
+
+    <button
+        type="button"
+        onclick="voltarPagina()"
+    >
+        <span aria-hidden="true">←</span>
+        Voltar
+    </button>
+
+
+    <a href="../index.html">
+        <span aria-hidden="true">⌂</span>
+        Início
+    </a>
+
+
+    <a
+        href="index.html"
+        class="ativo"
+        aria-current="page"
+    >
+        <span aria-hidden="true">▤</span>
+        Guia
+    </a>
+
+
+    <a href="../simulados/index.html">
+        <span aria-hidden="true">✓</span>
+        Simulados
+    </a>
+
+
+    <a href="planejamento.html">
+        <span aria-hidden="true">□</span>
+        Planejamento
+    </a>
+
+
+    <a href="../desempenho/index.html">
+        <span aria-hidden="true">◫</span>
+        Desempenho
+    </a>
+
+</nav>
+
+
+<!-- =========================================
+     CONTEÚDO PRINCIPAL
+========================================= -->
+
+<main class="conteudo-guia">
+
+
+<!-- =========================================
+     APRESENTAÇÃO
+========================================= -->
+
+<section class="abertura-guia">
+
+    <p class="rotulo-secao">
+        CENTRO DE ESTUDOS PSCPP
+    </p>
+
+    <h2>
+        Guia de Estudos
+    </h2>
+
+    <p class="subtitulo-guia">
+        Conteúdo organizado, prioridades estratégicas
+        e acompanhamento da sua preparação.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     VISÃO GERAL
+========================================= -->
+
+<section
+    class="dashboard dashboard-guia"
+    aria-labelledby="titulo-visao-geral"
+>
+
+    <div class="cabecalho-secao">
+
+        <div>
+
+            <p class="rotulo-secao">
+                VISÃO GERAL
+            </p>
+
+            <h2 id="titulo-visao-geral">
+                Seu plano de preparação
+            </h2>
+
+        </div>
+
+        <span class="indicador-atualizacao">
+            Atualização automática
+        </span>
+
+    </div>
+
+
+    <div class="cards resumo-estudos">
+
+
+        <article class="card card-resumo">
+
+            <div
+                class="card-icone"
+                aria-hidden="true"
+            >
+                ▤
+            </div>
+
+            <div class="card-conteudo">
+
+                <span class="card-label">
+                    Disciplinas
+                </span>
+
+                <strong id="total-disciplinas">
+                    0
+                </strong>
+
+                <small>
+                    Áreas de preparação
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <article class="card card-resumo">
+
+            <div
+                class="card-icone"
+                aria-hidden="true"
+            >
+                ◫
+            </div>
+
+            <div class="card-conteudo">
+
+                <span class="card-label">
+                    Assuntos
+                </span>
+
+                <strong id="total-assuntos">
+                    0
+                </strong>
+
+                <small>
+                    Tópicos programáticos
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <article class="card card-resumo">
+
+            <div
+                class="card-icone"
+                aria-hidden="true"
+            >
+                ◷
+            </div>
+
+            <div class="card-conteudo">
+
+                <span class="card-label">
+                    Carga estimada
+                </span>
+
+                <strong id="total-horas">
+                    0 horas
+                </strong>
+
+                <small>
+                    Tempo total planejado
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!--
+        Os cards:
+
+        Progresso Estratégico
+        Próximo Foco
+
+        continuam sendo inseridos automaticamente
+        pelo arquivo app-guia.js.
+        -->
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section
+    class="secao-programa"
+    aria-labelledby="titulo-conteudo-programatico"
+>
+
+    <div class="cabecalho-secao">
+
+        <div>
+
+            <p class="rotulo-secao">
+                PROGRAMA DE ESTUDOS
+            </p>
+
+            <h2 id="titulo-conteudo-programatico">
+                Conteúdo Programático PSCPP
+            </h2>
+
+            <p>
+                Selecione uma disciplina para acessar suas aulas,
+                módulos e tópicos de estudo.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="conteudo-programatico-guia"
+        class="cards grade-disciplinas"
+        aria-live="polite"
+    >
+
+        <!--
+        Os cards das disciplinas continuam sendo
+        criados automaticamente por app-guia.js.
+
+        O ID e a classe "cards" foram preservados
+        para manter a compatibilidade.
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FERRAMENTAS DE ESTUDO
+========================================= -->
+
+<section
+    class="secao-ferramentas"
+    aria-labelledby="titulo-ferramentas"
+>
+
+    <div class="cabecalho-secao">
+
+        <div>
+
+            <p class="rotulo-secao">
+                FERRAMENTAS
+            </p>
+
+            <h2 id="titulo-ferramentas">
+                Organize sua preparação
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="painel painel-ferramentas">
+
+
+        <article class="widget ferramenta-card">
+
+            <div
+                class="ferramenta-icone"
+                aria-hidden="true"
+            >
+                □
+            </div>
+
+            <div class="ferramenta-conteudo">
+
+                <h3>
+                    Planejamento
+                </h3>
+
+                <p>
+                    Cronograma estratégico até a prova,
+                    considerando progresso, prioridades,
+                    ritmo de estudo e prazo disponível.
+                </p>
+
+                <a
+                    href="planejamento.html"
+                    class="acao-ferramenta"
+                >
+                    Acessar planejamento
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="widget ferramenta-card">
+
+            <div
+                class="ferramenta-icone"
+                aria-hidden="true"
+            >
+                ◫
+            </div>
+
+            <div class="ferramenta-conteudo">
+
+                <h3>
+                    Progresso
+                </h3>
+
+                <p>
+                    Acompanhe sua evolução por disciplina,
+                    aulas concluídas e progresso estratégico.
+                </p>
+
+                <a
+                    href="../desempenho/index.html"
+                    class="acao-ferramenta"
+                >
+                    Ver desempenho
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="widget ferramenta-card">
+
+            <div
+                class="ferramenta-icone"
+                aria-hidden="true"
+            >
+                ↻
+            </div>
+
+            <div class="ferramenta-conteudo">
+
+                <h3>
+                    Revisões
+                </h3>
+
+                <p>
+                    Consulte revisões programadas,
+                    conteúdos vencidos e o histórico
+                    dos assuntos estudados.
+                </p>
+
+                <a
+                    href="../revisoes/index.html"
+                    class="acao-ferramenta"
+                >
+                    Acessar revisões
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="widget ferramenta-card">
+
+            <div
+                class="ferramenta-icone"
+                aria-hidden="true"
+            >
+                ◎
+            </div>
+
+            <div class="ferramenta-conteudo">
+
+                <h3>
+                    Objetivo
+                </h3>
+
+                <p>
+                    Integrar estudo técnico, planejamento
+                    inteligente, revisões e simulados
+                    na preparação para o PSCPP.
+                </p>
+
+                <a
+                    href="../simulados/index.html"
+                    class="acao-ferramenta"
+                >
+                    Acessar simulados
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+    <p>
+        Bridge Trainer PSCPP © 2026
+    </p>
+
+    <span>
+        Preparação técnica para Praticante de Prático
+    </span>
+
+</footer>
+
+
+<!-- =========================================
+     BOTÃO FLUTUANTE DE INÍCIO
+========================================= -->
+
+<a
+    href="../index.html"
+    class="botao-inicio"
+    aria-label="Voltar ao início"
+    title="Voltar ao início"
+>
+    ⌂
+</a>
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="../js/navigation.js"></script>
+
+<script src="../js/progresso.js"></script>
+
+<script src="banco-conteudo.js"></script>
+
+<script src="configuracao-estudo.js"></script>
+
+<script src="motor-planejamento.js"></script>
+
+<script src="app-guia.js"></script>
+
+
+</body>
+
+</html>
