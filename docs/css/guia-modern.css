@@ -713,3 +713,120 @@
 /* =====================================================
    FIM GUIA-MODERN.CSS
 ===================================================== */
+/* =====================================================
+   CORREÇÃO DE CONTRASTE
+   PROGRESSO ESTRATÉGICO E PRÓXIMO FOCO
+===================================================== */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) {
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #dbe8ef;
+
+    box-shadow:
+        0 7px 20px
+        rgba(11, 58, 83, 0.10);
+
+}
+
+
+/* TÍTULOS */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) h2,
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) h3 {
+
+    color:
+        #102f43 !important;
+
+    font-weight:
+        800;
+
+}
+
+
+/* TEXTOS GERAIS */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) p {
+
+    color:
+        #526d7b !important;
+
+    font-weight:
+        500;
+
+}
+
+
+/* NÚMEROS E INFORMAÇÕES DESTACADAS */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) strong {
+
+    color:
+        #173f55 !important;
+
+    font-weight:
+        800;
+
+}
+
+
+/* TEXTOS SECUNDÁRIOS */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) span,
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) small {
+
+    color:
+        #5d7683;
+
+}
+
+
+/* LINK PARA A AULA */
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) a {
+
+    color:
+        #087eae !important;
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+}
+
+
+.pagina-guia
+.cards-resumo-guia
+> .card:not(.card-resumo-guia) a:hover {
+
+    color:
+        #05688f !important;
+
+    text-decoration:
+        underline;
+
+}
