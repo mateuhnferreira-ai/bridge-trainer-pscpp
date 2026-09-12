@@ -1,1 +1,1412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Qualidades de Manobra - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="qualidades-de-manobra"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade do Navio</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Qualidades de Manobra
+</h2>
+
+<p>
+<strong>
+Manoeuvring Qualities
+</strong>
+</p>
+
+<p>
+Estudo das principais qualidades que caracterizam
+a capacidade de um navio responder aos seus controles,
+iniciar e desenvolver uma guinada, controlar essa
+guinada, manter o rumo e interromper seu movimento.
+</p>
+
+<p>
+A abordagem será orientada para a interpretação
+dos parâmetros que descrevem essas qualidades e
+para suas consequências na condução prática do navio.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Qualidades de Manobra
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Manoeuvring Qualities
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+MANOBRABILIDADE DO NAVIO — QUALIDADES DE MANOBRA
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="conceito-qualidades-manobra">
+Conceito de qualidades de manobra
+</li>
+
+<li data-progresso-topico="qualidades-fundamentais">
+Qualidades fundamentais da controlabilidade
+</li>
+
+<li data-progresso-topico="iniciacao-guinada">
+Capacidade de iniciar uma guinada — Initial Turning Ability
+</li>
+
+<li data-progresso-topico="capacidade-giro">
+Capacidade de giro — Turning Ability
+</li>
+
+<li data-progresso-topico="geometria-curva-giro">
+Advance, Transfer e Tactical Diameter
+</li>
+
+<li data-progresso-topico="fase-transitoria-giro">
+Fase transitória e giro estabelecido
+</li>
+
+<li data-progresso-topico="controle-guinada">
+Capacidade de controlar a guinada — Yaw-Checking Ability
+</li>
+
+<li data-progresso-topico="manutencao-rumo">
+Capacidade de manutenção do rumo — Coursekeeping Ability
+</li>
+
+<li data-progresso-topico="capacidade-parada">
+Capacidade de parada — Stopping Ability
+</li>
+
+<li data-progresso-topico="head-reach-desvio">
+Head Reach e Lateral Deviation
+</li>
+
+<li data-progresso-topico="swept-path">
+Swept Path e espaço efetivamente ocupado pelo navio
+</li>
+
+<li data-progresso-topico="interpretacao-operacional">
+Interpretação operacional das qualidades de manobra
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Compreender que a manobrabilidade de um navio
+não pode ser representada adequadamente por
+uma única característica.
+</li>
+
+<li>
+Distinguir as principais
+<strong>manoeuvring qualities</strong>
+utilizadas na avaliação da controlabilidade.
+</li>
+
+<li>
+Diferenciar
+<strong>coursekeeping ability</strong>,
+<strong>initial turning ability</strong>,
+<strong>turning ability</strong>,
+<strong>yaw-checking ability</strong>
+e <strong>stopping ability</strong>.
+</li>
+
+<li>
+Interpretar corretamente
+<strong>advance</strong>,
+<strong>transfer</strong> e
+<strong>tactical diameter</strong>.
+</li>
+
+<li>
+Distinguir a resposta transitória inicial
+da condição de giro estabelecido.
+</li>
+
+<li>
+Compreender por que as dimensões finais
+de uma curva de giro não descrevem,
+isoladamente, toda a capacidade de manobra
+de um navio.
+</li>
+
+<li>
+Relacionar a rapidez de início da guinada
+à condução do navio em águas restritas.
+</li>
+
+<li>
+Interpretar a capacidade do navio de
+interromper uma guinada já estabelecida.
+</li>
+
+<li>
+Interpretar
+<strong>head reach</strong> e
+<strong>lateral deviation</strong>
+durante uma manobra de parada.
+</li>
+
+<li>
+Distinguir a trajetória de um ponto de referência
+do navio da área efetivamente varrida pelo casco,
+ou <strong>swept path</strong>.
+</li>
+
+<li>
+Aplicar as diferentes qualidades de manobra
+ao planejamento e à execução de uma manobra
+pelo Prático.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture — Volume III
+</h3>
+
+<p>
+Referência técnica para a classificação das
+qualidades básicas de controlabilidade e para
+a interpretação de parâmetros relacionados
+à iniciação da guinada, curva de giro,
+controle da guinada e parada.
+</p>
+
+<p>
+Serão utilizados especialmente os trechos
+referentes a
+<strong>Analysis of Turning Ability</strong>
+e
+<strong>Maneuvering Trials and Performance Standards</strong>.
+</p>
+
+
+<hr>
+
+
+<h3>
+Practical Ship Hydrodynamics — 2nd Edition
+</h3>
+
+<p>
+Referência prevista na bibliografia oficial
+do PSCPP para o estudo de
+<strong>Ship Manoeuvring</strong>,
+complementando a interpretação hidrodinâmica
+das características de manobra.
+</p>
+
+<p>
+<strong>Trecho utilizado:</strong>
+Chapter 6 — Ship Manoeuvring.
+</p>
+
+
+<hr>
+
+
+<h3>
+IMO Resolution MSC.137(76)
+</h3>
+
+<p>
+Fonte normativa para os
+<strong>Standards for Ship Manoeuvrability</strong>.
+</p>
+
+<p>
+Serão utilizadas suas definições,
+terminologia associada às manobras padrão
+e critérios pertinentes às qualidades
+de manobra estudadas nesta aula.
+</p>
+
+
+<hr>
+
+
+<h3>
+IMO MSC/Circ.1053
+</h3>
+
+<p>
+Notas explicativas dos padrões IMO de
+manobrabilidade, utilizadas para complementar
+a interpretação técnica dos critérios
+estabelecidos pela MSC.137(76).
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DELIMITAÇÃO DO CONTEÚDO
+========================================= -->
+
+<section>
+
+<h2>🧭 Delimitação desta aula</h2>
+
+<div class="widget">
+
+<p>
+Esta aula estuda
+<strong>as qualidades que se deseja avaliar</strong>
+no comportamento de manobra do navio.
+</p>
+
+<p>
+Os procedimentos completos dos ensaios utilizados
+para medir essas qualidades serão desenvolvidos
+separadamente na aula
+<strong>Testes de Manobrabilidade</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Distinção fundamental
+</h3>
+
+<p>
+<strong>Qualidade de manobra</strong>
+é uma característica do comportamento do navio.
+</p>
+
+<p>
+<strong>Teste de manobrabilidade</strong>
+é uma manobra padronizada ou procedimento utilizado
+para observar, medir ou avaliar determinadas
+características desse comportamento.
+</p>
+
+</div>
+
+<p>
+Assim, conceitos como
+<strong>turning circle</strong>,
+<strong>zig-zag maneuver</strong>,
+<strong>pull-out</strong> e
+<strong>crash stop</strong>
+serão mencionados nesta aula apenas quando necessários
+para compreender o significado de uma determinada
+qualidade.
+</p>
+
+<p>
+Sua execução, condições de realização,
+procedimentos e critérios completos pertencem
+à aula seguinte.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1 — O que são Qualidades de Manobra</strong><br>
+Conceito de manoeuvring qualities e visão integrada
+da controlabilidade.
+</li>
+
+<li>
+<strong>Parte 2 — Iniciação da Guinada</strong><br>
+Initial Turning Ability e rapidez da resposta
+transitória.
+</li>
+
+<li>
+<strong>Parte 3 — Capacidade de Giro</strong><br>
+Turning Ability, trajetória de giro, advance,
+transfer e tactical diameter.
+</li>
+
+<li>
+<strong>Parte 4 — Fase Transitória e Giro Estabelecido</strong><br>
+Diferença entre a resposta inicial e
+steady turning.
+</li>
+
+<li>
+<strong>Parte 5 — Controle da Guinada</strong><br>
+Yaw-Checking Ability e interpretação da capacidade
+de interromper uma guinada.
+</li>
+
+<li>
+<strong>Parte 6 — Manutenção do Rumo</strong><br>
+Coursekeeping Ability e sua relação com
+as demais qualidades.
+</li>
+
+<li>
+<strong>Parte 7 — Capacidade de Parada</strong><br>
+Stopping Ability, Head Reach e Lateral Deviation.
+</li>
+
+<li>
+<strong>Parte 8 — Swept Path e Aplicação Operacional</strong><br>
+Espaço efetivamente ocupado pelo navio durante
+a manobra e interpretação para o Prático.
+</li>
+
+<li>
+<strong>Parte 9 — Consolidação PSCPP</strong><br>
+Resumo técnico, glossário, pontos de atenção
+e questões de revisão.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     O QUE SÃO QUALIDADES DE MANOBRA
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — O QUE SÃO QUALIDADES DE MANOBRA
+</h2>
+
+<p>
+Um navio não pode ser considerado simplesmente
+<strong>"bom de manobra"</strong> ou
+<strong>"ruim de manobra"</strong>
+sem que se estabeleça qual aspecto de seu
+comportamento está sendo analisado.
+</p>
+
+<p>
+A controlabilidade envolve diferentes capacidades.
+Um navio pode, por exemplo, desenvolver uma curva
+com dimensões relativamente pequenas e ainda assim
+apresentar características diferentes quanto à rapidez
+com que inicia a guinada, à facilidade para interrompê-la
+ou à distância necessária para parar.
+</p>
+
+<p>
+Por essa razão, o estudo técnico da manobrabilidade
+separa o comportamento do navio em
+<strong>qualidades de manobra distintas</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+     CONCEITO DE QUALIDADES DE MANOBRA
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-qualidades-manobra"
+data-topico-id="conceito-qualidades-manobra"
+>
+
+<h2>
+1. A manobrabilidade como conjunto de capacidades
+</h2>
+
+<div class="widget">
+
+<p>
+O
+<strong>Principles of Naval Architecture — Volume III</strong>
+não reduz a controlabilidade a uma única medida.
+A avaliação é estruturada por diferentes qualidades,
+cada uma associada a determinado aspecto da resposta
+do navio.
+</p>
+
+<p>
+Entre essas qualidades aparecem:
+<strong>coursekeeping</strong>,
+<strong>turn initiation</strong>,
+<strong>turning</strong>,
+<strong>turn checking</strong>
+e
+<strong>stopping</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+📖 PNA — ideia central
+</h3>
+
+<p>
+O PNA organiza separadamente as capacidades
+relacionadas à manutenção do rumo, iniciação
+da guinada, capacidade de giro, controle da
+guinada e parada.
+</p>
+
+<p>
+Essa classificação é particularmente importante
+porque demonstra que
+<strong>não existe um único índice capaz de representar
+sozinho toda a manobrabilidade de um navio</strong>.
+</p>
+
+</div>
+
+
+<h3>
+1.1 Por que essa distinção é importante?
+</h3>
+
+<p>
+Considere dois navios que apresentem
+<strong>tactical diameter</strong>
+semelhante em uma determinada condição.
+</p>
+
+<p>
+Isso não significa necessariamente que os dois
+responderão da mesma maneira quando o Prático
+ordenar uma alteração de rumo.
+</p>
+
+<p>
+Um deles pode começar a guinar rapidamente,
+enquanto o outro pode apresentar uma resposta
+inicial mais lenta.
+</p>
+
+<p>
+Da mesma forma, dois navios capazes de desenvolver
+curvas semelhantes podem exigir comportamentos
+diferentes para interromper uma guinada já estabelecida.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>
+Turning ability não é sinônimo de manoeuvrability.
+</strong>
+</p>
+
+<p>
+O diâmetro da curva de giro descreve apenas
+uma parte do comportamento do navio.
+</p>
+
+<p>
+Uma análise completa precisa considerar também
+a rapidez de resposta, a capacidade de controlar
+a guinada, a manutenção do rumo e a capacidade
+de parada.
+</p>
+
+</div>
+
+
+<h3>
+1.2 Qualidade e índice de avaliação
+</h3>
+
+<p>
+Outro cuidado conceitual importante é distinguir
+a <strong>qualidade</strong> do parâmetro utilizado
+para caracterizá-la.
+</p>
+
+<p>
+Por exemplo,
+<strong>turning ability</strong>
+é a qualidade estudada.
+</p>
+
+<p>
+<strong>Advance</strong>,
+<strong>transfer</strong> e
+<strong>tactical diameter</strong>
+são grandezas utilizadas para caracterizar
+a trajetória desenvolvida durante a curva.
+</p>
+
+<p>
+Da mesma maneira,
+<strong>stopping ability</strong>
+é a qualidade,
+enquanto
+<strong>head reach</strong>
+e
+<strong>lateral deviation</strong>
+são grandezas associadas à avaliação
+da parada.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Regra de interpretação
+</h3>
+
+<p>
+Ao estudar manobrabilidade, faça sempre
+duas perguntas:
+</p>
+
+<p>
+<strong>1.</strong>
+Qual propriedade do comportamento do navio
+está sendo avaliada?
+</p>
+
+<p>
+<strong>2.</strong>
+Qual parâmetro ou índice está sendo utilizado
+para descrevê-la?
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Manoeuvrability</strong> —
+manobrabilidade;
+</li>
+
+<li>
+<strong>Controllability</strong> —
+controlabilidade;
+</li>
+
+<li>
+<strong>Manoeuvring Qualities</strong> —
+qualidades de manobra;
+</li>
+
+<li>
+<strong>Coursekeeping Ability</strong> —
+capacidade de manter o rumo;
+</li>
+
+<li>
+<strong>Initial Turning Ability</strong> —
+capacidade de iniciar uma guinada;
+</li>
+
+<li>
+<strong>Turning Ability</strong> —
+capacidade de giro;
+</li>
+
+<li>
+<strong>Yaw-Checking Ability</strong> —
+capacidade de interromper ou controlar
+uma guinada;
+</li>
+
+<li>
+<strong>Stopping Ability</strong> —
+capacidade de parada.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+     QUALIDADES FUNDAMENTAIS
+========================================= -->
+
+<section
+class="topico-aula"
+id="qualidades-fundamentais"
+data-topico-id="qualidades-fundamentais"
+>
+
+<h2>
+2. As qualidades não são independentes
+</h2>
+
+<div class="widget">
+
+<p>
+A divisão em diferentes qualidades é necessária
+para permitir a análise do comportamento do navio,
+mas isso não significa que essas qualidades existam
+de forma completamente isolada.
+</p>
+
+<p>
+A capacidade de manter o rumo, por exemplo,
+depende de fatores associados à estabilidade dinâmica,
+à efetividade do leme, ao sistema de controle,
+ao tamanho e à velocidade do navio.
+</p>
+
+<p>
+Da mesma forma, a resposta observada durante
+uma alteração de rumo resulta da interação
+entre casco, leme, sistema de governo e
+condição de operação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+📖 Citação da bibliografia — PNA
+</h3>
+
+<p lang="en">
+<strong>
+“Coursekeeping ability depends on the ship’s dynamic stability...”
+</strong>
+</p>
+
+<p>
+<strong>Principles of Naval Architecture — Volume III</strong>,
+seção dedicada à relação entre os índices
+de controlabilidade e os ensaios.
+</p>
+
+<p>
+A passagem reforça um ponto essencial:
+a manutenção do rumo não deve ser interpretada
+como consequência de um único parâmetro.
+</p>
+
+</div>
+
+
+<p>
+Isso também explica por que os diferentes
+ensaios de manobrabilidade fornecem informações
+diferentes sobre o navio.
+</p>
+
+<p>
+Uma determinada manobra pode ser particularmente
+adequada para observar uma qualidade e fornecer,
+ao mesmo tempo, informações indiretas sobre outras.
+</p>
+
+<p>
+Essa relação será estudada detalhadamente
+na aula seguinte, dedicada aos
+<strong>Testes de Manobrabilidade</strong>.
+</p>
+
+
+<h3>
+2.1 Visão integrada
+</h3>
+
+<p>
+Para fins de aprendizagem, podemos visualizar
+as principais qualidades como respostas a
+perguntas operacionais diferentes:
+</p>
+
+<ul>
+
+<li>
+<strong>Coursekeeping Ability:</strong>
+o navio consegue manter adequadamente
+o movimento direcional desejado?
+</li>
+
+<li>
+<strong>Initial Turning Ability:</strong>
+com que rapidez o navio começa a responder
+quando se deseja iniciar uma alteração de rumo?
+</li>
+
+<li>
+<strong>Turning Ability:</strong>
+qual é a capacidade do navio para desenvolver
+uma curva?
+</li>
+
+<li>
+<strong>Yaw-Checking Ability:</strong>
+com que eficácia uma guinada já desenvolvida
+pode ser interrompida ou controlada?
+</li>
+
+<li>
+<strong>Stopping Ability:</strong>
+qual é o comportamento espacial do navio
+quando se deseja interromper seu avanço?
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Para o Prático, conhecer apenas um
+<strong>turning diameter</strong>
+não é suficiente para antecipar toda
+a resposta de um navio.
+</p>
+
+<p>
+Na condução real interessam também
+<strong>quando a resposta começa</strong>,
+<strong>como a guinada se desenvolve</strong>,
+<strong>como ela pode ser controlada</strong>
+e
+<strong>quanto espaço o navio efetivamente ocupa</strong>
+durante a manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+     UMA DISTINÇÃO FUNDAMENTAL:
+     REGIME TRANSITÓRIO E RESULTADO FINAL
+========================================= -->
+
+<section
+class="topico-aula"
+id="fase-transitoria-giro"
+data-topico-id="fase-transitoria-giro"
+>
+
+<h2>
+3. A manobra real ocorre, muitas vezes, no regime transitório
+</h2>
+
+<div class="widget">
+
+<p>
+Este é um dos conceitos mais importantes
+para compreender corretamente as qualidades
+de manobra.
+</p>
+
+<p>
+O
+<strong>Principles of Naval Architecture — Volume III</strong>
+distingue duas partes fundamentais da resposta
+do navio após a deflexão do leme:
+</p>
+
+<ul>
+
+<li>
+uma <strong>fase transitória inicial</strong>,
+na qual existem acelerações significativas
+de <strong>surge</strong>,
+<strong>sway</strong> e
+<strong>yaw</strong>;
+</li>
+
+<li>
+uma condição posterior de
+<strong>steady turning</strong>,
+na qual a razão de guinada e a velocidade
+avante tornam-se constantes e a trajetória
+tende a ser circular, na ausência de forças
+externas significativas.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+📖 Citação da bibliografia — PNA
+</h3>
+
+<p lang="en">
+<strong>
+“most maneuvers involve only transient phases of turning.”
+</strong>
+</p>
+
+<p>
+<strong>Principles of Naval Architecture — Volume III</strong>.
+</p>
+
+<p>
+Essa pequena frase possui grande importância
+operacional: muitas manobras executadas pelo
+Prático terminam ou recebem um novo comando
+<strong>antes que o navio alcance uma curva
+estabelecida</strong>.
+</p>
+
+</div>
+
+
+<p>
+O próprio PNA chama atenção para a consequência
+dessa característica.
+</p>
+
+<p>
+Em uma via navegável,
+a rapidez com que o navio
+<strong>começa a desenvolver a guinada</strong>
+pode ser mais importante para a manobra
+do que as dimensões finais de seu círculo de giro.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — conceito de grande importância
+</h3>
+
+<p>
+Não confunda
+<strong>boa capacidade de giro</strong>
+com
+<strong>resposta inicial rápida</strong>.
+</p>
+
+<p>
+O primeiro conceito está relacionado às
+características da curva desenvolvida pelo navio.
+</p>
+
+<p>
+O segundo está relacionado à rapidez com que
+a resposta aparece durante a
+<strong>fase transitória</strong>.
+</p>
+
+<p>
+Essas propriedades estão relacionadas,
+mas não são equivalentes.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos desta seção
+</h3>
+
+<ul>
+
+<li>
+<strong>Transient Phase</strong> —
+fase transitória;
+</li>
+
+<li>
+<strong>Initial Response</strong> —
+resposta inicial;
+</li>
+
+<li>
+<strong>Steady Turning</strong> —
+giro em regime permanente ou estabelecido;
+</li>
+
+<li>
+<strong>Rate of Turn</strong> —
+razão de guinada;
+</li>
+
+<li>
+<strong>Forward Speed</strong> —
+velocidade avante;
+</li>
+
+<li>
+<strong>Turning Path</strong> —
+trajetória de giro.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+🎯 Síntese da Parte 1
+</h3>
+
+<p>
+A manobrabilidade deve ser entendida como
+um <strong>conjunto de qualidades</strong>.
+</p>
+
+<p>
+Um navio precisa ser analisado quanto à capacidade
+de manter o rumo, iniciar uma guinada,
+desenvolver uma curva, controlar essa guinada
+e parar.
+</p>
+
+<p>
+Além disso, o comportamento durante a
+<strong>fase transitória</strong>
+pode possuir importância operacional maior
+do que determinadas características obtidas
+somente depois que a manobra se encontra
+plenamente desenvolvida.
+</p>
+
+<p>
+Essa distinção será fundamental para compreender
+a próxima qualidade:
+<strong>Initial Turning Ability</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     PRÓXIMA PARTE:
+     PARTE 2 — INICIAÇÃO DA GUINADA
+     INITIAL TURNING ABILITY
+
+     COLE A PARTE 2 IMEDIATAMENTE ABAIXO DESTA LINHA.
+
+     NÃO SUBSTITUA NENHUM CÓDIGO ANTERIOR.
+     NÃO FECHE </main>, </body> OU </html> NESTE PONTO.
+===================================================== -->
+
+
+<!-- =====================================================
+     ⬇⬇⬇ COLE A PRÓXIMA PARTE AQUI ⬇⬇⬇
+===================================================== -->
