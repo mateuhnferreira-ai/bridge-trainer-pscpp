@@ -1,1 +1,1388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Testes de Manobrabilidade - Bridge Trainer PSCPP
+</title>
+
+<link
+rel="stylesheet"
+href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+data-disciplina="manobrabilidade"
+data-aula="testes-de-manobrabilidade"
+>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>
+⚓ Bridge Trainer PSCPP
+</h1>
+
+<p>
+Manobrabilidade do Navio
+</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+type="button"
+onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="../../progresso/index.html">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     ABERTURA DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Testes de Manobrabilidade
+</h2>
+
+<p>
+<strong>
+Manoeuvring Trials
+</strong>
+</p>
+
+<p>
+Os testes de manobrabilidade permitem
+observar, medir e comparar a resposta
+do navio durante manobras padronizadas.
+</p>
+
+<p>
+Nesta aula estudaremos
+<strong>como as qualidades de manobra
+são avaliadas por meio de ensaios</strong>,
+quais grandezas são obtidas
+e como seus resultados devem ser
+interpretados.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section class="widget">
+
+<h3>
+📊 Progresso da aula
+</h3>
+
+<div class="barra-progresso-container">
+
+<div
+id="barra-progresso-aula"
+class="barra-progresso"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% concluído
+</p>
+
+<button
+type="button"
+class="botao-estudo"
+onclick="irParaOndeParei()"
+>
+▶ Continuar de onde parei
+</button>
+
+</section>
+
+
+
+<!-- =========================================
+     POMODORO
+========================================= -->
+
+<section class="widget">
+
+<h3>
+⏱ Sessão de estudo
+</h3>
+
+<p>
+Fase:
+<strong id="pomodoro-fase">
+Estudo
+</strong>
+</p>
+
+<p
+id="pomodoro-restante"
+style="font-size:1.5rem;"
+>
+25:00
+</p>
+
+<p>
+Sessão:
+<span id="pomodoro-sessao">
+0
+</span>
+</p>
+
+<p>
+Tempo acumulado:
+<span id="pomodoro-cumulativo">
+00:00
+</span>
+</p>
+
+<button
+type="button"
+id="pomodoro-btn-start"
+class="botao-estudo"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+id="pomodoro-btn-pause"
+class="botao-estudo"
+onclick="pausarPomodoro()"
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao-estudo"
+onclick="zerarPomodoro()"
+>
+↺ Zerar
+</button>
+
+</section>
+
+
+
+<!-- =========================================
+     ANOTAÇÃO
+========================================= -->
+
+<section class="widget">
+
+<h3>
+📝 Anotações da aula
+</h3>
+
+<p
+contenteditable="true"
+class="comentario-editavel"
+>
+Escreva aqui suas observações sobre
+os testes de manobrabilidade...
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section class="widget">
+
+<h3>
+📚 Conteúdo desta aula
+</h3>
+
+<ul>
+
+<li>
+Finalidade dos testes de manobrabilidade
+</li>
+
+<li>
+Qualidade, manobra de ensaio e índice
+</li>
+
+<li>
+Condições de realização dos ensaios
+</li>
+
+<li>
+Turning Circle Test
+</li>
+
+<li>
+10°/10° Zig-Zag Test
+</li>
+
+<li>
+20°/20° Zig-Zag Test
+</li>
+
+<li>
+Spiral Test
+</li>
+
+<li>
+Reverse Spiral Test
+</li>
+
+<li>
+Pull-Out Test
+</li>
+
+<li>
+Stopping / Crash-Astern Test
+</li>
+
+<li>
+Relação entre os ensaios
+e a estabilidade dinâmica
+</li>
+
+<li>
+Critérios de avaliação
+</li>
+
+<li>
+Interpretação operacional
+dos resultados
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS
+========================================= -->
+
+<section class="widget">
+
+<h3>
+🎯 Objetivos da aula
+</h3>
+
+<p>
+Ao final desta aula,
+você deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+identificar os principais
+<strong>manoeuvring trials</strong>;
+</li>
+
+<li>
+explicar a finalidade
+de cada ensaio;
+</li>
+
+<li>
+distinguir a
+<strong>manoeuvring quality</strong>
+do ensaio utilizado para avaliá-la;
+</li>
+
+<li>
+identificar os principais índices
+obtidos em cada manobra;
+</li>
+
+<li>
+interpretar os resultados
+sob a perspectiva operacional;
+</li>
+
+<li>
+relacionar os ensaios
+às características de
+<strong>controllability</strong>
+do navio.
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- =========================================
+     BIBLIOGRAFIA DA AULA
+========================================= -->
+
+<section class="widget">
+
+<h3>
+📖 Bibliografia utilizada
+</h3>
+
+<ul>
+
+<li>
+
+<strong>
+IMO Resolution MSC.137(76)
+</strong>
+—
+Standards for Ship Manoeuvrability.
+
+</li>
+
+
+<li>
+
+<strong>
+IMO MSC/Circ.1053
+</strong>
+—
+Explanatory Notes to the Standards
+for Ship Manoeuvrability.
+
+</li>
+
+
+<li>
+
+<strong>
+Principles of Naval Architecture —
+Volume III:
+Motions in Waves and Controllability
+</strong>
+
+</li>
+
+
+<li>
+
+<strong>
+Practical Ship Hydrodynamics —
+2nd Edition
+</strong>
+—
+Chapter 6, Ship Manoeuvring.
+
+</li>
+
+
+<li>
+
+<strong>
+Shiphandling for the Mariner —
+5th Edition
+</strong>
+—
+interpretação operacional dos dados
+de manobra quando pertinente.
+
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- =========================================
+     DELIMITAÇÃO DA AULA
+========================================= -->
+
+<section class="widget destaque">
+
+<h3>
+📌 Delimitação importante
+</h3>
+
+<p>
+Na aula anterior estudamos
+<strong>Qualidades de Manobra</strong>.
+</p>
+
+<p>
+Agora mudamos o ponto de vista.
+</p>
+
+<p style="text-align:center;">
+
+<strong>
+QUALIDADE
+→
+TESTE
+→
+ÍNDICE
+→
+INTERPRETAÇÃO
+</strong>
+
+</p>
+
+<p>
+Não estudaremos novamente,
+em profundidade,
+o significado físico de cada
+qualidade já apresentada.
+</p>
+
+<p>
+Nosso objetivo agora é entender
+<strong>como essas características
+são determinadas e avaliadas.</strong>
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+     FUNDAMENTOS DOS TESTES
+========================================= -->
+
+<section
+class="abertura-parte"
+>
+
+<h2>
+PARTE 1 — FUNDAMENTOS DOS TESTES
+DE MANOBRABILIDADE
+</h2>
+
+<p>
+<strong>
+Fundamentals of Manoeuvring Trials
+</strong>
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="finalidade-testes-manobrabilidade"
+data-topico-id="finalidade-testes-manobrabilidade"
+>
+
+<h2>
+1. Por que realizar testes de manobrabilidade?
+</h2>
+
+<div class="widget">
+
+<p>
+A resposta de um navio às ordens de leme
+e máquina depende de diversas características
+do próprio navio e de seus sistemas.
+</p>
+
+<p>
+Para avaliar essa resposta de forma objetiva,
+são realizadas
+<strong>manobras de ensaio</strong>
+das quais podem ser extraídas
+grandezas mensuráveis.
+</p>
+
+<p>
+O
+<strong>Principles of Naval Architecture</strong>
+descreve a avaliação da controlabilidade
+por meio de
+<strong>full-scale trials and analyses</strong>,
+utilizando manobras definidas
+e índices derivados de seus resultados.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<p>
+Portanto, o ensaio não é a qualidade
+do navio.
+</p>
+
+<p style="text-align:center;">
+
+<strong>
+O ENSAIO PRODUZ DADOS
+QUE PERMITEM AVALIAR
+UMA QUALIDADE.
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="qualidade-teste-indice"
+data-topico-id="qualidade-teste-indice"
+>
+
+<h2>
+2. Qualidade → Teste → Índice
+</h2>
+
+<div class="widget">
+
+<p>
+Essa relação é fundamental
+para compreender toda a aula.
+</p>
+
+<p>
+Considere, por exemplo,
+a
+<strong>Turning Ability</strong>.
+</p>
+
+<p>
+Ela representa uma
+<strong>qualidade de manobra</strong>.
+</p>
+
+<p>
+Para investigá-la,
+executa-se uma
+<strong>Turning Circle Manoeuvre</strong>.
+</p>
+
+<p>
+Da trajetória obtida,
+podem ser determinadas grandezas como:
+</p>
+
+<ul>
+
+<li>
+<strong>Advance</strong>;
+</li>
+
+<li>
+<strong>Transfer</strong>;
+</li>
+
+<li>
+<strong>Tactical Diameter</strong>.
+</li>
+
+</ul>
+
+<p>
+Essas grandezas funcionam como
+<strong>índices ou medidas da resposta
+do navio</strong>.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<p style="text-align:center;">
+
+<strong>
+TURNING ABILITY
+</strong>
+
+<br>
+
+↓
+
+<br>
+
+<strong>
+TURNING CIRCLE
+</strong>
+
+<br>
+
+↓
+
+<br>
+
+<strong>
+ADVANCE • TRANSFER • TACTICAL DIAMETER
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="ensaios-fundamentais"
+data-topico-id="ensaios-fundamentais"
+>
+
+<h2>
+3. Ensaios fundamentais
+</h2>
+
+<div class="widget">
+
+<p>
+O PNA analisa diferentes códigos
+e programas históricos de
+<strong>manoeuvring trials</strong>.
+</p>
+
+<p>
+Apesar de existirem diferenças
+entre esses programas,
+três tipos de manobra aparecem
+como ensaios fundamentais:
+</p>
+
+<ul>
+
+<li>
+<strong>Turning Manoeuvre</strong>;
+</li>
+
+<li>
+<strong>Zig-Zag Manoeuvre</strong>;
+</li>
+
+<li>
+<strong>Crash Stop</strong>.
+</li>
+
+</ul>
+
+<p>
+O PNA também apresenta,
+entre outros ensaios:
+</p>
+
+<ul>
+
+<li>
+<strong>Direct Spiral Test</strong>;
+</li>
+
+<li>
+<strong>Reverse Spiral Test</strong>;
+</li>
+
+<li>
+<strong>Pull-Out Test</strong>;
+</li>
+
+<li>
+turning manoeuvre em baixa velocidade.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Esses ensaios não devem ser tratados
+como diferentes maneiras de medir
+exatamente a mesma coisa.
+</p>
+
+<p>
+Cada manobra revela aspectos diferentes
+da resposta do navio.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="testes-e-qualidades"
+data-topico-id="testes-e-qualidades"
+>
+
+<h2>
+4. O que cada teste pode revelar?
+</h2>
+
+<div class="widget">
+
+<p>
+A relação entre ensaio e qualidade
+pode ser organizada inicialmente
+da seguinte maneira:
+</p>
+
+<p>
+<strong>Turning Circle</strong>
+→ características da
+<strong>Turning Ability</strong>.
+</p>
+
+<p>
+<strong>Zig-Zag Manoeuvre</strong>
+→ informações sobre
+<strong>Yaw-Checking Ability</strong>
+e resposta transitória.
+</p>
+
+<p>
+<strong>Spiral / Reverse Spiral</strong>
+→ investigação da
+<strong>Dynamic Stability</strong>.
+</p>
+
+<p>
+<strong>Pull-Out Test</strong>
+→ também permite demonstrar
+características de estabilidade dinâmica.
+</p>
+
+<p>
+<strong>Stopping Manoeuvre</strong>
+→ avaliação da
+<strong>Stopping Ability</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="zigzag-informacao"
+data-topico-id="zigzag-informacao"
+>
+
+<h2>
+5. Por que o Zig-Zag é tão informativo?
+</h2>
+
+<div class="widget">
+
+<p>
+Entre os ensaios tradicionais,
+o
+<strong>Zig-Zag Manoeuvre</strong>
+possui importância especial.
+</p>
+
+<p>
+Segundo o PNA,
+ele fornece grande quantidade
+de informação diretamente útil
+sobre o efeito combinado de:
+</p>
+
+<ul>
+
+<li>
+forma do casco;
+</li>
+
+<li>
+calado e trim;
+</li>
+
+<li>
+desempenho do leme;
+</li>
+
+<li>
+sistema de controle.
+</li>
+
+</ul>
+
+<p>
+A
+<strong>Yaw-Checking Ability</strong>,
+por exemplo,
+pode ser observada por grandezas como:
+</p>
+
+<ul>
+
+<li>
+<strong>First Overshoot Angle</strong>;
+</li>
+
+<li>
+<strong>Time to Check Yaw</strong>.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<p>
+Isso não significa que o Zig-Zag
+meça diretamente todas as qualidades
+de manobra.
+</p>
+
+<p>
+O próprio PNA alerta que
+<strong>Coursekeeping Ability</strong>,
+por exemplo,
+não é indicada diretamente
+por um único ensaio definitivo.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="teste-versus-operacao"
+data-topico-id="teste-versus-operacao"
+>
+
+<h2>
+6. Ensaio padronizado × operação real
+</h2>
+
+<div class="widget">
+
+<p>
+Os testes de manobrabilidade
+permitem comparar respostas do navio
+sob condições definidas.
+</p>
+
+<p>
+Entretanto,
+o Prático não conduz o navio
+simplesmente repetindo um ensaio.
+</p>
+
+<p>
+Ele utiliza os resultados dos testes
+para antecipar a resposta
+em uma situação operacional real.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Aplicação operacional
+</h3>
+
+<p>
+Conhecer o
+<strong>Advance</strong>
+de uma turning manoeuvre,
+por exemplo,
+não serve apenas para preencher
+uma tabela.
+</p>
+
+<p>
+Esse conhecimento ajuda o shiphandler
+a avaliar
+<strong>onde iniciar uma curva</strong>.
+</p>
+
+<p>
+O
+<strong>Shiphandling for the Mariner</strong>
+destaca justamente que,
+ao executar uma curva em um canal,
+duas questões fundamentais são
+onde iniciar a curva
+e quanto leme utilizar.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="indices-e-espaco-real"
+data-topico-id="indices-e-espaco-real"
+>
+
+<h2>
+7. Índices não mostram toda a área ocupada
+</h2>
+
+<div class="widget">
+
+<p>
+Há ainda uma limitação importante
+na interpretação dos resultados.
+</p>
+
+<p>
+Os índices obtidos das manobras
+podem ser excelentes para comparação,
+mas não mostram necessariamente
+<strong>todo o espaço ocupado pelo navio</strong>.
+</p>
+
+<p>
+O PNA chama atenção para a diferença
+entre:
+</p>
+
+<ul>
+
+<li>
+a trajetória de um
+<strong>reference point</strong>;
+</li>
+
+<li>
+a área efetivamente varrida
+pelo casco,
+ou
+<strong>Swept Path</strong>.
+</li>
+
+</ul>
+
+<p>
+Essa diferença torna-se particularmente
+importante para o Prático ao avaliar:
+</p>
+
+<ul>
+
+<li>
+canais;
+</li>
+
+<li>
+curvas;</li>
+
+<li>
+obstruções;
+</li>
+
+<li>
+outras embarcações;
+</li>
+
+<li>
+margens de segurança.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<p style="text-align:center;">
+
+<strong>
+ÍNDICE DO TESTE
+≠
+ESPAÇO TOTAL OCUPADO PELO NAVIO
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="logica-leitura-testes"
+data-topico-id="logica-leitura-testes"
+>
+
+<h2>
+8. A lógica que usaremos nesta aula
+</h2>
+
+<div class="widget">
+
+<p>
+Para evitar decorar procedimentos
+sem compreendê-los,
+cada teste será estudado
+seguindo a mesma sequência:
+</p>
+
+<p style="text-align:center;">
+
+<strong>
+FINALIDADE
+</strong>
+
+<br>
+↓
+
+<br>
+
+<strong>
+CONDIÇÕES INICIAIS
+</strong>
+
+<br>
+↓
+
+<br>
+
+<strong>
+EXECUÇÃO DA MANOBRA
+</strong>
+
+<br>
+↓
+
+<br>
+
+<strong>
+GRANDEZAS MEDIDAS
+</strong>
+
+<br>
+↓
+
+<br>
+
+<strong>
+INTERPRETAÇÃO DO RESULTADO
+</strong>
+
+<br>
+↓
+
+<br>
+
+<strong>
+APLICAÇÃO OPERACIONAL
+</strong>
+
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção para o PSCPP
+</h3>
+
+<p>
+Uma questão pode fornecer
+o nome do teste
+e perguntar qual qualidade
+está sendo avaliada.
+</p>
+
+<p>
+Também pode fazer o inverso:
+fornecer uma grandeza como
+<strong>First Overshoot Angle</strong>
+ou
+<strong>Tactical Diameter</strong>
+e exigir que o candidato identifique
+a manobra de origem.
+</p>
+
+<p>
+Por isso,
+não basta memorizar os nomes.
+É necessário entender
+<strong>a cadeia completa entre
+teste, medida e significado.</strong>
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO TÉCNICO — PARTE 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="glossario-parte-1"
+data-topico-id="glossario-parte-1"
+>
+
+<h2>
+🌐 Glossário Técnico — Parte 1
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Manoeuvring Trial</strong> —
+teste ou ensaio de manobrabilidade.
+</li>
+
+<li>
+<strong>Full-Scale Trial</strong> —
+ensaio realizado com o navio
+em escala real.
+</li>
+
+<li>
+<strong>Manoeuvring Quality</strong> —
+qualidade ou característica
+de manobra.
+</li>
+
+<li>
+<strong>Turning Manoeuvre</strong> —
+manobra de giro.
+</li>
+
+<li>
+<strong>Turning Circle</strong> —
+curva ou círculo de giro.
+</li>
+
+<li>
+<strong>Zig-Zag Manoeuvre</strong> —
+manobra de zigue-zague utilizada
+para observar a resposta transitória
+do navio e características
+de controle da guinada.
+</li>
+
+<li>
+<strong>Crash Stop</strong> —
+manobra de parada iniciada
+por ordem de reversão,
+utilizada na avaliação
+da capacidade de parada.
+</li>
+
+<li>
+<strong>Spiral Test</strong> —
+ensaio utilizado na investigação
+da estabilidade direcional dinâmica.
+</li>
+
+<li>
+<strong>Reverse Spiral Test</strong> —
+variante reversa do ensaio espiral.
+</li>
+
+<li>
+<strong>Pull-Out Test</strong> —
+ensaio iniciado a partir
+de uma condição de giro
+e utilizado na investigação
+da estabilidade dinâmica.
+</li>
+
+<li>
+<strong>Yaw-Checking Ability</strong> —
+capacidade de conter
+uma guinada já desenvolvida.
+</li>
+
+<li>
+<strong>Coursekeeping Ability</strong> —
+capacidade do navio governado
+de manter adequadamente
+a direção desejada.
+</li>
+
+<li>
+<strong>Dynamic Stability</strong> —
+estabilidade dinâmica.
+</li>
+
+<li>
+<strong>First Overshoot Angle</strong> —
+primeiro ângulo de ultrapassagem
+observado na resposta
+do zig-zag.
+</li>
+
+<li>
+<strong>Time to Check Yaw</strong> —
+tempo necessário para conter
+a guinada após a ação de controle.
+</li>
+
+<li>
+<strong>Reference Point</strong> —
+ponto de referência utilizado
+para representar a trajetória
+do navio.
+</li>
+
+<li>
+<strong>Swept Path</strong> —
+área efetivamente varrida
+pelo navio durante a manobra.
+</li>
+
+<li>
+<strong>Shiphandler</strong> —
+profissional que conduz
+e manobra o navio.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     PRÓXIMA PARTE:
+     PARTE 2 — CONDIÇÕES PADRONIZADAS
+     DOS TESTES DE MANOBRABILIDADE
+
+     COLE A PRÓXIMA PARTE
+     IMEDIATAMENTE ABAIXO DESTE COMENTÁRIO.
+
+     NÃO FECHE </main>, </body> OU </html>.
+===================================================== -->
