@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
 <title>
@@ -15,34 +15,36 @@ Testes de Manobrabilidade - Bridge Trainer PSCPP
 </title>
 
 <link
-rel="stylesheet"
-href="../../css/style.css"
+    rel="stylesheet"
+    href="../../css/style.css"
 >
 
 </head>
 
 
 <body
-data-disciplina="manobrabilidade"
-data-aula="testes-de-manobrabilidade"
+    data-disciplina="manobrabilidade"
+    data-aula="testes-de-manobrabilidade"
 >
 
 
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
 <!-- =========================================
-     CABEÇALHO
+     CABEÇALHO PRINCIPAL
 ========================================= -->
 
 <header class="topo">
 
 <div class="logo">
 
-<h1>
-⚓ Bridge Trainer PSCPP
-</h1>
+<h1>⚓ Bridge Trainer PSCPP</h1>
 
-<p>
-Manobrabilidade do Navio
-</p>
+<p>Manobrabilidade do Navio</p>
 
 </div>
 
@@ -51,14 +53,14 @@ Manobrabilidade do Navio
 
 
 <!-- =========================================
-     NAVEGAÇÃO
+     MENU DE NAVEGAÇÃO
 ========================================= -->
 
 <nav class="navbar">
 
 <button
-type="button"
-onclick="voltarPagina()"
+    type="button"
+    onclick="voltarPagina()"
 >
 ⬅ Voltar
 </button>
@@ -71,7 +73,7 @@ onclick="voltarPagina()"
 📚 Guia de Estudos
 </a>
 
-<a href="../../progresso/index.html">
+<a href="#">
 📊 Progresso
 </a>
 
@@ -86,8 +88,13 @@ onclick="voltarPagina()"
 <main>
 
 
+<!-- =====================================================
+     IDENTIDADE DA AULA
+===================================================== -->
+
+
 <!-- =========================================
-     ABERTURA DA AULA
+     APRESENTAÇÃO DA AULA
 ========================================= -->
 
 <section class="dashboard">
@@ -103,18 +110,11 @@ Manoeuvring Trials
 </p>
 
 <p>
-Os testes de manobrabilidade permitem
-observar, medir e comparar a resposta
-do navio durante manobras padronizadas.
-</p>
-
-<p>
-Nesta aula estudaremos
-<strong>como as qualidades de manobra
-são avaliadas por meio de ensaios</strong>,
-quais grandezas são obtidas
-e como seus resultados devem ser
-interpretados.
+Estudo dos ensaios utilizados para avaliar
+as características de manobra do navio,
+das condições padronizadas de realização,
+das grandezas obtidas e dos critérios empregados
+na interpretação de seus resultados.
 </p>
 
 </section>
@@ -123,82 +123,180 @@ interpretados.
 
 <!-- =========================================
      PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
 ========================================= -->
 
-<section class="widget">
+<section>
 
-<h3>
-📊 Progresso da aula
-</h3>
+<h2>📊 Progresso da Aula</h2>
 
-<div class="barra-progresso-container">
+<div class="widget">
+
+<div class="barra-progresso">
 
 <div
-id="barra-progresso-aula"
-class="barra-progresso"
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
 >
 </div>
 
 </div>
 
 <p id="texto-progresso-aula">
-0% concluído
+0% da aula concluída
 </p>
 
 <button
-type="button"
-class="botao-estudo"
-onclick="irParaOndeParei()"
+    type="button"
+    onclick="irParaOndeParei()"
 >
-▶ Continuar de onde parei
+📍 Ir para onde parei
 </button>
+
+</div>
 
 </section>
 
 
 
 <!-- =========================================
-     POMODORO
+     IDENTIFICAÇÃO DA AULA
 ========================================= -->
 
-<section class="widget">
+<section>
 
-<h3>
-⏱ Sessão de estudo
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Testes de Manobrabilidade
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Manoeuvring Trials
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
 </h3>
 
-<p>
-Fase:
-<strong id="pomodoro-fase">
-Estudo
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
 </strong>
-</p>
 
-<p
-id="pomodoro-restante"
-style="font-size:1.5rem;"
->
-25:00
-</p>
+</div>
 
-<p>
-Sessão:
-<span id="pomodoro-sessao">
-0
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
 </span>
-</p>
 
-<p>
-Tempo acumulado:
-<span id="pomodoro-cumulativo">
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
 00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
 </span>
-</p>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
 
 <button
 type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
 id="pomodoro-btn-start"
-class="botao-estudo"
 onclick="iniciarPomodoro()"
 >
 ▶ Iniciar
@@ -206,296 +304,470 @@ onclick="iniciarPomodoro()"
 
 <button
 type="button"
+class="botao pomodoro-botao"
 id="pomodoro-btn-pause"
-class="botao-estudo"
 onclick="pausarPomodoro()"
+disabled
 >
 ⏸ Pausar
 </button>
 
 <button
 type="button"
-class="botao-estudo"
+class="botao pomodoro-botao"
 onclick="zerarPomodoro()"
 >
-↺ Zerar
+↺ Zerar ciclo
 </button>
 
-</section>
+</div>
 
 
+<p class="pomodoro-orientacao">
 
-<!-- =========================================
-     ANOTAÇÃO
-========================================= -->
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
 
-<section class="widget">
-
-<h3>
-📝 Anotações da aula
-</h3>
-
-<p
-contenteditable="true"
-class="comentario-editavel"
->
-Escreva aqui suas observações sobre
-os testes de manobrabilidade...
 </p>
 
+</div>
+
 </section>
 
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
 
 
 <!-- =========================================
      CONTEÚDO PROGRAMÁTICO
 ========================================= -->
 
-<section class="widget">
+<section>
 
-<h3>
-📚 Conteúdo desta aula
-</h3>
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+MANOBRABILIDADE DO NAVIO — TESTES DE MANOBRABILIDADE
+</strong>
+</p>
 
 <ul>
 
-<li>
+<li data-progresso-topico="finalidade-testes-manobrabilidade">
 Finalidade dos testes de manobrabilidade
 </li>
 
-<li>
-Qualidade, manobra de ensaio e índice
+<li data-progresso-topico="qualidade-teste-indice">
+Relação entre qualidade de manobra, ensaio e índice
 </li>
 
-<li>
-Condições de realização dos ensaios
+<li data-progresso-topico="condicoes-testes-manobrabilidade">
+Condições padronizadas para realização dos ensaios
 </li>
 
-<li>
-Turning Circle Test
+<li data-progresso-topico="turning-circle">
+Turning Circle Manoeuvre
 </li>
 
-<li>
-10°/10° Zig-Zag Test
+<li data-progresso-topico="initial-turning-ability">
+Initial Turning Ability
 </li>
 
-<li>
-20°/20° Zig-Zag Test
+<li data-progresso-topico="zigzag-10-10">
+10°/10° Zig-Zag Manoeuvre
 </li>
 
-<li>
-Spiral Test
+<li data-progresso-topico="zigzag-20-20">
+20°/20° Zig-Zag Manoeuvre
 </li>
 
-<li>
-Reverse Spiral Test
+<li data-progresso-topico="dieudonne-spiral">
+Dieudonné Direct Spiral Test
 </li>
 
-<li>
-Pull-Out Test
+<li data-progresso-topico="bech-reverse-spiral">
+Bech Reverse Spiral Test
 </li>
 
-<li>
-Stopping / Crash-Astern Test
+<li data-progresso-topico="pullout-test">
+Pull-Out Manoeuvre
 </li>
 
-<li>
-Relação entre os ensaios
-e a estabilidade dinâmica
+<li data-progresso-topico="full-astern-stopping">
+Full Astern Stopping Test
 </li>
 
-<li>
-Critérios de avaliação
+<li data-progresso-topico="estabilidade-dinamica-testes">
+Relação entre os ensaios e a estabilidade dinâmica
 </li>
 
-<li>
-Interpretação operacional
-dos resultados
+<li data-progresso-topico="criterios-msc137">
+Critérios de manobrabilidade da MSC.137(76)
+</li>
+
+<li data-progresso-topico="interpretacao-operacional-testes">
+Interpretação operacional dos resultados
 </li>
 
 </ul>
+
+</div>
 
 </section>
 
 
 
 <!-- =========================================
-     OBJETIVOS
+     OBJETIVOS DE APRENDIZAGEM
 ========================================= -->
 
-<section class="widget">
+<section>
 
-<h3>
-🎯 Objetivos da aula
-</h3>
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
 
 <p>
-Ao final desta aula,
-você deverá ser capaz de:
+Ao concluir esta aula, o aluno deverá ser capaz de:
 </p>
 
 <ul>
 
 <li>
-identificar os principais
-<strong>manoeuvring trials</strong>;
+Explicar a finalidade dos
+<strong>Manoeuvring Trials</strong>
+e relacionar cada ensaio à qualidade de manobra
+que se pretende avaliar.
 </li>
 
 <li>
-explicar a finalidade
-de cada ensaio;
+Identificar as condições padronizadas
+estabelecidas para a realização dos ensaios
+de manobrabilidade.
 </li>
 
 <li>
-distinguir a
-<strong>manoeuvring quality</strong>
-do ensaio utilizado para avaliá-la;
+Descrever a execução e interpretar os resultados
+do <strong>Turning Circle Manoeuvre</strong>.
 </li>
 
 <li>
-identificar os principais índices
-obtidos em cada manobra;
+Distinguir
+<strong>Advance</strong>,
+<strong>Transfer</strong>
+e
+<strong>Tactical Diameter</strong>.
 </li>
 
 <li>
-interpretar os resultados
-sob a perspectiva operacional;
+Interpretar a
+<strong>Initial Turning Ability</strong>
+e seu respectivo critério.
 </li>
 
 <li>
-relacionar os ensaios
-às características de
-<strong>controllability</strong>
-do navio.
+Descrever os procedimentos dos ensaios
+<strong>10°/10° Zig-Zag</strong>
+e
+<strong>20°/20° Zig-Zag</strong>.
+</li>
+
+<li>
+Interpretar
+<strong>First Overshoot Angle</strong>,
+<strong>Second Overshoot Angle</strong>
+e a capacidade de
+<strong>Yaw Checking</strong>.
+</li>
+
+<li>
+Explicar a finalidade e a interpretação
+do
+<strong>Dieudonné Direct Spiral Test</strong>,
+do
+<strong>Bech Reverse Spiral Test</strong>
+e do
+<strong>Pull-Out Manoeuvre</strong>.
+</li>
+
+<li>
+Descrever o
+<strong>Full Astern Stopping Test</strong>
+e distinguir
+<strong>Track Reach</strong>
+de
+<strong>Head Reach</strong>.
+</li>
+
+<li>
+Aplicar corretamente os principais critérios
+estabelecidos pela
+<strong>IMO Resolution MSC.137(76)</strong>.
+</li>
+
+<li>
+Distinguir ensaios sujeitos a critérios numéricos
+de aceitação daqueles utilizados principalmente
+como instrumentos de diagnóstico da estabilidade
+e da resposta dinâmica do navio.
+</li>
+
+<li>
+Interpretar os resultados dos ensaios
+sob a perspectiva operacional do Prático,
+reconhecendo as limitações da aplicação direta
+dos dados de trial às condições reais de manobra.
 </li>
 
 </ul>
+
+</div>
 
 </section>
 
 
 
 <!-- =========================================
-     BIBLIOGRAFIA DA AULA
+     PUBLICAÇÕES UTILIZADAS
 ========================================= -->
 
-<section class="widget">
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
 
 <h3>
-📖 Bibliografia utilizada
-</h3>
-
-<ul>
-
-<li>
-
-<strong>
 IMO Resolution MSC.137(76)
-</strong>
-—
-Standards for Ship Manoeuvrability.
+</h3>
 
-</li>
+<p>
+Referência normativa principal para as condições
+padronizadas, definições dos standard manoeuvres
+e critérios de desempenho utilizados na avaliação
+da manobrabilidade do navio.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Definitions,
+Standard Manoeuvres and Terminology,
+Conditions e Criteria.
+</p>
 
 
-<li>
+<hr>
 
-<strong>
+
+<h3>
 IMO MSC/Circ.1053
-</strong>
-—
-Explanatory Notes to the Standards
-for Ship Manoeuvrability.
+</h3>
 
-</li>
+<p>
+Referência explicativa para interpretação
+dos Standards for Ship Manoeuvrability,
+incluindo fundamentos das qualidades de manobra,
+condições de ensaio, interpretação dos resultados
+e ensaios complementares de estabilidade.
+</p>
 
-
-<li>
-
-<strong>
-Principles of Naval Architecture —
-Volume III:
-Motions in Waves and Controllability
-</strong>
-
-</li>
-
-
-<li>
-
-<strong>
-Practical Ship Hydrodynamics —
-2nd Edition
-</strong>
-—
-Chapter 6, Ship Manoeuvring.
-
-</li>
+<p>
+<strong>Trechos utilizados:</strong>
+General Principles,
+Guidelines for Application,
+Prediction Guidance
+e Appendix 4 — Pull-Out Manoeuvre.
+</p>
 
 
-<li>
+<hr>
 
-<strong>
-Shiphandling for the Mariner —
-5th Edition
-</strong>
-—
-interpretação operacional dos dados
-de manobra quando pertinente.
 
-</li>
+<h3>
+Principles of Naval Architecture — Volume III
+</h3>
 
-</ul>
+<p>
+Referência técnica para os fundamentos
+dos manoeuvring trials,
+estabilidade dinâmica,
+Turning Circle,
+Zig-Zag,
+Direct Spiral,
+Reverse Spiral,
+Pull-Out
+e interpretação dos índices de controlabilidade.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Controllability,
+Maneuvering Trial Codes and Guidelines,
+Basic Trial Considerations,
+Basic Performance Criteria
+e seções relativas aos Spiral Manoeuvres.
+</p>
+
+
+<hr>
+
+
+<h3>
+Practical Ship Hydrodynamics — Volker Bertram
+</h3>
+
+<p>
+Referência complementar para os fundamentos
+hidrodinâmicos dos ensaios de manobra
+e para a relação entre os testes
+e o comportamento dinâmico do navio.
+</p>
+
+<p>
+<strong>Trecho utilizado:</strong>
+Chapter 6 — Ship Manoeuvring.
+</p>
+
+
+<hr>
+
+
+<h3>
+Shiphandling for the Mariner — 5th Edition
+</h3>
+
+<p>
+Referência operacional complementar
+para interpretação dos resultados
+dos testes de manobrabilidade
+sob a perspectiva do shiphandler.
+</p>
+
+</div>
 
 </section>
 
 
 
 <!-- =========================================
-     DELIMITAÇÃO DA AULA
+     ORGANIZAÇÃO DA AULA
 ========================================= -->
 
-<section class="widget destaque">
+<section>
 
-<h3>
-📌 Delimitação importante
-</h3>
+<h2>🗂 Organização da aula</h2>
 
-<p>
-Na aula anterior estudamos
-<strong>Qualidades de Manobra</strong>.
-</p>
+<div class="widget">
 
-<p>
-Agora mudamos o ponto de vista.
-</p>
+<ol>
 
-<p style="text-align:center;">
+<li>
+<strong>Parte 1 — Fundamentos dos Testes de Manobrabilidade</strong><br>
+Finalidade dos manoeuvring trials,
+qualidades de manobra, testes e índices.
+</li>
 
-<strong>
-QUALIDADE
-→
-TESTE
-→
-ÍNDICE
-→
-INTERPRETAÇÃO
-</strong>
+<li>
+<strong>Parte 2 — Condições Padronizadas dos Ensaios</strong><br>
+Profundidade, ambiente, condição de carga,
+trim, steady approach e Test Speed.
+</li>
 
-</p>
+<li>
+<strong>Parte 3 — Turning Circle Test</strong><br>
+Procedimento, Advance, Transfer,
+Tactical Diameter e critérios.
+</li>
 
-<p>
-Não estudaremos novamente,
-em profundidade,
-o significado físico de cada
-qualidade já apresentada.
-</p>
+<li>
+<strong>Parte 4 — 10°/10° Zig-Zag Test</strong><br>
+Executes, Overshoot Angles,
+Yaw Checking e critérios dependentes de L/V.
+</li>
 
-<p>
-Nosso objetivo agora é entender
-<strong>como essas características
-são determinadas e avaliadas.</strong>
-</p>
+<li>
+<strong>Parte 5 — 20°/20° Zig-Zag Test</strong><br>
+Procedimento, First Overshoot
+e comparação com o 10°/10°.
+</li>
+
+<li>
+<strong>Parte 6 — Dieudonné Spiral Test</strong><br>
+Steady Yaw Rate,
+Directional Stability
+e Hysteresis Loop.
+</li>
+
+<li>
+<strong>Parte 7 — Bech Reverse Spiral Test</strong><br>
+Constant Rate of Turn,
+Mean Rudder Angle
+e avaliação da instabilidade.
+</li>
+
+<li>
+<strong>Parte 8 — Pull-Out Test</strong><br>
+Decay da Rate of Turn,
+Residual Rate of Turn
+e Dynamic Stability.
+</li>
+
+<li>
+<strong>Parte 9 — Full Astern Stopping Test</strong><br>
+Track Reach,
+Head Reach,
+parada e critérios.
+</li>
+
+<li>
+<strong>Parte 10 — Ensaios e Estabilidade Dinâmica</strong><br>
+Relação entre os diferentes trials
+e as qualidades de controlabilidade.
+</li>
+
+<li>
+<strong>Parte 11 — Comparação Sistemática dos Ensaios</strong><br>
+Variáveis impostas,
+grandezas observadas,
+índices e limitações.
+</li>
+
+<li>
+<strong>Parte 12 — Critérios da MSC.137(76)</strong><br>
+Consolidação dos limites normativos
+de Turning, Zig-Zag e Stopping.
+</li>
+
+<li>
+<strong>Parte 13 — Interpretação Operacional</strong><br>
+Leitura dos resultados sob a perspectiva
+do Prático e do shiphandler.
+</li>
+
+<li>
+<strong>Parte 14 — Consolidação PSCPP</strong><br>
+Síntese técnica,
+glossário consolidado
+e pontos de atenção para a prova.
+</li>
+
+<li>
+<strong>Parte 15 — Questões de Revisão</strong><br>
+Questões normativas,
+conceituais,
+operacionais e de cálculo,
+com gabarito comentado.
+</li>
+
+</ol>
+
+</div>
 
 </section>
 
@@ -503,25 +775,47 @@ são determinadas e avaliadas.</strong>
 
 <!-- =========================================
      PARTE 1
-     FUNDAMENTOS DOS TESTES
 ========================================= -->
 
-<section
-class="abertura-parte"
->
+<section class="abertura-parte">
+
+<div class="widget">
 
 <h2>
-PARTE 1 — FUNDAMENTOS DOS TESTES
-DE MANOBRABILIDADE
+PARTE 1 — FUNDAMENTOS DOS TESTES DE MANOBRABILIDADE
 </h2>
 
 <p>
-<strong>
-Fundamentals of Manoeuvring Trials
-</strong>
+Esta parte estabelece a lógica fundamental
+dos ensaios de manobrabilidade,
+relacionando cada qualidade de manobra
+ao teste utilizado para investigá-la
+e às grandezas obtidas durante sua execução.
 </p>
 
+<p>
+Os conceitos de controlabilidade,
+estabilidade direcional,
+Turning Ability,
+Yaw Checking,
+Coursekeeping
+e Stopping Ability
+já estudados anteriormente serão retomados
+somente quando necessários para compreender
+a finalidade e a interpretação
+dos respectivos manoeuvring trials.
+</p>
+
+</div>
+
 </section>
+
+
+<!-- =========================================
+     PRIMEIRO TÓPICO DA PARTE 1
+     MANTENHA O CONTEÚDO JÁ EXISTENTE
+     DAQUI PARA BAIXO
+========================================= -->
 
 
 
