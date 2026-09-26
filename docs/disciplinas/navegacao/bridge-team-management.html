@@ -1,1 +1,1714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Bridge Team Management - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="bridge-team-management"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação em Águas Restritas</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+👥 Bridge Team Management
+</h2>
+
+<p>
+<strong>
+Bridge Team Management — BTM
+</strong>
+</p>
+
+<p>
+Estudo da organização e do gerenciamento da equipe
+do passadiço para a condução segura da navegação,
+considerando o emprego coordenado dos recursos
+humanos, técnicos e informacionais disponíveis
+a bordo.
+</p>
+
+<p>
+A abordagem desta aula será orientada para
+a aplicação prática dos princípios de
+<strong>Bridge Team Management</strong>
+na preparação, execução e monitoramento
+da navegação, especialmente em situações
+de maior carga de trabalho e durante
+a navegação em águas restritas e de praticagem.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação em Águas Restritas
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Bridge Team Management / BRM
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Bridge Team Management
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+NAVEGAÇÃO EM ÁGUAS RESTRITAS —
+BRIDGE TEAM MANAGEMENT
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="fundamentos-btm">
+Fundamentos do Bridge Team Management
+</li>
+
+<li data-progresso-topico="passage-appraisal">
+Passage Appraisal
+</li>
+
+<li data-progresso-topico="passage-planning">
+Passage Planning
+</li>
+
+<li data-progresso-topico="executing-passage">
+Executing the Passage / Voyage Plan
+</li>
+
+<li data-progresso-topico="monitoring-progress">
+Monitoring the Ship's Progress
+</li>
+
+<li data-progresso-topico="teamwork">
+Teamwork
+</li>
+
+<li data-progresso-topico="pilot-on-board">
+Navigating with a Pilot on Board
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Compreender os princípios fundamentais do
+<strong>Bridge Team Management</strong>.
+</li>
+
+<li>
+Reconhecer a importância da organização,
+coordenação e utilização adequada dos recursos
+disponíveis no passadiço.
+</li>
+
+<li>
+Identificar condições capazes de comprometer
+o desempenho da equipe e a segurança da navegação.
+</li>
+
+<li>
+Compreender o conceito de
+<strong>error chain</strong>
+e reconhecer fatores que podem contribuir
+para a formação de uma cadeia de erros.
+</li>
+
+<li>
+Relacionar planejamento, execução e monitoramento
+da derrota ao funcionamento coordenado
+da equipe do passadiço.
+</li>
+
+<li>
+Compreender a importância da comunicação,
+do monitoramento e da verificação cruzada
+durante a navegação.
+</li>
+
+<li>
+Compreender a integração do Prático
+à equipe do passadiço durante a
+<strong>pilotage</strong>.
+</li>
+
+<li>
+Interpretar a função do
+<strong>Master/Pilot Information Exchange</strong>
+no contexto do gerenciamento da equipe.
+</li>
+
+<li>
+Aplicar os princípios de BTM à condução
+segura do navio em águas restritas
+e de praticagem.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Bridge Team Management — A Practical Guide
+</h3>
+
+<p>
+<strong>A. J. Swift e T. J. Bailey —
+2nd Edition — The Nautical Institute.</strong>
+</p>
+
+<p>
+Fonte principal desta aula.
+</p>
+
+<p>
+Serão utilizados os capítulos:
+<strong>Bridge Team Management</strong>,
+<strong>Passage Appraisal</strong>,
+<strong>Passage Planning</strong>,
+<strong>Executing the Passage/Voyage Plan</strong>,
+<strong>Monitoring the Ship's Progress</strong>,
+<strong>Teamwork</strong>
+e
+<strong>Navigating with a Pilot on Board</strong>.
+</p>
+
+
+<hr>
+
+
+<h3>
+Bridge Procedures Guide — 6th Edition
+</h3>
+
+<p>
+<strong>
+International Chamber of Shipping — ICS.
+</strong>
+</p>
+
+<p>
+Referência complementar para a organização
+operacional do passadiço e para os procedimentos
+relacionados ao planejamento, execução,
+monitoramento e pilotagem.
+</p>
+
+<p>
+<strong>Capítulos utilizados:</strong>
+Chapter 2 — Effective Bridge Organisation;
+Chapter 3 — Passage Planning;
+Chapter 5 — Operation and Maintenance of Bridge Equipment;
+e Chapter 6 — Pilotage.
+</p>
+
+
+<hr>
+
+
+<h3>
+SOLAS — Chapter V
+</h3>
+
+<p>
+<strong>
+Safety of Navigation
+</strong>
+</p>
+
+<p>
+Referência normativa utilizada nos pontos
+relacionados à segurança da navegação
+e às obrigações pertinentes às operações
+desenvolvidas no passadiço.
+</p>
+
+
+<hr>
+
+
+<h3>
+Navegação: a Ciência e a Arte
+</h3>
+
+<p>
+<strong>
+Altineu Pires Miguens — Volumes I e III.
+</strong>
+</p>
+
+<p>
+Referência complementar utilizada somente
+nos assuntos diretamente relacionados
+à navegação em águas restritas tratados
+nesta aula.
+</p>
+
+
+<hr>
+
+
+<h3>
+Theory and Practices of Marine Pilotage
+</h3>
+
+<p>
+<strong>
+Santosha K. Nayak.
+</strong>
+</p>
+
+<p>
+Referência complementar para a aplicação
+dos princípios estudados ao ambiente
+de praticagem.
+</p>
+
+<p>
+Serão considerados especialmente os capítulos
+relacionados à entrada em águas de praticagem,
+posicionamento seguro no canal e manobra
+dentro dos limites portuários.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     DELIMITAÇÃO DO CONTEÚDO
+========================================= -->
+
+<section>
+
+<h2>🧭 Delimitação desta aula</h2>
+
+<div class="widget">
+
+<p>
+Esta aula estuda o
+<strong>gerenciamento da equipe do passadiço</strong>
+e a integração dos recursos disponíveis
+para a condução segura da navegação.
+</p>
+
+<p>
+Alguns assuntos abordados pelas publicações
+de referência possuem aulas próprias
+no Bridge Trainer PSCPP.
+</p>
+
+<div class="destaque">
+
+<h3>
+Princípio de não duplicação
+</h3>
+
+<p>
+Quando um assunto for necessário para compreender
+o funcionamento do
+<strong>Bridge Team Management</strong>,
+mas já tiver sido ou vier a ser desenvolvido
+de maneira aprofundada em outra aula,
+ele será apresentado aqui somente no nível
+necessário à compreensão de sua função
+dentro do BTM.
+</p>
+
+</div>
+
+<p>
+Assim, assuntos como
+<strong>Passage Planning</strong>,
+<strong>COLREG</strong>,
+<strong>RADAR</strong>,
+<strong>ECDIS</strong>,
+<strong>AIS/VTS</strong>,
+manobrabilidade e outros sistemas de navegação
+não serão novamente desenvolvidos integralmente
+nesta aula.
+</p>
+
+<p>
+O foco permanecerá na maneira pela qual
+esses recursos, informações e procedimentos
+são utilizados e coordenados pela
+<strong>bridge team</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1 — Fundamentos do Bridge Team Management</strong><br>
+Conceito, finalidade, gerenciamento da equipe,
+recursos disponíveis e cadeia de erros.
+</li>
+
+<li>
+<strong>Parte 2 — Passage Appraisal</strong><br>
+Avaliação das informações necessárias à preparação
+segura da viagem sob a perspectiva da bridge team.
+</li>
+
+<li>
+<strong>Parte 3 — Passage Planning</strong><br>
+Participação da equipe no planejamento da derrota,
+com foco nos aspectos diretamente relacionados ao BTM.
+</li>
+
+<li>
+<strong>Parte 4 — Executing the Passage/Voyage Plan</strong><br>
+Organização da equipe e utilização dos recursos
+durante a execução do plano.
+</li>
+
+<li>
+<strong>Parte 5 — Monitoring the Ship's Progress</strong><br>
+Monitoramento, verificação cruzada e acompanhamento
+do progresso do navio.
+</li>
+
+<li>
+<strong>Parte 6 — Teamwork</strong><br>
+Coordenação, comunicação, cooperação,
+liderança e desempenho da equipe.
+</li>
+
+<li>
+<strong>Parte 7 — Navigating with a Pilot on Board</strong><br>
+Integração do Prático à bridge team,
+Master/Pilot Information Exchange,
+responsabilidades e monitoramento.
+</li>
+
+<li>
+<strong>Parte 8 — Consolidação PSCPP</strong><br>
+Integração dos conceitos, pontos de atenção
+e questões de revisão.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARTE 1
+     FUNDAMENTOS DO BRIDGE TEAM MANAGEMENT
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<h2>
+Parte 1 — Fundamentos do Bridge Team Management
+</h2>
+
+<p>
+Antes de estudar o planejamento, a execução
+e o monitoramento de uma viagem, é necessário
+compreender por que o gerenciamento da equipe
+do passadiço constitui uma barreira essencial
+para a segurança da navegação.
+</p>
+
+<p>
+Nesta parte, o foco está na organização
+do trabalho coletivo, na utilização dos recursos
+disponíveis e na identificação de condições
+que podem favorecer o desenvolvimento
+de uma cadeia de erros.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     1. CONCEITO DE BRIDGE TEAM MANAGEMENT
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="fundamentos-btm"
+>
+
+<h2>
+1. Bridge Team Management
+</h2>
+
+<div class="widget">
+
+<p>
+A navegação segura não depende exclusivamente
+da capacidade técnica de uma única pessoa
+no passadiço.
+</p>
+
+<p>
+O navio é conduzido em um ambiente no qual
+diferentes pessoas, equipamentos, informações
+e procedimentos precisam funcionar de maneira
+coordenada.
+</p>
+
+<p>
+O
+<strong>Bridge Team Management — BTM</strong>
+trata justamente dessa utilização organizada
+dos recursos disponíveis para que a equipe
+possa conduzir e monitorar a navegação
+de maneira segura.
+</p>
+
+<div class="destaque">
+
+<h3>
+Ideia central
+</h3>
+
+<p>
+O passadiço deve funcionar como uma
+<strong>equipe</strong>,
+e não simplesmente como um conjunto
+de indivíduos executando tarefas isoladas.
+</p>
+
+</div>
+
+<p>
+Isso significa que informações importantes
+devem ser compartilhadas, ações precisam
+ser compreendidas e acompanhadas e o progresso
+do navio deve permanecer sob monitoramento.
+</p>
+
+<p>
+A organização da equipe cria, portanto,
+camadas adicionais de verificação.
+Um erro individual não deve necessariamente
+evoluir para uma situação perigosa se outro
+integrante da equipe puder percebê-lo,
+questioná-lo e contribuir para sua correção.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     2. O PASSADIÇO COMO SISTEMA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="bridge-team-sistema"
+>
+
+<h2>
+2. O passadiço como sistema integrado
+</h2>
+
+<div class="widget">
+
+<p>
+O conceito de
+<strong>bridge team</strong>
+deve ser compreendido de maneira funcional.
+</p>
+
+<p>
+A segurança da navegação resulta da interação
+entre pessoas, informações, equipamentos,
+procedimentos e condições externas.
+</p>
+
+<p>
+Nenhum desses elementos deve ser analisado
+completamente de forma isolada.
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+⚓ Bridge Team
+</h3>
+
+<p>
+<strong>Bridge:</strong>
+passadiço.
+</p>
+
+<p>
+<strong>Team:</strong>
+equipe.
+</p>
+
+<p>
+No contexto operacional,
+<strong>bridge team</strong>
+designa a equipe envolvida na condução
+e no monitoramento da navegação no passadiço.
+</p>
+
+</div>
+
+<p>
+A composição efetiva dessa equipe pode variar
+conforme a fase da viagem, as condições de
+navegação e a carga de trabalho.
+</p>
+
+<p>
+Consequentemente, o gerenciamento adequado
+não consiste apenas em determinar
+<strong>quem está no passadiço</strong>,
+mas também em assegurar que as funções
+necessárias estejam sendo desempenhadas
+e que as informações relevantes circulem
+entre os integrantes.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     3. RECURSOS DA BRIDGE TEAM
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="recursos-bridge-team"
+>
+
+<h2>
+3. Recursos disponíveis à Bridge Team
+</h2>
+
+<div class="widget">
+
+<p>
+O gerenciamento da equipe envolve o emprego
+coordenado dos recursos disponíveis
+para apoiar a tomada de decisão e
+o controle seguro da navegação.
+</p>
+
+<p>
+Esses recursos não se limitam aos equipamentos
+eletrônicos existentes no passadiço.
+</p>
+
+<p>
+Incluem também:
+</p>
+
+<ul>
+
+<li>
+as pessoas que participam da condução
+e do monitoramento da navegação;
+</li>
+
+<li>
+as informações disponíveis para a equipe;
+</li>
+
+<li>
+os equipamentos e sistemas de navegação;
+</li>
+
+<li>
+os procedimentos estabelecidos;
+</li>
+
+<li>
+o plano da viagem;
+</li>
+
+<li>
+e as informações provenientes de fontes externas
+relevantes à navegação.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠️ Atenção do Prático
+</h3>
+
+<p>
+Quando o Prático embarca, ele passa a representar
+uma importante fonte adicional de conhecimento
+e informação para a condução em águas
+de praticagem.
+</p>
+
+<p>
+Entretanto, a presença do Prático não elimina
+a necessidade de funcionamento da
+<strong>bridge team</strong>.
+</p>
+
+<p>
+A integração entre Prático, Comandante
+e equipe será estudada especificamente
+na Parte 7 desta aula.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     4. GERENCIAMENTO DA EQUIPE
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="team-management"
+>
+
+<h2>
+4. Team Management
+</h2>
+
+<div class="widget">
+
+<p>
+O gerenciamento eficiente exige que cada integrante
+compreenda sua função dentro da operação
+e mantenha consciência das atividades relevantes
+desenvolvidas pelos demais membros da equipe.
+</p>
+
+<p>
+A distribuição das tarefas deve permitir
+que as funções essenciais de navegação
+continuem sendo realizadas sem que um único
+integrante fique desnecessariamente
+sobrecarregado.
+</p>
+
+<p>
+Ao mesmo tempo, a divisão do trabalho
+não pode provocar isolamento de informações.
+</p>
+
+<div class="destaque">
+
+<h3>
+Distribuir tarefas não significa
+fragmentar a consciência da situação
+</h3>
+
+<p>
+Um integrante pode estar executando
+uma tarefa específica, mas as informações
+que afetem a segurança da navegação precisam
+ser comunicadas à equipe quando pertinentes.
+</p>
+
+</div>
+
+<p>
+Essa lógica permite que diferentes integrantes
+funcionem também como barreiras contra
+falhas individuais.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     5. TREINAMENTO E COACHING
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="training-coaching"
+>
+
+<h2>
+5. Training and Coaching
+</h2>
+
+<div class="widget">
+
+<p>
+A formação de uma equipe eficiente não depende
+somente do conhecimento individual de seus membros.
+</p>
+
+<p>
+A experiência deve ser compartilhada,
+e integrantes menos experientes precisam
+desenvolver progressivamente sua capacidade
+de reconhecer situações, interpretar informações
+e participar das decisões relacionadas
+à navegação.
+</p>
+
+<p>
+Nesse contexto, o
+<strong>coaching</strong>
+representa a orientação realizada durante
+o desenvolvimento profissional do integrante
+da equipe.
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+📘 Training x Coaching
+</h3>
+
+<p>
+<strong>Training:</strong>
+treinamento destinado ao desenvolvimento
+de conhecimentos e habilidades.
+</p>
+
+<p>
+<strong>Coaching:</strong>
+orientação e acompanhamento destinados
+ao aperfeiçoamento do desempenho
+e da experiência profissional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     6. BEM-ESTAR E MORAL
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="well-being-morale"
+>
+
+<h2>
+6. Well-being e Morale
+</h2>
+
+<div class="widget">
+
+<p>
+O desempenho da equipe também é influenciado
+pelas condições humanas em que o trabalho
+é realizado.
+</p>
+
+<p>
+O gerenciamento da bridge team deve reconhecer
+que fatores capazes de degradar o desempenho
+das pessoas podem também degradar
+a segurança da navegação.
+</p>
+
+<p>
+O conceito de
+<strong>well-being</strong>
+está relacionado às condições de bem-estar
+dos integrantes da equipe, enquanto
+<strong>morale</strong>
+se relaciona ao estado de confiança,
+motivação e disposição do grupo.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠️ Atenção operacional
+</h3>
+
+<p>
+Fatores humanos específicos, como fadiga,
+pressão e distração, possuem tratamento próprio
+em outras partes do programa do PSCPP.
+</p>
+
+<p>
+Nesta aula eles serão considerados somente
+na medida em que afetem o funcionamento
+da bridge team, evitando duplicação
+desnecessária desses conteúdos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     7. ERROR CHAIN
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="error-chain"
+>
+
+<h2>
+7. Error Chain — Cadeia de Erros
+</h2>
+
+<div class="widget">
+
+<p>
+Um conceito particularmente importante
+no estudo do Bridge Team Management é o de
+<strong>error chain</strong>.
+</p>
+
+<p>
+Um acidente de navegação não precisa resultar
+de um único erro isolado.
+</p>
+
+<p>
+Uma sequência de condições inadequadas,
+informações mal interpretadas, falhas de comunicação
+ou decisões não verificadas pode desenvolver-se
+progressivamente até produzir uma situação perigosa.
+</p>
+
+<div class="destaque">
+
+<h3>
+🔗 Cadeia de erros
+</h3>
+
+<p>
+A importância operacional do conceito está
+em reconhecer que uma cadeia em desenvolvimento
+pode ser
+<strong>interrompida</strong>.
+</p>
+
+<p>
+Quanto mais cedo a equipe reconhecer
+um desvio, uma inconsistência ou uma informação
+que não corresponda ao comportamento esperado,
+maior será a oportunidade de reavaliar
+a situação antes que novos erros se acumulem.
+</p>
+
+</div>
+
+<p>
+Por isso, o funcionamento adequado da equipe
+cria oportunidades para detectar problemas
+antes que eles evoluam para um acidente.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     8. INDÍCIOS DE UMA CADEIA DE ERROS
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="indicios-error-chain"
+>
+
+<h2>
+8. Indícios de desenvolvimento de uma Error Chain
+</h2>
+
+<div class="widget">
+
+<p>
+A literatura de Bridge Team Management chama
+atenção para determinadas condições que podem
+indicar deterioração do gerenciamento
+da navegação.
+</p>
+
+<p>
+Entre os aspectos particularmente relevantes
+estão situações envolvendo:
+</p>
+
+<ul>
+
+<li>
+<strong>ambiguity</strong> —
+informações ou situações ambíguas;
+</li>
+
+<li>
+<strong>distraction</strong> —
+desvio da atenção de tarefas importantes;
+</li>
+
+<li>
+<strong>inadequacy and confusion</strong> —
+inadequação ou confusão diante da situação;
+</li>
+
+<li>
+<strong>communications breakdown</strong> —
+falha ou ruptura da comunicação;
+</li>
+
+<li>
+problemas relacionados ao
+<strong>con</strong>
+ou ao serviço de vigia;
+</li>
+
+<li>
+<strong>non-compliance with the passage plan</strong> —
+não conformidade com o plano da viagem;
+</li>
+
+<li>
+<strong>procedural violation</strong> —
+violação de procedimentos.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠️ Atenção do Prático
+</h3>
+
+<p>
+O valor desses sinais está menos em
+memorizá-los como uma lista e mais em
+reconhecê-los durante a operação.
+</p>
+
+<p>
+Uma informação ambígua, uma alteração
+não explicada do plano, uma comunicação
+que não foi compreendida ou uma discrepância
+não investigada podem indicar que as barreiras
+de segurança da equipe estão enfraquecendo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     9. COMUNICAÇÃO COMO BARREIRA
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="comunicacao-barreira"
+>
+
+<h2>
+9. Comunicação como barreira de segurança
+</h2>
+
+<div class="widget">
+
+<p>
+A informação só se torna efetivamente útil
+à equipe quando chega às pessoas que precisam
+dela e é compreendida de maneira adequada.
+</p>
+
+<p>
+Uma falha de comunicação pode impedir
+que outro integrante reconheça uma situação
+perigosa ou perceba que a execução está
+se afastando do resultado esperado.
+</p>
+
+<p>
+Por essa razão, a comunicação dentro
+da bridge team deve apoiar:
+</p>
+
+<ul>
+
+<li>
+a compreensão das intenções;
+</li>
+
+<li>
+a coordenação das ações;
+</li>
+
+<li>
+o compartilhamento de informações relevantes;
+</li>
+
+<li>
+o acompanhamento das decisões;
+</li>
+
+<li>
+e a identificação de discrepâncias.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>
+Comunicação e verificação
+</h3>
+
+<p>
+Comunicar não significa apenas transmitir
+uma ordem.
+</p>
+
+<p>
+No contexto do BTM, a comunicação também
+permite que os demais integrantes compreendam
+o que está acontecendo e possam contribuir
+para o monitoramento da operação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     10. SAFE NAVIGATION
+========================================= -->
+
+<section
+    class="topico-aula"
+    data-topico-id="safe-navigation-btm"
+>
+
+<h2>
+10. Safe Navigation — visão integrada
+</h2>
+
+<div class="widget">
+
+<p>
+Os princípios estudados nesta primeira parte
+convergem para um objetivo comum:
+<strong>safe navigation</strong>.
+</p>
+
+<p>
+Planejamento, equipamentos, conhecimento técnico
+e experiência continuam essenciais, mas sua
+efetividade depende também da maneira como
+esses recursos são utilizados pela equipe.
+</p>
+
+<p>
+O Bridge Team Management fornece uma estrutura
+para que a navegação seja continuamente
+preparada, executada, observada e,
+quando necessário, corrigida.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Durante uma navegação em águas restritas,
+o navio pode estar simultaneamente submetido
+a exigências de posicionamento, tráfego,
+controle de velocidade, comunicações,
+monitoramento de equipamentos e preparação
+para uma manobra.
+</p>
+
+<p>
+O princípio de BTM não é fazer uma única pessoa
+executar todas essas atividades.
+</p>
+
+<p>
+É organizar os recursos disponíveis
+de maneira que a equipe mantenha uma compreensão
+coerente da situação e preserve a capacidade
+de detectar e corrigir desvios.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO — PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+📘 Glossário técnico — Parte 1
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<p>
+<strong>Bridge Team Management — BTM:</strong><br>
+Gerenciamento da equipe do passadiço.
+</p>
+
+<p>
+<strong>Bridge Team:</strong><br>
+Equipe do passadiço envolvida na condução
+e no monitoramento da navegação.
+</p>
+
+<p>
+<strong>Team Management:</strong><br>
+Gerenciamento da equipe.
+</p>
+
+<p>
+<strong>Training:</strong><br>
+Treinamento.
+</p>
+
+<p>
+<strong>Coaching:</strong><br>
+Orientação e acompanhamento voltados
+ao desenvolvimento do integrante da equipe.
+</p>
+
+<p>
+<strong>Well-being:</strong><br>
+Bem-estar.
+</p>
+
+<p>
+<strong>Morale:</strong><br>
+Moral, motivação e disposição da equipe.
+</p>
+
+<p>
+<strong>Error Chain:</strong><br>
+Cadeia de erros; sequência de condições
+ou falhas que pode evoluir para uma
+situação perigosa ou acidente.
+</p>
+
+<p>
+<strong>Ambiguity:</strong><br>
+Ambiguidade.
+</p>
+
+<p>
+<strong>Distraction:</strong><br>
+Distração ou desvio da atenção.
+</p>
+
+<p>
+<strong>Communications Breakdown:</strong><br>
+Falha ou ruptura da comunicação.
+</p>
+
+<p>
+<strong>Passage Plan:</strong><br>
+Plano da viagem ou plano de derrota.
+</p>
+
+<p>
+<strong>Procedural Violation:</strong><br>
+Violação de procedimento.
+</p>
+
+<p>
+<strong>Safe Navigation:</strong><br>
+Navegação segura.
+</p>
+
+<p>
+<strong>Con:</strong><br>
+Condução ou controle operacional do navio
+por quem está dirigindo sua movimentação
+naquele momento.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FECHAMENTO DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+🧭 Síntese da Parte 1
+</h2>
+
+<div class="widget">
+
+<p>
+O princípio fundamental do
+<strong>Bridge Team Management</strong>
+é que a segurança da navegação depende
+não apenas da competência individual,
+mas também da maneira como os recursos
+disponíveis são organizados e utilizados
+pela equipe.
+</p>
+
+<p>
+Uma bridge team eficiente compartilha
+informações relevantes, distribui adequadamente
+as tarefas, acompanha a execução das ações
+e cria oportunidades para que erros sejam
+identificados antes de se transformarem
+em uma cadeia capaz de comprometer
+a segurança da navegação.
+</p>
+
+<div class="destaque">
+
+<h3>
+🎯 Para guardar
+</h3>
+
+<p>
+<strong>
+O objetivo não é eliminar a possibilidade
+de erro humano, mas impedir que um erro
+não detectado se desenvolva livremente
+até produzir consequências perigosas.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     IMPORTANTE:
+     A PARTE 2 — PASSAGE APPRAISAL
+     DEVE SER COLADA IMEDIATAMENTE ABAIXO DESTE COMENTÁRIO.
+
+     NÃO FECHAR </main> OU </body> NESTE PONTO.
+===================================================== -->
