@@ -11703,6 +11703,1554 @@ Dica PSCPP: grande navio + resposta lenta → antecipação da manobra e altera�
             pagina: ""
         }
     ]
+},
+
+ // =====================================
+// TESTES DE MANOBRABILIDADE
+// QUESTÕES MAN-0211 A MAN-0220
+// =====================================
+
+
+// =====================================
+// QUESTÃO MAN-0211
+// =====================================
+
+{
+    id: "MAN-0211",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Turning Circle Test — Advance e Tactical Diameter",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante as provas de mar em água profunda, um navio porta-contêineres de 240 metros de comprimento (L) realiza o ensaio de curva de giro (Turning Circle Test) com o leme carregado a 35° para boreste, partindo da velocidade de teste. Para atender ao critério quantitativo da Resolução IMO MSC.137(76), o Avanço (Advance) e o Diâmetro Tático (Tactical Diameter) não podem exceder, respectivamente:
+`,
+
+    alternativas: {
+        A: "3,0 L e 4,5 L.",
+        B: "4,5 L e 5,0 L.",
+        C: "2,5 L e 5,0 L.",
+        D: "4,0 L e 6,0 L.",
+        E: "5,0 L e 7,5 L."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Resolução IMO MSC.137(76), item 5.3.1: na curva de giro em água profunda, o Advance não deve exceder 4,5 L e o Tactical Diameter não deve exceder 5,0 L.
+
+A alternativa A apresenta limites diferentes. A alternativa C utiliza 2,5 L, valor associado ao critério de capacidade de giro inicial. D e E apresentam limites superiores aos estabelecidos.
+
+Dica PSCPP: Turning Circle → Advance ≤ 4,5 L / Tactical Diameter ≤ 5,0 L.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Item 5.3.1 — Turning ability",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0212
+// =====================================
+
+{
+    id: "MAN-0212",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Initial Turning Ability",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O ensaio de capacidade de giro inicial (Initial Turning Ability) mede a rapidez de resposta do navio no início de uma guinada. Segundo a Resolução IMO MSC.137(76), ao aplicar um ângulo de leme de 10° para bombordo ou boreste, a distância percorrida pela embarcação até que o rumo tenha variado 10° não deve exceder:
+`,
+
+    alternativas: {
+        A: "1,5 L.",
+        B: "2,5 L.",
+        C: "3,5 L.",
+        D: "4,5 L.",
+        E: "5,0 L."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Resolução IMO MSC.137(76), item 5.3.2: com leme de 10° para qualquer bordo, a distância percorrida até que o rumo varie 10° não deve exceder 2,5 L.
+
+As alternativas A, C, D e E alteram a distância limite regulamentada.
+
+Dica PSCPP: leme 10° / variação de rumo 10° → distância ≤ 2,5 L.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Item 5.3.2 — Initial turning ability",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0213
+// =====================================
+
+{
+    id: "MAN-0213",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Full Astern Stopping Test — Track Reach",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A Resolução IMO MSC.137(76) estabelece que a distância percorrida ao longo da derrota (Track Reach) no ensaio de parada total em emergência (Full Astern Stopping Test) não deve exceder 15 comprimentos do navio (15 L). No entanto, para navios de grande deslocamento, a própria norma autoriza expressamente a Administração a estender esse limite para até:
+`,
+
+    alternativas: {
+        A: "18 L.",
+        B: "20 L.",
+        C: "25 L.",
+        D: "30 L.",
+        E: "12 L."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Resolução IMO MSC.137(76), item 5.3.3: a regra geral do Track Reach no ensaio de parada a toda força à ré é 15 L. A exceção apresentada permite que a Administração autorize até 20 L para navios de grande deslocamento.
+
+18 L e 25 L são valores distratores. 30 L excede o limite apresentado e 12 L não corresponde à exceção.
+
+Dica PSCPP: Full Astern Stopping Test → regra geral 15 L / exceção de grande deslocamento 20 L.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Item 5.3.3 — Stopping ability",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0214
+// =====================================
+
+{
+    id: "MAN-0214",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Zig-Zag 10°/10° — First Overshoot Angle",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No ensaio de Zig-Zag de 10°/10°, o limite do primeiro ângulo de ultrapassagem (First Overshoot Angle) depende do parâmetro temporal L/V, onde L é o comprimento em metros e V é a velocidade em m/s. Para um navio onde 10 ≤ L/V < 30 segundos, o valor limite do primeiro overshoot angle é:
+`,
+
+    alternativas: {
+        A: "(5 + 0,5 · (L/V))°.",
+        B: "(10 + 0,5 · (L/V))°.",
+        C: "(15 + (L/V))°.",
+        D: "10°.",
+        E: "25°."
+    },
+
+    resposta: "A",
+
+    comentario: `
+Resolução IMO MSC.137(76: para o Zig-Zag 10°/10°, na faixa 10 ≤ L/V < 30 s, o limite do primeiro overshoot angle é (5 + 0,5 · (L/V))°.
+
+A alternativa B altera o termo constante. C altera os fatores. D corresponde ao limite indicado para outra faixa de L/V e E corresponde ao valor utilizado como referência no Zig-Zag 20°/20°.
+
+Dica PSCPP: L/V entre 10 e 30 s no Zig-Zag 10/10 → 5 + 0,5(L/V).
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Zig-Zag Manoeuvre — First Overshoot Angle",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0215
+// =====================================
+
+{
+    id: "MAN-0215",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Zig-Zag 20°/20° — First Overshoot Angle",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No ensaio de Zig-Zag de 20°/20°, a Resolução IMO MSC.137(76) estabelece um valor limite fixo para o primeiro ângulo de ultrapassagem (First Overshoot Angle), independentemente da razão L/V. Esse valor máximo permitido é de:
+`,
+
+    alternativas: {
+        A: "10°.",
+        B: "15°.",
+        C: "20°.",
+        D: "25°.",
+        E: "30°."
+    },
+
+    resposta: "D",
+
+    comentario: `
+Resolução IMO MSC.137(76): no ensaio de Zig-Zag de 20°/20°, o primeiro overshoot angle não deve exceder 25°.
+
+As alternativas A, B, C e E apresentam valores diferentes daquele estabelecido para o ensaio.
+
+Dica PSCPP: Zig-Zag 20/20 → First Overshoot Angle ≤ 25°.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Zig-Zag 20°/20° Manoeuvre",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0216
+// =====================================
+
+{
+    id: "MAN-0216",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Condições padrão dos ensaios IMO",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para que os resultados dos ensaios de manobrabilidade de um navio sejam considerados válidos frente aos critérios da Resolução IMO MSC.137(76), as provas de mar devem ser conduzidas sob condições padronizadas. Assinale a alternativa que traz uma condição normativa correta:
+`,
+
+    alternativas: {
+        A: "Profundidade de água rasa com h/T ≤ 1,2.",
+        B: "Vento forte constante de Beaufort força 6 atuando pela bochecha.",
+        C: "Embarcação na condição de calado de verão completo (full load) e em apromado (even keel).",
+        D: "Velocidade inicial de teste equivalente a 50% da Potência Contínua Máxima (MCR).",
+        E: "Trim pela proa correspondente a 2% do comprimento entre perpendiculares."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Resolução IMO MSC.137(76) e suas notas explicativas: as provas de manobrabilidade devem ser realizadas sob condições padronizadas, incluindo a condição de carregamento completo no calado de verão e condição de even keel.
+
+Água rasa e vento forte não representam as condições padrão indicadas. A alternativa D reduz indevidamente a condição de teste e E estabelece trim pela proa.
+
+Dica PSCPP: condição padrão IMO → água profunda + condição carregada de verão + even keel.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Test Conditions",
+            pagina: ""
+        },
+        {
+            publicacao: "MSC/Circ.1053 — Explanatory Notes to the Standards for Ship Manoeuvrability",
+            capitulo: "Test Conditions",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0217
+// =====================================
+
+{
+    id: "MAN-0217",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Pilot Card, Wheelhouse Poster e Maneuvering Booklet",
+
+    edital: "Informações de manobra do navio",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A Resolução IMO A.601(15) estabelece a prestação de informações de manobra a bordo. Sobre o Pilot Card, o Wheelhouse Poster e o Maneuvering Booklet, assinale a afirmativa correta:
+`,
+
+    alternativas: {
+        A: "O Pilot Card é um quadro permanente afixado no passadiço com curvas de giro em todas as condições de lastro.",
+        B: "O Wheelhouse Poster é preenchido pelo Prático logo após o embarque com os dados atuais da praticagem.",
+        C: "O Maneuvering Booklet é exposto na parede do passadiço para consulta rápida do timoneiro.",
+        D: "O Pilot Card é preenchido pelo Comandante antes da manobra, fornecendo ao Prático dados imediatos sobre calados atuais, trim, propulsão e equipamentos.",
+        E: "O Wheelhouse Poster é uma brochura confidencial mantida nos arquivos da praça de máquinas."
+    },
+
+    resposta: "D",
+
+    comentario: `
+Resolução IMO A.601(15): o Pilot Card apresenta informações operacionais atuais do navio para utilização no intercâmbio com o Prático, incluindo condição de carregamento, calados, características de propulsão e governo.
+
+O Wheelhouse Poster apresenta informações permanentes de manobra no passadiço. O Maneuvering Booklet reúne informações mais detalhadas sobre as características de manobra do navio.
+
+Dica PSCPP:
+Pilot Card → situação operacional atual.
+Wheelhouse Poster → informação permanente e de consulta rápida.
+Maneuvering Booklet → informação detalhada de manobra.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information on Board Ships",
+            capitulo: "Pilot Card, Wheelhouse Poster and Maneuvering Booklet",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0218
+// =====================================
+
+{
+    id: "MAN-0218",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Dieudonné Spiral Test — Hysteresis Loop",
+
+    edital: "Testes de estabilidade direcional",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No ensaio de espiral direta de Dieudonné, ao plotar a taxa de guinada adimensionalizada em função do ângulo de leme, a presença de uma "laça de histerese" (hysteresis loop) indica que o navio apresenta:
+`,
+
+    alternativas: {
+        A: "Estabilidade direcional positiva com controles fixos.",
+        B: "Instabilidade direcional com controles fixos.",
+        C: "Estabilidade posicional no plano horizontal.",
+        D: "Ausência total de resistência viscosa no casco.",
+        E: "Estol do leme em ângulos inferiores a 5°."
+    },
+
+    resposta: "B",
+
+    comentario: `
+PNA Vol. III e as notas explicativas aos padrões de manobrabilidade: a presença de hysteresis loop na espiral de Dieudonné evidencia instabilidade direcional com controles fixos.
+
+A alternativa A apresenta o comportamento oposto. C, D e E tratam de fenômenos diferentes daquele identificado pelo ensaio.
+
+Dica PSCPP: hysteresis loop na espiral de Dieudonné → instabilidade direcional.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Direct Spiral Test",
+            pagina: ""
+        },
+        {
+            publicacao: "MSC/Circ.1053 — Explanatory Notes to the Standards for Ship Manoeuvrability",
+            capitulo: "Directional Stability",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0219
+// =====================================
+
+{
+    id: "MAN-0219",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Bech Reverse Spiral Test",
+
+    edital: "Testes de estabilidade direcional",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A principal vantagem técnica do ensaio de espiral reversa de Bech sobre o ensaio de espiral direta de Dieudonné é:
+`,
+
+    alternativas: {
+        A: "Dispensa do uso do hélice durante o teste.",
+        B: "Capacidade de mapear os pontos internos da laça de histerese em navios instáveis ao manter uma taxa de guinada constante e medir o leme médio.",
+        C: "Eliminação da necessidade de medição do rumo e da velocidade.",
+        D: "Aplicação exclusiva para embarcações de alta velocidade (HSC).",
+        E: "Possibilidade de execução em canais com largura menor que 1,0 L."
+    },
+
+    resposta: "B",
+
+    comentario: `
+PNA Vol. III: na espiral reversa de Bech, controla-se o navio para manter uma taxa de guinada constante e mede-se o ângulo médio de leme necessário. Esse procedimento permite mapear pontos internos da região de histerese de um navio direcionalmente instável.
+
+A, C, D e E atribuem ao ensaio características que não correspondem à sua finalidade.
+
+Dica PSCPP: Bech Reverse Spiral Test → permite investigar o interior da hysteresis loop.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Reverse Spiral Test",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0220
+// =====================================
+
+{
+    id: "MAN-0220",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Pullout Test",
+
+    edital: "Testes de estabilidade direcional",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No ensaio de Pullout, o leme é mantido defletido até a estabilização da guinada e então trazido rapidamente para a posição a meio (0°). Se o navio for direcionalmente estável, a taxa de guinada após o leme retornar a meio deverá:
+`,
+
+    alternativas: {
+        A: "Permanecer no valor máximo atingido.",
+        B: "Aumentar continuamente no bordo oposto.",
+        C: "Decair progressivamente até atingir o valor zero.",
+        D: "Oscilar sem amortecimento entre +15°/min e -15°/min.",
+        E: "Estabilizar em um valor fixo diferente de zero."
+    },
+
+    resposta: "C",
+
+    comentario: `
+PNA Vol. III: no Pullout Test, depois de o leme ser colocado a meio, um navio direcionalmente estável apresenta redução progressiva da taxa de guinada até zero.
+
+Uma taxa residual diferente de zero é indicativa de comportamento incompatível com a estabilidade direcional positiva descrita.
+
+Dica PSCPP: Pullout + navio estável → yaw rate decai para ZERO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Pullout Test",
+            pagina: ""
+        }
+    ]
+},
+
+ // =====================================
+// TESTES DE MANOBRABILIDADE
+// QUESTÕES MAN-0221 A MAN-0230
+// =====================================
+
+
+// =====================================
+// QUESTÃO MAN-0221
+// =====================================
+
+{
+    id: "MAN-0221",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Full Astern Stopping Test — Track Reach",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+During the full astern stopping trial, the total distance measured along the vessel's actual path from the moment the order "Full Astern" is given until the ship comes to a complete stop relative to the water is defined by IMO Res. MSC.137(76) as:
+`,
+
+    alternativas: {
+        A: "Head Reach.",
+        B: "Track Reach.",
+        C: "Side Track.",
+        D: "Tactical Diameter.",
+        E: "Advance."
+    },
+
+    resposta: "B",
+
+    comentario: `
+IMO Res. MSC.137(76: Track Reach is defined as the distance traveled along the vessel's actual path from the moment "Full Astern" is executed until the vessel comes to a complete stop.
+
+Head Reach is measured along the original course direction. Side Track represents lateral displacement. Tactical Diameter and Advance are turning-circle parameters.
+
+Dica PSCPP: distância ao longo da trajetória durante a parada = Track Reach.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Stopping manoeuvre — terminology",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0222
+// =====================================
+
+{
+    id: "MAN-0222",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Full Astern Stopping Test — Side Track",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+In a full astern stopping test of a single-screw ship with a right-handed fixed-pitch propeller, the lateral distance perpendicular to the initial course line, measured when the ship comes to a complete stop, is known as:
+`,
+
+    alternativas: {
+        A: "Advance.",
+        B: "Track Reach.",
+        C: "Side Track.",
+        D: "Transfer.",
+        E: "Stopping Diameter."
+    },
+
+    resposta: "C",
+
+    comentario: `
+According to the terminology adopted in the supplied material, Side Track is the lateral distance perpendicular to the initial heading line measured at the final stopping position.
+
+Advance and Transfer are turning-circle parameters. Track Reach refers to the distance along the stopping trajectory.
+
+Dica PSCPP: desvio lateral perpendicular durante a parada = Side Track.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Stopping manoeuvre — terminology",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Stopping Manoeuvres",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0223
+// =====================================
+
+{
+    id: "MAN-0223",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Zig-Zag 10°/10° — Second Overshoot Angle",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+In the standard 10°/10° Zig-Zag trial (Kempf Test), the "second overshoot angle" refers to the heading deviation beyond the second execute. According to IMO Res. MSC.137(76), for ships with L/V ≥ 10 seconds, the second overshoot angle must not exceed:
+`,
+
+    alternativas: {
+        A: "10°.",
+        B: "(15 + 0.75 · (L/V))°.",
+        C: "25°.",
+        D: "(25 + 0.8 · (L/V))°.",
+        E: "32°."
+    },
+
+    resposta: "D",
+
+    comentario: `
+According to the supplied question set, for L/V ≥ 10 s the second overshoot angle in the 10°/10° Zig-Zag trial must not exceed (25 + 0.8 · (L/V))°.
+
+The remaining alternatives use values or coefficients different from the criterion presented.
+
+Dica PSCPP: 2º Overshoot no Zig-Zag 10/10, para L/V ≥ 10 s → 25 + 0,8(L/V).
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Zig-Zag Manoeuvre — Second Overshoot Angle",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0224
+// =====================================
+
+{
+    id: "MAN-0224",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Turning Circle Test — Tactical Diameter",
+
+    edital: "Testes e ensaios de manobrabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+During a turning circle trial, the distance measured perpendicular to the original heading line from the point of rudder execute to the point where the vessel's heading has changed by 180 degrees is called:
+`,
+
+    alternativas: {
+        A: "Advance.",
+        B: "Transfer.",
+        C: "Tactical Diameter.",
+        D: "Final Turning Diameter.",
+        E: "Kick."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Tactical Diameter is the distance measured perpendicular to the original heading line from the rudder execute point to the position reached when the vessel's heading has changed by 180°.
+
+Advance is measured in the original-course direction to the 90° heading change. Transfer is the perpendicular displacement associated with the 90° heading change. Final Turning Diameter relates to the established steady turn.
+
+Dica PSCPP: perpendicular à derrota original quando Δψ = 180° → Tactical Diameter.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Turning Circle",
+            pagina: ""
+        },
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Turning Circle",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0225
+// =====================================
+
+{
+    id: "MAN-0225",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Environmental Correction of Manoeuvring Trials",
+
+    edital: "Condições e correções dos ensaios de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+According to IMO MSC.1/Circ.1053, when maneuvering trials are conducted in non-standard environmental conditions (such as significant wind or current), which method should be used to verify compliance with MSC.137(76)?
+`,
+
+    alternativas: {
+        A: "The trial results are automatically invalidated with no possibility of correction.",
+        B: "Validated mathematical models or simulation techniques must be applied to correct the raw trial data to standard conditions.",
+        C: "The allowable IMO criteria limits are doubled.",
+        D: "The pilot on duty assumes personal responsibility for certifying compliance.",
+        E: "The ship's draft is artificially adjusted in the mathematical report."
+    },
+
+    resposta: "B",
+
+    comentario: `
+According to the supplied material based on IMO MSC.1/Circ.1053, when trials are performed under non-standard environmental conditions, validated mathematical models or simulation techniques may be used to correct the measured data to the applicable standard conditions.
+
+The criteria are not automatically doubled, nor is compliance transferred to the pilot.
+
+Dica PSCPP: environmental effects on trials → correction to standard conditions using validated analytical/model/simulation procedures.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "MSC/Circ.1053 — Explanatory Notes to the Standards for Ship Manoeuvrability",
+            capitulo: "Environmental Conditions and Corrections",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Standard test conditions",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0226
+// =====================================
+
+{
+    id: "MAN-0226",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Turning Circle Test — Shallow Water Effects",
+
+    edital: "Influência de águas rasas nos testes de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao comparar os resultados de uma curva de giro realizada em águas rasas (h/T ≤ 1,2) com a mesma prova em águas profundas, observa-se hidrodinamicamente que:
+`,
+
+    alternativas: {
+        A: "O Diâmetro Tático diminui pela metade e a perda de velocidade é muito maior.",
+        B: "O Diâmetro Tático aumenta significativamente e a perda de velocidade durante o giro é menor.",
+        C: "O Avanço diminui e o Ponto Pivô recua para o espelho de popa.",
+        D: "A taxa de guinada aumenta proporcionalmente ao quadrado da profundidade.",
+        E: "A estabilidade de curso é totalmente destruída."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido, em águas rasas o aumento de massa adicionada e a restrição do escoamento aumentam a resistência do navio ao início da guinada. Como consequência, o Tactical Diameter aumenta, enquanto a perda de velocidade durante a curva é menor do que em águas profundas.
+
+A alternativa A inverte os efeitos. C, D e E não representam o comportamento apresentado.
+
+Dica PSCPP: águas rasas → Tactical Diameter AUMENTA / perda de velocidade na curva DIMINUI.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Shallow Water Effects",
+            pagina: ""
+        },
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Shallow Water Effects",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0227
+// =====================================
+
+{
+    id: "MAN-0227",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Man Overboard — Williamson Turn",
+
+    edital: "Manobras especiais e testes de manobra",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No ensaio de manobra de Homem ao Mar, a Curva de Williamson (Williamson Turn) é executada carregando o leme totalmente para o bordo da vítima até a proa variar 60°, invertendo-se então o leme para o bordo oposto. Essa manobra é especificamente recomendada para qual situação operacional?
+`,
+
+    alternativas: {
+        A: "Ação Imediata (Immediate Action), onde a vítima é vista caindo da asa do passadiço.",
+        B: "Ação Retardada (Delayed Action), onde uma pessoa é informada como perdida pouco tempo após o ocorrido.",
+        C: "Pessoa Desaparecida (Missing Person), após várias horas do incidente.",
+        D: "Parada de emergência com o motor engatado à ré.",
+        E: "Ancoragem de emergência em canal estreito."
+    },
+
+    resposta: "B",
+
+    comentario: `
+De acordo com o material fornecido, a Williamson Turn é indicada para Delayed Action porque permite retornar à derrota original no sentido oposto.
+
+A Immediate Action está associada à Anderson Turn. Para situação de pessoa desaparecida após intervalo maior, o material associa a Scharnow Turn.
+
+Dica PSCPP:
+Immediate Action → Anderson.
+Delayed Action → Williamson.
+Missing Person → Scharnow.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Man Overboard Manoeuvres",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0228
+// =====================================
+
+{
+    id: "MAN-0228",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Man Overboard — Scharnow Turn",
+
+    edital: "Manobras especiais e testes de manobra",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A Curva de Scharnow (Scharnow Turn) difere da Curva de Williamson por trazer o navio de volta à sua derrota oposta em uma posição à ré daquela onde a manobra foi iniciada. Por essa razão, a Curva de Scharnow NÃO deve ser utilizada em qual circunstância?
+`,
+
+    alternativas: {
+        A: "Quando o navio navega em águas profundas sem vento.",
+        B: "Em situações de Ação Imediata (Immediate Action).",
+        C: "Em situações de Pessoa Desaparecida (Missing Person).",
+        D: "Quando o navio está na condição de lastro.",
+        E: "Em navios equipados com propulsão azimutal."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido, a Scharnow Turn traz o navio de volta à derrota oposta em uma posição situada à ré do ponto em que a manobra foi iniciada. Por isso, não é apropriada para Immediate Action, pois o navio retornaria atrás do ponto recente de queda.
+
+As demais alternativas não representam a restrição operacional indicada.
+
+Dica PSCPP: Scharnow Turn → NÃO utilizar para Immediate Action.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Man Overboard Manoeuvres",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0229
+// =====================================
+
+{
+    id: "MAN-0229",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Man Overboard — Anderson Turn",
+
+    edital: "Manobras especiais e testes de manobra",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A manobra de Homem ao Mar conhecida como Curva de Anderson (Anderson Turn ou Single Tack) consiste em um giro simples de 360° com leme carregado. Sua principal vantagem e indicação operacional é:
+`,
+
+    alternativas: {
+        A: "Ser a manobra mais rápida para retornar ao ponto de queda em situações de Ação Imediata para navios com alta capacidade de giro.",
+        B: "Colocar o navio na derrota oposta exatamente no mesmo ponto geográfico após 10 milhas.",
+        C: "Reduzir o Track Reach sem utilizar a máquina à ré.",
+        D: "Compensar o vento de través em canais restritos.",
+        E: "Ser a única manobra autorizada pela NORMAM-311."
+    },
+
+    resposta: "A",
+
+    comentario: `
+Segundo o material fornecido, a Anderson Turn (Single Tack) é um giro simples utilizado como método rápido para retornar ao local da queda em situações de Immediate Action, especialmente em navios com boa capacidade de giro.
+
+A alternativa B não descreve a Anderson Turn. C e D tratam de outros problemas de manobra. E cria uma exclusividade normativa que não faz parte da fundamentação apresentada.
+
+Dica PSCPP: Anderson Turn → retorno rápido em Immediate Action.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Man Overboard Manoeuvres",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0230
+// =====================================
+
+{
+    id: "MAN-0230",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Stopping Manoeuvre — Cycling the Rudder",
+
+    edital: "Testes de parada e manobras de emergência",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Segundo Shiphandling for the Mariner, para reduzir o Track Reach em uma parada de emergência mantendo o controle do rumo, a técnica de defletir o leme alternadamente a boreste e bombordo (cycling the rudder) baseia-se no princípio de:
+`,
+
+    alternativas: {
+        A: "Cavitar o hélice para diminuir o empuxo residual.",
+        B: "Aumentar o arrasto hidrodinâmico do leme e do casco para dissipar energia cinética antes e durante o uso da máquina à ré.",
+        C: "Alterar o coeficiente de bloco (C_B) do navio temporariamente.",
+        D: "Cancelar o efeito de squat na proa.",
+        E: "Inverter o sentido de rotação do fluxo na esteira de Taylor."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base em Shiphandling for the Mariner, cycling the rudder aumenta o arrasto hidrodinâmico produzido durante a manobra, contribuindo para dissipar a energia cinética do navio e reduzir o Track Reach.
+
+A, C, D e E apresentam mecanismos físicos que não correspondem ao princípio da técnica.
+
+Dica PSCPP: reduzir Track Reach mantendo controle do rumo → Cycling the Rudder.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Stopping — Cycling the Rudder",
+            pagina: ""
+        }
+    ]
+},
+
+ // =====================================
+// TESTES DE MANOBRABILIDADE
+// QUESTÕES MAN-0231 A MAN-0240
+// =====================================
+
+
+// =====================================
+// QUESTÃO MAN-0231
+// =====================================
+
+{
+    id: "MAN-0231",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Influência do Trim nos Ensaios de Manobra",
+
+    edital: "Influência da condição de carregamento na manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio graneleiro realiza ensaios de manobra apresentando trim pela proa (trim by the head). Hidrodinamicamente, em comparação com a condição em apromado (even keel), essa condição causa:
+`,
+
+    alternativas: {
+        A: "Aumento da estabilidade de curso e aumento do diâmetro tático.",
+        B: "Redução da estabilidade de curso (tendência à instabilidade/governo \"cranky\") e redução do diâmetro tático.",
+        C: "Anulação do momento Munk e aumento do track reach.",
+        D: "Deslocamento do centro de pressão para a popa.",
+        E: "Aumento da velocidade final na curva de giro."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base no PNA Vol. III e Shiphandling for the Mariner, o trim pela proa desloca o centro de pressão hidrodinâmica para vante, reduzindo o braço de alavanca de restauração. O resultado apresentado é redução da estabilidade de curso, com tendência a governo "cranky", e redução do diâmetro tático.
+
+A alternativa A inverte os efeitos apresentados. C, D e E não correspondem à fundamentação indicada.
+
+Dica PSCPP: Trim pela PROA → estabilidade de curso REDUZ / diâmetro tático REDUZ.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability",
+            pagina: ""
+        },
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Effects of Trim on Shiphandling",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0232
+// =====================================
+
+{
+    id: "MAN-0232",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Short Round — Right-Handed FPP",
+
+    edital: "Manobras em espaço restrito",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A manobra de girar um navio monoeixo com hélice de rotação direita (right-handed FPP) em um canal estreito sem auxílio de rebocadores (Short Round) deve ser iniciada preferencialmente girando a proa para boreste. Essa recomendação operacional justifica-se porque:
+`,
+
+    alternativas: {
+        A: "O leme tem o dobro de área para o bordo de boreste.",
+        B: "Ao dar máquina à ré para sustar o seguimento, a força transversal do hélice (prop-walk) empurra a popa para bombordo e a proa para boreste, ajudando no giro.",
+        C: "O efeito de bank cushion atua apenas pelo lado de bombordo.",
+        D: "O navio apresenta menor squat ao guinar para boreste.",
+        E: "A corrente de maré empurra sempre a proa para boreste em canais."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base em Shiphandling for the Mariner, ao realizar o Short Round de um navio monoeixo equipado com hélice de rotação direita, a ação da máquina à ré pode ser aproveitada para auxiliar a guinada para boreste: o prop-walk desloca a popa para bombordo e, consequentemente, favorece o movimento da proa para boreste.
+
+A, C, D e E apresentam justificativas que não correspondem ao princípio utilizado na manobra.
+
+Dica PSCPP: Short Round com hélice RH → aproveitar o prop-walk da máquina à ré para auxiliar a guinada para BORESTE.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Turning in Restricted Waters — Short Round",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0233
+// =====================================
+
+{
+    id: "MAN-0233",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Pivot Point na Curva de Giro",
+
+    edital: "Ponto pivô e comportamento do navio em manobra",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a fase uniforme (steady state) de uma curva de giro em marcha à frente em água calma, a posição do Ponto Pivô (Pivot Point) no casco estabiliza-se aproximadamente:
+`,
+
+    alternativas: {
+        A: "No centro de gravidade (CG), a meia-nau.",
+        B: "No espelho de popa, sobre a madre do leme.",
+        C: "A cerca de 1/3 a 1/4 do comprimento do navio a partir da proa.",
+        D: "A 1/3 do comprimento a partir da popa.",
+        E: "No bulbo de proa, fora da linha d'água."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Segundo o material fornecido com base no PNA Vol. III e Shiphandling for the Mariner, durante o movimento à vante o Pivot Point desloca-se para a região de vante do navio, ficando aproximadamente entre 1/3 e 1/4 do comprimento medido a partir da proa.
+
+A alternativa A associa o Pivot Point ao CG. B e D o colocam excessivamente para ré. E o posiciona fora da região considerada.
+
+Dica PSCPP: seguimento à vante → Pivot Point aproximadamente 1/3 a 1/4 L a partir da proa.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability",
+            pagina: ""
+        },
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Pivot Point",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0234
+// =====================================
+
+{
+    id: "MAN-0234",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Atualização das Informações de Manobra",
+
+    edital: "Informações de manobra do navio",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em conformidade com a Regra 28 do Capítulo V da Convenção SOLAS, todas as embarcações devem manter a bordo registros das manobras executadas. O Livro de Manobras (Maneuvering Booklet) deve conter dados detalhados que permitam aos oficiais e Práticos prever o comportamento do navio. Essa documentação deve estar disponível no passadiço e ser atualizada sempre que:
+`,
+
+    alternativas: {
+        A: "O navio mudar de Prático na zona.",
+        B: "Ocorrerem alterações estruturais ou de propulsão que afetem significativamente as características de manobra.",
+        C: "A embarcação completar 1 ano de navegação.",
+        D: "Ocorrer troca de Comandante.",
+        E: "O combustível for alterado de MGO para VLSFO."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido, os dados de manobra devem refletir as características efetivas do navio. Alterações estruturais ou no sistema de propulsão que modifiquem significativamente seu comportamento de manobra exigem atualização das informações correspondentes.
+
+A mudança de Prático ou Comandante, o simples decurso de um ano e a troca do tipo de combustível não constituem, por si só, o critério apresentado.
+
+Dica PSCPP: alteração estrutural/propulsiva que modifique a manobrabilidade → atualizar as informações de manobra.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "SOLAS — International Convention for the Safety of Life at Sea",
+            capitulo: "Chapter V — Regulation 28",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information on Board Ships",
+            capitulo: "Maneuvering Booklet",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0235
+// =====================================
+
+{
+    id: "MAN-0235",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Bow Thruster — Limite Prático de Eficiência",
+
+    edital: "Propulsores auxiliares e manobrabilidade em baixa velocidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Segundo a literatura técnica de manobra (Shiphandling for the Mariner), a eficácia de um propulsor auxiliar de proa (Bow Thruster) reduz-se drasticamente com o ganho de velocidade do navio através da água, tornando-se praticamente ineficaz a partir de:
+`,
+
+    alternativas: {
+        A: "1 a 2 nós.",
+        B: "3 a 5 nós.",
+        C: "8 a 10 nós.",
+        D: "12 a 14 nós.",
+        E: "15 a 18 nós."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base em Shiphandling for the Mariner, o escoamento transversal através da região da abertura do túnel reduz rapidamente a efetividade do jato produzido pelo Bow Thruster à medida que o navio ganha seguimento.
+
+A faixa prática indicada é aproximadamente 3 a 5 nós.
+
+Dica PSCPP: Bow Thruster → máxima utilidade em baixa velocidade; eficiência cai fortemente na faixa de 3–5 nós.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Bow Thrusters",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0236
+// =====================================
+
+{
+    id: "MAN-0236",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Velocidade de Teste — V0",
+
+    edital: "Condições dos testes de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+De acordo com os Padrões de Manobrabilidade da IMO, a velocidade de teste (V0) na qual os ensaios de curva de giro, zig-zag e parada devem ser iniciados corresponde a pelo menos:
+`,
+
+    alternativas: {
+        A: "50% da velocidade máxima de fundo.",
+        B: "85% da Potência Contínua Máxima do motor principal (MCR).",
+        C: "100% da velocidade de escantilhão no vácuo.",
+        D: "10 nós fixos para qualquer tipo de navio.",
+        E: "Velocidade de emparceiramento de ondas de proa."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, a condição de teste é associada à potência do motor principal correspondente a pelo menos 85% da Maximum Continuous Rating (MCR).
+
+As alternativas A, C, D e E não correspondem ao parâmetro apresentado para os ensaios.
+
+Dica PSCPP: ensaios IMO → memorize a referência de 85% MCR utilizada na definição da condição de velocidade de teste.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Test conditions — test speed",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0237
+// =====================================
+
+{
+    id: "MAN-0237",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Influência da Razão L/B",
+
+    edital: "Influência das características do casco na manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio com baixa razão comprimento-boca (baixa L/B), típico de navios de grande porte e formas cheias (VLCCs), apresenta como característica de manobra em relação a um navio de alta L/B:
+`,
+
+    alternativas: {
+        A: "Maior estabilidade de curso e maior diâmetro tático.",
+        B: "Menor estabilidade de curso e menor diâmetro tático relativo (D_T/L).",
+        C: "Incapacidade de realizar o ensaio de zig-zag.",
+        D: "Resposta nula ao leme em velocidades reduzidas.",
+        E: "Curva de giro sem fase transiente."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base no PNA Vol. III, navios de baixa razão L/B e formas mais cheias apresentam menor estabilidade de curso inerente e menor diâmetro tático relativo D_T/L.
+
+A alternativa A apresenta a relação oposta. C, D e E atribuem características que não decorrem da baixa razão L/B.
+
+Dica PSCPP: baixa L/B / formas cheias → menor estabilidade de curso / menor D_T/L.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Hull Form Effects",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0238
+// =====================================
+
+{
+    id: "MAN-0238",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Full Astern Stopping Test — Perda de Governo",
+
+    edital: "Testes de parada e controle direcional",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante o ensaio de parada total com máquina a toda força à ré em um navio monoeixo convencional, a perda de controle do rumo nos momentos finais da parada ocorre porque:
+`,
+
+    alternativas: {
+        A: "O leme perde o fluxo acelerado do hélice (propeller slipstream) e a força transversal do hélice passa a dominar o comportamento da popa.",
+        B: "A pressão estática na popa torna-se infinita.",
+        C: "A camada limite do casco se extingue.",
+        D: "O número de Froude de profundidade atinge valor crítico.",
+        E: "O ponto pivô se fixa permanentemente na proa."
+    },
+
+    resposta: "A",
+
+    comentario: `
+Segundo o material fornecido com base no PNA Vol. III e Shiphandling for the Mariner, durante a parada com máquina à ré o leme convencional deixa de receber da mesma forma o escoamento acelerado do hélice que favorece sua autoridade em marcha à frente. Simultaneamente, os efeitos transversais do propulsor tornam-se importantes para o comportamento da popa.
+
+B, C, D e E apresentam explicações físicas que não correspondem ao mecanismo indicado.
+
+Dica PSCPP: Full Astern + baixa velocidade → menor autoridade do leme e maior importância dos efeitos transversais do propulsor.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Stopping Manoeuvres",
+            pagina: ""
+        },
+        {
+            publicacao: "Shiphandling for the Mariner — 5th Edition",
+            capitulo: "Stopping and Backing",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0239
+// =====================================
+
+{
+    id: "MAN-0239",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Dieudonné Spiral Test — Identificação de Instabilidade",
+
+    edital: "Testes de estabilidade direcional",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em um ensaio de espiral de Dieudonné, ao plotar a curva da taxa de guinada versus ângulo de leme, se o navio apresenta uma laça de histerese com largura de 8° de leme, a ação de governo necessária para manter o navio em rumo reto em água calma exige:
+`,
+
+    alternativas: {
+        A: "Manter o leme fixo a meio (0°).",
+        B: "Correções contínuas com leme de contra-guinada (counter-rudder) para ambos os bordos.",
+        C: "Uso permanente do bow thruster.",
+        D: "Manter o motor principal parado.",
+        E: "Trimar a embarcação pela proa em no mínimo 3 metros."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido com base no PNA Vol. III, uma laça de histerese no ensaio de espiral caracteriza instabilidade direcional com controles fixos. O navio pode desenvolver e manter uma taxa de guinada mesmo com pequeno ou nenhum ângulo de leme, exigindo correções de governo e uso de counter-rudder para controlar a guinada.
+
+A alternativa A pressupõe estabilidade suficiente com leme a meio. C, D e E não constituem a resposta de governo indicada.
+
+Dica PSCPP: hysteresis loop → directional instability → necessidade de counter-rudder.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Principles of Naval Architecture — Volume III",
+            capitulo: "Controllability — Direct Spiral Test and Directional Stability",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO MAN-0240
+// =====================================
+
+{
+    id: "MAN-0240",
+
+    disciplina: "manobrabilidade",
+    assunto: "Testes de Manobrabilidade",
+    topico: "Initial Turning Ability e COLREG/RIPEAM",
+
+    edital: "Aplicação operacional dos testes de manobrabilidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao aplicar a Regra 8(c) do COLREG/RIPEAM (Ação para Evitar Colisão por Alteração de Rumo), o conhecimento do parâmetro de capacidade de giro inicial (obtido no teste de leme de 10° / variação de 10° de rumo) alerta o Prático/Navegador para o fato de que:
+`,
+
+    alternativas: {
+        A: "O navio altera o rumo instantaneamente sem percorrer qualquer distância à vante.",
+        B: "Há uma distância percorrida e um retardo temporal (dead time) entre a aplicação do leme e a resposta efetiva da proa, exigindo que a alteração de rumo seja iniciada com ampla antecedência.",
+        C: "A alteração de rumo deve ser realizada sempre com pequenos ângulos de leme (2° a 3°).",
+        D: "O coice (kick) fará o navio deslocar-se lateralmente para o mesmo bordo do leme aplicado.",
+        E: "A velocidade do navio aumenta durante a fase inicial da guinada."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, o teste de capacidade de giro inicial evidencia que existe resposta dinâmica entre a aplicação do leme e a efetiva alteração do rumo. Durante esse intervalo o navio continua avançando.
+
+Aplicado operacionalmente à Regra 8 do COLREG/RIPEAM, esse comportamento reforça a necessidade de ação antecipada e suficientemente substancial para evitar uma situação de aproximação excessiva.
+
+A alternativa A ignora a dinâmica do navio. C estabelece arbitrariamente pequenos ângulos de leme. D apresenta incorretamente o sentido do kick. E afirma aumento de velocidade durante a guinada.
+
+Dica PSCPP: Initial Turning Ability + Regra 8 → considere o avanço e o tempo de resposta; aja com antecedência.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            capitulo: "Initial turning ability",
+            pagina: ""
+        },
+        {
+            publicacao: "COLREG / RIPEAM",
+            capitulo: "Regra 8 — Ação para evitar abalroamento",
+            pagina: ""
+        }
+    ]
 }
  
 ];
