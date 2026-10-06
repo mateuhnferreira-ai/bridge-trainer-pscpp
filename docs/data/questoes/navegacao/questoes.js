@@ -2879,7 +2879,1250 @@ B estabelece uma distância de parada irreal e ignora possíveis efeitos direcio
             pagina: ""
         }
     ]
+}, 
+
+// =====================================
+// BRIDGE TEAM MANAGEMENT / BRM
+// NAV-0061 a NAV-0070
+// =====================================
+
+
+{
+    id: "NAV-0061",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Passage Planning — Appraisal",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante a fase de Apreciação (Appraisal) do planejamento de viagem (Passage Planning), conduzida pelo Encarregado de Navegação sob orientação do Comandante de acordo com o ICS Bridge Procedures Guide (6ª Edição) e o Código STCW (Seção A-VIII/2), assinale a afirmativa que apresenta a conduta técnica correta:`,
+
+    alternativas: {
+        A: `A apreciação limita-se à seleção das cartas náuticas da rota principal, sendo desnecessária a consulta a avisos aos navegantes temporários (T&P) ou roteiros (Pilot Books) nesta fase preliminar, reservando-se essa análise para o estágio de Execução.`,
+        B: `O oficial responsável deve coletar e avaliar toda a informação relevante para a derrota pretendida "de berço a berço", incluindo a acurácia dos dados cartográficos (diagramas de fontes / CATZOC), restrições do sistema de gerenciamento de segurança (SMS) da empresa, margens de segurança vertical (UKC) e requisitos ambientais locais.`,
+        C: `Em viagens onde o Prático embarcará no ponto de aterragem, a apreciação do trecho sob praticagem é dispensada a bordo, cabendo ao Prático apresentar seu plano individualizado no momento do embarque.`,
+        D: `A verificação da disponibilidade de combustível, água doce e lubrificantes é de responsabilidade exclusiva da máquina, não devendo integrar a apreciação da equipe de navegação do passadiço.`,
+        E: `A utilização de cartas eletrônicas ráster (RNC) no estágio de apreciação dispensa a consulta à categoria de zonas de confiança (CATZOC), pois esta é aplicável apenas a cartas de papel.`
+    },
+
+    resposta: "B",
+
+    comentario: `O estágio de Appraisal consiste na coleta e avaliação minuciosa de toda a informação relevante para a viagem de berço a berço (berth to berth), abrangendo, entre outros elementos, a acurácia das informações cartográficas, avisos aos navegantes, publicações náuticas, limitações operacionais, UKC e demais restrições pertinentes.
+
+Pegadinha: Appraisal não é apenas selecionar cartas. É a etapa de reunião e avaliação das informações necessárias antes da elaboração detalhada da derrota.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 3.3 — Appraisal",
+            pagina: ""
+        },
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0062",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Passage Planning — Planning",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na elaboração detalhada do plano de viagem (Planning stage), o ICS Bridge Procedures Guide e o livro Bridge Team Management estabelecem parâmetros específicos a serem traçados e anotados nas cartas náuticas de trabalho, físicas ou ECDIS. Assinale a opção que está em estrita conformidade com as diretrizes de planejamento:`,
+
+    alternativas: {
+        A: `O Ponto de Não Retorno (Point of No Return ou Commitment Point) deve ser demarcado apenas no trecho oceânico para indicar o limite de autonomia de combustível do navio.`,
+        B: `A distância de desvio lateral (Cross Track Distance - XTD) deve ser configurada no ECDIS apenas nas etapas costeiras, sendo vedado seu uso na fase oceânica para evitar alarmes desnecessários.`,
+        C: `Em canais restritos ou aproximações portuárias, as alterações de rumo devem ser planejadas no Ponto de Guinada (Wheel Over Point - WOP), considerando o raio de curva e a velocidade prevista, devendo o plano identificar também as áreas de não navegação (No-Go Areas), margens de segurança, marcas de alinhamento e planos de contingência/fundeio de emergência.`,
+        D: `O plano de viagem é considerado concluído e definitivo assim que o Encarregado de Navegação assina a carta de trabalho, sendo vedada qualquer alteração posterior pelo Comandante.`,
+        E: `A margem de segurança vertical (UKC) na fase de planejamento deve ser calculada utilizando-se unicamente a sondagem cartografada, desconsiderando o efeito de maré astronômica por ser variável.`
+    },
+
+    resposta: "C",
+
+    comentario: `No estágio de Planning, as alterações de rumo em canais restritos devem considerar o Wheel Over Point (WOP), o raio de curva e a velocidade prevista. O planejamento também deve identificar No-Go Areas, margens de segurança, referências de navegação e contingências.
+
+Pegadinha: Abort Point e Commitment Point são particularmente importantes nas aproximações e águas restritas; XTD não é um recurso exclusivo da navegação costeira.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 3.4 — Planning",
+            pagina: ""
+        },
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulos 2 e 3",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0063",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Passage Planning — Execution and Monitoring",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O monitoramento do progresso do navio em relação ao plano de viagem aprovado é função primária do Oficial de Quarto (OOW). Segundo as orientações do ICS Bridge Procedures Guide e da Resolução IMO A.893(21):`,
+
+    alternativas: {
+        A: `O monitoramento da posição em águas restritas deve ser realizado exclusivamente por meio do GPS/GNSS acoplado ao ECDIS, por fornecer leitura contínua e isenta de erro humano.`,
+        B: `O monitoramento exige a verificação contínua da posição do navio por métodos primários e secundários independentes, como visuais, radar/paralelas indexadas e ecobatímetro, comparando a posição real com a derrota planejada e ajustando a proa e velocidade antes que desvios perigosos ocorram.`,
+        C: `A frequência de determinação da posição (Fix Frequency) é fixa e padronizada em 15 minutos para qualquer fase da viagem, seja em oceano aberto ou em canal restrito.`,
+        D: `Se o navio necessitar se afastar significativamente da derrota planejada por razões de tráfego, o OOW deve prosseguir na nova trajetória sem necessidade de efetuar a checagem de perigos no ECDIS (route scan) até retornar à derrota original.`,
+        E: `A presença do Prático na ponte transfere a responsabilidade do monitoramento da posição para a estação de praticagem em terra.`
+    },
+
+    resposta: "B",
+
+    comentario: `O monitoramento eficaz exige cross-checking contínuo mediante fontes independentes. A posição real deve ser comparada constantemente com o Passage Plan, especialmente em águas restritas.
+
+Pegadinha: a presença de GPS/ECDIS ou de Prático não elimina a obrigação da equipe do navio de monitorar independentemente a navegação.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seções 3.5 e 4.15",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Resolution A.893(21)",
+            capitulo: "Guidelines for Voyage Planning",
+            pagina: ""
+        },
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulo 5",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0064",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Abort Point e Contingências",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `No planejamento de aproximações a portos e águas restritas, o conceito de Abort Point (Ponto de Aborto) é crítico para a segurança da manobra. Com base no livro Bridge Team Management (Captain A. J. Swift), assinale a alternativa correta:`,
+
+    alternativas: {
+        A: `O Ponto de Aborto é a posição na derrota a partir da qual o navio não possui mais espaço físico de manobra ou profundidade para girar, parar ou retornar à água safa, estando comprometido irreversivelmente com a entrada no canal.`,
+        B: `O Ponto de Aborto é a última posição antes de entrar em águas restritas na qual o navio ainda pode decidir não prosseguir e alterar o rumo para retornar ao mar aberto ou demandar uma área de fundeio de emergência.`,
+        C: `O Ponto de Aborto coincide obrigatoriamente com o ponto de embarque do Prático (Pilot Boarding Station), independentemente da geometria do canal.`,
+        D: `Uma vez ultrapassado o Ponto de Aborto, é proibido ao Comandante utilizar os ferros do navio ou solicitar auxílio de rebocadores em caso de emergência.`,
+        E: `A definição do Ponto de Aborto é uma atribuição exclusiva do Prático e não deve constar no plano de viagem prévio elaborado pelo navio.`
+    },
+
+    resposta: "B",
+
+    comentario: `O Abort Point representa a última posição na qual ainda existe a possibilidade planejada de abortar a aproximação e retornar a águas safas ou utilizar uma alternativa prevista.
+
+Pegadinha: não confundir Abort Point com Commitment Point ou Point of No Return. Abort Point representa a última oportunidade planejada de desistir da aproximação.`,
+
+    bibliografia: [
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulo 3",
+            pagina: "27"
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0065",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Aprovação e Briefing do Passage Plan",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A responsabilidade formal sobre o Plano de Viagem (Passage Plan) e a condução do Briefing prévio com a equipe do passadiço são tratadas no ICS Bridge Procedures Guide e no Código STCW. Assinale a afirmativa correta:`,
+
+    alternativas: {
+        A: `A responsabilidade final pela aprovação e segurança do plano de viagem permanece com o Comandante (Master), independentemente de quem tenha elaborado o plano ou da presença de um Prático a bordo.`,
+        B: `O plano de viagem pode ser aprovado verbalmente pelo Prático durante a manobra de atracação, dispensando a assinatura do Comandante antes da suspensão.`,
+        C: `O Briefing do plano de viagem deve ser realizado apenas entre o Comandante e o Prático, sendo desnecessário envolver os oficiais de quarto e o timoneiro.`,
+        D: `Se a empresa mantiver um plano de viagem padronizado no seu SMS para uma determinada linha regular, o navio está isento de revisar ou adaptar o plano antes de cada viagem.`,
+        E: `A aprovação do plano de viagem pelo Comandante transfere o dever de navegação para a autoridade marítima do porto de destino.`
+    },
+
+    resposta: "A",
+
+    comentario: `A responsabilidade final pela aprovação e segurança do Passage Plan permanece com o Comandante, independentemente de quem o tenha preparado e da posterior presença de Prático.
+
+Pegadinha: um plano padronizado não elimina a necessidade de revisão para as condições específicas da viagem, e a presença do Prático não transfere a responsabilidade final do Comandante.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seções 3.2 e 6.1",
+            pagina: ""
+        },
+        {
+            publicacao: "SOLAS",
+            capitulo: "Regulation V/34",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0066",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Situational Awareness",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A manutenção da Consciência Situacional (Situational Awareness - SA) no passadiço é um dos pilares do BTM. Segundo o Bridge Team Management e o ICS Bridge Procedures Guide, a perda da consciência situacional pode ser indicada por elementos da cadeia de erros (error chain indicators). Assinale a opção que apresenta um indicador clássico de perda de SA:`,
+
+    alternativas: {
+        A: `Execução de cross-checking contínuo da posição por alinhamentos e paralelas indexadas no radar.`,
+        B: `Confirmação em voz alta (thinking aloud) de ordens de leme e máquina recebidas no passadiço.`,
+        C: `Sensação de ambiguidade ou incerteza quando duas fontes independentes de navegação, como radar e GPS, apresentam posições conflitantes que não são imediatamente investigadas.`,
+        D: `Realização de briefing prévio com toda a equipe do passadiço antes de entrar em canal restrito.`,
+        E: `Registro rigoroso das posições e ocorrências no diário de navegação nos intervalos regulamentares.`
+    },
+
+    resposta: "C",
+
+    comentario: `Uma discrepância ou ambiguidade entre fontes independentes de informação que permanece sem investigação constitui importante indicador de deterioração da Situational Awareness.
+
+Pegadinha: cross-checking, briefing e comunicação ativa são justamente barreiras destinadas a preservar a consciência situacional.`,
+
+    bibliografia: [
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulo 1",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.8",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0067",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Error Chain e Challenge and Response",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Acidentes marítimos e encalhes raramente derivam de uma falha isolada, resultando de uma sequência de pequenos desvios conhecida como Cadeia de Erros (Error Chain). Com base na doutrina de BTM:`,
+
+    alternativas: {
+        A: `A cadeia de erros só pode ser interrompida pelo Comandante, sendo vedado aos oficiais de quarto intervir em decisões já tomadas.`,
+        B: `A quebra da cadeia de erros exige que qualquer membro da equipe do passadiço, ao identificar um desvio do plano, uma ambiguidade ou uma condição insegura, expresse imediatamente sua dúvida através do procedimento de Challenge and Response.`,
+        C: `Erros latentes do sistema, como falha no software do ECDIS, eliminam a responsabilidade da equipe do passadiço na manutenção da vigilância visual.`,
+        D: `A ocorrência de um erro em um passadiço estruturado resulta invariavelmente no encalhe imediato do navio, sendo impossível evitar o acidente após o primeiro desvio.`,
+        E: `Os erros ativos do operador são irrelevantes quando o plano de viagem foi devidamente assinado pelo Comandante.`
+    },
+
+    resposta: "B",
+
+    comentario: `A filosofia do BTM procura identificar e interromper a Error Chain antes que a sequência de desvios resulte em acidente. Qualquer integrante da equipe que perceba uma condição insegura deve comunicá-la de maneira clara e assertiva.
+
+Pegadinha: Challenge and Response não é prerrogativa exclusiva do Comandante. A participação ativa dos demais membros da equipe constitui uma barreira de segurança.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2.5",
+            pagina: ""
+        },
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulo 1",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0068",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Authority Gradient",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O conceito de Gradiente de Autoridade (Authority Gradient) no passadiço analisa como a diferença de hierarquia afeta a comunicação e a segurança da navegação. De acordo com o Bridge Team Management:`,
+
+    alternativas: {
+        A: `Um gradiente de autoridade extremamente íngreme (steep authority gradient), onde o Comandante impõe um estilo autocrático e inflexível, favorece a segurança ao impedir que subordinados questionem ordens.`,
+        B: `Um gradiente de autoridade excessivamente plano (flat authority gradient), onde não há uma liderança clara definida, otimiza o tempo de resposta em manobras de emergência.`,
+        C: `O gradiente de autoridade ideal é aquele equilibrado, onde o Comandante mantém a autoridade e liderança final, mas estabelece um ambiente inclusivo de Just Culture que encoraja os oficiais e a guarnição a verbalizar dúvidas e questionamentos (assertiveness).`,
+        D: `A comunicação em circuito fechado (closed-loop communication) é aplicável apenas em conversas por rádio VHF com estações de VTS em terra.`,
+        E: `A presença do Prático zera o gradiente de autoridade no passadiço, convertendo a equipe em um colegiado sem liderança.`
+    },
+
+    resposta: "C",
+
+    comentario: `Um Authority Gradient excessivamente íngreme pode inibir questionamentos importantes, enquanto um gradiente excessivamente plano pode prejudicar a liderança e a definição das responsabilidades. O objetivo é preservar liderança clara juntamente com comunicação aberta e assertiva.
+
+Pegadinha: BTM não elimina a hierarquia; procura impedir que a hierarquia bloqueie informações essenciais à segurança.`,
+
+    bibliografia: [
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Capítulo 6",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2.5",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0069",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Challenge and Response e Assertividade",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A técnica de Challenge and Response (Desafio e Resposta) é recomendada pelo ICS Bridge Procedures Guide para prevenir acidentes causados por omissão ou erro de julgamento. Sobre o funcionamento adequado dessa técnica:`,
+
+    alternativas: {
+        A: `O questionamento de uma ordem ou ação insegura deve ser interpretado pela liderança como uma insubordinação ou afronta à autoridade do Comandante ou Prático.`,
+        B: `Quando um oficial de quarto observa que o Prático ou Comandante está executando uma manobra que se desvia do plano aprovado sem explicação, deve solicitar esclarecimento imediato (challenge); se a resposta não for satisfatória ou o perigo persistir, deve reiterar a dúvida com maior assertividade.`,
+        C: `O uso de Challenge and Response é restrito a situações de mau tempo em alto-mar.`,
+        D: `Ao fazer um challenge, o oficial de quarto assume automaticamente o comando legal da embarcação.`,
+        E: `A técnica exige que o subordinado aguarde a conclusão da manobra antes de apontar eventual perigo já passado.`
+    },
+
+    resposta: "B",
+
+    comentario: `Challenge and Response constitui uma barreira de segurança. Diante de uma ação não compreendida, desvio do plano ou risco percebido, o membro da equipe deve questionar imediatamente. Se a resposta não resolver a preocupação, o questionamento deve tornar-se progressivamente mais assertivo.
+
+Pegadinha: questionar uma condição insegura não representa automaticamente insubordinação nem transfere o comando do navio.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2.5",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0070",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Master-Pilot Information Exchange — MPX",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A Resolução IMO A.960(23) e o ICS Bridge Procedures Guide regulam a Troca de Informações entre o Comandante e o Prático (Master-Pilot Information Exchange - MPX). Em conformidade com tais normas:`,
+
+    alternativas: {
+        A: `O MPX deve ocorrer preferencialmente por e-mail antes do navio suspender do porto de origem, dispensando reuniões presenciais no passadiço.`,
+        B: `O MPX deve ser realizado imediatamente após o embarque do Prático no passadiço, abrangendo a apresentação do Pilot Card, verificação do Wheelhouse Poster, discussão das intenções de manobra do Prático, forças e uso de rebocadores, restrições locais de maré/corrente e confirmação do idioma de trabalho.`,
+        C: `O Pilot Card preenchido pelo navio substitui a necessidade de discussão verbal sobre as características de manobra e deficiências de equipamentos do navio.`,
+        D: `Se o Prático for habituado a praticar no porto local, ele está dispensado de apresentar suas intenções de manobra à equipe do passadiço.`,
+        E: `O MPX aplica-se apenas a navios petroleiros, sendo facultativo em navios porta-contêineres.`
+    },
+
+    resposta: "B",
+
+    comentario: `O Master-Pilot Information Exchange deve estabelecer entendimento comum entre o Prático, o Comandante e a equipe do passadiço. Entre os elementos tratados estão características e limitações do navio, Pilot Card, informações de manobra, condições locais, rebocadores, intenções do Prático e idioma utilizado.
+
+Pegadinha: o Pilot Card apoia o MPX, mas não substitui a comunicação e o entendimento mútuo entre Master, Pilot e Bridge Team.`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution A.960(23)",
+            capitulo: "Annex 2 — Recommended training and operational procedures for maritime pilots other than deep-sea pilots",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 6.4 — Master/Pilot Information Exchange",
+            pagina: ""
+        }
+    ]
+},
+
+// =====================================
+// BRIDGE TEAM MANAGEMENT / BRM
+// NAV-0071 a NAV-0080
+// =====================================
+
+
+{
+    id: "NAV-0071",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Responsabilidade do Comandante e Status do Prático",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Em relação à autoridade do Comandante e ao papel do Prático durante a navegação sob praticagem obrigatória (SOLAS Cap. V, IMO Res. A.960 e NORMAM):`,
+
+    alternativas: {
+        A: `A presença do Prático a bordo exime o Comandante e os oficiais de quarto de suas responsabilidades legais pela segurança da navegação e prevenção da poluição.`,
+        B: `O Prático atua como conselheiro especialista em manobra e conhecimento local, integrado à equipe do passadiço; o Comandante mantém a responsabilidade final e a autoridade sobre o navio.`,
+        C: `Se o Comandante discordar de uma ordem de leme ou máquina do Prático, não pode intervir na manobra sob pena de infração administrativa grave.`,
+        D: `Ao assumir a cona do navio, o Prático passa a responder civil e criminalmente por qualquer colisão com o cais, eximindo o armador.`,
+        E: `O Prático possui autoridade legal para alterar o rumo do navio sem necessidade de comunicar o OOW ou a guarnição de serviço.`
+    },
+
+    resposta: "B",
+
+    comentario: `A presença do Prático não alivia o Comandante ou os oficiais de suas responsabilidades pela segurança do navio. O Prático atua como especialista integrado à Bridge Team, fornecendo conhecimento local e assessoramento na condução da embarcação, enquanto o Comandante mantém a autoridade final.
+
+Pegadinha: a presença do Prático não representa transferência integral do comando ou das responsabilidades do Comandante.`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution A.960(23)",
+            capitulo: "Annex 2 — Operational Procedures",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seções 6.1 e 6.5",
+            pagina: ""
+        },
+        {
+            publicacao: "SOLAS",
+            capitulo: "Chapter V",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0072",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Bridge Team durante a Praticagem",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante o trânsito em canal restrito sob a condução de um Prático, as atribuições da equipe do passadiço (Bridge Team), conforme o ICS Bridge Procedures Guide (Seção 6.5.1), incluem:`,
+
+    alternativas: {
+        A: `Delegar todo o monitoramento da navegação e das comunicações em rádio VHF ao Prático, permitindo que o OOW se ocupe com trabalhos administrativos.`,
+        B: `Monitorar continuamente a posição do navio em relação ao plano de viagem, conferir se as ordens de leme e máquina do Prático estão sendo executadas corretamente, monitorar a folga abaixo da quilha (UKC) e manter o Comandante informado.`,
+        C: `Impedir que o Prático se comunique com os rebocadores na linguagem local do porto.`,
+        D: `Desligar o ecobatímetro para não gerar alarmes sonoros que possam distrair a atenção do Prático durante a manobra.`,
+        E: `Suspender o registro de marcações visuais e radar para não sobrecarregar as cartas de trabalho.`
+    },
+
+    resposta: "B",
+
+    comentario: `Durante a praticagem, a Bridge Team continua responsável pelo monitoramento independente da navegação. Deve acompanhar a posição, a execução das ordens de leme e máquina, a UKC e demais parâmetros relevantes.
+
+Pegadinha: a presença do Prático não coloca a equipe do navio em condição passiva. O monitoramento e o cross-checking devem continuar durante toda a praticagem.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 6.5.1",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0073",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Bridge Manning e Níveis de Guardaria",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A determinação da composição da equipe do passadiço (Bridge Manning) para as diferentes fases da viagem é regulada pelo STCW Código (Seção A-VIII/2) e pelo ICS Bridge Procedures Guide. Ao selecionar o nível de guardaria para navegar em águas restritas com visibilidade reduzida, o Comandante deve garantir:`,
+
+    alternativas: {
+        A: `Guardaria simples composta unicamente pelo Oficial de Quarto (OOW), atuando simultaneamente como timoneiro e vigia.`,
+        B: `Equipe reforçada (Bridge Team) composta pelo Comandante, Oficial de Quarto (OOW), um oficial de apoio/backup na carta/ECDIS, vigia dedicado exclusivo e timoneiro em leme manual (manual steering).`,
+        C: `Presença obrigatória de pelo menos dois Práticos no passadiço, independentemente de haver oficiais a bordo.`,
+        D: `Desativação do BNWAS para evitar ruídos na ponte.`,
+        E: `Manutenção do piloto automático acoplado ao GPS sem necessidade de timoneiro de prontidão.`
+    },
+
+    resposta: "B",
+
+    comentario: `Em águas restritas e visibilidade reduzida, deve ser estabelecido um nível de Bridge Manning compatível com o risco e a carga de trabalho, utilizando equipe reforçada no passadiço.
+
+Na situação descrita, a composição apresentada na alternativa B permite distribuir navegação, monitoramento, vigilância e governo do navio entre diferentes integrantes da Bridge Team.
+
+Pegadinha: o Prático não substitui a equipe de navegação do navio.`,
+
+    bibliografia: [
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2 e Checklist C2.2",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0074",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Sole Look-out",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O Código STCW (Parte 4-1) e o ICS Bridge Procedures Guide (Seção 4.4.2) estabelecem condições rigorosas sob as quais o Oficial de Quarto (OOW) pode atuar como Vigia Único (Sole Look-out). Assinale a opção que apresenta uma condição na qual é estritamente proibido manter o OOW como vigia único:`,
+
+    alternativas: {
+        A: `Período diurno em alto-mar sob mar calmo e excelente visibilidade.`,
+        B: `Durante o período noturno (horas de escuridão), sob qualquer condição de tráfego ou visibilidade.`,
+        C: `Quando o apoio de retaguarda (back-up) pode ser chamado imediatamente à ponte.`,
+        D: `Quando o volume de trabalho previsto não compromete a capacidade de navegação do OOW.`,
+        E: `Quando a avaliação de risco do Comandante confirmar a segurança da operação diurna.`
+    },
+
+    resposta: "B",
+
+    comentario: `O Oficial de Quarto somente pode ser considerado como único vigia em determinadas circunstâncias durante o período diurno, depois de cuidadosa avaliação das condições existentes.
+
+O período noturno não se enquadra nessa possibilidade.
+
+Pegadinha: Sole Look-out pelo OOW não significa que o Oficial possa acumular indiscriminadamente funções. A possibilidade depende de avaliação e condições adequadas durante o dia.`,
+
+    bibliografia: [
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2 — Part 4-1",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.4.2",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0075",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Watch Handover",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A transferência do serviço de quarto de navegação (Watch Handover) é um momento vulnerável a falhas de comunicação. Segundo o ICS Bridge Procedures Guide (Seção 4.2) e o STCW Code:`,
+
+    alternativas: {
+        A: `A rendição do quarto deve ser efetuada rigorosamente no horário agendado, mesmo se o navio estiver no meio de uma manobra para evitar uma colisão.`,
+        B: `A rendição do quarto deve ser adiada/diferida se uma manobra de desvio de perigo ou alteração de rumo estiver em andamento ou prestes a ser iniciada, só se concretizando após a conclusão da manobra.`,
+        C: `O oficial que assume o quarto não precisa verificar visualmente a posição do navio no ECDIS/carta, bastando confiar no relato verbal do oficial substituído.`,
+        D: `Durante a rendição noturna, não é necessário tempo de adaptação da visão à escuridão se a ponte estiver com telas em modo diurno.`,
+        E: `A responsabilidade do quarto transfere-se automaticamente assim que o oficial substituto entra na ponte, mesmo antes de conversar com o OOW.`
+    },
+
+    resposta: "B",
+
+    comentario: `A rendição do quarto deve ser adiada quando uma manobra ou outra ação destinada a evitar perigo estiver em andamento. A transferência deve ocorrer somente quando a situação estiver estabilizada e o oficial que assume estiver devidamente informado.
+
+Pegadinha: o horário programado não prevalece sobre a segurança da navegação.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.2 — Watch Handover",
+            pagina: ""
+        },
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0076",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Calling the Master",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O ICS Bridge Procedures Guide (Checklist C2.17) e as Ordens Permanentes do Comandante (Master's Standing Orders) especificam situações operacionais em que o Oficial de Quarto (OOW) deve chamar o Comandante imediatamente. Assinale a alternativa que exige o chamado imediato do Comandante:`,
+
+    alternativas: {
+        A: `Quando o navio estiver navegando exatamente sobre a derrota planejada em mar aberto sob céu limpo.`,
+        B: `Na ocorrência de deterioração da visibilidade, em caso de dúvida sobre o tráfego ou intenções de outros navios, falha em avistar terra/sinais no tempo esperado, ou diante de alarmes/avarias em equipamentos críticos de navegação/propulsão.`,
+        C: `Apenas quando o navio estiver a menos de 500 metros de colidir com um obstáculo fixo.`,
+        D: `Quando a maré subir acima do nível previsto na tábua de marés em um porto de águas profundas.`,
+        E: `Somente se houver solicitação expressa da praça de máquinas por telefone interno.`
+    },
+
+    resposta: "B",
+
+    comentario: `O OOW deve chamar imediatamente o Comandante diante de situações como deterioração da visibilidade, dúvida sobre tráfego ou intenções de outras embarcações, falha em avistar referências no tempo previsto e falhas de equipamentos essenciais.
+
+Regra prática de BTM: em caso de dúvida, chamar o Comandante não elimina a obrigação do OOW de tomar imediatamente as ações necessárias à segurança do navio.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Checklist C2.17",
+            pagina: ""
+        },
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2 — Part 4-1",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0077",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Hand Steering e Automatic Steering",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A transição do piloto automático (Autopilot) para o leme manual (Hand Steering) na aproximação de águas restritas e áreas de praticagem é regulada pela SOLAS Regra V/26 e pelo ICS Bridge Procedures Guide. Em conformidade com tais normas:`,
+
+    alternativas: {
+        A: `O piloto automático deve ser mantido engajado durante todo o trânsito no canal restrito para evitar fadiga do timoneiro.`,
+        B: `O leme manual deve ser engajado e testado antes de o navio entrar em águas restritas ou áreas de tráfego denso, garantindo a presença de um timoneiro qualificado no passadiço.`,
+        C: `A troca para leme manual dispensa a verificação dos motores hidráulicos da máquina do leme (steering gear power units).`,
+        D: `O teste do leme de emergência no pino do leme só precisa ser realizado uma vez a cada cinco anos durante a docagem seca.`,
+        E: `O timoneiro deve ser instruído a alterar o leme conforme seu próprio julgamento, sem necessidade de repetir as ordens do Prático.`
+    },
+
+    resposta: "B",
+
+    comentario: `Na aproximação de águas restritas e situações nas quais o governo manual possa ser necessário, o sistema deve estar pronto para uso e a mudança de automatic steering para hand steering deve poder ser realizada com segurança.
+
+O timoneiro deve compreender, repetir e executar corretamente as ordens recebidas.
+
+Pegadinha: automação não substitui a preparação prévia para assumir o governo manual.`,
+
+    bibliografia: [
+        {
+            publicacao: "SOLAS",
+            capitulo: "Regulation V/26 — Steering gear: testing and drills",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.14.4",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0078",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Gerenciamento de Distrações no Passadiço",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A presença de distrações no passadiço é apontada no ICS Bridge Procedures Guide (Seção 2.4) e no livro Bridge Team Management como uma causa primária de quebra da consciência situacional. De acordo com as recomendações oficiais:`,
+
+    alternativas: {
+        A: `O uso de telefones celulares e dispositivos eletrônicos pessoais é livre no passadiço desde que o navio esteja navegando com Prático a bordo.`,
+        B: `A empresa deve estabelecer uma política rígida no SMS limitando ou proibindo o uso de telefones celulares e dispositivos pessoais no passadiço, e o acesso à internet na ponte deve ser restrito a assuntos operacionais, como avisos rádio, meteorologia e atualizações de cartas.`,
+        C: `A música ambiente em alto volume é recomendada durante a navegação noturna para manter a guarnição desperta.`,
+        D: `Visitas de passageiros e tripulantes fora de serviço ao passadiço são incentivadas durante a manobra de atracação.`,
+        E: `O OOW pode atender chamadas pessoais em VHF se o navio estiver ancorado na área de espera.`
+    },
+
+    resposta: "B",
+
+    comentario: `O controle das distrações constitui parte do gerenciamento dos recursos do passadiço. O SMS deve estabelecer políticas adequadas para limitar atividades e dispositivos que possam retirar a atenção da equipe das tarefas de navegação.
+
+Pegadinha: a presença do Prático ou a utilização de sistemas automatizados não reduz a necessidade de controlar distrações.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.4",
+            pagina: ""
+        },
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Bridge Team Management",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0079",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "BNWAS",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A operação do Sistema de Alarme de Vigilância da Navegação do Passadiço (BNWAS), tornado obrigatório pela Convenção SOLAS (Regra V/19), é detalhada no ICS Bridge Procedures Guide (Seção 4.5). É correto afirmar que:`,
+
+    alternativas: {
+        A: `O BNWAS deve ser desligado sempre que o navio estiver navegando sob piloto automático em alto-mar.`,
+        B: `O BNWAS deve estar operacional e ligado sempre que o navio estiver a caminho (underway) no mar, monitorando a presença e capacidade de reação do OOW através de alertas visuais e sonoros sequenciais.`,
+        C: `A chave de seleção de modos do BNWAS deve ser mantida sob posse do vigia de serviço no convés principal.`,
+        D: `Se o BNWAS emitir o primeiro alarme visual, o sistema desliga automaticamente a máquina principal do navio.`,
+        E: `O uso do BNWAS substitui a necessidade do vigia noturno no passadiço em cerração.`
+    },
+
+    resposta: "B",
+
+    comentario: `O BNWAS deve permanecer operacional conforme os requisitos aplicáveis durante a navegação, monitorando a atividade no passadiço e escalando os alarmes quando não houver reconhecimento.
+
+Pegadinha: BNWAS é uma barreira adicional de segurança. Ele não substitui o vigia, não substitui o OOW e não elimina as exigências de vigilância previstas no STCW e no RIPEAM.`,
+
+    bibliografia: [
+        {
+            publicacao: "SOLAS",
+            capitulo: "Regulation V/19 — Carriage requirements for shipborne navigational systems and equipment",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.5 — BNWAS",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0080",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Workload Management e Fadiga",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O gerenciamento da carga de trabalho (Workload Management) e a prevenção da fadiga em operações de praticagem e navegação costeira são diretrizes fundamentais do BTM e do Código STCW (Seção A-VIII/1). Assinale a afirmativa correta:`,
+
+    alternativas: {
+        A: `Em situações de elevada complexidade e tráfego intenso em canais restritos, a distribuição adequada de tarefas entre os membros da equipe do passadiço evita a sobrecarga de um único indivíduo (single point failure).`,
+        B: `O Comandante deve acumular pessoalmente as funções de navegação visual, operação do radar, comunicação em VHF e governo do leme durante a praticagem.`,
+        C: `As horas de descanso regulamentares do STCW podem ser sistematicamente ignoradas durante operações comerciais normais do navio.`,
+        D: `A fadiga dos oficiais de quarto não compromete a acurácia das tomadas de marcação visual.`,
+        E: `O aumento da carga de trabalho justifica a desativação de procedimentos de verificação cruzada (cross-checking).`
+    },
+
+    resposta: "A",
+
+    comentario: `O Workload Management busca distribuir adequadamente as tarefas entre os integrantes da equipe, evitando que funções críticas sejam concentradas em uma única pessoa e reduzindo o risco de single point failure.
+
+A fadiga compromete percepção, julgamento, comunicação e capacidade de resposta. Por isso, o gerenciamento da carga de trabalho e o cumprimento dos períodos de descanso constituem elementos essenciais do BTM.
+
+Pegadinha: quanto maior a carga de trabalho e a complexidade da operação, maior — e não menor — a importância do cross-checking e da distribuição de tarefas.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seções 1.2 e 2.2",
+            pagina: ""
+        },
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/1 — Fitness for Duty",
+            pagina: ""
+        }
+    ]
+},
+// =====================================
+// BRIDGE TEAM MANAGEMENT / BRM
+// NAV-0081 a NAV-0090
+// =====================================
+
+
+{
+    id: "NAV-0081",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "ECDIS e Automation Bias",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O uso do ECDIS na navegação do passadiço introduziu novos desafios de BTM, como a complacência e o viés de automação (Automation Bias). Segundo o ICS Bridge Procedures Guide (Seção 1.4) e o livro Bridge Team Management:`,
+
+    alternativas: {
+        A: `A presença de um ECDIS homologado e operando em modo vetorial dispensa a necessidade de manter a vigilância visual da janela do passadiço.`,
+        B: `A equipe do passadiço deve estar alerta contra a superconfiança nos sistemas eletrônicos (over-reliance), realizando a validação cruzada contínua da posição eletrônica por métodos independentes (radar, marcações visuais, ecobatímetro).`,
+        C: `Quaisquer alarmes emitidos pelo ECDIS devem ser desativados permanentemente pelo OOW para evitar poluição sonora no passadiço.`,
+        D: `O ECDIS corrige automaticamente erros mecânicos de alinhamento da antena radar sem necessidade de intervenção do operador.`,
+        E: `A precisão dos dados do fundo exibidos no ECDIS é sempre superior à das cartas impresas de papel.`
+    },
+
+    resposta: "B",
+
+    comentario: `O viés de automação (Automation Bias) e a superconfiança (over-reliance) em equipamentos eletrônicos devem ser combatidos por meio de cross-checking contínuo com fontes independentes de informação.
+
+Pegadinha: um ECDIS homologado não elimina a necessidade de vigilância visual, radar e demais formas independentes de verificação da posição.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 1.4",
+            pagina: ""
+        },
+        {
+            publicacao: "Bridge Team Management — Captain A. J. Swift / Nautical Institute",
+            capitulo: "Bridge Team Management",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0082",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "ECDIS — Safety Frame e Anti-grounding",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante a navegação em águas restritas com ECDIS, a parametrization do vetor de busca de perigos (Look-ahead vector / Safety Frame / Anti-grounding cone) é crítica. Conforme as boas práticas de BTM em navegação eletrônica:`,
+
+    alternativas: {
+        A: `O vetor de busca de perigos a vante deve ser configurado com comprimento zero em canais restritos para impedir que o sistema emita alarmes de cruzamento de isóbatas.`,
+        B: `O vetor/setor de busca de perigos a vante deve ser ajustado com dimensões adequadas ao tempo de reação da manobra e à velocidade do navio, garantindo alarme antecipado caso a trajetória prevista cruze o Safety Contour ou perigos isolados.`,
+        C: `A configuração das cores do ECDIS no modo noturno (Night Display) permite o uso de lanternas de luz branca direcionadas à tela do equipamento.`,
+        D: `O parâmetro Safety Depth altera a cor das zonas de sombra navegáveis do mapa.`,
+        E: `O alarme do Safety Contour só funciona se o navio estiver navegando com o piloto automático acoplado.`
+    },
+
+    resposta: "B",
+
+    comentario: `O vetor ou setor de busca de perigos a vante (Anti-grounding cone / Safety Frame) deve ser ajustado considerando a velocidade do navio, sua manobrabilidade e o tempo necessário para detectar e reagir a um perigo.
+
+Pegadinha: reduzir o look-ahead a zero elimina uma importante barreira de segurança do ECDIS justamente quando o navio está operando em águas restritas.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 3.4.4 e Checklist C2.4",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0083",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Radar, ARPA e Risco de Colisão",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na navegação sob visibilidade restrita e canais estreitos, o uso do Radar/ARPA pela equipe do passadiço deve seguir os preceitos do BTM e da Regra 7 do RIPEAM. Assinale a opção correta:`,
+
+    alternativas: {
+        A: `Uma simples plotagem rápida de radar ou a leitura pontual do AIS são suficientes para descartar categoricamente o risco de colisão.`,
+        B: `A plotagem radar sistemática (ou acompanhamento ARPA) deve ser iniciada com antecedência, lembrando que alvos pequenos, ecos de madeira ou gelo podem não aparecer na tela do radar devido ao atenuador de mar (STC).`,
+        C: `O uso do vetor de movimento relativo na tela do radar fornece o rumo e velocidade verdadeira do alvo de forma direta sem necessidade de triângulo de velocidades.`,
+        D: `O sistema ARPA calcula o CPA e TCPA com precisão absoluta imediatamente após 1 segundo de aquisição do alvo.`,
+        E: `A apresentação do radar em Head-Up não estabilizado é a recomendada para acompanhamento de vetores de velocidade verdadeira.`
+    },
+
+    resposta: "B",
+
+    comentario: `A plotagem radar sistemática ou o acompanhamento ARPA deve ser iniciado com antecedência suficiente para avaliar o movimento dos alvos e determinar a existência de risco de colisão.
+
+Também devem ser consideradas as limitações do radar e os efeitos dos controles de clutter, como STC e FTC, sobre a detecção de determinados alvos.
+
+Pegadinha: informações insuficientes ou observações isoladas não devem ser utilizadas para concluir que não existe risco de colisão.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.16",
+            pagina: ""
+        },
+        {
+            publicacao: "RIPEAM / COLREG 1972",
+            capitulo: "Regra 7 — Risco de Abalroamento",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0084",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Comunicação VHF e IMO SMCP",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A comunicação via rádio VHF com outras embarcações ou estações de praticagem/VTS é uma fonte frequente de equívocos de BTM. Segundo o ICS Bridge Procedures Guide e o IMO SMCP (Standard Marine Communication Phrases):`,
+
+    alternativas: {
+        A: `Acordos de manobra de prevenção de colisão efetuados por rádio VHF substituem o cumprimento das Regras de Governo e Navegação do RIPEAM.`,
+        B: `As comunicações de segurança devem ser claras, precisas e utilizar a terminologia padronizada do IMO SMCP no idioma inglês ou idioma de trabalho acordado, evitando ambiguidades como "eu vou passar pela sua frente".`,
+        C: `O uso de nomes informais de navios em VHF é preferível ao uso do sinal de chamada (Call Sign) ou MMSI.`,
+        D: `O canal 16 de VHF deve ser utilizado para longas conversas de cortesia entre comandantes na fase de aterragem.`,
+        E: `O uso das expressões do SMCP é restrito a situações de emergência de abandono de navio.`
+    },
+
+    resposta: "B",
+
+    comentario: `As comunicações relacionadas à segurança devem ser claras, concisas e livres de ambiguidades. O IMO SMCP fornece terminologia padronizada destinada a reduzir interpretações divergentes entre pessoas de diferentes nacionalidades.
+
+Pegadinha: acordos efetuados por VHF não substituem as obrigações decorrentes do RIPEAM/COLREG.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2.8 e Figura 2.3",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Standard Marine Communication Phrases — SMCP",
+            capitulo: "Standard Marine Communication Phrases",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0085",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Comunicação Bridge — Engine Control Room",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `O BTM exige a manutenção de uma comunicação eficaz e em circuito fechado (closed-loop communication) entre o passadiço e a Praça de Máquinas (Engine Control Room - ECR). Em conformidade com o ICS Bridge Procedures Guide (Seção 4.9):`,
+
+    alternativas: {
+        A: `A praça de máquinas deve ser informada com antecedência razoável sobre reduções de velocidade, manobras críticas, demanda a águas restritas e necessidade de disponibilidade total de potência de máquina e geradores.`,
+        B: `O passadiço não precisa ser notificado pela máquina quando um gerador principal pifar ou ficar indisponível durante a praticagem.`,
+        C: `A troca de combustível de bordo (fuel changeover) pode ser realizada pela praça de máquinas no exato momento em que o navio efetua a curva de guinada no canal restrito sem avisar o passadiço.`,
+        D: `O uso do telégrafo de máquinas dispensa o registro das ordens de motor no diário de navegação.`,
+        E: `Em navios com controle de máquina na ponte (Bridge Control), as comunicações com a ECR são proibidas durante a atracação.`
+    },
+
+    resposta: "A",
+
+    comentario: `A comunicação entre passadiço e praça de máquinas deve ser antecipada e eficaz. A equipe de máquinas deve receber aviso adequado sobre alterações de velocidade, entrada em águas restritas e outras situações que possam exigir pronta disponibilidade da propulsão e geração elétrica.
+
+Da mesma forma, indisponibilidades relevantes da instalação devem ser comunicadas ao passadiço.
+
+Pegadinha: automação ou Bridge Control não elimina a necessidade de coordenação entre ponte e máquina.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 4.9",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0086",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Briefing e Debriefing",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Os conceitos de Briefing e Debriefing em operações de praticagem e navegação especial são aplicados pela equipe do passadiço como ferramentas de melhoria contínua. Segundo o ICS Bridge Procedures Guide (Seção 2.2.7):`,
+
+    alternativas: {
+        A: `O Briefing ocorre após a conclusão da manobra para buscar culpados por eventuais erros cometidos.`,
+        B: `O Briefing é realizado antes da operação (atracação, navegação em canal restrito, praticagem longa) para alinhar o modelo mental da equipe, repassar papéis e contingências; enquanto o Debriefing ocorre após a operação para analisar acertos, falhas e oportunidades de melhoria em um ambiente de Just Culture.`,
+        C: `O Debriefing é dispensável se a manobra tiver sido executada sem encalhes ou colisões visíveis.`,
+        D: `O Briefing inicial elimina a necessidade de fazer correções de curso durante a viagem.`,
+        E: `O Debriefing deve ser restrito exclusivamente aos oficiais de convés, excluindo a equipe de máquinas.`
+    },
+
+    resposta: "B",
+
+    comentario: `O Briefing precede a operação e procura estabelecer um modelo mental compartilhado, esclarecendo o plano, responsabilidades, riscos e contingências.
+
+O Debriefing ocorre posteriormente e permite analisar a execução e identificar oportunidades de aprendizado e melhoria.
+
+Pegadinha: Debriefing não deve ser entendido como mecanismo para procurar culpados, mas como ferramenta de aprendizagem operacional.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Seção 2.2.7",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0087",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Visibilidade Restrita",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Ao enfrentar névoa densa ou visibilidade restrita repentina durante a navegação costeira (ICS BPG Checklist C2.11 e RIPEAM R19), a equipe do passadiço deve adotar imediatamente o seguinte conjunto de ações:`,
+
+    alternativas: {
+        A: `Manter a velocidade de cruzeiro, desligar o apito de cerração para não confundir o vigia e prosseguir em piloto automático.`,
+        B: `Avisar o Comandante, chamar a máquina para Standby / Prontidão, reduzir a velocidade para a Velocidade de Segurança, engajar leme manual com timoneiro, postar vigia dedicado exclusivo em local apropriado, acionar os sinais sonoros de cerração no apito, ligar as luzes de navegação e operar os radares em plotagem contínua.`,
+        C: `Alterar o rumo para bombordo para qualquer eco detectado no radar a vante do travessão.`,
+        D: `Fundear imediatamente o navio no centro do canal de tráfego denso sem emitir sinais sonoros.`,
+        E: `Ligar as luzes de trabalho do convés principal para iluminar a cerração a vante.`
+    },
+
+    resposta: "B",
+
+    comentario: `A entrada ou ocorrência de visibilidade restrita exige reforço imediato das medidas de segurança: Comandante informado, máquina pronta, velocidade segura, vigilância adequada, sinais sonoros regulamentares e uso apropriado dos equipamentos de navegação.
+
+Pegadinha: a Regra 19 do RIPEAM contém precauções específicas para navios que não estejam à vista uns dos outros. Uma alteração para bombordo diante de determinado alvo detectado somente por radar pode ser justamente a manobra a evitar.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Checklist C2.11",
+            pagina: ""
+        },
+        {
+            publicacao: "RIPEAM / COLREG 1972",
+            capitulo: "Regra 19 — Condução de Embarcações em Visibilidade Restrita",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0088",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Steering Failure",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na ocorrência de uma avaria de leme (Steering Failure) enquanto o navio transita em canal estreito sob praticagem (ICS BPG Checklist C3.2), a ação primária e imediata da equipe do passadiço deve incluir:`,
+
+    alternativas: {
+        A: `Esperar o navio encalhar na margem antes de emitir qualquer sinal sonoro.`,
+        B: `Informar o Comandante e Prático, engajar o modo alternativo/emergência do leme (ou passar para o segundo motor hidráulico da máquina do leme), desacelerar a máquina, exibir as luzes/marcas de Navio Sem Governo (NUC), soar o sinal sonoro apropriado no apito, emitir aviso de emergência em VHF para os navios próximos e VTS, e preparar os ferros para fundeio de emergência se a profundidade permitir.`,
+        C: `Aumentar a velocidade das máquinas para Full Ahead para tentar fazer o navio governar apenas com o fluxo do hélice sem leme.`,
+        D: `Manter o caso em segredo para não alarmar os passageiros ou autoridades portuárias.`,
+        E: `Desligar o radar para economizar energia do quadro de emergência.`
+    },
+
+    resposta: "B",
+
+    comentario: `Uma falha do sistema de governo em canal restrito exige resposta imediata e coordenada. A Bridge Team deve alertar os responsáveis, tentar restabelecer o governo por meios alternativos ou de emergência, controlar a velocidade, comunicar a situação e preparar outras medidas de contingência.
+
+A sinalização e as comunicações externas devem refletir a condição efetiva do navio.
+
+Pegadinha: aumentar indiscriminadamente a velocidade de um navio que perdeu o governo pode ampliar rapidamente as consequências da falha.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Checklist C3.2 — Steering Failure",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0089",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "Anchor Watch",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante o período em que o navio permanece fundeado em uma baía costeira ou área de espera (ICS BPG Checklist C2.12 e STCW), as obrigações de guardaria do Oficial de Quarto (OOW) incluem:`,
+
+    alternativas: {
+        A: `Desligar o radar e o ecobatímetro e dispensar o vigia, pois o navio está parado e totalmente seguro no fundo.`,
+        B: `Verificar a posição do navio em intervalos frequentes por marcações visuais de pontos de terra e radar para confirmar se o navio não está garrando o ferro, monitorar a evolução da maré/corrente e o raio de giro, e manter vigilância adequada do tráfego ao redor.`,
+        C: `Manter as luzes de navegação em movimento acesas durante a noite enquanto fundeado.`,
+        D: `Permitir o desarmamento da máquina principal sem autorização prévia do Comandante.`,
+        E: `Cancelar o acompanhamento das previsões meteorológicas locais.`
+    },
+
+    resposta: "B",
+
+    comentario: `Durante a guardaria no fundeio, o OOW deve verificar regularmente a posição do navio para detectar eventual garreamento, acompanhar as condições meteorológicas, maré e corrente e manter vigilância adequada do tráfego.
+
+Pegadinha: estar fundeado não significa que o navio deixou de exigir guardaria ativa. A posição e as condições ao redor devem continuar sendo monitoradas.`,
+
+    bibliografia: [
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Checklist C2.12",
+            pagina: ""
+        },
+        {
+            publicacao: "STCW Code",
+            capitulo: "Section A-VIII/2 — Watchkeeping at Anchor",
+            pagina: ""
+        },
+        {
+            publicacao: "RIPEAM / COLREG 1972",
+            capitulo: "Regra 30 — Embarcações Fundeadas e Encalhadas",
+            pagina: ""
+        }
+    ]
+},
+
+
+{
+    id: "NAV-0090",
+    disciplina: "navegacao",
+    assunto: "bridge-team-management",
+    topico: "IMO SMCP e Inglês Técnico no Passadiço",
+    edital: "Bridge Team Management / BRM",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A padronização do idioma de trabalho no passadiço e o uso do IMO Standard Marine Communication Phrases (SMCP) sob o BTM e STCW destinam-se a:`,
+
+    alternativas: {
+        A: `Permitir que oficiais utilizem gírias regionais e abreviações não oficiais em comunicações de segurança.`,
+        B: `Eliminar a ambiguidade em mensagens operacionais entre tripulações de diferentes nacionalidades, Práticos e estações de terra, garantindo que termos como "Say again", "Standing by", "Mistake", "Correction" e ordens de leme/máquina tenham significado único e compreensível em circuito fechado.`,
+        C: `Substituir a necessidade de usar sinais visuais e apitos previstos no RIPEAM.`,
+        D: `Permitir conversações informais em canais de emergência sem registro no VDR.`,
+        E: `Facilitar negociações comerciais privadas entre o Prático e o agente marítimo do navio.`
+    },
+
+    resposta: "B",
+
+    comentario: `O IMO SMCP procura reduzir ambiguidades nas comunicações marítimas internacionais por meio de terminologia e construções padronizadas, especialmente em situações relacionadas à segurança.
+
+Expressões como "Say again", "Mistake" e "Correction", bem como ordens padronizadas de leme e máquina, contribuem para uma comunicação clara e previsível.
+
+Pegadinha: o SMCP complementa a comunicação operacional; ele não substitui as regras de navegação, sinais visuais ou sinais sonoros previstos no RIPEAM.`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Standard Marine Communication Phrases — SMCP",
+            capitulo: "Standard Marine Communication Phrases",
+            pagina: ""
+        },
+        {
+            publicacao: "ICS Bridge Procedures Guide — 6th Edition",
+            capitulo: "Figura 2.3",
+            pagina: ""
+        }
+    ]
 }
+    
     
 ];
 
