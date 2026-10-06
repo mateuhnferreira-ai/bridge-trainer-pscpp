@@ -1677,9 +1677,1210 @@ const questoesNavegacaoPSCPP = [
         }
 
     ]
-}    
+}, 
+    
+// =====================================
+// NAVEGAÇÃO EM ÁGUAS RESTRITAS
+// NAV-0031 a NAV-0040
+// =====================================
+
+{
+    id: "NAV-0031",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Definição de Águas Restritas e Limites Operacionais",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `De acordo com o Capítulo 9 do Navegação Ciência e Arte (Vol. 1), a "Navegação em Águas Restritas" é definida como aquela praticada no acesso e no interior de portos, baías, canais, rios e lagos, onde a proximidade dos perigos, a conformação da costa e/ou as profundidades reduzidas impõem severas restrições à manobra do navio. Em termos práticos de passadiço, os procedimentos inerentes à navegação em águas restritas devem ser formalmente guarnecidos quando:`,
+
+    alternativas: {
+        A: "O navio adentrar a Zona Econômica Exclusiva (ZEE) de 200 milhas náuticas da costa.",
+        B: "A distância à costa ou ao perigo mais próximo for inferior a 3 milhas náuticas ou quando as profundidades reduzidas tornarem pequena a folga abaixo da quilha.",
+        C: "O ecobatímetro indicar uma profundidade inferior a 100 metros, independentemente do calado da embarcação.",
+        D: "O navio estiver a menos de 12 milhas náuticas da costa, no limite do Mar Territorial brasileiro.",
+        E: "A visibilidade meteorológica cair abaixo de 2 milhas náuticas em alto-mar."
+    },
+
+    resposta: "B",
+
+    comentario: `O Navegação Ciência e Arte (Vol. 1, Cap. 9, Item 9.3) estabelece que os procedimentos formais de navegação em águas restritas devem ser guarnecidos quando a distância à costa ou ao perigo mais próximo for inferior a 3 milhas náuticas ou quando as profundidades reduzidas tornarem pequena a lazeira de água abaixo da quilha.
+
+A, C, D e E citam distâncias e profundidades genéricas (200 MN, 100 m, 12 MN, 2 MN) sem respaldo no capítulo de águas restritas.
+
+Dica de prova: guarde o limite clássico da Marinha do Brasil para guarnecer o Detalhe Especial para o Mar em Águas Restritas: distância < 3 milhas do perigo/costa ou lazeira reduzida.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 9, Item 9.3",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0032",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Requisitos de Precisão IMO/IALA e o Parâmetro 2 dRMS",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A precisão de posicionamento exigida durante a navegação em águas restritas e na aproximação a portos é significativamente maior do que na navegação costeira ou oceânica. Segundo as recomendações da Organização Marítima Internacional (IMO) e da Associação Internacional de Autoridades de Auxílios à Navegação Marítima e Faróis (IALA) citadas no Capítulo 9 do Navegação Ciência e Arte (Vol. 1), a precisão de posição requerida para essas áreas e o significado estatístico do padrão adotado correspondem a:`,
+
+    alternativas: {
+        A: "Precisão da ordem de 100 metros, correspondendo ao erro provável simples (1E) com 50% de probabilidade.",
+        B: "Precisão da ordem de 10 metros, expressa pelo parâmetro 2 dRMS (distance root mean square), que representa um nível de confiabilidade de 95%.",
+        C: "Precisão absoluta de 1 metro, garantida exclusivamente pelo GPS de navegação civil sem correções diferenciais.",
+        D: "Precisão da ordem de 50 metros, equivalente a 1 dRMS, representando 68% de probabilidade de acerto.",
+        E: "Precisão nula, pois em águas restritas a navegação por estimativa substitui totalmente os meios de posicionamento observados."
+    },
+
+    resposta: "B",
+
+    comentario: `O Navegação Ciência e Arte (Vol. 1, Cap. 9, Item 9.3) cita que as normas da IMO e IALA para aproximação de portos e águas restritas exigem precisões da ordem de 10 metros (2 dRMS, ou seja, 95% de confiabilidade).
+
+A, C, D e E alteram a ordem de grandeza da precisão (100 m, 1 m, 50 m) e os conceitos de estatística de erro (1E, 1 dRMS).
+
+Dica de prova: memorize a regra indicada no material: Águas Restritas = 10 metros de precisão com 2 dRMS (95% de probabilidade).`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 9, Item 9.3",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0033",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Dados Táticos do Navio - Geometria da Curva de Giro",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante uma manobra em canal restrito, o Prático ordena uma guinada de 90° para boreste. Para o correto planejamento gráfico do movimento do navio na carta náutica, é necessário compreender os elementos da curva de giro definidos no Capítulo 8 do Navegação Ciência e Arte (Vol. 1). Sobre os conceitos táticos, assinale a opção correta:`,
+
+    alternativas: {
+        A: "Avanço é a distância medida na direção do rumo inicial, desde o ponto em que o leme foi carregado até a proa atingir o novo rumo; atinge seu valor máximo para uma guinada de 90°.",
+        B: "Afastamento é a distância medida ao longo da curva descrita pelo centro de gravidade, desde o instante da ordem de leme até o navio parar totalmente.",
+        C: "Diâmetro Tático é a distância perpendicular medida entre o rumo inicial e a tangente à curva de giro quando o navio completa uma alteração de rumo de 360°.",
+        D: "Ângulo de Deriva é o ângulo formado entre o plano diametral do navio e a linha do rumo inicial antes de carregar o leme.",
+        E: "Diâmetro Final é a distância entre o ponto onde o leme foi carregado e o ponto de colisão com a margem do canal."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.2): Avanço é a distância medida na direção do rumo inicial, desde o ponto em que o leme foi carregado até a proa atingir o novo rumo. O avanço é máximo para uma guinada de 90°.
+
+B erra a definição de Afastamento, que é medido perpendicularmente ao rumo inicial. C erra o Diâmetro Tático, relacionado à guinada de 180°. D e E trocam os conceitos de Ângulo de Deriva e Diâmetro Final.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.2",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0034",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Efeito do Leme e Abatimento da Popa - Rabo de Peixe",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Ao guinar um navio de grande porte em um canal estreito carregando o leme para boreste, o Prático deve estar extremamente atento ao comportamento dinâmico do casco nos primeiros instantes da manobra. Em conformidade com as considerações práticas sobre a curva de giro expostas no Capítulo 8 do Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "A proa guina imediatamente para boreste e todo o casco ganha caminho para boreste sem que a popa se desloque para bombordo.",
+        B: "A água exerce forte pressão sobre a porta do leme, fazendo com que a proa guine para boreste, enquanto o centro de gravidade continua inicialmente no rumo original e a popa é empurrada para bombordo, produzindo um abatimento lateral para o bordo oposto ao da guinada.",
+        C: "O navio começa a ganhar caminho lateral para o bordo da guinada imediatamente após o leme atingir 5 graus de bordo.",
+        D: "O abatimento da popa para o bordo oposto à guinada é cancelado se o navio estiver navegando em velocidade reduzida de 3 nós.",
+        E: "Para evitar um obstáculo diretamente pela proa a uma distância inferior a um comprimento do navio, basta carregar todo o leme para um dos bordos."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.3): ao carregar o leme para um bordo, a pressão na porta do leme faz a proa guinar para o bordo da guinada, mas o centro de gravidade segue inicialmente o rumo original e a popa é empurrada para o bordo contrário, produzindo o abatimento da popa ou "rabo de peixe".
+
+A e C ignoram esse abatimento inicial da popa. D e E afirmam incorretamente que baixa velocidade ou leme total anulam o fenômeno ou garantem evitar obstáculo muito próximo.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.3",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0035",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Variação dos Dados Táticos com o Ângulo de Leme e Velocidade",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A relação entre a velocidade do navio, o ângulo de leme aplicado e as dimensões da curva de giro é fundamental para a manobra em canais restritos. Com base no Capítulo 8 do Navegação Ciência e Arte (Vol. 1), assinale a afirmativa correta:`,
+
+    alternativas: {
+        A: "O avanço, o diâmetro tático e o afastamento aumentam linearmente com o aumento do ângulo de leme de 15° para 35°.",
+        B: "O avanço, o diâmetro tático e o afastamento diminuem com o aumento do ângulo de leme, enquanto o ângulo de deriva aumenta.",
+        C: "O tempo de evolução de uma guinada aumenta à medida que a velocidade do navio na água aumenta.",
+        D: "Os valores de avanço e afastamento permanecem rigorosamente inalterados seja qual for a velocidade do navio ou ângulo de leme utilizado.",
+        E: "O diâmetro tático para 35° de leme é sempre o dobro do diâmetro tático para 15° de leme."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.3): o avanço, o diâmetro tático e o afastamento diminuem com o aumento do ângulo de leme, enquanto o ângulo de deriva aumenta.
+
+A afirma o oposto. C erra a relação apresentada entre tempo de evolução e velocidade. D e E estabelecem relações rígidas que não correspondem ao conteúdo fornecido.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.3",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0036",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Determinação do Ponto de Guinada - Wheel Over Point (WOP)",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `No planejamento da navegação em águas restritas, quando há uma inflexão (mudança de rumo) na derrota prevista dentro de um canal, é necessário determinar graficamente o Ponto de Guinada (Wheel Over Point - WOP). Segundo a metodologia descrita no Capítulo 8 do Navegação Ciência e Arte (Vol. 1), para localizar o WOP na carta náutica, utiliza-se:`,
+
+    alternativas: {
+        A: "Exclusivamente o valor da distância de parada do navio em crash stop.",
+        B: "O traçado da linha do novo rumo deslocada paralelamente a si mesma de uma distância igual ao Afastamento, encontrando a interseção com o rumo inicial, e a partir desse ponto mede-se para ré a distância do Avanço para fixar o WOP.",
+        C: "A medição direta de duas milhas náuticas a vante de cada bóia do canal.",
+        D: "O cálculo do efeito squat multiplicado pelo calado máximo da embarcação.",
+        E: "A divisão do comprimento total do navio pelo seno do ângulo de guinada."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.7): o Ponto de Guinada (WOP) é obtido graficamente traçando-se a linha do novo rumo deslocada paralelamente de uma distância igual ao Afastamento. Na interseção com o rumo inicial, mede-se para ré a distância do Avanço.
+
+A, C, D e E propõem métodos sem relação com o traçado geométrico dos dados táticos apresentado no material.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.7",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0037",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Seleção da Marca de Guinada - Través vs. Proa/Paralela",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Após a determinação do Ponto de Guinada (WOP) na carta náutica, seleciona-se um ponto notável em terra para servir como referência visual ou radar para o início da manobra. O Capítulo 8 do Navegação Ciência e Arte (Vol. 1) analisa as vantagens e desvantagens na escolha da marca de guinada. A respeito dessa seleção, é correto afirmar que:`,
+
+    alternativas: {
+        A: "Um objeto situado o mais próximo possível do través no momento da guinada proporciona uma marcação que varia rapidamente, garantindo maior precisão na identificação do instante exato de dar a ordem de leme; contudo, se o navio estiver fora da derrota original, continuará fora da derrota no novo rumo.",
+        B: "Um objeto cuja marcação no WOP seja paralela ao novo rumo (marca de proa) é altamente sensível e varia muito rapidamente, sendo a melhor opção para identificar o instante exato da guinada.",
+        C: "A marca de través é desaconselhada em qualquer situação por apresentar taxa de variação azimutal nula.",
+        D: "Selecionar uma marca de proa paralela ao novo rumo exige obrigatoriamente que a agulha giroscópica tenha um erro conhecido superior a 5 graus.",
+        E: "A escolha do ponto de referência para guinada independe da posição geométrica do objeto em relação à derrota."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.7): a marca de través é excelente para definir o momento exato da guinada por variar rapidamente; contudo, se o navio estiver fora da derrota original, continuará fora no novo rumo.
+
+A marca de proa varia mais lentamente e apresenta característica operacional diferente. C, D e E contêm erros conceituais em relação à seleção da referência de guinada.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.7",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0038",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Hidrodinâmica de Águas Rasas - Efeito Squat",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Ao navegar em canais restritos e águas rasas, a diminuição da lazeira de água sob o casco altera a distribuição de pressões ao redor do navio. O fenômeno hidrodinâmico do Squat (rebaixamento dinâmico), estudado no Navegação Ciência e Arte, caracteriza-se por:`,
+
+    alternativas: {
+        A: "Aumento da pressão hidrodinâmica sob o casco pelo princípio de Pascal, provocando a elevação do navio e aumento da folga abaixo da quilha (UKC).",
+        B: "Queda da pressão hidrodinâmica sob o casco devido ao aumento da velocidade do escoamento da água (princípio de Bernoulli), provocando o afundamento do navio e alteração de trim, reduzindo a folga abaixo da quilha (UKC).",
+        C: "Rebaixamento estático do casco que ocorre apenas quando o navio está totalmente parado e fundeado no centro do canal.",
+        D: "Elevação exclusiva da popa em navios de formas finas (baixo coeficiente de bloco Cb).",
+        E: "Fenômeno que varia na razão inversa do quadrado da velocidade (1/V²), tornando-se negligenciável em altas velocidades."
+    },
+
+    resposta: "B",
+
+    comentario: `O Efeito Squat é o afundamento dinâmico do casco causado pela queda de pressão hidrodinâmica sob o fundo do navio devido ao escoamento acelerado da água em águas rasas, reduzindo a folga abaixo da quilha (UKC) e podendo alterar o trim.
+
+A descreve elevação do casco. C trata o fenômeno como estático. D e E apresentam comportamento físico incompatível com a fundamentação fornecida.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Águas rasas — Efeito Squat",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0039",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Fórmula Prática e Variáveis do Efeito Squat",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A magnitude do rebaixamento por Squat é criticamente influenciada pela velocidade do navio na água (V), pelo coeficiente de bloco (Cb) do casco e pelo grau de confinamento do canal. De acordo com a doutrina técnica de manobra e navegação em águas restritas:`,
+
+    alternativas: {
+        A: "O Squat em águas rasas abertas varia proporcionalmente a V (velocidade simples), enquanto em canais estreitos confinados a sua magnitude é consideravelmente menor.",
+        B: "O Squat é diretamente proporcional ao quadrado da velocidade (V²), sendo que em canais confinados a restrição lateral faz com que o afundamento seja aproximadamente o dobro do observado em águas rasas irrestritas.",
+        C: "Navios de formas cheias (Cb > 0,80, como grandes petroleiros e mineradores) tendem a afundar excessivamente pela popa, elevando a proa em águas rasas.",
+        D: "A redução da velocidade do navio pela metade reduz o efeito Squat a apenas 50% do seu valor original.",
+        E: "O Squat independe do calado e das dimensões da seção transversal do canal navegável."
+    },
+
+    resposta: "B",
+
+    comentario: `Conforme a fundamentação fornecida, a magnitude do Squat varia diretamente com o quadrado da velocidade (V²) e é aproximadamente o dobro em canais confinados/estreitos em comparação a águas rasas abertas.
+
+As relações práticas apresentadas no material são:
+
+Squat ∝ (Cb × V²) / 100, em águas abertas;
+
+Squat ∝ (Cb × V²) / 50, em canais.
+
+A erra a proporcionalidade. C erra a atitude de trim indicada para navios de bloco alto. D ignora a relação quadrática. E desconsidera fatores geométricos relevantes.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Águas rasas — Efeito Squat",
+            pagina: ""
+        }
+    ]
+},
+
+{
+    id: "NAV-0040",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Efeito de Margem - Bank Cushion e Bank Suction",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Quando um navio navega descentralizado ao longo de um canal estreito, próximo a uma das margens (barrancas ou taludes), surgem forças hidrodinâmicas conhecidas como "Efeitos de Margem" (Bank Effects). Segundo a teoria de manobra exposta nas publicações de navegação e praticagem:`,
+
+    alternativas: {
+        A: "A proa é atraída para a margem mais próxima (Bank Suction) e a popa é repelida para o centro do canal (Bank Cushion).",
+        B: "O acúmulo de água entre a bochecha do navio e a margem próxima cria uma zona de alta pressão que repele a proa para o centro do canal (Bank Cushion), enquanto o escoamento acelerado a ré cria uma zona de baixa pressão que atrai a popa em direção à margem (Bank Suction).",
+        C: "O navio sofre uma força de atração uniforme ao longo de todo o seu costado, mantendo a proa e a popa rigorosamente paralelas à margem sem tendência de guinada.",
+        D: "Os efeitos de margem são anulados se o navio aumentar a velocidade para mais de 15 nós no canal.",
+        E: "A tendência natural de um navio sob efeito de margem é guinar a proa contra a margem próxima, exigindo leme para o centro do canal para evitar o encalhe da proa."
+    },
+
+    resposta: "B",
+
+    comentario: `Efeitos de Margem (Bank Effects): o acúmulo de água na bochecha próxima gera alta pressão, provocando a repulsão da proa para o centro do canal — Bank Cushion. O fluxo acelerado na região de ré gera baixa pressão, provocando a atração da popa em direção à margem — Bank Suction.
+
+A inverte Bank Cushion e Bank Suction. C elimina incorretamente o momento de guinada. D afirma que o aumento de velocidade anula o fenômeno. E inverte a tendência da proa.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Navegação em águas restritas — Efeitos de margem",
+            pagina: ""
+        }
+    ]
+},
+    
+// =====================================
+// NAVEGAÇÃO EM ÁGUAS RESTRITAS
+// NAV-0041 a NAV-0050
+// =====================================
 
 
+// =====================================
+// NAV-0041
+// EFEITO DE MARGEM — CORREÇÃO
+// =====================================
+
+{
+    id: "NAV-0041",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Manobra de Correção e Riscos sob Efeito de Margem",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Analisando a situação operacional de um navio de grande porte sofrendo forte Efeito de Margem (Bank Effect) ao aproximar-se da margem de boreste de um canal estreito, assinale a conduta de manobra correta e o risco associado:`,
+
+    alternativas: {
+        A: "A proa guinará para bombordo (centro do canal) e a popa será sugada para a margem de boreste; se o Prático carregar o leme para boreste para conter a guinada da proa, o efeito de propulsão do hélice aumentará a atração da popa contra a margem.",
+        B: "O Prático deve aumentar a velocidade da máquina para Full Ahead para anular a pressão da bochecha e afastar a popa da margem.",
+        C: "A proa guinará para boreste em direção à margem, devendo-se aplicar leme para bombordo com urgência.",
+        D: "A força de repulsão da proa (Bank Cushion) atua com maior intensidade quando o navio navega em águas profundas e distantes de qualquer talude.",
+        E: "Os efeitos de margem não afetam a estabilidade de governo, sendo dispensável o uso de leme de correção."
+    },
+
+    resposta: "A",
+
+    comentario: `Sob efeito de margem a boreste, a proa guina para o centro do canal (bombordo) e a popa cai para a margem de boreste. Se o operador der leme para boreste para conter a proa, a descarga do hélice (propeller wash) contra o leme carregado intensifica a sucção da popa contra a margem de boreste.
+
+A alternativa B está incorreta porque aumentar máquinas agrava significativamente o Bank Suction. C inverte o comportamento da proa. D e E contradizem os efeitos hidrodinâmicos associados à proximidade da margem.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Navegação em Águas Restritas — Efeitos de Margem",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0042
+// INTERAÇÃO — ULTRAPASSAGEM
+// =====================================
+
+{
+    id: "NAV-0042",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Interação Hidrodinâmica em Ultrapassagem de Navios",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante a navegação em um canal estreito, um navio A (alcançante) efetua a ultrapassagem de um navio B (alcançado) pelo seu bordo de bombordo. De acordo com os princípios de interação hidrodinâmica entre cascos (Ship-to-Ship Interaction) em águas restritas, no momento em que a proa de A emparelha com a popa de B:`,
+
+    alternativas: {
+        A: "A proa de A é atraída para a popa de B devido à zona de alta pressão existente entre os cascos.",
+        B: "As duas embarcações se repelem mutuamente ao longo de todo o comprimento dos cascos.",
+        C: "A zona de alta pressão a vante da proa de A exerce uma força de repulsão sobre a popa de B, fazendo a proa de B guinar em direção ao canal central, enquanto a popa de A é sugada para o bordo de B.",
+        D: "Não há qualquer alteração nas forças de leme de ambas as embarcações até que estejam totalmente safas.",
+        E: "O navio alcançado (B) ganha velocidade automaticamente devido ao efeito de arrasto do navio alcançante (A)."
+    },
+
+    resposta: "C",
+
+    comentario: `Na ultrapassagem em canal estreito, quando a proa de A atinge a popa de B, a onda de alta pressão da proa de A empurra a popa de B para longe, produzindo repulsão da popa de B, enquanto a popa de A é sugada para o casco de B.
+
+A, B, D e E invertem ou omitem os efeitos de alta e baixa pressão que surgem durante a interação dos cascos emparelhados.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Navegação em Águas Restritas — Interação Hidrodinâmica entre Navios",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0043
+// INTERAÇÃO — HEAD-ON
+// =====================================
+
+{
+    id: "NAV-0043",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Interação Hidrodinâmica no Cruzamento de Navios - Head-On",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Quando dois navios de grande porte navegam em rumos opostos e se cruzam a curta distância em um canal estreito (Head-on), as forças hidrodinâmicas variam dinamicamente ao longo das etapas do cruzamento. Assinale a sequência correta das forças registradas:`,
+
+    alternativas: {
+        A: "Primeiramente as proas se atraem; em seguida os bordos se repelem; e finalmente as popas se repelem.",
+        B: "Na aproximação proa com proa, a alta pressão entre as bochechas provoca a repulsão mútua das proas; quando os bordos ficam emparelhados, o fluxo acelerado cria baixa pressão e atração mútua dos cascos; e na passagem popa com popa, a atração das popas exige atenção para evitar a colisão de ré.",
+        C: "As duas embarcações mantêm forças de repulsão constantes do início ao fim da manobra de cruzamento.",
+        D: "A velocidade de cruzamento não altera a intensidade das forças de repulsão e atração entre os cascos."
+    },
+
+    resposta: "B",
+
+    comentario: `No cruzamento Head-on, a sequência apresentada é: primeiro, proa com proa, com repulsão das proas devido à alta pressão entre as bochechas; depois, com os meios-navios emparelhados, ocorre atração mútua decorrente da região de baixa pressão; finalmente, na passagem popa com popa, ocorre atração das popas, exigindo atenção para evitar colisão de ré.
+
+As alternativas A, C e D invertem ou eliminam etapas importantes da interação hidrodinâmica.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Navegação em Águas Restritas — Interação Hidrodinâmica entre Navios",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0044
+// ALINHAMENTOS
+// =====================================
+
+{
+    id: "NAV-0044",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Uso de Alinhamentos em Águas Restritas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Os alinhamentos (dois pontos notáveis de terra observados exatamente enfiados) representam uma das Linhas de Posição (LDP) mais valiosas na navegação em águas restritas. Segundo o Capítulo 4 do Navegação Ciência e Arte (Vol. 1), as principais vantagens operacionais do alinhamento são:`,
+
+    alternativas: {
+        A: "Alta sensibilidade angular e o fato de independer totalmente de qualquer instrumento de agulha para sua observação, permitindo ainda aferir diretamente o erro da giroscópica ou da agulha magnética de bordo.",
+        B: "Necessidade de calibração prévia do radar para validar visualmente a linha enfiada.",
+        C: "Imunidade total ao efeito de abatimento por vento e corrente quando o navio governa sobre ele.",
+        D: "Capacidade de fornecer a posição tridimensional do navio sem necessidade de ecobatímetro.",
+        E: "Aplicação restrita ao período diurno, sendo proibido seu uso na navegação noturna."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 4, Item 4.2.2): o alinhamento oferece altíssima precisão e independe de qualquer instrumento de agulha para sua observação, servindo ainda para verificar o erro da giroscópica ou da agulha magnética.
+
+B, C, D e E estabelecem características ou limitações que não correspondem às vantagens do alinhamento apresentadas no material.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 4, Item 4.2.2",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0045
+// MARCAÇÕES DE SEGURANÇA
+// =====================================
+
+{
+    id: "NAV-0045",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Emprego de Setores e Marcações de Segurança",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Ao conduzir um navio ao longo de um canal de acesso cercado por bancos de areia e pedrais submersos, o Prático utiliza Marcações de Segurança visual/radar ou luzes de setor. Em conformidade com o Capítulo 7 do Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "Uma marcação de segurança exige a determinação prévia da latitude e longitude exatas do navio por navegação astronômica.",
+        B: "As marcações de segurança estabelecem limites angulares a partir de um ponto notável; ao observar que a marcação do ponto aproxima-se do limite de perigo, o Prático deve corrigir o rumo para o bordo oposto ao perigo para manter o navio na lazeira de água segura.",
+        C: "Se a marcação do ponto de referência ultrapassar o limite seguro, significa que o navio entrou em zona de profundidade infinita.",
+        D: "O uso de luzes de setor colorido (verde e encarnado) orienta o navio a navegar continuamente dentro do setor colorido para garantir o centro do canal."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 7, Item 7.3): ao aproximar-se da marcação de segurança limite, o navegador corrige o rumo para o bordo oposto ao perigo, mantendo-se na lazeira de água segura.
+
+A, C e D apresentam exigências ou interpretações incorretas das marcações de segurança e das luzes de setor.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 7, Item 7.3",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0046
+// PARALLEL INDEXING
+// =====================================
+
+{
+    id: "NAV-0046",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Navegação Radar em Águas Restritas - Paralelas Indexadas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A técnica de Paralelas Indexadas (Parallel Indexing) é a ferramenta primária de monitoramento radar da posição em canais restritos. A respeito da preparação e execução dessa técnica (Capítulo 14 de Navegação Ciência e Arte):`,
+
+    alternativas: {
+        A: "A linha paralela indexada é traçada na tela do radar paralela ao Rumo Verdadeiro planejado, a uma distância do centro da tela igual à Distância de Passagem Prevista (DPA) de um eco fixo de terra; se o eco mantiver-se sobre a linha, o navio está sobre a derrota.",
+        B: "A técnica exige obrigatoriamente a apresentação do radar em Movimento Verdadeiro (True Motion) não estabilizado.",
+        C: "As paralelas indexadas só podem ser utilizadas para alvos situados diretamente sobre a linha de fé na proa do navio.",
+        D: "Se o eco de referência se afastar da linha paralela indexada, significa que a agulha giroscópica de bordo pifou.",
+        E: "A técnica é ineficaz em canais que apresentam inflexões e mudanças de rumo."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 14, Item 14.7): a linha paralela indexada é traçada paralela ao rumo e mantida tangente ao eco de um ponto de terra a uma distância igual à DPA. Se o eco permanecer na linha, o navio está na derrota.
+
+B erra o modo de apresentação. C limita incorretamente a técnica a alvos pela proa. D atribui qualquer afastamento a uma falha da giroscópica. E nega sua utilização em derrotas com mudanças de rumo.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 14, Item 14.7",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0047
+// RETAS DE SEGURANÇA
+// =====================================
+
+{
+    id: "NAV-0047",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Retas de Segurança e Ponto de Guinada no Radar",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Empregando o radar em águas restritas, o navegador pode combinar as paralelas indexadas com as isóbatas da carta náutica para traçar "Retas de Segurança" e pontos de guinada radar. Conforme demonstrado no Capítulo 14 do Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "As Retas de Segurança no radar indicam a velocidade máxima permitida para o navio no canal.",
+        B: "As Retas de Segurança definem as distâncias limites em relação aos ecos de terra que garantem ao navio manter-se em profundidades seguras e safa de perigos submersos contíguos ao canal.",
+        C: "O ponto de guinada radar independe dos dados táticos do navio (avanço e afastamento).",
+        D: "O uso de retas de segurança no radar dispensa o acompanhamento da sonda no ecobatímetro."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 14, Figura 14.45): as Retas de Segurança no radar delimitam as distâncias mínimas de segurança em relação aos ecos de terra para evitar perigos submersos contíguos.
+
+A, C e D desvirtuam o conceito de reta de segurança e sua integração com os demais meios de navegação.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 14, Figura 14.45",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0048
+// FUNDEIO DE PRECISÃO
+// =====================================
+
+{
+    id: "NAV-0048",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Fundeio de Precisão - Ponto de Largada do Ferro",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na execução de um fundeio de precisão em águas restritas em um ponto pré-determinado F (conforme detalhado no Capítulo 8 do Navegação Ciência e Arte), o instante de dar a ordem de "LARGAR O FERRO!" deve considerar a geometria da embarcação. O Ponto de Largada do Ferro (PL/LG) difere da posição planejada para o passadiço no momento do fundeio porque:`,
+
+    alternativas: {
+        A: "O ferro é largado pelo passadiço e cai verticalmente sob a alidade do repetidor.",
+        B: "A ordem de largar o ferro deve ser dada quando o escovém do navio atingir o ponto de fundeio F; como o radar e as alidades de navegação situam-se no passadiço, o PL/LG deve ser marcado na carta a uma distância à frente do ponto F igual à distância horizontal do escovém ao passadiço.",
+        C: "O ferro deve ser largado quando o passadiço estiver a duas milhas náuticas de distância do ponto F.",
+        D: "A distância entre o escovém e o passadiço é desprezada em navios com comprimento total superior a 200 metros.",
+        E: "O Ponto de Largada do Ferro é determinado exclusivamente pela profundidade lida no ecobatímetro."
+    },
+
+    resposta: "B",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.9): para que o ferro caia exatamente sobre o ponto de fundeio F, o Ponto de Largada do Ferro (PL/LG) deve ser marcado a vante na carta a uma distância igual à distância horizontal do escovém ao passadiço.
+
+A, C, D e E desconsideram a posição física do escovém em relação aos sensores e referências utilizados no passadiço.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.9",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0049
+// CÍRCULO DE GIRO DO PASSADIÇO
+// =====================================
+
+{
+    id: "NAV-0049",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Círculo de Giro do Passadiço - CGP e Garreamento",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Após a conclusão da manobra de fundeio de precisão, o Encarregado de Navegação traça na carta o Círculo de Giro do Passadiço (CGP) para monitorar a segurança do navio amarrado ao ferro. De acordo com o Capítulo 8 do Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "O raio do CGP é calculado somando-se o comprimento do filame de corrente arriado à distância do escovém ao passadiço.",
+        B: "O raio do CGP é igual apenas ao comprimento da amarra arriada (filame) em braças.",
+        C: "Posições subsequentes do navio plotadas fora dos limites do CGP indicam que o navio está perfeitamente seguro e com a amarra unhada com firmeza.",
+        D: "Se a posição observada do passadiço localizar-se fora do CGP, é sinal de que o navio está garrando, devendo o Comandante e a equipe de convés ser imediatamente alertados.",
+        E: "As afirmativas A e D estão corretas e completam o procedimento operacional de fundeio."
+    },
+
+    resposta: "E",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.9): o raio do Círculo de Giro do Passadiço (CGP) é a soma do filame com a distância escovém-passadiço. Posições observadas fora do CGP indicam que o navio está garrando.
+
+Assim, as afirmativas A e D estão corretas e se complementam, tornando E a resposta correta.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.9",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0050
+// ECDIS — SAFETY CONTOUR / SAFETY DEPTH
+// =====================================
+
+{
+    id: "NAV-0050",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "ECDIS - Safety Contour vs. Safety Depth",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na navegação em águas restritas utilizando o sistema ECDIS com cartas vetoriais (ENC), a correta parametrização das profundidades de segurança é vital para evitar alarmes falsos ou encalhes. Em conformidade com as normas técnicas de operação do ECDIS:`,
+
+    alternativas: {
+        A: "O Safety Contour (Contorno de Segurança) é a isobática selecionada que estabelece a divisão visual entre águas seguras (claras) e águas rasas/não navegáveis (escuras); se o valor exato digitado não existir na ENC, o sistema adota automaticamente a isobática imediatamente mais profunda.",
+        B: "O Safety Depth (Profundidade de Segurança) altera o preenchimento de cor das zonas de fundo, mas não destaca os números das sondagens pontuais.",
+        C: "O parâmetro Shallow Contour define o limite máximo de profundidade para navios de guerra em canais de acesso.",
+        D: "O ECDIS gera alarmes sonoros automáticos de encalhe para qualquer sonda independentemente da configuração do Safety Contour.",
+        E: "As cartas ráster (RNC) possuem capacidade de reordenação vetorial de camadas superior às cartas ENC."
+    },
+
+    resposta: "A",
+
+    comentario: `No ECDIS, o Safety Contour estabelece a separação visual entre águas consideradas seguras e águas rasas ou potencialmente não navegáveis. Quando o valor configurado pelo operador não corresponde a uma isóbata existente na ENC, o sistema utiliza a próxima isóbata disponível mais profunda.
+
+O Safety Depth possui função distinta, relacionada principalmente ao destaque das sondagens pontuais relevantes. B, C, D e E confundem as funções dos parâmetros e as características de ENC e RNC.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "ECDIS — Parâmetros de Segurança",
+            pagina: ""
+        }
+    ]
+},
+// =====================================
+// NAVEGAÇÃO EM ÁGUAS RESTRITAS
+// NAV-0051 a NAV-0060
+// =====================================
+
+
+// =====================================
+// NAV-0051
+// CATZOC
+// =====================================
+
+{
+    id: "NAV-0051",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Zonas de Confiança - Categoria CATZOC nas Cartas Eletrônicas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Ao planejar a folga abaixo da quilha (UKC) para trânsito em canais restritos com profundidades críticas, o Prático deve consultar a qualidade dos levantamentos hidrográficos através da categoria CATZOC (Category Zone of Confidence). Sobre o CATZOC:`,
+
+    alternativas: {
+        A: "O nível ZOC A1 representa o padrão de maior precisão e cobertura total do fundo (obtida por varredura multifeixe), garantindo incerteza de posição horizontal de ± 5 m e alta precisão de sonda.",
+        B: "O nível ZOC D indica que o canal foi varrido com tecnologia laser de última geração e possui erro de sonda nulo.",
+        C: "As categorias CATZOC aplicam-se exclusivamente às cartas de navegação fluvial em rios não mapeados.",
+        D: "A categoria ZOC C exige que a margem de segurança vertical seja reduzida a zero devido à alta confiabilidade dos dados de 1800."
+    },
+
+    resposta: "A",
+
+    comentario: `O padrão CATZOC ZOC A1 é o nível máximo de confiabilidade em levantamentos hidrográficos, garantindo varredura 100% do fundo e erro de posição horizontal ≤ ± 5 m.
+
+B, C e D atribuem características falsas às categorias ZOC D e C.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Cartas Eletrônicas — CATZOC",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0052
+// EQUIPE DE NAVEGAÇÃO / BTM
+// =====================================
+
+{
+    id: "NAV-0052",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Organização da Equipe de Navegação em Águas Restritas - BTM",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A condução da navegação em águas restritas exige o guarnecimento da Equipe de Navegação em passadiço no regime de Detalhe Especial para o Mar (DEM). De acordo com os procedimentos padronizados no Capítulo 9 do Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "A atribuição da Equipe de Navegação é fornecer um fluxo contínuo de informações de posição, rumos e velocidades ao Comandante e ao Prático, minorando o tempo percorrido sem posicionamento.",
+        B: "A ordem verbal \"Atenção para o MARQUE! ... MARQUE!\" é utilizada para sincronizar a obtenção simultânea de LDPs por diferentes observadores, atribuindo-se essa hora à posição observada.",
+        C: "Os intervalos de determinação de posição em águas restritas variam geralmente de 1 a 6 minutos, dependendo das restrições e da velocidade do navio.",
+        D: "Todas as afirmativas acima estão corretas.",
+        E: "Apenas as afirmativas A e B estão corretas."
+    },
+
+    resposta: "D",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 9, Itens 9.1 a 9.4): todas as afirmativas descrevem a função da Equipe de Navegação em DEM, o uso da ordem "MARQUE!" e a frequência de posições de 1 a 6 minutos.
+
+Portanto, A, B e C estão corretas, tornando D a resposta da questão.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 9, Itens 9.1 a 9.4",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0053
+// ERRO DA GIROSCÓPICA
+// =====================================
+
+{
+    id: "NAV-0053",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Erros de Agulha Giroscópica na Navegação em Águas Restritas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante a navegação em canais restritos, a verificação contínua do erro da agulha giroscópica de bordo é indispensável para evitar desvios no traçado das LDPs e nas paralelas indexadas. Conforme o Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "O erro da giroscópica pode ser verificado diretamente comparando-se a marcação observada de um alinhamento de terra com o seu valor verdadeiro cartografado.",
+        B: "Se a giro apresentar um erro para Oeste (W), todas as marcações verdadeiras observadas serão maiores do que as lidas na repetidora.",
+        C: "O erro de giro não afeta a orientação das paralelas indexadas na tela do radar em movimento relativo.",
+        D: "A verificação do erro da giroscópica em águas restritas só deve ser efetuada após o navio atracar no berço."
+    },
+
+    resposta: "A",
+
+    comentario: `O erro da agulha giroscópica em águas restritas pode ser verificado diretamente comparando-se a marcação lida de um alinhamento cartografado com a sua marcação verdadeira na carta náutica.
+
+B inverte o sinal do erro W. C e D negam a relevância operacional da verificação do erro da giroscópica durante a navegação em águas restritas.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Agulha Giroscópica e Navegação em Águas Restritas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0054
+// TRIÂNGULO DE CORRENTE
+// =====================================
+
+{
+    id: "NAV-0054",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Resolução do Triângulo de Corrente em Canais Estreitos",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Um navio navega em um canal no Rumo na Superfície RN = 090° com velocidade na água VN = 10 nós. Uma corrente de maré de vazante flui na direção Rcor = 180° com intensidade Vcor = 2 nós. Sobre os componentes do movimento resultante (Capítulo 5 de Navegação Ciência e Arte):`,
+
+    alternativas: {
+        A: "O navio sofrerá um abatimento para boreste (sul), alterando o Rumo no Fundo (Rfd) para um valor maior que 090°, enquanto a velocidade no fundo (SOG) será superior a 10 nós.",
+        B: "O navio sofrerá caimento para bombordo e a velocidade no fundo será de 8 nós.",
+        C: "A corrente não afetará a trajetória no fundo por atuar exatamente pelo través do navio.",
+        D: "O abatimento será para bombordo e o Rumo no Fundo será 080°.",
+        E: "A velocidade no fundo será igual a 12 nós."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 5, Figura 5.12): uma corrente para o sul (180°) atuando em um navio governando para leste (090°) provoca abatimento para boreste, fazendo Rfd > 090°.
+
+A velocidade resultante no fundo é:
+
+SOG = √(10² + 2²)
+
+SOG = √104
+
+SOG ≈ 10,2 nós.
+
+Portanto, a velocidade no fundo é ligeiramente superior a 10 nós.
+
+B, C, D e E apresentam direção de abatimento ou valores vetoriais incorretos.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 5, Figura 5.12",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0055
+// ODÔMETRO DOPPLER
+// =====================================
+
+{
+    id: "NAV-0055",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Odômetro Doppler e Velocidade em Águas Rasas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A medição precisa da velocidade sobre o fundo (SOG) e sobre a água (STW) em águas restritas é realizada pelo Odômetro Doppler. Segundo a publicação Navegação Ciência e Arte (Vol. 1):`,
+
+    alternativas: {
+        A: "O odômetro Doppler operando no modo Bottom Track (rastreio do fundo) fornece a velocidade real do navio em relação ao fundo do mar, indicando os componentes longitudinal e transversal.",
+        B: "O odômetro Doppler de fundo perde o sinal de fundo quando navega em profundidades inferiores a 5 metros.",
+        C: "Todos os odômetros de hélice de fundo medem a velocidade em relação ao fundo com precisão absoluta em rios.",
+        D: "O modo Water Track do odômetro Doppler mede a velocidade diretamente em relação às estrelas de navegação astronômica."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 11, Item 11.3.2): o Odômetro Doppler no modo Bottom Track mede a velocidade real sobre o fundo (SOG), podendo fornecer componentes longitudinal e transversal.
+
+B, C e D apresentam premissas incorretas sobre o funcionamento e os modos de medição do Doppler.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 11, Item 11.3.2",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0056
+// RIPEAM — REGRA 9
+// =====================================
+
+{
+    id: "NAV-0056",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "RIPEAM Regra 9 - Regras de Trânsito em Canais Estreitos",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A navegação de navios e embarcações de praticagem em canais estreitos é estritamente regida pela Regra 9 do RIPEAM. Em conformidade com essa regra, é incorreto afirmar que:`,
+
+    alternativas: {
+        A: "Uma embarcação navegando ao longo de um canal estreito deve manter-se tão próxima quanto seja seguro do limite exterior do canal a seu boreste.",
+        B: "Embarcações de comprimento inferior a 20 metros ou embarcações a vela não devem dificultar a passagem de uma embarcação que só possa navegar com segurança dentro de um canal estreito.",
+        C: "Uma embarcação de propulsão mecânica de grande porte navegando em um canal estreito tem prioridade absoluta e pode navegar pelo lado esquerdo (bombordo) do canal se desejar encurtar a distância.",
+        D: "Embarcações engajadas na pesca não devem dificultar a passagem de qualquer outra embarcação navegando num canal estreito.",
+        E: "A travessia de um canal estreito não deve ser feita se interferir na passagem de um navio que só possa navegar no canal."
+    },
+
+    resposta: "C",
+
+    comentario: `A afirmativa C é incorreta e, portanto, constitui o gabarito. A Regra 9 do RIPEAM determina que uma embarcação navegando ao longo de um canal estreito ou via de acesso deve manter-se tão próxima quanto seja seguro e praticável do limite exterior do canal ou via que estiver a seu boreste.
+
+A, B, D e E reproduzem as exigências apresentadas para a navegação em canais estreitos.`,
+
+    bibliografia: [
+        {
+            publicacao: "RIPEAM / COLREG 1972",
+            capitulo: "Regra 9 — Canais Estreitos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0057
+// RIPEAM — SINAIS SONOROS
+// =====================================
+
+{
+    id: "NAV-0057",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Sinais Sonoros em Curvas Cegas e Ultrapassagens - RIPEAM",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Na condução de navios em canais estreitos com curvas de visibilidade prejudicada por obstáculos na costa, bem como em manobras de ultrapassagem, aplicam-se sinais sonoros de apito prescritos nas Regras 9 e 34 do RIPEAM:`,
+
+    alternativas: {
+        A: "Ao aproximar-se de uma curva cega num canal estreito, a embarcação deve soar um apito longo, devendo esse sinal ser respondido com um apito longo por qualquer navio que esteja do outro lado da curva.",
+        B: "A ultrapassagem num canal estreito que dependa da concordância do alcançado é solicitada pelo alcançante com dois apitos curtos e respondida com dois apitos longos.",
+        C: "O sinal de concordância da embarcação alcançada em um canal estreito é um apito longo, um curto, um longo e um curto (— · — ·), nesta ordem.",
+        D: "As afirmativas A e C estão corretas e expressam rigorosamente as regras do RIPEAM.",
+        E: "As afirmativas B e C estão corretas."
+    },
+
+    resposta: "D",
+
+    comentario: `Regra 9(f) e Regra 34(e) do RIPEAM: ao aproximar-se de uma curva ou área de um canal estreito ou via de acesso onde outras embarcações possam estar ocultas por uma obstrução, deve ser soado um apito longo, respondido com um apito longo por qualquer embarcação que o ouça do outro lado.
+
+Na ultrapassagem em canal estreito, o sinal de concordância da embarcação alcançada é um apito longo, um curto, um longo e um curto (— · — ·).
+
+Portanto, A e C estão corretas e a resposta é D.`,
+
+    bibliografia: [
+        {
+            publicacao: "RIPEAM / COLREG 1972",
+            capitulo: "Regra 9 — Canais Estreitos; Regra 34 — Sinais de Manobra e Advertência",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0058
+// MASTER-PILOT INFORMATION EXCHANGE
+// =====================================
+
+{
+    id: "NAV-0058",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Praticagem Portuária e Troca de Informações - IMO A.960(23)",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A Resolução IMO A.960(23) estabelece as Recomendações sobre Treinamento, Qualificação e Procedimentos Operacionais para Práticos. Sobre o relacionamento entre o Prático e a Equipe do Passadiço (Bridge Team) em águas restritas:`,
+
+    alternativas: {
+        A: "O Prático assume a responsabilidade civil e o comando do navio, sendo o Comandante um mero espectador da manobra.",
+        B: "A troca de informações entre o Comandante e o Prático (Master-Pilot Information Exchange - MPX) é obrigatória e deve ocorrer no embarque, abordando o plano de viagem (Passage Plan), calados, dados táticos, falhas de equipamentos e peculiaridades da área restrita.",
+        C: "O plano de viagem do navio deixa de ter validade quando o Prático pisa a bordo.",
+        D: "O Comandante não pode intervir na manobra conduzida pelo Prático mesmo se identificar risco iminente de encalhe ou colisão."
+    },
+
+    resposta: "B",
+
+    comentario: `Segundo a fundamentação fornecida, a Resolução IMO A.960(23) estabelece a necessidade da troca formal de informações entre Comandante e Prático (Master-Pilot Information Exchange — MPX) antes da manobra, abrangendo informações relevantes ao plano e à condição operacional do navio.
+
+A presença do Prático não elimina a autoridade e responsabilidade do Comandante nem invalida o planejamento da viagem. Por isso, A, C e D estão incorretas.`,
+
+    bibliografia: [
+        {
+            publicacao: "IMO Resolution A.960(23)",
+            capitulo: "Operational Procedures for Maritime Pilots",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0059
+// TRANSFERÊNCIA DO PRÁTICO
+// =====================================
+
+{
+    id: "NAV-0059",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Arranjos de Transferência do Prático - IMO A.1045 e SOLAS V/23",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `A montagem e operação da escada de prático (Pilot Ladder) para embarque/desembarque em águas restritas são reguladas pela Convenção SOLAS Regra V/23 e pela Resolução IMO A.1045. É uma exigência técnica dessas normas que:`,
+
+    alternativas: {
+        A: "Para borda livre (freeboard) superior a 9 metros, é obrigatório o uso de uma instalação combinada (Combination Arrangement), combinando a escada de acomodação com a escada de prático.",
+        B: "A escada de prático pode ser amarrada nas balaustradas móveis do tombadilho sem necessidade de pontos estruturais de fixação.",
+        C: "A subida em escada de prático simples é autorizada até a altura máxima de 15 metros sem necessidade de plataforma intermediária.",
+        D: "Os degraus da escada de prático devem ser confeccionados em alumínio polido escorregadio."
+    },
+
+    resposta: "A",
+
+    comentario: `Conforme a fundamentação fornecida para SOLAS V/23 e IMO Resolução A.1045, para borda livre superior a 9 metros deve ser utilizada uma instalação combinada (Combination Arrangement), associando a escada de acomodação à escada de prático.
+
+B, C e D contrariam os requisitos de segurança, construção e fixação apresentados para os arranjos de transferência do Prático.`,
+
+    bibliografia: [
+        {
+            publicacao: "SOLAS",
+            capitulo: "Regulation V/23 — Pilot Transfer Arrangements",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Resolution A.1045",
+            capitulo: "Pilot Transfer Arrangements",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// NAV-0060
+// DESACELERAÇÃO E DISTÂNCIA DE PARADA
+// =====================================
+
+{
+    id: "NAV-0060",
+    disciplina: "navegacao",
+    assunto: "aguas-restritas",
+    topico: "Manobra de Desaceleração e Distância de Parada em Águas Restritas",
+    edital: "Navegação em Águas Restritas",
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `Durante a navegação em um canal restrito de acesso ao porto, o Prático precisa reduzir a velocidade do navio de 12 nós para 4 nós antes de atingir a bacia de evolução. Com base na dinâmica de desaceleração e manobra de máquinas (Capítulo 8 do Navegação Ciência e Arte):`,
+
+    alternativas: {
+        A: "A distância percorrida pelo navio durante a desaceleração é calculada utilizando a Tabela de Aceleração e Desaceleração de bordo, considerando o tempo necessário para a variação de RPM e a velocidade média no intervalo.",
+        B: "A inversão das máquinas de Full Ahead para Full Astern em navios de grande porte paralisa o navio em uma distância igual ao seu próprio comprimento, sem provocar guinadas de proa.",
+        C: "A resposta de desaceleração do navio em águas rasas é mais rápida do que em águas profundas devido à sustentação do casco.",
+        D: "O uso do leme não produz efeito sobre a taxa de desaceleração do navio."
+    },
+
+    resposta: "A",
+
+    comentario: `Navegação Ciência e Arte (Vol. 1, Cap. 8, Item 8.8 e Figura 8.9): as variações de velocidade e desaceleração são determinadas com auxílio das tabelas táticas de bordo, relacionando o tempo necessário para a variação de RPM à velocidade média no intervalo.
+
+B estabelece uma distância de parada irreal e ignora possíveis efeitos direcionais durante a inversão. C atribui comportamento incorreto às águas rasas. D desconsidera o aumento de resistência associado à atuação do leme.`,
+
+    bibliografia: [
+        {
+            publicacao: "Navegação Ciência e Arte — Volume 1",
+            capitulo: "Capítulo 8, Item 8.8 e Figura 8.9",
+            pagina: ""
+        }
+    ]
+}
+    
 ];
 
 
