@@ -4246,7 +4246,2555 @@ TALHA MORDIDA / ENGASGADA.
         }
     ]
 },
-    
+// =====================================
+// ESTABILIDADE, ARQUEAÇÃO E DESLOCAMENTO
+// QUESTÕES ART-0081 A ART-0090
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0081
+// =====================================
+
+{
+    id: "ART-0081",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Altura Metacêntrica Transversal",
+
+    edital: "Estabilidade — altura metacêntrica transversal",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante uma manobra de praticagem em canal dragado, o Prático necessita avaliar a estabilidade estática inicial do navio para pequenas inclinações transversais (até 10°). De acordo com a Geometria do Navio apresentada no Arte Naval, a Altura Metacêntrica Transversal (GM) é definida geometricamente como a distância vertical entre:
+`,
+
+    alternativas: {
+        A: "O Centro de Carena (C) e o Metacentro Transversal (M).",
+        B: "O Centro de Flutuação (CF) e o Centro de Gravidade (G).",
+        C: "O Centro de Gravidade (G) e o Metacentro Transversal (M).",
+        D: "A Linha de Base (LB) e o Metacentro Transversal (M).",
+        E: "O Centro de Carena (C) e o Centro de Gravidade (G)."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Conforme o Art. 2.33 do Arte Naval, a Altura Metacêntrica (GM) é a distância vertical medida entre o Centro de Gravidade (G) do navio e o Metacentro Transversal (M).
+
+Não deve ser confundida com o Raio Metacêntrico Transversal, que corresponde à distância entre o Centro de Carena e o Metacentro (MC ou BM).
+
+Relação fundamental:
+
+GM = KM - KG
+
+Dica PSCPP: diferencie cuidadosamente:
+
+GM → G até M.
+BM ou MC → C até M.
+KB → quilha até C.
+KM → quilha até M.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.33",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0082
+// =====================================
+
+{
+    id: "ART-0082",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Equilíbrio estável e Metacentro",
+
+    edital: "Estabilidade — equilíbrio inicial do navio",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em uma condição de equilíbrio estável para um navio aprumado flutuando em águas tranquilas, a linha de ação do empuxo e a linha de ação do peso coincidem na mesma vertical. Ao sofrer uma inclinação transversal infinitesimal, para que surja um Momento de Endireitamento (ME = W · GZ), é condição indispensável que o Metacentro Inicial (M):
+`,
+
+    alternativas: {
+        A: "Esteja localizado abaixo do Centro de Carena (C).",
+        B: "Esteja localizado acima do Centro de Gravidade (G).",
+        C: "Coincida exatamente com o Centro de Flutuação (CF).",
+        D: "Fique posicionado abaixo do plano da linha-d'água de projeto.",
+        E: "Permaneça no mesmo ponto horizontal do Centro de Carena original."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Para haver equilíbrio estável, o Metacentro Inicial (M) deve estar localizado acima do Centro de Gravidade (G).
+
+Nessa condição:
+
+GM > 0
+
+e, para uma pequena inclinação, surge um braço de endireitamento GZ positivo.
+
+O momento de endireitamento é:
+
+ME = W · GZ
+
+Se M estiver abaixo de G, GM será negativo e o momento produzido tenderá a aumentar a inclinação, caracterizando equilíbrio instável.
+
+Dica PSCPP:
+
+M acima de G → GM > 0 → ESTÁVEL.
+M coincide com G → GM = 0 → NEUTRO.
+M abaixo de G → GM < 0 → INSTÁVEL.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.29 e 2.33",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0083
+// =====================================
+
+{
+    id: "ART-0083",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Princípio de Arquimedes e Centro de Carena",
+
+    edital: "Flutuabilidade — princípio de Arquimedes",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O Princípio de Arquimedes, aplicado à flutuabilidade dos navios na Geometria do Navio, estabelece que todo corpo total ou parcialmente mergulhado num fluido sofre a ação de uma força vertical, de baixo para cima, cuja intensidade é igual ao peso do volume do fluido deslocado. Essa força de empuxo tem seu ponto de aplicação situado no:
+`,
+
+    alternativas: {
+        A: "Centro de Gravidade do navio (G).",
+        B: "Metacentro Transversal (M).",
+        C: "Centro de Carena ou Centro de Empuxo (C).",
+        D: "Centro de Flutuação da linha-d'água (CF).",
+        E: "Ponto de interseção do plano diametral com a borda-livre."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Segundo o Princípio de Arquimedes, o empuxo é igual ao peso do volume de líquido deslocado.
+
+Sua resultante atua no centro de gravidade do volume imerso, denominado Centro de Carena ou Centro de Empuxo (C).
+
+Assim:
+
+Peso → atua em G, verticalmente para baixo.
+
+Empuxo → atua em C, verticalmente para cima.
+
+O Centro de Flutuação (CF), por sua vez, corresponde ao centro geométrico da área do plano de flutuação e não ao ponto de aplicação do empuxo.
+
+Dica PSCPP:
+
+PESO → G.
+EMPUXO → C.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.22 e 2.25",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0084
+// =====================================
+
+{
+    id: "ART-0084",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Reserva de Flutuabilidade",
+
+    edital: "Flutuabilidade — reserva de flutuabilidade",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio cargueiro apresenta uma Reserva de Flutuabilidade que garante sua segurança em caso de avaria com alagamento parcial. Segundo o Arte Naval, a Reserva de Flutuabilidade é definida tecnicamente como:
+`,
+
+    alternativas: {
+        A: "O peso total de água de lastro contido nos tanques do fundo duplo.",
+        B: "O volume da parte do navio acima da superfície da água que pode ser tornada estanque.",
+        C: "A diferença entre o Deslocamento Padrão e o Deslocamento Leve.",
+        D: "O volume imerso da carena medido abaixo da linha de flutuação leve.",
+        E: "A área total do plano de flutuação multiplicada pela altura da superestrutura."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O Arte Naval define Reserva de Flutuabilidade como o volume da parte do navio acima da superfície da água que pode ser tornada estanque.
+
+Esse volume situa-se, em termos gerais, entre a linha de flutuação e as partes estanques superiores do casco.
+
+Não se trata de água de lastro, deslocamento ou volume da carena já imersa.
+
+Dica PSCPP:
+
+RESERVA DE FLUTUABILIDADE
+=
+VOLUME EMERGIDO QUE PODE SER TORNADO ESTANQUE.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.27",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0085
+// =====================================
+
+{
+    id: "ART-0085",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Deslocamento Padrão",
+
+    edital: "Deslocamento — condições de carregamento",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na verificação das características das condições típicas de deslocamento relativas aos navios de guerra, a Convenção do Tratado de Washington (1922) estabeleceu a condição de "Deslocamento Padrão" (Standard Displacement). Esta condição inclui o navio completo com toda a tripulação, munição, provisões e água potável, mas difere do Deslocamento em Plena Carga por EXCLUIR expressamente:
+`,
+
+    alternativas: {
+        A: "O armamento fixo e as máquinas de propulsão.",
+        B: "Os mantimentos e os materiais sobressalentes dos paióis.",
+        C: "O combustível e a água de alimentação de reserva das caldeiras.",
+        D: "A proteção do casco (couraça) e os equipamentos de convés."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Esta questão explora uma exceção importante.
+
+Conforme o material fornecido, o Deslocamento Padrão (Standard Displacement) inclui o navio completo, tripulação, munição, provisões, água potável e demais itens previstos para a condição.
+
+Entretanto, exclui expressamente:
+
+• combustível;
+• água de alimentação de reserva das caldeiras.
+
+Portanto, esses itens diferenciam a condição padrão da condição de plena carga.
+
+Dica PSCPP: no conceito de Standard Displacement do Tratado de Washington, a principal pegadinha está justamente nos itens EXCLUÍDOS: combustível e água de alimentação de reserva.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.74 e 2.75",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0086
+// =====================================
+
+{
+    id: "ART-0086",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Expoente de Carga — Peso Morto",
+
+    edital: "Deslocamento — peso morto e porte",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A diferença entre o Deslocamento Máximo (Plena Carga) e o Deslocamento Mínimo (Leve) de um navio mercante exprime a quantidade total de peso que a embarcação é capaz de embarcar. Esse parâmetro é denominado tecnicamente:
+`,
+
+    alternativas: {
+        A: "Porte Útil ou Carga Paga (Net Deadweight).",
+        B: "Deslocamento Normal (Normal Displacement).",
+        C: "Expoente de Carga ou Peso Morto (Gross Deadweight).",
+        D: "Arqueação Bruta (Gross Tonnage).",
+        E: "Capacidade Cúbica a Granel."
+    },
+
+    resposta: "C",
+
+    comentario: `
+A diferença entre o deslocamento máximo em plena carga e o deslocamento mínimo ou leve corresponde ao Expoente de Carga ou Peso Morto (Gross Deadweight).
+
+Em forma conceitual:
+
+Peso Morto = Deslocamento Máximo - Deslocamento Leve
+
+Esse valor representa tudo aquilo que o navio pode embarcar.
+
+Não deve ser confundido com o Porte Útil ou Carga Paga, que corresponde à parcela comercial da capacidade depois de considerados os demais pesos necessários à operação.
+
+Dica PSCPP:
+
+PLENA CARGA - LEVE = PESO MORTO / DEADWEIGHT.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.76 e 2.77",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0087
+// =====================================
+
+{
+    id: "ART-0087",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Arqueação Bruta",
+
+    edital: "Arqueação — Arqueação Bruta",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em conformidade com a Convenção Internacional para Medidas de Tonelagem de Navios (ICTM 1969), a Arqueação Bruta (AB) substituiu a antiga Tonelagem de Arqueação Bruta (TAB). Do ponto de vista conceitual e dimensional, a Arqueação Bruta (AB) é definida como:
+`,
+
+    alternativas: {
+        A: "Uma medida de peso expressa em toneladas métricas de 1.000 kg.",
+        B: "Um valor adimensional proporcional ao volume interno de todos os espaços fechados do navio.",
+        C: "Uma medida de volume equivalente a múltiplos de 100 pés cúbicos (2,83 m³).",
+        D: "A massa total da água salgada deslocada quando o navio está no calado de verão.",
+        E: "A capacidade de carga útil dos porões deduzida do volume da praça de máquinas."
+    },
+
+    resposta: "B",
+
+    comentario: `
+A Arqueação Bruta (AB), ou Gross Tonnage (GT), adotada pela ICTM-69, é um valor adimensional relacionado ao volume moldado dos espaços fechados do navio.
+
+Conceitualmente:
+
+AB = K₁ · V
+
+Ela não representa peso e não deve ser confundida com deslocamento.
+
+Também não deve ser confundida com a antiga Tonelagem de Arqueação Bruta, cuja unidade histórica estava relacionada a 100 pés cúbicos, aproximadamente 2,83 m³.
+
+Dica PSCPP:
+
+ARQUEAÇÃO ≠ DESLOCAMENTO.
+
+AB / GT → valor adimensional relacionado a volume.
+Deslocamento → peso/massa do navio e da água deslocada.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.78",
+            pagina: ""
+        },
+        {
+            publicacao: "International Convention on Tonnage Measurement of Ships, 1969",
+            capitulo: "Gross Tonnage",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0088
+// =====================================
+
+{
+    id: "ART-0088",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Arqueação Líquida",
+
+    edital: "Arqueação — Arqueação Líquida",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para a comparação comercial da capacidade de transporte de mercadorias e passageiros entre navios mercantes, utiliza-se a Arqueação Líquida (AL). De acordo com as regras da ICTM-69 e do Arte Naval, a Arqueação Líquida de um navio não deve ser inferior a:
+`,
+
+    alternativas: {
+        A: "10% da Arqueação Bruta (AB).",
+        B: "30% da Arqueação Bruta (AB).",
+        C: "50% da Arqueação Bruta (AB).",
+        D: "70% da Arqueação Bruta (AB).",
+        E: "85% do Deslocamento Leve."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, a Arqueação Líquida (AL), ou Net Tonnage (NT), não deve ser inferior a 30% da Arqueação Bruta.
+
+Assim:
+
+AL ≥ 0,30 · AB
+
+A Arqueação Líquida está relacionada à capacidade útil comercial considerada pelas regras de arqueação.
+
+Dica PSCPP: memorize o limite:
+
+AL mínima = 30% da AB.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.78",
+            pagina: ""
+        },
+        {
+            publicacao: "International Convention on Tonnage Measurement of Ships, 1969",
+            capitulo: "Net Tonnage",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0089
+// =====================================
+
+{
+    id: "ART-0089",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Variação do calado com a densidade da água",
+
+    edital: "Deslocamento — água salgada e água doce",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um Prático embarca em um navio mercante em águas parelhas (sem trim) e necessita determinar a variação do calado ao passar do mar (água salgada, d = 1,026 t/m³) para um porto fluvial (água doce, d = 1,010 t/m³). Sabendo que o deslocamento do navio (W) permanece inalterado, a variação do calado ocorre porque:
+`,
+
+    alternativas: {
+        A: "O empuxo diminui na água doce, fazendo o navio emergir até compensar a perda de massa.",
+        B: "O volume da água doce deslocada deve ser maior para igualar o peso do navio, fazendo-o imergir.",
+        C: "O Centro de Carena (C) desloca-se para vante, alterando o trim sem modificar o calado médio.",
+        D: "A densidade menor reduz o momento metacêntrico, provocando adernamento involuntário.",
+        E: "A borda-livre aumenta proporcionalmente à redução da área do plano de flutuação."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O peso do navio permanece constante.
+
+Pelo princípio de Arquimedes:
+
+W = V · d
+
+onde:
+
+W = deslocamento/peso do navio;
+V = volume de água deslocado;
+d = densidade da água.
+
+Ao passar para uma água de menor densidade, é necessário deslocar um volume maior de água para que o empuxo continue igual ao peso do navio.
+
+Consequentemente, o navio imerge mais e seu calado aumenta.
+
+Dica PSCPP:
+
+MAR → RIO = CALADO AUMENTA.
+
+RIO → MAR = CALADO DIMINUI.
+
+O empuxo em equilíbrio não deixa de igualar o peso do navio; o que se modifica é o volume necessário para produzi-lo.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.89",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0090
+// =====================================
+
+{
+    id: "ART-0090",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Regra prática de imersão em água doce",
+
+    edital: "Deslocamento — variação do calado com a densidade",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A regra prática usual para estimar o aumento de calado de um navio mercante de formas ordinárias ao passar da água salgada para a água doce em seu deslocamento máximo estabelece uma imersão aproximada de:
+`,
+
+    alternativas: {
+        A: "0,5 cm para cada metro de calado.",
+        B: "1,3 cm para cada metro de calado.",
+        C: "3,0 cm para cada metro de calado.",
+        D: "5,0 cm para cada metro de calado.",
+        E: "10,0 cm para cada metro de calado."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme a regra prática apresentada no material fornecido, para navios mercantes de formas ordinárias em plena carga, a passagem da água salgada para a água doce produz aproximadamente:
+
+1,3 cm de imersão para cada 1 m de calado.
+
+Exemplo:
+
+Para um navio com 10 m de calado:
+
+10 × 1,3 cm = 13 cm
+
+Logo, pela regra prática, o aumento aproximado do calado seria de 13 cm.
+
+Dica PSCPP:
+
+ÁGUA SALGADA → ÁGUA DOCE
+=
++1,3 cm de calado por metro de calado.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.89",
+            pagina: ""
+        }
+    ]
+},
+
+// =====================================
+// ESTABILIDADE, ARQUEAÇÃO E DESLOCAMENTO
+// QUESTÕES ART-0091 A ART-0100
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0091
+// =====================================
+
+{
+    id: "ART-0091",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Toneladas por Centímetro de Imersão — TPC",
+
+    edital: "Curvas hidrostáticas — toneladas por centímetro de imersão",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na utilização das Curvas Hidrostáticas de um navio, o valor das "Toneladas por Centímetro de Imersão" (TPC) representa o peso necessário para fazer variar o calado médio de um centímetro. A fórmula teórica do TPC em água salgada (d = 1,026 t/m³), em função da área do plano de flutuação (AF em m²), é:
+`,
+
+    alternativas: {
+        A: "TPC = 0,01026 · AF",
+        B: "TPC = 0,1026 · AF",
+        C: "TPC = 1,026 · AF",
+        D: "TPC = AF / 420",
+        E: "TPC = AF / 35"
+    },
+
+    resposta: "A",
+
+    comentario: `
+A variação de peso necessária para produzir uma pequena variação de calado pode ser obtida por:
+
+T = v · d
+
+Como o volume adicional deslocado é aproximadamente:
+
+v = AF · c
+
+temos:
+
+T = AF · c · d
+
+Para uma variação de calado de 1 cm:
+
+c = 0,01 m
+
+e, para água salgada:
+
+d = 1,026 t/m³
+
+Logo:
+
+TPC = AF · 0,01 · 1,026
+
+TPC = 0,01026 · AF
+
+A expressão AF / 420 corresponde à fórmula das Toneladas por Polegada de Imersão (TPI), utilizando unidades imperiais.
+
+Dica PSCPP:
+
+TPC = 0,01026 · AF
+
+Atenção especial à posição da vírgula decimal.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.86a",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0092
+// =====================================
+
+{
+    id: "ART-0092",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Regra de Baistrocchi — TPC",
+
+    edital: "Curvas hidrostáticas — estimativa das toneladas por centímetro de imersão",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Quando não se dispõe da área exata do plano de flutuação de um navio em plena carga, Baistrocchi apresentou regras empíricas para obter as Toneladas por Centímetro de Imersão (T) baseadas nas dimensões principais (L e B). Para um navio de formas cheias (CB > 0,7), a fórmula aproximada é:
+`,
+
+    alternativas: {
+        A: "T = 0,0070 · L · B",
+        B: "T = 0,0075 · L · B",
+        C: "T = 0,0084 · L · B",
+        D: "T = 0,0100 · L · B",
+        E: "T = 0,0125 · L · B"
+    },
+
+    resposta: "C",
+
+    comentario: `
+Conforme a Regra de Baistrocchi apresentada no material fornecido, para navios de formas cheias, com:
+
+CB > 0,7
+
+adota-se aproximadamente:
+
+T = 0,0084 · L · B
+
+As constantes apresentadas para as diferentes formas são:
+
+Navios finos e velozes:
+CB < 0,6
+T = 0,0070 · L · B
+
+Navios de formas ordinárias:
+0,6 < CB < 0,7
+T = 0,0075 · L · B
+
+Navios de formas cheias:
+CB > 0,7
+T = 0,0084 · L · B
+
+Dica PSCPP:
+
+0,0070 → FINO
+0,0075 → ORDINÁRIO
+0,0084 → CHEIO
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.86a — Regras de Baistrocchi",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0093
+// =====================================
+
+{
+    id: "ART-0093",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Embarque de peso sobre o Centro de Flutuação",
+
+    edital: "Trim e deslocamento — embarque e desembarque de pesos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante o carregamento de um navio, um peso de 100 toneladas é embarcado exatamente sobre a vertical do Centro de Flutuação (CF). Assinale a alternativa que descreve corretamente o comportamento do navio após essa operação:
+`,
+
+    alternativas: {
+        A: "O navio adquire um trim pela proa mantendo o calado à meia-nau inalterado.",
+        B: "Ocorre uma imersão paralela à flutuação, variando os calados de vante e de ré de uma mesma quantidade, sem alterar o trim.",
+        C: "O navio ganha uma banda para boreste e uma diminuição no calado de ré.",
+        D: "O Centro de Carena desce na vertical, reduzindo a Altura Metacêntrica Transversal.",
+        E: "O calado médio diminui proporcionalmente à distância entre o CF e a perpendicular de ré."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Quando um peso é embarcado exatamente na vertical que passa pelo Centro de Flutuação (CF), não é produzido momento de inclinação longitudinal.
+
+Consequentemente, não ocorre alteração do trim.
+
+O aumento de deslocamento produz uma imersão paralela, fazendo os calados de vante e de ré variarem da mesma quantidade.
+
+Portanto:
+
+Peso embarcado sobre o CF
+→ aumento do deslocamento;
+→ imersão paralela;
+→ aumento igual dos calados;
+→ sem alteração do trim.
+
+Dica PSCPP:
+
+PESO SOBRE O CF = VARIAÇÃO PURA DO CALADO MÉDIO.
+
+Não confunda com a movimentação longitudinal de um peso, que produz momento de trim.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.88",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0094
+// =====================================
+
+{
+    id: "ART-0094",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Posição do Centro de Flutuação",
+
+    edital: "Geometria do navio — Centro de Flutuação",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos navios de guerra de proporções ordinárias, a posição do Centro de Flutuação (CF) na flutuação normal situa-se aproximadamente a:
+`,
+
+    alternativas: {
+        A: "0,50 · L a partir da Perpendicular de Vante (PP-AV).",
+        B: "0,04 · L por ante à ré do meio do comprimento entre perpendiculares (L), ou seja, 0,54 · L a partir da PP-AV.",
+        C: "0,10 · L por anteavante da Perpendicular de Ré (PP-AR).",
+        D: "0,25 · L a partir do espelho de popa.",
+        E: "Exatamente sobre a Perpendicular de Vante."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, nos navios de guerra de proporções ordinárias o Centro de Flutuação encontra-se aproximadamente:
+
+0,04 · L a ré do meio do comprimento entre perpendiculares.
+
+Como o meio do comprimento corresponde a:
+
+0,50 · L
+
+medido a partir da Perpendicular de Vante, temos:
+
+0,50 · L + 0,04 · L = 0,54 · L
+
+Portanto, o CF situa-se aproximadamente a:
+
+0,54 · L a partir da PP-AV.
+
+Dica PSCPP:
+
+CF em navio de guerra de proporções ordinárias:
+
+4% de L a ré de meia-nau
+=
+54% de L a partir da PP-AV.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.88",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0095
+// =====================================
+
+{
+    id: "ART-0095",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Variação do trim por movimentação longitudinal de peso",
+
+    edital: "Trim — movimentação longitudinal de pesos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao movimentar um peso p (em toneladas) já existente a bordo por uma distância longitudinal l (em metros) no sentido de ré para vante, em um navio de deslocamento W e Altura Metacêntrica Longitudinal GM', a variação total do trim (ΔTrim) é calculada por:
+`,
+
+    alternativas: {
+        A: "ΔTrim = (p · l · L) / (W · GM')",
+        B: "ΔTrim = (p · W) / (l · GM')",
+        C: "ΔTrim = (W · GM') / (p · l)",
+        D: "ΔTrim = (p · l) / (100 · L)",
+        E: "ΔTrim = (l · GM') / L"
+    },
+
+    resposta: "A",
+
+    comentario: `
+A fórmula metacêntrica apresentada para a variação do trim provocada pela movimentação longitudinal de um peso é:
+
+ΔTrim = (p · l · L) / (W · GM')
+
+onde:
+
+p = peso movimentado;
+l = distância longitudinal pela qual o peso foi movimentado;
+L = comprimento considerado;
+W = deslocamento do navio;
+GM' = altura metacêntrica longitudinal.
+
+O produto:
+
+p · l
+
+representa o momento produzido pela movimentação do peso.
+
+Dica PSCPP:
+
+ΔTrim =
+Momento do peso × L
+dividido por
+W × GM'
+
+ou:
+
+ΔTrim = (p · l · L) / (W · GM')
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.90a",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0096
+// =====================================
+
+{
+    id: "ART-0096",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Momento para Variar o Trim de um Centímetro — MTC",
+
+    edital: "Trim — momento para variar o trim",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O Momento para Variar o Trim de um Centímetro (MTC) em um navio de guerra de proporções ordinárias pode ser estimado pela Regra de Baistrocchi em função do deslocamento W (em toneladas). Essa aproximação estabelece que o MTC (em metros-toneladas) é quase igual a:
+`,
+
+    alternativas: {
+        A: "1/10 do deslocamento (W / 10).",
+        B: "1/100 do deslocamento (W / 100).",
+        C: "1/1.000 do deslocamento (W / 1.000).",
+        D: "Duas vezes o deslocamento (2W).",
+        E: "Metade da boca máxima (B / 2)."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo a Regra de Baistrocchi apresentada no material fornecido, para navios de guerra de proporções ordinárias, o momento necessário para variar o trim de 1 cm é aproximadamente:
+
+MTC ≈ W / 100
+
+onde W é o deslocamento do navio em toneladas.
+
+Isso significa que o valor aproximado do MTC corresponde a 1% do deslocamento.
+
+Exemplo:
+
+Para W = 10.000 t:
+
+MTC ≈ 10.000 / 100
+
+MTC ≈ 100 m·t
+
+Dica PSCPP:
+
+MTC ≈ 1% DO DESLOCAMENTO
+=
+W / 100.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.90b — Regra de Baistrocchi",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0097
+// =====================================
+
+{
+    id: "ART-0097",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Leitura da escala de calado",
+
+    edital: "Calado — escalas de calado",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em uma operação de atracação, o Prático realiza a leitura da escala de calado em decímetros no costado de vante do navio. Observa-se que o nível da água coincide exatamente com o limbo INFERIOR do número "62". O calado lido corretamente nessa escala é de:
+`,
+
+    alternativas: {
+        A: "6,10 metros.",
+        B: "6,20 metros.",
+        C: "6,25 metros.",
+        D: "6,30 metros.",
+        E: "6,40 metros."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Os algarismos da escala métrica de calado possuem 1 decímetro de altura.
+
+O valor representado pelo algarismo corresponde ao seu limbo inferior.
+
+Portanto:
+
+limbo inferior de "62"
+=
+6,20 m.
+
+Como o próprio algarismo possui 1 dm de altura, seu limbo superior corresponderia a:
+
+6,30 m.
+
+Dica PSCPP:
+
+LIMBO INFERIOR → valor indicado pelo número.
+
+LIMBO SUPERIOR → número + 1 decímetro.
+
+Assim:
+
+"62" inferior = 6,20 m.
+"62" superior = 6,30 m.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.65 e Fig. 2-16",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0098
+// =====================================
+
+{
+    id: "ART-0098",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Coeficiente de Bloco",
+
+    edital: "Geometria do navio — coeficientes de forma",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O Coeficiente de Bloco (CB) representa a relação entre o volume da carena (V) e o volume do paralelepípedo circunscrito de arestas L (comprimento entre PPs), B (boca máxima imersa) e C (calado médio). A expressão matemática correta do Coeficiente de Bloco é:
+`,
+
+    alternativas: {
+        A: "CB = V / (L · B · C)",
+        B: "CB = (L · B) / (V · C)",
+        C: "CB = V / (AF · C)",
+        D: "CB = AMN / (B · C)",
+        E: "CB = V / L³"
+    },
+
+    resposta: "A",
+
+    comentario: `
+O Coeficiente de Bloco compara o volume real da carena com o volume do paralelepípedo que a circunscreve.
+
+Assim:
+
+CB = V / (L · B · C)
+
+onde:
+
+V = volume da carena;
+L = comprimento entre perpendiculares;
+B = boca máxima imersa;
+C = calado médio.
+
+Como se trata de uma relação entre volumes, CB é adimensional.
+
+Quanto mais próximo de 1 for CB, mais cheia é a forma da carena.
+
+Dica PSCPP:
+
+CB =
+VOLUME REAL DA CARENA
+/
+VOLUME DO BLOCO L × B × C.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.66a",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0099
+// =====================================
+
+{
+    id: "ART-0099",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Coeficiente Prismático",
+
+    edital: "Geometria do navio — coeficientes de forma",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na Geometria do Navio, a relação entre o volume deslocado (V) e o volume de um sólido que possui comprimento L e seção transversal igual à área da parte imersa da seção mestra (AMN) define o:
+`,
+
+    alternativas: {
+        A: "Coeficiente da área de flutuação (CWL).",
+        B: "Coeficiente da seção mestra (CSM).",
+        C: "Coeficiente prismático ou longitudinal (CP).",
+        D: "Coeficiente de esbelteza transversal.",
+        E: "Fator de estiva teórico."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Coeficiente Prismático ou Longitudinal (CP) compara o volume real da carena com o volume de um prisma cujo:
+
+• comprimento é L;
+• seção transversal é igual à área da seção mestra imersa AMN.
+
+Conceitualmente:
+
+CP = V / (L · AMN)
+
+Não deve ser confundido com:
+
+Coeficiente de Bloco:
+CB = V / (L · B · C)
+
+Coeficiente da Seção Mestra:
+CSM = AMN / (B · C)
+
+Coeficiente da Área de Flutuação:
+CWL = AF / (L · B)
+
+Dica PSCPP:
+
+PRISMA
+=
+SEÇÃO MESTRA × COMPRIMENTO
+=
+CP.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.66b",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0100
+// =====================================
+
+{
+    id: "ART-0100",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Compassar o navio",
+
+    edital: "Flutuação — trim e compasso",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a elaboração de um plano de amarrar e lastrar, o Comandante necessita trazer o navio da condição de inclinação longitudinal para a posição de quilha paralela. A ação operacional técnica de eliminar o trim de uma embarcação é denominada:
+`,
+
+    alternativas: {
+        A: "Aprumar.",
+        B: "Compassar (ou fazer o compasso).",
+        C: "Apopar.",
+        D: "Abicar.",
+        E: "Adestrar."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Compassar um navio significa retirar seu trim, trazendo-o à condição de quilha paralela.
+
+É fundamental distinguir compassar de aprumar:
+
+COMPASSAR
+→ retirar a inclinação longitudinal;
+→ tirar o trim.
+
+APRUMAR
+→ retirar a inclinação transversal;
+→ tirar a banda.
+
+Também:
+
+APOPAR
+→ aumentar o calado de ré em relação ao de vante.
+
+ABICAR
+→ aumentar o calado de vante em relação ao de ré.
+
+Dica PSCPP:
+
+TRIM → COMPASSAR.
+
+BANDA → APRUMAR.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.82",
+            pagina: ""
+        }
+    ]
+},
+
+// =====================================
+// ESTABILIDADE, ARQUEAÇÃO E DESLOCAMENTO
+// QUESTÕES ART-0101 A ART-0110
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0101
+// =====================================
+
+{
+    id: "ART-0101",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Aprumar o navio",
+
+    edital: "Flutuação — banda e aprumo",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A ação de eliminar a inclinação transversal de um navio, fazendo-o voltar à posição vertical reta sem banda para boreste ou bombordo, chama-se:
+`,
+
+    alternativas: {
+        A: "Compassar.",
+        B: "Aprumar.",
+        C: "Trimar.",
+        D: "Acastelar.",
+        E: "Lastrar."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Aprumar significa trazer o navio a prumo, eliminando sua banda ou inclinação transversal.
+
+É importante distinguir:
+
+APRUMAR
+→ retirar a banda;
+→ corrigir a inclinação transversal.
+
+COMPASSAR
+→ retirar o trim;
+→ corrigir a inclinação longitudinal.
+
+Dica PSCPP:
+
+BANDA → APRUMAR.
+TRIM → COMPASSAR.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.82",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0102
+// =====================================
+
+{
+    id: "ART-0102",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Flutuação direita",
+
+    edital: "Flutuação — banda e trim",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Quando um navio flutua sem banda e sem trim, diz-se tecnicamente que ele se encontra em:
+`,
+
+    alternativas: {
+        A: "Flutuação isocarena.",
+        B: "Flutuação de projeto extrema.",
+        C: "Flutuação direita.",
+        D: "Condição de alquebramento.",
+        E: "Condição de tosamento."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Quando o navio não apresenta nem banda nem trim, encontra-se em Flutuação Direita.
+
+Isso significa que não existe inclinação transversal nem inclinação longitudinal.
+
+Não se deve confundir esse conceito com flutuações isocarenas, que se referem a condições nas quais permanece constante o volume da carena.
+
+Dica PSCPP:
+
+SEM BANDA
++
+SEM TRIM
+=
+FLUTUAÇÃO DIREITA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.82",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0103
+// =====================================
+
+{
+    id: "ART-0103",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Trim operacional do navio",
+
+    edital: "Flutuação — trim pela proa e pela popa",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Sob o ponto de vista da manobra e da governabilidade de um navio mercante em canais restritos, qual condição de flutuação longitudinal é operacionalmente PREFERÍVEL para a navegação e navegação praticada pelo Prático?
+`,
+
+    alternativas: {
+        A: "Navio abicado (trim pela proa).",
+        B: "Navio em quilha paralela absoluta sem folga de fundo.",
+        C: "Navio apopado (trim pela popa).",
+        D: "Navio com grande banda permanente para o bordo do canal.",
+        E: "Navio com calado de vante 2 metros superior ao calado de ré."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Conforme o material fornecido, quando o navio possui trim, é preferível que esteja apopado.
+
+O navio abicado é apresentado como condição menos favorável porque:
+
+• fica mais propenso a embarcar água pela proa;
+• prejudica a eficiência dos propulsores;
+• torna-se mais difícil de governar.
+
+Portanto, entre as alternativas apresentadas, a condição preferível é o navio apopado.
+
+Dica PSCPP:
+
+APOPADO → trim pela popa.
+
+ABICADO → trim pela proa.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.82",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0104
+// =====================================
+
+{
+    id: "ART-0104",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Deslocamento moldado",
+
+    edital: "Deslocamento — componentes do deslocamento",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O volume total do casco compreendido entre a superfície moldada da carena e o plano de flutuação, multiplicado pelo peso específico da água, constitui a parcela principal do cálculo do deslocamento de um navio de aço, denominada:
+`,
+
+    alternativas: {
+        A: "Deslocamento dos apêndices.",
+        B: "Deslocamento do chapeamento.",
+        C: "Deslocamento moldado.",
+        D: "Deslocamento líquido útil.",
+        E: "Expoente de estrutura."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Deslocamento Moldado corresponde ao peso da água deslocada pelo volume compreendido entre a superfície moldada da carena e o plano de flutuação.
+
+No cálculo do deslocamento total de um navio de aço, devem ser consideradas também outras parcelas associadas ao chapeamento e aos apêndices.
+
+De forma conceitual:
+
+Deslocamento Total
+=
+Deslocamento Moldado
++
+Deslocamento do Chapeamento
++
+Deslocamento dos Apêndices.
+
+Dica PSCPP:
+
+SUPERFÍCIE MOLDADA DA CARENA
+até
+PLANO DE FLUTUAÇÃO
+→ DESLOCAMENTO MOLDADO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.69",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0105
+// =====================================
+
+{
+    id: "ART-0105",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Deslocamento dos apêndices",
+
+    edital: "Deslocamento — apêndices do casco",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em um navio de aço, elementos como a parte saliente da quilha, as bolinas, o leme, os hélices e os pés-de-galinha são computados no cálculo do deslocamento sob a parcela de:
+`,
+
+    alternativas: {
+        A: "Deslocamento do chapeamento.",
+        B: "Deslocamento moldado.",
+        C: "Deslocamento dos apêndices.",
+        D: "Peso morto líquido.",
+        E: "Teto de fundo duplo."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Deslocamento dos Apêndices considera os volumes correspondentes aos elementos que se projetam para fora da superfície moldada do casco.
+
+Entre os exemplos apresentados encontram-se:
+
+• parte saliente da quilha;
+• bolinas;
+• leme;
+• hélices;
+• pés-de-galinha.
+
+Esses elementos devem ser considerados juntamente com as demais parcelas para obtenção do deslocamento total.
+
+Dica PSCPP:
+
+PEÇAS EXTERNAS À SUPERFÍCIE MOLDADA
+→ APÊNDICES.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.69",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0106
+// =====================================
+
+{
+    id: "ART-0106",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Deslocamento Normal",
+
+    edital: "Deslocamento — condições típicas dos navios de guerra",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+De acordo com o Arte Naval, os navios de guerra são comparados e classificados internacionalmente entre si tomando-se como referência principal o seu:
+`,
+
+    alternativas: {
+        A: "Expoente de Carga Pago.",
+        B: "Deslocamento Normal.",
+        C: "Volume de carga geral dos porões.",
+        D: "Calado no escantilhão máximo.",
+        E: "Coeficiente da área de flutuação."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, os navios de guerra são comparados e caracterizados tomando-se como referência o Deslocamento Normal.
+
+Essa referência não deve ser confundida com os parâmetros normalmente empregados para caracterizar a capacidade comercial dos navios mercantes.
+
+Dica PSCPP:
+
+NAVIO DE GUERRA
+→ DESLOCAMENTO NORMAL.
+
+NAVIO MERCANTE
+→ atenção à condição de plena carga, peso morto e arqueação, conforme o parâmetro considerado.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.69 e 2.72",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0107
+// =====================================
+
+{
+    id: "ART-0107",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Deslocamento em plena carga",
+
+    edital: "Deslocamento — condições típicas dos navios mercantes",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos navios mercantes, quando se menciona de forma genérica o termo "deslocamento" sem outra qualificação, refere-se, em geral, à condição de:
+`,
+
+    alternativas: {
+        A: "Deslocamento Leve.",
+        B: "Deslocamento Normal.",
+        C: "Deslocamento em Plena Carga (Carregado).",
+        D: "Deslocamento Padrão.",
+        E: "Deslocamento em Lastro Mínimo."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Conforme o material fornecido, para navios mercantes a referência genérica ao deslocamento corresponde, em geral, ao Deslocamento em Plena Carga.
+
+Essa distinção é importante porque o Arte Naval emprega referências diferentes ao tratar das condições características de navios mercantes e navios de guerra.
+
+Dica PSCPP:
+
+NAVIO MERCANTE
+→ referência geral: PLENA CARGA.
+
+NAVIO DE GUERRA
+→ referência de comparação: DESLOCAMENTO NORMAL.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.69 e 2.72",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0108
+// =====================================
+
+{
+    id: "ART-0108",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Expoente de Carga — composição",
+
+    edital: "Deslocamento — peso morto e carga paga",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O peso da carga paga que um navio mercante pode transportar varia conforme a duração da viagem. A soma do peso do combustível, água doce, mantimentos e tripulação com o peso da carga paga resulta no:
+`,
+
+    alternativas: {
+        A: "Deslocamento Padrão.",
+        B: "Deslocamento Leve.",
+        C: "Expoente de Carga ou Peso Morto (Gross Deadweight).",
+        D: "Volume moldado abaixo do convés.",
+        E: "Coeficiente prismático útil."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Expoente de Carga ou Peso Morto corresponde ao conjunto dos pesos variáveis que o navio pode embarcar.
+
+No contexto apresentado, inclui:
+
+• combustível;
+• água doce;
+• mantimentos;
+• tripulação;
+• carga paga.
+
+A carga paga representa apenas a parcela comercial transportada.
+
+Portanto:
+
+CONSUMÍVEIS E DEMAIS PESOS VARIÁVEIS
++
+CARGA PAGA
+=
+EXPOENTE DE CARGA / PESO MORTO.
+
+Dica PSCPP: não confunda Peso Morto total com Carga Paga. A carga paga é apenas uma parcela do total.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.76 e 2.77",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0109
+// =====================================
+
+{
+    id: "ART-0109",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Fator de estiva",
+
+    edital: "Capacidade de carga — fator de estiva",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O fator de estiva (stowage factor) é utilizado no transporte marítimo para relacionar o volume ocupado pela carga com o seu peso. A unidade usual do fator de estiva e o valor médio praticado para carga geral nos navios mercantes são, respectivamente:
+`,
+
+    alternativas: {
+        A: "m²/t; 0,50 m²/t",
+        B: "m³/t; 1,39 m³/t",
+        C: "kg/m³; 1.025 kg/m³",
+        D: "pés³/tonelada longa; 100 pés³/ton",
+        E: "barris/tonelada; 42 barris/ton"
+    },
+
+    resposta: "B",
+
+    comentario: `
+O fator de estiva relaciona o volume ocupado por uma carga com seu peso.
+
+No sistema métrico, sua unidade é:
+
+m³/t
+
+Conforme o material fornecido, para carga geral adota-se como valor médio prático:
+
+1,39 m³/t.
+
+Quanto maior o fator de estiva, maior é o volume ocupado por unidade de peso da carga.
+
+Dica PSCPP:
+
+FATOR DE ESTIVA
+=
+VOLUME / PESO
+
+Unidade:
+m³/t
+
+Carga geral:
+aproximadamente 1,39 m³/t.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.81",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0110
+// =====================================
+
+{
+    id: "ART-0110",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Escala de deslocamento e Deadweight",
+
+    edital: "Curvas e escalas hidrostáticas — escala de deslocamento",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na escala de deslocamento de um navio mercante, ao se traçar um novo eixo de origem exatamente no ponto correspondente ao Deslocamento Leve, a curva a partir desse ponto passa a representar diretamente:
+`,
+
+    alternativas: {
+        A: "A Altura Metacêntrica Transversal (GM).",
+        B: "O Expoente de Carga (Deadweight).",
+        C: "A Posição Vertical do Centro de Carena (KB).",
+        D: "O Calado Moldado de Verão.",
+        E: "A Arqueação Líquida (AL)."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Ao deslocar a origem da escala para o ponto correspondente ao Deslocamento Leve, esse ponto passa a representar o valor zero.
+
+A diferença entre qualquer deslocamento superior e o deslocamento leve corresponde ao peso adicional embarcado pelo navio.
+
+Assim, a nova escala permite a leitura direta do:
+
+Expoente de Carga
+ou
+Deadweight.
+
+Conceitualmente:
+
+Deadweight
+=
+Deslocamento considerado
+-
+Deslocamento Leve.
+
+Dica PSCPP:
+
+ORIGEM NO DESLOCAMENTO LEVE
+→ LEITURA DIRETA DO DEADWEIGHT.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.85 e Fig. 2-20",
+            pagina: ""
+        }
+    ]
+},
+
+// =====================================
+// ESTABILIDADE, ARQUEAÇÃO E DESLOCAMENTO
+// QUESTÕES ART-0111 A ART-0120
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0111
+// =====================================
+
+{
+    id: "ART-0111",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Curvas Hidrostáticas — correção de trim",
+
+    edital: "Curvas hidrostáticas — deslocamento e correção para trim",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na leitura das Curvas Hidrostáticas (Fig. 2-19 do Arte Naval), quando o navio flutua descompassado (com trim), os valores de deslocamento obtidos na Curva 1 (água salgada) exigem a aplicação de uma correção. Essa aproximação direta sem correção é considerada suficiente na prática naval para inclinações longitudinais de até:
+`,
+
+    alternativas: {
+        A: "0,1 grau.",
+        B: "1,0 grau (inclusive).",
+        C: "5,0 graus.",
+        D: "10,0 graus.",
+        E: "15,0 graus."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o Art. 2.84, os valores obtidos diretamente na curva de deslocamento para um navio com trim constituem aproximação considerada suficiente na prática para inclinações longitudinais de até 1°, inclusive.
+
+Para inclinações longitudinais maiores, deve ser considerada a correção indicada pela curva correspondente.
+
+Dica PSCPP:
+
+INCLINAÇÃO LONGITUDINAL ATÉ 1°
+→ aproximação direta considerada suficiente.
+
+ACIMA DE 1°
+→ aplicar a correção correspondente.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.84 — Curvas Hidrostáticas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0112
+// =====================================
+
+{
+    id: "ART-0112",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Borda-livre",
+
+    edital: "Geometria do navio — borda-livre",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A distância vertical entre a linha de flutuação em plena carga e a linha reta do vau do convés da borda-livre, medida a meia-nau, que limita a imersão máxima do navio mercante conforme marcada no costado pelo Disco de Plimsoll, é o(a):
+`,
+
+    alternativas: {
+        A: "Calado de projeto.",
+        B: "Pontal moldado.",
+        C: "Borda-livre Mínima.",
+        D: "Altura do fundo (rise of floor).",
+        E: "Tosamento da proa."
+    },
+
+    resposta: "C",
+
+    comentario: `
+A Borda-livre corresponde à distância vertical medida a meia-nau entre a linha de flutuação carregada e a linha do convés da borda-livre.
+
+A marcação das linhas de carga no costado estabelece os limites de imersão aplicáveis ao navio.
+
+Não se deve confundir borda-livre com:
+
+Calado → porção vertical imersa.
+
+Pontal → dimensão vertical do casco tomada segundo sua definição geométrica.
+
+Dica PSCPP:
+
+PONTAL
+=
+CALADO
++
+BORDA-LIVRE
+
+na representação geométrica simplificada correspondente.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.28",
+            pagina: ""
+        },
+        {
+            publicacao: "International Convention on Load Lines, 1966",
+            capitulo: "Freeboard and Load Lines",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0113
+// =====================================
+
+{
+    id: "ART-0113",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Calado moldado e calado na quilha",
+
+    edital: "Geometria do navio — calado",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em navios modernos de quilha chata (plana), a diferença entre o Calado Moldado e o Calado na Quilha é geralmente insignificante. Entretanto, essa diferença torna-se substancial e NÃO pode ser desprezada nas embarcações dotadas de:
+`,
+
+    alternativas: {
+        A: "Fundo duplo estanque.",
+        B: "Quilha maciça.",
+        C: "Cavernamento longitudinal.",
+        D: "Anteparas corrugadas.",
+        E: "Propulsão azimutal."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido, nos navios de quilha plana a diferença entre o Calado Moldado e o Calado na Quilha é geralmente pequena.
+
+Nas embarcações dotadas de quilha maciça, entretanto, essa diferença passa a ser significativa e não deve ser desprezada.
+
+Dica PSCPP:
+
+QUILHA PLANA
+→ diferença geralmente pequena.
+
+QUILHA MACIÇA
+→ diferença relevante entre calado moldado e calado considerado até a quilha.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.62",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0114
+// =====================================
+
+{
+    id: "ART-0114",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Metacentro Inicial",
+
+    edital: "Estabilidade — metacentro inicial",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em um navio adernado por um momento externo, o Centro de Carena desloca-se de C para C1. A trajetória descrita por C para as sucessivas inclinações gera uma curva. Para um ângulo de inclinação infinitesimal (θ → 0), o centro de curvatura dessa trajetória é o:
+`,
+
+    alternativas: {
+        A: "Metacentro Inicial (M).",
+        B: "Centro de Gravidade (G).",
+        C: "Centro de Flutuação (CF).",
+        D: "Ponto de Quina (knuckle).",
+        E: "Polo de Adornamento."
+    },
+
+    resposta: "A",
+
+    comentario: `
+O Metacentro Inicial (M) corresponde, para inclinações infinitesimais, ao centro de curvatura da trajetória descrita pelo Centro de Carena à medida que o navio se inclina.
+
+Quando o navio aderna, a geometria do volume imerso muda e o Centro de Carena desloca-se.
+
+No limite:
+
+θ → 0
+
+o centro de curvatura dessa trajetória define o Metacentro Inicial.
+
+Dica PSCPP:
+
+TRAJETÓRIA DO CENTRO DE CARENA
++
+INCLINAÇÃO INFINITESIMAL
+→ METACENTRO INICIAL.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.29",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0115
+// =====================================
+
+{
+    id: "ART-0115",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Raio Metacêntrico Transversal",
+
+    edital: "Estabilidade — raio metacêntrico",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A distância vertical entre o Centro de Carena (C) e o Metacentro Transversal (M) denomina-se:
+`,
+
+    alternativas: {
+        A: "Altura Metacêntrica (GM).",
+        B: "Raio Metacêntrico Transversal (MC ou BM).",
+        C: "Braço de Endireitamento (GZ).",
+        D: "Altura da Carena (KB).",
+        E: "Pontal de projeto (KM)."
+    },
+
+    resposta: "B",
+
+    comentario: `
+A distância entre o Centro de Carena (C) e o Metacentro Transversal (M) é denominada Raio Metacêntrico Transversal.
+
+Pode ser representada por:
+
+MC
+
+ou, conforme a notação utilizada:
+
+BM.
+
+Não deve ser confundida com a Altura Metacêntrica:
+
+GM = distância entre G e M.
+
+Dica PSCPP:
+
+C → M = MC ou BM
+G → M = GM
+K → C = KB
+K → M = KM.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.31",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0116
+// =====================================
+
+{
+    id: "ART-0116",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Equilíbrio instável",
+
+    edital: "Estabilidade — posição relativa de G e M",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Se durante uma operação de transbordo de pesos a bordo de um navio o Centro de Gravidade (G) for elevado até uma posição acima do Metacentro Transversal (M), a Altura Metacêntrica (GM) tornar-se-á negativa. Nessa condição, o equilíbrio do navio será:
+`,
+
+    alternativas: {
+        A: "Estável.",
+        B: "Neutro (ou indiferente).",
+        C: "Instável.",
+        D: "Isocareno.",
+        E: "Hidrostático crítico."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Quando o Centro de Gravidade está acima do Metacentro:
+
+G acima de M
+
+a Altura Metacêntrica é negativa:
+
+GM < 0.
+
+Nessa condição, uma pequena inclinação produz uma tendência de aumentar o adernamento em vez de restaurar o navio à posição inicial.
+
+O equilíbrio é, portanto, instável.
+
+Dica PSCPP:
+
+GM > 0 → ESTÁVEL.
+
+GM = 0 → NEUTRO.
+
+GM < 0 → INSTÁVEL.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Arts. 2.29 e 2.33",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0117
+// =====================================
+
+{
+    id: "ART-0117",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Equilíbrio neutro — GM igual a zero",
+
+    edital: "Estabilidade — equilíbrio neutro",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Quando um navio possui Altura Metacêntrica GM = 0 (ponto G coincidindo com o ponto M), ao ser inclinado por uma força externa de pequeno ângulo, ele:
+`,
+
+    alternativas: {
+        A: "Retorna imediatamente e com violência à posição aprumada.",
+        B: "Cai imediatamente em emborcamento total.",
+        C: "Permanece na posição inclinada após a cessação da força externa, não gerando momento de endireitamento nem de emborcamento.",
+        D: "Aumenta automaticamente a sua reserva de flutuabilidade.",
+        E: "Reduz o calado de ré e aumenta o calado de vante."
+    },
+
+    resposta: "C",
+
+    comentario: `
+Quando:
+
+GM = 0
+
+o Centro de Gravidade coincide com o Metacentro Inicial.
+
+Para pequenos ângulos, utilizando a relação:
+
+GZ = GM · sen θ
+
+temos:
+
+GZ = 0.
+
+Consequentemente, não existe momento inicial de endireitamento nem momento inicial de emborcamento.
+
+A condição corresponde ao equilíbrio neutro ou indiferente.
+
+Dica PSCPP:
+
+GM > 0 → restaura.
+
+GM = 0 → indiferente.
+
+GM < 0 → desestabiliza.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Estabilidade inicial e altura metacêntrica",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0118
+// =====================================
+
+{
+    id: "ART-0118",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Curvas Hidrostáticas — KB e KM",
+
+    edital: "Curvas hidrostáticas — centro de carena e metacentro",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em uma consulta às Curvas Hidrostáticas, para determinar a altura do Centro de Carena acima da quilha (KB) e a altura do Metacentro Transversal acima da quilha (KM), utiliza-se no gráfico uma linha de referência inclinada a 45° em relação aos eixos, chamada:
+`,
+
+    alternativas: {
+        A: "Curva do momento de trim.",
+        B: "Diagonal para o centro de carena e o metacentro transversal acima da quilha.",
+        C: "Linha de base estanque de Plimsoll.",
+        D: "Reta de regressão do peso morto.",
+        E: "Abscissa de emersão paralela."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Conforme o material fornecido sobre as Curvas Hidrostáticas, utiliza-se uma linha reta traçada a 45° em relação aos eixos para auxiliar as leituras referentes ao Centro de Carena e ao Metacentro Transversal acima da quilha.
+
+Essa linha é denominada:
+
+"Diagonal para o centro de carena e o metacentro transversal acima da quilha."
+
+Ela está associada às leituras de:
+
+KB → altura do Centro de Carena acima da quilha.
+
+KM → altura do Metacentro Transversal acima da quilha.
+
+Dica PSCPP:
+
+RETA A 45° NAS CURVAS HIDROSTÁTICAS
+→ DIAGONAL DE REFERÊNCIA PARA KB E KM.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Art. 2.84 — Fig. 2-19",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0119
+// =====================================
+
+{
+    id: "ART-0119",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Peso suspenso por guindaste",
+
+    edital: "Estabilidade — movimentação e suspensão de pesos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a movimentação de uma carga pesada por meio do guindaste do próprio navio, no momento em que a carga é içada e fica suspensa pelo fiel do guindaste, o seu Centro de Gravidade passa a atuar aplicadamente no(a):
+`,
+
+    alternativas: {
+        A: "Fundo do porão de onde foi retirada.",
+        B: "Centro de Flutuação do plano de água.",
+        C: "Cabeça da lança do guindaste (ponto de suspensão).",
+        D: "Centro de Carena do navio.",
+        E: "Linha de base moldada a meia-nau."
+    },
+
+    resposta: "C",
+
+    comentario: `
+No tratamento da estabilidade de um peso suspenso, quando a carga deixa seu apoio e passa a ficar sustentada pelo cabo do aparelho de içamento, considera-se que o peso atua através do ponto de suspensão.
+
+No caso apresentado, esse ponto corresponde à cabeça da lança do guindaste.
+
+Esse comportamento equivale, para a análise da estabilidade, a uma elevação virtual do centro de gravidade associado ao peso e pode reduzir a Altura Metacêntrica do navio.
+
+Dica PSCPP:
+
+PESO APOIADO
+→ G relacionado à posição física do peso.
+
+PESO SUSPENSO
+→ considerar o PONTO DE SUSPENSÃO para o efeito sobre a estabilidade.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Estabilidade e movimentação de pesos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0120
+// =====================================
+
+{
+    id: "ART-0120",
+
+    disciplina: "arte-naval",
+    assunto: "Estabilidade, Arqueação e Deslocamento",
+    topico: "Efeito de Superfície Livre",
+
+    edital: "Estabilidade — efeito de superfície livre",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Um navio petroleiro navegando em canal de acesso portuário raso sofre um efeito de superfície livre (free surface effect) severo devido ao lastreamento incompleto em tanques centrais amplos e não subdivididos. Do ponto de vista da estabilidade estática, o efeito de superfície livre provoca:
+`,
+
+    alternativas: {
+        A: "Uma elevação real do Centro de Carena (C), aumentando a estabilidade.",
+        B: "Uma elevação virtual do Centro de Gravidade (G), resultando em uma redução virtual da Altura Metacêntrica (GM).",
+        C: "Um aumento do Raio Metacêntrico Transversal (MC), compensando o adernamento.",
+        D: "A eliminação do momento de emborcamento pela movimentação do líquido.",
+        E: "A variação permanente da Arqueação Bruta (AB) da embarcação."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O efeito de superfície livre (free surface effect) ocorre quando líquidos podem movimentar-se transversalmente em tanques parcialmente cheios.
+
+Com a inclinação do navio, o líquido desloca-se para o bordo mais baixo e produz um efeito desestabilizador.
+
+Para fins de estabilidade, esse efeito pode ser representado por uma elevação virtual do Centro de Gravidade do navio.
+
+Consequentemente:
+
+KG virtual aumenta
+
+e
+
+GM efetivo diminui.
+
+A correção pode ser expressa conceitualmente pela relação fornecida:
+
+ΔKGvirtual = (i · dl) / W
+
+onde o momento de superfície livre depende, entre outros parâmetros, do momento de inércia da superfície livre e da densidade do líquido.
+
+Portanto:
+
+SUPERFÍCIE LIVRE
+→ ELEVAÇÃO VIRTUAL DE G
+→ REDUÇÃO DO GM EFETIVO
+→ REDUÇÃO DA ESTABILIDADE INICIAL.
+
+O fenômeno não altera a Arqueação Bruta do navio.
+
+Dica PSCPP:
+
+TANQUE PARCIALMENTE CHEIO
+=
+SUPERFÍCIE LIVRE
+=
+MENOR GM EFETIVO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 2 — Estabilidade",
+            pagina: ""
+        }
+    ]
+}    
     
     
 ];
