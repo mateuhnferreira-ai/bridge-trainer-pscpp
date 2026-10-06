@@ -2635,7 +2635,1620 @@ const questoesArteNavalPSCPP = [
             pagina: ""
         }
     ]
-}
+},
+// =====================================
+// TRABALHOS DE MARINHEIRO E POLEAMES
+// QUESTÕES ART-0051 A ART-0060
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0051
+// =====================================
+
+{
+    id: "ART-0051",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Resistência de costuras em cabos de fibra",
+
+    edital: "Trabalhos de marinheiro — nós, voltas e costuras",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a preparação de uma manobra de reboque de emergência a bordo, o Prático necessita avaliar a redução da carga de ruptura introduzida pelos diferentes tipos de amarração, nós e costuras efetuados nos cabos de fibra. Segundo o Arte Naval, a emenda permanente que apresenta a maior resistência à tração e o valor percentual dessa resistência remanescente em relação ao vivo do cabo são, respectivamente:
+`,
+
+    alternativas: {
+        A: "Costura de mão; 100%.",
+        B: "Costura redonda; 85%.",
+        C: "Volta de fateixa; 76%.",
+        D: "Lais de guia; 60%.",
+        E: "Nó direito; 45%."
+    },
+
+    resposta: "B",
+
+    comentario: `
+A costura redonda retém 85% da resistência útil do cabo, sendo a emenda mais forte entre duas partes de cabo de fibra.
+
+Na tabela apresentada no material:
+• Costura redonda: 85%.
+• Volta de fateixa: 76%.
+• Lais de guia / Volta de fiel: 60%.
+• Nó de escota: 55%.
+• Nó direito / Meia-volta: 45%.
+
+Dica PSCPP: memorize principalmente a relação entre o tipo de trabalho realizado no cabo e a resistência remanescente. A troca dos percentuais entre nós, voltas e costuras constitui uma pegadinha típica.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Trabalhos de Marinheiro",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0052
+// =====================================
+
+{
+    id: "ART-0052",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Nó direito",
+
+    edital: "Trabalhos de marinheiro — nós e emendas de cabos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na faina de amarrar espias para reforço da atracação em terminal sujeito a forte correnteza, um marinheiro tentou emendar duas espias de bitolas substancialmente diferentes empregando o Nó Direito. Sob a ótica das normas técnicas de marinharia do Arte Naval, essa manobra é tecnicamente incorreta porque o Nó Direito:
+`,
+
+    alternativas: {
+        A: "É exclusivo para cabos de aço e trava definitivamente quando submetido a tração severa.",
+        B: "Desfaz-se por si mesmo quando os cabos são de tamanhos ou materiais diferentes, não devendo ser empregado para unir espias.",
+        C: "Duplica o diâmetro da espia naquele ponto, impedindo sua passagem pelas buzinas e tamancas.",
+        D: "Exige obrigatoriamente a confecção prévia de uma falcaça esganada em cada chicote para não descochar.",
+        E: "Só pode ser desfeito cortando-se a espia com o machado de manobra por ficar mordido."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O nó direito é empregado em amarrações leves, mas desfaz-se por si mesmo se os cabos forem de tamanhos ou materiais diferentes.
+
+O material destaca que ele não deve ser empregado para unir cabos que trabalham em aparelhos de laborar nem para emenda de espias.
+
+Para unir cabos de bitolas diferentes, emprega-se o Nó de Escota, singelo ou dobrado.
+
+Dica PSCPP: a pegadinha está em generalizar uma utilização cotidiana do nó direito. Em espias de manobra, sua utilização como emenda não é a solução indicada.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Nó Direito",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0053
+// =====================================
+
+{
+    id: "ART-0053",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Balso de calafate",
+
+    edital: "Trabalhos de marinheiro — balsos e segurança do pessoal",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante o embarque do Prático em alto-mar sob mar grosso, um tripulante precisa descer pelo costado para ajustar a escada de portaló, necessitando ficar com as mãos livres para trabalhar e seguro mesmo se vier a perder a consciência no interior do balso. De acordo com o Arte Naval, o trabalho de marinheiro adequado para essa situação operacional é o:
+`,
+
+    alternativas: {
+        A: "Balso de calafate.",
+        B: "Lais de guia singelo.",
+        C: "Nó de frade.",
+        D: "Nó de azelha.",
+        E: "Balso americano."
+    },
+
+    resposta: "A",
+
+    comentario: `
+O balso de calafate é formado por um lais de guia com uma volta adicional, originando dois seios livres de correr.
+
+Um homem passa a cabeça e os braços por um dos seios, ficando o lais de guia no peito, e senta-se no outro. Dessa forma pode trabalhar com as mãos livres.
+
+O arranjo também permite que, caso fique desacordado, possa ser içado com segurança sem cair.
+
+Dica PSCPP: Balso de Calafate = trabalho suspenso com as mãos livres e segurança do homem.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Balsos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0054
+// =====================================
+
+{
+    id: "ART-0054",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Nó de escota singelo",
+
+    edital: "Trabalhos de marinheiro — nós",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para unir o chicote de uma adriça a uma bandeira que não possui gato, ou para dar volta à boça de uma embarcação miúda na mão do cabo de cabeço de um pau de surriola, o Arte Naval prescreve o emprego do:
+`,
+
+    alternativas: {
+        A: "Nó de escota singelo.",
+        B: "Nó direito.",
+        C: "Nó torto.",
+        D: "Nó de correr.",
+        E: "Volta de fiel singela."
+    },
+
+    resposta: "A",
+
+    comentario: `
+O Nó de Escota Singelo é utilizado para unir dois cabos pelos chicotes ou para unir um chicote a um olhal, mão ou alça.
+
+O material cita expressamente entre suas aplicações:
+• amarrar a uma bandeira a adriça que não possui gato;
+• dar volta à boça de uma embarcação miúda na mão do cabo de cabeço de um pau de surriola.
+
+Dica PSCPP: "adriça de bandeira sem gato" e "pau de surriola" são expressões que devem levar imediatamente ao Nó de Escota.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Nó de Escota",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0055
+// =====================================
+
+{
+    id: "ART-0055",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Aboçadura",
+
+    edital: "Trabalhos de marinheiro — emenda e aboçadura de espias",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Em manobras de atracação, quando se deseja emendar duas espias com rapidez e segurança temporária, utiliza-se a aboçadura. No entanto, o Arte Naval faz a seguinte ressalva técnica quanto ao uso desse trabalho:
+`,
+
+    alternativas: {
+        A: "Reduz a resistência do cabo a menos de 20% de sua carga de ruptura original.",
+        B: "É um nó volumoso demais para ser usado quando o cabo tiver de gurnir em um cabrestante ou retorno.",
+        C: "Não permite o emprego de botões esganados nos chicotes abotoados.",
+        D: "Exige a confecção prévia de uma costura de laborar em cada chicote.",
+        E: "Só pode ser confeccionada em cabos de aço galvanizado alcatroados."
+    },
+
+    resposta: "B",
+
+    comentario: `
+As aboçaduras permitem unir duas espias com rapidez e segurança.
+
+Entretanto, são trabalhos volumosos demais para serem empregados quando o cabo tiver de gurnir em um cabrestante ou em um retorno.
+
+Quando a emenda precisa passar por poleame, deve-se observar a necessidade de manter uma geometria adequada do cabo, sendo particularmente importante a costura de laborar.
+
+Dica PSCPP: cabo que precisa gurnir em cabrestante, retorno ou poleame → atenção aos trabalhos que aumentam excessivamente o volume da emenda.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Aboçaduras",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0056
+// =====================================
+
+{
+    id: "ART-0056",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Falcaça",
+
+    edital: "Trabalhos de marinheiro — falcaças",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Sempre que um cabo de fibra é cortado a bordo, deve-se realizar uma falcaça no chicote para evitar que ele se descoche. Segundo as regras de proporção estabelecidas no Arte Naval, a largura correta de uma falcaça deve ser:
+`,
+
+    alternativas: {
+        A: "Igual à metade da circunferência do cabo.",
+        B: "Igual ao dobro do diâmetro do cabo.",
+        C: "Igual ao diâmetro do cabo no qual ela é dada.",
+        D: "Fixada arbitrariamente em 50 milímetros para qualquer bitola.",
+        E: "Igual a três vezes a circunferência do cabo."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O número de voltas de uma falcaça não é arbitrário.
+
+A proporção apresentada pelo Arte Naval determina que a largura da falcaça seja igual ao diâmetro do cabo no qual ela é dada.
+
+Dica PSCPP: cuidado com a troca entre raio, diâmetro e circunferência.
+
+Largura da Falcaça = Diâmetro do Cabo.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Falcaças",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0057
+// =====================================
+
+{
+    id: "ART-0057",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Falcaça esganada pela cocha",
+
+    edital: "Trabalhos de marinheiro — métodos de falcaçar",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao inspecionar os cabos de manobra, o Prático observa uma falcaça executada passando-se a agulha sob um cordão do cabo e enviando o fio de vela de um lado para o outro através dos cordões, de modo a esganar a falcaça pela cocha com elevado grau de segurança. Essa técnica corresponde ao método da:
+`,
+
+    alternativas: {
+        A: "Falcaça comum (primeiro método).",
+        B: "Falcaça esganada pela cocha (quarto método).",
+        C: "Falcaça de meia-volta ou trincafiada (sexto método).",
+        D: "Falcaça francesa com nó de porco.",
+        E: "Costura de mão em cabo naval de dupla trança."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O quarto método utiliza agulha e repuxo.
+
+A agulha é passada de um lado para outro através dos cordões do cabo, produzindo uma falcaça segura e permitindo que o arremate não apareça.
+
+Esse método corresponde à Falcaça Esganada pela Cocha.
+
+Dica PSCPP: "agulha e repuxo atravessando os cordões" → quarto método → Falcaça Esganada pela Cocha.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Falcaças",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0058
+// =====================================
+
+{
+    id: "ART-0058",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Pinha de retinida",
+
+    edital: "Trabalhos de marinheiro — pinhas",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Nos trabalhos de marinheiro, as pinhas consistem na intercalação simétrica dos cordões descochados no chicote do cabo. O Arte Naval destaca que a pinha empregada na extremidade das retinidas para dar peso e auxiliar no arremesso, contendo em seu interior um saco de areia chamado pandulho, é a:
+`,
+
+    alternativas: {
+        A: "Pinha cruzada ou em cruz (pinha de retinida).",
+        B: "Pinha de abacaxi.",
+        C: "Pinha fixa.",
+        D: "Pinha de colhedor singela.",
+        E: "Pinha de boça."
+    },
+
+    resposta: "A",
+
+    comentario: `
+A Pinha Cruzada ou em Cruz é também conhecida como Pinha de Retinida.
+
+Para aumentar o alcance do arremesso, coloca-se em seu interior um pandulho, isto é, um saco de areia.
+
+As demais pinhas possuem aplicações diferentes.
+
+Dica PSCPP: PANDULHO + ARREMESSO DA RETINIDA = Pinha Cruzada ou Pinha de Retinida.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Pinhas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0059
+// =====================================
+
+{
+    id: "ART-0059",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Nó de porco",
+
+    edital: "Trabalhos de marinheiro — pinhas e nós",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+A confecção de pinhas fundamentais exige a correta orientação dos cordões durante o trançado. No Arte Naval, o trabalho considerado o "inverso da pinha singela" — no qual os cordões voltam-se para baixo em vez de serem intercalados para cima — é denominado:
+`,
+
+    alternativas: {
+        A: "Nó de porco.",
+        B: "Pinha de rosa.",
+        C: "Pinha de cesta.",
+        D: "Pinha de anel.",
+        E: "Nó de frade."
+    },
+
+    resposta: "A",
+
+    comentario: `
+O Nó de Porco é apresentado como o inverso da Pinha Singela.
+
+Na Pinha Singela, os cordões são intercalados para cima. No Nó de Porco, o trabalho é realizado de forma semelhante, porém com os cordões voltados para baixo.
+
+Dica PSCPP:
+
+Pinha Singela → cordões para CIMA.
+Nó de Porco → cordões para BAIXO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Nó de Porco e Pinhas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0060
+// =====================================
+
+{
+    id: "ART-0060",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Botão falido",
+
+    edital: "Trabalhos de marinheiro — botões",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante o aparelhamento de uma talha que suporta peso, torna-se necessário segurar a beta enquanto se muda o ponto de amarração do tirador, havendo esforço desigual nas duas pernadas. De acordo com o Arte Naval, o melhor método de botão a ser aplicado para abotoar os cabos nessa situação é o:
+`,
+
+    alternativas: {
+        A: "Botão redondo simples.",
+        B: "Botão falido.",
+        C: "Botão cruzado.",
+        D: "Botão redondo coberto.",
+        E: "Peito de morte."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O Botão Falido é o método indicado quando o esforço nas duas pernadas é desigual.
+
+O exemplo apresentado é justamente o de se aguentar a beta de uma talha que suporta peso enquanto se muda o ponto de amarração do tirador.
+
+O Botão Redondo, por sua vez, está associado a situações em que o esforço é igual nas duas pernadas.
+
+Dica PSCPP:
+
+Esforço DESIGUAL → Botão Falido.
+Esforço IGUAL → Botão Redondo.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Botões",
+            pagina: ""
+        }
+    ]
+},
+// =====================================
+// TRABALHOS DE MARINHEIRO E POLEAMES
+// QUESTÕES ART-0061 A ART-0070
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0061
+// =====================================
+
+{
+    id: "ART-0061",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Preservação e proteção de cabos",
+
+    edital: "Trabalhos de marinheiro — engaiar, percintar, trincafiar e forrar",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para proteger um cabo ou costura exposto ao tempo e a atrito severo, realiza-se um conjunto sequencial de trabalhos de preservação. A ordem cronológica EXATA e correta das operações descritas no Arte Naval para cobrir totalmente o cabo é:
+`,
+
+    alternativas: {
+        A: "Forrar, percintar, engaiar e trincafiar.",
+        B: "Percintar, engaiar, forrar e trincafiar.",
+        C: "Engaiar, percintar, trincafiar e forrar.",
+        D: "Trincafiar, forrar, engaiar e percintar.",
+        E: "Engaiar, forrar, percintar e encapar."
+    },
+
+    resposta: "C",
+
+    comentario: `
+A sequência apresentada no Arte Naval é:
+
+1º Engaiar — encher as cochas com merlim;
+2º Percintar — cobrir com tiras de lona em espiral;
+3º Trincafiar — aplicar as voltas de trincafios ou tomadouros;
+4º Forrar — cobrir com voltas redondas de merlim.
+
+Portanto:
+
+ENGAIAR → PERCINTAR → TRINCAFIAR → FORRAR.
+
+Dica PSCPP: esta é uma típica questão de inversão da ordem dos procedimentos. Uma forma simples de memorizar é E-P-T-F.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Trabalhos de Marinheiro",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0062
+// =====================================
+
+{
+    id: "ART-0062",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Costura de laborar",
+
+    edital: "Trabalhos de marinheiro — costuras",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao realizar a emenda de dois cabos de fibra que necessitam gurnir frequentemente nos gornes dos moitões e cadernais de um aparelho de carga, a costura prescrita pelo Arte Naval por manter exatamente o mesmo diâmetro do cabo original é a:
+`,
+
+    alternativas: {
+        A: "Costura redonda.",
+        B: "Costura de mão.",
+        C: "Costura de laborar.",
+        D: "Costura de boca de lobo.",
+        E: "Costura de encapeladura."
+    },
+
+    resposta: "C",
+
+    comentario: `
+A Costura de Laborar é utilizada para emendar dois cabos quando eles precisam gurnir em poleame.
+
+Sua característica fundamental é que a emenda resultante permanece com o mesmo diâmetro do cabo original.
+
+A Costura Redonda, ao contrário, aumenta significativamente o diâmetro no ponto da emenda, prejudicando sua passagem pelos gornes.
+
+Dica PSCPP:
+
+Mesmo diâmetro + necessidade de gurnir em poleame = COSTURA DE LABORAR.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Costuras",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0063
+// =====================================
+
+{
+    id: "ART-0063",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Gaxeta laminada",
+
+    edital: "Trabalhos de marinheiro — gaxetas",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+No acabamento e vedação do casco, a gaxeta confeccionada com números ímpares a partir de 5 cordões, utilizada para substituir a borracha de vedação das portas estanques e do eixo propulsor do navio, é a:
+`,
+
+    alternativas: {
+        A: "Gaxeta laminada.",
+        B: "Gaxeta cilíndrica.",
+        C: "Gaxeta quadrada de quatro faces.",
+        D: "Gaxeta de rabo de cavalo.",
+        E: "Gaxeta simples de três cordões."
+    },
+
+    resposta: "A",
+
+    comentario: `
+A Gaxeta Laminada é confeccionada com números ímpares de cordões, a partir de cinco.
+
+Segundo o material fornecido, é utilizada para substituir a borracha de vedação das portas estanques e do eixo propulsor do navio.
+
+A Gaxeta Cilíndrica possui aplicação distinta.
+
+Dica PSCPP:
+
+Número ÍMPAR de cordões + vedação de PORTA ESTANQUE/EIXO PROPULSOR = GAXETA LAMINADA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Gaxetas",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0064
+// =====================================
+
+{
+    id: "ART-0064",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Coxim espanhol",
+
+    edital: "Trabalhos de marinheiro — coxins",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O Arte Naval define coxins como trançados planos feitos geralmente com cordões de cabo descochado. O coxim formado pela repetição de nós de porco, passando cada cordão por cima e para trás do que lhe fica adjacente, denomina-se:
+`,
+
+    alternativas: {
+        A: "Coxim francês.",
+        B: "Coxim espanhol.",
+        C: "Coxim russo.",
+        D: "Coxim de tear.",
+        E: "Coxim português."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O Coxim Espanhol é formado por nós de porco, passando cada cordão por cima e para trás daquele que lhe fica adjacente.
+
+O material diferencia, entre outros:
+
+• Coxim Espanhol → nós de porco;
+• Coxim Russo → nós de pinha singela.
+
+Dica PSCPP:
+
+Nós de PORCO = Coxim ESPANHOL.
+Nós de PINHA SINGELA = Coxim RUSSO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Coxins",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0065
+// =====================================
+
+{
+    id: "ART-0065",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Escada de Prático",
+
+    edital: "Trabalhos de marinheiro — escadas e cabos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na manobra de embarque do Prático com escada de quebra-peito, em conformidade com o Arte Naval e a Resolução IMO A.1045, o cabo fabricado especialmente para a confecção das pernadas da escada é o:
+`,
+
+    alternativas: {
+        A: "Cabo de aço galvanizado 6 x 19.",
+        B: "Cabo de linho alcatroado de quatro cordões, com 51 milímetros (2 polegadas) de circunferência.",
+        C: "Cabo de polipropileno trançado de oito cordões.",
+        D: "Arrebém de cânhamo de 12 milímetros de diâmetro.",
+        E: "Virador de aço de 1 polegada."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Segundo o material fornecido, o cabo indicado para esse tipo de escada é um cabo de linho alcatroado, de quatro cordões, fabricado especialmente para essa finalidade.
+
+A especificação apresentada é de 51 mm, equivalentes a 2 polegadas, de circunferência.
+
+Dica PSCPP: memorize o conjunto:
+
+LINHO ALCATROADO → 4 CORDÕES → 51 mm / 2" DE CIRCUNFERÊNCIA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Escadas",
+            pagina: ""
+        },
+        {
+            publicacao: "IMO Resolution A.1045",
+            capitulo: "Pilot transfer arrangements",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0066
+// =====================================
+
+{
+    id: "ART-0066",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Cabrilha",
+
+    edital: "Trabalhos de marinheiro — aparelhos para movimentação de pesos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na movimentação de peso no convés onde se improvisa uma cabrilha (duas vigas cruzadas em tesoura), o deslocamento da carga suspensa no sentido longitudinal (vante/ré) é executado mediante:
+`,
+
+    alternativas: {
+        A: "Giro do pé da cabrilha sobre um mancal esférico no convés.",
+        B: "Solecamento da pluma de vante e tesamento da pluma de ré (ou vice-versa).",
+        C: "Deslocamento do ponto de cruzamento das vigas por meio de um macaco hidráulico.",
+        D: "Alteração do ângulo das pernadas de 120° para 45°.",
+        E: "Ajuste das trapas de correntes fixadas à soleira."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Na cabrilha, as duas vigas são mantidas ao alto pelas plumas de vante e de ré.
+
+Para deslocar longitudinalmente um peso suspenso, manobram-se simultaneamente essas plumas.
+
+Para mover em determinado sentido, soleca-se uma pluma e tesa-se a outra; para o movimento inverso, inverte-se a operação.
+
+Dica PSCPP: deslocamento longitudinal da carga na cabrilha = trabalho conjugado das plumas de vante e de ré.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Cabrilha",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0067
+// =====================================
+
+{
+    id: "ART-0067",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Aboçar espia",
+
+    edital: "Trabalhos de marinheiro — manobra de espias",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a atracação com auxílio de guincho/cabrestante, uma espia tensionada precisa ser transferida para os cabeços do convés sem perder o tesão. O procedimento técnico de aboçar (ou trapear) o cabo consiste em:
+`,
+
+    alternativas: {
+        A: "Dar três voltas redondas no cabrestante e cortar o chicote.",
+        B: "Amarrar um cabo solteiro (boça) ao vivo da espia, transferir a tensão para a boça solecando o cabrestante, e então passar o chicote da espia para os cabeços.",
+        C: "Passar uma patesca no seio da espia e travar o tirador com o virador.",
+        D: "Dar dois cotes no cabeço de vante e travar a espia com um nó de escota dobrado.",
+        E: "Trincafiar a espia contra o balaústre usando merlim alcatroado."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Aboça-se um cabo quando, estando ele sob tensão, deseja-se mudar seu ponto de amarração.
+
+Uma boça é amarrada ao vivo da espia. Em seguida, soleca-se cuidadosamente o cabo até que a boça receba o esforço.
+
+Com a carga temporariamente transferida para a boça, torna-se possível mudar o ponto de amarração da espia.
+
+Dica PSCPP: ABOÇAR = transferir TEMPORARIAMENTE o esforço do cabo para uma boça para permitir a mudança de sua amarração.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Manobra de cabos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0068
+// =====================================
+
+{
+    id: "ART-0068",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Voltas de espia nos cabeços",
+
+    edital: "Trabalhos de marinheiro — manobra e amarração de espias",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao dar volta a uma espia de fibra em um par de cabeços no convés, a primeira volta e o remate correto prescritos pelo Arte Naval devem observar que:
+`,
+
+    alternativas: {
+        A: "A primeira volta é dada no primeiro cabeço de onde vem a espia, rematando-se com um nó direito.",
+        B: "A primeira volta que a espia dá é no segundo cabeço a contar da direção de onde ela vem, dando-se voltas falidas e rematando com um cote em um dos cabeços ou abotoando as voltas mais altas.",
+        C: "As voltas devem ser todas redondas em um único cabeço, sendo proibido o uso de voltas falidas.",
+        D: "A espia deve ser mordida entre os dois cabeços por meio de uma patesca de gato.",
+        E: "A primeira volta deve ser esganada com mialhar e rematada por volta de fiel."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Nas espias dadas num par de cabeços são empregadas voltas falidas.
+
+A regra destacada no material é que a primeira volta da espia deve ser dada no SEGUNDO cabeço, contado a partir da direção de onde a espia vem.
+
+O remate pode ser realizado com um cote em um dos cabeços ou mediante o abotoamento das voltas superiores.
+
+Dica PSCPP: a inversão entre PRIMEIRO e SEGUNDO cabeço é uma pegadinha clássica.
+
+Direção de onde vem a espia → primeira volta no SEGUNDO cabeço.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Manobra de espias",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0069
+// =====================================
+
+{
+    id: "ART-0069",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Socairo",
+
+    edital: "Trabalhos de marinheiro — cabrestantes e guinchos",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na faina de alar uma espia no cabrestante, o marinheiro designado para ficar ao socairo desempenha a função operacional crítica de:
+`,
+
+    alternativas: {
+        A: "Controlar o freio mecânico do tambor por meio de alavanca hidráulica.",
+        B: "Colher o brando no cabo que sai do cabrestante, mantendo o atrito das voltas sobre a saia para impedir que o cabo cavalgue ou deslize.",
+        C: "Aplicar a boça de corrente na entrada do tubo do escovém.",
+        D: "Inspecionar os gornes da patesca contra o desgaste por abrasão.",
+        E: "Acionar a buzina de aviso de parada de emergência."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O homem colocado ao socairo trabalha com o chicote que sai do cabrestante ou guincho.
+
+Sua função é colher o brando no cabo, mantendo adequadamente o atrito das voltas sobre a saia e evitando que o cabo cavalgue ou deslize.
+
+Dica PSCPP:
+
+ESTAR AO SOCAIRO = controlar o brando do cabo que sai do cabrestante/guincho, mantendo o trabalho adequado das voltas.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Manobra de cabos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0070
+// =====================================
+
+{
+    id: "ART-0070",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Ferramentas de marinheiro — Vazador",
+
+    edital: "Trabalhos de marinheiro — ferramentas",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na confecção de trabalhos de marinheiro em lonas e cabos, utilizam-se ferramentas manuais específicas. O utensílio de ferro, com a ponta em circunferência bem afiada, destinado a abrir buracos no pano para a colocação de ilhoses é o(a):
+`,
+
+    alternativas: {
+        A: "Espicha.",
+        B: "Passador.",
+        C: "Vazador.",
+        D: "Remanchador.",
+        E: "Palheta de forrar."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Vazador é o utensílio de ferro com a extremidade circular afiada utilizado para abrir no pano os orifícios destinados à colocação de ilhoses.
+
+Não deve ser confundido com:
+
+• Espicha — utilizada nos trabalhos envolvendo as cochas dos cabos;
+• Passador — ferramenta empregada em outros trabalhos de costura;
+• Remanchador — empregado na colocação do anilho no ilhós;
+• Palheta de forrar — relacionada à operação de forrar.
+
+Dica PSCPP: ponta circular afiada + abrir buraco na lona para ILHÓS = VAZADOR.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Ferramentas de marinheiro",
+            pagina: ""
+        }
+    ]
+},
+
+// =====================================
+// TRABALHOS DE MARINHEIRO E POLEAMES
+// QUESTÕES ART-0071 A ART-0080
+// =====================================
+
+
+// =====================================
+// QUESTÃO ART-0071
+// =====================================
+
+{
+    id: "ART-0071",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Ferramentas de marinheiro — Repuxo",
+
+    edital: "Trabalhos de marinheiro — ferramentas",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na costura manual de lonas pesadas e tralhas de velas, o marinheiro calça na mão direita uma tira de couro com furo para o polegar, contendo um dedal na palma, para forçar a agulha através do pano ou cabo. Essa peça de couro denomina-se:
+`,
+
+    alternativas: {
+        A: "Repuxo.",
+        B: "Ascoma.",
+        C: "Monelha.",
+        D: "Baderna.",
+        E: "Barbeia."
+    },
+
+    resposta: "A",
+
+    comentario: `
+O Repuxo é uma tira de couro unida pelos extremos, com abertura para o polegar, usada na mão direita.
+
+Possui um dedal na região da palma e permite ao marinheiro exercer força sobre a agulha durante trabalhos em lona ou através de cabos, protegendo simultaneamente a mão.
+
+Não deve ser confundido com:
+
+• Ascoma — cobertura utilizada em ponto de atrito;
+• Monelha — chumaço empregado como defensa.
+
+Dica PSCPP: tira de couro + furo para o polegar + dedal na palma + empurrar agulha = REPUXO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Ferramentas de marinheiro",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0072
+// =====================================
+
+{
+    id: "ART-0072",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Estropo braçalote",
+
+    edital: "Trabalhos de marinheiro — estropos",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para o içamento de cargas gerais por guindastes, utilizam-se estropos. O estropo constituído por um pedaço de cabo contendo uma alça em cada chicote, feita com costura redonda ou com clips (grampos), é classificado como:
+`,
+
+    alternativas: {
+        A: "Estropo comum (anel).",
+        B: "Estropo aberto.",
+        C: "Estropo braçalote.",
+        D: "Estropo de rede.",
+        E: "Estropo trincafiado."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O Estropo Braçalote é constituído por um pedaço de cabo que apresenta uma alça em cada chicote.
+
+Essas alças podem ser confeccionadas com costura redonda ou com clips.
+
+O Estropo Comum, por sua vez, constitui um anel fechado de cabo.
+
+Dica PSCPP: duas extremidades + uma alça em cada chicote = ESTROPO BRAÇALOTE.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Estropos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0073
+// =====================================
+
+{
+    id: "ART-0073",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Ângulo de estropo e esforço nas pernadas",
+
+    edital: "Trabalhos de marinheiro — estropos e movimentação de pesos",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Ao utilizar um estropo de duas pernadas para içar uma carga, o Prático e a equipe de manobra devem controlar a variação da tensão no cabo provocada pela geometria de içamento. De acordo com o Arte Naval, a regra técnica sobre o ângulo do estropo estabelece que:
+`,
+
+    alternativas: {
+        A: "O ângulo entre as pernadas não influi na tensão do cabo, dependendo apenas da velocidade do guindaste.",
+        B: "À proporção que aumenta o ângulo entre as pernadas, aumenta a carga exercida no cabo, devendo-se evitar, se possível, um ângulo de estropo menor que 45° em relação à horizontal.",
+        C: "A tensão no cabo diminui à medida que o ângulo com a horizontal diminui.",
+        D: "O ângulo ideal de içamento é de 15° com a horizontal para anular o esforço de tração.",
+        E: "O estropo suporta a mesma carga nominal em qualquer ângulo entre 0° e 180°."
+    },
+
+    resposta: "B",
+
+    comentario: `
+A tensão nas pernadas do estropo depende da geometria do içamento.
+
+À medida que aumenta o ângulo entre as pernadas — tornando o estropo mais aberto — aumenta o esforço suportado por cada pernada.
+
+De maneira equivalente, quanto menor for o ângulo da pernada com a horizontal, maior será sua tensão.
+
+O material recomenda, se possível, não utilizar ângulo de estropo menor que 45° em relação à horizontal.
+
+Dica PSCPP: estropo mais ABERTO = MAIOR tensão nas pernadas.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Estropos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0074
+// =====================================
+
+{
+    id: "ART-0074",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Cortar um estropo",
+
+    edital: "Trabalhos de marinheiro — estropos",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Quando a carga a ser içada possui volume pequeno para o tamanho do estropo disponível, realiza-se a operação de "cortar o estropo". O Arte Naval ressalta que essa operação visa encurtar o estropo sem dar nós no cabo porque os nós:
+`,
+
+    alternativas: {
+        A: "Aumentam o diâmetro do cabo impedindo sua entrada no gato de carga.",
+        B: "Poderiam ficar mordidos sob o esforço da carga, dificultando o desfazimento e danificando as fibras do cabo.",
+        C: "Alteram o centro de gravidade da carga provocando balanço transversal.",
+        D: "São expressamente proibidos no convés pela Convenção SOLAS.",
+        E: "Provocam a corrosão galvânica instantânea nos fios de aço."
+    },
+
+    resposta: "B",
+
+    comentario: `
+"Cortar um estropo" significa encurtar seu comprimento sem dar nós no cabo.
+
+A razão destacada no material é que os nós poderiam ficar mordidos quando submetidos ao esforço da carga.
+
+Além de dificultar posteriormente seu desfazimento, essa condição pode prejudicar o cabo.
+
+Dica PSCPP: CORTAR O ESTROPO não significa cortá-lo fisicamente. Significa ENCURTÁ-LO sem dar nós.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Estropos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0075
+// =====================================
+
+{
+    id: "ART-0075",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Tira-vira",
+
+    edital: "Trabalhos de marinheiro — movimentação de pesos",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Para içar tonéis, tambores ou tubos na posição horizontal ao longo de uma prancha inclinada entre o cais e o convés, aplicam-se forças iguais nas duas pernadas de um cabo passado em volta do objeto. Essa manobra é tecnicamente denominada:
+`,
+
+    alternativas: {
+        A: "Balso de calafate.",
+        B: "Tira-vira.",
+        C: "Catau de reboque.",
+        D: "Volta da ribeira e cote.",
+        E: "Peito de morte."
+    },
+
+    resposta: "B",
+
+    comentario: `
+O Tira-vira é empregado para içar tonéis, tubos e objetos semelhantes.
+
+Durante a operação devem ser aplicadas forças iguais nas duas pernadas do estropo, podendo uma prancha inclinada facilitar a manobra.
+
+Dica PSCPP: TONEL/TUBO + prancha inclinada + forças iguais nas duas pernadas = TIRA-VIRA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulo 8 — Movimentação de pesos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0076
+// =====================================
+
+{
+    id: "ART-0076",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Anatomia do poleame — Roldana",
+
+    edital: "Poleame — constituição dos moitões e cadernais",
+
+    dificuldade: "media",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+O poleame de madeira ou metálico empregado nos aparelhos de laborar é composto por diversas partes estruturais. A peça circular que gira em torno de um pino no interior da caixa do moitão, contendo um sulco periférico por onde passa o cabo, é o(a):
+`,
+
+    alternativas: {
+        A: "Gorne.",
+        B: "Roldana.",
+        C: "Goivado (ou canal).",
+        D: "Strop (estropo do moitão).",
+        E: "Teta."
+    },
+
+    resposta: "B",
+
+    comentario: `
+A Roldana é a peça circular que gira em torno de seu eixo ou pino dentro da caixa do moitão ou cadernal.
+
+Na periferia da roldana existe o sulco por onde trabalha o cabo, denominado goivado ou canal.
+
+Assim, deve-se distinguir:
+
+• Roldana → peça circular móvel;
+• Goivado → sulco periférico da roldana;
+• Gorne → espaço/abertura da caixa em que trabalha a roldana.
+
+Dica PSCPP: a banca pode trocar facilmente ROLDANA, GORNE e GOIVADO.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulos 1 e 8 — Poleame",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0077
+// =====================================
+
+{
+    id: "ART-0077",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Patesca",
+
+    edital: "Poleame — tipos e aplicações",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na faina de passagem de cabos de reboque e manobra de pesos, utilizam-se diferentes peças de poleame. A peça de poleame constituída por uma caixa de madeira ou ferro com uma abertura lateral na bochecha, permitindo que o cabo seja gurnido pelo seio sem necessidade de enfiar o chicote, é o(a):
+`,
+
+    alternativas: {
+        A: "Cadernal de três gornes.",
+        B: "Moitão de Catarina.",
+        C: "Patesca (ou moitão de pasta).",
+        D: "Catarina de socorro.",
+        E: "Bigota."
+    },
+
+    resposta: "C",
+
+    comentario: `
+A Patesca permite introduzir o cabo lateralmente pelo seio, sem que seja necessário passar o chicote por todo o gorne.
+
+Essa característica torna a peça especialmente útil quando se precisa estabelecer rapidamente um retorno em um cabo que já se encontra disposto ou trabalhando.
+
+Dica PSCPP:
+
+GURNIR PELO SEIO
++
+SEM PASSAR O CHICOTE
+=
+PATESCA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulos 1 e 8 — Poleame",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0078
+// =====================================
+
+{
+    id: "ART-0078",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Talha dobrada",
+
+    edital: "Poleame — aparelhos de laborar",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Os aparelhos de laborar são combinações de moitões e cadernais passados por cabos (betas) para obter vantagem mecânica. Segundo o Arte Naval, o aparelho de força formado por dous cadernais, um fixo e um móvel, contendo dous gornes cada um denomina-se:
+`,
+
+    alternativas: {
+        A: "Teque.",
+        B: "Talha singela.",
+        C: "Talha dobrada.",
+        D: "Estralheira.",
+        E: "Aparelho de teso."
+    },
+
+    resposta: "C",
+
+    comentario: `
+O aparelho constituído por dois cadernais de dois gornes cada um, sendo um fixo e outro móvel, é denominado Talha Dobrada.
+
+No material fornecido, a diferenciação apresentada é:
+
+• Teque → combinação própria de moitão/cadernal;
+• Talha singela → dois moitões;
+• Talha dobrada → dois cadernais de dois gornes;
+• Estralheira → dois cadernais de três gornes.
+
+Dica PSCPP: memorize a constituição física dos aparelhos, pois a banca costuma trocar seus nomes mantendo a descrição correta.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulos 1 e 8 — Aparelhos de laborar",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0079
+// =====================================
+
+{
+    id: "ART-0079",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Ordens de manobra de cabos",
+
+    edital: "Manobra de cabos — terminologia e ordens",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Durante a atracação de um navio, o Prático comanda ordens verbais diretas para o controle das espias no convés.
+
+Relacione o comando à sua definição exata segundo o Arte Naval:
+
+1. Alar o cabo até que fique portando.
+2. Dar um brando ao cabo, arriando-o um pouco para aliviar o peso.
+3. Folgar o cabo deixando-o com seio.
+4. Esticar o cabo.
+
+A sequência correta das ações (1, 2, 3 e 4) é:
+`,
+
+    alternativas: {
+        A: "Rondar; Solecar; Brandear; Tesar.",
+        B: "Tesar; Brandear; Solecar; Rondar.",
+        C: "Solecar; Rondar; Tesar; Brandear.",
+        D: "Rondar; Brandear; Solecar; Aboçar.",
+        E: "Brandear; Solecar; Rondar; Tesar."
+    },
+
+    resposta: "A",
+
+    comentario: `
+As correspondências apresentadas são:
+
+1. RONDAR → alar o cabo até que fique portando.
+2. SOLECAR → dar um brando, arriando um pouco o cabo para aliviar o esforço.
+3. BRANDEAR → folgar o cabo, deixando-o com seio.
+4. TESAR → esticar o cabo.
+
+A diferença entre Solecar e Brandear merece atenção especial:
+
+SOLECAR → aliviar um pouco.
+BRANDEAR → folgar, deixando seio.
+
+Dica PSCPP: questões de terminologia operacional costumam trocar apenas uma das quatro ordens para tornar toda a alternativa incorreta.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulos 7 e 8 — Manobra de cabos",
+            pagina: ""
+        }
+    ]
+},
+
+
+// =====================================
+// QUESTÃO ART-0080
+// =====================================
+
+{
+    id: "ART-0080",
+
+    disciplina: "arte-naval",
+    assunto: "Trabalhos de Marinheiro e Poleames",
+    topico: "Talha mordida ou engasgada",
+
+    edital: "Poleame — aparelhos de laborar e terminologia",
+
+    dificuldade: "dificil",
+    tipo: "multipla-escolha",
+    origem: "banco",
+
+    enunciado: `
+Na operação de um aparelho de carga, quando uma das pernadas do cabo monta sobre a outra junto ao gorne do cadernal, apertando-a e impedindo a roldana de girar, diz-se tecnicamente que o aparelho ficou:
+`,
+
+    alternativas: {
+        A: "Recorrido.",
+        B: "Mordido (ou engasgado).",
+        C: "Coçado.",
+        D: "Ascomado.",
+        E: "Desgurnido."
+    },
+
+    resposta: "B",
+
+    comentario: `
+Uma talha fica Mordida ou Engasgada quando uma de suas pernadas monta sobre a outra junto ao gorne do cadernal, apertando-a e impedindo o movimento normal da roldana.
+
+Os demais termos possuem significados diferentes:
+
+• Recorrer → relacionado ao movimento/arriamento do cabo;
+• Coçado → cabo ferido pelo atrito;
+• Desgurnir → retirar o cabo do local onde estava gurnido.
+
+Dica PSCPP:
+
+PERNADA SOBRE PERNADA
++
+ROLDANA IMPEDIDA DE GIRAR
+=
+TALHA MORDIDA / ENGASGADA.
+`,
+
+    bibliografia: [
+        {
+            publicacao: "Arte Naval — 8ª Edição, 2019",
+            capitulo: "Capítulos 7 e 8 — Poleame e aparelhos de laborar",
+            pagina: ""
+        }
+    ]
+},
+    
+    
+    
 ];
 
 
