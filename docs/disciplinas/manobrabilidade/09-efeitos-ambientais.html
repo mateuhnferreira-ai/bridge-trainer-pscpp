@@ -1,3 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Efeitos Ambientais - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="efeitos-ambientais"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+🌬 Efeitos Ambientais
+</h2>
+
+<p>
+<strong>
+Environmental Effects
+</strong>
+</p>
+
+<p>
+Estudo da influência das forças ambientais sobre
+a manobrabilidade do navio, com atenção especial
+aos efeitos produzidos pelo vento, pela corrente
+e pelas ondas.
+</p>
+
+<p>
+O objetivo desta aula é compreender como essas
+ações externas podem modificar o movimento,
+a trajetória, a deriva, a tendência de guinada
+e a capacidade de controle do navio durante
+a execução de uma manobra.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Efeitos Ambientais
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Environmental Effects
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+
+<!-- FASE ATUAL -->
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMPO PRINCIPAL -->
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+
+<!-- INFORMAÇÕES DE TEMPO -->
+
+<div class="pomodoro-informacoes">
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTROLES -->
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+
+▶ Iniciar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+
+⏸ Pausar
+
+</button>
+
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+
+↺ Zerar ciclo
+
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>I — Manobrabilidade do Navio</strong>
+</p>
+
+<p>
+<strong>
+Efeitos Ambientais
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="forcas-ambientais">
+Forças ambientais e sua influência sobre a manobra;
+</li>
+
+<li data-progresso-topico="forca-momento-ambiental">
+forças e momentos produzidos pelas ações ambientais;
+</li>
+
+<li data-progresso-topico="vento">
+ação do vento sobre o navio;
+</li>
+
+<li data-progresso-topico="forca-vento">
+força e momento produzidos pelo vento;
+</li>
+
+<li data-progresso-topico="efeitos-operacionais-vento">
+efeitos operacionais do vento;
+</li>
+
+<li data-progresso-topico="corrente">
+ação da corrente sobre o navio;
+</li>
+
+<li data-progresso-topico="forca-corrente">
+força produzida pela corrente;
+</li>
+
+<li data-progresso-topico="efeitos-operacionais-corrente">
+efeitos operacionais da corrente;
+</li>
+
+<li data-progresso-topico="ondas">
+efeitos das ondas sobre a manobrabilidade;
+</li>
+
+<li data-progresso-topico="controle-governo-ambiente">
+estabilidade e controle de governo sob a ação
+dos efeitos ambientais;
+</li>
+
+<li data-progresso-topico="efeitos-ambientais-combinados">
+efeitos combinados do vento, corrente e ondas.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+identificar os principais agentes ambientais
+capazes de influenciar a manobra do navio;
+</li>
+
+<li>
+compreender a diferença entre força ambiental
+e momento produzido por uma força ambiental;
+</li>
+
+<li>
+relacionar a ação do vento com o comportamento
+do navio durante a manobra;
+</li>
+
+<li>
+compreender a influência da corrente sobre
+o movimento e a trajetória do navio;
+</li>
+
+<li>
+reconhecer os efeitos das ondas relevantes
+para a manobrabilidade;
+</li>
+
+<li>
+avaliar a influência das forças ambientais
+sobre a deriva e a tendência de guinada;
+</li>
+
+<li>
+compreender a importância das forças ambientais
+durante manobras realizadas em baixa velocidade;
+</li>
+
+<li>
+relacionar vento, corrente e ondas com a
+capacidade de controle e governo do navio;
+</li>
+
+<li>
+interpretar os efeitos combinados dos diferentes
+agentes ambientais sobre a manobra;
+</li>
+
+<li>
+utilizar corretamente os principais termos técnicos
+em inglês marítimo relacionados aos efeitos
+ambientais.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture
+</h3>
+
+<p>
+Publicação utilizada para a fundamentação
+hidrodinâmica relacionada à controlabilidade
+e aos efeitos do ambiente sobre o comportamento
+do navio.
+</p>
+
+<p>
+<strong>Trecho de interesse:</strong>
+Controllability — Effects of the Environment.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+Publicação utilizada para complementar a análise
+do comportamento do navio e das consequências
+operacionais das forças externas durante
+a manobra.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+Publicação utilizada como referência complementar
+para a interpretação operacional dos efeitos
+do vento e da corrente durante a condução
+e a manobra do navio.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Theory and Practices of Marine Pilotage
+</h3>
+
+<p>
+Publicação complementar utilizada para relacionar
+os efeitos ambientais com situações práticas
+de pilotagem e controle do navio.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>Precisão bibliográfica</h3>
+
+<p>
+Esta aula está direcionada aos
+<strong>efeitos do ambiente sobre a manobrabilidade</strong>.
+</p>
+
+<p>
+O estudo detalhado da formação e das características
+meteorológicas e oceanográficas do vento,
+das correntes e das ondas será mantido nas
+disciplinas correspondentes, evitando duplicação
+de conteúdo.
+</p>
+
+<p>
+Da mesma forma, efeitos específicos relacionados
+a águas rasas, bancos, canais estreitos e interação
+entre navios serão desenvolvidos nas aulas próprias
+destinadas a esses assuntos.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+fundamentos das forças ambientais;
+</li>
+
+<li>
+vento e sua ação sobre o navio;
+</li>
+
+<li>
+forças e momentos produzidos pelo vento;
+</li>
+
+<li>
+efeitos operacionais do vento;
+</li>
+
+<li>
+vento durante aproximação, atracação
+e desatracação;
+</li>
+
+<li>
+corrente e sua ação sobre o navio;
+</li>
+
+<li>
+forças produzidas pela corrente;
+</li>
+
+<li>
+efeitos operacionais da corrente;
+</li>
+
+<li>
+ondas e controlabilidade;
+</li>
+
+<li>
+estabilidade e controle de governo sob
+efeitos ambientais;
+</li>
+
+<li>
+efeitos ambientais combinados;
+</li>
+
+<li>
+aplicações e pontos de atenção para o PSCPP.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================
      PARTE 1
      FUNDAMENTOS DOS EFEITOS AMBIENTAIS
@@ -18,31 +701,23 @@ PARTE 1 — FUNDAMENTOS DOS EFEITOS AMBIENTAIS
 
 <p>
 Durante uma manobra, o movimento do navio não depende
-apenas das ações produzidas por seus meios de governo
-e propulsão.
+apenas das ações produzidas pela propulsão e pelos
+meios de governo.
 </p>
 
 <p>
-O navio também está continuamente sujeito à ação
-de forças externas produzidas pelo ambiente,
-principalmente pelo
-<strong>vento</strong>,
-pela <strong>corrente</strong>
-e pelas <strong>ondas</strong>.
+O navio também está sujeito à ação de forças externas
+produzidas pelo ambiente, entre as quais se destacam
+o <strong>vento</strong>, a <strong>corrente</strong>
+e as <strong>ondas</strong>.
 </p>
 
 <p>
-Essas ações podem modificar a trajetória,
-produzir movimento lateral e gerar momentos capazes
-de alterar a orientação do navio.
-</p>
-
-<p>
-Para o Prático, portanto, não basta conhecer a
-existência das forças ambientais.
-É necessário compreender como essas forças
-interferem na capacidade de controlar o movimento
-da embarcação durante a manobra.
+Nesta primeira parte serão estabelecidos os conceitos
+fundamentais necessários para compreender como essas
+ações podem produzir forças, movimentos laterais
+e momentos capazes de modificar o comportamento
+do navio.
 </p>
 
 </div>
@@ -53,28 +728,38 @@ da embarcação durante a manobra.
 
 <!-- =========================================
      TÓPICO 1
-     FORÇAS AMBIENTAIS E MANOBRABILIDADE
+     FORÇAS AMBIENTAIS
 ========================================= -->
 
 <section
 class="topico-aula"
-id="forcas-ambientais-manobrabilidade"
-data-topico-id="forcas-ambientais-manobrabilidade">
+id="forcas-ambientais"
+data-topico-id="forcas-ambientais">
 
-<h2>1. Forças ambientais e manobrabilidade</h2>
+<h2>1. Forças ambientais</h2>
 
 <div class="widget">
 
 <p>
-As condições ambientais podem exercer forças
-externas sobre o navio e, consequentemente,
-alterar seu movimento.
+No estudo da manobrabilidade, o navio deve ser
+considerado como um corpo sujeito simultaneamente
+a diferentes forças e momentos.
 </p>
 
 <p>
-No estudo da manobrabilidade,
-três agentes ambientais possuem particular
-importância:
+Parte dessas ações está relacionada aos próprios
+meios utilizados para controlar a embarcação,
+como a propulsão e o leme.
+</p>
+
+<p>
+Outras ações têm origem no ambiente em que o navio
+se encontra.
+</p>
+
+<p>
+Entre os principais agentes ambientais relevantes
+para a manobrabilidade encontram-se:
 </p>
 
 <ul>
@@ -97,18 +782,10 @@ importância:
 </ul>
 
 <p>
-A ação desses agentes deve ser considerada juntamente
-com as forças e os momentos produzidos pelo casco,
-hélice, leme e demais meios utilizados para controlar
-o navio.
-</p>
-
-<p>
-Consequentemente, uma determinada ordem de máquina
-ou de leme não deve ser interpretada isoladamente.
-O movimento efetivamente observado resulta da ação
-conjunta das diferentes forças e momentos que atuam
-sobre a embarcação.
+Esses agentes podem alterar o movimento efetivo
+do navio e, portanto, devem ser considerados
+juntamente com as ações produzidas pelo casco,
+pela propulsão e pelos meios de governo.
 </p>
 
 
@@ -117,13 +794,15 @@ sobre a embarcação.
 <h3>Conceito fundamental</h3>
 
 <p>
-As forças ambientais não constituem apenas uma
-perturbação externa à manobra.
+O movimento efetivamente observado durante uma
+manobra resulta da ação conjunta das forças
+e dos momentos que atuam sobre o navio.
 </p>
 
 <p>
-Elas fazem parte do conjunto de forças e momentos
-que determina o movimento efetivo do navio.
+As forças ambientais fazem parte desse conjunto
+e não devem ser analisadas isoladamente da condição
+de manobra da embarcação.
 </p>
 
 </div>
@@ -134,17 +813,16 @@ que determina o movimento efetivo do navio.
 <h3>⚠ Atenção PSCPP</h3>
 
 <p>
-O estudo dos efeitos ambientais nesta aula está
-voltado para a
-<strong>manobrabilidade do navio</strong>.
+Nesta aula, vento, corrente e ondas serão estudados
+sob o ponto de vista da
+<strong>manobrabilidade</strong>.
 </p>
 
 <p>
-O objetivo não é estudar detalhadamente a formação
-meteorológica ou oceanográfica do vento,
-das correntes ou das ondas, mas compreender
-<strong>como esses agentes modificam o comportamento
-do navio durante a manobra</strong>.
+O objetivo é compreender os efeitos desses agentes
+sobre o comportamento do navio, sem aprofundar
+os fenômenos meteorológicos e oceanográficos
+que serão tratados nas disciplinas específicas.
 </p>
 
 </div>
@@ -157,7 +835,7 @@ do navio durante a manobra</strong>.
 
 <!-- =========================================
      TÓPICO 2
-     FORÇA E MOMENTO
+     FORÇA E MOMENTO AMBIENTAL
 ========================================= -->
 
 <section
@@ -170,68 +848,50 @@ data-topico-id="forca-momento-ambiental">
 <div class="widget">
 
 <p>
-A ação de um agente ambiental sobre o navio pode
-produzir não apenas uma tendência de deslocamento,
-mas também uma tendência de rotação.
+A ação de um agente ambiental sobre o navio
+pode contribuir tanto para alterar seu movimento
+de translação quanto para produzir uma tendência
+de rotação.
 </p>
 
 <p>
-Para compreender essa diferença, é importante
-separar dois efeitos fundamentais:
-<strong>força</strong>
-e <strong>momento</strong>.
+Uma força com componente transversal pode contribuir
+para o desenvolvimento de movimento lateral.
 </p>
 
 <p>
-Uma força externa pode contribuir para alterar
-o movimento translacional do navio.
-Quando essa ação possui componente transversal,
-pode produzir ou modificar o movimento lateral
-da embarcação.
-</p>
-
-<p>
-Entretanto, a resultante da ação ambiental
-não precisa atuar de maneira a produzir somente
-translação.
-Dependendo de sua distribuição e de seu ponto
-de aplicação em relação ao navio,
-ela também pode produzir um
+Entretanto, quando a resultante dessa ação produz
+também uma tendência de rotação do navio em torno
+do eixo vertical, surge um
 <strong>momento de guinada</strong>
 (<strong>yaw moment</strong>).
 </p>
 
 <p>
-Nesse caso, além de uma possível tendência de
-deslocamento, surge uma tendência de alteração
-da proa do navio.
+Assim, a ação ambiental pode provocar simultaneamente
+uma tendência de deslocamento e uma tendência
+de alteração da orientação do navio.
 </p>
 
 
 <div class="destaque">
 
-<h3>Translação e rotação</h3>
+<h3>Força e momento</h3>
 
 <p>
-Uma força ambiental pode contribuir para
-<strong>deslocar</strong> o navio.
+Uma <strong>força</strong> pode contribuir para
+alterar o movimento translacional do navio.
 </p>
 
 <p>
-Quando sua ação também produz momento,
-ela pode contribuir para
-<strong>girar</strong> o navio.
+Um <strong>momento</strong> pode contribuir para
+alterar seu movimento de rotação.
 </p>
 
 <p>
-Por isso, ao analisar vento ou corrente,
-não é suficiente perguntar apenas
-<strong>“para onde o navio será empurrado?”</strong>.
-</p>
-
-<p>
-Também é necessário avaliar
-<strong>“qual será a tendência de guinada?”</strong>.
+Na análise de uma força ambiental, portanto,
+é necessário considerar tanto a tendência de
+deslocamento quanto a possível tendência de guinada.
 </p>
 
 </div>
@@ -242,15 +902,16 @@ Também é necessário avaliar
 <h3>⚠ Atenção PSCPP</h3>
 
 <p>
-Força lateral e momento de guinada representam
-efeitos diferentes.
+Não confunda
+<strong>força lateral</strong>
+com
+<strong>momento de guinada</strong>.
 </p>
 
 <p>
-Uma força ambiental pode produzir simultaneamente
-movimento lateral e alteração da orientação do navio.
-A resposta observada dependerá do conjunto das forças
-e momentos atuantes.
+Uma ação ambiental pode produzir os dois efeitos
+simultaneamente, mas eles representam consequências
+distintas sobre o movimento do navio.
 </p>
 
 </div>
@@ -263,61 +924,56 @@ e momentos atuantes.
 
 <!-- =========================================
      TÓPICO 3
-     MOVIMENTO LATERAL E DERIVA
+     MOVIMENTO RESULTANTE
 ========================================= -->
 
 <section
 class="topico-aula"
-id="movimento-lateral-deriva"
-data-topico-id="movimento-lateral-deriva">
+id="movimento-resultante-ambiente"
+data-topico-id="movimento-resultante-ambiente">
 
-<h2>3. Movimento lateral e deriva</h2>
+<h2>3. Movimento resultante do navio</h2>
 
 <div class="widget">
 
 <p>
-Quando uma força ambiental possui componente
-transversal à orientação ou ao movimento do navio,
-ela pode contribuir para produzir um deslocamento
-lateral da embarcação.
+A direção para a qual a proa está orientada
+não determina, por si só, a direção do movimento
+efetivo do navio.
 </p>
 
 <p>
-Esse efeito é particularmente importante durante
-manobras em que pequenos deslocamentos laterais
-podem alterar significativamente a posição do navio
-em relação a um cais, canal, outra embarcação
-ou limite de segurança.
+A presença de forças ambientais pode introduzir
+componentes longitudinais e transversais que
+modificam o movimento resultante da embarcação.
 </p>
 
 <p>
-A ação ambiental também pode fazer com que o
-movimento efetivo do navio não coincida com a
-direção para a qual sua proa está apontada.
+Consequentemente, o navio pode apresentar uma
+trajetória diferente daquela que seria esperada
+considerando apenas sua orientação.
 </p>
 
 <p>
-Assim, a orientação longitudinal do navio e a
-trajetória efetivamente percorrida sobre a água
-ou sobre o fundo não devem ser consideradas,
-necessariamente, como a mesma coisa.
+Essa distinção é fundamental para a interpretação
+dos efeitos do vento e da corrente, que serão
+desenvolvidos nas próximas partes da aula.
 </p>
 
 
 <div class="destaque">
 
-<h3>Orientação não significa trajetória</h3>
+<h3>Orientação e movimento</h3>
 
 <p>
-A direção para a qual a proa aponta não determina,
-por si só, a direção do movimento efetivo do navio.
+<strong>Orientação do navio</strong> e
+<strong>direção do movimento efetivo</strong>
+não são necessariamente coincidentes.
 </p>
 
 <p>
-Vento e corrente podem introduzir componentes
-laterais de movimento que precisam ser consideradas
-pelo Prático durante o planejamento e a execução
-da manobra.
+A ação das forças ambientais deve ser considerada
+na avaliação da trajetória resultante.
 </p>
 
 </div>
@@ -328,16 +984,14 @@ da manobra.
 <h3>⚠ Atenção PSCPP</h3>
 
 <p>
-Não confunda
-<strong>orientação do navio</strong>
-com
-<strong>direção de seu movimento efetivo</strong>.
+Durante uma manobra, observar apenas a proa do navio
+não é suficiente para determinar como a embarcação
+está efetivamente se deslocando.
 </p>
 
 <p>
-Essa distinção será especialmente importante
-quando estudarmos separadamente os efeitos do
-vento e da corrente.
+A tendência de movimento lateral deve ser considerada
+juntamente com a tendência de guinada.
 </p>
 
 </div>
@@ -350,7 +1004,7 @@ vento e da corrente.
 
 <!-- =========================================
      TÓPICO 4
-     IMPORTÂNCIA DA BAIXA VELOCIDADE
+     BAIXA VELOCIDADE
 ========================================= -->
 
 <section
@@ -358,52 +1012,44 @@ class="topico-aula"
 id="efeitos-ambientais-baixa-velocidade"
 data-topico-id="efeitos-ambientais-baixa-velocidade">
 
-<h2>4. Efeitos ambientais e baixa velocidade</h2>
+<h2>4. Importância dos efeitos ambientais em baixa velocidade</h2>
 
 <div class="widget">
 
 <p>
-Os efeitos ambientais merecem atenção especial
-durante operações realizadas em baixa velocidade.
+A influência das forças ambientais merece atenção
+especial durante manobras realizadas em baixa
+velocidade.
 </p>
 
 <p>
-Nessas condições, a capacidade disponível para
-produzir determinadas forças de controle pode ser
-reduzida, enquanto vento e corrente continuam
-atuando sobre o navio.
+Nessas condições, a relação entre as forças externas
+e a capacidade disponível para controlar o movimento
+do navio assume grande importância operacional.
 </p>
 
 <p>
-Isso torna a avaliação das forças externas
-particularmente importante em operações como
-aproximações, atracações, desatracações e outras
-manobras executadas com velocidade reduzida.
-</p>
-
-<p>
-A importância operacional não decorre apenas
-da intensidade absoluta da força ambiental,
-mas da relação entre essa força e a capacidade
-disponível para controlar o movimento do navio
-naquela condição.
+Esse aspecto deve ser considerado principalmente
+durante aproximações, atracações, desatracações
+e outras operações nas quais pequenos movimentos
+laterais ou alterações da orientação podem produzir
+efeitos relevantes sobre a manobra.
 </p>
 
 
 <div class="destaque">
 
-<h3>Relação entre perturbação e controle</h3>
+<h3>Relação entre força ambiental e controle</h3>
 
 <p>
-O mesmo agente ambiental pode representar
-dificuldades operacionais muito diferentes
-dependendo da condição de manobra do navio.
+A importância de uma ação ambiental não depende
+somente de sua intensidade absoluta.
 </p>
 
 <p>
-Por isso, a análise prática deve considerar
-simultaneamente a ação ambiental e a capacidade
-disponível para produzir a resposta necessária.
+Também deve ser considerada a capacidade disponível
+para controlar seus efeitos na condição específica
+em que o navio está sendo manobrado.
 </p>
 
 </div>
@@ -414,16 +1060,10 @@ disponível para produzir a resposta necessária.
 <h3>⚠ Atenção PSCPP</h3>
 
 <p>
-Não se deve concluir que uma condição ambiental
-é operacionalmente pouco importante apenas porque
-sua intensidade parece pequena.
-</p>
-
-<p>
-Durante uma manobra de baixa velocidade,
-uma ação ambiental persistente pode produzir
-efeitos relevantes sobre a posição e a orientação
-da embarcação.
+Uma força ambiental aparentemente pequena pode
+tornar-se operacionalmente relevante quando o navio
+dispõe de reduzida capacidade para contrariar
+o movimento produzido por ela.
 </p>
 
 </div>
@@ -436,72 +1076,62 @@ da embarcação.
 
 <!-- =========================================
      TÓPICO 5
-     AVALIAÇÃO OPERACIONAL
+     RACIOCÍNIO OPERACIONAL
 ========================================= -->
 
 <section
 class="topico-aula"
-id="avaliacao-operacional-efeitos-ambientais"
-data-topico-id="avaliacao-operacional-efeitos-ambientais">
+id="raciocinio-operacional-efeitos-ambientais"
+data-topico-id="raciocinio-operacional-efeitos-ambientais">
 
-<h2>5. Avaliação operacional dos efeitos ambientais</h2>
+<h2>5. Raciocínio operacional</h2>
 
 <div class="widget">
 
 <p>
-A análise operacional dos efeitos ambientais deve
-considerar mais do que simplesmente a intensidade
-do vento, da corrente ou das ondas.
+Para compreender os efeitos ambientais sobre
+a manobrabilidade, é útil organizar a análise
+a partir da relação entre o agente externo,
+a resposta do navio e a capacidade disponível
+para controlar essa resposta.
 </p>
 
 <p>
-É necessário observar como cada agente atua em
-relação ao navio e quais movimentos podem resultar
-dessa ação.
-</p>
-
-<p>
-De forma geral, a avaliação deve considerar:
+De forma geral, devem ser considerados:
 </p>
 
 <ul>
 
 <li>
-a direção de atuação do agente ambiental;
+a direção da ação ambiental;
 </li>
 
 <li>
-sua intensidade;
+a intensidade dessa ação;
 </li>
 
 <li>
-a orientação do navio em relação a essa ação;
+a orientação do navio;
 </li>
 
 <li>
-a tendência de deslocamento resultante;
+a tendência de movimento produzida;
 </li>
 
 <li>
-a possível tendência de guinada;
+a tendência de guinada;
 </li>
 
 <li>
-a condição de movimento do navio;
+a condição de movimento da embarcação;
 </li>
 
 <li>
 a capacidade disponível para controlar
-esses efeitos.
+os efeitos resultantes.
 </li>
 
 </ul>
-
-<p>
-Nas próximas partes da aula, esses princípios serão
-aplicados separadamente ao vento, à corrente
-e às ondas.
-</p>
 
 
 <div class="destaque">
@@ -509,14 +1139,14 @@ e às ondas.
 <h3>Sequência de análise</h3>
 
 <p>
-Para fins de manobrabilidade, podemos organizar
-o raciocínio da seguinte forma:
+O raciocínio básico utilizado ao longo desta aula
+pode ser representado por:
 </p>
 
 <p>
 <strong>
 agente ambiental → força e momento →
-movimento resultante → consequência operacional →
+resposta do navio → consequência para a manobra →
 ação de controle.
 </strong>
 </p>
@@ -529,15 +1159,14 @@ ação de controle.
 <h3>⚠ Atenção PSCPP</h3>
 
 <p>
-Evite analisar vento, corrente ou ondas apenas
-como valores isolados.
+Vento, corrente e ondas não devem ser interpretados
+apenas como valores ambientais isolados.
 </p>
 
 <p>
-Para a manobra, interessa principalmente
-<strong>como a ação ambiental se relaciona com
-a orientação, o movimento e a capacidade de
-controle do navio</strong>.
+Para a manobrabilidade, interessa compreender
+<strong>como essas ações modificam o comportamento
+do navio e sua capacidade de controle</strong>.
 </p>
 
 </div>
@@ -613,12 +1242,7 @@ movimento lateral;
 
 <li>
 <strong>Low speed</strong> —
-baixa velocidade;
-</li>
-
-<li>
-<strong>Ship handling</strong> —
-manobra ou condução do navio, conforme o contexto.
+baixa velocidade.
 </li>
 
 </ul>
