@@ -7375,3 +7375,8092 @@ de interação.
      SOMENTE NA PARTE 6,
      CONFORME O PADRÃO 1.
 ===================================================== -->
+
+<!-- =====================================================
+     BRIDGE TRAINER PSCPP
+     MANOBRABILIDADE DO NAVIO
+
+     AULA: INTERAÇÃO HIDRODINÂMICA
+     PARTE 4 DE 6
+
+     CONTEÚDO PROGRAMÁTICO:
+     8.12.5.2.1 — Geometria e separação
+     8.12.5.2.2 — Geometria e profundidade
+     8.12.5.2.3 — Geometria e comprimento
+     8.12.5.2.4 — Geometria e velocidade
+
+     PADRÃO 1
+     CONTINUAÇÃO DA PARTE 3
+
+     NÃO ALTERAR OS IDs ANTERIORES
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — Fatores que modificam
+a interação durante a ultrapassagem
+</h2>
+
+<p>
+<strong>
+Effects of Channel Geometry,
+Separation, Water Depth,
+Ship Length and Speed
+</strong>
+</p>
+
+<p>
+A intensidade da interação
+hidrodinâmica entre dois navios
+não depende exclusivamente
+da distância entre seus cascos.
+</p>
+
+<p>
+A geometria da via navegável,
+a profundidade disponível,
+as dimensões das embarcações
+e suas velocidades modificam
+as condições de escoamento.
+</p>
+
+<p>
+Esses fatores também influenciam
+a capacidade de governo
+e as margens disponíveis
+para executar a ultrapassagem.
+</p>
+
+<div class="destaque">
+
+<h3>
+Objetivo desta parte
+</h3>
+
+<p>
+Compreender como as características
+da via navegável e dos navios
+modificam a interação,
+sem confundir os efeitos
+entre embarcações com os efeitos
+isolados de banco, squat
+ou resistência ao avanço.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-19"
+data-topico-id="topico-19"
+>
+
+<h2>
+19. Geometria do canal
+e distância de separação
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+Conteúdo programático:
+8.12.5.2.1
+</strong>
+</p>
+
+<p>
+Durante uma ultrapassagem,
+a distância lateral
+entre os cascos influencia
+o escoamento na região
+intermediária.
+</p>
+
+<p>
+Quando a manobra ocorre
+em um canal, a largura
+navegável também limita
+as posições que as
+embarcações podem assumir.
+</p>
+
+<h3>
+19.1 Separação lateral
+</h3>
+
+<p>
+A separação lateral,
+<strong>lateral separation</strong>,
+é a distância transversal
+entre as superfícies
+dos cascos em uma
+configuração considerada.
+</p>
+
+<p>
+Em condições comparáveis,
+a redução dessa distância
+pode intensificar
+a influência recíproca
+dos campos hidrodinâmicos.
+</p>
+
+<p>
+Entretanto, a força resultante
+não depende apenas
+da menor distância
+entre os cascos.
+</p>
+
+<p>
+A posição longitudinal relativa,
+as velocidades e as formas
+das embarcações também
+modificam a distribuição
+de pressões.
+</p>
+
+
+<h3>
+19.2 Largura do canal
+</h3>
+
+<p>
+Um canal com largura
+limitada restringe
+o espaço disponível
+para a passagem.
+</p>
+
+<p>
+Além da separação
+entre os navios,
+devem ser consideradas
+as folgas em relação
+às margens.
+</p>
+
+<p>
+Essas folgas influenciam
+o escoamento ao redor
+dos cascos e as margens
+de segurança da manobra.
+</p>
+
+
+<!-- =========================================
+     FIGURA 8
+     VISTA SUPERIOR
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 8 —
+Separação entre navios
+e folgas laterais no canal
+</h3>
+
+<svg
+viewBox="0 0 760 480"
+width="100%"
+role="img"
+aria-label="Vista superior de dois navios paralelos navegando para a direita em um canal, com identificação das folgas laterais em relação às margens e da separação entre os cascos"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="12"
+y="12"
+width="736"
+height="456"
+rx="12"
+fill="#dceef7"
+/>
+
+<!-- MARGENS -->
+
+<rect
+x="12"
+y="12"
+width="736"
+height="62"
+fill="#c4c0a8"
+/>
+
+<rect
+x="12"
+y="406"
+width="736"
+height="62"
+fill="#c4c0a8"
+/>
+
+<line
+x1="12"
+y1="74"
+x2="748"
+y2="74"
+stroke="#77735f"
+stroke-width="4"
+/>
+
+<line
+x1="12"
+y1="406"
+x2="748"
+y2="406"
+stroke="#77735f"
+stroke-width="4"
+/>
+
+<!-- NAVIO A -->
+
+<path
+d="
+M 105 165
+Q 105 145 130 145
+L 535 145
+Q 605 145 675 185
+Q 605 225 535 225
+L 130 225
+Q 105 225 105 205
+Z
+"
+fill="#617b90"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- NAVIO B -->
+
+<path
+d="
+M 105 275
+Q 105 255 130 255
+L 535 255
+Q 605 255 675 295
+Q 605 335 535 335
+L 130 335
+Q 105 335 105 315
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- SEPARAÇÃO -->
+
+<line
+x1="400"
+y1="225"
+x2="400"
+y2="255"
+stroke="#a13e2c"
+stroke-width="3"
+/>
+
+<path
+d="M 393 235 L 400 225 L 407 235"
+fill="none"
+stroke="#a13e2c"
+stroke-width="2"
+/>
+
+<path
+d="M 393 245 L 400 255 L 407 245"
+fill="none"
+stroke="#a13e2c"
+stroke-width="2"
+/>
+
+<!-- FOLGA SUPERIOR -->
+
+<line
+x1="400"
+y1="74"
+x2="400"
+y2="145"
+stroke="#176b85"
+stroke-width="3"
+/>
+
+<!-- FOLGA INFERIOR -->
+
+<line
+x1="400"
+y1="335"
+x2="400"
+y2="406"
+stroke="#176b85"
+stroke-width="3"
+/>
+
+<!-- LEGENDAS -->
+
+<text
+x="420"
+y="112"
+font-size="16"
+fill="#153b57"
+>
+Folga à margem
+</text>
+
+<text
+x="420"
+y="248"
+font-size="16"
+fill="#a13e2c"
+>
+Separação
+</text>
+
+<text
+x="420"
+y="378"
+font-size="16"
+fill="#153b57"
+>
+Folga à margem
+</text>
+
+<text
+x="130"
+y="191"
+font-size="18"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="130"
+y="301"
+font-size="18"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+<text
+x="25"
+y="46"
+font-size="17"
+fill="#3d3a2c"
+>
+Margem
+</text>
+
+<text
+x="25"
+y="446"
+font-size="17"
+fill="#3d3a2c"
+>
+Margem
+</text>
+
+</svg>
+
+<p>
+<strong>
+Representação esquemática
+em vista superior.
+</strong>
+</p>
+
+<p>
+Ambos os navios possuem
+proas orientadas
+para a direita.
+</p>
+
+<p>
+As distâncias indicadas
+são geométricas.
+A figura não representa
+um critério quantitativo
+de segurança.
+</p>
+
+</div>
+
+
+<h3>
+19.3 Interação simultânea
+com as margens
+</h3>
+
+<p>
+Em um canal restrito,
+a embarcação pode sofrer
+influência hidrodinâmica
+do outro navio
+e das proximidades
+das margens.
+</p>
+
+<p>
+Os efeitos não devem
+ser tratados como
+necessariamente independentes.
+</p>
+
+<p>
+A distribuição de pressões
+resulta das condições
+de escoamento do conjunto.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A largura total do canal
+não corresponde integralmente
+à separação disponível
+entre os navios.
+</p>
+
+<p>
+Também devem ser consideradas
+as bocas das embarcações,
+as folgas às margens
+e as margens de manobra.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Lateral Separation</strong> —
+separação lateral;
+</li>
+
+<li>
+<strong>Channel Width</strong> —
+largura do canal;
+</li>
+
+<li>
+<strong>Bank Clearance</strong> —
+folga em relação à margem;
+</li>
+
+<li>
+<strong>Ship-to-Ship Clearance</strong> —
+folga entre os navios;
+</li>
+
+<li>
+<strong>Confined Waterway</strong> —
+via navegável confinada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma ultrapassagem
+geometricamente possível
+não é necessariamente
+hidrodinamicamente segura.
+</p>
+
+<p>
+A análise deve considerar
+a separação entre os navios
+e a proximidade das margens.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-20"
+data-topico-id="topico-20"
+>
+
+<h2>
+20. Geometria do canal
+e profundidade da água
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+Conteúdo programático:
+8.12.5.2.2
+</strong>
+</p>
+
+<p>
+A profundidade disponível
+influencia o escoamento
+sob os cascos e,
+consequentemente,
+pode modificar
+a interação hidrodinâmica
+entre embarcações.
+</p>
+
+
+<h3>
+20.1 Restrição vertical
+do escoamento
+</h3>
+
+<p>
+Quando a distância
+entre o fundo do casco
+e o leito diminui,
+a presença do fundo
+passa a exercer
+maior influência
+sobre o escoamento.
+</p>
+
+<p>
+Durante a ultrapassagem,
+essa restrição vertical
+atua simultaneamente
+à proximidade lateral
+entre os navios.
+</p>
+
+<p>
+A combinação pode modificar
+as forças laterais,
+os momentos de guinada
+e os movimentos verticais
+das embarcações.
+</p>
+
+
+<h3>
+20.2 Relação profundidade-calado
+</h3>
+
+<p>
+Uma grandeza geométrica
+útil é a razão:
+</p>
+
+<div class="destaque">
+
+<h3>
+Razão profundidade-calado
+</h3>
+
+<p>
+<strong>
+h / T
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>h:</strong>
+profundidade local da água;
+</li>
+
+<li>
+<strong>T:</strong>
+calado considerado
+da embarcação.
+</li>
+
+</ul>
+
+<p>
+A razão é adimensional.
+</p>
+
+<p>
+Valores menores
+indicam menor profundidade
+em relação ao calado.
+</p>
+
+<p>
+Ela é um parâmetro
+geométrico de análise,
+não uma fórmula
+para calcular diretamente
+a força de interação.
+</p>
+
+</div>
+
+
+<h3>
+20.3 Folga abaixo da quilha
+</h3>
+
+<p>
+A folga abaixo da quilha,
+<strong>under-keel clearance</strong>,
+também é relevante.
+</p>
+
+<p>
+Em uma representação
+geométrica simplificada,
+sem considerar movimentos
+dinâmicos do navio:
+</p>
+
+<div class="destaque">
+
+<h3>
+Folga estática simplificada
+</h3>
+
+<p>
+<strong>
+UKC = h − T
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>UKC:</strong>
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>h:</strong>
+profundidade da água;
+</li>
+
+<li>
+<strong>T:</strong>
+calado do navio.
+</li>
+
+</ul>
+
+<p>
+Essa relação não inclui,
+por si só, squat,
+trim dinâmico,
+movimentos do navio,
+incertezas de sondagem
+ou outras parcelas
+necessárias à avaliação
+operacional da UKC.
+</p>
+
+</div>
+
+
+<!-- =========================================
+     FIGURA 9
+     VISTA TRANSVERSAL
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 9 —
+Dois navios em seção transversal
+de um canal
+</h3>
+
+<svg
+viewBox="0 0 760 470"
+width="100%"
+role="img"
+aria-label="Seção transversal de um canal mostrando dois cascos lado a lado, superfície da água, fundo, profundidade h, calado T e folga abaixo da quilha"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="12"
+y="12"
+width="736"
+height="446"
+rx="12"
+fill="#eef4f8"
+/>
+
+<!-- ÁGUA -->
+
+<rect
+x="55"
+y="105"
+width="650"
+height="290"
+fill="#dceef7"
+/>
+
+<!-- SUPERFÍCIE -->
+
+<line
+x1="55"
+y1="105"
+x2="705"
+y2="105"
+stroke="#1688b8"
+stroke-width="4"
+/>
+
+<!-- FUNDO -->
+
+<rect
+x="55"
+y="395"
+width="650"
+height="48"
+fill="#c4c0a8"
+/>
+
+<line
+x1="55"
+y1="395"
+x2="705"
+y2="395"
+stroke="#77735f"
+stroke-width="4"
+/>
+
+<!-- CASCO A -->
+
+<path
+d="
+M 140 105
+L 140 225
+Q 140 260 180 275
+L 290 275
+Q 330 260 330 225
+L 330 105
+Z
+"
+fill="#617b90"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- CASCO B -->
+
+<path
+d="
+M 425 105
+L 425 225
+Q 425 260 465 275
+L 575 275
+Q 615 260 615 225
+L 615 105
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- CALADO -->
+
+<line
+x1="105"
+y1="105"
+x2="105"
+y2="275"
+stroke="#a13e2c"
+stroke-width="3"
+/>
+
+<text
+x="75"
+y="200"
+font-size="21"
+fill="#a13e2c"
+>
+T
+</text>
+
+<!-- PROFUNDIDADE -->
+
+<line
+x1="670"
+y1="105"
+x2="670"
+y2="395"
+stroke="#176b85"
+stroke-width="3"
+/>
+
+<text
+x="681"
+y="257"
+font-size="21"
+fill="#176b85"
+>
+h
+</text>
+
+<!-- UKC -->
+
+<line
+x1="370"
+y1="275"
+x2="370"
+y2="395"
+stroke="#a13e2c"
+stroke-width="3"
+/>
+
+<text
+x="378"
+y="344"
+font-size="18"
+fill="#a13e2c"
+>
+UKC
+</text>
+
+<!-- RÓTULOS -->
+
+<text
+x="170"
+y="150"
+font-size="19"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="455"
+y="150"
+font-size="19"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+<text
+x="80"
+y="85"
+font-size="18"
+fill="#153b57"
+>
+Superfície da água
+</text>
+
+<text
+x="85"
+y="425"
+font-size="18"
+fill="#3d3a2c"
+>
+Fundo do canal
+</text>
+
+</svg>
+
+<p>
+<strong>
+Representação em seção transversal,
+não em vista superior.
+</strong>
+</p>
+
+<p>
+O desenho ilustra
+a restrição vertical
+e lateral do escoamento.
+</p>
+
+<p>
+As proporções
+não correspondem
+a uma condição real
+de carregamento
+ou profundidade.
+</p>
+
+</div>
+
+
+<h3>
+20.4 Interação e squat
+</h3>
+
+<p>
+A proximidade entre navios
+em águas restritas
+pode modificar
+os movimentos verticais
+e o trim dinâmico.
+</p>
+
+<p>
+O
+<strong>
+Shiphandling for the Mariner,
+5ª edição,
+páginas impressas 99–100
+</strong>,
+discute a influência
+da interação entre navios
+sobre o squat.
+</p>
+
+<p>
+A publicação apresenta
+resultados de encontros
+em canais restritos
+e ressalta os riscos
+associados ao aumento
+do calado dinâmico.
+</p>
+
+<p>
+Ao tratar especificamente
+da ultrapassagem,
+o autor reconhece
+a insuficiência de dados
+para confirmar determinadas
+comparações quantitativas
+com o encontro entre navios.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não é correto afirmar,
+como regra universal
+comprovada,
+que o squat durante
+uma ultrapassagem
+será necessariamente
+maior que durante
+um encontro.
+</p>
+
+<p>
+A publicação apresenta
+essa possibilidade
+como uma preocupação
+de segurança,
+mas ressalva
+a ausência de dados
+conclusivos para
+a comparação.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Water Depth</strong> —
+profundidade da água;
+</li>
+
+<li>
+<strong>Draft / Draught</strong> —
+calado;
+</li>
+
+<li>
+<strong>Under-Keel Clearance</strong> —
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>Shallow-Water Interaction</strong> —
+interação em águas rasas;
+</li>
+
+<li>
+<strong>Squat</strong> —
+alteração dinâmica
+de afundamento e trim
+associada ao movimento
+do navio na água.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-21"
+data-topico-id="topico-21"
+>
+
+<h2>
+21. Geometria do canal
+e comprimento dos navios
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+Conteúdo programático:
+8.12.5.2.3
+</strong>
+</p>
+
+<p>
+O comprimento
+das embarcações
+influencia a extensão
+longitudinal dos cascos
+e a evolução das posições
+relativas durante
+uma ultrapassagem.
+</p>
+
+
+<h3>
+21.1 Comprimento
+e sobreposição longitudinal
+</h3>
+
+<p>
+Durante a passagem,
+a região em que
+os cascos ficam
+longitudinalmente
+sobrepostos muda
+continuamente.
+</p>
+
+<p>
+Navios de comprimentos
+diferentes apresentam
+configurações distintas
+de aproximação,
+sobreposição e afastamento.
+</p>
+
+<p>
+Essas diferenças podem
+alterar a distribuição
+das pressões
+e dos momentos
+hidrodinâmicos.
+</p>
+
+
+<h3>
+21.2 Distância relativa
+para completar a passagem
+</h3>
+
+<p>
+Considere uma ultrapassagem
+em trajetórias paralelas.
+</p>
+
+<p>
+Para passar de uma situação
+em que a proa do ultrapassador
+está à altura da popa
+do ultrapassado até
+uma situação em que
+a popa do ultrapassador
+esteja à altura da proa
+do ultrapassado,
+o deslocamento longitudinal
+relativo corresponde,
+na geometria idealizada,
+à soma dos comprimentos.
+</p>
+
+<div class="destaque">
+
+<h3>
+Deslocamento relativo idealizado
+</h3>
+
+<p>
+<strong>
+Δx = L<sub>A</sub> + L<sub>B</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>L<sub>A</sub>:</strong>
+comprimento longitudinal
+do ultrapassador;
+</li>
+
+<li>
+<strong>L<sub>B</sub>:</strong>
+comprimento longitudinal
+do ultrapassado.
+</li>
+
+</ul>
+
+<p>
+A expressão descreve
+uma configuração
+geométrica simplificada.
+</p>
+
+<p>
+Não inclui distâncias
+de segurança antes
+e depois da passagem.
+</p>
+
+</div>
+
+
+<h3>
+21.3 Exemplo cinemático
+</h3>
+
+<p>
+Considere:
+</p>
+
+<ul>
+
+<li>
+Navio A:
+comprimento de 220 m;
+</li>
+
+<li>
+Navio B:
+comprimento de 180 m.
+</li>
+
+</ul>
+
+<p>
+A distância longitudinal
+relativa entre
+as duas configurações
+descritas será:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+Δx = 220 + 180
+</strong>
+</p>
+
+<p>
+<strong>
+Δx = 400 m
+</strong>
+</p>
+
+</div>
+
+<p>
+Esse resultado
+não determina
+a distância total
+necessária para
+uma ultrapassagem segura.
+</p>
+
+<p>
+Ele apenas representa
+a extensão longitudinal
+relativa de uma
+sobreposição completa,
+segundo as hipóteses
+adotadas.
+</p>
+
+
+<h3>
+21.4 Influência hidrodinâmica
+</h3>
+
+<p>
+O comprimento também
+participa da distribuição
+longitudinal das forças
+sobre o casco.
+</p>
+
+<p>
+As forças que atuam
+em regiões diferentes
+podem produzir momentos
+de guinada distintos.
+</p>
+
+<p>
+Entretanto, o comprimento
+isoladamente não permite
+determinar a magnitude
+nem o sentido
+da interação.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Ship Length</strong> —
+comprimento do navio;
+</li>
+
+<li>
+<strong>Length Overall (LOA)</strong> —
+comprimento total;
+</li>
+
+<li>
+<strong>Length Between Perpendiculars
+(LBP)</strong> —
+comprimento entre perpendiculares;
+</li>
+
+<li>
+<strong>Longitudinal Overlap</strong> —
+sobreposição longitudinal;
+</li>
+
+<li>
+<strong>Relative Displacement</strong> —
+deslocamento relativo.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Navios mais longos
+podem exigir maior
+deslocamento longitudinal
+relativo para completar
+a passagem.
+</p>
+
+<p>
+Entretanto, o tempo
+e a intensidade
+da interação dependem
+também das velocidades,
+das formas dos cascos
+e das condições
+do canal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-22"
+data-topico-id="topico-22"
+>
+
+<h2>
+22. Geometria do canal
+e velocidade dos navios
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+Conteúdo programático:
+8.12.5.2.4
+</strong>
+</p>
+
+<p>
+A velocidade influencia
+a formação do campo
+de escoamento ao redor
+de cada navio.
+</p>
+
+<p>
+Em um canal restrito,
+essa influência deve
+ser analisada juntamente
+com a largura,
+a profundidade
+e a proximidade
+entre os cascos.
+</p>
+
+
+<h3>
+22.1 Velocidade
+em relação à água
+</h3>
+
+<p>
+Para analisar o escoamento
+ao redor do casco,
+a velocidade do navio
+em relação à água
+é uma grandeza relevante.
+</p>
+
+<p>
+Essa velocidade
+não deve ser confundida
+com a velocidade
+sobre o fundo.
+</p>
+
+<p>
+A corrente pode fazer
+com que as duas
+apresentem valores
+diferentes.
+</p>
+
+
+<h3>
+22.2 Escala dinâmica
+das forças
+</h3>
+
+<p>
+A pressão dinâmica,
+apresentada na Parte 2,
+pode ser escrita:
+</p>
+
+<div class="destaque">
+
+<h3>
+Pressão dinâmica
+</h3>
+
+<p>
+<strong>
+q = ½ρV²
+</strong>
+</p>
+
+<p>
+Essa expressão mostra
+a dependência quadrática
+da pressão dinâmica
+com a velocidade
+de referência.
+</p>
+
+<p>
+Entretanto, a força
+de interação real
+depende da distribuição
+das pressões e das
+condições geométricas
+do escoamento.
+</p>
+
+<p>
+Não se deve substituir
+essa análise por
+uma proporcionalidade
+universal entre
+força de interação
+e quadrado
+da velocidade.
+</p>
+
+</div>
+
+
+<h3>
+22.3 Velocidade relativa
+e duração da ultrapassagem
+</h3>
+
+<p>
+Para navios em trajetórias
+aproximadamente paralelas,
+a velocidade relativa
+longitudinal determina
+a rapidez com que
+uma embarcação avança
+em relação à outra.
+</p>
+
+<p>
+Uma diferença pequena
+de velocidades
+pode prolongar
+a permanência
+dos navios
+lado a lado.
+</p>
+
+<p>
+Por outro lado,
+um aumento da velocidade
+do ultrapassador
+pode intensificar
+as perturbações
+hidrodinâmicas.
+</p>
+
+
+<h3>
+22.4 A orientação
+da bibliografia
+</h3>
+
+<div class="destaque">
+
+<h3>
+Shiphandling for the Mariner
+— página 81
+</h3>
+
+<p>
+A publicação recomenda
+que o navio ultrapassador
+mantenha velocidade
+moderada e proporcione
+a maior separação
+lateral praticável.
+</p>
+
+<p>
+Também destaca
+a importância
+de evitar permanência
+prolongada pelo través.
+</p>
+
+<p>
+O navio ultrapassado
+deve preservar
+seguimento suficiente
+para manter
+a capacidade de governo.
+</p>
+
+</div>
+
+
+<h3>
+22.5 Compromisso operacional
+</h3>
+
+<p>
+A escolha da velocidade
+não deve ser baseada
+exclusivamente
+na tentativa de reduzir
+o tempo de passagem.
+</p>
+
+<p>
+A avaliação deve considerar
+simultaneamente:
+</p>
+
+<ul>
+
+<li>
+Intensidade potencial
+da interação;
+</li>
+
+<li>
+Duração da proximidade
+entre os cascos;
+</li>
+
+<li>
+Capacidade de governo
+das embarcações;
+</li>
+
+<li>
+Profundidade e largura
+do canal;
+</li>
+
+<li>
+Condições ambientais
+e restrições locais.
+</li>
+
+</ul>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Speed Through Water (STW)</strong> —
+velocidade em relação
+à água;
+</li>
+
+<li>
+<strong>Speed Over Ground (SOG)</strong> —
+velocidade sobre
+o fundo;
+</li>
+
+<li>
+<strong>Relative Speed</strong> —
+velocidade relativa;
+</li>
+
+<li>
+<strong>Moderate Speed</strong> —
+velocidade moderada;
+</li>
+
+<li>
+<strong>Steerageway</strong> —
+seguimento suficiente
+para manter o governo.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+A maior velocidade
+não é necessariamente
+a melhor escolha
+para uma ultrapassagem.
+</p>
+
+<p>
+A menor velocidade
+também não será
+automaticamente segura
+se comprometer
+a capacidade de governo.
+</p>
+
+<p>
+O planejamento deve
+equilibrar a intensidade
+da interação,
+o tempo de exposição
+e o controle da manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-23"
+data-topico-id="topico-23"
+>
+
+<h2>
+23. Efeito combinado
+das variáveis geométricas
+e operacionais
+</h2>
+
+<div class="widget">
+
+<p>
+Os fatores estudados
+não atuam necessariamente
+de maneira independente.
+</p>
+
+<p>
+A redução da largura
+disponível, por exemplo,
+pode limitar a separação
+lateral entre os navios.
+</p>
+
+<p>
+Se a profundidade
+também for reduzida,
+o escoamento estará
+sujeito a restrições
+laterais e verticais.
+</p>
+
+<p>
+A velocidade de cada
+embarcação modifica
+as condições dinâmicas
+desse escoamento.
+</p>
+
+
+<h3>
+23.1 Dependência conjunta
+</h3>
+
+<p>
+De maneira conceitual,
+a força lateral
+de interação pode
+ser representada como:
+</p>
+
+<div class="destaque">
+
+<h3>
+Dependência funcional
+</h3>
+
+<p>
+<strong>
+Y<sub>int</sub> =
+f(s, h, B<sub>c</sub>,
+L<sub>A</sub>, L<sub>B</sub>,
+V<sub>A</sub>, V<sub>B</sub>, P)
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>s:</strong>
+separação lateral;
+</li>
+
+<li>
+<strong>h:</strong>
+profundidade;
+</li>
+
+<li>
+<strong>B<sub>c</sub>:</strong>
+largura do canal;
+</li>
+
+<li>
+<strong>L<sub>A</sub>,
+L<sub>B</sub>:</strong>
+comprimentos dos navios;
+</li>
+
+<li>
+<strong>V<sub>A</sub>,
+V<sub>B</sub>:</strong>
+velocidades dos navios;
+</li>
+
+<li>
+<strong>P:</strong>
+posição relativa.
+</li>
+
+</ul>
+
+<p>
+A expressão é conceitual.
+Não constitui uma
+equação empírica
+de previsão.
+</p>
+
+</div>
+
+
+<h3>
+23.2 Momento de guinada
+</h3>
+
+<p>
+O mesmo raciocínio
+aplica-se ao momento
+de guinada.
+</p>
+
+<p>
+A intensidade
+e o sentido
+do momento dependem
+da distribuição
+longitudinal
+das forças.
+</p>
+
+<p>
+Assim, duas configurações
+que produzam forças
+laterais resultantes
+semelhantes podem
+apresentar momentos
+de guinada diferentes.
+</p>
+
+
+<h3>
+23.3 Limites das relações
+simplificadas
+</h3>
+
+<p>
+As fórmulas cinemáticas
+e geométricas apresentadas
+nesta aula ajudam
+a interpretar
+o fenômeno.
+</p>
+
+<p>
+Entretanto, a previsão
+quantitativa das forças
+e dos momentos
+de interação exige
+modelos hidrodinâmicos
+apropriados,
+dados experimentais
+ou outras ferramentas
+de análise adequadas.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Combined Effects</strong> —
+efeitos combinados;
+</li>
+
+<li>
+<strong>Hydrodynamic Model</strong> —
+modelo hidrodinâmico;
+</li>
+
+<li>
+<strong>Model Test</strong> —
+ensaio com modelo;
+</li>
+
+<li>
+<strong>Numerical Simulation</strong> —
+simulação numérica;
+</li>
+
+<li>
+<strong>Manoeuvring Prediction</strong> —
+previsão do comportamento
+de manobra.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não existe uma única
+fórmula elementar
+que determine
+a força de interação
+para todas as geometrias
+de canal e combinações
+de navios.
+</p>
+
+<p>
+As relações apresentadas
+nesta aula são ferramentas
+de interpretação,
+não substitutos
+de uma análise
+hidrodinâmica completa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 24
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-24"
+data-topico-id="topico-24"
+>
+
+<h2>
+24. Aplicação operacional:
+avaliação integrada
+de uma ultrapassagem
+em canal restrito
+</h2>
+
+<div class="widget">
+
+<p>
+Considere uma situação
+hipotética em que
+dois navios precisam
+avaliar uma ultrapassagem
+em um canal.
+</p>
+
+<p>
+A profundidade
+é limitada,
+a largura navegável
+restringe a separação
+lateral e as embarcações
+possuem comprimentos
+diferentes.
+</p>
+
+
+<h3>
+24.1 Primeira avaliação:
+geometria
+</h3>
+
+<p>
+A largura do canal
+deve ser confrontada
+com as bocas dos navios,
+as folgas às margens
+e a separação lateral
+pretendida.
+</p>
+
+<p>
+A existência de espaço
+geométrico para a passagem
+não encerra a avaliação
+de segurança.
+</p>
+
+
+<h3>
+24.2 Segunda avaliação:
+profundidade
+</h3>
+
+<p>
+A profundidade disponível
+deve ser analisada
+em relação aos calados
+das embarcações.
+</p>
+
+<p>
+Também devem ser
+consideradas as possíveis
+alterações dinâmicas
+de afundamento e trim.
+</p>
+
+<p>
+A interação entre navios
+pode modificar
+essas condições.
+</p>
+
+
+<h3>
+24.3 Terceira avaliação:
+comprimento
+</h3>
+
+<p>
+O comprimento dos navios
+influencia a distância
+longitudinal relativa
+necessária para completar
+a passagem.
+</p>
+
+<p>
+Essa distância,
+combinada à velocidade
+relativa, influencia
+a duração da manobra.
+</p>
+
+
+<h3>
+24.4 Quarta avaliação:
+velocidade
+</h3>
+
+<p>
+As velocidades devem
+ser avaliadas quanto
+à intensidade potencial
+das perturbações,
+à duração da proximidade
+e à capacidade
+de governo.
+</p>
+
+<p>
+A escolha deve ser
+compatível com
+as características
+dos navios e com
+as condições locais.
+</p>
+
+
+<h3>
+24.5 Quinta avaliação:
+resposta das embarcações
+</h3>
+
+<p>
+Mesmo quando
+a ultrapassagem
+é geometricamente
+possível, podem surgir
+forças laterais
+e momentos de guinada
+capazes de modificar
+as trajetórias.
+</p>
+
+<p>
+A capacidade
+de responder
+a essas perturbações
+deve integrar
+a avaliação operacional.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Sequência de raciocínio
+para o PSCPP
+</h3>
+
+<ol>
+
+<li>
+Identificar a geometria
+da via navegável.
+</li>
+
+<li>
+Avaliar a separação
+entre os cascos.
+</li>
+
+<li>
+Relacionar profundidade
+e calado.
+</li>
+
+<li>
+Considerar o comprimento
+e a sobreposição
+longitudinal.
+</li>
+
+<li>
+Avaliar as velocidades
+e a duração da passagem.
+</li>
+
+<li>
+Considerar forças laterais,
+momentos de guinada
+e capacidade de governo.
+</li>
+
+</ol>
+
+</div>
+
+
+<h3>
+24.6 Distinção entre
+conhecimento técnico
+e decisão operacional
+</h3>
+
+<p>
+As relações estudadas
+permitem reconhecer
+os mecanismos
+que influenciam
+a interação.
+</p>
+
+<p>
+Entretanto, a autorização
+ou execução de uma
+ultrapassagem real
+depende de uma avaliação
+operacional específica,
+incluindo as regras
+de navegação
+e os procedimentos
+locais aplicáveis.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Restricted-Water Overtaking</strong> —
+ultrapassagem
+em águas restritas;
+</li>
+
+<li>
+<strong>Passing Clearance</strong> —
+folga de passagem;
+</li>
+
+<li>
+<strong>Under-Keel Clearance</strong> —
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>Manoeuvring Capability</strong> —
+capacidade de manobra;
+</li>
+
+<li>
+<strong>Operational Limitations</strong> —
+limitações operacionais.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+A avaliação da ultrapassagem
+deve considerar
+simultaneamente
+as características
+das embarcações,
+a geometria do canal,
+as velocidades
+e a capacidade de governo.
+</p>
+
+<p>
+Não se deve reduzir
+a análise de segurança
+a um único parâmetro,
+como velocidade,
+profundidade
+ou separação lateral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Síntese técnica —
+Parte 4
+</h2>
+
+<p>
+A geometria do canal
+modifica as condições
+em que ocorre
+a interação hidrodinâmica
+entre navios.
+</p>
+
+<p>
+A separação lateral
+influencia a proximidade
+dos campos de escoamento.
+</p>
+
+<p>
+A profundidade altera
+as condições de fluxo
+sob os cascos e pode
+modificar as respostas
+hidrodinâmicas.
+</p>
+
+<p>
+O comprimento dos navios
+influencia a evolução
+das posições relativas
+e a extensão
+da sobreposição
+longitudinal.
+</p>
+
+<p>
+As velocidades influenciam
+o campo de escoamento
+e a duração
+da ultrapassagem.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Pontos fundamentais
+para o PSCPP
+</h3>
+
+<ul>
+
+<li>
+A separação lateral
+não deve ser analisada
+isoladamente da largura
+do canal.
+</li>
+
+<li>
+A profundidade pode
+modificar as forças
+de interação
+e os movimentos verticais.
+</li>
+
+<li>
+O comprimento influencia
+a geometria e a duração
+da ultrapassagem.
+</li>
+
+<li>
+A velocidade relativa
+não determina,
+isoladamente,
+a intensidade
+da interação.
+</li>
+
+<li>
+Os efeitos hidrodinâmicos
+dependem da combinação
+das condições geométricas
+e operacionais.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Próxima etapa
+</h3>
+
+<p>
+<strong>
+PARTE 5 —
+Interação durante
+o cruzamento
+ou encontro de navios
+</strong>
+</p>
+
+<p>
+<strong>
+Meeting and Passing
+</strong>
+</p>
+
+<p>
+Conteúdo programático:
+<strong>8.12.5.3</strong>.
+</p>
+
+<p>
+Serão estudadas
+as forças laterais
+e os momentos de guinada
+durante o encontro
+de embarcações
+que navegam
+em sentidos opostos.
+</p>
+
+<p>
+Também serão analisadas
+as diferenças
+entre encontro
+e ultrapassagem,
+com ênfase
+na evolução
+das posições relativas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 4
+
+     TÓPICOS DESENVOLVIDOS:
+
+     19 — Geometria e separação
+     20 — Geometria e profundidade
+     21 — Geometria e comprimento
+     22 — Geometria e velocidade
+     23 — Efeitos combinados
+     24 — Aplicação operacional
+
+     PRÓXIMA ETAPA:
+     INSERIR A PARTE 5 ABAIXO.
+
+     NÃO INSERIR AINDA:
+     - EXERCÍCIOS FINAIS
+     - GABARITO
+     - REFERÊNCIAS FINAIS
+     - CONCLUSÃO GERAL
+     - FOOTER
+     - SCRIPTS
+
+     ESSES BLOCOS SERÃO INSERIDOS
+     SOMENTE NA PARTE 6,
+     CONFORME O PADRÃO 1.
+===================================================== -->
+
+
+<!-- =====================================================
+     BRIDGE TRAINER PSCPP
+     MANOBRABILIDADE DO NAVIO
+
+     AULA: INTERAÇÃO HIDRODINÂMICA
+     PARTE 5 DE 6
+
+     CONTEÚDO PROGRAMÁTICO:
+     8.12.5.3 — Efeitos de interação
+     quando do cruzamento de navios
+
+     PADRÃO 1
+     CONTINUAÇÃO DA PARTE 4
+
+     NÃO ALTERAR OS IDs ANTERIORES
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — Interação durante
+o cruzamento de navios
+</h2>
+
+<p>
+<strong>
+Ship-to-Ship Hydrodynamic Interaction
+During Meeting and Passing
+</strong>
+</p>
+
+<p>
+O encontro entre navios que navegam
+em sentidos opostos representa
+uma situação particular de interação
+hidrodinâmica.
+</p>
+
+<p>
+Durante a aproximação, a passagem
+e o afastamento, as posições relativas
+dos cascos mudam rapidamente.
+</p>
+
+<p>
+Essas mudanças modificam
+a distribuição das pressões
+e podem produzir forças laterais
+e momentos de guinada
+sobre ambas as embarcações.
+</p>
+
+<p>
+Em canais estreitos, a interação
+entre os navios pode ocorrer
+simultaneamente à influência
+hidrodinâmica das margens
+e do fundo.
+</p>
+
+<div class="destaque">
+
+<h3>
+Referência bibliográfica
+</h3>
+
+<p>
+<strong>
+Shiphandling for the Mariner —
+5th Edition
+</strong>
+</p>
+
+<p>
+<strong>Seções:</strong>
+Meeting Another Vessel or Tow,
+páginas impressas 78–80;
+Meeting and Passing,
+páginas impressas 98–100.
+</p>
+
+<p>
+O autor apresenta uma sequência
+de manobra empregada em canais
+estreitos, discute a influência
+das margens e descreve alterações
+de squat durante o encontro.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-25"
+data-topico-id="topico-25"
+>
+
+<h2>
+25. Características hidrodinâmicas
+do encontro entre navios
+</h2>
+
+<div class="widget">
+
+<p>
+No encontro entre embarcações,
+<strong>meeting</strong>,
+dois navios aproximam-se
+navegando em sentidos
+aproximadamente opostos.
+</p>
+
+<p>
+Quando passam próximos,
+os campos hidrodinâmicos
+produzidos pelos cascos
+interagem.
+</p>
+
+<p>
+A distribuição de pressão
+sobre cada embarcação
+pode se modificar,
+produzindo forças laterais
+e momentos de guinada.
+</p>
+
+
+<h3>
+25.1 Diferença em relação
+à ultrapassagem
+</h3>
+
+<p>
+Na ultrapassagem,
+as embarcações navegam
+aproximadamente
+no mesmo sentido.
+</p>
+
+<p>
+No encontro,
+as embarcações navegam
+em sentidos opostos.
+</p>
+
+<p>
+Essa diferença altera
+a velocidade de aproximação
+longitudinal e a rapidez
+com que as posições
+relativas se modificam.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Velocidade de aproximação
+</h3>
+
+<p>
+Para trajetórias colineares
+e velocidades positivas
+medidas na mesma referência,
+a velocidade relativa
+de aproximação pode ser
+representada por:
+</p>
+
+<p>
+<strong>
+V<sub>aprox</sub> =
+V<sub>A</sub> + V<sub>B</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>V<sub>A</sub>:</strong>
+módulo da velocidade
+longitudinal do navio A;
+</li>
+
+<li>
+<strong>V<sub>B</sub>:</strong>
+módulo da velocidade
+longitudinal do navio B;
+</li>
+
+<li>
+<strong>V<sub>aprox</sub>:</strong>
+velocidade longitudinal
+de aproximação.
+</li>
+
+</ul>
+
+<p>
+A relação é cinemática.
+Não constitui uma fórmula
+para calcular a intensidade
+da interação hidrodinâmica.
+</p>
+
+</div>
+
+
+<h3>
+25.2 Exemplo numérico
+</h3>
+
+<p>
+Considere dois navios
+em trajetórias opostas:
+</p>
+
+<ul>
+
+<li>
+Navio A: 8 nós;
+</li>
+
+<li>
+Navio B: 7 nós.
+</li>
+
+</ul>
+
+<p>
+A velocidade de aproximação
+longitudinal será:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+V<sub>aprox</sub> = 8 + 7
+</strong>
+</p>
+
+<p>
+<strong>
+V<sub>aprox</sub> = 15 nós
+</strong>
+</p>
+
+</div>
+
+<p>
+Esse valor descreve
+a rapidez de fechamento
+longitudinal entre
+as embarcações.
+</p>
+
+<p>
+Não significa que
+o escoamento ao redor
+de cada casco possua
+velocidade de 15 nós.
+</p>
+
+
+<h3>
+25.3 Duração da proximidade
+</h3>
+
+<p>
+Em condições comparáveis,
+a velocidade relativa
+longitudinal geralmente
+é maior no encontro
+do que em uma ultrapassagem
+entre navios com velocidades
+de mesma ordem.
+</p>
+
+<p>
+Consequentemente,
+a mudança de posição
+relativa pode ocorrer
+mais rapidamente.
+</p>
+
+<p>
+Entretanto, a menor
+duração da proximidade
+não significa ausência
+de forças intensas.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Meeting</strong> —
+encontro entre navios;
+</li>
+
+<li>
+<strong>Meeting and Passing</strong> —
+encontro e passagem;
+</li>
+
+<li>
+<strong>Opposing Courses</strong> —
+rumos opostos;
+</li>
+
+<li>
+<strong>Closing Speed</strong> —
+velocidade de aproximação;
+</li>
+
+<li>
+<strong>Relative Motion</strong> —
+movimento relativo;
+</li>
+
+<li>
+<strong>Passing Distance</strong> —
+distância de passagem.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda
+a velocidade de aproximação
+entre os navios
+com a velocidade da água
+em relação a cada casco.
+</p>
+
+<p>
+A velocidade relativa
+descreve a evolução
+geométrica do encontro,
+mas não determina,
+isoladamente,
+as forças hidrodinâmicas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-26"
+data-topico-id="topico-26"
+>
+
+<h2>
+26. Evolução da interação
+durante o encontro
+</h2>
+
+<div class="widget">
+
+<p>
+O encontro entre navios
+pode ser analisado
+em fases sucessivas.
+</p>
+
+<p>
+A distribuição das forças
+não permanece constante,
+pois a posição relativa
+dos cascos se modifica
+durante toda a passagem.
+</p>
+
+
+<h3>
+26.1 Aproximação das proas
+</h3>
+
+<p>
+Na fase inicial,
+as regiões de proa
+aproximam-se.
+</p>
+
+<p>
+Os campos de pressão
+associados ao escoamento
+ao redor dessas regiões
+podem produzir forças
+laterais e momentos
+de guinada.
+</p>
+
+<p>
+A resposta depende
+da geometria dos cascos,
+da separação lateral
+e das condições
+do canal.
+</p>
+
+
+<h3>
+26.2 Passagem das proas
+</h3>
+
+<p>
+Quando as proas
+passam próximas,
+a distribuição
+das pressões muda
+rapidamente.
+</p>
+
+<p>
+Podem surgir tendências
+de afastamento ou aproximação
+entre determinadas regiões
+dos cascos.
+</p>
+
+<p>
+A força lateral
+e o momento de guinada
+não precisam apresentar
+o mesmo sentido
+em todas as fases.
+</p>
+
+
+<h3>
+26.3 Passagem dos corpos
+</h3>
+
+<p>
+À medida que as embarcações
+continuam avançando,
+as regiões intermediárias
+dos cascos passam
+uma pela outra.
+</p>
+
+<p>
+O escoamento na região
+entre os navios
+pode sofrer aceleração
+e alterações de pressão.
+</p>
+
+<p>
+Essas alterações
+podem contribuir
+para forças laterais
+de aproximação.
+</p>
+
+<p>
+A intensidade e o sentido
+da resultante dependem
+da distribuição completa
+das pressões.
+</p>
+
+
+<h3>
+26.4 Passagem das popas
+</h3>
+
+<p>
+Na fase final,
+as regiões de popa
+passam próximas.
+</p>
+
+<p>
+A distribuição
+hidrodinâmica
+modifica-se novamente,
+podendo produzir
+forças laterais
+e momentos de guinada
+diferentes dos observados
+na aproximação.
+</p>
+
+<p>
+O
+<strong>
+Shiphandling for the Mariner,
+página 80
+</strong>,
+descreve um efeito
+de sucção mútua
+entre as regiões
+de popa durante
+o afastamento final,
+no contexto da manobra
+apresentada pelo autor.
+</p>
+
+
+<!-- =========================================
+     FIGURA 10
+     VISTA SUPERIOR
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 10 —
+Sequência geométrica
+do encontro entre navios
+</h3>
+
+<svg
+viewBox="0 0 760 790"
+width="100%"
+role="img"
+aria-label="Quatro fases de encontro entre dois navios em vista superior. O navio A aponta para a direita e o navio B para a esquerda em todas as fases."
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="10"
+y="10"
+width="740"
+height="770"
+rx="12"
+fill="#dceef7"
+/>
+
+<!-- FASE 1 -->
+
+<text
+x="25"
+y="43"
+font-size="21"
+fill="#153b57"
+>
+1 — Aproximação das proas
+</text>
+
+<path
+d="
+M 45 75
+L 210 75
+Q 255 75 290 100
+Q 255 125 210 125
+L 45 125
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<path
+d="
+M 715 145
+L 550 145
+Q 505 145 470 170
+Q 505 195 550 195
+L 715 195
+Z
+"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<text
+x="80"
+y="105"
+font-size="16"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="585"
+y="175"
+font-size="16"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+
+<!-- FASE 2 -->
+
+<text
+x="25"
+y="240"
+font-size="21"
+fill="#153b57"
+>
+2 — Passagem das proas
+</text>
+
+<path
+d="
+M 180 275
+L 345 275
+Q 390 275 425 300
+Q 390 325 345 325
+L 180 325
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<path
+d="
+M 580 345
+L 415 345
+Q 370 345 335 370
+Q 370 395 415 395
+L 580 395
+Z
+"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<text
+x="210"
+y="305"
+font-size="16"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="450"
+y="375"
+font-size="16"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+
+<!-- FASE 3 -->
+
+<text
+x="25"
+y="435"
+font-size="21"
+fill="#153b57"
+>
+3 — Passagem dos corpos
+</text>
+
+<path
+d="
+M 275 470
+L 440 470
+Q 485 470 520 495
+Q 485 520 440 520
+L 275 520
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<path
+d="
+M 485 540
+L 320 540
+Q 275 540 240 565
+Q 275 590 320 590
+L 485 590
+Z
+"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<text
+x="305"
+y="500"
+font-size="16"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="365"
+y="570"
+font-size="16"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+
+<!-- FASE 4 -->
+
+<text
+x="25"
+y="630"
+font-size="21"
+fill="#153b57"
+>
+4 — Passagem das popas
+</text>
+
+<path
+d="
+M 480 665
+L 645 665
+Q 690 665 725 690
+Q 690 715 645 715
+L 480 715
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<path
+d="
+M 280 725
+L 115 725
+Q 70 725 35 750
+Q 70 775 115 775
+L 280 775
+Z
+"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="2"
+/>
+
+<text
+x="515"
+y="695"
+font-size="16"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="155"
+y="755"
+font-size="16"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+</svg>
+
+<p>
+<strong>
+Representação esquemática
+em vista superior.
+</strong>
+</p>
+
+<p>
+O navio A aponta
+para a direita.
+O navio B aponta
+para a esquerda.
+</p>
+
+<p>
+As quatro configurações
+mostram a evolução
+das posições relativas.
+</p>
+
+<p>
+A figura não representa
+uma trajetória obrigatória
+nem o sentido real
+das forças hidrodinâmicas.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O encontro não corresponde
+a uma única condição
+hidrodinâmica.
+</p>
+
+<p>
+A aproximação das proas,
+a passagem dos corpos
+e o afastamento das popas
+podem produzir respostas
+diferentes de movimento.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Bow-to-Bow Meeting</strong> —
+aproximação proa a proa;
+</li>
+
+<li>
+<strong>Bow</strong> —
+proa;
+</li>
+
+<li>
+<strong>Stern</strong> —
+popa;
+</li>
+
+<li>
+<strong>Mutual Suction</strong> —
+sucção mútua;
+</li>
+
+<li>
+<strong>Passing Clear</strong> —
+completar a passagem
+e afastar-se.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A passagem das proas
+não encerra o risco
+de interação.
+</p>
+
+<p>
+Os efeitos hidrodinâmicos
+podem continuar durante
+a passagem dos corpos
+e das popas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-27"
+data-topico-id="topico-27"
+>
+
+<h2>
+27. Forças laterais e momentos
+de guinada durante o encontro
+</h2>
+
+<div class="widget">
+
+<p>
+Durante o encontro,
+a distribuição das pressões
+sobre os cascos pode
+produzir forças laterais
+e momentos de guinada.
+</p>
+
+<p>
+Esses efeitos dependem
+da posição relativa
+das embarcações.
+</p>
+
+
+<h3>
+27.1 Interação entre
+as regiões de proa
+</h3>
+
+<p>
+A aproximação das proas
+modifica as condições
+de escoamento
+na região entre
+as embarcações.
+</p>
+
+<p>
+Podem surgir forças
+que alterem a tendência
+de movimento lateral
+e a orientação dos navios.
+</p>
+
+<p>
+O sentido da resposta
+não deve ser determinado
+apenas pela observação
+de uma região isolada
+de pressão.
+</p>
+
+
+<h3>
+27.2 Interação durante
+a passagem lateral
+</h3>
+
+<p>
+Quando os corpos
+das embarcações
+passam próximos,
+a distribuição
+de pressões
+sobre os costados
+pode produzir
+forças de aproximação
+ou afastamento.
+</p>
+
+<p>
+O momento de guinada
+depende da distribuição
+longitudinal dessas forças.
+</p>
+
+
+<h3>
+27.3 Interação entre
+as regiões de popa
+</h3>
+
+<p>
+Durante o afastamento,
+as regiões de popa
+passam próximas.
+</p>
+
+<p>
+A interação pode modificar
+a tendência de guinada
+das embarcações
+mesmo após suas proas
+já terem passado
+uma pela outra.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Força lateral e momento
+</h3>
+
+<p>
+Adotando o sistema
+de eixos apresentado
+na Parte 1:
+</p>
+
+<p>
+<strong>
+N = xF<sub>y</sub>
+− yF<sub>x</sub>
+</strong>
+</p>
+
+<p>
+A relação mostra
+que o momento
+depende da posição
+de aplicação da força
+em relação ao ponto
+de referência.
+</p>
+
+<p>
+Uma força lateral
+atuando a vante
+pode produzir momento
+de sentido diferente
+de uma força lateral
+de mesmo sentido
+atuando a ré.
+</p>
+
+</div>
+
+
+<h3>
+27.4 Guinada involuntária
+</h3>
+
+<p>
+Um momento hidrodinâmico
+pode modificar
+a orientação do navio
+sem que tenha ocorrido
+uma alteração voluntária
+do ângulo de leme.
+</p>
+
+<p>
+O sistema de governo
+deve produzir resposta
+compatível com as forças
+e os momentos atuantes
+para manter a trajetória
+pretendida.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Side Force</strong> —
+força lateral;
+</li>
+
+<li>
+<strong>Yawing Moment</strong> —
+momento de guinada;
+</li>
+
+<li>
+<strong>Bow Interaction</strong> —
+interação na região
+de proa;
+</li>
+
+<li>
+<strong>Stern Interaction</strong> —
+interação na região
+de popa;
+</li>
+
+<li>
+<strong>Heading Deviation</strong> —
+alteração da orientação
+do navio.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A direção da força lateral
+não determina,
+isoladamente,
+o sentido da guinada.
+</p>
+
+<p>
+A distribuição
+das forças ao longo
+do casco é essencial
+para interpretar
+o momento resultante.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-28"
+data-topico-id="topico-28"
+>
+
+<h2>
+28. Encontro de navios
+em canais estreitos
+</h2>
+
+<div class="widget">
+
+<p>
+Em canais estreitos,
+a interação entre
+as embarcações pode
+ocorrer simultaneamente
+aos efeitos
+das margens e do fundo.
+</p>
+
+<p>
+A largura disponível
+restringe as posições
+laterais dos navios
+e influencia
+as condições
+de escoamento.
+</p>
+
+
+<h3>
+28.1 Influência
+das margens
+</h3>
+
+<p>
+A proximidade
+de uma margem
+pode produzir
+forças laterais
+e momentos de guinada.
+</p>
+
+<p>
+Durante o encontro,
+essas ações coexistem
+com a interação
+entre os dois navios.
+</p>
+
+<p>
+O comportamento resultante
+depende do conjunto
+das condições
+hidrodinâmicas.
+</p>
+
+
+<h3>
+28.2 Exemplo apresentado
+na bibliografia
+</h3>
+
+<p>
+O
+<strong>
+Shiphandling for the Mariner,
+páginas 78–80
+</strong>,
+descreve uma técnica
+de encontro empregada
+em canais estreitos.
+</p>
+
+<p>
+O autor apresenta
+uma sequência
+de comandos de leme
+associada à evolução
+da posição relativa
+das embarcações.
+</p>
+
+<p>
+Nessa descrição,
+a influência
+das margens
+e a interação
+entre os navios
+são consideradas
+conjuntamente.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Sequência descrita
+pelo autor
+</h3>
+
+<ol>
+
+<li>
+Os navios aproximam-se
+em uma configuração
+quase proa a proa.
+</li>
+
+<li>
+Em uma situação específica
+descrita na publicação,
+os navios iniciam
+movimentos para boreste
+antes da passagem.
+</li>
+
+<li>
+Os comandos de leme
+são modificados
+conforme as proas
+e os corpos
+passam próximos.
+</li>
+
+<li>
+A tendência de guinada
+é acompanhada
+durante a passagem
+das popas.
+</li>
+
+<li>
+Após a separação,
+as embarcações
+prosseguem suas trajetórias.
+</li>
+
+</ol>
+
+<p>
+<strong>
+Importante:
+</strong>
+essa sequência corresponde
+ao exemplo operacional
+apresentado pelo autor.
+</p>
+
+<p>
+Ela não constitui
+procedimento universal
+para todos os canais,
+navios e condições
+de encontro.
+</p>
+
+</div>
+
+
+<h3>
+28.3 Limitações
+da generalização
+</h3>
+
+<p>
+A manobra descrita
+depende das características
+da via navegável,
+das embarcações
+e das condições
+operacionais.
+</p>
+
+<p>
+Não é adequado
+transformar uma sequência
+de comandos apresentada
+para uma situação
+específica em regra
+geral de governo.
+</p>
+
+
+<h3>
+28.4 Separação lateral
+e capacidade de governo
+</h3>
+
+<p>
+A avaliação de segurança
+deve considerar
+a distância entre
+os navios,
+a proximidade
+das margens
+e a capacidade
+de manter o controle
+da trajetória.
+</p>
+
+<p>
+A existência
+de espaço geométrico
+para a passagem
+não garante,
+isoladamente,
+que o encontro
+seja seguro.
+</p>
+
+
+<!-- =========================================
+     FIGURA 11
+     VISTA SUPERIOR
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 11 —
+Encontro de navios
+em canal estreito
+</h3>
+
+<svg
+viewBox="0 0 760 440"
+width="100%"
+role="img"
+aria-label="Vista superior de dois navios em sentidos opostos dentro de um canal, com indicação das margens e da região de interação"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="12"
+y="12"
+width="736"
+height="416"
+rx="12"
+fill="#dceef7"
+/>
+
+<!-- MARGENS -->
+
+<rect
+x="12"
+y="12"
+width="736"
+height="65"
+fill="#c4c0a8"
+/>
+
+<rect
+x="12"
+y="363"
+width="736"
+height="65"
+fill="#c4c0a8"
+/>
+
+<line
+x1="12"
+y1="77"
+x2="748"
+y2="77"
+stroke="#77735f"
+stroke-width="4"
+/>
+
+<line
+x1="12"
+y1="363"
+x2="748"
+y2="363"
+stroke="#77735f"
+stroke-width="4"
+/>
+
+<!-- NAVIO A: PROA PARA DIREITA -->
+
+<path
+d="
+M 90 130
+L 480 130
+Q 545 130 610 170
+Q 545 210 480 210
+L 90 210
+Z
+"
+fill="#3d607a"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- NAVIO B: PROA PARA ESQUERDA -->
+
+<path
+d="
+M 670 240
+L 280 240
+Q 215 240 150 280
+Q 215 320 280 320
+L 670 320
+Z
+"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- REGIÃO DE INTERAÇÃO -->
+
+<rect
+x="290"
+y="214"
+width="210"
+height="22"
+rx="6"
+fill="#1688b8"
+fill-opacity="0.28"
+stroke="#1688b8"
+stroke-width="2"
+stroke-dasharray="6 5"
+/>
+
+<!-- IDENTIFICAÇÕES -->
+
+<text
+x="130"
+y="177"
+font-size="19"
+fill="#ffffff"
+>
+Navio A →
+</text>
+
+<text
+x="490"
+y="287"
+font-size="19"
+fill="#ffffff"
+>
+← Navio B
+</text>
+
+<text
+x="30"
+y="46"
+font-size="18"
+fill="#3d3a2c"
+>
+Margem superior
+</text>
+
+<text
+x="30"
+y="402"
+font-size="18"
+fill="#3d3a2c"
+>
+Margem inferior
+</text>
+
+<text
+x="510"
+y="230"
+font-size="15"
+fill="#153b57"
+>
+Região entre cascos
+</text>
+
+</svg>
+
+<p>
+<strong>
+Representação esquemática
+em vista superior.
+</strong>
+</p>
+
+<p>
+O navio A possui
+proa orientada
+para a direita.
+</p>
+
+<p>
+O navio B possui
+proa orientada
+para a esquerda.
+</p>
+
+<p>
+A figura representa
+a proximidade
+entre os cascos
+e as margens,
+sem indicar valores
+de pressão
+ou forças resultantes.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Narrow Channel</strong> —
+canal estreito;
+</li>
+
+<li>
+<strong>Bank Effect</strong> —
+efeito de margem;
+</li>
+
+<li>
+<strong>Bank Suction</strong> —
+sucção de margem;
+</li>
+
+<li>
+<strong>Meeting Manoeuvre</strong> —
+manobra de encontro;
+</li>
+
+<li>
+<strong>Helm Order</strong> —
+ordem de leme;
+</li>
+
+<li>
+<strong>Steering Control</strong> —
+controle de governo.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+A sequência de comandos
+de leme apresentada
+em uma publicação
+não deve ser aplicada
+automaticamente
+a outras situações.
+</p>
+
+<p>
+A resposta do navio
+depende da geometria
+do canal,
+das condições ambientais
+e das características
+de manobra
+da embarcação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-29"
+data-topico-id="topico-29"
+>
+
+<h2>
+29. Influência do encontro
+sobre o squat e a UKC
+</h2>
+
+<div class="widget">
+
+<p>
+A interação entre navios
+em águas restritas
+pode modificar
+os movimentos verticais
+das embarcações.
+</p>
+
+<p>
+Essa alteração
+é relevante
+para a avaliação
+da folga abaixo
+da quilha.
+</p>
+
+
+<h3>
+29.1 Squat durante
+o encontro
+</h3>
+
+<p>
+O
+<strong>
+Shiphandling for the Mariner,
+5ª edição,
+páginas 98–100
+</strong>,
+apresenta resultados
+de ensaios realizados
+em canais do Panamá.
+</p>
+
+<p>
+A publicação descreve
+aumento de squat
+durante encontros
+entre navios
+em canais restritos.
+</p>
+
+<p>
+O autor destaca
+que o efeito
+pode ocorrer
+rapidamente
+durante a passagem.
+</p>
+
+
+<h3>
+29.2 Resultados
+apresentados pelo autor
+</h3>
+
+<div class="destaque">
+
+<h3>
+Observações experimentais
+</h3>
+
+<p>
+Nos ensaios relatados
+pela publicação,
+foram observados
+aumentos relevantes
+de squat durante
+o encontro.
+</p>
+
+<p>
+O autor informa
+que os acréscimos
+observados foram
+frequentemente
+da ordem de 50%,
+havendo resultados
+maiores conforme
+a velocidade,
+a separação
+e as características
+dos navios.
+</p>
+
+<p>
+Esses percentuais
+descrevem os ensaios
+relatados e não
+constituem uma regra
+universal de cálculo.
+</p>
+
+</div>
+
+
+<h3>
+29.3 Exemplo apresentado
+na publicação
+</h3>
+
+<p>
+O autor descreve
+uma situação em que
+um navio apresentou
+aumento expressivo
+de afundamento
+durante o encontro
+com outra embarcação.
+</p>
+
+<p>
+O exemplo ilustra
+que a folga abaixo
+da quilha pode diminuir
+significativamente
+durante a passagem.
+</p>
+
+<p>
+A intensidade real
+depende das condições
+de velocidade,
+profundidade,
+separação e geometria
+dos cascos.
+</p>
+
+
+<h3>
+29.4 Consequências
+para a segurança
+</h3>
+
+<p>
+O aumento do calado
+dinâmico pode reduzir
+a folga disponível
+entre o casco
+e o fundo.
+</p>
+
+<p>
+Em situações críticas,
+essa redução pode
+aumentar o risco
+de contato com
+o leito do canal.
+</p>
+
+<p>
+Portanto, a análise
+da UKC durante
+um encontro
+não deve considerar
+apenas a condição
+estática do navio.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Relação geométrica
+simplificada
+</h3>
+
+<p>
+<strong>
+UKC = h − T
+</strong>
+</p>
+
+<p>
+A expressão representa
+a folga geométrica
+em uma condição
+simplificada.
+</p>
+
+<p>
+Durante a navegação,
+a avaliação operacional
+deve considerar
+as alterações dinâmicas
+do calado e do trim,
+entre outros fatores.
+</p>
+
+</div>
+
+
+<h3>
+29.5 Distinção
+entre encontro
+e ultrapassagem
+</h3>
+
+<p>
+A publicação apresenta
+dados experimentais
+sobre encontros
+em canais restritos.
+</p>
+
+<p>
+Ao discutir
+a ultrapassagem,
+o autor ressalva
+a ausência de dados
+suficientes para
+confirmar determinadas
+comparações quantitativas.
+</p>
+
+<p>
+Assim, não é correto
+aplicar automaticamente
+os resultados
+de encontro
+a todas as situações
+de ultrapassagem.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Squat</strong> —
+alteração dinâmica
+de afundamento
+e trim;
+</li>
+
+<li>
+<strong>Sinkage</strong> —
+afundamento vertical;
+</li>
+
+<li>
+<strong>Dynamic Draft</strong> —
+calado dinâmico;
+</li>
+
+<li>
+<strong>Under-Keel Clearance</strong> —
+folga abaixo
+da quilha;
+</li>
+
+<li>
+<strong>Grounding</strong> —
+encalhe;
+</li>
+
+<li>
+<strong>Model Test</strong> —
+ensaio com modelo.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Os percentuais
+observados em ensaios
+não devem ser utilizados
+como coeficientes
+universais de previsão.
+</p>
+
+<p>
+A interação entre navios
+pode aumentar
+o afundamento dinâmico
+e reduzir a UKC,
+mas a magnitude
+deve ser avaliada
+para as condições
+específicas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-30"
+data-topico-id="topico-30"
+>
+
+<h2>
+30. Aplicação operacional:
+avaliação de um encontro
+em águas restritas
+</h2>
+
+<div class="widget">
+
+<p>
+O planejamento
+de um encontro
+entre navios
+deve considerar
+as forças de interação,
+a geometria
+da via navegável
+e a capacidade
+de governo
+das embarcações.
+</p>
+
+
+<h3>
+30.1 Avaliação
+das condições iniciais
+</h3>
+
+<p>
+Devem ser considerados,
+conforme aplicável:
+</p>
+
+<ul>
+
+<li>
+Comprimentos, bocas
+e calados dos navios;
+</li>
+
+<li>
+Velocidades
+em relação à água;
+</li>
+
+<li>
+Largura e profundidade
+do canal;
+</li>
+
+<li>
+Separação lateral
+prevista;
+</li>
+
+<li>
+Folgas em relação
+às margens;
+</li>
+
+<li>
+Corrente e vento;
+</li>
+
+<li>
+Capacidade de governo
+das embarcações.
+</li>
+
+</ul>
+
+
+<h3>
+30.2 Aproximação
+</h3>
+
+<p>
+Na aproximação,
+a velocidade relativa
+longitudinal determina
+a rapidez com que
+a distância entre
+as embarcações diminui.
+</p>
+
+<p>
+O planejamento deve
+considerar a necessidade
+de manter controle
+sobre a trajetória
+e a separação lateral.
+</p>
+
+
+<h3>
+30.3 Passagem
+</h3>
+
+<p>
+Durante a passagem,
+as forças laterais
+e os momentos
+de guinada podem
+variar rapidamente.
+</p>
+
+<p>
+A interação entre
+os navios pode ocorrer
+simultaneamente
+à influência
+das margens.
+</p>
+
+<p>
+A resposta do governo
+deve ser acompanhada
+durante toda
+a manobra.
+</p>
+
+
+<h3>
+30.4 Afastamento
+</h3>
+
+<p>
+O afastamento das proas
+não significa
+o término
+da interação.
+</p>
+
+<p>
+As regiões de popa
+também podem experimentar
+forças hidrodinâmicas
+durante a passagem.
+</p>
+
+<p>
+A observação
+da trajetória
+deve continuar
+até que os navios
+estejam suficientemente
+afastados.
+</p>
+
+
+<h3>
+30.5 Avaliação
+da profundidade
+</h3>
+
+<p>
+Em canais rasos,
+a interação pode
+modificar o squat
+e reduzir
+a folga abaixo
+da quilha.
+</p>
+
+<p>
+Esse efeito deve
+ser considerado
+na avaliação
+das margens
+de segurança
+da navegação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Sequência de raciocínio
+operacional
+</h3>
+
+<ol>
+
+<li>
+Avaliar as características
+dos dois navios.
+</li>
+
+<li>
+Identificar as restrições
+geométricas do canal.
+</li>
+
+<li>
+Considerar as velocidades
+e a rapidez de aproximação.
+</li>
+
+<li>
+Avaliar a separação
+lateral disponível.
+</li>
+
+<li>
+Considerar a interação
+entre navios e margens.
+</li>
+
+<li>
+Acompanhar forças
+laterais, guinada
+e resposta de governo.
+</li>
+
+<li>
+Considerar possíveis
+alterações de squat
+e da UKC.
+</li>
+
+<li>
+Manter o acompanhamento
+até o afastamento
+das popas.
+</li>
+
+</ol>
+
+</div>
+
+
+<h3>
+30.6 Distinção
+entre interação
+e regras de navegação
+</h3>
+
+<p>
+O estudo hidrodinâmico
+permite compreender
+as forças que podem
+atuar durante
+o encontro.
+</p>
+
+<p>
+Entretanto, a interação
+hidrodinâmica não altera,
+por si só,
+as obrigações
+estabelecidas
+pelo Regulamento
+Internacional
+para Evitar Abalroamentos
+no Mar.
+</p>
+
+<p>
+A execução da manobra
+deve observar
+as regras aplicáveis
+e os procedimentos
+operacionais locais.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Meeting Arrangement</strong> —
+coordenação do encontro;
+</li>
+
+<li>
+<strong>Safe Passing</strong> —
+passagem segura;
+</li>
+
+<li>
+<strong>Manoeuvring Margin</strong> —
+margem de manobra;
+</li>
+
+<li>
+<strong>Steering Response</strong> —
+resposta ao governo;
+</li>
+
+<li>
+<strong>Restricted Waters</strong> —
+águas restritas;
+</li>
+
+<li>
+<strong>Passing Clear</strong> —
+completar a passagem
+com afastamento seguro.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+O encontro em canal
+estreito deve ser
+avaliado considerando
+a interação entre
+os navios,
+a influência
+das margens
+e as condições
+de profundidade.
+</p>
+
+<p>
+A ausência de contato
+entre os cascos
+não garante,
+isoladamente,
+que as margens
+de segurança
+tenham sido preservadas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Síntese técnica —
+Parte 5
+</h2>
+
+<p>
+O encontro entre
+navios que navegam
+em sentidos opostos
+produz uma sequência
+de configurações
+hidrodinâmicas distintas.
+</p>
+
+<p>
+As forças laterais
+e os momentos de guinada
+podem variar
+durante a aproximação,
+a passagem dos corpos
+e o afastamento
+das popas.
+</p>
+
+<p>
+Em canais estreitos,
+a interação entre
+os navios pode ocorrer
+simultaneamente
+à influência
+das margens.
+</p>
+
+<p>
+Em águas rasas,
+a passagem pode modificar
+o squat e reduzir
+a folga abaixo
+da quilha.
+</p>
+
+<p>
+A avaliação operacional
+deve considerar
+a geometria do canal,
+as velocidades,
+a separação lateral
+e a capacidade
+de governo
+das embarcações.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Pontos fundamentais
+para o PSCPP
+</h3>
+
+<ul>
+
+<li>
+O encontro envolve
+navios navegando
+em sentidos opostos.
+</li>
+
+<li>
+A velocidade
+de aproximação
+não representa
+a velocidade
+do escoamento
+sobre cada casco.
+</li>
+
+<li>
+A interação varia
+durante a passagem
+das proas,
+dos corpos
+e das popas.
+</li>
+
+<li>
+Força lateral
+e momento de guinada
+devem ser analisados
+separadamente.
+</li>
+
+<li>
+A proximidade
+das margens pode
+modificar a resposta
+das embarcações.
+</li>
+
+<li>
+O encontro em canal
+restrito pode aumentar
+o squat e reduzir
+a UKC.
+</li>
+
+<li>
+Uma técnica operacional
+descrita para
+um canal específico
+não constitui
+procedimento universal.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Próxima etapa
+</h3>
+
+<p>
+<strong>
+PARTE 6 —
+Aplicações operacionais,
+revisão geral
+e questões PSCPP
+</strong>
+</p>
+
+<p>
+A parte final
+integrará os conceitos
+de passagem por
+navio atracado,
+ultrapassagem
+e encontro.
+</p>
+
+<p>
+Também incluirá:
+</p>
+
+<ul>
+
+<li>
+Quadro comparativo
+dos três tipos
+de interação;
+</li>
+
+<li>
+Resumo técnico
+dos mecanismos físicos;
+</li>
+
+<li>
+Glossário consolidado
+português–inglês;
+</li>
+
+<li>
+Questões de múltipla
+escolha no padrão PSCPP;
+</li>
+
+<li>
+Correção e gabarito
+comentado ocultável;
+</li>
+
+<li>
+Referências bibliográficas
+finais;
+</li>
+
+<li>
+Conclusão da aula.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 5
+
+     TÓPICOS DESENVOLVIDOS:
+
+     25 — Características do encontro
+     26 — Evolução da interação
+     27 — Forças laterais e momentos
+     28 — Encontro em canais estreitos
+     29 — Squat e UKC
+     30 — Aplicação operacional
+
+     PRÓXIMA ETAPA:
+     INSERIR A PARTE 6 ABAIXO.
+
+     NÃO INSERIR AINDA:
+     - EXERCÍCIOS FINAIS
+     - GABARITO
+     - REFERÊNCIAS FINAIS
+     - CONCLUSÃO GERAL
+     - FOOTER
+     - SCRIPTS
+
+     ESSES BLOCOS SERÃO INSERIDOS
+     NA PARTE 6,
+     CONFORME O PADRÃO 1.
+===================================================== -->
+
+
+ 
+<!-- =====================================================
+     BRIDGE TRAINER PSCPP
+     MANOBRABILIDADE DO NAVIO
+
+     AULA: INTERAÇÃO HIDRODINÂMICA
+     PARTE 6 DE 6 — ENCERRAMENTO
+
+     CONTEÚDO PROGRAMÁTICO:
+     8.12.5 A 8.12.5.3
+
+     PADRÃO 1
+     CONTINUAÇÃO DA PARTE 5
+
+     INCLUI:
+     - TÓPICOS 31 A 34
+     - REVISÃO INTEGRADA
+     - GLOSSÁRIO
+     - 20 QUESTÕES
+     - CORREÇÃO PELO EXERCICIOS.JS
+     - GABARITO OCULTÁVEL
+     - REFERÊNCIAS
+     - CONCLUSÃO
+     - FOOTER E SCRIPTS
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 6
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 6 — Integração operacional,
+revisão e avaliação
+</h2>
+
+<p>
+<strong>
+Ship-to-Ship Hydrodynamic Interaction:
+Operational Review and Assessment
+</strong>
+</p>
+
+<p>
+As partes anteriores apresentaram
+os mecanismos físicos da interação
+hidrodinâmica e seus efeitos
+nas principais situações de passagem
+entre embarcações.
+</p>
+
+<p>
+Nesta etapa, os conceitos serão
+integrados para desenvolver
+o raciocínio operacional
+exigido do candidato ao PSCPP.
+</p>
+
+<p>
+O objetivo é distinguir
+os fenômenos hidrodinâmicos,
+reconhecer suas limitações
+e interpretar corretamente
+as situações de manobra.
+</p>
+
+<div class="destaque">
+
+<h3>
+Objetivos finais
+</h3>
+
+<ul>
+
+<li>
+Comparar os diferentes
+tipos de interação
+entre navios.
+</li>
+
+<li>
+Distinguir força lateral
+de momento de guinada.
+</li>
+
+<li>
+Interpretar a influência
+da separação, velocidade,
+profundidade e geometria.
+</li>
+
+<li>
+Reconhecer situações
+operacionais críticas.
+</li>
+
+<li>
+Resolver questões técnicas
+de múltipla escolha.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-31"
+data-topico-id="topico-31"
+>
+
+<h2>
+31. Comparação dos principais
+tipos de interação
+</h2>
+
+<div class="widget">
+
+<p>
+Os três cenários estudados
+envolvem a alteração
+dos campos hidrodinâmicos
+devido à proximidade
+entre embarcações.
+</p>
+
+<p>
+Entretanto, a posição relativa
+e o movimento dos navios
+são diferentes em cada caso.
+</p>
+
+
+<h3>
+31.1 Passagem por navio atracado
+</h3>
+
+<p>
+Na passagem por um navio
+atracado, apenas a embarcação
+que passa apresenta,
+em princípio, movimento
+de avanço em relação
+à infraestrutura portuária.
+</p>
+
+<p>
+O campo hidrodinâmico
+produzido pela embarcação
+em movimento pode provocar
+forças laterais e momentos
+sobre o navio atracado.
+</p>
+
+<p>
+As consequências operacionais
+podem incluir esforços
+sobre as espias e alterações
+da posição do navio
+junto ao cais.
+</p>
+
+
+<h3>
+31.2 Ultrapassagem
+</h3>
+
+<p>
+Na ultrapassagem,
+ambas as embarcações
+navegam aproximadamente
+no mesmo sentido.
+</p>
+
+<p>
+A velocidade relativa
+longitudinal corresponde,
+nas condições simplificadas
+estudadas, à diferença
+entre suas velocidades.
+</p>
+
+<p>
+Uma pequena diferença
+pode prolongar
+o período de proximidade.
+</p>
+
+<p>
+As forças e os momentos
+variam conforme
+a posição relativa
+dos cascos.
+</p>
+
+
+<h3>
+31.3 Encontro ou cruzamento
+</h3>
+
+<p>
+No encontro,
+as embarcações navegam
+em sentidos opostos.
+</p>
+
+<p>
+A velocidade de aproximação
+longitudinal corresponde,
+nas condições simplificadas,
+à soma dos módulos
+das velocidades.
+</p>
+
+<p>
+A interação pode modificar
+a guinada e o movimento
+lateral durante a passagem
+das proas, dos corpos
+e das popas.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Quadro comparativo
+</h3>
+
+<p>
+<strong>
+Passagem por navio atracado
+</strong>
+</p>
+
+<ul>
+
+<li>
+Um navio em movimento
+e outro atracado.
+</li>
+
+<li>
+Atenção aos esforços
+sobre o navio atracado
+e suas amarras.
+</li>
+
+</ul>
+
+<p>
+<strong>
+Ultrapassagem
+</strong>
+</p>
+
+<ul>
+
+<li>
+Dois navios navegando
+no mesmo sentido.
+</li>
+
+<li>
+Atenção à duração
+da proximidade
+e à evolução
+da posição relativa.
+</li>
+
+</ul>
+
+<p>
+<strong>
+Encontro
+</strong>
+</p>
+
+<ul>
+
+<li>
+Dois navios navegando
+em sentidos opostos.
+</li>
+
+<li>
+Atenção à rápida mudança
+de posição relativa
+e aos efeitos
+durante toda a passagem.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Passing a Moored Vessel</strong> —
+passagem por navio atracado;
+</li>
+
+<li>
+<strong>Overtaking</strong> —
+ultrapassagem;
+</li>
+
+<li>
+<strong>Meeting</strong> —
+encontro;
+</li>
+
+<li>
+<strong>Hydrodynamic Interaction</strong> —
+interação hidrodinâmica;
+</li>
+
+<li>
+<strong>Relative Position</strong> —
+posição relativa.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não aplique automaticamente
+a um encontro as mesmas
+conclusões operacionais
+obtidas para
+uma ultrapassagem.
+</p>
+
+<p>
+A evolução das posições
+relativas é diferente
+em cada situação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-32"
+data-topico-id="topico-32"
+>
+
+<h2>
+32. Integração dos mecanismos
+hidrodinâmicos
+</h2>
+
+<div class="widget">
+
+<p>
+A interação entre navios
+resulta de alterações
+na distribuição de pressão
+e nas condições
+de escoamento ao redor
+dos cascos.
+</p>
+
+<p>
+Essas alterações podem
+produzir forças laterais,
+momentos de guinada
+e modificações
+nos movimentos verticais.
+</p>
+
+
+<h3>
+32.1 Força lateral
+</h3>
+
+<p>
+A força lateral resultante
+representa a ação transversal
+das pressões e tensões
+hidrodinâmicas sobre
+o casco.
+</p>
+
+<p>
+Seu sentido depende
+da distribuição
+instantânea dessas ações.
+</p>
+
+
+<h3>
+32.2 Momento de guinada
+</h3>
+
+<p>
+O momento de guinada
+depende da posição
+das forças em relação
+ao ponto de referência.
+</p>
+
+<div class="destaque">
+
+<h3>
+Relação mecânica
+</h3>
+
+<p>
+<strong>
+N = xF<sub>y</sub>
+− yF<sub>x</sub>
+</strong>
+</p>
+
+<p>
+A expressão representa
+a contribuição de uma força
+para o momento em torno
+do eixo vertical,
+conforme a convenção
+de sinais adotada
+na aula.
+</p>
+
+<p>
+Para diversas forças,
+as contribuições devem
+ser somadas.
+</p>
+
+</div>
+
+
+<h3>
+32.3 Pressão dinâmica
+</h3>
+
+<p>
+A pressão dinâmica
+é expressa por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+q = ½ρV²
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>ρ:</strong>
+massa específica
+da água;
+</li>
+
+<li>
+<strong>V:</strong>
+velocidade de referência
+do escoamento.
+</li>
+
+</ul>
+
+<p>
+Essa relação não fornece,
+isoladamente,
+a força de interação
+entre dois navios.
+</p>
+
+</div>
+
+
+<h3>
+32.4 Variáveis relevantes
+</h3>
+
+<p>
+A intensidade
+e a distribuição
+dos efeitos dependem
+de fatores como:
+</p>
+
+<ul>
+
+<li>
+Posição relativa;
+</li>
+
+<li>
+Separação lateral;
+</li>
+
+<li>
+Velocidade dos navios;
+</li>
+
+<li>
+Geometria dos cascos;
+</li>
+
+<li>
+Comprimento e boca;
+</li>
+
+<li>
+Profundidade da água;
+</li>
+
+<li>
+Geometria do canal;
+</li>
+
+<li>
+Proximidade das margens.
+</li>
+
+</ul>
+
+
+<h3>
+32.5 Resposta do navio
+</h3>
+
+<p>
+A existência
+de uma força
+hidrodinâmica
+não determina,
+por si só,
+a trajetória resultante.
+</p>
+
+<p>
+A resposta depende
+também das características
+de movimento do navio,
+de sua inércia
+e da capacidade
+de governo.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Síntese física
+</h3>
+
+<p>
+<strong>
+Alteração do escoamento
+→ distribuição de pressão
+→ forças e momentos
+→ resposta do navio.
+</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Pressure Distribution</strong> —
+distribuição de pressão;
+</li>
+
+<li>
+<strong>Side Force</strong> —
+força lateral;
+</li>
+
+<li>
+<strong>Yawing Moment</strong> —
+momento de guinada;
+</li>
+
+<li>
+<strong>Hydrodynamic Load</strong> —
+carregamento hidrodinâmico;
+</li>
+
+<li>
+<strong>Ship Response</strong> —
+resposta do navio.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Evite afirmações absolutas
+como:
+</p>
+
+<p>
+<strong>
+“Dois navios próximos
+sempre se atraem.”
+</strong>
+</p>
+
+<p>
+O sentido da força
+e do momento pode mudar
+com a posição relativa
+e as condições
+do escoamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-33"
+data-topico-id="topico-33"
+>
+
+<h2>
+33. Raciocínio operacional
+e limites de aplicação
+</h2>
+
+<div class="widget">
+
+<p>
+O conhecimento
+dos mecanismos físicos
+permite reconhecer
+situações de interação,
+mas não substitui
+a avaliação operacional
+específica.
+</p>
+
+
+<h3>
+33.1 Reconhecimento
+da situação
+</h3>
+
+<p>
+O primeiro passo
+é identificar
+a configuração
+de passagem:
+</p>
+
+<ul>
+
+<li>
+Navio atracado;
+</li>
+
+<li>
+Ultrapassagem;
+</li>
+
+<li>
+Encontro.
+</li>
+
+</ul>
+
+
+<h3>
+33.2 Avaliação geométrica
+</h3>
+
+<p>
+Devem ser consideradas
+as dimensões
+das embarcações,
+a separação lateral,
+a profundidade
+e a largura
+da via navegável.
+</p>
+
+
+<h3>
+33.3 Avaliação dinâmica
+</h3>
+
+<p>
+As velocidades
+em relação à água
+influenciam os campos
+hidrodinâmicos.
+</p>
+
+<p>
+A velocidade relativa
+longitudinal influencia
+a duração da passagem
+e a evolução
+das posições relativas.
+</p>
+
+
+<h3>
+33.4 Capacidade de governo
+</h3>
+
+<p>
+A avaliação deve considerar
+a possibilidade
+de forças laterais
+e momentos de guinada
+que alterem a trajetória
+pretendida.
+</p>
+
+<p>
+A resposta dos navios
+depende das condições
+de governo
+e das características
+das embarcações.
+</p>
+
+
+<h3>
+33.5 Limitações
+dos modelos simplificados
+</h3>
+
+<p>
+As relações geométricas
+e cinemáticas apresentadas
+nesta aula ajudam
+na compreensão
+dos fenômenos.
+</p>
+
+<p>
+Entretanto, não fornecem
+uma previsão quantitativa
+universal das forças
+de interação.
+</p>
+
+<p>
+A análise quantitativa
+pode exigir modelos
+hidrodinâmicos específicos,
+ensaios ou simulações
+adequadas.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Roteiro de análise
+</h3>
+
+<ol>
+
+<li>
+Identificar o tipo
+de passagem.
+</li>
+
+<li>
+Analisar as posições
+relativas.
+</li>
+
+<li>
+Avaliar a separação
+entre os cascos.
+</li>
+
+<li>
+Considerar profundidade
+e geometria do canal.
+</li>
+
+<li>
+Avaliar velocidades
+e duração.
+</li>
+
+<li>
+Considerar forças laterais
+e momentos de guinada.
+</li>
+
+<li>
+Avaliar a capacidade
+de governo.
+</li>
+
+<li>
+Considerar as regras
+de navegação
+e procedimentos locais.
+</li>
+
+</ol>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Risk Assessment</strong> —
+avaliação de risco;
+</li>
+
+<li>
+<strong>Safe Clearance</strong> —
+folga segura;
+</li>
+
+<li>
+<strong>Steering Capability</strong> —
+capacidade de governo;
+</li>
+
+<li>
+<strong>Manoeuvring Margin</strong> —
+margem de manobra;
+</li>
+
+<li>
+<strong>Operational Limitation</strong> —
+limitação operacional.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+A interpretação
+hidrodinâmica deve
+ser integrada
+às regras de navegação
+e aos procedimentos
+locais aplicáveis.
+</p>
+
+<p>
+Não se deve transformar
+uma descrição física
+em uma ordem universal
+de máquina ou leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-34"
+data-topico-id="topico-34"
+>
+
+<h2>
+34. Revisão final
+e pontos de atenção PSCPP
+</h2>
+
+<div class="widget">
+
+<h3>
+34.1 Conceitos essenciais
+</h3>
+
+<ul>
+
+<li>
+A interação hidrodinâmica
+é causada pela alteração
+recíproca das condições
+de escoamento
+e pressão.
+</li>
+
+<li>
+A força lateral
+e o momento de guinada
+são grandezas distintas.
+</li>
+
+<li>
+O sentido da interação
+pode variar
+com a posição relativa.
+</li>
+
+<li>
+A velocidade relativa
+não determina,
+isoladamente,
+a intensidade das forças.
+</li>
+
+<li>
+A redução da separação
+lateral pode intensificar
+a interação.
+</li>
+
+<li>
+A geometria do canal
+e a profundidade
+podem modificar
+os efeitos.
+</li>
+
+<li>
+A interação pode
+afetar o governo
+das embarcações.
+</li>
+
+<li>
+Em águas restritas,
+a passagem pode
+modificar o squat
+e a UKC.
+</li>
+
+</ul>
+
+
+<h3>
+34.2 Pegadinhas conceituais
+</h3>
+
+<div class="destaque">
+
+<h3>
+Afirmação incorreta 1
+</h3>
+
+<p>
+“Quanto menor
+a velocidade relativa,
+menor será necessariamente
+a interação.”
+</p>
+
+<p>
+<strong>Correção:</strong>
+a velocidade relativa
+influencia a duração
+da passagem.
+A intensidade depende
+também de outras variáveis.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Afirmação incorreta 2
+</h3>
+
+<p>
+“Uma força lateral
+sempre provoca guinada
+no mesmo sentido.”
+</p>
+
+<p>
+<strong>Correção:</strong>
+o momento depende
+da posição
+de aplicação da força.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Afirmação incorreta 3
+</h3>
+
+<p>
+“Após a passagem
+das proas,
+a interação termina.”
+</p>
+
+<p>
+<strong>Correção:</strong>
+os efeitos podem continuar
+durante a passagem
+dos corpos e das popas.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Afirmação incorreta 4
+</h3>
+
+<p>
+“Se há espaço físico
+para dois navios,
+a passagem é segura.”
+</p>
+
+<p>
+<strong>Correção:</strong>
+a possibilidade geométrica
+não garante segurança
+hidrodinâmica
+ou capacidade
+de governo adequada.
+</p>
+
+</div>
+
+
+<div class="destaque">
+
+<h3>
+Afirmação incorreta 5
+</h3>
+
+<p>
+“Os percentuais
+de squat observados
+em ensaios podem
+ser aplicados
+a qualquer encontro.”
+</p>
+
+<p>
+<strong>Correção:</strong>
+resultados experimentais
+dependem das condições
+específicas do ensaio.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Glossário consolidado
+</h3>
+
+<ul>
+
+<li>
+<strong>Ship-to-Ship Interaction</strong> —
+interação entre navios;
+</li>
+
+<li>
+<strong>Meeting</strong> —
+encontro;
+</li>
+
+<li>
+<strong>Overtaking</strong> —
+ultrapassagem;
+</li>
+
+<li>
+<strong>Moored Vessel</strong> —
+navio atracado
+ou amarrado;
+</li>
+
+<li>
+<strong>Side Force</strong> —
+força lateral;
+</li>
+
+<li>
+<strong>Yawing Moment</strong> —
+momento de guinada;
+</li>
+
+<li>
+<strong>Relative Speed</strong> —
+velocidade relativa;
+</li>
+
+<li>
+<strong>Lateral Separation</strong> —
+separação lateral;
+</li>
+
+<li>
+<strong>Bank Effect</strong> —
+efeito de margem;
+</li>
+
+<li>
+<strong>Bank Suction</strong> —
+sucção de margem;
+</li>
+
+<li>
+<strong>Under-Keel Clearance</strong> —
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>Squat</strong> —
+afundamento e alteração
+de trim dinâmicos
+associados ao movimento
+do navio na água;
+</li>
+
+<li>
+<strong>Steerageway</strong> —
+seguimento suficiente
+para manter o governo;
+</li>
+
+<li>
+<strong>Passing Clear</strong> —
+completar a passagem
+com afastamento;
+</li>
+
+<li>
+<strong>Restricted Waters</strong> —
+águas restritas;
+</li>
+
+<li>
+<strong>Pressure Distribution</strong> —
+distribuição de pressão;
+</li>
+
+<li>
+<strong>Hydrodynamic Load</strong> —
+carregamento hidrodinâmico;
+</li>
+
+<li>
+<strong>Manoeuvring Margin</strong> —
+margem de manobra;
+</li>
+
+<li>
+<strong>Ship Response</strong> —
+resposta do navio.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Em questões sobre
+interação hidrodinâmica,
+observe especialmente
+expressões como:
+</p>
+
+<ul>
+
+<li>
+“Sempre”;
+</li>
+
+<li>
+“Nunca”;
+</li>
+
+<li>
+“Necessariamente”;
+</li>
+
+<li>
+“Independentemente
+da velocidade”;
+</li>
+
+<li>
+“Independentemente
+da posição relativa”.
+</li>
+
+</ul>
+
+<p>
+Essas expressões podem
+transformar uma afirmação
+válida para determinadas
+condições em uma
+generalização incorreta.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXERCÍCIOS
+========================================= -->
+
+<section>
+
+<h2>
+📝 Questões de revisão —
+Interação Hidrodinâmica
+</h2>
+
+<div class="widget">
+
+<p>
+As questões seguintes
+foram elaboradas
+para avaliar a compreensão
+dos mecanismos físicos
+e sua interpretação
+operacional.
+</p>
+
+<p>
+Selecione uma alternativa
+por questão e utilize
+o botão de correção
+ao final do exercício.
+</p>
+
+<p>
+<strong>
+Total: 20 questões.
+</strong>
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUESTÃO 1
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q1"
+data-resposta="B"
+data-topico="Fundamentos da interação"
+data-edital="8.12.5"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 1</h3>
+
+<p>
+A interação hidrodinâmica
+entre navios decorre,
+fundamentalmente:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Exclusivamente da formação
+de ondas superficiais.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Da alteração dos campos
+de escoamento e pressão
+pela proximidade dos cascos.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Apenas da ação
+do vento sobre os costados.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Exclusivamente
+da diferença de calado.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 2
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q2"
+data-resposta="C"
+data-topico="Força lateral e guinada"
+data-edital="8.12.5"
+data-bibliografia="Naval Shiphandling; Principles of Naval Architecture"
+>
+
+<h3>Questão 2</h3>
+
+<p>
+Sobre a força lateral
+e o momento de guinada,
+é correto afirmar:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) São a mesma
+grandeza física.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O momento independe
+da posição da força.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) O momento depende
+da distribuição
+e da posição das forças.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Toda força lateral
+produz momento nulo.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 3
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q3"
+data-resposta="A"
+data-topico="Pressão dinâmica"
+data-edital="8.12.5"
+data-bibliografia="Principles of Naval Architecture; Practical Ship Hydrodynamics"
+>
+
+<h3>Questão 3</h3>
+
+<p>
+A expressão
+q = ½ρV²
+representa:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A pressão dinâmica
+associada à velocidade
+de referência do escoamento.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) A força total
+de interação entre navios.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) O momento de guinada
+sobre o casco.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A folga abaixo
+da quilha.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 4
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q4"
+data-resposta="D"
+data-topico="Posição relativa"
+data-edital="8.12.5"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 4</h3>
+
+<p>
+Durante a passagem
+entre navios,
+a interação hidrodinâmica:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Mantém sempre
+o mesmo sentido.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Desaparece quando
+as proas se cruzam.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Independe da posição
+longitudinal relativa.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Pode variar conforme
+a posição relativa
+dos cascos.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 5
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q5"
+data-resposta="B"
+data-topico="Navio atracado"
+data-edital="8.12.5.1"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 5</h3>
+
+<p>
+A passagem próxima
+a um navio atracado
+pode produzir:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Apenas esforços
+verticais sem
+efeitos laterais.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Forças laterais
+e esforços adicionais
+sobre as amarras.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Necessariamente
+o rompimento das espias.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Nenhuma interação,
+pois o navio está parado.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 6
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q6"
+data-resposta="A"
+data-topico="Velocidade relativa na ultrapassagem"
+data-edital="8.12.5.2"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 6</h3>
+
+<p>
+Dois navios seguem
+em trajetórias paralelas
+no mesmo sentido,
+a 12 nós e 9 nós,
+medidos na mesma referência.
+</p>
+
+<p>
+A velocidade longitudinal
+relativa é:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) 3 nós.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) 21 nós.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) 10,5 nós.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) 108 nós.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 7
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q7"
+data-resposta="C"
+data-topico="Duração da ultrapassagem"
+data-edital="8.12.5.2"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 7</h3>
+
+<p>
+Em uma ultrapassagem,
+uma pequena velocidade
+relativa longitudinal
+pode:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Eliminar as forças
+de interação.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Impedir qualquer
+momento de guinada.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Prolongar a permanência
+dos navios próximos.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Tornar irrelevante
+a separação lateral.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 8
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q8"
+data-resposta="D"
+data-topico="Velocidade e interação"
+data-edital="8.12.5.2.4"
+data-bibliografia="Shiphandling for the Mariner; Practical Ship Hydrodynamics"
+>
+
+<h3>Questão 8</h3>
+
+<p>
+A respeito da velocidade
+na ultrapassagem,
+assinale a correta:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A maior velocidade
+possível é sempre
+a mais segura.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) A velocidade relativa
+determina sozinha
+a força de interação.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A velocidade dos navios
+em relação à água
+é irrelevante.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Devem ser considerados
+o tempo de exposição
+e as perturbações
+hidrodinâmicas.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 9
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q9"
+data-resposta="B"
+data-topico="Separação lateral"
+data-edital="8.12.5.2.1"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 9</h3>
+
+<p>
+Em condições comparáveis,
+a redução da separação
+lateral entre navios:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Elimina o efeito
+das pressões.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Pode intensificar
+a interação hidrodinâmica.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Torna a geometria
+do canal irrelevante.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Garante a manutenção
+da trajetória.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 10
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q10"
+data-resposta="C"
+data-topico="Geometria do canal"
+data-edital="8.12.5.2.1"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 10</h3>
+
+<p>
+Em um canal estreito,
+a avaliação
+da ultrapassagem
+deve considerar:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Somente a distância
+entre as proas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Apenas a velocidade
+do ultrapassador.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A separação entre
+os cascos e as folgas
+em relação às margens.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Exclusivamente
+o comprimento
+do canal.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 11
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q11"
+data-resposta="A"
+data-topico="Profundidade e calado"
+data-edital="8.12.5.2.2"
+data-bibliografia="Practical Ship Hydrodynamics; Shiphandling for the Mariner"
+>
+
+<h3>Questão 11</h3>
+
+<p>
+A razão h/T,
+na qual h é
+a profundidade
+e T o calado,
+representa:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Uma relação
+geométrica adimensional
+entre profundidade
+e calado.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O momento
+de guinada.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A força lateral
+entre os navios.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A velocidade
+relativa longitudinal.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 12
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q12"
+data-resposta="D"
+data-topico="Squat e UKC"
+data-edital="8.12.5.2.2; 8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 12</h3>
+
+<p>
+Sobre a influência
+da interação
+no squat,
+assinale a correta:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O squat é sempre
+nulo durante encontros.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Os resultados
+experimentais permitem
+um percentual universal
+para qualquer navio.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A interação
+não pode alterar
+a folga abaixo
+da quilha.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A interação pode
+modificar o squat
+e reduzir a UKC.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 13
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q13"
+data-resposta="B"
+data-topico="Comprimento dos navios"
+data-edital="8.12.5.2.3"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 13</h3>
+
+<p>
+Na ultrapassagem idealizada,
+o deslocamento longitudinal
+relativo entre a primeira
+sobreposição das extremidades
+e a completa passagem
+dos cascos corresponde:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) À diferença
+entre as bocas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) À soma
+dos comprimentos
+dos navios.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Apenas ao comprimento
+do ultrapassado.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) À profundidade
+do canal.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 14
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q14"
+data-resposta="C"
+data-topico="Encontro de navios"
+data-edital="8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 14</h3>
+
+<p>
+Dois navios aproximam-se
+em sentidos opostos,
+em trajetórias colineares,
+a 8 nós e 7 nós,
+na mesma referência.
+</p>
+
+<p>
+A velocidade longitudinal
+de aproximação é:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) 1 nó.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) 7,5 nós.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) 15 nós.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) 56 nós.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 15
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q15"
+data-resposta="A"
+data-topico="Fases do encontro"
+data-edital="8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner"
+>
+
+<h3>Questão 15</h3>
+
+<p>
+Durante o encontro
+de dois navios,
+a interação:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Pode continuar
+durante a passagem
+das popas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Termina necessariamente
+quando as proas
+se cruzam.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Existe somente
+antes da passagem
+das proas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Independe
+da posição relativa.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 16
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q16"
+data-resposta="D"
+data-topico="Interação e margem"
+data-edital="8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 16</h3>
+
+<p>
+Durante o encontro
+em canal estreito,
+é correto afirmar:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A influência
+das margens desaparece.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) A força lateral
+entre os navios
+é sempre nula.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) O governo
+não é afetado
+pelas pressões.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A interação
+entre navios pode
+coexistir com
+o efeito de margem.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 17
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q17"
+data-resposta="B"
+data-topico="Capacidade de governo"
+data-edital="8.12.5.2; 8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 17</h3>
+
+<p>
+A interação hidrodinâmica
+pode comprometer
+a manutenção do rumo
+porque:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Desativa
+necessariamente
+o sistema de governo.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Pode produzir
+momentos de guinada
+não comandados.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Impede qualquer
+ação do leme.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Elimina
+a inércia do navio.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 18
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q18"
+data-resposta="C"
+data-topico="Interpretação operacional"
+data-edital="8.12.5"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 18</h3>
+
+<p>
+A existência
+de espaço geométrico
+suficiente para
+a passagem de dois
+navios significa:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Segurança
+hidrodinâmica garantida.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Ausência
+de momentos de guinada.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Apenas que a geometria
+permite a passagem,
+sem garantir
+segurança operacional.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Impossibilidade
+de interação.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 19
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q19"
+data-resposta="A"
+data-topico="Limites dos modelos"
+data-edital="8.12.5"
+data-bibliografia="Principles of Naval Architecture; Practical Ship Hydrodynamics"
+>
+
+<h3>Questão 19</h3>
+
+<p>
+A previsão quantitativa
+das forças de interação
+entre navios:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Pode exigir modelos
+hidrodinâmicos específicos
+ou dados experimentais.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Depende somente
+da velocidade relativa.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Pode ser obtida
+universalmente
+pela fórmula UKC = h − T.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Independe
+da forma dos cascos.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     QUESTÃO 20
+========================================= -->
+
+<div
+class="widget questao"
+data-questao-id="interacao-hidrodinamica-q20"
+data-resposta="D"
+data-topico="Integração operacional"
+data-edital="8.12.5 a 8.12.5.3"
+data-bibliografia="Shiphandling for the Mariner; Naval Shiphandling"
+>
+
+<h3>Questão 20</h3>
+
+<p>
+A avaliação operacional
+da interação
+entre navios deve:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Considerar
+apenas a velocidade.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Desconsiderar
+a profundidade.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Aplicar sempre
+a mesma sequência
+de comandos de leme.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Integrar geometria,
+velocidades, posições
+relativas e capacidade
+de governo.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLES DO EXERCÍCIO
+     PADRÃO 1
+========================================= -->
+
+<section>
+
+<h2>
+📊 Correção do exercício
+</h2>
+
+<div class="widget">
+
+<p id="resumo-selecao-exercicios">
+0 de 20 questões respondidas
+</p>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios"></p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>
+✅ Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<p>
+O gabarito pode ser consultado
+após a realização do exercício.
+</p>
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+
+<h3>Questão 1 — B</h3>
+
+<p>
+A interação decorre
+da alteração das condições
+de escoamento e pressão
+pela proximidade
+entre os cascos.
+</p>
+
+
+<h3>Questão 2 — C</h3>
+
+<p>
+O momento de guinada
+depende da posição
+e da distribuição
+das forças em relação
+ao ponto de referência.
+</p>
+
+
+<h3>Questão 3 — A</h3>
+
+<p>
+A expressão
+q = ½ρV²
+representa a pressão
+dinâmica associada
+à velocidade
+de referência.
+</p>
+
+
+<h3>Questão 4 — D</h3>
+
+<p>
+As forças e os momentos
+podem variar conforme
+a posição longitudinal
+relativa das embarcações.
+</p>
+
+
+<h3>Questão 5 — B</h3>
+
+<p>
+O navio atracado
+pode sofrer forças
+hidrodinâmicas
+que gerem movimentos
+e esforços adicionais
+nas amarras.
+</p>
+
+
+<h3>Questão 6 — A</h3>
+
+<p>
+Em trajetórias paralelas
+no mesmo sentido:
+</p>
+
+<p>
+<strong>
+V<sub>rel</sub> = 12 − 9 = 3 nós.
+</strong>
+</p>
+
+
+<h3>Questão 7 — C</h3>
+
+<p>
+Uma pequena velocidade
+relativa pode aumentar
+o tempo durante
+o qual os navios
+permanecem próximos.
+</p>
+
+
+<h3>Questão 8 — D</h3>
+
+<p>
+A velocidade influencia
+as perturbações
+hidrodinâmicas,
+enquanto a velocidade
+relativa influencia
+a duração da passagem.
+</p>
+
+
+<h3>Questão 9 — B</h3>
+
+<p>
+A redução da separação
+lateral pode intensificar
+a influência recíproca
+dos campos hidrodinâmicos.
+</p>
+
+
+<h3>Questão 10 — C</h3>
+
+<p>
+Em canal estreito,
+devem ser consideradas
+a separação entre
+os navios e as folgas
+em relação às margens.
+</p>
+
+
+<h3>Questão 11 — A</h3>
+
+<p>
+A razão h/T
+é uma grandeza
+geométrica adimensional
+que relaciona
+profundidade e calado.
+</p>
+
+
+<h3>Questão 12 — D</h3>
+
+<p>
+A interação pode modificar
+o squat e reduzir
+a folga abaixo da quilha,
+especialmente em condições
+de águas restritas.
+</p>
+
+
+<h3>Questão 13 — B</h3>
+
+<p>
+Na geometria idealizada,
+o deslocamento longitudinal
+relativo entre
+as configurações descritas
+corresponde à soma
+dos comprimentos.
+</p>
+
+
+<h3>Questão 14 — C</h3>
+
+<p>
+Em trajetórias colineares
+e sentidos opostos:
+</p>
+
+<p>
+<strong>
+V<sub>aprox</sub> = 8 + 7 = 15 nós.
+</strong>
+</p>
+
+
+<h3>Questão 15 — A</h3>
+
+<p>
+A interação pode continuar
+durante a passagem
+das regiões de popa,
+mesmo após o cruzamento
+das proas.
+</p>
+
+
+<h3>Questão 16 — D</h3>
+
+<p>
+Em canais estreitos,
+a interação entre navios
+pode coexistir
+com os efeitos
+hidrodinâmicos
+das margens.
+</p>
+
+
+<h3>Questão 17 — B</h3>
+
+<p>
+A distribuição
+de pressões pode produzir
+momentos de guinada
+que alterem a orientação
+do navio sem comando
+voluntário de leme.
+</p>
+
+
+<h3>Questão 18 — C</h3>
+
+<p>
+A possibilidade
+geométrica de passagem
+não garante
+segurança hidrodinâmica
+ou capacidade de governo
+suficiente.
+</p>
+
+
+<h3>Questão 19 — A</h3>
+
+<p>
+A previsão quantitativa
+pode exigir ensaios,
+modelos hidrodinâmicos
+ou simulações adequadas
+às condições estudadas.
+</p>
+
+
+<h3>Questão 20 — D</h3>
+
+<p>
+A avaliação deve integrar
+as características
+dos navios,
+as condições do canal,
+as velocidades,
+as posições relativas
+e a capacidade de governo.
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS BIBLIOGRÁFICAS
+========================================= -->
+
+<section>
+
+<h2>
+📚 Referências bibliográficas
+</h2>
+
+<div class="widget">
+
+<h3>
+1. Shiphandling for the Mariner
+</h3>
+
+<p>
+<strong>
+5th Edition
+</strong>
+</p>
+
+<p>
+Referência operacional
+para os fenômenos
+de encontro,
+ultrapassagem
+e interação
+em águas restritas.
+</p>
+
+<p>
+<strong>
+Seções de interesse:
+</strong>
+</p>
+
+<ul>
+
+<li>
+Meeting Another Vessel or Tow;
+</li>
+
+<li>
+Overtaking Another Vessel or Tow;
+</li>
+
+<li>
+Meeting and Passing.
+</li>
+
+</ul>
+
+<p>
+A publicação também discute
+efeitos de interação
+sobre squat e condições
+de passagem em canais.
+</p>
+
+
+<h3>
+2. Naval Shiphandling
+</h3>
+
+<p>
+<strong>
+4th Edition
+</strong>
+</p>
+
+<p>
+Referência complementar
+para interpretação
+operacional das forças
+que influenciam
+o movimento
+e o governo dos navios.
+</p>
+
+
+<h3>
+3. Principles of Naval Architecture
+</h3>
+
+<p>
+<strong>
+Society of Naval Architects
+and Marine Engineers — SNAME
+</strong>
+</p>
+
+<p>
+Referência de fundamentos
+hidrodinâmicos,
+resistência e escoamento
+ao redor do casco.
+</p>
+
+
+<h3>
+4. Practical Ship Hydrodynamics
+</h3>
+
+<p>
+<strong>
+Volker Bertram
+</strong>
+</p>
+
+<p>
+Referência complementar
+para interpretação
+dos fenômenos
+de escoamento,
+efeitos hidrodinâmicos
+e limitações
+de modelos simplificados.
+</p>
+
+
+<h3>
+5. Conteúdo Programático PSCPP
+</h3>
+
+<p>
+<strong>
+Disciplina:
+Manobrabilidade do Navio
+</strong>
+</p>
+
+<p>
+<strong>
+Itens:
+8.12.5 a 8.12.5.3
+</strong>
+</p>
+
+<p>
+Efeitos de interação
+entre navios,
+incluindo passagem
+por navio atracado,
+ultrapassagem
+e cruzamento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Observação bibliográfica
+</h3>
+
+<p>
+As relações cinemáticas
+e os exemplos numéricos
+apresentados nesta aula
+são recursos didáticos
+de interpretação.
+</p>
+
+<p>
+Não constituem,
+isoladamente,
+modelos de previsão
+das forças
+de interação.
+</p>
+
+<p>
+Os resultados experimentais
+relatados nas publicações
+devem ser interpretados
+dentro das condições
+em que foram obtidos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO GERAL
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Conclusão —
+Interação Hidrodinâmica
+</h2>
+
+<p>
+A interação hidrodinâmica
+entre navios é um fenômeno
+fundamental para compreender
+o comportamento
+das embarcações
+durante passagens
+em proximidade.
+</p>
+
+<p>
+A alteração dos campos
+de escoamento
+e da distribuição
+de pressões pode produzir
+forças laterais,
+momentos de guinada
+e alterações
+nos movimentos verticais.
+</p>
+
+<p>
+Esses efeitos dependem
+das posições relativas,
+das velocidades,
+das características
+dos cascos
+e das condições
+da via navegável.
+</p>
+
+<p>
+A passagem por
+navio atracado,
+a ultrapassagem
+e o encontro
+apresentam configurações
+distintas e exigem
+interpretação própria.
+</p>
+
+<p>
+Para o PSCPP,
+é essencial compreender
+não apenas a existência
+da interação,
+mas também
+a maneira como
+seus efeitos variam
+ao longo da manobra.
+</p>
+
+<p>
+<strong>
+A compreensão física
+dos fenômenos deve
+ser integrada
+à capacidade de governo,
+às margens de segurança
+e às regras de navegação
+aplicáveis.
+</strong>
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     ENCERRAMENTO DO MAIN
+========================================= -->
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER — PADRÃO 1
+========================================= -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo
+de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     PADRÃO 1
+
+     MANTER A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     GABARITO OCULTÁVEL
+     PADRÃO 1
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById("gabaritoAula");
+
+    if (!gabarito) return;
+
+    if (gabarito.style.display === "none") {
+
+        gabarito.style.display = "block";
+
+    } else {
+
+        gabarito.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+
+
+<!-- =====================================================
+     FIM DA PARTE 6
+     FIM DA AULA INTERAÇÃO HIDRODINÂMICA
+
+     TOTAL:
+     34 TÓPICOS
+     6 PARTES
+     20 QUESTÕES
+
+     INTEGRAÇÕES:
+     navigation.js
+     progresso.js
+     pomodoro.js
+     exercicios.js
+
+     OBSERVAÇÃO:
+     O FUNCIONAMENTO DA CORREÇÃO
+     DEPENDE DA IMPLEMENTAÇÃO
+     EXISTENTE EM exercicios.js.
+
+     NÃO ADICIONAR OUTRO
+     </main>, </body> OU </html>.
+===================================================== -->
+   
+    
