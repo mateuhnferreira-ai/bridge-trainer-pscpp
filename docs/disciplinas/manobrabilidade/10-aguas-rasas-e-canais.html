@@ -25,7 +25,7 @@
 
 <body
     data-disciplina="manobrabilidade"
-    data-aula="aguas-rasas-canais"
+    data-aula="aguas-rasas-e-canais"
 >
 
 
@@ -1841,3 +1841,3322 @@ para o comportamento do navio.
      INSERIR A PARTE 2 ABAIXO
 ========================================= -->
 
+<!-- =====================================================
+     PARTE 2
+     ESCOAMENTO, RESISTÊNCIA E COMPORTAMENTO
+     HIDRODINÂMICO EM ÁGUAS RASAS
+     Bridge Trainer PSCPP
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 2 — Escoamento, Resistência e Comportamento Hidrodinâmico
+</h2>
+
+<p>
+<strong>
+Shallow Water Flow, Resistance and Hydrodynamic Behaviour
+</strong>
+</p>
+
+<p>
+A presença de um fundo próximo ao casco modifica
+as condições de contorno do escoamento e altera
+os mecanismos de propagação das ondas,
+de distribuição de pressões e de resistência
+ao avanço do navio.
+</p>
+
+<p>
+Nesta parte, os fenômenos serão examinados
+a partir dos princípios da conservação
+da massa, da quantidade de movimento,
+da teoria linear das ondas e da resistência
+hidrodinâmica.
+</p>
+
+<div class="destaque">
+
+<h3>Fundamentação bibliográfica</h3>
+
+<p>
+<strong>Ship Resistance and Flow:</strong>
+seção 5.8 — Shallow-Water Effects on Wave Properties.
+</p>
+
+<p>
+<strong>Practical Ship Hydrodynamics:</strong>
+capítulo 3 — Resistance and Propulsion,
+seção Shallow Water.
+</p>
+
+<p>
+<strong>Conteúdo programático:</strong>
+itens 1.8, 5.5.2 e 8.11.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 7
+     CONDIÇÕES DE CONTORNO
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-7"
+data-topico-id="condicoes-contorno-fundo"
+>
+
+<h2>
+7. Condições de contorno do escoamento em águas rasas
+</h2>
+
+<div class="widget">
+
+<p>
+Na análise hidrodinâmica de um navio,
+o escoamento é condicionado pelas fronteiras
+físicas do domínio ocupado pela água.
+</p>
+
+<p>
+Em águas profundas, a influência direta
+do fundo sobre determinadas perturbações
+produzidas pelo casco pode ser desprezível.
+</p>
+
+<p>
+Em águas rasas, entretanto, o fundo passa
+a constituir uma fronteira próxima,
+modificando o campo de velocidades
+e o comportamento das ondas.
+</p>
+
+<h3>
+7.1 Condição de impermeabilidade
+</h3>
+
+<p>
+A água não pode atravessar uma fronteira
+sólida impermeável.
+</p>
+
+<p>
+Para um fundo horizontal, fixo e impermeável,
+a componente normal da velocidade
+do fluido deve ser nula na superfície
+do fundo.
+</p>
+
+<div class="destaque">
+
+<h3>
+Condição cinemática no fundo
+</h3>
+
+<p>
+<strong>
+w = 0, em z = −h
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>w:</strong>
+componente vertical da velocidade;
+</li>
+
+<li>
+<strong>z:</strong>
+coordenada vertical, positiva para cima;
+</li>
+
+<li>
+<strong>h:</strong>
+profundidade da água.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+No modelo de escoamento potencial,
+a velocidade é obtida a partir
+de um potencial de velocidades φ.
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+u = ∂φ/∂x
+</strong>
+</p>
+
+<p>
+<strong>
+w = ∂φ/∂z
+</strong>
+</p>
+
+<p>
+Portanto, para o fundo horizontal:
+</p>
+
+<p>
+<strong>
+∂φ/∂z = 0, em z = −h
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa condição é utilizada na formulação
+da teoria linear das ondas em profundidade
+finita, apresentada em
+<strong>Ship Resistance and Flow</strong>,
+seção 5.8.
+</p>
+
+<p>
+É necessário distinguir essa condição
+de impermeabilidade da condição viscosa
+de não deslizamento.
+</p>
+
+<p>
+Para um fluido viscoso junto a um fundo
+sólido estacionário, a velocidade
+relativa do fluido na parede é nula.
+Já no modelo potencial idealizado,
+impõe-se apenas a ausência de velocidade
+normal à superfície sólida.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A presença do fundo altera o escoamento
+mesmo antes de ocorrer qualquer contato
+entre o casco e o leito.
+</p>
+
+<p>
+A condição de impermeabilidade é uma
+restrição cinemática. Ela não determina,
+isoladamente, a magnitude do squat
+ou da resistência adicional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 8
+     CONSERVAÇÃO DA MASSA
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-8"
+data-topico-id="continuidade-escoamento-aguas-rasas"
+>
+
+<h2>
+8. Conservação da massa e aceleração do escoamento
+</h2>
+
+<div class="widget">
+
+<p>
+O movimento de um navio desloca água
+que precisa escoar ao redor do casco,
+por baixo da embarcação e,
+quando existe espaço disponível,
+pelas regiões laterais.
+</p>
+
+<p>
+A conservação da massa é um dos princípios
+fundamentais para compreender
+esse escoamento.
+</p>
+
+<h3>
+8.1 Equação da continuidade
+</h3>
+
+<p>
+Para um fluido incompressível,
+a equação diferencial da continuidade é:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+∂u/∂x + ∂v/∂y + ∂w/∂z = 0
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>u:</strong> velocidade longitudinal;
+</li>
+
+<li>
+<strong>v:</strong> velocidade transversal;
+</li>
+
+<li>
+<strong>w:</strong> velocidade vertical.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Essa equação expressa que o campo
+de velocidades de um fluido incompressível
+possui divergência nula.
+</p>
+
+<p>
+Em uma representação unidimensional
+simplificada, com escoamento permanente
+e sem vazão através das paredes laterais,
+a continuidade pode ser expressa por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+A₁U₁ = A₂U₂
+</strong>
+</p>
+
+<p>
+Se A₂ for menor que A₁,
+então:
+</p>
+
+<p>
+<strong>
+U₂ = U₁(A₁/A₂)
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa relação mostra que uma redução
+da área disponível pode exigir
+aumento da velocidade média do escoamento
+que atravessa a seção.
+</p>
+
+<p>
+No entorno de um navio real, porém,
+o escoamento é tridimensional,
+com superfície livre deformável,
+efeitos viscosos e caminhos alternativos
+para o movimento da água.
+</p>
+
+<p>
+Portanto, não se deve interpretar
+a equação unidimensional como uma
+descrição completa do escoamento
+entre a quilha e o fundo.
+</p>
+
+
+<!-- =========================================
+     FIGURA SVG
+     ESCOAMENTO SOB O CASCO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Esquema conceitual do escoamento sob o casco
+</h3>
+
+<svg
+viewBox="0 0 760 390"
+width="100%"
+role="img"
+aria-label="Vista lateral esquemática do escoamento sob o casco de um navio em águas rasas"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="20" y="70"
+width="720" height="270"
+fill="#dceef7"
+/>
+
+<line
+x1="20" y1="70"
+x2="740" y2="70"
+stroke="#1688b8"
+stroke-width="4"
+/>
+
+<path
+d="M 130 95
+L 130 160
+Q 145 205 205 218
+L 555 218
+Q 615 205 630 160
+L 630 95"
+fill="#586f83"
+stroke="#263f53"
+stroke-width="3"
+/>
+
+<rect
+x="20" y="340"
+width="720" height="25"
+fill="#a58a68"
+/>
+
+<line
+x1="20" y1="340"
+x2="740" y2="340"
+stroke="#765b3c"
+stroke-width="3"
+/>
+
+<g
+stroke="#1688b8"
+stroke-width="3"
+fill="none"
+stroke-linecap="round"
+>
+
+<path d="M 55 270 L 195 270"/>
+<path d="M 180 262 L 195 270 L 180 278"/>
+
+<path d="M 235 270 L 415 270"/>
+<path d="M 400 262 L 415 270 L 400 278"/>
+
+<path d="M 455 270 L 685 270"/>
+<path d="M 670 262 L 685 270 L 670 278"/>
+
+<path d="M 55 310 L 200 310"/>
+<path d="M 185 302 L 200 310 L 185 318"/>
+
+<path d="M 235 310 L 420 310"/>
+<path d="M 405 302 L 420 310 L 405 318"/>
+
+<path d="M 455 310 L 685 310"/>
+<path d="M 670 302 L 685 310 L 670 318"/>
+
+</g>
+
+<text
+x="280" y="190"
+font-size="17"
+fill="#ffffff"
+>
+Casco — vista lateral
+</text>
+
+<text
+x="290" y="250"
+font-size="16"
+fill="#153b57"
+>
+Região sob a quilha
+</text>
+
+<text
+x="30" y="48"
+font-size="16"
+fill="#153b57"
+>
+Superfície livre
+</text>
+
+<text
+x="34" y="384"
+font-size="16"
+fill="#765b3c"
+>
+Fundo horizontal
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 2.</strong>
+Vista lateral conceitual.
+As setas representam apenas uma direção
+esquemática de escoamento relativo.
+A figura não apresenta velocidades
+calculadas nem linhas de corrente reais.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A redução da folga sob a quilha
+pode modificar intensamente
+o escoamento local.
+</p>
+
+<p>
+Entretanto, a distribuição real
+de velocidades depende da geometria
+tridimensional do casco, da profundidade,
+da velocidade e do confinamento lateral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 9
+     CAMPO DE PRESSÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-9"
+data-topico-id="pressao-hidrodinamica-aguas-rasas"
+>
+
+<h2>
+9. Campo de pressões e interação casco-fundo
+</h2>
+
+<div class="widget">
+
+<p>
+As forças hidrodinâmicas exercidas
+sobre o casco dependem da distribuição
+de pressão e das tensões viscosas
+ao longo da superfície molhada.
+</p>
+
+<p>
+Em águas rasas, as alterações
+do escoamento modificam
+essa distribuição e podem influenciar
+as forças verticais e longitudinais,
+bem como os momentos associados
+à atitude do navio.
+</p>
+
+<h3>
+9.1 Equação de Bernoulli
+</h3>
+
+<p>
+Para um escoamento ideal,
+incompressível, permanente
+e sem perdas, a equação de Bernoulli
+pode ser escrita ao longo
+de uma linha de corrente:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+p + ½ρU² + ρgz = constante
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>p:</strong> pressão estática;
+</li>
+
+<li>
+<strong>ρ:</strong> massa específica da água;
+</li>
+
+<li>
+<strong>U:</strong> módulo da velocidade local;
+</li>
+
+<li>
+<strong>g:</strong> aceleração da gravidade;
+</li>
+
+<li>
+<strong>z:</strong> cota vertical.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Em dois pontos de uma mesma linha
+de corrente e à mesma elevação,
+a relação idealizada indica
+que o aumento da velocidade
+corresponde à diminuição
+da pressão estática.
+</p>
+
+<p>
+Essa interpretação é útil
+para compreender qualitativamente
+a influência da aceleração
+do escoamento sobre o campo
+de pressões próximo ao casco.
+</p>
+
+<p>
+Contudo, a equação não pode ser
+aplicada indiscriminadamente
+entre quaisquer dois pontos
+de um escoamento viscoso,
+tridimensional e com superfície
+livre deformável.
+</p>
+
+<h3>
+9.2 Força resultante das pressões
+</h3>
+
+<p>
+A força exercida pela pressão
+sobre uma superfície do casco
+pode ser representada por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+F⃗<sub>p</sub> = −∫<sub>S</sub> p n⃗ dS
+</strong>
+</p>
+
+<p>
+Onde n⃗ é o vetor unitário normal
+à superfície, orientado para fora
+do volume do casco considerado.
+</p>
+
+<p>
+A força hidrodinâmica total também
+inclui as contribuições das tensões
+viscosas.
+</p>
+
+</div>
+
+<p>
+A distribuição das pressões
+pode produzir uma força vertical
+resultante e um momento
+em torno do eixo transversal.
+</p>
+
+<p>
+A nova condição de equilíbrio dinâmico
+do navio poderá envolver
+afundamento e alteração do trim.
+</p>
+
+<p>
+Esses efeitos serão examinados
+quantitativamente na Parte 3,
+dedicada ao squat.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não se deve afirmar que todo
+aumento de velocidade local
+produz necessariamente uma redução
+uniforme de pressão sob todo o casco.
+</p>
+
+<p>
+O comportamento real depende
+da distribuição espacial
+do escoamento.
+</p>
+
+<p>
+Também não se deve calcular
+o squat apenas a partir
+de uma diferença arbitrária
+de pressões obtida por Bernoulli.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 10
+     PROPAGAÇÃO DE ONDAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-10"
+data-topico-id="dispersao-ondas-profundidade-finita"
+>
+
+<h2>
+10. Propagação de ondas em profundidade finita
+</h2>
+
+<div class="widget">
+
+<p>
+A profundidade da água influencia
+a velocidade de propagação
+das ondas gravitacionais.
+</p>
+
+<p>
+Em <strong>Ship Resistance and Flow</strong>,
+seção 5.8, a influência do fundo
+é examinada por meio da relação
+de dispersão das ondas.
+</p>
+
+<h3>
+10.1 Relação de dispersão
+</h3>
+
+<p>
+Para ondas gravitacionais lineares,
+de pequena amplitude,
+em água de profundidade uniforme,
+sem corrente e desprezando
+a tensão superficial:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+ω² = gk tanh(kh)
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>ω:</strong> frequência angular;
+</li>
+
+<li>
+<strong>k:</strong> número de onda;
+</li>
+
+<li>
+<strong>h:</strong> profundidade;
+</li>
+
+<li>
+<strong>g:</strong> aceleração da gravidade.
+</li>
+
+</ul>
+
+<p>
+<strong>
+k = 2π/λ
+</strong>
+</p>
+
+<p>
+<strong>
+c = ω/k
+</strong>
+</p>
+
+</div>
+
+<p>
+Substituindo essas relações,
+obtém-se a velocidade de fase:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+c = √[(g/k)tanh(kh)]
+</strong>
+</p>
+
+<p>
+Ou:
+</p>
+
+<p>
+<strong>
+c = √[(gλ/2π)tanh(2πh/λ)]
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa expressão evidencia que
+a velocidade de propagação
+depende tanto do comprimento
+de onda quanto da profundidade.
+</p>
+
+<h3>
+10.2 Limite de águas profundas
+</h3>
+
+<p>
+Quando kh é suficientemente grande:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+tanh(kh) ≈ 1
+</strong>
+</p>
+
+<p>
+<strong>
+c ≈ √(g/k)
+</strong>
+</p>
+
+</div>
+
+<p>
+Nesse limite, a velocidade
+de fase deixa de depender
+explicitamente da profundidade.
+</p>
+
+<h3>
+10.3 Limite de águas rasas
+</h3>
+
+<p>
+Quando kh é suficientemente pequeno:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+tanh(kh) ≈ kh
+</strong>
+</p>
+
+<p>
+Portanto:
+</p>
+
+<p>
+<strong>
+c ≈ √(gh)
+</strong>
+</p>
+
+</div>
+
+<p>
+Nesse limite, a velocidade
+de propagação deixa de depender
+do comprimento de onda
+na aproximação linear.
+</p>
+
+<p>
+A obra <strong>Ship Resistance and Flow</strong>
+destaca que, quando o comprimento
+de onda se torna grande em relação
+à profundidade, a influência
+do fundo passa a modificar
+a relação de dispersão.
+</p>
+
+<h3>
+10.4 Interpretação do parâmetro kh
+</h3>
+
+<p>
+O produto kh é adimensional:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+kh = 2πh/λ
+</strong>
+</p>
+
+</div>
+
+<p>
+Valores pequenos de kh
+caracterizam o limite de ondas longas
+em águas rasas.
+</p>
+
+<p>
+Valores grandes de kh
+aproximam o comportamento
+de águas profundas.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A classificação hidrodinâmica
+de uma onda como onda de água rasa
+depende da relação entre
+comprimento de onda e profundidade.
+</p>
+
+<p>
+Essa classificação não deve
+ser confundida com a avaliação
+da folga abaixo da quilha
+de um navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 11
+     RESISTÊNCIA EM ÁGUAS RASAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-11"
+data-topico-id="resistencia-avanco-aguas-rasas"
+>
+
+<h2>
+11. Resistência ao avanço em águas rasas
+</h2>
+
+<div class="widget">
+
+<p>
+A resistência ao avanço
+de um navio envolve diferentes
+mecanismos físicos,
+incluindo efeitos viscosos
+e geração de ondas.
+</p>
+
+<p>
+A presença do fundo modifica
+o escoamento e pode aumentar
+a resistência total.
+</p>
+
+<p>
+Em <strong>Practical Ship Hydrodynamics</strong>,
+capítulo 3, a seção
+<strong>Shallow Water</strong>
+destaca o aumento da resistência
+friccional e, geralmente,
+também da resistência de ondas.
+</p>
+
+<p>
+A obra também assinala
+que, nas proximidades
+de Fn<sub>h</sub> = 1,
+a resistência pode aumentar
+acentuadamente.
+</p>
+
+<h3>
+11.1 Resistência friccional
+</h3>
+
+<p>
+A resistência friccional
+está relacionada às tensões
+tangenciais exercidas
+pelo fluido sobre a superfície
+molhada do casco.
+</p>
+
+<p>
+Sua determinação depende
+das características da camada limite,
+da velocidade e das propriedades
+do fluido.
+</p>
+
+<div class="destaque">
+
+<h3>
+Representação convencional
+</h3>
+
+<p>
+<strong>
+R<sub>F</sub> = ½ρSV²C<sub>F</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>R<sub>F</sub>:</strong>
+resistência friccional;
+</li>
+
+<li>
+<strong>S:</strong>
+área molhada;
+</li>
+
+<li>
+<strong>V:</strong>
+velocidade de referência;
+</li>
+
+<li>
+<strong>C<sub>F</sub>:</strong>
+coeficiente de resistência friccional.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Essa expressão é uma representação
+convencional da resistência friccional,
+não uma fórmula específica
+de correção para águas rasas.
+</p>
+
+<p>
+A influência do fundo sobre
+o escoamento viscoso não pode
+ser representada apenas
+pela substituição da profundidade
+nessa expressão.
+</p>
+
+<h3>
+11.2 Resistência de ondas
+</h3>
+
+<p>
+A resistência associada à geração
+de ondas depende do sistema
+de perturbações produzido
+pelo casco.
+</p>
+
+<p>
+Como a profundidade modifica
+a propagação das ondas,
+também pode modificar
+a resistência de ondas.
+</p>
+
+<p>
+A relação entre resistência
+e velocidade pode apresentar
+comportamento particularmente
+acentuado próximo
+à condição crítica de profundidade.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confundir aumento de resistência
+com aumento de potência disponível.
+</p>
+
+<p>
+Para manter uma determinada velocidade
+em uma condição de maior resistência,
+pode ser necessária maior potência
+propulsiva.
+</p>
+
+<p>
+Se a potência disponível permanecer
+limitada, a velocidade alcançável
+poderá ser reduzida.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 12
+     PERDA DE VELOCIDADE E LIMITAÇÕES
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-12"
+data-topico-id="perda-velocidade-aguas-rasas"
+>
+
+<h2>
+12. Perda de velocidade e limites das estimativas
+</h2>
+
+<div class="widget">
+
+<p>
+O aumento da resistência
+em águas rasas pode provocar
+redução da velocidade
+para uma mesma condição
+de potência propulsiva.
+</p>
+
+<p>
+O capítulo 3 de
+<strong>Practical Ship Hydrodynamics</strong>
+apresenta um diagrama
+de perda percentual de velocidade
+associado ao trabalho de Lackenby (1963).
+</p>
+
+<p>
+O diagrama relaciona
+a influência da profundidade,
+a seção mestra do navio
+e o parâmetro de velocidade:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+V²/(gh) = Fn<sub>h</sub>²
+</strong>
+</p>
+
+<p>
+A representação também utiliza
+a área da seção mestra
+e a profundidade da água.
+</p>
+
+</div>
+
+<p>
+O diagrama é apresentado
+como recurso para estimar
+perdas de velocidade
+quando a influência de águas rasas
+é relativamente pequena.
+</p>
+
+<p>
+Para efeitos intensos,
+a obra destaca a complexidade
+introduzida por fenômenos
+como quebra de ondas,
+squat e deformação
+da superfície livre.
+</p>
+
+<p>
+Nessas condições, estimativas
+simplificadas podem deixar
+de representar adequadamente
+o comportamento real.
+</p>
+
+<h3>
+12.1 Limitações dos modelos simplificados
+</h3>
+
+<p>
+As limitações decorrem
+da interação entre diferentes
+mecanismos físicos:
+</p>
+
+<ul>
+
+<li>
+Alteração da superfície livre;
+</li>
+
+<li>
+Modificação do campo de pressões;
+</li>
+
+<li>
+Mudanças no escoamento viscoso;
+</li>
+
+<li>
+Alteração da resistência de ondas;
+</li>
+
+<li>
+Afundamento e trim dinâmicos;
+</li>
+
+<li>
+Possível confinamento lateral.
+</li>
+
+</ul>
+
+<p>
+Em situações complexas,
+a avaliação quantitativa
+pode exigir ensaios com modelos
+ou simulações de dinâmica
+dos fluidos computacional.
+</p>
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+A perda de velocidade
+para determinada potência
+não deve ser utilizada
+isoladamente como medida
+da folga abaixo da quilha.
+</p>
+
+<p>
+A resistência ao avanço
+e o squat são fenômenos
+relacionados ao escoamento,
+mas não representam
+a mesma grandeza física.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A resistência de águas rasas
+não pode ser estimada,
+para todas as condições,
+por um único fator multiplicativo
+aplicado à resistência
+de águas profundas.
+</p>
+
+<p>
+A validade de cada método
+de estimativa depende
+de suas hipóteses,
+dos parâmetros utilizados
+e da faixa de aplicação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     GLOSSÁRIO — PARTE 2
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 2
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Condição de contorno —
+Boundary condition:</strong>
+restrição física ou matemática
+imposta ao escoamento
+na fronteira do domínio.
+</li>
+
+<li>
+<strong>Condição de impermeabilidade —
+No-penetration condition:</strong>
+ausência de velocidade normal
+através de uma fronteira sólida.
+</li>
+
+<li>
+<strong>Condição de não deslizamento —
+No-slip condition:</strong>
+igualdade entre a velocidade
+do fluido e a velocidade
+da superfície sólida em contato.
+</li>
+
+<li>
+<strong>Escoamento potencial —
+Potential flow:</strong>
+modelo de escoamento irrotacional
+descrito por um potencial
+de velocidades.
+</li>
+
+<li>
+<strong>Potencial de velocidades —
+Velocity potential:</strong>
+função escalar cujo gradiente
+determina o campo de velocidades.
+</li>
+
+<li>
+<strong>Equação da continuidade —
+Continuity equation:</strong>
+expressão matemática
+da conservação da massa.
+</li>
+
+<li>
+<strong>Campo de pressões —
+Pressure field:</strong>
+distribuição espacial
+da pressão no fluido.
+</li>
+
+<li>
+<strong>Pressão estática —
+Static pressure:</strong>
+pressão termodinâmica local
+do fluido.
+</li>
+
+<li>
+<strong>Pressão dinâmica —
+Dynamic pressure:</strong>
+grandeza ½ρU² utilizada
+na análise de escoamentos.
+</li>
+
+<li>
+<strong>Linha de corrente —
+Streamline:</strong>
+linha tangente ao vetor
+velocidade do fluido
+em cada ponto.
+</li>
+
+<li>
+<strong>Relação de dispersão —
+Dispersion relation:</strong>
+relação entre frequência
+e número de onda.
+</li>
+
+<li>
+<strong>Velocidade de fase —
+Phase velocity:</strong>
+velocidade de propagação
+de uma fase da onda.
+</li>
+
+<li>
+<strong>Número de onda —
+Wave number:</strong>
+grandeza k = 2π/λ.
+</li>
+
+<li>
+<strong>Comprimento de onda —
+Wavelength:</strong>
+distância espacial entre
+duas fases consecutivas
+equivalentes de uma onda.
+</li>
+
+<li>
+<strong>Resistência friccional —
+Frictional resistance:</strong>
+componente da resistência
+relacionada às tensões viscosas
+tangenciais sobre o casco.
+</li>
+
+<li>
+<strong>Resistência de ondas —
+Wave-making resistance:</strong>
+componente associada
+à geração de ondas
+pelo movimento do navio.
+</li>
+
+<li>
+<strong>Camada limite —
+Boundary layer:</strong>
+região próxima à superfície
+na qual os efeitos viscosos
+são importantes.
+</li>
+
+<li>
+<strong>Dinâmica dos fluidos computacional —
+Computational Fluid Dynamics (CFD):</strong>
+métodos numéricos utilizados
+para estudar o escoamento
+de fluidos.
+</li>
+
+<li>
+<strong>Ensaio com modelo —
+Model test:</strong>
+ensaio experimental
+com modelo físico
+para investigação
+do comportamento hidrodinâmico.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Conclusão da Parte 2
+</h2>
+
+<p>
+A proximidade do fundo
+modifica as condições
+de contorno do escoamento,
+a propagação das ondas
+e a distribuição
+das pressões hidrodinâmicas.
+</p>
+
+<p>
+Essas modificações
+podem alterar a resistência
+ao avanço e o comportamento
+dinâmico do navio.
+</p>
+
+<p>
+A teoria linear das ondas
+fornece relações fundamentais
+para compreender a influência
+da profundidade, enquanto
+os modelos simplificados
+de resistência possuem
+limites de aplicação
+que precisam ser respeitados.
+</p>
+
+<p>
+Na Parte 3, o estudo avançará
+para o fenômeno de
+<strong>squat</strong>,
+incluindo afundamento dinâmico,
+alteração do trim,
+estimativas quantitativas
+e consequências para a folga
+abaixo da quilha.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 2
+     INSERIR A PARTE 3 ABAIXO
+========================================= -->
+
+
+<!-- =====================================================
+     PARTE 3
+     SQUAT — AFUNDAMENTO DINÂMICO E TRIM
+     Bridge Trainer PSCPP
+===================================================== -->
+
+
+<!-- =========================================
+     ABERTURA DA PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — Squat: Afundamento Dinâmico,
+Alteração do Trim e Folga sob a Quilha
+</h2>
+
+<p>
+<strong>
+Ship Squat, Dynamic Sinkage and Dynamic Trim
+</strong>
+</p>
+
+<p>
+O squat constitui um dos fenômenos
+hidrodinâmicos mais importantes
+na navegação de navios com pequena
+folga abaixo da quilha.
+</p>
+
+<p>
+Sua compreensão exige distinguir
+o afundamento médio do casco,
+a alteração dinâmica do trim
+e o aumento máximo do calado
+em determinado ponto da embarcação.
+</p>
+
+<div class="destaque">
+
+<h3>Referência principal</h3>
+
+<p>
+<strong>Shiphandling for the Mariner,
+5ª edição.</strong>
+</p>
+
+<p>
+Capítulo 2 — Shiphandling in a Channel.
+</p>
+
+<p>
+Seção: The Basics of Squat.
+</p>
+
+<p>
+Páginas impressas 85 a 90.
+</p>
+
+<p>
+Conteúdo programático:
+efeitos de águas rasas,
+squat e comportamento
+do navio em águas confinadas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-13"
+data-topico-id="definicao-squat"
+>
+
+<h2>
+13. Definição física do squat
+</h2>
+
+<div class="widget">
+
+<p>
+Quando um navio adquire velocidade
+através da água, a distribuição
+de pressões ao redor do casco
+pode provocar alterações
+na sua posição vertical
+e na sua atitude longitudinal.
+</p>
+
+<p>
+O <strong>Shiphandling for the Mariner</strong>
+distingue três conceitos fundamentais:
+</p>
+
+<ul>
+
+<li>
+<strong>Sinkage:</strong>
+afundamento do casco, caracterizado
+pelo aumento do calado médio.
+</li>
+
+<li>
+<strong>Dynamic trim:</strong>
+alteração do trim provocada
+pela distribuição das pressões
+hidrodinâmicas durante o movimento.
+</li>
+
+<li>
+<strong>Squat:</strong>
+efeito combinado do afundamento
+e da alteração do trim,
+cuja magnitude máxima depende
+da distribuição dessas alterações
+ao longo do casco.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+O squat não deve ser interpretado
+necessariamente como um afundamento
+uniforme de todo o navio.
+</p>
+
+<p>
+O casco pode experimentar
+afundamento médio acompanhado
+de uma rotação longitudinal,
+produzindo aumentos diferentes
+dos calados de proa e popa.
+</p>
+
+</div>
+
+<h3>13.1 Afundamento médio</h3>
+
+<p>
+Considerando os calados de proa
+e popa em duas condições
+de movimento, podemos representar
+a variação do calado médio por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+ΔT<sub>m</sub> =
+(ΔT<sub>F</sub> + ΔT<sub>A</sub>)/2
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>ΔT<sub>F</sub>:</strong>
+variação do calado de proa;
+</li>
+
+<li>
+<strong>ΔT<sub>A</sub>:</strong>
+variação do calado de popa.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Essa expressão é uma representação
+geométrica simplificada,
+utilizando os calados
+nos extremos considerados.
+</p>
+
+<p>
+Não substitui o cálculo hidrostático
+rigoroso da alteração
+da posição vertical do navio.
+</p>
+
+<h3>13.2 Alteração dinâmica do trim</h3>
+
+<p>
+Adotando trim positivo pela popa,
+a variação do trim pode ser
+representada por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+ΔTrim = ΔT<sub>A</sub> − ΔT<sub>F</sub>
+</strong>
+</p>
+
+</div>
+
+<p>
+Quando a variação do calado
+de popa supera a de proa,
+o navio apresenta alteração
+do trim pela popa.
+</p>
+
+<p>
+Quando ocorre o contrário,
+a alteração é pela proa.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Não confundir squat com trim.
+</p>
+
+<p>
+O trim representa a diferença
+longitudinal entre calados.
+O squat envolve a alteração
+da posição vertical do navio
+e a possível modificação
+dessa diferença durante o movimento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 14
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-14"
+data-topico-id="mecanismo-hidrodinamico-squat"
+>
+
+<h2>
+14. Mecanismo hidrodinâmico do squat
+</h2>
+
+<div class="widget">
+
+<p>
+O movimento do navio produz
+um campo de pressões
+ao redor da superfície molhada.
+</p>
+
+<p>
+Em águas rasas e canais confinados,
+a passagem da água ao redor
+e sob o casco é influenciada
+pela presença do fundo
+e das margens laterais.
+</p>
+
+<p>
+A aceleração local do escoamento
+e a modificação da superfície livre
+alteram a distribuição
+das pressões hidrodinâmicas.
+</p>
+
+<h3>14.1 Força vertical resultante</h3>
+
+<p>
+A componente vertical da força
+de pressão exercida pelo fluido
+sobre o casco pode ser expressa
+genericamente por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+F<sub>z,p</sub> =
+−∫<sub>S</sub> p n<sub>z</sub> dS
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>p:</strong>
+pressão local;
+</li>
+
+<li>
+<strong>n<sub>z</sub>:</strong>
+componente vertical
+da normal à superfície;
+</li>
+
+<li>
+<strong>S:</strong>
+superfície considerada.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+A distribuição das pressões
+sobre o casco influencia
+a força vertical resultante
+e o momento em torno
+do eixo transversal.
+</p>
+
+<p>
+A resposta do navio ocorre
+por meio de alterações
+de sua posição vertical
+e de sua atitude longitudinal,
+até atingir uma condição
+dinâmica compatível
+com as forças e momentos atuantes.
+</p>
+
+<h3>14.2 Momento de trim</h3>
+
+<p>
+A contribuição da pressão
+para o momento em torno
+do eixo transversal pode ser
+representada, em notação vetorial,
+por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+M⃗<sub>p</sub> =
+∫<sub>S</sub>
+r⃗ × (−p n⃗) dS
+</strong>
+</p>
+
+<p>
+Onde r⃗ representa o vetor
+posição em relação
+ao ponto de referência.
+</p>
+
+</div>
+
+<p>
+A distribuição longitudinal
+das pressões é fundamental
+para determinar se o navio
+apresentará maior afundamento
+pela proa ou pela popa.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+A equação de Bernoulli auxilia
+a interpretar qualitativamente
+as relações entre velocidade
+e pressão.
+</p>
+
+<p>
+Entretanto, o squat real
+não pode ser determinado
+somente pela aplicação
+de Bernoulli a dois pontos
+arbitrários sob o casco.
+</p>
+
+<p>
+É necessário considerar
+a distribuição de pressões,
+a geometria do navio
+e as condições do escoamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 15
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-15"
+data-topico-id="squat-proa-popa"
+>
+
+<h2>
+15. Squat pela proa e pela popa
+</h2>
+
+<div class="widget">
+
+<p>
+O squat pode produzir
+aumento mais acentuado
+do calado de proa
+ou do calado de popa.
+</p>
+
+<p>
+O <strong>Shiphandling for the Mariner</strong>
+destaca que a localização
+do maior aumento do calado
+depende da forma do casco
+e da distribuição longitudinal
+das alterações hidrodinâmicas.
+</p>
+
+<p>
+Consequentemente, não é correto
+afirmar que todos os navios
+afundam predominantemente
+pela proa em águas rasas.
+</p>
+
+<h3>15.1 Representação geométrica</h3>
+
+<p>
+Para pequenas alterações
+da atitude longitudinal,
+a variação do calado
+em uma posição x pode ser
+aproximada por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+ΔT(x) ≈ s + xθ
+</strong>
+</p>
+
+<p>
+Nesta representação:
+</p>
+
+<ul>
+
+<li>
+<strong>s:</strong>
+afundamento vertical
+do ponto de referência;
+</li>
+
+<li>
+<strong>x:</strong>
+distância longitudinal
+ao ponto de referência;
+</li>
+
+<li>
+<strong>θ:</strong>
+pequena rotação longitudinal,
+com convenção de sinais
+escolhida para a expressão.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Essa expressão é uma
+aproximação cinemática
+de pequenas rotações,
+não uma fórmula empírica
+de previsão de squat.
+</p>
+
+
+<!-- =========================================
+     FIGURA SVG
+     VISTA LATERAL
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Afundamento dinâmico e alteração do trim
+</h3>
+
+<svg
+viewBox="0 0 760 430"
+width="100%"
+role="img"
+aria-label="Vista lateral esquemática comparando a posição inicial do casco com uma condição de squat pela proa"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="20" y="65"
+width="720" height="320"
+fill="#dceef7"
+/>
+
+<line
+x1="20" y1="65"
+x2="740" y2="65"
+stroke="#1688b8"
+stroke-width="4"
+/>
+
+<rect
+x="20" y="385"
+width="720" height="20"
+fill="#a58a68"
+/>
+
+<line
+x1="20" y1="385"
+x2="740" y2="385"
+stroke="#765b3c"
+stroke-width="3"
+/>
+
+<!-- POSIÇÃO INICIAL -->
+
+<path
+d="M 120 125
+L 140 225
+L 570 225
+L 635 125"
+fill="none"
+stroke="#52758c"
+stroke-width="4"
+stroke-dasharray="9 7"
+/>
+
+<!-- POSIÇÃO COM SQUAT -->
+
+<path
+d="M 120 145
+L 145 270
+L 570 245
+L 635 145"
+fill="none"
+stroke="#d35438"
+stroke-width="5"
+/>
+
+<!-- INDICAÇÃO DE PROA E POPA -->
+
+<text
+x="95" y="110"
+font-size="17"
+fill="#153b57"
+>
+Popa
+</text>
+
+<text
+x="620" y="110"
+font-size="17"
+fill="#153b57"
+>
+Proa
+</text>
+
+<!-- SETAS DE VARIAÇÃO -->
+
+<line
+x1="185" y1="225"
+x2="185" y2="267"
+stroke="#d35438"
+stroke-width="3"
+/>
+
+<path
+d="M 178 256 L 185 268 L 192 256"
+fill="none"
+stroke="#d35438"
+stroke-width="3"
+/>
+
+<line
+x1="530" y1="225"
+x2="530" y2="245"
+stroke="#d35438"
+stroke-width="3"
+/>
+
+<path
+d="M 523 235 L 530 247 L 537 235"
+fill="none"
+stroke="#d35438"
+stroke-width="3"
+/>
+
+<text
+x="190" y="302"
+font-size="16"
+fill="#a63d27"
+>
+ΔT popa
+</text>
+
+<text
+x="510" y="280"
+font-size="16"
+fill="#a63d27"
+>
+ΔT proa
+</text>
+
+<text
+x="45" y="45"
+font-size="16"
+fill="#153b57"
+>
+Linha azul tracejada: posição inicial
+</text>
+
+<text
+x="390" y="45"
+font-size="16"
+fill="#a63d27"
+>
+Linha vermelha: posição alterada
+</text>
+
+<text
+x="30" y="423"
+font-size="16"
+fill="#765b3c"
+>
+Fundo
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 3.</strong>
+Representação lateral esquemática
+de alteração da posição vertical
+e do trim.
+</p>
+
+<p>
+Neste desenho, o aumento
+do calado de popa é maior
+que o aumento do calado de proa.
+Trata-se de um exemplo
+de squat predominante pela popa.
+</p>
+
+<p>
+A figura não representa
+uma previsão quantitativa
+para um navio específico.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+O ponto de maior aumento
+do calado é operacionalmente
+relevante para a determinação
+da folga mínima abaixo
+da quilha.
+</p>
+
+<p>
+Uma avaliação baseada apenas
+no calado médio pode deixar
+de identificar a condição
+mais crítica ao longo do casco.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 16
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-16"
+data-topico-id="fatores-influenciam-squat"
+>
+
+<h2>
+16. Fatores que influenciam o squat
+</h2>
+
+<div class="widget">
+
+<p>
+O <strong>Shiphandling for the Mariner</strong>,
+página impressa 87,
+relaciona diferentes fatores
+que influenciam a restrição
+do escoamento e,
+consequentemente,
+o fenômeno de squat.
+</p>
+
+<h3>16.1 Velocidade através da água</h3>
+
+<p>
+A velocidade do navio
+em relação à água
+é um dos fatores
+mais importantes.
+</p>
+
+<p>
+O texto apresenta,
+com base em observações
+de navios e modelos,
+uma relação aproximada
+entre squat e o quadrado
+da velocidade.
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+Squat ∝ V²
+</strong>
+</p>
+
+<p>
+Em condições comparáveis,
+duplicar a velocidade
+pode produzir aproximadamente
+quatro vezes o squat.
+</p>
+
+</div>
+
+<p>
+Essa relação é uma aproximação
+utilizada em determinados
+métodos empíricos.
+Não constitui uma lei universal
+para qualquer velocidade,
+casco ou via navegável.
+</p>
+
+<h3>16.2 Relação profundidade/calado</h3>
+
+<p>
+A diminuição da folga
+abaixo da quilha
+altera a passagem da água
+sob o casco.
+</p>
+
+<p>
+A relação h/T
+é um parâmetro importante
+para caracterizar
+essa proximidade.
+</p>
+
+<h3>16.3 Fator de bloqueio</h3>
+
+<p>
+Em um canal de seção
+transversal definida,
+a área ocupada pela seção
+submersa do navio pode
+ser comparada à área
+da seção do canal.
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+B<sub>f</sub> = A<sub>s</sub>/A<sub>c</sub>
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>A<sub>s</sub>:</strong>
+área da seção transversal
+submersa do navio;
+</li>
+
+<li>
+<strong>A<sub>c</sub>:</strong>
+área da seção transversal
+molhada do canal;
+</li>
+
+<li>
+<strong>B<sub>f</sub>:</strong>
+fator de bloqueio geométrico.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Quanto maior a fração
+da seção ocupada pelo navio,
+menor será a área
+disponível para o retorno
+do escoamento.
+</p>
+
+<p>
+Essa relação é especialmente
+importante em canais
+estreitos e confinados.
+</p>
+
+<h3>16.4 Coeficiente de bloco</h3>
+
+<p>
+O coeficiente de bloco
+representa a relação
+entre o volume deslocado
+pelo casco e o volume
+do paralelepípedo definido
+por comprimento,
+boca e calado de referência.
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+C<sub>B</sub> = ∇/(LBT)
+</strong>
+</p>
+
+<p>
+Onde ∇ representa
+o volume deslocado.
+</p>
+
+</div>
+
+<p>
+A geometria do casco
+influencia a distribuição
+do escoamento e das pressões.
+</p>
+
+<p>
+Por isso, navios com
+coeficientes de bloco
+diferentes podem apresentar
+respostas distintas
+em condições semelhantes.
+</p>
+
+<h3>16.5 Deslocamento e aceleração</h3>
+
+<p>
+A publicação também relaciona
+o deslocamento do navio
+e o histórico de aceleração
+entre os fatores relevantes.
+</p>
+
+<p>
+Esses parâmetros influenciam
+a quantidade de água deslocada,
+a evolução temporal do escoamento
+e a resposta dinâmica
+da embarcação.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Não utilizar somente
+o coeficiente de bloco
+para determinar a localização
+do squat máximo.
+</p>
+
+<p>
+A geometria longitudinal
+do casco, a profundidade
+e as condições de escoamento
+também são importantes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-17"
+data-topico-id="formula-barrass-squat"
+>
+
+<h2>
+17. Estimativa empírica do squat — Barrass
+</h2>
+
+<div class="widget">
+
+<p>
+O <strong>Shiphandling for the Mariner</strong>,
+página impressa 88,
+apresenta uma fórmula empírica
+atribuída a C. B. Barrass
+para estimativa do squat.
+</p>
+
+<p>
+A publicação distingue
+uma expressão para águas abertas
+de uma estimativa ampliada
+para águas rasas confinadas.
+</p>
+
+<h3>17.1 Fórmula apresentada para águas abertas</h3>
+
+<div class="destaque">
+
+<p>
+<strong>
+S = C<sub>B</sub>V²/100
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>S:</strong>
+squat estimado, em metros;
+</li>
+
+<li>
+<strong>C<sub>B</sub>:</strong>
+coeficiente de bloco;
+</li>
+
+<li>
+<strong>V:</strong>
+velocidade através da água,
+em nós.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+A expressão possui
+coeficiente numérico empírico
+associado às unidades adotadas.
+Não é uma equação dimensional
+universal independente
+do sistema de unidades.
+</p>
+
+<h3>17.2 Estimativa para águas rasas confinadas</h3>
+
+<p>
+A publicação apresenta
+o dobro da estimativa anterior
+para a condição de águas rasas
+confinadas:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+S = 2C<sub>B</sub>V²/100
+</strong>
+</p>
+
+</div>
+
+<p>
+Esse fator é uma aproximação
+empírica descrita na obra.
+Não deve ser interpretado
+como multiplicador universal
+válido para todos os canais
+e navios.
+</p>
+
+<h3>17.3 Exemplo de cálculo</h3>
+
+<p>
+Considere um navio
+com coeficiente de bloco
+igual a 0,80,
+navegando a 10 nós.
+</p>
+
+<p>
+Para a condição de águas
+rasas confinadas,
+utilizando a expressão
+apresentada na publicação:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+S = 2 × 0,80 × 10²/100
+</strong>
+</p>
+
+<p>
+<strong>
+S = 1,60 m
+</strong>
+</p>
+
+</div>
+
+<p>
+Reduzindo a velocidade
+para 5 nós:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+S = 2 × 0,80 × 5²/100
+</strong>
+</p>
+
+<p>
+<strong>
+S = 0,40 m
+</strong>
+</p>
+
+</div>
+
+<p>
+A redução da velocidade
+pela metade produziu,
+nesse modelo,
+uma redução do squat
+para um quarto
+do valor inicial.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+A fórmula de Barrass
+é um método empírico
+de estimativa.
+</p>
+
+<p>
+O próprio
+<strong>Shiphandling for the Mariner</strong>
+ressalta que a precisão
+dos modelos depende
+do tipo de navio
+e das características
+da via navegável.
+</p>
+
+<p>
+A publicação informa
+que a fórmula pode
+superestimar o squat
+em determinadas condições.
+Isso não significa
+que exista garantia
+de superestimativa
+em qualquer situação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-18"
+data-topico-id="squat-folga-quilha"
+>
+
+<h2>
+18. Squat e folga abaixo da quilha
+</h2>
+
+<div class="widget">
+
+<p>
+O squat modifica
+a posição vertical
+do casco em relação
+à superfície livre
+e ao fundo.
+</p>
+
+<p>
+Consequentemente,
+pode reduzir a folga
+disponível abaixo
+da quilha.
+</p>
+
+<h3>18.1 Representação simplificada</h3>
+
+<p>
+Considerando profundidade
+e calado estático conhecidos,
+sem incluir movimentos
+de onda, incertezas
+ou outras margens,
+a folga inicial é:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+UKC<sub>0</sub> = h − T
+</strong>
+</p>
+
+</div>
+
+<p>
+Se S representar
+o aumento máximo
+do calado devido ao squat,
+a folga mínima simplificada
+pode ser estimada por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+UKC<sub>din</sub> ≈ h − T − S
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa expressão é válida
+somente quando T representa
+o calado estático correspondente
+ao ponto crítico considerado
+e S representa seu aumento
+de calado devido ao squat.
+</p>
+
+<p>
+Não se deve subtrair
+novamente uma alteração
+de trim que já esteja
+incluída em S.
+</p>
+
+<h3>18.2 Exemplo numérico</h3>
+
+<p>
+Considere:
+</p>
+
+<ul>
+
+<li>
+Profundidade: 15,0 m;
+</li>
+
+<li>
+Calado estático no ponto crítico:
+12,0 m;
+</li>
+
+<li>
+Squat estimado nesse ponto:
+1,0 m.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<p>
+<strong>
+UKC<sub>0</sub> = 15 − 12 = 3,0 m
+</strong>
+</p>
+
+<p>
+<strong>
+UKC<sub>din</sub> ≈ 15 − 12 − 1
+</strong>
+</p>
+
+<p>
+<strong>
+UKC<sub>din</sub> ≈ 2,0 m
+</strong>
+</p>
+
+</div>
+
+<p>
+A folga simplificada
+é reduzida de 3,0 m
+para 2,0 m.
+</p>
+
+<p>
+Esse resultado não constitui
+uma avaliação completa
+de segurança da navegação.
+</p>
+
+<h3>18.3 Outras contribuições</h3>
+
+<p>
+Uma avaliação operacional
+de folga abaixo da quilha
+pode exigir consideração
+de fatores adicionais,
+conforme o procedimento
+e os critérios aplicáveis:
+</p>
+
+<ul>
+
+<li>
+Nível efetivo da água;
+</li>
+
+<li>
+Incertezas hidrográficas;
+</li>
+
+<li>
+Movimentos verticais
+e angulares induzidos por ondas;
+</li>
+
+<li>
+Alterações de calado;
+</li>
+
+<li>
+Margens operacionais
+de segurança.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+A folga estática
+não representa necessariamente
+a folga mínima durante
+a passagem do navio.
+</p>
+
+<p>
+Além disso, squat
+e movimentos induzidos
+por ondas são fenômenos
+distintos e devem
+ser tratados conforme
+o método de avaliação
+adotado.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-19"
+data-topico-id="limitacoes-modelos-squat"
+>
+
+<h2>
+19. Limitações dos modelos de previsão do squat
+</h2>
+
+<div class="widget">
+
+<p>
+O <strong>Shiphandling for the Mariner</strong>,
+páginas impressas 89 e 90,
+discute resultados
+de medições de squat
+e a comparação
+entre diferentes
+métodos de previsão.
+</p>
+
+<p>
+A publicação menciona,
+entre outros,
+os métodos associados
+a Barrass, Tuck,
+Eryuzlu e Tothill.
+</p>
+
+<p>
+Os resultados apresentados
+mostram que a qualidade
+das previsões depende
+do tipo de navio
+e das características
+da via navegável.
+</p>
+
+<h3>19.1 Ausência de uma fórmula universal</h3>
+
+<p>
+O squat depende
+de diferentes variáveis
+geométricas e dinâmicas.
+</p>
+
+<p>
+Por esse motivo,
+um método que apresente
+boa concordância
+com medições em determinado
+navio ou canal
+não necessariamente
+apresentará o mesmo
+desempenho em outra condição.
+</p>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+A seleção de um método
+de estimativa do squat
+deve considerar
+sua faixa de validade,
+as características
+do navio e as condições
+da via navegável.
+</p>
+
+</div>
+
+<h3>19.2 Importância das medições</h3>
+
+<p>
+A publicação apresenta
+resultados obtidos
+por sistemas de posicionamento
+diferencial de alta precisão,
+utilizados para investigar
+o comportamento real
+dos navios.
+</p>
+
+<p>
+Essas medições permitem
+comparar os valores
+previstos por diferentes
+formulações com os
+valores observados.
+</p>
+
+<p>
+A concordância entre
+modelo e medição
+deve ser avaliada
+considerando erros,
+dispersão dos resultados
+e condições experimentais.
+</p>
+
+<h3>19.3 Consequência operacional</h3>
+
+<p>
+A utilização de uma
+estimativa simplificada
+não elimina a necessidade
+de considerar as
+características reais
+da embarcação e da
+via navegável.
+</p>
+
+<p>
+Na avaliação operacional,
+a margem de segurança
+não deve depender
+exclusivamente da suposição
+de que determinada fórmula
+sempre superestimará
+o squat.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Distinguir três situações:
+</p>
+
+<ul>
+
+<li>
+Valor de squat medido
+em determinada condição;
+</li>
+
+<li>
+Valor previsto por
+um método empírico;
+</li>
+
+<li>
+Margem operacional
+adotada para o planejamento.
+</li>
+
+</ul>
+
+<p>
+Essas grandezas
+não são equivalentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     GLOSSÁRIO — PARTE 3
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 3
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Squat — Squat:</strong>
+efeito combinado
+do afundamento dinâmico
+e da alteração do trim.
+</li>
+
+<li>
+<strong>Afundamento dinâmico —
+Dynamic sinkage:</strong>
+alteração da posição
+vertical do casco
+durante o movimento.
+</li>
+
+<li>
+<strong>Afundamento médio —
+Mean sinkage:</strong>
+alteração da posição
+vertical média considerada
+na análise.
+</li>
+
+<li>
+<strong>Trim dinâmico —
+Dynamic trim:</strong>
+alteração do trim
+provocada pelas forças
+e momentos hidrodinâmicos.
+</li>
+
+<li>
+<strong>Squat pela proa —
+Squat by the bow:</strong>
+condição em que o maior
+aumento do calado
+ocorre na região de proa.
+</li>
+
+<li>
+<strong>Squat pela popa —
+Squat by the stern:</strong>
+condição em que o maior
+aumento do calado
+ocorre na região de popa.
+</li>
+
+<li>
+<strong>Coeficiente de bloco —
+Block coefficient:</strong>
+relação entre volume
+deslocado e volume
+geométrico de referência.
+</li>
+
+<li>
+<strong>Fator de bloqueio —
+Blockage factor:</strong>
+relação entre a área
+transversal submersa
+do navio e a área
+transversal do canal.
+</li>
+
+<li>
+<strong>Seção mestra —
+Midship section:</strong>
+seção transversal
+de referência do casco.
+</li>
+
+<li>
+<strong>Velocidade através da água —
+Speed through water:</strong>
+velocidade do navio
+relativa à água.
+</li>
+
+<li>
+<strong>Velocidade sobre o fundo —
+Speed over ground:</strong>
+velocidade do navio
+relativa ao fundo terrestre.
+</li>
+
+<li>
+<strong>Folga abaixo da quilha —
+Under-keel clearance:</strong>
+distância entre a parte
+inferior do casco
+e o fundo considerado.
+</li>
+
+<li>
+<strong>Folga dinâmica abaixo da quilha —
+Dynamic under-keel clearance:</strong>
+folga considerada
+durante o movimento,
+incluindo os efeitos
+dinâmicos pertinentes.
+</li>
+
+<li>
+<strong>Modelo empírico —
+Empirical model:</strong>
+formulação construída
+a partir de observações
+ou resultados experimentais.
+</li>
+
+<li>
+<strong>Previsão de squat —
+Squat prediction:</strong>
+estimativa da alteração
+do calado provocada
+pelo fenômeno.
+</li>
+
+<li>
+<strong>Medição de squat —
+Squat measurement:</strong>
+determinação experimental
+da resposta vertical
+e longitudinal do navio.
+</li>
+
+<li>
+<strong>Fórmula de Barrass —
+Barrass formula:</strong>
+formulação empírica
+utilizada para estimar squat.
+</li>
+
+<li>
+<strong>Canal confinado —
+Confined channel:</strong>
+canal cuja geometria
+restringe o escoamento
+ao redor do navio.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Conclusão da Parte 3
+</h2>
+
+<p>
+O squat é um fenômeno
+hidrodinâmico associado
+ao movimento do navio
+e envolve alterações
+da posição vertical
+e do trim.
+</p>
+
+<p>
+Sua magnitude depende
+da velocidade,
+da geometria do casco,
+da profundidade
+e das características
+da via navegável.
+</p>
+
+<p>
+As fórmulas empíricas
+permitem estimativas,
+mas sua aplicação
+deve respeitar
+as hipóteses
+e limitações
+de cada método.
+</p>
+
+<p>
+Na Parte 4,
+serão examinados
+os efeitos de banco,
+incluindo
+<strong>bank suction</strong>,
+<strong>bow cushion</strong>,
+forças laterais,
+momentos de guinada
+e consequências
+para o controle
+do rumo em canais.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 3
+     INSERIR A PARTE 4 ABAIXO
+========================================= -->
+
+    
