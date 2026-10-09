@@ -1,1 +1,1843 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Águas Rasas e Canais - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="aguas-rasas-canais"
+>
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade do Navio</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Águas Rasas e Canais
+</h2>
+
+<p>
+<strong>
+Shallow Water Effects and Restricted Waterways
+</strong>
+</p>
+
+<p>
+Estudo dos efeitos hidrodinâmicos associados
+à navegação em águas de profundidade limitada
+e em vias navegáveis confinadas, considerando
+as modificações no escoamento ao redor do casco,
+na formação de ondas, nas forças e momentos
+hidrodinâmicos e na resposta do navio
+aos comandos de manobra.
+</p>
+
+<p>
+A abordagem integra fundamentos de
+hidrodinâmica naval, interpretação matemática
+e consequências operacionais para a praticagem.
+</p>
+
+</section>
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Águas Rasas e Canais
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Shallow Water Effects and Restricted Waterways
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP — Técnico e Operacional
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize
+a pausa para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+Disciplina: Manobrabilidade do Navio
+</strong>
+</p>
+
+<p>
+Itens do conteúdo programático relacionados
+diretamente ao desenvolvimento desta aula:
+</p>
+
+<ul>
+
+<li>
+<strong>1.8 —</strong>
+Efeitos de águas rasas nas resistências do navio.
+</li>
+
+<li>
+<strong>5.5.2 —</strong>
+Efeitos de águas rasas.
+</li>
+
+<li>
+<strong>5.5.4 —</strong>
+Efeito dos canais.
+</li>
+
+<li>
+<strong>8.11 —</strong>
+Efeitos de águas rasas.
+</li>
+
+<li>
+<strong>8.11.1 —</strong>
+Classificação de águas rasas.
+</li>
+
+<li>
+<strong>8.11.2 —</strong>
+Sinais presenciados a bordo indicativos
+de que o navio está em águas rasas.
+</li>
+
+<li>
+<strong>8.11.3 a 8.11.7 —</strong>
+Desempenho dos navios, forças hidrodinâmicas,
+squat e manobras com lama fluida.
+</li>
+
+<li>
+<strong>8.12 —</strong>
+Efeitos de águas restritas ou confinadas
+e interações.
+</li>
+
+<li>
+<strong>8.12.1 a 8.12.5 —</strong>
+Conceitos, efeitos de banco, canais,
+squat em canais e interações entre navios.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Explicar os mecanismos físicos responsáveis
+pelos efeitos hidrodinâmicos de águas rasas.
+</li>
+
+<li>
+Relacionar profundidade, calado e velocidade
+ao comportamento do escoamento.
+</li>
+
+<li>
+Interpretar os números adimensionais
+utilizados na análise hidrodinâmica.
+</li>
+
+<li>
+Explicar as alterações de resistência,
+formação de ondas, afundamento dinâmico
+e comportamento direcional.
+</li>
+
+<li>
+Analisar os efeitos de bancos, canais
+e interações entre embarcações.
+</li>
+
+<li>
+Aplicar os conceitos ao planejamento
+e à execução de manobras em águas restritas.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Principles of Naval Architecture
+</h3>
+
+<p>
+Referência para fundamentos de resistência,
+escoamento e hidrodinâmica do navio.
+</p>
+
+<h3>
+Practical Ship Hydrodynamics
+</h3>
+
+<p>
+Referência para resistência ao avanço,
+formação de ondas e efeitos de profundidade.
+</p>
+
+<p>
+<strong>Trechos pertinentes:</strong>
+Capítulo 3, especialmente a discussão
+sobre resistência em águas rasas e
+número de Froude de profundidade.
+</p>
+
+<h3>
+Naval Shiphandling
+</h3>
+
+<p>
+Referência complementar para interpretação
+operacional dos efeitos de águas rasas
+na resistência, no afundamento do navio
+e na manobra.
+</p>
+
+<h3>
+Shiphandling for the Mariner
+</h3>
+
+<p>
+Referência complementar de manobra
+e comportamento do navio.
+</p>
+
+<p>
+<strong>Nota bibliográfica:</strong>
+As referências indicadas nesta seção
+serão especificadas progressivamente.
+Não serão atribuídas classificações,
+fórmulas ou resultados experimentais
+a publicações não verificadas.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+Fundamentos hidrodinâmicos das águas rasas.
+</li>
+
+<li>
+Escoamento, resistência e comportamento
+hidrodinâmico do navio.
+</li>
+
+<li>
+Squat: mecanismos físicos, estimativas
+e efeitos da lama fluida.
+</li>
+
+<li>
+Efeitos de banco e controle da guinada.
+</li>
+
+<li>
+Canais confinados, geometria e limites
+operacionais.
+</li>
+
+<li>
+Interações entre navios, aplicações
+operacionais e revisão técnica.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — FUNDAMENTOS HIDRODINÂMICOS
+DAS ÁGUAS RASAS
+</h2>
+
+<p>
+Nesta parte serão estudados os mecanismos
+fundamentais que distinguem o movimento
+de um navio em águas profundas daquele
+observado em águas de profundidade limitada.
+</p>
+
+<p>
+A análise começará pela geometria
+da região navegável e avançará
+para os parâmetros adimensionais,
+a propagação de ondas e as consequências
+hidrodinâmicas do confinamento vertical.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 1
+     DEFINIÇÃO FÍSICA DE ÁGUAS RASAS
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-1"
+data-topico-id="definicao-fisica-aguas-rasas"
+>
+
+<h2>
+1. Conceito hidrodinâmico de águas rasas
+</h2>
+
+<div class="widget">
+
+<p>
+Na hidrodinâmica naval, a expressão
+<strong>shallow water</strong>
+designa uma condição em que a proximidade
+do fundo interfere de maneira significativa
+no escoamento ao redor do casco
+e no sistema de ondas produzido pelo navio.
+</p>
+
+<p>
+Essa definição não depende exclusivamente
+do valor absoluto da profundidade.
+Uma mesma profundidade pode representar
+condições hidrodinâmicas distintas
+para navios com diferentes calados,
+dimensões e velocidades.
+</p>
+
+<p>
+A presença do fundo altera as condições
+de contorno do escoamento, restringindo
+o movimento vertical da água
+e modificando a distribuição de velocidades
+e pressões ao redor da embarcação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Águas rasas constituem uma condição
+hidrodinâmica relativa, cuja intensidade
+depende da interação entre profundidade,
+geometria do navio, velocidade
+e características da via navegável.
+</p>
+
+</div>
+
+
+<p>
+É necessário distinguir dois mecanismos:
+</p>
+
+<ul>
+
+<li>
+<strong>Interferência do fundo no escoamento
+ao redor do casco:</strong>
+depende, entre outros fatores,
+da folga abaixo da quilha
+e da geometria da embarcação.
+</li>
+
+<li>
+<strong>Interferência da profundidade
+na propagação de ondas:</strong>
+depende da relação entre profundidade,
+comprimento de onda e velocidade
+de propagação.
+</li>
+
+</ul>
+
+<p>
+Esses mecanismos estão relacionados,
+mas não são equivalentes.
+A classificação das ondas como rasas
+não determina, isoladamente,
+a intensidade dos efeitos de fundo
+sobre um navio.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confundir águas rasas com águas
+necessariamente estreitas.
+</p>
+
+<p>
+Um navio pode navegar em águas rasas
+sem confinamento lateral significativo,
+assim como pode navegar em um canal estreito
+cuja profundidade seja relativamente grande.
+</p>
+
+<p>
+Quando o confinamento vertical
+e o confinamento lateral ocorrem
+simultaneamente, os efeitos hidrodinâmicos
+podem se combinar.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 2
+     RELAÇÃO PROFUNDIDADE / CALADO
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-2"
+data-topico-id="relacao-profundidade-calado"
+>
+
+<h2>
+2. Relação entre profundidade e calado
+</h2>
+
+<div class="widget">
+
+<p>
+Um dos parâmetros geométricos
+mais importantes para caracterizar
+a proximidade do fundo é a razão
+entre a profundidade disponível
+e o calado do navio.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Relação profundidade/calado
+</h3>
+
+<p>
+<strong>
+h/T
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>h</strong> —
+profundidade local da água;
+</li>
+
+<li>
+<strong>T</strong> —
+calado considerado do navio.
+</li>
+
+</ul>
+
+<p>
+A razão h/T é adimensional.
+</p>
+
+</div>
+
+
+<p>
+Para um navio de calado T,
+navegando em profundidade h,
+a folga geométrica estática
+abaixo da quilha é:
+</p>
+
+<div class="destaque">
+
+<h3>
+Folga estática abaixo da quilha
+</h3>
+
+<p>
+<strong>
+UKC = h − T
+</strong>
+</p>
+
+<p>
+<strong>
+UKC/T = h/T − 1
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Essas expressões representam
+uma condição geométrica simplificada,
+sem considerar ainda squat,
+movimentos verticais, variações
+de nível da água e demais margens
+de segurança.
+</p>
+
+<p>
+À medida que h/T se aproxima
+da unidade, a folga geométrica
+diminui e o fundo passa
+a impor restrições mais severas
+ao escoamento.
+</p>
+
+<p>
+Entretanto, não existe um único valor
+universal de h/T que permita prever,
+isoladamente, todos os efeitos
+de águas rasas.
+</p>
+
+
+<!-- =========================================
+     FIGURA SVG
+     CORTE TRANSVERSAL ESQUEMÁTICO
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Representação geométrica da profundidade,
+calado e folga abaixo da quilha
+</h3>
+
+<svg
+viewBox="0 0 760 400"
+width="100%"
+role="img"
+aria-label="Corte transversal esquemático de um navio mostrando profundidade, calado e folga sob a quilha"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="20" y="65"
+width="720" height="295"
+fill="#dceef7"
+/>
+
+<line
+x1="20" y1="65"
+x2="740" y2="65"
+stroke="#1688b8"
+stroke-width="4"
+/>
+
+<text
+x="35" y="48"
+font-size="17"
+fill="#153b57"
+>
+Superfície livre
+</text>
+
+<path
+d="M 200 65
+L 200 165
+Q 200 225 265 245
+L 495 245
+Q 560 225 560 165
+L 560 65"
+fill="#536b80"
+stroke="#263e52"
+stroke-width="3"
+/>
+
+<rect
+x="20" y="360"
+width="720" height="20"
+fill="#a58a68"
+/>
+
+<line
+x1="20" y1="360"
+x2="740" y2="360"
+stroke="#765b3c"
+stroke-width="3"
+/>
+
+<text
+x="36" y="390"
+font-size="16"
+fill="#765b3c"
+>
+Fundo
+</text>
+
+<line
+x1="625" y1="65"
+x2="625" y2="360"
+stroke="#153b57"
+stroke-width="2"
+/>
+
+<path
+d="M 617 77 L 625 65 L 633 77
+M 617 348 L 625 360 L 633 348"
+stroke="#153b57"
+stroke-width="2"
+fill="none"
+/>
+
+<text
+x="642" y="218"
+font-size="19"
+fill="#153b57"
+>
+h
+</text>
+
+<line
+x1="155" y1="65"
+x2="155" y2="245"
+stroke="#d35438"
+stroke-width="2"
+/>
+
+<path
+d="M 147 77 L 155 65 L 163 77
+M 147 233 L 155 245 L 163 233"
+stroke="#d35438"
+stroke-width="2"
+fill="none"
+/>
+
+<text
+x="130" y="161"
+font-size="19"
+fill="#a63d27"
+>
+T
+</text>
+
+<line
+x1="380" y1="245"
+x2="380" y2="360"
+stroke="#16804b"
+stroke-width="3"
+stroke-dasharray="6 5"
+/>
+
+<text
+x="398" y="308"
+font-size="17"
+fill="#146b41"
+>
+UKC
+</text>
+
+</svg>
+
+<p>
+<strong>Figura 1.</strong>
+Corte transversal esquemático.
+A folga estática UKC corresponde
+à diferença entre a profundidade
+e o calado representados.
+Desenho didático, sem escala.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A folga estática não deve ser confundida
+com a folga dinâmica disponível
+durante a navegação.
+</p>
+
+<p>
+O squat pode aumentar o calado
+efetivo e reduzir a distância
+entre o ponto mais baixo do casco
+e o fundo.
+</p>
+
+<p>
+Além disso, a utilização de um único
+calado T é uma simplificação.
+Em um navio com trim, os calados
+de proa e popa podem ser diferentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 3
+     NÚMERO DE FROUDE DE PROFUNDIDADE
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-3"
+data-topico-id="numero-froude-profundidade"
+>
+
+<h2>
+3. Número de Froude de profundidade
+</h2>
+
+<div class="widget">
+
+<p>
+A análise do comportamento das ondas
+em águas de profundidade limitada
+utiliza o
+<strong>depth Froude number</strong>,
+ou número de Froude de profundidade.
+</p>
+
+<p>
+Esse parâmetro compara a velocidade
+do navio em relação à água
+com a velocidade característica
+de propagação de ondas longas
+em uma profundidade h.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Número de Froude de profundidade
+</h3>
+
+<p>
+<strong>
+Fn<sub>h</sub> = V / √(gh)
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>V</strong> —
+velocidade do navio em relação à água;
+</li>
+
+<li>
+<strong>g</strong> —
+aceleração da gravidade;
+</li>
+
+<li>
+<strong>h</strong> —
+profundidade da água.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Na aproximação de ondas longas
+em águas rasas, a velocidade
+de propagação é:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+c = √(gh)
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Essa expressão é válida para
+ondas de gravidade suficientemente
+longas em relação à profundidade,
+considerando o modelo linear
+de ondas em profundidade uniforme.
+</p>
+
+<p>
+A partir da relação entre V e c,
+distinguem-se três regimes:
+</p>
+
+<ul>
+
+<li>
+<strong>Fn<sub>h</sub> &lt; 1:</strong>
+regime subcrítico;
+</li>
+
+<li>
+<strong>Fn<sub>h</sub> = 1:</strong>
+condição crítica no modelo idealizado;
+</li>
+
+<li>
+<strong>Fn<sub>h</sub> &gt; 1:</strong>
+regime supercrítico.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Interpretação física
+</h3>
+
+<p>
+No regime subcrítico, a velocidade
+do navio é inferior à velocidade
+característica das ondas longas.
+</p>
+
+<p>
+Na condição crítica,
+essas velocidades se igualam.
+O sistema de ondas pode apresentar
+alterações acentuadas e a resistência
+de ondas pode aumentar significativamente.
+</p>
+
+<p>
+No regime supercrítico,
+a velocidade do navio excede
+a velocidade característica
+das ondas longas.
+</p>
+
+</div>
+
+
+<p>
+É importante observar que o número
+de Froude de profundidade não substitui
+o número de Froude baseado
+no comprimento do navio.
+</p>
+
+<p>
+Este último é normalmente expresso por:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+Fn = V / √(gL)
+</strong>
+</p>
+
+<p>
+Onde L representa o comprimento
+característico adotado na análise.
+</p>
+
+</div>
+
+
+<p>
+Os dois números possuem aplicações
+distintas: Fn relaciona a velocidade
+à escala longitudinal do navio,
+enquanto Fn<sub>h</sub> relaciona
+a velocidade à profundidade da água.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confundir o regime crítico
+de propagação de ondas com uma
+velocidade universal de perda
+de governo ou de encalhe.
+</p>
+
+<p>
+A condição Fn<sub>h</sub> = 1
+é um parâmetro hidrodinâmico,
+não um limite operacional único
+aplicável a todos os navios.
+</p>
+
+<p>
+O comportamento real também depende
+da geometria do casco,
+do confinamento lateral
+e de outras características
+do escoamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 4
+     VELOCIDADE CRÍTICA
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-4"
+data-topico-id="velocidade-critica-profundidade"
+>
+
+<h2>
+4. Velocidade crítica associada à profundidade
+</h2>
+
+<div class="widget">
+
+<p>
+A condição Fn<sub>h</sub> = 1
+permite definir uma velocidade
+característica para a profundidade
+considerada.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Velocidade crítica idealizada
+</h3>
+
+<p>
+<strong>
+V<sub>crit</sub> = √(gh)
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Essa velocidade aumenta
+com a raiz quadrada
+da profundidade.
+</p>
+
+<p>
+Consequentemente, para uma mesma
+velocidade de navegação,
+a redução da profundidade
+provoca aumento do número
+de Froude de profundidade.
+</p>
+
+
+<h3>
+Exemplo de aplicação
+</h3>
+
+<p>
+Considere um navio navegando
+em uma região de profundidade
+uniforme de 16 metros.
+</p>
+
+<p>
+Adotando g = 9,81 m/s²:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+V<sub>crit</sub> = √(9,81 × 16)
+</strong>
+</p>
+
+<p>
+<strong>
+V<sub>crit</sub> ≈ 12,53 m/s
+</strong>
+</p>
+
+<p>
+<strong>
+V<sub>crit</sub> ≈ 24,36 nós
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Se a velocidade do navio
+em relação à água for de 10 nós,
+temos aproximadamente:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+V = 5,144 m/s
+</strong>
+</p>
+
+<p>
+<strong>
+Fn<sub>h</sub> =
+5,144 / 12,53 ≈ 0,41
+</strong>
+</p>
+
+</div>
+
+
+<p>
+Portanto, nesse exemplo,
+o navio encontra-se
+no regime subcrítico
+em relação à propagação
+de ondas longas.
+</p>
+
+<p>
+Esse resultado, isoladamente,
+não permite concluir que
+a influência do fundo
+sobre o casco seja desprezível.
+Para isso, seria necessário
+considerar também o calado,
+a folga sob a quilha
+e outras características
+do navio e da via navegável.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O cálculo de Fn<sub>h</sub>
+deve utilizar a velocidade
+relativa à água, e não
+automaticamente a velocidade
+sobre o fundo.
+</p>
+
+<p>
+Na presença de corrente,
+essas velocidades podem diferir
+significativamente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 5
+     SINAIS OBSERVÁVEIS
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-5"
+data-topico-id="sinais-efeitos-aguas-rasas"
+>
+
+<h2>
+5. Sinais associados aos efeitos de águas rasas
+</h2>
+
+<div class="widget">
+
+<p>
+A aproximação do fundo pode produzir
+alterações perceptíveis no comportamento
+hidrodinâmico e operacional do navio.
+</p>
+
+<p>
+Entre os fenômenos que podem ser
+observados, dependendo das condições
+de navegação, destacam-se:
+</p>
+
+<ul>
+
+<li>
+Aumento da resistência ao avanço
+e possível redução de velocidade
+para uma mesma condição de potência.
+</li>
+
+<li>
+Alterações no sistema de ondas
+gerado pelo navio.
+</li>
+
+<li>
+Afundamento dinâmico e alterações
+do trim associados ao squat.
+</li>
+
+<li>
+Modificações na resposta
+do navio aos comandos de leme.
+</li>
+
+<li>
+Alterações das características
+de guinada e da trajetória.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Interpretação operacional
+</h3>
+
+<p>
+Esses sinais não constituem,
+isoladamente, prova conclusiva
+de que o navio esteja sofrendo
+um determinado efeito hidrodinâmico.
+</p>
+
+<p>
+A avaliação deve considerar
+simultaneamente velocidade,
+profundidade, calado,
+condições ambientais
+e informações disponíveis
+sobre a via navegável.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A ausência de sinais facilmente
+perceptíveis na ponte
+não comprova a inexistência
+de efeitos de águas rasas.
+</p>
+
+<p>
+O planejamento da manobra
+não deve depender apenas
+da percepção visual
+do comportamento do navio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 6
+     INTERPRETAÇÃO INTEGRADA
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-6"
+data-topico-id="interpretacao-integrada-aguas-rasas"
+>
+
+<h2>
+6. Interpretação integrada dos parâmetros
+</h2>
+
+<div class="widget">
+
+<p>
+A avaliação técnica de um navio
+em águas rasas exige a consideração
+simultânea de parâmetros geométricos
+e dinâmicos.
+</p>
+
+<p>
+Entre os principais parâmetros
+introduzidos nesta parte estão:
+</p>
+
+<ul>
+
+<li>
+<strong>h/T:</strong>
+proximidade geométrica do fundo
+em relação ao calado.
+</li>
+
+<li>
+<strong>UKC:</strong>
+folga disponível abaixo da quilha
+na condição considerada.
+</li>
+
+<li>
+<strong>Fn<sub>h</sub>:</strong>
+relação entre velocidade do navio
+e velocidade característica
+das ondas longas.
+</li>
+
+<li>
+<strong>Fn:</strong>
+relação entre velocidade e
+comprimento característico do navio.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Síntese hidrodinâmica
+</h3>
+
+<p>
+A razão h/T caracteriza
+a proximidade geométrica
+entre casco e fundo.
+</p>
+
+<p>
+O número Fn<sub>h</sub>
+caracteriza o regime de velocidade
+em relação à propagação
+de ondas longas.
+</p>
+
+<p>
+Esses parâmetros são complementares
+e não devem ser tratados
+como equivalentes.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Duas embarcações navegando
+à mesma velocidade
+e na mesma profundidade
+possuem o mesmo Fn<sub>h</sub>,
+mas podem apresentar
+efeitos de águas rasas
+significativamente diferentes.
+</p>
+
+<p>
+Isso ocorre porque
+suas dimensões, calados
+e formas de casco
+podem ser distintos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 1
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<p>
+Os termos a seguir devem ser reconhecidos
+tanto em português quanto em inglês,
+especialmente em textos técnicos
+de hidrodinâmica e manobrabilidade.
+</p>
+
+<ul>
+
+<li>
+<strong>Águas rasas — Shallow water:</strong>
+condição de profundidade limitada
+com influência hidrodinâmica do fundo.
+</li>
+
+<li>
+<strong>Efeitos de águas rasas —
+Shallow water effects:</strong>
+alterações no escoamento
+e no comportamento do navio
+associadas à proximidade do fundo.
+</li>
+
+<li>
+<strong>Águas restritas —
+Restricted waters:</strong>
+região com restrições geométricas
+ou operacionais à navegação.
+</li>
+
+<li>
+<strong>Águas confinadas —
+Confined waters:</strong>
+região na qual o confinamento
+pode influenciar o escoamento
+e a manobrabilidade.
+</li>
+
+<li>
+<strong>Profundidade da água —
+Water depth:</strong>
+distância vertical entre
+a superfície livre
+e o fundo considerado.
+</li>
+
+<li>
+<strong>Calado — Draft:</strong>
+distância vertical entre
+a linha de flutuação
+e o ponto de referência
+inferior do casco.
+</li>
+
+<li>
+<strong>Folga abaixo da quilha —
+Under-keel clearance (UKC):</strong>
+distância disponível entre
+a parte inferior do navio
+e o fundo.
+</li>
+
+<li>
+<strong>Razão profundidade/calado —
+Depth-to-draft ratio:</strong>
+relação adimensional h/T.
+</li>
+
+<li>
+<strong>Número de Froude de profundidade —
+Depth Froude number:</strong>
+parâmetro adimensional
+Fn<sub>h</sub>.
+</li>
+
+<li>
+<strong>Velocidade crítica —
+Critical speed:</strong>
+velocidade característica
+associada à condição crítica
+do modelo de ondas longas.
+</li>
+
+<li>
+<strong>Regime subcrítico —
+Subcritical flow regime:</strong>
+condição Fn<sub>h</sub> inferior a 1.
+</li>
+
+<li>
+<strong>Regime supercrítico —
+Supercritical flow regime:</strong>
+condição Fn<sub>h</sub> superior a 1.
+</li>
+
+<li>
+<strong>Resistência de ondas —
+Wave-making resistance:</strong>
+componente da resistência
+relacionada à geração
+de ondas pelo navio.
+</li>
+
+<li>
+<strong>Afundamento dinâmico —
+Dynamic sinkage:</strong>
+alteração vertical da posição
+do navio associada ao movimento.
+</li>
+
+<li>
+<strong>Squat — Squat:</strong>
+fenômeno de afundamento dinâmico
+e possível alteração do trim
+do navio em movimento.
+</li>
+
+<li>
+<strong>Trim — Trim:</strong>
+diferença entre os calados
+de proa e popa,
+segundo a convenção adotada.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Conclusão da Parte 1
+</h2>
+
+<p>
+A análise dos efeitos de águas rasas
+exige distinguir a proximidade
+geométrica do fundo
+das características de propagação
+das ondas geradas pelo navio.
+</p>
+
+<p>
+A razão profundidade/calado
+e o número de Froude de profundidade
+fornecem informações complementares,
+mas não substituem uma avaliação
+hidrodinâmica completa.
+</p>
+
+<p>
+Na Parte 2 serão examinadas
+as modificações do escoamento
+ao redor do casco,
+as alterações de pressão,
+a resistência ao avanço
+e suas consequências
+para o comportamento do navio.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 1
+     INSERIR A PARTE 2 ABAIXO
+========================================= -->
+
