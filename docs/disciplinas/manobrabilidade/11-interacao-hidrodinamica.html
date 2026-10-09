@@ -1,1 +1,2191 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Interação Hidrodinâmica | Bridge Trainer PSCPP
+</title>
+
+<link
+rel="stylesheet"
+href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+data-tipo-pagina="aula"
+data-disciplina="manobrabilidade"
+data-aula="interacao-hidrodinamica"
+>
+
+
+<!-- =========================================
+     CABEÇALHO — PADRÃO 1
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>
+Preparação para o Processo Seletivo
+de Praticante de Prático
+</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+type="button"
+onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h1>
+Interação Hidrodinâmica
+</h1>
+
+<p>
+<strong>
+Ship-to-Ship Hydrodynamic Interaction
+</strong>
+</p>
+
+<p>
+Disciplina:
+Manobrabilidade do Navio
+</p>
+
+<p>
+Conteúdo programático:
+Item 8.12.5 —
+Efeitos de interação entre navios
+</p>
+
+<p>
+Aula técnica —
+Bridge Trainer PSCPP
+</p>
+
+</section>
+
+
+<!-- =========================================
+     DASHBOARD E PROGRESSO
+========================================= -->
+
+<section class="widget">
+
+<h2>
+📊 Acompanhamento da aula
+</h2>
+
+<p>
+O progresso dos tópicos
+será acompanhado
+pelo sistema
+do Bridge Trainer PSCPP.
+</p>
+
+<p>
+Os botões de conclusão
+serão inseridos
+automaticamente
+pelo progresso.js.
+</p>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 —
+Fundamentos da Interação Hidrodinâmica
+</h2>
+
+<p>
+<strong>
+Fundamentals of Ship-to-Ship Interaction
+</strong>
+</p>
+
+<p>
+Quando dois navios
+navegam próximos,
+cada embarcação
+altera o escoamento
+da água ao redor
+da outra.
+</p>
+
+<p>
+Essas alterações
+podem produzir
+forças laterais,
+momentos de guinada
+e modificações
+na trajetória.
+</p>
+
+<p>
+A compreensão
+desses mecanismos
+é essencial
+para interpretar
+as situações
+de encontro,
+ultrapassagem
+e passagem
+por navios atracados.
+</p>
+
+<div class="destaque">
+
+<h3>
+Referências desta parte
+</h3>
+
+<p>
+<strong>
+Shiphandling for the Mariner —
+5ª edição:
+</strong>
+Chapter 2,
+Meeting Another Vessel or Tow
+e Overtaking Another Vessel or Tow.
+</p>
+
+<p>
+<strong>
+Naval Shiphandling —
+4ª edição:
+</strong>
+fundamentos das forças
+que atuam sobre o navio
+e manobra
+em águas restritas.
+</p>
+
+<p>
+<strong>
+Conteúdo Programático PSCPP:
+</strong>
+8.12.5 —
+Efeitos de interação
+entre navios.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-1"
+data-topico-id="conceito-interacao-hidrodinamica"
+>
+
+<h2>
+1. Conceito de interação hidrodinâmica
+</h2>
+
+<div class="widget">
+
+<p>
+A interação hidrodinâmica
+entre navios,
+ou
+<strong>
+ship-to-ship hydrodynamic interaction
+</strong>,
+é o fenômeno
+pelo qual a presença
+e o movimento
+de uma embarcação
+alteram o campo
+de escoamento
+ao redor de outra.
+</p>
+
+<p>
+Essas alterações
+modificam
+a distribuição
+de pressões
+sobre os cascos
+e, consequentemente,
+as forças
+e os momentos
+hidrodinâmicos
+atuantes.
+</p>
+
+<h3>
+1.1 Origem física
+</h3>
+
+<p>
+Um navio em movimento
+perturba a água
+ao seu redor.
+</p>
+
+<p>
+Essa perturbação
+envolve alterações
+de velocidade,
+pressão
+e superfície livre.
+</p>
+
+<p>
+Quando outro navio
+se aproxima,
+o escoamento
+produzido por ambos
+passa a interagir.
+</p>
+
+<p>
+O campo resultante
+não corresponde,
+em geral,
+à simples soma
+de dois escoamentos
+independentes.
+</p>
+
+<p>
+Isso ocorre porque
+as condições
+de contorno
+e a geometria
+da região disponível
+para a água
+também se modificam.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A interação hidrodinâmica
+não exige
+contato físico
+entre os navios.
+</p>
+
+<p>
+Ela decorre
+das alterações
+do escoamento
+e das pressões
+ao redor
+dos cascos.
+</p>
+
+</div>
+
+
+<h3>
+1.2 Principais consequências
+</h3>
+
+<p>
+As consequências
+podem incluir:
+</p>
+
+<ul>
+
+<li>
+Forças laterais
+de atração
+ou repulsão;
+</li>
+
+<li>
+Momentos
+de guinada;
+</li>
+
+<li>
+Alterações
+da trajetória;
+</li>
+
+<li>
+Mudanças
+na resposta
+aos comandos
+de governo;
+</li>
+
+<li>
+Alterações
+do afundamento
+dinâmico.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+O efeito
+mais importante
+para a manobra
+não é apenas
+a força lateral
+instantânea.
+</p>
+
+<p>
+É necessário
+considerar também
+o momento de guinada
+e a evolução
+dessas grandezas
+durante a passagem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-2"
+data-topico-id="campo-pressao-velocidade-navios"
+>
+
+<h2>
+2. Campo de pressão e velocidade
+</h2>
+
+<div class="widget">
+
+<p>
+O escoamento
+ao redor de um navio
+apresenta regiões
+com diferentes
+velocidades
+e pressões.
+</p>
+
+<p>
+A aproximação
+de outro casco
+altera a geometria
+disponível
+para a passagem
+da água.
+</p>
+
+<p>
+Essa alteração
+pode produzir
+aceleração local
+do escoamento
+e mudanças
+na pressão.
+</p>
+
+
+<h3>
+2.1 Relação entre velocidade e pressão
+</h3>
+
+<p>
+Em uma aproximação
+idealizada,
+para escoamento
+estacionário,
+incompressível,
+invíscido
+e ao longo
+de uma linha
+de corrente,
+a equação
+de Bernoulli
+pode ser escrita:
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Equação de Bernoulli
+</h3>
+
+<p>
+<strong>
+p + ½ρV² + ρgz = constante
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>p:</strong>
+pressão;
+</li>
+
+<li>
+<strong>ρ:</strong>
+massa específica
+da água;
+</li>
+
+<li>
+<strong>V:</strong>
+velocidade
+local do escoamento;
+</li>
+
+<li>
+<strong>g:</strong>
+aceleração
+da gravidade;
+</li>
+
+<li>
+<strong>z:</strong>
+cota vertical.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Na comparação
+entre pontos
+de mesma cota,
+sob as hipóteses
+indicadas,
+o aumento
+da velocidade
+está associado
+à redução
+da pressão estática.
+</p>
+
+<p>
+Entretanto,
+o escoamento
+real entre navios
+é tridimensional,
+viscoso,
+não uniforme
+e pode apresentar
+forte dependência
+do tempo.
+</p>
+
+<p>
+Por essa razão,
+a equação
+de Bernoulli
+é utilizada aqui
+para interpretação
+conceitual,
+não para calcular
+diretamente
+as forças
+de interação.
+</p>
+
+
+<h3>
+2.2 Região entre os cascos
+</h3>
+
+<p>
+Quando dois navios
+passam próximos,
+a região
+entre os cascos
+pode apresentar
+escoamento acelerado
+e alterações
+importantes
+de pressão.
+</p>
+
+<p>
+A distribuição
+dessas alterações
+depende
+da posição relativa
+das embarcações.
+</p>
+
+<p>
+Portanto,
+não se deve concluir
+que toda a extensão
+da região
+entre os cascos
+apresenta
+a mesma pressão.
+</p>
+
+
+<!-- =========================================
+     FIGURA 1 — VISTA SUPERIOR
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 1 —
+Proximidade lateral
+entre dois navios
+</h3>
+
+<svg
+viewBox="0 0 760 440"
+width="100%"
+role="img"
+aria-label="Vista superior de dois navios paralelos, ambos com proa para a direita, mostrando a região de interação entre os cascos"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<!-- ÁGUA -->
+
+<rect
+x="10"
+y="10"
+width="740"
+height="420"
+rx="12"
+fill="#dceef7"
+/>
+
+<!-- NAVIO A -->
+
+<path
+d="M 105 130
+L 105 80
+Q 105 65 125 65
+L 545 65
+Q 615 65 675 105
+Q 615 145 545 145
+L 125 145
+Q 105 145 105 130 Z"
+fill="#526d85"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- NAVIO B -->
+
+<path
+d="M 105 360
+L 105 310
+Q 105 295 125 295
+L 545 295
+Q 615 295 675 335
+Q 615 375 545 375
+L 125 375
+Q 105 375 105 360 Z"
+fill="#71899d"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- LINHAS CENTRAIS -->
+
+<line
+x1="130"
+y1="105"
+x2="635"
+y2="105"
+stroke="#ffffff"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<line
+x1="130"
+y1="335"
+x2="635"
+y2="335"
+stroke="#ffffff"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<!-- REGIÃO DE INTERAÇÃO -->
+
+<rect
+x="145"
+y="158"
+width="450"
+height="124"
+rx="14"
+fill="#1688b8"
+fill-opacity="0.12"
+stroke="#1688b8"
+stroke-width="2"
+stroke-dasharray="8 7"
+/>
+
+<text
+x="228"
+y="205"
+font-size="19"
+fill="#153b57"
+>
+Região de interação
+</text>
+
+<text
+x="244"
+y="231"
+font-size="17"
+fill="#153b57"
+>
+hidrodinâmica
+</text>
+
+<!-- SENTIDO DE AVANÇO A -->
+
+<line
+x1="370"
+y1="42"
+x2="505"
+y2="42"
+stroke="#153b57"
+stroke-width="3"
+/>
+
+<path
+d="M 490 34 L 507 42 L 490 50"
+fill="none"
+stroke="#153b57"
+stroke-width="3"
+/>
+
+<!-- SENTIDO DE AVANÇO B -->
+
+<line
+x1="370"
+y1="400"
+x2="505"
+y2="400"
+stroke="#153b57"
+stroke-width="3"
+/>
+
+<path
+d="M 490 392 L 507 400 L 490 408"
+fill="none"
+stroke="#153b57"
+stroke-width="3"
+/>
+
+<!-- IDENTIFICAÇÃO -->
+
+<text
+x="125"
+y="91"
+font-size="18"
+fill="#ffffff"
+>
+Navio A
+</text>
+
+<text
+x="125"
+y="321"
+font-size="18"
+fill="#ffffff"
+>
+Navio B
+</text>
+
+<text
+x="592"
+y="90"
+font-size="15"
+fill="#ffffff"
+>
+Proa
+</text>
+
+<text
+x="592"
+y="320"
+font-size="15"
+fill="#ffffff"
+>
+Proa
+</text>
+
+</svg>
+
+<p>
+<strong>
+Representação esquemática,
+em vista superior.
+</strong>
+</p>
+
+<p>
+As duas embarcações
+apresentam proas
+orientadas para a direita.
+</p>
+
+<p>
+A região destacada
+indica apenas
+a proximidade
+hidrodinâmica
+entre os cascos.
+</p>
+
+<p>
+Não representa
+uma distribuição
+quantitativa
+de pressão
+ou velocidade.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+A expressão
+"efeito de sucção"
+não deve ser utilizada
+como explicação
+única de todas
+as interações.
+</p>
+
+<p>
+As forças resultantes
+dependem
+da distribuição
+completa
+das pressões
+sobre os cascos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-3"
+data-topico-id="forcas-laterais-interacao"
+>
+
+<h2>
+3. Forças laterais de interação
+</h2>
+
+<div class="widget">
+
+<p>
+As diferenças
+de pressão
+entre os bordos
+de um navio
+podem produzir
+uma força lateral
+resultante.
+</p>
+
+<p>
+Essa força
+pode atuar
+em direção
+à outra embarcação
+ou em sentido oposto,
+dependendo
+da distribuição
+de pressões
+existente
+naquele instante.
+</p>
+
+
+<h3>
+3.1 Resultante de pressão
+</h3>
+
+<p>
+A força exercida
+pela pressão
+sobre a superfície
+molhada do casco
+pode ser representada
+por uma integral
+de superfície.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Força hidrodinâmica
+de pressão
+</h3>
+
+<p>
+<strong>
+F<sub>p</sub>
+= −∫<sub>S</sub> p n dS
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>S:</strong>
+superfície molhada
+considerada;
+</li>
+
+<li>
+<strong>p:</strong>
+pressão local;
+</li>
+
+<li>
+<strong>n:</strong>
+vetor normal
+à superfície,
+orientado
+para fora
+do casco;
+</li>
+
+<li>
+<strong>dS:</strong>
+elemento
+de área.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+A componente
+transversal
+dessa resultante
+contribui
+para a força
+lateral Y.
+</p>
+
+<p>
+Em uma análise
+hidrodinâmica completa,
+também podem existir
+contribuições
+de tensões viscosas.
+</p>
+
+
+<h3>
+3.2 Convenção de sinais
+</h3>
+
+<p>
+Para interpretar
+a direção
+das forças,
+é necessário
+estabelecer
+um sistema
+de coordenadas.
+</p>
+
+<p>
+Nesta aula,
+adotaremos
+uma convenção
+de eixos
+solidários
+ao navio:
+</p>
+
+<ul>
+
+<li>
+<strong>x positivo:</strong>
+em direção
+à proa;
+</li>
+
+<li>
+<strong>y positivo:</strong>
+para boreste;
+</li>
+
+<li>
+<strong>z positivo:</strong>
+para baixo.
+</li>
+
+</ul>
+
+<p>
+Com essa convenção,
+uma força lateral
+para boreste
+possui componente
+Y positiva.
+</p>
+
+<p>
+Uma força lateral
+para bombordo
+possui componente
+Y negativa.
+</p>
+
+
+<!-- =========================================
+     FIGURA 2 — SISTEMA DE EIXOS
+========================================= -->
+
+<div class="figura-aula">
+
+<h3>
+Figura 2 —
+Eixos horizontais
+do navio
+</h3>
+
+<svg
+viewBox="0 0 760 430"
+width="100%"
+role="img"
+aria-label="Vista superior de um navio com proa para cima, eixo x positivo para a proa e eixo y positivo para boreste"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<rect
+x="15"
+y="15"
+width="730"
+height="400"
+rx="12"
+fill="#dceef7"
+/>
+
+<!-- CASCO -->
+
+<path
+d="M 380 55
+Q 420 110 425 160
+L 425 330
+Q 425 360 400 375
+L 360 375
+Q 335 360 335 330
+L 335 160
+Q 340 110 380 55 Z"
+fill="#617b90"
+stroke="#29465e"
+stroke-width="3"
+/>
+
+<!-- CENTRO -->
+
+<circle
+cx="380"
+cy="220"
+r="7"
+fill="#ffffff"
+stroke="#153b57"
+stroke-width="2"
+/>
+
+<!-- EIXO X -->
+
+<line
+x1="380"
+y1="220"
+x2="380"
+y2="90"
+stroke="#153b57"
+stroke-width="4"
+/>
+
+<path
+d="M 371 105 L 380 88 L 389 105"
+fill="none"
+stroke="#153b57"
+stroke-width="4"
+/>
+
+<!-- EIXO Y -->
+
+<line
+x1="380"
+y1="220"
+x2="550"
+y2="220"
+stroke="#b24c35"
+stroke-width="4"
+/>
+
+<path
+d="M 535 211 L 552 220 L 535 229"
+fill="none"
+stroke="#b24c35"
+stroke-width="4"
+/>
+
+<!-- RÓTULOS -->
+
+<text
+x="397"
+y="105"
+font-size="19"
+fill="#153b57"
+>
++x
+</text>
+
+<text
+x="555"
+y="212"
+font-size="19"
+fill="#a13e2c"
+>
++y
+</text>
+
+<text
+x="435"
+y="160"
+font-size="18"
+fill="#153b57"
+>
+Boreste
+</text>
+
+<text
+x="230"
+y="160"
+font-size="18"
+fill="#153b57"
+>
+Bombordo
+</text>
+
+<text
+x="345"
+y="42"
+font-size="18"
+fill="#153b57"
+>
+Proa
+</text>
+
+<text
+x="345"
+y="401"
+font-size="18"
+fill="#153b57"
+>
+Popa
+</text>
+
+</svg>
+
+<p>
+<strong>
+Vista superior.
+</strong>
+</p>
+
+<p>
+O eixo x positivo
+aponta para a proa,
+e o eixo y positivo
+aponta para boreste.
+</p>
+
+<p>
+A orientação
+do eixo vertical z
+é indicada
+no texto,
+não sendo representada
+nesta vista superior.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma força lateral
+não determina,
+isoladamente,
+o sentido
+da guinada.
+</p>
+
+<p>
+Para avaliar
+a tendência
+de rotação,
+também é necessário
+considerar
+onde a força atua
+em relação
+ao centro
+de referência.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-4"
+data-topico-id="momento-guinada-interacao"
+>
+
+<h2>
+4. Momento de guinada produzido pela interação
+</h2>
+
+<div class="widget">
+
+<p>
+As forças
+hidrodinâmicas
+não atuam
+necessariamente
+de maneira
+uniforme
+ao longo
+do comprimento
+do navio.
+</p>
+
+<p>
+Quando a distribuição
+de forças
+apresenta
+uma resultante
+com braço
+em relação
+ao centro
+de referência,
+pode surgir
+um momento
+de guinada.
+</p>
+
+
+<h3>
+4.1 Definição de momento
+</h3>
+
+<p>
+O momento
+de uma força
+em relação
+a um ponto
+pode ser representado
+pelo produto vetorial:
+</p>
+
+
+<div class="destaque">
+
+<p>
+<strong>
+M = r × F
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>M:</strong>
+vetor momento;
+</li>
+
+<li>
+<strong>r:</strong>
+vetor posição
+do ponto
+de aplicação
+da força
+em relação
+ao ponto
+de referência;
+</li>
+
+<li>
+<strong>F:</strong>
+vetor força.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Na análise
+do movimento
+horizontal,
+o momento
+em torno
+do eixo vertical
+está associado
+à guinada.
+</p>
+
+<p>
+Usando os eixos
+definidos
+no tópico anterior,
+a componente
+de momento
+em torno
+do eixo vertical
+pode ser obtida
+a partir
+das forças
+e de seus
+braços.
+</p>
+
+
+<h3>
+4.2 Forças distribuídas
+</h3>
+
+<p>
+Em uma interação
+entre navios,
+a pressão
+pode variar
+ao longo
+da proa,
+da região central
+e da popa.
+</p>
+
+<p>
+Assim,
+a força lateral
+resultante
+e o momento
+de guinada
+resultante
+devem ser avaliados
+separadamente.
+</p>
+
+<p>
+Um navio
+pode experimentar
+força lateral
+para determinado
+bordo
+e, simultaneamente,
+momento de guinada
+que desloca
+sua proa
+para o bordo
+oposto.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Distinção essencial
+</h3>
+
+<p>
+<strong>
+Força lateral:
+</strong>
+contribui
+para a aceleração
+transversal.
+</p>
+
+<p>
+<strong>
+Momento de guinada:
+</strong>
+contribui
+para a aceleração
+angular
+em torno
+do eixo vertical.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Durante uma passagem,
+a direção
+e a intensidade
+do momento
+de guinada
+podem mudar
+conforme
+a posição relativa
+das embarcações.
+</p>
+
+<p>
+Por isso,
+a tendência
+observada
+no início
+de uma interação
+não precisa
+permanecer
+igual
+até o final.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-5"
+data-topico-id="posicao-relativa-navios"
+>
+
+<h2>
+5. Importância da posição relativa dos navios
+</h2>
+
+<div class="widget">
+
+<p>
+A interação
+hidrodinâmica
+depende fortemente
+da posição
+de um navio
+em relação
+ao outro.
+</p>
+
+<p>
+À medida
+que as embarcações
+se aproximam
+e passam
+uma pela outra,
+diferentes regiões
+dos cascos
+ficam próximas.
+</p>
+
+
+<h3>
+5.1 Regiões relevantes
+</h3>
+
+<p>
+Podemos distinguir,
+de maneira
+conceitual:
+</p>
+
+<ul>
+
+<li>
+Proa próxima
+à proa;
+</li>
+
+<li>
+Proa próxima
+à região central
+do outro navio;
+</li>
+
+<li>
+Proa próxima
+à popa;
+</li>
+
+<li>
+Regiões centrais
+aproximadamente
+pelo través;
+</li>
+
+<li>
+Popa próxima
+à popa.
+</li>
+
+</ul>
+
+
+<p>
+Cada configuração
+corresponde
+a uma geometria
+diferente
+para o escoamento.
+</p>
+
+<p>
+Consequentemente,
+a distribuição
+de pressões
+e as forças
+de interação
+podem mudar.
+</p>
+
+
+<h3>
+5.2 Evolução temporal
+</h3>
+
+<p>
+As forças
+de interação
+dependem
+da posição relativa
+e do movimento
+dos navios.
+</p>
+
+<p>
+Uma representação
+conceitual é:
+</p>
+
+
+<div class="destaque">
+
+<p>
+<strong>
+Y<sub>int</sub> = f(P, V, G, h)
+</strong>
+</p>
+
+<p>
+<strong>
+N<sub>int</sub> = g(P, V, G, h)
+</strong>
+</p>
+
+<p>
+Onde:
+</p>
+
+<ul>
+
+<li>
+<strong>P:</strong>
+posição relativa
+dos navios;
+</li>
+
+<li>
+<strong>V:</strong>
+condições
+de velocidade;
+</li>
+
+<li>
+<strong>G:</strong>
+geometria
+dos cascos
+e da via navegável;
+</li>
+
+<li>
+<strong>h:</strong>
+profundidade
+da água.
+</li>
+
+</ul>
+
+<p>
+As funções
+f e g
+são apenas
+representações
+conceituais
+de dependência,
+não modelos
+numéricos
+de previsão.
+</p>
+
+</div>
+
+
+<h3>
+5.3 Consequência operacional
+</h3>
+
+<p>
+Uma embarcação
+pode apresentar
+diferentes tendências
+de movimento
+durante
+uma única passagem.
+</p>
+
+<p>
+Isso explica
+por que
+o controle
+da guinada
+deve considerar
+a evolução
+da interação,
+e não apenas
+a condição
+instantânea.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não interpretar
+a interação
+entre navios
+como uma força
+de atração
+constante.
+</p>
+
+<p>
+O fenômeno
+é dinâmico
+e depende
+da configuração
+relativa
+dos cascos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="topico-6"
+data-topico-id="fatores-intensidade-interacao"
+>
+
+<h2>
+6. Fatores que influenciam a intensidade da interação
+</h2>
+
+<div class="widget">
+
+<p>
+A intensidade
+das forças
+hidrodinâmicas
+entre navios
+depende
+de diferentes
+fatores
+geométricos
+e operacionais.
+</p>
+
+
+<h3>
+6.1 Separação lateral
+</h3>
+
+<p>
+A distância
+entre os cascos
+influencia
+a região disponível
+para o escoamento.
+</p>
+
+<p>
+A redução
+da separação
+pode intensificar
+as alterações
+de pressão
+e as forças
+de interação.
+</p>
+
+
+<h3>
+6.2 Velocidade
+</h3>
+
+<p>
+As velocidades
+das embarcações
+influenciam
+os campos
+de escoamento
+e as pressões
+hidrodinâmicas.
+</p>
+
+<p>
+A diferença
+de velocidades
+também influencia
+o tempo
+durante o qual
+os navios
+permanecem
+em determinadas
+posições relativas.
+</p>
+
+
+<h3>
+6.3 Profundidade
+</h3>
+
+<p>
+A proximidade
+do fundo
+modifica
+o escoamento
+e pode alterar
+a intensidade
+das interações.
+</p>
+
+<p>
+Esse efeito
+é especialmente
+relevante
+em canais
+e águas rasas.
+</p>
+
+
+<h3>
+6.4 Dimensões e formas dos cascos
+</h3>
+
+<p>
+Comprimento,
+boca,
+calado
+e formas
+dos cascos
+influenciam
+a distribuição
+de pressões
+e a evolução
+das forças.
+</p>
+
+
+<h3>
+6.5 Geometria do canal
+</h3>
+
+<p>
+A largura,
+a profundidade
+e a configuração
+das margens
+podem modificar
+o escoamento
+ao redor
+das embarcações.
+</p>
+
+<p>
+Por essa razão,
+a interação
+entre dois navios
+em águas amplas
+não precisa
+apresentar
+o mesmo comportamento
+observado
+em um canal
+estreito.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+A avaliação
+de uma passagem
+deve considerar
+simultaneamente:
+</p>
+
+<ul>
+
+<li>
+Distância
+entre os navios;
+</li>
+
+<li>
+Velocidades
+individuais
+e relativas;
+</li>
+
+<li>
+Dimensões
+das embarcações;
+</li>
+
+<li>
+Profundidade;
+</li>
+
+<li>
+Geometria
+da via navegável.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção do Prático
+</h3>
+
+<p>
+Não existe
+uma distância
+lateral universal
+que elimine
+os efeitos
+de interação
+para todos
+os navios
+e canais.
+</p>
+
+<p>
+A análise
+depende
+das condições
+específicas
+da manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     GLOSSÁRIO TÉCNICO — PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico —
+Parte 1
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>
+Ship-to-Ship Interaction:
+</strong>
+interação hidrodinâmica
+entre navios.
+</li>
+
+<li>
+<strong>
+Hydrodynamic Force:
+</strong>
+força hidrodinâmica.
+</li>
+
+<li>
+<strong>
+Lateral Force:
+</strong>
+força lateral.
+</li>
+
+<li>
+<strong>
+Yaw Moment:
+</strong>
+momento de guinada.
+</li>
+
+<li>
+<strong>
+Pressure Distribution:
+</strong>
+distribuição
+de pressões.
+</li>
+
+<li>
+<strong>
+Flow Field:
+</strong>
+campo
+de escoamento.
+</li>
+
+<li>
+<strong>
+Relative Position:
+</strong>
+posição relativa.
+</li>
+
+<li>
+<strong>
+Relative Velocity:
+</strong>
+velocidade relativa.
+</li>
+
+<li>
+<strong>
+Lateral Separation:
+</strong>
+separação lateral.
+</li>
+
+<li>
+<strong>
+Meeting:
+</strong>
+encontro
+entre embarcações.
+</li>
+
+<li>
+<strong>
+Overtaking:
+</strong>
+ultrapassagem.
+</li>
+
+<li>
+<strong>
+Passing Vessel:
+</strong>
+navio passante.
+</li>
+
+<li>
+<strong>
+Moored Vessel:
+</strong>
+navio atracado
+ou amarrado.
+</li>
+
+<li>
+<strong>
+Sway:
+</strong>
+movimento lateral
+de translação.
+</li>
+
+<li>
+<strong>
+Yaw:
+</strong>
+movimento de guinada.
+</li>
+
+<li>
+<strong>
+Pressure Field:
+</strong>
+campo de pressão.
+</li>
+
+<li>
+<strong>
+Boundary Conditions:
+</strong>
+condições de contorno.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ENCERRAMENTO DA PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+Conclusão da Parte 1
+</h2>
+
+<p>
+A interação
+hidrodinâmica
+entre navios
+resulta
+da modificação
+do escoamento
+e da distribuição
+de pressões
+ao redor
+dos cascos.
+</p>
+
+<p>
+As forças
+laterais
+e os momentos
+de guinada
+dependem
+das posições
+relativas,
+das velocidades
+e das características
+geométricas
+das embarcações
+e da via navegável.
+</p>
+
+<p>
+A compreensão
+desses fundamentos
+permitirá
+analisar,
+nas próximas partes,
+as situações
+de passagem
+por navio atracado,
+ultrapassagem
+e encontro
+entre embarcações.
+</p>
+
+<div class="destaque">
+
+<h3>
+Próxima etapa
+</h3>
+
+<p>
+<strong>
+Parte 2 —
+Interação durante a passagem
+por um navio atracado.
+</strong>
+</p>
+
+<p>
+Item 8.12.5.1
+do conteúdo programático.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FIM DA PARTE 1
+
+     INSERIR A PARTE 2 ABAIXO
+
+     NÃO FECHAR MAIN, BODY OU HTML
+     NESTA ETAPA
+========================================= -->
+
