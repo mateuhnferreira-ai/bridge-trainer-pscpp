@@ -1,1 +1,1831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Fundeio, Suspender e Amarração - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="arte-naval"
+    data-aula="fundeio-amarracao"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Arte Naval</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Fundeio, Suspender e Amarração
+</h2>
+
+<p>
+<strong>
+Anchoring, Weighing Anchor and Mooring
+</strong>
+</p>
+
+<p>
+Estudo dos equipamentos, fundamentos e manobras
+relacionados ao fundeio, à suspensão do ferro
+e à amarração do navio, com identificação dos
+componentes, explicação de seu funcionamento
+e aplicação operacional conforme as referências.
+</p>
+
+</section>
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Arte Naval
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Fundeio, Suspender e Amarração
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Anchoring, Weighing Anchor and Mooring
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+    type="button"
+    class="botao pomodoro-botao pomodoro-botao-iniciar"
+    id="pomodoro-btn-start"
+    onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+    type="button"
+    class="botao pomodoro-botao"
+    id="pomodoro-btn-pause"
+    onclick="pausarPomodoro()"
+    disabled
+>
+⏸ Pausar
+</button>
+
+<button
+    type="button"
+    class="botao pomodoro-botao"
+    onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+
+     NÃO ALTERAR:
+     - data-disciplina
+     - data-aula
+     - IDs permanentes dos tópicos
+     - nomes das classes estruturais
+     - IDs do progresso e do Pomodoro
+
+     OS BOTÕES DE PROGRESSO DOS TÓPICOS
+     SERÃO CRIADOS PELO progresso.js.
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+II — Arte Naval
+</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>Item 3:</strong>
+Manobras de fundear, suspender, amarrar,
+rocegar, amarrar à boia e largar da boia.
+</li>
+
+<li>
+<strong>Item 11:</strong>
+Amarração.
+</li>
+
+<li>
+<strong>Item 14:</strong>
+Aparelho de fundear e suspender.
+</li>
+
+</ul>
+
+<p>
+<strong>Fonte:</strong>
+Conteúdo Programático — FINAL,
+página 8 do PDF fornecido.
+</p>
+
+<h3>
+Tópicos desenvolvidos na Parte 1
+</h3>
+
+<ul>
+
+<li data-progresso-topico="fundeio-p1-aparelho">
+O aparelho de fundear e suspender.
+</li>
+
+<li data-progresso-topico="fundeio-p1-nomenclatura">
+Nomenclatura das âncoras.
+</li>
+
+<li data-progresso-topico="fundeio-p1-almirantado">
+Âncora tipo Almirantado.
+</li>
+
+<li data-progresso-topico="fundeio-p1-patente">
+Âncoras tipo patente.
+</li>
+
+<li data-progresso-topico="fundeio-p1-danforth-especiais">
+Danforth, âncoras especiais e poitas.
+</li>
+
+<li data-progresso-topico="fundeio-p1-presa-fundo">
+Poder de unhar e ação sobre o fundo.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta parte, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Identificar os componentes principais
+do aparelho de fundear e suspender.
+</li>
+
+<li>
+Reconhecer a nomenclatura das âncoras
+e distinguir partes que pertencem
+a tipos específicos.
+</li>
+
+<li>
+Comparar Almirantado, patente e Danforth
+quanto à construção e ao funcionamento.
+</li>
+
+<li>
+Distinguir os empregos de ancorotes,
+fateixas, busca-vidas, gatas,
+âncoras cogumelo e poitas.
+</li>
+
+<li>
+Explicar a influência do desenho,
+da natureza do fundo e da direção
+da tração sobre a presa da âncora.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Arte Naval — 8ª edição, 2019
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Maurílio M. Fonseca.
+</p>
+
+<p>
+<strong>Base técnica desta parte:</strong>
+capítulo 10 — Aparelho de Fundear e Suspender,
+Seção A — Âncoras.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+artigos 10.1 a 10.5,
+páginas impressas 705–713.
+No PDF fornecido do Volume II,
+correspondem às páginas 67–75 do arquivo.
+</p>
+
+<ul>
+
+<li>
+10.1 — Descrição sumária do aparelho
+de fundear e suspender.
+</li>
+
+<li>
+10.2 — Nomenclatura das âncoras.
+</li>
+
+<li>
+10.3 — Tipos de âncoras.
+</li>
+
+<li>
+10.4 — Requisitos das âncoras.
+</li>
+
+<li>
+10.5 — Estudo sobre a ação das âncoras
+no fundo do mar.
+</li>
+
+</ul>
+
+<p>
+<strong>Figuras utilizadas:</strong>
+10-1, 10-2 e 10-3,
+páginas impressas 707–709.
+</p>
+
+<h3>
+Conteúdo Programático — FINAL
+</h3>
+
+<p>
+Utilizado para delimitar a correspondência
+da aula com os itens de Arte Naval.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<p>
+O desenvolvimento seguirá esta sequência:
+</p>
+
+<ol>
+
+<li>
+Fundamentos do fundeio e tipos de âncoras.
+</li>
+
+<li>
+Amarras, acessórios e máquinas de suspender.
+</li>
+
+<li>
+Planejamento e execução do fundeio.
+</li>
+
+<li>
+Permanência no fundeadouro e suspensão do ferro.
+</li>
+
+<li>
+Fundamentos e equipamentos de amarração.
+</li>
+
+<li>
+Manobras de amarração e operações com boias.
+</li>
+
+<li>
+Revisão técnica, exercícios
+e gabarito comentado.
+</li>
+
+</ol>
+
+<p>
+Cada parte terá seu glossário português–inglês.
+Os procedimentos e critérios operacionais
+serão desenvolvidos com indicação
+dos trechos efetivamente consultados.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — Fundamentos do fundeio e tipos de âncoras
+</h2>
+
+<p>
+<strong>
+Anchoring Fundamentals and Anchor Types
+</strong>
+</p>
+
+<p>
+O estudo do fundeio começa pela compreensão
+do conjunto que mantém o navio no fundeadouro:
+âncora, amarra, máquina de suspender
+e acessórios.
+</p>
+
+<p>
+Nesta parte, estudaremos a nomenclatura,
+as diferenças construtivas entre os tipos
+de âncora e os fundamentos de sua ação
+sobre o fundo.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-aparelho"
+    data-topico-id="fundeio-p1-aparelho"
+>
+
+<h2>
+1. O aparelho de fundear e suspender
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o artigo 10.1 de
+<em>Arte Naval</em>, o aparelho
+de fundear e suspender é constituído
+pelas âncoras, amarras, máquinas de suspender
+e acessórios, incluindo manilhas, escovéns,
+gateiras, mordentes e boças.
+</p>
+
+<p>
+As âncoras são também chamadas, a bordo,
+de <strong>ferros</strong>.
+Servem para aguentar o navio no fundeadouro,
+evitando seu arrastamento por forças externas,
+como vento, correnteza e ondas.
+</p>
+
+<p>
+Por efeito de seu peso e desenho,
+a âncora pode fazer presa no fundo.
+Ao ser içada pela amarra, deve permitir
+seu desprendimento.
+</p>
+
+<h3>
+1.1. Ligação entre a âncora e o navio
+</h3>
+
+<p>
+Na descrição da publicação,
+a âncora é ligada por manilha à amarra,
+constituída por uma cadeia de elos especiais
+com malhetes.
+</p>
+
+<p>
+A amarra sobe ao convés através do
+<strong>escovém</strong>.
+Nas âncoras tipo patente,
+esse componente também aloja a haste
+quando o ferro está recolhido.
+</p>
+
+<p>
+Do convés, a amarra desce ao paiol
+por um conduto denominado
+<strong>buzina da amarra</strong>.
+Sua extremidade interior fica presa
+no paiol.
+</p>
+
+<h3>
+1.2. Máquina de suspender
+</h3>
+
+<p>
+A máquina aciona um cabrestante ou molinete.
+Sua <strong>coroa de Barbotin</strong>
+possui cavidades que recebem os elos,
+permitindo alar a amarra.
+</p>
+
+<p>
+As <strong>boças</strong> e os
+<strong>mordentes</strong> têm a função
+de aguentar a amarra e retirar o esforço
+do freio da máquina, conforme a disposição
+do aparelho descrita no artigo 10.1.
+</p>
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O fundeio depende do funcionamento
+de um conjunto.
+A âncora faz presa no fundo;
+a amarra liga o ferro ao navio;
+a máquina permite sua movimentação;
+e os dispositivos de retenção
+agu entam a amarra.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda as funções:
+o escovém conduz a amarra e pode alojar
+a haste; a coroa de Barbotin recebe os elos;
+boças e mordentes aguentam a amarra.
+Esses componentes serão detalhados
+na próxima parte.
+</p>
+
+</div>
+
+<p>
+<strong>Referência:</strong>
+Arte Naval, artigo 10.1,
+páginas 705–706.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-nomenclatura"
+    data-topico-id="fundeio-p1-nomenclatura"
+>
+
+<h2>
+2. Nomenclatura das âncoras
+</h2>
+
+<div class="widget">
+
+<p>
+O artigo 10.2 apresenta a nomenclatura
+a partir de uma âncora tipo Almirantado.
+Algumas partes pertencem a tipos específicos
+e não devem ser atribuídas indistintamente
+a todas as âncoras.
+</p>
+
+<ul>
+
+<li>
+<strong>Haste:</strong>
+barra principal da âncora.
+Sua extremidade inferior se une aos braços;
+na superior encontra-se a ligação
+com o anete.
+</li>
+
+<li>
+<strong>Braços:</strong>
+ramos que partem da extremidade inferior
+da haste. No Almirantado, são curvos.
+</li>
+
+<li>
+<strong>Cruz:</strong>
+região de união da haste com os braços.
+</li>
+
+<li>
+<strong>Patas:</strong>
+superfícies aproximadamente triangulares
+situadas nas extremidades dos braços.
+</li>
+
+<li>
+<strong>Unhas:</strong>
+vértices exteriores das patas.
+</li>
+
+<li>
+<strong>Orelhas:</strong>
+os outros dois vértices de cada pata,
+distintos da unha.
+</li>
+
+<li>
+<strong>Anete:</strong>
+arganéu ou manilha na extremidade superior
+da haste, onde se liga a amarra.
+</li>
+
+<li>
+<strong>Cavirão:</strong>
+pino que prende o anete pelo furo
+da extremidade superior da haste.
+</li>
+
+<li>
+<strong>Cepo:</strong>
+barra transversal cuja disposição
+depende do tipo de âncora.
+No Almirantado, fica na parte superior
+da haste, perpendicularmente aos braços.
+</li>
+
+<li>
+<strong>Noz:</strong>
+engrossamento da haste no local
+de passagem do cepo, na descrição
+do Almirantado.
+</li>
+
+<li>
+<strong>Palma:</strong>
+aresta saliente na base inferior
+dos braços das âncoras tipo patente.
+</li>
+
+</ul>
+
+<figure class="figura-aula">
+
+<img
+    src="../../img/arte-naval/ancoras-tipos-arte-naval.png"
+    alt="Figuras de Arte Naval mostrando a nomenclatura da âncora Almirantado, as âncoras patente Dunn e Baldt e a âncora Danforth com cepo na cruz."
+    loading="lazy"
+    style="display:block; width:100%; max-width:900px; height:auto; margin:0 auto;"
+>
+
+<figcaption>
+
+<strong>
+Figura 1 — Tipos e nomenclatura das âncoras.
+</strong>
+
+Reunião das figuras 10-1, 10-2 e 10-3
+de Arte Naval, 8ª edição,
+páginas 707–709.
+As ilustrações possuem escalas distintas;
+não devem ser utilizadas para comparar
+dimensões entre os modelos.
+
+</figcaption>
+
+</figure>
+
+<div class="destaque">
+
+<h3>
+Pata e unha são diferentes
+</h3>
+
+<p>
+A <strong>pata</strong> é uma superfície;
+a <strong>unha</strong> é seu vértice exterior.
+Essa distinção permite descrever
+corretamente a penetração da âncora.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Cepo</strong> e
+<strong>palma</strong> não são sinônimos.
+O cepo é uma barra transversal;
+a palma é a saliência da base dos braços
+descrita para as âncoras tipo patente.
+</p>
+
+</div>
+
+<p>
+<strong>Referência:</strong>
+Arte Naval, artigo 10.2,
+páginas 706–707.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-almirantado"
+    data-topico-id="fundeio-p1-almirantado"
+>
+
+<h2>
+3. Âncora tipo Almirantado
+</h2>
+
+<div class="widget">
+
+<p>
+A âncora tipo Almirantado possui
+<strong>cepo perpendicular ao plano
+dos braços</strong>, braços curvos
+e patas que fazem presa no fundo.
+</p>
+
+<p>
+Arte Naval explica que esse tipo
+foi substituído como âncora padrão
+dos navios pelas âncoras tipo patente,
+principalmente pelas dificuldades
+de manobra e arrumação a bordo.
+</p>
+
+<h3>
+3.1. Função do cepo
+</h3>
+
+<p>
+Quando a âncora cai com os braços
+aproximadamente horizontais
+e o cepo apoiado sobre uma extremidade,
+fica numa posição instável.
+</p>
+
+<p>
+A tração da amarra tende a fazê-la
+deitar sobre o cepo, colocando uma
+das unhas em posição de penetrar
+no fundo.
+</p>
+
+<p>
+As esferas nas extremidades do cepo
+dificultam que ele se enterre
+antes de a unha fazer presa.
+O cepo participa, portanto,
+do posicionamento da âncora para unhar.
+</p>
+
+<h3>
+3.2. Ação da pata
+</h3>
+
+<p>
+Depois de unhada, a curvatura do braço
+favorece o aprofundamento da pata
+quando a amarra exerce esforço horizontal
+ou pouco inclinado em relação ao fundo.
+</p>
+
+<p>
+Na suspensão, o esforço dirigido
+verticalmente tende a trazer a unha
+para cima, facilitando o desprendimento.
+</p>
+
+<div class="destaque">
+
+<h3>
+Relação entre forma e funcionamento
+</h3>
+
+<p>
+O cepo ajuda a posicionar a unha;
+o braço curvo e a pata participam
+da penetração e da retenção.
+A geometria também favorece a liberação
+quando muda a direção do esforço.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A existência de duas patas não significa
+que ambas trabalhem simultaneamente
+na condição usual descrita
+para o Almirantado.
+O mecanismo apresentado pela publicação
+coloca uma pata em posição
+de fazer presa.
+</p>
+
+</div>
+
+<p>
+<strong>Referências:</strong>
+Arte Naval, artigo 10.3, alínea a,
+páginas 707–708; e artigo 10.5,
+alínea a, páginas 711–712.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-patente"
+    data-topico-id="fundeio-p1-patente"
+>
+
+<h2>
+4. Âncoras tipo patente
+</h2>
+
+<div class="widget">
+
+<p>
+As âncoras tipo patente apresentadas
+em Arte Naval <strong>não possuem cepo</strong>
+e têm a haste articulada aos braços.
+Entre os modelos citados estão
+Martin, Smith, Hall, Dunn e Baldt.
+</p>
+
+<p>
+O artigo 10.3 descreve movimento
+dos braços entre <strong>30° e 45°
+para cada lado da haste</strong>,
+conforme a construção.
+Esses são os valores apresentados
+pela publicação para essa família.
+</p>
+
+<h3>
+4.1. Palma e movimento dos braços
+</h3>
+
+<p>
+A base inferior dos braços possui
+uma saliência denominada palma.
+Quando ela encontra apoio no fundo
+e a amarra exerce esforço
+aproximadamente horizontal,
+a geometria favorece a orientação
+dos braços para baixo
+e a penetração das unhas.
+</p>
+
+<p>
+As duas patas estão dispostas
+de modo que, quando uma unha,
+a outra também fica unhada,
+conforme a descrição do autor.
+</p>
+
+<h3>
+4.2. Articulação e arrumação
+</h3>
+
+<p>
+A ausência de cepo e a articulação
+permitem recolher a haste no escovém,
+facilitando a manobra
+e a arrumação a bordo.
+Essa é a grande vantagem
+destacada pela publicação.
+</p>
+
+<p>
+O artigo também ressalta a necessidade
+de uma articulação bem ajustada,
+para evitar a entrada de pequenos
+corpos estranhos que possam
+impedir o movimento.
+</p>
+
+<div class="destaque">
+
+<h3>
+Comparação conforme a fonte
+</h3>
+
+<p>
+Arte Naval atribui às âncoras tipo patente
+descritas menor poder de unhar
+que ao Almirantado,
+compensado, em determinadas condições
+de fundo, por maior filame.
+</p>
+
+<p>
+Essa comparação deve ser entendida
+no contexto dos tipos tratados
+pelo autor, sem generalização automática
+para todo projeto moderno
+de âncora sem cepo.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Patente não é um único modelo.</strong>
+É a categoria utilizada pela publicação
+para vários desenhos de âncoras.
+</p>
+
+<p>
+Também não significa simplesmente
+qualquer âncora com braços articulados:
+a Danforth é tratada separadamente
+e possui cepo.
+</p>
+
+</div>
+
+<p>
+<strong>Referências:</strong>
+Arte Naval, artigo 10.3, alínea b,
+páginas 708–709; e artigo 10.5,
+alínea b, páginas 712–713.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-danforth-especiais"
+    data-topico-id="fundeio-p1-danforth-especiais"
+>
+
+<h2>
+5. Danforth, âncoras especiais e poitas
+</h2>
+
+<div class="widget">
+
+<h3>
+5.1. Âncora Danforth
+</h3>
+
+<p>
+A Danforth possui braços semelhantes
+aos das âncoras tipo patente,
+porém mais compridos e afilados.
+Seu <strong>cepo fica na cruz,
+paralelo ao plano dos braços</strong>.
+</p>
+
+<p>
+Essa posição do cepo é uma diferença
+fundamental em relação ao Almirantado.
+Segundo a publicação, ela permite
+a entrada da âncora no escovém.
+</p>
+
+<p>
+Arte Naval destaca seu poder de unhar
+e seu emprego na popa de embarcações
+de desembarque que devem aterrar
+nas praias. Aponta também
+maior dificuldade para arrancá-la
+do fundo.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Comparação quantitativa na bibliografia
+</h3>
+
+<p>
+O artigo 10.3, alínea c,
+admite para a Danforth poder de unhar
+igual a dez vezes o das âncoras tipo patente
+e a três vezes o do Almirantado
+de mesmo peso.
+</p>
+
+<p>
+Esses números são uma afirmação
+da fonte, que não apresenta nesse trecho
+as condições de ensaio.
+Não devem ser utilizados como
+multiplicadores universais
+para dimensionar um fundeio real.
+</p>
+
+</div>
+
+<h3>
+5.2. Ancorote
+</h3>
+
+<p>
+É uma âncora pequena,
+do tipo Almirantado ou patente,
+utilizada em embarcações miúdas
+ou como ferro auxiliar nas amarrações.
+A denominação está relacionada
+ao porte e ao emprego.
+</p>
+
+<h3>
+5.3. Fateixa
+</h3>
+
+<p>
+É um ancorote sem cepo,
+com haste cilíndrica e quatro braços
+curvos dotados de patas e unhas.
+A publicação indica seu uso
+no fundeio de embarcações miúdas.
+</p>
+
+<h3>
+5.4. Busca-vida
+</h3>
+
+<p>
+Assemelha-se a uma fateixa,
+mas possui quatro ou cinco braços
+<strong>sem patas</strong>,
+terminados em pontas agudas.
+</p>
+
+<p>
+Sua função indicada é
+<strong>rocegar objetos perdidos
+no fundo</strong>, como amarras
+e âncoras.
+</p>
+
+<h3>
+5.5. Gata
+</h3>
+
+<p>
+É semelhante ao Almirantado,
+porém com um só braço e cepo pequeno.
+A publicação a destina
+a amarrações fixas.
+</p>
+
+<h3>
+5.6. Cogumelo
+</h3>
+
+<p>
+Possui formato de cogumelo
+e também é utilizado
+em amarrações fixas.
+</p>
+
+<h3>
+5.7. Poita
+</h3>
+
+<p>
+A publicação descreve poitas
+confeccionadas em ferro fundido
+ou concreto armado,
+com um forte arganéu para ligação.
+São utilizadas em amarrações fixas.
+</p>
+
+<div class="destaque">
+
+<h3>
+Diferenciar pelo emprego
+</h3>
+
+<ul>
+
+<li>
+<strong>Fateixa:</strong>
+fundeio de embarcações miúdas.
+</li>
+
+<li>
+<strong>Busca-vida:</strong>
+recuperação de objetos por rocega.
+</li>
+
+<li>
+<strong>Gata, cogumelo e poita:</strong>
+amarrações fixas.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+<strong>Referência:</strong>
+Arte Naval, artigo 10.3,
+alíneas c e d,
+páginas 709–711.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fundeio-p1-presa-fundo"
+    data-topico-id="fundeio-p1-presa-fundo"
+>
+
+<h2>
+6. Poder de unhar e ação sobre o fundo
+</h2>
+
+<div class="widget">
+
+<h3>
+6.1. Requisitos de uma boa âncora
+</h3>
+
+<p>
+O artigo 10.4 apresenta quatro requisitos:
+</p>
+
+<ol>
+
+<li>
+Unhar rapidamente e aguentar firme
+quando o navio rabeia sobre a amarra.
+</li>
+
+<li>
+Soltar-se com facilidade
+quando a amarra é içada.
+</li>
+
+<li>
+Apresentar dificuldade
+para entocar ou encepar.
+</li>
+
+<li>
+Permitir facilidade de manobra
+e arrumação a bordo.
+</li>
+
+</ol>
+
+<p>
+<strong>Entocar</strong> significa
+enrascar a amarra nos braços
+ou nas patas.
+<strong>Encepar</strong> significa
+enrascar a amarra no cepo.
+O autor explica que essas condições
+prejudicam a segurança da presa.
+</p>
+
+<h3>
+6.2. Influência da natureza do fundo
+</h3>
+
+<p>
+O poder de unhar depende do peso
+e do desenho da âncora,
+especialmente das patas.
+A publicação associa hastes longas
+e patas agudas a melhor comportamento
+em areia, enquanto indica preferência
+por patas largas em lama.
+</p>
+
+<p>
+O aumento da área das patas
+pode melhorar a presa,
+mas não pode ser considerado isoladamente:
+o autor ressalta o compromisso
+com a capacidade de unhar rapidamente.
+</p>
+
+<div class="destaque">
+
+<h3>
+Peso não explica sozinho a retenção
+</h3>
+
+<p>
+O funcionamento envolve
+<strong>peso, geometria,
+natureza do fundo e direção
+da tração</strong>.
+Duas âncoras de mesmo peso
+podem ter comportamentos distintos.
+</p>
+
+</div>
+
+<h3>
+6.3. Direção da tração e filame
+</h3>
+
+<p>
+O artigo 10.5 explica que o esforço
+horizontal ou pouco inclinado
+favorece a ação da âncora no fundo.
+Para obter essa condição,
+é necessário largar amarra
+em comprimento superior
+à profundidade do local.
+</p>
+
+<p>
+Esse comprimento largado
+é denominado <strong>filame</strong>.
+As relações de filame
+e os critérios de sua escolha
+serão estudados na parte dedicada
+às amarras e ao fundeio.
+</p>
+
+<p>
+Ao suspender, a mudança da direção
+do esforço para uma orientação
+mais vertical favorece
+o desprendimento do ferro,
+conforme a geometria descrita
+pelo autor.
+</p>
+
+<h3>
+6.4. Interação entre âncora e amarra
+</h3>
+
+<p>
+A publicação destaca o papel
+do peso da amarra depois
+de a âncora fazer presa.
+Isso reforça a necessidade
+de estudar o conjunto,
+em vez de atribuir toda a retenção
+exclusivamente ao peso do ferro.
+</p>
+
+<p>
+Para interpretar fisicamente
+o sistema, a amarra transmite
+a tração, enquanto a âncora
+e o fundo oferecem a resistência
+necessária. O peso e a configuração
+da amarra influenciam a direção
+do esforço aplicado à âncora.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Aplicação operacional
+</h3>
+
+<p>
+A âncora ter alcançado o fundo
+não significa que já tenha unhado.
+Também não se pode escolher
+o filame somente pelo tipo
+de âncora.
+</p>
+
+<p>
+Nesta parte estudamos os fundamentos.
+A execução da manobra
+e a verificação da presa
+serão desenvolvidas
+nos blocos operacionais da aula.
+</p>
+
+</div>
+
+<p>
+<strong>Referências:</strong>
+Arte Naval, artigos 10.4 e 10.5,
+páginas 711–713.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese da Parte 1
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+O aparelho de fundear e suspender
+é um conjunto de equipamentos.
+</li>
+
+<li>
+No Almirantado, o cepo
+é perpendicular ao plano dos braços.
+</li>
+
+<li>
+As âncoras tipo patente descritas
+não possuem cepo
+e têm braços articulados.
+</li>
+
+<li>
+Na Danforth, o cepo fica na cruz,
+paralelo ao plano dos braços.
+</li>
+
+<li>
+Fateixa e busca-vida possuem
+finalidades distintas e diferem
+pela presença ou ausência de patas.
+</li>
+
+<li>
+Peso, desenho, fundo e direção
+da tração participam
+do funcionamento da âncora.
+</li>
+
+<li>
+Esforço aproximadamente horizontal
+favorece a presa; sua mudança
+para a direção vertical participa
+do desprendimento ao suspender.
+</li>
+
+</ul>
+
+<p>
+<strong>Referência desta parte:</strong>
+FONSECA, Maurílio M.
+<em>Arte Naval</em>. 8ª ed.
+Rio de Janeiro: Marinha do Brasil, 2019.
+Volume II do arquivo fornecido,
+capítulo 10, artigos 10.1–10.5,
+páginas impressas 705–713.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     GLOSSÁRIO PORTUGUÊS–INGLÊS
+     FINAL DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário português–inglês — Parte 1
+</h2>
+
+<div class="widget">
+
+<p>
+Equivalentes técnicos para leitura
+das publicações em inglês,
+com o significado correspondente
+aos conceitos estudados nesta parte.
+</p>
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Anchoring — Fundeio:</strong>
+operação de estabelecer a retenção
+do navio por sua âncora e amarra.
+</li>
+
+<li>
+<strong>Weighing anchor — Suspender o ferro:</strong>
+operação de recolher a âncora,
+incluindo seu desprendimento do fundo.
+</li>
+
+<li>
+<strong>Anchor — Âncora / ferro:</strong>
+elemento que faz presa no fundo.
+</li>
+
+<li>
+<strong>Anchor chain / chain cable — Amarra:</strong>
+cadeia que liga a âncora ao navio.
+Nesse contexto, “cable” não significa
+necessariamente cabo de fibras.
+</li>
+
+<li>
+<strong>Shank — Haste:</strong>
+elemento principal da âncora.
+</li>
+
+<li>
+<strong>Arm — Braço:</strong>
+ramo ligado à região inferior
+da haste.
+</li>
+
+<li>
+<strong>Crown — Cruz:</strong>
+região de encontro da haste
+com os braços.
+</li>
+
+<li>
+<strong>Fluke — Pata:</strong>
+superfície que participa
+da presa no fundo.
+</li>
+
+<li>
+<strong>Stock — Cepo:</strong>
+barra transversal presente
+em determinados tipos de âncora.
+</li>
+
+<li>
+<strong>Anchor ring / anchor shackle — Anete:</strong>
+arganéu ou manilha de ligação
+na extremidade superior da haste,
+conforme a construção.
+</li>
+
+<li>
+<strong>Admiralty-pattern anchor — Âncora tipo Almirantado:</strong>
+tipo com cepo perpendicular
+ao plano dos braços.
+</li>
+
+<li>
+<strong>Stockless anchor — Âncora sem cepo:</strong>
+designação em inglês aplicável
+às âncoras tipo patente
+descritas nesta parte.
+</li>
+
+<li>
+<strong>Danforth anchor — Âncora Danforth:</strong>
+tipo com cepo na cruz,
+paralelo ao plano dos braços.
+</li>
+
+<li>
+<strong>Grapnel — Fateixa / garatéia:</strong>
+termo cujo equivalente depende
+da construção e da finalidade.
+Distinguir a fateixa de fundeio
+do busca-vida de rocega.
+</li>
+
+<li>
+<strong>Mushroom anchor — Âncora cogumelo:</strong>
+tipo utilizado em amarrações fixas.
+</li>
+
+<li>
+<strong>Hawse pipe — Escovém:</strong>
+passagem da amarra entre
+o exterior do casco e o convés.
+</li>
+
+<li>
+<strong>Chain locker — Paiol da amarra:</strong>
+compartimento de armazenamento
+da amarra.
+</li>
+
+<li>
+<strong>Anchor windlass — Molinete de fundeio:</strong>
+máquina utilizada para manobrar
+a amarra.
+</li>
+
+<li>
+<strong>Chain wheel / wildcat — Coroa de Barbotin:</strong>
+roda com cavidades que recebem
+os elos da amarra.
+</li>
+
+<li>
+<strong>Holding power — Poder de retenção:</strong>
+capacidade de resistir ao esforço
+que tende a deslocar a âncora.
+</li>
+
+<li>
+<strong>Dragging anchor — Garrar:</strong>
+arrastamento da âncora pelo fundo,
+com perda da retenção pretendida.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+<strong>Nota terminológica:</strong>
+filame é o comprimento de amarra largado.
+A palavra inglesa <em>scope</em>
+também é empregada para a relação
+entre comprimento largado
+e distância vertical.
+Essa relação será definida
+quando estudarmos seu cálculo.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+
+     ENCERRAMENTO DA PARTE 1
+
+     A PRÓXIMA PARTE DEVERÁ SER COLADA ABAIXO
+     DESTE COMENTÁRIO, SEM APAGAR OU SUBSTITUIR
+     O CONTEÚDO ANTERIOR.
+
+     PRÓXIMA:
+     PARTE 2 — AMARRAS, ACESSÓRIOS
+     E MÁQUINAS DE SUSPENDER.
+
+     NÃO FECHAR main, body OU html AGORA.
+
+     O RODAPÉ, OS SCRIPTS OBRIGATÓRIOS
+     E O FECHAMENTO DO ARQUIVO
+     SERÃO INSERIDOS NA ÚLTIMA PARTE.
+
+===================================================== -->
