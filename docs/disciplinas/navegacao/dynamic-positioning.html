@@ -1882,3 +1882,3065 @@ no instrumento correspondente.
      OS SCRIPTS OBRIGATÓRIOS SERÃO INSERIDOS
      NO ENCERRAMENTO DA AULA.
 ===================================================== -->
+
+
+<!-- =========================================
+     PARTE 2
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 2 — Arquitetura do sistema, energia e geração de empuxo
+</h2>
+
+<p>
+Uma instalação DP depende da atuação conjunta dos
+sistemas de energia, propulsores e controle.
+Nesta parte, serão examinadas as funções desses
+subsistemas e as condições necessárias para que
+um comando de controle se transforme em força
+e momento efetivamente disponíveis à embarcação.
+</p>
+
+<p>
+Os requisitos apresentados têm como referência
+a MSC.1/Circ.1580. A análise detalhada das classes
+de equipamento e dos critérios de falha será
+desenvolvida na Parte 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-arquitetura-subsistemas"
+data-topico-id="dp-arquitetura-subsistemas"
+>
+
+<h2>
+8. Os três subsistemas da instalação DP
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.11 da MSC.1/Circ.1580 define
+<strong>DP system</strong> como a instalação
+completa necessária ao posicionamento dinâmico.
+Ela compreende, sem se limitar a eles,
+os seguintes subsistemas:
+</p>
+
+<ul>
+
+<li>
+<strong>Power system:</strong>
+sistema de energia.
+</li>
+
+<li>
+<strong>Thruster system:</strong>
+sistema de propulsores.
+</li>
+
+<li>
+<strong>DP control system:</strong>
+sistema de controle DP.
+</li>
+
+</ul>
+
+<p>
+Essa divisão é funcional. Ela permite identificar
+como a energia é fornecida, como o empuxo é produzido
+e como os comandos são determinados e transmitidos.
+Os subsistemas precisam funcionar conjuntamente
+para que a capacidade de posicionamento seja obtida.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O sistema de controle DP é uma parte da instalação.
+Ele não representa, isoladamente, o sistema DP completo.
+</p>
+
+<p>
+Um computador operacional não assegura manutenção
+de posição se a alimentação dos propulsores,
+seus acionamentos ou seus sistemas auxiliares
+estiverem indisponíveis.
+</p>
+
+</div>
+
+
+<figure class="figura-aula">
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 760 470"
+    width="100%"
+    role="img"
+    aria-labelledby="dp-arquitetura-titulo dp-arquitetura-descricao"
+>
+
+<title id="dp-arquitetura-titulo">
+Arquitetura funcional de uma instalação DP
+</title>
+
+<desc id="dp-arquitetura-descricao">
+Diagrama dos sistemas de energia, controle e propulsores.
+A energia alimenta o controle e os acionamentos.
+O controle envia comandos aos propulsores e recebe
+informações de estado. Os propulsores produzem
+força e momento sobre a embarcação.
+</desc>
+
+<defs>
+
+<marker
+    id="dp-arquitetura-seta"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="5"
+    orient="auto-start-reverse"
+>
+
+<path
+    d="M 0 0 L 10 5 L 0 10 Z"
+    fill="#176b87"
+/>
+
+</marker>
+
+</defs>
+
+<rect
+    x="1"
+    y="1"
+    width="758"
+    height="468"
+    rx="16"
+    fill="#f7fafc"
+    stroke="#d5e5ee"
+/>
+
+<text
+    x="380"
+    y="35"
+    text-anchor="middle"
+    font-size="21"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#0b3a53"
+>
+Instalação DP — integração funcional
+</text>
+
+<rect
+    x="240"
+    y="65"
+    width="280"
+    height="80"
+    rx="12"
+    fill="#0b3a53"
+/>
+
+<text
+    x="380"
+    y="97"
+    text-anchor="middle"
+    font-size="20"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#ffffff"
+>
+Sistema de energia
+</text>
+
+<text
+    x="380"
+    y="124"
+    text-anchor="middle"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#ffffff"
+>
+Geração, distribuição e alimentação
+</text>
+
+<rect
+    x="55"
+    y="220"
+    width="280"
+    height="90"
+    rx="12"
+    fill="#ffffff"
+    stroke="#176b87"
+    stroke-width="2"
+/>
+
+<text
+    x="195"
+    y="253"
+    text-anchor="middle"
+    font-size="20"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#0b3a53"
+>
+Controle DP
+</text>
+
+<text
+    x="195"
+    y="281"
+    text-anchor="middle"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Informações e comandos
+</text>
+
+<rect
+    x="425"
+    y="220"
+    width="280"
+    height="90"
+    rx="12"
+    fill="#ffffff"
+    stroke="#176b87"
+    stroke-width="2"
+/>
+
+<text
+    x="565"
+    y="253"
+    text-anchor="middle"
+    font-size="20"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#0b3a53"
+>
+Sistema de propulsores
+</text>
+
+<text
+    x="565"
+    y="281"
+    text-anchor="middle"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Acionamentos e auxiliares
+</text>
+
+<path
+    d="M 280 145 L 195 220"
+    fill="none"
+    stroke="#176b87"
+    stroke-width="3"
+    marker-end="url(#dp-arquitetura-seta)"
+/>
+
+<text
+    x="133"
+    y="177"
+    font-size="15"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Alimentação do controle
+</text>
+
+<path
+    d="M 480 145 L 565 220"
+    fill="none"
+    stroke="#176b87"
+    stroke-width="3"
+    marker-end="url(#dp-arquitetura-seta)"
+/>
+
+<text
+    x="490"
+    y="177"
+    font-size="15"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Energia dos acionamentos
+</text>
+
+<line
+    x1="335"
+    y1="240"
+    x2="425"
+    y2="240"
+    stroke="#176b87"
+    stroke-width="3"
+    marker-end="url(#dp-arquitetura-seta)"
+/>
+
+<text
+    x="380"
+    y="225"
+    text-anchor="middle"
+    font-size="14"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Comandos
+</text>
+
+<line
+    x1="425"
+    y1="293"
+    x2="335"
+    y2="293"
+    stroke="#176b87"
+    stroke-width="3"
+    marker-end="url(#dp-arquitetura-seta)"
+/>
+
+<text
+    x="380"
+    y="327"
+    text-anchor="middle"
+    font-size="14"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Estado e resposta
+</text>
+
+<rect
+    x="410"
+    y="375"
+    width="310"
+    height="65"
+    rx="12"
+    fill="#e8f2f7"
+    stroke="#176b87"
+/>
+
+<line
+    x1="565"
+    y1="310"
+    x2="565"
+    y2="375"
+    stroke="#176b87"
+    stroke-width="3"
+    marker-end="url(#dp-arquitetura-seta)"
+/>
+
+<text
+    x="565"
+    y="403"
+    text-anchor="middle"
+    font-size="18"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#0b3a53"
+>
+Forças e momento de guinada
+</text>
+
+<text
+    x="565"
+    y="426"
+    text-anchor="middle"
+    font-size="15"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Ação efetiva sobre a embarcação
+</text>
+
+</svg>
+
+<figcaption>
+Diagrama funcional simplificado. Não representa
+um projeto elétrico, a distribuição dos grupos
+redundantes ou todas as interfaces da instalação.
+</figcaption>
+
+</figure>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §1.2.11,
+página impressa 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-energia-componentes"
+data-topico-id="dp-energia-componentes"
+>
+
+<h2>
+9. Sistema de energia: componentes e dependências
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.20 define o
+<strong>sistema de energia</strong> como o conjunto
+de componentes e sistemas necessários para
+fornecer energia ao sistema DP.
+</p>
+
+<p>
+A definição inclui, sem se limitar a eles:
+</p>
+
+<ul>
+
+<li>
+<strong>Máquinas motrizes e auxiliares:</strong>
+sistemas necessários de combustível, resfriamento,
+pré-lubrificação, lubrificação, hidráulica,
+pré-aquecimento e pneumática, incluindo tubulações.
+</li>
+
+<li>
+<strong>Geradores:</strong>
+equipamentos responsáveis pela geração elétrica.
+</li>
+
+<li>
+<strong>Quadros elétricos:</strong>
+equipamentos de conexão, distribuição e proteção.
+</li>
+
+<li>
+<strong>Sistemas de distribuição:</strong>
+cabos e seus encaminhamentos.
+</li>
+
+<li>
+<strong>Fontes de alimentação:</strong>
+incluindo fontes ininterruptas, ou UPS.
+</li>
+
+<li>
+<strong>Sistemas de gerenciamento de energia:</strong>
+quando aplicáveis.
+</li>
+
+</ul>
+
+<p>
+A inclusão dos auxiliares é relevante: um equipamento
+pode estar mecanicamente íntegro e, ainda assim,
+ficar indisponível por perda de uma função necessária
+ao seu funcionamento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo didático, a disponibilidade de um
+grupo gerador não depende apenas do gerador.
+Uma falha de combustível, lubrificação ou
+resfriamento pode comprometer a máquina motriz
+e retirar essa fonte de energia de serviço.
+</p>
+
+<p>
+A análise da instalação deve acompanhar a cadeia
+funcional até os sistemas auxiliares dos quais
+os equipamentos dependem.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+“Sistema de energia” não é sinônimo de
+“conjunto de geradores”. A definição normativa
+também abrange distribuição, alimentação,
+gerenciamento e auxiliares necessários.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §1.2.20,
+página impressa 5.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 10
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-potencia-resposta-distribuicao"
+data-topico-id="dp-potencia-resposta-distribuicao"
+>
+
+<h2>
+10. Resposta à demanda e distribuição de potência
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.2.1 estabelece que o sistema
+de energia deve apresentar tempo de resposta
+adequado às alterações da demanda de potência.
+</p>
+
+<p>
+A necessidade de empuxo pode variar durante
+uma correção de posição ou aproamento.
+A instalação deve responder à demanda dos
+acionamentos de forma compatível com a operação.
+</p>
+
+<p>
+Por isso, a potência nominal instalada não descreve,
+isoladamente, a capacidade operacional disponível.
+Também importam a condição dos equipamentos,
+a configuração de distribuição e a resposta
+às mudanças de carga.
+</p>
+
+
+<h3>
+10.1. Divisão do sistema de energia
+</h3>
+
+<p>
+Para a classe de equipamento 2, o parágrafo 3.2.3
+prevê divisão em dois ou mais sistemas, de modo
+que a falha de um subsistema deixe pelo menos
+outro em funcionamento, com potência suficiente
+para manutenção de posição.
+</p>
+
+<p>
+Os sistemas podem operar interligados, mas devem
+ser arranjados para separação automática diante
+de falhas que possam se propagar, incluindo
+sobrecarga e curto-circuito.
+</p>
+
+<p>
+O dispositivo de conexão e desconexão entre
+seções dos quadros é denominado
+<strong>bus-tie breaker</strong>.
+</p>
+
+
+<h3>
+10.2. Particularidade da classe 3
+</h3>
+
+<p>
+Para a classe 3, o parágrafo 3.2.4 também prevê
+divisão da energia e acrescenta separação dos
+sistemas em espaços diferentes, por divisórias
+classe A-60.
+</p>
+
+<p>
+Quando esses espaços estão abaixo da linha
+d'água operacional, a separação deve também
+ser estanque à água.
+</p>
+
+<p>
+Os disjuntores de interligação devem permanecer
+abertos durante operações classe 3, salvo quando
+for aceita integridade equivalente conforme
+o parágrafo 3.1.4.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não transforme o requisito em uma regra genérica
+de que “todo navio DP deve operar com barramentos
+abertos”.
+</p>
+
+<p>
+A classe, o arranjo aprovado e as condições
+expressas nas diretrizes precisam ser considerados.
+</p>
+
+</div>
+
+
+<p>
+Para classes 2 e 3, o parágrafo 3.2.5 exige que
+a potência disponível para manutenção de posição
+seja suficiente após a pior falha aplicável.
+A filosofia dessa capacidade remanescente
+será aprofundada nas Partes 4 e 5.
+</p>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.2 e 3.2.1–3.2.5,
+páginas impressas 3 e 8.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-pms-blackout"
+data-topico-id="dp-pms-blackout"
+>
+
+<h2>
+11. Gerenciamento de energia e prevenção de blackout
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.19 define
+<strong>Power Management System — PMS</strong>
+como um sistema que assegura a continuidade
+do fornecimento elétrico nas condições operacionais.
+</p>
+
+<p>
+Para classes 2 e 3, o parágrafo 3.2.6 prevê
+pelo menos um PMS automático, com redundância
+conforme a classe e função de prevenção de blackout.
+</p>
+
+<p>
+O parágrafo 3.2.8 acrescenta que mudanças
+repentinas de carga decorrentes de falhas únicas
+ou falhas de equipamentos não devem produzir
+um blackout.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O PMS atua no gerenciamento do fornecimento elétrico.
+O controle DP atua no posicionamento da embarcação.
+As funções são distintas, embora seu desempenho
+precise ser coordenado.
+</p>
+
+</div>
+
+
+<p>
+Como interpretação operacional, uma solicitação
+de empuxo só pode ser atendida enquanto existir
+energia disponível e um caminho funcional
+até o acionamento correspondente.
+</p>
+
+<p>
+Uma indicação de demanda no controle não significa
+que essa demanda tenha sido integralmente atendida
+pela instalação.
+</p>
+
+
+<h3>
+11.1. Armazenamento alternativo de energia
+</h3>
+
+<p>
+O parágrafo 3.2.7 admite armazenamento alternativo,
+como baterias e volantes de inércia, como fonte
+de energia para propulsores, desde que sejam
+atendidos os requisitos relevantes de redundância,
+independência e separação.
+</p>
+
+<p>
+Para classes 2 e 3, a energia dessas fontes
+pode ser incluída na análise de consequências
+quando existirem medições confiáveis da energia
+disponível para os cálculos.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A presença de baterias não demonstra, por si só,
+capacidade suficiente após uma falha.
+É necessário considerar energia disponível,
+potência utilizável e atendimento dos requisitos
+do arranjo.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.19,
+página impressa 5; §§3.2.6–3.2.8,
+página impressa 8.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-ups-alimentacao-controle"
+data-topico-id="dp-ups-alimentacao-controle"
+>
+
+<h2>
+12. UPS: continuidade da alimentação do controle
+</h2>
+
+<div class="widget">
+
+<p>
+Uma <strong>Uninterruptible Power Supply — UPS</strong>
+é uma fonte ininterrupta de alimentação.
+No contexto do parágrafo 3.4.1.8, sua função
+é preservar a alimentação do controle DP
+e dos componentes associados diante de uma
+falha da alimentação principal.
+</p>
+
+<p>
+O requisito prevê uma UPS dedicada a cada
+sistema de controle DP, com os seguintes mínimos:
+</p>
+
+<ul>
+
+<li>
+<strong>Classe 1:</strong> uma UPS.
+</li>
+
+<li>
+<strong>Classe 2:</strong> duas UPS.
+</li>
+
+<li>
+<strong>Classe 3:</strong> três UPS.
+</li>
+
+</ul>
+
+<p>
+O arranjo deve impedir que uma falha de alimentação
+afete mais de um sistema de computadores
+e seus componentes associados.
+</p>
+
+<p>
+Referências de posição e sensores devem ser
+distribuídos entre as UPS de forma correspondente
+aos sistemas de controle que atendem,
+preservando a capacidade de manutenção de posição
+diante da falha de alimentação considerada.
+</p>
+
+<p>
+A capacidade das baterias das UPS deve permitir
+<strong>pelo menos 30 minutos de operação</strong>
+após falha do fornecimento principal.
+Também deve existir alarme de perda da
+alimentação de carga.
+</p>
+
+<p>
+Para classes 2 e 3, a alimentação de carga
+das UPS que atendem ao controle principal
+deve provir de sistemas de energia diferentes.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Os 30 minutos dizem respeito à alimentação
+dos sistemas atendidos pelas UPS.
+Esse requisito não garante 30 minutos de
+acionamento dos propulsores nem 30 minutos
+de manutenção de posição após um blackout.
+</p>
+
+<p>
+A continuidade do controle e a disponibilidade
+de energia propulsiva são condições diferentes.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §3.4.1.8,
+página impressa 10.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-propulsores-componentes"
+data-topico-id="dp-propulsores-componentes"
+>
+
+<h2>
+13. Sistema de propulsores: alcance da definição
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.23 define o
+<strong>sistema de propulsores</strong> como
+o conjunto necessário para fornecer ao sistema DP
+a força propulsiva e sua direção.
+</p>
+
+<p>
+A definição compreende:
+</p>
+
+<ul>
+
+<li>
+Propulsores, unidades de acionamento e auxiliares
+necessários, incluindo resfriamento, hidráulica,
+lubrificação e tubulações.
+</li>
+
+<li>
+Hélices principais e lemes, quando estiverem
+sob controle do sistema DP.
+</li>
+
+<li>
+Sistemas de controle dos propulsores.
+</li>
+
+<li>
+Controles manuais dos propulsores.
+</li>
+
+<li>
+Cabos associados e seus encaminhamentos.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O sistema de propulsores não se limita aos
+propulsores transversais de proa ou popa.
+A definição pode incluir hélices principais
+e lemes, desde que estejam sob controle DP.
+</p>
+
+</div>
+
+
+<p>
+O parágrafo 3.3.1 prevê que cada propulsor
+possa ser controlado remotamente e individualmente,
+de forma independente do controle DP.
+</p>
+
+<p>
+Essa independência funcional permite distinguir
+o comando individual do propulsor da atuação
+automática coordenada pelo controle DP.
+Ela não deve ser interpretada como independência
+absoluta de todos os sistemas de energia
+e auxiliares.
+</p>
+
+
+<h3>
+13.1. Parada de emergência
+</h3>
+
+<p>
+O parágrafo 3.3.6 prevê controles individuais
+de parada de emergência dos propulsores
+na estação de controle DP.
+</p>
+
+<p>
+Para classes 2 e 3, o sistema de parada de
+emergência deve ter monitoramento do circuito.
+Para classe 3, os efeitos de incêndio e
+alagamento também devem ser considerados.
+</p>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.23,
+página impressa 5; §§3.3.1 e 3.3.6,
+páginas impressas 8 e 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-forcas-momento-empuxo"
+data-topico-id="dp-forcas-momento-empuxo"
+>
+
+<h2>
+14. Empuxo longitudinal, transversal e momento de guinada
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.3.2 exige capacidade de produzir
+empuxo adequado nas direções longitudinal
+e lateral e momento de guinada para controlar
+o aproamento.
+</p>
+
+<p>
+Para compreender fisicamente essa exigência,
+é necessário considerar tanto a direção
+da força quanto o ponto em que ela atua.
+</p>
+
+
+<h3>
+14.1. Componentes da força
+</h3>
+
+<p>
+Uma força propulsiva pode ser decomposta
+em componentes longitudinal e transversal.
+A soma das contribuições dos propulsores
+determina a força resultante nessas direções.
+</p>
+
+<p>
+Em uma representação plana simplificada:
+</p>
+
+<p class="formula-linha">
+<strong>X = Σ F<sub>x,i</sub></strong>
+</p>
+
+<p class="formula-linha">
+<strong>Y = Σ F<sub>y,i</sub></strong>
+</p>
+
+<ul>
+
+<li>
+<strong>X:</strong>
+força propulsiva longitudinal resultante.
+</li>
+
+<li>
+<strong>Y:</strong>
+força propulsiva transversal resultante.
+</li>
+
+<li>
+<strong>F<sub>x,i</sub> e F<sub>y,i</sub>:</strong>
+componentes da força produzida pelo propulsor i.
+</li>
+
+</ul>
+
+
+<h3>
+14.2. Momento de guinada
+</h3>
+
+<p>
+A contribuição de cada força ao momento de
+guinada depende de sua posição em relação
+ao ponto de referência adotado.
+</p>
+
+<p>
+Adotando eixos cartesianos no plano horizontal
+e sinal de rotação conforme a regra da mão direita:
+</p>
+
+<p class="formula-linha">
+<strong>
+N = Σ
+(x<sub>i</sub> F<sub>y,i</sub>
+− y<sub>i</sub> F<sub>x,i</sub>)
+</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>N:</strong>
+momento propulsivo resultante em torno do eixo vertical.
+</li>
+
+<li>
+<strong>x<sub>i</sub> e y<sub>i</sub>:</strong>
+coordenadas do ponto de aplicação da força
+em relação à origem escolhida.
+</li>
+
+</ul>
+
+<p>
+As forças são expressas em newtons;
+as distâncias, em metros; e o momento,
+em newton-metro.
+</p>
+
+<p>
+Essas expressões representam a soma de forças
+e momentos da mecânica. São uma explicação
+didática do requisito funcional, não equações
+de controle prescritas pela circular.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Duas forças transversais iguais, aplicadas
+em posições simétricas a vante e a ré
+da origem, podem produzir translação lateral
+com cancelamento de seus momentos.
+</p>
+
+<p>
+Se essas forças tiverem sentidos opostos,
+a força transversal resultante pode ser nula,
+enquanto seus momentos se somam e produzem
+guinada.
+</p>
+
+<p>
+O exemplo pressupõe geometria simétrica
+e forças efetivas iguais. Não representa
+um arranjo obrigatório de propulsores.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Empuxo total disponível e capacidade de controlar
+o aproamento não são grandezas equivalentes.
+A distribuição espacial e direcional das forças
+determina o momento que pode ser produzido.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência do requisito funcional:</strong>
+MSC.1/Circ.1580, anexo, §3.3.2,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-empuxo-efetivo-interferencia"
+data-topico-id="dp-empuxo-efetivo-interferencia"
+>
+
+<h2>
+15. Empuxo efetivo e interferência entre propulsores
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.3.4 estabelece que os valores
+de força dos propulsores utilizados na análise
+de consequências devem ser corrigidos para
+considerar a interferência entre propulsores
+e outros efeitos que reduzam a força efetiva.
+</p>
+
+<p>
+Consequentemente, a simples soma de valores
+nominais ou máximos individuais não deve ser
+tratada automaticamente como a força efetiva
+disponível na condição examinada.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A avaliação deve considerar o empuxo que
+a instalação consegue efetivamente fornecer,
+incluindo reduções relevantes ao seu desempenho.
+</p>
+
+</div>
+
+
+<p>
+A circular não fornece, nesse parágrafo,
+um percentual universal de perda por interferência.
+O valor aplicável depende das características
+e da condição da instalação.
+</p>
+
+<p>
+Para classes 2 e 3, o parágrafo 3.3.3 também
+exige que a ligação dos propulsores ao sistema
+de energia preserve a capacidade funcional
+de força longitudinal, lateral e momento
+após a perda de um dos sistemas de energia
+e dos propulsores ligados a ele.
+</p>
+
+
+<h3>
+15.1. Falha do comando de empuxo
+</h3>
+
+<p>
+O parágrafo 3.3.5 estabelece que uma falha
+do sistema de propulsores, incluindo controle
+de passo, azimute e/ou rotação, não deve
+provocar aumento da intensidade do empuxo
+nem alteração de sua direção.
+</p>
+
+<p>
+O requisito trata do comportamento diante
+da falha. Uma perda de empuxo disponível
+e a produção de empuxo indevido representam
+efeitos diferentes e precisam ser reconhecidos
+na análise da instalação.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não atribua um fator fixo de redução de empuxo
+a toda instalação DP. As diretrizes exigem
+considerar os efeitos redutores, mas não
+estabelecem um coeficiente universal.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.3.3–3.3.5,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 16
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-controle-integracao-instalacao"
+data-topico-id="dp-controle-integracao-instalacao"
+>
+
+<h2>
+16. Controle DP e integração da instalação
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.10 define o controle DP como
+o conjunto de componentes e sistemas de hardware
+e software necessários ao posicionamento dinâmico.
+</p>
+
+<p>
+Sua composição inclui:
+</p>
+
+<ul>
+
+<li>
+Sistema de computadores e sistema de joystick.
+</li>
+
+<li>
+Sistemas de sensores.
+</li>
+
+<li>
+Estações de controle e sistemas de apresentação
+de informações.
+</li>
+
+<li>
+Sistemas de referência de posição.
+</li>
+
+<li>
+Cabos associados e seus encaminhamentos.
+</li>
+
+<li>
+Redes.
+</li>
+
+</ul>
+
+<p>
+A função de controle depende das informações
+recebidas e da possibilidade de comandar
+os meios propulsivos. Seu funcionamento
+precisa ser avaliado junto ao estado
+dos demais subsistemas.
+</p>
+
+<p>
+O parágrafo 3.4.1.2 prevê apresentação de
+informações dos sistemas de energia, propulsores
+e controle para verificar seu funcionamento.
+As informações necessárias à operação segura
+devem permanecer visíveis.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Uma indicação de computador operacional
+não basta para avaliar a prontidão DP.
+É necessário reconhecer a disponibilidade
+da energia, dos propulsores e das informações
+das quais o controle depende.
+</p>
+
+</div>
+
+
+<p>
+A Parte 3 examinará as referências, os sensores
+e os requisitos específicos de controle.
+Nesta parte, o ponto central é a integração:
+a capacidade DP resulta da cadeia funcional
+completa.
+</p>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.10,
+página impressa 4; §3.4.1.2,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 2
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 2
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A instalação DP compreende sistemas de energia,
+propulsores e controle que precisam atuar conjuntamente.
+</li>
+
+<li>
+O sistema de energia inclui geração, distribuição,
+fontes de alimentação, gerenciamento e auxiliares.
+</li>
+
+<li>
+A potência deve responder adequadamente às
+alterações da demanda; a potência nominal
+instalada não descreve toda a capacidade operacional.
+</li>
+
+<li>
+PMS e controle DP possuem funções diferentes:
+gerenciamento elétrico e posicionamento,
+respectivamente.
+</li>
+
+<li>
+A autonomia mínima das UPS do controle
+não equivale à autonomia de propulsão.
+</li>
+
+<li>
+O sistema de propulsores pode incluir hélices
+principais e lemes sob controle DP.
+</li>
+
+<li>
+A direção e o ponto de aplicação das forças
+determinam a força resultante e o momento de guinada.
+</li>
+
+<li>
+O empuxo usado na análise de consequências
+deve considerar interferências e outros efeitos
+que reduzam a força efetiva.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 2
+     ÚLTIMO BLOCO DIDÁTICO DA PARTE
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 2
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>DP system</strong>
+— Sistema DP:
+instalação completa necessária ao posicionamento
+dinâmico, compreendendo energia, propulsores
+e controle, entre outros componentes necessários.
+</li>
+
+<li>
+<strong>Power system</strong>
+— Sistema de energia:
+conjunto necessário ao fornecimento de energia
+ao sistema DP.
+</li>
+
+<li>
+<strong>Thruster system</strong>
+— Sistema de propulsores:
+conjunto necessário à produção de força propulsiva
+e ao controle de sua direção.
+</li>
+
+<li>
+<strong>DP control system</strong>
+— Sistema de controle DP:
+componentes de hardware e software, sensores,
+referências, interfaces, redes e demais elementos
+necessários ao controle do posicionamento.
+</li>
+
+<li>
+<strong>Prime mover</strong>
+— Máquina motriz:
+máquina que fornece a potência mecânica,
+por exemplo, ao acionamento de um gerador.
+</li>
+
+<li>
+<strong>Switchboard</strong>
+— Quadro elétrico:
+equipamento de conexão, distribuição e proteção
+dos circuitos elétricos.
+</li>
+
+<li>
+<strong>Bus-tie breaker</strong>
+— Disjuntor de interligação de barramentos:
+dispositivo que conecta ou desconecta
+seções dos quadros elétricos.
+</li>
+
+<li>
+<strong>Power Management System — PMS</strong>
+— Sistema de gerenciamento de energia:
+sistema destinado à continuidade do fornecimento
+elétrico nas condições operacionais.
+</li>
+
+<li>
+<strong>Blackout</strong>
+— Apagamento elétrico:
+perda do fornecimento elétrico;
+suas consequências dependem do alcance da falha
+e das funções afetadas.
+</li>
+
+<li>
+<strong>Uninterruptible Power Supply — UPS</strong>
+— Fonte ininterrupta de alimentação:
+fonte que preserva a alimentação dos equipamentos
+atendidos quando ocorre perda do fornecimento principal.
+</li>
+
+<li>
+<strong>Charge power</strong>
+— Alimentação de carga:
+fornecimento utilizado para carregar e manter
+as baterias da UPS.
+</li>
+
+<li>
+<strong>Drive unit</strong>
+— Unidade de acionamento:
+conjunto que fornece o acionamento necessário
+ao funcionamento do propulsor.
+</li>
+
+<li>
+<strong>Auxiliary systems</strong>
+— Sistemas auxiliares:
+sistemas como resfriamento, lubrificação
+e hidráulica, necessários ao funcionamento
+dos equipamentos principais.
+</li>
+
+<li>
+<strong>Effective force</strong>
+— Força efetiva:
+força realmente disponível na condição considerada,
+após os efeitos relevantes que reduzem seu valor.
+</li>
+
+<li>
+<strong>Thruster interference</strong>
+— Interferência entre propulsores:
+interação que pode reduzir a força efetiva
+considerada na avaliação do desempenho.
+</li>
+
+<li>
+<strong>Pitch control</strong>
+— Controle de passo:
+controle do passo das pás quando aplicável
+ao propulsor.
+</li>
+
+<li>
+<strong>Azimuth control</strong>
+— Controle de azimute:
+controle da orientação do propulsor e,
+consequentemente, da direção do empuxo.
+</li>
+
+<li>
+<strong>Emergency stop</strong>
+— Parada de emergência:
+comando destinado à parada do propulsor
+em uma condição de emergência.
+</li>
+
+<li>
+<strong>Loop monitoring</strong>
+— Monitoramento do circuito:
+supervisão da integridade do circuito
+do sistema de parada de emergência.
+</li>
+
+<li>
+<strong>A-60 class division</strong>
+— Divisória classe A-60:
+divisória com classificação de proteção
+contra incêndio, utilizada na separação
+exigida pelas diretrizes.
+</li>
+
+<li>
+<strong>Watertight separation</strong>
+— Separação estanque à água:
+separação destinada a impedir a passagem de água
+entre os espaços considerados.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 2
+
+     CONTINUAR COM A PARTE 3 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html AINDA.
+===================================================== -->
+
+<!-- =========================================
+     PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — Referências de posição, sensores e controle
+</h2>
+
+<p>
+O controle DP depende de informações adequadas
+sobre a posição, o aproamento, os movimentos
+da embarcação e o vento.
+</p>
+
+<p>
+Nesta parte, serão examinados os requisitos
+de seleção, independência, diversidade e monitoramento
+dessas informações, além dos computadores,
+das interfaces e dos meios de controle alternativo.
+</p>
+
+<p>
+A referência normativa principal é a
+MSC.1/Circ.1580, anexo, seções 3.4 e 3.7.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-referencias-sensores-distincao"
+data-topico-id="dp-referencias-sensores-distincao"
+>
+
+<h2>
+17. Referências de posição e sensores da embarcação
+</h2>
+
+<div class="widget">
+
+<p>
+A MSC.1/Circ.1580 trata separadamente os
+<strong>sistemas de referência de posição</strong>,
+na seção 3.4.3, e os
+<strong>sensores da embarcação</strong>,
+na seção 3.4.4.
+</p>
+
+<p>
+Essa separação permite identificar a função
+de cada informação utilizada pelo controle.
+</p>
+
+
+<h3>
+17.1. Sistemas de referência de posição
+</h3>
+
+<p>
+Os <strong>position reference systems</strong>
+fornecem informações de posição ao controle DP.
+Sua seleção deve considerar os requisitos
+operacionais, as restrições decorrentes da
+forma de instalação ou emprego e o desempenho
+esperado nas condições de trabalho.
+</p>
+
+<p>
+A informação precisa apresentar precisão
+e repetibilidade adequadas à operação pretendida.
+A simples disponibilidade de um sinal
+não demonstra sua adequação à tarefa.
+</p>
+
+
+<h3>
+17.2. Sensores da embarcação
+</h3>
+
+<p>
+Segundo o parágrafo 3.4.4.1, os sensores
+devem medir, no mínimo:
+</p>
+
+<ul>
+
+<li>
+O aproamento da embarcação.
+</li>
+
+<li>
+Os movimentos da embarcação.
+</li>
+
+<li>
+A velocidade e a direção do vento.
+</li>
+
+</ul>
+
+<p>
+Uma informação de aproamento descreve a orientação
+da embarcação; uma referência de posição
+descreve sua localização em relação à referência
+utilizada. Uma não substitui automaticamente
+a outra.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O controle precisa receber informações
+compatíveis com as funções executadas.
+Uma referência de posição confiável não elimina
+a necessidade de informações adequadas
+de aproamento e dos demais sensores requeridos.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Os números mínimos de referências de posição
+não devem ser aplicados indistintamente
+a todos os sensores. A circular estabelece
+requisitos específicos para cada grupo.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.3.1,
+3.4.3.5 e 3.4.4.1,
+páginas impressas 11 e 12.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-referencias-independencia-diversidade"
+data-topico-id="dp-referencias-independencia-diversidade"
+>
+
+<h2>
+18. Quantidade, independência e diversidade das referências
+</h2>
+
+<div class="widget">
+
+<p>
+Na MSC.1/Circ.1580, a quantidade mínima
+de sistemas de referência de posição
+depende da classe de equipamento:
+</p>
+
+<ul>
+
+<li>
+<strong>Classe 1:</strong>
+pelo menos dois sistemas independentes.
+</li>
+
+<li>
+<strong>Classes 2 e 3:</strong>
+pelo menos três sistemas independentes.
+</li>
+
+</ul>
+
+<p>
+Esses sistemas devem estar
+<strong>instalados e simultaneamente disponíveis
+ao controle DP durante a operação</strong>.
+</p>
+
+<p>
+Quando dois ou mais sistemas são requeridos,
+eles não devem ser todos do mesmo tipo:
+devem estar baseados em princípios diferentes
+e ser adequados às condições operacionais.
+</p>
+
+
+<h3>
+18.1. Independência
+</h3>
+
+<p>
+A independência exige examinar as dependências
+entre os sistemas, e não apenas contar
+equipamentos fisicamente distintos.
+</p>
+
+<p>
+Como interpretação didática, uma fonte comum
+de alimentação, uma interface compartilhada
+ou outra dependência relevante pode permitir
+que uma única falha comprometa várias
+informações ao mesmo tempo.
+</p>
+
+<p>
+A avaliação deve considerar o arranjo completo,
+incluindo as interfaces e a alimentação
+dos equipamentos.
+</p>
+
+
+<h3>
+18.2. Diversidade de princípios
+</h3>
+
+<p>
+Diversidade e independência são critérios
+relacionados, mas não equivalentes.
+</p>
+
+<p>
+Equipamentos separados podem utilizar
+o mesmo princípio de medição. Aumentar
+a quantidade desses equipamentos não atende,
+por si só, à exigência de princípios diferentes.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo conceitual, três equipamentos
+baseados no mesmo princípio podem sofrer
+degradação diante de uma condição que afete
+esse princípio.
+</p>
+
+<p>
+Por isso, a seleção deve considerar tanto
+a independência dos sistemas quanto
+a diversidade exigida e a adequação
+ao ambiente de trabalho.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+“Simultaneamente disponíveis” é a expressão
+utilizada pela circular. Ela não deve ser
+substituída, sem outra fonte, por uma regra
+universal de que todas as referências precisam
+receber peso idêntico no algoritmo de controle.
+</p>
+
+<p>
+Os mínimos apresentados neste tópico
+pertencem à MSC.1/Circ.1580.
+Na MSC/Circ.645, o §3.4.3.2 estabelece
+três referências para classes 2 e 3,
+mas essa seção não apresenta o mesmo mínimo
+de duas referências para classe 1.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.3.2–3.4.3.4,
+página impressa 11;
+MSC/Circ.645, anexo, §3.4.3.2.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-qualidade-monitoramento-referencias"
+data-topico-id="dp-qualidade-monitoramento-referencias"
+>
+
+<h2>
+19. Qualidade e monitoramento das referências
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.4.3.5 estabelece que os sistemas
+de referência devem produzir dados com
+<strong>precisão e repetibilidade adequadas</strong>
+à operação DP pretendida.
+</p>
+
+<p>
+Em termos de medição, precisão e repetibilidade
+não devem ser confundidas: informações
+consistentemente semelhantes podem apresentar
+um erro sistemático em relação à condição real.
+</p>
+
+<p>
+A repetição de uma indicação, portanto,
+não comprova isoladamente sua correção.
+</p>
+
+
+<h3>
+19.1. Degradação do sinal
+</h3>
+
+<p>
+O parágrafo 3.4.3.6 prevê monitoramento
+do desempenho das referências e advertências
+quando seus sinais forem incorretos
+ou estiverem substancialmente degradados.
+</p>
+
+<p>
+A degradação não precisa aparecer somente
+como ausência completa de informação.
+Pode existir uma indicação disponível
+cuja qualidade já não seja adequada
+à operação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Uma divergência entre referências deve ser
+interpretada como informação sobre a condição
+do sistema. A comparação precisa considerar
+qualidade, independência e circunstâncias
+operacionais.
+</p>
+
+<p>
+A concordância entre indicações também
+deve ser examinada: referências com dependência
+comum podem concordar e, ainda assim,
+não representar verificações independentes.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A circular estabelece requisitos de qualidade
+e monitoramento, mas não determina,
+nesses parágrafos, um algoritmo universal
+de votação, ponderação ou rejeição de sinais.
+</p>
+
+<p>
+Essas funções não devem ser descritas
+como idênticas em todos os fabricantes.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.3.5 e 3.4.3.6,
+página impressa 11.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-sensores-redundancia"
+data-topico-id="dp-sensores-redundancia"
+>
+
+<h2>
+20. Requisitos de redundância dos sensores
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.4.4.2 trata dos sistemas DP
+classes 2 e 3 que dependem integralmente
+de sinais corretos dos sensores da embarcação.
+</p>
+
+<p>
+Nessa condição, os sinais devem ser baseados
+em <strong>três sistemas que atendam
+à mesma finalidade</strong>.
+</p>
+
+<p>
+A própria circular exemplifica que esse
+requisito resulta na instalação de pelo menos
+três sensores de referência de aproamento.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Preserve a condição normativa:
+“quando o controle DP for integralmente
+dependente de sinais corretos dos sensores”.
+</p>
+
+<p>
+Não reduza o texto a uma afirmação
+sem qualificação de que toda informação,
+em qualquer instalação, obrigatoriamente
+provém de três sensores.
+</p>
+
+</div>
+
+
+<h3>
+20.1. Arranjo independente
+</h3>
+
+<p>
+Segundo o parágrafo 3.4.4.3, sensores
+com a mesma finalidade e ligados a sistemas
+redundantes devem ser arranjados de forma
+independente, para que a falha de um
+não afete os demais.
+</p>
+
+
+<h3>
+20.2. Particularidade da classe 3
+</h3>
+
+<p>
+Para classe 3, um sensor de cada tipo deve
+estar diretamente conectado ao controle DP
+de reserva e separado dos demais sensores
+por uma divisória classe A-60.
+</p>
+
+<p>
+Se seus dados também forem enviados ao
+controle principal, o arranjo deve impedir
+que uma falha nesse controle comprometa
+a integridade dos sinais destinados
+ao controle de reserva.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Compartilhar uma informação com o controle
+principal não deve criar um caminho
+pelo qual sua falha comprometa o controle
+de reserva.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.4.2–3.4.4.4,
+página impressa 12.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 21
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-computadores-transferencia"
+data-topico-id="dp-computadores-transferencia"
+>
+
+<h2>
+21. Computadores e transferência de controle
+</h2>
+
+<div class="widget">
+
+<p>
+Os requisitos de computadores são apresentados
+na seção 3.4.2 da MSC.1/Circ.1580.
+</p>
+
+
+<h3>
+21.1. Classe 1
+</h3>
+
+<p>
+O controle DP não precisa ser redundante
+para a classe de equipamento 1.
+</p>
+
+<p>
+Essa disposição não elimina os demais
+requisitos aplicáveis ao sistema.
+</p>
+
+
+<h3>
+21.2. Classe 2
+</h3>
+
+<p>
+O controle deve compreender pelo menos
+<strong>dois sistemas de computadores</strong>,
+arranjados para manter a capacidade automática
+de posicionamento diante de uma falha única.
+</p>
+
+<p>
+Funções ou recursos comuns, como rotinas
+de autoverificação, transferência de dados
+e interfaces com a instalação, não devem
+ser capazes de provocar falha em mais
+de um sistema de computadores.
+</p>
+
+<p>
+Deve existir alarme quando um computador
+falhar ou não estiver pronto para assumir
+o controle.
+</p>
+
+
+<h3>
+21.3. Classe 3
+</h3>
+
+<p>
+O controle principal deve compreender
+pelo menos dois sistemas de computadores,
+com os requisitos correspondentes
+de continuidade após falha única.
+</p>
+
+<p>
+Esses computadores principais
+<strong>não incluem o sistema de reserva</strong>.
+Além deles, deve existir um controle DP
+de reserva separado.
+</p>
+
+
+<h3>
+21.4. Transferência automática
+</h3>
+
+<p>
+O parágrafo 3.4.2.5 prevê transferência
+automática entre sistemas de computadores
+redundantes após a detecção de falha
+em um deles.
+</p>
+
+<p>
+A transferência deve ocorrer suavemente,
+sem perda de posição ou aproamento.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Na classe 3, não conte o computador
+de reserva como um dos dois computadores
+mínimos do controle principal.
+</p>
+
+<p>
+Também não confunda a transferência
+automática entre computadores redundantes
+com a mudança para o controle de reserva
+separado, tratada no próximo tópico.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo,
+§§3.4.2.1–3.4.2.3 e 3.4.2.5,
+páginas impressas 10 e 11.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 22
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-controle-reserva-classe3"
+data-topico-id="dp-controle-reserva-classe3"
+>
+
+<h2>
+22. Controle de reserva separado na classe 3
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.4.2.6 estabelece que o controle DP
+de reserva da classe 3 deve ficar em uma sala
+separada da estação principal por uma
+divisória classe A-60.
+</p>
+
+<p>
+Durante a operação DP, esse controle deve
+ser continuamente atualizado por informações
+de pelo menos um dos conjuntos requeridos
+de sensores, referência de posição,
+resposta dos propulsores e outras entradas
+necessárias.
+</p>
+
+<p>
+Ele deve permanecer pronto para assumir
+o controle.
+</p>
+
+
+<h3>
+22.1. Mudança para o controle de reserva
+</h3>
+
+<p>
+A mudança para esse sistema deve ser
+<strong>manual</strong>, realizada no
+computador de reserva, e não deve ser afetada
+por uma falha do controle principal.
+</p>
+
+<p>
+O conjunto dos controles principal e de reserva
+deve ser arranjado para permitir manutenção
+automática de posição após qualquer falha
+única abrangida pelo requisito.
+</p>
+
+
+<h3>
+22.2. Referência de posição do sistema de reserva
+</h3>
+
+<p>
+Segundo o parágrafo 3.4.3.7, pelo menos
+uma referência de posição deve estar conectada
+diretamente ao controle de reserva e separada
+das demais referências por uma divisória
+classe A-60.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Prontidão do sistema de reserva exige
+informações atualizadas, alimentação
+e interfaces adequadas. Não basta
+a existência física de outro computador.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A circular distingue:
+</p>
+
+<ul>
+
+<li>
+Transferência automática entre computadores
+redundantes.
+</li>
+
+<li>
+Mudança manual para o controle de reserva
+separado da classe 3.
+</li>
+
+</ul>
+
+<p>
+Essa distinção deve ser preservada
+ao interpretar questões sobre transferência
+de controle.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.2.6 e 3.4.3.7,
+página impressa 11.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 23
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-estacao-modos-alarmes"
+data-topico-id="dp-estacao-modos-alarmes"
+>
+
+<h2>
+23. Estação de controle, modos e alarmes
+</h2>
+
+<div class="widget">
+
+<p>
+A estação de controle DP deve permitir
+boa visão dos limites externos da embarcação
+e da área ao redor.
+</p>
+
+<p>
+Os sistemas de apresentação devem seguir
+princípios ergonômicos que favoreçam
+a operação adequada.
+</p>
+
+
+<h3>
+23.1. Identificação do modo ativo
+</h3>
+
+<p>
+O parágrafo 3.4.1.3 prevê acesso adequado
+aos modos de controle, incluindo joystick
+manual e controle DP automático dos propulsores,
+hélices e lemes, quando integrantes do sistema.
+</p>
+
+<p>
+O <strong>modo ativo deve estar claramente
+apresentado</strong>.
+</p>
+
+<p>
+Essa informação permite reconhecer qual
+função está efetivamente em execução
+e quais ações dependem do operador.
+</p>
+
+
+<h3>
+23.2. Proteção contra ato inadvertido
+</h3>
+
+<p>
+Para classes 2 e 3, os comandos devem
+ser projetados de modo que um único
+ato inadvertido no painel do operador
+não provoque perda de posição ou aproamento.
+</p>
+
+
+<h3>
+23.3. Alarmes e advertências
+</h3>
+
+<p>
+Falhas nos sistemas interligados ao controle DP
+ou controlados por ele devem produzir
+alarmes e advertências audíveis e visuais.
+</p>
+
+<p>
+Deve existir registro de sua ocorrência
+e das mudanças de estado, acompanhado
+das explicações necessárias.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Uma mudança de modo altera a relação
+entre o operador e o sistema.
+A leitura do modo ativo é necessária
+para interpretar a resposta da embarcação
+e a função dos comandos disponíveis.
+</p>
+
+<p>
+Os registros de alarmes e estados permitem
+examinar a sequência de eventos.
+Uma indicação isolada pode não mostrar
+todas as condições que antecederam
+uma alteração de desempenho.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo,
+§§3.4.1.1 e 3.4.1.3–3.4.1.5,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 24
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-integridade-isolamento-controle"
+data-topico-id="dp-integridade-isolamento-controle"
+>
+
+<h2>
+24. Integridade das interfaces e isolamento
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.4.1.6 exige prevenção
+da transferência de falhas entre sistemas.
+Os componentes redundantes devem permitir
+isolamento dos elementos defeituosos
+e continuidade suave do controle.
+</p>
+
+<p>
+O parágrafo 3.4.2.7 trata especificamente
+do isolamento dos computadores DP em relação
+a outros computadores e sistemas de comunicação
+a bordo.
+</p>
+
+<p>
+O objetivo é preservar a integridade
+do sistema DP e de suas interfaces de comando.
+</p>
+
+
+<h3>
+24.1. Meios de isolamento
+</h3>
+
+<p>
+A circular admite isolamento por hardware
+e/ou software e separação física dos cabos
+e das linhas de comunicação.
+</p>
+
+<p>
+A robustez desse isolamento deve ser
+verificada por análise e demonstrada
+por testes.
+</p>
+
+<p>
+Também devem existir medidas específicas
+para impedir a conexão de dispositivos
+ou sistemas não autorizados ou não aprovados.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A existência de uma ligação com outro sistema
+não pode ser avaliada apenas pela conveniência
+da troca de dados.
+</p>
+
+<p>
+É necessário verificar se a interface preserva
+a integridade do controle e impede
+a propagação de falhas.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.4.1.6 e 3.4.2.7,
+páginas impressas 9 e 11.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 25
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-joystick-independente-controle-manual"
+data-topico-id="dp-joystick-independente-controle-manual"
+>
+
+<h2>
+25. Joystick independente e controle manual
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 3.4.1.7 prevê a possibilidade
+de controlar os propulsores manualmente,
+por alavancas individuais e por um
+joystick independente, diante de falha
+do controle DP.
+</p>
+
+<p>
+Se o joystick independente utilizar entradas
+de sensores, a falha do controle principal
+não deve comprometer a integridade
+dessas entradas.
+</p>
+
+
+<h3>
+25.1. Independent Joystick System — IJS
+</h3>
+
+<p>
+A seção 3.7 prevê um sistema de joystick
+independente do controle DP automático.
+</p>
+
+<p>
+Sua alimentação deve ser independente
+das UPS do controle DP.
+Uma falha do IJS deve produzir alarme.
+</p>
+
+<p>
+O parágrafo 3.7.2 estabelece que o IJS
+deve possuir controle automático
+de aproamento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O controle automático de aproamento
+do IJS não transforma o comando manual
+centralizado de posição em manutenção
+automática de posição.
+</p>
+
+<p>
+Sua função deve ser interpretada conforme
+a definição de sistema de joystick
+estudada na Parte 1.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O joystick independente não equivale
+ao controle DP de reserva da classe 3.
+</p>
+
+<p>
+São meios com requisitos e funções distintos:
+o IJS fornece controle manual centralizado
+de posição com aproamento automático;
+o controle DP de reserva separado
+deve estar preparado para assumir
+o posicionamento automático.
+</p>
+
+<p>
+A mudança para um meio manual também
+não demonstra, por si só, que todos
+os limites da atividade continuam atendidos.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo,
+§§1.2.16, 3.4.1.7 e 3.7.1–3.7.2,
+páginas impressas 4, 10 e 12.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 3
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 3
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+Referências de posição e sensores possuem
+funções e requisitos específicos.
+</li>
+
+<li>
+Na MSC.1/Circ.1580, são requeridas pelo menos
+duas referências independentes para classe 1
+e três para classes 2 e 3, instaladas
+e simultaneamente disponíveis.
+</li>
+
+<li>
+As referências requeridas não devem ser todas
+do mesmo tipo; sua seleção deve considerar
+princípios diferentes e condições operacionais.
+</li>
+
+<li>
+Disponibilidade de sinal não equivale
+a qualidade adequada da informação.
+</li>
+
+<li>
+Na classe 3, os dois computadores mínimos
+do controle principal não incluem
+o controle de reserva separado.
+</li>
+
+<li>
+A transferência entre computadores redundantes
+é automática; a mudança para o controle
+de reserva separado da classe 3 é manual.
+</li>
+
+<li>
+O modo ativo deve estar claramente apresentado,
+e falhas devem produzir alarmes
+e registros adequados.
+</li>
+
+<li>
+O joystick independente e o controle DP
+de reserva possuem funções distintas.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 3
+     ÚLTIMO BLOCO DIDÁTICO DA PARTE
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 3
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Position reference system — PRS</strong>
+— Sistema de referência de posição:
+sistema que fornece informações de posição
+ao controle DP.
+</li>
+
+<li>
+<strong>Vessel sensors</strong>
+— Sensores da embarcação:
+sensores que medem, no mínimo, aproamento,
+movimentos e velocidade e direção do vento.
+</li>
+
+<li>
+<strong>Heading reference sensor</strong>
+— Sensor de referência de aproamento:
+sensor que fornece a orientação da proa
+utilizada pelo controle.
+</li>
+
+<li>
+<strong>Accuracy</strong>
+— Exatidão, tratada no texto como precisão
+da informação:
+proximidade da indicação em relação
+à condição real ou ao valor de referência.
+</li>
+
+<li>
+<strong>Repeatability</strong>
+— Repetibilidade:
+capacidade de obter resultados semelhantes
+em condições repetidas de medição.
+</li>
+
+<li>
+<strong>Independent systems</strong>
+— Sistemas independentes:
+sistemas cujo arranjo evita que uma falha
+em um comprometa os demais.
+</li>
+
+<li>
+<strong>Different principles</strong>
+— Princípios diferentes:
+bases distintas de obtenção da informação,
+exigidas para que as referências requeridas
+não sejam todas do mesmo tipo.
+</li>
+
+<li>
+<strong>Degraded signal</strong>
+— Sinal degradado:
+informação cuja qualidade foi reduzida,
+mesmo que ainda esteja disponível.
+</li>
+
+<li>
+<strong>Computer system</strong>
+— Sistema de computadores:
+computadores e componentes associados,
+incluindo software e interfaces.
+</li>
+
+<li>
+<strong>Automatic transfer of control</strong>
+— Transferência automática de controle:
+passagem de controle entre computadores
+redundantes após detecção de falha.
+</li>
+
+<li>
+<strong>Backup DP control system</strong>
+— Sistema de controle DP de reserva:
+controle separado previsto para classe 3,
+atualizado e pronto para assumir
+o posicionamento automático.
+</li>
+
+<li>
+<strong>Switchover</strong>
+— Mudança de controle:
+passagem para o sistema de reserva;
+no requisito estudado da classe 3,
+é realizada manualmente no computador
+de reserva.
+</li>
+
+<li>
+<strong>Thruster feedback</strong>
+— Informação de resposta dos propulsores:
+informação sobre sua condição ou resposta,
+utilizada pelo sistema de controle.
+</li>
+
+<li>
+<strong>DP control station</strong>
+— Estação de controle DP:
+posto destinado às operações DP,
+com informações, comandos e comunicações
+necessários.
+</li>
+
+<li>
+<strong>Active control mode</strong>
+— Modo de controle ativo:
+modo que efetivamente governa
+a atuação dos equipamentos.
+</li>
+
+<li>
+<strong>Inadvertent act</strong>
+— Ato inadvertido:
+ação não intencional do operador,
+considerada nos requisitos de proteção
+do controle.
+</li>
+
+<li>
+<strong>Isolation</strong>
+— Isolamento:
+separação funcional ou física destinada
+a preservar a integridade do sistema
+e impedir propagação de falhas.
+</li>
+
+<li>
+<strong>Independent Joystick System — IJS</strong>
+— Sistema de joystick independente:
+controle independente do DP automático,
+com posição comandada manualmente
+e aproamento automático.
+</li>
+
+<li>
+<strong>Individual levers</strong>
+— Alavancas individuais:
+comandos destinados ao controle manual
+dos propulsores individualmente.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 3
+
+     CONTINUAR COM A PARTE 4 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html AINDA.
+===================================================== -->    
