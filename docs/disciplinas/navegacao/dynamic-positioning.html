@@ -1,1 +1,1884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Dynamic Positioning — DP - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="dynamic-positioning"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação em Águas Restritas</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Dynamic Positioning — DP
+</h2>
+
+<p>
+<strong>
+Dynamic Positioning — Posicionamento Dinâmico
+</strong>
+</p>
+
+<p>
+Estudo dos fundamentos dos sistemas de posicionamento
+dinâmico, de sua arquitetura funcional e dos critérios
+de segurança estabelecidos nas diretrizes da IMO.
+</p>
+
+<p>
+A aula relaciona o controle de posição e aproamento
+à disponibilidade de energia, empuxo, referências e
+sensores, com atenção à capacidade remanescente após
+falhas e aos limites de execução de uma operação DP.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação em Águas Restritas
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Sistemas de posicionamento dinâmico
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Dynamic Positioning — DP
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+III — Navegação em Águas Restritas
+</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>Item 16(j):</strong>
+Utilização de equipamentos do passadiço:
+“Dynamic Positioning Systems” — noções e conceitos básicos.
+</li>
+
+<li>
+<strong>Item 32:</strong>
+Sistemas de posicionamento dinâmico.
+</li>
+
+<li>
+<strong>Item 32.1:</strong>
+Conceito e aplicações.
+</li>
+
+<li>
+<strong>Item 32.2:</strong>
+Regulamentação IMO.
+</li>
+
+</ul>
+
+<p>
+<strong>Localização no documento fornecido:</strong>
+páginas impressas 12 e 17 de 30.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Interpretar as definições de embarcação DP, operação DP
+e manutenção de posição.
+</li>
+
+<li>
+Distinguir posição, aproamento e acompanhamento de
+uma derrota predeterminada.
+</li>
+
+<li>
+Identificar os subsistemas de energia, propulsores
+e controle que compõem uma instalação DP.
+</li>
+
+<li>
+Relacionar classes de equipamento aos critérios de
+falha, redundância e segregação.
+</li>
+
+<li>
+Distinguir referências de posição de sensores de
+aproamento, movimentos e vento.
+</li>
+
+<li>
+Explicar a importância da capacidade remanescente
+após a pior falha e do tempo necessário para encerrar
+uma operação com segurança.
+</li>
+
+<li>
+Reconhecer os requisitos de verificação, documentação
+e treinamento tratados pelas circulares estudadas.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+IMO — MSC.1/Circ.1580, de 16 de junho de 2017
+</h3>
+
+<p>
+<strong>
+Guidelines for vessels and units with dynamic
+positioning (DP) systems.
+</strong>
+</p>
+
+<p>
+Fonte principal da aula para definições, classes de
+equipamento, requisitos funcionais e operacionais,
+verificações, documentação e treinamento.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta parte:</strong>
+preâmbulo, parágrafos 1 e 2; anexo, seção 1.1;
+parágrafos 1.2.7, 1.2.9, 1.2.16, 1.2.17,
+1.2.18, 3.1.2 e 3.3.2.
+</p>
+
+<p>
+<strong>Localização:</strong>
+páginas impressas 2 a 4, 7 e 9 do anexo.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+IMO — MSC/Circ.645, de 6 de junho de 1994
+</h3>
+
+<p>
+<strong>
+Guidelines for vessels with dynamic positioning systems.
+</strong>
+</p>
+
+<p>
+Fonte complementar para compreender o regime anterior
+e compará-lo ao enquadramento estabelecido pela
+MSC.1/Circ.1580.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta parte:</strong>
+anexo, parágrafos 1.2, 1.3.1 e 1.3.3.
+</p>
+
+<p>
+<strong>Localização:</strong>
+página impressa 3 do anexo.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+IMO — MSC.1/Circ.738/Rev.2, de 16 de junho de 2017
+</h3>
+
+<p>
+<strong>
+Guidelines for Dynamic Positioning System (DP)
+Operator Training.
+</strong>
+</p>
+
+<p>
+Referência específica para o enquadramento do
+treinamento dos operadores. Seu conteúdo será
+desenvolvido na Parte 6.
+</p>
+
+<p>
+A circular remete às diretrizes da IMCA;
+não reproduz um programa completo de formação
+e certificação de operadores.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+Fundamentos, aplicações e enquadramento IMO.
+</li>
+
+<li>
+Arquitetura do sistema, energia e geração de empuxo.
+</li>
+
+<li>
+Referências de posição, sensores e controle.
+</li>
+
+<li>
+Classes de equipamento, redundância e falhas.
+</li>
+
+<li>
+Capacidade de manutenção de posição e decisão operacional.
+</li>
+
+<li>
+Verificação, documentação, treinamento e avaliação integradora.
+</li>
+
+</ol>
+
+<p>
+Cada parte apresenta seu próprio glossário técnico
+inglês–português ao final.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — Fundamentos, aplicações e enquadramento IMO
+</h2>
+
+<p>
+Nesta parte, serão estabelecidos os conceitos necessários
+para interpretar uma operação DP: o que o sistema controla,
+como se distinguem posição e aproamento e em quais condições
+se aplicam as diretrizes de 1994 e 2017.
+</p>
+
+<p>
+As definições normativas serão apresentadas com
+identificação da circular correspondente. Os exemplos
+operacionais são explicações didáticas e não constituem
+procedimentos específicos de uma embarcação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-conceito-embarcacao"
+data-topico-id="dp-conceito-embarcacao"
+>
+
+<h2>
+1. O conceito de embarcação dinamicamente posicionada
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o parágrafo 1.2.9 da MSC.1/Circ.1580,
+uma <strong>embarcação dinamicamente posicionada</strong>
+é uma unidade ou embarcação que mantém automaticamente
+sua posição e/ou seu aproamento, em localização fixa,
+localização relativa ou derrota predeterminada,
+por meio da força produzida pelos propulsores.
+</p>
+
+<p>
+Essa definição contém três elementos centrais:
+<strong>controle automático</strong>,
+<strong>posição e/ou aproamento</strong> e
+<strong>atuação por força propulsiva</strong>.
+</p>
+
+<p>
+O sistema utiliza os meios propulsivos disponíveis
+para produzir as ações necessárias à manutenção
+da condição comandada. A embarcação pode estar
+submetida a forças externas mesmo quando sua
+posição permanece aproximadamente constante.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Manter posição não significa ausência de forças.
+Significa controlar o movimento da embarcação
+por meio de ações propulsivas compatíveis com
+as perturbações e com a condição desejada.
+</p>
+
+</div>
+
+
+<p>
+Como interpretação física simplificada, quando a
+embarcação mantém uma condição aproximadamente
+estacionária, as forças e o momento produzidos
+pelos propulsores precisam compensar as solicitações
+externas relevantes no plano horizontal.
+</p>
+
+<p>
+Durante uma correção de posição ou aproamento,
+a atuação também deve produzir a alteração de movimento
+necessária para reduzir o desvio. Essa explicação
+descreve o princípio físico; não estabelece uma lei
+de controle ou um algoritmo obrigatório pela IMO.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A definição de 2017 não restringe DP à permanência
+em um único ponto fixo. Ela inclui localização
+relativa e derrota predeterminada.
+</p>
+
+<p>
+Portanto, a afirmação “DP serve exclusivamente
+para manter um navio parado em uma posição geográfica”
+é incompleta.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §1.2.9,
+página impressa 3.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-operacao-plano-horizontal"
+data-topico-id="dp-operacao-plano-horizontal"
+>
+
+<h2>
+2. Operação DP e movimentos no plano horizontal
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.7 da MSC.1/Circ.1580 define
+<strong>operação DP</strong> como a utilização
+do sistema DP para controlar automaticamente
+<strong>pelo menos dois graus de liberdade
+no plano horizontal</strong>.
+</p>
+
+<p>
+Para interpretar essa definição, consideram-se
+os movimentos longitudinais e transversais
+da embarcação e sua rotação em torno do eixo vertical.
+</p>
+
+<ul>
+
+<li>
+<strong>Surge:</strong>
+translação longitudinal, para vante ou para ré.
+</li>
+
+<li>
+<strong>Sway:</strong>
+translação transversal, para bombordo ou boreste.
+</li>
+
+<li>
+<strong>Yaw:</strong>
+rotação em torno do eixo vertical, correspondente
+ao movimento de guinada.
+</li>
+
+</ul>
+
+<p>
+O parágrafo 3.3.2 relaciona diretamente a atuação
+dos propulsores a esses movimentos: o sistema
+de propulsores deve fornecer empuxo adequado
+nas direções longitudinal e lateral e produzir
+momento de guinada para o controle do aproamento.
+</p>
+
+
+<figure class="figura-aula">
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 760 430"
+    width="100%"
+    role="img"
+    aria-labelledby="dp-movimentos-titulo dp-movimentos-descricao"
+>
+
+<title id="dp-movimentos-titulo">
+Movimentos horizontais relacionados ao posicionamento dinâmico
+</title>
+
+<desc id="dp-movimentos-descricao">
+Vista superior de uma embarcação com a proa voltada
+para cima. Surge representa movimento longitudinal,
+sway representa movimento transversal e yaw representa
+rotação em torno do eixo vertical.
+</desc>
+
+<defs>
+
+<marker
+    id="dp-seta-movimentos"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="5"
+    orient="auto-start-reverse"
+>
+
+<path
+    d="M 0 0 L 10 5 L 0 10 Z"
+    fill="context-stroke"
+/>
+
+</marker>
+
+</defs>
+
+<rect
+    x="1"
+    y="1"
+    width="758"
+    height="428"
+    rx="16"
+    fill="#f7fafc"
+    stroke="#d5e5ee"
+/>
+
+<text
+    x="380"
+    y="34"
+    text-anchor="middle"
+    font-size="20"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#0b3a53"
+>
+Vista superior — plano horizontal
+</text>
+
+<path
+    d="M 380 112
+       Q 345 142 340 170
+       L 340 298
+       Q 380 313 420 298
+       L 420 170
+       Q 415 142 380 112 Z"
+    fill="#d5e5ee"
+    stroke="#0b3a53"
+    stroke-width="3"
+/>
+
+<line
+    x1="380"
+    y1="128"
+    x2="380"
+    y2="295"
+    stroke="#0b3a53"
+    stroke-width="1.5"
+    stroke-dasharray="6 5"
+/>
+
+<text
+    x="432"
+    y="143"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Proa
+</text>
+
+<line
+    x1="300"
+    y1="110"
+    x2="300"
+    y2="310"
+    stroke="#176b87"
+    stroke-width="4"
+    marker-start="url(#dp-seta-movimentos)"
+    marker-end="url(#dp-seta-movimentos)"
+/>
+
+<text
+    x="175"
+    y="185"
+    font-size="19"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#176b87"
+>
+SURGE
+</text>
+
+<text
+    x="145"
+    y="210"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Longitudinal
+</text>
+
+<line
+    x1="275"
+    y1="345"
+    x2="485"
+    y2="345"
+    stroke="#176b87"
+    stroke-width="4"
+    marker-start="url(#dp-seta-movimentos)"
+    marker-end="url(#dp-seta-movimentos)"
+/>
+
+<text
+    x="380"
+    y="382"
+    text-anchor="middle"
+    font-size="19"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#176b87"
+>
+SWAY — Transversal
+</text>
+
+<path
+    d="M 454 140
+       C 545 165 552 258 459 291"
+    fill="none"
+    stroke="#926d00"
+    stroke-width="4"
+    marker-start="url(#dp-seta-movimentos)"
+    marker-end="url(#dp-seta-movimentos)"
+/>
+
+<text
+    x="558"
+    y="206"
+    font-size="19"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="#926d00"
+>
+YAW
+</text>
+
+<text
+    x="558"
+    y="232"
+    font-size="16"
+    font-family="Arial, sans-serif"
+    fill="#0b3a53"
+>
+Guinada
+</text>
+
+</svg>
+
+<figcaption>
+Figura didática: movimentos horizontais.
+As setas indicam possibilidades de movimento,
+não vetores de empuxo nem posição de propulsores.
+</figcaption>
+
+</figure>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A definição normativa de operação DP utiliza
+a expressão “pelo menos dois graus de liberdade”.
+Não substitua essa redação por “obrigatoriamente
+os três graus de liberdade em qualquer operação”.
+</p>
+
+<p>
+Os movimentos verticais e os demais movimentos
+angulares podem ser medidos e considerados pelo
+sistema, mas não são os graus de liberdade horizontais
+mencionados nessa definição.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.7,
+página impressa 3; §3.3.2,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-posicao-aproamento-derrota"
+data-topico-id="dp-posicao-aproamento-derrota"
+>
+
+<h2>
+3. Posição, aproamento e derrota predeterminada
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>Posição</strong> e <strong>aproamento</strong>
+representam condições distintas da embarcação.
+A posição descreve sua localização em relação
+a uma referência; o aproamento descreve a orientação
+da proa.
+</p>
+
+<p>
+Uma embarcação pode conservar aproximadamente
+o aproamento enquanto se desloca lateralmente.
+Também pode girar enquanto um ponto de referência
+selecionado permanece próximo da posição desejada.
+Por isso, observar somente o aproamento não permite
+concluir que a posição está sendo mantida.
+</p>
+
+
+<h3>
+3.1. Localização fixa
+</h3>
+
+<p>
+Na manutenção de uma localização fixa, a condição
+desejada é definida em relação a uma referência
+que não acompanha o movimento de outro alvo.
+</p>
+
+<p>
+Como exemplo didático, pode-se considerar uma
+embarcação que precisa permanecer sobre uma
+posição de trabalho enquanto os propulsores
+compensam as solicitações ambientais.
+</p>
+
+
+<h3>
+3.2. Localização relativa
+</h3>
+
+<p>
+Na manutenção de uma localização relativa,
+a condição desejada é expressa em relação
+a uma referência externa.
+</p>
+
+<p>
+Se essa referência se deslocar, conservar
+a mesma relação geométrica pode exigir que
+a embarcação também se desloque. Assim,
+manutenção de posição relativa e imobilidade
+geográfica não são equivalentes.
+</p>
+
+
+<h3>
+3.3. Derrota predeterminada
+</h3>
+
+<p>
+A definição de embarcação DP também contempla
+uma derrota predeterminada. Nesse caso,
+o objetivo pode envolver deslocamento controlado
+ao longo de uma trajetória, em vez de permanência
+em uma única localização.
+</p>
+
+<p>
+Essa possibilidade não significa que qualquer
+sistema de acompanhamento automático de derrota
+seja, por si só, uma instalação DP. A definição
+e o conjunto funcional do sistema devem ser
+considerados.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Antes de interpretar o desempenho do sistema,
+é necessário identificar a condição comandada:
+qual posição ou relação espacial deve ser mantida,
+qual aproamento foi selecionado e se existe
+uma trajetória a acompanhar.
+</p>
+
+<p>
+Uma mudança de posição desejada pode ser intencional.
+Um desvio em relação a uma condição que deveria
+permanecer constante exige outra interpretação.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.9 e 1.2.18,
+páginas impressas 3 e 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-manutencao-perda-posicao"
+data-topico-id="dp-manutencao-perda-posicao"
+>
+
+<h2>
+4. Manutenção de posição e limites da atividade
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.18 da MSC.1/Circ.1580 define
+<strong>position keeping</strong> como a manutenção
+da posição e/ou do aproamento ou da derrota desejados,
+dentro das excursões normais do sistema de controle
+e das condições ambientais definidas.
+</p>
+
+<p>
+A referência às excursões normais reconhece que
+o controle não exige ausência absoluta de movimento.
+O desempenho deve ser interpretado em relação
+à condição desejada e aos limites aplicáveis.
+</p>
+
+<p>
+Por sua vez, o parágrafo 1.2.17 define
+<strong>perda de posição e/ou aproamento</strong>
+como a situação em que a posição e/ou o aproamento
+ficam fora dos limites estabelecidos para a atividade
+DP em andamento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Uma excursão não representa automaticamente perda
+de posição. A avaliação depende dos limites
+estabelecidos para a atividade.
+</p>
+
+<p>
+Entretanto, a existência de excursões normais
+não autoriza aceitar qualquer desvio.
+</p>
+
+</div>
+
+
+<p>
+Como exemplo didático, duas atividades podem ter
+tolerâncias diferentes para o mesmo deslocamento.
+Um desvio compatível com uma tarefa pode ser
+inaceitável em outra, em função das restrições
+e das consequências envolvidas.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+As definições estudadas não estabelecem uma
+tolerância universal, em metros ou graus,
+válida para todas as operações DP.
+</p>
+
+<p>
+Não se deve atribuir um valor fixo de precisão
+a toda embarcação DP nem confundir os limites
+de uma atividade com a classe do equipamento.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.17 e 1.2.18,
+página impressa 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-diferenca-joystick"
+data-topico-id="dp-diferenca-joystick"
+>
+
+<h2>
+5. DP, joystick e controle de aproamento
+</h2>
+
+<div class="widget">
+
+<p>
+A MSC.1/Circ.1580 distingue uma operação DP
+de um <strong>joystick system</strong>.
+O parágrafo 1.2.16 define o sistema de joystick
+como um sistema de controle manual centralizado
+de posição, com controle manual ou automático
+do aproamento.
+</p>
+
+<p>
+A palavra <strong>manual</strong>, aplicada ao
+controle de posição, é essencial nessa definição:
+a existência de um joystick não demonstra,
+por si só, manutenção automática de posição.
+</p>
+
+<p>
+Mesmo quando o aproamento é controlado
+automaticamente, o operador pode continuar
+responsável por comandar manualmente os movimentos
+de translação por meio do joystick.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Distinção funcional
+</h3>
+
+<ul>
+
+<li>
+<strong>Operação DP:</strong>
+controle automático de pelo menos dois graus
+de liberdade no plano horizontal.
+</li>
+
+<li>
+<strong>Sistema de joystick:</strong>
+controle manual centralizado de posição,
+com aproamento manual ou automático.
+</li>
+
+<li>
+<strong>Controle automático apenas de aproamento:</strong>
+a orientação da proa pode ser mantida sem que
+a localização da embarcação seja controlada.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Essa última distinção permite compreender por que
+a simples utilização de um piloto automático
+para conservar o aproamento não demonstra
+a realização de uma operação DP.
+</p>
+
+<p>
+O efeito funcional precisa ser identificado:
+quais movimentos são comandados pelo operador
+e quais são controlados automaticamente?
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não classifique o modo de operação apenas pelo
+formato do comando ou pela presença de um joystick
+no console. Verifique a função efetivamente
+executada pelo sistema.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.7 e 1.2.16,
+páginas impressas 3 e 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-aplicacoes-forcas-missao"
+data-topico-id="dp-aplicacoes-forcas-missao"
+>
+
+<h2>
+6. Aplicações e forças associadas à missão
+</h2>
+
+<div class="widget">
+
+<p>
+O propósito das diretrizes, apresentado na seção 1.1
+da MSC.1/Circ.1580, é recomendar critérios de projeto,
+equipamentos, disposições operacionais, testes
+e documentação para reduzir os riscos envolvidos
+em operações sob controle DP.
+</p>
+
+<p>
+Esses riscos abrangem pessoas, a própria embarcação,
+outras embarcações ou estruturas, instalações
+submarinas e o meio ambiente.
+</p>
+
+<p>
+A aplicação do DP deve, portanto, ser compreendida
+em relação à tarefa executada e às consequências
+de um desvio de posição ou aproamento.
+</p>
+
+
+<h3>
+6.1. Operações mencionadas nas diretrizes
+</h3>
+
+<p>
+O parágrafo 3.1.2 cita sistemas associados a
+<strong>lançamento de cabos</strong>,
+<strong>lançamento de dutos</strong> e
+<strong>amarração</strong> como exemplos de
+sistemas cuja atuação pode produzir forças externas
+com influência direta no desempenho DP.
+</p>
+
+<p>
+Quando essas forças afetam o desempenho,
+sua influência deve ser considerada no projeto
+do sistema DP. O parágrafo também trata do
+fornecimento automático de dados, quando disponível
+pelo fabricante, e da possibilidade de entrada manual.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+A embarcação pode precisar compensar tanto
+solicitações ambientais quanto solicitações
+decorrentes do trabalho realizado.
+</p>
+
+<p>
+Assim, avaliar somente vento e corrente pode
+ser insuficiente quando uma linha, um cabo
+ou outro sistema da missão exerce força
+significativa sobre a embarcação.
+</p>
+
+</div>
+
+
+<h3>
+6.2. DP e fundeio
+</h3>
+
+<p>
+Na MSC/Circ.645, a definição de embarcação DP
+menciona expressamente a manutenção automática
+de posição exclusivamente por força dos propulsores.
+</p>
+
+<p>
+A MSC.1/Circ.1580 utiliza a expressão
+“por meio da força dos propulsores” e reconhece,
+no parágrafo 3.1.2, a influência de sistemas
+associados à missão, incluindo amarração.
+</p>
+
+<p>
+A comparação deve preservar a redação de cada
+documento. Não é correto definir uma embarcação
+como DP apenas porque sua posição está sendo
+mantida por âncoras ou amarras.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A presença de uma força de amarração não permite
+concluir, isoladamente, que existe ou que não existe
+uma operação DP. É necessário identificar
+a atuação automática do sistema e o papel
+dos propulsores na condição operacional examinada.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.1,
+página impressa 3, e §3.1.2,
+página impressa 7;
+MSC/Circ.645, anexo, §1.3.1,
+página impressa 3.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-enquadramento-circulares"
+data-topico-id="dp-enquadramento-circulares"
+>
+
+<h2>
+7. Enquadramento das diretrizes de 1994 e 2017
+</h2>
+
+<div class="widget">
+
+<p>
+A MSC/Circ.645 foi aprovada em 1994 para oferecer
+um padrão internacional aos sistemas DP.
+A MSC.1/Circ.1580 apresenta diretrizes revisadas,
+considerando o desenvolvimento das operações,
+das práticas da indústria e das tecnologias DP
+desde então.
+</p>
+
+<p>
+O preâmbulo da MSC.1/Circ.1580 estabelece
+o enquadramento recomendado das duas versões.
+</p>
+
+
+<h3>
+7.1. Marco da MSC.1/Circ.1580
+</h3>
+
+<p>
+Recomenda-se aplicar as diretrizes de 2017
+às embarcações e unidades construídas
+<strong>em ou após 9 de junho de 2017</strong>.
+</p>
+
+
+<h3>
+7.2. Continuidade de aplicação da MSC/Circ.645
+</h3>
+
+<p>
+Para embarcações e unidades construídas
+<strong>em ou após 1º de julho de 1994,
+mas antes de 9 de junho de 2017</strong>,
+a versão anterior, MSC/Circ.645,
+pode continuar a ser aplicada.
+</p>
+
+<p>
+A seção 1.2 da MSC/Circ.645 relaciona sua aplicação
+à quilha batida ou a estágio semelhante de construção
+em ou após 1º de julho de 1994.
+</p>
+
+
+<h3>
+7.3. Requisitos operacionais de 2017
+</h3>
+
+<p>
+O mesmo preâmbulo recomenda que a
+<strong>seção 4 da MSC.1/Circ.1580</strong>,
+sobre requisitos operacionais, seja aplicada
+a embarcações e unidades novas e existentes,
+conforme apropriado.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não afirme que a MSC.1/Circ.1580 revogou
+indistintamente a MSC/Circ.645 para todas
+as embarcações.
+</p>
+
+<p>
+O enquadramento deve considerar o marco
+de construção e a recomendação específica
+relativa aos requisitos operacionais.
+</p>
+
+</div>
+
+
+<h3>
+7.4. Natureza das diretrizes
+</h3>
+
+<p>
+As circulares apresentam diretrizes e recomendações.
+Sua redação deve ser distinguida de obrigações
+incorporadas por uma Administração, um Estado costeiro
+ou outros instrumentos aplicáveis.
+</p>
+
+<p>
+Na leitura da fonte, uma recomendação expressa
+por “should” não deve ser convertida automaticamente
+em obrigação legal universal, sem identificar
+o instrumento que lhe atribui esse caráter.
+</p>
+
+<p>
+Nesta aula, os requisitos serão estudados conforme
+os textos fornecidos, identificando a circular
+e a seção correspondente.
+</p>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, preâmbulo, §§1 e 2,
+página impressa 2 do anexo;
+MSC/Circ.645, anexo, §1.2,
+página impressa 3.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 1
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A definição de embarcação DP contempla manutenção
+automática de posição e/ou aproamento em localização
+fixa, relativa ou derrota predeterminada, por força
+dos propulsores.
+</li>
+
+<li>
+Uma operação DP controla automaticamente pelo menos
+dois graus de liberdade no plano horizontal.
+</li>
+
+<li>
+Posição e aproamento são grandezas diferentes:
+manter a orientação da proa não demonstra
+manutenção de posição.
+</li>
+
+<li>
+A manutenção de posição admite excursões normais;
+a perda de posição ou aproamento é definida
+em relação aos limites da atividade.
+</li>
+
+<li>
+Um sistema de joystick com controle manual de posição
+não equivale, por essa função, ao controle automático DP.
+</li>
+
+<li>
+Forças associadas à missão podem influenciar
+o desempenho e precisam ser consideradas.
+</li>
+
+<li>
+As diretrizes de 1994 e 2017 possuem enquadramento
+de aplicação que deve ser preservado.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 1
+     ÚLTIMO BLOCO DIDÁTICO DA PARTE
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 1
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Dynamic Positioning — DP</strong>
+— Posicionamento dinâmico:
+controle da condição espacial da embarcação
+por atuação dos propulsores, segundo as definições
+e os critérios estudados.
+</li>
+
+<li>
+<strong>Dynamically positioned vessel / DP vessel</strong>
+— Embarcação dinamicamente posicionada:
+unidade ou embarcação que mantém automaticamente
+posição e/ou aproamento, em localização fixa,
+relativa ou derrota predeterminada,
+por força dos propulsores.
+</li>
+
+<li>
+<strong>DP operation</strong>
+— Operação DP:
+utilização do sistema para controlar automaticamente
+pelo menos dois graus de liberdade no plano horizontal.
+</li>
+
+<li>
+<strong>Position keeping</strong>
+— Manutenção de posição:
+manutenção da posição e/ou do aproamento ou
+da derrota desejados dentro das excursões normais
+do controle e das condições ambientais definidas.
+</li>
+
+<li>
+<strong>Heading</strong>
+— Aproamento:
+orientação da proa da embarcação;
+não equivale à direção de seu deslocamento.
+</li>
+
+<li>
+<strong>Fixed location</strong>
+— Localização fixa:
+condição de posição definida em relação
+a uma referência fixa.
+</li>
+
+<li>
+<strong>Relative location</strong>
+— Localização relativa:
+condição de posição definida em relação
+a uma referência externa, que pode se mover.
+</li>
+
+<li>
+<strong>Predetermined track</strong>
+— Derrota ou trajetória predeterminada:
+trajetória previamente estabelecida
+a ser acompanhada.
+</li>
+
+<li>
+<strong>Degree of freedom — DOF</strong>
+— Grau de liberdade:
+componente independente de movimento;
+nesta parte, os movimentos horizontais
+longitudinal, transversal e de guinada.
+</li>
+
+<li>
+<strong>Surge</strong>
+— Movimento longitudinal:
+translação para vante ou para ré.
+</li>
+
+<li>
+<strong>Sway</strong>
+— Movimento transversal:
+translação para bombordo ou boreste.
+</li>
+
+<li>
+<strong>Yaw</strong>
+— Guinada:
+rotação em torno do eixo vertical.
+</li>
+
+<li>
+<strong>Thruster force</strong>
+— Força produzida pelo propulsor:
+ação propulsiva utilizada para controlar
+o movimento da embarcação.
+</li>
+
+<li>
+<strong>Yawing moment</strong>
+— Momento de guinada:
+ação rotacional em torno do eixo vertical,
+necessária ao controle do aproamento.
+</li>
+
+<li>
+<strong>Joystick system</strong>
+— Sistema de joystick:
+controle manual centralizado de posição,
+com controle manual ou automático do aproamento.
+</li>
+
+<li>
+<strong>Excursion</strong>
+— Excursão:
+desvio em relação à condição desejada,
+avaliado segundo o comportamento do controle
+e os limites da atividade.
+</li>
+
+<li>
+<strong>Loss of position and/or heading</strong>
+— Perda de posição e/ou aproamento:
+condição em que a posição e/ou o aproamento
+ficam fora dos limites definidos para
+a atividade DP em andamento.
+</li>
+
+<li>
+<strong>Mission-related systems</strong>
+— Sistemas associados à missão:
+sistemas da atividade executada que podem
+impor forças externas e influenciar
+o desempenho DP.
+</li>
+
+<li>
+<strong>Guidelines</strong>
+— Diretrizes:
+orientações e critérios cujo enquadramento
+de aplicação deve ser identificado
+no instrumento correspondente.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     CONTINUAR COM A PARTE 2 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html AINDA.
+     OS SCRIPTS OBRIGATÓRIOS SERÃO INSERIDOS
+     NO ENCERRAMENTO DA AULA.
+===================================================== -->
