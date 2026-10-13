@@ -4944,3 +4944,2595 @@ dos propulsores individualmente.
 
      NÃO FECHAR main, body OU html AINDA.
 ===================================================== -->    
+<!-- =========================================
+     PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — Classes de equipamento, redundância e falhas
+</h2>
+
+<p>
+As classes de equipamento DP são organizadas
+segundo os critérios de falha que a instalação
+deve suportar e as consequências da perda
+de posição ou aproamento.
+</p>
+
+<p>
+Nesta parte, serão examinadas as diferenças
+entre classes 1, 2 e 3, a prevenção da propagação
+de falhas e a relação entre redundância,
+pior falha e análise dos modos de falha.
+</p>
+
+<p>
+Referência principal: MSC.1/Circ.1580,
+anexo, seções 1.2, 2, 3.1, 3.5, 3.6 e 5.1.2.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 26
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-classes-filosofia-risco"
+data-topico-id="dp-classes-filosofia-risco"
+>
+
+<h2>
+26. Filosofia das classes de equipamento
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o parágrafo 2.1 da MSC.1/Circ.1580,
+o nível necessário de redundância é determinado
+pelas consequências da perda da capacidade
+de manutenção de posição e/ou aproamento.
+</p>
+
+<p>
+Os requisitos são agrupados em três
+<strong>classes de equipamento</strong>.
+Cada classe está associada a critérios
+de falha que orientam o projeto e a operação.
+</p>
+
+<p>
+A classe requerida para uma operação deve
+ser acordada entre a companhia e o cliente,
+com base na análise de risco das consequências
+de uma perda de posição ou aproamento.
+</p>
+
+<p>
+Alternativamente, a Administração ou o
+Estado costeiro pode determinar a classe
+para a operação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+As classes DP expressam critérios de tolerância
+a falhas e requisitos de redundância.
+Elas não constituem uma escala universal
+de precisão de posicionamento.
+</p>
+
+</div>
+
+
+<p>
+A Administração deve atribuir a classe
+à embarcação com base nos critérios
+da seção 2 e registrá-la no DPVAD.
+</p>
+
+<p>
+Segundo o parágrafo 2.6, a atribuição
+de uma classe significa que a embarcação
+é adequada a operações dentro dessa classe
+e das classes inferiores.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Essa adequação não significa autorização
+incondicional para qualquer atividade.
+A condição dos equipamentos, os limites
+ambientais e os requisitos da operação
+continuam relevantes.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§2.1, 2.5 e 2.6,
+páginas impressas 5 e 6.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 27
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-classe1-falha-unica"
+data-topico-id="dp-classe1-falha-unica"
+>
+
+<h2>
+27. Classe 1: possibilidade de perda após falha única
+</h2>
+
+<div class="widget">
+
+<p>
+Para a <strong>classe de equipamento 1</strong>,
+o parágrafo 2.2.1 estabelece que uma falha
+única pode provocar perda de posição
+e/ou aproamento.
+</p>
+
+<p>
+Isso significa que a classe não exige
+a preservação dessa capacidade diante
+de toda falha única nos termos previstos
+para as classes superiores.
+</p>
+
+<p>
+Como estudado anteriormente, o sistema
+de energia e o controle DP não precisam
+ser redundantes na classe 1.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+“Pode ocorrer perda” não significa
+“qualquer falha necessariamente provoca perda”.
+</p>
+
+<p>
+A consequência real depende do elemento
+afetado, do arranjo e das condições operacionais.
+O ponto normativo é a ausência da garantia
+de tolerância a falha única exigida
+pelas classes 2 e 3.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§2.2.1,
+3.2.2 e 3.4.2.1,
+páginas impressas 6, 8 e 10.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 28
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-classe2-ativos-estaticos"
+data-topico-id="dp-classe2-ativos-estaticos"
+>
+
+<h2>
+28. Classe 2: componentes ativos e estáticos
+</h2>
+
+<div class="widget">
+
+<p>
+Para a <strong>classe de equipamento 2</strong>,
+uma falha única em qualquer componente
+ou sistema ativo não deve provocar
+perda de posição e/ou aproamento.
+</p>
+
+<p>
+Os critérios incluem componentes e sistemas
+como geradores, propulsores, quadros elétricos,
+redes de comunicação e válvulas
+com comando remoto.
+</p>
+
+
+<h3>
+28.1. Componentes normalmente estáticos
+</h3>
+
+<p>
+O requisito não se limita aos componentes
+ativos. O parágrafo 2.2.2 também inclui
+componentes normalmente estáticos, como
+cabos, tubulações e válvulas manuais,
+quando:
+</p>
+
+<ul>
+
+<li>
+Sua falha pode afetar imediatamente
+a capacidade de manutenção de posição.
+</li>
+
+<li>
+Ou sua proteção não está adequadamente
+documentada.
+</li>
+
+</ul>
+
+<p>
+Componentes estáticos comuns podem ser
+aceitos em sistemas cuja falha não afete
+imediatamente a capacidade de manutenção
+de posição.
+</p>
+
+<p>
+A circular apresenta como exemplos
+ventilação e sistemas de água do mar
+que não resfriem diretamente máquinas
+em funcionamento.
+</p>
+
+<p>
+Normalmente, esses componentes estáticos
+não são considerados sujeitos a falha
+quando sua proteção adequada contra danos
+é demonstrada à satisfação da Administração.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A avaliação de um componente estático
+depende de sua consequência funcional
+e da proteção demonstrada.
+A classificação como “estático”
+não elimina automaticamente sua falha
+da análise.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A afirmação “classe 2 considera somente
+falhas de equipamentos ativos” é incompleta.
+</p>
+
+<p>
+É necessário preservar as condições
+normativas referentes aos componentes
+normalmente estáticos.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §2.2.2,
+página impressa 6.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 29
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-classe3-incendio-alagamento"
+data-topico-id="dp-classe3-incendio-alagamento"
+>
+
+<h2>
+29. Classe 3: falhas e perda de compartimentos
+</h2>
+
+<div class="widget">
+
+<p>
+Para a <strong>classe de equipamento 3</strong>,
+uma falha única abrangida pelos critérios
+não deve provocar perda de posição
+e/ou aproamento.
+</p>
+
+<p>
+A definição de falha única inclui:
+</p>
+
+<ul>
+
+<li>
+Os elementos previstos para classe 2
+e qualquer componente normalmente estático,
+cuja falha deve ser considerada.
+</li>
+
+<li>
+Todos os componentes em qualquer
+compartimento estanque à água,
+por incêndio ou alagamento.
+</li>
+
+<li>
+Todos os componentes em qualquer
+subdivisão de incêndio,
+por incêndio ou alagamento,
+observando os requisitos específicos
+para cabos.
+</li>
+
+</ul>
+
+<p>
+A perda simultânea de vários equipamentos
+pode, portanto, integrar um único evento
+de falha considerado no projeto,
+quando esses equipamentos são afetados
+pelo mesmo incêndio ou alagamento
+no espaço abrangido pelo critério.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Dois equipamentos duplicados no mesmo espaço
+podem ser atingidos pelo mesmo evento.
+Sua duplicação não demonstra, isoladamente,
+tolerância à perda desse espaço.
+</p>
+
+<p>
+A classe 3 exige avaliar a separação
+dos sistemas e a capacidade dos meios
+que permanecem disponíveis.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+“Falha única” não significa necessariamente
+perda de apenas um equipamento.
+O critério da classe 3 pode abranger
+todos os componentes do compartimento
+ou da subdivisão afetados.
+</p>
+
+<p>
+A classe 3 também não representa proteção
+ilimitada contra qualquer combinação
+de eventos simultâneos.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §2.2.3,
+página impressa 6.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 30
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-redundancia-disponibilidade"
+data-topico-id="dp-redundancia-disponibilidade"
+>
+
+<h2>
+30. Redundância, disponibilidade e capacidade residual
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.21 define
+<strong>redundância</strong> como a capacidade
+de um componente ou sistema manter
+ou restaurar sua função após uma falha única.
+</p>
+
+<p>
+Ela pode ser obtida pela instalação
+de múltiplos componentes, múltiplos sistemas
+ou meios alternativos de executar uma função.
+</p>
+
+
+<h3>
+30.1. Redundância funcional
+</h3>
+
+<p>
+Para atender aos critérios de falha única,
+o parágrafo 3.1.3 prevê normalmente:
+</p>
+
+<ul>
+
+<li>
+<strong>Classe 2:</strong>
+redundância de todos os componentes ativos.
+</li>
+
+<li>
+<strong>Classe 3:</strong>
+redundância de todos os componentes
+e separação física classe A-60.
+</li>
+
+</ul>
+
+<p>
+Essas disposições devem ser interpretadas
+junto às particularidades e exceções
+expressamente tratadas nas diretrizes.
+</p>
+
+
+<h3>
+30.2. Disponibilidade após a falha
+</h3>
+
+<p>
+Segundo o parágrafo 3.1.6, componentes
+e sistemas redundantes devem estar
+imediatamente disponíveis, sem exigir
+intervenção manual dos operadores.
+</p>
+
+<p>
+Sua capacidade deve permitir continuar
+a operação durante o período necessário
+para terminar com segurança o trabalho
+em andamento.
+</p>
+
+<p>
+A transferência de controle deve ocorrer
+suavemente e dentro dos limites aceitáveis
+das operações para as quais a embarcação
+foi projetada.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A presença de um equipamento sobressalente
+desligado, que exige preparação ou intervenção
+para entrar em serviço, não demonstra
+automaticamente atendimento ao requisito
+de disponibilidade imediata.
+</p>
+
+<p>
+A mudança manual para o controle de reserva
+separado da classe 3 possui requisito específico,
+estudado na Parte 3, e deve ser interpretada
+junto ao arranjo previsto nas diretrizes.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.21,
+página impressa 5; §§3.1.3 e 3.1.6,
+página impressa 7.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 31
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-propagacao-falhas-segregacao"
+data-topico-id="dp-propagacao-falhas-segregacao"
+>
+
+<h2>
+31. Propagação de falhas e segregação dos sistemas
+</h2>
+
+<div class="widget">
+
+<p>
+Para classes 2 e 3, as conexões entre sistemas
+redundantes e separados devem ser reduzidas
+ao mínimo e falhar para a condição mais segura.
+</p>
+
+<p>
+O parágrafo 3.1.5 estabelece que uma falha
+em um sistema não deve ser transferida
+ao outro sistema redundante.
+</p>
+
+<p>
+Na classe 3, conexões necessárias entre
+sistemas separados podem ser aceitas
+quando operadas de forma a não constituir
+um caminho de propagação de falha
+durante a operação DP.
+</p>
+
+
+<h3>
+31.1. Cabos na classe 3
+</h3>
+
+<p>
+Cabos de equipamentos ou sistemas redundantes
+não devem ser encaminhados conjuntamente
+pelos mesmos compartimentos.
+</p>
+
+<p>
+Quando isso for inevitável, o parágrafo 3.5.1
+admite encaminhamento conjunto em dutos
+classe A-60, incluindo suas terminações,
+protegidos dos riscos de incêndio,
+exceto aquele representado pelos próprios cabos.
+</p>
+
+<p>
+Não devem existir caixas de conexão
+dentro desses dutos.
+</p>
+
+
+<h3>
+31.2. Tubulações na classe 3
+</h3>
+
+<p>
+Tubulações redundantes, como as de combustível,
+resfriamento, lubrificação e óleo hidráulico,
+não devem ser encaminhadas conjuntamente
+pelos mesmos compartimentos.
+</p>
+
+<p>
+Quando inevitável, podem ser utilizados
+dutos classe A-60, incluindo suas terminações,
+com a proteção especificada no parágrafo 3.5.3.
+</p>
+
+
+<h3>
+31.3. Arranjo na classe 2
+</h3>
+
+<p>
+Para classe 2, cabos e tubulações
+de combustível, lubrificação, hidráulica
+e resfriamento devem ser posicionados
+considerando riscos de incêndio
+e danos mecânicos.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A separação dos equipamentos principais
+pode ser insuficiente se seus cabos,
+tubulações ou interfaces permanecerem
+expostos ao mesmo evento de falha.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§3.1.4–3.1.5,
+página impressa 7; §§3.5.1–3.5.3,
+página impressa 12.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 32
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-falhas-ocultas-sistemas-externos"
+data-topico-id="dp-falhas-ocultas-sistemas-externos"
+>
+
+<h2>
+32. Falhas ocultas e sistemas essenciais não DP
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.12 define falha como
+uma ocorrência em componente ou sistema
+que provoca perda de função ou deterioração
+da capacidade funcional a ponto de reduzir
+significativamente a segurança da embarcação,
+das pessoas ou a proteção ambiental.
+</p>
+
+<p>
+Uma falha não precisa, portanto,
+representar parada completa do equipamento.
+</p>
+
+
+<h3>
+32.1. Falha oculta
+</h3>
+
+<p>
+Uma <strong>hidden failure</strong>
+não é imediatamente evidente ao pessoal
+de operação ou manutenção e pode impedir
+uma função quando ela for solicitada.
+</p>
+
+<p>
+A definição menciona funções de proteção,
+equipamentos de reserva, fontes de alimentação
+de emergência e insuficiência de capacidade
+ou desempenho.
+</p>
+
+<p>
+Para classes 2 e 3, o parágrafo 3.1.7
+exige monitoramento das falhas ocultas
+nos dispositivos para os quais a FMEA
+demonstre que esse tipo de falha
+provoca perda de redundância.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo didático, um dispositivo
+de proteção pode permanecer aparentemente
+disponível, mas não atuar quando solicitado.
+</p>
+
+<p>
+Se essa proteção for necessária para impedir
+a propagação de outra falha, a condição oculta
+pode comprometer a redundância antes
+de uma perda perceptível de posição.
+</p>
+
+</div>
+
+
+<h3>
+32.2. Sistemas essenciais não DP
+</h3>
+
+<p>
+Para classes 2 e 3, sistemas que não pertencem
+diretamente ao DP, mas cuja falha pode
+provocar falha do DP, também devem atender
+aos requisitos relevantes das diretrizes.
+</p>
+
+<p>
+O parágrafo 3.6 cita sistemas comuns
+de combate a incêndio, ventilação de motores,
+climatização e sistemas de parada,
+entre outros.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A fronteira da análise não termina
+nos equipamentos identificados como DP.
+Dependências externas capazes de comprometer
+o sistema também precisam ser consideradas.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.12 e 1.2.15,
+página impressa 4; §3.1.7,
+página impressa 7; §3.6,
+página impressa 12.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 33
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-atos-inadvertidos"
+data-topico-id="dp-atos-inadvertidos"
+>
+
+<h2>
+33. Atos inadvertidos no critério de falha única
+</h2>
+
+<div class="widget">
+
+<p>
+Para classes 2 e 3, o parágrafo 2.3 estabelece
+que um único ato inadvertido deve ser considerado
+uma falha única quando esse ato for
+razoavelmente provável.
+</p>
+
+<p>
+O critério incorpora ações humanas à análise
+das falhas relevantes.
+</p>
+
+<p>
+Ele se relaciona à proteção dos comandos
+estudada na Parte 3: um único ato inadvertido
+no painel não deve provocar perda de posição
+ou aproamento nas classes 2 e 3.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não omita a qualificação
+“razoavelmente provável”.
+Também não trate a análise de falha única
+como restrita a avarias mecânicas ou elétricas.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §2.3,
+página impressa 6; §3.4.1.4,
+página impressa 9.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 34
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-wcf-wcfdi"
+data-topico-id="dp-wcf-wcfdi"
+>
+
+<h2>
+34. Pior falha e intenção de projeto
+</h2>
+
+<div class="widget">
+
+<h3>
+34.1. Worst-Case Failure — WCF
+</h3>
+
+<p>
+O parágrafo 1.2.25 define
+<strong>Worst-Case Failure</strong>
+como a falha única identificada no sistema DP
+que produz o maior efeito prejudicial
+sobre sua capacidade, conforme determinado
+pela FMEA.
+</p>
+
+<p>
+A WCF deve resultar da análise
+do arranjo real. Não pode ser presumida
+apenas pela quantidade de equipamentos
+instalados.
+</p>
+
+
+<h3>
+34.2. Worst-Case Failure Design Intent — WCFDI
+</h3>
+
+<p>
+O parágrafo 1.2.24 define
+<strong>Worst-Case Failure Design Intent</strong>
+como as capacidades mínimas especificadas
+que devem ser mantidas após a pior falha.
+</p>
+
+<p>
+A WCFDI constitui uma base do projeto
+e normalmente se relaciona à quantidade
+de propulsores e geradores que podem
+falhar simultaneamente.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Distinção fundamental
+</h3>
+
+<ul>
+
+<li>
+<strong>WCF:</strong>
+qual falha única produz o efeito mais prejudicial?
+</li>
+
+<li>
+<strong>WCFDI:</strong>
+qual capacidade mínima o projeto pretende
+preservar após essa falha?
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+Uma única falha pode retirar vários
+equipamentos quando eles dependem
+do mesmo sistema afetado.
+</p>
+
+<p>
+Como exemplo didático, a perda de um grupo
+de energia pode retirar os propulsores
+alimentados por ele. O evento iniciador
+é único, embora seus efeitos atinjam
+vários componentes.
+</p>
+
+<p>
+Segundo o parágrafo 2.4, a pior falha
+deve ser determinada com base nos critérios
+da classe e utilizada como critério
+da análise de consequências.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A WCF não corresponde necessariamente
+à perda do maior propulsor isolado.
+Uma dependência comum pode produzir
+consequência mais severa.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.24–1.2.25,
+página impressa 5; §2.4,
+página impressa 6.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 35
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-fmea-proving-trials"
+data-topico-id="dp-fmea-proving-trials"
+>
+
+<h2>
+35. FMEA e ensaios de comprovação
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>Failure Modes and Effects Analysis — FMEA</strong>
+é uma análise sistemática dos sistemas
+e subsistemas, com detalhamento suficiente
+para identificar modos potenciais de falha
+e suas consequências.
+</p>
+
+<p>
+Para classes 2 e 3, o parágrafo 5.1.2
+exige a realização de uma FMEA.
+</p>
+
+<p>
+A análise deve demonstrar que uma falha única
+abrangida pelos critérios não provoca
+perda de posição ou aproamento
+e verificar a WCFDI.
+</p>
+
+
+<h3>
+35.1. FMEA proving trials
+</h3>
+
+<p>
+Os <strong>FMEA proving trials</strong>
+constituem o programa de testes destinado
+a verificar a FMEA.
+</p>
+
+<p>
+Segundo o parágrafo 5.1.2,
+a análise deve ser confirmada
+por esses ensaios.
+</p>
+
+<p>
+A FMEA e os resultados dos ensaios
+devem permanecer a bordo.
+A análise deve ser mantida atualizada.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A FMEA identifica e analisa os modos
+de falha e suas consequências.
+Os ensaios verificam a análise
+na instalação.
+</p>
+
+<p>
+Ter um documento de FMEA não substitui
+a comprovação por testes nem sua atualização
+quando a instalação se modifica.
+</p>
+
+</div>
+
+
+<h3>
+35.2. Relação com a operação
+</h3>
+
+<p>
+Para classes 2 e 3, o parágrafo 2.7
+prevê operação de modo que a pior falha
+possa ocorrer a qualquer momento
+sem ultrapassar os critérios aceitáveis
+de excursão para posição ou aproamento.
+</p>
+
+<p>
+A verificação contínua da capacidade
+na condição operacional é realizada
+pela análise de consequências,
+que será desenvolvida na Parte 5.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda três funções:
+</p>
+
+<ul>
+
+<li>
+<strong>FMEA:</strong>
+análise sistemática das falhas.
+</li>
+
+<li>
+<strong>Proving trials:</strong>
+verificação da análise por testes.
+</li>
+
+<li>
+<strong>Consequence analysis:</strong>
+verificação contínua da capacidade
+diante da pior falha.
+</li>
+
+</ul>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§1.2.13–1.2.14,
+página impressa 4; §2.7,
+página impressa 7; §5.1.2,
+página impressa 14.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 4
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+A classe requerida depende das consequências
+da perda de posição ou aproamento.
+</li>
+
+<li>
+Na classe 1, uma falha única pode provocar perda.
+</li>
+
+<li>
+A classe 2 contempla componentes ativos
+e determinados componentes normalmente estáticos.
+</li>
+
+<li>
+A classe 3 amplia os critérios para incluir
+perdas decorrentes de incêndio ou alagamento
+nos espaços definidos pelas diretrizes.
+</li>
+
+<li>
+Redundância exige disponibilidade funcional,
+capacidade residual e prevenção
+da propagação de falhas.
+</li>
+
+<li>
+Falhas ocultas e dependências de sistemas
+não DP podem comprometer a redundância.
+</li>
+
+<li>
+WCF identifica a pior consequência
+de uma falha única; WCFDI especifica
+a capacidade mínima pretendida após ela.
+</li>
+
+<li>
+A FMEA deve ser confirmada por ensaios,
+mantida a bordo e atualizada.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 4
+     ÚLTIMO BLOCO DIDÁTICO DA PARTE
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 4
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Equipment class</strong>
+— Classe de equipamento:
+agrupamento de requisitos DP segundo
+os critérios de falha e redundância.
+</li>
+
+<li>
+<strong>Single fault / single failure</strong>
+— Falha única:
+evento considerado nos critérios da classe,
+cujos efeitos podem atingir vários componentes.
+</li>
+
+<li>
+<strong>Active component</strong>
+— Componente ativo:
+componente ou sistema como gerador,
+propulsor ou válvula com comando remoto,
+conforme exemplos das diretrizes.
+</li>
+
+<li>
+<strong>Normally static component</strong>
+— Componente normalmente estático:
+elemento como cabo, tubulação ou válvula manual,
+cujo tratamento na análise depende
+dos critérios aplicáveis.
+</li>
+
+<li>
+<strong>Redundancy</strong>
+— Redundância:
+capacidade de manter ou restaurar
+uma função após falha única.
+</li>
+
+<li>
+<strong>Failure propagation</strong>
+— Propagação de falha:
+transferência dos efeitos de uma falha
+de um sistema para outro.
+</li>
+
+<li>
+<strong>Physical separation</strong>
+— Separação física:
+disposição dos sistemas destinada
+a evitar sua perda pelo mesmo evento,
+conforme os requisitos aplicáveis.
+</li>
+
+<li>
+<strong>Watertight compartment</strong>
+— Compartimento estanque à água:
+espaço considerado no critério
+de incêndio ou alagamento da classe 3.
+</li>
+
+<li>
+<strong>Fire subdivision</strong>
+— Subdivisão de incêndio:
+espaço considerado na avaliação
+da perda de componentes por incêndio
+ou alagamento na classe 3.
+</li>
+
+<li>
+<strong>Hidden failure</strong>
+— Falha oculta:
+falha não imediatamente evidente,
+capaz de impedir uma função quando solicitada.
+</li>
+
+<li>
+<strong>Essential non-DP systems</strong>
+— Sistemas essenciais não DP:
+sistemas externos ao DP cuja falha
+pode comprometer seu funcionamento.
+</li>
+
+<li>
+<strong>Worst-Case Failure — WCF</strong>
+— Pior falha:
+falha única com o maior efeito prejudicial
+sobre a capacidade DP, determinada pela FMEA.
+</li>
+
+<li>
+<strong>Worst-Case Failure Design Intent — WCFDI</strong>
+— Intenção de projeto para a pior falha:
+capacidades mínimas especificadas
+a preservar após a pior falha.
+</li>
+
+<li>
+<strong>Failure Modes and Effects Analysis — FMEA</strong>
+— Análise dos modos de falha e seus efeitos:
+análise sistemática dos modos potenciais
+de falha e de suas consequências.
+</li>
+
+<li>
+<strong>FMEA proving trials</strong>
+— Ensaios de comprovação da FMEA:
+programa de testes destinado
+a verificar a análise.
+</li>
+
+<li>
+<strong>Fail to the safest condition</strong>
+— Falhar para a condição mais segura:
+comportamento previsto para conexões
+entre sistemas redundantes e separados.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 4
+
+     CONTINUAR COM A PARTE 5 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html AINDA.
+===================================================== -->
+
+<!-- =========================================
+     PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — Capacidade de manutenção de posição e decisão operacional
+</h2>
+
+<p>
+A capacidade de manter posição com todos os
+equipamentos disponíveis não demonstra,
+isoladamente, que uma operação pode continuar
+com segurança após a pior falha.
+</p>
+
+<p>
+Nesta parte, serão examinadas a análise
+de consequências, a interpretação dos gráficos
+de capacidade, os limites específicos da atividade
+e o tempo necessário para terminar a operação
+com segurança.
+</p>
+
+<p>
+Referência principal: MSC.1/Circ.1580,
+anexo, §§1.2.1, 1.2.5, 1.2.22, 2.7,
+3.4.2.4 e seção 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 36
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-capacidade-integra-pos-falha"
+data-topico-id="dp-capacidade-integra-pos-falha"
+>
+
+<h2>
+36. Capacidade íntegra e capacidade após a pior falha
+</h2>
+
+<div class="widget">
+
+<p>
+Para classes 2 e 3, a operação deve considerar
+a possibilidade de ocorrência da pior falha
+a qualquer momento, sem ultrapassar os critérios
+aceitáveis de excursão de posição
+ou aproamento.
+</p>
+
+<p>
+É necessário distinguir duas condições:
+</p>
+
+<ul>
+
+<li>
+<strong>Condição plenamente operacional:</strong>
+capacidade com os equipamentos previstos
+disponíveis no arranjo considerado.
+</li>
+
+<li>
+<strong>Condição após a pior falha única:</strong>
+capacidade dos equipamentos que permanecem
+disponíveis após o evento identificado
+pela análise.
+</li>
+
+</ul>
+
+<p>
+A segunda condição pode apresentar menor
+capacidade de força e momento, além de uma
+distribuição diferente dos meios propulsivos.
+</p>
+
+<p>
+Por isso, não basta verificar se a embarcação
+mantém posição agora. É necessário verificar
+se os meios remanescentes conseguem atender
+à demanda após a falha aplicável.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo didático, uma embarcação pode
+manter posição utilizando propulsores de dois
+grupos de energia. Se a perda de um grupo
+retirar uma parcela importante dos propulsores,
+os equipamentos restantes podem não atender
+à mesma solicitação ambiental.
+</p>
+
+<p>
+A posição aparentemente estável antes
+da falha não comprova capacidade suficiente
+na condição posterior.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não adote uma porcentagem genérica de potência
+ou utilização dos propulsores como limite
+universal de segurança.
+</p>
+
+<p>
+A distribuição dos equipamentos perdidos,
+a direção das forças e a capacidade remanescente
+de momento também precisam ser consideradas.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §2.7,
+página impressa 7; §§3.4.2.4 e 4.5,
+páginas impressas 10 e 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 37
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-consequence-analysis"
+data-topico-id="dp-consequence-analysis"
+>
+
+<h2>
+37. Análise de consequências — Consequence analysis
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.5 define
+<strong>consequence analysis</strong>
+como uma função de software que verifica
+continuamente se a embarcação permanecerá
+em posição caso ocorra a pior falha.
+</p>
+
+<p>
+Para classes 2 e 3, o parágrafo 3.4.2.4
+prevê essa função no controle DP.
+</p>
+
+
+<h3>
+37.1. O que deve ser verificado
+</h3>
+
+<p>
+A análise deve verificar se os propulsores,
+hélices e lemes sob controle DP que permanecerem
+operacionais após a pior falha conseguem
+produzir a mesma força propulsiva resultante
+e o mesmo momento requeridos antes da falha.
+</p>
+
+<p>
+O critério se refere à
+<strong>resultante necessária</strong>.
+Não exige que cada equipamento remanescente
+reproduza individualmente o comando de um
+equipamento perdido.
+</p>
+
+<p>
+Os meios disponíveis precisam, em conjunto,
+atender às solicitações de força
+e momento.
+</p>
+
+
+<h3>
+37.2. Alarme de capacidade insuficiente
+</h3>
+
+<p>
+A análise deve produzir alarme quando
+a ocorrência da pior falha levaria à perda
+de posição e/ou aproamento por insuficiência
+de empuxo nas condições ambientais presentes.
+</p>
+
+<p>
+Essas condições incluem vento,
+ondas e corrente.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Um alarme da análise de consequências pode
+indicar insuficiência da capacidade
+após uma falha hipotética, mesmo enquanto
+a embarcação ainda mantém posição
+com os equipamentos disponíveis.
+</p>
+
+<p>
+Ele não deve ser interpretado automaticamente
+como evidência de que a falha já ocorreu.
+</p>
+
+</div>
+
+
+<h3>
+37.3. Operações com encerramento demorado
+</h3>
+
+<p>
+Para operações que demandam longo tempo
+para terminar com segurança, a função deve
+incluir simulação do empuxo e da potência
+remanescentes após a pior falha, com base
+na entrada das condições ambientais.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A análise de consequências é uma verificação
+contínua de capacidade. Ela não substitui
+a FMEA, os ensaios de comprovação
+ou as decisões previstas no manual operacional.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.5,
+página impressa 3; §3.4.2.4,
+página impressa 10.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 38
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-capability-plots"
+data-topico-id="dp-capability-plots"
+>
+
+<h2>
+38. Gráficos polares de capacidade DP
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 4.5 prevê a elaboração de
+<strong>DP capability polar plots</strong>
+para demonstrar a capacidade de manutenção
+de posição:
+</p>
+
+<ul>
+
+<li>
+Na condição plenamente operacional.
+</li>
+
+<li>
+Na condição após a pior falha única.
+</li>
+
+</ul>
+
+<p>
+Os gráficos devem representar as condições
+ambientais da área de operação e a condição
+operacional da embarcação específica
+para sua missão.
+</p>
+
+
+<h3>
+38.1. Interpretação das direções
+</h3>
+
+<p>
+Em uma representação polar, a capacidade
+é examinada para diferentes direções
+de solicitação em relação à embarcação.
+</p>
+
+<p>
+A leitura exige identificar a convenção
+angular, a grandeza representada no eixo
+radial e as hipóteses ambientais utilizadas.
+Esses elementos devem ser obtidos
+no gráfico e em sua documentação.
+</p>
+
+<p>
+Uma direção de maior capacidade não permite
+presumir a mesma capacidade em todas
+as demais direções.
+</p>
+
+
+<h3>
+38.2. Comparação entre condições
+</h3>
+
+<p>
+A comparação entre a condição íntegra
+e a condição após falha permite reconhecer
+em quais direções a perda de equipamentos
+reduz a capacidade de manutenção de posição.
+</p>
+
+<p>
+Uma solicitação pode estar dentro
+da capacidade íntegra e fora da capacidade
+após a pior falha.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Antes de utilizar um gráfico, deve-se verificar
+se ele corresponde à configuração
+e à condição de missão examinadas.
+</p>
+
+<p>
+Um gráfico produzido para outra disponibilidade
+de propulsores ou outra condição operacional
+não demonstra automaticamente a capacidade
+da configuração atual.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A circular não estabelece um único formato
+numérico de gráfico válido para todas
+as instalações.
+</p>
+
+<p>
+Não se deve interpretar o limite apresentado
+sem conhecer as hipóteses de vento, ondas,
+corrente e condição da embarcação utilizadas
+em sua elaboração.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §4.5,
+página impressa 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 39
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-asog-limites-atividade"
+data-topico-id="dp-asog-limites-atividade"
+>
+
+<h2>
+39. Limites específicos da atividade — ASOG
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.1 define
+<strong>Activity-Specific Operating Guidelines
+— ASOG</strong> como diretrizes relativas
+aos limites operacionais, ambientais
+e de desempenho dos equipamentos
+para uma localização e atividade específicas.
+</p>
+
+<p>
+Em operações de perfuração, essas diretrizes
+podem ser denominadas
+<strong>Well-Specific Operating Guidelines
+— WSOG</strong>.
+</p>
+
+<p>
+A especificidade é essencial:
+os limites devem estar relacionados
+à atividade e à localização consideradas.
+</p>
+
+
+<h3>
+39.1. Relação com a preparação operacional
+</h3>
+
+<p>
+O parágrafo 4.1 prevê a verificação
+do sistema antes de cada operação DP,
+segundo as listas aplicáveis e ferramentas
+de apoio à decisão, como ASOG.
+</p>
+
+<p>
+O objetivo é verificar o funcionamento
+correto e a configuração do sistema
+para o modo apropriado de operação.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+A ASOG relaciona limites da atividade
+às condições de operação e dos equipamentos.
+Ela não deve ser substituída por uma
+avaliação genérica de que o navio
+“está mantendo posição”.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A MSC.1/Circ.1580 define a função da ASOG,
+mas os trechos estudados não apresentam
+uma matriz universal de cores, valores
+ou ações válida para todas as operações.
+</p>
+
+<p>
+Não se devem inventar limites ou comandos
+de resposta sem a documentação específica.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.1,
+página impressa 3; §§4.1 e 4.6.10,
+página impressa 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 40
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-checklists-monitoramento"
+data-topico-id="dp-checklists-monitoramento"
+>
+
+<h2>
+40. Verificações antes e durante a operação
+</h2>
+
+<div class="widget">
+
+<h3>
+40.1. Antes de cada operação
+</h3>
+
+<p>
+A verificação prévia deve seguir
+as listas específicas aplicáveis
+à embarcação e à localização,
+além das ferramentas de apoio à decisão.
+</p>
+
+<p>
+Segundo o parágrafo 4.1, devem ser verificados:
+</p>
+
+<ul>
+
+<li>
+O funcionamento correto do sistema DP.
+</li>
+
+<li>
+Sua configuração para o modo apropriado
+de operação.
+</li>
+
+</ul>
+
+
+<h3>
+40.2. Durante a operação
+</h3>
+
+<p>
+O parágrafo 4.2 prevê verificações
+em intervalos regulares, conforme
+a lista específica de serviço
+de quarto da embarcação.
+</p>
+
+<p>
+A condição inicial não deve ser tratada
+como permanente. Disponibilidade
+dos equipamentos, qualidade das informações
+e condições ambientais podem mudar.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo didático, uma referência
+de posição pode estar adequada
+no início da atividade e apresentar
+degradação posteriormente.
+</p>
+
+<p>
+Da mesma forma, uma alteração na disponibilidade
+dos equipamentos pode reduzir a capacidade
+após falha, sem produzir perda imediata
+de posição.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O parágrafo 4.2 exige intervalos regulares,
+mas não estabelece um intervalo universal
+em minutos.
+</p>
+
+<p>
+A frequência e os itens da verificação
+devem ser obtidos na lista operacional
+aplicável.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§4.1 e 4.2,
+página impressa 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 41
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-tempo-encerramento-seguro"
+data-topico-id="dp-tempo-encerramento-seguro"
+>
+
+<h2>
+41. Tempo necessário para terminar com segurança
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 1.2.22 define
+<strong>time to safely terminate operations</strong>
+como o tempo necessário, em uma emergência,
+para cessar com segurança as operações
+da embarcação DP.
+</p>
+
+<p>
+Esse tempo se refere à atividade executada.
+Não equivale necessariamente ao tempo
+para acionar um comando, interromper
+um equipamento ou abandonar o modo DP.
+</p>
+
+<p>
+O encerramento seguro pode exigir
+uma sequência de ações definida
+na documentação da operação.
+</p>
+
+
+<h3>
+41.1. Relação com a deterioração ambiental
+</h3>
+
+<p>
+O parágrafo 4.3 exige considerar tanto
+a deterioração das condições ambientais
+quanto o tempo necessário para terminar
+a operação com segurança.
+</p>
+
+<p>
+A avaliação, portanto, não se limita
+à capacidade no instante presente.
+Ela precisa reconhecer a possibilidade
+de redução da margem durante o período
+necessário ao encerramento.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Aplicação operacional
+</h3>
+
+<p>
+Como exemplo didático, uma atividade
+com encerramento demorado pode exigir
+uma decisão antecipada quando as condições
+ambientais estão se deteriorando.
+</p>
+
+<p>
+Esperar a perda efetiva de posição
+pode deixar tempo insuficiente
+para completar o encerramento seguro.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A circular não estabelece um tempo fixo
+de encerramento para todas as atividades.
+</p>
+
+<p>
+O tempo deve corresponder à operação
+e aos procedimentos aplicáveis.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §1.2.22,
+página impressa 5; §§3.4.2.4 e 4.3,
+páginas impressas 10 e 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 42
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-criterio-terminar-operacao"
+data-topico-id="dp-criterio-terminar-operacao"
+>
+
+<h2>
+42. Critério operacional para terminar a atividade
+</h2>
+
+<div class="widget">
+
+<p>
+Segundo o parágrafo 4.3, operações
+que necessitam de classe 2 ou 3 devem
+ser terminadas quando as condições ambientais
+forem tais que a embarcação não consiga
+manter posição caso ocorra a falha única
+aplicável à classe.
+</p>
+
+<p>
+O critério considera a capacidade
+<strong>após a falha</strong>.
+Não exige aguardar a perda de posição
+na condição atual.
+</p>
+
+<p>
+Também devem ser consideradas a deterioração
+ambiental e a duração do encerramento seguro.
+</p>
+
+
+<h3>
+42.1. Meios de verificação
+</h3>
+
+<p>
+O mesmo parágrafo prevê a verificação
+por meio de:
+</p>
+
+<ul>
+
+<li>
+<strong>Envelopes ambientais:</strong>
+quando a operação ocorre em classe 1.
+</li>
+
+<li>
+<strong>Meio automático:</strong>
+como a análise de consequências,
+quando a operação ocorre em classe 2 ou 3.
+</li>
+
+</ul>
+
+<p>
+Essa distinção deve ser preservada
+junto ao enquadramento da operação
+e aos critérios aplicáveis.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A frase “a posição continua estável,
+portanto a operação pode continuar”
+não demonstra atendimento ao requisito
+da classe 2 ou 3.
+</p>
+
+<p>
+É necessário avaliar se a posição
+continuaria dentro dos limites
+após a falha considerada.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referência:</strong>
+MSC.1/Circ.1580, anexo, §4.3,
+página impressa 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 43
+========================================= -->
+
+<section
+class="topico-aula"
+id="dp-manual-operacional"
+data-topico-id="dp-manual-operacional"
+>
+
+<h2>
+43. Manual operacional e instruções a bordo
+</h2>
+
+<div class="widget">
+
+<p>
+O parágrafo 4.4 prevê que as instruções
+operacionais necessárias permaneçam a bordo.
+</p>
+
+<p>
+O parágrafo 4.6 estabelece que os manuais
+operacionais DP específicos da embarcação
+incorporem:
+</p>
+
+<ul>
+
+<li>
+Lista de verificação da localização.
+</li>
+
+<li>
+Lista de verificação de serviço de quarto.
+</li>
+
+<li>
+Instruções de operação DP.
+</li>
+
+<li>
+Testes anuais e respectivos procedimentos.
+</li>
+
+<li>
+Testes iniciais e periódicos de cinco anos
+e respectivos procedimentos.
+</li>
+
+<li>
+Exemplos de testes e procedimentos
+após modificações e não conformidades.
+</li>
+
+<li>
+Procedimento de recuperação de blackout.
+</li>
+
+<li>
+Lista de componentes críticos.
+</li>
+
+<li>
+Exemplos de modos operacionais.
+</li>
+
+<li>
+Ferramentas de apoio à decisão, como ASOG.
+</li>
+
+<li>
+Gráficos de capacidade.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O manual reúne as instruções e ferramentas
+que relacionam os requisitos gerais
+à instalação e à operação da embarcação.
+</p>
+
+<p>
+A recuperação de blackout e as respostas
+a falhas devem seguir os procedimentos
+aplicáveis. A circular exige sua documentação,
+mas não fornece uma sequência única
+de comandos para todas as embarcações.
+</p>
+
+</div>
+
+
+<p>
+<strong>Referências:</strong>
+MSC.1/Circ.1580, anexo, §§4.4 e 4.6,
+página impressa 13.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 5
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 5
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+Manter posição com todos os equipamentos
+não comprova capacidade após a pior falha.
+</li>
+
+<li>
+A análise de consequências verifica
+continuamente a capacidade dos meios
+que permaneceriam disponíveis.
+</li>
+
+<li>
+Seu alarme pode indicar insuficiência
+pós-falha antes de ocorrer perda efetiva
+de posição.
+</li>
+
+<li>
+Os gráficos de capacidade devem representar
+a condição íntegra e a condição após
+a pior falha, considerando ambiente e missão.
+</li>
+
+<li>
+ASOG e listas de verificação relacionam
+os limites à atividade e à embarcação.
+</li>
+
+<li>
+A decisão operacional deve considerar
+a deterioração ambiental e o tempo
+para terminar com segurança.
+</li>
+
+<li>
+Operações que necessitam de classe 2 ou 3
+devem ser terminadas quando a capacidade
+após a falha aplicável deixa de atender
+à manutenção de posição.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 5
+     ÚLTIMO BLOCO DIDÁTICO DA PARTE
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário técnico — Parte 5
+</h2>
+
+<div class="widget">
+
+<div class="termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Consequence analysis</strong>
+— Análise de consequências:
+função de software que verifica continuamente
+se a embarcação permanecerá em posição
+após a pior falha.
+</li>
+
+<li>
+<strong>Fully operational condition</strong>
+— Condição plenamente operacional:
+condição com os equipamentos previstos
+disponíveis no arranjo examinado.
+</li>
+
+<li>
+<strong>Post worst-case single failure condition</strong>
+— Condição após a pior falha única:
+condição dos meios que permanecem disponíveis
+após o evento de falha considerado.
+</li>
+
+<li>
+<strong>Resultant thrust force</strong>
+— Força propulsiva resultante:
+resultado combinado das forças
+dos meios propulsivos.
+</li>
+
+<li>
+<strong>DP capability polar plot</strong>
+— Gráfico polar de capacidade DP:
+representação da capacidade de manutenção
+de posição para diferentes direções,
+sob condições especificadas.
+</li>
+
+<li>
+<strong>Environmental conditions</strong>
+— Condições ambientais:
+condições como vento, ondas e corrente,
+consideradas na avaliação da capacidade.
+</li>
+
+<li>
+<strong>Environmental envelope</strong>
+— Envelope ambiental:
+conjunto de condições ambientais
+considerado para verificar os limites
+de operação.
+</li>
+
+<li>
+<strong>Activity-Specific Operating Guidelines — ASOG</strong>
+— Diretrizes operacionais específicas da atividade:
+limites operacionais, ambientais
+e de desempenho dos equipamentos
+para uma localização e atividade específicas.
+</li>
+
+<li>
+<strong>Well-Specific Operating Guidelines — WSOG</strong>
+— Diretrizes operacionais específicas do poço:
+denominação que pode ser utilizada
+para essas diretrizes em operações
+de perfuração.
+</li>
+
+<li>
+<strong>Location checklist</strong>
+— Lista de verificação da localização:
+verificações aplicáveis à embarcação
+e ao local antes da operação.
+</li>
+
+<li>
+<strong>Watchkeeping checklist</strong>
+— Lista de verificação de serviço de quarto:
+verificações periódicas durante
+a operação DP.
+</li>
+
+<li>
+<strong>Time to safely terminate operations</strong>
+— Tempo para terminar as operações com segurança:
+tempo necessário para cessar a atividade
+com segurança em uma emergência.
+</li>
+
+<li>
+<strong>Decision support tools</strong>
+— Ferramentas de apoio à decisão:
+instrumentos que auxiliam a avaliação
+das condições e dos limites operacionais.
+</li>
+
+<li>
+<strong>Blackout recovery procedure</strong>
+— Procedimento de recuperação de blackout:
+procedimento específico para recuperação
+após perda do fornecimento elétrico.
+</li>
+
+<li>
+<strong>Critical components</strong>
+— Componentes críticos:
+componentes identificados como críticos
+na documentação operacional da embarcação.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 5
+
+     CONTINUAR COM A PARTE 6 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html AINDA.
+===================================================== -->    
