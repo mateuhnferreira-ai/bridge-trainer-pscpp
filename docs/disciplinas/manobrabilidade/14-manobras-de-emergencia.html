@@ -7615,3 +7615,1967 @@ de falha já desenvolvidos.
 
     
     
+<!-- =========================================
+     PARTE 9
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 9 — ANÁLISE INTEGRADA DE CENÁRIOS
+</h2>
+
+<p>
+Nesta parte, os conceitos serão aplicados
+a situações com informações delimitadas.
+O objetivo é identificar conclusões sustentadas
+pelos dados e reconhecer aquilo
+que ainda não pode ser determinado.
+</p>
+
+<p>
+Os cenários são didáticos.
+Não representam acidentes relatados
+nas publicações nem estabelecem
+sequências universais de ordens.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 57
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-governo-recuperado"
+data-topico-id="emergencia-cenario-governo-recuperado"
+>
+
+<h2>
+57. Governo recuperado,
+mas guinada ainda presente
+</h2>
+
+<div class="widget">
+
+<h3>
+Situação apresentada
+</h3>
+
+<p>
+Após falha do comando automático,
+o navio desenvolve guinada para boreste.
+O governo manual é selecionado,
+e o movimento do leme passa
+a corresponder às ordens.
+</p>
+
+<p>
+Com leme contrário à guinada,
+a velocidade de guinada para boreste
+diminui progressivamente,
+mas ainda não chegou a zero.
+</p>
+
+<h3>
+Conclusão sustentada
+</h3>
+
+<p>
+Existe resposta favorável
+na redução da rotação.
+A continuidade da variação
+da proa para boreste não demonstra,
+por si só, persistência
+da falha de comando.
+</p>
+
+<h3>
+Conclusão que não pode ser antecipada
+</h3>
+
+<p>
+Não é possível afirmar
+que a margem será preservada
+apenas porque o governo
+voltou a responder.
+</p>
+
+<p>
+Ainda é necessário avaliar
+quanto a proa continuará variando
+até a guinada ser contida
+e onde passarão as extremidades.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Raciocínio de prova
+</h3>
+
+<p>
+Recuperação do comando,
+redução da velocidade de guinada
+e recuperação da trajetória
+são eventos diferentes.
+Podem ocorrer em instantes distintos.
+</p>
+
+</div>
+
+<p>
+<strong>Fundamentação:</strong>
+Bridge Procedures Guide,
+seção 4.14.4 e checklist C3.2;
+Crenshaw, capítulo 2,
+quanto à relação entre momento
+e alteração do movimento angular.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 58
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-empuxo-calculo"
+data-topico-id="emergencia-cenario-empuxo-calculo"
+>
+
+<h2>
+58. Propulsão remanescente:
+calcular uma contribuição,
+não o resultado completo
+</h2>
+
+<div class="widget">
+
+<h3>
+Situação apresentada
+</h3>
+
+<p>
+Um navio de dois hélices perde
+o empuxo do propulsor de boreste.
+O propulsor de bombordo permanece
+produzindo componente longitudinal
+de empuxo adiante de 300 kN.
+</p>
+
+<p>
+Sua linha de ação está a 6 m,
+transversalmente, do centro de gravidade.
+Para esta etapa, desprezam-se
+as outras contribuições de momento.
+</p>
+
+<h3>
+Cálculo da contribuição
+</h3>
+
+<div class="formula-linha">
+
+<p>
+<strong>
+|N<sub>T</sub>| = 300 × 6
+= 1.800 kN·m
+</strong>
+</p>
+
+</div>
+
+<p>
+Essa componente de empuxo
+produz momento com tendência
+de levar a proa para boreste.
+</p>
+
+<h3>
+Limite da conclusão
+</h3>
+
+<p>
+O valor calculado não representa
+necessariamente o momento resultante.
+Ainda faltam os efeitos dos lemes,
+das forças transversais,
+do casco e do ambiente.
+</p>
+
+<p>
+Também não permite calcular
+diretamente a velocidade de guinada
+ou a trajetória.
+</p>
+
+<h3>
+Alteração do empuxo
+</h3>
+
+<p>
+Se essa componente aumentar
+para 400 kN, mantendo-se
+o braço de 6 m,
+sua contribuição passa a:
+</p>
+
+<div class="formula-linha">
+
+<p>
+<strong>
+|N<sub>T</sub>| = 400 × 6
+= 2.400 kN·m
+</strong>
+</p>
+
+</div>
+
+<p>
+Aumentam simultaneamente
+a contribuição longitudinal
+e essa parcela do momento.
+Não se pode presumir melhora
+do controle apenas pelo aumento
+da potência remanescente.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Raciocínio de prova
+</h3>
+
+<p>
+O sentido de uma contribuição
+de momento não determina,
+isoladamente, o sentido
+da aceleração angular resultante.
+O movimento já existente
+também precisa ser considerado.
+</p>
+
+</div>
+
+<p>
+<strong>Fundamentação:</strong>
+Crenshaw, capítulo 2;
+MacElrevey, capítulo 9,
+“Maneuvering Twin-Screw Ships”.
+Valores numéricos criados
+exclusivamente para o exercício.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 59
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-comparacao-tempos"
+data-topico-id="emergencia-cenario-comparacao-tempos"
+>
+
+<h2>
+59. Tempo para alcançar o limite
+e tempo para produzir efeito
+</h2>
+
+<div class="widget">
+
+<h3>
+Situação apresentada
+</h3>
+
+<p>
+A menor distância de uma região
+do casco a um limite é de 90 m.
+Essa distância diminui,
+aproximadamente, a 0,30 m/s.
+</p>
+
+<p>
+Um recurso poderá começar
+a aplicar força em 4 minutos.
+</p>
+
+<h3>
+Estimativa inicial
+</h3>
+
+<p>
+Mantida a velocidade de aproximação:
+</p>
+
+<div class="formula-linha">
+
+<p>
+<strong>
+t ≈ 90 / 0,30
+= 300 s
+= 5 min
+</strong>
+</p>
+
+</div>
+
+<p>
+Em 4 minutos, sob a mesma hipótese,
+a aproximação consumiria:
+</p>
+
+<div class="formula-linha">
+
+<p>
+<strong>
+d ≈ 0,30 × 240
+= 72 m
+</strong>
+</p>
+
+</div>
+
+<p>
+Restariam aproximadamente 18 m
+quando a aplicação de força começasse.
+</p>
+
+<h3>
+Por que isso não comprova recuperação?
+</h3>
+
+<p>
+Começar a aplicar força
+não equivale a zerar imediatamente
+a velocidade de aproximação.
+Ainda será necessário espaço
+durante a contenção do movimento.
+</p>
+
+<p>
+Além disso, a velocidade
+pode aumentar ou diminuir,
+e uma guinada pode alterar
+qual ponto do casco
+se aproxima primeiro do limite.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Conclusão tecnicamente válida
+</h3>
+
+<p>
+O recurso está previsto
+para atuar antes do contato
+na extrapolação inicial.
+Entretanto, os dados fornecidos
+não demonstram força e espaço
+suficientes para evitar o contato.
+</p>
+
+</div>
+
+<p>
+<strong>Fundamentação:</strong>
+cinemática simplificada e fundamentos
+de força e inércia de Crenshaw,
+capítulo 2.
+Os números não são dados
+de desempenho de uma publicação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 60
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-ensaio-operacao"
+data-topico-id="emergencia-cenario-ensaio-operacao"
+>
+
+<h2>
+60. Distância de ensaio:
+quando a comparação é insuficiente
+</h2>
+
+<div class="widget">
+
+<h3>
+Situação apresentada
+</h3>
+
+<p>
+Um navio de comprimento entre
+perpendiculares de 180 m
+apresentou track reach de 12 L
+em um ensaio de toda a ré.
+</p>
+
+<p>
+Durante uma emergência,
+há 2.300 m até um limite
+na direção original de progressão.
+Uma das linhas propulsoras
+está indisponível.
+</p>
+
+<h3>
+Conversão do resultado
+</h3>
+
+<div class="formula-linha">
+
+<p>
+<strong>
+12 L = 12 × 180
+= 2.160 m
+</strong>
+</p>
+
+</div>
+
+<h3>
+Interpretação incorreta
+</h3>
+
+<p>
+“Como 2.160 m é menor que 2.300 m,
+o navio conseguirá parar
+antes do limite.”
+</p>
+
+<h3>
+Por que a conclusão não é sustentada?
+</h3>
+
+<ul>
+
+<li>
+O ensaio utilizou uma condição
+propulsora que não foi demonstrada
+na emergência.
+</li>
+
+<li>
+Track reach é medido
+ao longo da trajetória,
+não apenas na direção inicial.
+</li>
+
+<li>
+A condição real pode apresentar
+corrente, profundidade,
+carregamento e velocidade diferentes.
+</li>
+
+<li>
+O espaço lateral necessário
+não foi informado.
+</li>
+
+</ul>
+
+<p>
+Os dados do ensaio são relevantes,
+mas não comprovam a parada
+na condição avariada.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Raciocínio de prova
+</h3>
+
+<p>
+Uma comparação numérica correta
+pode sustentar uma conclusão errada
+se as grandezas ou condições
+não forem equivalentes.
+</p>
+
+</div>
+
+<p>
+<strong>Fundamentação:</strong>
+MSC.137(76),
+itens 4.2.10–4.2.11 e 5.2;
+MacElrevey, capítulos 1 e 2.
+O resultado de 12 L é hipotético.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 61
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-blackout-retorno"
+data-topico-id="emergencia-cenario-blackout-retorno"
+>
+
+<h2>
+61. Blackout:
+retorno das indicações
+antes da recuperação dos atuadores
+</h2>
+
+<div class="widget">
+
+<h3>
+Situação apresentada
+</h3>
+
+<p>
+Após um blackout, alguns equipamentos
+do passadiço voltam a funcionar.
+O indicador de ângulo apresenta
+leme a 15° para boreste.
+</p>
+
+<p>
+Não existe confirmação
+de funcionamento da unidade
+de potência do governo.
+O navio permanece guinando
+para boreste.
+</p>
+
+<h3>
+O que a indicação permite afirmar?
+</h3>
+
+<p>
+Se estiver correta,
+informa a posição do leme
+naquele instante.
+Não comprova capacidade
+de movimentá-lo.
+</p>
+
+<h3>
+O que a guinada permite afirmar?
+</h3>
+
+<p>
+Informa a evolução angular observada.
+Não identifica, sozinha,
+se o leme está mecanicamente travado,
+sem acionamento ou aguardando
+restabelecimento do comando.
+</p>
+
+<h3>
+O que precisa ser distinguido?
+</h3>
+
+<ul>
+
+<li>
+Alimentação da indicação.
+</li>
+
+<li>
+Alimentação e condição
+do circuito de comando.
+</li>
+
+<li>
+Disponibilidade do acionamento.
+</li>
+
+<li>
+Liberdade mecânica do conjunto.
+</li>
+
+<li>
+Resposta do navio após
+uma ação efetivamente executada.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Raciocínio de prova
+</h3>
+
+<p>
+O retorno de uma informação
+sobre o equipamento
+não equivale ao retorno
+da capacidade de controlá-lo.
+</p>
+
+</div>
+
+<p>
+<strong>Fundamentação:</strong>
+Bridge Procedures Guide,
+checklists B2.3, C3.2 e C3.3.
+Cenário didático de aplicação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 62
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-evidencia-resposta"
+data-topico-id="emergencia-cenario-evidencia-resposta"
+>
+
+<h2>
+62. Estrutura de uma resposta técnica
+para questões de emergência
+</h2>
+
+<div class="widget">
+
+<p>
+Em uma questão dissertativa,
+a resposta deve relacionar
+os dados apresentados
+com as consequências físicas
+e as limitações da conclusão.
+</p>
+
+<h3>
+62.1. Identificar a condição
+</h3>
+
+<p>
+Indicar a função perdida
+sem ampliar a avaria
+além do que o enunciado informa.
+</p>
+
+<h3>
+62.2. Explicar a consequência
+</h3>
+
+<p>
+Relacionar a falha
+às forças e aos momentos
+que deixaram de estar disponíveis
+ou passaram a atuar
+de modo assimétrico.
+</p>
+
+<h3>
+62.3. Avaliar a alternativa
+</h3>
+
+<p>
+Explicar qual movimento
+o recurso pode contrariar,
+quais condições exige
+e quais efeitos adicionais produz.
+</p>
+
+<h3>
+62.4. Delimitar a conclusão
+</h3>
+
+<p>
+Separar o resultado demonstrado
+daquilo que depende
+de informação adicional.
+Evitar substituir análise
+por uma ordem automática.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo de formulação
+</h3>
+
+<p>
+“A aplicação de empuxo a ré
+pode contribuir para reduzir
+o seguimento. Entretanto,
+com o leme indisponível,
+não se pode presumir
+a manutenção da proa.
+A viabilidade depende
+da trajetória resultante,
+da capacidade propulsora
+e do espaço lateral disponível.”
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Preparação para o PSCPP
+</h3>
+
+<p>
+Distinguir sempre:
+afirmação expressa da referência,
+aplicação física ao cenário
+e hipótese adotada no cálculo.
+Essa separação evita
+atribuir à publicação
+uma conclusão que ela não apresenta.
+</p>
+
+</div>
+
+<p>
+<strong>Natureza deste tópico:</strong>
+orientação didática para resolução
+dos cenários da aula.
+Não constitui critério oficial
+de correção da banca.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 9
+
+     PRÓXIMA PARTE:
+     EXERCÍCIOS, GABARITO COMENTADO,
+     REFERÊNCIAS FINAIS E FECHAMENTO DA PÁGINA.
+
+     MANTER main, body E html ABERTOS.
+     NÃO INSERIR OS SCRIPTS NESTE PONTO.
+===================================================== -->
+
+<!-- =========================================
+     PARTE 10
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 10 — EXERCÍCIOS E GABARITO COMENTADO
+</h2>
+
+<p>
+Resolva as questões considerando as condições
+expressamente informadas. Não acrescente
+disponibilidade de equipamentos,
+independência entre sistemas ou espaço de manobra
+que o enunciado não tenha demonstrado.
+</p>
+
+<p>
+As questões são autorais para treinamento PSCPP.
+Não são reproduções de provas anteriores
+nem questões atribuídas à banca.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXERCÍCIOS OBJETIVOS
+========================================= -->
+
+<section>
+
+<h2>📝 Questões de revisão</h2>
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q1"
+data-resposta="C"
+data-topico="emergencia-governo-verificacao"
+data-edital="I - Aplicação integrada da controlabilidade"
+data-bibliografia="Crenshaw, cap. 2; Bridge Procedures Guide, C3.2"
+>
+
+<h3>Questão 1 — Recuperação do governo</h3>
+
+<p>
+Após recuperar o movimento do leme,
+um navio recebe leme contrário à guinada.
+Sua velocidade de guinada diminui,
+mas a proa continua variando no sentido anterior.
+Qual conclusão é sustentada?
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) A continuidade da variação da proa demonstra
+que o leme permanece inoperante.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) A redução da velocidade de guinada comprova
+que o casco não atingirá a margem.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Existe contenção da rotação, mas ainda é necessário
+avaliar a trajetória até a guinada cessar.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A recuperação do comando elimina
+a influência da guinada anterior.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q2"
+data-resposta="A"
+data-topico="emergencia-parada-ensaio-imo"
+data-edital="I - 8.9.2"
+data-bibliografia="MSC.137(76), 4.2.10-4.2.11"
+>
+
+<h3>Questão 2 — Track reach</h3>
+
+<p>
+Segundo a MSC.137(76), o track reach
+do ensaio de parada com toda a ré é medido:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Ao longo da trajetória do ponto de meio-navio,
+desde a ordem de toda a ré até a parada na água.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Na direção inicial, desde o estabelecimento
+do empuxo a ré até a parada no fundo.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Ao longo da trajetória da proa,
+excluindo o intervalo de resposta da máquina.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Na direção inicial, desde a reversão
+do eixo até o desaparecimento da guinada.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q3"
+data-resposta="D"
+data-topico="emergencia-parada-limites-imo"
+data-edital="I - 8.9.3"
+data-bibliografia="MSC.137(76), 5.3.4"
+>
+
+<h3>Questão 3 — Critério de parada</h3>
+
+<p>
+A respeito do critério de track reach
+da MSC.137(76), assinale a alternativa correta.
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O limite de 15 L garante a parada em serviço,
+mesmo com perda parcial de propulsão.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O condutor pode adotar 20 L
+sempre que considerar necessário.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) O critério deve ser convertido utilizando
+sempre o comprimento total, LOA.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) A Administração pode modificar o valor de 15 L
+quando o grande deslocamento tornar o critério
+impraticável, sem exceder 20 L.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q4"
+data-resposta="B"
+data-topico="emergencia-governo-modos-alternativos"
+data-edital="I - Aplicação integrada da controlabilidade"
+data-bibliografia="Bridge Procedures Guide, 4.14.4 e B2.3"
+>
+
+<h3>Questão 4 — Governo local</h3>
+
+<p>
+O comando remoto falha. O posto local,
+o acionamento e o conjunto mecânico
+permanecem disponíveis. Nesse cenário:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O governo local é inviável,
+pois toda falha remota impede o acionamento.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O governo local pode oferecer alternativa,
+mediante transferência e comunicação adequadas.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A seleção do posto local garante
+retorno imediato à trajetória original.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) O posto local produziria o mesmo resultado
+se o leme estivesse mecanicamente travado.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q5"
+data-resposta="A"
+data-topico="emergencia-leme-travado-fora-meio"
+data-edital="I - Aplicação integrada da controlabilidade"
+data-bibliografia="Crenshaw, cap. 2"
+>
+
+<h3>Questão 5 — Leme travado</h3>
+
+<p>
+Em uma instalação convencional,
+o leme permanece travado fora de meio
+na esteira do hélice.
+Aumentar máquina adiante pode:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Intensificar o escoamento sobre o leme
+e reforçar seu momento de guinada.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Reposicionar hidrodinamicamente o leme
+no ângulo solicitado.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Eliminar o momento do leme,
+pois o empuxo é longitudinal.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Garantir a contenção da guinada
+pelo aumento da autoridade de governo.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q6"
+data-resposta="C"
+data-topico="emergencia-propulsao-um-helice"
+data-edital="I - Aplicação das forças propulsoras"
+data-bibliografia="Crenshaw, cap. 2; MacElrevey, cap. 9"
+>
+
+<h3>Questão 6 — Momento do empuxo</h3>
+
+<p>
+O propulsor de boreste está indisponível.
+O de bombordo produz componente longitudinal
+de empuxo adiante de 250 kN,
+com braço transversal de 5 m.
+Considerando somente essa contribuição:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O momento é 50 kN·m para bombordo.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O momento é 1.250 kN·m para bombordo.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) O momento é 1.250 kN·m
+com tendência de proa para boreste.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) O momento é nulo,
+pois não existe componente transversal.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q7"
+data-resposta="B"
+data-topico="emergencia-blackout-energia-controle"
+data-edital="I - Aplicação integrada da controlabilidade"
+data-bibliografia="Bridge Procedures Guide, C3.3"
+>
+
+<h3>Questão 7 — Blackout</h3>
+
+<p>
+Após um blackout, voltam a funcionar
+as comunicações e o indicador de ângulo do leme.
+Não há confirmação do acionamento do governo.
+É correto afirmar:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O retorno do indicador comprova
+que o leme pode executar ordens.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O retorno desses equipamentos não demonstra
+recuperação do acionamento do leme.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A alimentação de emergência garante
+a potência de todos os propulsores.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Selecionar governo manual elimina
+qualquer falha de alimentação.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q8"
+data-resposta="D"
+data-topico="emergencia-recursos-impelidor-proa"
+data-edital="I - Aplicação dos recursos de manobra"
+data-bibliografia="MacElrevey, cap. 1, Bow and Stern Thrusters"
+>
+
+<h3>Questão 8 — Impelidor transversal</h3>
+
+<p>
+Sobre o emprego emergencial
+de um impelidor transversal convencional:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Sua ação substitui diretamente
+a frenagem longitudinal da máquina a ré.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Uma baixa velocidade sobre o fundo
+garante sua eficácia.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) A força na proa produz somente rotação,
+sem contribuição transversal.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Sua utilidade depende, entre outros fatores,
+da velocidade relativa à água,
+da imersão e da capacidade disponível.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q9"
+data-resposta="C"
+data-topico="emergencia-ferro-arrasto-unhada"
+data-edital="Aplicação de recurso de contingência; conexão com II - item 3"
+data-bibliografia="MacElrevey, cap. 8, Emergency Use of the Anchor"
+>
+
+<h3>Questão 9 — Ferro na emergência</h3>
+
+<p>
+Considere as afirmações:
+</p>
+
+<p>
+I — Largar o ferro não elimina instantaneamente
+o seguimento do navio.
+</p>
+
+<p>
+II — A retenção brusca durante a frenagem
+pode produzir esforços elevados.
+</p>
+
+<p>
+III — A advertência sobre retenção brusca
+significa que o ferro nunca deve unhar,
+inclusive após o navio estabelecer o fundeio.
+</p>
+
+<p>Estão corretas:</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Apenas I.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Apenas II e III.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Apenas I e II.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) I, II e III.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q10"
+data-resposta="A"
+data-topico="emergencia-restritas-corrente"
+data-edital="I - 8.9.2 e 8.10"
+data-bibliografia="MSC.137(76), 4.2.10; MacElrevey, cap. 2"
+>
+
+<h3>Questão 10 — Referência da velocidade</h3>
+
+<p>
+Um navio está momentaneamente sem velocidade
+relativa à água em corrente uniforme
+de 2 nós para leste.
+Desconsiderando outras contribuições,
+sua velocidade sobre o fundo é:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) 2 nós para leste.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Zero.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) 2 nós para oeste.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Necessariamente igual
+à velocidade de ensaio IMO.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q11"
+data-resposta="D"
+data-topico="emergencia-cenario-comparacao-tempos"
+data-edital="I - Aplicação integrada da controlabilidade"
+data-bibliografia="Crenshaw, cap. 2; aplicação cinemática"
+>
+
+<h3>Questão 11 — Tempo disponível</h3>
+
+<p>
+Uma distância lateral de 120 m diminui
+a 0,40 m/s, aproximadamente constante.
+Um rebocador começará a aplicar força
+após 4 minutos. É correto concluir:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) O contato ocorrerá em 3 minutos.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) O início da força aos 4 minutos
+garante que não haverá contato.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Restarão 96 m quando a força começar.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Restarão aproximadamente 24 m,
+mas os dados não comprovam
+que a aproximação será contida.
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+class="widget questao"
+data-questao-id="manobras-de-emergencia-q12"
+data-resposta="B"
+data-topico="emergencia-mob-angulos-referencia"
+data-edital="I - 8.13.12"
+data-bibliografia="MacElrevey, 5a ed., Williamson Turns, p. 236"
+>
+
+<h3>Questão 12 — Williamson e fonte bibliográfica</h3>
+
+<p>
+No texto explicativo da página 236
+da 5ª edição de MacElrevey,
+a primeira inversão do leme é apresentada
+após alteração de proa:
+</p>
+
+<div class="alternativas-questao">
+
+<button type="button" class="alternativa" data-opcao="A">
+A) Sempre de 60°, independentemente do navio.
+</button>
+
+<button type="button" class="alternativa" data-opcao="B">
+B) Entre 35° e 50°, com ponto exato
+previamente determinado para o navio.
+</button>
+
+<button type="button" class="alternativa" data-opcao="C">
+C) Entre 10° e 15° da proa inicial.
+</button>
+
+<button type="button" class="alternativa" data-opcao="D">
+D) Somente após alcançar a proa recíproca.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+========================================= -->
+
+<div class="widget">
+
+<h3>📋 Progresso das questões</h3>
+
+<p id="resumo-selecao-exercicios">
+0 de 12 questões respondidas
+</p>
+
+<button
+type="button"
+id="botao-corrigir-exercicios"
+class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+
+<div
+id="resultado-exercicios"
+class="widget"
+style="display:none;"
+>
+
+<h3>📊 Resultado da tentativa</h3>
+
+<p id="texto-resultado-exercicios"></p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUESTÕES DISSERTATIVAS
+========================================= -->
+
+<section>
+
+<h2>✍ Questões dissertativas</h2>
+
+<div class="widget">
+
+<h3>Dissertativa 1 — Leme travado</h3>
+
+<p>
+Um navio convencional de um hélice
+mantém seguimento adiante.
+O leme fica mecanicamente travado
+fora de meio, na esteira do hélice.
+Explique por que:
+</p>
+
+<ol>
+
+<li>
+Transferir o comando para o posto local
+não elimina necessariamente a avaria.
+</li>
+
+<li>
+Aumentar máquina adiante pode agravar
+a guinada.
+</li>
+
+<li>
+Aplicar máquina a ré não garante
+parada em trajetória retilínea.
+</li>
+
+</ol>
+
+<p>
+Fundamente a resposta sem prescrever
+uma sequência universal de ordens.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>Dissertativa 2 — Falha antes de uma curva</h3>
+
+<p>
+Um navio perde toda a propulsão
+antes de uma curva de canal.
+O governo permanece operacional,
+há corrente no sentido da progressão
+e um rebocador ainda não está conectado.
+</p>
+
+<p>
+Indique as informações necessárias
+para avaliar a continuidade do movimento,
+a possibilidade de controle
+e o emprego de assistência.
+Explique por que a distância de parada
+obtida no ensaio de toda a ré
+não pode ser aplicada diretamente.
+</p>
+
+<p>
+Estas questões não integram
+a pontuação automática das 12 objetivas.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>✅ Gabarito comentado</h2>
+
+<div class="widget">
+
+<button
+type="button"
+class="botao-estudo"
+onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+
+<div
+id="gabaritoAula"
+style="display:none;"
+>
+
+<hr>
+
+<h3>Questão 1 — Alternativa C</h3>
+
+<p>
+A diminuição da velocidade de guinada
+é compatível com momento contrário à rotação.
+A proa ainda varia enquanto existir
+velocidade de guinada.
+Não há informação suficiente
+para garantir afastamento da margem.
+</p>
+
+<h3>Questão 2 — Alternativa A</h3>
+
+<p>
+A definição utiliza a trajetória
+do ponto de meio-navio,
+desde a emissão da ordem de toda a ré
+até a parada em relação à água.
+O intervalo de resposta da instalação
+não é excluído.
+Referência: MSC.137(76), 4.2.10–4.2.11.
+</p>
+
+<h3>Questão 3 — Alternativa D</h3>
+
+<p>
+A modificação é competência da Administração
+nas condições indicadas no padrão,
+com limite máximo de 20 L.
+Não se trata de distância garantida
+em uma emergência.
+L é o comprimento entre perpendiculares.
+Referência: MSC.137(76), 4.1.1 e 5.3.4.
+</p>
+
+<h3>Questão 4 — Alternativa B</h3>
+
+<p>
+A alternativa pode contornar
+a falha do comando remoto
+porque o cenário preserva
+o posto local e o acionamento.
+Isso não elimina o movimento
+adquirido durante a falha.
+Um impedimento mecânico seria
+uma condição diferente.
+</p>
+
+<h3>Questão 5 — Alternativa A</h3>
+
+<p>
+Na configuração informada,
+o aumento do escoamento do hélice
+pode intensificar a força
+sobre o leme imobilizado.
+A força adicional pode reforçar
+uma guinada indesejada.
+Não existe liberdade para selecionar
+o ângulo necessário à correção.
+</p>
+
+<h3>Questão 6 — Alternativa C</h3>
+
+<p>
+A magnitude é 250 × 5 = 1.250 kN·m.
+O empuxo adiante aplicado a bombordo
+produz contribuição com tendência
+de proa para boreste.
+O resultado não inclui
+os demais momentos atuantes.
+</p>
+
+<h3>Questão 7 — Alternativa B</h3>
+
+<p>
+Indicação, comando e acionamento
+são funções distintas.
+O retorno de uma delas
+não comprova recuperação das demais.
+Referência: Bridge Procedures Guide,
+checklists B2.3 e C3.3.
+</p>
+
+<h3>Questão 8 — Alternativa D</h3>
+
+<p>
+A capacidade do impelidor depende
+das condições reais de funcionamento.
+Sua ação transversal pode produzir
+força lateral e momento,
+mas não substitui diretamente
+a frenagem longitudinal.
+Referência: MacElrevey, capítulo 1.
+</p>
+
+<h3>Questão 9 — Alternativa C</h3>
+
+<p>
+I e II estão corretas.
+A afirmação III confunde
+a retenção brusca durante a frenagem
+com a manutenção posterior
+do navio fundeado.
+Referência: MacElrevey, capítulo 8,
+“Emergency Use of the Anchor”.
+</p>
+
+<h3>Questão 10 — Alternativa A</h3>
+
+<p>
+Na hipótese de corrente uniforme,
+sem velocidade relativa à água,
+o navio acompanha a corrente:
+2 nós para leste sobre o fundo.
+Isso não equivale a estar parado
+em relação às margens.
+</p>
+
+<h3>Questão 11 — Alternativa D</h3>
+
+<p>
+Em 240 s, a aproximação estimada
+é 0,40 × 240 = 96 m.
+Restam 120 − 96 = 24 m.
+Começar a aplicar força
+não significa eliminar imediatamente
+a velocidade transversal.
+O cálculo supõe aproximação constante.
+</p>
+
+<h3>Questão 12 — Alternativa B</h3>
+
+<p>
+O enunciado identifica expressamente
+o texto da página 236,
+que apresenta 35° a 50°.
+A figura 9-15 apresenta 35° a 55°.
+Essa diferença foi preservada
+na Parte 8; não se deve trocar
+uma formulação pela outra.
+</p>
+
+<hr>
+
+<h3>Dissertativa 1 — Elementos esperados</h3>
+
+<p>
+O posto local oferece outra forma
+de transmitir o comando,
+mas não remove um travamento mecânico.
+</p>
+
+<p>
+Com o leme na esteira do hélice,
+a máquina adiante pode aumentar
+a força sobre o leme travado
+e seu momento de guinada.
+</p>
+
+<p>
+A máquina a ré modifica a frenagem
+e o escoamento, podendo introduzir
+efeitos transversais e alterações da proa.
+Não garante trajetória retilínea
+nem reversão imediata da guinada.
+</p>
+
+<p>
+A análise deve considerar
+a configuração propulsora,
+o movimento existente,
+as forças externas
+e o espaço disponível.
+</p>
+
+<h3>Dissertativa 2 — Elementos esperados</h3>
+
+<p>
+São relevantes: posição e distância
+até a curva, limites navegáveis,
+velocidades relativas à água e ao fundo,
+guinada, corrente local,
+resposta do leme, profundidade
+e condições ambientais.
+</p>
+
+<p>
+Também é necessário conhecer
+a previsão de recuperação,
+a disponibilidade dos demais recursos
+e o tempo até o rebocador
+poder aplicar força efetiva,
+com sua posição e direção de atuação.
+</p>
+
+<p>
+A parada de toda a ré pressupõe
+uma ação propulsora indisponível
+no cenário. Além disso,
+suas condições de referência
+não foram demonstradas na operação.
+A corrente pode continuar deslocando
+o navio sobre o fundo
+após a perda do seguimento na água.
+</p>
+
+<p>
+Os elementos acima orientam
+a autocorreção. Não representam
+espelho oficial de banca.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS FINAIS
+========================================= -->
+
+<section>
+
+<h2>📚 Referências bibliográficas finais</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+<strong>CRENSHAW, Russell Sydnor.</strong>
+Naval Shiphandling. 4ª edição, 1975.
+Capítulo 2 — Forces Affecting the Ship.
+Fundamentos de forças, momentos e inércia.
+</li>
+
+<li>
+<strong>INTERNATIONAL MARITIME ORGANIZATION.</strong>
+Resolution MSC.137(76), 2002.
+Standards for Ship Manoeuvrability.
+Definições, condições de referência
+e critério de parada.
+</li>
+
+<li>
+<strong>INTERNATIONAL MARITIME ORGANIZATION.</strong>
+MSC/Circ.1053, 2002.
+Explanatory Notes to the Standards
+for Ship Manoeuvrability.
+Discussão do desempenho de parada,
+incluindo o apêndice 3.
+</li>
+
+<li>
+<strong>MacELREVEY, Daniel H.;
+MacELREVEY, Daniel E.</strong>
+Shiphandling for the Mariner.
+5ª edição, 2018.
+Capítulos 1, 2, 3, 8 e 9,
+nos trechos identificados ao longo da aula.
+</li>
+
+<li>
+<strong>INTERNATIONAL CHAMBER OF SHIPPING.</strong>
+Bridge Procedures Guide. 6ª edição.
+Seção 4.14.4;
+checklists B2.3, C3.1, C3.2 e C3.3.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="widget">
+
+<h3>Delimitação bibliográfica</h3>
+
+<p>
+A bibliografia fornecida indica
+a 4ª edição de Shiphandling for the Mariner.
+A consulta realizada nesta aula
+utilizou a 5ª edição disponível.
+Suas páginas e formulações
+não foram atribuídas à 4ª edição.
+</p>
+
+<p>
+Os fundamentos de Crenshaw
+foram utilizados no recorte
+do capítulo 2 indicado
+para Manobrabilidade.
+MacElrevey e o Bridge Procedures Guide
+foram empregados como referências
+operacionais de apoio.
+</p>
+
+<p>
+O PNA, volume III, os livros de Mesquita
+e a Resolução A.601(15),
+mencionados no planejamento,
+não foram utilizados como fontes
+específicas sem consulta ao texto.
+</p>
+
+<p>
+Cálculos e cenários autorais
+foram identificados como aplicações
+didáticas, sem atribuição
+de dados experimentais às publicações.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO
+========================================= -->
+
+<section class="dashboard">
+
+<h2>⚓ Conclusão da aula</h2>
+
+<p>
+A análise de uma emergência começa
+pela função perdida e pelo movimento
+que o navio já possui.
+A seleção de recursos exige verificar
+disponibilidade, força, momento,
+tempo de resposta e espaço de atuação.
+</p>
+
+<p>
+Uma ordem emitida não comprova execução;
+um equipamento funcionando não comprova
+controle suficiente; e um resultado de ensaio
+não garante o mesmo desempenho
+em condição avariada.
+</p>
+
+<p>
+Para o PSCPP, preserve as definições
+e condições das referências.
+Nas aplicações, explicite as hipóteses
+e não transforme tendências
+em regras universais.
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+</main>
+
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR
+===================================================== -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     NÃO ALTERAR A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     CONTROLE DO GABARITO
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById(
+            "gabaritoAula"
+        );
+
+    if (!gabarito) {
+
+        return;
+
+    }
+
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
+
+        gabarito.style.display =
+            "block";
+
+    }
+    else {
+
+        gabarito.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>    
