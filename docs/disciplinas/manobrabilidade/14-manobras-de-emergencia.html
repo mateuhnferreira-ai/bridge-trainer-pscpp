@@ -1,1 +1,1390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Manobras de Emergência - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="manobrabilidade"
+    data-aula="manobras-de-emergencia"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Manobrabilidade do Navio</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+🚨 Manobras de Emergência
+</h2>
+
+<p>
+<strong>
+Emergency Shiphandling — Manobra do navio em emergência
+</strong>
+</p>
+
+<p>
+Análise do comportamento do navio diante de falhas de governo,
+perda de propulsão e redução dos recursos de manobra.
+O estudo concentra-se no reconhecimento da condição,
+na previsão da trajetória e na avaliação das alternativas
+de controle ainda disponíveis.
+</p>
+
+<p>
+Os fundamentos de hélices, lemes, estabilidade direcional,
+parada e efeitos ambientais serão utilizados como
+conhecimentos prévios, sem repetir seu desenvolvimento.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Manobrabilidade do Navio
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Manobras de Emergência
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Emergency Shiphandling
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+I — Manobrabilidade do Navio
+</strong>
+</p>
+
+<p>
+Esta aula integra conhecimentos do programa para analisar
+falhas e situações de emergência. O título
+“Manobras de Emergência” identifica o módulo do aplicativo;
+não corresponde a um item isolado com esse mesmo título
+no documento fornecido.
+</p>
+
+<ul>
+
+<li>
+<strong>Itens 8.9.1 a 8.9.6:</strong>
+habilidade de parar, alterar velocidades e mover a ré;
+avaliação do desempenho de parada; fatores envolvidos
+na mudança de velocidade e parada sem empuxo a ré.
+</li>
+
+<li>
+<strong>Itens 8.10, 8.11 e 8.12:</strong>
+ação do vento e da corrente, águas rasas e restritas
+e interações, aplicadas à avaliação de emergências.
+</li>
+
+<li>
+<strong>Item 8.13.11:</strong>
+manobra teste de parada com seguimento a ré.
+</li>
+
+<li>
+<strong>Item 8.13.12:</strong>
+manobra de resgate de homem ao mar.
+</li>
+
+<li>
+<strong>Item 8.18:</strong>
+documentos de manobrabilidade existentes a bordo.
+</li>
+
+</ul>
+
+<p>
+Falha de governo, perda de propulsão e indisponibilidade
+de equipamentos serão estudadas como cenários que
+alteram a capacidade de utilizar esses conhecimentos.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Distinguir uma ordem emitida da resposta efetivamente
+produzida pelo equipamento e pelo navio.
+</li>
+
+<li>
+Diferenciar falha de comando, perda de acionamento,
+leme travado e perda de propulsão quanto às consequências
+para a manobra.
+</li>
+
+<li>
+Relacionar o movimento existente no instante da falha
+com a evolução provável da trajetória.
+</li>
+
+<li>
+Avaliar quais recursos permanecem disponíveis e quais
+dependências podem impedir seu emprego.
+</li>
+
+<li>
+Comparar alternativas de redução de velocidade,
+controle de guinada e assistência sem supor
+uma resposta universal para todas as embarcações.
+</li>
+
+<li>
+Interpretar cenários de emergência utilizando
+características do navio, espaço disponível
+e condições ambientais.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Crenshaw — Naval Shiphandling
+</h3>
+
+<p>
+<strong>Edição:</strong>
+4ª edição, 1975.
+</p>
+
+<p>
+<strong>Trecho utilizado nesta parte:</strong>
+capítulo 2 — Forces Affecting the Ship.
+</p>
+
+<p>
+Fundamenta a distinção entre as forças aplicadas ao navio
+e o movimento que se desenvolve sob sua ação.
+Nesta aula, esse fundamento será aplicado à mudança
+de condição provocada por uma falha.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+MacElrevey — Shiphandling for the Mariner
+</h3>
+
+<p>
+<strong>Edição consultada:</strong>
+5ª edição, 2018.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta parte:</strong>
+capítulo 1 — Arrival, especialmente Master's Trial,
+páginas impressas 8–9, e Approaching the Pilot Station,
+página impressa 22.
+</p>
+
+<p>
+Os trechos abordam o conhecimento prévio da resposta
+do navio sob falhas simuladas e a preparação para
+utilização do governo de emergência.
+</p>
+
+<p>
+<strong>Distinção bibliográfica:</strong>
+a bibliografia fornecida indica a 4ª edição.
+O arquivo disponível é da 5ª edição; suas páginas
+e formulações não serão atribuídas à edição anterior.
+</p>
+
+</div>
+
+
+<div class="widget">
+
+<h3>
+Delimitação das fontes
+</h3>
+
+<p>
+As relações e os exemplos apresentados nesta parte
+constituem síntese didática dos fundamentos consultados.
+Não representam uma lista universal de procedimentos
+de emergência nem uma transcrição de instruções
+específicas de um navio.
+</p>
+
+<p>
+As publicações indicadas no planejamento cuja íntegra
+ainda não foi consultada não serão citadas como
+fundamento de afirmações específicas.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+Reconhecimento da falha e avaliação do controle restante.
+</li>
+
+<li>
+Parada de emergência aplicada a cenários de falha.
+</li>
+
+<li>
+Falhas de governo e leme travado.
+</li>
+
+<li>
+Perda de propulsão, empuxo assimétrico e blackout.
+</li>
+
+<li>
+Emprego dos recursos de manobra remanescentes.
+</li>
+
+<li>
+Ferros e rebocadores como recursos de contingência.
+</li>
+
+<li>
+Emergências em águas restritas.
+</li>
+
+<li>
+Homem ao mar: seleção e limitações da manobra de retorno.
+</li>
+
+<li>
+Análise integrada de cenários.
+</li>
+
+<li>
+Exercícios e gabarito comentado.
+</li>
+
+</ol>
+
+<p>
+O desenvolvimento dos equipamentos, dos efeitos
+hidrodinâmicos e das manobras normais permanece
+nas respectivas aulas. Aqui, o foco é a alteração
+da capacidade de controle e suas consequências.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — RECONHECIMENTO DA FALHA
+E AVALIAÇÃO DO CONTROLE RESTANTE
+</h2>
+
+<p>
+Uma falha pode retirar um recurso de manobra sem
+eliminar o movimento já existente. A análise começa
+pela identificação do que deixou de funcionar,
+do movimento que continua presente e dos meios
+que ainda podem modificar a trajetória.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-condicao-de-controle"
+data-topico-id="emergencia-condicao-de-controle"
+>
+
+<h2>
+1. A emergência como alteração da capacidade de controle
+</h2>
+
+<div class="widget">
+
+<p>
+Para esta aula, uma emergência de manobra é uma situação
+em que uma falha ou ameaça exige reavaliar imediatamente
+a capacidade de controlar a trajetória e a velocidade
+do navio dentro do espaço disponível.
+Esta é uma definição de trabalho didática.
+</p>
+
+<p>
+O efeito de uma falha depende do contexto.
+A indisponibilidade de um impelidor de proa pode
+ser administrável em determinada condição e comprometer
+uma aproximação em outra. Da mesma forma,
+uma perda de governo produz consequências diferentes
+em mar aberto e em um canal próximo de uma curva.
+</p>
+
+<p>
+A análise deve relacionar quatro elementos:
+</p>
+
+<ul>
+
+<li>
+<strong>Função perdida:</strong>
+o que deixou de ser executado ou passou a responder
+de forma diferente da esperada.
+</li>
+
+<li>
+<strong>Movimento existente:</strong>
+seguimento, movimento transversal e velocidade
+de guinada no instante da falha.
+</li>
+
+<li>
+<strong>Recursos restantes:</strong>
+meios capazes de produzir forças ou momentos
+nas condições presentes.
+</li>
+
+<li>
+<strong>Espaço e tempo disponíveis:</strong>
+margens existentes para que uma ação produza efeito.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O nome do equipamento avariado, isoladamente,
+não determina a manobra adequada.
+É necessário conhecer a função perdida
+e a condição dinâmica do navio.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Steering failure</strong> —
+falha de governo.
+</li>
+
+<li>
+<strong>Loss of propulsion</strong> —
+perda de propulsão.
+</li>
+
+<li>
+<strong>Residual control capability</strong> —
+capacidade de controle remanescente.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A perda de um equipamento não significa,
+necessariamente, perda total de controle.
+A existência de outros equipamentos também
+não garante que eles tenham capacidade suficiente
+para conter o movimento nas condições presentes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-ordem-resposta"
+data-topico-id="emergencia-ordem-resposta"
+>
+
+<h2>
+2. Ordem emitida, resposta do equipamento
+e resposta do navio
+</h2>
+
+<div class="widget">
+
+<p>
+A avaliação da falha exige distinguir três níveis.
+Uma ordem pode ter sido transmitida corretamente
+sem que o equipamento a execute. O equipamento,
+por sua vez, pode executar a ordem sem produzir
+a mudança de movimento esperada no tempo disponível.
+</p>
+
+<h3>
+2.1. Ordem emitida
+</h3>
+
+<p>
+É a solicitação feita ao sistema: determinado
+ângulo de leme, regime de máquina ou ação
+de um impelidor.
+A emissão da ordem não comprova sua execução.
+</p>
+
+<h3>
+2.2. Resposta do equipamento
+</h3>
+
+<p>
+É a condição efetivamente alcançada:
+posição do leme, rotação, passo do hélice
+ou estado do propulsor.
+Os parâmetros disponíveis dependem da instalação.
+</p>
+
+<p>
+A comparação entre comando e indicações,
+associada à comunicação com o local de operação,
+ajuda a identificar onde ocorreu a perda de função.
+Uma indicação isolada também pode estar defeituosa.
+</p>
+
+<h3>
+2.3. Resposta do navio
+</h3>
+
+<p>
+É a evolução observada do seguimento,
+do movimento transversal, da proa e da velocidade
+de guinada.
+Mesmo com o equipamento funcionando,
+a resposta pode ser insuficiente diante
+do movimento existente e das forças externas.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo de interpretação
+</h3>
+
+<p>
+Após uma ordem de leme contrária à guinada,
+o indicador mostra o ângulo solicitado,
+mas a proa continua variando no sentido anterior.
+Isso, por si só, não comprova leme travado.
+A guinada existente precisa ser reduzida antes
+de eventualmente se inverter.
+</p>
+
+<p>
+É necessário observar a evolução da velocidade
+de guinada, verificar a execução da ordem
+e considerar a condição hidrodinâmica.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+“Não alterou imediatamente a proa” e
+“o leme não respondeu ao comando”
+não são afirmações equivalentes.
+Uma descreve o movimento do navio;
+a outra descreve a execução de uma ordem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-estado-no-instante-da-falha"
+data-topico-id="emergencia-estado-no-instante-da-falha"
+>
+
+<h2>
+3. O estado do navio no instante da falha
+</h2>
+
+<div class="widget">
+
+<p>
+A falha modifica as forças e os momentos disponíveis,
+mas não elimina instantaneamente as velocidades
+que o navio já possui.
+Esse é o ponto dos fundamentos de inércia
+que precisamos aplicar nesta aula.
+</p>
+
+<p>
+Considere dois navios com a mesma falha de governo:
+um segue aproximadamente em linha reta;
+o outro já está guinando em direção a uma margem.
+A avaria pode ser semelhante, mas a evolução inicial
+e as possibilidades de recuperação são diferentes.
+</p>
+
+<h3>
+3.1. Seguimento longitudinal
+</h3>
+
+<p>
+Determina parte do avanço que continuará ocorrendo
+enquanto se reconhece a falha e se estabelece
+uma ação efetiva.
+A perda de propulsão não equivale à parada do navio.
+</p>
+
+<h3>
+3.2. Movimento transversal
+</h3>
+
+<p>
+Pode manter a aproximação de uma margem,
+de outro navio ou de uma estrutura,
+mesmo quando o seguimento longitudinal é pequeno.
+</p>
+
+<p>
+Uma redução da velocidade para vante,
+portanto, não comprova que o risco de contato
+lateral tenha sido eliminado.
+</p>
+
+<h3>
+3.3. Velocidade de guinada
+</h3>
+
+<p>
+Indica a rapidez com que a proa está variando.
+Em uma emergência, a proa momentânea deve ser
+interpretada junto com a tendência de rotação.
+</p>
+
+<p>
+Dois navios com a mesma proa podem estar em condições
+muito diferentes: um pode estar estabilizado,
+enquanto o outro gira rapidamente em direção ao perigo.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Posição e tendência
+</h3>
+
+<p>
+A posição atual mostra onde o navio está.
+As velocidades longitudinal, transversal e angular
+ajudam a avaliar para onde ele está evoluindo.
+A decisão precisa considerar ambas.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Velocidade sobre o fundo reduzida não demonstra,
+isoladamente, baixa velocidade relativa à água.
+Essa distinção continua necessária para avaliar
+a ação hidrodinâmica sobre o casco e o leme.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-recursos-disponiveis"
+data-topico-id="emergencia-recursos-disponiveis"
+>
+
+<h2>
+4. Recurso instalado não significa recurso disponível
+</h2>
+
+<div class="widget">
+
+<p>
+A identificação dos recursos restantes precisa
+considerar sua disponibilidade real.
+Não basta listar os equipamentos instalados.
+</p>
+
+<p>
+Para cada recurso, devem ser avaliadas três perguntas:
+</p>
+
+<ul>
+
+<li>
+<strong>Pode funcionar?</strong>
+Há energia, acionamento, comando e comunicação
+suficientes para utilizá-lo?
+</li>
+
+<li>
+<strong>Pode produzir o efeito necessário?</strong>
+Sua força ou seu momento são adequados
+à velocidade, ao movimento e ao ambiente?
+</li>
+
+<li>
+<strong>Pode atuar em tempo útil?</strong>
+O efeito estará disponível antes de se esgotar
+o espaço de manobra?
+</li>
+
+</ul>
+
+<h3>
+4.1. Dependências entre equipamentos
+</h3>
+
+<p>
+Uma única falha pode afetar vários recursos
+que dependem da mesma alimentação ou sistema.
+Em um blackout, por exemplo, a disponibilidade
+do governo, dos propulsores e dos impelidores
+dependerá da arquitetura e da recuperação
+dos sistemas de bordo.
+</p>
+
+<p>
+Por isso, a presença de um impelidor de proa
+não autoriza presumir que ele estará disponível
+após uma perda de energia.
+</p>
+
+<h3>
+4.2. Disponibilidade de um modo alternativo
+</h3>
+
+<p>
+A perda de comando a partir de determinado posto
+não implica necessariamente perda do acionamento
+do equipamento.
+Um modo alternativo pode permanecer utilizável,
+conforme a instalação.
+</p>
+
+<p>
+Entretanto, um comando alternativo não elimina
+um travamento mecânico nem substitui uma fonte
+de energia indisponível.
+A distinção entre esses casos será desenvolvida
+na parte sobre falhas de governo.
+</p>
+
+<h3>
+4.3. Assistência externa
+</h3>
+
+<p>
+Um rebocador próximo somente constitui recurso
+efetivo quando suas condições de aproximação,
+conexão ou atuação permitem produzir a força
+necessária em tempo útil.
+</p>
+
+<p>
+A existência de assistência na área não equivale
+à aplicação imediata de força sobre o navio.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Preparação anterior à emergência
+</h3>
+
+<p>
+MacElrevey destaca o conhecimento prévio
+da resposta do próprio navio e o treinamento
+para utilização do governo de emergência.
+O reconhecimento das possibilidades de controle
+deve começar antes de uma falha real.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-espaco-tempo-resposta"
+data-topico-id="emergencia-espaco-tempo-resposta"
+>
+
+<h2>
+5. Espaço disponível e tempo para produzir efeito
+</h2>
+
+<div class="widget">
+
+<p>
+Uma alternativa pode ser tecnicamente possível
+e, ainda assim, não produzir efeito antes
+de o navio atingir uma condição perigosa.
+</p>
+
+<p>
+O tempo envolve o reconhecimento da condição,
+a transmissão e execução das ações
+e o desenvolvimento da resposta do navio.
+Essas atividades podem ocorrer parcialmente
+em paralelo; não constituem uma sequência
+rígida a ser cumprida antes de agir.
+</p>
+
+<h3>
+5.1. Estimativa simples da aproximação
+</h3>
+
+<p>
+Como exercício de avaliação, se uma distância
+até um limite diminui a uma velocidade aproximadamente
+constante, o tempo para alcançar esse limite pode
+ser estimado por:
+</p>
+
+<div class="formula-linha">
+
+<p>
+<strong>t ≈ d / V<sub>aproximacao</sub></strong>
+</p>
+
+</div>
+
+<ul>
+
+<li>
+<strong>t:</strong>
+tempo estimado para alcançar o limite.
+</li>
+
+<li>
+<strong>d:</strong>
+distância restante medida na direção considerada.
+</li>
+
+<li>
+<strong>V<sub>aproximacao</sub>:</strong>
+componente da velocidade relativa que reduz
+essa distância.
+</li>
+
+</ul>
+
+<p>
+Com distância de 120 m e aproximação lateral
+constante de 0,40 m/s, o tempo estimado é:
+</p>
+
+<div class="formula-linha">
+
+<p>
+<strong>t ≈ 120 / 0,40 = 300 s = 5 min</strong>
+</p>
+
+</div>
+
+<p>
+Esse resultado não é uma previsão completa
+da trajetória nem um prazo seguro para esperar.
+A velocidade pode variar, e a guinada pode fazer
+a proa ou a popa atingir o limite antes
+do ponto usado na estimativa.
+</p>
+
+<h3>
+5.2. Espaço ocupado pelo casco
+</h3>
+
+<p>
+Ao guinar, o navio ocupa uma área que não coincide
+apenas com a trajetória de um ponto de referência.
+A avaliação deve incluir a passagem das extremidades
+e o afastamento lateral do casco.
+</p>
+
+<p>
+Assim, afastar a proa de um obstáculo
+não comprova que toda a embarcação
+esteja se afastando dele.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O quociente distância/velocidade é uma estimativa
+cinemática sob hipóteses simplificadas.
+Não fornece distância de parada, tempo de recuperação
+do governo ou garantia de espaço suficiente
+para executar uma manobra.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="emergencia-cenario-inicial"
+data-topico-id="emergencia-cenario-inicial"
+>
+
+<h2>
+6. Cenário inicial: mesma indicação,
+diagnósticos diferentes
+</h2>
+
+<div class="widget">
+
+<p>
+Um navio percorre um canal e inicia uma guinada
+para boreste. É emitida uma ordem de leme
+para reduzir essa guinada, mas a proa continua
+variando para boreste.
+</p>
+
+<p>
+A observação inicial permite reconhecer
+uma resposta insuficiente ou ainda não estabelecida.
+Ela não identifica, sozinha, a causa.
+</p>
+
+<h3>
+Hipótese A — O leme não executou a ordem
+</h3>
+
+<p>
+Pode existir falha no comando, no acionamento
+ou impedimento mecânico.
+A investigação deve distinguir essas possibilidades,
+pois suas consequências para o emprego de modos
+alternativos são diferentes.
+</p>
+
+<h3>
+Hipótese B — O leme executou a ordem
+e a guinada começa a diminuir
+</h3>
+
+<p>
+O navio pode continuar guinando para boreste
+enquanto sua velocidade de guinada diminui.
+Nesse caso, existe uma resposta de frenagem
+da rotação, mesmo antes de a proa estabilizar.
+</p>
+
+<h3>
+Hipótese C — O leme executou a ordem,
+mas a guinada não é contida
+</h3>
+
+<p>
+A autoridade de controle pode ser insuficiente
+para a condição presente.
+É necessário avaliar o escoamento no leme,
+a propulsão, as forças externas e as restrições
+locais, utilizando os conhecimentos
+das aulas anteriores.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Raciocínio central da Parte 1
+</h3>
+
+<p>
+Identificar a função perdida, observar
+a evolução do movimento e verificar os recursos
+restantes permite avaliar alternativas.
+Repetir uma ordem sem verificar sua execução
+não esclarece a condição de controle.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Aplicação ao estudo
+</h3>
+
+<p>
+As hipóteses deste cenário organizam a análise;
+não determinam uma ordem universal de máquina
+ou de leme. A ação adequada depende
+da configuração do navio, da falha efetiva,
+do movimento existente e do espaço disponível.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     CONTINUAR COM A PARTE 2 NESTE PONTO.
+
+     NÃO FECHAR main, body OU html.
+     OS EXERCÍCIOS INTEGRADOS, O GABARITO,
+     AS REFERÊNCIAS FINAIS E OS SCRIPTS
+     SERÃO INSERIDOS NA ÚLTIMA PARTE.
+===================================================== -->
