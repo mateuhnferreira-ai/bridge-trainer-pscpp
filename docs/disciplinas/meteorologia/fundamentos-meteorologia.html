@@ -1,1 +1,1874 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Fundamentos de Meteorologia - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="meteorologia"
+    data-aula="fundamentos-meteorologia"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Meteorologia</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Fundamentos de Meteorologia
+</h2>
+
+<p>
+<strong>
+Fundamentals of Meteorology
+— Fundamentos de Meteorologia
+</strong>
+</p>
+
+<p>
+Estudo dos conceitos físicos e dos princípios de observação
+necessários à compreensão do tempo atmosférico e de seus
+efeitos sobre a navegação.
+</p>
+
+<p>
+A interpretação meteorológica exige compreender como
+temperatura, pressão, umidade e movimento do ar se relacionam.
+A identificação isolada de um elemento não substitui
+a análise do conjunto e de sua evolução.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Meteorologia
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Fundamentos de Meteorologia
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Fundamentals of Meteorology
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+    type="button"
+    class="botao pomodoro-botao pomodoro-botao-iniciar"
+    id="pomodoro-btn-start"
+    onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+    type="button"
+    class="botao pomodoro-botao"
+    id="pomodoro-btn-pause"
+    onclick="pausarPomodoro()"
+    disabled
+>
+⏸ Pausar
+</button>
+
+<button
+    type="button"
+    class="botao pomodoro-botao"
+    onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+V — Meteorologia e Oceanografia
+</strong>
+</p>
+
+<p>
+Esta aula apresenta os fundamentos necessários ao estudo
+dos seguintes itens do conteúdo programático fornecido:
+</p>
+
+<ul>
+
+<li>
+6 — Climatologia.
+</li>
+
+<li>
+10 — Pressão atmosférica.
+</li>
+
+<li>
+11 — Ventos.
+</li>
+
+<li>
+12 — Visibilidade.
+</li>
+
+<li>
+13 — Cobertura do céu.
+</li>
+
+<li>
+14 — Precipitação.
+</li>
+
+</ul>
+
+<p>
+A vinculação acima indica a aplicação dos fundamentos.
+Esta parte introdutória não esgota esses itens,
+que serão aprofundados nas aulas correspondentes.
+</p>
+
+<h3>
+Tópicos desta parte
+</h3>
+
+<ul>
+
+<li data-progresso-topico="fund-p1-tempo-clima">
+Meteorologia, tempo atmosférico e clima.
+</li>
+
+<li data-progresso-topico="fund-p1-elementos">
+Elementos meteorológicos e interpretação integrada.
+</li>
+
+<li data-progresso-topico="fund-p1-atmosfera">
+Atmosfera, vapor de água e troposfera.
+</li>
+
+<li data-progresso-topico="fund-p1-observacao">
+Observação, análise e previsão.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta parte, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Distinguir tempo atmosférico, clima e previsão meteorológica.
+</li>
+
+<li>
+Reconhecer os elementos utilizados para descrever
+o estado da atmosfera.
+</li>
+
+<li>
+Explicar a importância da troposfera, do vapor de água
+e dos núcleos de condensação.
+</li>
+
+<li>
+Interpretar corretamente o sentido da direção meteorológica
+do vento.
+</li>
+
+<li>
+Distinguir observação, análise e previsão.
+</li>
+
+<li>
+Reconhecer por que uma observação isolada não determina
+a situação meteorológica nem sua evolução.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+Meteorologia: noções básicas
+</h3>
+
+<p>
+<strong>Autores:</strong>
+Rita Yuri Ynoue, Michelle Simões Reboita,
+Tércio Ambrizzi e Gyrlene Aparecida Mendes da Silva.
+</p>
+
+<p>
+<strong>Edição consultada:</strong>
+Oficina de Textos, 2017.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta parte:</strong>
+prefácio; capítulo 1, composição e estrutura vertical
+da atmosfera; capítulo 7, seção 7.1, tipos de observação;
+capítulo 11, seção 11.1, definição de tempo e clima.
+</p>
+
+<hr>
+
+<h3>
+Navegação: a Ciência e a Arte — Volume III
+</h3>
+
+<p>
+<strong>Autor:</strong>
+Altineu Pires Miguens.
+</p>
+
+<p>
+<strong>Trechos utilizados nesta parte:</strong>
+capítulo 45 — Noções de Meteorologia para Navegantes;
+seções 45.1.1, 45.1.2 e 45.2.
+</p>
+
+<p>
+<strong>Imagem utilizada:</strong>
+Figura 45.1 — Estrutura da Atmosfera,
+página interna 45-2.
+</p>
+
+<div class="destaque">
+
+<h3>
+Critério de desenvolvimento
+</h3>
+
+<p>
+As explicações são apresentadas como sínteses técnicas
+das fontes consultadas. Os exemplos de aplicação
+à navegação e o mapa mental são recursos didáticos
+elaborados para esta aula.
+</p>
+
+<p>
+As demais publicações fornecidas serão utilizadas
+nas partes e aulas em que seu conteúdo for pertinente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+Parte 1 — Conceitos fundamentais e observação do tempo.
+</li>
+
+<li>
+Parte 2 — Energia e mecanismos de transferência de calor.
+</li>
+
+<li>
+Parte 3 — Interações entre temperatura, pressão,
+umidade e movimento do ar.
+</li>
+
+<li>
+Parte 4 — Integração dos fundamentos e revisão
+aplicada à navegação.
+</li>
+
+</ol>
+
+<p>
+Os assuntos serão aprofundados também nas aulas específicas
+da disciplina, evitando que esta introdução substitua
+o estudo completo de atmosfera, pressão, ventos,
+nuvens e sistemas meteorológicos.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — Conceitos fundamentais e observação do tempo
+</h2>
+
+<p>
+Antes de interpretar uma carta meteorológica ou reconhecer
+a aproximação de um sistema, é necessário descrever
+corretamente o estado da atmosfera.
+</p>
+
+<p>
+Esta parte estabelece o vocabulário técnico e o raciocínio
+que servirão de base às explicações físicas das próximas partes.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p1-tempo-clima"
+    data-topico-id="fund-p1-tempo-clima"
+>
+
+<h2>
+1. Meteorologia, tempo atmosférico e clima
+</h2>
+
+<div class="widget">
+
+<h3>
+1.1. Objeto da Meteorologia
+</h3>
+
+<p>
+A Meteorologia estuda os processos físicos, químicos
+e dinâmicos da atmosfera e suas interações
+com os demais componentes do sistema terrestre.
+</p>
+
+<p>
+Seu estudo envolve a composição do ar, as trocas de energia,
+o comportamento da água na atmosfera e os movimentos
+que redistribuem calor e umidade.
+</p>
+
+<p>
+Na navegação, esses conhecimentos permitem compreender
+condições que afetam a visibilidade, a ação do vento
+e a evolução do estado do mar.
+</p>
+
+
+<h3>
+1.2. Tempo atmosférico
+</h3>
+
+<p>
+<strong>Tempo atmosférico</strong> é o estado da atmosfera
+em determinado local e momento.
+</p>
+
+<p>
+Uma descrição meteorológica tecnicamente útil reúne
+variáveis observadas, como temperatura, pressão,
+umidade, vento, nebulosidade, precipitação e visibilidade.
+</p>
+
+<div class="destaque">
+
+<h3>
+Exemplo didático — descrição do tempo
+</h3>
+
+<p>
+“Na entrada do canal, às 12:00 UTC, observa-se vento de sul,
+céu encoberto, chuva e redução de visibilidade.”
+</p>
+
+<p>
+O enunciado descreve condições em um local e horário
+determinados. Trata-se de uma descrição do tempo atmosférico.
+Para um registro completo, devem ser acrescentados
+os valores e demais informações disponíveis.
+</p>
+
+</div>
+
+
+<h3>
+1.3. Clima
+</h3>
+
+<p>
+<strong>Clima</strong> corresponde à descrição estatística
+das condições atmosféricas de uma região
+ao longo de períodos extensos.
+</p>
+
+<p>
+A caracterização climática considera as condições
+predominantes e sua variabilidade. Não deve ser confundida
+com a situação observada em um dia específico.
+</p>
+
+<p>
+Ynoue e colaboradores, na seção 11.1,
+apresentam os períodos de 30 anos utilizados
+nas normais climatológicas.
+</p>
+
+<div class="destaque">
+
+<h3>
+Exemplo didático — informação climática
+</h3>
+
+<p>
+“A região apresenta maior frequência de nevoeiros
+em determinada época do ano.”
+</p>
+
+<p>
+Essa informação auxilia o planejamento sazonal.
+Entretanto, não demonstra que haverá nevoeiro
+no horário de uma manobra específica.
+</p>
+
+</div>
+
+
+<h3>
+1.4. Aplicação à navegação
+</h3>
+
+<p>
+A climatologia auxilia o planejamento de uma viagem,
+a avaliação de condições sazonais e o reconhecimento
+de padrões regionais.
+</p>
+
+<p>
+Para uma decisão operacional concreta, é necessário
+considerar o tempo observado, a previsão e os avisos
+aplicáveis à área e ao período da operação.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Weather</strong> — tempo atmosférico.
+</li>
+
+<li>
+<strong>Climate</strong> — clima.
+</li>
+
+<li>
+<strong>Climatological normal</strong> —
+normal climatológica.
+</li>
+
+<li>
+<strong>Weather forecast</strong> —
+previsão do tempo.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Um episódio de tempo severo não caracteriza,
+por si só, o clima de uma região.
+</p>
+
+<p>
+Da mesma forma, uma média climática não determina
+as condições meteorológicas de uma data específica.
+</p>
+
+</div>
+
+<p>
+<strong>Referência do tópico:</strong>
+Ynoue e colaboradores, prefácio e seção 11.1.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p1-elementos"
+    data-topico-id="fund-p1-elementos"
+>
+
+<h2>
+2. Elementos meteorológicos e interpretação integrada
+</h2>
+
+<div class="widget">
+
+<p>
+Os elementos meteorológicos descrevem aspectos
+complementares do estado da atmosfera.
+</p>
+
+<p>
+Sua interpretação deve considerar:
+<strong>valor observado, distribuição espacial,
+evolução temporal e condições de medição.</strong>
+</p>
+
+
+<h3>
+2.1. Pressão atmosférica
+</h3>
+
+<p>
+A pressão corresponde à força normal exercida
+por unidade de área. Na atmosfera,
+relaciona-se ao estado físico e à distribuição
+da massa de ar.
+</p>
+
+<p>
+Para interpretar o tempo, interessa conhecer
+não apenas um valor de pressão, mas também
+sua variação com o tempo e sua distribuição
+na região considerada.
+</p>
+
+<p>
+Uma leitura isolada não permite determinar
+a posição ou a trajetória de um sistema meteorológico.
+</p>
+
+
+<h3>
+2.2. Temperatura do ar
+</h3>
+
+<p>
+A temperatura caracteriza o estado térmico do ar.
+Deve ser distinguida da temperatura
+da superfície do mar.
+</p>
+
+<p>
+A diferença entre as condições térmicas do ar
+e da superfície com que ele interage
+é relevante para processos como trocas de calor,
+estabilidade e formação de determinados nevoeiros.
+</p>
+
+
+<h3>
+2.3. Umidade
+</h3>
+
+<p>
+A umidade refere-se ao vapor de água presente no ar.
+Existem diferentes grandezas para expressá-la,
+que não devem ser tratadas como equivalentes.
+</p>
+
+<p>
+A <strong>umidade relativa</strong> depende
+também da temperatura. Portanto, não representa
+diretamente uma massa de vapor de água
+por unidade de volume.
+</p>
+
+<p>
+Uma alteração da umidade relativa pode ocorrer
+em consequência de uma mudança de temperatura,
+sem que isso signifique necessariamente
+entrada ou retirada de vapor de água.
+</p>
+
+
+<h3>
+2.4. Vento
+</h3>
+
+<p>
+O vento é descrito por sua direção e intensidade.
+Na convenção meteorológica,
+a direção indica <strong>de onde o vento sopra</strong>.
+</p>
+
+<div class="destaque">
+
+<h3>
+Convenção de direção
+</h3>
+
+<p>
+<strong>Vento de sul:</strong>
+sopra do sul para o norte.
+</p>
+
+<p>
+<strong>Vento de leste:</strong>
+sopra do leste para o oeste.
+</p>
+
+</div>
+
+<p>
+A bordo de um navio em movimento, a indicação
+do anemômetro pode representar o
+<strong>vento aparente</strong>.
+</p>
+
+<p>
+É necessário distinguir essa medição do
+<strong>vento verdadeiro</strong>
+antes de compará-la com informações meteorológicas.
+</p>
+
+
+<h3>
+2.5. Nebulosidade
+</h3>
+
+<p>
+A observação das nuvens considera sua quantidade,
+seus tipos e sua evolução.
+</p>
+
+<p>
+A simples indicação de céu encoberto não descreve
+completamente a situação: diferentes tipos de nuvens
+podem estar associados a mecanismos físicos distintos.
+</p>
+
+
+<h3>
+2.6. Precipitação
+</h3>
+
+<p>
+A observação deve identificar a ocorrência,
+o tipo e a intensidade da precipitação.
+</p>
+
+<p>
+Essas informações ajudam a caracterizar o tempo
+e seus possíveis efeitos sobre a visibilidade
+e as operações.
+</p>
+
+
+<h3>
+2.7. Visibilidade
+</h3>
+
+<p>
+A visibilidade relaciona-se à possibilidade
+de distinguir objetos através da atmosfera,
+conforme os critérios de observação pertinentes.
+</p>
+
+<p>
+Sua redução pode estar associada a fenômenos diferentes,
+como nevoeiro, precipitação ou partículas em suspensão.
+A causa não deve ser deduzida apenas
+pela constatação de visibilidade reduzida.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Atmospheric pressure</strong> —
+pressão atmosférica.
+</li>
+
+<li>
+<strong>Air temperature</strong> —
+temperatura do ar.
+</li>
+
+<li>
+<strong>Sea surface temperature</strong> —
+temperatura da superfície do mar.
+</li>
+
+<li>
+<strong>Relative humidity</strong> —
+umidade relativa.
+</li>
+
+<li>
+<strong>Wind direction</strong> —
+direção do vento.
+</li>
+
+<li>
+<strong>Wind speed</strong> —
+velocidade do vento.
+</li>
+
+<li>
+<strong>Apparent wind</strong> —
+vento aparente.
+</li>
+
+<li>
+<strong>True wind</strong> —
+vento verdadeiro.
+</li>
+
+<li>
+<strong>Cloud cover</strong> —
+cobertura de nuvens.
+</li>
+
+<li>
+<strong>Precipitation</strong> —
+precipitação.
+</li>
+
+<li>
+<strong>Visibility</strong> —
+visibilidade.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Pressão baixa, nuvem escura ou umidade elevada,
+consideradas isoladamente, não identificam
+de forma inequívoca um sistema meteorológico.
+</p>
+
+<p>
+A interpretação exige o conjunto das observações,
+sua distribuição espacial e sua evolução.
+</p>
+
+</div>
+
+<p>
+<strong>Referências do tópico:</strong>
+Miguens, seção 45.2;
+Ynoue e colaboradores, prefácio.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p1-atmosfera"
+    data-topico-id="fund-p1-atmosfera"
+>
+
+<h2>
+3. A atmosfera como meio dos fenômenos meteorológicos
+</h2>
+
+<div class="widget">
+
+<h3>
+3.1. Mistura gasosa e constituintes variáveis
+</h3>
+
+<p>
+A atmosfera é uma mistura gasosa que contém
+vapor de água e partículas em suspensão.
+</p>
+
+<p>
+Nitrogênio e oxigênio predominam no ar seco.
+Entretanto, a importância meteorológica de um constituinte
+não depende apenas de sua abundância.
+</p>
+
+<p>
+O vapor de água, embora presente em proporção variável,
+desempenha papel fundamental na formação das nuvens,
+na precipitação e nas trocas de energia
+associadas às mudanças de fase.
+</p>
+
+
+<h3>
+3.2. Núcleos de condensação
+</h3>
+
+<p>
+Certas partículas em suspensão podem atuar
+como <strong>núcleos de condensação</strong>,
+favorecendo a formação de gotículas
+quando existem condições apropriadas.
+</p>
+
+<p>
+O sal marinho é um exemplo de material
+que pode participar desse processo.
+</p>
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+O vapor de água é água no estado gasoso.
+As gotículas que constituem uma nuvem
+são água no estado líquido.
+</p>
+
+<p>
+Uma nuvem também pode conter cristais de gelo
+ou uma combinação de gotículas e cristais.
+Portanto, não se deve definir nuvem simplesmente
+como “vapor de água visível”.
+</p>
+
+</div>
+
+
+<h3>
+3.3. Troposfera
+</h3>
+
+<p>
+A <strong>troposfera</strong> é a camada inferior
+da atmosfera, onde ocorre a grande maioria
+dos fenômenos meteorológicos.
+</p>
+
+<p>
+Em termos médios, a temperatura diminui
+com o aumento da altitude nessa camada.
+</p>
+
+<p>
+Isso não significa que toda camada de ar
+apresente sempre esse comportamento.
+Podem existir situações em que a temperatura
+aumenta com a altitude em determinada faixa,
+caracterizando uma <strong>inversão térmica</strong>.
+</p>
+
+
+<!-- =========================================
+     IMAGEM EXPLICATIVA
+========================================= -->
+
+<figure class="figura-aula">
+
+<a
+    href="../../img/meteorologia/fundamentos-p1-estrutura-atmosfera.png"
+    target="_blank"
+    rel="noopener"
+>
+
+<img
+    src="../../img/meteorologia/fundamentos-p1-estrutura-atmosfera.png"
+    alt="Perfil esquemático da temperatura com a altitude, mostrando troposfera, estratosfera, mesosfera e termosfera."
+    loading="lazy"
+    style="display: block; max-width: 100%; height: auto; margin: auto;"
+>
+
+</a>
+
+<figcaption>
+
+<strong>
+Figura 1 — Estrutura térmica da atmosfera.
+</strong>
+
+Recorte da Figura 45.1 de Miguens,
+Volume III, página interna 45-2.
+A publicação indica como fonte a FAA,
+Advisory Circular 00-6B.
+Toque na imagem para ampliar.
+
+</figcaption>
+
+</figure>
+
+
+<h3>
+3.4. Como interpretar a imagem
+</h3>
+
+<p>
+O eixo vertical representa a altitude.
+O eixo horizontal representa a temperatura.
+</p>
+
+<p>
+A linha amarela mostra um perfil esquemático
+da variação da temperatura com a altura.
+</p>
+
+<ul>
+
+<li>
+<strong>Troposfera:</strong>
+o perfil geral se desloca para temperaturas menores
+à medida que a altitude aumenta.
+</li>
+
+<li>
+<strong>Estratosfera:</strong>
+o sentido geral da variação térmica se inverte,
+com aumento da temperatura em sua porção superior.
+</li>
+
+<li>
+<strong>Mesosfera:</strong>
+o perfil volta a apresentar redução de temperatura
+com o aumento da altitude.
+</li>
+
+<li>
+<strong>Termosfera:</strong>
+a temperatura volta a aumentar com a altitude.
+</li>
+
+</ul>
+
+<p>
+A figura representa uma estrutura geral.
+<strong>Não corresponde a uma sondagem meteorológica real
+de um local e horário específicos.</strong>
+</p>
+
+
+<h3>
+3.5. Tropopausa
+</h3>
+
+<p>
+A <strong>tropopausa</strong> é a região de transição
+entre a troposfera e a estratosfera.
+</p>
+
+<p>
+Sua altitude varia com a latitude,
+a estação do ano e as condições atmosféricas.
+Assim, não se deve interpretar a altura apresentada
+na figura como um valor fixo para todo o planeta.
+</p>
+
+
+<h3>
+3.6. Energia e movimento
+</h3>
+
+<p>
+A energia solar é a principal fonte de energia
+dos processos meteorológicos abordados nesta aula.
+</p>
+
+<p>
+O aquecimento desigual da superfície e da atmosfera
+contribui para diferenças de temperatura,
+densidade e pressão e para o estabelecimento
+de circulações.
+</p>
+
+<p>
+A evolução do vento depende também das forças atuantes,
+que serão estudadas nas partes e aulas correspondentes.
+</p>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos da imagem e do tópico
+</h3>
+
+<ul>
+
+<li>
+<strong>Atmosphere</strong> — atmosfera.
+</li>
+
+<li>
+<strong>Water vapour</strong> — vapor de água.
+</li>
+
+<li>
+<strong>Condensation nuclei</strong> —
+núcleos de condensação.
+</li>
+
+<li>
+<strong>Troposphere</strong> — troposfera.
+</li>
+
+<li>
+<strong>Tropopause</strong> — tropopausa.
+</li>
+
+<li>
+<strong>Stratosphere</strong> — estratosfera.
+</li>
+
+<li>
+<strong>Mesosphere</strong> — mesosfera.
+</li>
+
+<li>
+<strong>Thermosphere</strong> — termosfera.
+</li>
+
+<li>
+<strong>Temperature inversion</strong> —
+inversão térmica.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A afirmação “a temperatura diminui com a altitude”
+descreve um comportamento médio da troposfera.
+</p>
+
+<p>
+Ela não constitui uma regra universal
+para toda a atmosfera nem para qualquer situação
+meteorológica.
+</p>
+
+<p>
+Também é incorreto afirmar que todos os fenômenos
+meteorológicos ocorrem exclusivamente na troposfera:
+a referência destaca a ocorrência da
+<strong>grande maioria</strong> deles nessa camada.
+</p>
+
+</div>
+
+<p>
+<strong>Referências do tópico:</strong>
+Miguens, seções 45.1.1 e 45.1.2;
+Ynoue e colaboradores, capítulo 1.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p1-observacao"
+    data-topico-id="fund-p1-observacao"
+>
+
+<h2>
+4. Observação, análise e previsão
+</h2>
+
+<div class="widget">
+
+<h3>
+4.1. Observação meteorológica
+</h3>
+
+<p>
+A <strong>observação</strong> registra as condições
+efetivamente medidas ou estimadas
+em determinado local e horário.
+</p>
+
+<p>
+Pode envolver instrumentos, observação visual
+e diferentes plataformas de aquisição de dados.
+</p>
+
+<p>
+Ynoue e colaboradores, na seção 7.1,
+apresentam observações de superfície,
+de ar superior e marítimas, entre outras.
+</p>
+
+<p>
+Navios, boias, estações costeiras e plataformas
+contribuem com informações sobre a atmosfera
+e o oceano. Cada dado descreve condições
+associadas a determinado ponto e procedimento
+de observação.
+</p>
+
+
+<h3>
+4.2. Análise meteorológica
+</h3>
+
+<p>
+A <strong>análise</strong> organiza e interpreta
+as observações para representar
+o estado da atmosfera.
+</p>
+
+<p>
+Uma carta meteorológica permite relacionar
+informações distribuídas espacialmente.
+Essa visão é diferente da leitura de um único
+instrumento a bordo.
+</p>
+
+
+<h3>
+4.3. Previsão meteorológica
+</h3>
+
+<p>
+A <strong>previsão</strong> estima a evolução futura
+da atmosfera, utilizando métodos físicos,
+modelos e avaliação meteorológica.
+</p>
+
+<p>
+Uma observação descreve uma condição registrada.
+Uma previsão se refere a uma condição futura estimada.
+As duas informações devem ser distinguidas
+quanto ao horário e à finalidade.
+</p>
+
+
+<h3>
+4.4. Sequência de aplicação a bordo
+</h3>
+
+<p>
+A sequência abaixo é uma síntese didática
+para organizar o raciocínio:
+</p>
+
+<ol>
+
+<li>
+<strong>Situar a observação:</strong>
+identificar posição, data e horário.
+</li>
+
+<li>
+<strong>Descrever os elementos:</strong>
+registrar valores, unidades e condições observadas.
+</li>
+
+<li>
+<strong>Acompanhar a evolução:</strong>
+comparar observações sucessivas.
+</li>
+
+<li>
+<strong>Relacionar o quadro regional:</strong>
+consultar cartas, previsões e avisos aplicáveis.
+</li>
+
+<li>
+<strong>Avaliar os efeitos:</strong>
+considerar as consequências possíveis
+para a navegação e a manobra.
+</li>
+
+</ol>
+
+
+<h3>
+4.5. Compatibilidade das informações
+</h3>
+
+<p>
+Antes de comparar informações,
+é necessário verificar se horários,
+referências e grandezas são compatíveis.
+</p>
+
+<ul>
+
+<li>
+Uma medição de vento aparente não deve ser tratada
+automaticamente como vento verdadeiro.
+</li>
+
+<li>
+Uma pressão medida a bordo não deve ser confundida
+automaticamente com pressão reduzida
+ao nível médio do mar.
+</li>
+
+<li>
+Uma previsão para determinada área e período
+não deve ser aplicada sem verificar sua abrangência
+e validade.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Exemplo didático — visibilidade reduzida
+</h3>
+
+<p>
+O observador constata redução de visibilidade.
+Essa é uma informação observacional.
+</p>
+
+<p>
+Para interpretar sua causa, deve relacioná-la
+às condições de temperatura, umidade,
+vento, precipitação e demais dados disponíveis.
+</p>
+
+<p>
+A redução de visibilidade, isoladamente,
+não permite concluir que existe nevoeiro de advecção
+ou que uma frente está passando.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Observation</strong> — observação.
+</li>
+
+<li>
+<strong>Analysis</strong> — análise.
+</li>
+
+<li>
+<strong>Forecast</strong> — previsão.
+</li>
+
+<li>
+<strong>Trend</strong> — tendência.
+</li>
+
+<li>
+<strong>Surface observation</strong> —
+observação de superfície.
+</li>
+
+<li>
+<strong>Upper-air observation</strong> —
+observação de ar superior.
+</li>
+
+<li>
+<strong>Marine observation</strong> —
+observação marítima.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>
+Observar uma mudança e identificar sua causa
+são etapas distintas.
+</strong>
+</p>
+
+<p>
+Uma tendência ganha significado quando relacionada
+aos demais elementos e à situação meteorológica.
+</p>
+
+<p>
+Evite transformar um indício isolado
+em diagnóstico definitivo.
+</p>
+
+</div>
+
+<p>
+<strong>Referências do tópico:</strong>
+Ynoue e colaboradores, seção 7.1;
+aplicação didática aos elementos apresentados
+por Miguens, seção 45.2.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     SÍNTESE DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+📌 Síntese técnica da Parte 1
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+<strong>Meteorologia:</strong>
+estuda a atmosfera, seus processos
+e suas interações.
+</li>
+
+<li>
+<strong>Tempo:</strong>
+estado da atmosfera em determinado local e momento.
+</li>
+
+<li>
+<strong>Clima:</strong>
+descrição estatística das condições atmosféricas
+em períodos extensos.
+</li>
+
+<li>
+<strong>Elementos meteorológicos:</strong>
+devem ser interpretados em conjunto
+e acompanhados ao longo do tempo.
+</li>
+
+<li>
+<strong>Troposfera:</strong>
+camada onde ocorre a grande maioria
+dos fenômenos meteorológicos.
+</li>
+
+<li>
+<strong>Vapor de água:</strong>
+participa das mudanças de fase
+e das trocas de energia.
+</li>
+
+<li>
+<strong>Observação, análise e previsão:</strong>
+são atividades relacionadas,
+mas com significados distintos.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Perguntas para revisão ativa
+</h3>
+
+<ol>
+
+<li>
+Por que uma característica climática não determina
+o tempo de uma manobra específica?
+</li>
+
+<li>
+O que significa dizer que o vento é de sul?
+</li>
+
+<li>
+Por que uma nuvem não deve ser definida
+como vapor de água visível?
+</li>
+
+<li>
+Por que o perfil térmico médio da troposfera
+não exclui a ocorrência de inversões?
+</li>
+
+<li>
+Por que uma pressão baixa isolada
+não permite determinar a trajetória de um sistema?
+</li>
+
+<li>
+Qual é a diferença entre observar uma condição
+e prever sua evolução?
+</li>
+
+</ol>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAPA MENTAL EM IMAGEM
+     ENCERRAMENTO DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+🧠 Mapa mental — Parte 1
+</h2>
+
+<div class="widget">
+
+<p>
+Utilize a imagem para revisar as relações
+entre os conceitos estudados.
+</p>
+
+<figure class="figura-aula">
+
+<a
+    href="../../img/meteorologia/fundamentos-p1-mapa-mental.png"
+    target="_blank"
+    rel="noopener"
+>
+
+<img
+    src="../../img/meteorologia/fundamentos-p1-mapa-mental.png"
+    alt="Mapa mental relacionando tempo e clima, elementos meteorológicos, atmosfera e energia, observação e navegação."
+    loading="lazy"
+    style="display: block; max-width: 100%; height: auto; margin: auto;"
+>
+
+</a>
+
+<figcaption>
+
+<strong>
+Mapa mental — Fundamentos de Meteorologia,
+Parte 1.
+</strong>
+
+Síntese didática original baseada em Ynoue
+e colaboradores e no capítulo 45 de Miguens.
+Toque na imagem para ampliar.
+
+</figcaption>
+
+</figure>
+
+<p>
+<strong>Como revisar:</strong>
+explique cada ramo com suas próprias palavras
+e retorne ao tópico correspondente
+sempre que não conseguir justificar uma relação.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     A PARTE 2 SERÁ INSERIDA ABAIXO.
+
+     NÃO FECHAR MAIN, BODY OU HTML NESTE PONTO.
+
+     OS EXERCÍCIOS OBJETIVOS, O GABARITO,
+     AS REFERÊNCIAS FINAIS, O RODAPÉ
+     E OS SCRIPTS OBRIGATÓRIOS SERÃO INSERIDOS
+     NO ENCERRAMENTO DA AULA.
+===================================================== -->
+
+
+  
