@@ -6379,3 +6379,2905 @@ uma tempestade.
 
      NÃO REPETIR OS BLOCOS FIXOS.
 ===================================================== -->   
+
+
+<!-- =====================================================
+     PARTE 4
+     ESTABILIDADE, INTEGRAÇÃO E EXERCÍCIOS
+
+     CONTINUAÇÃO DA PARTE 3.
+     NÃO REPETIR OS BLOCOS FIXOS.
+===================================================== -->
+
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — Estabilidade atmosférica,
+integração dos fundamentos
+e exercícios comentados
+</h2>
+
+<p>
+Conhecer o resfriamento de uma parcela
+não é suficiente para determinar
+se ela continuará subindo.
+É necessário comparar suas propriedades
+com as do ambiente no mesmo nível.
+</p>
+
+<p>
+Nesta parte, estudaremos
+estabilidade, instabilidade,
+neutralidade e inversões térmicas,
+integrando energia,
+umidade e movimento vertical.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENQUADRAMENTO
+========================================= -->
+
+<section>
+
+<h2>
+📚 Enquadramento da Parte 4
+</h2>
+
+<div class="widget">
+
+<p>
+<strong>Vinculação principal:</strong>
+item 17.1 — Ar estável e ar instável.
+</p>
+
+<p>
+<strong>Integrações:</strong>
+item 18.1 — Processo convectivo
+e condições propícias;
+item 16 — Elementos meteorológicos;
+e fundamentos da interpretação
+de informações meteorológicas.
+</p>
+
+<p>
+<strong>Fonte principal:</strong>
+Ynoue e colaboradores,
+seções 5.2, 5.3 e 5.4,
+incluindo as subseções
+5.4.1, 5.4.2 e 5.4.3.
+</p>
+
+<p>
+<strong>Complementação:</strong>
+Ynoue e colaboradores,
+seção 10.4.2,
+sobre estabilidade e inversão térmica;
+Miguens, capítulo 45,
+para a integração dos elementos
+e a aplicação à navegação.
+</p>
+
+<p>
+Os exemplos numéricos
+e as questões são autorais,
+elaborados para treinamento.
+Não são transcrições
+de provas anteriores.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p4-conceito-estabilidade"
+    data-topico-id="fund-p4-conceito-estabilidade"
+>
+
+<h2>
+17. Estabilidade estática:
+parcela e ambiente
+</h2>
+
+<div class="widget">
+
+<h3>
+17.1. Pergunta fundamental
+</h3>
+
+<p>
+Após um pequeno deslocamento vertical,
+a parcela apresenta tendência
+a retornar à posição inicial,
+a continuar afastando-se dela
+ou a permanecer sem tendência
+restauradora ou amplificadora?
+</p>
+
+<p>
+Essa é a base
+da avaliação de estabilidade estática
+no modelo de parcela.
+</p>
+
+
+<h3>
+17.2. Comparação no mesmo nível
+</h3>
+
+<p>
+A parcela deve ser comparada
+com o ambiente
+na mesma altitude,
+com pressão aproximadamente igual.
+</p>
+
+<p>
+A força de flutuabilidade
+depende da diferença de densidade
+entre a parcela e o ambiente.
+</p>
+
+<p>
+Quando os efeitos das diferenças
+de umidade e do condensado
+podem ser desprezados,
+a comparação de temperatura
+é utilizada como aproximação:
+</p>
+
+<ul>
+
+<li>
+Parcela mais quente:
+menor densidade
+que o ambiente.
+</li>
+
+<li>
+Parcela mais fria:
+maior densidade
+que o ambiente.
+</li>
+
+<li>
+Parcela à mesma temperatura:
+ausência de contraste térmico
+de densidade,
+nas hipóteses consideradas.
+</li>
+
+</ul>
+
+<p>
+Quando as umidades são diferentes,
+a temperatura real,
+isoladamente,
+pode não representar
+toda a diferença de densidade.
+A temperatura virtual
+é uma grandeza utilizada
+para incorporar o efeito
+do vapor de água nessa comparação.
+</p>
+
+<p>
+Nesta introdução,
+os exemplos numéricos
+adotam condições
+em que a comparação direta
+de temperatura é suficiente.
+</p>
+
+
+<h3>
+17.3. Atmosfera estável
+</h3>
+
+<p>
+Em uma condição estável,
+o deslocamento produz
+uma força de flutuabilidade
+que se opõe ao afastamento
+da posição inicial.
+</p>
+
+<p>
+Uma parcela levantada
+que se torna mais densa
+que o ambiente
+apresenta tendência
+a descer.
+</p>
+
+<p>
+A estabilidade não obriga
+o retorno instantâneo.
+A parcela pode oscilar
+ou continuar sendo deslocada
+por uma força externa.
+</p>
+
+
+<h3>
+17.4. Atmosfera instável
+</h3>
+
+<p>
+Em uma condição instável,
+o deslocamento produz
+flutuabilidade que favorece
+o afastamento
+da posição inicial.
+</p>
+
+<p>
+Uma parcela levantada
+que permanece menos densa
+que o ambiente
+recebe impulso
+para continuar subindo.
+</p>
+
+
+<h3>
+17.5. Atmosfera neutra
+</h3>
+
+<p>
+Na condição neutra,
+a parcela deslocada
+não apresenta contraste
+de densidade capaz
+de produzir uma força
+restauradora ou amplificadora,
+nas hipóteses adotadas.
+</p>
+
+<p>
+Isso não significa
+ausência de vento,
+turbulência ou movimento.
+A neutralidade descreve
+a resposta de flutuabilidade
+ao deslocamento considerado.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Síntese conceitual
+</h3>
+
+<ul>
+
+<li>
+<strong>Estável:</strong>
+opõe-se ao afastamento.
+</li>
+
+<li>
+<strong>Instável:</strong>
+favorece o afastamento.
+</li>
+
+<li>
+<strong>Neutra:</strong>
+não produz tendência
+restauradora ou amplificadora
+no modelo considerado.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não compare a temperatura
+da parcela em altitude
+com a temperatura
+do ambiente na superfície.
+</p>
+
+<p>
+<strong>
+A comparação deve ocorrer
+no mesmo nível.
+</strong>
+</p>
+
+<p>
+Também não confunda
+estabilidade atmosférica
+com condições operacionais
+necessariamente favoráveis.
+Uma atmosfera estável
+pode apresentar nevoeiro,
+nuvens baixas
+ou vento significativo.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Static stability</strong> —
+estabilidade estática.
+</li>
+
+<li>
+<strong>Buoyancy</strong> —
+flutuabilidade.
+</li>
+
+<li>
+<strong>Stable atmosphere</strong> —
+atmosfera estável.
+</li>
+
+<li>
+<strong>Unstable atmosphere</strong> —
+atmosfera instável.
+</li>
+
+<li>
+<strong>Neutral atmosphere</strong> —
+atmosfera neutra.
+</li>
+
+<li>
+<strong>Virtual temperature</strong> —
+temperatura virtual.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+<strong>Referência principal:</strong>
+Ynoue e colaboradores,
+seção 5.4.
+A ressalva sobre umidade
+explicita os limites
+da comparação simplificada
+por temperatura.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p4-taxas-classificacao"
+    data-topico-id="fund-p4-taxas-classificacao"
+>
+
+<h2>
+18. Gradiente do ambiente
+e taxas adiabáticas
+</h2>
+
+<div class="widget">
+
+<h3>
+18.1. Duas informações distintas
+</h3>
+
+<p>
+O perfil ambiental informa
+como a temperatura do ar
+varia com a altura
+na atmosfera considerada.
+</p>
+
+<p>
+As taxas adiabáticas informam
+como varia a temperatura
+de uma parcela
+que se desloca verticalmente
+sob determinadas hipóteses.
+</p>
+
+<p>
+A estabilidade resulta
+da comparação entre
+o comportamento da parcela
+e o do ambiente.
+</p>
+
+
+<h3>
+18.2. Convenção de sinais
+</h3>
+
+<p>
+Nesta aula,
+será utilizada a convenção:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+Γe = −dT do ambiente / dz
+</strong>
+</p>
+
+<p>
+Assim,
+quando a temperatura diminui
+com a altura,
+Γe é positivo.
+</p>
+
+<ul>
+
+<li>
+<strong>Γe:</strong>
+taxa de decréscimo
+da temperatura ambiente.
+</li>
+
+<li>
+<strong>Γd:</strong>
+taxa adiabática seca,
+aproximadamente 10 °C/km
+na aproximação utilizada.
+</li>
+
+<li>
+<strong>Γs:</strong>
+taxa adiabática saturada,
+variável com as condições
+termodinâmicas.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Nas condições usuais
+deste desenvolvimento,
+Γs é menor que Γd.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção aos sinais da referência
+</h3>
+
+<p>
+Na seção 5.4,
+Ynoue apresenta exemplos
+utilizando taxas negativas
+para a redução de temperatura
+com a altura.
+</p>
+
+<p>
+Nesta aula,
+utilizamos o módulo positivo
+do decréscimo,
+conforme a definição acima.
+</p>
+
+<p>
+As desigualdades aparentam
+sentidos diferentes
+quando se muda a convenção,
+mas o critério físico
+permanece o mesmo.
+</p>
+
+</div>
+
+
+<h3>
+18.3. Estabilidade absoluta
+</h3>
+
+<div class="destaque">
+
+<p>
+<strong>
+Γe &lt; Γs &lt; Γd
+</strong>
+</p>
+
+</div>
+
+<p>
+O ambiente resfria
+com a altura
+mais lentamente
+que a parcela saturada
+e que a parcela não saturada.
+</p>
+
+<p>
+Após um levantamento,
+ambas tendem a ficar
+mais frias que o ambiente,
+no modelo considerado.
+A resposta é estável
+para as duas condições.
+</p>
+
+
+<h3>
+18.4. Instabilidade absoluta
+</h3>
+
+<div class="destaque">
+
+<p>
+<strong>
+Γe &gt; Γd &gt; Γs
+</strong>
+</p>
+
+</div>
+
+<p>
+O ambiente resfria
+com a altura
+mais rapidamente
+que as parcelas
+saturada e não saturada.
+</p>
+
+<p>
+Após um levantamento,
+a parcela tende a permanecer
+mais quente que o ambiente,
+favorecendo a continuação
+da ascendência.
+</p>
+
+
+<h3>
+18.5. Instabilidade condicional
+</h3>
+
+<div class="destaque">
+
+<p>
+<strong>
+Γs &lt; Γe &lt; Γd
+</strong>
+</p>
+
+</div>
+
+<p>
+A resposta depende
+da condição da parcela:
+</p>
+
+<ul>
+
+<li>
+<strong>Não saturada:</strong>
+resfria pela taxa seca
+e apresenta resposta estável
+ao pequeno deslocamento.
+</li>
+
+<li>
+<strong>Saturada:</strong>
+resfria mais lentamente
+e pode apresentar
+resposta instável.
+</li>
+
+</ul>
+
+<p>
+Uma parcela inicialmente
+não saturada
+pode precisar
+de levantamento forçado
+para atingir a saturação
+e continuar até apresentar
+flutuabilidade positiva.
+</p>
+
+<p>
+A classificação condicional
+não garante que a parcela
+chegará a esse estado.
+</p>
+
+
+<h3>
+18.6. Neutralidade
+</h3>
+
+<ul>
+
+<li>
+<strong>Γe = Γd:</strong>
+neutralidade para
+a parcela não saturada.
+</li>
+
+<li>
+<strong>Γe = Γs:</strong>
+neutralidade para
+a parcela saturada.
+</li>
+
+</ul>
+
+<p>
+A neutralidade deve ser
+associada ao estado
+da parcela.
+Uma camada neutra
+para ar não saturado
+não é necessariamente
+neutra para ar saturado.
+</p>
+
+
+<h3>
+18.7. Exemplo condicional
+</h3>
+
+<p>
+Considere,
+apenas para este exemplo:
+</p>
+
+<ul>
+
+<li>
+Γd = 10 °C/km.
+</li>
+
+<li>
+Γs = 6 °C/km.
+</li>
+
+<li>
+Γe = 8 °C/km.
+</li>
+
+</ul>
+
+<p>
+Como 6 &lt; 8 &lt; 10,
+a camada é condicionalmente
+instável.
+</p>
+
+<p>
+O valor de 6 °C/km
+é uma hipótese do exemplo,
+não um valor universal
+para a taxa saturada.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue e colaboradores,
+seções 5.4.1 a 5.4.3.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p4-exemplos-estabilidade"
+    data-topico-id="fund-p4-exemplos-estabilidade"
+>
+
+<h2>
+19. Comparação numérica
+entre parcela e ambiente
+</h2>
+
+<div class="widget">
+
+<p>
+Nos três exemplos seguintes,
+a parcela e o ambiente
+partem de 30 °C
+no nível inicial.
+</p>
+
+<p>
+A parcela é levantada
+adiabaticamente por 1 km
+e permanece não saturada.
+Utiliza-se Γd = 10 °C/km.
+</p>
+
+<p>
+Portanto,
+a temperatura da parcela
+no nível final
+é de aproximadamente 20 °C.
+</p>
+
+<p>
+Adotam-se condições
+em que os efeitos
+das diferenças de umidade
+sobre a comparação
+podem ser desprezados.
+</p>
+
+
+<h3>
+19.1. Ambiente resfria 4 °C/km
+</h3>
+
+<ul>
+
+<li>
+Ambiente a 1 km:
+30 − 4 = 26 °C.
+</li>
+
+<li>
+Parcela a 1 km:
+30 − 10 = 20 °C.
+</li>
+
+</ul>
+
+<p>
+A parcela está mais fria
+que o ambiente
+no mesmo nível.
+Sua flutuabilidade
+tende a restaurar
+a posição inicial.
+</p>
+
+
+<h3>
+19.2. Ambiente resfria 10 °C/km
+</h3>
+
+<ul>
+
+<li>
+Ambiente a 1 km:
+30 − 10 = 20 °C.
+</li>
+
+<li>
+Parcela a 1 km:
+30 − 10 = 20 °C.
+</li>
+
+</ul>
+
+<p>
+A condição é neutra
+para a parcela não saturada,
+nas hipóteses adotadas.
+</p>
+
+
+<h3>
+19.3. Ambiente resfria 12 °C/km
+</h3>
+
+<ul>
+
+<li>
+Ambiente a 1 km:
+30 − 12 = 18 °C.
+</li>
+
+<li>
+Parcela a 1 km:
+30 − 10 = 20 °C.
+</li>
+
+</ul>
+
+<p>
+A parcela permanece
+mais quente que o ambiente.
+A flutuabilidade favorece
+a continuação da subida.
+</p>
+
+
+<figure class="figura-aula">
+
+<a
+    href="../../img/meteorologia/fundamentos-p4-estabilidade-parcela.png"
+    target="_blank"
+    rel="noopener"
+>
+
+<img
+    src="../../img/meteorologia/fundamentos-p4-estabilidade-parcela.png"
+    alt="Três gráficos comparam a temperatura de uma parcela não saturada com ambientes estável, neutro e instável."
+    loading="lazy"
+    style="display: block; max-width: 100%; height: auto; margin: auto;"
+>
+
+</a>
+
+<figcaption>
+
+<strong>
+Figura 4 — Comparação entre
+a parcela e o ambiente.
+</strong>
+
+Gráficos didáticos originais,
+baseados nos critérios
+de Ynoue e colaboradores,
+seção 5.4.
+Os valores não representam
+uma sondagem real.
+Toque para ampliar.
+
+</figcaption>
+
+</figure>
+
+
+<h3>
+19.4. Como ler os gráficos
+</h3>
+
+<ul>
+
+<li>
+O eixo horizontal
+representa a temperatura.
+</li>
+
+<li>
+O eixo vertical
+representa a altura
+em relação ao nível inicial.
+</li>
+
+<li>
+A linha azul representa
+o ambiente.
+</li>
+
+<li>
+A linha tracejada
+representa a parcela.
+</li>
+
+<li>
+A comparação deve ser feita
+horizontalmente,
+na mesma altura.
+</li>
+
+</ul>
+
+<p>
+No painel neutro,
+as duas linhas
+estão sobrepostas.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma parcela pode estar
+mais fria que estava
+na superfície
+e, ainda assim,
+estar mais quente
+que o ambiente em altitude.
+</p>
+
+<p>
+<strong>
+O que determina
+a flutuabilidade
+é o contraste
+com o ambiente
+no mesmo nível.
+</strong>
+</p>
+
+</div>
+
+<p>
+<strong>Base conceitual:</strong>
+Ynoue e colaboradores,
+seção 5.4.
+Exemplos numéricos autorais.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+    class="topico-aula"
+    id="fund-p4-inversoes-limites"
+    data-topico-id="fund-p4-inversoes-limites"
+>
+
+<h2>
+20. Inversões térmicas
+e limites da interpretação
+</h2>
+
+<div class="widget">
+
+<h3>
+20.1. Inversão térmica
+</h3>
+
+<p>
+Em uma inversão,
+a temperatura aumenta
+com a altura
+em determinada camada.
+</p>
+
+<p>
+Na convenção adotada,
+isso corresponde
+a Γe negativo.
+</p>
+
+<p>
+Uma parcela levantada
+e resfriada adiabaticamente
+encontra ambiente
+relativamente mais quente,
+o que favorece
+uma resposta estável.
+</p>
+
+
+<h3>
+20.2. Formação e consequências
+</h3>
+
+<p>
+Uma inversão próxima
+à superfície pode desenvolver-se
+quando a superfície
+se resfria radiativamente
+e resfria o ar em contato.
+</p>
+
+<p>
+Inversões também podem
+estar associadas
+a outros processos,
+como subsidência
+ou transporte de ar
+com propriedades diferentes.
+</p>
+
+<p>
+A estabilidade dificulta
+a mistura vertical
+por flutuabilidade,
+podendo favorecer
+a concentração
+de umidade ou partículas
+em uma camada.
+</p>
+
+<p>
+O resultado para a visibilidade
+depende também
+da umidade,
+do vento,
+dos aerossóis
+e das condições locais.
+</p>
+
+
+<h3>
+20.3. Estabilidade
+não impede todo levantamento
+</h3>
+
+<p>
+O ar pode ser forçado
+a subir por relevo,
+convergência
+ou superfícies frontais,
+mesmo apresentando
+resposta estável
+à flutuabilidade.
+</p>
+
+<p>
+Se alcançar condições
+apropriadas de saturação,
+pode formar nuvens.
+</p>
+
+<p>
+Portanto,
+a presença de uma nuvem
+não demonstra,
+isoladamente,
+instabilidade convectiva.
+</p>
+
+
+<h3>
+20.4. Saturação
+e convecção livre
+</h3>
+
+<p>
+O NCL identifica
+a saturação
+por levantamento
+da parcela considerada.
+</p>
+
+<p>
+O nível de convecção livre
+identifica a condição
+em que a parcela levantada
+passa a apresentar
+flutuabilidade positiva
+para continuar subindo
+sem depender
+do mesmo levantamento externo.
+</p>
+
+<p>
+Esses níveis não precisam
+coincidir.
+Uma parcela pode atingir
+a saturação
+e ainda permanecer
+mais densa que o ambiente.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Instabilidade
+não garante tempestade
+</h3>
+
+<p>
+A formação de uma tempestade
+depende de um conjunto
+de condições,
+incluindo umidade,
+levantamento
+e estrutura vertical favorável.
+</p>
+
+<p>
+A avaliação não pode
+ser reduzida
+a uma única temperatura,
+a uma nuvem isolada
+ou à classificação
+de uma camada.
+</p>
+
+</div>
+
+
+<h3>
+20.5. Integração dos fundamentos
+</h3>
+
+<ol>
+
+<li>
+A energia modifica
+o estado térmico
+e participa
+das mudanças de fase.
+</li>
+
+<li>
+A temperatura influencia
+a pressão de vapor
+de saturação.
+</li>
+
+<li>
+A subida pode produzir
+expansão e resfriamento
+sem troca externa
+de calor.
+</li>
+
+<li>
+A condensação libera energia
+e modifica a taxa
+de resfriamento da parcela.
+</li>
+
+<li>
+A comparação com o ambiente
+determina sua resposta
+de flutuabilidade.
+</li>
+
+<li>
+A aplicação à navegação
+exige integrar
+essas relações
+às observações,
+cartas, boletins
+e previsões pertinentes.
+</li>
+
+</ol>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Temperature inversion</strong> —
+inversão térmica.
+</li>
+
+<li>
+<strong>Subsidence</strong> —
+subsidência.
+</li>
+
+<li>
+<strong>Forced lifting</strong> —
+levantamento forçado.
+</li>
+
+<li>
+<strong>Level of free convection
+— LFC</strong> —
+nível de convecção livre.
+</li>
+
+<li>
+<strong>Conditional instability</strong> —
+instabilidade condicional.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+<strong>Referências:</strong>
+Ynoue e colaboradores,
+seções 5.2, 5.3, 5.4
+e 10.4.2.
+A distinção entre saturação
+e flutuabilidade positiva
+explicita a sequência física
+do levantamento.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXERCÍCIOS DA AULA
+========================================= -->
+
+<section>
+
+<h2>
+📝 Questões de revisão
+— Fundamentos de Meteorologia
+</h2>
+
+<div class="widget">
+
+<p>
+Questões autorais,
+com distratores conceituais,
+baseadas nas quatro partes
+da aula.
+</p>
+
+<p>
+Selecione uma alternativa
+por questão.
+Ao final,
+utilize o botão
+de correção.
+</p>
+
+</div>
+
+
+
+<!-- QUESTÃO 1 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q1"
+    data-resposta="A"
+    data-topico="fund-p1-tempo-clima"
+    data-edital="V - item 6"
+    data-bibliografia="Ynoue et al., seção 11.1"
+>
+
+<h3>Questão 1</h3>
+
+<p>
+Uma carta apresenta a frequência
+climatológica de nevoeiros
+em determinado mês.
+Sobre sua utilização,
+assinale a alternativa correta.
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Auxilia o planejamento,
+mas não determina se haverá nevoeiro
+no horário de uma manobra específica.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Substitui a observação local
+sempre que a frequência
+for superior a 50%.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Representa a previsão exata
+para todos os dias daquele mês.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) Permite dispensar a previsão,
+pois o clima determina
+o tempo diário.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 2 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q2"
+    data-resposta="C"
+    data-topico="fund-p2-radiacao"
+    data-edital="V - item 16.1"
+    data-bibliografia="Ynoue et al., seção 2.2.1"
+>
+
+<h3>Questão 2</h3>
+
+<p>
+Sobre o intercâmbio radiativo
+superfície-atmosfera,
+assinale a alternativa correta.
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) A superfície deixa de emitir
+radiação após o pôr do Sol.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) A radiação infravermelha terrestre
+é apenas luz solar refletida.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) A superfície emite radiação térmica
+também durante a noite;
+essa emissão difere da reflexão
+da radiação solar.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) A transferência por radiação
+exige contato molecular
+entre o Sol e a Terra.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 3 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q3"
+    data-resposta="B"
+    data-topico="fund-p2-conducao-conveccao-adveccao"
+    data-edital="V - itens 16 e 17"
+    data-bibliografia="Ynoue et al., seção 2.2; Miguens, seção 45.1.2"
+>
+
+<h3>Questão 3</h3>
+
+<p>
+O vento transporta ar mais frio
+para uma região,
+contribuindo para a queda
+da temperatura local.
+Esse transporte horizontal
+caracteriza:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Condução molecular.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Advecção.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Reflexão radiativa.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) Compressão adiabática,
+necessariamente.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 4 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q4"
+    data-resposta="D"
+    data-topico="fund-p3-saturacao-umidade"
+    data-edital="V - item 16.5"
+    data-bibliografia="Ynoue et al., seção 4.2"
+>
+
+<h3>Questão 4</h3>
+
+<p>
+Uma parcela é resfriada
+a pressão constante,
+sem mudança de fase
+e sem alteração
+do conteúdo de vapor.
+Antes de atingir a saturação,
+é correto afirmar que:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) A umidade relativa
+necessariamente diminui.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) A elevação da umidade relativa
+prova que foi acrescentado vapor.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) A pressão de vapor de saturação
+aumenta com o resfriamento.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) A umidade relativa aumenta
+porque a pressão de vapor
+de saturação diminui.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 5 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q5"
+    data-resposta="B"
+    data-topico="fund-p3-fases-agua"
+    data-edital="V - itens 16.6 e 16.7"
+    data-bibliografia="Ynoue et al., seção 4.1.1; Miguens, seção 45.2.3"
+>
+
+<h3>Questão 5</h3>
+
+<p>
+Sobre as mudanças de fase
+da água,
+assinale a alternativa correta.
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Evaporação libera energia
+e condensação absorve energia.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Evaporação absorve energia
+e condensação libera energia.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Condensação corresponde
+à passagem direta
+do vapor para o gelo.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) A evaporação só ocorre
+quando a água atinge
+a ebulição.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 6 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q6"
+    data-resposta="A"
+    data-topico="fund-p3-processos-adiabaticos"
+    data-edital="V - fundamentos dos itens 17.1 e 18.1"
+    data-bibliografia="Ynoue et al., seção 5.2.2"
+>
+
+<h3>Questão 6</h3>
+
+<p>
+Uma parcela não saturada
+sobe adiabaticamente,
+sem mistura.
+Seu resfriamento ocorre,
+no modelo estudado,
+porque:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Ela se expande
+e realiza trabalho,
+com redução da energia interna.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Ela necessariamente perde calor
+por condução para o ambiente.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) A ausência de troca de calor
+impede qualquer expansão.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) O processo adiabático
+exige temperatura constante.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 7 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q7"
+    data-resposta="C"
+    data-topico="fund-p3-taxa-adiabatica-seca"
+    data-edital="V - fundamentos do item 17.1"
+    data-bibliografia="Ynoue et al., seção 5.2.2"
+>
+
+<h3>Questão 7</h3>
+
+<p>
+Uma parcela inicialmente
+a 28 °C
+é levantada 600 m,
+permanecendo não saturada,
+sem mistura
+e sem troca externa de calor.
+Adote 1 °C por 100 m.
+Sua temperatura final será,
+aproximadamente:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) 34 °C.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) 28 °C.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) 22 °C.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) 18 °C.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 8 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q8"
+    data-resposta="D"
+    data-topico="fund-p3-ncl-ascensao-saturada"
+    data-edital="V - itens 16.7 e 18.1"
+    data-bibliografia="Ynoue et al., seções 5.2.2 e 5.4.3"
+>
+
+<h3>Questão 8</h3>
+
+<p>
+Uma parcela atinge o NCL
+durante um levantamento.
+Qual conclusão
+é tecnicamente correta?
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) A parcela tornou-se
+necessariamente mais quente
+que o ambiente.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) A partir desse nível,
+a temperatura deixa
+de diminuir com a altura.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) A chuva na superfície
+está garantida.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) A parcela atingiu
+a saturação no modelo,
+mas isso não demonstra,
+isoladamente,
+flutuabilidade positiva.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 9 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q9"
+    data-resposta="C"
+    data-topico="fund-p4-exemplos-estabilidade"
+    data-edital="V - item 17.1"
+    data-bibliografia="Ynoue et al., seção 5.4"
+>
+
+<h3>Questão 9</h3>
+
+<p>
+Parcela e ambiente partem
+de 30 °C.
+Após 1 km de levantamento,
+a parcela não saturada
+está a 20 °C
+e o ambiente, a 26 °C.
+Desprezando diferenças
+de composição e condensado,
+a parcela:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Apresenta flutuabilidade
+que favorece a subida.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Está neutra,
+pois ambas as temperaturas
+são positivas.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Está mais densa
+que o ambiente
+e apresenta tendência
+restauradora.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) Não pode ter subido,
+pois uma camada estável
+impede qualquer levantamento.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 10 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q10"
+    data-resposta="B"
+    data-topico="fund-p4-taxas-classificacao"
+    data-edital="V - item 17.1"
+    data-bibliografia="Ynoue et al., seção 5.4.3"
+>
+
+<h3>Questão 10</h3>
+
+<p>
+Adotando taxas positivas
+de decréscimo da temperatura,
+considere Γs = 6 °C/km,
+Γe = 8 °C/km
+e Γd = 10 °C/km.
+A camada é:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Absolutamente estável.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Condicionalmente instável.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Absolutamente instável.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) Neutra para parcelas
+saturadas e não saturadas.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 11 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q11"
+    data-resposta="D"
+    data-topico="fund-p4-inversoes-limites"
+    data-edital="V - item 17.1"
+    data-bibliografia="Ynoue et al., seções 5.4 e 10.4.2"
+>
+
+<h3>Questão 11</h3>
+
+<p>
+Sobre uma inversão térmica,
+assinale a alternativa correta.
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) A temperatura diminui
+mais rapidamente que a taxa seca.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Sua presença garante
+céu limpo e boa visibilidade.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Elimina a possibilidade
+de levantamento forçado.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) A temperatura aumenta
+com a altura na camada,
+favorecendo estabilidade estática.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTÃO 12 -->
+
+<div
+    class="widget questao"
+    data-questao-id="fundamentos-meteorologia-q12"
+    data-resposta="A"
+    data-topico="fund-p1-observacao"
+    data-edital="V - fundamentos do item 21"
+    data-bibliografia="Ynoue et al., seção 7.1; Miguens, seção 45.5"
+>
+
+<h3>Questão 12</h3>
+
+<p>
+A bordo,
+observam-se queda de pressão,
+aumento da nebulosidade
+e redução de visibilidade.
+A interpretação adequada é:
+</p>
+
+<div class="alternativas-questao">
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="A"
+>
+A) Integrar as tendências
+às demais observações
+e aos produtos válidos
+para a área e o período,
+sem identificar um sistema
+apenas por esses indícios.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="B"
+>
+B) Concluir imediatamente
+que existe ciclone tropical.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="C"
+>
+C) Considerar irrelevantes
+a posição e o horário,
+pois os sinais são universais.
+</button>
+
+<button
+    type="button"
+    class="alternativa"
+    data-opcao="D"
+>
+D) Substituir a análise
+por uma média climatológica.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONTROLE DOS EXERCÍCIOS
+========================================= -->
+
+<div class="widget">
+
+<h3>
+📋 Progresso das questões
+</h3>
+
+<p id="resumo-selecao-exercicios">
+0 de 12 questões respondidas
+</p>
+
+<button
+    type="button"
+    id="botao-corrigir-exercicios"
+    class="botao-estudo"
+>
+✅ Corrigir Exercício
+</button>
+
+</div>
+
+
+<div
+    id="resultado-exercicios"
+    class="widget"
+    style="display:none;"
+>
+
+<h3>
+📊 Resultado da tentativa
+</h3>
+
+<p id="texto-resultado-exercicios">
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GABARITO COMENTADO
+========================================= -->
+
+<section>
+
+<h2>
+✅ Gabarito comentado
+</h2>
+
+<div class="widget">
+
+<button
+    type="button"
+    class="botao-estudo"
+    onclick="alternarGabaritoAula()"
+>
+Mostrar / Ocultar Gabarito
+</button>
+
+
+<div
+    id="gabaritoAula"
+    style="display:none;"
+>
+
+<hr>
+
+
+<h3>
+Questão 1 — Alternativa A
+</h3>
+
+<p>
+A climatologia descreve
+frequências e características
+em períodos extensos.
+Ela auxilia o planejamento,
+mas não substitui
+a observação e a previsão
+para uma operação específica.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 11.1.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 2 — Alternativa C
+</h3>
+
+<p>
+A superfície emite
+radiação térmica
+em função de sua temperatura,
+inclusive durante a noite.
+</p>
+
+<p>
+Essa emissão não é
+simples reflexão
+da radiação solar.
+A radiação também
+não exige contato molecular
+entre emissor e receptor.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 2.2.1.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 3 — Alternativa B
+</h3>
+
+<p>
+O transporte horizontal
+de propriedades pelo vento
+caracteriza advecção.
+</p>
+
+<p>
+A queda da temperatura local
+pode ocorrer pela chegada
+de ar mais frio,
+sem exigir resfriamento
+por expansão
+da parcela naquele local.
+</p>
+
+<p>
+<strong>Referências:</strong>
+Ynoue, seção 2.2;
+Miguens, seção 45.1.2.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 4 — Alternativa D
+</h3>
+
+<p>
+Com pressão
+e conteúdo de vapor constantes,
+o resfriamento reduz
+a pressão de vapor
+de saturação.
+</p>
+
+<p>
+Como UR = 100 × e/es,
+a umidade relativa aumenta,
+sem necessidade
+de acrescentar vapor.
+</p>
+
+<p>
+O enunciado delimita
+a situação anterior
+à mudança de fase.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 4.2.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 5 — Alternativa B
+</h3>
+
+<p>
+A evaporação exige energia
+para a passagem
+do líquido ao vapor.
+A condensação libera
+a energia correspondente
+ao processo inverso.
+</p>
+
+<p>
+A passagem direta
+do vapor ao gelo
+é deposição
+ou ressublimação.
+A evaporação não exige
+temperatura de ebulição.
+</p>
+
+<p>
+<strong>Referências:</strong>
+Ynoue, seção 4.1.1;
+Miguens, seção 45.2.3.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 6 — Alternativa A
+</h3>
+
+<p>
+A redução da pressão externa
+permite a expansão.
+Ao realizar trabalho,
+a parcela não saturada
+reduz sua energia interna
+e sua temperatura,
+sem perder calor
+para o ambiente.
+</p>
+
+<p>
+Adiabático significa
+ausência de troca de calor,
+não temperatura constante.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 5.2.2.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 7 — Alternativa C
+</h3>
+
+<p>
+O resfriamento aproximado é:
+</p>
+
+<p>
+<strong>
+600 m × 1 °C/100 m = 6 °C.
+</strong>
+</p>
+
+<p>
+Logo:
+</p>
+
+<p>
+<strong>
+28 − 6 = 22 °C.
+</strong>
+</p>
+
+<p>
+O cálculo depende
+da manutenção
+da condição não saturada
+e das demais hipóteses
+do enunciado.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 5.2.2.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 8 — Alternativa D
+</h3>
+
+<p>
+O NCL identifica a saturação
+durante o levantamento.
+</p>
+
+<p>
+A parcela ainda pode
+estar mais fria
+e mais densa
+que o ambiente.
+Saturação não demonstra,
+isoladamente,
+convecção livre.
+</p>
+
+<p>
+A condensação também
+não interrompe necessariamente
+o resfriamento
+nem garante chuva
+atingindo a superfície.
+</p>
+
+<p>
+<strong>Referências:</strong>
+Ynoue, seções 5.2.2 e 5.4.3.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 9 — Alternativa C
+</h3>
+
+<p>
+A comparação ocorre
+a 1 km:
+parcela a 20 °C
+e ambiente a 26 °C.
+</p>
+
+<p>
+Nas hipóteses adotadas,
+a parcela mais fria
+é mais densa
+e apresenta flutuabilidade
+dirigida para baixo,
+opondo-se ao levantamento.
+</p>
+
+<p>
+Isso não significa
+que forças externas
+sejam incapazes
+de levantá-la.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 5.4.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 10 — Alternativa B
+</h3>
+
+<p>
+Na convenção positiva:
+</p>
+
+<p>
+<strong>
+Γs &lt; Γe &lt; Γd.
+</strong>
+</p>
+
+<p>
+O ambiente é estável
+para uma parcela
+não saturada
+e instável para
+uma parcela saturada,
+no modelo considerado.
+</p>
+
+<p>
+A ocorrência de tempestade
+não é consequência automática
+dessa classificação.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Ynoue, seção 5.4.3.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 11 — Alternativa D
+</h3>
+
+<p>
+A inversão corresponde
+ao aumento da temperatura
+com a altura.
+</p>
+
+<p>
+Ela favorece
+uma resposta estável
+a deslocamentos verticais,
+mas não garante
+boa visibilidade
+nem impede
+levantamento forçado.
+</p>
+
+<p>
+<strong>Referências:</strong>
+Ynoue, seções 5.4 e 10.4.2.
+</p>
+
+<hr>
+
+
+<h3>
+Questão 12 — Alternativa A
+</h3>
+
+<p>
+Os indícios devem
+ser integrados
+às demais observações
+e ao quadro meteorológico.
+</p>
+
+<p>
+É necessário verificar
+posição,
+horários de observação
+e emissão,
+validade
+e abrangência
+dos produtos.
+</p>
+
+<p>
+Os sinais apresentados
+não identificam,
+por si só,
+um ciclone tropical
+ou qualquer outro
+sistema específico.
+</p>
+
+<p>
+<strong>Referências:</strong>
+Ynoue, seção 7.1;
+Miguens, seção 45.5.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAPA MENTAL DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>
+🧠 Mapa mental — Parte 4
+</h2>
+
+<div class="widget">
+
+<figure class="figura-aula">
+
+<a
+    href="../../img/meteorologia/fundamentos-p4-mapa-mental.png"
+    target="_blank"
+    rel="noopener"
+>
+
+<img
+    src="../../img/meteorologia/fundamentos-p4-mapa-mental.png"
+    alt="Mapa de revisão sobre comparação entre parcela e ambiente, estabilidade, taxas adiabáticas, inversões e interpretação integrada."
+    loading="lazy"
+    style="display: block; max-width: 100%; height: auto; margin: auto;"
+>
+
+</a>
+
+<figcaption>
+
+<strong>
+Mapa mental — Estabilidade
+e integração dos fundamentos.
+</strong>
+
+Síntese didática original,
+baseada em Ynoue e colaboradores
+e no capítulo 45 de Miguens.
+As desigualdades utilizam
+a convenção positiva
+de decréscimo da temperatura.
+Toque para ampliar.
+
+</figcaption>
+
+</figure>
+
+<p>
+<strong>Revisão final:</strong>
+explique por que saturação,
+instabilidade
+e precipitação
+são conceitos relacionados,
+mas não equivalentes.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REFERÊNCIAS FINAIS
+========================================= -->
+
+<section>
+
+<h2>
+📚 Referências bibliográficas finais
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+YNOUE, Rita Yuri;
+REBOITA, Michelle Simões;
+AMBRIZZI, Tércio;
+SILVA, Gyrlene Aparecida Mendes da.
+<strong>Meteorologia:
+noções básicas.</strong>
+São Paulo:
+Oficina de Textos, 2017.
+</li>
+
+<li>
+MIGUENS, Altineu Pires.
+<strong>Navegação:
+a Ciência e a Arte.</strong>
+Volume III.
+Diretoria de Hidrografia
+e Navegação.
+Capítulo 45 —
+Noções de Meteorologia
+para Navegantes.
+</li>
+
+</ul>
+
+
+<h3>
+Trechos utilizados
+</h3>
+
+<ul>
+
+<li>
+<strong>Ynoue:</strong>
+prefácio;
+capítulo 1;
+capítulo 2,
+seções 2.1, 2.2 e 2.3;
+capítulo 3,
+seções 3.2.4 e 3.3;
+capítulo 4;
+capítulo 5,
+seções 5.1 a 5.4;
+capítulo 7, seção 7.1;
+capítulo 10, seção 10.4.2;
+capítulo 11, seção 11.1.
+</li>
+
+<li>
+<strong>Miguens:</strong>
+seções 45.1.1,
+45.1.2,
+45.2 e 45.5.
+Figura 45.1,
+página interna 45-2.
+</li>
+
+</ul>
+
+
+<h3>
+Origem das imagens
+</h3>
+
+<ul>
+
+<li>
+<strong>Estrutura da atmosfera:</strong>
+Figura 45.1 de Miguens;
+a publicação atribui
+a imagem à FAA,
+Advisory Circular 00-6B.
+</li>
+
+<li>
+<strong>Demais figuras
+e mapas mentais:</strong>
+elaboração didática original,
+com base nos conceitos
+das referências indicadas.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limites de cobertura
+</h3>
+
+<p>
+Esta aula estabelece fundamentos.
+Não substitui o desenvolvimento
+dos demais assuntos
+da disciplina.
+</p>
+
+<p>
+Marés, correntes,
+teoria de ondas,
+cartas piloto,
+navegação de mau tempo
+e informações hidro/meteo
+portuárias serão tratados
+nos arquivos correspondentes.
+</p>
+
+<p>
+Somente as publicações
+efetivamente utilizadas
+foram relacionadas
+como referências desta aula.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Conclusão da aula
+</h2>
+
+<p>
+O estado da atmosfera
+é descrito por elementos
+que se relacionam
+por processos físicos.
+Energia,
+água
+e movimento do ar
+devem ser interpretados
+em conjunto.
+</p>
+
+<p>
+Uma parcela pode mudar
+de temperatura
+por transferência de calor
+ou por trabalho
+de expansão e compressão.
+As mudanças de fase
+modificam seu balanço energético,
+e a comparação com o ambiente
+determina sua resposta
+de flutuabilidade.
+</p>
+
+<p>
+Na aplicação à navegação,
+o conhecimento desses fundamentos
+deve acompanhar
+a observação consistente
+e a interpretação
+das informações válidas
+para a área e o período.
+</p>
+
+<p>
+<strong>
+Concluir esta aula
+significa estabelecer a base
+para o aprofundamento
+dos assuntos específicos
+de Meteorologia.
+</strong>
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+</main>
+
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR
+===================================================== -->
+
+<footer>
+
+<p>
+⚓ Bridge Trainer PSCPP
+</p>
+
+<p>
+Preparação para o Processo Seletivo de Praticante de Prático
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS OBRIGATÓRIOS
+     NÃO ALTERAR A ORDEM
+========================================= -->
+
+<script src="../../js/navigation.js"></script>
+
+<script src="../../js/progresso.js"></script>
+
+<script src="../../js/pomodoro.js"></script>
+
+<script src="../../js/exercicios.js"></script>
+
+
+
+<!-- =========================================
+     CONTROLE DO GABARITO
+========================================= -->
+
+<script>
+
+function alternarGabaritoAula() {
+
+    const gabarito =
+        document.getElementById(
+            "gabaritoAula"
+        );
+
+
+    if (!gabarito) {
+
+        return;
+
+    }
+
+
+    if (
+        gabarito.style.display ===
+        "none"
+    ) {
+
+        gabarito.style.display =
+            "block";
+
+    }
+    else {
+
+        gabarito.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>    
