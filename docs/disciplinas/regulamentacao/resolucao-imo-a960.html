@@ -1,1 +1,1435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Resolução IMO A.960(23) - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="regulamentacao"
+    data-aula="resolucao-imo-a960"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Regulamentação</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Resolução IMO A.960(23)
+</h2>
+
+<p>
+<strong>
+Recommendations on training and certification
+and on operational procedures for maritime pilots
+other than deep-sea pilots
+</strong>
+</p>
+
+<p>
+Recomendações sobre treinamento e certificação
+e sobre procedimentos operacionais para práticos
+marítimos, exceto práticos de alto-mar.
+</p>
+
+<p>
+Estudo integral da resolução, de seu Anexo 1
+e de seu Anexo 2, com tradução de estudo,
+explicações técnicas e questões de revisão
+voltadas ao PSCPP.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Regulamentação
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Resolução IMO A.960(23)
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Training, certification and operational procedures
+for maritime pilots
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+IV — Legislação e Regulamentação — Item 21
+</strong>
+</p>
+
+<p>
+Recomendações IMO sobre treinamento, certificação
+e procedimentos operacionais para práticos
+marítimos, que não práticos de alto-mar.
+</p>
+
+<p>
+A referência 18 da bibliografia da disciplina
+indica a Resolução A.960(23), sem limitar
+o estudo a determinados anexos ou parágrafos.
+Esta aula abrange o documento integral.
+</p>
+
+<ul>
+
+<li data-progresso-topico="imo960-identificacao">
+Identificação e organização da resolução.
+</li>
+
+<li data-progresso-topico="imo960-preambulo">
+Preâmbulo: fundamentos e finalidade.
+</li>
+
+<li data-progresso-topico="imo960-dispositivos">
+Dispositivos operativos: adoção dos anexos,
+implementação, revisão e revogação.
+</li>
+
+<li>
+Anexo 1: alcance, autoridade competente,
+certificação, aptidão médica, treinamento,
+proficiência e programa de conhecimentos.
+</li>
+
+<li>
+Anexo 2: responsabilidades e procedimentos
+operacionais dos práticos marítimos.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Identificar o alcance da resolução e suas
+exclusões expressas.
+</li>
+
+<li>
+Distinguir as atribuições da IMO das atribuições
+da autoridade competente de praticagem.
+</li>
+
+<li>
+Explicar as recomendações sobre certificação,
+aptidão médica, treinamento e manutenção
+da proficiência.
+</li>
+
+<li>
+Reconhecer os 28 itens do programa de conhecimentos
+para certificação ou licenciamento.
+</li>
+
+<li>
+Interpretar os deveres do comandante,
+dos oficiais do passadiço e do prático.
+</li>
+
+<li>
+Descrever a troca de informações
+comandante–prático e as recomendações
+sobre comunicações.
+</li>
+
+<li>
+Identificar as disposições sobre relatos,
+recusa do serviço e aptidão para o serviço.
+</li>
+
+<li>
+Resolver questões preservando as condições,
+ressalvas, sujeitos e prazos do texto
+de referência.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+IMO — Resolution A.960(23)
+</h3>
+
+<p>
+<strong>
+Recommendations on training and certification
+and on operational procedures for maritime pilots
+other than deep-sea pilots.
+</strong>
+</p>
+
+<p>
+<strong>Adoção:</strong>
+5 de dezembro de 2003,
+23ª sessão da Assembleia da IMO.
+</p>
+
+<p>
+<strong>Identificação do documento:</strong>
+A 23/Res.960.
+</p>
+
+<p>
+<strong>Data de emissão indicada no cabeçalho:</strong>
+5 de março de 2004.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+preâmbulo; dispositivos operativos 1 a 4;
+Anexo 1, itens 1 a 7;
+Anexo 2, itens 1 a 9;
+e respectivas notas de rodapé.
+</p>
+
+<div class="destaque">
+
+<h3>
+Critério de fidelidade à referência
+</h3>
+
+<p>
+Os blocos identificados como
+<strong>“Tradução de estudo”</strong>
+apresentam uma tradução do texto inglês
+fornecido, preservando seu sentido,
+sua sequência e suas ressalvas.
+Não constituem tradução oficial.
+</p>
+
+<p>
+Os blocos identificados como
+<strong>“Comentário didático”</strong>,
+os esquemas e os exercícios são recursos
+de aprendizagem e não integram
+o texto original da resolução.
+</p>
+
+<p>
+Na tradução das recomendações,
+o emprego de <strong>“deveria”</strong>
+preserva o caráter recomendatório
+do termo inglês <strong>should</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1:</strong>
+identificação, preâmbulo e dispositivos
+operativos da resolução.
+</li>
+
+<li>
+<strong>Parte 2:</strong>
+Anexo 1 — alcance, autoridade competente,
+certificado ou licença, aptidão médica
+e padrões de treinamento e certificação.
+</li>
+
+<li>
+<strong>Parte 3:</strong>
+Anexo 1 — manutenção da proficiência
+e os 28 itens do programa para certificação
+ou licenciamento.
+</li>
+
+<li>
+<strong>Parte 4:</strong>
+Anexo 2 — generalidades, deveres,
+ponto de embarque e solicitação
+do serviço de praticagem.
+</li>
+
+<li>
+<strong>Parte 5:</strong>
+Anexo 2 — troca de informações
+comandante–prático e idioma das comunicações.
+</li>
+
+<li>
+<strong>Parte 6:</strong>
+Anexo 2 — relatos, recusa do serviço,
+aptidão para o serviço, questões
+e gabarito comentado.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — IDENTIFICAÇÃO, PREÂMBULO
+E DISPOSITIVOS DA RESOLUÇÃO
+</h2>
+
+<p>
+O preâmbulo apresenta os fundamentos
+da resolução. Os dispositivos operativos
+adotam as duas recomendações anexas,
+tratam de sua implementação e revisão
+e revogam a resolução anterior.
+</p>
+
+<p>
+<strong>Referência:</strong>
+Resolução A.960(23), preâmbulo
+e dispositivos operativos 1 a 4.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="imo960-identificacao"
+data-topico-id="imo960-identificacao"
+>
+
+<h2>
+1. Identificação e organização do documento
+</h2>
+
+<div class="widget">
+
+<p>
+A Resolução A.960(23) foi adotada
+em 5 de dezembro de 2003.
+O documento apresenta o seguinte título:
+</p>
+
+<blockquote>
+
+<p>
+<strong>
+Recomendações sobre treinamento e certificação
+e sobre procedimentos operacionais para
+práticos marítimos, exceto práticos de alto-mar.
+</strong>
+</p>
+
+</blockquote>
+
+<p>
+<strong>Tradução de estudo do título original.</strong>
+</p>
+
+<div class="destaque">
+
+<h3>
+Comentário didático — leitura da identificação
+</h3>
+
+<ul>
+
+<li>
+<strong>A:</strong>
+identifica uma resolução da Assembleia da IMO.
+</li>
+
+<li>
+<strong>960:</strong>
+número da resolução.
+</li>
+
+<li>
+<strong>(23):</strong>
+23ª sessão da Assembleia.
+</li>
+
+</ul>
+
+<p>
+A data de adoção, 5 de dezembro de 2003,
+deve ser distinguida da data de emissão
+do documento, 5 de março de 2004.
+</p>
+
+</div>
+
+
+<h3>
+Organização para leitura
+</h3>
+
+<ol>
+
+<li>
+<strong>Preâmbulo:</strong>
+fundamentos e considerações
+que antecedem as decisões.
+</li>
+
+<li>
+<strong>Dispositivos operativos:</strong>
+quatro decisões da Assembleia.
+</li>
+
+<li>
+<strong>Anexo 1:</strong>
+recomendação sobre treinamento
+e certificação de práticos marítimos,
+exceto práticos de alto-mar.
+</li>
+
+<li>
+<strong>Anexo 2:</strong>
+recomendação sobre procedimentos
+operacionais para práticos marítimos,
+exceto práticos de alto-mar.
+</li>
+
+</ol>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Assembly</strong> —
+Assembleia;
+</li>
+
+<li>
+<strong>Maritime pilot</strong> —
+prático marítimo;
+</li>
+
+<li>
+<strong>Deep-sea pilot</strong> —
+prático de alto-mar;
+</li>
+
+<li>
+<strong>Training</strong> —
+treinamento ou formação,
+conforme o contexto;
+</li>
+
+<li>
+<strong>Certification</strong> —
+certificação;
+</li>
+
+<li>
+<strong>Operational procedures</strong> —
+procedimentos operacionais.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O título contém uma exclusão expressa:
+<strong>other than deep-sea pilots</strong>.
+A delimitação dos demais destinatários
+será detalhada no Anexo 1, item 1.2.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="imo960-preambulo"
+data-topico-id="imo960-preambulo"
+>
+
+<h2>
+2. Preâmbulo da resolução
+</h2>
+
+<div class="widget">
+
+<h3>
+Tradução de estudo — preâmbulo integral
+</h3>
+
+<p>
+<strong>A ASSEMBLEIA,</strong>
+</p>
+
+<p>
+<strong>RECORDANDO</strong>
+o artigo 15(j) da Convenção sobre
+a Organização Marítima Internacional,
+relativo às funções da Assembleia
+no que se refere a regulamentos
+e diretrizes concernentes à segurança
+marítima e à prevenção e ao controle
+da poluição marinha proveniente de navios,
+</p>
+
+<p>
+<strong>RECONHECENDO</strong>
+que os práticos marítimos desempenham
+um importante papel na promoção
+da segurança marítima e na proteção
+do meio ambiente marinho,
+</p>
+
+<p>
+<strong>CONSIDERANDO</strong>
+que a manutenção de uma relação
+de trabalho adequada entre o prático,
+o comandante e, conforme o caso,
+o oficial encarregado de um quarto
+de navegação é importante para assegurar
+a segurança da navegação,
+</p>
+
+<p>
+<strong>OBSERVANDO</strong>
+que, como cada área de praticagem
+exige do prático experiência altamente
+especializada e conhecimento local,
+a IMO não pretende envolver-se
+na certificação ou no licenciamento
+de práticos, nem nos sistemas
+de praticagem praticados nos diversos Estados,
+</p>
+
+<p>
+<strong>RECONHECENDO TAMBÉM</strong>
+os elevados padrões dos serviços
+de praticagem já estabelecidos
+em muitos Estados e a necessidade
+de que esses padrões sejam mantidos,
+</p>
+
+<p>
+<strong>CONSIDERANDO</strong>
+que, nos Estados que estão desenvolvendo
+serviços de praticagem, o estabelecimento
+de padrões mínimos práticos de treinamento,
+requisitos de certificação e procedimentos
+operacionais para proporcionar coordenação
+eficaz entre os práticos e o pessoal
+dos navios, levando devidamente em conta
+os procedimentos do passadiço e
+os equipamentos do navio, contribuiria
+para a segurança marítima,
+</p>
+
+<p>
+<strong>TENDO CONSIDERADO</strong>
+a recomendação feita pelo Comitê
+de Segurança Marítima em sua
+septuagésima quinta sessão,
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Comentário didático — fundamentos do preâmbulo
+</h3>
+
+<p>
+O preâmbulo relaciona a qualidade
+do serviço de praticagem a três aspectos:
+</p>
+
+<ul>
+
+<li>
+<strong>Competência especializada:</strong>
+experiência e conhecimento local
+próprios de cada área.
+</li>
+
+<li>
+<strong>Coordenação a bordo:</strong>
+relação de trabalho adequada
+entre prático, comandante e
+oficial de quarto.
+</li>
+
+<li>
+<strong>Padrões de serviço:</strong>
+manutenção dos padrões existentes
+e desenvolvimento de requisitos
+nos Estados que estruturam seus serviços.
+</li>
+
+</ul>
+
+<p>
+A segurança marítima e a proteção
+do meio ambiente aparecem como
+fundamentos expressos da resolução.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Master</strong> —
+comandante;
+</li>
+
+<li>
+<strong>Officer in charge of a navigational watch</strong> —
+oficial encarregado de um quarto de navegação;
+</li>
+
+<li>
+<strong>Local knowledge</strong> —
+conhecimento local;
+</li>
+
+<li>
+<strong>Licensing</strong> —
+licenciamento;
+</li>
+
+<li>
+<strong>Maritime Safety Committee — MSC</strong> —
+Comitê de Segurança Marítima.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — papel da IMO
+</h3>
+
+<p>
+O texto declara que a IMO não pretende
+envolver-se na certificação ou
+no licenciamento dos práticos,
+nem nos sistemas de praticagem
+dos diversos Estados.
+</p>
+
+<p>
+Isso deve ser lido em conjunto
+com a adoção de recomendações
+internacionais sobre esses assuntos.
+A definição de recomendações
+não equivale à emissão individual
+de certificados pela IMO.
+</p>
+
+</div>
+
+<p>
+<strong>Referência:</strong>
+preâmbulo da Resolução A.960(23).
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="imo960-dispositivos"
+data-topico-id="imo960-dispositivos"
+>
+
+<h2>
+3. Dispositivos operativos 1 a 4
+</h2>
+
+<div class="widget">
+
+<h3>
+Tradução de estudo — dispositivo 1
+</h3>
+
+<p>
+<strong>1. ADOTA:</strong>
+</p>
+
+<p>
+<strong>(a)</strong>
+a Recomendação sobre Treinamento
+e Certificação de Práticos Marítimos,
+exceto Práticos de Alto-Mar,
+constante do Anexo 1
+à presente resolução;
+</p>
+
+<p>
+<strong>(b)</strong>
+a Recomendação sobre Procedimentos
+Operacionais para Práticos Marítimos,
+exceto Práticos de Alto-Mar,
+constante do Anexo 2
+à presente resolução;
+</p>
+
+
+<h3>
+Tradução de estudo — dispositivo 2
+</h3>
+
+<p>
+<strong>2. INSTA</strong>
+os governos a dar efeito
+a essas recomendações tão cedo
+quanto possível;
+</p>
+
+
+<h3>
+Tradução de estudo — dispositivo 3
+</h3>
+
+<p>
+<strong>3. SOLICITA</strong>
+ao Comitê de Segurança Marítima
+que mantenha as recomendações
+sob revisão e as altere,
+conforme necessário, à luz
+da experiência adquirida
+com sua implementação;
+</p>
+
+
+<h3>
+Tradução de estudo — dispositivo 4
+</h3>
+
+<p>
+<strong>4. REVOGA</strong>
+a Resolução A.485(XII).
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Comentário didático — quatro ações
+</h3>
+
+<ol>
+
+<li>
+<strong>Adotar:</strong>
+as duas recomendações anexas.
+</li>
+
+<li>
+<strong>Instar:</strong>
+os governos a dar efeito
+às recomendações.
+</li>
+
+<li>
+<strong>Solicitar:</strong>
+ao MSC a revisão e as alterações
+necessárias à luz da experiência.
+</li>
+
+<li>
+<strong>Revogar:</strong>
+a Resolução A.485(XII).
+</li>
+
+</ol>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP — precisão dos dispositivos
+</h3>
+
+<ul>
+
+<li>
+O dispositivo 2 utiliza a expressão
+<strong>“tão cedo quanto possível”</strong>;
+não fixa uma data de calendário
+para a implementação.
+</li>
+
+<li>
+O órgão ao qual se solicita
+manter as recomendações sob revisão
+é o <strong>MSC</strong>.
+</li>
+
+<li>
+A resolução expressamente revogada
+é a <strong>A.485(XII)</strong>.
+</li>
+
+<li>
+Os dois anexos são adotados
+pela mesma resolução,
+mas tratam de matérias distintas.
+</li>
+
+</ul>
+
+</div>
+
+<p>
+<strong>Referência:</strong>
+dispositivos operativos 1 a 4
+da Resolução A.960(23).
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="imo960-leitura-normativa"
+data-topico-id="imo960-leitura-normativa"
+>
+
+<h2>
+4. Leitura técnica das recomendações
+</h2>
+
+<div class="widget">
+
+<h3>
+Comentário didático
+</h3>
+
+<p>
+Para interpretar os próximos itens,
+identifique em cada disposição:
+quem deve agir, qual é a ação prevista,
+em que condições ela se aplica
+e quais ressalvas acompanham o texto.
+</p>
+
+<div class="destaque">
+
+<h3>
+Roteiro de leitura
+</h3>
+
+<ol>
+
+<li>
+<strong>Sujeito:</strong>
+governo, autoridade competente,
+prático, comandante ou equipe
+do passadiço.
+</li>
+
+<li>
+<strong>Ação:</strong>
+estabelecer, avaliar, informar,
+verificar, comunicar ou outra
+conduta especificada.
+</li>
+
+<li>
+<strong>Condição:</strong>
+situação na qual a recomendação
+se aplica.
+</li>
+
+<li>
+<strong>Ressalva:</strong>
+alternativas, limitações e expressões
+como “conforme necessário”,
+“se disponível” e “tão cedo
+quanto praticável”.
+</li>
+
+</ol>
+
+</div>
+
+<p>
+Esses elementos serão preservados
+na tradução dos anexos.
+A explicação didática será apresentada
+após o texto correspondente.
+</p>
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Expressões para a leitura do original
+</h3>
+
+<ul>
+
+<li>
+<strong>Should</strong> —
+deveria; formulação de recomendação;
+</li>
+
+<li>
+<strong>May</strong> —
+pode; o sentido específico depende
+do contexto;
+</li>
+
+<li>
+<strong>As appropriate</strong> —
+conforme apropriado ou conforme o caso;
+</li>
+
+<li>
+<strong>As soon as practicable</strong> —
+tão cedo quanto praticável;
+</li>
+
+<li>
+<strong>If available</strong> —
+se disponível.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Uma alternativa pode conservar
+o assunto geral do dispositivo
+e tornar-se incorreta ao trocar
+seu sujeito, eliminar uma ressalva,
+transformar uma possibilidade
+em exigência absoluta ou alterar
+um intervalo de verificação.
+</p>
+
+<p>
+O estudo deve alcançar a redação
+de cada item, além de sua ideia geral.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     REVISÃO DA PARTE 1
+========================================= -->
+
+<section>
+
+<h2>
+📌 Revisão da Parte 1
+</h2>
+
+<div class="widget">
+
+<ul>
+
+<li>
+<strong>Adoção:</strong>
+5 de dezembro de 2003.
+</li>
+
+<li>
+<strong>Finalidades reconhecidas:</strong>
+segurança marítima e proteção
+do meio ambiente marinho.
+</li>
+
+<li>
+<strong>Fundamento da especialização:</strong>
+experiência e conhecimento local
+de cada área de praticagem.
+</li>
+
+<li>
+<strong>Relação de trabalho:</strong>
+prático, comandante e, conforme o caso,
+oficial encarregado do quarto
+de navegação.
+</li>
+
+<li>
+<strong>Anexo 1:</strong>
+treinamento e certificação.
+</li>
+
+<li>
+<strong>Anexo 2:</strong>
+procedimentos operacionais.
+</li>
+
+<li>
+<strong>Governos:</strong>
+instados a dar efeito às recomendações
+tão cedo quanto possível.
+</li>
+
+<li>
+<strong>MSC:</strong>
+solicitado a manter as recomendações
+sob revisão e alterá-las
+conforme necessário.
+</li>
+
+<li>
+<strong>Revogação expressa:</strong>
+Resolução A.485(XII).
+</li>
+
+</ul>
+
+<p>
+<strong>Próxima parte:</strong>
+início do Anexo 1 — alcance,
+autoridade competente, certificado
+ou licença, aptidão médica
+e padrões de treinamento.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     INSERIR A PARTE 2 ABAIXO.
+
+     MANTER MAIN, BODY E HTML ABERTOS.
+
+     EXERCÍCIOS, GABARITO, REFERÊNCIAS FINAIS,
+     CONCLUSÃO, RODAPÉ E SCRIPTS SERÃO INSERIDOS
+     AO FINAL DA AULA, NA ORDEM DO PADRÃO 1.
+===================================================== -->
