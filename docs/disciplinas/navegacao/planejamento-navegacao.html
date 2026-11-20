@@ -1,1 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Planejamento da Derrota - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="planejamento-navegacao"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação em Águas Restritas</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Planejamento da Derrota
+</h2>
+
+<p>
+<strong>
+Passage Planning
+</strong>
+</p>
+
+<p>
+Avaliação da passagem e elaboração da derrota de berço a berço,
+com ênfase na escolha da rota, nas margens de segurança e nos
+critérios de decisão em águas restritas.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação em Águas Restritas
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Planejamento da Derrota
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Passage Planning
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+III — Navegação em Águas Restritas. Item 10 — Planejamento de
+derrota em águas restritas (<em>Passage planning</em>).
+</strong>
+</p>
+
+<p>
+Tópicos da Parte 1:
+</p>
+
+<ul>
+
+<li data-progresso-topico="alcance-e-etapas">
+Alcance do plano e etapas da passagem
+</li>
+
+<li data-progresso-topico="responsabilidade-pelo-plano">
+Responsabilidade e aprovação do plano
+</li>
+
+<li data-progresso-topico="fontes-e-qualidade-dos-dados">
+Cartas, publicações e qualidade das informações
+</li>
+
+<li data-progresso-topico="navio-ambiente-e-restricoes">
+Condição do navio, ambiente e restrições locais
+</li>
+
+<li data-progresso-topico="resultado-da-avaliacao">
+Resultado da avaliação e aplicação operacional
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Distinguir avaliação, elaboração, execução e monitoramento
+no planejamento de uma passagem de berço a berço.
+</li>
+
+<li>
+Identificar os dados do navio, da área e do ambiente necessários
+para avaliar uma derrota em águas restritas.
+</li>
+
+<li>
+Transformar os resultados da avaliação em critérios para a escolha
+da rota, a definição de margens e a preparação de contingências.
+</li>
+
+<li>
+Explicar a responsabilidade do comandante pela aprovação do plano
+e a função das informações de praticagem na sua revisão.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+ICS — <em>Bridge Procedures Guide</em>, 6ª edição, 2022
+</h3>
+
+<p>
+Referência principal desta parte para as etapas da passagem,
+a responsabilidade pelo plano e a avaliação das informações.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+capítulo 3, §§ 3.1 a 3.3.2, páginas 41 a 45.
+</p>
+
+</div>
+
+<div class="widget">
+
+<h3>
+IMO — Resolução A.893(21), <em>Guidelines for Voyage Planning</em>
+</h3>
+
+<p>
+Diretrizes sobre a avaliação da viagem, o alcance de berço a
+berço e a aprovação do plano pelo comandante.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+anexo, §§ 1 e 2, e §§ 3.1 e 3.4.
+</p>
+
+<p>
+<a href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.893%2821%29.pdf">
+Consultar o texto oficial da Resolução A.893(21)
+</a>
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>Fundamentos e avaliação da passagem</li>
+
+<li>Escolha da passagem e identificação dos trechos críticos</li>
+
+<li>Traçado da derrota, guinadas e margens laterais</li>
+
+<li>Profundidade disponível e folga sob a quilha</li>
+
+<li>Métodos e limites de monitoramento previstos no plano</li>
+
+<li>Trecho de praticagem e verificação da rota no ECDIS</li>
+
+<li>Aprovação, comunicação e revisão do plano</li>
+
+<li>Caso integrado, revisão e questões PSCPP</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — Fundamentos e avaliação da passagem
+</h2>
+
+<p>
+Antes de traçar a derrota, a equipe precisa avaliar se o navio
+pode realizar a passagem pretendida nas condições esperadas.
+Nesta parte, vamos identificar os dados necessários e mostrar
+como eles se convertem em restrições e decisões de planejamento.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="alcance-e-etapas"
+data-topico-id="alcance-e-etapas"
+>
+
+<h2>
+1. Alcance do plano e etapas da passagem
+</h2>
+
+<div class="widget">
+
+<p>
+O plano de passagem abrange toda a viagem <strong>de berço a
+berço</strong>, incluindo os trechos em que serão utilizados os
+serviços de um prático. A saída, o trânsito, a aproximação e a
+chegada integram o mesmo plano, com o grau de detalhe adequado
+a cada trecho.
+</p>
+
+<p>
+A IMO e o <em>Bridge Procedures Guide</em> organizam o processo
+em quatro etapas:
+</p>
+
+<ol>
+
+<li>
+<strong>Avaliação (<em>appraisal</em>):</strong> reunir e examinar
+as informações que condicionam a passagem, identificar perigos
+e verificar as opções disponíveis.
+</li>
+
+<li>
+<strong>Elaboração do plano (<em>planning</em>):</strong> definir
+a derrota, seus limites, os meios de acompanhamento, os pontos
+de decisão e as contingências pertinentes.
+</li>
+
+<li>
+<strong>Execução (<em>execution</em>):</strong> conduzir o navio
+com base no plano, considerando as condições encontradas.
+</li>
+
+<li>
+<strong>Monitoramento (<em>monitoring</em>):</strong> verificar
+continuamente o progresso do navio em relação ao plano e
+reconhecer situações que exijam intervenção ou revisão.
+</li>
+
+</ol>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+Identificar uma profundidade limitante no canal é tarefa da
+avaliação. Definir em que condições o navio poderá cruzar aquele
+trecho e registrar os limites adotados são tarefas da elaboração
+do plano.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+O embarque do prático ocorre dentro da passagem planejada.
+O trecho de praticagem precisa estar contemplado no plano
+de berço a berço.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="responsabilidade-pelo-plano"
+data-topico-id="responsabilidade-pelo-plano"
+>
+
+<h2>
+2. Responsabilidade e aprovação do plano
+</h2>
+
+<div class="widget">
+
+<p>
+O comandante é responsável por assegurar que o plano ofereça
+uma base segura para a passagem pretendida. A preparação pode
+ser atribuída a um oficial, e cabe ao comandante verificar e
+aprovar o plano antes da partida, conforme as diretrizes da
+IMO e do ICS.
+</p>
+
+<p>
+As orientações do Sistema de Gerenciamento da Segurança da
+companhia também integram o planejamento. Quando houver uma
+rota padrão da companhia, ela deve ser revista a bordo à luz
+das condições da viagem, como o calado atual, a previsão de
+maré, as restrições locais e o estado dos equipamentos.
+</p>
+
+<p>
+O ICS reconhece que alguns detalhes da chegada podem ainda
+estar indisponíveis na partida. O plano deve ser finalizado
+assim que praticável, e a equipe de passadiço deve receber
+as informações em tempo adequado. A troca de informações
+entre comandante e prático pode confirmar dados locais e
+indicar ajustes necessários.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Em uma questão de prova, distinga quem <strong>prepara</strong>
+o plano de quem o <strong>verifica e aprova</strong>. Uma rota
+usada anteriormente precisa ser reavaliada para a viagem atual.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="fontes-e-qualidade-dos-dados"
+data-topico-id="fontes-e-qualidade-dos-dados"
+>
+
+<h2>
+3. Cartas, publicações e qualidade das informações
+</h2>
+
+<div class="widget">
+
+<p>
+A avaliação começa com cartas náuticas oficiais atualizadas,
+em escala apropriada para cada trecho, e com as publicações
+e informações de segurança pertinentes. Em uma aproximação
+portuária, o planejamento deve considerar tanto a informação
+cartográfica quanto as alterações temporárias divulgadas para
+o período da passagem.
+</p>
+
+<ul>
+
+<li>
+<strong>Cartas e dados hidrográficos:</strong> verificar a
+cobertura, a escala, as notas, as referências verticais,
+as profundidades e a qualidade do levantamento nas áreas
+que condicionam a rota.
+</li>
+
+<li>
+<strong>Publicações e avisos:</strong> consultar roteiro,
+informações de maré e corrente, avisos aos navegantes e
+avisos-rádio náuticos pertinentes à área, conforme o caso.
+</li>
+
+<li>
+<strong>Informações locais:</strong> confirmar restrições
+portuárias, alterações de balizamento, obras, dragagens,
+condições de acesso e requisitos de comunicação.
+</li>
+
+</ul>
+
+<div class="destaque">
+
+<h3>Conceito fundamental</h3>
+
+<p>
+<strong>Atualização</strong> e <strong>qualidade
+hidrográfica</strong> respondem a perguntas diferentes.
+A atualização indica se as correções disponíveis foram
+incorporadas. A qualidade hidrográfica informa o grau de
+confiança que se pode atribuir aos dados do levantamento.
+Uma carta atualizada ainda pode representar áreas com
+dados de qualidade limitada.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Antes de combinar uma profundidade de carta com uma altura
+de maré, verifique se os valores estão referidos a níveis
+compatíveis. Uma diferença de referência vertical afeta
+diretamente a estimativa de água disponível.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 4
+========================================= -->
+
+<section
+class="topico-aula"
+id="navio-ambiente-e-restricoes"
+data-topico-id="navio-ambiente-e-restricoes"
+>
+
+<h2>
+4. Condição do navio, ambiente e restrições locais
+</h2>
+
+<div class="widget">
+
+<p>
+A mesma rota pode ser adequada para um navio e inadequada para
+outro. A avaliação compara as características do navio e sua
+condição atual com a geometria, a profundidade e as condições
+previstas para a passagem.
+</p>
+
+<dl>
+
+<dt><strong>Navio e carregamento</strong></dt>
+<dd>
+Verificar dimensões, calados reais, trim, calado aéreo quando
+aplicável e características de guinada e parada. Considerar
+limitações de propulsão, governo e equipamentos de navegação.
+</dd>
+
+<dt><strong>Profundidade e nível d’água</strong></dt>
+<dd>
+Identificar os trechos que governam a passagem e obter os
+dados necessários para avaliar a folga sob a quilha, incluindo
+a profundidade disponível e o efeito do <em>squat</em>.
+</dd>
+
+<dt><strong>Corrente, vento e visibilidade</strong></dt>
+<dd>
+Avaliar como a corrente e o vento podem deslocar o navio
+ou alterar a manobra, e se a visibilidade esperada permite
+usar as referências visuais previstas.
+</dd>
+
+<dt><strong>Tráfego e serviços</strong></dt>
+<dd>
+Identificar restrições de cruzamento ou ultrapassagem,
+quando existentes, pontos de reporte, serviço de tráfego,
+praticagem, rebocadores e alternativas de espera ou fundeio.
+</dd>
+
+</dl>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Uma janela com altura de maré favorável pode coincidir com
+corrente transversal desfavorável. A passagem depende de
+a janela atender simultaneamente aos critérios relevantes,
+como água sob a quilha e margem lateral para manobrar.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 5
+========================================= -->
+
+<section
+class="topico-aula"
+id="resultado-da-avaliacao"
+data-topico-id="resultado-da-avaliacao"
+>
+
+<h2>
+5. Resultado da avaliação e aplicação operacional
+</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir a avaliação, a equipe deve conseguir identificar
+onde estão os perigos, que áreas podem oferecer passagem
+segura e quais condições precisam ser atendidas. As incertezas
+relevantes devem ser anotadas junto com o dado a confirmar
+e o ponto ou momento em que a decisão será necessária.
+</p>
+
+<div class="destaque">
+
+<h3>Aplicação operacional — entrada em canal</h3>
+
+<p>
+Considere um caso hipotético. Um navio precisa cruzar um
+trecho raso e depois guinar em uma curva sujeita à corrente
+transversal. Um aviso informa que uma boia próxima à curva
+está fora de posição. A avaliação produz três questões
+distintas para a elaboração do plano:
+</p>
+
+<ol>
+
+<li>
+<strong>Trecho raso:</strong> qual janela de passagem atende
+à folga sob a quilha exigida, considerando a condição do navio
+e as informações disponíveis sobre a profundidade?
+</li>
+
+<li>
+<strong>Curva:</strong> em quais condições há espaço para
+executar a guinada e manter o navio dentro dos limites
+laterais planejados?
+</li>
+
+<li>
+<strong>Boia fora de posição:</strong> quais referências
+cartografadas e verificáveis estão disponíveis para confirmar
+a posição e acompanhar a aproximação da curva?
+</li>
+
+</ol>
+
+<p>
+As três questões devem ser resolvidas antes da decisão de
+entrar. Se um dado crítico ficar pendente, a equipe precisa
+identificar onde poderá aguardar ou reavaliar a passagem
+com espaço para agir.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Ao analisar um enunciado, associe cada perigo à informação
+que permite avaliá-lo e à decisão que essa informação
+sustenta. No exemplo, profundidade condiciona a janela,
+corrente condiciona a guinada e o aviso sobre a boia
+condiciona a escolha das referências de monitoramento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 1
+========================================= -->
+
+<section class="termos-tecnicos">
+
+<h2>🌐 Glossário inglês–português — Parte 1</h2>
+
+<div class="widget">
+
+<dl>
+
+<dt><strong>Passage planning</strong></dt>
+<dd>Planejamento da passagem ou da derrota.</dd>
+
+<dt><strong>Passage plan</strong></dt>
+<dd>Plano de passagem ou plano de derrota.</dd>
+
+<dt><strong>Berth to berth</strong></dt>
+<dd>De berço a berço.</dd>
+
+<dt><strong>Appraisal</strong></dt>
+<dd>Avaliação das informações relevantes à passagem.</dd>
+
+<dt><strong>Planning</strong></dt>
+<dd>Elaboração do plano a partir da avaliação.</dd>
+
+<dt><strong>Execution</strong></dt>
+<dd>Execução da passagem planejada.</dd>
+
+<dt><strong>Monitoring</strong></dt>
+<dd>Monitoramento do progresso do navio em relação ao plano.</dd>
+
+<dt><strong>Sea room</strong></dt>
+<dd>Espaço disponível para navegar ou manobrar.</dd>
+
+<dt><strong>Air draught</strong></dt>
+<dd>Calado aéreo, medido da linha d’água ao ponto mais alto pertinente do navio.</dd>
+
+<dt><strong>Under-keel clearance (UKC)</strong></dt>
+<dd>Folga sob a quilha.</dd>
+
+<dt><strong>Squat</strong></dt>
+<dd>Afundamento e alteração de trim induzidos pelo movimento do navio na água.</dd>
+
+<dt><strong>Master–Pilot Exchange (MPX)</strong></dt>
+<dd>Troca de informações entre comandante e prático.</dd>
+
+</dl>
+
+</div>
+
+</section>
+
+
+
+<!-- FIM DA PARTE 1 — COLE A PARTE 2 A PARTIR DA PRÓXIMA LINHA -->
