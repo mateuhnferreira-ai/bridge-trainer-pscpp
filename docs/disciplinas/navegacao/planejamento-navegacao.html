@@ -1450,3 +1450,1083 @@ de chegada a cada ponto crítico.
 
 
 <!-- FIM DA PARTE 2 — COLE A PARTE 3 A PARTIR DA PRÓXIMA LINHA -->
+
+
+    <!-- =========================================
+     PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — Traçado da derrota, guinadas e margens laterais
+</h2>
+
+<p>
+Depois de escolher a passagem, é preciso transformar a rota
+em um traçado que o navio possa seguir. Nesta parte, vamos
+definir as pernas, localizar o início da manobra de guinada
+e verificar se há margem lateral para o casco durante a curva.
+</p>
+
+<p>
+<strong>Referências desta parte:</strong>
+ICS, <em>Bridge Procedures Guide</em>, 6ª edição, § 3.4 e
+figura 3.5. Miguens, <em>Navegação: A Ciência e a Arte</em>,
+volume I, capítulo 8, § 8.7. IMO, Resolução A.893(21),
+anexo, §§ 3.2.1 e 3.2.2.5.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+========================================= -->
+
+<section
+class="topico-aula"
+id="pernas-e-waypoints"
+data-topico-id="pernas-e-waypoints"
+>
+
+<h2>
+11. Pernas da derrota e waypoints
+</h2>
+
+<div class="widget">
+
+<p>
+Uma <strong>perna</strong> (<em>leg</em>) é o trecho da rota
+definido entre dois pontos sucessivos. Um <strong>waypoint</strong>
+é uma posição selecionada para definir a rota. Pode representar
+o vértice entre duas pernas ou outro ponto usado para organizar
+o traçado.
+</p>
+
+<p>
+Para cada perna, registre a direção verdadeira planejada,
+a distância, a velocidade prevista e o horário estimado nos
+pontos relevantes. Nos trechos restritos, associe também
+os perigos próximos, os limites laterais e as referências
+que ajudarão a verificar a posição do navio.
+</p>
+
+<div class="destaque">
+
+<h3>Derrota planejada, COG e aproamento</h3>
+
+<p>
+A direção verdadeira da perna é a direção da linha traçada
+sobre a carta. O <strong>COG</strong> representa a direção
+na qual o navio efetivamente se desloca sobre o fundo.
+O <strong>aproamento</strong> indica para onde a proa aponta.
+Com corrente transversal, o aproamento necessário para
+acompanhar a perna pode diferir da direção da linha planejada.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Em um enunciado, identifique se a direção informada se refere
+à perna traçada, ao movimento sobre o fundo ou à orientação
+da proa. Essa distinção é indispensável quando há corrente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+========================================= -->
+
+<section
+class="topico-aula"
+id="ponto-de-guinada-e-dados-taticos"
+data-topico-id="ponto-de-guinada-e-dados-taticos"
+>
+
+<h2>
+12. Ponto de guinada e dados táticos do navio
+</h2>
+
+<div class="widget">
+
+<p>
+Em águas restritas, o <strong>ponto de guinada</strong> pode
+ser definido como a posição onde se aplica o leme para iniciar
+a manobra planejada. O termo <em>wheel-over position</em>
+designa essa posição no cenário tratado aqui. A proa e a
+trajetória respondem progressivamente à aplicação do leme.
+</p>
+
+<p>
+No método apresentado por Miguens, o ponto de guinada é
+determinado graficamente com os dados táticos do navio para a
+alteração de rumo desejada. O <strong>avanço</strong> é medido
+na direção do rumo inicial, e o <strong>afastamento</strong>,
+perpendicularmente a ele. Ambos são referidos ao início da
+manobra e lidos para o ângulo de alteração considerado.
+</p>
+
+<p>
+Depois de determinar o ponto, pode-se escolher um objeto
+cartografado que permita reconhecê-lo por marcação. A geometria
+da referência deve permitir identificar o momento de guinar
+com a precisão requerida para aquele trecho.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Confira a velocidade, o ângulo de leme e as condições a que
+pertencem os dados de manobra. Uma guinada em canal pode
+diferir da curva de giro obtida em condições de prova.
+Corrente, profundidade e proximidade das margens afetam
+a trajetória que interessa ao planejamento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="geometria-do-arco-de-guinada"
+data-topico-id="geometria-do-arco-de-guinada"
+>
+
+<h2>
+13. Geometria do arco e antecipação da guinada
+</h2>
+
+<div class="widget">
+
+<p>
+Em um modelo geométrico de raio constante, um arco circular
+liga a perna de entrada à perna de saída. Quando o
+<em>waypoint</em> é a interseção das duas retas, a distância
+do vértice ao ponto de tangência em cada perna é:
+</p>
+
+<div class="destaque">
+
+<h3>Distância de tangência</h3>
+
+<p>
+<strong>T = R × tan(Δ / 2)</strong>
+</p>
+
+<ul>
+
+<li><strong>T:</strong> distância medida ao longo da perna entre o vértice e a tangência.</li>
+
+<li><strong>R:</strong> raio do arco escolhido para o traçado.</li>
+
+<li><strong>Δ:</strong> ângulo entre as direções de entrada e saída, medido no sentido da guinada e tomado em módulo, entre 0° e 180°.</li>
+
+</ul>
+
+<p>
+Use a mesma unidade para <strong>R</strong> e <strong>T</strong>.
+Se Δ estiver em graus, use a calculadora em modo de graus.
+Para um mesmo raio, uma alteração maior de direção exige
+começar o arco mais longe do vértice.
+</p>
+
+</div>
+
+<figure class="figura-aula">
+
+<svg
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 360 235"
+width="100%"
+role="img"
+aria-labelledby="titulo-esquema-guinada descricao-esquema-guinada"
+>
+
+<title id="titulo-esquema-guinada">
+Guinada idealizada entre duas pernas
+</title>
+
+<desc id="descricao-esquema-guinada">
+A perna de entrada segue da esquerda para a direita.
+O ponto de aplicação do leme vem antes da tangência inicial.
+O arco sobe até a perna de saída e evita passar pelo vértice
+formado pelo prolongamento das duas pernas.
+</desc>
+
+<rect x="0" y="0" width="360" height="235" rx="12" fill="#f1f7fa"/>
+
+<path
+    d="M 180 170 H 265 V 85"
+    fill="none"
+    stroke="#657783"
+    stroke-width="2"
+    stroke-dasharray="5 5"
+/>
+
+<path
+    d="M 25 170 H 180 A 85 85 0 0 0 265 85 V 23"
+    fill="none"
+    stroke="#005a7c"
+    stroke-width="4"
+/>
+
+<circle cx="155" cy="170" r="5" fill="#914500"/>
+<circle cx="180" cy="170" r="5" fill="#005a7c"/>
+<circle cx="265" cy="170" r="5" fill="#455864"/>
+
+<g fill="#183647" font-family="sans-serif" font-size="13">
+
+<text x="22" y="151">Perna de entrada</text>
+<text x="128" y="195">WOP</text>
+<text x="155" y="216">Início do arco</text>
+<text x="248" y="195">Waypoint</text>
+<text x="56" y="36">Perna de saída</text>
+<text x="110" y="103">Arco planejado</text>
+
+</g>
+
+<path
+    d="M 155 177 L 150 184 M 180 177 V 200 M 160 32 H 255 M 208 100 L 234 128"
+    fill="none"
+    stroke="#657783"
+    stroke-width="1.5"
+/>
+
+</svg>
+
+<figcaption>
+Esquema sem escala. O vértice das pernas, o início geométrico
+do arco e a posição de aplicação do leme são três referências
+distintas neste modelo.
+</figcaption>
+
+</figure>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+A fórmula fornece a posição geométrica da tangência.
+Para estabelecer a posição de aplicação do leme, é preciso
+considerar a resposta de manobra do navio. O método gráfico
+com avanço e afastamento já usa dados relativos ao início
+da manobra. Verifique a origem dos dados antes de acrescentar
+qualquer correção, para evitar contar a antecipação duas vezes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 14
+========================================= -->
+
+<section
+class="topico-aula"
+id="corredor-e-margens-laterais"
+data-topico-id="corredor-e-margens-laterais"
+>
+
+<h2>
+14. Corredor da derrota e margens laterais
+</h2>
+
+<div class="widget">
+
+<p>
+Os limites laterais podem ser definidos separadamente a
+bombordo e a boreste conforme a posição dos perigos e a
+largura de água navegável. A tolerância pode ser menor do
+lado de um baixio, de uma estrutura ou de uma margem sujeita
+a interação hidrodinâmica.
+</p>
+
+<p>
+Para avaliá-los, considere o <strong>ponto de referência</strong>
+usado para representar o navio e a
+<strong>área varrida pelo casco</strong>. Em uma guinada,
+proa e popa percorrem trajetórias diferentes. Uma linha
+central aparentemente livre ainda pode levar uma extremidade
+do navio para perto do limite navegável.
+</p>
+
+<div class="destaque">
+
+<h3>Desvio medido e tolerância planejada</h3>
+
+<p>
+O desvio transversal indica quanto a posição de referência
+se afastou lateralmente da linha da derrota. O limite lateral
+planejado define até onde se admite esse afastamento naquele
+lado da perna. A verificação deve considerar também a precisão
+do posicionamento, a incerteza dos dados cartográficos e a
+margem necessária para reconhecer e corrigir a tendência
+de desvio.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Na curva, o ponto de menor margem pode ocorrer entre as
+tangências. Examine o arco inteiro e a área varrida pelo
+navio, incluindo a proa e a popa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 15
+========================================= -->
+
+<section
+class="topico-aula"
+id="caso-tracado-da-guinada"
+data-topico-id="caso-tracado-da-guinada"
+>
+
+<h2>
+15. Aplicação operacional: traçado e verificação da guinada
+</h2>
+
+<div class="widget">
+
+<p>
+Para estudar a geometria da curva do canal das Partes 1 e 2,
+adote três valores hipotéticos: alteração de trajetória de
+<strong>90°</strong>, raio planejado de <strong>0,18 MN</strong>
+e velocidade sobre o fundo de <strong>9 nós</strong> no trecho
+reto de aproximação. Modele a resposta inicial como
+<strong>20 segundos</strong> de deslocamento ao longo da perna
+antes de o arco idealizado começar.
+</p>
+
+<ol>
+
+<li>
+<strong>Tangência inicial:</strong>
+T = 0,18 × tan(45°) = <strong>0,18 MN</strong> antes do waypoint.
+</li>
+
+<li>
+<strong>Distância percorrida nos 20 segundos:</strong>
+d ≈ V × t. Com V em nós e t em horas,
+d ≈ 9 × (20 ÷ 3.600) = <strong>0,05 MN</strong>.
+</li>
+
+<li>
+<strong>Posição estimada de aplicação do leme neste modelo:</strong>
+0,18 + 0,05 = <strong>0,23 MN antes do waypoint</strong>,
+medidos ao longo da perna de entrada.
+</li>
+
+</ol>
+
+<p>
+O resultado localiza três referências: a aplicação do leme
+a 0,23 MN do vértice, o início geométrico do arco a 0,18 MN
+e o próprio waypoint. Os 20 segundos são uma hipótese do
+exercício. Em uma passagem real, a trajetória muda
+progressivamente e deve ser avaliada com dados do navio
+e condições representativas da manobra.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Neste canal, a corrente transversal pode alterar o caminho
+sobre o fundo durante a curva. Verifique se o arco e a área
+varrida pelo casco preservam as margens previstas nas
+condições da janela escolhida. Como a boia está fora de
+posição, use uma referência alternativa verificada para
+reconhecer o ponto de guinada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 3
+========================================= -->
+
+<section class="termos-tecnicos">
+
+<h2>🌐 Glossário inglês–português — Parte 3</h2>
+
+<div class="widget">
+
+<dl>
+
+<dt><strong>Leg</strong></dt>
+<dd>Perna ou trecho da rota planejada.</dd>
+
+<dt><strong>Waypoint</strong></dt>
+<dd>Ponto selecionado para definir a rota.</dd>
+
+<dt><strong>Heading</strong></dt>
+<dd>Aproamento, direção para a qual aponta a proa.</dd>
+
+<dt><strong>Course over ground (COG)</strong></dt>
+<dd>Direção do deslocamento do navio sobre o fundo.</dd>
+
+<dt><strong>Wheel-over position (WOP)</strong></dt>
+<dd>Posição planejada para aplicar o leme e iniciar a manobra de guinada.</dd>
+
+<dt><strong>Advance</strong></dt>
+<dd>Avanço, medido na direção do rumo inicial para o ângulo de alteração considerado.</dd>
+
+<dt><strong>Transfer</strong></dt>
+<dd>Afastamento durante a guinada, medido perpendicularmente ao rumo inicial.</dd>
+
+<dt><strong>Turning radius</strong></dt>
+<dd>Raio de guinada. No traçado idealizado, é o raio do arco planejado.</dd>
+
+<dt><strong>Swept path</strong></dt>
+<dd>Faixa varrida pelo casco ao longo da trajetória.</dd>
+
+</dl>
+
+</div>
+
+</section>
+
+
+
+<!-- FIM DA PARTE 3 — COLE A PARTE 4 A PARTIR DA PRÓXIMA LINHA -->
+
+    <!-- =========================================
+     PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — Profundidade disponível e folga sob a quilha
+</h2>
+
+<p>
+Na Parte 3, verificamos se o navio tinha espaço lateral
+para completar a guinada. Agora vamos avaliar a margem
+vertical no trecho raso. O cálculo depende da profundidade
+do fundo, do nível d’água no horário da passagem e da
+condição do casco em movimento.
+</p>
+
+<p>
+<strong>Referências desta parte:</strong>
+ICS, <em>Bridge Procedures Guide</em>, 6ª edição, figura 3.5
+e § 3.4.2. PIANC, <em>Use of Hydro/Meteo Information for
+Port Access and Operations</em>, § 6.2.1.
+IMO, Resolução A.893(21), anexo, §§ 3.2.2.2, 3.2.2.3
+e 4.2.2.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 16
+========================================= -->
+
+<section
+class="topico-aula"
+id="profundidade-e-nivel-da-agua"
+data-topico-id="profundidade-e-nivel-da-agua"
+>
+
+<h2>
+16. Profundidade cartografada e nível da água
+</h2>
+
+<div class="widget">
+
+<p>
+A profundidade cartografada é referida ao nível de redução
+indicado na carta. Para estimar a coluna d’água no momento
+da passagem, some a profundidade aplicável ao trecho à
+altura do nível d’água, expressa em relação à mesma
+referência vertical.
+</p>
+
+<div class="destaque">
+
+<h3>Profundidade disponível estimada</h3>
+
+<p>
+<strong>D<sub>disp</sub> = D<sub>carta</sub> + h</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>D<sub>carta</sub>:</strong> profundidade cartografada
+no ponto ou trecho analisado.
+</li>
+
+<li>
+<strong>h:</strong> altura do nível d’água em relação ao nível
+de redução, no local e horário considerados. Use valor negativo
+se a superfície estiver abaixo desse nível.
+</li>
+
+</ul>
+
+<p>
+Exemplo: com <strong>11,80 m</strong> de profundidade
+cartografada e nível d’água <strong>0,90 m acima</strong>
+do nível de redução, a profundidade disponível estimada
+é <strong>12,70 m</strong>.
+</p>
+
+</div>
+
+<p>
+A tábua de marés fornece uma previsão. O nível observado
+pode divergir dela por efeitos meteorológicos e hidrológicos.
+Ao usar previsão ou medição de uma estação, verifique a
+referência vertical, o horário e se o dado representa
+adequadamente o trecho crítico.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+A altura que interessa é a prevista ou observada para
+a travessia do trecho limitante. Se o navio levar tempo
+para chegar ao baixio, o valor na entrada do canal pode
+ser diferente do valor na passagem pelo baixio.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 17
+========================================= -->
+
+<section
+class="topico-aula"
+id="folga-estatica-e-dinamica"
+data-topico-id="folga-estatica-e-dinamica"
+>
+
+<h2>
+17. Folga estática e dinâmica sob a quilha
+</h2>
+
+<div class="widget">
+
+<p>
+Nesta aula, chamaremos de <strong>folga estática</strong>
+a diferença entre a profundidade disponível e o calado
+estático pertinente ao cálculo. A <strong>folga dinâmica
+estimada</strong> incorpora os efeitos que aumentam a
+imersão do ponto limitante do casco durante o trânsito.
+</p>
+
+<p>
+O calado estático deve representar a condição do navio.
+Verifique os calados de proa e popa, o trim e qualquer
+correção ainda aplicável, como a de densidade da água.
+O ponto de maior imersão durante a passagem pode mudar
+com o trim dinâmico ou a inclinação do navio.
+</p>
+
+<figure class="figura-aula">
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 480 260"
+    width="100%"
+    role="img"
+    aria-labelledby="titulo-corte-ukc descricao-corte-ukc"
+>
+
+<title id="titulo-corte-ukc">
+Corte esquemático da folga sob a quilha
+</title>
+
+<desc id="descricao-corte-ukc">
+A superfície está acima do nível de redução. A profundidade
+cartografada vai do nível de redução ao fundo. A folga estática
+vai da quilha em repouso ao fundo. O aumento de imersão em
+movimento aproxima o casco do fundo e reduz a folga.
+</desc>
+
+<rect width="480" height="260" fill="#f4f8fa"/>
+<rect y="44" width="480" height="166" fill="#d8edf5"/>
+<rect y="210" width="480" height="50" fill="#d7c5a6"/>
+
+<path d="M 0 44 H 480" stroke="#006689" stroke-width="3"/>
+<path
+    d="M 0 79 H 480"
+    stroke="#505b65"
+    stroke-width="2"
+    stroke-dasharray="6 5"
+/>
+<path d="M 0 210 H 480" stroke="#6b5437" stroke-width="3"/>
+
+<path
+    d="M 110 22 H 246 L 234 88 Q 225 123 203 133
+       H 153 Q 131 123 122 88 Z"
+    fill="#294f62"
+    stroke="#173742"
+    stroke-width="2"
+/>
+
+<path
+    d="M 153 133 H 282 M 153 153 H 282"
+    fill="none"
+    stroke="#425663"
+    stroke-width="1.5"
+    stroke-dasharray="4 4"
+/>
+
+<g fill="none" stroke="#8b3c0b" stroke-width="2">
+
+<path d="M 26 44 V 79 M 20 44 H 32 M 20 79 H 32"/>
+<path d="M 26 79 V 210 M 20 210 H 32"/>
+<path d="M 288 133 V 153 M 282 133 H 294 M 282 153 H 294"/>
+<path d="M 288 153 V 210 M 282 210 H 294"/>
+<path d="M 414 133 V 210 M 408 133 H 420 M 408 210 H 420"/>
+
+</g>
+
+<g fill="#173742" font-family="sans-serif" font-size="15">
+
+<text x="283" y="34">Superfície da água</text>
+<text x="286" y="72">Nível de redução</text>
+<text x="37" y="66">h</text>
+<text x="37" y="134">D carta</text>
+<text x="37" y="157">cartografada</text>
+<text x="37" y="176">Profundidade</text>
+<text x="299" y="126">Aumento</text>
+<text x="299" y="145">de imersão</text>
+<text x="299" y="180">Folga</text>
+<text x="299" y="199">dinâmica</text>
+<text x="424" y="175">Folga</text>
+<text x="424" y="194">estática</text>
+<text x="20" y="239">Fundo</text>
+
+</g>
+
+</svg>
+
+<figcaption>
+Corte conceitual, sem escala. A linha superior junto à
+quilha marca sua posição estática. A linha inferior
+representa a maior imersão considerada para o casco
+em movimento. As reservas por incerteza entram no
+orçamento de folga, além das distâncias físicas da figura.
+</figcaption>
+
+</figure>
+
+<div class="destaque">
+
+<h3>Do calado estático à folga dinâmica</h3>
+
+<p>
+<strong>UKC<sub>est</sub> = D<sub>disp</sub> − T<sub>est</sub></strong>
+</p>
+
+<p>
+<strong>UKC<sub>din</sub> = D<sub>disp</sub> − T<sub>efetivo</sub></strong>
+</p>
+
+<p>
+<strong>T<sub>efetivo</sub></strong> representa o calado no
+ponto mais imerso para a condição dinâmica analisada. Na
+prática, use o método de cálculo adotado para o trânsito
+e as definições de folga estabelecidas por ele.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 18
+========================================= -->
+
+<section
+class="topico-aula"
+id="squat-e-calado-dinamico"
+data-topico-id="squat-e-calado-dinamico"
+>
+
+<h2>
+18. Squat, movimentos do navio e calado dinâmico
+</h2>
+
+<div class="widget">
+
+<p>
+O <strong>squat</strong> é o afundamento do navio,
+acompanhado de alteração de trim, associado ao escoamento
+em torno do casco em movimento. Sua avaliação depende da
+velocidade relativa à água, das características do casco,
+da profundidade e do confinamento do canal.
+</p>
+
+<p>
+Para o cálculo da folga, interessa quanto aumenta a
+imersão no ponto do casco que limita a passagem. Use uma
+estimativa de <em>squat</em> compatível com o navio, o trecho
+e a velocidade planejada. Considere também o efeito de
+ondas e da inclinação em guinada, quando pertinentes,
+conforme o método de avaliação adotado.
+</p>
+
+<div class="destaque">
+
+<h3>Velocidade sobre o fundo e velocidade na água</h3>
+
+<p>
+Para estimar a hora de chegada ao baixio, interessa a
+velocidade sobre o fundo. Para avaliar o escoamento associado
+ao <em>squat</em>, interessa a velocidade relativa à água.
+Em uma simplificação com corrente longitudinal uniforme
+de 2 nós pela proa, um navio a 8 nós sobre o fundo se
+desloca a 10 nós em relação à água.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Uma redução de velocidade pode diminuir o <em>squat</em> e,
+ao mesmo tempo, atrasar a chegada ao trecho raso. Compare
+o ganho de folga com a mudança no nível d’água durante esse
+atraso e mantenha a capacidade de governo necessária para
+a passagem.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 19
+========================================= -->
+
+<section
+class="topico-aula"
+id="criterio-de-ukc-e-incertezas"
+data-topico-id="criterio-de-ukc-e-incertezas"
+>
+
+<h2>
+19. Critério de folga e tratamento das incertezas
+</h2>
+
+<div class="widget">
+
+<p>
+Antes de comparar valores, identifique como o critério
+aplicável define a folga mínima. Verifique se as reservas
+por incerteza já estão incorporadas no método e se o
+limite deve ser aplicado à folga estática, à dinâmica
+ou à folga residual calculada após as deduções previstas.
+</p>
+
+<div class="destaque">
+
+<h3>Modelo de cálculo adotado no exemplo desta aula</h3>
+
+<p>
+<strong>
+UKC<sub>res</sub> =
+(D<sub>carta</sub> + h) − T<sub>est</sub> − S − M − U
+</strong>
+</p>
+
+<ul>
+
+<li>
+<strong>S:</strong> aumento de imersão por <em>squat</em>,
+estimado para o ponto limitante do casco.
+</li>
+
+<li>
+<strong>M:</strong> dedução adicional por movimentos
+ou inclinação, conforme as hipóteses do exercício.
+</li>
+
+<li>
+<strong>U:</strong> reserva por incertezas que ainda não
+foram consideradas nas demais parcelas.
+</li>
+
+</ul>
+
+<p>
+Neste modelo, a passagem atende ao critério vertical
+quando <strong>UKC<sub>res</sub> ≥ UKC<sub>mín</sub></strong>.
+O exercício usa deduções separadas para mostrar o efeito
+de cada parcela. Em aplicação real, siga as regras do
+método adotado para combinar os fatores.
+</p>
+
+</div>
+
+<p>
+Entre as incertezas relevantes estão a qualidade da
+batimetria, a possibilidade de assoreamento, o erro na
+previsão do nível d’água e a incerteza do calado. Uma
+incerteza já tratada na profundidade de cálculo, no modelo
+ou no critério de aceitação deve ser identificada para
+evitar dupla contagem.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+Folga positiva indica separação estimada entre o casco e
+o fundo segundo as hipóteses adotadas. A aceitação exige
+que essa folga também satisfaça o critério mínimo aplicável.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 20
+========================================= -->
+
+<section
+class="topico-aula"
+id="caso-ukc-janela-b"
+data-topico-id="caso-ukc-janela-b"
+>
+
+<h2>
+20. Aplicação operacional — folga sob a quilha na Janela B
+</h2>
+
+<div class="widget">
+
+<p>
+Retome o canal das partes anteriores. Para o ponto raso
+que condiciona a Janela B, adote os seguintes valores
+hipotéticos, todos em metros:
+</p>
+
+<ul>
+
+<li>Profundidade cartografada: <strong>11,80 m</strong>.</li>
+<li>Altura prevista no horário de passagem: <strong>+0,90 m</strong>.</li>
+<li>Calado estático de cálculo: <strong>11,10 m</strong>.</li>
+<li>Aumento de imersão por <em>squat</em>: <strong>0,45 m</strong>.</li>
+<li>Dedução por movimentos ou inclinação: <strong>0,20 m</strong>.</li>
+<li>Reserva de incerteza ainda não contabilizada: <strong>0,15 m</strong>.</li>
+<li>Folga residual mínima adotada no cenário: <strong>0,70 m</strong>.</li>
+
+</ul>
+
+<ol>
+
+<li>
+<strong>Profundidade disponível:</strong>
+11,80 + 0,90 = <strong>12,70 m</strong>.
+</li>
+
+<li>
+<strong>Folga estática:</strong>
+12,70 − 11,10 = <strong>1,60 m</strong>.
+</li>
+
+<li>
+<strong>Folga dinâmica estimada:</strong>
+1,60 − 0,45 − 0,20 = <strong>0,95 m</strong>.
+</li>
+
+<li>
+<strong>Folga residual para comparação com o mínimo:</strong>
+0,95 − 0,15 = <strong>0,80 m</strong>.
+</li>
+
+<li>
+<strong>Margem sobre o mínimo:</strong>
+0,80 − 0,70 = <strong>0,10 m</strong>.
+</li>
+
+</ol>
+
+<p>
+Mantidas as demais parcelas, a altura mínima do nível
+d’água para satisfazer o critério no trecho é:
+</p>
+
+<div class="destaque">
+
+<p>
+<strong>
+h<sub>mín</sub> =
+T<sub>est</sub> + S + M + U + UKC<sub>mín</sub> − D<sub>carta</sub>
+</strong>
+</p>
+
+<p>
+h<sub>mín</sub> =
+11,10 + 0,45 + 0,20 + 0,15 + 0,70 − 11,80
+= <strong>+0,80 m</strong> em relação ao nível de redução.
+</p>
+
+</div>
+
+<p>
+Antes do ponto de decisão, uma atualização reduz a
+estimativa do nível d’água de <strong>+0,90 m</strong>
+para <strong>+0,65 m</strong> no horário de cruzamento.
+Mantidas as outras hipóteses, a folga residual passa de
+<strong>0,80 m</strong> para <strong>0,55 m</strong>.
+O plano fica <strong>0,15 m abaixo do mínimo</strong>
+e a entrada precisa ser reavaliada.
+</p>
+
+<div class="atencao-pratico">
+
+<h3>⚠ Atenção PSCPP</h3>
+
+<p>
+O limiar de <strong>+0,80 m</strong> vale para o ponto e as
+hipóteses do exercício. Para definir a janela de passagem,
+verifique por quanto tempo o critério permanece satisfeito,
+quando o navio chegará a cada trecho crítico e se os critérios
+laterais e de corrente da Parte 2 também serão atendidos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 4
+========================================= -->
+
+<section class="termos-tecnicos">
+
+<h2>🌐 Glossário inglês–português — Parte 4</h2>
+
+<div class="widget">
+
+<dl>
+
+<dt><strong>Chart datum</strong></dt>
+<dd>Nível de redução a que se referem as profundidades da carta.</dd>
+
+<dt><strong>Charted depth</strong></dt>
+<dd>Profundidade cartografada, referida ao nível de redução.</dd>
+
+<dt><strong>Available depth</strong></dt>
+<dd>Profundidade disponível no local e horário considerados.</dd>
+
+<dt><strong>Static draught</strong></dt>
+<dd>Calado estático na condição de carregamento considerada.</dd>
+
+<dt><strong>Dynamic under-keel clearance</strong></dt>
+<dd>Folga sob a quilha estimada considerando os efeitos dinâmicos pertinentes.</dd>
+
+<dt><strong>Speed through water (STW)</strong></dt>
+<dd>Velocidade do navio em relação à água.</dd>
+
+<dt><strong>Speed over ground (SOG)</strong></dt>
+<dd>Velocidade do navio em relação ao fundo.</dd>
+
+<dt><strong>Heel</strong></dt>
+<dd>Inclinação transversal do navio.</dd>
+
+</dl>
+
+</div>
+
+</section>
+
+
+
+<!-- FIM DA PARTE 4 — COLE A PARTE 5 A PARTIR DA PRÓXIMA LINHA -->
