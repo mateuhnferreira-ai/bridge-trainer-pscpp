@@ -3107,3 +3107,2088 @@ quilha;
      </body>
      </html>
 ===================================================== -->
+
+    <!-- =========================================
+     PARTE 3
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 3 — Posicionamento do Navio no Canal
+</h2>
+
+<p>
+Depois de cruzar a entrada, o desafio passa a ser manter o navio
+dentro de uma faixa navegável segura, preservando margens laterais e
+verticais compatíveis com suas dimensões, características de manobra
+e condições ambientais.
+</p>
+
+<p>
+O posicionamento seguro não corresponde necessariamente ao centro
+geométrico do canal. O Prático deverá determinar uma trajetória
+operacional considerando profundidade, corrente, vento, tráfego,
+efeito de banco, interação com outros navios, regras locais e
+possibilidades de contingência.
+</p>
+
+<p>
+Nesta parte serão estudados o gerenciamento da posição, as margens
+limítrofes de segurança, a determinação do rumo a conduzir e as
+técnicas para manter o navio na faixa planejada.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 6
+========================================= -->
+
+<section
+class="topico-aula"
+id="posicao-no-canal"
+data-topico-id="posicao-no-canal"
+>
+
+<h2>
+6. Gerenciamento da posição no canal
+</h2>
+
+<div class="widget">
+
+<p>
+Gerenciar a posição significa controlar continuamente não apenas o
+local em que o navio se encontra, mas também a direção e a velocidade
+com que ele se aproxima dos limites da faixa navegável.
+</p>
+
+<p>
+Uma posição momentaneamente correta pode esconder uma tendência
+perigosa. Um navio situado no centro do canal, mas com velocidade
+lateral em direção a uma das margens, já exige avaliação e,
+possivelmente, ação corretiva.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Princípio posição–tendência
+</h3>
+
+<p>
+A avaliação deve responder continuamente a três perguntas:
+</p>
+
+<ol>
+
+<li>
+<strong>Onde o navio está?</strong>
+</li>
+
+<li>
+<strong>Em que direção e com que velocidade ele está se
+deslocando?</strong>
+</li>
+
+<li>
+<strong>Onde estará quando a próxima ação produzir efeito?</strong>
+</li>
+
+</ol>
+
+</div>
+
+
+<h3>
+6.1 Faixa navegável e faixa segura
+</h3>
+
+<p>
+A largura total indicada na carta não corresponde necessariamente à
+largura segura disponível para determinado navio.
+</p>
+
+<p>
+A faixa efetivamente utilizável poderá ser reduzida por:
+</p>
+
+<ul>
+
+<li>
+profundidades inferiores às exigidas pelo calado;
+</li>
+
+<li>
+taludes submersos;
+</li>
+
+<li>
+incerteza hidrográfica;
+</li>
+
+<li>
+assoreamento;
+</li>
+
+<li>
+squat;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+auxílios à navegação fora de posição;
+</li>
+
+<li>
+obras, dragas ou obstáculos temporários;
+</li>
+
+<li>
+presença de outros navios;
+</li>
+
+<li>
+regras de tráfego ou exigências locais;
+</li>
+
+<li>
+margens de segurança adotadas no planejamento.
+</li>
+
+</ul>
+
+
+<h3>
+6.2 Corredor planejado</h3>
+
+<p>
+O plano de pilotagem deve estabelecer um corredor dentro do qual a
+posição do navio possa variar sem ultrapassar os limites de segurança.
+Esse corredor deverá considerar a boca do navio, e não apenas a
+posição de uma antena GNSS ou do centro do símbolo apresentado no
+ECDIS.
+</p>
+
+<p>
+Se o sistema apresenta a posição da antena de referência, deve-se
+considerar a distância entre essa antena e:
+</p>
+
+<ul>
+
+<li>
+a proa;
+</li>
+
+<li>
+a popa;
+</li>
+
+<li>
+o costado de boreste;
+</li>
+
+<li>
+o costado de bombordo;
+</li>
+
+<li>
+o ponto pivô durante a manobra.
+</li>
+
+</ul>
+
+
+<div class="figura-aula">
+
+<h3>
+📐 Representação do corredor seguro
+</h3>
+
+<svg
+    viewBox="0 0 900 430"
+    role="img"
+    aria-labelledby="titulo-corredor descricao-corredor"
+    style="width:100%; height:auto;"
+>
+
+<title id="titulo-corredor">
+Canal, corredor seguro e trajetória do navio
+</title>
+
+<desc id="descricao-corredor">
+Representação superior de um canal com limites laterais,
+corredor planejado, eixo de referência e trajetória do navio.
+</desc>
+
+<rect
+    x="20"
+    y="20"
+    width="860"
+    height="390"
+    rx="20"
+    fill="#d7c59a"
+/>
+
+<path
+    d="M90 20 L210 410"
+    stroke="#8b6f47"
+    stroke-width="12"
+    fill="none"
+/>
+
+<path
+    d="M810 20 L690 410"
+    stroke="#8b6f47"
+    stroke-width="12"
+    fill="none"
+/>
+
+<path
+    d="M105 20 L225 410 L675 410 L795 20 Z"
+    fill="#b9e2f5"
+    stroke="#2274a5"
+    stroke-width="4"
+/>
+
+<path
+    d="M230 20 L305 410"
+    stroke="#ffffff"
+    stroke-width="5"
+    stroke-dasharray="14 12"
+    fill="none"
+/>
+
+<path
+    d="M670 20 L595 410"
+    stroke="#ffffff"
+    stroke-width="5"
+    stroke-dasharray="14 12"
+    fill="none"
+/>
+
+<path
+    d="M450 20 L450 410"
+    stroke="#17324d"
+    stroke-width="4"
+    stroke-dasharray="16 12"
+    fill="none"
+/>
+
+<path
+    d="M430 390
+       C420 320, 470 270, 458 205
+       C450 160, 420 115, 440 45"
+    stroke="#d62828"
+    stroke-width="7"
+    fill="none"
+/>
+
+<polygon
+    points="440,45 425,72 455,68"
+    fill="#d62828"
+/>
+
+<g transform="translate(455 235) rotate(-8)">
+
+<path
+    d="M0 -52
+       L18 -22
+       L18 42
+       L0 58
+       L-18 42
+       L-18 -22 Z"
+    fill="#f2a900"
+    stroke="#17252a"
+    stroke-width="4"
+/>
+
+<line
+    x1="0"
+    y1="-45"
+    x2="0"
+    y2="48"
+    stroke="#17252a"
+    stroke-width="3"
+/>
+
+</g>
+
+<text
+    x="450"
+    y="395"
+    text-anchor="middle"
+    font-size="22"
+    fill="#17324d"
+>
+Eixo de referência
+</text>
+
+<text
+    x="255"
+    y="80"
+    font-size="21"
+    fill="#17324d"
+>
+Limite do corredor seguro
+</text>
+
+<text
+    x="475"
+    y="115"
+    font-size="21"
+    fill="#b00020"
+>
+Trajetória efetiva
+</text>
+
+</svg>
+
+<p>
+<strong>Leitura da figura:</strong>
+a trajetória pode variar dentro do corredor planejado, mas o Prático
+deve reconhecer a tendência de aproximação dos limites antes que a
+margem disponível seja consumida.
+</p>
+
+</div>
+
+
+<h3>
+6.3 Monitoramento por meios independentes
+</h3>
+
+<p>
+A posição deve ser verificada por mais de um meio sempre que possível.
+Entre os recursos disponíveis estão:
+</p>
+
+<ul>
+
+<li>
+observação visual das margens e dos auxílios à navegação;
+</li>
+
+<li>
+alinhamentos;
+</li>
+
+<li>
+marcações visuais;
+</li>
+
+<li>
+distâncias radar;
+</li>
+
+<li>
+parallel indexing;
+</li>
+
+<li>
+posição GNSS apresentada no ECDIS;
+</li>
+
+<li>
+ecobatímetro;
+</li>
+
+<li>
+informações de corrente e maré;
+</li>
+
+<li>
+dados fornecidos por equipamentos portáteis de pilotagem, quando
+utilizados;
+</li>
+
+<li>
+informações do VTS, sem transferir a responsabilidade pelo
+monitoramento a uma estação em terra.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Uma posição GNSS aparentemente precisa deve ser comparada com radar,
+observação visual e profundidade. Divergências podem indicar:
+</p>
+
+<ul>
+
+<li>
+erro ou perda de integridade do sinal;
+</li>
+
+<li>
+seleção incorreta da fonte de posição;
+</li>
+
+<li>
+deslocamento da carta;
+</li>
+
+<li>
+datum incompatível;
+</li>
+
+<li>
+erro na posição da antena;
+</li>
+
+<li>
+auxílio à navegação fora de posição;
+</li>
+
+<li>
+representação cartográfica inadequada para a escala utilizada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Navigable width</strong> — largura navegável;
+</li>
+
+<li>
+<strong>Safe corridor</strong> — corredor seguro;
+</li>
+
+<li>
+<strong>Track limits</strong> — limites da derrota;
+</li>
+
+<li>
+<strong>Cross-track distance — XTD</strong> — afastamento lateral
+da derrota;
+</li>
+
+<li>
+<strong>Reference position</strong> — posição de referência;
+</li>
+
+<li>
+<strong>Independent position check</strong> — verificação
+independente da posição;
+</li>
+
+<li>
+<strong>Position integrity</strong> — integridade da posição;
+</li>
+
+<li>
+<strong>Parallel indexing</strong> — indexação paralela.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O símbolo do navio no ECDIS não substitui a avaliação da geometria
+real do casco. Em navios de grande porte, uma antena localizada a ré
+pode permanecer dentro do corredor enquanto a proa já se aproxima de
+um limite lateral durante uma guinada.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 7
+========================================= -->
+
+<section
+class="topico-aula"
+id="margens-seguranca"
+data-topico-id="margens-seguranca"
+>
+
+<h2>
+7. Margens limítrofes de segurança
+</h2>
+
+<div class="widget">
+
+<p>
+As margens limítrofes representam os afastamentos mínimos que devem
+ser preservados entre o navio e os perigos existentes. Elas devem ser
+estabelecidas durante o planejamento e reavaliadas durante a passagem.
+</p>
+
+<p>
+Uma margem não deve ser tratada como espaço disponível para uso
+rotineiro. Ela constitui uma reserva destinada a absorver incertezas,
+variações ambientais, erros de medição e respostas diferentes das
+esperadas.
+</p>
+
+
+<h3>
+7.1 Componentes da margem lateral
+</h3>
+
+<p>
+Uma margem lateral deve considerar, conforme aplicável:
+</p>
+
+<ul>
+
+<li>
+meia-boca do navio;
+</li>
+
+<li>
+posição da antena ou do ponto utilizado para monitoramento;
+</li>
+
+<li>
+erro da posição;
+</li>
+
+<li>
+erro cartográfico ou hidrográfico;
+</li>
+
+<li>
+incerteza na posição dos auxílios à navegação;
+</li>
+
+<li>
+abatimento por vento e corrente;
+</li>
+
+<li>
+ângulo de deriva;
+</li>
+
+<li>
+razão de guinada;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+sucção e interação com outros navios;
+</li>
+
+<li>
+resposta do leme e da máquina;
+</li>
+
+<li>
+experiência e desempenho da equipe;
+</li>
+
+<li>
+necessidade de espaço para ação corretiva.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Representação simplificada
+</h3>
+
+<p>
+Uma forma conceitual de representar a margem lateral necessária é:
+</p>
+
+<p>
+<strong>
+M<sub>lateral</sub> =
+M<sub>casco</sub> +
+M<sub>posição</sub> +
+M<sub>ambiental</sub> +
+M<sub>manobra</sub> +
+M<sub>contingência</sub>
+</strong>
+</p>
+
+<p>
+Essa expressão não constitui fórmula normativa universal. Ela
+demonstra que a margem precisa acomodar dimensões do casco, incertezas
+de posicionamento, efeitos ambientais, resposta de manobra e uma
+reserva para contingências.
+</p>
+
+</div>
+
+
+<h3>
+7.2 Margem para o banco
+</h3>
+
+<p>
+A proximidade de uma margem pode produzir forças e momentos
+hidrodinâmicos capazes de alterar a trajetória do navio.
+Genericamente, podem ocorrer:
+</p>
+
+<ul>
+
+<li>
+aumento de pressão junto à região de vante, gerando tendência de
+afastamento da proa;
+</li>
+
+<li>
+redução de pressão junto à região de ré, gerando sucção da popa em
+direção ao banco;
+</li>
+
+<li>
+momento de guinada;
+</li>
+
+<li>
+necessidade de maior ângulo de leme para manter o rumo;
+</li>
+
+<li>
+aumento de resistência ao avanço;
+</li>
+
+<li>
+redução da margem para correção.
+</li>
+
+</ul>
+
+<p>
+A intensidade do efeito depende de fatores como:
+</p>
+
+<ul>
+
+<li>
+distância lateral ao banco;
+</li>
+
+<li>
+velocidade do navio;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+geometria e inclinação do banco;
+</li>
+
+<li>
+relação entre calado e profundidade;
+</li>
+
+<li>
+forma do casco;
+</li>
+
+<li>
+presença de corrente;
+</li>
+
+<li>
+assimetria do escoamento ao redor do navio.
+</li>
+
+</ul>
+
+
+<div class="figura-aula">
+
+<h3>
+📐 Efeito de banco — representação simplificada
+</h3>
+
+<svg
+    viewBox="0 0 900 400"
+    role="img"
+    aria-labelledby="titulo-banco descricao-banco"
+    style="width:100%; height:auto;"
+>
+
+<title id="titulo-banco">
+Efeito de banco sobre um navio
+</title>
+
+<desc id="descricao-banco">
+Vista superior de um navio próximo ao banco, mostrando tendência
+de afastamento da proa e sucção da popa em direção ao banco.
+</desc>
+
+<rect
+    x="20"
+    y="20"
+    width="860"
+    height="360"
+    rx="20"
+    fill="#b9e2f5"
+/>
+
+<path
+    d="M665 20
+       C620 90, 700 150, 645 220
+       C610 270, 690 330, 640 380
+       L880 380 L880 20 Z"
+    fill="#d7c59a"
+    stroke="#8b6f47"
+    stroke-width="5"
+/>
+
+<g transform="translate(430 200) rotate(-90)">
+
+<path
+    d="M0 -105
+       L32 -58
+       L32 82
+       L0 110
+       L-32 82
+       L-32 -58 Z"
+    fill="#f2a900"
+    stroke="#17252a"
+    stroke-width="5"
+/>
+
+<line
+    x1="0"
+    y1="-90"
+    x2="0"
+    y2="95"
+    stroke="#17252a"
+    stroke-width="4"
+/>
+
+</g>
+
+<path
+    d="M485 105 C430 70, 385 70, 330 95"
+    stroke="#d62828"
+    stroke-width="8"
+    fill="none"
+    marker-end="url(#seta-banco)"
+/>
+
+<path
+    d="M475 295 C535 325, 570 315, 615 285"
+    stroke="#6a1b9a"
+    stroke-width="8"
+    fill="none"
+    marker-end="url(#seta-banco)"
+/>
+
+<defs>
+
+<marker
+    id="seta-banco"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="3"
+    orient="auto"
+    markerUnits="strokeWidth"
+>
+
+<path
+    d="M0,0 L0,6 L9,3 Z"
+    fill="context-stroke"
+/>
+
+</marker>
+
+</defs>
+
+<text
+    x="220"
+    y="70"
+    font-size="22"
+    fill="#b00020"
+>
+Tendência de afastamento da proa
+</text>
+
+<text
+    x="470"
+    y="350"
+    font-size="22"
+    fill="#5a1275"
+>
+Sucção da popa em direção ao banco
+</text>
+
+<text
+    x="735"
+    y="205"
+    text-anchor="middle"
+    font-size="25"
+    fill="#4e3b22"
+>
+BANCO
+</text>
+
+</svg>
+
+<p>
+<strong>Atenção:</strong>
+a figura representa o comportamento clássico de forma simplificada.
+A resposta real depende da geometria do canal, do navio, da
+profundidade, da velocidade e das condições do escoamento.
+</p>
+
+</div>
+
+
+<h3>
+7.3 Margem vertical
+</h3>
+
+<p>
+A margem vertical corresponde à separação entre o ponto mais baixo do
+navio e o fundo ou obstáculo submerso. Ela deve considerar:
+</p>
+
+<ul>
+
+<li>
+calado estático;
+</li>
+
+<li>
+trim;
+</li>
+
+<li>
+banda;
+</li>
+
+<li>
+squat;
+</li>
+
+<li>
+movimentos de arfagem, balanço e caturro;
+</li>
+
+<li>
+variação da maré;
+</li>
+
+<li>
+pressão atmosférica e efeitos meteorológicos locais;
+</li>
+
+<li>
+densidade da água;
+</li>
+
+<li>
+incerteza batimétrica;
+</li>
+
+<li>
+assoreamento;
+</li>
+
+<li>
+margem estabelecida pela Autoridade competente.
+</li>
+
+</ul>
+
+
+<h3>
+7.4 Margem de parada e contingência
+</h3>
+
+<p>
+A margem longitudinal deve permitir a redução de velocidade, parada,
+alteração de rumo ou adoção de uma medida de emergência antes de um
+ponto crítico.
+</p>
+
+<p>
+Ela depende de:
+</p>
+
+<ul>
+
+<li>
+velocidade do navio;
+</li>
+
+<li>
+deslocamento e inércia;
+</li>
+
+<li>
+tipo de propulsão;
+</li>
+
+<li>
+tempo de resposta da máquina;
+</li>
+
+<li>
+corrente longitudinal;
+</li>
+
+<li>
+vento;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+uso de ferros ou rebocadores;
+</li>
+
+<li>
+espaço lateral disponível.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Quanto menor a margem disponível, mais cedo deve ser detectado e
+corrigido um desvio. Correções tardias e intensas podem produzir:
+</p>
+
+<ul>
+
+<li>
+grande razão de guinada;
+</li>
+
+<li>
+ultrapassagem da trajetória desejada;
+</li>
+
+<li>
+aproximação excessiva do banco oposto;
+</li>
+
+<li>
+perda de velocidade;
+</li>
+
+<li>
+redução da eficiência do leme;
+</li>
+
+<li>
+sequência de correções alternadas e progressivamente maiores.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Lateral clearance</strong> — afastamento lateral;
+</li>
+
+<li>
+<strong>Vertical clearance</strong> — afastamento vertical;
+</li>
+
+<li>
+<strong>Stopping margin</strong> — margem para parada;
+</li>
+
+<li>
+<strong>Contingency margin</strong> — margem de contingência;
+</li>
+
+<li>
+<strong>Bow cushion</strong> — efeito de pressão ou amortecimento na
+proa junto ao banco;
+</li>
+
+<li>
+<strong>Stern suction</strong> — sucção da popa;
+</li>
+
+<li>
+<strong>Bank effect</strong> — efeito de banco;
+</li>
+
+<li>
+<strong>Safety boundary</strong> — limite de segurança.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Aumentar o ângulo de leme nem sempre é a melhor resposta ao efeito de
+banco. Em determinadas situações, a redução controlada da velocidade
+diminui as forças hidrodinâmicas. Contudo, a redução não pode retirar
+do navio a velocidade necessária ao governo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 8
+========================================= -->
+
+<section
+class="topico-aula"
+id="rumo-corrigido"
+data-topico-id="rumo-corrigido"
+>
+
+<h2>
+8. Determinação do rumo a ser conduzido
+</h2>
+
+<div class="widget">
+
+<p>
+O rumo a ser conduzido é a direção de proa necessária para produzir
+a trajetória desejada sobre o fundo. Quando vento e corrente atuam
+lateralmente, essa direção poderá diferir do rumo da derrota
+planejada.
+</p>
+
+<p>
+A determinação inicial pode ser feita por construção vetorial ou
+cálculo, mas deverá ser continuamente ajustada com base no movimento
+real observado.
+</p>
+
+
+<h3>
+8.1 Vetores envolvidos
+</h3>
+
+<p>
+A trajetória resulta da soma de:
+</p>
+
+<ul>
+
+<li>
+movimento do navio em relação à água;
+</li>
+
+<li>
+movimento da água em relação ao fundo;
+</li>
+
+<li>
+efeitos aerodinâmicos do vento;
+</li>
+
+<li>
+efeitos hidrodinâmicos provocados pela proximidade das margens e
+outros navios.
+</li>
+
+</ul>
+
+<p>
+A relação vetorial fundamental é:
+</p>
+
+<p>
+<strong>
+V⃗<sub>fundo</sub> =
+V⃗<sub>navio/água</sub> +
+V⃗<sub>corrente</sub>
+</strong>
+</p>
+
+<p>
+O objetivo é selecionar uma proa e uma velocidade na água que façam o
+vetor resultante coincidir, tanto quanto possível, com a trajetória
+pretendida.
+</p>
+
+
+<h3>
+8.2 Ângulo de compensação
+</h3>
+
+<p>
+Quando a corrente atua transversalmente, o navio deverá apontar sua
+proa para o lado de onde vem o deslocamento, criando um ângulo de
+compensação entre a proa e o COG.
+</p>
+
+<p>
+Para uma corrente transversal simplificada e velocidades constantes,
+o ângulo aproximado poderá ser representado por:
+</p>
+
+<p>
+<strong>
+α = arcsen
+(
+V<sub>c⊥</sub> / V<sub>n</sub>
+)
+</strong>
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>α</strong> é o ângulo aproximado de compensação;
+</li>
+
+<li>
+<strong>V<sub>c⊥</sub></strong> é a componente da corrente
+perpendicular à trajetória;
+</li>
+
+<li>
+<strong>V<sub>n</sub></strong> é a velocidade do navio em relação à
+água.
+</li>
+
+</ul>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Limitação da expressão
+</h3>
+
+<p>
+A expressão é uma simplificação didática. Ela pressupõe velocidades
+uniformes e não representa integralmente o efeito do vento, da
+aceleração, das margens, da guinada, da variação espacial da corrente
+ou da resposta hidrodinâmica do navio.
+</p>
+
+</div>
+
+
+<h3>
+8.3 Exemplo simplificado
+</h3>
+
+<p>
+Considere um navio com velocidade de 8 nós em relação à água e uma
+componente transversal de corrente de 1 nó.
+</p>
+
+<p>
+<strong>
+α = arcsen (1 / 8)
+</strong>
+</p>
+
+<p>
+<strong>
+α ≈ 7,2°
+</strong>
+</p>
+
+<p>
+Em condições idealizadas, seria necessário iniciar com cerca de
+7° de compensação para produzir uma trajetória aproximadamente
+paralela ao canal.
+</p>
+
+<p>
+Na operação real, o Prático verificará o resultado utilizando COG,
+alinhamentos, radar, ECDIS e referências visuais, ajustando a proa
+conforme necessário.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Rumo previsto e rumo efetivo
+</h3>
+
+<p>
+O valor calculado ou estimado constitui apenas uma condição inicial.
+O rumo efetivamente necessário deverá ser confirmado pela resposta do
+navio.
+</p>
+
+<p>
+A sequência correta é:
+</p>
+
+<ol>
+
+<li>
+estimar o efeito ambiental;
+</li>
+
+<li>
+selecionar o rumo inicial;
+</li>
+
+<li>
+observar a trajetória resultante;
+</li>
+
+<li>
+comparar com a trajetória desejada;
+</li>
+
+<li>
+aplicar correção proporcional e antecipada;
+</li>
+
+<li>
+verificar novamente o resultado.
+</li>
+
+</ol>
+
+</div>
+
+
+<h3>
+8.4 Corrente variável no canal
+</h3>
+
+<p>
+A direção e a intensidade da corrente podem variar em:
+</p>
+
+<ul>
+
+<li>
+curvas;
+</li>
+
+<li>
+confluências;
+</li>
+
+<li>
+estreitamentos;
+</li>
+
+<li>
+proximidades de bancos;
+</li>
+
+<li>
+entradas de bacias;
+</li>
+
+<li>
+áreas próximas a terminais;
+</li>
+
+<li>
+mudanças de profundidade;
+</li>
+
+<li>
+diferentes fases da maré.
+</li>
+
+</ul>
+
+<p>
+Consequentemente, o rumo necessário em um trecho pode não ser
+adequado poucos cabos adiante.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+A correção deve ser baseada na tendência, e não apenas no afastamento
+já acumulado. Quando a trajetória começa a convergir para o limite do
+corredor, o Prático deve avaliar:
+</p>
+
+<ul>
+
+<li>
+velocidade lateral;
+</li>
+
+<li>
+tempo até o limite;
+</li>
+
+<li>
+tempo de resposta do leme;
+</li>
+
+<li>
+efeito da mudança de proa;
+</li>
+
+<li>
+possível redução da correção antes de cruzar a trajetória desejada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Course to steer — CTS</strong> — rumo a conduzir;
+</li>
+
+<li>
+<strong>Desired track</strong> — trajetória desejada;
+</li>
+
+<li>
+<strong>Set</strong> — direção para a qual a corrente atua;
+</li>
+
+<li>
+<strong>Drift</strong> — velocidade da corrente;
+</li>
+
+<li>
+<strong>Cross-current</strong> — corrente transversal;
+</li>
+
+<li>
+<strong>Cross-current component</strong> — componente transversal
+da corrente;
+</li>
+
+<li>
+<strong>Crab angle</strong> — ângulo de compensação entre proa e
+trajetória;
+</li>
+
+<li>
+<strong>Leeway</strong> — abatimento provocado principalmente pelo
+vento.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+COG não é uma ordem de governo. O timoneiro governa pela proa
+determinada na agulha. O COG é utilizado para avaliar a trajetória
+resultante sobre o fundo e auxiliar a determinação da proa necessária.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 9
+========================================= -->
+
+<section
+class="topico-aula"
+id="centro-do-canal"
+data-topico-id="centro-do-canal"
+>
+
+<h2>
+9. Manutenção da posição no canal
+</h2>
+
+<div class="widget">
+
+<p>
+Manter a posição no canal exige o uso integrado de referências
+visuais, radar, ECDIS, ecobatímetro, informações ambientais e
+conhecimento da resposta do navio.
+</p>
+
+<p>
+A técnica escolhida deve permitir detectar o afastamento e,
+principalmente, sua tendência, antes que uma correção acentuada seja
+necessária.
+</p>
+
+
+<h3>
+9.1 Alinhamentos visuais
+</h3>
+
+<p>
+Os alinhamentos são particularmente sensíveis para identificar
+deslocamentos laterais. Quando os objetos começam a abrir, o sentido
+da abertura indica o lado do afastamento.
+</p>
+
+<p>
+Entretanto, o alinhamento deve ser combinado com:
+</p>
+
+<ul>
+
+<li>
+proa;
+</li>
+
+<li>
+COG;
+</li>
+
+<li>
+velocidade lateral;
+</li>
+
+<li>
+razão de abertura dos objetos;
+</li>
+
+<li>
+distância disponível para corrigir;
+</li>
+
+<li>
+resposta esperada do navio.
+</li>
+
+</ul>
+
+
+<h3>
+9.2 Marcações e distâncias
+</h3>
+
+<p>
+Marcações visuais ou radar permitem monitorar a passagem por pontos
+críticos e avaliar a aproximação de perigos laterais.
+</p>
+
+<p>
+Distâncias radar são especialmente úteis quando tomadas para:
+</p>
+
+<ul>
+
+<li>
+pontas bem definidas;
+</li>
+
+<li>
+molhes;
+</li>
+
+<li>
+ilhas pequenas;
+</li>
+
+<li>
+boias confiáveis;
+</li>
+
+<li>
+estruturas fixas;
+</li>
+
+<li>
+margens com boa definição radar.
+</li>
+
+</ul>
+
+<p>
+Deve-se considerar que a distância radar corresponde ao primeiro
+eco detectável do objeto e pode não coincidir exatamente com o ponto
+cartografado selecionado.
+</p>
+
+
+<h3>
+9.3 Parallel indexing
+</h3>
+
+<p>
+O <em>parallel indexing</em> permite monitorar a posição do navio em
+relação a uma linha planejada sem depender exclusivamente de
+marcações sucessivas.
+</p>
+
+<p>
+Uma linha de indexação paralela é configurada no radar a uma distância
+predeterminada de um objeto ou margem. Mantendo o eco sobre essa
+linha, o navio preserva aproximadamente a separação planejada.
+</p>
+
+<p>
+O método pode ser usado para:
+</p>
+
+<ul>
+
+<li>
+monitorar afastamento lateral;
+</li>
+
+<li>
+acompanhar uma perna retilínea;
+</li>
+
+<li>
+verificar aproximação de um ponto de guinada;
+</li>
+
+<li>
+controlar distância de uma margem;
+</li>
+
+<li>
+estabelecer limites de segurança ou de abortagem.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Limitações do parallel indexing
+</h3>
+
+<p>
+A técnica depende de:
+</p>
+
+<ul>
+
+<li>
+correta identificação do eco;
+</li>
+
+<li>
+ajuste adequado da linha de proa;
+</li>
+
+<li>
+erro reduzido da giro;
+</li>
+
+<li>
+escala radar apropriada;
+</li>
+
+<li>
+seleção de alvo fixo e bem definido;
+</li>
+
+<li>
+compreensão de que a linha monitora uma posição de referência do
+navio, e não todos os pontos do casco.
+</li>
+
+</ul>
+
+</div>
+
+
+<h3>
+9.4 ECDIS e monitoramento do XTD
+</h3>
+
+<p>
+O ECDIS pode apresentar o afastamento lateral da derrota planejada e
+gerar alertas quando o navio se aproxima dos limites configurados.
+</p>
+
+<p>
+A configuração deverá considerar:
+</p>
+
+<ul>
+
+<li>
+dimensões do navio;
+</li>
+
+<li>
+posição da antena;
+</li>
+
+<li>
+largura do canal;
+</li>
+
+<li>
+qualidade dos dados hidrográficos;
+</li>
+
+<li>
+erro da fonte de posição;
+</li>
+
+<li>
+efeitos ambientais;
+</li>
+
+<li>
+espaço necessário para corrigir;
+</li>
+
+<li>
+fase da manobra.
+</li>
+
+</ul>
+
+<p>
+Limites muito amplos podem avisar tarde demais. Limites
+excessivamente estreitos podem gerar alarmes contínuos, reduzindo sua
+utilidade operacional.
+</p>
+
+
+<h3>
+9.5 Ecobatímetro como verificação</h3>
+
+<p>
+A profundidade observada pode auxiliar na confirmação da posição e na
+detecção de aproximação de um talude ou banco. Contudo, sua leitura
+deve ser interpretada considerando:
+</p>
+
+<ul>
+
+<li>
+localização do transdutor;
+</li>
+
+<li>
+referência utilizada pelo equipamento;
+</li>
+
+<li>
+calado do transdutor;
+</li>
+
+<li>
+movimentos do navio;
+</li>
+
+<li>
+maré;
+</li>
+
+<li>
+natureza e inclinação do fundo;
+</li>
+
+<li>
+atraso da apresentação;
+</li>
+
+<li>
+possíveis falsos ecos.
+</li>
+
+</ul>
+
+
+<h3>
+9.6 Posição no centro do canal</h3>
+
+<p>
+O centro geométrico pode ser uma referência útil, mas não constitui
+regra absoluta. A melhor posição dependerá de:
+</p>
+
+<ul>
+
+<li>
+profundidade de cada lado;
+</li>
+
+<li>
+sentido do tráfego;
+</li>
+
+<li>
+Regra 9 do COLREG, quando aplicável;
+</li>
+
+<li>
+corrente e vento;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+presença de outro navio;
+</li>
+
+<li>
+geometria da próxima curva;
+</li>
+
+<li>
+necessidade de preparar a próxima manobra;
+</li>
+
+<li>
+regras e práticas locais.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Uma correção eficiente deve ser:
+</p>
+
+<ul>
+
+<li>
+antecipada;
+</li>
+
+<li>
+proporcional ao desvio e à tendência;
+</li>
+
+<li>
+compatível com a resposta do navio;
+</li>
+
+<li>
+monitorada até produzir o efeito desejado;
+</li>
+
+<li>
+reduzida antes de gerar desvio para o lado oposto.
+</li>
+
+</ul>
+
+<p>
+A sequência prática é:
+</p>
+
+<p>
+<strong>
+detectar → confirmar → corrigir → acompanhar →
+retirar a correção → estabilizar
+</strong>
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Erro comum: perseguição da trajetória
+</h3>
+
+<p>
+Aplicar correções alternadas e excessivas pode fazer o navio oscilar
+de uma margem para a outra. Esse comportamento é conhecido como
+<em>chasing the track</em>.
+</p>
+
+<p>
+O problema geralmente resulta de:
+</p>
+
+<ul>
+
+<li>
+detecção tardia do desvio;
+</li>
+
+<li>
+leme excessivo;
+</li>
+
+<li>
+demora para retirar o leme;
+</li>
+
+<li>
+desconsideração da inércia da guinada;
+</li>
+
+<li>
+ordens baseadas somente na posição instantânea;
+</li>
+
+<li>
+ausência de monitoramento da razão de guinada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Track keeping</strong> — manutenção da trajetória;
+</li>
+
+<li>
+<strong>Channel keeping</strong> — manutenção da posição no canal;
+</li>
+
+<li>
+<strong>Parallel indexing</strong> — indexação paralela;
+</li>
+
+<li>
+<strong>Clearing line</strong> — linha de segurança;
+</li>
+
+<li>
+<strong>Cross-track error — XTE</strong> — erro lateral em relação à
+derrota;
+</li>
+
+<li>
+<strong>Wheel-over line</strong> — linha de início da guinada;
+</li>
+
+<li>
+<strong>Chasing the track</strong> — perseguição oscilatória da
+trajetória;
+</li>
+
+<li>
+<strong>Overshoot</strong> — ultrapassagem da trajetória ou do valor
+pretendido;
+</li>
+
+<li>
+<strong>Position trend</strong> — tendência da posição.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Nenhum método isolado garante a posição do navio. A pilotagem segura
+utiliza referências independentes e compara continuamente a posição
+indicada com a tendência visual, radar, batimétrica e eletrônica.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 3
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário — Parte 3
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Safe corridor</strong> — corredor seguro;
+</li>
+
+<li>
+<strong>Navigable width</strong> — largura navegável;
+</li>
+
+<li>
+<strong>Safety margin</strong> — margem de segurança;
+</li>
+
+<li>
+<strong>Bank effect</strong> — efeito de banco;
+</li>
+
+<li>
+<strong>Bow cushion</strong> — efeito de pressão na proa;
+</li>
+
+<li>
+<strong>Stern suction</strong> — sucção da popa;
+</li>
+
+<li>
+<strong>Course to steer — CTS</strong> — rumo a conduzir;
+</li>
+
+<li>
+<strong>Crab angle</strong> — ângulo de compensação;
+</li>
+
+<li>
+<strong>Cross-track distance — XTD</strong> — afastamento lateral
+da derrota;
+</li>
+
+<li>
+<strong>Parallel indexing</strong> — indexação paralela;
+</li>
+
+<li>
+<strong>Track keeping</strong> — manutenção da trajetória;
+</li>
+
+<li>
+<strong>Chasing the track</strong> — perseguição oscilatória da
+trajetória.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FIM DA PARTE 3
+
+     A PARTE 4 DEVERÁ SER COLADA IMEDIATAMENTE
+     APÓS ESTE COMENTÁRIO.
+
+     NÃO INSERIR:
+     </main>
+     </body>
+     </html>
+===================================================== -->
