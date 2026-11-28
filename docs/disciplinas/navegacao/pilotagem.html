@@ -1,1 +1,1604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Pilotagem - Bridge Trainer PSCPP
+</title>
+
+<link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+</head>
+
+
+<body
+    data-disciplina="navegacao"
+    data-aula="pilotagem"
+>
+
+
+<!-- =====================================================
+     BLOCO FIXO
+     NÃO ALTERAR A ESTRUTURA
+===================================================== -->
+
+
+<!-- =========================================
+     CABEÇALHO PRINCIPAL
+========================================= -->
+
+<header class="topo">
+
+<div class="logo">
+
+<h1>⚓ Bridge Trainer PSCPP</h1>
+
+<p>Navegação em Águas Restritas</p>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MENU DE NAVEGAÇÃO
+========================================= -->
+
+<nav class="navbar">
+
+<button
+    type="button"
+    onclick="voltarPagina()"
+>
+⬅ Voltar
+</button>
+
+<a href="../../index.html">
+🏠 Início
+</a>
+
+<a href="../../guia-estudos/index.html">
+📚 Guia de Estudos
+</a>
+
+<a href="#">
+📊 Progresso
+</a>
+
+<a href="#">
+📝 Simulados
+</a>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     IDENTIDADE DA AULA
+
+     ID DA DISCIPLINA:
+     navegacao
+
+     ID OFICIAL DA AULA:
+     pilotagem
+
+     ARQUIVO:
+     pilotagem.html
+===================================================== -->
+
+
+<!-- =========================================
+     APRESENTAÇÃO DA AULA
+========================================= -->
+
+<section class="dashboard">
+
+<h2>
+⚓ Pilotagem
+</h2>
+
+<p>
+<strong>
+Marine Pilotage
+</strong>
+</p>
+
+<p>
+Esta aula apresenta os princípios, procedimentos e técnicas empregados
+na preparação, execução, monitoramento e avaliação da navegação em
+águas de praticagem, com ênfase no controle seguro da posição e do
+movimento do navio em rios, canais, portos e demais águas restritas.
+</p>
+
+<p>
+O estudo será orientado para a atuação operacional do Praticante de
+Prático, integrando planejamento da derrota, conhecimento local,
+informações ambientais, recursos do passadiço, troca de informações
+Comandante–Prático e condução do navio em margens reduzidas de
+segurança.
+</p>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRESSO DA AULA
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section>
+
+<h2>📊 Progresso da Aula</h2>
+
+<div class="widget">
+
+<div class="barra-progresso">
+
+<div
+    class="progresso"
+    id="barra-progresso-aula"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    style="width: 0%;"
+>
+</div>
+
+</div>
+
+<p id="texto-progresso-aula">
+0% da aula concluída
+</p>
+
+<button
+    type="button"
+    onclick="irParaOndeParei()"
+>
+📍 Ir para onde parei
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     IDENTIFICAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>📘 Identificação da aula</h2>
+
+<div class="widget">
+
+<p>
+<strong>Disciplina:</strong>
+Navegação em Águas Restritas
+</p>
+
+<p>
+<strong>Assunto:</strong>
+Pilotagem
+</p>
+
+<p>
+<strong>Termo técnico principal:</strong>
+Marine Pilotage
+</p>
+
+<p>
+<strong>Nível:</strong>
+PSCPP
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     CRONÔMETRO DE ESTUDO — POMODORO
+     BLOCO FIXO — NÃO ALTERAR
+========================================= -->
+
+<section class="secao-pomodoro">
+
+<h2>⏱ Cronômetro de Estudo</h2>
+
+<div class="widget pomodoro-widget">
+
+<div class="pomodoro-cabecalho">
+
+<div class="pomodoro-icone">
+⏱
+</div>
+
+<div>
+
+<span class="pomodoro-rotulo">
+Fase atual
+</span>
+
+<h3 id="pomodoro-fase">
+📖 Estudo
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-tempo-principal">
+
+<span class="pomodoro-tempo-label">
+Tempo restante
+</span>
+
+<strong id="pomodoro-restante">
+30:00
+</strong>
+
+</div>
+
+
+<div class="pomodoro-informacoes">
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+🎯
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Sessão atual
+</span>
+
+<strong id="pomodoro-sessao">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-caixa">
+
+<span class="pomodoro-caixa-icone">
+📚
+</span>
+
+<div>
+
+<span class="pomodoro-caixa-titulo">
+Total na disciplina
+</span>
+
+<strong id="pomodoro-cumulativo">
+00:00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="pomodoro-controles">
+
+<button
+type="button"
+class="botao pomodoro-botao pomodoro-botao-iniciar"
+id="pomodoro-btn-start"
+onclick="iniciarPomodoro()"
+>
+▶ Iniciar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+id="pomodoro-btn-pause"
+onclick="pausarPomodoro()"
+disabled
+>
+⏸ Pausar
+</button>
+
+<button
+type="button"
+class="botao pomodoro-botao"
+onclick="zerarPomodoro()"
+>
+↺ Zerar ciclo
+</button>
+
+</div>
+
+
+<p class="pomodoro-orientacao">
+
+Estude com concentração durante o ciclo e utilize a pausa
+para descansar antes de iniciar uma nova sessão.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INÍCIO DO CONTEÚDO EDITÁVEL DA AULA
+===================================================== -->
+
+
+<!-- =========================================
+     CONTEÚDO PROGRAMÁTICO
+========================================= -->
+
+<section>
+
+<h2>📋 Conteúdo programático</h2>
+
+<div class="widget">
+
+<p>
+<strong>
+III — Navegação em Águas Restritas
+</strong>
+</p>
+
+<p>
+<strong>
+Itens 34 e 35 — Procedimentos e gerenciamento da navegação
+em águas de praticagem
+</strong>
+</p>
+
+<ul>
+
+<li data-progresso-topico="conceito-pilotagem">
+Conceito, finalidade e características da pilotagem
+</li>
+
+<li data-progresso-topico="aguas-praticagem">
+Características das águas de navegação de praticagem
+</li>
+
+<li data-progresso-topico="perigos-aguas-praticagem">
+Perigos associados à navegação em águas restritas
+</li>
+
+<li data-progresso-topico="verificacoes-entrada-canal">
+Verificações antes da entrada em um canal de acesso
+</li>
+
+<li data-progresso-topico="alinhamento-entrada-canal">
+Alinhamento e gerenciamento da entrada do canal
+</li>
+
+<li data-progresso-topico="posicao-no-canal">
+Gerenciamento da posição do navio no canal de acesso
+</li>
+
+<li data-progresso-topico="margens-seguranca">
+Margens limítrofes de segurança
+</li>
+
+<li data-progresso-topico="rumo-corrigido">
+Determinação do rumo a ser conduzido
+</li>
+
+<li data-progresso-topico="centro-do-canal">
+Técnicas de manutenção da posição no canal
+</li>
+
+<li data-progresso-topico="manutencao-rumo">
+Manutenção do rumo e verificação do erro da giro
+</li>
+
+<li data-progresso-topico="tolerancias-canal">
+Tolerâncias aceitáveis durante a navegação no canal
+</li>
+
+<li data-progresso-topico="navio-beijar-boia">
+Fenômeno de o navio “beijar a boia”
+</li>
+
+<li data-progresso-topico="planejamento-pilotagem">
+Planejamento da navegação de praticagem
+</li>
+
+<li data-progresso-topico="plano-pilotagem-ecdis">
+Plano de navegação de praticagem no ECDIS
+</li>
+
+<li data-progresso-topico="pilotagem-visual-nao-visual">
+Pilotagem visual e pilotagem não visual
+</li>
+
+<li data-progresso-topico="controle-trajetoria">
+Controle da trajetória e monitoramento das curvas
+</li>
+
+<li data-progresso-topico="coordenacao-passadico">
+Coordenação entre o Prático e a equipe do passadiço
+</li>
+
+<li data-progresso-topico="navegacao-rios-canais-portos">
+Navegação em rios, canais e portos
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     OBJETIVOS DE APRENDIZAGEM
+========================================= -->
+
+<section>
+
+<h2>🎯 Objetivos de aprendizagem</h2>
+
+<div class="widget">
+
+<p>
+Ao concluir esta aula, o aluno deverá ser capaz de:
+</p>
+
+<ul>
+
+<li>
+Explicar as características que diferenciam a navegação em águas de
+praticagem da navegação oceânica e costeira.
+</li>
+
+<li>
+Identificar os perigos associados à condução de navios em canais,
+rios, áreas portuárias e demais águas confinadas.
+</li>
+
+<li>
+Planejar a entrada, a permanência e a saída do navio de um canal de
+acesso.
+</li>
+
+<li>
+Determinar margens de segurança compatíveis com as dimensões do
+navio, a batimetria, a corrente, o vento e a qualidade do
+posicionamento.
+</li>
+
+<li>
+Monitorar rumo, posição, velocidade, razão de guinada e trajetória
+durante a execução da pilotagem.
+</li>
+
+<li>
+Integrar informações visuais, radar, ECDIS, GNSS, ecobatímetro e
+demais recursos disponíveis no passadiço.
+</li>
+
+<li>
+Reconhecer as responsabilidades do Comandante, do Prático e da equipe
+do passadiço durante a navegação em águas de praticagem.
+</li>
+
+<li>
+Aplicar procedimentos de contingência diante de desvios da derrota,
+falhas de equipamentos ou perda da margem de segurança.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICAÇÕES UTILIZADAS
+========================================= -->
+
+<section>
+
+<h2>📚 Publicações utilizadas</h2>
+
+<div class="widget">
+
+<h3>
+NAYAK, Santosha K. — Theory and Practices of Marine Pilotage
+</h3>
+
+<p>
+Referência técnica principal para os procedimentos de pilotagem,
+posicionamento do navio no canal, condução em áreas portuárias,
+manobras em baixa velocidade e gerenciamento operacional da
+passagem.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Capítulo 5 — Entering Pilotage Waters; Capítulo 6 — Safe Positioning
+of a Vessel in the Channel; Capítulo 13 — Manoeuvring Inside Harbour
+Limits.
+</p>
+
+<hr>
+
+<h3>
+INTERNATIONAL CHAMBER OF SHIPPING — Bridge Procedures Guide,
+6ª edição
+</h3>
+
+<p>
+Referência para organização do passadiço, planejamento da passagem,
+monitoramento da derrota, comunicação e integração do Prático com o
+Comandante e a equipe do passadiço.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Capítulo 2 — Effective Bridge Organisation; Capítulo 3 — Passage
+Planning; Capítulo 6 — Pilotage.
+</p>
+
+<hr>
+
+<h3>
+MIGUENS, Altineu Pires — Navegação: a Ciência e a Arte,
+Volumes I e III
+</h3>
+
+<p>
+Referência para navegação costeira, linhas de posição, dados táticos
+do navio, marés, correntes, radar, publicações náuticas e sistemas
+modernos de navegação.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Volume I, capítulos 4, 7, 8, 10, 12, 13 e 14; Volume III, capítulos
+37, 38, 39, 40 e 42.
+</p>
+
+<hr>
+
+<h3>
+INTERNATIONAL MARITIME ORGANIZATION — SOLAS,
+Capítulo V
+</h3>
+
+<p>
+Base normativa internacional relativa à segurança da navegação,
+equipamentos e sistemas de bordo, mensagens de perigo, planejamento
+da viagem e responsabilidades relacionadas à condução segura do
+navio.
+</p>
+
+<p>
+<strong>Trechos utilizados:</strong>
+Capítulo V — Safety of Navigation, conforme aplicável ao
+planejamento e à execução segura da passagem.
+</p>
+
+<hr>
+
+<h3>
+Normas e padrões complementares
+</h3>
+
+<p>
+NORMAM-511/DHN; NORMAM-601/DHN; NORMAM-602/DHN; COLREG;
+Resolução IMO A.1106(29); Resolução MSC.192(79); Resolução
+MSC.530(106) e demais documentos aplicáveis aos sistemas e
+procedimentos abordados em cada parte da aula.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     NOTA SOBRE ATUALIZAÇÃO NORMATIVA
+========================================= -->
+
+<section>
+
+<h2>⚖ Base normativa e atualização</h2>
+
+<div class="widget">
+
+<div class="destaque">
+
+<h3>
+Critério de desenvolvimento
+</h3>
+
+<p>
+A estrutura principal desta aula seguirá o conteúdo programático e a
+bibliografia oficial do PSCPP. Publicações posteriores serão
+apresentadas como atualização normativa ou técnica, sem substituição
+silenciosa das referências expressamente indicadas no edital.
+</p>
+
+</div>
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O aluno deverá distinguir três níveis de referência:
+</p>
+
+<ul>
+
+<li>
+a bibliografia expressamente relacionada ao processo seletivo;
+</li>
+
+<li>
+a norma vigente na data do estudo;
+</li>
+
+<li>
+a norma já aprovada, mas com entrada em vigor futura.
+</li>
+
+</ul>
+
+<p>
+Quando houver diferença entre esses níveis, a aula indicará
+expressamente a situação normativa e a respectiva data de vigência.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ORGANIZAÇÃO DA AULA
+========================================= -->
+
+<section>
+
+<h2>🗂 Organização da aula</h2>
+
+<div class="widget">
+
+<ol>
+
+<li>
+<strong>Parte 1 — Fundamentos da pilotagem:</strong>
+conceito, características das águas de praticagem, perigos e
+preparação para a entrada.
+</li>
+
+<li>
+<strong>Parte 2 — Entrada no canal:</strong>
+verificações finais, alinhamento, ponto de não retorno e
+gerenciamento da área de entrada.
+</li>
+
+<li>
+<strong>Parte 3 — Posicionamento no canal:</strong>
+margens de segurança, rumo a conduzir e manutenção do navio na faixa
+navegável.
+</li>
+
+<li>
+<strong>Parte 4 — Controle de rumo e trajetória:</strong>
+erro da giro, tolerâncias, razão de guinada, curvas e antecipação.
+</li>
+
+<li>
+<strong>Parte 5 — Planejamento da pilotagem:</strong>
+cartas, publicações, marés, correntes, pontos críticos, abortagem e
+contingências.
+</li>
+
+<li>
+<strong>Parte 6 — ECDIS e instrumentos:</strong>
+configuração de segurança, plano de pilotagem e integração dos
+sensores.
+</li>
+
+<li>
+<strong>Parte 7 — Execução da pilotagem:</strong>
+pilotagem visual e não visual, coordenação do passadiço e
+monitoramento da passagem.
+</li>
+
+<li>
+<strong>Parte 8 — Rios, canais e portos:</strong>
+corrente, vento, interação hidrodinâmica, avaliação pós-viagem e
+exercícios.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     PARTE 1
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 1 — Fundamentos da Pilotagem
+</h2>
+
+<p>
+A pilotagem exige a condução precisa do navio em um ambiente no qual
+as margens laterais, verticais, longitudinais e temporais de
+segurança são reduzidas. Nessas condições, pequenos desvios de
+posição, rumo, velocidade ou razão de guinada podem desenvolver-se
+rapidamente e comprometer a segurança da passagem.
+</p>
+
+<p>
+Nesta primeira parte serão estudados o conceito operacional de
+pilotagem, as características das águas de praticagem, os principais
+perigos e as verificações necessárias antes da entrada em um canal
+de acesso.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 1
+========================================= -->
+
+<section
+class="topico-aula"
+id="conceito-pilotagem"
+data-topico-id="conceito-pilotagem"
+>
+
+<h2>
+1. Conceito operacional de pilotagem
+</h2>
+
+<div class="widget">
+
+<p>
+No contexto desta aula, <strong>pilotagem</strong> é o processo de
+planejar, conduzir e monitorar o movimento de um navio em águas nas
+quais a segurança da navegação depende de elevado conhecimento
+local, controle preciso da trajetória e integração contínua entre
+informações visuais, instrumentais e ambientais.
+</p>
+
+<p>
+A pilotagem não se limita à emissão de ordens de leme e máquina.
+Ela começa antes do embarque, com a preparação da passagem, a análise
+das condições do navio e do ambiente, a identificação dos pontos
+críticos e a definição de alternativas para situações anormais.
+</p>
+
+<p>
+Durante a execução, o Prático deve manter uma representação mental
+atualizada do movimento do navio. Essa representação deve incluir,
+no mínimo:
+</p>
+
+<ul>
+
+<li>
+posição atual e posição prevista;
+</li>
+
+<li>
+rumo verdadeiro, proa e direção do movimento;
+</li>
+
+<li>
+velocidade no fundo e velocidade na água;
+</li>
+
+<li>
+razão de guinada;
+</li>
+
+<li>
+efeitos de vento, corrente e maré;
+</li>
+
+<li>
+distância para margens, boias, baixios e outros perigos;
+</li>
+
+<li>
+distância e tempo disponíveis para a próxima ação;
+</li>
+
+<li>
+resposta esperada do navio às ordens de máquina e leme;
+</li>
+
+<li>
+tráfego existente e possíveis situações de encontro;
+</li>
+
+<li>
+condições necessárias para prosseguir, abortar ou adotar uma
+alternativa.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Conceito fundamental
+</h3>
+
+<p>
+Pilotar significa controlar simultaneamente a
+<strong>posição</strong>, a <strong>orientação</strong>, a
+<strong>velocidade</strong> e a <strong>trajetória futura</strong>
+do navio dentro de margens de segurança previamente definidas.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+O Prático não deve aguardar que o navio alcance um ponto crítico para
+então decidir a manobra. As ações devem ser antecipadas com base na
+distância disponível, no tempo de resposta do navio, na inércia e
+nos efeitos ambientais.
+</p>
+
+<p>
+Em pilotagem, a pergunta operacional não é apenas
+“onde o navio está?”, mas também:
+<strong>“para onde ele está se deslocando e onde estará quando a
+ordem começar a produzir efeito?”</strong>
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Marine pilotage</strong> — pilotagem ou condução assistida
+por Prático;
+</li>
+
+<li>
+<strong>Pilotage waters</strong> — águas de praticagem;
+</li>
+
+<li>
+<strong>Local knowledge</strong> — conhecimento local;
+</li>
+
+<li>
+<strong>Ship’s track</strong> — trajetória efetivamente percorrida
+pelo navio;
+</li>
+
+<li>
+<strong>Heading</strong> — proa;
+</li>
+
+<li>
+<strong>Course over ground — COG</strong> — rumo no fundo;
+</li>
+
+<li>
+<strong>Speed over ground — SOG</strong> — velocidade no fundo;
+</li>
+
+<li>
+<strong>Rate of turn — ROT</strong> — razão de guinada;
+</li>
+
+<li>
+<strong>Safety margin</strong> — margem de segurança.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não confunda <strong>proa</strong> com
+<strong>rumo no fundo</strong>. A proa representa a direção para a
+qual o eixo longitudinal do navio aponta. O COG representa a direção
+do movimento efetivo sobre o fundo. Vento, corrente, abatimento e
+deriva podem produzir diferença significativa entre esses valores.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 2
+========================================= -->
+
+<section
+class="topico-aula"
+id="aguas-praticagem"
+data-topico-id="aguas-praticagem"
+>
+
+<h2>
+2. Características das águas de praticagem
+</h2>
+
+<div class="widget">
+
+<p>
+Águas de praticagem são áreas em que a navegação normalmente exige
+conhecimento local especializado em razão da combinação de
+restrições geográficas, hidrográficas, ambientais, operacionais ou
+regulamentares.
+</p>
+
+<p>
+Essas águas podem compreender:
+</p>
+
+<ul>
+
+<li>
+canais de acesso;
+</li>
+
+<li>
+rios e estuários;
+</li>
+
+<li>
+barras;
+</li>
+
+<li>
+bacias de evolução;
+</li>
+
+<li>
+áreas de fundeio;
+</li>
+
+<li>
+áreas portuárias;
+</li>
+
+<li>
+terminais marítimos;
+</li>
+
+<li>
+trechos sujeitos a correntes intensas;
+</li>
+
+<li>
+zonas com baixa profundidade ou largura limitada;
+</li>
+
+<li>
+áreas com tráfego intenso ou regulamentação local específica.
+</li>
+
+</ul>
+
+<p>
+Diferentemente da navegação em mar aberto, a pilotagem pode ocorrer
+com margens muito pequenas para corrigir um desvio. O navio pode
+operar próximo dos limites laterais do canal, com folga abaixo da
+quilha reduzida e com espaço limitado para alterar o rumo, reduzir a
+velocidade, girar ou interromper a manobra.
+</p>
+
+<p>
+A dificuldade não depende apenas do tamanho absoluto da área
+navegável. Ela depende da relação entre:
+</p>
+
+<ul>
+
+<li>
+dimensões e características de manobra do navio;
+</li>
+
+<li>
+largura e geometria da via navegável;
+</li>
+
+<li>
+profundidade disponível;
+</li>
+
+<li>
+velocidade e direção da corrente;
+</li>
+
+<li>
+intensidade e direção do vento;
+</li>
+
+<li>
+densidade do tráfego;
+</li>
+
+<li>
+qualidade dos auxílios à navegação;
+</li>
+
+<li>
+precisão das informações hidrográficas;
+</li>
+
+<li>
+condições de visibilidade;
+</li>
+
+<li>
+capacidade de resposta da equipe e dos equipamentos.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Margens de segurança
+</h3>
+
+<p>
+A segurança da pilotagem depende do gerenciamento conjunto de quatro
+margens:
+</p>
+
+<ul>
+
+<li>
+<strong>margem lateral:</strong>
+distância para os limites do canal e perigos laterais;
+</li>
+
+<li>
+<strong>margem vertical:</strong>
+folga abaixo da quilha;
+</li>
+
+<li>
+<strong>margem longitudinal:</strong>
+distância necessária para parar, reduzir velocidade, guinar ou
+abortar;
+</li>
+
+<li>
+<strong>margem temporal:</strong>
+tempo disponível para detectar, decidir, ordenar e obter a resposta
+do navio.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Uma mesma corrente pode ter efeitos diferentes ao longo da passagem.
+Em um trecho retilíneo, pode gerar abatimento relativamente
+previsível. Próximo de uma curva, bifurcação, banco ou entrada de
+bacia, a corrente pode variar de direção e intensidade e produzir
+uma mudança rápida na trajetória.
+</p>
+
+<p>
+Por isso, o conhecimento local não deve ser entendido como simples
+memorização da derrota. Ele inclui a compreensão de como o ambiente
+se modifica e como cada classe de navio responde nessas condições.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Confined waters</strong> — águas confinadas;
+</li>
+
+<li>
+<strong>Restricted waters</strong> — águas restritas;
+</li>
+
+<li>
+<strong>Approach channel</strong> — canal de acesso;
+</li>
+
+<li>
+<strong>Turning basin</strong> — bacia de evolução;
+</li>
+
+<li>
+<strong>Under-keel clearance — UKC</strong> — folga abaixo da
+quilha;
+</li>
+
+<li>
+<strong>Channel limits</strong> — limites do canal;
+</li>
+
+<li>
+<strong>Cross-current</strong> — corrente transversal;
+</li>
+
+<li>
+<strong>Set</strong> — direção para a qual a corrente desloca o
+navio;
+</li>
+
+<li>
+<strong>Drift</strong> — velocidade da corrente ou intensidade do
+deslocamento provocado por ela.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Água restrita não é definida apenas pela proximidade visual da costa.
+Um navio pode estar relativamente afastado das margens e, ainda
+assim, possuir pouca liberdade de manobra em razão da batimetria,
+do calado, da largura segura disponível ou da presença de outros
+navios.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 3
+========================================= -->
+
+<section
+class="topico-aula"
+id="perigos-aguas-praticagem"
+data-topico-id="perigos-aguas-praticagem"
+>
+
+<h2>
+3. Perigos associados às águas de praticagem
+</h2>
+
+<div class="widget">
+
+<p>
+Os perigos presentes em águas de praticagem devem ser identificados
+durante o planejamento e continuamente reavaliados durante a
+execução. A avaliação não deve considerar cada fator isoladamente,
+mas a possibilidade de combinação entre eles.
+</p>
+
+<h3>
+3.1 Perigos hidrográficos e geográficos
+</h3>
+
+<ul>
+
+<li>
+baixios, bancos e pedras;
+</li>
+
+<li>
+profundidades críticas;
+</li>
+
+<li>
+assoreamento e alterações do fundo;
+</li>
+
+<li>
+curvas acentuadas;
+</li>
+
+<li>
+estreitamentos do canal;
+</li>
+
+<li>
+obras, cais, pontes, dolfins e estruturas portuárias;
+</li>
+
+<li>
+limitações de calado aéreo e vertical;
+</li>
+
+<li>
+batimetria antiga ou de confiabilidade limitada.
+</li>
+
+</ul>
+
+<h3>
+3.2 Perigos ambientais
+</h3>
+
+<ul>
+
+<li>
+correntes longitudinais e transversais;
+</li>
+
+<li>
+variações de maré;
+</li>
+
+<li>
+rajadas e mudanças do vento;
+</li>
+
+<li>
+chuva intensa e redução de visibilidade;
+</li>
+
+<li>
+nevoeiro, fumaça ou iluminação de fundo;
+</li>
+
+<li>
+ondas, marulho e ressaca;
+</li>
+
+<li>
+variações da densidade da água;
+</li>
+
+<li>
+detritos, troncos ou objetos à deriva.
+</li>
+
+</ul>
+
+<h3>
+3.3 Perigos hidrodinâmicos
+</h3>
+
+<ul>
+
+<li>
+efeito de águas rasas;
+</li>
+
+<li>
+aumento do squat;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+interação navio–navio;
+</li>
+
+<li>
+redução da eficiência do leme em baixa velocidade;
+</li>
+
+<li>
+mudanças no ponto pivô;
+</li>
+
+<li>
+aumento da distância de parada;
+</li>
+
+<li>
+resposta assimétrica durante encontros ou ultrapassagens.
+</li>
+
+</ul>
+
+<h3>
+3.4 Perigos operacionais
+</h3>
+
+<ul>
+
+<li>
+falha de máquina, leme, propulsor ou geração elétrica;
+</li>
+
+<li>
+indisponibilidade de rebocador;
+</li>
+
+<li>
+falha ou atraso nas comunicações;
+</li>
+
+<li>
+erro de interpretação de uma ordem;
+</li>
+
+<li>
+excesso de velocidade;
+</li>
+
+<li>
+entrada desalinhada no canal;
+</li>
+
+<li>
+tráfego contrário em ponto crítico;
+</li>
+
+<li>
+falha ou degradação do GNSS, radar, ECDIS ou giro;
+</li>
+
+<li>
+perda da consciência situacional;
+</li>
+
+<li>
+planejamento incompleto ou contingência inadequada.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Combinação de perigos
+</h3>
+
+<p>
+O risco raramente resulta de um único fator. Um navio pode possuir
+folga abaixo da quilha suficiente em condição estática, mas perder
+parte dessa margem devido ao squat. Simultaneamente, uma corrente
+transversal pode aproximá-lo do banco, enquanto a redução de
+velocidade diminui a eficiência do leme.
+</p>
+
+<p>
+A avaliação operacional deve, portanto, considerar a
+<strong>combinação entre profundidade, velocidade, corrente,
+vento, geometria do canal e resposta do navio</strong>.
+</p>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Cada perigo identificado deve estar associado a pelo menos uma
+medida de controle. Exemplos:
+</p>
+
+<ul>
+
+<li>
+<strong>corrente transversal:</strong>
+definir rumo de compensação e ponto de alinhamento;
+</li>
+
+<li>
+<strong>curva crítica:</strong>
+estabelecer ponto de início da guinada e razão de guinada esperada;
+</li>
+
+<li>
+<strong>profundidade limitada:</strong>
+controlar maré, calado, squat e UKC;
+</li>
+
+<li>
+<strong>falha de máquina:</strong>
+definir fundeadouro de emergência, rebocadores ou ponto de abortagem;
+</li>
+
+<li>
+<strong>tráfego contrário:</strong>
+estabelecer trecho de encontro, espera ou coordenação com o VTS.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Hazard</strong> — perigo;
+</li>
+
+<li>
+<strong>Risk assessment</strong> — avaliação de risco;
+</li>
+
+<li>
+<strong>Shallow-water effect</strong> — efeito de águas rasas;
+</li>
+
+<li>
+<strong>Squat</strong> — aumento dinâmico do calado e alteração do
+trim durante o movimento em águas de profundidade limitada;
+</li>
+
+<li>
+<strong>Bank effect</strong> — efeito de banco;
+</li>
+
+<li>
+<strong>Ship-to-ship interaction</strong> — interação entre navios;
+</li>
+
+<li>
+<strong>Abort point</strong> — ponto de abortagem;
+</li>
+
+<li>
+<strong>Contingency plan</strong> — plano de contingência;
+</li>
+
+<li>
+<strong>Wheel-over point</strong> — ponto de início da guinada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+<strong>Perigo</strong> e <strong>risco</strong> não são sinônimos.
+O perigo é a condição capaz de causar dano. O risco resulta da
+combinação entre a probabilidade de ocorrência e a gravidade das
+consequências.
+</p>
+
+<p>
+Na pilotagem, o mesmo perigo pode apresentar riscos diferentes
+conforme o tipo de navio, o calado, a velocidade, a maré, o vento,
+a corrente e os recursos disponíveis.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FIM DA PARTE 1
+
+     A PARTE 2 DEVERÁ SER COLADA IMEDIATAMENTE
+     APÓS ESTE COMENTÁRIO.
+
+     NÃO INSERIR:
+     </main>
+     </body>
+     </html>
+===================================================== -->
