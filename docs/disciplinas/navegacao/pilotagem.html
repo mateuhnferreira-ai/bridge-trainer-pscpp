@@ -5192,3 +5192,4209 @@ trajetória.
      </body>
      </html>
 ===================================================== -->
+
+  <!-- =========================================
+     PARTE 4
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 4 — Controle de Rumo e Trajetória
+</h2>
+
+<p>
+Em águas restritas, manter a proa ordenada não garante que o navio
+permaneça na trajetória planejada. Corrente, vento, erro da giro,
+efeito de banco, interação hidrodinâmica e inércia de guinada podem
+produzir diferenças significativas entre proa, rumo no fundo e
+movimento real do casco.
+</p>
+
+<p>
+O controle seguro exige monitoramento simultâneo da proa, do COG, da
+razão de guinada, do afastamento lateral e da posição das extremidades
+do navio.
+</p>
+
+<p>
+Nesta parte serão estudados os métodos de manutenção do rumo, a
+verificação do erro da giro, o controle das curvas, as tolerâncias
+aceitáveis no canal e o fenômeno conhecido como o navio
+“beijar a boia”.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 10
+========================================= -->
+
+<section
+class="topico-aula"
+id="manutencao-rumo"
+data-topico-id="manutencao-rumo"
+>
+
+<h2>
+10. Manutenção do rumo
+</h2>
+
+<div class="widget">
+
+<p>
+A manutenção do rumo consiste em governar o navio de modo que sua
+proa e sua trajetória permaneçam compatíveis com a derrota planejada
+e com as margens de segurança disponíveis.
+</p>
+
+<p>
+Em um canal, devem ser observados simultaneamente:
+</p>
+
+<ul>
+
+<li>
+proa indicada pela giro;
+</li>
+
+<li>
+proa magnética, quando utilizada como verificação;
+</li>
+
+<li>
+rumo no fundo — COG;
+</li>
+
+<li>
+velocidade no fundo — SOG;
+</li>
+
+<li>
+razão de guinada — ROT;
+</li>
+
+<li>
+ângulo do leme;
+</li>
+
+<li>
+afastamento lateral da derrota;
+</li>
+
+<li>
+alinhamentos e referências visuais;
+</li>
+
+<li>
+distâncias radar;
+</li>
+
+<li>
+posição das extremidades do navio;
+</li>
+
+<li>
+efeitos de vento e corrente;
+</li>
+
+<li>
+resposta do navio às ordens anteriores.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Proa, rumo e trajetória
+</h3>
+
+<ul>
+
+<li>
+<strong>Proa:</strong>
+direção para a qual aponta o eixo longitudinal do navio;
+</li>
+
+<li>
+<strong>COG:</strong>
+direção instantânea do movimento do ponto de referência sobre o
+fundo;
+</li>
+
+<li>
+<strong>Trajetória:</strong>
+caminho efetivamente percorrido pelo navio ao longo do tempo.
+</li>
+
+</ul>
+
+<p>
+Uma proa constante pode produzir uma trajetória curva ou oblíqua
+quando corrente, vento ou forças hidrodinâmicas variam.
+</p>
+
+</div>
+
+
+<h3>
+10.1 Governo manual
+</h3>
+
+<p>
+Em trechos críticos, o governo manual permite resposta direta às
+ordens do Prático ou do Comandante. As ordens devem ser claras,
+confirmadas pelo timoneiro e acompanhadas até sua execução.
+</p>
+
+<p>
+A sequência de comunicação deve incluir:
+</p>
+
+<ol>
+
+<li>
+emissão da ordem;
+</li>
+
+<li>
+repetição da ordem pelo timoneiro;
+</li>
+
+<li>
+execução da ordem;
+</li>
+
+<li>
+informação quando o leme atingir o ângulo ordenado;
+</li>
+
+<li>
+informação quando o navio atingir a proa determinada, conforme o
+procedimento adotado.
+</li>
+
+</ol>
+
+<p>
+Exemplos de ordens padronizadas:
+</p>
+
+<ul>
+
+<li>
+<strong>Port ten</strong> — leme 10° a bombordo;
+</li>
+
+<li>
+<strong>Starboard twenty</strong> — leme 20° a boreste;
+</li>
+
+<li>
+<strong>Midships</strong> — leme a meio;
+</li>
+
+<li>
+<strong>Steady</strong> — parar a guinada e estabilizar;
+</li>
+
+<li>
+<strong>Steady on course 090</strong> — estabilizar na proa 090°;
+</li>
+
+<li>
+<strong>Nothing to port</strong> — não permitir que a proa passe
+para bombordo do valor indicado;
+</li>
+
+<li>
+<strong>Ease to five</strong> — reduzir o ângulo do leme para 5°.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção à comunicação
+</h3>
+
+<p>
+Uma ordem de leme não deve ser considerada concluída apenas porque
+foi repetida corretamente. O oficial responsável deve verificar o
+indicador do ângulo do leme e acompanhar a resposta da proa e da
+razão de guinada.
+</p>
+
+</div>
+
+
+<h3>
+10.2 Proa a governar</h3>
+
+<p>
+A proa a governar deverá ser ajustada de acordo com a trajetória
+observada. Se a corrente empurra o navio para bombordo, poderá ser
+necessário governar com a proa para boreste da direção da derrota,
+desde que isso produza o COG pretendido.
+</p>
+
+<p>
+O Prático deverá evitar correções baseadas exclusivamente em pequenas
+oscilações instantâneas do COG. Em baixas velocidades ou com posição
+GNSS instável, o COG pode variar rapidamente sem representar uma
+mudança equivalente no movimento global do navio.
+</p>
+
+
+<h3>
+10.3 Uso da razão de guinada
+</h3>
+
+<p>
+A razão de guinada indica a velocidade angular com que a proa do
+navio está mudando, normalmente expressa em graus por minuto.
+</p>
+
+<p>
+Ela permite reconhecer:
+</p>
+
+<ul>
+
+<li>
+início da resposta ao leme;
+</li>
+
+<li>
+crescimento da guinada;
+</li>
+
+<li>
+necessidade de reduzir o ângulo de leme;
+</li>
+
+<li>
+momento de aplicar contraleme;
+</li>
+
+<li>
+guinada residual após colocar o leme a meio;
+</li>
+
+<li>
+tendência de ultrapassar a proa desejada.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Relação entre velocidade, raio e razão de guinada
+</h3>
+
+<p>
+Para uma curva aproximadamente circular:
+</p>
+
+<p>
+<strong>
+ω = V / R
+</strong>
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>ω</strong> é a velocidade angular em radianos por segundo;
+</li>
+
+<li>
+<strong>V</strong> é a velocidade linear em metros por segundo;
+</li>
+
+<li>
+<strong>R</strong> é o raio da trajetória em metros.
+</li>
+
+</ul>
+
+<p>
+Convertendo para graus por minuto:
+</p>
+
+<p>
+<strong>
+ROT (°/min) ≈
+3438 × V (m/s) / R (m)
+</strong>
+</p>
+
+<p>
+Ou, usando velocidade em nós:
+</p>
+
+<p>
+<strong>
+ROT (°/min) ≈
+1768 × V (kn) / R (m)
+</strong>
+</p>
+
+<p>
+As expressões representam uma relação geométrica idealizada.
+O comportamento real dependerá do ponto de referência utilizado, da
+deriva, do ângulo de leme, da profundidade e da resposta dinâmica do
+navio.
+</p>
+
+</div>
+
+
+<h3>
+10.4 Contraleme
+</h3>
+
+<p>
+O contraleme é aplicado para reduzir a razão de guinada antes de o
+navio atingir a proa ou a trajetória desejada.
+</p>
+
+<p>
+O momento e a intensidade do contraleme dependem de:
+</p>
+
+<ul>
+
+<li>
+razão de guinada existente;
+</li>
+
+<li>
+inércia do navio;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+eficiência do leme;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+vento e corrente;
+</li>
+
+<li>
+proximidade da margem;
+</li>
+
+<li>
+ângulo ainda disponível até a nova proa.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+O contraleme deve ser aplicado antes de alcançar a proa final quando
+a guinada ainda possui energia suficiente para continuar. Esperar a
+proa atingir exatamente o valor desejado para então iniciar o
+contraleme poderá provocar ultrapassagem.
+</p>
+
+</div>
+
+
+<h3>
+10.5 Métodos de determinação do erro da giro em um canal
+</h3>
+
+<p>
+O erro da agulha giroscópica deve ser conhecido porque afeta:
+</p>
+
+<ul>
+
+<li>
+proas e marcações;
+</li>
+
+<li>
+orientação dos radares;
+</li>
+
+<li>
+parallel indexing;
+</li>
+
+<li>
+vetores de alvos ARPA;
+</li>
+
+<li>
+apresentação do ECDIS quando estabilizada pela giro;
+</li>
+
+<li>
+determinação do rumo a conduzir;
+</li>
+
+<li>
+avaliação de corrente e abatimento.
+</li>
+
+</ul>
+
+<p>
+Entre os métodos aplicáveis estão:
+</p>
+
+
+<h4>
+a) Alinhamento de objetos cartografados
+</h4>
+
+<p>
+Quando dois objetos fixos e corretamente identificados estão em
+alinhamento, a direção verdadeira da linha pode ser obtida na carta.
+A marcação indicada pela giro é comparada com essa direção.
+</p>
+
+<p>
+De forma conceitual:
+</p>
+
+<p>
+<strong>
+Erro da giro =
+direção verdadeira − direção indicada pela giro
+</strong>
+</p>
+
+<p>
+O sinal e a denominação leste ou oeste devem seguir a convenção
+adotada a bordo, evitando interpretações ambíguas.
+</p>
+
+
+<h4>
+b) Comparação com azimute conhecido
+</h4>
+
+<p>
+Quando as condições permitem, pode-se comparar uma marcação
+giroscópica com o azimute verdadeiro calculado de um astro.
+Esse método depende de observação adequada, horário preciso e cálculo
+correto.
+</p>
+
+
+<h4>
+c) Comparação com agulha magnética
+</h4>
+
+<p>
+A giro pode ser comparada com a agulha magnética quando a declinação
+e o desvio são conhecidos com confiabilidade. O método funciona como
+verificação, mas incorpora as incertezas próprias da agulha magnética.
+</p>
+
+
+<h4>
+d) Referências terrestres e equipamentos independentes
+</h4>
+
+<p>
+Em determinadas áreas, linhas de referência, equipamentos portáteis
+de pilotagem ou sistemas independentes podem auxiliar na identificação
+de uma discrepância. A fonte, a integridade e a referência utilizadas
+devem ser conhecidas.
+</p>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ COG não determina sozinho o erro da giro
+</h3>
+
+<p>
+A diferença entre proa e COG não pode ser atribuída automaticamente
+ao erro da giro. Ela pode resultar de:
+</p>
+
+<ul>
+
+<li>
+corrente;
+</li>
+
+<li>
+vento;
+</li>
+
+<li>
+abatimento;
+</li>
+
+<li>
+movimento lateral durante a guinada;
+</li>
+
+<li>
+posição da antena GNSS;
+</li>
+
+<li>
+instabilidade do COG em baixa velocidade.
+</li>
+
+</ul>
+
+</div>
+
+
+<h3>
+10.6 Monitoramento da curva
+</h3>
+
+<p>
+Antes de uma curva, devem estar definidos:
+</p>
+
+<ul>
+
+<li>
+ponto ou linha de início da guinada;
+</li>
+
+<li>
+proa de entrada;
+</li>
+
+<li>
+proa de saída;
+</li>
+
+<li>
+ângulo aproximado de leme;
+</li>
+
+<li>
+razão de guinada esperada;
+</li>
+
+<li>
+velocidade pretendida;
+</li>
+
+<li>
+limites laterais;
+</li>
+
+<li>
+momento aproximado para reduzir o leme;
+</li>
+
+<li>
+referências visuais, radar e ECDIS;
+</li>
+
+<li>
+ação de contingência em caso de resposta insuficiente ou excessiva.
+</li>
+
+</ul>
+
+
+<div class="figura-aula">
+
+<h3>
+📐 Controle de uma curva no canal
+</h3>
+
+<svg
+    viewBox="0 0 900 520"
+    role="img"
+    aria-labelledby="titulo-curva descricao-curva"
+    style="width:100%; height:auto;"
+>
+
+<title id="titulo-curva">
+Controle da trajetória em uma curva
+</title>
+
+<desc id="descricao-curva">
+Representação superior de um canal curvo com linha de início da
+guinada, trajetória planejada e pontos de aplicação e retirada
+do leme.
+</desc>
+
+<rect
+    x="20"
+    y="20"
+    width="860"
+    height="480"
+    rx="24"
+    fill="#d8c79c"
+/>
+
+<path
+    d="M100 500
+       L100 345
+       C100 155, 250 65, 430 65
+       L880 65
+       L880 255
+       L455 255
+       C360 255, 295 315, 295 405
+       L295 500 Z"
+    fill="#b9e2f5"
+    stroke="#2274a5"
+    stroke-width="5"
+/>
+
+<path
+    d="M198 500
+       L198 385
+       C198 245, 300 160, 445 160
+       L880 160"
+    fill="none"
+    stroke="#17324d"
+    stroke-width="5"
+    stroke-dasharray="15 12"
+/>
+
+<path
+    d="M198 485
+       L198 390
+       C198 245, 300 160, 445 160
+       L850 160"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="8"
+/>
+
+<line
+    x1="115"
+    y1="355"
+    x2="285"
+    y2="355"
+    stroke="#6a1b9a"
+    stroke-width="7"
+    stroke-dasharray="12 8"
+/>
+
+<circle
+    cx="198"
+    cy="355"
+    r="12"
+    fill="#6a1b9a"
+/>
+
+<circle
+    cx="310"
+    cy="210"
+    r="12"
+    fill="#f2a900"
+/>
+
+<circle
+    cx="470"
+    cy="160"
+    r="12"
+    fill="#00875a"
+/>
+
+<text
+    x="305"
+    y="335"
+    font-size="20"
+    fill="#5a1275"
+>
+Linha de início da guinada
+</text>
+
+<text
+    x="325"
+    y="205"
+    font-size="20"
+    fill="#8a5a00"
+>
+Redução do leme
+</text>
+
+<text
+    x="490"
+    y="145"
+    font-size="20"
+    fill="#006b46"
+>
+Estabilização
+</text>
+
+<text
+    x="540"
+    y="205"
+    font-size="21"
+    fill="#b00020"
+>
+Trajetória planejada
+</text>
+
+</svg>
+
+<p>
+A posição exata dos pontos varia conforme velocidade, raio pretendido,
+resposta do navio, corrente, vento e profundidade.
+</p>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Heading</strong> — proa;
+</li>
+
+<li>
+<strong>Steady course</strong> — proa estabilizada;
+</li>
+
+<li>
+<strong>Rate of turn — ROT</strong> — razão de guinada;
+</li>
+
+<li>
+<strong>Counter-rudder</strong> — contraleme;
+</li>
+
+<li>
+<strong>Gyro error</strong> — erro da giro;
+</li>
+
+<li>
+<strong>Wheel-over point</strong> — ponto de início da guinada;
+</li>
+
+<li>
+<strong>Wheel-over line</strong> — linha de início da guinada;
+</li>
+
+<li>
+<strong>Turn monitoring</strong> — monitoramento da curva;
+</li>
+
+<li>
+<strong>Overshoot</strong> — ultrapassagem da proa ou trajetória
+pretendida.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Durante uma curva, a proa, a antena GNSS, o ponto pivô e a popa
+percorrem trajetórias diferentes. O monitoramento de apenas um ponto
+do navio pode ocultar a aproximação perigosa de outra extremidade.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 11
+========================================= -->
+
+<section
+class="topico-aula"
+id="tolerancias-canal"
+data-topico-id="tolerancias-canal"
+>
+
+<h2>
+11. Tolerâncias aceitáveis no canal
+</h2>
+
+<div class="widget">
+
+<p>
+Tolerância é o desvio máximo previamente aceito para determinada
+variável antes que seja necessária ação corretiva, comunicação ou
+interrupção da manobra.
+</p>
+
+<p>
+As tolerâncias devem ser definidas durante o planejamento e não
+improvisadas depois que o desvio já ocorreu.
+</p>
+
+
+<h3>
+11.1 Variáveis sujeitas a tolerância
+</h3>
+
+<ul>
+
+<li>
+afastamento lateral da derrota;
+</li>
+
+<li>
+distância para o limite do canal;
+</li>
+
+<li>
+proa;
+</li>
+
+<li>
+COG;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+razão de guinada;
+</li>
+
+<li>
+folga abaixo da quilha;
+</li>
+
+<li>
+distância para o próximo ponto crítico;
+</li>
+
+<li>
+posição de encontro com outro navio;
+</li>
+
+<li>
+erro ou incerteza dos sensores;
+</li>
+
+<li>
+vento, corrente e visibilidade;
+</li>
+
+<li>
+tempo de resposta dos sistemas.
+</li>
+
+</ul>
+
+
+<h3>
+11.2 Critérios para estabelecer tolerâncias
+</h3>
+
+<p>
+As tolerâncias dependem de:
+</p>
+
+<ul>
+
+<li>
+largura e profundidade do canal;
+</li>
+
+<li>
+boca, calado e comprimento do navio;
+</li>
+
+<li>
+características de governo e parada;
+</li>
+
+<li>
+velocidade;
+</li>
+
+<li>
+qualidade do levantamento hidrográfico;
+</li>
+
+<li>
+precisão dos sistemas de posicionamento;
+</li>
+
+<li>
+efeitos de vento e corrente;
+</li>
+
+<li>
+tráfego;
+</li>
+
+<li>
+possibilidade de ação corretiva;
+</li>
+
+<li>
+consequência de ultrapassar o limite;
+</li>
+
+<li>
+normas e critérios da Autoridade competente.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Limite de alerta e limite de ação
+</h3>
+
+<p>
+É útil distinguir:
+</p>
+
+<ul>
+
+<li>
+<strong>limite de alerta:</strong>
+valor que exige maior atenção, confirmação por meios independentes
+e preparação de uma correção;
+</li>
+
+<li>
+<strong>limite de ação:</strong>
+valor que exige ação corretiva imediata;
+</li>
+
+<li>
+<strong>limite de abortagem:</strong>
+condição além da qual o plano normal deixa de oferecer segurança
+suficiente e a contingência deve ser executada.
+</li>
+
+</ul>
+
+</div>
+
+
+<h3>
+11.3 Tolerância lateral
+</h3>
+
+<p>
+A tolerância lateral configurada no ECDIS deve ser menor que a margem
+total disponível, preservando espaço suficiente para:
+</p>
+
+<ul>
+
+<li>
+detectar o desvio;
+</li>
+
+<li>
+confirmar a tendência;
+</li>
+
+<li>
+emitir e executar a ordem;
+</li>
+
+<li>
+aguardar a resposta do navio;
+</li>
+
+<li>
+reduzir a guinada;
+</li>
+
+<li>
+estabilizar a nova trajetória.
+</li>
+
+</ul>
+
+<p>
+Conceitualmente:
+</p>
+
+<p>
+<strong>
+XTD<sub>ação</sub> &lt;
+margem lateral disponível − espaço de recuperação
+</strong>
+</p>
+
+<p>
+A expressão demonstra que o limite de ação não deve coincidir com o
+perigo. Deve existir uma reserva para recuperar a trajetória.
+</p>
+
+
+<h3>
+11.4 Tolerância de proa
+</h3>
+
+<p>
+A tolerância de proa deve considerar o efeito que determinado erro
+produzirá ao longo da distância restante.
+</p>
+
+<p>
+Para pequenos ângulos e em uma aproximação simplificada, o afastamento
+lateral poderá ser estimado por:
+</p>
+
+<p>
+<strong>
+d<sub>lateral</sub> ≈
+D × sen(Δθ)
+</strong>
+</p>
+
+<p>
+Em que:
+</p>
+
+<ul>
+
+<li>
+<strong>D</strong> é a distância percorrida;
+</li>
+
+<li>
+<strong>Δθ</strong> é a diferença angular entre a trajetória
+pretendida e a trajetória efetiva;
+</li>
+
+<li>
+<strong>d<sub>lateral</sub></strong> é o afastamento lateral
+aproximado.
+</li>
+
+</ul>
+
+<p>
+Exemplo: mantendo um erro de trajetória de 3° por uma milha náutica:
+</p>
+
+<p>
+<strong>
+d<sub>lateral</sub> ≈
+1 × sen(3°) ≈ 0,052 MN
+</strong>
+</p>
+
+<p>
+Como uma milha náutica possui 1.852 metros:
+</p>
+
+<p>
+<strong>
+0,052 × 1.852 ≈ 97 metros
+</strong>
+</p>
+
+<p>
+Portanto, um erro angular aparentemente pequeno pode consumir uma
+parcela significativa da largura de um canal.
+</p>
+
+
+<h3>
+11.5 Tolerância de velocidade
+</h3>
+
+<p>
+A velocidade máxima aceitável deve considerar:
+</p>
+
+<ul>
+
+<li>
+distância de parada;
+</li>
+
+<li>
+controle do rumo;
+</li>
+
+<li>
+squat;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+interação com outros navios;
+</li>
+
+<li>
+energia do impacto em caso de acidente;
+</li>
+
+<li>
+tempo disponível para decisão;
+</li>
+
+<li>
+limites portuários ou regulamentares.
+</li>
+
+</ul>
+
+<p>
+Também poderá existir uma velocidade mínima operacional necessária
+para conservar governo suficiente.
+</p>
+
+
+<h3>
+11.6 Desvio e ação corretiva
+</h3>
+
+<p>
+Ao detectar uma tendência de ultrapassagem, a equipe deve:
+</p>
+
+<ol>
+
+<li>
+confirmar a informação por meio independente;
+</li>
+
+<li>
+identificar a provável causa;
+</li>
+
+<li>
+avaliar o tempo e o espaço disponíveis;
+</li>
+
+<li>
+aplicar correção compatível;
+</li>
+
+<li>
+monitorar a resposta;
+</li>
+
+<li>
+retirar a correção no momento apropriado;
+</li>
+
+<li>
+informar a equipe sobre a nova condição;
+</li>
+
+<li>
+executar a contingência se a recuperação não for suficiente.
+</li>
+
+</ol>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+A tolerância deve ser menor nos trechos em que:
+</p>
+
+<ul>
+
+<li>
+o canal é mais estreito;
+</li>
+
+<li>
+a profundidade é crítica;
+</li>
+
+<li>
+a corrente é transversal;
+</li>
+
+<li>
+a próxima curva está próxima;
+</li>
+
+<li>
+há encontro com outro navio;
+</li>
+
+<li>
+o efeito de banco é intenso;
+</li>
+
+<li>
+a capacidade de abortagem é reduzida.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Tolerance</strong> — tolerância;
+</li>
+
+<li>
+<strong>Alert limit</strong> — limite de alerta;
+</li>
+
+<li>
+<strong>Action limit</strong> — limite de ação;
+</li>
+
+<li>
+<strong>Abort limit</strong> — limite de abortagem;
+</li>
+
+<li>
+<strong>Recovery space</strong> — espaço para recuperação;
+</li>
+
+<li>
+<strong>Cross-track limit</strong> — limite de afastamento lateral;
+</li>
+
+<li>
+<strong>Safety boundary</strong> — limite de segurança;
+</li>
+
+<li>
+<strong>Deviation</strong> — desvio.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+Não existe tolerância universal aplicável a todos os navios e canais.
+O valor aceitável depende da relação entre o navio, a via navegável,
+as condições ambientais, a precisão das informações e o espaço para
+recuperação.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 12
+========================================= -->
+
+<section
+class="topico-aula"
+id="navio-beijar-boia"
+data-topico-id="navio-beijar-boia"
+>
+
+<h2>
+12. O fenômeno de o navio “beijar a boia”
+</h2>
+
+<div class="widget">
+
+<p>
+A expressão “beijar a boia” descreve a situação em que uma boia passa
+excessivamente próxima do costado ou de uma das extremidades do navio,
+podendo ocorrer contato físico ou a impressão visual de contato
+iminente.
+</p>
+
+<p>
+A ocorrência pode resultar da combinação de:
+</p>
+
+<ul>
+
+<li>
+trajetória excessivamente próxima do limite balizado;
+</li>
+
+<li>
+posição inadequada na entrada de uma curva;
+</li>
+
+<li>
+abatimento por corrente ou vento;
+</li>
+
+<li>
+varrimento lateral da popa;
+</li>
+
+<li>
+avanço lateral da proa durante a guinada;
+</li>
+
+<li>
+posição do ponto pivô;
+</li>
+
+<li>
+diferença entre a trajetória da antena GNSS e a do casco;
+</li>
+
+<li>
+movimento da própria boia em torno de sua poita;
+</li>
+
+<li>
+efeitos hidrodinâmicos próximos ao casco;
+</li>
+
+<li>
+erro na posição indicada ou cartografada da boia.
+</li>
+
+</ul>
+
+
+<h3>
+12.1 A boia não é um ponto fixo
+</h3>
+
+<p>
+Uma boia flutuante pode se deslocar em torno de sua poita em razão de:
+</p>
+
+<ul>
+
+<li>
+corrente;
+</li>
+
+<li>
+vento;
+</li>
+
+<li>
+ondas;
+</li>
+
+<li>
+comprimento da amarra;
+</li>
+
+<li>
+profundidade;
+</li>
+
+<li>
+variação da maré;
+</li>
+
+<li>
+passagem de outros navios.
+</li>
+
+</ul>
+
+<p>
+Consequentemente, sua posição instantânea pode diferir da posição
+cartografada. Boias também podem estar fora de posição, desaparecidas,
+avariadas ou apresentando característica luminosa incorreta.
+</p>
+
+
+<div class="destaque">
+
+<h3>
+Princípio fundamental
+</h3>
+
+<p>
+Uma boia sinaliza um canal, perigo ou referência, mas não transforma
+o espaço imediatamente ao seu lado em água segura.
+</p>
+
+<p>
+A navegação deve ser planejada com base na carta, na batimetria, nos
+limites estabelecidos e em margens apropriadas — não apenas na
+distância visual para a boia.
+</p>
+
+</div>
+
+
+<h3>
+12.2 Trajetórias diferentes durante uma curva
+</h3>
+
+<p>
+Durante a guinada, as diferentes partes do navio percorrem trajetórias
+distintas:
+</p>
+
+<ul>
+
+<li>
+a proa avança lateralmente para o interior da curva;
+</li>
+
+<li>
+o ponto pivô desloca-se ao longo da trajetória;
+</li>
+
+<li>
+a popa varre para o lado oposto ao sentido inicial da guinada;
+</li>
+
+<li>
+a antena GNSS acompanha apenas o ponto em que está instalada.
+</li>
+
+</ul>
+
+<p>
+Assim, a trajetória apresentada no ECDIS pode parecer segura para a
+antena, enquanto a proa ou a popa passa perigosamente próxima da boia.
+</p>
+
+
+<div class="figura-aula">
+
+<h3>
+📐 Varrimento do casco junto à boia
+</h3>
+
+<svg
+    viewBox="0 0 900 470"
+    role="img"
+    aria-labelledby="titulo-boia descricao-boia"
+    style="width:100%; height:auto;"
+>
+
+<title id="titulo-boia">
+Varrimento do casco próximo de uma boia
+</title>
+
+<desc id="descricao-boia">
+Vista superior mostrando a trajetória do ponto de referência,
+a posição do navio em uma curva e a aproximação da popa a uma boia.
+</desc>
+
+<rect
+    x="20"
+    y="20"
+    width="860"
+    height="430"
+    rx="24"
+    fill="#b9e2f5"
+/>
+
+<path
+    d="M110 430
+       C125 235, 280 110, 500 105
+       L850 105"
+    fill="none"
+    stroke="#17324d"
+    stroke-width="5"
+    stroke-dasharray="16 12"
+/>
+
+<path
+    d="M110 420
+       C135 235, 285 125, 500 120
+       L820 120"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="7"
+/>
+
+<g transform="translate(310 230) rotate(-48)">
+
+<path
+    d="M0 -105
+       L30 -55
+       L30 82
+       L0 108
+       L-30 82
+       L-30 -55 Z"
+    fill="#f2a900"
+    stroke="#17252a"
+    stroke-width="5"
+/>
+
+<circle
+    cx="0"
+    cy="45"
+    r="8"
+    fill="#d62828"
+/>
+
+</g>
+
+<circle
+    cx="215"
+    cy="330"
+    r="22"
+    fill="#1a7f37"
+    stroke="#ffffff"
+    stroke-width="6"
+/>
+
+<line
+    x1="215"
+    y1="352"
+    x2="215"
+    y2="395"
+    stroke="#3d3d3d"
+    stroke-width="5"
+/>
+
+<path
+    d="M260 305 C285 325, 300 340, 315 365"
+    fill="none"
+    stroke="#6a1b9a"
+    stroke-width="8"
+    marker-end="url(#seta-boia)"
+/>
+
+<defs>
+
+<marker
+    id="seta-boia"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="3"
+    orient="auto"
+    markerUnits="strokeWidth"
+>
+
+<path
+    d="M0,0 L0,6 L9,3 Z"
+    fill="#6a1b9a"
+/>
+
+</marker>
+
+</defs>
+
+<text
+    x="105"
+    y="410"
+    font-size="21"
+    fill="#006b46"
+>
+Boia
+</text>
+
+<text
+    x="320"
+    y="390"
+    font-size="21"
+    fill="#5a1275"
+>
+Varrimento da popa
+</text>
+
+<text
+    x="535"
+    y="95"
+    font-size="21"
+    fill="#b00020"
+>
+Trajetória do ponto de referência
+</text>
+
+</svg>
+
+<p>
+A figura é esquemática: a trajetória e o varrimento dependem das
+dimensões do navio, do ponto pivô, da velocidade e da razão de
+guinada.
+</p>
+
+</div>
+
+
+<h3>
+12.3 Efeitos da passagem do navio sobre a boia
+</h3>
+
+<p>
+O escoamento ao redor de um navio de grande porte pode movimentar uma
+boia. Dependendo da distância, velocidade, profundidade e geometria
+local, podem ocorrer:
+</p>
+
+<ul>
+
+<li>
+deslocamento inicial provocado pela onda de pressão;
+</li>
+
+<li>
+movimento em direção ao casco associado ao escoamento lateral;
+</li>
+
+<li>
+oscilação causada pela esteira;
+</li>
+
+<li>
+aparente aproximação repentina após a passagem da proa.
+</li>
+
+</ul>
+
+<p>
+Esse movimento não deve ser tratado como previsível ou utilizado para
+justificar uma passagem sem margem adequada.
+</p>
+
+
+<h3>
+12.4 Prevenção
+</h3>
+
+<p>
+Para evitar aproximação excessiva, o Prático deve:
+</p>
+
+<ul>
+
+<li>
+planejar a trajetória de todo o casco;
+</li>
+
+<li>
+considerar a posição da antena GNSS;
+</li>
+
+<li>
+conhecer a posição aproximada do ponto pivô;
+</li>
+
+<li>
+antecipar o varrimento da popa;
+</li>
+
+<li>
+considerar vento e corrente;
+</li>
+
+<li>
+manter margem adequada para o movimento da boia;
+</li>
+
+<li>
+não usar a boia como único meio de posicionamento;
+</li>
+
+<li>
+controlar velocidade e razão de guinada;
+</li>
+
+<li>
+monitorar visualmente a extremidade ameaçada;
+</li>
+
+<li>
+designar um observador adicional quando necessário.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Quando uma boia desaparecer sob a linha de visada a partir do
+passadiço, isso não significa necessariamente que exista distância
+segura. Em navios de grande porte, a própria estrutura do navio pode
+ocultar uma boia que já está muito próxima do costado.
+</p>
+
+<p>
+A equipe deverá informar imediatamente:
+</p>
+
+<ul>
+
+<li>
+lado em que a boia se encontra;
+</li>
+
+<li>
+distância estimada;
+</li>
+
+<li>
+tendência de aproximação ou afastamento;
+</li>
+
+<li>
+extremidade do navio mais ameaçada.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Buoy kissing</strong> — aproximação extrema ou contato do
+navio com a boia;
+</li>
+
+<li>
+<strong>Buoy watch</strong> — vigilância específica da passagem pela
+boia;
+</li>
+
+<li>
+<strong>Swinging radius</strong> — raio de giro da boia em torno de
+sua poita;
+</li>
+
+<li>
+<strong>Buoy off station</strong> — boia fora de posição;
+</li>
+
+<li>
+<strong>Stern swing</strong> — varrimento lateral da popa;
+</li>
+
+<li>
+<strong>Bow sweep</strong> — varrimento lateral da proa;
+</li>
+
+<li>
+<strong>Pivot point</strong> — ponto pivô;
+</li>
+
+<li>
+<strong>Hull clearance</strong> — afastamento do casco.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O auxílio flutuante não deve ser considerado uma referência
+absolutamente fixa. A posição do navio precisa ser confirmada por
+meios independentes, e a margem deve considerar tanto o movimento do
+casco quanto o possível deslocamento da boia.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 4
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário — Parte 4
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Heading</strong> — proa;
+</li>
+
+<li>
+<strong>Rate of turn — ROT</strong> — razão de guinada;
+</li>
+
+<li>
+<strong>Counter-rudder</strong> — contraleme;
+</li>
+
+<li>
+<strong>Gyro error</strong> — erro da giro;
+</li>
+
+<li>
+<strong>Wheel-over point</strong> — ponto de início da guinada;
+</li>
+
+<li>
+<strong>Turn monitoring</strong> — monitoramento da curva;
+</li>
+
+<li>
+<strong>Alert limit</strong> — limite de alerta;
+</li>
+
+<li>
+<strong>Action limit</strong> — limite de ação;
+</li>
+
+<li>
+<strong>Recovery space</strong> — espaço para recuperação;
+</li>
+
+<li>
+<strong>Buoy off station</strong> — boia fora de posição;
+</li>
+
+<li>
+<strong>Stern swing</strong> — varrimento lateral da popa;
+</li>
+
+<li>
+<strong>Hull clearance</strong> — afastamento do casco.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FIM DA PARTE 4
+
+     A PARTE 5 DEVERÁ SER COLADA IMEDIATAMENTE
+     APÓS ESTE COMENTÁRIO.
+
+     NÃO INSERIR:
+     </main>
+     </body>
+     </html>
+===================================================== -->  
+
+   <!-- =========================================
+     PARTE 5
+========================================= -->
+
+<section class="abertura-parte">
+
+<div class="widget">
+
+<h2>
+PARTE 5 — Planejamento da Pilotagem
+</h2>
+
+<p>
+O planejamento da pilotagem transforma informações hidrográficas,
+meteorológicas, operacionais e regulamentares em uma sequência
+coordenada de ações para conduzir o navio com segurança.
+</p>
+
+<p>
+O plano deve abranger toda a passagem, desde a aproximação e o
+embarque do Prático até o término da faina, incluindo os pontos
+críticos, limites operacionais, comunicações, alternativas e medidas
+de contingência.
+</p>
+
+<p>
+Nesta parte serão estudadas a avaliação inicial, a seleção da derrota,
+as cartas e publicações, a influência de maré e corrente, os pontos
+de controle, as verificações anteriores ao embarque e a integração
+entre o plano do navio e o plano do Prático.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     TÓPICO 13
+========================================= -->
+
+<section
+class="topico-aula"
+id="planejamento-pilotagem"
+data-topico-id="planejamento-pilotagem"
+>
+
+<h2>
+13. Planejamento da navegação de praticagem
+</h2>
+
+<div class="widget">
+
+<p>
+O planejamento da pilotagem deve produzir uma representação clara da
+passagem pretendida e das condições necessárias para executá-la.
+Ele não deve limitar-se a uma linha traçada na carta ou no ECDIS.
+</p>
+
+<p>
+Um plano completo deve indicar:
+</p>
+
+<ul>
+
+<li>
+onde o navio deverá navegar;
+</li>
+
+<li>
+quando cada ação deverá ser iniciada;
+</li>
+
+<li>
+qual velocidade deverá ser mantida;
+</li>
+
+<li>
+quais referências serão utilizadas;
+</li>
+
+<li>
+quais limites não deverão ser ultrapassados;
+</li>
+
+<li>
+como a passagem será monitorada;
+</li>
+
+<li>
+o que deverá ser feito diante de uma condição anormal.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Princípio fundamental
+</h3>
+
+<p>
+O plano de pilotagem deve ser suficientemente detalhado para orientar
+a execução, mas também suficientemente flexível para permitir ajustes
+controlados quando as condições reais diferirem das previstas.
+</p>
+
+<p>
+Alterar o plano não significa abandonar o planejamento. Significa
+reavaliar riscos, comunicar a mudança e manter a passagem dentro de
+limites seguros.
+</p>
+
+</div>
+
+
+<h3>
+13.1 Responsabilidade pelo planejamento
+</h3>
+
+<p>
+A presença do Prático não elimina a necessidade de o navio possuir
+um plano de viagem completo. O plano elaborado pela equipe do
+passadiço e o conhecimento local do Prático devem ser comparados e
+integrados durante a troca de informações Comandante–Prático.
+</p>
+
+<p>
+A Regra V/34 do SOLAS estabelece que o Comandante deve assegurar o
+planejamento da viagem pretendida, utilizando cartas e publicações
+náuticas apropriadas e considerando as diretrizes e recomendações
+aplicáveis da IMO.
+</p>
+
+<p>
+Durante a praticagem:
+</p>
+
+<ul>
+
+<li>
+o Comandante continua responsável pelo comando do navio;
+</li>
+
+<li>
+a equipe do passadiço continua responsável pelo monitoramento da
+passagem;
+</li>
+
+<li>
+o Prático fornece conhecimento local e orientação especializada;
+</li>
+
+<li>
+qualquer dúvida ou divergência deve ser esclarecida imediatamente;
+</li>
+
+<li>
+o plano do Prático não deve ser tratado como substituto do plano do
+navio;
+</li>
+
+<li>
+o plano do navio não deve ser executado de forma rígida quando o
+conhecimento local indicar condição diferente.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+A troca Comandante–Prático não é uma transferência automática do
+comando. O Prático integra-se à equipe do passadiço e sua orientação
+deve ser compreendida, monitorada e apoiada por toda a equipe.
+</p>
+
+</div>
+
+
+<h3>
+13.2 Etapas do planejamento
+</h3>
+
+<p>
+O planejamento da passagem pode ser organizado nas quatro etapas
+clássicas:
+</p>
+
+<ol>
+
+<li>
+<strong>Avaliação — Appraisal:</strong>
+reunir e analisar todas as informações relevantes;
+</li>
+
+<li>
+<strong>Planejamento — Planning:</strong>
+definir a derrota, os parâmetros e as contingências;
+</li>
+
+<li>
+<strong>Execução — Execution:</strong>
+conduzir o navio de acordo com o plano ajustado às condições reais;
+</li>
+
+<li>
+<strong>Monitoramento — Monitoring:</strong>
+verificar continuamente posição, tendência e cumprimento dos
+limites.
+</li>
+
+</ol>
+
+
+<div class="figura-aula">
+
+<h3>
+🧭 Ciclo do planejamento da pilotagem
+</h3>
+
+<svg
+    viewBox="0 0 900 520"
+    role="img"
+    aria-labelledby="titulo-ciclo-plano descricao-ciclo-plano"
+    style="width:100%; height:auto;"
+>
+
+<title id="titulo-ciclo-plano">
+Ciclo do planejamento da pilotagem
+</title>
+
+<desc id="descricao-ciclo-plano">
+Fluxo entre avaliação, planejamento, execução, monitoramento e
+reavaliação da passagem.
+</desc>
+
+<rect
+    x="20"
+    y="20"
+    width="860"
+    height="480"
+    rx="24"
+    fill="#eef5f8"
+    stroke="#2274a5"
+    stroke-width="4"
+/>
+
+<rect
+    x="330"
+    y="55"
+    width="240"
+    height="85"
+    rx="18"
+    fill="#17324d"
+/>
+
+<text
+    x="450"
+    y="92"
+    text-anchor="middle"
+    font-size="25"
+    fill="#ffffff"
+>
+AVALIAÇÃO
+</text>
+
+<text
+    x="450"
+    y="120"
+    text-anchor="middle"
+    font-size="17"
+    fill="#ffffff"
+>
+Reunir informações
+</text>
+
+<rect
+    x="605"
+    y="210"
+    width="240"
+    height="85"
+    rx="18"
+    fill="#1f6f8b"
+/>
+
+<text
+    x="725"
+    y="247"
+    text-anchor="middle"
+    font-size="25"
+    fill="#ffffff"
+>
+PLANEJAMENTO
+</text>
+
+<text
+    x="725"
+    y="275"
+    text-anchor="middle"
+    font-size="17"
+    fill="#ffffff"
+>
+Definir a passagem
+</text>
+
+<rect
+    x="330"
+    y="365"
+    width="240"
+    height="85"
+    rx="18"
+    fill="#00875a"
+/>
+
+<text
+    x="450"
+    y="402"
+    text-anchor="middle"
+    font-size="25"
+    fill="#ffffff"
+>
+EXECUÇÃO
+</text>
+
+<text
+    x="450"
+    y="430"
+    text-anchor="middle"
+    font-size="17"
+    fill="#ffffff"
+>
+Conduzir o navio
+</text>
+
+<rect
+    x="55"
+    y="210"
+    width="240"
+    height="85"
+    rx="18"
+    fill="#8a5a00"
+/>
+
+<text
+    x="175"
+    y="247"
+    text-anchor="middle"
+    font-size="25"
+    fill="#ffffff"
+>
+MONITORAMENTO
+</text>
+
+<text
+    x="175"
+    y="275"
+    text-anchor="middle"
+    font-size="17"
+    fill="#ffffff"
+>
+Comparar e corrigir
+</text>
+
+<path
+    d="M570 105 C650 120, 700 155, 720 205"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="7"
+    marker-end="url(#seta-plano)"
+/>
+
+<path
+    d="M720 300 C695 350, 625 390, 575 400"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="7"
+    marker-end="url(#seta-plano)"
+/>
+
+<path
+    d="M325 407 C245 390, 190 345, 175 302"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="7"
+    marker-end="url(#seta-plano)"
+/>
+
+<path
+    d="M175 205 C200 145, 260 110, 325 100"
+    fill="none"
+    stroke="#d62828"
+    stroke-width="7"
+    marker-end="url(#seta-plano)"
+/>
+
+<defs>
+
+<marker
+    id="seta-plano"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="3"
+    orient="auto"
+    markerUnits="strokeWidth"
+>
+
+<path
+    d="M0,0 L0,6 L9,3 Z"
+    fill="#d62828"
+/>
+
+</marker>
+
+</defs>
+
+<circle
+    cx="450"
+    cy="252"
+    r="82"
+    fill="#ffffff"
+    stroke="#2274a5"
+    stroke-width="5"
+/>
+
+<text
+    x="450"
+    y="242"
+    text-anchor="middle"
+    font-size="24"
+    fill="#17324d"
+>
+PASSAGEM
+</text>
+
+<text
+    x="450"
+    y="275"
+    text-anchor="middle"
+    font-size="24"
+    fill="#17324d"
+>
+SEGURA
+</text>
+
+</svg>
+
+<p>
+O monitoramento pode revelar uma condição diferente da prevista,
+exigindo nova avaliação e ajuste do plano.
+</p>
+
+</div>
+
+
+<h3>
+13.3 Preparativos iniciais
+</h3>
+
+<p>
+Os preparativos devem começar antes do embarque do Prático e incluir
+a reunião das informações necessárias à passagem.
+</p>
+
+<h4>
+13.3.1 Dados do navio
+</h4>
+
+<ul>
+
+<li>
+comprimento total;
+</li>
+
+<li>
+boca;
+</li>
+
+<li>
+calados de vante e de ré;
+</li>
+
+<li>
+trim e banda;
+</li>
+
+<li>
+deslocamento;
+</li>
+
+<li>
+altura máxima;
+</li>
+
+<li>
+tipo de propulsão;
+</li>
+
+<li>
+número de hélices e lemes;
+</li>
+
+<li>
+velocidade mínima de governo;
+</li>
+
+<li>
+dados de parada;
+</li>
+
+<li>
+diâmetro tático e avanço;
+</li>
+
+<li>
+limitações de máquina;
+</li>
+
+<li>
+propulsores laterais;
+</li>
+
+<li>
+condição dos ferros;
+</li>
+
+<li>
+equipamentos indisponíveis ou degradados.
+</li>
+
+</ul>
+
+
+<h4>
+13.3.2 Dados da viagem
+</h4>
+
+<ul>
+
+<li>
+ETA no ponto de embarque;
+</li>
+
+<li>
+ETD previsto;
+</li>
+
+<li>
+terminal ou fundeadouro de destino;
+</li>
+
+<li>
+berço e bordo de atracação;
+</li>
+
+<li>
+rebocadores previstos;
+</li>
+
+<li>
+restrições de tráfego;
+</li>
+
+<li>
+janela de maré;
+</li>
+
+<li>
+restrições de calado, comprimento ou altura;
+</li>
+
+<li>
+necessidade de escolta;
+</li>
+
+<li>
+comunicações e autorizações necessárias.
+</li>
+
+</ul>
+
+
+<h4>
+13.3.3 Condições ambientais
+</h4>
+
+<ul>
+
+<li>
+previsão de vento;
+</li>
+
+<li>
+visibilidade;
+</li>
+
+<li>
+altura e período das ondas;
+</li>
+
+<li>
+maré prevista e observada;
+</li>
+
+<li>
+correntes de maré;
+</li>
+
+<li>
+nível dos rios;
+</li>
+
+<li>
+descargas ou vazões;
+</li>
+
+<li>
+pressão atmosférica;
+</li>
+
+<li>
+possíveis variações meteorológicas durante a faina.
+</li>
+
+</ul>
+
+
+<h3>
+13.4 Cartas e publicações
+</h3>
+
+<p>
+As cartas e publicações devem ser oficiais, apropriadas à escala da
+operação e atualizadas.
+</p>
+
+<p>
+Conforme aplicável, devem ser consultados:
+</p>
+
+<ul>
+
+<li>
+cartas náuticas em papel;
+</li>
+
+<li>
+cartas eletrônicas oficiais — ENC;
+</li>
+
+<li>
+Roteiro;
+</li>
+
+<li>
+Lista de Faróis;
+</li>
+
+<li>
+Lista de Auxílios-Rádio;
+</li>
+
+<li>
+Tábuas das Marés;
+</li>
+
+<li>
+Cartas de Correntes de Maré;
+</li>
+
+<li>
+Avisos aos Navegantes;
+</li>
+
+<li>
+Avisos-Rádio Náuticos e informações de segurança marítima;
+</li>
+
+<li>
+Normas e Procedimentos da Capitania dos Portos — NPCP ou NPCF;
+</li>
+
+<li>
+regras do porto e do terminal;
+</li>
+
+<li>
+informações do VTS;
+</li>
+
+<li>
+circulares e avisos locais;
+</li>
+
+<li>
+informações recentes da praticagem.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção às informações temporárias
+</h3>
+
+<p>
+Nem todas as alterações relevantes estarão incorporadas
+imediatamente à carta. Dragagens, assoreamentos, obras, boias fora de
+posição, interdições, operações especiais e alterações temporárias
+podem aparecer inicialmente em avisos ou mensagens náuticas.
+</p>
+
+</div>
+
+
+<h3>
+13.5 Avaliação das cartas
+</h3>
+
+<p>
+A equipe deve avaliar a adequação da carta e não apenas confirmar sua
+existência.
+</p>
+
+<p>
+Devem ser considerados:
+</p>
+
+<ul>
+
+<li>
+escala;
+</li>
+
+<li>
+datum horizontal;
+</li>
+
+<li>
+datum vertical;
+</li>
+
+<li>
+data e qualidade do levantamento;
+</li>
+
+<li>
+Categoria de Zona de Confiança — CATZOC, quando aplicável;
+</li>
+
+<li>
+profundidades mínimas;
+</li>
+
+<li>
+natureza do fundo;
+</li>
+
+<li>
+curvas batimétricas;
+</li>
+
+<li>
+perigos isolados;
+</li>
+
+<li>
+altura de pontes e cabos;
+</li>
+
+<li>
+limites de canais dragados;
+</li>
+
+<li>
+notas e advertências da carta;
+</li>
+
+<li>
+possíveis diferenças entre a carta e informações locais recentes.
+</li>
+
+</ul>
+
+
+<h3>
+13.6 Seleção da derrota
+</h3>
+
+<p>
+A derrota deve conduzir o navio por águas seguras e permitir a
+execução das alterações de rumo dentro da capacidade de manobra
+disponível.
+</p>
+
+<p>
+A seleção deverá considerar:
+</p>
+
+<ul>
+
+<li>
+largura e profundidade da via navegável;
+</li>
+
+<li>
+folga abaixo da quilha;
+</li>
+
+<li>
+curvas e pontos de guinada;
+</li>
+
+<li>
+corrente e vento;
+</li>
+
+<li>
+efeito de banco;
+</li>
+
+<li>
+interação com outros navios;
+</li>
+
+<li>
+áreas de encontro e ultrapassagem;
+</li>
+
+<li>
+esquemas de separação de tráfego;
+</li>
+
+<li>
+regras para canais estreitos;
+</li>
+
+<li>
+limites de velocidade;
+</li>
+
+<li>
+posição dos auxílios à navegação;
+</li>
+
+<li>
+áreas proibidas ou de navegação restrita;
+</li>
+
+<li>
+espaço para contingências.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Áreas de não acesso
+</h3>
+
+<p>
+As áreas nas quais o navio não poderá entrar com segurança devem ser
+claramente identificadas. Elas podem resultar de:
+</p>
+
+<ul>
+
+<li>
+profundidade insuficiente;
+</li>
+
+<li>
+obstáculos;
+</li>
+
+<li>
+margem lateral inadequada;
+</li>
+
+<li>
+restrição regulamentar;
+</li>
+
+<li>
+ausência de espaço para recuperação;
+</li>
+
+<li>
+risco inaceitável de interação ou encalhe.
+</li>
+
+</ul>
+
+<p>
+Essas áreas devem ser tratadas como limites operacionais, e não como
+espaço adicional disponível para corrigir um erro.
+</p>
+
+</div>
+
+
+<h3>
+13.7 Rumos e correções
+</h3>
+
+<p>
+Para cada perna da derrota, devem ser avaliados:
+</p>
+
+<ul>
+
+<li>
+rumo verdadeiro da trajetória;
+</li>
+
+<li>
+proa inicial estimada;
+</li>
+
+<li>
+corrente prevista;
+</li>
+
+<li>
+abatimento pelo vento;
+</li>
+
+<li>
+mudanças esperadas durante a maré;
+</li>
+
+<li>
+referências visuais e radar;
+</li>
+
+<li>
+limites laterais;
+</li>
+
+<li>
+correções previstas;
+</li>
+
+<li>
+forma de confirmar o resultado.
+</li>
+
+</ul>
+
+<p>
+O plano deve registrar o rumo da derrota, mas a proa a governar poderá
+ser ajustada durante a execução para produzir o COG necessário.
+</p>
+
+
+<h3>
+13.8 Pontos de início da guinada
+</h3>
+
+<p>
+Cada alteração de rumo deverá possuir um ponto ou linha de início da
+guinada baseado na geometria da curva e na resposta esperada do navio.
+</p>
+
+<p>
+Devem ser registrados:
+</p>
+
+<ul>
+
+<li>
+proa de entrada;
+</li>
+
+<li>
+proa de saída;
+</li>
+
+<li>
+velocidade prevista;
+</li>
+
+<li>
+raio da curva;
+</li>
+
+<li>
+razão de guinada esperada;
+</li>
+
+<li>
+ângulo inicial de leme;
+</li>
+
+<li>
+ponto para redução do leme;
+</li>
+
+<li>
+referências para monitoramento;
+</li>
+
+<li>
+limites internos e externos;
+</li>
+
+<li>
+ação em caso de resposta insuficiente ou excessiva.
+</li>
+
+</ul>
+
+
+<h3>
+13.9 Planejamento da velocidade
+</h3>
+
+<p>
+O perfil de velocidade deve considerar toda a passagem e não apenas
+os limites regulamentares.
+</p>
+
+<p>
+Devem ser identificados:
+</p>
+
+<ul>
+
+<li>
+pontos de redução de velocidade;
+</li>
+
+<li>
+velocidade necessária para governo;
+</li>
+
+<li>
+velocidade máxima em áreas de UKC crítica;
+</li>
+
+<li>
+velocidade de aproximação às curvas;
+</li>
+
+<li>
+velocidade nos encontros;
+</li>
+
+<li>
+velocidade de aproximação ao berço;
+</li>
+
+<li>
+efeito da corrente sobre a SOG;
+</li>
+
+<li>
+tempo e distância necessários para desacelerar;
+</li>
+
+<li>
+limitações de partidas e reversões do motor.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Velocidade na água e velocidade no fundo
+</h3>
+
+<p>
+Com corrente favorável, a SOG pode ser elevada mesmo com pequena
+velocidade na água. Com corrente contrária, a SOG pode ser reduzida
+enquanto o fluxo sobre o leme permanece significativo.
+</p>
+
+<p>
+A avaliação deve considerar separadamente:
+</p>
+
+<ul>
+
+<li>
+velocidade na água, relacionada ao escoamento sobre casco, hélice e
+leme;
+</li>
+
+<li>
+velocidade no fundo, relacionada ao tempo disponível e ao movimento
+em relação aos perigos fixos.
+</li>
+
+</ul>
+
+</div>
+
+
+<h3>
+13.10 Maré, corrente e janela operacional
+</h3>
+
+<p>
+O planejamento deve considerar a condição ambiental ao longo de toda
+a passagem, e não apenas no instante da entrada.
+</p>
+
+<p>
+Devem ser avaliados:
+</p>
+
+<ul>
+
+<li>
+altura da maré na entrada;
+</li>
+
+<li>
+altura prevista nos pontos críticos;
+</li>
+
+<li>
+horário da preamar e da baixa-mar;
+</li>
+
+<li>
+períodos de estofo;
+</li>
+
+<li>
+direção e intensidade da corrente;
+</li>
+
+<li>
+diferença de horário da maré entre locais;
+</li>
+
+<li>
+duração da passagem;
+</li>
+
+<li>
+margem para atrasos;
+</li>
+
+<li>
+efeito da corrente na manobra final;
+</li>
+
+<li>
+possibilidade de perda da janela operacional.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Janela de maré
+</h3>
+
+<p>
+A janela de maré é o intervalo no qual a combinação entre nível da
+água, corrente, calado e critérios operacionais permite a passagem.
+</p>
+
+<p>
+Ela não deve ser interpretada apenas como o momento em que existe
+profundidade suficiente. A corrente e o tempo necessário para
+completar a travessia também podem limitar a operação.
+</p>
+
+</div>
+
+
+<h3>
+13.11 Planejamento da folga abaixo da quilha
+</h3>
+
+<p>
+A UKC planejada deve considerar:
+</p>
+
+<ul>
+
+<li>
+profundidade cartografada;
+</li>
+
+<li>
+altura da maré;
+</li>
+
+<li>
+calado de água doce ou salgada;
+</li>
+
+<li>
+squat;
+</li>
+
+<li>
+trim e banda;
+</li>
+
+<li>
+movimentos do navio;
+</li>
+
+<li>
+incerteza da maré;
+</li>
+
+<li>
+incerteza batimétrica;
+</li>
+
+<li>
+assoreamento;
+</li>
+
+<li>
+critérios da Autoridade ou do porto.
+</li>
+
+</ul>
+
+<p>
+Representação conceitual:
+</p>
+
+<p>
+<strong>
+UKC =
+profundidade disponível
+− calado dinâmico
+</strong>
+</p>
+
+<p>
+Em que o calado dinâmico inclui os efeitos que aumentam a imersão
+durante o movimento.
+</p>
+
+
+<h3>
+13.12 Pontos críticos
+</h3>
+
+<p>
+Pontos críticos são locais ou fases em que a margem de segurança é
+reduzida ou a consequência de uma falha é elevada.
+</p>
+
+<p>
+Exemplos:
+</p>
+
+<ul>
+
+<li>
+entrada de canal;
+</li>
+
+<li>
+curva acentuada;
+</li>
+
+<li>
+trecho de menor profundidade;
+</li>
+
+<li>
+ponte;
+</li>
+
+<li>
+estreitamento;
+</li>
+
+<li>
+encontro com outro navio;
+</li>
+
+<li>
+mudança intensa da corrente;
+</li>
+
+<li>
+proximidade de terminal;
+</li>
+
+<li>
+bacia de evolução;
+</li>
+
+<li>
+ponto após o qual não é possível abortar normalmente.
+</li>
+
+</ul>
+
+<p>
+Para cada ponto crítico, o plano deverá indicar:
+</p>
+
+<ul>
+
+<li>
+condição necessária para prosseguir;
+</li>
+
+<li>
+posição e velocidade pretendidas;
+</li>
+
+<li>
+referências de monitoramento;
+</li>
+
+<li>
+limites de segurança;
+</li>
+
+<li>
+decisão prevista em caso de não conformidade.
+</li>
+
+</ul>
+
+
+<h3>
+13.13 Pontos de acesso, não acesso e decisão
+</h3>
+
+<p>
+O plano deve estabelecer pontos de decisão nos quais a equipe
+confirmará se as condições permitem prosseguir.
+</p>
+
+<ul>
+
+<li>
+<strong>Ponto de acesso:</strong>
+condição ou posição a partir da qual a próxima fase pode ser iniciada;
+</li>
+
+<li>
+<strong>Ponto de não acesso:</strong>
+limite que não deverá ser cruzado sem as condições necessárias;
+</li>
+
+<li>
+<strong>Ponto de abortagem:</strong>
+último ponto no qual a manobra normal pode ser interrompida com
+segurança;
+</li>
+
+<li>
+<strong>Ponto de compromisso:</strong>
+ponto após o qual prosseguir ou executar uma contingência específica
+pode ser mais seguro do que tentar retornar.
+</li>
+
+</ul>
+
+
+<h3>
+13.14 Planejamento de contingência
+</h3>
+
+<p>
+A contingência deve ser específica para cada fase da passagem. Uma
+orientação genérica como “fundear em emergência” é insuficiente se
+não houver profundidade, espaço ou tempo para largar o ferro.
+</p>
+
+<p>
+Devem ser consideradas falhas de:
+</p>
+
+<ul>
+
+<li>
+máquina principal;
+</li>
+
+<li>
+aparelho de governo;
+</li>
+
+<li>
+geração elétrica;
+</li>
+
+<li>
+propulsor lateral;
+</li>
+
+<li>
+rebocador;
+</li>
+
+<li>
+radar;
+</li>
+
+<li>
+ECDIS;
+</li>
+
+<li>
+GNSS;
+</li>
+
+<li>
+agulha giroscópica;
+</li>
+
+<li>
+comunicações;
+</li>
+
+<li>
+auxílio à navegação;
+</li>
+
+<li>
+visibilidade.
+</li>
+
+</ul>
+
+<p>
+Também devem ser planejadas ações para:
+</p>
+
+<ul>
+
+<li>
+tráfego inesperado;
+</li>
+
+<li>
+homem ao mar;
+</li>
+
+<li>
+perda de rebocador;
+</li>
+
+<li>
+boia fora de posição;
+</li>
+
+<li>
+profundidade inferior à esperada;
+</li>
+
+<li>
+vento ou corrente acima do limite;
+</li>
+
+<li>
+impossibilidade de atracar;
+</li>
+
+<li>
+interdição do canal ou berço.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Estrutura de uma contingência útil
+</h3>
+
+<p>
+Para cada falha relevante, o plano deve responder:
+</p>
+
+<ol>
+
+<li>
+<strong>Como a falha será reconhecida?</strong>
+</li>
+
+<li>
+<strong>Qual será a primeira ação?</strong>
+</li>
+
+<li>
+<strong>Quem deverá ser informado?</strong>
+</li>
+
+<li>
+<strong>Qual recurso estará disponível?</strong>
+</li>
+
+<li>
+<strong>Para onde o navio poderá ser conduzido?</strong>
+</li>
+
+<li>
+<strong>Até quando essa alternativa continuará viável?</strong>
+</li>
+
+</ol>
+
+</div>
+
+
+<h3>
+13.15 Comunicações
+</h3>
+
+<p>
+O plano deve identificar:
+</p>
+
+<ul>
+
+<li>
+canais VHF aplicáveis;
+</li>
+
+<li>
+estações a serem chamadas;
+</li>
+
+<li>
+pontos de reporte;
+</li>
+
+<li>
+informações obrigatórias;
+</li>
+
+<li>
+comunicação com rebocadores;
+</li>
+
+<li>
+comunicação com as estações de amarração;
+</li>
+
+<li>
+procedimentos em caso de falha do VHF;
+</li>
+
+<li>
+idioma de trabalho no passadiço;
+</li>
+
+<li>
+frases padronizadas necessárias.
+</li>
+
+</ul>
+
+<p>
+As comunicações externas não devem impedir o monitoramento interno da
+manobra. Quando necessário, um integrante específico deverá ser
+designado para operar o rádio.
+</p>
+
+
+<h3>
+13.16 Rebocadores
+</h3>
+
+<p>
+Quando forem utilizados rebocadores, o plano deverá definir:
+</p>
+
+<ul>
+
+<li>
+quantidade e tipo;
+</li>
+
+<li>
+bollard pull disponível;
+</li>
+
+<li>
+pontos de conexão;
+</li>
+
+<li>
+momento e local da conexão;
+</li>
+
+<li>
+método de assistência;
+</li>
+
+<li>
+limitações de velocidade;
+</li>
+
+<li>
+efeito do vento e da corrente;
+</li>
+
+<li>
+comunicações;
+</li>
+
+<li>
+ordens padronizadas;
+</li>
+
+<li>
+ações em caso de ruptura do cabo ou falha do rebocador.
+</li>
+
+</ul>
+
+
+<h3>
+13.17 Verificações antes do embarque do Prático
+</h3>
+
+<p>
+Antes do embarque, o navio deverá ter preparado:
+</p>
+
+<ul>
+
+<li>
+plano de viagem até o berço ou destino;
+</li>
+
+<li>
+cartas e publicações atualizadas;
+</li>
+
+<li>
+Pilot Card preenchido;
+</li>
+
+<li>
+informações sobre defeitos e limitações;
+</li>
+
+<li>
+equipamentos de navegação configurados;
+</li>
+
+<li>
+sistemas de governo testados;
+</li>
+
+<li>
+máquinas disponíveis para manobra;
+</li>
+
+<li>
+ferros prontos conforme necessário;
+</li>
+
+<li>
+equipe do passadiço reforçada;
+</li>
+
+<li>
+comunicações estabelecidas;
+</li>
+
+<li>
+arranjo de transferência do Prático preparado;
+</li>
+
+<li>
+iluminação e meios de salvamento disponíveis;
+</li>
+
+<li>
+condições de embarque comunicadas à praticagem.
+</li>
+
+</ul>
+
+
+<h3>
+13.18 Troca de informações Comandante–Prático
+</h3>
+
+<p>
+A troca deve ocorrer antes do início da fase crítica e incluir,
+conforme aplicável:
+</p>
+
+<ul>
+
+<li>
+plano e sequência da passagem;
+</li>
+
+<li>
+calados e condição do navio;
+</li>
+
+<li>
+características de manobra;
+</li>
+
+<li>
+defeitos ou limitações;
+</li>
+
+<li>
+condições meteorológicas e de maré;
+</li>
+
+<li>
+tráfego;
+</li>
+
+<li>
+velocidades previstas;
+</li>
+
+<li>
+rebocadores;
+</li>
+
+<li>
+berço e plano de atracação;
+</li>
+
+<li>
+pontos críticos;
+</li>
+
+<li>
+contingências;
+</li>
+
+<li>
+distribuição de tarefas;
+</li>
+
+<li>
+idioma e forma de comunicação;
+</li>
+
+<li>
+condições para interromper ou alterar o plano.
+</li>
+
+</ul>
+
+
+<div class="destaque">
+
+<h3>
+Plano compartilhado
+</h3>
+
+<p>
+A troca é efetiva quando o Comandante, o Prático e a equipe do
+passadiço constroem um entendimento comum sobre:
+</p>
+
+<ul>
+
+<li>
+a derrota pretendida;
+</li>
+
+<li>
+as ações principais;
+</li>
+
+<li>
+os limites operacionais;
+</li>
+
+<li>
+as funções de cada integrante;
+</li>
+
+<li>
+as contingências.
+</li>
+
+</ul>
+
+<p>
+A simples assinatura de um formulário não comprova, por si só, que
+esse entendimento foi alcançado.
+</p>
+
+</div>
+
+
+<h3>
+13.19 Controle e alteração do plano
+</h3>
+
+<p>
+Durante a execução, qualquer alteração significativa deve ser:
+</p>
+
+<ol>
+
+<li>
+avaliada quanto aos riscos;
+</li>
+
+<li>
+comunicada ao Comandante e à equipe;
+</li>
+
+<li>
+verificada quanto à profundidade e aos perigos;
+</li>
+
+<li>
+registrada ou inserida nos sistemas quando praticável;
+</li>
+
+<li>
+monitorada após sua implementação.
+</li>
+
+</ol>
+
+<p>
+Uma mudança não deve ser executada apenas porque parece reduzir
+distância ou tempo. A nova rota precisa manter as margens de segurança
+e as possibilidades de contingência.
+</p>
+
+
+<h3>
+13.20 Briefing da equipe
+</h3>
+
+<p>
+Antes da fase crítica, a equipe deverá conhecer:
+</p>
+
+<ul>
+
+<li>
+situação atual do navio;
+</li>
+
+<li>
+próxima ação;
+</li>
+
+<li>
+próximo ponto crítico;
+</li>
+
+<li>
+velocidade pretendida;
+</li>
+
+<li>
+limites laterais e verticais;
+</li>
+
+<li>
+tráfego relevante;
+</li>
+
+<li>
+função de cada integrante;
+</li>
+
+<li>
+critérios para comunicar um desvio;
+</li>
+
+<li>
+ação prevista em caso de falha.
+</li>
+
+</ul>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚓ Aplicação operacional
+</h3>
+
+<p>
+Um bom briefing deve permitir que qualquer integrante responsável
+pelo monitoramento reconheça quando:
+</p>
+
+<ul>
+
+<li>
+o navio não iniciou a guinada no ponto previsto;
+</li>
+
+<li>
+a velocidade está acima do planejado;
+</li>
+
+<li>
+a UKC está abaixo do limite;
+</li>
+
+<li>
+o encontro ocorrerá em local inadequado;
+</li>
+
+<li>
+a trajetória se aproxima de uma área de não acesso;
+</li>
+
+<li>
+a contingência precisa ser preparada.
+</li>
+
+</ul>
+
+</div>
+
+
+<h3>
+13.21 Checklist operacional de planejamento
+</h3>
+
+<div class="destaque">
+
+<h3>
+Antes de iniciar a pilotagem, confirmar:
+</h3>
+
+<ul>
+
+<li>
+☐ cartas e publicações corretas e atualizadas;
+</li>
+
+<li>
+☐ derrota planejada e verificada;
+</li>
+
+<li>
+☐ calado, trim e UKC avaliados;
+</li>
+
+<li>
+☐ maré, corrente, vento e visibilidade confirmados;
+</li>
+
+<li>
+☐ pontos críticos identificados;
+</li>
+
+<li>
+☐ velocidades e curvas planejadas;
+</li>
+
+<li>
+☐ limites laterais configurados;
+</li>
+
+<li>
+☐ áreas de não acesso identificadas;
+</li>
+
+<li>
+☐ pontos de abortagem definidos;
+</li>
+
+<li>
+☐ contingências praticáveis;
+</li>
+
+<li>
+☐ tráfego conhecido;
+</li>
+
+<li>
+☐ rebocadores confirmados;
+</li>
+
+<li>
+☐ máquinas e governo disponíveis;
+</li>
+
+<li>
+☐ equipamentos de navegação operacionais;
+</li>
+
+<li>
+☐ troca Comandante–Prático concluída;
+</li>
+
+<li>
+☐ equipe informada sobre o plano;
+</li>
+
+<li>
+☐ funções de monitoramento distribuídas;
+</li>
+
+<li>
+☐ comunicações testadas.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="termos-tecnicos">
+
+<h3>
+🌐 Termos técnicos
+</h3>
+
+<ul>
+
+<li>
+<strong>Appraisal</strong> — avaliação das informações;
+</li>
+
+<li>
+<strong>Passage planning</strong> — planejamento da passagem;
+</li>
+
+<li>
+<strong>Execution</strong> — execução;
+</li>
+
+<li>
+<strong>Monitoring</strong> — monitoramento;
+</li>
+
+<li>
+<strong>Pilotage plan</strong> — plano de pilotagem;
+</li>
+
+<li>
+<strong>Master–Pilot Exchange — MPX</strong> — troca de informações
+entre Comandante e Prático;
+</li>
+
+<li>
+<strong>No-go area</strong> — área de não acesso;
+</li>
+
+<li>
+<strong>Critical point</strong> — ponto crítico;
+</li>
+
+<li>
+<strong>Abort point</strong> — ponto de abortagem;
+</li>
+
+<li>
+<strong>Contingency plan</strong> — plano de contingência;
+</li>
+
+<li>
+<strong>Tidal window</strong> — janela de maré;
+</li>
+
+<li>
+<strong>Wheel-over point</strong> — ponto de início da guinada;
+</li>
+
+<li>
+<strong>Bridge team briefing</strong> — briefing da equipe do
+passadiço;
+</li>
+
+<li>
+<strong>Shared mental model</strong> — compreensão mental
+compartilhada da operação.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="atencao-pratico">
+
+<h3>
+⚠ Atenção PSCPP
+</h3>
+
+<p>
+O plano não deve existir apenas para atender uma exigência documental.
+Sua finalidade é permitir que a equipe antecipe ações, reconheça
+desvios e intervenha antes que as margens de segurança sejam
+consumidas.
+</p>
+
+<p>
+Um plano que não pode ser compreendido e monitorado pela equipe não
+cumpre plenamente sua função operacional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     GLOSSÁRIO DA PARTE 5
+========================================= -->
+
+<section>
+
+<h2>
+🌐 Glossário — Parte 5
+</h2>
+
+<div class="widget termos-tecnicos">
+
+<ul>
+
+<li>
+<strong>Appraisal</strong> — avaliação;
+</li>
+
+<li>
+<strong>Planning</strong> — planejamento;
+</li>
+
+<li>
+<strong>Execution</strong> — execução;
+</li>
+
+<li>
+<strong>Monitoring</strong> — monitoramento;
+</li>
+
+<li>
+<strong>Passage plan</strong> — plano de passagem;
+</li>
+
+<li>
+<strong>Pilotage plan</strong> — plano de pilotagem;
+</li>
+
+<li>
+<strong>Master–Pilot Exchange — MPX</strong> — troca de informações
+Comandante–Prático;
+</li>
+
+<li>
+<strong>No-go area</strong> — área de não acesso;
+</li>
+
+<li>
+<strong>Critical point</strong> — ponto crítico;
+</li>
+
+<li>
+<strong>Abort point</strong> — ponto de abortagem;
+</li>
+
+<li>
+<strong>Contingency plan</strong> — plano de contingência;
+</li>
+
+<li>
+<strong>Tidal window</strong> — janela de maré;
+</li>
+
+<li>
+<strong>Wheel-over point</strong> — ponto de início da guinada;
+</li>
+
+<li>
+<strong>Under-keel clearance — UKC</strong> — folga abaixo da
+quilha;
+</li>
+
+<li>
+<strong>Bridge team briefing</strong> — briefing da equipe do
+passadiço;
+</li>
+
+<li>
+<strong>Shared mental model</strong> — compreensão compartilhada da
+operação.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FIM DA PARTE 5
+
+     A PARTE 6 DEVERÁ SER COLADA IMEDIATAMENTE
+     APÓS ESTE COMENTÁRIO.
+
+     NÃO INSERIR:
+     </main>
+     </body>
+     </html>
+===================================================== --> 
